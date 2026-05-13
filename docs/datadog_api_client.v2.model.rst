@@ -221,6 +221,41 @@ datadog\_api\_client.v2.model.advisory module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ai\_workflow\_attributes module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_workflow_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_workflow\_data module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_workflow_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_workflow\_data\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_workflow_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_workflow\_list\_meta module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_workflow_list_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_workflow\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_workflow_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.alert\_event\_attributes module
 -------------------------------------------------------------
 
@@ -3434,6 +3469,20 @@ datadog\_api\_client.v2.model.cancel\_data\_deletion\_response\_body module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cancel\_workflow\_executions\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cancel_workflow_executions_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cancel\_workflow\_executions\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cancel_workflow_executions_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case module
 -----------------------------------------
 
@@ -6388,6 +6437,13 @@ datadog\_api\_client.v2.model.create\_action\_connection\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_ai\_workflow\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_ai_workflow_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_allocations\_request module
 -----------------------------------------------------------------
 
@@ -7491,6 +7547,13 @@ datadog\_api\_client.v2.model.create\_variant module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_variant
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_workflow\_executions\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_workflow_executions_response
    :members:
    :show-inheritance:
 
@@ -9944,6 +10007,13 @@ datadog\_api\_client.v2.model.downtime\_update\_request\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.entity module
+-------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_attributes module
 -------------------------------------------------------
 
@@ -11159,6 +11229,20 @@ datadog\_api\_client.v2.model.events\_warning module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.events_warning
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_step module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_step\_status module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_step_status
    :members:
    :show-inheritance:
 
@@ -16517,6 +16601,13 @@ datadog\_api\_client.v2.model.links module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_ai\_workflows\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_ai_workflows_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_allocations\_response module
 ----------------------------------------------------------------
 
@@ -16755,6 +16846,34 @@ datadog\_api\_client.v2.model.list\_environments\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_execution\_steps\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_execution_steps_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_execution\_steps\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_execution_steps_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_execution\_steps\_data\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_execution_steps_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_execution\_steps\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_execution_steps_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_feature\_flags\_response module
 -------------------------------------------------------------------
 
@@ -16902,6 +17021,34 @@ datadog\_api\_client.v2.model.list\_powerpacks\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_pr\_outputs\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_pr_outputs_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_pr\_outputs\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_pr_outputs_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_pr\_outputs\_data\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_pr_outputs_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_pr\_outputs\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_pr_outputs_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_relation\_catalog\_response module
 ----------------------------------------------------------------------
 
@@ -16997,6 +17144,13 @@ datadog\_api\_client.v2.model.list\_vulnerable\_assets\_response module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_vulnerable_assets_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_workflow\_instances\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_workflow_instances_response
    :members:
    :show-inheritance:
 
@@ -24452,6 +24606,27 @@ datadog\_api\_client.v2.model.powerpacks\_response\_meta\_pagination module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.powerpacks_response_meta_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pr\_output module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pr_output
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pr\_output\_ci\_status module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pr_output_ci_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pr\_output\_status module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pr_output_status
    :members:
    :show-inheritance:
 
@@ -35480,6 +35655,13 @@ datadog\_api\_client.v2.model.update\_action\_connection\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_ai\_workflow\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_ai_workflow_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_app\_request module
 ---------------------------------------------------------
 
@@ -37181,6 +37363,34 @@ datadog\_api\_client.v2.model.workflow\_data\_update\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.workflow\_execution\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_execution_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_execution\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_execution_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_execution\_data\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_execution_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_execution\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_execution_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.workflow\_instance\_create\_meta module
 ---------------------------------------------------------------------
 
@@ -37213,6 +37423,34 @@ datadog\_api\_client.v2.model.workflow\_instance\_list\_item module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.workflow_instance_list_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_summary\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_summary_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_summary\_attributes\_status module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_summary_attributes_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_summary\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_summary_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_instance\_summary\_data\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_instance_summary_data_type
    :members:
    :show-inheritance:
 

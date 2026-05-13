@@ -33,6 +33,7 @@ from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecureEmbedApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
+from datadog_api_client.v2.api.dependency_management_api import DependencyManagementApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
@@ -146,6 +147,7 @@ __all__ = [
     "DashboardSecureEmbedApi",
     "DataDeletionApi",
     "DatasetsApi",
+    "DependencyManagementApi",
     "DeploymentGatesApi",
     "DomainAllowlistApi",
     "DowntimesApi",

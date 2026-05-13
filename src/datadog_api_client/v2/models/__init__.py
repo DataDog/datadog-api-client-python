@@ -1,3 +1,8 @@
+from datadog_api_client.v2.model.ai_workflow_attributes import AIWorkflowAttributes
+from datadog_api_client.v2.model.ai_workflow_data import AIWorkflowData
+from datadog_api_client.v2.model.ai_workflow_data_type import AIWorkflowDataType
+from datadog_api_client.v2.model.ai_workflow_list_meta import AIWorkflowListMeta
+from datadog_api_client.v2.model.ai_workflow_response import AIWorkflowResponse
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
 from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData
@@ -746,6 +751,8 @@ from datadog_api_client.v2.model.campaign_response_data import CampaignResponseD
 from datadog_api_client.v2.model.campaign_status import CampaignStatus
 from datadog_api_client.v2.model.campaign_type import CampaignType
 from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
+from datadog_api_client.v2.model.cancel_workflow_executions_data import CancelWorkflowExecutionsData
+from datadog_api_client.v2.model.cancel_workflow_executions_response import CancelWorkflowExecutionsResponse
 from datadog_api_client.v2.model.case import Case
 from datadog_api_client.v2.model.case3rd_party_ticket_status import Case3rdPartyTicketStatus
 from datadog_api_client.v2.model.case_assign import CaseAssign
@@ -1193,6 +1200,7 @@ from datadog_api_client.v2.model.coverage_summary_response import CoverageSummar
 from datadog_api_client.v2.model.coverage_summary_service_stats import CoverageSummaryServiceStats
 from datadog_api_client.v2.model.coverage_summary_type import CoverageSummaryType
 from datadog_api_client.v2.model.cpu import Cpu
+from datadog_api_client.v2.model.create_ai_workflow_request import CreateAIWorkflowRequest
 from datadog_api_client.v2.model.create_action_connection_request import CreateActionConnectionRequest
 from datadog_api_client.v2.model.create_action_connection_response import CreateActionConnectionResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
@@ -1463,6 +1471,7 @@ from datadog_api_client.v2.model.create_upload_response_data_attributes import C
 from datadog_api_client.v2.model.create_upload_response_data_type import CreateUploadResponseDataType
 from datadog_api_client.v2.model.create_user_notification_channel_request import CreateUserNotificationChannelRequest
 from datadog_api_client.v2.model.create_variant import CreateVariant
+from datadog_api_client.v2.model.create_workflow_executions_response import CreateWorkflowExecutionsResponse
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
@@ -1954,6 +1963,7 @@ from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRe
 from datadog_api_client.v2.model.downtime_update_request_attributes import DowntimeUpdateRequestAttributes
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
 from datadog_api_client.v2.model.epss import EPSS
+from datadog_api_client.v2.model.entity import Entity
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_meta import EntityMeta
@@ -2202,6 +2212,8 @@ from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.events_sort_type import EventsSortType
 from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 from datadog_api_client.v2.model.events_warning import EventsWarning
+from datadog_api_client.v2.model.execution_step import ExecutionStep
+from datadog_api_client.v2.model.execution_step_status import ExecutionStepStatus
 from datadog_api_client.v2.model.exposure_rollout_step_request import ExposureRolloutStepRequest
 from datadog_api_client.v2.model.exposure_schedule_request import ExposureScheduleRequest
 from datadog_api_client.v2.model.facet_info_request import FacetInfoRequest
@@ -3339,6 +3351,7 @@ from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttribute
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
 from datadog_api_client.v2.model.library import Library
 from datadog_api_client.v2.model.links import Links
+from datadog_api_client.v2.model.list_ai_workflows_response import ListAIWorkflowsResponse
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
 from datadog_api_client.v2.model.list_apis_response_data_attributes import ListAPIsResponseDataAttributes
@@ -3381,6 +3394,10 @@ from datadog_api_client.v2.model.list_entity_catalog_response import ListEntityC
 from datadog_api_client.v2.model.list_entity_catalog_response_included_item import ListEntityCatalogResponseIncludedItem
 from datadog_api_client.v2.model.list_entity_catalog_response_links import ListEntityCatalogResponseLinks
 from datadog_api_client.v2.model.list_environments_response import ListEnvironmentsResponse
+from datadog_api_client.v2.model.list_execution_steps_attributes import ListExecutionStepsAttributes
+from datadog_api_client.v2.model.list_execution_steps_data import ListExecutionStepsData
+from datadog_api_client.v2.model.list_execution_steps_data_type import ListExecutionStepsDataType
+from datadog_api_client.v2.model.list_execution_steps_response import ListExecutionStepsResponse
 from datadog_api_client.v2.model.list_feature_flags_response import ListFeatureFlagsResponse
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
@@ -3400,6 +3417,10 @@ from datadog_api_client.v2.model.list_investigations_response_meta_page import L
 from datadog_api_client.v2.model.list_kind_catalog_response import ListKindCatalogResponse
 from datadog_api_client.v2.model.list_notification_channels_response import ListNotificationChannelsResponse
 from datadog_api_client.v2.model.list_on_call_notification_rules_response import ListOnCallNotificationRulesResponse
+from datadog_api_client.v2.model.list_pr_outputs_attributes import ListPROutputsAttributes
+from datadog_api_client.v2.model.list_pr_outputs_data import ListPROutputsData
+from datadog_api_client.v2.model.list_pr_outputs_data_type import ListPROutputsDataType
+from datadog_api_client.v2.model.list_pr_outputs_response import ListPROutputsResponse
 from datadog_api_client.v2.model.list_personal_access_tokens_response import ListPersonalAccessTokensResponse
 from datadog_api_client.v2.model.list_pipelines_response import ListPipelinesResponse
 from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelinesResponseMeta
@@ -3418,6 +3439,7 @@ from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
+from datadog_api_client.v2.model.list_workflow_instances_response import ListWorkflowInstancesResponse
 from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.log_attributes import LogAttributes
 from datadog_api_client.v2.model.log_type import LogType
@@ -4874,6 +4896,9 @@ from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
+from datadog_api_client.v2.model.pr_output import PROutput
+from datadog_api_client.v2.model.pr_output_ci_status import PROutputCiStatus
+from datadog_api_client.v2.model.pr_output_status import PROutputStatus
 from datadog_api_client.v2.model.page_urgency import PageUrgency
 from datadog_api_client.v2.model.paginated_response_meta import PaginatedResponseMeta
 from datadog_api_client.v2.model.pagination import Pagination
@@ -7251,6 +7276,7 @@ from datadog_api_client.v2.model.unassign_seats_user_request_data_attributes imp
 )
 from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
+from datadog_api_client.v2.model.update_ai_workflow_request import UpdateAIWorkflowRequest
 from datadog_api_client.v2.model.update_action_connection_request import UpdateActionConnectionRequest
 from datadog_api_client.v2.model.update_action_connection_response import UpdateActionConnectionResponse
 from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
@@ -7560,11 +7586,21 @@ from datadog_api_client.v2.model.workflow_data_relationships import WorkflowData
 from datadog_api_client.v2.model.workflow_data_type import WorkflowDataType
 from datadog_api_client.v2.model.workflow_data_update import WorkflowDataUpdate
 from datadog_api_client.v2.model.workflow_data_update_attributes import WorkflowDataUpdateAttributes
+from datadog_api_client.v2.model.workflow_execution_attributes import WorkflowExecutionAttributes
+from datadog_api_client.v2.model.workflow_execution_data import WorkflowExecutionData
+from datadog_api_client.v2.model.workflow_execution_data_type import WorkflowExecutionDataType
+from datadog_api_client.v2.model.workflow_execution_response import WorkflowExecutionResponse
 from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
 from datadog_api_client.v2.model.workflow_instance_create_request import WorkflowInstanceCreateRequest
 from datadog_api_client.v2.model.workflow_instance_create_response import WorkflowInstanceCreateResponse
 from datadog_api_client.v2.model.workflow_instance_create_response_data import WorkflowInstanceCreateResponseData
 from datadog_api_client.v2.model.workflow_instance_list_item import WorkflowInstanceListItem
+from datadog_api_client.v2.model.workflow_instance_summary_attributes import WorkflowInstanceSummaryAttributes
+from datadog_api_client.v2.model.workflow_instance_summary_attributes_status import (
+    WorkflowInstanceSummaryAttributesStatus,
+)
+from datadog_api_client.v2.model.workflow_instance_summary_data import WorkflowInstanceSummaryData
+from datadog_api_client.v2.model.workflow_instance_summary_data_type import WorkflowInstanceSummaryDataType
 from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
 from datadog_api_client.v2.model.workflow_list_instances_response_meta import WorkflowListInstancesResponseMeta
 from datadog_api_client.v2.model.workflow_list_instances_response_meta_page import WorkflowListInstancesResponseMetaPage
@@ -7586,6 +7622,11 @@ from datadog_api_client.v2.model.zoom_configuration_reference import ZoomConfigu
 from datadog_api_client.v2.model.zoom_configuration_reference_data import ZoomConfigurationReferenceData
 
 __all__ = [
+    "AIWorkflowAttributes",
+    "AIWorkflowData",
+    "AIWorkflowDataType",
+    "AIWorkflowListMeta",
+    "AIWorkflowResponse",
     "APIErrorResponse",
     "APIKeyCreateAttributes",
     "APIKeyCreateData",
@@ -8154,6 +8195,8 @@ __all__ = [
     "CampaignStatus",
     "CampaignType",
     "CancelDataDeletionResponseBody",
+    "CancelWorkflowExecutionsData",
+    "CancelWorkflowExecutionsResponse",
     "Case",
     "Case3rdPartyTicketStatus",
     "CaseAssign",
@@ -8501,6 +8544,7 @@ __all__ = [
     "CoverageSummaryServiceStats",
     "CoverageSummaryType",
     "Cpu",
+    "CreateAIWorkflowRequest",
     "CreateActionConnectionRequest",
     "CreateActionConnectionResponse",
     "CreateAllocationsRequest",
@@ -8661,6 +8705,7 @@ __all__ = [
     "CreateUploadResponseDataType",
     "CreateUserNotificationChannelRequest",
     "CreateVariant",
+    "CreateWorkflowExecutionsResponse",
     "CreateWorkflowRequest",
     "CreateWorkflowResponse",
     "Creator",
@@ -9010,6 +9055,7 @@ __all__ = [
     "DowntimeUpdateRequestAttributes",
     "DowntimeUpdateRequestData",
     "EPSS",
+    "Entity",
     "EntityAttributes",
     "EntityData",
     "EntityMeta",
@@ -9184,6 +9230,8 @@ __all__ = [
     "EventsSortType",
     "EventsTimeseriesQuery",
     "EventsWarning",
+    "ExecutionStep",
+    "ExecutionStepStatus",
     "ExposureRolloutStepRequest",
     "ExposureScheduleRequest",
     "FacetInfoRequest",
@@ -10083,6 +10131,7 @@ __all__ = [
     "LeakedKeyType",
     "Library",
     "Links",
+    "ListAIWorkflowsResponse",
     "ListAPIsResponse",
     "ListAPIsResponseData",
     "ListAPIsResponseDataAttributes",
@@ -10117,6 +10166,10 @@ __all__ = [
     "ListEntityCatalogResponseIncludedItem",
     "ListEntityCatalogResponseLinks",
     "ListEnvironmentsResponse",
+    "ListExecutionStepsAttributes",
+    "ListExecutionStepsData",
+    "ListExecutionStepsDataType",
+    "ListExecutionStepsResponse",
     "ListFeatureFlagsResponse",
     "ListFindingsMeta",
     "ListFindingsPage",
@@ -10134,6 +10187,10 @@ __all__ = [
     "ListKindCatalogResponse",
     "ListNotificationChannelsResponse",
     "ListOnCallNotificationRulesResponse",
+    "ListPROutputsAttributes",
+    "ListPROutputsData",
+    "ListPROutputsDataType",
+    "ListPROutputsResponse",
     "ListPersonalAccessTokensResponse",
     "ListPipelinesResponse",
     "ListPipelinesResponseMeta",
@@ -10152,6 +10209,7 @@ __all__ = [
     "ListTeamsSort",
     "ListVulnerabilitiesResponse",
     "ListVulnerableAssetsResponse",
+    "ListWorkflowInstancesResponse",
     "Log",
     "LogAttributes",
     "LogType",
@@ -10976,6 +11034,9 @@ __all__ = [
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
     "OverwriteAllocationsRequest",
+    "PROutput",
+    "PROutputCiStatus",
+    "PROutputStatus",
     "PageUrgency",
     "PaginatedResponseMeta",
     "Pagination",
@@ -12663,6 +12724,7 @@ __all__ = [
     "UnassignSeatsUserRequestDataAttributes",
     "Unit",
     "UnpublishAppResponse",
+    "UpdateAIWorkflowRequest",
     "UpdateActionConnectionRequest",
     "UpdateActionConnectionResponse",
     "UpdateAppRequest",
@@ -12908,11 +12970,19 @@ __all__ = [
     "WorkflowDataType",
     "WorkflowDataUpdate",
     "WorkflowDataUpdateAttributes",
+    "WorkflowExecutionAttributes",
+    "WorkflowExecutionData",
+    "WorkflowExecutionDataType",
+    "WorkflowExecutionResponse",
     "WorkflowInstanceCreateMeta",
     "WorkflowInstanceCreateRequest",
     "WorkflowInstanceCreateResponse",
     "WorkflowInstanceCreateResponseData",
     "WorkflowInstanceListItem",
+    "WorkflowInstanceSummaryAttributes",
+    "WorkflowInstanceSummaryAttributesStatus",
+    "WorkflowInstanceSummaryData",
+    "WorkflowInstanceSummaryDataType",
     "WorkflowListInstancesResponse",
     "WorkflowListInstancesResponseMeta",
     "WorkflowListInstancesResponseMetaPage",

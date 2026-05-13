@@ -1701,6 +1701,92 @@
       "type": "idempotent"
     }
   },
+  "CreateAIWorkflow": {
+    "tag": "Dependency Management",
+    "undo": {
+      "operationId": "DeleteAIWorkflow",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "<RESPONSE_PATH>data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListAIWorkflows": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteAIWorkflow": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAIWorkflow": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAIWorkflow": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CancelWorkflowExecutions": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteWorkflowExecutions": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateWorkflowExecution": {
+    "tag": "Dependency Management",
+    "undo": {
+      "operationId": "DeleteWorkflowExecutions",
+      "type": "unsafe"
+    }
+  },
+  "ListAIWorkflowInstances": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CancelWorkflowExecution": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "ListPROutputs": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RerunWorkflowExecution": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "ListExecutionSteps": {
+    "tag": "Dependency Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListDeploymentGates": {
     "tag": "Deployment Gates",
     "undo": {
