@@ -6290,6 +6290,20 @@ datadog\_api\_client.v2.model.cost\_by\_org\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_tag module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_attributes module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_tag\_description module
 -----------------------------------------------------------
 
@@ -6322,6 +6336,62 @@ datadog\_api\_client.v2.model.cost\_tag\_descriptions\_response module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cost_tag_descriptions_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_details module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_keys\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_keys_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_type module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tags\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tags_response
    :members:
    :show-inheritance:
 

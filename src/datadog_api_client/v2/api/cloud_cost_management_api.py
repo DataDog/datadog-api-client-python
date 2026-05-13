@@ -43,6 +43,9 @@ from datadog_api_client.v2.model.gcp_uc_config_response import GcpUcConfigRespon
 from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPUsageCostConfigPatchRequest
 from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
 from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDescriptionsResponse
+from datadog_api_client.v2.model.cost_tag_keys_response import CostTagKeysResponse
+from datadog_api_client.v2.model.cost_tag_key_response import CostTagKeyResponse
+from datadog_api_client.v2.model.cost_tags_response import CostTagsResponse
 from datadog_api_client.v2.model.ruleset_resp_array import RulesetRespArray
 from datadog_api_client.v2.model.ruleset_resp import RulesetResp
 from datadog_api_client.v2.model.create_ruleset_request import CreateRulesetRequest
@@ -439,6 +442,42 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_cost_tag_key_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostTagKeyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tag_keys/{tag_key}",
+                "operation_id": "get_cost_tag_key",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "tag_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "tag_key",
+                    "location": "path",
+                },
+                "filter_metric": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[metric]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 10000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_custom_allocation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (ArbitraryRuleResponse,),
@@ -674,6 +713,81 @@ class CloudCostManagementApi:
                 "filter_cloud": {
                     "openapi_types": (str,),
                     "attribute": "filter[cloud]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_tag_keys_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostTagKeysResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tag_keys",
+                "operation_id": "list_cost_tag_keys",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_metric": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[metric]",
+                    "location": "query",
+                },
+                "filter_tags": {
+                    "openapi_types": ([str],),
+                    "attribute": "filter[tags]",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tags",
+                "operation_id": "list_cost_tags",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_metric": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[metric]",
+                    "location": "query",
+                },
+                "filter_match": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[match]",
+                    "location": "query",
+                },
+                "filter_tags": {
+                    "openapi_types": ([str],),
+                    "attribute": "filter[tags]",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "filter_tag_keys": {
+                    "openapi_types": ([str],),
+                    "attribute": "filter[tag_keys]",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 10000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
                     "location": "query",
                 },
             },
@@ -1360,6 +1474,36 @@ class CloudCostManagementApi:
 
         return self._get_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
+    def get_cost_tag_key(
+        self,
+        tag_key: str,
+        *,
+        filter_metric: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> CostTagKeyResponse:
+        """Get a Cloud Cost Management tag key.
+
+        Get details for a specific Cloud Cost Management tag key, including example tag values and description.
+
+        :param tag_key: The Cloud Cost Management tag key. Tag keys can contain forward slashes (for example, ``kubernetes/instance`` ).
+        :type tag_key: str
+        :param filter_metric: The Cloud Cost Management metric to scope the tag key details to. When omitted, returns details across all metrics.
+        :type filter_metric: str, optional
+        :param page_size: Controls the size of the internal tag value search scope. This does **not** restrict the number of example tag values returned in the response. Defaults to 50, maximum 10000.
+        :type page_size: int, optional
+        :rtype: CostTagKeyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["tag_key"] = tag_key
+
+        if filter_metric is not unset:
+            kwargs["filter_metric"] = filter_metric
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        return self._get_cost_tag_key_endpoint.call_with_http_info(**kwargs)
+
     def get_custom_allocation_rule(
         self,
         rule_id: int,
@@ -1568,6 +1712,74 @@ class CloudCostManagementApi:
             kwargs["filter_cloud"] = filter_cloud
 
         return self._list_cost_tag_descriptions_endpoint.call_with_http_info(**kwargs)
+
+    def list_cost_tag_keys(
+        self,
+        *,
+        filter_metric: Union[str, UnsetType] = unset,
+        filter_tags: Union[List[str], UnsetType] = unset,
+    ) -> CostTagKeysResponse:
+        """List Cloud Cost Management tag keys.
+
+        List Cloud Cost Management tag keys.
+
+        :param filter_metric: The Cloud Cost Management metric to scope the tag keys to. When omitted, returns tag keys across all metrics.
+        :type filter_metric: str, optional
+        :param filter_tags: Filter to return only tag keys that appear with the given ``key:value`` tag values. For example, ``filter[tags]=providername:aws`` returns tag keys found on the same cost data, such as ``is_aws_ec2_compute`` and ``aws_instance_type``.
+        :type filter_tags: [str], optional
+        :rtype: CostTagKeysResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_metric is not unset:
+            kwargs["filter_metric"] = filter_metric
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        return self._list_cost_tag_keys_endpoint.call_with_http_info(**kwargs)
+
+    def list_cost_tags(
+        self,
+        *,
+        filter_metric: Union[str, UnsetType] = unset,
+        filter_match: Union[str, UnsetType] = unset,
+        filter_tags: Union[List[str], UnsetType] = unset,
+        filter_tag_keys: Union[List[str], UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> CostTagsResponse:
+        """List Cloud Cost Management tags.
+
+        List Cloud Cost Management tags for a given metric.
+
+        :param filter_metric: The Cloud Cost Management metric to scope the tags to. When omitted, returns tags across all metrics.
+        :type filter_metric: str, optional
+        :param filter_match: A substring used to filter the returned tags by name.
+        :type filter_match: str, optional
+        :param filter_tags: Filter to return only tags that appear with the given ``key:value`` tag values. For example, ``filter[tags]=providername:aws`` returns tags found on the same cost data, such as ``aws_instance_type:t3.micro`` and ``aws_instance_type:m5.large``.
+        :type filter_tags: [str], optional
+        :param filter_tag_keys: Restrict the returned tags to those whose key matches one of the given tag keys.
+        :type filter_tag_keys: [str], optional
+        :param page_size: Controls the size of the internal tag search scope. This does **not** restrict the number of tags returned in the response. Defaults to 50, maximum 10000.
+        :type page_size: int, optional
+        :rtype: CostTagsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_metric is not unset:
+            kwargs["filter_metric"] = filter_metric
+
+        if filter_match is not unset:
+            kwargs["filter_match"] = filter_match
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if filter_tag_keys is not unset:
+            kwargs["filter_tag_keys"] = filter_tag_keys
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        return self._list_cost_tags_endpoint.call_with_http_info(**kwargs)
 
     def list_custom_allocation_rules(
         self,

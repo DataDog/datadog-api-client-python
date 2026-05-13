@@ -1488,6 +1488,24 @@
       "type": "safe"
     }
   },
+  "ListCostTagKeys": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCostTagKey": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCostTags": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetActiveBillingDimensions": {
     "tag": "Usage Metering",
     "undo": {

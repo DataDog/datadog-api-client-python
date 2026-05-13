@@ -250,6 +250,27 @@ Feature: Cloud Cost Management
     And the response "data.type" is equal to "gcp_uc_config"
     And the response "data.attributes.account_id" is equal to "123456_ABCDEF_123ABC"
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a Cloud Cost Management tag key returns "Bad Request" response
+    Given new "GetCostTagKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a Cloud Cost Management tag key returns "Not Found" response
+    Given new "GetCostTagKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a Cloud Cost Management tag key returns "OK" response
+    Given new "GetCostTagKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/cloud-cost-management
   Scenario: Get a budget returns "Not Found" response
     Given new "GetBudget" request
@@ -346,6 +367,30 @@ Feature: Cloud Cost Management
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: List Cloud Cost Management tag descriptions returns "OK" response
     Given new "ListCostTagDescriptions" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tag keys returns "Bad Request" response
+    Given new "ListCostTagKeys" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tag keys returns "OK" response
+    Given new "ListCostTagKeys" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tags returns "Bad Request" response
+    Given new "ListCostTags" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tags returns "OK" response
+    Given new "ListCostTags" request
     When the request is sent
     Then the response status is 200 OK
 
