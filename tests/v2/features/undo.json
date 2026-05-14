@@ -1918,12 +1918,6 @@
       "type": "idempotent"
     }
   },
-  "CreateEmailTransportWebhookIntake": {
-    "tag": "Email Transport",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "SearchIssues": {
     "tag": "Error Tracking",
     "undo": {

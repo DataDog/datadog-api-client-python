@@ -377,7 +377,6 @@ class Configuration:
                 "v2.trigger_deployment_gates_evaluation": False,
                 "v2.update_deployment_gate": False,
                 "v2.update_deployment_rule": False,
-                "v2.create_email_transport_webhook_intake": False,
                 "v2.create_hamr_org_connection": False,
                 "v2.get_hamr_org_connection": False,
                 "v2.create_global_incident_handle": False,
