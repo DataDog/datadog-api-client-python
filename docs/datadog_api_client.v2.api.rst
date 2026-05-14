@@ -172,6 +172,13 @@ datadog\_api\_client.v2.api.code\_coverage\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.compliance\_api module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.compliance_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.confluent\_cloud\_api module
 --------------------------------------------------------
 

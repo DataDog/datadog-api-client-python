@@ -5431,6 +5431,14 @@ from datadog_api_client.v2.model.routing_rule_relationships_policy_data_type imp
 from datadog_api_client.v2.model.routing_rule_type import RoutingRuleType
 from datadog_api_client.v2.model.rule_attributes import RuleAttributes
 from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
+from datadog_api_client.v2.model.rule_based_view_attributes import RuleBasedViewAttributes
+from datadog_api_client.v2.model.rule_based_view_compliance_framework import RuleBasedViewComplianceFramework
+from datadog_api_client.v2.model.rule_based_view_data import RuleBasedViewData
+from datadog_api_client.v2.model.rule_based_view_response import RuleBasedViewResponse
+from datadog_api_client.v2.model.rule_based_view_rule import RuleBasedViewRule
+from datadog_api_client.v2.model.rule_based_view_rule_category import RuleBasedViewRuleCategory
+from datadog_api_client.v2.model.rule_based_view_rule_stats import RuleBasedViewRuleStats
+from datadog_api_client.v2.model.rule_based_view_type import RuleBasedViewType
 from datadog_api_client.v2.model.rule_outcome_relationships import RuleOutcomeRelationships
 from datadog_api_client.v2.model.rule_severity import RuleSeverity
 from datadog_api_client.v2.model.rule_type import RuleType
@@ -11426,6 +11434,14 @@ __all__ = [
     "RoutingRuleType",
     "RuleAttributes",
     "RuleAttributesRequest",
+    "RuleBasedViewAttributes",
+    "RuleBasedViewComplianceFramework",
+    "RuleBasedViewData",
+    "RuleBasedViewResponse",
+    "RuleBasedViewRule",
+    "RuleBasedViewRuleCategory",
+    "RuleBasedViewRuleStats",
+    "RuleBasedViewType",
     "RuleOutcomeRelationships",
     "RuleSeverity",
     "RuleType",
