@@ -1253,6 +1253,12 @@
       "type": "safe"
     }
   },
+  "GetRuleBasedView": {
+    "tag": "Compliance",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListContainerImages": {
     "tag": "Container Images",
     "undo": {

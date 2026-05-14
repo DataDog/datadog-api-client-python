@@ -26499,6 +26499,62 @@ datadog\_api\_client.v2.model.rule\_attributes\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rule\_based\_view\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_based\_view\_compliance\_framework module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_compliance_framework
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_based\_view\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_based\_view\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_based\_view\_rule module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_based\_view\_rule\_category module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_rule_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_based\_view\_rule\_stats module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_rule_stats
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rule\_based\_view\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rule_based_view_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rule\_outcome\_relationships module
 -----------------------------------------------------------------
 
