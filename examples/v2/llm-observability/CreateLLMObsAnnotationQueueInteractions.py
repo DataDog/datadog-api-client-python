@@ -4,7 +4,6 @@ Add annotation queue interactions returns "Created" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.llm_observability_api import LLMObservabilityApi
-from datadog_api_client.v2.model.llm_obs_annotation_queue_interaction_item import LLMObsAnnotationQueueInteractionItem
 from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_data_attributes_request import (
     LLMObsAnnotationQueueInteractionsDataAttributesRequest,
 )
@@ -15,15 +14,16 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_request i
     LLMObsAnnotationQueueInteractionsRequest,
 )
 from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_type import LLMObsAnnotationQueueInteractionsType
-from datadog_api_client.v2.model.llm_obs_interaction_type import LLMObsInteractionType
+from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
+from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTraceInteractionType
 
 body = LLMObsAnnotationQueueInteractionsRequest(
     data=LLMObsAnnotationQueueInteractionsDataRequest(
         attributes=LLMObsAnnotationQueueInteractionsDataAttributesRequest(
             interactions=[
-                LLMObsAnnotationQueueInteractionItem(
+                LLMObsTraceInteractionItem(
                     content_id="trace-abc-123",
-                    type=LLMObsInteractionType.TRACE,
+                    type=LLMObsTraceInteractionType.TRACE,
                 ),
             ],
         ),

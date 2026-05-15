@@ -17574,6 +17574,41 @@ datadog\_api\_client.v2.model.llm\_obs\_annotation\_schema module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_content\_block module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_content_block
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_content\_block\_header\_level module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_content_block_header_level
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_content\_block\_llm\_obs\_trace\_interaction\_type module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_content_block_llm_obs_trace_interaction_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_content\_block\_time\_frame module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_content_block_time_frame
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_content\_block\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_content_block_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_cursor\_meta module
 -----------------------------------------------------------
 
@@ -18008,6 +18043,34 @@ datadog\_api\_client.v2.model.llm\_obs\_delete\_projects\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_display\_block\_annotated\_interaction\_item module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_display_block_annotated_interaction_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_display\_block\_interaction\_item module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_display_block_interaction_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_display\_block\_interaction\_response\_item module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_display_block_interaction_response_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_display\_block\_interaction\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_display_block_interaction_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_event\_type module
 ----------------------------------------------------------
 
@@ -18155,13 +18218,6 @@ datadog\_api\_client.v2.model.llm\_obs\_experiments\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.llm\_obs\_interaction\_type module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.llm_obs_interaction_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.llm\_obs\_label\_schema module
 ------------------------------------------------------------
 
@@ -18271,6 +18327,34 @@ datadog\_api\_client.v2.model.llm\_obs\_record\_type module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_record_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_trace\_annotated\_interaction\_item module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_trace_annotated_interaction_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_trace\_interaction\_item module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_trace_interaction_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_trace\_interaction\_response\_item module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_trace_interaction_response_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_trace\_interaction\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_trace_interaction_type
    :members:
    :show-inheritance:
 

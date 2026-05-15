@@ -890,8 +890,16 @@ class LLMObservabilityApi:
     ) -> LLMObsAnnotationQueueInteractionsResponse:
         """Add annotation queue interactions.
 
-        Add one or more interactions (traces or sessions) to an annotation queue.
-        At least one interaction must be provided.
+        Add one or more interactions to an annotation queue. At least one
+        interaction must be provided. Each interaction has a ``type`` :
+
+        * ``trace`` , ``experiment_trace`` , ``session`` : ``content_id`` references the
+          upstream entity; the server fetches the actual content.
+        * ``display_block`` : omit ``content_id`` and provide the rendered content
+          in ``display_block``. The server generates ``content_id`` as a
+          deterministic hash of the block list.
+
+        Items of different types can be mixed in a single request.
 
         :param queue_id: The ID of the LLM Observability annotation queue.
         :type queue_id: str
