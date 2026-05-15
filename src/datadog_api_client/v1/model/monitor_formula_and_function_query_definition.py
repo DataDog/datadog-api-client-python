@@ -58,6 +58,18 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
             This is useful when an entity has been configured to emit metrics with additional tags.
         :type scope: str, optional
 
+        :param job_type: The type of job being monitored. Valid values include:
+            `databricks.job`, `spark.application`, `airflow.dag`,
+            `dbt.job`, `dbt.model`, `dbt.test`, `glue.job`.
+            Custom job types are supported with the `custom.ol.` prefix.
+        :type job_type: str
+
+        :param jobs_query: Filter expression used to select the jobs to monitor.
+        :type jobs_query: str
+
+        :param query_dialect: Query dialect for data jobs queries. Currently only `metric` is supported.
+        :type query_dialect: str
+
         :param augment_query: Augment query for aggregate augmented queries. Can be an events query or a reference table query.
         :type augment_query: MonitorFormulaAndFunctionAggregateAugmentQuery
 
@@ -93,6 +105,9 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition import (
             MonitorFormulaAndFunctionDataQualityQueryDefinition,
         )
+        from datadog_api_client.v1.model.monitor_formula_and_function_data_jobs_query_definition import (
+            MonitorFormulaAndFunctionDataJobsQueryDefinition,
+        )
         from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augmented_query_definition import (
             MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
         )
@@ -105,6 +120,7 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
                 MonitorFormulaAndFunctionEventQueryDefinition,
                 MonitorFormulaAndFunctionCostQueryDefinition,
                 MonitorFormulaAndFunctionDataQualityQueryDefinition,
+                MonitorFormulaAndFunctionDataJobsQueryDefinition,
                 MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
                 MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
             ],

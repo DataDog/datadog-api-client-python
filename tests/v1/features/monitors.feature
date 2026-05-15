@@ -43,6 +43,15 @@ Feature: Monitors
     Then the response status is 200 OK
 
   @team:DataDog/monitor-app
+  Scenario: Create a Data Jobs monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}", "type": "data-jobs alert", "query": "formula(\"failed_runs(run_query)\").by(job_name,workspace_name).last(10d) > 0", "message": "Data jobs alert triggered", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "options": {"thresholds": {"critical": 0}, "variables": [{"name": "run_query", "jobs_query": "job_name:*", "job_type": "databricks.job", "query_dialect": "metric"}]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "data-jobs alert"
+
+  @team:DataDog/monitor-app
   Scenario: Create a Data Quality monitor returns "OK" response
     Given new "CreateMonitor" request
     And body with value {"name": "{{ unique }}", "type": "data-quality alert", "query": "formula(\"query1\").last(\"5m\") > 100", "message": "Data quality alert triggered", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "priority": 3, "options": {"thresholds": {"critical": 100}, "variables": [{"name": "query1", "data_source": "data_quality_metrics", "measure": "row_count", "filter": "search for column where `database:production AND table:users`", "group_by": ["entity_id"]}]}}

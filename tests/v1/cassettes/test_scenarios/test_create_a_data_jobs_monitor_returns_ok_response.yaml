@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: '{"message":"Data jobs alert triggered","name":"Test-Create_a_Data_Jobs_monitor_returns_OK_response-1778756334","options":{"thresholds":{"critical":0},"variables":[{"job_type":"databricks.job","jobs_query":"job_name:*","name":"run_query","query_dialect":"metric"}]},"query":"formula(\"failed_runs(run_query)\").by(job_name,workspace_name).last(10d)
+      > 0","tags":["test:testcreateadatajobsmonitorreturnsokresponse1778756334","env:ci"],"type":"data-jobs
+      alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"id":283063470,"org_id":321813,"type":"data-jobs alert","name":"Test-Create_a_Data_Jobs_monitor_returns_OK_response-1778756334","message":"Data
+        jobs alert triggered","tags":["test:testcreateadatajobsmonitorreturnsokresponse1778756334","env:ci"],"query":"formula(\"failed_runs(run_query)\").by(job_name,workspace_name).last(10d)
+        > 0","options":{"thresholds":{"critical":0.0},"variables":[{"job_type":"databricks.job","jobs_query":"job_name:*","name":"run_query","query_dialect":"metric"}],"notify_no_data":false,"notify_audit":false,"new_host_delay":300,"include_tags":true,"silenced":{}},"multi":true,"created_at":1778756334000,"created":"2026-05-14T10:58:54.236230+00:00","modified":"2026-05-14T10:58:54.236230+00:00","deleted":null,"priority":null,"restricted_roles":null,"restriction_policy":null,"draft_status":"published","assets":[],"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"CI Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","email":"team-intg-tools-libs-spam@datadoghq.com","id":2320499}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/283063470
+  response:
+    body:
+      string: '{"deleted_monitor_id":283063470}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
