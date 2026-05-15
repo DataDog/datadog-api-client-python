@@ -16,7 +16,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
     """
     Data source for event platform-based queries.
 
-    :param value: Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events", "ci_tests", "ci_pipelines", "incident_analytics", "product_analytics", "on_call_events"].
+    :param value: Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events", "ci_tests", "ci_pipelines", "incident_analytics", "product_analytics", "on_call_events", "errors"].
     :type value: str
     """
 
@@ -34,6 +34,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
         "incident_analytics",
         "product_analytics",
         "on_call_events",
+        "errors",
     }
     LOGS: ClassVar["FormulaAndFunctionEventsDataSource"]
     SPANS: ClassVar["FormulaAndFunctionEventsDataSource"]
@@ -48,6 +49,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
     INCIDENT_ANALYTICS: ClassVar["FormulaAndFunctionEventsDataSource"]
     PRODUCT_ANALYTICS: ClassVar["FormulaAndFunctionEventsDataSource"]
     ON_CALL_EVENTS: ClassVar["FormulaAndFunctionEventsDataSource"]
+    ERRORS: ClassVar["FormulaAndFunctionEventsDataSource"]
 
     @cached_property
     def openapi_types(_):
@@ -69,3 +71,4 @@ FormulaAndFunctionEventsDataSource.CI_PIPELINES = FormulaAndFunctionEventsDataSo
 FormulaAndFunctionEventsDataSource.INCIDENT_ANALYTICS = FormulaAndFunctionEventsDataSource("incident_analytics")
 FormulaAndFunctionEventsDataSource.PRODUCT_ANALYTICS = FormulaAndFunctionEventsDataSource("product_analytics")
 FormulaAndFunctionEventsDataSource.ON_CALL_EVENTS = FormulaAndFunctionEventsDataSource("on_call_events")
+FormulaAndFunctionEventsDataSource.ERRORS = FormulaAndFunctionEventsDataSource("errors")
