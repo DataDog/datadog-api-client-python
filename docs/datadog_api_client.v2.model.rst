@@ -781,6 +781,13 @@ datadog\_api\_client.v2.model.app\_deployment\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.app\_favorite\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_favorite_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.app\_key\_registration\_data module
 -----------------------------------------------------------------
 
@@ -802,6 +809,20 @@ datadog\_api\_client.v2.model.app\_meta module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.app\_protection\_level module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_protection_level
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_protection\_level\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_protection_level_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.app\_relationship module
 ------------------------------------------------------
 
@@ -809,10 +830,45 @@ datadog\_api\_client.v2.model.app\_relationship module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.app\_self\_service\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_self_service_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_tags\_type module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_tags_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.app\_trigger\_wrapper module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.app_trigger_wrapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_version\_attributes module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_version_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_version\_name\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_version_name_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.app\_version\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_version_type
    :members:
    :show-inheritance:
 
@@ -7400,6 +7456,27 @@ datadog\_api\_client.v2.model.create\_phone\_notification\_channel\_config modul
 ---------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.create_phone_notification_channel_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_publish\_request\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_publish_request_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_publish\_request\_request\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_publish_request_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_publish\_request\_request\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_publish_request_request_data_attributes
    :members:
    :show-inheritance:
 
@@ -16832,6 +16909,13 @@ datadog\_api\_client.v2.model.list\_app\_key\_registrations\_response\_meta modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_app\_versions\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_app_versions_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_application\_keys\_response module
 ----------------------------------------------------------------------
 
@@ -25271,6 +25355,13 @@ datadog\_api\_client.v2.model.publish\_app\_response module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.publish_app_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.publish\_request\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.publish_request_type
    :members:
    :show-inheritance:
 
@@ -35704,6 +35795,48 @@ datadog\_api\_client.v2.model.update\_action\_connection\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_app\_favorite\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_favorite_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_favorite\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_favorite_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_favorite\_request\_data\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_favorite_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_protection\_level\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_protection_level_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_protection\_level\_request\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_protection_level_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_protection\_level\_request\_data\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_protection_level_request_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_app\_request module
 ---------------------------------------------------------
 
@@ -35743,6 +35876,69 @@ datadog\_api\_client.v2.model.update\_app\_response\_data\_attributes module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.update_app_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_self\_service\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_self_service_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_self\_service\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_self_service_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_self\_service\_request\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_self_service_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_tags\_request module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_tags_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_tags\_request\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_tags_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_tags\_request\_data\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_tags_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_version\_name\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_version_name_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_version\_name\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_version_name_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.update\_app\_version\_name\_request\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_app_version_name_request_data_attributes
    :members:
    :show-inheritance:
 
