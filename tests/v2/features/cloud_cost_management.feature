@@ -520,6 +520,22 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get the Cloud Cost Management billing currency returns "Bad Request" response
+    Given operation "GetCostTagMetadataCurrency" enabled
+    And new "GetCostTagMetadataCurrency" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get the Cloud Cost Management billing currency returns "OK" response
+    Given operation "GetCostTagMetadataCurrency" enabled
+    And new "GetCostTagMetadataCurrency" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: List Cloud Cost Management AWS CUR configs returns "OK" response
     Given new "ListCostAWSCURConfigs" request
@@ -541,8 +557,40 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management orchestrators returns "Bad Request" response
+    Given operation "ListCostTagMetadataOrchestrators" enabled
+    And new "ListCostTagMetadataOrchestrators" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management orchestrators returns "OK" response
+    Given operation "ListCostTagMetadataOrchestrators" enabled
+    And new "ListCostTagMetadataOrchestrators" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
   Scenario: List Cloud Cost Management tag descriptions returns "OK" response
     Given new "ListCostTagDescriptions" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tag key metadata returns "Bad Request" response
+    Given operation "ListCostTagMetadata" enabled
+    And new "ListCostTagMetadata" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tag key metadata returns "OK" response
+    Given operation "ListCostTagMetadata" enabled
+    And new "ListCostTagMetadata" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -555,6 +603,22 @@ Feature: Cloud Cost Management
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: List Cloud Cost Management tag keys returns "OK" response
     Given new "ListCostTagKeys" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tag sources returns "Bad Request" response
+    Given operation "ListCostTagKeySources" enabled
+    And new "ListCostTagKeySources" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List Cloud Cost Management tag sources returns "OK" response
+    Given operation "ListCostTagKeySources" enabled
+    And new "ListCostTagKeySources" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -593,6 +657,22 @@ Feature: Cloud Cost Management
   @team:DataDog/cloud-cost-management
   Scenario: List Google Cloud Usage Cost configs returns "OK" response
     Given new "ListCostGCPUsageCostConfigs" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List available Cloud Cost Management metrics returns "Bad Request" response
+    Given operation "ListCostTagMetadataMetrics" enabled
+    And new "ListCostTagMetadataMetrics" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: List available Cloud Cost Management metrics returns "OK" response
+    Given operation "ListCostTagMetadataMetrics" enabled
+    And new "ListCostTagMetadataMetrics" request
+    And request contains "filter[month]" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

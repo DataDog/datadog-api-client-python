@@ -6535,6 +6535,69 @@ datadog\_api\_client.v2.model.cost\_by\_org\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_currency module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_currency
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_currency\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_currency_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_currency\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_currency_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_metric module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_metric\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_metric_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_metrics\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_metrics_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_orchestrator module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_orchestrator
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_orchestrator\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_orchestrator_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_orchestrators\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_orchestrators_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_tag module
 ----------------------------------------------
 
@@ -6605,10 +6668,80 @@ datadog\_api\_client.v2.model.cost\_tag\_key\_details module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_tag\_key\_metadata module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_metadata\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_metadata_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_metadata\_cardinality\_by\_account module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_metadata_cardinality_by_account
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_metadata\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_metadata_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_metadata\_top\_values\_by\_account module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_metadata_top_values_by_account
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_metadata\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_metadata_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_tag\_key\_response module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cost_tag_key_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_source module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_source\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_source_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_source\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_key\_sources\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_key_sources_response
    :members:
    :show-inheritance:
 
@@ -6623,6 +6756,13 @@ datadog\_api\_client.v2.model.cost\_tag\_keys\_response module
 --------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.cost_tag_keys_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_metadata\_daily\_filter module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_metadata_daily_filter
    :members:
    :show-inheritance:
 

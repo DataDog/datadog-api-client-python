@@ -1223,6 +1223,15 @@ from datadog_api_client.v2.model.cost_by_org import CostByOrg
 from datadog_api_client.v2.model.cost_by_org_attributes import CostByOrgAttributes
 from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_by_org_type import CostByOrgType
+from datadog_api_client.v2.model.cost_currency import CostCurrency
+from datadog_api_client.v2.model.cost_currency_response import CostCurrencyResponse
+from datadog_api_client.v2.model.cost_currency_type import CostCurrencyType
+from datadog_api_client.v2.model.cost_metric import CostMetric
+from datadog_api_client.v2.model.cost_metric_type import CostMetricType
+from datadog_api_client.v2.model.cost_metrics_response import CostMetricsResponse
+from datadog_api_client.v2.model.cost_orchestrator import CostOrchestrator
+from datadog_api_client.v2.model.cost_orchestrator_type import CostOrchestratorType
+from datadog_api_client.v2.model.cost_orchestrators_response import CostOrchestratorsResponse
 from datadog_api_client.v2.model.cost_tag import CostTag
 from datadog_api_client.v2.model.cost_tag_attributes import CostTagAttributes
 from datadog_api_client.v2.model.cost_tag_description import CostTagDescription
@@ -1233,9 +1242,22 @@ from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDe
 from datadog_api_client.v2.model.cost_tag_key import CostTagKey
 from datadog_api_client.v2.model.cost_tag_key_attributes import CostTagKeyAttributes
 from datadog_api_client.v2.model.cost_tag_key_details import CostTagKeyDetails
+from datadog_api_client.v2.model.cost_tag_key_metadata import CostTagKeyMetadata
+from datadog_api_client.v2.model.cost_tag_key_metadata_attributes import CostTagKeyMetadataAttributes
+from datadog_api_client.v2.model.cost_tag_key_metadata_cardinality_by_account import (
+    CostTagKeyMetadataCardinalityByAccount,
+)
+from datadog_api_client.v2.model.cost_tag_key_metadata_response import CostTagKeyMetadataResponse
+from datadog_api_client.v2.model.cost_tag_key_metadata_top_values_by_account import CostTagKeyMetadataTopValuesByAccount
+from datadog_api_client.v2.model.cost_tag_key_metadata_type import CostTagKeyMetadataType
 from datadog_api_client.v2.model.cost_tag_key_response import CostTagKeyResponse
+from datadog_api_client.v2.model.cost_tag_key_source import CostTagKeySource
+from datadog_api_client.v2.model.cost_tag_key_source_attributes import CostTagKeySourceAttributes
+from datadog_api_client.v2.model.cost_tag_key_source_type import CostTagKeySourceType
+from datadog_api_client.v2.model.cost_tag_key_sources_response import CostTagKeySourcesResponse
 from datadog_api_client.v2.model.cost_tag_key_type import CostTagKeyType
 from datadog_api_client.v2.model.cost_tag_keys_response import CostTagKeysResponse
+from datadog_api_client.v2.model.cost_tag_metadata_daily_filter import CostTagMetadataDailyFilter
 from datadog_api_client.v2.model.cost_tag_type import CostTagType
 from datadog_api_client.v2.model.cost_tags_response import CostTagsResponse
 from datadog_api_client.v2.model.coverage_summary_attributes import CoverageSummaryAttributes
@@ -8620,6 +8642,15 @@ __all__ = [
     "CostByOrgAttributes",
     "CostByOrgResponse",
     "CostByOrgType",
+    "CostCurrency",
+    "CostCurrencyResponse",
+    "CostCurrencyType",
+    "CostMetric",
+    "CostMetricType",
+    "CostMetricsResponse",
+    "CostOrchestrator",
+    "CostOrchestratorType",
+    "CostOrchestratorsResponse",
     "CostTag",
     "CostTagAttributes",
     "CostTagDescription",
@@ -8630,9 +8661,20 @@ __all__ = [
     "CostTagKey",
     "CostTagKeyAttributes",
     "CostTagKeyDetails",
+    "CostTagKeyMetadata",
+    "CostTagKeyMetadataAttributes",
+    "CostTagKeyMetadataCardinalityByAccount",
+    "CostTagKeyMetadataResponse",
+    "CostTagKeyMetadataTopValuesByAccount",
+    "CostTagKeyMetadataType",
     "CostTagKeyResponse",
+    "CostTagKeySource",
+    "CostTagKeySourceAttributes",
+    "CostTagKeySourceType",
+    "CostTagKeySourcesResponse",
     "CostTagKeyType",
     "CostTagKeysResponse",
+    "CostTagMetadataDailyFilter",
     "CostTagType",
     "CostTagsResponse",
     "CoverageSummaryAttributes",

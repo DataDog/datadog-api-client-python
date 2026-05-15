@@ -1609,6 +1609,36 @@
       "type": "safe"
     }
   },
+  "ListCostTagMetadata": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCostTagMetadataCurrency": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCostTagMetadataMetrics": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCostTagMetadataOrchestrators": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCostTagKeySources": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCostTags": {
     "tag": "Cloud Cost Management",
     "undo": {
