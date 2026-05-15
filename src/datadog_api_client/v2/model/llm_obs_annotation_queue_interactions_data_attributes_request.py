@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,6 +15,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_annotation_queue_interaction_item import (
         LLMObsAnnotationQueueInteractionItem,
     )
+    from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
+    from datadog_api_client.v2.model.llm_obs_display_block_interaction_item import LLMObsDisplayBlockInteractionItem
 
 
 class LLMObsAnnotationQueueInteractionsDataAttributesRequest(ModelNormal):
@@ -38,7 +40,13 @@ class LLMObsAnnotationQueueInteractionsDataAttributesRequest(ModelNormal):
         "interactions": "interactions",
     }
 
-    def __init__(self_, interactions: List[LLMObsAnnotationQueueInteractionItem], **kwargs):
+    def __init__(
+        self_,
+        interactions: List[
+            Union[LLMObsAnnotationQueueInteractionItem, LLMObsTraceInteractionItem, LLMObsDisplayBlockInteractionItem]
+        ],
+        **kwargs,
+    ):
         """
         Attributes for adding interactions to an annotation queue.
 

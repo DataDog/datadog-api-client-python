@@ -8,6 +8,24 @@ Feature: LLM Observability
     And a valid "appKeyAuth" key in the system
     And an instance of "LLMObservability" API
 
+  @skip @team:DataDog/ml-observability
+  Scenario: Add a display_block interaction returns "Created" response
+    Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
+    And new "CreateLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interactions": [{"type": "display_block", "display_block": [{"type": "markdown", "content": "## Triage Instructions"}]}]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @skip @team:DataDog/ml-observability
+  Scenario: Add a display_block interaction with an image block missing url returns "Bad Request" response
+    Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
+    And new "CreateLLMObsAnnotationQueueInteractions" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"interactions": [{"type": "display_block", "display_block": [{"type": "image"}]}]}, "type": "interactions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @generated @skip @team:DataDog/ml-observability
   Scenario: Add annotation queue interactions returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueueInteractions" enabled

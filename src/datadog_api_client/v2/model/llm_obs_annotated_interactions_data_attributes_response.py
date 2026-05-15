@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,6 +13,10 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_annotated_interaction_item import LLMObsAnnotatedInteractionItem
+    from datadog_api_client.v2.model.llm_obs_trace_annotated_interaction_item import LLMObsTraceAnnotatedInteractionItem
+    from datadog_api_client.v2.model.llm_obs_display_block_annotated_interaction_item import (
+        LLMObsDisplayBlockAnnotatedInteractionItem,
+    )
 
 
 class LLMObsAnnotatedInteractionsDataAttributesResponse(ModelNormal):
@@ -28,7 +32,17 @@ class LLMObsAnnotatedInteractionsDataAttributesResponse(ModelNormal):
         "annotated_interactions": "annotated_interactions",
     }
 
-    def __init__(self_, annotated_interactions: List[LLMObsAnnotatedInteractionItem], **kwargs):
+    def __init__(
+        self_,
+        annotated_interactions: List[
+            Union[
+                LLMObsAnnotatedInteractionItem,
+                LLMObsTraceAnnotatedInteractionItem,
+                LLMObsDisplayBlockAnnotatedInteractionItem,
+            ]
+        ],
+        **kwargs,
+    ):
         """
         Attributes containing the list of annotated interactions.
 

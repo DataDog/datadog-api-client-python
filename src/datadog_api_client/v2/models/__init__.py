@@ -3226,6 +3226,13 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_request im
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_annotation_schema import LLMObsAnnotationSchema
+from datadog_api_client.v2.model.llm_obs_content_block import LLMObsContentBlock
+from datadog_api_client.v2.model.llm_obs_content_block_header_level import LLMObsContentBlockHeaderLevel
+from datadog_api_client.v2.model.llm_obs_content_block_llm_obs_trace_interaction_type import (
+    LLMObsContentBlockLLMObsTraceInteractionType,
+)
+from datadog_api_client.v2.model.llm_obs_content_block_time_frame import LLMObsContentBlockTimeFrame
+from datadog_api_client.v2.model.llm_obs_content_block_type import LLMObsContentBlockType
 from datadog_api_client.v2.model.llm_obs_cursor_meta import LLMObsCursorMeta
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_assessment_criteria import (
     LLMObsCustomEvalConfigAssessmentCriteria,
@@ -3326,6 +3333,14 @@ from datadog_api_client.v2.model.llm_obs_delete_projects_data_attributes_request
 )
 from datadog_api_client.v2.model.llm_obs_delete_projects_data_request import LLMObsDeleteProjectsDataRequest
 from datadog_api_client.v2.model.llm_obs_delete_projects_request import LLMObsDeleteProjectsRequest
+from datadog_api_client.v2.model.llm_obs_display_block_annotated_interaction_item import (
+    LLMObsDisplayBlockAnnotatedInteractionItem,
+)
+from datadog_api_client.v2.model.llm_obs_display_block_interaction_item import LLMObsDisplayBlockInteractionItem
+from datadog_api_client.v2.model.llm_obs_display_block_interaction_response_item import (
+    LLMObsDisplayBlockInteractionResponseItem,
+)
+from datadog_api_client.v2.model.llm_obs_display_block_interaction_type import LLMObsDisplayBlockInteractionType
 from datadog_api_client.v2.model.llm_obs_event_type import LLMObsEventType
 from datadog_api_client.v2.model.llm_obs_experiment_data_attributes_request import LLMObsExperimentDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_experiment_data_attributes_response import (
@@ -3353,7 +3368,6 @@ from datadog_api_client.v2.model.llm_obs_experiment_update_data_attributes_reque
 from datadog_api_client.v2.model.llm_obs_experiment_update_data_request import LLMObsExperimentUpdateDataRequest
 from datadog_api_client.v2.model.llm_obs_experiment_update_request import LLMObsExperimentUpdateRequest
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
-from datadog_api_client.v2.model.llm_obs_interaction_type import LLMObsInteractionType
 from datadog_api_client.v2.model.llm_obs_label_schema import LLMObsLabelSchema
 from datadog_api_client.v2.model.llm_obs_label_schema_type import LLMObsLabelSchemaType
 from datadog_api_client.v2.model.llm_obs_metric_assessment import LLMObsMetricAssessment
@@ -3372,6 +3386,10 @@ from datadog_api_client.v2.model.llm_obs_project_update_data_request import LLMO
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
 from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
+from datadog_api_client.v2.model.llm_obs_trace_annotated_interaction_item import LLMObsTraceAnnotatedInteractionItem
+from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
+from datadog_api_client.v2.model.llm_obs_trace_interaction_response_item import LLMObsTraceInteractionResponseItem
+from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTraceInteractionType
 from datadog_api_client.v2.model.language import Language
 from datadog_api_client.v2.model.launch_darkly_api_key import LaunchDarklyAPIKey
 from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
@@ -10087,6 +10105,11 @@ __all__ = [
     "LLMObsAnnotationQueueUpdateRequest",
     "LLMObsAnnotationQueuesResponse",
     "LLMObsAnnotationSchema",
+    "LLMObsContentBlock",
+    "LLMObsContentBlockHeaderLevel",
+    "LLMObsContentBlockLLMObsTraceInteractionType",
+    "LLMObsContentBlockTimeFrame",
+    "LLMObsContentBlockType",
     "LLMObsCursorMeta",
     "LLMObsCustomEvalConfigAssessmentCriteria",
     "LLMObsCustomEvalConfigAttributes",
@@ -10149,6 +10172,10 @@ __all__ = [
     "LLMObsDeleteProjectsDataAttributesRequest",
     "LLMObsDeleteProjectsDataRequest",
     "LLMObsDeleteProjectsRequest",
+    "LLMObsDisplayBlockAnnotatedInteractionItem",
+    "LLMObsDisplayBlockInteractionItem",
+    "LLMObsDisplayBlockInteractionResponseItem",
+    "LLMObsDisplayBlockInteractionType",
     "LLMObsEventType",
     "LLMObsExperimentDataAttributesRequest",
     "LLMObsExperimentDataAttributesResponse",
@@ -10170,7 +10197,6 @@ __all__ = [
     "LLMObsExperimentUpdateDataRequest",
     "LLMObsExperimentUpdateRequest",
     "LLMObsExperimentsResponse",
-    "LLMObsInteractionType",
     "LLMObsLabelSchema",
     "LLMObsLabelSchemaType",
     "LLMObsMetricAssessment",
@@ -10187,6 +10213,10 @@ __all__ = [
     "LLMObsProjectUpdateRequest",
     "LLMObsProjectsResponse",
     "LLMObsRecordType",
+    "LLMObsTraceAnnotatedInteractionItem",
+    "LLMObsTraceInteractionItem",
+    "LLMObsTraceInteractionResponseItem",
+    "LLMObsTraceInteractionType",
     "Language",
     "LaunchDarklyAPIKey",
     "LaunchDarklyAPIKeyType",
