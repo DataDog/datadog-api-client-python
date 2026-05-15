@@ -275,7 +275,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/incident-app
+  @skip-terraform-config @team:Datadog/incident-app
   Scenario: Create incident notification template returns "Created" response
     Given there is a valid "incident_type" in the system
     And operation "CreateIncidentNotificationTemplate" enabled
@@ -497,7 +497,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:Datadog/incident-app
+  @skip-terraform-config @skip-validation @team:Datadog/incident-app
   Scenario: Delete an incident type returns "OK" response
     Given operation "DeleteIncidentType" enabled
     And new "DeleteIncidentType" request
@@ -1311,7 +1311,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:Datadog/incident-app
+  @skip-terraform-config @skip-validation @team:Datadog/incident-app
   Scenario: Update an incident type returns "OK" response
     Given operation "UpdateIncidentType" enabled
     And new "UpdateIncidentType" request
