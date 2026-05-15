@@ -220,11 +220,20 @@ from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventNa
 from datadog_api_client.v2.model.app_builder_event_type import AppBuilderEventType
 from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 from datadog_api_client.v2.model.app_deployment_type import AppDeploymentType
+from datadog_api_client.v2.model.app_favorite_type import AppFavoriteType
 from datadog_api_client.v2.model.app_key_registration_data import AppKeyRegistrationData
 from datadog_api_client.v2.model.app_key_registration_data_type import AppKeyRegistrationDataType
 from datadog_api_client.v2.model.app_meta import AppMeta
+from datadog_api_client.v2.model.app_protection_level import AppProtectionLevel
+from datadog_api_client.v2.model.app_protection_level_type import AppProtectionLevelType
 from datadog_api_client.v2.model.app_relationship import AppRelationship
+from datadog_api_client.v2.model.app_self_service_type import AppSelfServiceType
+from datadog_api_client.v2.model.app_tags_type import AppTagsType
 from datadog_api_client.v2.model.app_trigger_wrapper import AppTriggerWrapper
+from datadog_api_client.v2.model.app_version import AppVersion
+from datadog_api_client.v2.model.app_version_attributes import AppVersionAttributes
+from datadog_api_client.v2.model.app_version_name_type import AppVersionNameType
+from datadog_api_client.v2.model.app_version_type import AppVersionType
 from datadog_api_client.v2.model.application_key_create_attributes import ApplicationKeyCreateAttributes
 from datadog_api_client.v2.model.application_key_create_data import ApplicationKeyCreateData
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
@@ -1412,6 +1421,11 @@ from datadog_api_client.v2.model.create_page_response import CreatePageResponse
 from datadog_api_client.v2.model.create_page_response_data import CreatePageResponseData
 from datadog_api_client.v2.model.create_page_response_data_type import CreatePageResponseDataType
 from datadog_api_client.v2.model.create_phone_notification_channel_config import CreatePhoneNotificationChannelConfig
+from datadog_api_client.v2.model.create_publish_request_request import CreatePublishRequestRequest
+from datadog_api_client.v2.model.create_publish_request_request_data import CreatePublishRequestRequestData
+from datadog_api_client.v2.model.create_publish_request_request_data_attributes import (
+    CreatePublishRequestRequestDataAttributes,
+)
 from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 from datadog_api_client.v2.model.create_rule_request_data import CreateRuleRequestData
 from datadog_api_client.v2.model.create_rule_response import CreateRuleResponse
@@ -3390,6 +3404,7 @@ from datadog_api_client.v2.model.list_apis_response_meta_pagination import ListA
 from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
 from datadog_api_client.v2.model.list_app_key_registrations_response import ListAppKeyRegistrationsResponse
 from datadog_api_client.v2.model.list_app_key_registrations_response_meta import ListAppKeyRegistrationsResponseMeta
+from datadog_api_client.v2.model.list_app_versions_response import ListAppVersionsResponse
 from datadog_api_client.v2.model.list_application_keys_response import ListApplicationKeysResponse
 from datadog_api_client.v2.model.list_apps_response import ListAppsResponse
 from datadog_api_client.v2.model.list_apps_response_data_items import ListAppsResponseDataItems
@@ -5164,6 +5179,7 @@ from datadog_api_client.v2.model.projected_cost_response import ProjectedCostRes
 from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
 from datadog_api_client.v2.model.projects_response import ProjectsResponse
 from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
+from datadog_api_client.v2.model.publish_request_type import PublishRequestType
 from datadog_api_client.v2.model.put_apps_datastore_item_response_array import PutAppsDatastoreItemResponseArray
 from datadog_api_client.v2.model.put_apps_datastore_item_response_data import PutAppsDatastoreItemResponseData
 from datadog_api_client.v2.model.put_incident_notification_rule_request import PutIncidentNotificationRuleRequest
@@ -7291,12 +7307,35 @@ from datadog_api_client.v2.model.unit import Unit
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
 from datadog_api_client.v2.model.update_action_connection_request import UpdateActionConnectionRequest
 from datadog_api_client.v2.model.update_action_connection_response import UpdateActionConnectionResponse
+from datadog_api_client.v2.model.update_app_favorite_request import UpdateAppFavoriteRequest
+from datadog_api_client.v2.model.update_app_favorite_request_data import UpdateAppFavoriteRequestData
+from datadog_api_client.v2.model.update_app_favorite_request_data_attributes import (
+    UpdateAppFavoriteRequestDataAttributes,
+)
+from datadog_api_client.v2.model.update_app_protection_level_request import UpdateAppProtectionLevelRequest
+from datadog_api_client.v2.model.update_app_protection_level_request_data import UpdateAppProtectionLevelRequestData
+from datadog_api_client.v2.model.update_app_protection_level_request_data_attributes import (
+    UpdateAppProtectionLevelRequestDataAttributes,
+)
 from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
 from datadog_api_client.v2.model.update_app_request_data import UpdateAppRequestData
 from datadog_api_client.v2.model.update_app_request_data_attributes import UpdateAppRequestDataAttributes
 from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_response_data import UpdateAppResponseData
 from datadog_api_client.v2.model.update_app_response_data_attributes import UpdateAppResponseDataAttributes
+from datadog_api_client.v2.model.update_app_self_service_request import UpdateAppSelfServiceRequest
+from datadog_api_client.v2.model.update_app_self_service_request_data import UpdateAppSelfServiceRequestData
+from datadog_api_client.v2.model.update_app_self_service_request_data_attributes import (
+    UpdateAppSelfServiceRequestDataAttributes,
+)
+from datadog_api_client.v2.model.update_app_tags_request import UpdateAppTagsRequest
+from datadog_api_client.v2.model.update_app_tags_request_data import UpdateAppTagsRequestData
+from datadog_api_client.v2.model.update_app_tags_request_data_attributes import UpdateAppTagsRequestDataAttributes
+from datadog_api_client.v2.model.update_app_version_name_request import UpdateAppVersionNameRequest
+from datadog_api_client.v2.model.update_app_version_name_request_data import UpdateAppVersionNameRequestData
+from datadog_api_client.v2.model.update_app_version_name_request_data_attributes import (
+    UpdateAppVersionNameRequestDataAttributes,
+)
 from datadog_api_client.v2.model.update_apps_datastore_item_request import UpdateAppsDatastoreItemRequest
 from datadog_api_client.v2.model.update_apps_datastore_item_request_data import UpdateAppsDatastoreItemRequestData
 from datadog_api_client.v2.model.update_apps_datastore_item_request_data_attributes import (
@@ -7824,11 +7863,20 @@ __all__ = [
     "AppBuilderEventType",
     "AppDefinitionType",
     "AppDeploymentType",
+    "AppFavoriteType",
     "AppKeyRegistrationData",
     "AppKeyRegistrationDataType",
     "AppMeta",
+    "AppProtectionLevel",
+    "AppProtectionLevelType",
     "AppRelationship",
+    "AppSelfServiceType",
+    "AppTagsType",
     "AppTriggerWrapper",
+    "AppVersion",
+    "AppVersionAttributes",
+    "AppVersionNameType",
+    "AppVersionType",
     "ApplicationKeyCreateAttributes",
     "ApplicationKeyCreateData",
     "ApplicationKeyCreateRequest",
@@ -8686,6 +8734,9 @@ __all__ = [
     "CreatePageResponseData",
     "CreatePageResponseDataType",
     "CreatePhoneNotificationChannelConfig",
+    "CreatePublishRequestRequest",
+    "CreatePublishRequestRequestData",
+    "CreatePublishRequestRequestDataAttributes",
     "CreateRuleRequest",
     "CreateRuleRequestData",
     "CreateRuleResponse",
@@ -10166,6 +10217,7 @@ __all__ = [
     "ListAllocationsResponse",
     "ListAppKeyRegistrationsResponse",
     "ListAppKeyRegistrationsResponseMeta",
+    "ListAppVersionsResponse",
     "ListApplicationKeysResponse",
     "ListAppsResponse",
     "ListAppsResponseDataItems",
@@ -11240,6 +11292,7 @@ __all__ = [
     "ProjectedCostType",
     "ProjectsResponse",
     "PublishAppResponse",
+    "PublishRequestType",
     "PutAppsDatastoreItemResponseArray",
     "PutAppsDatastoreItemResponseData",
     "PutIncidentNotificationRuleRequest",
@@ -12735,12 +12788,27 @@ __all__ = [
     "UnpublishAppResponse",
     "UpdateActionConnectionRequest",
     "UpdateActionConnectionResponse",
+    "UpdateAppFavoriteRequest",
+    "UpdateAppFavoriteRequestData",
+    "UpdateAppFavoriteRequestDataAttributes",
+    "UpdateAppProtectionLevelRequest",
+    "UpdateAppProtectionLevelRequestData",
+    "UpdateAppProtectionLevelRequestDataAttributes",
     "UpdateAppRequest",
     "UpdateAppRequestData",
     "UpdateAppRequestDataAttributes",
     "UpdateAppResponse",
     "UpdateAppResponseData",
     "UpdateAppResponseDataAttributes",
+    "UpdateAppSelfServiceRequest",
+    "UpdateAppSelfServiceRequestData",
+    "UpdateAppSelfServiceRequestDataAttributes",
+    "UpdateAppTagsRequest",
+    "UpdateAppTagsRequestData",
+    "UpdateAppTagsRequestDataAttributes",
+    "UpdateAppVersionNameRequest",
+    "UpdateAppVersionNameRequestData",
+    "UpdateAppVersionNameRequestDataAttributes",
     "UpdateAppsDatastoreItemRequest",
     "UpdateAppsDatastoreItemRequestData",
     "UpdateAppsDatastoreItemRequestDataAttributes",

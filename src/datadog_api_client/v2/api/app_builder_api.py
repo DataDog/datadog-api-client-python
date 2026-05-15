@@ -24,6 +24,13 @@ from datadog_api_client.v2.model.update_app_response import UpdateAppResponse
 from datadog_api_client.v2.model.update_app_request import UpdateAppRequest
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
 from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
+from datadog_api_client.v2.model.update_app_favorite_request import UpdateAppFavoriteRequest
+from datadog_api_client.v2.model.update_app_protection_level_request import UpdateAppProtectionLevelRequest
+from datadog_api_client.v2.model.create_publish_request_request import CreatePublishRequestRequest
+from datadog_api_client.v2.model.update_app_self_service_request import UpdateAppSelfServiceRequest
+from datadog_api_client.v2.model.update_app_tags_request import UpdateAppTagsRequest
+from datadog_api_client.v2.model.update_app_version_name_request import UpdateAppVersionNameRequest
+from datadog_api_client.v2.model.list_app_versions_response import ListAppVersionsResponse
 
 
 class AppBuilderApi:
@@ -49,6 +56,32 @@ class AppBuilderApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateAppRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_publish_request_endpoint = _Endpoint(
+            settings={
+                "response_type": (PublishAppResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/publish-request",
+                "operation_id": "create_publish_request",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreatePublishRequestRequest,),
                     "location": "body",
                 },
             },
@@ -200,6 +233,39 @@ class AppBuilderApi:
             api_client=api_client,
         )
 
+        self._list_app_versions_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListAppVersionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/versions",
+                "operation_id": "list_app_versions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "page": {
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._publish_app_endpoint = _Endpoint(
             settings={
                 "response_type": (PublishAppResponse,),
@@ -215,6 +281,35 @@ class AppBuilderApi:
                     "openapi_types": (UUID,),
                     "attribute": "app_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._revert_app_endpoint = _Endpoint(
+            settings={
+                "response_type": (UpdateAppResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/revert",
+                "operation_id": "revert_app",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "version",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -272,6 +367,142 @@ class AppBuilderApi:
             api_client=api_client,
         )
 
+        self._update_app_favorite_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/favorite",
+                "operation_id": "update_app_favorite",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateAppFavoriteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_app_self_service_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/self-service",
+                "operation_id": "update_app_self_service",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateAppSelfServiceRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_app_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/tags",
+                "operation_id": "update_app_tags",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateAppTagsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_app_version_name_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/version-name",
+                "operation_id": "update_app_version_name",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "version",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateAppVersionNameRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_protection_level_endpoint = _Endpoint(
+            settings={
+                "response_type": (UpdateAppResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/apps/{app_id}/protection-level",
+                "operation_id": "update_protection_level",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateAppProtectionLevelRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_app(
         self,
         body: CreateAppRequest,
@@ -287,6 +518,27 @@ class AppBuilderApi:
         kwargs["body"] = body
 
         return self._create_app_endpoint.call_with_http_info(**kwargs)
+
+    def create_publish_request(
+        self,
+        app_id: UUID,
+        body: CreatePublishRequestRequest,
+    ) -> PublishAppResponse:
+        """Create Publish Request.
+
+        Create a publish request to ask for approval to publish an app whose protection level is ``approval_required``. Publishing happens automatically once the request is approved by a user with the appropriate permissions.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :type body: CreatePublishRequestRequest
+        :rtype: PublishAppResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["body"] = body
+
+        return self._create_publish_request_endpoint.call_with_http_info(**kwargs)
 
     def delete_app(
         self,
@@ -424,6 +676,36 @@ class AppBuilderApi:
 
         return self._list_apps_endpoint.call_with_http_info(**kwargs)
 
+    def list_app_versions(
+        self,
+        app_id: UUID,
+        *,
+        limit: Union[int, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+    ) -> ListAppVersionsResponse:
+        """List App Versions.
+
+        List the versions of an app. This endpoint is paginated.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :param limit: The number of versions to return per page.
+        :type limit: int, optional
+        :param page: The page number to return.
+        :type page: int, optional
+        :rtype: ListAppVersionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        return self._list_app_versions_endpoint.call_with_http_info(**kwargs)
+
     def publish_app(
         self,
         app_id: UUID,
@@ -440,6 +722,28 @@ class AppBuilderApi:
         kwargs["app_id"] = app_id
 
         return self._publish_app_endpoint.call_with_http_info(**kwargs)
+
+    def revert_app(
+        self,
+        app_id: UUID,
+        version: str,
+    ) -> UpdateAppResponse:
+        """Revert App.
+
+        Revert an app to a previous version. The version to revert to is selected through the ``version`` query parameter. The reverted version becomes the new latest version of the app.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :param version: The version number of the app to revert to. Cannot be ``latest``. The special value ``deployed`` can be used to revert to the currently published version.
+        :type version: str
+        :rtype: UpdateAppResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["version"] = version
+
+        return self._revert_app_endpoint.call_with_http_info(**kwargs)
 
     def unpublish_app(
         self,
@@ -478,3 +782,113 @@ class AppBuilderApi:
         kwargs["body"] = body
 
         return self._update_app_endpoint.call_with_http_info(**kwargs)
+
+    def update_app_favorite(
+        self,
+        app_id: UUID,
+        body: UpdateAppFavoriteRequest,
+    ) -> None:
+        """Update App Favorite Status.
+
+        Add or remove an app from the current user's favorites. Favorited apps can be filtered for using the ``filter[favorite]`` query parameter on the `List Apps <https://docs.datadoghq.com/api/latest/app-builder/#list-apps>`_ endpoint.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :type body: UpdateAppFavoriteRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["body"] = body
+
+        return self._update_app_favorite_endpoint.call_with_http_info(**kwargs)
+
+    def update_app_self_service(
+        self,
+        app_id: UUID,
+        body: UpdateAppSelfServiceRequest,
+    ) -> None:
+        """Update App Self-Service Status.
+
+        Enable or disable self-service for an app. Self-service apps can be discovered and run by users in your organization without explicit access being granted.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :type body: UpdateAppSelfServiceRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["body"] = body
+
+        return self._update_app_self_service_endpoint.call_with_http_info(**kwargs)
+
+    def update_app_tags(
+        self,
+        app_id: UUID,
+        body: UpdateAppTagsRequest,
+    ) -> None:
+        """Update App Tags.
+
+        Replace the tags on an app. The provided list overwrites the existing tags entirely; tags not present in the request body are removed.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :type body: UpdateAppTagsRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["body"] = body
+
+        return self._update_app_tags_endpoint.call_with_http_info(**kwargs)
+
+    def update_app_version_name(
+        self,
+        app_id: UUID,
+        version: str,
+        body: UpdateAppVersionNameRequest,
+    ) -> None:
+        """Name App Version.
+
+        Assign a human-readable name to a specific version of an app. The version is selected through the ``version`` query parameter.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :param version: The version number of the app to name. The special values ``latest`` and ``deployed`` can also be used to target the latest or currently published version.
+        :type version: str
+        :type body: UpdateAppVersionNameRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["version"] = version
+
+        kwargs["body"] = body
+
+        return self._update_app_version_name_endpoint.call_with_http_info(**kwargs)
+
+    def update_protection_level(
+        self,
+        app_id: UUID,
+        body: UpdateAppProtectionLevelRequest,
+    ) -> UpdateAppResponse:
+        """Update App Protection Level.
+
+        Update the publication protection level of an app. When set to ``approval_required`` , future publishes must go through an approval workflow before going live.
+
+        :param app_id: The ID of the app.
+        :type app_id: UUID
+        :type body: UpdateAppProtectionLevelRequest
+        :rtype: UpdateAppResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["body"] = body
+
+        return self._update_protection_level_endpoint.call_with_http_info(**kwargs)

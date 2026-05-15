@@ -632,6 +632,61 @@
       "type": "idempotent"
     }
   },
+  "UpdateAppFavorite": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateProtectionLevel": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreatePublishRequest": {
+    "tag": "App Builder",
+    "undo": {
+      "operationId": "DeleteApp",
+      "parameters": [
+        {
+          "name": "app_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "RevertApp": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAppSelfService": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAppTags": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAppVersionName": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAppVersions": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListApplicationKeys": {
     "tag": "Key Management",
     "undo": {
