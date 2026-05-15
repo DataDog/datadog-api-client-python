@@ -5478,6 +5478,195 @@ datadog\_api\_client.v2.model.commit\_coverage\_summary\_request\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.commitments\_aws\_ec2\_ri\_commitment module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_aws_ec2_ri_commitment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_aws\_elasticache\_ri\_commitment module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_aws_elasticache_ri_commitment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_aws\_rdsri\_commitment module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_aws_rdsri_commitment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_aws\_sp\_commitment module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_aws_sp_commitment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_azure\_compute\_sp\_commitment module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_azure_compute_sp_commitment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_azure\_vmri\_commitment module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_azure_vmri_commitment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_azure\_vmri\_status module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_azure_vmri_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_commitment\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_commitment_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_coverage\_scalar\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_coverage_scalar_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_coverage\_timeseries\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_coverage_timeseries_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_list\_item module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_list_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_list\_meta module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_list_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_list\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_on\_demand\_hotspots\_scalar\_meta module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_on\_demand\_hotspots\_scalar\_response module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_provider module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_provider
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_savings\_scalar\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_savings_scalar_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_savings\_timeseries\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_savings_timeseries_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_scalar\_column module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_scalar_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_scalar\_column\_meta module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_scalar_column_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_scalar\_column\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_scalar_column_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_timeseries\_metric module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_timeseries_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_timeseries\_series module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_timeseries_series
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_unit module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_unit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_utilization\_scalar\_product\_breakdown\_entry module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_utilization_scalar_product_breakdown_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_utilization\_scalar\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_utilization_scalar_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.commitments\_utilization\_timeseries\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.commitments_utilization_timeseries_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.completion\_condition module
 ----------------------------------------------------------
 
