@@ -1428,6 +1428,54 @@
       "type": "safe"
     }
   },
+  "GetCommitmentsCommitmentList": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCommitmentsCoverageScalar": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCommitmentsCoverageTimeseries": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCommitmentsOnDemandHotspotsScalar": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCommitmentsSavingsScalar": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCommitmentsSavingsTimeseries": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCommitmentsUtilizationScalar": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCommitmentsUtilizationTimeseries": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCustomCostsFiles": {
     "tag": "Cloud Cost Management",
     "undo": {
