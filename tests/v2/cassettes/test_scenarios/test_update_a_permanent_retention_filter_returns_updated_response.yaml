@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"cross_product_sampling":{"trace_sample_rate":100}},"id":"default_replays","type":"permanent_retention_filters"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/permanent_retention_filters/default_replays
+  response:
+    body:
+      string: '{"data":{"id":"default_replays","type":"permanent_retention_filters","attributes":{"name":"Default
+        Replays","event_type":"session","query":"@has_replay:true","sample_rate":100,"enabled":true,"cross_product_sampling":{"trace_sample_rate":100},"cross_product_sampling_editability":{"trace_sample_rate":true}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
