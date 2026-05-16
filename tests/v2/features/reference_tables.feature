@@ -142,6 +142,41 @@ Feature: Reference Tables
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/redapl-experiences
+  Scenario: List reference table rows returns "Bad Request" response for invalid limit
+    Given new "ListReferenceTableRows" request
+    And request contains "id" parameter with value "not-a-valid-uuid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/redapl-experiences
+  Scenario: List reference table rows returns "Not Found" response
+    Given new "ListReferenceTableRows" request
+    And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: List rows returns "Bad Request" response
+    Given new "ListReferenceTableRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: List rows returns "Not Found" response
+    Given new "ListReferenceTableRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: List rows returns "OK" response
+    Given new "ListReferenceTableRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/redapl-experiences
   Scenario: List tables returns "OK" response
     Given new "ListTables" request

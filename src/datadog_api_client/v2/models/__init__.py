@@ -3504,6 +3504,8 @@ from datadog_api_client.v2.model.list_pipelines_response_meta import ListPipelin
 from datadog_api_client.v2.model.list_powerpacks_response import ListPowerpacksResponse
 from datadog_api_client.v2.model.list_relation_catalog_response import ListRelationCatalogResponse
 from datadog_api_client.v2.model.list_relation_catalog_response_links import ListRelationCatalogResponseLinks
+from datadog_api_client.v2.model.list_rows_response import ListRowsResponse
+from datadog_api_client.v2.model.list_rows_response_links import ListRowsResponseLinks
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
@@ -10339,6 +10341,8 @@ __all__ = [
     "ListPowerpacksResponse",
     "ListRelationCatalogResponse",
     "ListRelationCatalogResponseLinks",
+    "ListRowsResponse",
+    "ListRowsResponseLinks",
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
