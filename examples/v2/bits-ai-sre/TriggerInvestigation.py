@@ -1,9 +1,9 @@
 """
-Trigger a Bits AI investigation returns "OK" response
+Trigger a Bits AI SRE investigation returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.bits_ai_api import BitsAIApi
+from datadog_api_client.v2.api.bits_aisre_api import BitsAISREApi
 from datadog_api_client.v2.model.monitor_alert_trigger_attributes import MonitorAlertTriggerAttributes
 from datadog_api_client.v2.model.trigger_attributes import TriggerAttributes
 from datadog_api_client.v2.model.trigger_investigation_request import TriggerInvestigationRequest
@@ -33,7 +33,7 @@ body = TriggerInvestigationRequest(
 configuration = Configuration()
 configuration.unstable_operations["trigger_investigation"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = BitsAIApi(api_client)
+    api_instance = BitsAISREApi(api_client)
     response = api_instance.trigger_investigation(body=body)
 
     print(response)
