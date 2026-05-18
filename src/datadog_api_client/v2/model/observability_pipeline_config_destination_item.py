@@ -218,14 +218,14 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param header_source_name: Optional override for the source name header.
         :type header_source_name: str, optional
 
-        :param ingestion_endpoint: Your Databricks Zerobus ingestion endpoint. This is the endpoint used to stream data directly into your Databricks Lakehouse.
-        :type ingestion_endpoint: str
+        :param ingestion_endpoint_key: Name of the environment variable or the secret identifier that references the Databricks Zerobus ingestion endpoint, which is used to stream data directly into your Databricks Lakehouse.
+        :type ingestion_endpoint_key: str, optional
 
         :param table_name: The fully qualified name of your target Databricks table. Make sure this table already exists in your Databricks workspace before deploying.
         :type table_name: str
 
-        :param unity_catalog_endpoint: Your Databricks workspace URL. This is used to communicate with the Unity Catalog API.
-        :type unity_catalog_endpoint: str
+        :param unity_catalog_endpoint_key: Name of the environment variable or the secret identifier that references your Databricks workspace URL, which is used to communicate with the Unity Catalog API.
+        :type unity_catalog_endpoint_key: str, optional
         """
         super().__init__(kwargs)
 
