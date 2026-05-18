@@ -5439,6 +5439,12 @@
       "type": "safe"
     }
   },
+  "ListScorecardScores": {
+    "tag": "Scorecards",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UnassignSeatsUser": {
     "tag": "Seats",
     "undo": {

@@ -17420,6 +17420,20 @@ datadog\_api\_client.v2.model.list\_rules\_response\_links module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_scorecard\_scores\_meta module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_scorecard_scores_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_scorecard\_scores\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_scorecard_scores_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_scorecards\_response module
 ---------------------------------------------------------------
 
@@ -28603,6 +28617,55 @@ datadog\_api\_client.v2.model.scorecard\_list\_type module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.scorecard_list_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_score\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_score_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_score\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_score_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_score\_data\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_score_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_score\_relationship\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_score_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_score\_relationship\_item module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_score_relationship_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_score\_relationships module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_score_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scorecard\_scores\_aggregation module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scorecard_scores_aggregation
    :members:
    :show-inheritance:
 
