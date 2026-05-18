@@ -31,6 +31,10 @@ from datadog_api_client.v2.model.update_app_self_service_request import UpdateAp
 from datadog_api_client.v2.model.update_app_tags_request import UpdateAppTagsRequest
 from datadog_api_client.v2.model.update_app_version_name_request import UpdateAppVersionNameRequest
 from datadog_api_client.v2.model.list_app_versions_response import ListAppVersionsResponse
+from datadog_api_client.v2.model.get_blueprint_response import GetBlueprintResponse
+from datadog_api_client.v2.model.list_blueprints_response import ListBlueprintsResponse
+from datadog_api_client.v2.model.get_blueprints_response import GetBlueprintsResponse
+from datadog_api_client.v2.model.app_builder_list_tags_response import AppBuilderListTagsResponse
 
 
 class AppBuilderApi:
@@ -160,6 +164,75 @@ class AppBuilderApi:
             api_client=api_client,
         )
 
+        self._get_blueprint_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetBlueprintResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/blueprint/{blueprint_id}",
+                "operation_id": "get_blueprint",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "blueprint_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "blueprint_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_blueprints_by_integration_id_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetBlueprintsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/blueprints/integration-id/{integration_id}",
+                "operation_id": "get_blueprints_by_integration_id",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "integration_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_blueprints_by_slugs_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetBlueprintsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/blueprints/slugs/{slugs}",
+                "operation_id": "get_blueprints_by_slugs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "slugs": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "slugs",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_apps_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAppsResponse,),
@@ -260,6 +333,49 @@ class AppBuilderApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_blueprints_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListBlueprintsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/blueprints",
+                "operation_id": "list_blueprints",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "page": {
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_tags_endpoint = _Endpoint(
+            settings={
+                "response_type": (AppBuilderListTagsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/app-builder/tags",
+                "operation_id": "list_tags",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -597,6 +713,57 @@ class AppBuilderApi:
 
         return self._get_app_endpoint.call_with_http_info(**kwargs)
 
+    def get_blueprint(
+        self,
+        blueprint_id: UUID,
+    ) -> GetBlueprintResponse:
+        """Get Blueprint.
+
+        Retrieve an app blueprint by its ID.
+
+        :param blueprint_id: The ID of the blueprint to retrieve.
+        :type blueprint_id: UUID
+        :rtype: GetBlueprintResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["blueprint_id"] = blueprint_id
+
+        return self._get_blueprint_endpoint.call_with_http_info(**kwargs)
+
+    def get_blueprints_by_integration_id(
+        self,
+        integration_id: str,
+    ) -> GetBlueprintsResponse:
+        """Get Blueprints by Integration ID.
+
+        List app blueprints associated with a specific integration ID.
+
+        :param integration_id: The integration ID to filter blueprints by.
+        :type integration_id: str
+        :rtype: GetBlueprintsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration_id"] = integration_id
+
+        return self._get_blueprints_by_integration_id_endpoint.call_with_http_info(**kwargs)
+
+    def get_blueprints_by_slugs(
+        self,
+        slugs: str,
+    ) -> GetBlueprintsResponse:
+        """Get Blueprints by Slugs.
+
+        Retrieve app blueprints by their slugs.
+
+        :param slugs: A comma-separated list of blueprint slugs.
+        :type slugs: str
+        :rtype: GetBlueprintsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["slugs"] = slugs
+
+        return self._get_blueprints_by_slugs_endpoint.call_with_http_info(**kwargs)
+
     def list_apps(
         self,
         *,
@@ -705,6 +872,43 @@ class AppBuilderApi:
             kwargs["page"] = page
 
         return self._list_app_versions_endpoint.call_with_http_info(**kwargs)
+
+    def list_blueprints(
+        self,
+        *,
+        limit: Union[int, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+    ) -> ListBlueprintsResponse:
+        """List Blueprints.
+
+        List available app blueprints.
+
+        :param limit: The number of blueprints to return per page. Defaults to 10. Maximum is 100.
+        :type limit: int, optional
+        :param page: The page of results to return. Starts at 0.
+        :type page: int, optional
+        :rtype: ListBlueprintsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        return self._list_blueprints_endpoint.call_with_http_info(**kwargs)
+
+    def list_tags(
+        self,
+    ) -> AppBuilderListTagsResponse:
+        """List Tags.
+
+        List all tags associated with the authenticated user's apps.
+
+        :rtype: AppBuilderListTagsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_tags_endpoint.call_with_http_info(**kwargs)
 
     def publish_app(
         self,

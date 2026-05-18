@@ -218,6 +218,7 @@ from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFi
 from datadog_api_client.v2.model.app_builder_event import AppBuilderEvent
 from datadog_api_client.v2.model.app_builder_event_name import AppBuilderEventName
 from datadog_api_client.v2.model.app_builder_event_type import AppBuilderEventType
+from datadog_api_client.v2.model.app_builder_list_tags_response import AppBuilderListTagsResponse
 from datadog_api_client.v2.model.app_definition_type import AppDefinitionType
 from datadog_api_client.v2.model.app_deployment_type import AppDeploymentType
 from datadog_api_client.v2.model.app_favorite_type import AppFavoriteType
@@ -605,6 +606,12 @@ from datadog_api_client.v2.model.billing_dimensions_mapping_body_item_attributes
     BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus,
 )
 from datadog_api_client.v2.model.billing_dimensions_mapping_response import BillingDimensionsMappingResponse
+from datadog_api_client.v2.model.blueprint_attributes import BlueprintAttributes
+from datadog_api_client.v2.model.blueprint_data import BlueprintData
+from datadog_api_client.v2.model.blueprint_data_type import BlueprintDataType
+from datadog_api_client.v2.model.blueprint_metadata_attributes import BlueprintMetadataAttributes
+from datadog_api_client.v2.model.blueprint_metadata_data import BlueprintMetadataData
+from datadog_api_client.v2.model.blueprint_native_action import BlueprintNativeAction
 from datadog_api_client.v2.model.branch_coverage_summary_request import BranchCoverageSummaryRequest
 from datadog_api_client.v2.model.branch_coverage_summary_request_attributes import (
     BranchCoverageSummaryRequestAttributes,
@@ -2545,6 +2552,8 @@ from datadog_api_client.v2.model.get_app_key_registration_response import GetApp
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
 from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
 from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
+from datadog_api_client.v2.model.get_blueprint_response import GetBlueprintResponse
+from datadog_api_client.v2.model.get_blueprints_response import GetBlueprintsResponse
 from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
 from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
 from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
@@ -3455,6 +3464,7 @@ from datadog_api_client.v2.model.list_apps_response_data_items_relationships imp
 from datadog_api_client.v2.model.list_apps_response_meta import ListAppsResponseMeta
 from datadog_api_client.v2.model.list_apps_response_meta_page import ListAppsResponseMetaPage
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
+from datadog_api_client.v2.model.list_blueprints_response import ListBlueprintsResponse
 from datadog_api_client.v2.model.list_campaigns_response import ListCampaignsResponse
 from datadog_api_client.v2.model.list_connections_response import ListConnectionsResponse
 from datadog_api_client.v2.model.list_connections_response_data import ListConnectionsResponseData
@@ -7012,6 +7022,8 @@ from datadog_api_client.v2.model.table_row_resource_data import TableRowResource
 from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
 from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
 from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
+from datadog_api_client.v2.model.tag_data import TagData
+from datadog_api_client.v2.model.tag_data_type import TagDataType
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.targeting_rule import TargetingRule
 from datadog_api_client.v2.model.targeting_rule_request import TargetingRuleRequest
@@ -7901,6 +7913,7 @@ __all__ = [
     "AppBuilderEvent",
     "AppBuilderEventName",
     "AppBuilderEventType",
+    "AppBuilderListTagsResponse",
     "AppDefinitionType",
     "AppDeploymentType",
     "AppFavoriteType",
@@ -8162,6 +8175,12 @@ __all__ = [
     "BillingDimensionsMappingBodyItemAttributesEndpointsItems",
     "BillingDimensionsMappingBodyItemAttributesEndpointsItemsStatus",
     "BillingDimensionsMappingResponse",
+    "BlueprintAttributes",
+    "BlueprintData",
+    "BlueprintDataType",
+    "BlueprintMetadataAttributes",
+    "BlueprintMetadataData",
+    "BlueprintNativeAction",
     "BranchCoverageSummaryRequest",
     "BranchCoverageSummaryRequestAttributes",
     "BranchCoverageSummaryRequestData",
@@ -9616,6 +9635,8 @@ __all__ = [
     "GetAppResponse",
     "GetAppResponseData",
     "GetAppResponseDataAttributes",
+    "GetBlueprintResponse",
+    "GetBlueprintsResponse",
     "GetCustomFrameworkResponse",
     "GetDataDeletionsResponseBody",
     "GetDeviceAttributes",
@@ -10298,6 +10319,7 @@ __all__ = [
     "ListAppsResponseMeta",
     "ListAppsResponseMetaPage",
     "ListAssetsSBOMsResponse",
+    "ListBlueprintsResponse",
     "ListCampaignsResponse",
     "ListConnectionsResponse",
     "ListConnectionsResponseData",
@@ -12631,6 +12653,8 @@ __all__ = [
     "TableRowResourceDataAttributes",
     "TableRowResourceDataType",
     "TableRowResourceIdentifier",
+    "TagData",
+    "TagDataType",
     "TagsEventAttribute",
     "TargetingRule",
     "TargetingRuleRequest",
