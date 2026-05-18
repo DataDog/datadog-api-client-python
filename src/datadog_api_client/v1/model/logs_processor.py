@@ -112,6 +112,9 @@ class LogsProcessor(ModelComposed):
 
         :param schema: Configuration of the schema data to use.
         :type schema: LogsSchemaData
+
+        :param attribute_to_exclude: Name of the log attribute to remove from the log event.
+        :type attribute_to_exclude: str
         """
         super().__init__(kwargs)
 
@@ -144,6 +147,7 @@ class LogsProcessor(ModelComposed):
         from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
         from datadog_api_client.v1.model.logs_decoder_processor import LogsDecoderProcessor
         from datadog_api_client.v1.model.logs_schema_processor import LogsSchemaProcessor
+        from datadog_api_client.v1.model.logs_exclude_attribute_processor import LogsExcludeAttributeProcessor
 
         return {
             "oneOf": [
@@ -167,5 +171,6 @@ class LogsProcessor(ModelComposed):
                 LogsArrayProcessor,
                 LogsDecoderProcessor,
                 LogsSchemaProcessor,
+                LogsExcludeAttributeProcessor,
             ],
         }
