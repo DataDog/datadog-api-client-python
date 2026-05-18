@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.synthetics_downtime_time_slot_date import SyntheticsDowntimeTimeSlotDate
     from datadog_api_client.v2.model.synthetics_downtime_frequency import SyntheticsDowntimeFrequency
+    from datadog_api_client.v2.model.synthetics_downtime_weekday_position import SyntheticsDowntimeWeekdayPosition
     from datadog_api_client.v2.model.synthetics_downtime_weekday import SyntheticsDowntimeWeekday
 
 
@@ -24,12 +25,14 @@ class SyntheticsDowntimeTimeSlotRecurrenceRequest(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.synthetics_downtime_time_slot_date import SyntheticsDowntimeTimeSlotDate
         from datadog_api_client.v2.model.synthetics_downtime_frequency import SyntheticsDowntimeFrequency
+        from datadog_api_client.v2.model.synthetics_downtime_weekday_position import SyntheticsDowntimeWeekdayPosition
         from datadog_api_client.v2.model.synthetics_downtime_weekday import SyntheticsDowntimeWeekday
 
         return {
             "end": (SyntheticsDowntimeTimeSlotDate,),
             "frequency": (SyntheticsDowntimeFrequency,),
             "interval": (int,),
+            "weekday_positions": ([SyntheticsDowntimeWeekdayPosition],),
             "weekdays": ([SyntheticsDowntimeWeekday],),
         }
 
@@ -37,6 +40,7 @@ class SyntheticsDowntimeTimeSlotRecurrenceRequest(ModelNormal):
         "end": "end",
         "frequency": "frequency",
         "interval": "interval",
+        "weekday_positions": "weekdayPositions",
         "weekdays": "weekdays",
     }
 
@@ -45,6 +49,7 @@ class SyntheticsDowntimeTimeSlotRecurrenceRequest(ModelNormal):
         frequency: SyntheticsDowntimeFrequency,
         end: Union[SyntheticsDowntimeTimeSlotDate, UnsetType] = unset,
         interval: Union[int, UnsetType] = unset,
+        weekday_positions: Union[List[SyntheticsDowntimeWeekdayPosition], UnsetType] = unset,
         weekdays: Union[List[SyntheticsDowntimeWeekday], UnsetType] = unset,
         **kwargs,
     ):
@@ -60,6 +65,9 @@ class SyntheticsDowntimeTimeSlotRecurrenceRequest(ModelNormal):
         :param interval: The interval between recurrences, relative to the frequency.
         :type interval: int, optional
 
+        :param weekday_positions: Positions of the weekdays within a month for a monthly Synthetics downtime recurrence. Used in combination with ``weekdays`` to schedule occurrences such as "the first Monday of the month".
+        :type weekday_positions: [SyntheticsDowntimeWeekdayPosition], optional
+
         :param weekdays: Days of the week for a Synthetics downtime recurrence schedule.
         :type weekdays: [SyntheticsDowntimeWeekday], optional
         """
@@ -67,6 +75,8 @@ class SyntheticsDowntimeTimeSlotRecurrenceRequest(ModelNormal):
             kwargs["end"] = end
         if interval is not unset:
             kwargs["interval"] = interval
+        if weekday_positions is not unset:
+            kwargs["weekday_positions"] = weekday_positions
         if weekdays is not unset:
             kwargs["weekdays"] = weekdays
         super().__init__(kwargs)

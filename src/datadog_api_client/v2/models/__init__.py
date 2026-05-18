@@ -6761,6 +6761,7 @@ from datadog_api_client.v2.model.synthetics_downtime_time_slot_recurrence_respon
 from datadog_api_client.v2.model.synthetics_downtime_time_slot_request import SyntheticsDowntimeTimeSlotRequest
 from datadog_api_client.v2.model.synthetics_downtime_time_slot_response import SyntheticsDowntimeTimeSlotResponse
 from datadog_api_client.v2.model.synthetics_downtime_weekday import SyntheticsDowntimeWeekday
+from datadog_api_client.v2.model.synthetics_downtime_weekday_position import SyntheticsDowntimeWeekdayPosition
 from datadog_api_client.v2.model.synthetics_downtimes_response import SyntheticsDowntimesResponse
 from datadog_api_client.v2.model.synthetics_fast_test_result import SyntheticsFastTestResult
 from datadog_api_client.v2.model.synthetics_fast_test_result_attributes import SyntheticsFastTestResultAttributes
@@ -12446,6 +12447,7 @@ __all__ = [
     "SyntheticsDowntimeTimeSlotRequest",
     "SyntheticsDowntimeTimeSlotResponse",
     "SyntheticsDowntimeWeekday",
+    "SyntheticsDowntimeWeekdayPosition",
     "SyntheticsDowntimesResponse",
     "SyntheticsFastTestResult",
     "SyntheticsFastTestResultAttributes",
