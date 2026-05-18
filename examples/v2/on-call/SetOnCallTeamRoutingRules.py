@@ -5,6 +5,8 @@ Set On-Call team routing rules returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action_type import RoutingRuleEscalationPolicyActionType
 from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
 from datadog_api_client.v2.model.send_slack_message_action_type import SendSlackMessageActionType
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
@@ -55,9 +57,36 @@ body = TeamRoutingRulesRequest(
                     ),
                 ),
                 TeamRoutingRulesRequestRule(
-                    policy_id=ESCALATION_POLICY_DATA_ID,
+                    actions=[
+                        RoutingRuleEscalationPolicyAction(
+                            ack_timeout_minutes=10,
+                            policy_id=ESCALATION_POLICY_DATA_ID,
+                            support_hours=TimeRestrictions(
+                                time_zone="Europe/Paris",
+                                restrictions=[
+                                    TimeRestriction(
+                                        end_day=Weekday.FRIDAY,
+                                        end_time="17:00:00",
+                                        start_day=Weekday.MONDAY,
+                                        start_time="09:00:00",
+                                    ),
+                                ],
+                            ),
+                            type=RoutingRuleEscalationPolicyActionType.ESCALATION_POLICY,
+                            urgency=Urgency.LOW,
+                        ),
+                    ],
+                    query="tags.service:test",
+                ),
+                TeamRoutingRulesRequestRule(
+                    actions=[
+                        RoutingRuleEscalationPolicyAction(
+                            policy_id=ESCALATION_POLICY_DATA_ID,
+                            type=RoutingRuleEscalationPolicyActionType.ESCALATION_POLICY,
+                            urgency=Urgency.LOW,
+                        ),
+                    ],
                     query="",
-                    urgency=Urgency.LOW,
                 ),
             ],
         ),

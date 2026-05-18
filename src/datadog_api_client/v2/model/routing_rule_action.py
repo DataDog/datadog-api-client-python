@@ -32,6 +32,18 @@ class RoutingRuleAction(ModelComposed):
 
         :param handle: The handle of the Workflow Automation to trigger.
         :type handle: str
+
+        :param ack_timeout_minutes: The number of minutes before an unacknowledged page is re-escalated.
+        :type ack_timeout_minutes: int, optional
+
+        :param policy_id: The ID of the escalation policy to route to.
+        :type policy_id: str
+
+        :param support_hours: Holds time zone information and a list of time restrictions for a routing rule.
+        :type support_hours: TimeRestrictions, optional
+
+        :param urgency: Specifies the level of urgency for a routing rule (low, high, or dynamic).
+        :type urgency: Urgency, optional
         """
         super().__init__(kwargs)
 
@@ -47,11 +59,13 @@ class RoutingRuleAction(ModelComposed):
         from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
         from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
         from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
+        from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
 
         return {
             "oneOf": [
                 SendSlackMessageAction,
                 SendTeamsMessageAction,
                 TriggerWorkflowAutomationAction,
+                RoutingRuleEscalationPolicyAction,
             ],
         }
