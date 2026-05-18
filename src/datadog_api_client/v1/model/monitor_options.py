@@ -35,6 +35,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition import (
         MonitorFormulaAndFunctionDataQualityQueryDefinition,
     )
+    from datadog_api_client.v1.model.monitor_formula_and_function_data_jobs_query_definition import (
+        MonitorFormulaAndFunctionDataJobsQueryDefinition,
+    )
     from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_augmented_query_definition import (
         MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
     )
@@ -183,6 +186,7 @@ class MonitorOptions(ModelNormal):
                     MonitorFormulaAndFunctionEventQueryDefinition,
                     MonitorFormulaAndFunctionCostQueryDefinition,
                     MonitorFormulaAndFunctionDataQualityQueryDefinition,
+                    MonitorFormulaAndFunctionDataJobsQueryDefinition,
                     MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
                     MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
                 ]

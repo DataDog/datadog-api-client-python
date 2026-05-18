@@ -2608,6 +2608,13 @@ datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_cost\_query\_defi
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_data\_jobs\_query\_definition module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.monitor_formula_and_function_data_jobs_query_definition
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.monitor\_formula\_and\_function\_data\_quality\_data\_source module
 -------------------------------------------------------------------------------------------------
 
