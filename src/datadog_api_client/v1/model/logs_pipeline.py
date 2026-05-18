@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
     from datadog_api_client.v1.model.logs_decoder_processor import LogsDecoderProcessor
     from datadog_api_client.v1.model.logs_schema_processor import LogsSchemaProcessor
+    from datadog_api_client.v1.model.logs_exclude_attribute_processor import LogsExcludeAttributeProcessor
 
 
 class LogsPipeline(ModelNormal):
@@ -105,6 +106,7 @@ class LogsPipeline(ModelNormal):
                     LogsArrayProcessor,
                     LogsDecoderProcessor,
                     LogsSchemaProcessor,
+                    LogsExcludeAttributeProcessor,
                 ]
             ],
             UnsetType,

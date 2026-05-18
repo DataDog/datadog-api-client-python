@@ -341,6 +341,8 @@ from datadog_api_client.v1.model.logs_decoder_processor_input_representation imp
     LogsDecoderProcessorInputRepresentation,
 )
 from datadog_api_client.v1.model.logs_decoder_processor_type import LogsDecoderProcessorType
+from datadog_api_client.v1.model.logs_exclude_attribute_processor import LogsExcludeAttributeProcessor
+from datadog_api_client.v1.model.logs_exclude_attribute_processor_type import LogsExcludeAttributeProcessorType
 from datadog_api_client.v1.model.logs_exclusion import LogsExclusion
 from datadog_api_client.v1.model.logs_exclusion_filter import LogsExclusionFilter
 from datadog_api_client.v1.model.logs_filter import LogsFilter
@@ -1635,6 +1637,8 @@ __all__ = [
     "LogsDecoderProcessorBinaryToTextEncoding",
     "LogsDecoderProcessorInputRepresentation",
     "LogsDecoderProcessorType",
+    "LogsExcludeAttributeProcessor",
+    "LogsExcludeAttributeProcessorType",
     "LogsExclusion",
     "LogsExclusionFilter",
     "LogsFilter",

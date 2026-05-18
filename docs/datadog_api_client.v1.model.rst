@@ -2027,6 +2027,20 @@ datadog\_api\_client.v1.model.logs\_decoder\_processor\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_exclude\_attribute\_processor module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_exclude_attribute_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_exclude\_attribute\_processor\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_exclude_attribute_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_exclusion module
 ----------------------------------------------------
 
