@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"selfService":true},"type":"selfService"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/7addb29b-f935-472c-ae79-d1963979a23e/self-service
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"623c417b-ba6a-4952-8d3c-1d90edaf3166","title":"app
+        not found","detail":"app with id 7addb29b-f935-472c-ae79-d1963979a23e not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
