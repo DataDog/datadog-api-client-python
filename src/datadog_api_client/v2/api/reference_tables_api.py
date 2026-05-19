@@ -21,6 +21,7 @@ from datadog_api_client.v2.model.patch_table_request import PatchTableRequest
 from datadog_api_client.v2.model.batch_delete_rows_request_array import BatchDeleteRowsRequestArray
 from datadog_api_client.v2.model.table_row_resource_array import TableRowResourceArray
 from datadog_api_client.v2.model.batch_upsert_rows_request_array import BatchUpsertRowsRequestArray
+from datadog_api_client.v2.model.list_rows_response import ListRowsResponse
 from datadog_api_client.v2.model.create_upload_response import CreateUploadResponse
 from datadog_api_client.v2.model.create_upload_request import CreateUploadRequest
 
@@ -189,6 +190,43 @@ class ReferenceTablesApi:
                     "openapi_types": (str,),
                     "attribute": "id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_reference_table_rows_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListRowsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/reference-tables/tables/{id}/rows/list",
+                "operation_id": "list_reference_table_rows",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_continuation_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page[continuation_token]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -432,6 +470,36 @@ class ReferenceTablesApi:
         kwargs["id"] = id
 
         return self._get_table_endpoint.call_with_http_info(**kwargs)
+
+    def list_reference_table_rows(
+        self,
+        id: str,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        page_continuation_token: Union[str, UnsetType] = unset,
+    ) -> ListRowsResponse:
+        """List rows.
+
+        List all rows in a reference table using cursor-based pagination. Pass the ``page[continuation_token]`` from the previous response to fetch the next page on the same consistent snapshot. Returns 400 for tables with more than 10,000,000 rows.
+
+        :param id: Unique identifier of the reference table to list rows from.
+        :type id: str
+        :param page_limit: Number of rows to return per page. Defaults to 100, maximum is 1000.
+        :type page_limit: int, optional
+        :param page_continuation_token: Opaque cursor from the previous response's next link. Pass this to retrieve the next page on the same consistent snapshot.
+        :type page_continuation_token: str, optional
+        :rtype: ListRowsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_continuation_token is not unset:
+            kwargs["page_continuation_token"] = page_continuation_token
+
+        return self._list_reference_table_rows_endpoint.call_with_http_info(**kwargs)
 
     def list_tables(
         self,

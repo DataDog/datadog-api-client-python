@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/reference-tables/tables/00000000-0000-0000-0000-000000000000/rows/list
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"table not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
