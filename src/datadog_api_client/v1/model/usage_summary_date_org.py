@@ -84,6 +84,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "csm_host_enterprise_gcp_host_count_top99p": (int,),
             "csm_host_enterprise_oci_host_count_top99p": (int,),
             "csm_host_enterprise_total_host_count_top99p": (int,),
+            "csm_host_pro_hosts_agentless_scanners_sum": (int,),
+            "csm_host_pro_hosts_agentless_scanners_top99p": (int,),
             "csm_host_pro_oci_host_count_top99p": (int,),
             "cspm_aas_host_top99p": (int,),
             "cspm_aws_host_top99p": (int,),
@@ -92,6 +94,8 @@ class UsageSummaryDateOrg(ModelNormal):
             "cspm_container_hwm": (int,),
             "cspm_gcp_host_top99p": (int,),
             "cspm_host_top99p": (int,),
+            "cspm_hosts_agentless_scanners_sum": (int,),
+            "cspm_hosts_agentless_scanners_top99p": (int,),
             "custom_historical_ts_avg": (int,),
             "custom_live_ts_avg": (int,),
             "custom_ts_avg": (int,),
@@ -335,6 +339,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "csm_host_enterprise_gcp_host_count_top99p": "csm_host_enterprise_gcp_host_count_top99p",
         "csm_host_enterprise_oci_host_count_top99p": "csm_host_enterprise_oci_host_count_top99p",
         "csm_host_enterprise_total_host_count_top99p": "csm_host_enterprise_total_host_count_top99p",
+        "csm_host_pro_hosts_agentless_scanners_sum": "csm_host_pro_hosts_agentless_scanners_sum",
+        "csm_host_pro_hosts_agentless_scanners_top99p": "csm_host_pro_hosts_agentless_scanners_top99p",
         "csm_host_pro_oci_host_count_top99p": "csm_host_pro_oci_host_count_top99p",
         "cspm_aas_host_top99p": "cspm_aas_host_top99p",
         "cspm_aws_host_top99p": "cspm_aws_host_top99p",
@@ -343,6 +349,8 @@ class UsageSummaryDateOrg(ModelNormal):
         "cspm_container_hwm": "cspm_container_hwm",
         "cspm_gcp_host_top99p": "cspm_gcp_host_top99p",
         "cspm_host_top99p": "cspm_host_top99p",
+        "cspm_hosts_agentless_scanners_sum": "cspm_hosts_agentless_scanners_sum",
+        "cspm_hosts_agentless_scanners_top99p": "cspm_hosts_agentless_scanners_top99p",
         "custom_historical_ts_avg": "custom_historical_ts_avg",
         "custom_live_ts_avg": "custom_live_ts_avg",
         "custom_ts_avg": "custom_ts_avg",
@@ -587,6 +595,8 @@ class UsageSummaryDateOrg(ModelNormal):
         csm_host_enterprise_gcp_host_count_top99p: Union[int, UnsetType] = unset,
         csm_host_enterprise_oci_host_count_top99p: Union[int, UnsetType] = unset,
         csm_host_enterprise_total_host_count_top99p: Union[int, UnsetType] = unset,
+        csm_host_pro_hosts_agentless_scanners_sum: Union[int, UnsetType] = unset,
+        csm_host_pro_hosts_agentless_scanners_top99p: Union[int, UnsetType] = unset,
         csm_host_pro_oci_host_count_top99p: Union[int, UnsetType] = unset,
         cspm_aas_host_top99p: Union[int, UnsetType] = unset,
         cspm_aws_host_top99p: Union[int, UnsetType] = unset,
@@ -595,6 +605,8 @@ class UsageSummaryDateOrg(ModelNormal):
         cspm_container_hwm: Union[int, UnsetType] = unset,
         cspm_gcp_host_top99p: Union[int, UnsetType] = unset,
         cspm_host_top99p: Union[int, UnsetType] = unset,
+        cspm_hosts_agentless_scanners_sum: Union[int, UnsetType] = unset,
+        cspm_hosts_agentless_scanners_top99p: Union[int, UnsetType] = unset,
         custom_historical_ts_avg: Union[int, UnsetType] = unset,
         custom_live_ts_avg: Union[int, UnsetType] = unset,
         custom_ts_avg: Union[int, UnsetType] = unset,
@@ -974,6 +986,12 @@ class UsageSummaryDateOrg(ModelNormal):
         :param csm_host_enterprise_total_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Enterprise hosts over all hours in the current date for the given org.
         :type csm_host_enterprise_total_host_count_top99p: int, optional
 
+        :param csm_host_pro_hosts_agentless_scanners_sum: Shows the sum of all Cloud Security Management Pro Agentless scanner hosts over all hours in the current date for the given org.
+        :type csm_host_pro_hosts_agentless_scanners_sum: int, optional
+
+        :param csm_host_pro_hosts_agentless_scanners_top99p: Shows the 99th percentile of all Cloud Security Management Pro Agentless scanner hosts over all hours in the current date for the given org.
+        :type csm_host_pro_hosts_agentless_scanners_top99p: int, optional
+
         :param csm_host_pro_oci_host_count_top99p: Shows the 99th percentile of all Cloud Security Management Pro OCI hosts over all hours in the current date for the given org.
         :type csm_host_pro_oci_host_count_top99p: int, optional
 
@@ -997,6 +1015,12 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param cspm_host_top99p: Shows the 99th percentile of all Cloud Security Management Pro hosts over all hours in the current date for the given org.
         :type cspm_host_top99p: int, optional
+
+        :param cspm_hosts_agentless_scanners_sum: Shows the sum of all Cloud Security Management Pro Agentless scanner hosts over all hours in the current date for the given org.
+        :type cspm_hosts_agentless_scanners_sum: int, optional
+
+        :param cspm_hosts_agentless_scanners_top99p: Shows the 99th percentile of all Cloud Security Management Pro Agentless scanner hosts over all hours in the current date for the given org.
+        :type cspm_hosts_agentless_scanners_top99p: int, optional
 
         :param custom_historical_ts_avg: Shows the average number of distinct historical custom metrics over all hours in the current date for the given org.
         :type custom_historical_ts_avg: int, optional
@@ -1653,6 +1677,10 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["csm_host_enterprise_oci_host_count_top99p"] = csm_host_enterprise_oci_host_count_top99p
         if csm_host_enterprise_total_host_count_top99p is not unset:
             kwargs["csm_host_enterprise_total_host_count_top99p"] = csm_host_enterprise_total_host_count_top99p
+        if csm_host_pro_hosts_agentless_scanners_sum is not unset:
+            kwargs["csm_host_pro_hosts_agentless_scanners_sum"] = csm_host_pro_hosts_agentless_scanners_sum
+        if csm_host_pro_hosts_agentless_scanners_top99p is not unset:
+            kwargs["csm_host_pro_hosts_agentless_scanners_top99p"] = csm_host_pro_hosts_agentless_scanners_top99p
         if csm_host_pro_oci_host_count_top99p is not unset:
             kwargs["csm_host_pro_oci_host_count_top99p"] = csm_host_pro_oci_host_count_top99p
         if cspm_aas_host_top99p is not unset:
@@ -1669,6 +1697,10 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["cspm_gcp_host_top99p"] = cspm_gcp_host_top99p
         if cspm_host_top99p is not unset:
             kwargs["cspm_host_top99p"] = cspm_host_top99p
+        if cspm_hosts_agentless_scanners_sum is not unset:
+            kwargs["cspm_hosts_agentless_scanners_sum"] = cspm_hosts_agentless_scanners_sum
+        if cspm_hosts_agentless_scanners_top99p is not unset:
+            kwargs["cspm_hosts_agentless_scanners_top99p"] = cspm_hosts_agentless_scanners_top99p
         if custom_historical_ts_avg is not unset:
             kwargs["custom_historical_ts_avg"] = custom_historical_ts_avg
         if custom_live_ts_avg is not unset:
