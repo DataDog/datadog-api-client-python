@@ -2034,6 +2034,13 @@ from datadog_api_client.v2.model.downtime_update_request_attributes import Downt
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
 from datadog_api_client.v2.model.epss import EPSS
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
+from datadog_api_client.v2.model.entity_context_entity import EntityContextEntity
+from datadog_api_client.v2.model.entity_context_entity_attributes import EntityContextEntityAttributes
+from datadog_api_client.v2.model.entity_context_page import EntityContextPage
+from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
+from datadog_api_client.v2.model.entity_context_response_meta import EntityContextResponseMeta
+from datadog_api_client.v2.model.entity_context_revision import EntityContextRevision
+from datadog_api_client.v2.model.entity_context_revision_attributes import EntityContextRevisionAttributes
 from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_meta import EntityMeta
 from datadog_api_client.v2.model.entity_relationships import EntityRelationships
@@ -3518,6 +3525,11 @@ from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulner
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.log_attributes import LogAttributes
+from datadog_api_client.v2.model.log_formatting_issue_attributes import LogFormattingIssueAttributes
+from datadog_api_client.v2.model.log_formatting_issue_data import LogFormattingIssueData
+from datadog_api_client.v2.model.log_formatting_issue_reason import LogFormattingIssueReason
+from datadog_api_client.v2.model.log_formatting_issue_type import LogFormattingIssueType
+from datadog_api_client.v2.model.log_formatting_issues_response import LogFormattingIssuesResponse
 from datadog_api_client.v2.model.log_type import LogType
 from datadog_api_client.v2.model.logs_aggregate_bucket import LogsAggregateBucket
 from datadog_api_client.v2.model.logs_aggregate_bucket_value import LogsAggregateBucketValue
@@ -5642,6 +5654,60 @@ from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
 from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
 from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
 from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_attributes import (
+    SampleLogGenerationBulkSubscriptionAttributes,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_data import (
+    SampleLogGenerationBulkSubscriptionData,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_item_meta import (
+    SampleLogGenerationBulkSubscriptionItemMeta,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_request import (
+    SampleLogGenerationBulkSubscriptionRequest,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_request_type import (
+    SampleLogGenerationBulkSubscriptionRequestType,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_response import (
+    SampleLogGenerationBulkSubscriptionResponse,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_result_item import (
+    SampleLogGenerationBulkSubscriptionResultItem,
+)
+from datadog_api_client.v2.model.sample_log_generation_duration import SampleLogGenerationDuration
+from datadog_api_client.v2.model.sample_log_generation_subscription_attributes import (
+    SampleLogGenerationSubscriptionAttributes,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_create_attributes import (
+    SampleLogGenerationSubscriptionCreateAttributes,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_create_data import (
+    SampleLogGenerationSubscriptionCreateData,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_create_request import (
+    SampleLogGenerationSubscriptionCreateRequest,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_data import SampleLogGenerationSubscriptionData
+from datadog_api_client.v2.model.sample_log_generation_subscription_request_type import (
+    SampleLogGenerationSubscriptionRequestType,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_resource_type import (
+    SampleLogGenerationSubscriptionResourceType,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_response import (
+    SampleLogGenerationSubscriptionResponse,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_status import SampleLogGenerationSubscriptionStatus
+from datadog_api_client.v2.model.sample_log_generation_subscriptions_response import (
+    SampleLogGenerationSubscriptionsResponse,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscriptions_response_meta import (
+    SampleLogGenerationSubscriptionsResponseMeta,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscriptions_status_filter import (
+    SampleLogGenerationSubscriptionsStatusFilter,
+)
 from datadog_api_client.v2.model.sca_request import ScaRequest
 from datadog_api_client.v2.model.sca_request_data import ScaRequestData
 from datadog_api_client.v2.model.sca_request_data_attributes import ScaRequestDataAttributes
@@ -5822,6 +5888,11 @@ from datadog_api_client.v2.model.security_filter_type import SecurityFilterType
 from datadog_api_client.v2.model.security_filter_update_attributes import SecurityFilterUpdateAttributes
 from datadog_api_client.v2.model.security_filter_update_data import SecurityFilterUpdateData
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
+from datadog_api_client.v2.model.security_filter_version import SecurityFilterVersion
+from datadog_api_client.v2.model.security_filter_version_attributes import SecurityFilterVersionAttributes
+from datadog_api_client.v2.model.security_filter_version_entry import SecurityFilterVersionEntry
+from datadog_api_client.v2.model.security_filter_version_type import SecurityFilterVersionType
+from datadog_api_client.v2.model.security_filter_versions_response import SecurityFilterVersionsResponse
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_findings_attributes import SecurityFindingsAttributes
 from datadog_api_client.v2.model.security_findings_data import SecurityFindingsData
@@ -5896,6 +5967,58 @@ from datadog_api_client.v2.model.security_monitoring_critical_assets_response im
 )
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
+from datadog_api_client.v2.model.security_monitoring_integration_config_attributes import (
+    SecurityMonitoringIntegrationConfigAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_create_attributes import (
+    SecurityMonitoringIntegrationConfigCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_create_data import (
+    SecurityMonitoringIntegrationConfigCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_create_request import (
+    SecurityMonitoringIntegrationConfigCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_data import (
+    SecurityMonitoringIntegrationConfigData,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_resource_type import (
+    SecurityMonitoringIntegrationConfigResourceType,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_response import (
+    SecurityMonitoringIntegrationConfigResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_secrets import (
+    SecurityMonitoringIntegrationConfigSecrets,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_settings import (
+    SecurityMonitoringIntegrationConfigSettings,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_state import (
+    SecurityMonitoringIntegrationConfigState,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_update_attributes import (
+    SecurityMonitoringIntegrationConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_update_data import (
+    SecurityMonitoringIntegrationConfigUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_update_request import (
+    SecurityMonitoringIntegrationConfigUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_configs_response import (
+    SecurityMonitoringIntegrationConfigsResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_attributes import (
+    SecurityMonitoringIntegrationCredentialsValidateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_data import (
+    SecurityMonitoringIntegrationCredentialsValidateData,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_request import (
+    SecurityMonitoringIntegrationCredentialsValidateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_type import SecurityMonitoringIntegrationType
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response import (
     SecurityMonitoringPaginatedSuppressionsResponse,
@@ -6449,6 +6572,11 @@ from datadog_api_client.v2.model.shift_data_relationships_user_data import Shift
 from datadog_api_client.v2.model.shift_data_relationships_user_data_type import ShiftDataRelationshipsUserDataType
 from datadog_api_client.v2.model.shift_data_type import ShiftDataType
 from datadog_api_client.v2.model.shift_included import ShiftIncluded
+from datadog_api_client.v2.model.signal_entities_attributes import SignalEntitiesAttributes
+from datadog_api_client.v2.model.signal_entities_data import SignalEntitiesData
+from datadog_api_client.v2.model.signal_entities_response import SignalEntitiesResponse
+from datadog_api_client.v2.model.signal_entities_type import SignalEntitiesType
+from datadog_api_client.v2.model.signal_entity_identity import SignalEntityIdentity
 from datadog_api_client.v2.model.simple_monitor_user_template import SimpleMonitorUserTemplate
 from datadog_api_client.v2.model.single_aggregated_connection_response_array import (
     SingleAggregatedConnectionResponseArray,
@@ -9198,6 +9326,13 @@ __all__ = [
     "DowntimeUpdateRequestData",
     "EPSS",
     "EntityAttributes",
+    "EntityContextEntity",
+    "EntityContextEntityAttributes",
+    "EntityContextPage",
+    "EntityContextResponse",
+    "EntityContextResponseMeta",
+    "EntityContextRevision",
+    "EntityContextRevisionAttributes",
     "EntityData",
     "EntityMeta",
     "EntityRelationships",
@@ -10354,6 +10489,11 @@ __all__ = [
     "ListVulnerableAssetsResponse",
     "Log",
     "LogAttributes",
+    "LogFormattingIssueAttributes",
+    "LogFormattingIssueData",
+    "LogFormattingIssueReason",
+    "LogFormattingIssueType",
+    "LogFormattingIssuesResponse",
     "LogType",
     "LogsAggregateBucket",
     "LogsAggregateBucketValue",
@@ -11730,6 +11870,26 @@ __all__ = [
     "SLOReportStatusGetResponse",
     "SLOReportStatusGetResponseAttributes",
     "SLOReportStatusGetResponseData",
+    "SampleLogGenerationBulkSubscriptionAttributes",
+    "SampleLogGenerationBulkSubscriptionData",
+    "SampleLogGenerationBulkSubscriptionItemMeta",
+    "SampleLogGenerationBulkSubscriptionRequest",
+    "SampleLogGenerationBulkSubscriptionRequestType",
+    "SampleLogGenerationBulkSubscriptionResponse",
+    "SampleLogGenerationBulkSubscriptionResultItem",
+    "SampleLogGenerationDuration",
+    "SampleLogGenerationSubscriptionAttributes",
+    "SampleLogGenerationSubscriptionCreateAttributes",
+    "SampleLogGenerationSubscriptionCreateData",
+    "SampleLogGenerationSubscriptionCreateRequest",
+    "SampleLogGenerationSubscriptionData",
+    "SampleLogGenerationSubscriptionRequestType",
+    "SampleLogGenerationSubscriptionResourceType",
+    "SampleLogGenerationSubscriptionResponse",
+    "SampleLogGenerationSubscriptionStatus",
+    "SampleLogGenerationSubscriptionsResponse",
+    "SampleLogGenerationSubscriptionsResponseMeta",
+    "SampleLogGenerationSubscriptionsStatusFilter",
     "ScaRequest",
     "ScaRequestData",
     "ScaRequestDataAttributes",
@@ -11868,6 +12028,11 @@ __all__ = [
     "SecurityFilterUpdateAttributes",
     "SecurityFilterUpdateData",
     "SecurityFilterUpdateRequest",
+    "SecurityFilterVersion",
+    "SecurityFilterVersionAttributes",
+    "SecurityFilterVersionEntry",
+    "SecurityFilterVersionType",
+    "SecurityFilterVersionsResponse",
     "SecurityFiltersResponse",
     "SecurityFindingsAttributes",
     "SecurityFindingsData",
@@ -11904,6 +12069,24 @@ __all__ = [
     "SecurityMonitoringCriticalAssetsResponse",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
+    "SecurityMonitoringIntegrationConfigAttributes",
+    "SecurityMonitoringIntegrationConfigCreateAttributes",
+    "SecurityMonitoringIntegrationConfigCreateData",
+    "SecurityMonitoringIntegrationConfigCreateRequest",
+    "SecurityMonitoringIntegrationConfigData",
+    "SecurityMonitoringIntegrationConfigResourceType",
+    "SecurityMonitoringIntegrationConfigResponse",
+    "SecurityMonitoringIntegrationConfigSecrets",
+    "SecurityMonitoringIntegrationConfigSettings",
+    "SecurityMonitoringIntegrationConfigState",
+    "SecurityMonitoringIntegrationConfigUpdateAttributes",
+    "SecurityMonitoringIntegrationConfigUpdateData",
+    "SecurityMonitoringIntegrationConfigUpdateRequest",
+    "SecurityMonitoringIntegrationConfigsResponse",
+    "SecurityMonitoringIntegrationCredentialsValidateAttributes",
+    "SecurityMonitoringIntegrationCredentialsValidateData",
+    "SecurityMonitoringIntegrationCredentialsValidateRequest",
+    "SecurityMonitoringIntegrationType",
     "SecurityMonitoringListRulesResponse",
     "SecurityMonitoringPaginatedSuppressionsResponse",
     "SecurityMonitoringReferenceTable",
@@ -12235,6 +12418,11 @@ __all__ = [
     "ShiftDataRelationshipsUserDataType",
     "ShiftDataType",
     "ShiftIncluded",
+    "SignalEntitiesAttributes",
+    "SignalEntitiesData",
+    "SignalEntitiesResponse",
+    "SignalEntitiesType",
+    "SignalEntityIdentity",
     "SimpleMonitorUserTemplate",
     "SingleAggregatedConnectionResponseArray",
     "SingleAggregatedConnectionResponseData",

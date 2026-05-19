@@ -82,9 +82,26 @@ from datadog_api_client.v2.model.security_monitoring_critical_asset_create_reque
 from datadog_api_client.v2.model.security_monitoring_critical_asset_update_request import (
     SecurityMonitoringCriticalAssetUpdateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_integration_configs_response import (
+    SecurityMonitoringIntegrationConfigsResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_type import SecurityMonitoringIntegrationType
+from datadog_api_client.v2.model.security_monitoring_integration_config_response import (
+    SecurityMonitoringIntegrationConfigResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_create_request import (
+    SecurityMonitoringIntegrationConfigCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_request import (
+    SecurityMonitoringIntegrationCredentialsValidateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_update_request import (
+    SecurityMonitoringIntegrationConfigUpdateRequest,
+)
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
+from datadog_api_client.v2.model.security_filter_versions_response import SecurityFilterVersionsResponse
 from datadog_api_client.v2.model.security_filter_update_request import SecurityFilterUpdateRequest
 from datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response import (
     SecurityMonitoringPaginatedSuppressionsResponse,
@@ -110,6 +127,8 @@ from datadog_api_client.v2.model.get_suppression_version_history_response import
 from datadog_api_client.v2.model.security_monitoring_content_pack_states_response import (
     SecurityMonitoringContentPackStatesResponse,
 )
+from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
+from datadog_api_client.v2.model.log_formatting_issues_response import LogFormattingIssuesResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
@@ -132,6 +151,24 @@ from datadog_api_client.v2.model.security_monitoring_rule_validate_payload impor
 from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
 from datadog_api_client.v2.model.get_rule_version_history_response import GetRuleVersionHistoryResponse
+from datadog_api_client.v2.model.sample_log_generation_subscriptions_response import (
+    SampleLogGenerationSubscriptionsResponse,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscriptions_status_filter import (
+    SampleLogGenerationSubscriptionsStatusFilter,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_response import (
+    SampleLogGenerationSubscriptionResponse,
+)
+from datadog_api_client.v2.model.sample_log_generation_subscription_create_request import (
+    SampleLogGenerationSubscriptionCreateRequest,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_response import (
+    SampleLogGenerationBulkSubscriptionResponse,
+)
+from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_request import (
+    SampleLogGenerationBulkSubscriptionRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_signals_list_response import SecurityMonitoringSignalsListResponse
 from datadog_api_client.v2.model.security_monitoring_signals_sort import SecurityMonitoringSignalsSort
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
@@ -155,6 +192,7 @@ from datadog_api_client.v2.model.security_monitoring_signal_triage_update_respon
 from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_request import (
     SecurityMonitoringSignalAssigneeUpdateRequest,
 )
+from datadog_api_client.v2.model.signal_entities_response import SignalEntitiesResponse
 from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_request import (
     SecurityMonitoringSignalIncidentsUpdateRequest,
 )
@@ -259,6 +297,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AttachJiraIssueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._bulk_create_sample_log_generation_subscriptions_endpoint = _Endpoint(
+            settings={
+                "response_type": (SampleLogGenerationBulkSubscriptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/sample_log_generation/subscriptions/bulk",
+                "operation_id": "bulk_create_sample_log_generation_subscriptions",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SampleLogGenerationBulkSubscriptionRequest,),
                     "location": "body",
                 },
             },
@@ -564,6 +622,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_sample_log_generation_subscription_endpoint = _Endpoint(
+            settings={
+                "response_type": (SampleLogGenerationSubscriptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/sample_log_generation/subscriptions",
+                "operation_id": "create_sample_log_generation_subscription",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SampleLogGenerationSubscriptionCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityFilterResponse,),
@@ -597,6 +675,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (SecurityMonitoringCriticalAssetCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_security_monitoring_integration_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringIntegrationConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config",
+                "operation_id": "create_security_monitoring_integration_config",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringIntegrationConfigCreateRequest,),
                     "location": "body",
                 },
             },
@@ -759,6 +857,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._delete_sample_log_generation_subscription_endpoint = _Endpoint(
+            settings={
+                "response_type": (SampleLogGenerationSubscriptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/sample_log_generation/subscriptions/{content_pack_id}",
+                "operation_id": "delete_sample_log_generation_subscription",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "content_pack_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "content_pack_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_security_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -796,6 +917,29 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "critical_asset_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_security_monitoring_integration_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/{integration_config_id}",
+                "operation_id": "delete_security_monitoring_integration_config",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "integration_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_config_id",
                     "location": "path",
                 },
             },
@@ -1110,6 +1254,53 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "version",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_entity_context_endpoint = _Endpoint(
+            settings={
+                "response_type": (EntityContextResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/entity_context",
+                "operation_id": "get_entity_context",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
+                "_from": {
+                    "openapi_types": (str,),
+                    "attribute": "from",
+                    "location": "query",
+                },
+                "to": {
+                    "openapi_types": (str,),
+                    "attribute": "to",
+                    "location": "query",
+                },
+                "as_of": {
+                    "openapi_types": (str,),
+                    "attribute": "as_of",
+                    "location": "query",
+                },
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "page_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page_token",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1463,6 +1654,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_security_monitoring_integration_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringIntegrationConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/{integration_config_id}",
+                "operation_id": "get_security_monitoring_integration_config",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "integration_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_config_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
@@ -1524,6 +1738,37 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "suppression_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_signal_entities_endpoint = _Endpoint(
+            settings={
+                "response_type": (SignalEntitiesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/signals/{signal_id}/entities",
+                "operation_id": "get_signal_entities",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "signal_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "signal_id",
+                    "location": "path",
+                },
+                "limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1954,6 +2199,33 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_log_formatting_issues_endpoint = _Endpoint(
+            settings={
+                "response_type": (LogFormattingIssuesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/log_formatting_issues",
+                "operation_id": "list_log_formatting_issues",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_from": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[to]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_multiple_rulesets_endpoint = _Endpoint(
             settings={
                 "response_type": (GetMultipleRulesetsResponse,),
@@ -1971,6 +2243,38 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._list_sample_log_generation_subscriptions_endpoint = _Endpoint(
+            settings={
+                "response_type": (SampleLogGenerationSubscriptionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/sample_log_generation/subscriptions",
+                "operation_id": "list_sample_log_generation_subscriptions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "status": {
+                    "openapi_types": (SampleLogGenerationSubscriptionsStatusFilter,),
+                    "attribute": "status",
+                    "location": "query",
+                },
+                "start_timestamp": {
+                    "openapi_types": (datetime,),
+                    "attribute": "start_timestamp",
+                    "location": "query",
+                },
+                "end_timestamp": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_timestamp",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -2030,6 +2334,22 @@ class SecurityMonitoringApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters",
                 "operation_id": "list_security_filters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_security_filter_versions_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityFilterVersionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/security_filters/versions",
+                "operation_id": "list_security_filter_versions",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -2138,6 +2458,28 @@ class SecurityMonitoringApi:
                     },
                     "openapi_types": (int,),
                     "attribute": "page[limit]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_security_monitoring_integration_configs_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringIntegrationConfigsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config",
+                "operation_id": "list_security_monitoring_integration_configs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_integration_type": {
+                    "openapi_types": (SecurityMonitoringIntegrationType,),
+                    "attribute": "filter[integration_type]",
                     "location": "query",
                 },
             },
@@ -2943,6 +3285,32 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._update_security_monitoring_integration_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringIntegrationConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/{integration_config_id}",
+                "operation_id": "update_security_monitoring_integration_config",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "integration_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_config_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringIntegrationConfigUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleResponse,),
@@ -2992,6 +3360,49 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._validate_security_monitoring_integration_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/{integration_config_id}/validate",
+                "operation_id": "validate_security_monitoring_integration_config",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "integration_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_config_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._validate_security_monitoring_integration_credentials_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/validate",
+                "operation_id": "validate_security_monitoring_integration_credentials",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringIntegrationCredentialsValidateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -3092,6 +3503,29 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
+
+    def bulk_create_sample_log_generation_subscriptions(
+        self,
+        body: SampleLogGenerationBulkSubscriptionRequest,
+    ) -> SampleLogGenerationBulkSubscriptionResponse:
+        """Bulk subscribe to sample log generation.
+
+        Subscribe to sample log generation for multiple Cloud SIEM content packs in a single call.
+        Each requested content pack is processed independently; the response includes a per-item
+        status so partial successes can be inspected.
+
+        **Availability** : this endpoint is restricted to Cloud SIEM trial organizations on an
+        eligible pricing model. Non-trial orgs receive ``403 Forbidden`` , the feature flag may also reject
+        requests with ``400 Bad Request`` , and legacy pricing tiers receive per-item responses with ``status: not_available``.
+
+        :param body: The content packs to subscribe to and the desired duration of the subscriptions.
+        :type body: SampleLogGenerationBulkSubscriptionRequest
+        :rtype: SampleLogGenerationBulkSubscriptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._bulk_create_sample_log_generation_subscriptions_endpoint.call_with_http_info(**kwargs)
 
     def bulk_delete_security_monitoring_rules(
         self,
@@ -3364,6 +3798,29 @@ class SecurityMonitoringApi:
 
         return self._create_jira_issues_endpoint.call_with_http_info(**kwargs)
 
+    def create_sample_log_generation_subscription(
+        self,
+        body: SampleLogGenerationSubscriptionCreateRequest,
+    ) -> SampleLogGenerationSubscriptionResponse:
+        """Subscribe to sample log generation.
+
+        Subscribe to sample log generation for a Cloud SIEM content pack. Sample logs for the
+        requested content pack are injected into the Logs platform for the duration of the subscription,
+        so detection rules can be exercised without onboarding the underlying integration first.
+
+        **Availability** : this endpoint is restricted to Cloud SIEM trial organizations on an
+        eligible pricing model. Non-trial orgs receive ``403 Forbidden`` , the feature flag may also reject
+        requests with ``400 Bad Request`` , and legacy pricing tiers receive a response with ``status: not_available``.
+
+        :param body: The content pack to subscribe to and the desired duration of the subscription.
+        :type body: SampleLogGenerationSubscriptionCreateRequest
+        :rtype: SampleLogGenerationSubscriptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_sample_log_generation_subscription_endpoint.call_with_http_info(**kwargs)
+
     def create_security_filter(
         self,
         body: SecurityFilterCreateRequest,
@@ -3400,6 +3857,25 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_security_monitoring_critical_asset_endpoint.call_with_http_info(**kwargs)
+
+    def create_security_monitoring_integration_config(
+        self,
+        body: SecurityMonitoringIntegrationConfigCreateRequest,
+    ) -> SecurityMonitoringIntegrationConfigResponse:
+        """Create an entity context sync configuration.
+
+        Create a new entity context sync configuration so Cloud SIEM can ingest entities from an external
+        source. The credentials provided in ``secrets`` are validated against the source before the configuration
+        is stored and never returned in subsequent responses.
+
+        :param body: The definition of the new integration configuration.
+        :type body: SecurityMonitoringIntegrationConfigCreateRequest
+        :rtype: SecurityMonitoringIntegrationConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_security_monitoring_integration_config_endpoint.call_with_http_info(**kwargs)
 
     def create_security_monitoring_rule(
         self,
@@ -3532,6 +4008,28 @@ class SecurityMonitoringApi:
 
         return self._delete_historical_job_endpoint.call_with_http_info(**kwargs)
 
+    def delete_sample_log_generation_subscription(
+        self,
+        content_pack_id: str,
+    ) -> SampleLogGenerationSubscriptionResponse:
+        """Unsubscribe from sample log generation.
+
+        Unsubscribe from sample log generation for a Cloud SIEM content pack.
+        After unsubscribing, no more sample logs are generated for the requested content pack.
+
+        **Availability** : this endpoint is restricted to Cloud SIEM trial organizations on an
+        eligible pricing model. Non-trial orgs receive ``403 Forbidden`` , the feature flag may also reject
+        requests with ``400 Bad Request`` , and legacy pricing tiers receive a response with ``status: not_available``.
+
+        :param content_pack_id: The identifier of the Cloud SIEM content pack to operate on (for example, ``aws-cloudtrail`` ).
+        :type content_pack_id: str
+        :rtype: SampleLogGenerationSubscriptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["content_pack_id"] = content_pack_id
+
+        return self._delete_sample_log_generation_subscription_endpoint.call_with_http_info(**kwargs)
+
     def delete_security_filter(
         self,
         security_filter_id: str,
@@ -3565,6 +4063,24 @@ class SecurityMonitoringApi:
         kwargs["critical_asset_id"] = critical_asset_id
 
         return self._delete_security_monitoring_critical_asset_endpoint.call_with_http_info(**kwargs)
+
+    def delete_security_monitoring_integration_config(
+        self,
+        integration_config_id: str,
+    ) -> None:
+        """Delete an entity context sync configuration.
+
+        Delete an entity context sync configuration. Cloud SIEM stops ingesting entities from this source,
+        and the credentials stored for the configuration are removed from the secrets store.
+
+        :param integration_config_id: The ID of the entity context sync configuration.
+        :type integration_config_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration_config_id"] = integration_config_id
+
+        return self._delete_security_monitoring_integration_config_endpoint.call_with_http_info(**kwargs)
 
     def delete_security_monitoring_rule(
         self,
@@ -3814,6 +4330,62 @@ class SecurityMonitoringApi:
         kwargs["version"] = version
 
         return self._get_custom_framework_endpoint.call_with_http_info(**kwargs)
+
+    def get_entity_context(
+        self,
+        *,
+        query: Union[str, UnsetType] = unset,
+        _from: Union[str, UnsetType] = unset,
+        to: Union[str, UnsetType] = unset,
+        as_of: Union[str, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        page_token: Union[str, UnsetType] = unset,
+    ) -> EntityContextResponse:
+        """Get entity context.
+
+        Search the Cloud SIEM entity context store for entities that match a query, and return the historical
+        revisions of each entity in the requested time range. The endpoint can either return revisions across an
+        interval ( ``from`` / ``to`` ) or the snapshot of each entity at a single point in time ( ``as_of`` ); the two modes
+        are mutually exclusive.
+
+        :param query: A free-text query (for example, an email address or principal ID) used to filter the entities returned.
+        :type query: str, optional
+        :param _from: The start of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now-7d`` ).
+            Defaults to ``now-7d``. Ignored when ``as_of`` is set.
+        :type _from: str, optional
+        :param to: The end of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now`` ).
+            Defaults to ``now``. Ignored when ``as_of`` is set.
+        :type to: str, optional
+        :param as_of: A point in time at which to query the entity revisions, as an RFC3339 timestamp, a Unix timestamp
+            (in seconds), or a relative time (for example, ``now-1d`` ). When set, ``from`` and ``to`` are ignored.
+            Cannot be combined with custom ``from`` / ``to`` values.
+        :type as_of: str, optional
+        :param limit: The maximum number of entities to return.
+        :type limit: int, optional
+        :param page_token: An opaque token used to fetch the next page of results, as returned in ``meta.page.next_token`` of a previous response.
+        :type page_token: str, optional
+        :rtype: EntityContextResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
+        if _from is not unset:
+            kwargs["_from"] = _from
+
+        if to is not unset:
+            kwargs["to"] = to
+
+        if as_of is not unset:
+            kwargs["as_of"] = as_of
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if page_token is not unset:
+            kwargs["page_token"] = page_token
+
+        return self._get_entity_context_endpoint.call_with_http_info(**kwargs)
 
     def get_finding(
         self,
@@ -4106,6 +4678,23 @@ class SecurityMonitoringApi:
 
         return self._get_security_monitoring_histsignals_by_job_id_endpoint.call_with_http_info(**kwargs)
 
+    def get_security_monitoring_integration_config(
+        self,
+        integration_config_id: str,
+    ) -> SecurityMonitoringIntegrationConfigResponse:
+        """Get an entity context sync configuration.
+
+        Get the details of a specific entity context sync configuration.
+
+        :param integration_config_id: The ID of the entity context sync configuration.
+        :type integration_config_id: str
+        :rtype: SecurityMonitoringIntegrationConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration_config_id"] = integration_config_id
+
+        return self._get_security_monitoring_integration_config_endpoint.call_with_http_info(**kwargs)
+
     def get_security_monitoring_rule(
         self,
         rule_id: str,
@@ -4156,6 +4745,30 @@ class SecurityMonitoringApi:
         kwargs["suppression_id"] = suppression_id
 
         return self._get_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def get_signal_entities(
+        self,
+        signal_id: str,
+        *,
+        limit: Union[int, UnsetType] = unset,
+    ) -> SignalEntitiesResponse:
+        """Get entities related to a signal.
+
+        Get the list of entities related to a security signal, captured at the signal's timestamp.
+
+        :param signal_id: The ID of the signal.
+        :type signal_id: str
+        :param limit: The maximum number of entities to return.
+        :type limit: int, optional
+        :rtype: SignalEntitiesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["signal_id"] = signal_id
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        return self._get_signal_entities_endpoint.call_with_http_info(**kwargs)
 
     def get_signal_notification_rule(
         self,
@@ -4716,6 +5329,36 @@ class SecurityMonitoringApi:
 
         return self._list_indicators_of_compromise_endpoint.call_with_http_info(**kwargs)
 
+    def list_log_formatting_issues(
+        self,
+        *,
+        filter_from: Union[str, UnsetType] = unset,
+        filter_to: Union[str, UnsetType] = unset,
+    ) -> LogFormattingIssuesResponse:
+        """Get Cloud SIEM log formatting issues.
+
+        Get the list of log sources whose logs are not properly formatted for Cloud SIEM detection rules in the
+        requested time range. Each item identifies a log source and the machine-readable reason its logs cannot
+        be used by detection rules. Primarily used by the Cloud SIEM UI to surface onboarding and pipeline
+        warnings, but also useful for programmatic health checks.
+
+        :param filter_from: The start of the time range to inspect, as an RFC3339 timestamp or a relative time (for example, ``now-1d`` ).
+            Defaults to ``now-1d``.
+        :type filter_from: str, optional
+        :param filter_to: The end of the time range to inspect, as an RFC3339 timestamp or a relative time (for example, ``now`` ).
+            Defaults to ``now``.
+        :type filter_to: str, optional
+        :rtype: LogFormattingIssuesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        return self._list_log_formatting_issues_endpoint.call_with_http_info(**kwargs)
+
     def list_multiple_rulesets(
         self,
         body: GetMultipleRulesetsRequest,
@@ -4731,6 +5374,48 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._list_multiple_rulesets_endpoint.call_with_http_info(**kwargs)
+
+    def list_sample_log_generation_subscriptions(
+        self,
+        *,
+        status: Union[SampleLogGenerationSubscriptionsStatusFilter, UnsetType] = unset,
+        start_timestamp: Union[datetime, UnsetType] = unset,
+        end_timestamp: Union[datetime, UnsetType] = unset,
+    ) -> SampleLogGenerationSubscriptionsResponse:
+        """Get sample log generation subscriptions.
+
+        Get the sample log generation subscriptions for the organization.
+        Sample log generation injects representative example logs for a given Cloud SIEM content pack into the Logs platform,
+        which can be used to test detection rules without onboarding the underlying integration first.
+
+        **Availability** : this endpoint is restricted to Cloud SIEM trial organizations on an eligible
+        pricing model. Other organizations receive a ``403 Forbidden`` (non-trial orgs) or a ``400 Bad Request``
+        (feature disabled), and legacy pricing tiers receive a response with ``status: not_available``.
+
+        :param status: Filter the subscriptions by status. Use ``active`` to return only currently active
+            subscriptions, or ``all`` to return every subscription including expired ones.
+            Ignored when ``start_timestamp`` is provided. Defaults to ``active``.
+        :type status: SampleLogGenerationSubscriptionsStatusFilter, optional
+        :param start_timestamp: The start of the time range, as an RFC3339 timestamp. When provided, the response includes
+            every subscription that was active at any point in ``[start_timestamp, end_timestamp]`` ,
+            and the ``status`` filter is ignored.
+        :type start_timestamp: datetime, optional
+        :param end_timestamp: The end of the time range, as an RFC3339 timestamp. Ignored unless ``start_timestamp`` is set.
+            Defaults to the current time when ``start_timestamp`` is provided.
+        :type end_timestamp: datetime, optional
+        :rtype: SampleLogGenerationSubscriptionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if status is not unset:
+            kwargs["status"] = status
+
+        if start_timestamp is not unset:
+            kwargs["start_timestamp"] = start_timestamp
+
+        if end_timestamp is not unset:
+            kwargs["end_timestamp"] = end_timestamp
+
+        return self._list_sample_log_generation_subscriptions_endpoint.call_with_http_info(**kwargs)
 
     def list_scanned_assets_metadata(
         self,
@@ -4860,6 +5545,20 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_security_filters_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_filter_versions(
+        self,
+    ) -> SecurityFilterVersionsResponse:
+        """Get the version history of security filters.
+
+        Get the configured security filters at each historical version of the configuration.
+        Each entry in the response represents the set of all security filters at a given version,
+        ordered from the most recent version to the oldest.
+
+        :rtype: SecurityFilterVersionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_security_filter_versions_endpoint.call_with_http_info(**kwargs)
 
     def list_security_findings(
         self,
@@ -5014,6 +5713,27 @@ class SecurityMonitoringApi:
             kwargs["page_limit"] = page_limit
 
         return self._list_security_monitoring_histsignals_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_monitoring_integration_configs(
+        self,
+        *,
+        filter_integration_type: Union[SecurityMonitoringIntegrationType, UnsetType] = unset,
+    ) -> SecurityMonitoringIntegrationConfigsResponse:
+        """List entity context sync configurations.
+
+        List the entity context sync configurations for Cloud SIEM. Each configuration connects Cloud SIEM
+        to an external source that provides entities (for example, users from an identity provider) for use
+        in signals and the entity explorer.
+
+        :param filter_integration_type: Filter the entity context sync configurations by source type.
+        :type filter_integration_type: SecurityMonitoringIntegrationType, optional
+        :rtype: SecurityMonitoringIntegrationConfigsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_integration_type is not unset:
+            kwargs["filter_integration_type"] = filter_integration_type
+
+        return self._list_security_monitoring_integration_configs_endpoint.call_with_http_info(**kwargs)
 
     def list_security_monitoring_rules(
         self,
@@ -6038,6 +6758,28 @@ class SecurityMonitoringApi:
 
         return self._update_security_monitoring_critical_asset_endpoint.call_with_http_info(**kwargs)
 
+    def update_security_monitoring_integration_config(
+        self,
+        integration_config_id: str,
+        body: SecurityMonitoringIntegrationConfigUpdateRequest,
+    ) -> SecurityMonitoringIntegrationConfigResponse:
+        """Update an entity context sync configuration.
+
+        Update an existing entity context sync configuration. Supports partial updates; only the fields provided in the request body are modified.
+
+        :param integration_config_id: The ID of the entity context sync configuration.
+        :type integration_config_id: str
+        :param body: The fields to update on the integration configuration.
+        :type body: SecurityMonitoringIntegrationConfigUpdateRequest
+        :rtype: SecurityMonitoringIntegrationConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration_config_id"] = integration_config_id
+
+        kwargs["body"] = body
+
+        return self._update_security_monitoring_integration_config_endpoint.call_with_http_info(**kwargs)
+
     def update_security_monitoring_rule(
         self,
         rule_id: str,
@@ -6083,6 +6825,42 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def validate_security_monitoring_integration_config(
+        self,
+        integration_config_id: str,
+    ) -> None:
+        """Validate an entity context sync configuration.
+
+        Validate the credentials currently stored on an existing entity context sync configuration.
+        Returns a 200 status code if the credentials are still valid against the external entity source.
+
+        :param integration_config_id: The ID of the entity context sync configuration.
+        :type integration_config_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration_config_id"] = integration_config_id
+
+        return self._validate_security_monitoring_integration_config_endpoint.call_with_http_info(**kwargs)
+
+    def validate_security_monitoring_integration_credentials(
+        self,
+        body: SecurityMonitoringIntegrationCredentialsValidateRequest,
+    ) -> None:
+        """Validate entity context sync credentials.
+
+        Validate a set of credentials against the external entity source before creating a sync configuration.
+        Returns a 200 status code if the credentials are valid.
+
+        :param body: The credentials to validate.
+        :type body: SecurityMonitoringIntegrationCredentialsValidateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._validate_security_monitoring_integration_credentials_endpoint.call_with_http_info(**kwargs)
 
     def validate_security_monitoring_rule(
         self,
