@@ -1,6 +1,6 @@
 {%- for api in apis %}
 {%- set classname = api|class_name %}
-from {{ package }}.{{ version }}.api.{{ classname|safe_snake_case }} import {{ classname }}
+from {{ package }}.{{ version }}.api.{{ api|safe_snake_case }}_api import {{ classname }}
 {%- endfor %}
 
 
