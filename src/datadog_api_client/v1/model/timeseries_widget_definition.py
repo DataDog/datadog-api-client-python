@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.timeseries_widget_anomaly_detection import TimeseriesWidgetAnomalyDetection
     from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
     from datadog_api_client.v1.model.widget_event import WidgetEvent
     from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
@@ -38,6 +39,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.timeseries_widget_anomaly_detection import TimeseriesWidgetAnomalyDetection
         from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
         from datadog_api_client.v1.model.widget_event import WidgetEvent
         from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
@@ -50,6 +52,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
         from datadog_api_client.v1.model.timeseries_widget_definition_type import TimeseriesWidgetDefinitionType
 
         return {
+            "anomaly_detection": (TimeseriesWidgetAnomalyDetection,),
             "custom_links": ([WidgetCustomLink],),
             "description": (str,),
             "events": ([WidgetEvent],),
@@ -69,6 +72,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
         }
 
     attribute_map = {
+        "anomaly_detection": "anomaly_detection",
         "custom_links": "custom_links",
         "description": "description",
         "events": "events",
@@ -91,6 +95,7 @@ class TimeseriesWidgetDefinition(ModelNormal):
         self_,
         requests: List[TimeseriesWidgetRequest],
         type: TimeseriesWidgetDefinitionType,
+        anomaly_detection: Union[TimeseriesWidgetAnomalyDetection, UnsetType] = unset,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         events: Union[List[WidgetEvent], UnsetType] = unset,
@@ -109,6 +114,9 @@ class TimeseriesWidgetDefinition(ModelNormal):
     ):
         """
         The timeseries visualization allows you to display the evolution of one or more metrics, log events, or Indexed Spans over time.
+
+        :param anomaly_detection: Anomaly detection configuration for a timeseries widget.
+        :type anomaly_detection: TimeseriesWidgetAnomalyDetection, optional
 
         :param custom_links: List of custom links.
         :type custom_links: [WidgetCustomLink], optional
@@ -158,6 +166,8 @@ class TimeseriesWidgetDefinition(ModelNormal):
         :param yaxis: Axis controls for the widget.
         :type yaxis: WidgetAxis, optional
         """
+        if anomaly_detection is not unset:
+            kwargs["anomaly_detection"] = anomaly_detection
         if custom_links is not unset:
             kwargs["custom_links"] = custom_links
         if description is not unset:
