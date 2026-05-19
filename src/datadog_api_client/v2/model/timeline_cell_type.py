@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class TimelineCellType(ModelSimple):
     """
-    The type of content in the timeline cell. Currently only `COMMENT` is supported in this endpoint.
+    Timeline cell content type
 
     :param value: If omitted defaults to "COMMENT". Must be one of ["COMMENT"].
     :type value: str

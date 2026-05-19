@@ -3,13 +3,17 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Dict, List, Union, TYPE_CHECKING
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
+    none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -22,6 +26,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
     from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
     from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
+    from datadog_api_client.v1.model.synthetics_mcp_protocol_version import SyntheticsMCPProtocolVersion
     from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
     from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
     from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
@@ -53,6 +58,7 @@ class SyntheticsTestRequest(ModelNormal):
         from datadog_api_client.v1.model.synthetics_test_request_body_file import SyntheticsTestRequestBodyFile
         from datadog_api_client.v1.model.synthetics_test_headers import SyntheticsTestHeaders
         from datadog_api_client.v1.model.synthetics_test_options_http_version import SyntheticsTestOptionsHTTPVersion
+        from datadog_api_client.v1.model.synthetics_mcp_protocol_version import SyntheticsMCPProtocolVersion
         from datadog_api_client.v1.model.synthetics_test_metadata import SyntheticsTestMetadata
         from datadog_api_client.v1.model.synthetics_test_request_port import SyntheticsTestRequestPort
         from datadog_api_client.v1.model.synthetics_test_request_proxy import SyntheticsTestRequestProxy
@@ -78,6 +84,7 @@ class SyntheticsTestRequest(ModelNormal):
             "host": (str,),
             "http_version": (SyntheticsTestOptionsHTTPVersion,),
             "is_message_base64_encoded": (bool,),
+            "mcp_protocol_version": (SyntheticsMCPProtocolVersion,),
             "message": (str,),
             "metadata": (SyntheticsTestMetadata,),
             "method": (str,),
@@ -91,6 +98,23 @@ class SyntheticsTestRequest(ModelNormal):
             "service": (str,),
             "should_track_hops": (bool,),
             "timeout": (float,),
+            "tool_args": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+            ),
+            "tool_name": (str,),
             "url": (str,),
         }
 
@@ -115,6 +139,7 @@ class SyntheticsTestRequest(ModelNormal):
         "host": "host",
         "http_version": "httpVersion",
         "is_message_base64_encoded": "isMessageBase64Encoded",
+        "mcp_protocol_version": "mcpProtocolVersion",
         "message": "message",
         "metadata": "metadata",
         "method": "method",
@@ -128,6 +153,8 @@ class SyntheticsTestRequest(ModelNormal):
         "service": "service",
         "should_track_hops": "shouldTrackHops",
         "timeout": "timeout",
+        "tool_args": "toolArgs",
+        "tool_name": "toolName",
         "url": "url",
     }
 
@@ -162,6 +189,7 @@ class SyntheticsTestRequest(ModelNormal):
         host: Union[str, UnsetType] = unset,
         http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
         is_message_base64_encoded: Union[bool, UnsetType] = unset,
+        mcp_protocol_version: Union[SyntheticsMCPProtocolVersion, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         metadata: Union[SyntheticsTestMetadata, UnsetType] = unset,
         method: Union[str, UnsetType] = unset,
@@ -175,6 +203,8 @@ class SyntheticsTestRequest(ModelNormal):
         service: Union[str, UnsetType] = unset,
         should_track_hops: Union[bool, UnsetType] = unset,
         timeout: Union[float, UnsetType] = unset,
+        tool_args: Union[Dict[str, Any], UnsetType] = unset,
+        tool_name: Union[str, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -193,7 +223,9 @@ class SyntheticsTestRequest(ModelNormal):
         :param body_type: Type of the request body.
         :type body_type: SyntheticsTestRequestBodyType, optional
 
-        :param call_type: The type of gRPC call to perform.
+        :param call_type: The type of call to perform. Used by gRPC steps ( ``healthcheck`` , ``unary`` )
+            and MCP steps ( ``init`` , ``tool_list`` , ``tool_call`` ). Valid values depend on
+            the parent step's ``subtype``.
         :type call_type: SyntheticsTestCallType, optional
 
         :param certificate: Client certificate to use when performing the test request.
@@ -241,6 +273,9 @@ class SyntheticsTestRequest(ModelNormal):
         :param is_message_base64_encoded: Whether the message is base64 encoded.
         :type is_message_base64_encoded: bool, optional
 
+        :param mcp_protocol_version: The MCP protocol version used by the step. See https://modelcontextprotocol.io/specification.
+        :type mcp_protocol_version: SyntheticsMCPProtocolVersion, optional
+
         :param message: Message to send for UDP or WebSocket tests.
         :type message: str, optional
 
@@ -281,6 +316,12 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param timeout: Timeout in seconds for the test.
         :type timeout: float, optional
+
+        :param tool_args: Arguments to pass to the MCP tool. Free-form object whose shape depends on the tool. Used when ``callType`` is ``tool_call``.
+        :type tool_args: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
+
+        :param tool_name: The name of the MCP tool to call. Required when ``callType`` is ``tool_call``.
+        :type tool_name: str, optional
 
         :param url: URL to perform the test with.
         :type url: str, optional
@@ -325,6 +366,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["http_version"] = http_version
         if is_message_base64_encoded is not unset:
             kwargs["is_message_base64_encoded"] = is_message_base64_encoded
+        if mcp_protocol_version is not unset:
+            kwargs["mcp_protocol_version"] = mcp_protocol_version
         if message is not unset:
             kwargs["message"] = message
         if metadata is not unset:
@@ -351,6 +394,10 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["should_track_hops"] = should_track_hops
         if timeout is not unset:
             kwargs["timeout"] = timeout
+        if tool_args is not unset:
+            kwargs["tool_args"] = tool_args
+        if tool_name is not unset:
+            kwargs["tool_name"] = tool_name
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)

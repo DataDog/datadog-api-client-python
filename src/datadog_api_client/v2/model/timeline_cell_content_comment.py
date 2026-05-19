@@ -26,9 +26,9 @@ class TimelineCellContentComment(ModelNormal):
 
     def __init__(self_, message: Union[str, UnsetType] = unset, **kwargs):
         """
-        The content of a comment timeline cell.
+        comment content
 
-        :param message: The text content of the comment. Supports Markdown formatting.
+        :param message: comment message
         :type message: str, optional
         """
         if message is not unset:
