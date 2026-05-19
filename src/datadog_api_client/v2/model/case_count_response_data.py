@@ -1,0 +1,52 @@
+# Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
+# This product includes software developed at Datadog (https://www.datadoghq.com/).
+# Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+from datadog_api_client.model_utils import (
+    ModelNormal,
+    cached_property,
+)
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.case_count_response_attributes import CaseCountResponseAttributes
+
+
+class CaseCountResponseData(ModelNormal):
+    @cached_property
+    def openapi_types(_):
+        from datadog_api_client.v2.model.case_count_response_attributes import CaseCountResponseAttributes
+
+        return {
+            "attributes": (CaseCountResponseAttributes,),
+            "id": (str,),
+            "type": (str,),
+        }
+
+    attribute_map = {
+        "attributes": "attributes",
+        "id": "id",
+        "type": "type",
+    }
+
+    def __init__(self_, attributes: CaseCountResponseAttributes, id: str, type: str, **kwargs):
+        """
+        Data object containing the count results, including per-field group breakdowns.
+
+        :param attributes: Attributes for the count response, including the total count and optional facet breakdowns.
+        :type attributes: CaseCountResponseAttributes
+
+        :param id: Count response identifier.
+        :type id: str
+
+        :param type: Count resource type.
+        :type type: str
+        """
+        super().__init__(kwargs)
+
+        self_.attributes = attributes
+        self_.id = id
+        self_.type = type

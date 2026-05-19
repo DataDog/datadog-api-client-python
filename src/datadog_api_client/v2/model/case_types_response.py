@@ -32,7 +32,7 @@ class CaseTypesResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[CaseTypeResource], UnsetType] = unset, **kwargs):
         """
-        Case types response.
+        Response containing a list of case types.
 
         :param data: List of case types
         :type data: [CaseTypeResource], optional

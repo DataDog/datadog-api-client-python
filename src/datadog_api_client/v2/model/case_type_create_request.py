@@ -30,9 +30,9 @@ class CaseTypeCreateRequest(ModelNormal):
 
     def __init__(self_, data: CaseTypeCreate, **kwargs):
         """
-        Case type create request
+        Request payload for creating a case type.
 
-        :param data: Case type
+        :param data: Data object for creating a case type.
         :type data: CaseTypeCreate
         """
         super().__init__(kwargs)

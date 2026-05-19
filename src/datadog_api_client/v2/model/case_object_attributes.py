@@ -17,6 +17,6 @@ class CaseObjectAttributes(ModelNormal):
 
     def __init__(self_, **kwargs):
         """
-        The definition of ``CaseObjectAttributes`` object.
+        Key-value pairs of case attributes. Each key maps to an array of string values, used for flexible metadata such as labels or tags.
         """
         super().__init__(kwargs)

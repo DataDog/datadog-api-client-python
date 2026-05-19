@@ -39,7 +39,7 @@ class CaseUpdateAttributes(ModelNormal):
         :param attributes: Case update attributes attributes
         :type attributes: CaseUpdateAttributesAttributes
 
-        :param type: Case resource type
+        :param type: JSON:API resource type for cases.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

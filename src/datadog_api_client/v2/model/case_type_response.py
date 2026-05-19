@@ -32,9 +32,9 @@ class CaseTypeResponse(ModelNormal):
 
     def __init__(self_, data: Union[CaseTypeResource, UnsetType] = unset, **kwargs):
         """
-        Case type response
+        Response containing a single case type.
 
-        :param data: The definition of ``CaseType`` object.
+        :param data: A case type that defines a classification category for cases. Each case type can have its own custom attributes, statuses, and automation rules.
         :type data: CaseTypeResource, optional
         """
         if data is not unset:
