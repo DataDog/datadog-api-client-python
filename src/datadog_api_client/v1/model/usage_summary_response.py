@@ -109,6 +109,7 @@ class UsageSummaryResponse(ModelNormal):
             "data_jobs_monitoring_host_hr_agg_sum": (int,),
             "dbm_host_top99p_sum": (int,),
             "dbm_queries_avg_sum": (int,),
+            "do_jobs_monitoring_orchestrators_job_hours_agg_sum": (int,),
             "end_date": (datetime,),
             "eph_infra_host_agent_agg_sum": (int,),
             "eph_infra_host_alibaba_agg_sum": (int,),
@@ -365,6 +366,7 @@ class UsageSummaryResponse(ModelNormal):
         "data_jobs_monitoring_host_hr_agg_sum": "data_jobs_monitoring_host_hr_agg_sum",
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",
         "dbm_queries_avg_sum": "dbm_queries_avg_sum",
+        "do_jobs_monitoring_orchestrators_job_hours_agg_sum": "do_jobs_monitoring_orchestrators_job_hours_agg_sum",
         "end_date": "end_date",
         "eph_infra_host_agent_agg_sum": "eph_infra_host_agent_agg_sum",
         "eph_infra_host_alibaba_agg_sum": "eph_infra_host_alibaba_agg_sum",
@@ -622,6 +624,7 @@ class UsageSummaryResponse(ModelNormal):
         data_jobs_monitoring_host_hr_agg_sum: Union[int, UnsetType] = unset,
         dbm_host_top99p_sum: Union[int, UnsetType] = unset,
         dbm_queries_avg_sum: Union[int, UnsetType] = unset,
+        do_jobs_monitoring_orchestrators_job_hours_agg_sum: Union[int, UnsetType] = unset,
         end_date: Union[datetime, UnsetType] = unset,
         eph_infra_host_agent_agg_sum: Union[int, UnsetType] = unset,
         eph_infra_host_alibaba_agg_sum: Union[int, UnsetType] = unset,
@@ -1045,6 +1048,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param dbm_queries_avg_sum: Shows the average of all distinct Database Monitoring Normalized Queries over all hours in the current month for all organizations.
         :type dbm_queries_avg_sum: int, optional
+
+        :param do_jobs_monitoring_orchestrators_job_hours_agg_sum: Shows the sum of all orchestrator job hours over all hours in the current month for all organizations.
+        :type do_jobs_monitoring_orchestrators_job_hours_agg_sum: int, optional
 
         :param end_date: Shows the last date of usage in the current month for all organizations.
         :type end_date: datetime, optional
@@ -1726,6 +1732,10 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["dbm_host_top99p_sum"] = dbm_host_top99p_sum
         if dbm_queries_avg_sum is not unset:
             kwargs["dbm_queries_avg_sum"] = dbm_queries_avg_sum
+        if do_jobs_monitoring_orchestrators_job_hours_agg_sum is not unset:
+            kwargs[
+                "do_jobs_monitoring_orchestrators_job_hours_agg_sum"
+            ] = do_jobs_monitoring_orchestrators_job_hours_agg_sum
         if end_date is not unset:
             kwargs["end_date"] = end_date
         if eph_infra_host_agent_agg_sum is not unset:
