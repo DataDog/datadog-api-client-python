@@ -48,21 +48,21 @@ class CustomAttributeConfigAttributesCreate(ModelNormal):
         **kwargs,
     ):
         """
-        Custom attribute config resource attributes
+        Attributes required to create a custom attribute configuration.
 
-        :param description: Custom attribute description.
+        :param description: A description explaining the purpose and expected values for this custom attribute.
         :type description: str, optional
 
-        :param display_name: Custom attribute name.
+        :param display_name: The human-readable label shown in the Case Management UI for this custom attribute.
         :type display_name: str
 
-        :param is_multi: Whether multiple values can be set
+        :param is_multi: If ``true`` , this attribute accepts an array of values. If ``false`` , only a single value is allowed.
         :type is_multi: bool
 
-        :param key: Custom attribute key. This will be the value use to search on this custom attribute
+        :param key: The programmatic key used to reference this custom attribute in search queries and API calls.
         :type key: str
 
-        :param type: Custom attributes type
+        :param type: The data type of the custom attribute, which determines the allowed values and UI input control.
         :type type: CustomAttributeType
         """
         if description is not unset:
