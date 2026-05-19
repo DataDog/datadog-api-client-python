@@ -39,7 +39,7 @@ class CaseUpdatePriority(ModelNormal):
         :param attributes: Case update priority attributes
         :type attributes: CaseUpdatePriorityAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: Case resource type
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

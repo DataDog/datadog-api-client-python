@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/model-lab-api/runs/70158/artifacts
+  response:
+    body:
+      string: '{"data":{"id":"70158","type":"artifacts","attributes":{"files":[{"path":"lora_model/","is_dir":true}],"path_in_project":"f635c73b70594ab6bb6e212cdf87d0d5/artifacts"}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

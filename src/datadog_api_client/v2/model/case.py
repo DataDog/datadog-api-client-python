@@ -60,7 +60,7 @@ class Case(ModelNormal):
         :param relationships: Resources related to a case
         :type relationships: CaseRelationships, optional
 
-        :param type: JSON:API resource type for cases.
+        :param type: Case resource type
         :type type: CaseResourceType
         """
         if relationships is not unset:

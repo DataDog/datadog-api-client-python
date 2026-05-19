@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/model-lab-api/project-facet-keys
+  response:
+    body:
+      string: '{"data":{"id":"2","type":"facet_keys","attributes":{"metrics":null,"parameters":[],"tags":["age","beatings","mlflow.experimentKind","mlflow.experiment.ownerID","morale","team","usecase","weather"]}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

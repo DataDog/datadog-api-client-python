@@ -10,7 +10,6 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.case_types_response import CaseTypesResponse
 from datadog_api_client.v2.model.case_type_response import CaseTypeResponse
 from datadog_api_client.v2.model.case_type_create_request import CaseTypeCreateRequest
-from datadog_api_client.v2.model.case_type_update_request import CaseTypeUpdateRequest
 
 
 class CaseManagementTypeApi:
@@ -82,32 +81,6 @@ class CaseManagementTypeApi:
             api_client=api_client,
         )
 
-        self._update_case_type_endpoint = _Endpoint(
-            settings={
-                "response_type": (CaseTypeResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/types/{case_type_id}",
-                "operation_id": "update_case_type",
-                "http_method": "PUT",
-                "version": "v2",
-            },
-            params_map={
-                "case_type_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_type_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (CaseTypeUpdateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
     def create_case_type(
         self,
         body: CaseTypeCreateRequest,
@@ -133,7 +106,7 @@ class CaseManagementTypeApi:
 
         Delete a case type
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: Case type's UUID
         :type case_type_id: str
         :rtype: None
         """
@@ -153,25 +126,3 @@ class CaseManagementTypeApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_all_case_types_endpoint.call_with_http_info(**kwargs)
-
-    def update_case_type(
-        self,
-        case_type_id: str,
-        body: CaseTypeUpdateRequest,
-    ) -> CaseTypeResponse:
-        """Update a case type.
-
-        Updates the name, emoji, or description of an existing case type.
-
-        :param case_type_id: The UUID of the case type.
-        :type case_type_id: str
-        :param body: Case type payload.
-        :type body: CaseTypeUpdateRequest
-        :rtype: CaseTypeResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_type_id"] = case_type_id
-
-        kwargs["body"] = body
-
-        return self._update_case_type_endpoint.call_with_http_info(**kwargs)

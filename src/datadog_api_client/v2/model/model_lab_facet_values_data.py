@@ -1,0 +1,54 @@
+# Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
+# This product includes software developed at Datadog (https://www.datadoghq.com/).
+# Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+from datadog_api_client.model_utils import (
+    ModelNormal,
+    cached_property,
+)
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.model_lab_facet_values_attributes import ModelLabFacetValuesAttributes
+    from datadog_api_client.v2.model.model_lab_facet_values_type import ModelLabFacetValuesType
+
+
+class ModelLabFacetValuesData(ModelNormal):
+    @cached_property
+    def openapi_types(_):
+        from datadog_api_client.v2.model.model_lab_facet_values_attributes import ModelLabFacetValuesAttributes
+        from datadog_api_client.v2.model.model_lab_facet_values_type import ModelLabFacetValuesType
+
+        return {
+            "attributes": (ModelLabFacetValuesAttributes,),
+            "id": (str,),
+            "type": (ModelLabFacetValuesType,),
+        }
+
+    attribute_map = {
+        "attributes": "attributes",
+        "id": "id",
+        "type": "type",
+    }
+
+    def __init__(self_, attributes: ModelLabFacetValuesAttributes, id: str, type: ModelLabFacetValuesType, **kwargs):
+        """
+        A facet values JSON:API resource object.
+
+        :param attributes: Available values for a specific facet key.
+        :type attributes: ModelLabFacetValuesAttributes
+
+        :param id: The unique identifier of the facet values resource.
+        :type id: str
+
+        :param type: The JSON:API type for a facet values resource.
+        :type type: ModelLabFacetValuesType
+        """
+        super().__init__(kwargs)
+
+        self_.attributes = attributes
+        self_.id = id
+        self_.type = type
