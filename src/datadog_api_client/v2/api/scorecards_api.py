@@ -31,6 +31,8 @@ from datadog_api_client.v2.model.create_rule_request import CreateRuleRequest
 from datadog_api_client.v2.model.update_rule_response import UpdateRuleResponse
 from datadog_api_client.v2.model.update_rule_request import UpdateRuleRequest
 from datadog_api_client.v2.model.list_scorecards_response import ListScorecardsResponse
+from datadog_api_client.v2.model.list_scorecard_scores_response import ListScorecardScoresResponse
+from datadog_api_client.v2.model.scorecard_scores_aggregation import ScorecardScoresAggregation
 
 
 class ScorecardsApi:
@@ -391,6 +393,74 @@ class ScorecardsApi:
                 "filter_scorecard_description": {
                     "openapi_types": (str,),
                     "attribute": "filter[scorecard][description]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_scorecard_scores_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListScorecardScoresResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/scorecard/scores/{aggregation}",
+                "operation_id": "list_scorecard_scores",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "aggregation": {
+                    "required": True,
+                    "openapi_types": (ScorecardScoresAggregation,),
+                    "attribute": "aggregation",
+                    "location": "path",
+                },
+                "filter_rule_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[rule][id]",
+                    "location": "query",
+                },
+                "filter_rule_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[rule][name]",
+                    "location": "query",
+                },
+                "filter_rule_level": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[rule][level]",
+                    "location": "query",
+                },
+                "filter_rule_scorecard_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[rule][scorecard_id]",
+                    "location": "query",
+                },
+                "filter_rule_is_custom": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[rule][is_custom]",
+                    "location": "query",
+                },
+                "filter_rule_is_enabled": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[rule][is_enabled]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
                     "location": "query",
                 },
             },
@@ -989,6 +1059,78 @@ class ScorecardsApi:
             kwargs["filter_scorecard_description"] = filter_scorecard_description
 
         return self._list_scorecards_endpoint.call_with_http_info(**kwargs)
+
+    def list_scorecard_scores(
+        self,
+        aggregation: ScorecardScoresAggregation,
+        *,
+        filter_rule_id: Union[str, UnsetType] = unset,
+        filter_rule_name: Union[str, UnsetType] = unset,
+        filter_rule_level: Union[str, UnsetType] = unset,
+        filter_rule_scorecard_id: Union[str, UnsetType] = unset,
+        filter_rule_is_custom: Union[bool, UnsetType] = unset,
+        filter_rule_is_enabled: Union[bool, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> ListScorecardScoresResponse:
+        """List all scores.
+
+        Returns a list of scorecard scores for each aggregation type, with score breakdowns.
+
+        :param aggregation: The type of scores being requested.
+        :type aggregation: ScorecardScoresAggregation
+        :param filter_rule_id: Filter scores by rule ID(s), comma-separated.
+        :type filter_rule_id: str, optional
+        :param filter_rule_name: Filter scores by rule name.
+        :type filter_rule_name: str, optional
+        :param filter_rule_level: Filter scores by rule level(s), comma-separated.
+        :type filter_rule_level: str, optional
+        :param filter_rule_scorecard_id: Filter scores by scorecard ID(s), comma-separated.
+        :type filter_rule_scorecard_id: str, optional
+        :param filter_rule_is_custom: Filter scores to show only custom rules.
+        :type filter_rule_is_custom: bool, optional
+        :param filter_rule_is_enabled: Filter scores to show only enabled rules.
+        :type filter_rule_is_enabled: bool, optional
+        :param sort: Sort scores by field. Use a hyphen prefix for descending order. Options: score, numerator, denominator, total_pass, total_fail, total_skip, total_no_data.
+        :type sort: str, optional
+        :param page_offset: Offset for pagination.
+        :type page_offset: int, optional
+        :param page_limit: Number of scores to return. Max is 1000.
+        :type page_limit: int, optional
+        :rtype: ListScorecardScoresResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["aggregation"] = aggregation
+
+        if filter_rule_id is not unset:
+            kwargs["filter_rule_id"] = filter_rule_id
+
+        if filter_rule_name is not unset:
+            kwargs["filter_rule_name"] = filter_rule_name
+
+        if filter_rule_level is not unset:
+            kwargs["filter_rule_level"] = filter_rule_level
+
+        if filter_rule_scorecard_id is not unset:
+            kwargs["filter_rule_scorecard_id"] = filter_rule_scorecard_id
+
+        if filter_rule_is_custom is not unset:
+            kwargs["filter_rule_is_custom"] = filter_rule_is_custom
+
+        if filter_rule_is_enabled is not unset:
+            kwargs["filter_rule_is_enabled"] = filter_rule_is_enabled
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        return self._list_scorecard_scores_endpoint.call_with_http_info(**kwargs)
 
     def update_scorecard_campaign(
         self,

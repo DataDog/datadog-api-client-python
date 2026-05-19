@@ -183,6 +183,20 @@ Feature: Scorecards
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: List all scores returns "Bad Request" response
+    Given new "ListScorecardScores" request
+    And request contains "aggregation" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/service-catalog
+  Scenario: List all scores returns "OK" response
+    Given new "ListScorecardScores" request
+    And request contains "aggregation" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/service-catalog
   Scenario: Update Scorecard outcomes asynchronously returns "Accepted" response
     Given there is a valid "create_scorecard_rule" in the system

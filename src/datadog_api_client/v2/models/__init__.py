@@ -3597,6 +3597,8 @@ from datadog_api_client.v2.model.list_relation_catalog_response_links import Lis
 from datadog_api_client.v2.model.list_rules_response import ListRulesResponse
 from datadog_api_client.v2.model.list_rules_response_data_item import ListRulesResponseDataItem
 from datadog_api_client.v2.model.list_rules_response_links import ListRulesResponseLinks
+from datadog_api_client.v2.model.list_scorecard_scores_meta import ListScorecardScoresMeta
+from datadog_api_client.v2.model.list_scorecard_scores_response import ListScorecardScoresResponse
 from datadog_api_client.v2.model.list_scorecards_response import ListScorecardsResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
@@ -5854,6 +5856,13 @@ from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
 from datadog_api_client.v2.model.scorecard_list_response_attributes import ScorecardListResponseAttributes
 from datadog_api_client.v2.model.scorecard_list_response_data import ScorecardListResponseData
 from datadog_api_client.v2.model.scorecard_list_type import ScorecardListType
+from datadog_api_client.v2.model.scorecard_score_attributes import ScorecardScoreAttributes
+from datadog_api_client.v2.model.scorecard_score_data import ScorecardScoreData
+from datadog_api_client.v2.model.scorecard_score_data_type import ScorecardScoreDataType
+from datadog_api_client.v2.model.scorecard_score_relationship_data import ScorecardScoreRelationshipData
+from datadog_api_client.v2.model.scorecard_score_relationship_item import ScorecardScoreRelationshipItem
+from datadog_api_client.v2.model.scorecard_score_relationships import ScorecardScoreRelationships
+from datadog_api_client.v2.model.scorecard_scores_aggregation import ScorecardScoresAggregation
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
 from datadog_api_client.v2.model.seat_assignments_data_type import SeatAssignmentsDataType
@@ -10537,6 +10546,8 @@ __all__ = [
     "ListRulesResponse",
     "ListRulesResponseDataItem",
     "ListRulesResponseLinks",
+    "ListScorecardScoresMeta",
+    "ListScorecardScoresResponse",
     "ListScorecardsResponse",
     "ListSecurityFindingsResponse",
     "ListTagsResponse",
@@ -12012,6 +12023,13 @@ __all__ = [
     "ScorecardListResponseAttributes",
     "ScorecardListResponseData",
     "ScorecardListType",
+    "ScorecardScoreAttributes",
+    "ScorecardScoreData",
+    "ScorecardScoreDataType",
+    "ScorecardScoreRelationshipData",
+    "ScorecardScoreRelationshipItem",
+    "ScorecardScoreRelationships",
+    "ScorecardScoresAggregation",
     "ScorecardType",
     "SearchIssuesIncludeQueryParameterItem",
     "SeatAssignmentsDataType",
