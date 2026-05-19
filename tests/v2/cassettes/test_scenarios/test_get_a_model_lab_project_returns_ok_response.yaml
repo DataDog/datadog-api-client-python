@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/model-lab-api/projects/2387
+  response:
+    body:
+      string: '{"data":{"id":"2387","type":"projects","attributes":{"artifact_storage_location":"model-lab:///76421","created_at":"2026-05-15T02:54:52.457827Z","description":"","external_url":"https://mlflow.us1.staging.dog/#/experiments/76421","is_starred":false,"name":"ft-gpt2-smoke-1778812860","owner_id":"1d45ac49-1e4e-11f1-8c3a-42221ed6388d","tags":[],"updated_at":"2026-05-15T02:54:52.468614Z"}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

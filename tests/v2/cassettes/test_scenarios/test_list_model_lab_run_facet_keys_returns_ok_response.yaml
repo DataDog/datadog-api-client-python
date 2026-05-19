@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/model-lab-api/facet-keys?filter%5Bproject_id%5D=2387
+  response:
+    body:
+      string: '{"data":{"id":"2387","type":"facet_keys","attributes":{"metrics":["entropy","epoch","eval_entropy","eval_loss","eval_mean_token_accuracy","eval_num_tokens","eval_runtime","eval_samples_per_second","eval_steps_per_second","final_train_loss","grad_norm","learning_rate","loss","mean_token_accuracy","num_tokens","total_flos","total_steps","training_runtime_seconds","train_loss","train_runtime","train_samples_per_second","train_steps_per_second"],"parameters":["activation_function","adam_beta1","adam_beta2","adam_epsilon","add_cross_attention","architectures","attn_pdrop","auto_find_batch_size","average_tokens_across_devices","bf16","bf16_full_eval","bos_token_id","chunk_size_feed_forward","dataset","disable_tqdm","dtype","embd_pdrop","eos_token_id","eval_accumulation_steps","eval_delay","eval_do_concat_batches","eval_on_start","eval_steps","eval_strategy","eval_use_gather_object","fp16","fp16_full_eval","gradient_accumulation_steps","gradient_checkpointing","gradient_checkpointing_kwargs","id2label","include_for_metrics","include_num_input_tokens_seen","initializer_range","is_encoder_decoder","label2id","label_smoothing_factor","layer_norm_epsilon","learning_rate","liger_kernel_config","logging_first_step","logging_nan_inf_filter","logging_steps","logging_strategy","log_level","log_level_replica","log_on_each_node","lora_alpha","lora_dropout","lora_rank","lr_scheduler_kwargs","lr_scheduler_type","max_grad_norm","max_length","max_steps","method","model_name","model_type","_name_or_path","n_ctx","neftune_noise_alpha","n_embd","n_head","n_inner","n_layer","n_positions","num_epochs","num_train_epochs","optim","optim_args","optimizer","optim_target_modules","output_attentions","output_dir","output_hidden_states","packing","pad_token_id","per_device_batch_size","per_device_eval_batch_size","per_device_train_batch_size","precision","prediction_loss_only","problem_type","project","reorder_and_upcast_attn","report_to","resid_pdrop","return_dict","run_name","scale_attn_by_inverse_layer_idx","scale_attn_weights","summary_activation","summary_first_dropout","summary_proj_to_labels","summary_type","summary_use_proj","task_specific_params","tf32","tie_word_embeddings","torch_compile","torch_compile_backend","torch_compile_mode","torch_empty_cache_steps","trackio_bucket_id","trackio_space_id","trackio_static_space_id","trainer","transformers_version","use_cache","use_liger_kernel","vocab_size","warmup_steps","weight_decay"],"tags":["mlflow.runName","mlflow.source.name","mlflow.source.type","mlflow.user","resumed"]}}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -30,9 +30,9 @@ class CustomAttributeConfigCreateRequest(ModelNormal):
 
     def __init__(self_, data: CustomAttributeConfigCreate, **kwargs):
         """
-        Request payload for creating a custom attribute configuration.
+        Custom attribute config create request
 
-        :param data: Data object for creating a custom attribute configuration.
+        :param data: Custom attribute config
         :type data: CustomAttributeConfigCreate
         """
         super().__init__(kwargs)

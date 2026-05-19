@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/model-lab-api/runs/999999/pin
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"run not found"}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1

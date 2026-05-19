@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CustomAttributeType(ModelSimple):
     """
-    The data type of the custom attribute, which determines the allowed values and UI input control.
+    Custom attributes type
 
     :param value: Must be one of ["URL", "TEXT", "NUMBER", "SELECT"].
     :type value: str

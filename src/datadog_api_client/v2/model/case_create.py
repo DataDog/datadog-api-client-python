@@ -54,7 +54,7 @@ class CaseCreate(ModelNormal):
         :param relationships: Relationships formed with the case on creation
         :type relationships: CaseCreateRelationships, optional
 
-        :param type: JSON:API resource type for cases.
+        :param type: Case resource type
         :type type: CaseResourceType
         """
         if relationships is not unset:

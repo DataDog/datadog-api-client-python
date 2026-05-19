@@ -61,6 +61,7 @@ from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.api.logs_restriction_queries_api import LogsRestrictionQueriesApi
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftTeamsIntegrationApi
+from datadog_api_client.v2.api.model_lab_api_api import ModelLabAPIApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
 from datadog_api_client.v2.api.oci_integration_api import OCIIntegrationApi
@@ -175,6 +176,7 @@ __all__ = [
     "LogsRestrictionQueriesApi",
     "MetricsApi",
     "MicrosoftTeamsIntegrationApi",
+    "ModelLabAPIApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
     "OCIIntegrationApi",

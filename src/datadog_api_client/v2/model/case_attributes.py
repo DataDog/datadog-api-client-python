@@ -113,7 +113,7 @@ class CaseAttributes(ModelNormal):
         :param archived_at: Timestamp of when the case was archived
         :type archived_at: datetime, none_type, optional
 
-        :param attributes: Key-value pairs of case attributes. Each key maps to an array of string values, used for flexible metadata such as labels or tags.
+        :param attributes: The definition of ``CaseObjectAttributes`` object.
         :type attributes: CaseObjectAttributes, optional
 
         :param closed_at: Timestamp of when the case was closed

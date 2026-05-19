@@ -39,18 +39,18 @@ class TimelineCellAuthorUserContent(ModelNormal):
         **kwargs,
     ):
         """
-        Profile information for the user who authored the timeline cell.
+        user author content.
 
-        :param email: The email address of the user.
+        :param email: user email
         :type email: str, optional
 
-        :param handle: The Datadog handle of the user.
+        :param handle: user handle
         :type handle: str, optional
 
-        :param id: The UUID of the user.
+        :param id: user UUID
         :type id: str, optional
 
-        :param name: The display name of the user.
+        :param name: user name
         :type name: str, optional
         """
         if email is not unset:
