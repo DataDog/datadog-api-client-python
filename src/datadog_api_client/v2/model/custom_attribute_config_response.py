@@ -32,9 +32,9 @@ class CustomAttributeConfigResponse(ModelNormal):
 
     def __init__(self_, data: Union[CustomAttributeConfig, UnsetType] = unset, **kwargs):
         """
-        Custom attribute config response.
+        Response containing a single custom attribute configuration.
 
-        :param data: The definition of ``CustomAttributeConfig`` object.
+        :param data: A custom attribute configuration that defines an organization-specific metadata field on cases. Custom attributes are scoped to a case type and can hold text, URLs, numbers, or predefined select options.
         :type data: CustomAttributeConfig, optional
         """
         if data is not unset:

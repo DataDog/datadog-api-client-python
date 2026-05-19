@@ -41,12 +41,12 @@ class TimelineCellAuthorUser(ModelNormal):
         **kwargs,
     ):
         """
-        timeline cell user author
+        A user who authored a timeline cell.
 
-        :param content: user author content.
+        :param content: Profile information for the user who authored the timeline cell.
         :type content: TimelineCellAuthorUserContent, optional
 
-        :param type: user author type.
+        :param type: The type of timeline cell author. Currently only ``USER`` is supported.
         :type type: TimelineCellAuthorUserType, optional
         """
         if content is not unset:

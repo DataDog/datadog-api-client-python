@@ -36,15 +36,15 @@ class TimelineCellResource(ModelNormal):
 
     def __init__(self_, attributes: TimelineCell, id: str, type: TimelineCellResourceType, **kwargs):
         """
-        Timeline cell JSON:API resource
+        A timeline cell resource representing a single entry in a case's activity timeline.
 
-        :param attributes: timeline cell
+        :param attributes: Attributes of a timeline cell, representing a single event in a case's chronological activity log (for example, a comment, status change, or assignment update).
         :type attributes: TimelineCell
 
         :param id: Timeline cell's identifier
         :type id: str
 
-        :param type: Timeline cell JSON:API resource type
+        :param type: JSON:API resource type for timeline cells.
         :type type: TimelineCellResourceType
         """
         super().__init__(kwargs)
