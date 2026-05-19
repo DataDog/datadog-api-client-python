@@ -51,24 +51,24 @@ class CustomAttributeConfigResourceAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a custom attribute configuration, defining an organization-specific metadata field that can be added to cases of a given type.
+        Custom attribute resource attributes
 
-        :param case_type_id: The UUID of the case type this custom attribute belongs to.
+        :param case_type_id: Custom attribute config identifier.
         :type case_type_id: str
 
-        :param description: A description explaining the purpose and expected values for this custom attribute.
+        :param description: Custom attribute description.
         :type description: str, optional
 
-        :param display_name: The human-readable label shown in the Case Management UI for this custom attribute.
+        :param display_name: Custom attribute name.
         :type display_name: str
 
-        :param is_multi: If ``true`` , this attribute accepts an array of values. If ``false`` , only a single value is allowed.
+        :param is_multi: Whether multiple values can be set
         :type is_multi: bool
 
-        :param key: The programmatic key used to reference this custom attribute in search queries and API calls.
+        :param key: Custom attribute key. This will be the value use to search on this custom attribute
         :type key: str
 
-        :param type: The data type of the custom attribute, which determines the allowed values and UI input control.
+        :param type: Custom attributes type
         :type type: CustomAttributeType
         """
         if description is not unset:

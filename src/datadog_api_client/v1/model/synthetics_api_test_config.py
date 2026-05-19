@@ -24,6 +24,12 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_assertion_json_schema_target import SyntheticsAssertionJSONSchemaTarget
     from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
     from datadog_api_client.v1.model.synthetics_assertion_javascript import SyntheticsAssertionJavascript
+    from datadog_api_client.v1.model.synthetics_assertion_mcp_server_capabilities_target import (
+        SyntheticsAssertionMCPServerCapabilitiesTarget,
+    )
+    from datadog_api_client.v1.model.synthetics_assertion_mcp_respects_specification import (
+        SyntheticsAssertionMCPRespectsSpecification,
+    )
     from datadog_api_client.v1.model.synthetics_api_test_step import SyntheticsAPITestStep
     from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWaitStep
     from datadog_api_client.v1.model.synthetics_api_subtest_step import SyntheticsAPISubtestStep
@@ -65,6 +71,8 @@ class SyntheticsAPITestConfig(ModelNormal):
                     SyntheticsAssertionJSONSchemaTarget,
                     SyntheticsAssertionXPathTarget,
                     SyntheticsAssertionJavascript,
+                    SyntheticsAssertionMCPServerCapabilitiesTarget,
+                    SyntheticsAssertionMCPRespectsSpecification,
                 ]
             ],
             UnsetType,

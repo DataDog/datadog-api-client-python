@@ -34,12 +34,12 @@ class CaseTypeCreate(ModelNormal):
 
     def __init__(self_, attributes: CaseTypeResourceAttributes, type: CaseTypeResourceType, **kwargs):
         """
-        Data object for creating a case type.
+        Case type
 
-        :param attributes: Attributes of a case type, which define a classification category for cases. Organizations use case types to model different workflows (for example, Security Incident, Bug Report, Change Request).
+        :param attributes: Case Type resource attributes
         :type attributes: CaseTypeResourceAttributes
 
-        :param type: JSON:API resource type for case types.
+        :param type: Case type resource type
         :type type: CaseTypeResourceType
         """
         super().__init__(kwargs)

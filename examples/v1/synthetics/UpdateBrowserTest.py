@@ -14,6 +14,7 @@ from datadog_api_client.v1.model.synthetics_browser_variable import SyntheticsBr
 from datadog_api_client.v1.model.synthetics_browser_variable_type import SyntheticsBrowserVariableType
 from datadog_api_client.v1.model.synthetics_config_variable import SyntheticsConfigVariable
 from datadog_api_client.v1.model.synthetics_config_variable_type import SyntheticsConfigVariableType
+from datadog_api_client.v1.model.synthetics_mcp_protocol_version import SyntheticsMCPProtocolVersion
 from datadog_api_client.v1.model.synthetics_restricted_roles import SyntheticsRestrictedRoles
 from datadog_api_client.v1.model.synthetics_step import SyntheticsStep
 from datadog_api_client.v1.model.synthetics_step_type import SyntheticsStepType
@@ -66,10 +67,12 @@ body = SyntheticsBrowserTest(
                 SyntheticsTestRequestBodyFile(),
             ],
             http_version=SyntheticsTestOptionsHTTPVersion.HTTP1,
+            mcp_protocol_version=SyntheticsMCPProtocolVersion.VERSION_2025_06_18,
             proxy=SyntheticsTestRequestProxy(
                 url="https://example.com",
             ),
             service="Greeter",
+            tool_name="search",
             url="https://example.com",
         ),
         variables=[

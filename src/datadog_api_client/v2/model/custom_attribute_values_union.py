@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class CustomAttributeValuesUnion(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The value of a custom attribute. The accepted format depends on the attribute's type and whether it accepts multiple values.
+        Union of supported value for a custom attribute
         """
         super().__init__(kwargs)
 

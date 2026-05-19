@@ -53,6 +53,12 @@ class SyntheticsAssertion(ModelComposed):
         )
         from datadog_api_client.v1.model.synthetics_assertion_x_path_target import SyntheticsAssertionXPathTarget
         from datadog_api_client.v1.model.synthetics_assertion_javascript import SyntheticsAssertionJavascript
+        from datadog_api_client.v1.model.synthetics_assertion_mcp_server_capabilities_target import (
+            SyntheticsAssertionMCPServerCapabilitiesTarget,
+        )
+        from datadog_api_client.v1.model.synthetics_assertion_mcp_respects_specification import (
+            SyntheticsAssertionMCPRespectsSpecification,
+        )
 
         return {
             "oneOf": [
@@ -62,5 +68,7 @@ class SyntheticsAssertion(ModelComposed):
                 SyntheticsAssertionJSONSchemaTarget,
                 SyntheticsAssertionXPathTarget,
                 SyntheticsAssertionJavascript,
+                SyntheticsAssertionMCPServerCapabilitiesTarget,
+                SyntheticsAssertionMCPRespectsSpecification,
             ],
         }

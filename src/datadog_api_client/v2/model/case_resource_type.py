@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseResourceType(ModelSimple):
     """
-    JSON:API resource type for cases.
+    Case resource type
 
     :param value: If omitted defaults to "case". Must be one of ["case"].
     :type value: str
