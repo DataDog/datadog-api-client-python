@@ -21,8 +21,14 @@ class LLMObsAnnotatedInteractionItem(ModelComposed):
         :param content_id: Upstream entity identifier supplied by the caller.
         :type content_id: str
 
+        :param created_at: Timestamp when the interaction was added to the queue.
+        :type created_at: datetime
+
         :param id: Unique identifier of the interaction.
         :type id: str
+
+        :param modified_at: Timestamp when the interaction was last updated.
+        :type modified_at: datetime
 
         :param type: Type of an upstream-entity interaction.
         :type type: LLMObsTraceInteractionType
