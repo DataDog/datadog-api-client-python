@@ -8303,6 +8303,10 @@ components:
           description: The name assigned to this aggregation, when multiple aggregations are defined for a query.
           example: "compute_result"
           type: string
+        source:
+          description: Source reference for composite query payloads.
+          example: "filter_query"
+          type: string
       required:
         - aggregation
       type: object
@@ -8330,6 +8334,10 @@ components:
           type: integer
         sort:
           $ref: "#/components/schemas/MonitorFormulaAndFunctionEventQueryGroupBySort"
+        source:
+          description: Source reference for composite query payloads.
+          example: "filter_query"
+          type: string
       required:
         - facet
       type: object
