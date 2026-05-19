@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"layout_type":"ordered","title":"Test-Get_usage_stats_for_a_dashboard_returns_OK_response-1779115226
+      with Profile Metrics Query","widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"cb5-47u-8yc","title":"Test-Get_usage_stats_for_a_dashboard_returns_OK_response-1779115226
+        with Profile Metrics Query","description":null,"author_handle":"frog@datadoghq.com","author_name":"frog","layout_type":"ordered","url":"/dashboard/cb5-47u-8yc/test-getusagestatsforadashboardreturnsokresponse-1779115226-with-profile-metrics","template_variables":null,"widgets":[{"definition":{"requests":[{"profile_metrics_query":{"compute":{"aggregation":"sum","facet":"@prof_core_cpu_cores"},"group_by":[{"facet":"service","limit":10,"sort":{"aggregation":"sum","facet":"@prof_core_cpu_cores","order":"desc"}}],"search":{"query":"runtime:jvm"}}}],"type":"timeseries"},"id":7645859989261101}],"notify_list":null,"created_at":"2026-05-18T14:40:27.022358+00:00","modified_at":"2026-05-18T14:40:27.022358+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/dashboards/cb5-47u-8yc/usage
+  response:
+    body:
+      string: '{"data":{"id":"cb5-47u-8yc","type":"dashboards-usages","attributes":{"org_id":321813,"title":"Test-Get_usage_stats_for_a_dashboard_returns_OK_response-1779115226
+        with Profile Metrics Query","teams":[],"created_at":"2026-05-18T14:40:27.022358Z","author":{"id":"1445416","name":"frog","handle":"frog@datadoghq.com","is_disabled":false},"total_views":0,"viewed_at":null,"viewer":null,"total_views_by_type":null,"edited_at":"2026-05-18T14:40:27.022358Z","widget_count":1,"widget_count_by_type":{"timeseries":1},"dashboard_quality_score":null}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/cb5-47u-8yc
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"cb5-47u-8yc"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

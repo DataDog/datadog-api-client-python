@@ -1796,6 +1796,18 @@
       "type": "idempotent"
     }
   },
+  "ListDashboardsUsage": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDashboardUsage": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetAllDatasets": {
     "tag": "Datasets",
     "undo": {

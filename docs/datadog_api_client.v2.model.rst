@@ -8901,6 +8901,41 @@ datadog\_api\_client.v2.model.dashboard\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dashboard\_usage module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_usage
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_usage\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_usage_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_usage\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_usage_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_usage\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_usage_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_usage\_user module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_usage_user
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.data\_attributes\_rules\_items\_if\_tag\_exists module
 ------------------------------------------------------------------------------------
 
@@ -17158,6 +17193,27 @@ datadog\_api\_client.v2.model.list\_connections\_response\_data\_type module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_connections_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_dashboards\_usage\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_dashboards_usage_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_dashboards\_usage\_response\_links module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_dashboards_usage_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_dashboards\_usage\_response\_meta module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_dashboards_usage_response_meta
    :members:
    :show-inheritance:
 

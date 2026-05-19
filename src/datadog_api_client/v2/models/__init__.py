@@ -1793,6 +1793,11 @@ from datadog_api_client.v2.model.dashboard_list_update_items_request import Dash
 from datadog_api_client.v2.model.dashboard_list_update_items_response import DashboardListUpdateItemsResponse
 from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
 from datadog_api_client.v2.model.dashboard_type import DashboardType
+from datadog_api_client.v2.model.dashboard_usage import DashboardUsage
+from datadog_api_client.v2.model.dashboard_usage_attributes import DashboardUsageAttributes
+from datadog_api_client.v2.model.dashboard_usage_response import DashboardUsageResponse
+from datadog_api_client.v2.model.dashboard_usage_type import DashboardUsageType
+from datadog_api_client.v2.model.dashboard_usage_user import DashboardUsageUser
 from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import DataAttributesRulesItemsIfTagExists
 from datadog_api_client.v2.model.data_attributes_rules_items_mapping import DataAttributesRulesItemsMapping
 from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
@@ -3466,6 +3471,9 @@ from datadog_api_client.v2.model.list_connections_response_data_attributes_conne
     ListConnectionsResponseDataAttributesConnectionsItemsJoin,
 )
 from datadog_api_client.v2.model.list_connections_response_data_type import ListConnectionsResponseDataType
+from datadog_api_client.v2.model.list_dashboards_usage_response import ListDashboardsUsageResponse
+from datadog_api_client.v2.model.list_dashboards_usage_response_links import ListDashboardsUsageResponseLinks
+from datadog_api_client.v2.model.list_dashboards_usage_response_meta import ListDashboardsUsageResponseMeta
 from datadog_api_client.v2.model.list_deployment_rule_response_data import ListDeploymentRuleResponseData
 from datadog_api_client.v2.model.list_deployment_rules_data_type import ListDeploymentRulesDataType
 from datadog_api_client.v2.model.list_deployment_rules_response_data_attributes import (
@@ -9015,6 +9023,11 @@ __all__ = [
     "DashboardListUpdateItemsResponse",
     "DashboardTriggerWrapper",
     "DashboardType",
+    "DashboardUsage",
+    "DashboardUsageAttributes",
+    "DashboardUsageResponse",
+    "DashboardUsageType",
+    "DashboardUsageUser",
     "DataAttributesRulesItemsIfTagExists",
     "DataAttributesRulesItemsMapping",
     "DataDeletionResponseItem",
@@ -10306,6 +10319,9 @@ __all__ = [
     "ListConnectionsResponseDataAttributesConnectionsItems",
     "ListConnectionsResponseDataAttributesConnectionsItemsJoin",
     "ListConnectionsResponseDataType",
+    "ListDashboardsUsageResponse",
+    "ListDashboardsUsageResponseLinks",
+    "ListDashboardsUsageResponseMeta",
     "ListDeploymentRuleResponseData",
     "ListDeploymentRulesDataType",
     "ListDeploymentRulesResponseDataAttributes",
