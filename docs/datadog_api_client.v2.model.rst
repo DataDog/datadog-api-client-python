@@ -21984,6 +21984,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_metric\_value module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_mtls\_server\_tls module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_mtls_server_tls
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_new\_relic\_destination module
 -------------------------------------------------------------------------------------
 

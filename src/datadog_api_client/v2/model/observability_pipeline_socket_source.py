@@ -20,7 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_socket_source_mode import (
         ObservabilityPipelineSocketSourceMode,
     )
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
     from datadog_api_client.v2.model.observability_pipeline_socket_source_type import (
         ObservabilityPipelineSocketSourceType,
     )
@@ -50,7 +50,9 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_socket_source_mode import (
             ObservabilityPipelineSocketSourceMode,
         )
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
+            ObservabilityPipelineMtlsServerTls,
+        )
         from datadog_api_client.v2.model.observability_pipeline_socket_source_type import (
             ObservabilityPipelineSocketSourceType,
         )
@@ -60,7 +62,7 @@ class ObservabilityPipelineSocketSource(ModelNormal):
             "framing": (ObservabilityPipelineSocketSourceFraming,),
             "id": (str,),
             "mode": (ObservabilityPipelineSocketSourceMode,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineMtlsServerTls,),
             "type": (ObservabilityPipelineSocketSourceType,),
         }
 
@@ -87,7 +89,7 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         mode: ObservabilityPipelineSocketSourceMode,
         type: ObservabilityPipelineSocketSourceType,
         address_key: Union[str, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -107,8 +109,8 @@ class ObservabilityPipelineSocketSource(ModelNormal):
         :param mode: Protocol used to receive logs.
         :type mode: ObservabilityPipelineSocketSourceMode
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
+        :type tls: ObservabilityPipelineMtlsServerTls, optional
 
         :param type: The source type. The value should always be ``socket``.
         :type type: ObservabilityPipelineSocketSourceType

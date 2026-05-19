@@ -18,7 +18,7 @@ if TYPE_CHECKING:
         ObservabilityPipelineHttpServerSourceAuthStrategy,
     )
     from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
     from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
         ObservabilityPipelineHttpServerSourceType,
     )
@@ -31,7 +31,9 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
             ObservabilityPipelineHttpServerSourceAuthStrategy,
         )
         from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
+            ObservabilityPipelineMtlsServerTls,
+        )
         from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
             ObservabilityPipelineHttpServerSourceType,
         )
@@ -43,7 +45,7 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
             "decoding": (ObservabilityPipelineDecoding,),
             "id": (str,),
             "password_key": (str,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineMtlsServerTls,),
             "type": (ObservabilityPipelineHttpServerSourceType,),
             "username_key": (str,),
         }
@@ -69,7 +71,7 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         address_key: Union[str, UnsetType] = unset,
         custom_key: Union[str, UnsetType] = unset,
         password_key: Union[str, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
         username_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -96,8 +98,8 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         :param password_key: Name of the environment variable or secret that holds the password (used when ``auth_strategy`` is ``plain`` ).
         :type password_key: str, optional
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
+        :type tls: ObservabilityPipelineMtlsServerTls, optional
 
         :param type: The source type. The value should always be ``http_server``.
         :type type: ObservabilityPipelineHttpServerSourceType

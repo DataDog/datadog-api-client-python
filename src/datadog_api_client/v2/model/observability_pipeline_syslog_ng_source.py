@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_syslog_source_mode import (
         ObservabilityPipelineSyslogSourceMode,
     )
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
     from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source_type import (
         ObservabilityPipelineSyslogNgSourceType,
     )
@@ -29,7 +29,9 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_syslog_source_mode import (
             ObservabilityPipelineSyslogSourceMode,
         )
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
+            ObservabilityPipelineMtlsServerTls,
+        )
         from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source_type import (
             ObservabilityPipelineSyslogNgSourceType,
         )
@@ -38,7 +40,7 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
             "address_key": (str,),
             "id": (str,),
             "mode": (ObservabilityPipelineSyslogSourceMode,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineMtlsServerTls,),
             "type": (ObservabilityPipelineSyslogNgSourceType,),
         }
 
@@ -56,7 +58,7 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         mode: ObservabilityPipelineSyslogSourceMode,
         type: ObservabilityPipelineSyslogNgSourceType,
         address_key: Union[str, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -73,8 +75,8 @@ class ObservabilityPipelineSyslogNgSource(ModelNormal):
         :param mode: Protocol used by the syslog source to receive messages.
         :type mode: ObservabilityPipelineSyslogSourceMode
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
+        :type tls: ObservabilityPipelineMtlsServerTls, optional
 
         :param type: The source type. The value should always be ``syslog_ng``.
         :type type: ObservabilityPipelineSyslogNgSourceType
