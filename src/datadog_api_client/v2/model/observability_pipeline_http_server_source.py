@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -22,9 +22,19 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
         ObservabilityPipelineHttpServerSourceType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token import (
+        ObservabilityPipelineHttpServerSourceValidToken,
+    )
 
 
 class ObservabilityPipelineHttpServerSource(ModelNormal):
+    validations = {
+        "valid_tokens": {
+            "max_items": 1000,
+            "min_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_http_server_source_auth_strategy import (
@@ -34,6 +44,9 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
         from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
             ObservabilityPipelineHttpServerSourceType,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token import (
+            ObservabilityPipelineHttpServerSourceValidToken,
         )
 
         return {
@@ -46,6 +59,7 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
             "tls": (ObservabilityPipelineTls,),
             "type": (ObservabilityPipelineHttpServerSourceType,),
             "username_key": (str,),
+            "valid_tokens": ([ObservabilityPipelineHttpServerSourceValidToken],),
         }
 
     attribute_map = {
@@ -58,6 +72,7 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         "tls": "tls",
         "type": "type",
         "username_key": "username_key",
+        "valid_tokens": "valid_tokens",
     }
 
     def __init__(
@@ -71,6 +86,7 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         password_key: Union[str, UnsetType] = unset,
         tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         username_key: Union[str, UnsetType] = unset,
+        valid_tokens: Union[List[ObservabilityPipelineHttpServerSourceValidToken], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -104,6 +120,11 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
 
         :param username_key: Name of the environment variable or secret that holds the username (used when ``auth_strategy`` is ``plain`` ).
         :type username_key: str, optional
+
+        :param valid_tokens: A list of tokens that are accepted for authenticating incoming HTTP requests. When set,
+            the source rejects any request whose token does not match an enabled entry in this list.
+            Cannot be combined with the ``plain`` auth strategy.
+        :type valid_tokens: [ObservabilityPipelineHttpServerSourceValidToken], optional
         """
         if address_key is not unset:
             kwargs["address_key"] = address_key
@@ -115,6 +136,8 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
             kwargs["tls"] = tls
         if username_key is not unset:
             kwargs["username_key"] = username_key
+        if valid_tokens is not unset:
+            kwargs["valid_tokens"] = valid_tokens
         super().__init__(kwargs)
 
         self_.auth_strategy = auth_strategy

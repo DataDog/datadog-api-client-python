@@ -21844,6 +21844,34 @@ datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_typ
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_valid\_token module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_valid\_token\_path\_to\_token module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token_path_to_token
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_valid\_token\_path\_to\_token\_header module
+-------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token_path_to_token_header
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_http\_server\_source\_valid\_token\_path\_to\_token\_location module
+---------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token_path_to_token_location
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_kafka\_destination module
 --------------------------------------------------------------------------------
 
@@ -22719,6 +22747,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_socket\_source\_type modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_source\_valid\_token\_field\_to\_add module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_source_valid_token_field_to_add
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_spec module
 ------------------------------------------------------------------
 
@@ -22793,6 +22828,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_source\_type
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_source\_valid\_token module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_valid_token
    :members:
    :show-inheritance:
 

@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["my-processor-group"],"type":"datadog_logs"}],"processor_groups":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["splunk-hec-source"],"processors":[{"enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"sources":[{"id":"splunk-hec-source","type":"splunk_hec","valid_tokens":[{"enabled":true,"field_to_add":{"key":"token_name","value":"primary_token"},"token_key":"SPLUNK_HEC_TOKEN"},{"enabled":false,"token_key":"SPLUNK_HEC_TOKEN_BACKUP"}]}]},"name":"Pipeline
+      with Splunk HEC valid_tokens"},"type":"pipelines"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/validate
+  response:
+    body:
+      string: '{"errors":[]}
+
+        '
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
