@@ -33121,6 +33121,13 @@ datadog\_api\_client.v2.model.synthetics\_downtime\_weekday module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.synthetics\_downtime\_weekday\_position module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.synthetics_downtime_weekday_position
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.synthetics\_downtimes\_response module
 --------------------------------------------------------------------
 
