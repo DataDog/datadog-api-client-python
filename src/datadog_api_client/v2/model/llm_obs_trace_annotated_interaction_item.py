@@ -8,6 +8,7 @@ from typing import List, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
 )
 
 
@@ -25,14 +26,18 @@ class LLMObsTraceAnnotatedInteractionItem(ModelNormal):
         return {
             "annotations": ([LLMObsAnnotationItem],),
             "content_id": (str,),
+            "created_at": (datetime,),
             "id": (str,),
+            "modified_at": (datetime,),
             "type": (LLMObsTraceInteractionType,),
         }
 
     attribute_map = {
         "annotations": "annotations",
         "content_id": "content_id",
+        "created_at": "created_at",
         "id": "id",
+        "modified_at": "modified_at",
         "type": "type",
     }
 
@@ -40,7 +45,9 @@ class LLMObsTraceAnnotatedInteractionItem(ModelNormal):
         self_,
         annotations: List[LLMObsAnnotationItem],
         content_id: str,
+        created_at: datetime,
         id: str,
+        modified_at: datetime,
         type: LLMObsTraceInteractionType,
         **kwargs,
     ):
@@ -53,8 +60,14 @@ class LLMObsTraceAnnotatedInteractionItem(ModelNormal):
         :param content_id: Upstream entity identifier supplied by the caller.
         :type content_id: str
 
+        :param created_at: Timestamp when the interaction was added to the queue.
+        :type created_at: datetime
+
         :param id: Unique identifier of the interaction.
         :type id: str
+
+        :param modified_at: Timestamp when the interaction was last updated.
+        :type modified_at: datetime
 
         :param type: Type of an upstream-entity interaction.
         :type type: LLMObsTraceInteractionType
@@ -63,5 +76,7 @@ class LLMObsTraceAnnotatedInteractionItem(ModelNormal):
 
         self_.annotations = annotations
         self_.content_id = content_id
+        self_.created_at = created_at
         self_.id = id
+        self_.modified_at = modified_at
         self_.type = type
