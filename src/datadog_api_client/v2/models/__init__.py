@@ -501,6 +501,22 @@ from datadog_api_client.v2.model.authn_mappings_sort import AuthNMappingsSort
 from datadog_api_client.v2.model.authn_mappings_type import AuthNMappingsType
 from datadog_api_client.v2.model.auto_close_inactive_cases import AutoCloseInactiveCases
 from datadog_api_client.v2.model.auto_transition_assigned_cases import AutoTransitionAssignedCases
+from datadog_api_client.v2.model.automation_rule import AutomationRule
+from datadog_api_client.v2.model.automation_rule_action import AutomationRuleAction
+from datadog_api_client.v2.model.automation_rule_action_data import AutomationRuleActionData
+from datadog_api_client.v2.model.automation_rule_action_type import AutomationRuleActionType
+from datadog_api_client.v2.model.automation_rule_attributes import AutomationRuleAttributes
+from datadog_api_client.v2.model.automation_rule_create import AutomationRuleCreate
+from datadog_api_client.v2.model.automation_rule_create_attributes import AutomationRuleCreateAttributes
+from datadog_api_client.v2.model.automation_rule_create_request import AutomationRuleCreateRequest
+from datadog_api_client.v2.model.automation_rule_relationships import AutomationRuleRelationships
+from datadog_api_client.v2.model.automation_rule_response import AutomationRuleResponse
+from datadog_api_client.v2.model.automation_rule_trigger import AutomationRuleTrigger
+from datadog_api_client.v2.model.automation_rule_trigger_data import AutomationRuleTriggerData
+from datadog_api_client.v2.model.automation_rule_trigger_type import AutomationRuleTriggerType
+from datadog_api_client.v2.model.automation_rule_update import AutomationRuleUpdate
+from datadog_api_client.v2.model.automation_rule_update_request import AutomationRuleUpdateRequest
+from datadog_api_client.v2.model.automation_rules_response import AutomationRulesResponse
 from datadog_api_client.v2.model.aws_cur_config import AwsCURConfig
 from datadog_api_client.v2.model.aws_cur_config_attributes import AwsCURConfigAttributes
 from datadog_api_client.v2.model.aws_cur_config_patch_data import AwsCURConfigPatchData
@@ -757,13 +773,34 @@ from datadog_api_client.v2.model.campaign_type import CampaignType
 from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
 from datadog_api_client.v2.model.case import Case
 from datadog_api_client.v2.model.case3rd_party_ticket_status import Case3rdPartyTicketStatus
+from datadog_api_client.v2.model.case_aggregate_group import CaseAggregateGroup
+from datadog_api_client.v2.model.case_aggregate_group_by import CaseAggregateGroupBy
+from datadog_api_client.v2.model.case_aggregate_request import CaseAggregateRequest
+from datadog_api_client.v2.model.case_aggregate_request_attributes import CaseAggregateRequestAttributes
+from datadog_api_client.v2.model.case_aggregate_request_data import CaseAggregateRequestData
+from datadog_api_client.v2.model.case_aggregate_resource_type import CaseAggregateResourceType
+from datadog_api_client.v2.model.case_aggregate_response import CaseAggregateResponse
+from datadog_api_client.v2.model.case_aggregate_response_attributes import CaseAggregateResponseAttributes
+from datadog_api_client.v2.model.case_aggregate_response_data import CaseAggregateResponseData
 from datadog_api_client.v2.model.case_assign import CaseAssign
 from datadog_api_client.v2.model.case_assign_attributes import CaseAssignAttributes
 from datadog_api_client.v2.model.case_assign_request import CaseAssignRequest
 from datadog_api_client.v2.model.case_attributes import CaseAttributes
+from datadog_api_client.v2.model.case_automation_rule_resource_type import CaseAutomationRuleResourceType
+from datadog_api_client.v2.model.case_automation_rule_state import CaseAutomationRuleState
+from datadog_api_client.v2.model.case_bulk_action_type import CaseBulkActionType
+from datadog_api_client.v2.model.case_bulk_resource_type import CaseBulkResourceType
+from datadog_api_client.v2.model.case_bulk_update_request import CaseBulkUpdateRequest
+from datadog_api_client.v2.model.case_bulk_update_request_attributes import CaseBulkUpdateRequestAttributes
+from datadog_api_client.v2.model.case_bulk_update_request_data import CaseBulkUpdateRequestData
 from datadog_api_client.v2.model.case_comment import CaseComment
 from datadog_api_client.v2.model.case_comment_attributes import CaseCommentAttributes
 from datadog_api_client.v2.model.case_comment_request import CaseCommentRequest
+from datadog_api_client.v2.model.case_count_group import CaseCountGroup
+from datadog_api_client.v2.model.case_count_group_value import CaseCountGroupValue
+from datadog_api_client.v2.model.case_count_response import CaseCountResponse
+from datadog_api_client.v2.model.case_count_response_attributes import CaseCountResponseAttributes
+from datadog_api_client.v2.model.case_count_response_data import CaseCountResponseData
 from datadog_api_client.v2.model.case_create import CaseCreate
 from datadog_api_client.v2.model.case_create_attributes import CaseCreateAttributes
 from datadog_api_client.v2.model.case_create_relationships import CaseCreateRelationships
@@ -771,7 +808,19 @@ from datadog_api_client.v2.model.case_create_request import CaseCreateRequest
 from datadog_api_client.v2.model.case_data_type import CaseDataType
 from datadog_api_client.v2.model.case_empty import CaseEmpty
 from datadog_api_client.v2.model.case_empty_request import CaseEmptyRequest
+from datadog_api_client.v2.model.case_insight import CaseInsight
+from datadog_api_client.v2.model.case_insight_type import CaseInsightType
+from datadog_api_client.v2.model.case_insights_attributes import CaseInsightsAttributes
+from datadog_api_client.v2.model.case_insights_data import CaseInsightsData
 from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
+from datadog_api_client.v2.model.case_insights_request import CaseInsightsRequest
+from datadog_api_client.v2.model.case_link import CaseLink
+from datadog_api_client.v2.model.case_link_attributes import CaseLinkAttributes
+from datadog_api_client.v2.model.case_link_create import CaseLinkCreate
+from datadog_api_client.v2.model.case_link_create_request import CaseLinkCreateRequest
+from datadog_api_client.v2.model.case_link_resource_type import CaseLinkResourceType
+from datadog_api_client.v2.model.case_link_response import CaseLinkResponse
+from datadog_api_client.v2.model.case_links_response import CaseLinksResponse
 from datadog_api_client.v2.model.case_management_project import CaseManagementProject
 from datadog_api_client.v2.model.case_management_project_data import CaseManagementProjectData
 from datadog_api_client.v2.model.case_management_project_data_type import CaseManagementProjectDataType
@@ -806,24 +855,52 @@ from datadog_api_client.v2.model.case_type_resource import CaseTypeResource
 from datadog_api_client.v2.model.case_type_resource_attributes import CaseTypeResourceAttributes
 from datadog_api_client.v2.model.case_type_resource_type import CaseTypeResourceType
 from datadog_api_client.v2.model.case_type_response import CaseTypeResponse
+from datadog_api_client.v2.model.case_type_update import CaseTypeUpdate
+from datadog_api_client.v2.model.case_type_update_request import CaseTypeUpdateRequest
 from datadog_api_client.v2.model.case_types_response import CaseTypesResponse
 from datadog_api_client.v2.model.case_update_attributes import CaseUpdateAttributes
 from datadog_api_client.v2.model.case_update_attributes_attributes import CaseUpdateAttributesAttributes
 from datadog_api_client.v2.model.case_update_attributes_request import CaseUpdateAttributesRequest
+from datadog_api_client.v2.model.case_update_comment import CaseUpdateComment
+from datadog_api_client.v2.model.case_update_comment_attributes import CaseUpdateCommentAttributes
+from datadog_api_client.v2.model.case_update_comment_request import CaseUpdateCommentRequest
 from datadog_api_client.v2.model.case_update_custom_attribute import CaseUpdateCustomAttribute
 from datadog_api_client.v2.model.case_update_custom_attribute_request import CaseUpdateCustomAttributeRequest
 from datadog_api_client.v2.model.case_update_description import CaseUpdateDescription
 from datadog_api_client.v2.model.case_update_description_attributes import CaseUpdateDescriptionAttributes
 from datadog_api_client.v2.model.case_update_description_request import CaseUpdateDescriptionRequest
+from datadog_api_client.v2.model.case_update_due_date import CaseUpdateDueDate
+from datadog_api_client.v2.model.case_update_due_date_attributes import CaseUpdateDueDateAttributes
+from datadog_api_client.v2.model.case_update_due_date_request import CaseUpdateDueDateRequest
 from datadog_api_client.v2.model.case_update_priority import CaseUpdatePriority
 from datadog_api_client.v2.model.case_update_priority_attributes import CaseUpdatePriorityAttributes
 from datadog_api_client.v2.model.case_update_priority_request import CaseUpdatePriorityRequest
+from datadog_api_client.v2.model.case_update_resolved_reason import CaseUpdateResolvedReason
+from datadog_api_client.v2.model.case_update_resolved_reason_attributes import CaseUpdateResolvedReasonAttributes
+from datadog_api_client.v2.model.case_update_resolved_reason_request import CaseUpdateResolvedReasonRequest
 from datadog_api_client.v2.model.case_update_status import CaseUpdateStatus
 from datadog_api_client.v2.model.case_update_status_attributes import CaseUpdateStatusAttributes
 from datadog_api_client.v2.model.case_update_status_request import CaseUpdateStatusRequest
 from datadog_api_client.v2.model.case_update_title import CaseUpdateTitle
 from datadog_api_client.v2.model.case_update_title_attributes import CaseUpdateTitleAttributes
 from datadog_api_client.v2.model.case_update_title_request import CaseUpdateTitleRequest
+from datadog_api_client.v2.model.case_view import CaseView
+from datadog_api_client.v2.model.case_view_attributes import CaseViewAttributes
+from datadog_api_client.v2.model.case_view_create import CaseViewCreate
+from datadog_api_client.v2.model.case_view_create_attributes import CaseViewCreateAttributes
+from datadog_api_client.v2.model.case_view_create_request import CaseViewCreateRequest
+from datadog_api_client.v2.model.case_view_relationships import CaseViewRelationships
+from datadog_api_client.v2.model.case_view_resource_type import CaseViewResourceType
+from datadog_api_client.v2.model.case_view_response import CaseViewResponse
+from datadog_api_client.v2.model.case_view_update import CaseViewUpdate
+from datadog_api_client.v2.model.case_view_update_attributes import CaseViewUpdateAttributes
+from datadog_api_client.v2.model.case_view_update_request import CaseViewUpdateRequest
+from datadog_api_client.v2.model.case_views_response import CaseViewsResponse
+from datadog_api_client.v2.model.case_watcher import CaseWatcher
+from datadog_api_client.v2.model.case_watcher_relationships import CaseWatcherRelationships
+from datadog_api_client.v2.model.case_watcher_resource_type import CaseWatcherResourceType
+from datadog_api_client.v2.model.case_watcher_user_relationship import CaseWatcherUserRelationship
+from datadog_api_client.v2.model.case_watchers_response import CaseWatchersResponse
 from datadog_api_client.v2.model.cases_response import CasesResponse
 from datadog_api_client.v2.model.cases_response_meta import CasesResponseMeta
 from datadog_api_client.v2.model.cases_response_meta_pagination import CasesResponseMetaPagination
@@ -1236,8 +1313,14 @@ from datadog_api_client.v2.model.cost_tag import CostTag
 from datadog_api_client.v2.model.cost_tag_attributes import CostTagAttributes
 from datadog_api_client.v2.model.cost_tag_description import CostTagDescription
 from datadog_api_client.v2.model.cost_tag_description_attributes import CostTagDescriptionAttributes
+from datadog_api_client.v2.model.cost_tag_description_response import CostTagDescriptionResponse
 from datadog_api_client.v2.model.cost_tag_description_source import CostTagDescriptionSource
 from datadog_api_client.v2.model.cost_tag_description_type import CostTagDescriptionType
+from datadog_api_client.v2.model.cost_tag_description_upsert_request import CostTagDescriptionUpsertRequest
+from datadog_api_client.v2.model.cost_tag_description_upsert_request_data import CostTagDescriptionUpsertRequestData
+from datadog_api_client.v2.model.cost_tag_description_upsert_request_data_attributes import (
+    CostTagDescriptionUpsertRequestDataAttributes,
+)
 from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDescriptionsResponse
 from datadog_api_client.v2.model.cost_tag_key import CostTagKey
 from datadog_api_client.v2.model.cost_tag_key_attributes import CostTagKeyAttributes
@@ -1579,8 +1662,13 @@ from datadog_api_client.v2.model.custom_attribute_config_resource_attributes imp
 )
 from datadog_api_client.v2.model.custom_attribute_config_resource_type import CustomAttributeConfigResourceType
 from datadog_api_client.v2.model.custom_attribute_config_response import CustomAttributeConfigResponse
+from datadog_api_client.v2.model.custom_attribute_config_update import CustomAttributeConfigUpdate
+from datadog_api_client.v2.model.custom_attribute_config_update_attributes import CustomAttributeConfigUpdateAttributes
+from datadog_api_client.v2.model.custom_attribute_config_update_request import CustomAttributeConfigUpdateRequest
 from datadog_api_client.v2.model.custom_attribute_configs_response import CustomAttributeConfigsResponse
+from datadog_api_client.v2.model.custom_attribute_select_option import CustomAttributeSelectOption
 from datadog_api_client.v2.model.custom_attribute_type import CustomAttributeType
+from datadog_api_client.v2.model.custom_attribute_type_data import CustomAttributeTypeData
 from datadog_api_client.v2.model.custom_attribute_value import CustomAttributeValue
 from datadog_api_client.v2.model.custom_attribute_values_union import CustomAttributeValuesUnion
 from datadog_api_client.v2.model.custom_connection import CustomConnection
@@ -2545,6 +2633,10 @@ from datadog_api_client.v2.model.gemini_credentials_update import GeminiCredenti
 from datadog_api_client.v2.model.gemini_integration import GeminiIntegration
 from datadog_api_client.v2.model.gemini_integration_type import GeminiIntegrationType
 from datadog_api_client.v2.model.gemini_integration_update import GeminiIntegrationUpdate
+from datadog_api_client.v2.model.generate_cost_tag_description_response import GenerateCostTagDescriptionResponse
+from datadog_api_client.v2.model.generated_cost_tag_description import GeneratedCostTagDescription
+from datadog_api_client.v2.model.generated_cost_tag_description_attributes import GeneratedCostTagDescriptionAttributes
+from datadog_api_client.v2.model.generated_cost_tag_description_type import GeneratedCostTagDescriptionType
 from datadog_api_client.v2.model.get_action_connection_response import GetActionConnectionResponse
 from datadog_api_client.v2.model.get_app_key_registration_response import GetAppKeyRegistrationResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
@@ -3646,6 +3738,17 @@ from datadog_api_client.v2.model.maintenance_data_relationships_status_page impo
 from datadog_api_client.v2.model.maintenance_data_relationships_status_page_data import (
     MaintenanceDataRelationshipsStatusPageData,
 )
+from datadog_api_client.v2.model.maintenance_window import MaintenanceWindow
+from datadog_api_client.v2.model.maintenance_window_attributes import MaintenanceWindowAttributes
+from datadog_api_client.v2.model.maintenance_window_create import MaintenanceWindowCreate
+from datadog_api_client.v2.model.maintenance_window_create_attributes import MaintenanceWindowCreateAttributes
+from datadog_api_client.v2.model.maintenance_window_create_request import MaintenanceWindowCreateRequest
+from datadog_api_client.v2.model.maintenance_window_resource_type import MaintenanceWindowResourceType
+from datadog_api_client.v2.model.maintenance_window_response import MaintenanceWindowResponse
+from datadog_api_client.v2.model.maintenance_window_update import MaintenanceWindowUpdate
+from datadog_api_client.v2.model.maintenance_window_update_attributes import MaintenanceWindowUpdateAttributes
+from datadog_api_client.v2.model.maintenance_window_update_request import MaintenanceWindowUpdateRequest
+from datadog_api_client.v2.model.maintenance_windows_response import MaintenanceWindowsResponse
 from datadog_api_client.v2.model.managed_orgs_data import ManagedOrgsData
 from datadog_api_client.v2.model.managed_orgs_relationship_to_org import ManagedOrgsRelationshipToOrg
 from datadog_api_client.v2.model.managed_orgs_relationship_to_orgs import ManagedOrgsRelationshipToOrgs
@@ -5252,6 +5355,9 @@ from datadog_api_client.v2.model.project_columns_config_columns_items_sort impor
 from datadog_api_client.v2.model.project_create import ProjectCreate
 from datadog_api_client.v2.model.project_create_attributes import ProjectCreateAttributes
 from datadog_api_client.v2.model.project_create_request import ProjectCreateRequest
+from datadog_api_client.v2.model.project_favorite import ProjectFavorite
+from datadog_api_client.v2.model.project_favorite_resource_type import ProjectFavoriteResourceType
+from datadog_api_client.v2.model.project_favorites_response import ProjectFavoritesResponse
 from datadog_api_client.v2.model.project_notification_settings import ProjectNotificationSettings
 from datadog_api_client.v2.model.project_relationship import ProjectRelationship
 from datadog_api_client.v2.model.project_relationship_data import ProjectRelationshipData
@@ -8131,6 +8237,22 @@ __all__ = [
     "AuthNMappingsType",
     "AutoCloseInactiveCases",
     "AutoTransitionAssignedCases",
+    "AutomationRule",
+    "AutomationRuleAction",
+    "AutomationRuleActionData",
+    "AutomationRuleActionType",
+    "AutomationRuleAttributes",
+    "AutomationRuleCreate",
+    "AutomationRuleCreateAttributes",
+    "AutomationRuleCreateRequest",
+    "AutomationRuleRelationships",
+    "AutomationRuleResponse",
+    "AutomationRuleTrigger",
+    "AutomationRuleTriggerData",
+    "AutomationRuleTriggerType",
+    "AutomationRuleUpdate",
+    "AutomationRuleUpdateRequest",
+    "AutomationRulesResponse",
     "AwsCURConfig",
     "AwsCURConfigAttributes",
     "AwsCURConfigPatchData",
@@ -8339,13 +8461,34 @@ __all__ = [
     "CancelDataDeletionResponseBody",
     "Case",
     "Case3rdPartyTicketStatus",
+    "CaseAggregateGroup",
+    "CaseAggregateGroupBy",
+    "CaseAggregateRequest",
+    "CaseAggregateRequestAttributes",
+    "CaseAggregateRequestData",
+    "CaseAggregateResourceType",
+    "CaseAggregateResponse",
+    "CaseAggregateResponseAttributes",
+    "CaseAggregateResponseData",
     "CaseAssign",
     "CaseAssignAttributes",
     "CaseAssignRequest",
     "CaseAttributes",
+    "CaseAutomationRuleResourceType",
+    "CaseAutomationRuleState",
+    "CaseBulkActionType",
+    "CaseBulkResourceType",
+    "CaseBulkUpdateRequest",
+    "CaseBulkUpdateRequestAttributes",
+    "CaseBulkUpdateRequestData",
     "CaseComment",
     "CaseCommentAttributes",
     "CaseCommentRequest",
+    "CaseCountGroup",
+    "CaseCountGroupValue",
+    "CaseCountResponse",
+    "CaseCountResponseAttributes",
+    "CaseCountResponseData",
     "CaseCreate",
     "CaseCreateAttributes",
     "CaseCreateRelationships",
@@ -8353,7 +8496,19 @@ __all__ = [
     "CaseDataType",
     "CaseEmpty",
     "CaseEmptyRequest",
+    "CaseInsight",
+    "CaseInsightType",
+    "CaseInsightsAttributes",
+    "CaseInsightsData",
     "CaseInsightsItems",
+    "CaseInsightsRequest",
+    "CaseLink",
+    "CaseLinkAttributes",
+    "CaseLinkCreate",
+    "CaseLinkCreateRequest",
+    "CaseLinkResourceType",
+    "CaseLinkResponse",
+    "CaseLinksResponse",
     "CaseManagementProject",
     "CaseManagementProjectData",
     "CaseManagementProjectDataType",
@@ -8388,24 +8543,52 @@ __all__ = [
     "CaseTypeResourceAttributes",
     "CaseTypeResourceType",
     "CaseTypeResponse",
+    "CaseTypeUpdate",
+    "CaseTypeUpdateRequest",
     "CaseTypesResponse",
     "CaseUpdateAttributes",
     "CaseUpdateAttributesAttributes",
     "CaseUpdateAttributesRequest",
+    "CaseUpdateComment",
+    "CaseUpdateCommentAttributes",
+    "CaseUpdateCommentRequest",
     "CaseUpdateCustomAttribute",
     "CaseUpdateCustomAttributeRequest",
     "CaseUpdateDescription",
     "CaseUpdateDescriptionAttributes",
     "CaseUpdateDescriptionRequest",
+    "CaseUpdateDueDate",
+    "CaseUpdateDueDateAttributes",
+    "CaseUpdateDueDateRequest",
     "CaseUpdatePriority",
     "CaseUpdatePriorityAttributes",
     "CaseUpdatePriorityRequest",
+    "CaseUpdateResolvedReason",
+    "CaseUpdateResolvedReasonAttributes",
+    "CaseUpdateResolvedReasonRequest",
     "CaseUpdateStatus",
     "CaseUpdateStatusAttributes",
     "CaseUpdateStatusRequest",
     "CaseUpdateTitle",
     "CaseUpdateTitleAttributes",
     "CaseUpdateTitleRequest",
+    "CaseView",
+    "CaseViewAttributes",
+    "CaseViewCreate",
+    "CaseViewCreateAttributes",
+    "CaseViewCreateRequest",
+    "CaseViewRelationships",
+    "CaseViewResourceType",
+    "CaseViewResponse",
+    "CaseViewUpdate",
+    "CaseViewUpdateAttributes",
+    "CaseViewUpdateRequest",
+    "CaseViewsResponse",
+    "CaseWatcher",
+    "CaseWatcherRelationships",
+    "CaseWatcherResourceType",
+    "CaseWatcherUserRelationship",
+    "CaseWatchersResponse",
     "CasesResponse",
     "CasesResponseMeta",
     "CasesResponseMetaPagination",
@@ -8712,8 +8895,12 @@ __all__ = [
     "CostTagAttributes",
     "CostTagDescription",
     "CostTagDescriptionAttributes",
+    "CostTagDescriptionResponse",
     "CostTagDescriptionSource",
     "CostTagDescriptionType",
+    "CostTagDescriptionUpsertRequest",
+    "CostTagDescriptionUpsertRequestData",
+    "CostTagDescriptionUpsertRequestDataAttributes",
     "CostTagDescriptionsResponse",
     "CostTagKey",
     "CostTagKeyAttributes",
@@ -8927,8 +9114,13 @@ __all__ = [
     "CustomAttributeConfigResourceAttributes",
     "CustomAttributeConfigResourceType",
     "CustomAttributeConfigResponse",
+    "CustomAttributeConfigUpdate",
+    "CustomAttributeConfigUpdateAttributes",
+    "CustomAttributeConfigUpdateRequest",
     "CustomAttributeConfigsResponse",
+    "CustomAttributeSelectOption",
     "CustomAttributeType",
+    "CustomAttributeTypeData",
     "CustomAttributeValue",
     "CustomAttributeValuesUnion",
     "CustomConnection",
@@ -9673,6 +9865,10 @@ __all__ = [
     "GeminiIntegration",
     "GeminiIntegrationType",
     "GeminiIntegrationUpdate",
+    "GenerateCostTagDescriptionResponse",
+    "GeneratedCostTagDescription",
+    "GeneratedCostTagDescriptionAttributes",
+    "GeneratedCostTagDescriptionType",
     "GetActionConnectionResponse",
     "GetAppKeyRegistrationResponse",
     "GetAppResponse",
@@ -10516,6 +10712,17 @@ __all__ = [
     "MaintenanceDataRelationshipsLastModifiedByUserData",
     "MaintenanceDataRelationshipsStatusPage",
     "MaintenanceDataRelationshipsStatusPageData",
+    "MaintenanceWindow",
+    "MaintenanceWindowAttributes",
+    "MaintenanceWindowCreate",
+    "MaintenanceWindowCreateAttributes",
+    "MaintenanceWindowCreateRequest",
+    "MaintenanceWindowResourceType",
+    "MaintenanceWindowResponse",
+    "MaintenanceWindowUpdate",
+    "MaintenanceWindowUpdateAttributes",
+    "MaintenanceWindowUpdateRequest",
+    "MaintenanceWindowsResponse",
     "ManagedOrgsData",
     "ManagedOrgsRelationshipToOrg",
     "ManagedOrgsRelationshipToOrgs",
@@ -11454,6 +11661,9 @@ __all__ = [
     "ProjectCreate",
     "ProjectCreateAttributes",
     "ProjectCreateRequest",
+    "ProjectFavorite",
+    "ProjectFavoriteResourceType",
+    "ProjectFavoritesResponse",
     "ProjectNotificationSettings",
     "ProjectRelationship",
     "ProjectRelationshipData",

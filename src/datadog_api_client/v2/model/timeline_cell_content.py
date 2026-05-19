@@ -13,9 +13,9 @@ from datadog_api_client.model_utils import (
 class TimelineCellContent(ModelComposed):
     def __init__(self, **kwargs):
         """
-        timeline cell content
+        The content payload of a timeline cell, varying by cell type.
 
-        :param message: comment message
+        :param message: The text content of the comment. Supports Markdown formatting.
         :type message: str, optional
         """
         super().__init__(kwargs)

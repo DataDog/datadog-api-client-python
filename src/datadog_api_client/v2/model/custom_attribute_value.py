@@ -42,15 +42,15 @@ class CustomAttributeValue(ModelNormal):
         **kwargs,
     ):
         """
-        Custom attribute values
+        A typed value for a custom attribute on a specific case.
 
         :param is_multi: If true, value must be an array
         :type is_multi: bool
 
-        :param type: Custom attributes type
+        :param type: The data type of the custom attribute, which determines the allowed values and UI input control.
         :type type: CustomAttributeType
 
-        :param value: Union of supported value for a custom attribute
+        :param value: The value of a custom attribute. The accepted format depends on the attribute's type and whether it accepts multiple values.
         :type value: CustomAttributeValuesUnion
         """
         super().__init__(kwargs)
