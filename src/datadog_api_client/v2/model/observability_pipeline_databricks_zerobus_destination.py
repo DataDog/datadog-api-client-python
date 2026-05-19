@@ -47,33 +47,31 @@ class ObservabilityPipelineDatabricksZerobusDestination(ModelNormal):
             "auth": (ObservabilityPipelineDatabricksZerobusDestinationAuth,),
             "buffer": (ObservabilityPipelineBufferOptions,),
             "id": (str,),
-            "ingestion_endpoint": (str,),
+            "ingestion_endpoint_key": (str,),
             "inputs": ([str],),
             "table_name": (str,),
             "type": (ObservabilityPipelineDatabricksZerobusDestinationType,),
-            "unity_catalog_endpoint": (str,),
+            "unity_catalog_endpoint_key": (str,),
         }
 
     attribute_map = {
         "auth": "auth",
         "buffer": "buffer",
         "id": "id",
-        "ingestion_endpoint": "ingestion_endpoint",
+        "ingestion_endpoint_key": "ingestion_endpoint_key",
         "inputs": "inputs",
         "table_name": "table_name",
         "type": "type",
-        "unity_catalog_endpoint": "unity_catalog_endpoint",
+        "unity_catalog_endpoint_key": "unity_catalog_endpoint_key",
     }
 
     def __init__(
         self_,
         auth: ObservabilityPipelineDatabricksZerobusDestinationAuth,
         id: str,
-        ingestion_endpoint: str,
         inputs: List[str],
         table_name: str,
         type: ObservabilityPipelineDatabricksZerobusDestinationType,
-        unity_catalog_endpoint: str,
         buffer: Union[
             ObservabilityPipelineBufferOptions,
             ObservabilityPipelineDiskBufferOptions,
@@ -81,6 +79,8 @@ class ObservabilityPipelineDatabricksZerobusDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        ingestion_endpoint_key: Union[str, UnsetType] = unset,
+        unity_catalog_endpoint_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -97,8 +97,8 @@ class ObservabilityPipelineDatabricksZerobusDestination(ModelNormal):
         :param id: The unique identifier for this component.
         :type id: str
 
-        :param ingestion_endpoint: Your Databricks Zerobus ingestion endpoint. This is the endpoint used to stream data directly into your Databricks Lakehouse.
-        :type ingestion_endpoint: str
+        :param ingestion_endpoint_key: Name of the environment variable or the secret identifier that references the Databricks Zerobus ingestion endpoint, which is used to stream data directly into your Databricks Lakehouse.
+        :type ingestion_endpoint_key: str, optional
 
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
@@ -109,17 +109,19 @@ class ObservabilityPipelineDatabricksZerobusDestination(ModelNormal):
         :param type: The destination type. The value must be ``databricks_zerobus``.
         :type type: ObservabilityPipelineDatabricksZerobusDestinationType
 
-        :param unity_catalog_endpoint: Your Databricks workspace URL. This is used to communicate with the Unity Catalog API.
-        :type unity_catalog_endpoint: str
+        :param unity_catalog_endpoint_key: Name of the environment variable or the secret identifier that references your Databricks workspace URL, which is used to communicate with the Unity Catalog API.
+        :type unity_catalog_endpoint_key: str, optional
         """
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if ingestion_endpoint_key is not unset:
+            kwargs["ingestion_endpoint_key"] = ingestion_endpoint_key
+        if unity_catalog_endpoint_key is not unset:
+            kwargs["unity_catalog_endpoint_key"] = unity_catalog_endpoint_key
         super().__init__(kwargs)
 
         self_.auth = auth
         self_.id = id
-        self_.ingestion_endpoint = ingestion_endpoint
         self_.inputs = inputs
         self_.table_name = table_name
         self_.type = type
-        self_.unity_catalog_endpoint = unity_catalog_endpoint
