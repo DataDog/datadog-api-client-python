@@ -32,7 +32,7 @@ class CustomAttributeConfigsResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[CustomAttributeConfig], UnsetType] = unset, **kwargs):
         """
-        Response containing a list of custom attribute configurations.
+        Custom attribute configs response.
 
         :param data: List of custom attribute configs of case type
         :type data: [CustomAttributeConfig], optional

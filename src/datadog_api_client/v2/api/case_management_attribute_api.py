@@ -10,7 +10,6 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.custom_attribute_configs_response import CustomAttributeConfigsResponse
 from datadog_api_client.v2.model.custom_attribute_config_response import CustomAttributeConfigResponse
 from datadog_api_client.v2.model.custom_attribute_config_create_request import CustomAttributeConfigCreateRequest
-from datadog_api_client.v2.model.custom_attribute_config_update_request import CustomAttributeConfigUpdateRequest
 
 
 class CaseManagementAttributeApi:
@@ -117,38 +116,6 @@ class CaseManagementAttributeApi:
             api_client=api_client,
         )
 
-        self._update_custom_attribute_config_endpoint = _Endpoint(
-            settings={
-                "response_type": (CustomAttributeConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cases/types/{case_type_id}/custom_attributes/{custom_attribute_id}",
-                "operation_id": "update_custom_attribute_config",
-                "http_method": "PUT",
-                "version": "v2",
-            },
-            params_map={
-                "case_type_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "case_type_id",
-                    "location": "path",
-                },
-                "custom_attribute_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "custom_attribute_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (CustomAttributeConfigUpdateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
     def create_custom_attribute_config(
         self,
         case_type_id: str,
@@ -158,7 +125,7 @@ class CaseManagementAttributeApi:
 
         Create custom attribute config for a case type
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: Case type's UUID
         :type case_type_id: str
         :param body: Custom attribute config payload
         :type body: CustomAttributeConfigCreateRequest
@@ -180,7 +147,7 @@ class CaseManagementAttributeApi:
 
         Delete custom attribute config
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: Case type's UUID
         :type case_type_id: str
         :param custom_attribute_id: Case Custom attribute's UUID
         :type custom_attribute_id: str
@@ -201,7 +168,7 @@ class CaseManagementAttributeApi:
 
         Get all custom attribute config of case type
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: Case type's UUID
         :type case_type_id: str
         :rtype: CustomAttributeConfigsResponse
         """
@@ -221,30 +188,3 @@ class CaseManagementAttributeApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_all_custom_attributes_endpoint.call_with_http_info(**kwargs)
-
-    def update_custom_attribute_config(
-        self,
-        case_type_id: str,
-        custom_attribute_id: str,
-        body: CustomAttributeConfigUpdateRequest,
-    ) -> CustomAttributeConfigResponse:
-        """Update custom attribute config.
-
-        Updates the display name, description, type, or options of an existing custom attribute configuration for a case type.
-
-        :param case_type_id: The UUID of the case type.
-        :type case_type_id: str
-        :param custom_attribute_id: Case Custom attribute's UUID
-        :type custom_attribute_id: str
-        :param body: Custom attribute config payload.
-        :type body: CustomAttributeConfigUpdateRequest
-        :rtype: CustomAttributeConfigResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["case_type_id"] = case_type_id
-
-        kwargs["custom_attribute_id"] = custom_attribute_id
-
-        kwargs["body"] = body
-
-        return self._update_custom_attribute_config_endpoint.call_with_http_info(**kwargs)

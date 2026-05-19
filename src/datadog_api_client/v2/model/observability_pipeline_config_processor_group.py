@@ -68,8 +68,20 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
         ObservabilityPipelineThrottleProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processor import (
+        ObservabilityPipelineAddMetricTagsProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_aggregate_processor import (
+        ObservabilityPipelineAggregateProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor import (
         ObservabilityPipelineMetricTagsProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_rename_metric_tags_processor import (
+        ObservabilityPipelineRenameMetricTagsProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor import (
+        ObservabilityPipelineTagCardinalityLimitProcessor,
     )
 
 
@@ -128,7 +140,11 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
                 ObservabilityPipelineSensitiveDataScannerProcessor,
                 ObservabilityPipelineSplitArrayProcessor,
                 ObservabilityPipelineThrottleProcessor,
+                ObservabilityPipelineAddMetricTagsProcessor,
+                ObservabilityPipelineAggregateProcessor,
                 ObservabilityPipelineMetricTagsProcessor,
+                ObservabilityPipelineRenameMetricTagsProcessor,
+                ObservabilityPipelineTagCardinalityLimitProcessor,
             ]
         ],
         display_name: Union[str, UnsetType] = unset,

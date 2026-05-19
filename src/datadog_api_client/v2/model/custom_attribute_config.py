@@ -48,15 +48,15 @@ class CustomAttributeConfig(ModelNormal):
         **kwargs,
     ):
         """
-        A custom attribute configuration that defines an organization-specific metadata field on cases. Custom attributes are scoped to a case type and can hold text, URLs, numbers, or predefined select options.
+        The definition of ``CustomAttributeConfig`` object.
 
-        :param attributes: Attributes of a custom attribute configuration, defining an organization-specific metadata field that can be added to cases of a given type.
+        :param attributes: Custom attribute resource attributes
         :type attributes: CustomAttributeConfigResourceAttributes, optional
 
         :param id: Custom attribute configs identifier
         :type id: str, optional
 
-        :param type: JSON:API resource type for custom attribute configurations.
+        :param type: Custom attributes config JSON:API resource type
         :type type: CustomAttributeConfigResourceType, optional
         """
         if attributes is not unset:

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class TimelineCellAuthorUserType(ModelSimple):
     """
-    The type of timeline cell author. Currently only `USER` is supported.
+    user author type.
 
     :param value: If omitted defaults to "USER". Must be one of ["USER"].
     :type value: str

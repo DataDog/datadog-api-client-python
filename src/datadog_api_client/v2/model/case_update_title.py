@@ -39,7 +39,7 @@ class CaseUpdateTitle(ModelNormal):
         :param attributes: Case update title attributes
         :type attributes: CaseUpdateTitleAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: Case resource type
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class TimelineCellResourceType(ModelSimple):
     """
-    JSON:API resource type for timeline cells.
+    Timeline cell JSON:API resource type
 
     :param value: If omitted defaults to "timeline_cell". Must be one of ["timeline_cell"].
     :type value: str
