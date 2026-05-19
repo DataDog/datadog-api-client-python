@@ -31,6 +31,7 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
             "interval": (int,),
             "metric": (str,),
             "name": (str,),
+            "source": (str,),
         }
 
     attribute_map = {
@@ -38,6 +39,7 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         "interval": "interval",
         "metric": "metric",
         "name": "name",
+        "source": "source",
     }
 
     def __init__(
@@ -46,6 +48,7 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
         interval: Union[int, UnsetType] = unset,
         metric: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        source: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -62,6 +65,9 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
 
         :param name: The name assigned to this aggregation, when multiple aggregations are defined for a query.
         :type name: str, optional
+
+        :param source: Source reference for composite query payloads.
+        :type source: str, optional
         """
         if interval is not unset:
             kwargs["interval"] = interval
@@ -69,6 +75,8 @@ class MonitorFormulaAndFunctionEventQueryDefinitionCompute(ModelNormal):
             kwargs["metric"] = metric
         if name is not unset:
             kwargs["name"] = name
+        if source is not unset:
+            kwargs["source"] = source
         super().__init__(kwargs)
 
         self_.aggregation = aggregation

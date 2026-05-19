@@ -30,12 +30,14 @@ class MonitorFormulaAndFunctionEventQueryGroupBy(ModelNormal):
             "facet": (str,),
             "limit": (int,),
             "sort": (MonitorFormulaAndFunctionEventQueryGroupBySort,),
+            "source": (str,),
         }
 
     attribute_map = {
         "facet": "facet",
         "limit": "limit",
         "sort": "sort",
+        "source": "source",
     }
 
     def __init__(
@@ -43,6 +45,7 @@ class MonitorFormulaAndFunctionEventQueryGroupBy(ModelNormal):
         facet: str,
         limit: Union[int, UnsetType] = unset,
         sort: Union[MonitorFormulaAndFunctionEventQueryGroupBySort, UnsetType] = unset,
+        source: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,11 +59,16 @@ class MonitorFormulaAndFunctionEventQueryGroupBy(ModelNormal):
 
         :param sort: Options for sorting group by results.
         :type sort: MonitorFormulaAndFunctionEventQueryGroupBySort, optional
+
+        :param source: Source reference for composite query payloads.
+        :type source: str, optional
         """
         if limit is not unset:
             kwargs["limit"] = limit
         if sort is not unset:
             kwargs["sort"] = sort
+        if source is not unset:
+            kwargs["source"] = source
         super().__init__(kwargs)
 
         self_.facet = facet
