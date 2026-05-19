@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CustomAttributeConfigResourceType(ModelSimple):
     """
-    Custom attributes config JSON:API resource type
+    JSON:API resource type for custom attribute configurations.
 
     :param value: If omitted defaults to "custom_attribute". Must be one of ["custom_attribute"].
     :type value: str
