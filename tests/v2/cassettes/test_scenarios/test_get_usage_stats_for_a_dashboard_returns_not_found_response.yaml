@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/dashboards/xxx-xxx-xxx/usage
+  response:
+    body:
+      string: '{"errors":["Dashboard not found for dashboard_id=xxx-xxx-xxx in org_id=321813
+        not found"]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 404
+      message: Not Found
+version: 1
