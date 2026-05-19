@@ -105,6 +105,7 @@ class UsageSummaryDate(ModelNormal):
             "date": (datetime,),
             "dbm_host_top99p": (int,),
             "dbm_queries_count_avg": (int,),
+            "do_jobs_monitoring_serverless_job_hours_sum": (int,),
             "eph_infra_host_agent_sum": (int,),
             "eph_infra_host_alibaba_sum": (int,),
             "eph_infra_host_aws_sum": (int,),
@@ -350,6 +351,7 @@ class UsageSummaryDate(ModelNormal):
         "date": "date",
         "dbm_host_top99p": "dbm_host_top99p",
         "dbm_queries_count_avg": "dbm_queries_count_avg",
+        "do_jobs_monitoring_serverless_job_hours_sum": "do_jobs_monitoring_serverless_job_hours_sum",
         "eph_infra_host_agent_sum": "eph_infra_host_agent_sum",
         "eph_infra_host_alibaba_sum": "eph_infra_host_alibaba_sum",
         "eph_infra_host_aws_sum": "eph_infra_host_aws_sum",
@@ -596,6 +598,7 @@ class UsageSummaryDate(ModelNormal):
         date: Union[datetime, UnsetType] = unset,
         dbm_host_top99p: Union[int, UnsetType] = unset,
         dbm_queries_count_avg: Union[int, UnsetType] = unset,
+        do_jobs_monitoring_serverless_job_hours_sum: Union[int, UnsetType] = unset,
         eph_infra_host_agent_sum: Union[int, UnsetType] = unset,
         eph_infra_host_alibaba_sum: Union[int, UnsetType] = unset,
         eph_infra_host_aws_sum: Union[int, UnsetType] = unset,
@@ -1004,6 +1007,9 @@ class UsageSummaryDate(ModelNormal):
 
         :param dbm_queries_count_avg: Shows the average of all normalized Database Monitoring queries over all hours in the current date for all organizations.
         :type dbm_queries_count_avg: int, optional
+
+        :param do_jobs_monitoring_serverless_job_hours_sum: Shows the sum of all serverless job hours over all hours in the current date for all organizations.
+        :type do_jobs_monitoring_serverless_job_hours_sum: int, optional
 
         :param eph_infra_host_agent_sum: Shows the sum of all ephemeral infrastructure hosts with the Datadog Agent over all hours in the current date for the given org.
         :type eph_infra_host_agent_sum: int, optional
@@ -1652,6 +1658,8 @@ class UsageSummaryDate(ModelNormal):
             kwargs["dbm_host_top99p"] = dbm_host_top99p
         if dbm_queries_count_avg is not unset:
             kwargs["dbm_queries_count_avg"] = dbm_queries_count_avg
+        if do_jobs_monitoring_serverless_job_hours_sum is not unset:
+            kwargs["do_jobs_monitoring_serverless_job_hours_sum"] = do_jobs_monitoring_serverless_job_hours_sum
         if eph_infra_host_agent_sum is not unset:
             kwargs["eph_infra_host_agent_sum"] = eph_infra_host_agent_sum
         if eph_infra_host_alibaba_sum is not unset:
