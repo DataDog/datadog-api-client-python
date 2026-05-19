@@ -32,7 +32,7 @@ class CaseUpdateAttributesAttributes(ModelNormal):
         """
         Case update attributes attributes
 
-        :param attributes: The definition of ``CaseObjectAttributes`` object.
+        :param attributes: Key-value pairs of case attributes. Each key maps to an array of string values, used for flexible metadata such as labels or tags.
         :type attributes: CaseObjectAttributes
         """
         super().__init__(kwargs)

@@ -790,6 +790,49 @@
       "type": "safe"
     }
   },
+  "AggregateCases": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "BulkUpdateCases": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CountCases": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCaseLinks": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCaseLink": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "DeleteCaseLink",
+      "parameters": [
+        {
+          "name": "link_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCaseLink": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetProjects": {
     "tag": "Case Management",
     "undo": {
@@ -809,6 +852,12 @@
       "type": "unsafe"
     }
   },
+  "ListUserCaseProjectFavorites": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteProject": {
     "tag": "Case Management",
     "undo": {
@@ -825,6 +874,25 @@
     "tag": "Case Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "UnfavoriteCaseProject": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "FavoriteCaseProject": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "UnfavoriteCaseProject",
+      "parameters": [
+        {
+          "name": "project_id",
+          "source": "path.project_id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "GetProjectNotificationRules": {
@@ -862,6 +930,59 @@
       "type": "idempotent"
     }
   },
+  "ListCaseAutomationRules": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCaseAutomationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "DeleteCaseAutomationRule",
+      "parameters": [
+        {
+          "name": "project_id",
+          "source": "path.project_id"
+        },
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCaseAutomationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCaseAutomationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCaseAutomationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DisableCaseAutomationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EnableCaseAutomationRule": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetAllCaseTypes": {
     "tag": "Case Management Type",
     "undo": {
@@ -886,6 +1007,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateCaseType": {
+    "tag": "Case Management Type",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetAllCustomAttributeConfigsByCaseType": {
     "tag": "Case Management Attribute",
     "undo": {
@@ -900,6 +1027,49 @@
   },
   "DeleteCustomAttributeConfig": {
     "tag": "Case Management Attribute",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateCustomAttributeConfig": {
+    "tag": "Case Management Attribute",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListCaseViews": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCaseView": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "DeleteCaseView",
+      "parameters": [
+        {
+          "name": "view_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCaseView": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCaseView": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCaseView": {
+    "tag": "Case Management",
     "undo": {
       "type": "idempotent"
     }
@@ -940,6 +1110,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateCaseComment": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteCaseCustomAttribute": {
     "tag": "Case Management",
     "undo": {
@@ -956,6 +1132,24 @@
     "tag": "Case Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "UpdateCaseDueDate": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RemoveCaseInsights": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AddCaseInsights": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdatePriority": {
@@ -1014,10 +1208,22 @@
       "type": "unsafe"
     }
   },
+  "UpdateCaseResolvedReason": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpdateStatus": {
     "tag": "Case Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListCaseTimeline": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateCaseTitle": {
@@ -1036,6 +1242,35 @@
     "tag": "Case Management",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListCaseWatchers": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UnwatchCase": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "WatchCase": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "UnwatchCase",
+      "parameters": [
+        {
+          "name": "case_id",
+          "source": "path.case_id"
+        },
+        {
+          "name": "user_uuid",
+          "source": "path.user_uuid"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "ListCatalogEntity": {
@@ -3497,6 +3732,24 @@
       "type": "idempotent"
     }
   },
+  "AggregateLLMObsExperimentation": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchLLMObsExperimentation": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SimpleSearchLLMObsExperimentation": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLLMObsExperiments": {
     "tag": "LLM Observability",
     "undo": {
@@ -3506,15 +3759,19 @@
   "CreateLLMObsExperiment": {
     "tag": "LLM Observability",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
+      "operationId": "DeleteLLMObsExperiments",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"data\": {\"attributes\": {\"experiment_ids\": [\"{{ data.id }}\"]}, \"type\": \"experiments\"}}"
+        }
+      ],
       "type": "unsafe"
     }
   },
   "DeleteLLMObsExperiments": {
     "tag": "LLM Observability",
     "undo": {
-      "operationId": "TODO",
       "parameters": [],
       "type": "unsafe"
     }
@@ -3528,7 +3785,6 @@
   "CreateLLMObsExperimentEvents": {
     "tag": "LLM Observability",
     "undo": {
-      "operationId": "TODO",
       "parameters": [],
       "type": "unsafe"
     }
@@ -3624,6 +3880,12 @@
       "operationId": "TODO",
       "parameters": [],
       "type": "unsafe"
+    }
+  },
+  "ListLLMObsExperimentEvents": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
     }
   },
   "SubmitLog": {
@@ -3862,6 +4124,37 @@
     "tag": "Logs",
     "undo": {
       "type": "safe"
+    }
+  },
+  "ListMaintenanceWindows": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMaintenanceWindow": {
+    "tag": "Case Management",
+    "undo": {
+      "operationId": "DeleteMaintenanceWindow",
+      "parameters": [
+        {
+          "name": "maintenance_window_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteMaintenanceWindow": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateMaintenanceWindow": {
+    "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListTagConfigurations": {

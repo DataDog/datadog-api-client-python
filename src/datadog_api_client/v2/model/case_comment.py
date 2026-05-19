@@ -39,7 +39,7 @@ class CaseComment(ModelNormal):
         :param attributes: Case comment attributes
         :type attributes: CaseCommentAttributes
 
-        :param type: Case resource type
+        :param type: JSON:API resource type for cases.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

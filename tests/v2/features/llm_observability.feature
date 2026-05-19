@@ -54,6 +54,22 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Aggregate LLM Observability experimentation returns "Bad Request" response
+    Given operation "AggregateLLMObsExperimentation" enabled
+    And new "AggregateLLMObsExperimentation" request
+    And body with value {"data": {"attributes": {"aggregate": {"compute": [{"metric": "score_value", "name": "avg_faithfulness"}], "dataset_version": null, "group_by": [{"field": "span_id"}], "indexes": ["experiment-evals"], "limit": 1000, "search": {"query": "@experiment_id:3fd6b5e0-8910-4b1c-a7d0-5b84de329012"}, "time": {"from": 1705312200000, "to": 1705315800000}}}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Aggregate LLM Observability experimentation returns "OK" response
+    Given operation "AggregateLLMObsExperimentation" enabled
+    And new "AggregateLLMObsExperimentation" request
+    And body with value {"data": {"attributes": {"aggregate": {"compute": [{"metric": "score_value", "name": "avg_faithfulness"}], "dataset_version": null, "group_by": [{"field": "span_id"}], "indexes": ["experiment-evals"], "limit": 1000, "search": {"query": "@experiment_id:3fd6b5e0-8910-4b1c-a7d0-5b84de329012"}, "time": {"from": 1705312200000, "to": 1705315800000}}}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Append records to an LLM Observability dataset returns "Bad Request" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
@@ -543,6 +559,30 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: List events for an LLM Observability experiment returns "Bad Request" response
+    Given operation "ListLLMObsExperimentEvents" enabled
+    And new "ListLLMObsExperimentEvents" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List events for an LLM Observability experiment returns "Not Found" response
+    Given operation "ListLLMObsExperimentEvents" enabled
+    And new "ListLLMObsExperimentEvents" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List events for an LLM Observability experiment returns "OK" response
+    Given operation "ListLLMObsExperimentEvents" enabled
+    And new "ListLLMObsExperimentEvents" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Push events for an LLM Observability experiment returns "Accepted" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
@@ -568,6 +608,46 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "events"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Search LLM Observability experimentation entities returns "Bad Request" response
+    Given operation "SearchLLMObsExperimentation" enabled
+    And new "SearchLLMObsExperimentation" request
+    And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 100}}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Search LLM Observability experimentation entities returns "OK — all results returned in a single page." response
+    Given operation "SearchLLMObsExperimentation" enabled
+    And new "SearchLLMObsExperimentation" request
+    And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 100}}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 200 OK — all results returned in a single page.
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Search LLM Observability experimentation entities returns "Partial Content — more results are available. Use `meta.after` as the next `page.cursor`." response
+    Given operation "SearchLLMObsExperimentation" enabled
+    And new "SearchLLMObsExperimentation" request
+    And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 100}}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 206 Partial Content — more results are available. Use `meta.after` as the next `page.cursor`.
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Simple search experimentation entities returns "Bad Request" response
+    Given operation "SimpleSearchLLMObsExperimentation" enabled
+    And new "SimpleSearchLLMObsExperimentation" request
+    And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 50, "number": 1}, "sort": [{"direction": "desc", "field": "created_at"}]}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Simple search experimentation entities returns "OK" response
+    Given operation "SimpleSearchLLMObsExperimentation" enabled
+    And new "SimpleSearchLLMObsExperimentation" request
+    And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 50, "number": 1}, "sort": [{"direction": "desc", "field": "created_at"}]}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Update LLM Observability dataset records returns "Bad Request" response
