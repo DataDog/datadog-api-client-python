@@ -39,7 +39,7 @@ class CaseAssign(ModelNormal):
         :param attributes: Case assign attributes
         :type attributes: CaseAssignAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: Case resource type
         :type type: CaseResourceType
         """
         super().__init__(kwargs)
