@@ -63,12 +63,12 @@ class TimelineCell(ModelNormal):
         **kwargs,
     ):
         """
-        timeline cell
+        Attributes of a timeline cell, representing a single event in a case's chronological activity log (for example, a comment, status change, or assignment update).
 
-        :param author: author of the timeline cell
+        :param author: The author of the timeline cell. Currently only user authors are supported.
         :type author: TimelineCellAuthor, optional
 
-        :param cell_content: timeline cell content
+        :param cell_content: The content payload of a timeline cell, varying by cell type.
         :type cell_content: TimelineCellContent, optional
 
         :param created_at: Timestamp of when the cell was created
@@ -80,7 +80,7 @@ class TimelineCell(ModelNormal):
         :param modified_at: Timestamp of when the cell was last modified
         :type modified_at: datetime, optional
 
-        :param type: Timeline cell content type
+        :param type: The type of content in the timeline cell. Currently only ``COMMENT`` is supported in this endpoint.
         :type type: TimelineCellType, optional
         """
         if author is not unset:

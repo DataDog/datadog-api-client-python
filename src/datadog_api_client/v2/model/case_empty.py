@@ -32,7 +32,7 @@ class CaseEmpty(ModelNormal):
         """
         Case empty request data
 
-        :param type: Case resource type
+        :param type: JSON:API resource type for cases.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

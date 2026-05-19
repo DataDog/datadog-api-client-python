@@ -36,10 +36,10 @@ class CaseUpdateCustomAttribute(ModelNormal):
         """
         Case update custom attribute
 
-        :param attributes: Custom attribute values
+        :param attributes: A typed value for a custom attribute on a specific case.
         :type attributes: CustomAttributeValue
 
-        :param type: Case resource type
+        :param type: JSON:API resource type for cases.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

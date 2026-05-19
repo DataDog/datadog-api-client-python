@@ -13,12 +13,12 @@ from datadog_api_client.model_utils import (
 class TimelineCellAuthor(ModelComposed):
     def __init__(self, **kwargs):
         """
-        author of the timeline cell
+        The author of the timeline cell. Currently only user authors are supported.
 
-        :param content: user author content.
+        :param content: Profile information for the user who authored the timeline cell.
         :type content: TimelineCellAuthorUserContent, optional
 
-        :param type: user author type.
+        :param type: The type of timeline cell author. Currently only `USER` is supported.
         :type type: TimelineCellAuthorUserType, optional
         """
         super().__init__(kwargs)
