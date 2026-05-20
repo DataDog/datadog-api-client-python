@@ -5761,6 +5761,11 @@ from datadog_api_client.v2.model.rollout_strategy import RolloutStrategy
 from datadog_api_client.v2.model.routing_rule import RoutingRule
 from datadog_api_client.v2.model.routing_rule_action import RoutingRuleAction
 from datadog_api_client.v2.model.routing_rule_attributes import RoutingRuleAttributes
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action_support_hours import (
+    RoutingRuleEscalationPolicyActionSupportHours,
+)
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action_type import RoutingRuleEscalationPolicyActionType
 from datadog_api_client.v2.model.routing_rule_relationships import RoutingRuleRelationships
 from datadog_api_client.v2.model.routing_rule_relationships_policy import RoutingRuleRelationshipsPolicy
 from datadog_api_client.v2.model.routing_rule_relationships_policy_data import RoutingRuleRelationshipsPolicyData
@@ -12084,6 +12089,9 @@ __all__ = [
     "RoutingRule",
     "RoutingRuleAction",
     "RoutingRuleAttributes",
+    "RoutingRuleEscalationPolicyAction",
+    "RoutingRuleEscalationPolicyActionSupportHours",
+    "RoutingRuleEscalationPolicyActionType",
     "RoutingRuleRelationships",
     "RoutingRuleRelationshipsPolicy",
     "RoutingRuleRelationshipsPolicyData",
