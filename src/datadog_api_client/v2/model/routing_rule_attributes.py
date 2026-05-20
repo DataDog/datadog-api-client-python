@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
     from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
     from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
+    from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
 
 
 class RoutingRuleAttributes(ModelNormal):
@@ -48,7 +49,11 @@ class RoutingRuleAttributes(ModelNormal):
         actions: Union[
             List[
                 Union[
-                    RoutingRuleAction, SendSlackMessageAction, SendTeamsMessageAction, TriggerWorkflowAutomationAction
+                    RoutingRuleAction,
+                    SendSlackMessageAction,
+                    SendTeamsMessageAction,
+                    TriggerWorkflowAutomationAction,
+                    RoutingRuleEscalationPolicyAction,
                 ]
             ],
             UnsetType,
@@ -67,7 +72,7 @@ class RoutingRuleAttributes(ModelNormal):
         :param query: Defines the query or condition that triggers this routing rule.
         :type query: str, optional
 
-        :param time_restriction: Holds time zone information and a list of time restrictions for a routing rule.
+        :param time_restriction: Time restrictions during which the routing rule is active. Outside of these hours, the rule does not match and routing continues to subsequent rules. This is mutually exclusive with the action-level ``support_hours`` field.
         :type time_restriction: TimeRestrictions, optional
 
         :param urgency: Specifies the level of urgency for a routing rule (low, high, or dynamic).

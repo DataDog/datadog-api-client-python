@@ -5,8 +5,11 @@ Set On-Call team routing rules returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_api import OnCallApi
-from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
-from datadog_api_client.v2.model.send_slack_message_action_type import SendSlackMessageActionType
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action_support_hours import (
+    RoutingRuleEscalationPolicyActionSupportHours,
+)
+from datadog_api_client.v2.model.routing_rule_escalation_policy_action_type import RoutingRuleEscalationPolicyActionType
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
 from datadog_api_client.v2.model.team_routing_rules_request_data import TeamRoutingRulesRequestData
 from datadog_api_client.v2.model.team_routing_rules_request_data_attributes import TeamRoutingRulesRequestDataAttributes
@@ -29,13 +32,13 @@ body = TeamRoutingRulesRequest(
             rules=[
                 TeamRoutingRulesRequestRule(
                     actions=[
-                        SendSlackMessageAction(
-                            channel="channel",
-                            type=SendSlackMessageActionType.SEND_SLACK_MESSAGE,
-                            workspace="workspace",
+                        RoutingRuleEscalationPolicyAction(
+                            type=RoutingRuleEscalationPolicyActionType.ESCALATION_POLICY,
+                            policy_id=ESCALATION_POLICY_DATA_ID,
+                            urgency=Urgency.LOW,
                         ),
                     ],
-                    query="tags.service:test",
+                    query="tags.service:time_restrictions",
                     time_restriction=TimeRestrictions(
                         time_zone="Europe/Paris",
                         restrictions=[
@@ -55,9 +58,47 @@ body = TeamRoutingRulesRequest(
                     ),
                 ),
                 TeamRoutingRulesRequestRule(
+                    actions=[
+                        RoutingRuleEscalationPolicyAction(
+                            type=RoutingRuleEscalationPolicyActionType.ESCALATION_POLICY,
+                            policy_id=ESCALATION_POLICY_DATA_ID,
+                            urgency=Urgency.LOW,
+                            ack_timeout_minutes=30,
+                            support_hours=RoutingRuleEscalationPolicyActionSupportHours(
+                                time_zone="Europe/Paris",
+                                restrictions=[
+                                    TimeRestriction(
+                                        end_day=Weekday.WEDNESDAY,
+                                        end_time="17:00:00",
+                                        start_day=Weekday.WEDNESDAY,
+                                        start_time="09:00:00",
+                                    ),
+                                    TimeRestriction(
+                                        end_day=Weekday.THURSDAY,
+                                        end_time="17:00:00",
+                                        start_day=Weekday.THURSDAY,
+                                        start_time="09:00:00",
+                                    ),
+                                ],
+                            ),
+                        ),
+                    ],
+                    query="tags.service:support_hours_and_acknowledgment_timeout",
+                ),
+                TeamRoutingRulesRequestRule(
                     policy_id=ESCALATION_POLICY_DATA_ID,
-                    query="",
+                    query="tags.service:legacy_policy_definition",
                     urgency=Urgency.LOW,
+                ),
+                TeamRoutingRulesRequestRule(
+                    actions=[
+                        RoutingRuleEscalationPolicyAction(
+                            type=RoutingRuleEscalationPolicyActionType.ESCALATION_POLICY,
+                            policy_id=ESCALATION_POLICY_DATA_ID,
+                            urgency=Urgency.LOW,
+                        ),
+                    ],
+                    query="",
                 ),
             ],
         ),
