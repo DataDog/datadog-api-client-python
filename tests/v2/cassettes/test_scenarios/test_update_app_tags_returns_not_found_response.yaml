@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"tags":["team:platform","service:ops"]},"type":"tags"}}'
+    headers:
+      accept:
+      - '*/*'
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/7addb29b-f935-472c-ae79-d1963979a23e/tags
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"26c91c86-51b3-4c5f-98b4-713698730b08","title":"app
+        not found","detail":"app with id 7addb29b-f935-472c-ae79-d1963979a23e not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
