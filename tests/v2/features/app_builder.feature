@@ -113,7 +113,7 @@ Feature: App Builder
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-typescript @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Get App returns "Gone" response
     Given new "GetApp" request
     And there is a valid "app" in the system
@@ -138,6 +138,34 @@ Feature: App Builder
     Then the response status is 200 OK
     And the response "data.id" has the same value as "app.data.id"
     And the response "data.type" is equal to "appDefinitions"
+
+  @team:DataDog/app-builder-backend
+  Scenario: Get Blueprint returns "Not Found" response
+    Given new "GetBlueprint" request
+    And request contains "blueprint_id" parameter with value "00000000-0000-0000-0000-000000000001"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/app-builder-backend
+  Scenario: Get Blueprint returns "OK" response
+    Given new "GetBlueprint" request
+    And request contains "blueprint_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/app-builder-backend
+  Scenario: Get Blueprints by Integration ID returns "OK" response
+    Given new "GetBlueprintsByIntegrationId" request
+    And request contains "integration_id" parameter with value "aws"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/app-builder-backend
+  Scenario: Get Blueprints by Slugs returns "OK" response
+    Given new "GetBlueprintsBySlugs" request
+    And request contains "slugs" parameter with value "aws-service-manager"
+    When the request is sent
+    Then the response status is 200 OK
 
   @skip @team:DataDog/app-builder-backend
   Scenario: List App Versions returns "Bad Request" response
@@ -170,6 +198,18 @@ Feature: App Builder
   @skip-typescript @team:DataDog/app-builder-backend
   Scenario: List Apps returns "OK" response
     Given new "ListApps" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/app-builder-backend
+  Scenario: List Blueprints returns "OK" response
+    Given new "ListBlueprints" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/app-builder-backend
+  Scenario: List Tags returns "OK" response
+    Given new "ListTags" request
     When the request is sent
     Then the response status is 200 OK
 

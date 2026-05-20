@@ -687,6 +687,36 @@
       "type": "safe"
     }
   },
+  "GetBlueprint": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListBlueprints": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBlueprintsByIntegrationId": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBlueprintsBySlugs": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListTags": {
+    "tag": "App Builder",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListApplicationKeys": {
     "tag": "Key Management",
     "undo": {
