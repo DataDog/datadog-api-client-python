@@ -16,7 +16,7 @@ class SyntheticsAssertionType(ModelSimple):
     """
     Type of the assertion.
 
-    :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage", "grpcHealthcheckStatus", "grpcMetadata", "grpcProto", "connection", "multiNetworkHop", "jitter"].
+    :param value: Must be one of ["body", "header", "statusCode", "certificate", "responseTime", "property", "recordEvery", "recordSome", "tlsVersion", "minTlsVersion", "latency", "packetLossPercentage", "packetsReceived", "networkHop", "receivedMessage", "grpcHealthcheckStatus", "grpcMetadata", "grpcProto", "connection", "multiNetworkHop", "jitter", "mcpToolNameLength", "mcpToolCount"].
     :type value: str
     """
 
@@ -42,6 +42,8 @@ class SyntheticsAssertionType(ModelSimple):
         "connection",
         "multiNetworkHop",
         "jitter",
+        "mcpToolNameLength",
+        "mcpToolCount",
     }
     BODY: ClassVar["SyntheticsAssertionType"]
     HEADER: ClassVar["SyntheticsAssertionType"]
@@ -64,6 +66,8 @@ class SyntheticsAssertionType(ModelSimple):
     CONNECTION: ClassVar["SyntheticsAssertionType"]
     MULTI_NETWORK_HOP: ClassVar["SyntheticsAssertionType"]
     JITTER: ClassVar["SyntheticsAssertionType"]
+    MCP_TOOL_NAME_LENGTH: ClassVar["SyntheticsAssertionType"]
+    MCP_TOOL_COUNT: ClassVar["SyntheticsAssertionType"]
 
     @cached_property
     def openapi_types(_):
@@ -93,3 +97,5 @@ SyntheticsAssertionType.GRPC_PROTO = SyntheticsAssertionType("grpcProto")
 SyntheticsAssertionType.CONNECTION = SyntheticsAssertionType("connection")
 SyntheticsAssertionType.MULTI_NETWORK_HOP = SyntheticsAssertionType("multiNetworkHop")
 SyntheticsAssertionType.JITTER = SyntheticsAssertionType("jitter")
+SyntheticsAssertionType.MCP_TOOL_NAME_LENGTH = SyntheticsAssertionType("mcpToolNameLength")
+SyntheticsAssertionType.MCP_TOOL_COUNT = SyntheticsAssertionType("mcpToolCount")

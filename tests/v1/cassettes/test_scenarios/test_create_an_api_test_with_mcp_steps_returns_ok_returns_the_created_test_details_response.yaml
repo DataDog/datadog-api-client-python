@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: '{"config":{"steps":[{"allowFailure":false,"assertions":[{"operator":"is","target":200,"type":"statusCode"},{"type":"mcpRespectsSpecification"},{"operator":"contains","target":["tools"],"type":"mcpServerCapabilities"}],"isCritical":true,"name":"Initialize
+      MCP session","request":{"callType":"init","headers":{"DD-API-KEY":"<YOUR-API-KEY>","DD-APPLICATION-KEY":"<YOUR-APP-KEY>"},"mcpProtocolVersion":"2025-06-18","url":"https://example.org/mcp"},"retry":{"count":0,"interval":300},"subtype":"mcp"},{"allowFailure":false,"assertions":[{"operator":"is","target":200,"type":"statusCode"},{"operator":"moreThan","target":0,"type":"mcpToolCount"},{"operator":"lessThan","target":64,"type":"mcpToolNameLength"},{"type":"mcpRespectsSpecification"}],"isCritical":true,"name":"List
+      MCP tools","request":{"callType":"tool_list","headers":{"DD-API-KEY":"<YOUR-API-KEY>","DD-APPLICATION-KEY":"<YOUR-APP-KEY>"},"mcpProtocolVersion":"2025-06-18","url":"https://example.org/mcp"},"retry":{"count":0,"interval":300},"subtype":"mcp"},{"allowFailure":false,"assertions":[{"operator":"is","target":200,"type":"statusCode"},{"operator":"lessThan","target":5000,"type":"responseTime"},{"type":"mcpRespectsSpecification"}],"isCritical":true,"name":"Call
+      MCP search tool","request":{"callType":"tool_call","headers":{"DD-API-KEY":"<YOUR-API-KEY>","DD-APPLICATION-KEY":"<YOUR-APP-KEY>"},"mcpProtocolVersion":"2025-06-18","toolArgs":{"limit":5,"query":"datadog
+      synthetics"},"toolName":"search","url":"https://example.org/mcp"},"retry":{"count":0,"interval":300},"subtype":"mcp"}]},"locations":["aws:us-east-2"],"message":"BDD
+      test payload: synthetics_api_test_mcp_payload.json","name":"Test-Create_an_API_test_with_MCP_steps_returns_OK_Returns_the_created_test_details_response-1779209121","options":{"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_MCP_steps_returns_OK_Returns_the_created_test_details_response-1779209121","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":900},"subtype":"multi","tags":["testing:api"],"type":"api"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/api
+  response:
+    body:
+      string: '{"public_id":"htz-sbz-vuw","name":"Test-Create_an_API_test_with_MCP_steps_returns_OK_Returns_the_created_test_details_response-1779209121","status":"live","type":"api","subtype":"multi","tags":["testing:api"],"created_at":"2026-05-19T16:45:22.077574+00:00","modified_at":"2026-05-19T16:45:22.077574+00:00","config":{"steps":[{"allowFailure":false,"assertions":[{"operator":"is","target":200,"type":"statusCode"},{"type":"mcpRespectsSpecification"},{"operator":"contains","target":["tools"],"type":"mcpServerCapabilities"}],"isCritical":true,"name":"Initialize
+        MCP session","request":{"callType":"init","headers":{"DD-API-KEY":"<YOUR-API-KEY>","DD-APPLICATION-KEY":"<YOUR-APP-KEY>"},"mcpProtocolVersion":"2025-06-18","url":"https://example.org/mcp"},"retry":{"count":0,"interval":300},"subtype":"mcp","id":"3qn-99h-nhn"},{"allowFailure":false,"assertions":[{"operator":"is","target":200,"type":"statusCode"},{"operator":"moreThan","target":0,"type":"mcpToolCount"},{"operator":"lessThan","target":64,"type":"mcpToolNameLength"},{"type":"mcpRespectsSpecification"}],"isCritical":true,"name":"List
+        MCP tools","request":{"callType":"tool_list","headers":{"DD-API-KEY":"<YOUR-API-KEY>","DD-APPLICATION-KEY":"<YOUR-APP-KEY>"},"mcpProtocolVersion":"2025-06-18","url":"https://example.org/mcp"},"retry":{"count":0,"interval":300},"subtype":"mcp","id":"4xh-7i6-xda"},{"allowFailure":false,"assertions":[{"operator":"is","target":200,"type":"statusCode"},{"operator":"lessThan","target":5000,"type":"responseTime"},{"type":"mcpRespectsSpecification"}],"isCritical":true,"name":"Call
+        MCP search tool","request":{"callType":"tool_call","headers":{"DD-API-KEY":"<YOUR-API-KEY>","DD-APPLICATION-KEY":"<YOUR-APP-KEY>"},"mcpProtocolVersion":"2025-06-18","toolArgs":{"limit":5,"query":"datadog
+        synthetics"},"toolName":"search","url":"https://example.org/mcp"},"retry":{"count":0,"interval":300},"subtype":"mcp","id":"38v-zrk-3th"}]},"message":"BDD
+        test payload: synthetics_api_test_mcp_payload.json","options":{"min_failure_duration":10,"min_location_failed":1,"monitor_name":"Test-Create_an_API_test_with_MCP_steps_returns_OK_Returns_the_created_test_details_response-1779209121","monitor_priority":5,"retry":{"count":3,"interval":1000},"tick_every":900,"bits_ai_auto_investigate":false},"locations":["aws:us-east-2"],"created_by":{"name":"frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"},"deleted_at":null,"monitor_id":284930680,"org_id":321813,"modified_by":{"name":"frog","handle":"frog@datadoghq.com","email":"frog@datadoghq.com"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"public_ids":["htz-sbz-vuw"]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/synthetics/tests/delete
+  response:
+    body:
+      string: '{"deleted_tests":[{"public_id":"htz-sbz-vuw","deleted_at":"2026-05-19T16:45:22.518455+00:00"}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

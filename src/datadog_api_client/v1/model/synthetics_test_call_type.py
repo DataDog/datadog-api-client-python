@@ -14,18 +14,26 @@ from typing import ClassVar
 
 class SyntheticsTestCallType(ModelSimple):
     """
-    The type of gRPC call to perform.
+    The type of call to perform. Used by gRPC steps (`healthcheck`, `unary`)
+        and MCP steps (`init`, `tool_list`, `tool_call`). Valid values depend on
+        the parent step's `subtype`.
 
-    :param value: Must be one of ["healthcheck", "unary"].
+    :param value: Must be one of ["healthcheck", "unary", "init", "tool_list", "tool_call"].
     :type value: str
     """
 
     allowed_values = {
         "healthcheck",
         "unary",
+        "init",
+        "tool_list",
+        "tool_call",
     }
     HEALTHCHECK: ClassVar["SyntheticsTestCallType"]
     UNARY: ClassVar["SyntheticsTestCallType"]
+    INIT: ClassVar["SyntheticsTestCallType"]
+    TOOL_LIST: ClassVar["SyntheticsTestCallType"]
+    TOOL_CALL: ClassVar["SyntheticsTestCallType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +44,6 @@ class SyntheticsTestCallType(ModelSimple):
 
 SyntheticsTestCallType.HEALTHCHECK = SyntheticsTestCallType("healthcheck")
 SyntheticsTestCallType.UNARY = SyntheticsTestCallType("unary")
+SyntheticsTestCallType.INIT = SyntheticsTestCallType("init")
+SyntheticsTestCallType.TOOL_LIST = SyntheticsTestCallType("tool_list")
+SyntheticsTestCallType.TOOL_CALL = SyntheticsTestCallType("tool_call")
