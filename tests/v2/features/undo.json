@@ -3660,6 +3660,14 @@
       "type": "idempotent"
     }
   },
+  "DeleteLLMObsData": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "ListLLMObsAnnotationQueues": {
     "tag": "LLM Observability",
     "undo": {
@@ -3815,6 +3823,18 @@
     "tag": "LLM Observability",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListLLMObsSpans": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchLLMObsSpans": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListLLMObsDatasets": {

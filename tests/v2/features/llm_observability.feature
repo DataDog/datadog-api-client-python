@@ -1,7 +1,7 @@
 @endpoint(llm-observability) @endpoint(llm-observability-v2)
 Feature: LLM Observability
-  Manage LLM Observability projects, datasets, dataset records, experiments,
-  and annotations.
+  Manage LLM Observability spans, data, projects, datasets, dataset records,
+  experiments, and annotations.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -244,6 +244,22 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"category": "Custom", "eval_name": "my-custom-evaluator", "llm_judge_config": {"assessment_criteria": {"max_threshold": 1.0, "min_threshold": 0.7, "pass_values": ["pass", "yes"], "pass_when": true}, "inference_params": {"frequency_penalty": 0.0, "max_tokens": 1024, "presence_penalty": 0.0, "temperature": 0.7, "top_k": 50, "top_p": 1.0}, "last_used_library_prompt_template_name": "sentiment-analysis-v1", "modified_library_prompt_template": false, "output_schema": null, "parsing_type": "structured_output", "prompt_template": [{"content": "Rate the quality of the following response:", "contents": [{"type": "text", "value": {"text": "What is the sentiment of this review?", "tool_call": {"arguments": "{\"location\": \"San Francisco\"}", "id": "call_abc123", "name": "get_weather", "type": "function"}, "tool_call_result": {"name": "get_weather", "result": "sunny, 72F", "tool_id": "call_abc123", "type": "function"}}}], "role": "user"}]}, "llm_provider": {"bedrock": {"region": "us-east-1"}, "integration_account_id": "my-account-id", "integration_provider": "openai", "model_name": "gpt-4o", "vertex_ai": {"location": "us-central1", "project": "my-gcp-project"}}, "target": {"application_name": "my-llm-app", "enabled": true, "eval_scope": "span", "filter": "@service:my-service", "root_spans_only": true, "sampling_percentage": 50.0}}, "id": "my-custom-evaluator", "type": "evaluator_config"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete LLM Observability data returns "Accepted" response
+    Given operation "DeleteLLMObsData" enabled
+    And new "DeleteLLMObsData" request
+    And body with value {"data": {"attributes": {"delay": 0, "from": 1705314600000, "query": {"query": "@trace_id:abc123def456"}, "to": 1705315200000}, "type": "create_deletion_req"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete LLM Observability data returns "Bad Request" response
+    Given operation "DeleteLLMObsData" enabled
+    And new "DeleteLLMObsData" request
+    And body with value {"data": {"attributes": {"delay": 0, "from": 1705314600000, "query": {"query": "@trace_id:abc123def456"}, "to": 1705315200000}, "type": "create_deletion_req"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Delete LLM Observability dataset records returns "Bad Request" response
@@ -559,6 +575,20 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability spans returns "Bad Request" response
+    Given operation "ListLLMObsSpans" enabled
+    And new "ListLLMObsSpans" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability spans returns "OK" response
+    Given operation "ListLLMObsSpans" enabled
+    And new "ListLLMObsSpans" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: List events for an LLM Observability experiment returns "Bad Request" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
@@ -632,6 +662,22 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 100}}, "type": "experimentation"}}
     When the request is sent
     Then the response status is 206 Partial Content — more results are available. Use `meta.after` as the next `page.cursor`.
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Search LLM Observability spans returns "Bad Request" response
+    Given operation "SearchLLMObsSpans" enabled
+    And new "SearchLLMObsSpans" request
+    And body with value {"data": {"attributes": {"filter": {"from": "now-900s", "ml_app": "my-llm-app", "query": "@session_id:abc123def456", "span_id": "abc123def456", "span_kind": "llm", "span_name": "llm_call", "to": "now", "trace_id": "trace-9a8b7c6d5e4f"}, "options": {"include_attachments": true, "time_offset": 0}, "page": {"cursor": "eyJzdGFydCI6MTAwfQ==", "limit": 10}, "sort": "-start_ns"}, "type": "spans"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Search LLM Observability spans returns "OK" response
+    Given operation "SearchLLMObsSpans" enabled
+    And new "SearchLLMObsSpans" request
+    And body with value {"data": {"attributes": {"filter": {"from": "now-900s", "ml_app": "my-llm-app", "query": "@session_id:abc123def456", "span_id": "abc123def456", "span_kind": "llm", "span_name": "llm_call", "to": "now", "trace_id": "trace-9a8b7c6d5e4f"}, "options": {"include_attachments": true, "time_offset": 0}, "page": {"cursor": "eyJzdGFydCI6MTAwfQ==", "limit": 10}, "sort": "-start_ns"}, "type": "spans"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Simple search experimentation entities returns "Bad Request" response
