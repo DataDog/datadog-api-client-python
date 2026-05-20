@@ -1441,12 +1441,6 @@ from datadog_api_client.v2.model.create_degradation_request_data_attributes_comp
 from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
     CreateDegradationRequestDataAttributesStatus,
 )
-from datadog_api_client.v2.model.create_degradation_request_data_attributes_updates_items import (
-    CreateDegradationRequestDataAttributesUpdatesItems,
-)
-from datadog_api_client.v2.model.create_degradation_request_data_attributes_updates_items_components_affected_items import (
-    CreateDegradationRequestDataAttributesUpdatesItemsComponentsAffectedItems,
-)
 from datadog_api_client.v2.model.create_deployment_gate_params import CreateDeploymentGateParams
 from datadog_api_client.v2.model.create_deployment_gate_params_data import CreateDeploymentGateParamsData
 from datadog_api_client.v2.model.create_deployment_gate_params_data_attributes import (
@@ -1483,12 +1477,6 @@ from datadog_api_client.v2.model.create_maintenance_request_data_attributes impo
 )
 from datadog_api_client.v2.model.create_maintenance_request_data_attributes_components_affected_items import (
     CreateMaintenanceRequestDataAttributesComponentsAffectedItems,
-)
-from datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items import (
-    CreateMaintenanceRequestDataAttributesUpdatesItems,
-)
-from datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items_components_affected_items import (
-    CreateMaintenanceRequestDataAttributesUpdatesItemsComponentsAffectedItems,
 )
 from datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items_status import (
     CreateMaintenanceRequestDataAttributesUpdatesItemsStatus,
@@ -9081,8 +9069,6 @@ __all__ = [
     "CreateDegradationRequestDataAttributes",
     "CreateDegradationRequestDataAttributesComponentsAffectedItems",
     "CreateDegradationRequestDataAttributesStatus",
-    "CreateDegradationRequestDataAttributesUpdatesItems",
-    "CreateDegradationRequestDataAttributesUpdatesItemsComponentsAffectedItems",
     "CreateDeploymentGateParams",
     "CreateDeploymentGateParamsData",
     "CreateDeploymentGateParamsDataAttributes",
@@ -9108,8 +9094,6 @@ __all__ = [
     "CreateMaintenanceRequestData",
     "CreateMaintenanceRequestDataAttributes",
     "CreateMaintenanceRequestDataAttributesComponentsAffectedItems",
-    "CreateMaintenanceRequestDataAttributesUpdatesItems",
-    "CreateMaintenanceRequestDataAttributesUpdatesItemsComponentsAffectedItems",
     "CreateMaintenanceRequestDataAttributesUpdatesItemsStatus",
     "CreateNotificationChannelAttributes",
     "CreateNotificationChannelConfig",
