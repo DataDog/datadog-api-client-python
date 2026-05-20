@@ -3380,6 +3380,14 @@ from datadog_api_client.v2.model.llm_obs_custom_eval_config_user import LLMObsCu
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_vertex_ai_options import (
     LLMObsCustomEvalConfigVertexAIOptions,
 )
+from datadog_api_client.v2.model.llm_obs_data_deletion_request import LLMObsDataDeletionRequest
+from datadog_api_client.v2.model.llm_obs_data_deletion_request_attributes import LLMObsDataDeletionRequestAttributes
+from datadog_api_client.v2.model.llm_obs_data_deletion_request_data import LLMObsDataDeletionRequestData
+from datadog_api_client.v2.model.llm_obs_data_deletion_request_type import LLMObsDataDeletionRequestType
+from datadog_api_client.v2.model.llm_obs_data_deletion_response import LLMObsDataDeletionResponse
+from datadog_api_client.v2.model.llm_obs_data_deletion_response_attributes import LLMObsDataDeletionResponseAttributes
+from datadog_api_client.v2.model.llm_obs_data_deletion_response_data import LLMObsDataDeletionResponseData
+from datadog_api_client.v2.model.llm_obs_data_deletion_response_type import LLMObsDataDeletionResponseType
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_request import LLMObsDatasetDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_response import LLMObsDatasetDataAttributesResponse
 from datadog_api_client.v2.model.llm_obs_dataset_data_request import LLMObsDatasetDataRequest
@@ -3572,6 +3580,26 @@ from datadog_api_client.v2.model.llm_obs_project_update_data_request import LLMO
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
 from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
+from datadog_api_client.v2.model.llm_obs_search_spans_request import LLMObsSearchSpansRequest
+from datadog_api_client.v2.model.llm_obs_search_spans_request_attributes import LLMObsSearchSpansRequestAttributes
+from datadog_api_client.v2.model.llm_obs_search_spans_request_data import LLMObsSearchSpansRequestData
+from datadog_api_client.v2.model.llm_obs_search_spans_request_type import LLMObsSearchSpansRequestType
+from datadog_api_client.v2.model.llm_obs_span_attributes import LLMObsSpanAttributes
+from datadog_api_client.v2.model.llm_obs_span_data import LLMObsSpanData
+from datadog_api_client.v2.model.llm_obs_span_evaluation_metric import LLMObsSpanEvaluationMetric
+from datadog_api_client.v2.model.llm_obs_span_filter import LLMObsSpanFilter
+from datadog_api_client.v2.model.llm_obs_span_io import LLMObsSpanIO
+from datadog_api_client.v2.model.llm_obs_span_message import LLMObsSpanMessage
+from datadog_api_client.v2.model.llm_obs_span_page_query import LLMObsSpanPageQuery
+from datadog_api_client.v2.model.llm_obs_span_search_options import LLMObsSpanSearchOptions
+from datadog_api_client.v2.model.llm_obs_span_tool_call import LLMObsSpanToolCall
+from datadog_api_client.v2.model.llm_obs_span_tool_definition import LLMObsSpanToolDefinition
+from datadog_api_client.v2.model.llm_obs_span_tool_result import LLMObsSpanToolResult
+from datadog_api_client.v2.model.llm_obs_span_type import LLMObsSpanType
+from datadog_api_client.v2.model.llm_obs_spans_response import LLMObsSpansResponse
+from datadog_api_client.v2.model.llm_obs_spans_response_links import LLMObsSpansResponseLinks
+from datadog_api_client.v2.model.llm_obs_spans_response_meta import LLMObsSpansResponseMeta
+from datadog_api_client.v2.model.llm_obs_spans_response_page import LLMObsSpansResponsePage
 from datadog_api_client.v2.model.llm_obs_trace_annotated_interaction_item import LLMObsTraceAnnotatedInteractionItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_response_item import LLMObsTraceInteractionResponseItem
@@ -10493,6 +10521,14 @@ __all__ = [
     "LLMObsCustomEvalConfigUpdateRequest",
     "LLMObsCustomEvalConfigUser",
     "LLMObsCustomEvalConfigVertexAIOptions",
+    "LLMObsDataDeletionRequest",
+    "LLMObsDataDeletionRequestAttributes",
+    "LLMObsDataDeletionRequestData",
+    "LLMObsDataDeletionRequestType",
+    "LLMObsDataDeletionResponse",
+    "LLMObsDataDeletionResponseAttributes",
+    "LLMObsDataDeletionResponseData",
+    "LLMObsDataDeletionResponseType",
     "LLMObsDatasetDataAttributesRequest",
     "LLMObsDatasetDataAttributesResponse",
     "LLMObsDatasetDataRequest",
@@ -10613,6 +10649,26 @@ __all__ = [
     "LLMObsProjectUpdateRequest",
     "LLMObsProjectsResponse",
     "LLMObsRecordType",
+    "LLMObsSearchSpansRequest",
+    "LLMObsSearchSpansRequestAttributes",
+    "LLMObsSearchSpansRequestData",
+    "LLMObsSearchSpansRequestType",
+    "LLMObsSpanAttributes",
+    "LLMObsSpanData",
+    "LLMObsSpanEvaluationMetric",
+    "LLMObsSpanFilter",
+    "LLMObsSpanIO",
+    "LLMObsSpanMessage",
+    "LLMObsSpanPageQuery",
+    "LLMObsSpanSearchOptions",
+    "LLMObsSpanToolCall",
+    "LLMObsSpanToolDefinition",
+    "LLMObsSpanToolResult",
+    "LLMObsSpanType",
+    "LLMObsSpansResponse",
+    "LLMObsSpansResponseLinks",
+    "LLMObsSpansResponseMeta",
+    "LLMObsSpansResponsePage",
     "LLMObsTraceAnnotatedInteractionItem",
     "LLMObsTraceInteractionItem",
     "LLMObsTraceInteractionResponseItem",

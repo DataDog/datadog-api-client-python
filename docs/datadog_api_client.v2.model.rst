@@ -18561,6 +18561,62 @@ datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_vertex\_ai\_option
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_dataset\_data\_attributes\_request module
 ---------------------------------------------------------------------------------
 
@@ -19398,6 +19454,146 @@ datadog\_api\_client.v2.model.llm\_obs\_record\_type module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_record_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_search\_spans\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_search_spans_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_search\_spans\_request\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_search_spans_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_search\_spans\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_search_spans_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_search\_spans\_request\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_search_spans_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_evaluation\_metric module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_evaluation_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_filter module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_io module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_io
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_message module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_message
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_page\_query module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_page_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_search\_options module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_search_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_tool\_call module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_tool_call
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_tool\_definition module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_tool_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_tool\_result module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_tool_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_span\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_span_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_spans\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_spans_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_spans\_response\_links module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_spans_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_spans\_response\_meta module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_spans_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_spans\_response\_page module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_spans_response_page
    :members:
    :show-inheritance:
 

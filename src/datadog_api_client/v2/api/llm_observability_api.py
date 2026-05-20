@@ -13,6 +13,8 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_response import LLMObsCustomEvalConfigResponse
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_request import LLMObsCustomEvalConfigUpdateRequest
+from datadog_api_client.v2.model.llm_obs_data_deletion_response import LLMObsDataDeletionResponse
+from datadog_api_client.v2.model.llm_obs_data_deletion_request import LLMObsDataDeletionRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObsAnnotationQueueResponse
 from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
@@ -56,6 +58,8 @@ from datadog_api_client.v2.model.llm_obs_project_response import LLMObsProjectRe
 from datadog_api_client.v2.model.llm_obs_project_request import LLMObsProjectRequest
 from datadog_api_client.v2.model.llm_obs_delete_projects_request import LLMObsDeleteProjectsRequest
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
+from datadog_api_client.v2.model.llm_obs_spans_response import LLMObsSpansResponse
+from datadog_api_client.v2.model.llm_obs_search_spans_request import LLMObsSearchSpansRequest
 from datadog_api_client.v2.model.llm_obs_datasets_response import LLMObsDatasetsResponse
 from datadog_api_client.v2.model.llm_obs_dataset_response import LLMObsDatasetResponse
 from datadog_api_client.v2.model.llm_obs_dataset_request import LLMObsDatasetRequest
@@ -71,7 +75,7 @@ from datadog_api_client.v2.model.llm_obs_experiment_events_v2_response import LL
 
 class LLMObservabilityApi:
     """
-    Manage LLM Observability projects, datasets, dataset records, experiments, and annotations.
+    Manage LLM Observability spans, data, projects, datasets, dataset records, experiments, and annotations.
     """
 
     def __init__(self, api_client=None):
@@ -338,6 +342,26 @@ class LLMObservabilityApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._delete_llm_obs_data_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDataDeletionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/deletion/data/llmobs",
+                "operation_id": "delete_llm_obs_data",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsDataDeletionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -735,6 +759,83 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._list_llm_obs_spans_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsSpansResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/spans/events",
+                "operation_id": "list_llm_obs_spans",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_from": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[to]",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "filter_span_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[span_id]",
+                    "location": "query",
+                },
+                "filter_trace_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[trace_id]",
+                    "location": "query",
+                },
+                "filter_span_kind": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[span_kind]",
+                    "location": "query",
+                },
+                "filter_span_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[span_name]",
+                    "location": "query",
+                },
+                "filter_ml_app": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[ml_app]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "include_attachments": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_attachments",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._search_llm_obs_experimentation_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentationSearchResponse,),
@@ -748,6 +849,26 @@ class LLMObservabilityApi:
                 "body": {
                     "required": True,
                     "openapi_types": (LLMObsExperimentationSearchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._search_llm_obs_spans_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsSpansResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/spans/events/search",
+                "operation_id": "search_llm_obs_spans",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsSearchSpansRequest,),
                     "location": "body",
                 },
             },
@@ -1201,6 +1322,23 @@ class LLMObservabilityApi:
 
         return self._delete_llm_obs_custom_eval_config_endpoint.call_with_http_info(**kwargs)
 
+    def delete_llm_obs_data(
+        self,
+        body: LLMObsDataDeletionRequest,
+    ) -> LLMObsDataDeletionResponse:
+        """Delete LLM Observability data.
+
+        Submit a request to delete LLM Observability span data matching a trace ID filter within a specified time range.
+
+        :param body: Data deletion request payload.
+        :type body: LLMObsDataDeletionRequest
+        :rtype: LLMObsDataDeletionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._delete_llm_obs_data_endpoint.call_with_http_info(**kwargs)
+
     def delete_llm_obs_dataset_records(
         self,
         project_id: str,
@@ -1554,6 +1692,91 @@ class LLMObservabilityApi:
 
         return self._list_llm_obs_projects_endpoint.call_with_http_info(**kwargs)
 
+    def list_llm_obs_spans(
+        self,
+        *,
+        filter_from: Union[str, UnsetType] = unset,
+        filter_to: Union[str, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_span_id: Union[str, UnsetType] = unset,
+        filter_trace_id: Union[str, UnsetType] = unset,
+        filter_span_kind: Union[str, UnsetType] = unset,
+        filter_span_name: Union[str, UnsetType] = unset,
+        filter_ml_app: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        include_attachments: Union[bool, UnsetType] = unset,
+    ) -> LLMObsSpansResponse:
+        """List LLM Observability spans.
+
+        List LLM Observability spans matching the specified filters.
+
+        :param filter_from: Start of the time range. Accepts ISO 8601 or relative format (e.g., ``now-15m`` ). Defaults to ``now-15m``.
+        :type filter_from: str, optional
+        :param filter_to: End of the time range. Accepts ISO 8601 or relative format. Defaults to ``now``.
+        :type filter_to: str, optional
+        :param filter_query: Search query using LLM Observability query syntax. Supports attribute filters using the field:value syntax (e.g. session_id, trace_id, ml_app, meta.span.kind). When provided, structured field filters ( ``filter[span_id]`` , ``filter[trace_id]`` , etc.) are ignored.
+        :type filter_query: str, optional
+        :param filter_span_id: Filter by exact span ID.
+        :type filter_span_id: str, optional
+        :param filter_trace_id: Filter by exact trace ID.
+        :type filter_trace_id: str, optional
+        :param filter_span_kind: Filter by span kind (e.g., llm, agent, tool, task, workflow).
+        :type filter_span_kind: str, optional
+        :param filter_span_name: Filter by span name.
+        :type filter_span_name: str, optional
+        :param filter_ml_app: Filter by ML application name.
+        :type filter_ml_app: str, optional
+        :param page_limit: Maximum number of spans to return. Defaults to ``10``.
+        :type page_limit: int, optional
+        :param page_cursor: Cursor from the previous response to retrieve the next page.
+        :type page_cursor: str, optional
+        :param sort: Sort order for the results.
+        :type sort: str, optional
+        :param include_attachments: Whether to include attachment data in the response. Defaults to ``true``.
+        :type include_attachments: bool, optional
+        :rtype: LLMObsSpansResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_span_id is not unset:
+            kwargs["filter_span_id"] = filter_span_id
+
+        if filter_trace_id is not unset:
+            kwargs["filter_trace_id"] = filter_trace_id
+
+        if filter_span_kind is not unset:
+            kwargs["filter_span_kind"] = filter_span_kind
+
+        if filter_span_name is not unset:
+            kwargs["filter_span_name"] = filter_span_name
+
+        if filter_ml_app is not unset:
+            kwargs["filter_ml_app"] = filter_ml_app
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if include_attachments is not unset:
+            kwargs["include_attachments"] = include_attachments
+
+        return self._list_llm_obs_spans_endpoint.call_with_http_info(**kwargs)
+
     def search_llm_obs_experimentation(
         self,
         body: LLMObsExperimentationSearchRequest,
@@ -1574,6 +1797,23 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._search_llm_obs_experimentation_endpoint.call_with_http_info(**kwargs)
+
+    def search_llm_obs_spans(
+        self,
+        body: LLMObsSearchSpansRequest,
+    ) -> LLMObsSpansResponse:
+        """Search LLM Observability spans.
+
+        Search LLM Observability spans using structured filters in the request body.
+
+        :param body: Search spans payload.
+        :type body: LLMObsSearchSpansRequest
+        :rtype: LLMObsSpansResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._search_llm_obs_spans_endpoint.call_with_http_info(**kwargs)
 
     def simple_search_llm_obs_experimentation(
         self,
