@@ -27,10 +27,10 @@ Feature: App Builder
     Then the response status is 201 Created
     And the response "data.type" is equal to "appDefinitions"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Create Publish Request returns "Bad Request" response
     Given new "CreatePublishRequest" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
     And body with value {"data": {"attributes": {"description": "Adds new dashboard widgets and a few bug fixes.", "title": "Release v1.2 to production"}, "type": "publishRequest"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -43,10 +43,10 @@ Feature: App Builder
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Create Publish Request returns "Not Found" response
     Given new "CreatePublishRequest" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
     And body with value {"data": {"attributes": {"description": "Adds new dashboard widgets and a few bug fixes.", "title": "Release v1.2 to production"}, "type": "publishRequest"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -139,24 +139,25 @@ Feature: App Builder
     And the response "data.id" has the same value as "app.data.id"
     And the response "data.type" is equal to "appDefinitions"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: List App Versions returns "Bad Request" response
     Given new "ListAppVersions" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: List App Versions returns "Not Found" response
     Given new "ListAppVersions" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: List App Versions returns "OK" response
     Given new "ListAppVersions" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And there is a valid "app" in the system
+    And request contains "app_id" parameter from "app.data.id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -172,29 +173,30 @@ Feature: App Builder
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Name App Version returns "Bad Request" response
     Given new "UpdateAppVersionName" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "version" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
+    And request contains "version" parameter with value "latest"
     And body with value {"data": {"attributes": {"name": "v1.2.0 - bug fix release"}, "type": "versionNames"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Name App Version returns "No Content" response
     Given new "UpdateAppVersionName" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "version" parameter from "REPLACE.ME"
+    And there is a valid "app" in the system
+    And request contains "app_id" parameter from "app.data.id"
+    And request contains "version" parameter with value "latest"
     And body with value {"data": {"attributes": {"name": "v1.2.0 - bug fix release"}, "type": "versionNames"}}
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Name App Version returns "Not Found" response
     Given new "UpdateAppVersionName" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "version" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
+    And request contains "version" parameter with value "latest"
     And body with value {"data": {"attributes": {"name": "v1.2.0 - bug fix release"}, "type": "versionNames"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -221,19 +223,19 @@ Feature: App Builder
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Revert App returns "Bad Request" response
     Given new "RevertApp" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "version" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
+    And request contains "version" parameter with value "1"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Revert App returns "Not Found" response
     Given new "RevertApp" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "version" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
+    And request contains "version" parameter with value "1"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -267,98 +269,103 @@ Feature: App Builder
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Update App Favorite Status returns "Bad Request" response
     Given new "UpdateAppFavorite" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
     And body with value {"data": {"attributes": {"favorite": true}, "type": "favorites"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Favorite Status returns "No Content" response
     Given new "UpdateAppFavorite" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And there is a valid "app" in the system
+    And request contains "app_id" parameter from "app.data.id"
     And body with value {"data": {"attributes": {"favorite": true}, "type": "favorites"}}
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Favorite Status returns "Not Found" response
     Given new "UpdateAppFavorite" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
     And body with value {"data": {"attributes": {"favorite": true}, "type": "favorites"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Update App Protection Level returns "Bad Request" response
     Given new "UpdateProtectionLevel" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
     And body with value {"data": {"attributes": {"protectionLevel": "approval_required"}, "type": "protectionLevel"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Protection Level returns "Not Found" response
     Given new "UpdateProtectionLevel" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
     And body with value {"data": {"attributes": {"protectionLevel": "approval_required"}, "type": "protectionLevel"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Protection Level returns "OK" response
     Given new "UpdateProtectionLevel" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And there is a valid "app" in the system
+    And request contains "app_id" parameter from "app.data.id"
     And body with value {"data": {"attributes": {"protectionLevel": "approval_required"}, "type": "protectionLevel"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "appDefinitions"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Update App Self-Service Status returns "Bad Request" response
     Given new "UpdateAppSelfService" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
     And body with value {"data": {"attributes": {"selfService": true}, "type": "selfService"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Self-Service Status returns "No Content" response
     Given new "UpdateAppSelfService" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And there is a valid "app" in the system
+    And request contains "app_id" parameter from "app.data.id"
     And body with value {"data": {"attributes": {"selfService": true}, "type": "selfService"}}
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Self-Service Status returns "Not Found" response
     Given new "UpdateAppSelfService" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
     And body with value {"data": {"attributes": {"selfService": true}, "type": "selfService"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip @team:DataDog/app-builder-backend
   Scenario: Update App Tags returns "Bad Request" response
     Given new "UpdateAppTags" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "bad-app-id"
     And body with value {"data": {"attributes": {"tags": ["team:platform", "service:ops"]}, "type": "tags"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Tags returns "No Content" response
     Given new "UpdateAppTags" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And there is a valid "app" in the system
+    And request contains "app_id" parameter from "app.data.id"
     And body with value {"data": {"attributes": {"tags": ["team:platform", "service:ops"]}, "type": "tags"}}
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @skip-typescript @team:DataDog/app-builder-backend
   Scenario: Update App Tags returns "Not Found" response
     Given new "UpdateAppTags" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "7addb29b-f935-472c-ae79-d1963979a23e"
     And body with value {"data": {"attributes": {"tags": ["team:platform", "service:ops"]}, "type": "tags"}}
     When the request is sent
     Then the response status is 404 Not Found

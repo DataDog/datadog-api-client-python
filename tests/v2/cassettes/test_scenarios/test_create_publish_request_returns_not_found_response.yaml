@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"description":"Adds new dashboard widgets and a
+      few bug fixes.","title":"Release v1.2 to production"},"type":"publishRequest"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/app-builder/apps/7addb29b-f935-472c-ae79-d1963979a23e/publish-request
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"c9247d40-2291-4860-90ac-9c2441ff23db","title":"app
+        not found","detail":"app with id 7addb29b-f935-472c-ae79-d1963979a23e not
+        found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
