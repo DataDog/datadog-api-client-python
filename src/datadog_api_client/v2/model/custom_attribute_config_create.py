@@ -40,12 +40,12 @@ class CustomAttributeConfigCreate(ModelNormal):
         self_, attributes: CustomAttributeConfigAttributesCreate, type: CustomAttributeConfigResourceType, **kwargs
     ):
         """
-        Custom attribute config
+        Data object for creating a custom attribute configuration.
 
-        :param attributes: Custom attribute config resource attributes
+        :param attributes: Attributes required to create a custom attribute configuration.
         :type attributes: CustomAttributeConfigAttributesCreate
 
-        :param type: Custom attributes config JSON:API resource type
+        :param type: JSON:API resource type for custom attribute configurations.
         :type type: CustomAttributeConfigResourceType
         """
         super().__init__(kwargs)

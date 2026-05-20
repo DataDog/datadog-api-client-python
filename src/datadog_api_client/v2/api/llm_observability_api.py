@@ -33,6 +33,18 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_response 
 from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_request import (
     LLMObsAnnotationQueueLabelSchemaUpdateRequest,
 )
+from datadog_api_client.v2.model.llm_obs_experimentation_analytics_response import (
+    LLMObsExperimentationAnalyticsResponse,
+)
+from datadog_api_client.v2.model.llm_obs_experimentation_analytics_request import LLMObsExperimentationAnalyticsRequest
+from datadog_api_client.v2.model.llm_obs_experimentation_search_response import LLMObsExperimentationSearchResponse
+from datadog_api_client.v2.model.llm_obs_experimentation_search_request import LLMObsExperimentationSearchRequest
+from datadog_api_client.v2.model.llm_obs_experimentation_simple_search_response import (
+    LLMObsExperimentationSimpleSearchResponse,
+)
+from datadog_api_client.v2.model.llm_obs_experimentation_simple_search_request import (
+    LLMObsExperimentationSimpleSearchRequest,
+)
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
 from datadog_api_client.v2.model.llm_obs_experiment_response import LLMObsExperimentResponse
 from datadog_api_client.v2.model.llm_obs_experiment_request import LLMObsExperimentRequest
@@ -54,6 +66,7 @@ from datadog_api_client.v2.model.llm_obs_dataset_records_mutation_response impor
 from datadog_api_client.v2.model.llm_obs_dataset_records_update_request import LLMObsDatasetRecordsUpdateRequest
 from datadog_api_client.v2.model.llm_obs_dataset_records_request import LLMObsDatasetRecordsRequest
 from datadog_api_client.v2.model.llm_obs_delete_dataset_records_request import LLMObsDeleteDatasetRecordsRequest
+from datadog_api_client.v2.model.llm_obs_experiment_events_v2_response import LLMObsExperimentEventsV2Response
 
 
 class LLMObservabilityApi:
@@ -65,6 +78,26 @@ class LLMObservabilityApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._aggregate_llm_obs_experimentation_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsExperimentationAnalyticsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/experimentation/analytics",
+                "operation_id": "aggregate_llm_obs_experimentation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsExperimentationAnalyticsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_llm_obs_annotation_queue_endpoint = _Endpoint(
             settings={
@@ -590,6 +623,39 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._list_llm_obs_experiment_events_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsExperimentEventsV2Response,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v3/experiments/{experiment_id}/events",
+                "operation_id": "list_llm_obs_experiment_events",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "experiment_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "experiment_id",
+                    "location": "path",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_llm_obs_experiments_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentsResponse,),
@@ -666,6 +732,46 @@ class LLMObservabilityApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._search_llm_obs_experimentation_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsExperimentationSearchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/experimentation/search",
+                "operation_id": "search_llm_obs_experimentation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsExperimentationSearchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._simple_search_llm_obs_experimentation_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsExperimentationSimpleSearchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/experimentation/simple-search",
+                "operation_id": "simple_search_llm_obs_experimentation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsExperimentationSimpleSearchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -862,6 +968,26 @@ class LLMObservabilityApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def aggregate_llm_obs_experimentation(
+        self,
+        body: LLMObsExperimentationAnalyticsRequest,
+    ) -> LLMObsExperimentationAnalyticsResponse:
+        """Aggregate LLM Observability experimentation.
+
+        Execute an analytics aggregation over LLM Observability experimentation data.
+        Use this endpoint to compute metrics (for example average eval scores) grouped by fields such as ``span_id`` or ``experiment_id``.
+
+        At least one ``compute`` definition and one ``index`` must be provided.
+
+        :param body: Analytics payload.
+        :type body: LLMObsExperimentationAnalyticsRequest
+        :rtype: LLMObsExperimentationAnalyticsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._aggregate_llm_obs_experimentation_endpoint.call_with_http_info(**kwargs)
 
     def create_llm_obs_annotation_queue(
         self,
@@ -1318,6 +1444,36 @@ class LLMObservabilityApi:
 
         return self._list_llm_obs_datasets_endpoint.call_with_http_info(**kwargs)
 
+    def list_llm_obs_experiment_events(
+        self,
+        experiment_id: str,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+    ) -> LLMObsExperimentEventsV2Response:
+        """List events for an LLM Observability experiment.
+
+        Retrieve spans and experiment-level summary metrics for a given experiment with cursor-based pagination.
+
+        :param experiment_id: The ID of the LLM Observability experiment.
+        :type experiment_id: str
+        :param page_limit: Maximum number of spans to return per page. Defaults to 5000.
+        :type page_limit: int, optional
+        :param page_cursor: Opaque cursor from a previous response to fetch the next page of results.
+        :type page_cursor: str, optional
+        :rtype: LLMObsExperimentEventsV2Response
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["experiment_id"] = experiment_id
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        return self._list_llm_obs_experiment_events_endpoint.call_with_http_info(**kwargs)
+
     def list_llm_obs_experiments(
         self,
         *,
@@ -1397,6 +1553,47 @@ class LLMObservabilityApi:
             kwargs["page_limit"] = page_limit
 
         return self._list_llm_obs_projects_endpoint.call_with_http_info(**kwargs)
+
+    def search_llm_obs_experimentation(
+        self,
+        body: LLMObsExperimentationSearchRequest,
+    ) -> LLMObsExperimentationSearchResponse:
+        """Search LLM Observability experimentation entities.
+
+        Search across LLM Observability experimentation entities — projects, datasets, dataset records, experiments, and experiment runs — using cursor-based pagination.
+
+        The ``filter.scope`` field controls which entity types are returned. At least one valid scope must be provided.
+
+        Returns ``200 OK`` when all results fit in a single page. Returns ``206 Partial Content`` with a cursor in ``meta.after`` when additional pages are available.
+
+        :param body: Experimentation search payload.
+        :type body: LLMObsExperimentationSearchRequest
+        :rtype: LLMObsExperimentationSearchResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._search_llm_obs_experimentation_endpoint.call_with_http_info(**kwargs)
+
+    def simple_search_llm_obs_experimentation(
+        self,
+        body: LLMObsExperimentationSimpleSearchRequest,
+    ) -> LLMObsExperimentationSimpleSearchResponse:
+        """Simple search experimentation entities.
+
+        Search across LLM Observability experimentation entities using offset-based (page-number) pagination.
+        Use this endpoint when you need total page count or want to navigate to a specific page number.
+
+        The ``filter.scope`` field controls which entity types are returned. At least one valid scope must be provided.
+
+        :param body: Simple search payload.
+        :type body: LLMObsExperimentationSimpleSearchRequest
+        :rtype: LLMObsExperimentationSimpleSearchResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._simple_search_llm_obs_experimentation_endpoint.call_with_http_info(**kwargs)
 
     def update_llm_obs_annotation_queue(
         self,

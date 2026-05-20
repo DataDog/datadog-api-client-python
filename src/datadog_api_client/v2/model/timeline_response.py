@@ -32,7 +32,7 @@ class TimelineResponse(ModelNormal):
 
     def __init__(self_, data: Union[List[TimelineCellResource], UnsetType] = unset, **kwargs):
         """
-        Timeline response
+        Response containing the chronological list of timeline cells for a case.
 
         :param data: The ``TimelineResponse`` ``data``.
         :type data: [TimelineCellResource], optional
