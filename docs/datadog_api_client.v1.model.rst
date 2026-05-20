@@ -5226,6 +5226,34 @@ datadog\_api\_client.v1.model.synthetics\_assertion\_json\_schema\_target\_targe
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_assertion\_mcp\_respects\_specification module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_mcp_respects_specification
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_assertion\_mcp\_respects\_specification\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_mcp_respects_specification_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_assertion\_mcp\_server\_capabilities\_target module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_mcp_server_capabilities_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_assertion\_mcp\_server\_capabilities\_type module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_assertion_mcp_server_capabilities_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_assertion\_operator module
 --------------------------------------------------------------------
 
@@ -5734,6 +5762,13 @@ datadog\_api\_client.v1.model.synthetics\_locations module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.synthetics_locations
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_mcp\_server\_capability module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_mcp_server_capability
    :members:
    :show-inheritance:
 

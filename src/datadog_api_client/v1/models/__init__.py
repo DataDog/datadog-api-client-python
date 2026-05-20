@@ -910,6 +910,18 @@ from datadog_api_client.v1.model.synthetics_assertion_json_schema_target_target 
 )
 from datadog_api_client.v1.model.synthetics_assertion_javascript import SyntheticsAssertionJavascript
 from datadog_api_client.v1.model.synthetics_assertion_javascript_type import SyntheticsAssertionJavascriptType
+from datadog_api_client.v1.model.synthetics_assertion_mcp_respects_specification import (
+    SyntheticsAssertionMCPRespectsSpecification,
+)
+from datadog_api_client.v1.model.synthetics_assertion_mcp_respects_specification_type import (
+    SyntheticsAssertionMCPRespectsSpecificationType,
+)
+from datadog_api_client.v1.model.synthetics_assertion_mcp_server_capabilities_target import (
+    SyntheticsAssertionMCPServerCapabilitiesTarget,
+)
+from datadog_api_client.v1.model.synthetics_assertion_mcp_server_capabilities_type import (
+    SyntheticsAssertionMCPServerCapabilitiesType,
+)
 from datadog_api_client.v1.model.synthetics_assertion_operator import SyntheticsAssertionOperator
 from datadog_api_client.v1.model.synthetics_assertion_target import SyntheticsAssertionTarget
 from datadog_api_client.v1.model.synthetics_assertion_target_value import SyntheticsAssertionTargetValue
@@ -999,6 +1011,8 @@ from datadog_api_client.v1.model.synthetics_local_variable_parsing_options_type 
 )
 from datadog_api_client.v1.model.synthetics_location import SyntheticsLocation
 from datadog_api_client.v1.model.synthetics_locations import SyntheticsLocations
+from datadog_api_client.v1.model.synthetics_mcp_protocol_version import SyntheticsMCPProtocolVersion
+from datadog_api_client.v1.model.synthetics_mcp_server_capability import SyntheticsMCPServerCapability
 from datadog_api_client.v1.model.synthetics_mobile_step import SyntheticsMobileStep
 from datadog_api_client.v1.model.synthetics_mobile_step_params import SyntheticsMobileStepParams
 from datadog_api_client.v1.model.synthetics_mobile_step_params_direction import SyntheticsMobileStepParamsDirection
@@ -2097,6 +2111,10 @@ __all__ = [
     "SyntheticsAssertionJSONSchemaTargetTarget",
     "SyntheticsAssertionJavascript",
     "SyntheticsAssertionJavascriptType",
+    "SyntheticsAssertionMCPRespectsSpecification",
+    "SyntheticsAssertionMCPRespectsSpecificationType",
+    "SyntheticsAssertionMCPServerCapabilitiesTarget",
+    "SyntheticsAssertionMCPServerCapabilitiesType",
     "SyntheticsAssertionOperator",
     "SyntheticsAssertionTarget",
     "SyntheticsAssertionTargetValue",
@@ -2170,6 +2188,8 @@ __all__ = [
     "SyntheticsLocalVariableParsingOptionsType",
     "SyntheticsLocation",
     "SyntheticsLocations",
+    "SyntheticsMCPProtocolVersion",
+    "SyntheticsMCPServerCapability",
     "SyntheticsMobileStep",
     "SyntheticsMobileStepParams",
     "SyntheticsMobileStepParamsDirection",
