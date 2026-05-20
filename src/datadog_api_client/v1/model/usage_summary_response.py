@@ -75,6 +75,7 @@ class UsageSummaryResponse(ModelNormal):
             "cloud_cost_management_host_count_avg_sum": (int,),
             "cloud_cost_management_oci_host_count_avg_sum": (int,),
             "cloud_siem_events_agg_sum": (int,),
+            "cloud_siem_indexed_logs_agg_sum": (int,),
             "code_analysis_sa_committers_hwm_sum": (int,),
             "code_analysis_sca_committers_hwm_sum": (int,),
             "code_security_host_top99p_sum": (int,),
@@ -270,6 +271,8 @@ class UsageSummaryResponse(ModelNormal):
             "serverless_apps_google_count_avg_sum": (int,),
             "serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum": (int,),
             "serverless_apps_total_count_avg_sum": (int,),
+            "siem_12mo_retention_agg_sum": (int,),
+            "siem_6mo_retention_agg_sum": (int,),
             "siem_analyzed_logs_add_on_count_agg_sum": (int,),
             "start_date": (datetime,),
             "synthetics_browser_check_calls_count_agg_sum": (int,),
@@ -335,6 +338,7 @@ class UsageSummaryResponse(ModelNormal):
         "cloud_cost_management_host_count_avg_sum": "cloud_cost_management_host_count_avg_sum",
         "cloud_cost_management_oci_host_count_avg_sum": "cloud_cost_management_oci_host_count_avg_sum",
         "cloud_siem_events_agg_sum": "cloud_siem_events_agg_sum",
+        "cloud_siem_indexed_logs_agg_sum": "cloud_siem_indexed_logs_agg_sum",
         "code_analysis_sa_committers_hwm_sum": "code_analysis_sa_committers_hwm_sum",
         "code_analysis_sca_committers_hwm_sum": "code_analysis_sca_committers_hwm_sum",
         "code_security_host_top99p_sum": "code_security_host_top99p_sum",
@@ -530,6 +534,8 @@ class UsageSummaryResponse(ModelNormal):
         "serverless_apps_google_count_avg_sum": "serverless_apps_google_count_avg_sum",
         "serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum": "serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum",
         "serverless_apps_total_count_avg_sum": "serverless_apps_total_count_avg_sum",
+        "siem_12mo_retention_agg_sum": "siem_12mo_retention_agg_sum",
+        "siem_6mo_retention_agg_sum": "siem_6mo_retention_agg_sum",
         "siem_analyzed_logs_add_on_count_agg_sum": "siem_analyzed_logs_add_on_count_agg_sum",
         "start_date": "start_date",
         "synthetics_browser_check_calls_count_agg_sum": "synthetics_browser_check_calls_count_agg_sum",
@@ -596,6 +602,7 @@ class UsageSummaryResponse(ModelNormal):
         cloud_cost_management_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_cost_management_oci_host_count_avg_sum: Union[int, UnsetType] = unset,
         cloud_siem_events_agg_sum: Union[int, UnsetType] = unset,
+        cloud_siem_indexed_logs_agg_sum: Union[int, UnsetType] = unset,
         code_analysis_sa_committers_hwm_sum: Union[int, UnsetType] = unset,
         code_analysis_sca_committers_hwm_sum: Union[int, UnsetType] = unset,
         code_security_host_top99p_sum: Union[int, UnsetType] = unset,
@@ -791,6 +798,8 @@ class UsageSummaryResponse(ModelNormal):
         serverless_apps_google_count_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_total_count_avg_sum: Union[int, UnsetType] = unset,
+        siem_12mo_retention_agg_sum: Union[int, UnsetType] = unset,
+        siem_6mo_retention_agg_sum: Union[int, UnsetType] = unset,
         siem_analyzed_logs_add_on_count_agg_sum: Union[int, UnsetType] = unset,
         start_date: Union[datetime, UnsetType] = unset,
         synthetics_browser_check_calls_count_agg_sum: Union[int, UnsetType] = unset,
@@ -955,6 +964,9 @@ class UsageSummaryResponse(ModelNormal):
 
         :param cloud_siem_events_agg_sum: Shows the sum of all Cloud Security Information and Event Management events over all hours in the current month for all organizations.
         :type cloud_siem_events_agg_sum: int, optional
+
+        :param cloud_siem_indexed_logs_agg_sum: Shows the sum of all Cloud SIEM Indexed Logs over all hours in the current month for all organizations.
+        :type cloud_siem_indexed_logs_agg_sum: int, optional
 
         :param code_analysis_sa_committers_hwm_sum: Shows the high-water mark of all Static Analysis committers over all hours in the current month for all organizations.
         :type code_analysis_sa_committers_hwm_sum: int, optional
@@ -1541,6 +1553,12 @@ class UsageSummaryResponse(ModelNormal):
         :param serverless_apps_total_count_avg_sum: Sum of the average number of Serverless Apps for Azure and Google Cloud in the current month for all organizations.
         :type serverless_apps_total_count_avg_sum: int, optional
 
+        :param siem_12mo_retention_agg_sum: Shows the sum of all SIEM 12mo Retention over all hours in the current month for all organizations.
+        :type siem_12mo_retention_agg_sum: int, optional
+
+        :param siem_6mo_retention_agg_sum: Shows the sum of all SIEM 6mo Retention over all hours in the current month for all organizations.
+        :type siem_6mo_retention_agg_sum: int, optional
+
         :param siem_analyzed_logs_add_on_count_agg_sum: Shows the sum of all log events analyzed by Cloud SIEM over all hours in the current month for all organizations.
         :type siem_analyzed_logs_add_on_count_agg_sum: int, optional
 
@@ -1678,6 +1696,8 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["cloud_cost_management_oci_host_count_avg_sum"] = cloud_cost_management_oci_host_count_avg_sum
         if cloud_siem_events_agg_sum is not unset:
             kwargs["cloud_siem_events_agg_sum"] = cloud_siem_events_agg_sum
+        if cloud_siem_indexed_logs_agg_sum is not unset:
+            kwargs["cloud_siem_indexed_logs_agg_sum"] = cloud_siem_indexed_logs_agg_sum
         if code_analysis_sa_committers_hwm_sum is not unset:
             kwargs["code_analysis_sa_committers_hwm_sum"] = code_analysis_sa_committers_hwm_sum
         if code_analysis_sca_committers_hwm_sum is not unset:
@@ -2146,6 +2166,10 @@ class UsageSummaryResponse(ModelNormal):
             ] = serverless_apps_infra_gcp_gke_autopilot_pods_avg_sum
         if serverless_apps_total_count_avg_sum is not unset:
             kwargs["serverless_apps_total_count_avg_sum"] = serverless_apps_total_count_avg_sum
+        if siem_12mo_retention_agg_sum is not unset:
+            kwargs["siem_12mo_retention_agg_sum"] = siem_12mo_retention_agg_sum
+        if siem_6mo_retention_agg_sum is not unset:
+            kwargs["siem_6mo_retention_agg_sum"] = siem_6mo_retention_agg_sum
         if siem_analyzed_logs_add_on_count_agg_sum is not unset:
             kwargs["siem_analyzed_logs_add_on_count_agg_sum"] = siem_analyzed_logs_add_on_count_agg_sum
         if start_date is not unset:
