@@ -105,6 +105,7 @@ class UsageSummaryDateOrg(ModelNormal):
             "data_jobs_monitoring_host_hr_sum": (int,),
             "dbm_host_top99p_sum": (int,),
             "dbm_queries_avg_sum": (int,),
+            "do_jobs_monitoring_orchestrators_job_hours_sum": (int,),
             "eph_infra_host_agent_sum": (int,),
             "eph_infra_host_alibaba_sum": (int,),
             "eph_infra_host_aws_sum": (int,),
@@ -360,6 +361,7 @@ class UsageSummaryDateOrg(ModelNormal):
         "data_jobs_monitoring_host_hr_sum": "data_jobs_monitoring_host_hr_sum",
         "dbm_host_top99p_sum": "dbm_host_top99p_sum",
         "dbm_queries_avg_sum": "dbm_queries_avg_sum",
+        "do_jobs_monitoring_orchestrators_job_hours_sum": "do_jobs_monitoring_orchestrators_job_hours_sum",
         "eph_infra_host_agent_sum": "eph_infra_host_agent_sum",
         "eph_infra_host_alibaba_sum": "eph_infra_host_alibaba_sum",
         "eph_infra_host_aws_sum": "eph_infra_host_aws_sum",
@@ -616,6 +618,7 @@ class UsageSummaryDateOrg(ModelNormal):
         data_jobs_monitoring_host_hr_sum: Union[int, UnsetType] = unset,
         dbm_host_top99p_sum: Union[int, UnsetType] = unset,
         dbm_queries_avg_sum: Union[int, UnsetType] = unset,
+        do_jobs_monitoring_orchestrators_job_hours_sum: Union[int, UnsetType] = unset,
         eph_infra_host_agent_sum: Union[int, UnsetType] = unset,
         eph_infra_host_alibaba_sum: Union[int, UnsetType] = unset,
         eph_infra_host_aws_sum: Union[int, UnsetType] = unset,
@@ -1048,6 +1051,9 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param dbm_queries_avg_sum: Shows the average of all distinct Database Monitoring normalized queries over all hours in the current month for the given org.
         :type dbm_queries_avg_sum: int, optional
+
+        :param do_jobs_monitoring_orchestrators_job_hours_sum: Shows the sum of all orchestrator job hours over all hours in the current date for the given org.
+        :type do_jobs_monitoring_orchestrators_job_hours_sum: int, optional
 
         :param eph_infra_host_agent_sum: Shows the sum of all ephemeral infrastructure hosts with the Datadog Agent over all hours in the current date for the given org.
         :type eph_infra_host_agent_sum: int, optional
@@ -1719,6 +1725,8 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["dbm_host_top99p_sum"] = dbm_host_top99p_sum
         if dbm_queries_avg_sum is not unset:
             kwargs["dbm_queries_avg_sum"] = dbm_queries_avg_sum
+        if do_jobs_monitoring_orchestrators_job_hours_sum is not unset:
+            kwargs["do_jobs_monitoring_orchestrators_job_hours_sum"] = do_jobs_monitoring_orchestrators_job_hours_sum
         if eph_infra_host_agent_sum is not unset:
             kwargs["eph_infra_host_agent_sum"] = eph_infra_host_agent_sum
         if eph_infra_host_alibaba_sum is not unset:
