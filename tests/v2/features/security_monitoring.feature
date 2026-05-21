@@ -560,6 +560,19 @@ Feature: Security Monitoring
     And the response "message" is equal to "Test rule"
 
   @skip-validation @team:DataDog/k9-cloud-siem
+  Scenario: Create a detection rule with type 'impossible_travel' and baselineUserLocationsDuration returns "OK" response
+    Given new "CreateSecurityMonitoringRule" request
+    And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":true,"baselineUserLocationsDuration":7}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "log_detection"
+    And the response "message" is equal to "test"
+    And the response "options.detectionMethod" is equal to "impossible_travel"
+    And the response "options.impossibleTravelOptions.baselineUserLocations" is equal to true
+    And the response "options.impossibleTravelOptions.baselineUserLocationsDuration" is equal to 7
+
+  @skip-validation @team:DataDog/k9-cloud-siem
   Scenario: Create a detection rule with type 'impossible_travel' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"queries":[{"aggregation":"geo_data","groupByFields":["@usr.id"],"distinctFields":[],"metric":"@network.client.geoip","query":"*"}],"cases":[{"name":"","status":"info","notifications":[]}],"hasExtendedTitle":true,"message":"test","isEnabled":true,"options":{"maxSignalDuration":86400,"evaluationWindow":900,"keepAlive":3600,"detectionMethod":"impossible_travel","impossibleTravelOptions":{"baselineUserLocations":false}},"name":"{{ unique }}","type":"log_detection","tags":[],"filters":[]}
