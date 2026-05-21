@@ -1,0 +1,328 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/app-builder/blueprints
+  response:
+    body:
+      string: "{\"data\":[{\"id\":\"faeef8bc-d9eb-43a1-b829-71782380279d\",\"type\"\
+        :\"blueprint\",\"attributes\":{\"created_at\":\"2025-08-18T16:20:42.182618Z\"\
+        ,\"description\":\"Manage AWS Services from a single unified interface.\"\
+        ,\"name\":\"AWS Service Management Console\",\"slug\":\"aws_service_management_console\"\
+        ,\"tags\":[\"aws\"],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.aws.organizations.listAccounts\",\"updated_at\":\"2026-05-18T17:02:03.016145Z\"\
+        }},{\"id\":\"b2ba39de-d111-4940-b600-df6bb52661dc\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-08-15T00:00:19.017104Z\",\"description\"\
+        :\"Manage projects, merge requests, commits, pipelines, jobs, branches, and\
+        \ deployments all from a unified interface within Datadog.\",\"name\":\"GitLab\
+        \ Manager\",\"slug\":\"gitlab_manager\",\"tags\":[\"software_delivery\"],\"\
+        tile_background\":\"search-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.gitlab.projects.listProjects\"\
+        ,\"updated_at\":\"2026-05-18T17:01:20.81581Z\"}},{\"id\":\"398529ec-6c34-4e6d-bccf-5a34be7e6e1c\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-10-15T19:11:36.098607Z\"\
+        ,\"description\":\"Unifying Jira, Confluence, GitHub, and Datadog Incidents\
+        \ to highlight team and developer contribution with AI summaries.\",\"name\"\
+        :\"Development Insights\",\"slug\":\"development-insights\",\"tags\":[\"datadog\"\
+        ,\"uses_ai\"],\"tile_background\":\"search-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.dd.apps_datastore.getDatastoreItem\",\"updated_at\":\"2026-05-18T17:02:03.557012Z\"\
+        }},{\"id\":\"1a9239ca-1d11-48c0-ad23-0f8ca00cd321\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-10-08T17:07:54.77105Z\",\"description\"\
+        :\"Unified device visibility. Smarter investigations\",\"name\":\"Asset Investigation\
+        \ App\",\"slug\":\"asset-intel-app\",\"tags\":[\"datadog\",\"uses_ai\"],\"\
+        tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.dd.apps_datastore.listDatastoreItems\"\
+        ,\"updated_at\":\"2026-05-18T17:02:03.371529Z\"}},{\"id\":\"d190e5cd-412c-4857-9993-6e98a478a64e\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-06-30T18:02:02.519433Z\"\
+        ,\"description\":\"Manage Okta users, groups, and roles directly from Datadog\
+        \ in a secure, unified interface.\",\"name\":\"Manage Okta Users, Groups,\
+        \ and Roles\",\"slug\":\"manage-okta-user-groups-roles\",\"tags\":[\"security\"\
+        ],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.okta.add_user_to_group\"\
+        ,\"updated_at\":\"2026-05-18T17:02:15.156458Z\"}},{\"id\":\"11feb11b-85d9-4e89-9f5c-0c96c04da5bc\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-06-30T18:02:02.176559Z\"\
+        ,\"description\":\"Scaffolder app can be used for creating new software components\
+        \ from template repositories. It takes inputs from developers and generates\
+        \ a new repository or a PR based on the provided data and the template.\"\
+        ,\"name\":\"Scaffold New Project in GitHub\",\"slug\":\"scaffold-new-project-in-github\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"table-with-modal\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.github.searchRepositories\",\"updated_at\"\
+        :\"2026-05-18T17:02:09.340524Z\"}},{\"id\":\"6c5b24ef-c303-42ec-a305-351f5a1026cf\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:43.381741Z\"\
+        ,\"description\":\"Monitor Kubernetes resources, restart deployments, delete\
+        \ pods, and create tickets or incidents\",\"name\":\"Manage Kubernetes Deployments\"\
+        ,\"slug\":\"manage-kubernetes-deployments\",\"tags\":[\"kubernetes\",\"private_action\"\
+        ],\"tile_background\":\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.kubernetes.apps.listDeployment\"\
+        ,\"updated_at\":\"2026-05-18T17:01:26.003985Z\"}},{\"id\":\"dd0adb73-dd5f-4cb5-a22d-41946755958e\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.261927Z\"\
+        ,\"description\":\"Stop RDS clusters \\u0026 instances and reduce your cost\"\
+        ,\"name\":\"Manage RDS Clusters \\u0026 Instances\",\"slug\":\"rds_console\"\
+        ,\"tags\":[\"aws\"],\"tile_background\":\"table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.aws.rds.list_db_instances\",\"updated_at\":\"2026-05-18T17:02:04.353815Z\"\
+        }},{\"id\":\"8750a7cb-f076-474f-9f66-8d3f7c02ad3f\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-08T15:16:02.674864Z\",\"description\"\
+        :\"Analyze your metrics in Datadog and create threshold alert monitors\",\"\
+        name\":\"Explore Metrics \\u0026 Create Monitors\",\"slug\":\"datadog_metrics_and_monitors\"\
+        ,\"tags\":[\"datadog\"],\"tile_background\":\"bento-box-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.dd.metrics.listMetrics\",\"updated_at\":\"2026-05-18T17:02:03.452603Z\"\
+        }},{\"id\":\"17127e2b-ea85-4c3a-ba3e-0f1dfa0c941a\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-30T21:11:28.731422Z\",\"description\"\
+        :\"Fill out the form to generate the terraform for a new S3 bucket in Github\"\
+        ,\"name\":\"Create S3 Bucket with a Terraform PR\",\"slug\":\"create-new-s3-bucket-terraform-pr\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"table-with-modal\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.github.searchRepositories\",\"updated_at\"\
+        :\"2026-05-18T17:02:09.266218Z\"}},{\"id\":\"dc4075af-5e50-402f-abb2-6041db59d378\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-30T21:11:28.759103Z\"\
+        ,\"description\":\"View open pull requests from your team in a table with\
+        \ an AI-generated summary of the progress.\",\"name\":\"GitHub PR Summarizer\"\
+        ,\"slug\":\"github-pr-summarizer\",\"tags\":[\"uses_ai\"],\"tile_background\"\
+        :\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.github.searchRepositories\"\
+        ,\"updated_at\":\"2026-05-18T17:02:09.306954Z\"}},{\"id\":\"dc1bcad2-1eb7-456f-a32b-60e8ad7adf71\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-28T21:17:42.010916Z\"\
+        ,\"description\":\"Start, stop or reboot your AWS EC2 instances\",\"name\"\
+        :\"Manage EC2 Instances\",\"slug\":\"ec2_instance_manager\",\"tags\":[\"aws\"\
+        ],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.aws.ec2.describe_ec2_instances\"\
+        ,\"updated_at\":\"2026-05-18T17:02:03.602628Z\"}},{\"id\":\"8d6b6284-10ba-42d0-829c-800e7c396a3b\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-30T08:38:29.623958Z\"\
+        ,\"description\":\"Peek, purge or redrive SQS queues\",\"name\":\"Manage SQS\
+        \ Queues\",\"slug\":\"sqs-queue-manager\",\"tags\":[\"aws\"],\"tile_background\"\
+        :\"bento-box-table\",\"tile_icon_action_fqn\":\"com.datadoghq.aws.sqs.list_queues_with_attributes\"\
+        ,\"updated_at\":\"2026-05-18T17:02:02.47498Z\"}},{\"id\":\"be6d5e27-a5a8-406a-9b0c-b779f6a94728\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:46.237126Z\"\
+        ,\"description\":\"Create, view, or toggle on or off LaunchDarkly feature\
+        \ flags\",\"name\":\"LaunchDarkly Feature Flag Manager\",\"slug\":\"launchdarkly_feature_flag_manager\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"bento-box-table\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.launchdarkly.listProjects\",\"updated_at\"\
+        :\"2026-05-18T17:01:49.464175Z\"}},{\"id\":\"7566d028-b111-47a8-8ee2-b42efbd95edb\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:43.058949Z\"\
+        ,\"description\":\"View, retry, or cancel deployments in Gitlab\",\"name\"\
+        :\"Manage Gitlab Deployments\",\"slug\":\"gitlab-deployment-manager\",\"tags\"\
+        :[\"software_delivery\"],\"tile_background\":\"table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.gitlab.getProjectDeployments\",\"updated_at\":\"2026-05-18T17:01:20.761242Z\"\
+        }},{\"id\":\"dddf3b1a-47a4-400a-8485-321ad58f2779\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-30T08:38:30.229357Z\",\"description\"\
+        :\"Create, view, and manage incidents in ServiceNow\",\"name\":\"Manage ServiceNow\
+        \ Incidents\",\"slug\":\"servicenow_incident_manager\",\"tags\":[\"paging\"\
+        ],\"tile_background\":\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.servicenow.listIncidents\"\
+        ,\"updated_at\":\"2026-05-18T17:02:17.797196Z\"}},{\"id\":\"df97f5ff-0ce8-4def-b1fb-151b427fc82d\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-09T16:50:07.302357Z\"\
+        ,\"description\":\"Personalized developer homepage to prioritize tasks across\
+        \ tools\",\"name\":\"Developer Homepage\",\"slug\":\"developer-homepage\"\
+        ,\"tags\":[\"datadog\",\"uses_ai\"],\"tile_background\":\"one-callout-table\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.dd.service_catalog.getServicePagerdutyOncall\"\
+        ,\"updated_at\":\"2026-05-18T17:02:03.484343Z\"}},{\"id\":\"f290ac0f-ded8-4143-bb94-3dbe20f883d5\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-05T19:50:19.410003Z\"\
+        ,\"description\":\"Explore mobile user sessions, using Luciq's observability\
+        \ tools\",\"name\":\"Explore Luciq Sessions\",\"slug\":\"instabug-sessions-explorer\"\
+        ,\"tags\":[\"observability\"],\"tile_background\":\"table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.http.request\",\"updated_at\":\"2026-05-18T17:01:48.606352Z\"\
+        }},{\"id\":\"a7041749-fb41-451b-880f-10eddcdbbe1c\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-05-02T20:27:48.306432Z\",\"description\"\
+        :\"View incidents across pages, update them, follow past updates, and create\
+        \ new incidents on Statuspage \u2014 all directly from Datadog.\",\"name\"\
+        :\"Manage Statuspage Incidents\",\"slug\":\"manage-statuspage-incidents\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"search-callout-table\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.statuspage.updateComponentStatus\"\
+        ,\"updated_at\":\"2026-05-18T17:02:18.402711Z\"}},{\"id\":\"8839570e-1711-43e8-86f2-679f5ae0f8f9\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-30T21:11:28.769943Z\"\
+        ,\"description\":\"Complete the form to provision a new EKS Cluster using\
+        \ Terraform\",\"name\":\"Provision EKS Cluster\",\"slug\":\"provision-eks-cluster\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"table-with-modal\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.github.createOrUpdateFile\",\"updated_at\"\
+        :\"2026-05-18T17:02:09.329157Z\"}},{\"id\":\"7f3fb131-0ff5-48d9-a997-87f99ef8b364\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-30T21:11:28.764126Z\"\
+        ,\"description\":\"Select a service and trigger a restart in Github Workflows\"\
+        ,\"name\":\"Restart Service With Github Actions\",\"slug\":\"github_actions_restart_service\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.github.actions.triggerWorkflowRun\",\"updated_at\":\"2026-05-18T17:02:09.318622Z\"\
+        }},{\"id\":\"39ff9db2-aeed-4552-8080-d6a13fbfad74\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.278756Z\",\"description\"\
+        :\"Create a new RDS DB instance from a form\",\"name\":\"Provision RDS Instance\"\
+        ,\"slug\":\"rds_provision_instance\",\"tags\":[\"aws\"],\"tile_background\"\
+        :\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.aws.rds.createRdsDbInstance\"\
+        ,\"updated_at\":\"2026-05-18T17:02:04.37742Z\"}},{\"id\":\"0b110831-0834-4898-84dc-292153807df1\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.21136Z\"\
+        ,\"description\":\"View and manage Jira tickets by board, status, or sprint\"\
+        ,\"name\":\"Manage Jira Tickets\",\"slug\":\"jira-ticket-manager\",\"tags\"\
+        :[\"software_delivery\"],\"tile_background\":\"table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.jira.create_issue\",\"updated_at\":\"2026-05-18T17:02:04.247226Z\"\
+        }},{\"id\":\"111cc4d5-1fdf-47aa-8bb1-25cc8ac7dff2\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.286928Z\",\"description\"\
+        :\"Explore S3 files and view their content\",\"name\":\"Explore S3 Files\"\
+        ,\"slug\":\"s3_file_explorer\",\"tags\":[\"aws\"],\"tile_background\":\"bento-box-table\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.aws.s3.list_s3_buckets\",\"updated_at\"\
+        :\"2026-05-18T17:02:02.170177Z\"}},{\"id\":\"773fce74-eec7-4170-a222-53e24261f812\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.307523Z\"\
+        ,\"description\":\"Fill out the form to generate the terraform for new monitors\
+        \ for a service.\",\"name\":\"Create Monitors for New Service\",\"slug\":\"\
+        service-monitor-creation\",\"tags\":[\"datadog\"],\"tile_background\":\"table-with-modal\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.dd.service_catalog.listServiceDefinitions\"\
+        ,\"updated_at\":\"2026-05-18T17:02:04.388154Z\"}},{\"id\":\"b899cebf-0b56-4e6e-89c8-01afdb19e781\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-30T21:11:28.742329Z\"\
+        ,\"description\":\"View opened, closed, and assigned pull requests to a specific\
+        \ user\",\"name\":\"Github PR Pipeline\",\"slug\":\"github-pr-dashboard\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"two-input-table\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.github.searchRepositories\",\"updated_at\"\
+        :\"2026-05-18T17:02:09.287376Z\"}},{\"id\":\"635fc8c5-0330-40e6-a859-b8fc3d76e331\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:46.466284Z\"\
+        ,\"description\":\"Monitor the status of PagerDuty services and trigger incidents\
+        \ when needed\",\"name\":\"Manage PagerDuty Services\",\"slug\":\"pagerduty_service_manager\"\
+        ,\"tags\":[\"paging\"],\"tile_background\":\"table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.pagerduty.listServices\",\"updated_at\":\"2026-05-18T17:02:15.911013Z\"\
+        }},{\"id\":\"8ada5164-b533-462e-80db-47e7d0fbed0d\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-28T21:17:42.02843Z\",\"description\"\
+        :\"Select from your clusters and services, and easily scale tasks up or down\"\
+        ,\"name\":\"Manage ECS Tasks\",\"slug\":\"ecs_task_manager\",\"tags\":[\"\
+        aws\"],\"tile_background\":\"three-callout-prompt\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.aws.ecs.listEcsClusters\",\"updated_at\":\"2026-05-18T17:02:00.300159Z\"\
+        }},{\"id\":\"e2f2ff93-709c-4eae-95ab-cbc0f2bc87f0\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-06-23T19:08:48.624684Z\",\"description\"\
+        :\"List, explore details and re-run lambda functions\",\"name\":\"Manage Lambda\
+        \ Functions\",\"slug\":\"lambda-function-manager\",\"tags\":[\"aws\"],\"tile_background\"\
+        :\"table-with-modal\",\"tile_icon_action_fqn\":\"com.datadoghq.aws.lambda.listAWSLambdaFunction\"\
+        ,\"updated_at\":\"2026-05-18T17:02:01.047167Z\"}},{\"id\":\"07f8536d-6342-4f30-8254-0c7b019707f0\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-30T08:38:30.332498Z\"\
+        ,\"description\":\"Manage and update Statuspage components across pages.\"\
+        ,\"name\":\"Manage Statuspage Components\",\"slug\":\"statuspage-component-manager\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"one-callout-table\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.statuspage.listIncidents\",\"updated_at\"\
+        :\"2026-05-18T17:02:18.425899Z\"}},{\"id\":\"53d32e20-034c-4d46-ad54-f71f83ae7850\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:47.563531Z\"\
+        ,\"description\":\"Manage, update or delete your AWS EKS clusters\",\"name\"\
+        :\"Manage AWS EKS\",\"slug\":\"manage-aws-eks\",\"tags\":[\"aws\"],\"tile_background\"\
+        :\"one-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.aws.eks.updateClusterConfig\"\
+        ,\"updated_at\":\"2026-05-18T17:02:04.264646Z\"}},{\"id\":\"8b8aa818-4ed3-40f5-b6ca-dd891c75f317\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:46.449263Z\"\
+        ,\"description\":\"Trigger, acknowledge and resolve incidents from PagerDuty.\"\
+        ,\"name\":\"Manage PagerDuty Incidents\",\"slug\":\"pagerduty_incident_manager\"\
+        ,\"tags\":[\"paging\"],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.pagerduty.resolve_incident\",\"updated_at\":\"2026-05-18T17:02:15.703635Z\"\
+        }},{\"id\":\"d4eac482-3518-412b-8424-31935f6fc1b6\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.247502Z\",\"description\"\
+        :\"Enter a prompt to find the most likely causes of your regression\",\"name\"\
+        :\"Find PR Regressions\",\"slug\":\"pr_regression_finder\",\"tags\":[\"uses_ai\"\
+        ],\"tile_background\":\"search-callout-table\",\"tile_icon_action_fqn\":\"\
+        com.datadoghq.openai.generateText\",\"updated_at\":\"2026-05-18T17:02:04.329232Z\"\
+        }},{\"id\":\"5a617cdf-6d0c-4fc5-a26f-e123e37e1438\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-05-02T20:27:47.572068Z\",\"description\"\
+        :\"List a Datastore in your app and manage its CRUD (Create, Read, Update,\
+        \ Delete) operations directly from App Builder.\",\"name\":\"Manage Datastore\"\
+        ,\"slug\":\"manage-datastore\",\"tags\":[\"datadog\"],\"tile_background\"\
+        :\"search-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.dd.apps_datastore.bulkPutDatastoreItem\"\
+        ,\"updated_at\":\"2026-05-18T17:02:04.277122Z\"}},{\"id\":\"8caf15ac-f175-4b46-b867-dfbd73f5d1ba\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.237759Z\"\
+        ,\"description\":\"Track on-call engineers across different teams and services,\
+        \ and create incidents in OpsGenie\",\"name\":\"Manage OpsGenie On-call\"\
+        ,\"slug\":\"manage-ops-genie-on-call\",\"tags\":[\"paging\"],\"tile_background\"\
+        :\"one-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.opsgenie.createIncident\"\
+        ,\"updated_at\":\"2026-05-18T17:02:04.302057Z\"}},{\"id\":\"88a2c35b-31f4-4420-b6a0-f3da6a1fd740\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-14T02:00:39.687547Z\"\
+        ,\"description\":\"Create new S3 buckets directly in AWS.\",\"name\":\"Create\
+        \ S3 Bucket\",\"slug\":\"create-new-s3-bucket\",\"tags\":[\"aws\"],\"tile_background\"\
+        :\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.aws.s3.create_s3_bucket\"\
+        ,\"updated_at\":\"2026-05-18T17:02:02.159767Z\"}},{\"id\":\"eef5812e-45ef-47a4-9570-4c6b7a11bc4f\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:43.692089Z\"\
+        ,\"description\":\"Prompt OpenAI and get responses from a text inputs\",\"\
+        name\":\"Prompt OpenAI\",\"slug\":\"openai-prompter\",\"tags\":[\"uses_ai\"\
+        ],\"tile_background\":\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.openai.generateText\"\
+        ,\"updated_at\":\"2026-05-18T17:01:29.850296Z\"}},{\"id\":\"f333c674-1010-4bf6-9b7b-215f6c88f878\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:46.458292Z\"\
+        ,\"description\":\"Track on-call engineers across different teams and services\"\
+        ,\"name\":\"Manage PagerDuty On-call\",\"slug\":\"pagerduty_oncall_manager\"\
+        ,\"tags\":[\"paging\"],\"tile_background\":\"people-modal\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.pagerduty.listServices\",\"updated_at\":\"2026-05-18T17:02:15.724318Z\"\
+        }},{\"id\":\"5761abf4-771d-42e6-9898-5eae6465e94c\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.317021Z\",\"description\"\
+        :\"Manage, start, restart, and stop your Azure Web Apps\",\"name\":\"Manage\
+        \ Azure Web Apps\",\"slug\":\"manage-azure-web-apps\",\"tags\":[\"azure\"\
+        ],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\":\"com.datadoghq.azure.apps.restartWebApp\"\
+        ,\"updated_at\":\"2026-05-18T17:02:04.40436Z\"}},{\"id\":\"858a49c0-7781-46ef-b4e0-7fc7c96a311b\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-06-23T19:08:48.677682Z\"\
+        ,\"description\":\"View state machines and stop, start or pause their associated\
+        \ executions\",\"name\":\"Manage Step Functions\",\"slug\":\"step-functions-console\"\
+        ,\"tags\":[\"aws\"],\"tile_background\":\"table-with-modal\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.aws.stepfunctions.listStateMachines\",\"updated_at\":\"2026-05-18T17:02:02.699196Z\"\
+        }},{\"id\":\"4c19fab0-3269-46e4-a2dd-365ba5bb2619\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-28T21:17:42.057615Z\",\"description\"\
+        :\"List, start, restart, power off and deallocate your VMs\",\"name\":\"Manage\
+        \ Azure Virtual Machines\",\"slug\":\"azure_vms_management_console\",\"tags\"\
+        :[\"azure\"],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.azure.vm.listSubscriptionVirtualMachines\",\"updated_at\"\
+        :\"2026-05-18T17:02:06.221711Z\"}},{\"id\":\"a276b5f5-c6c0-4329-af64-d630d25593dc\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-28T21:17:42.000627Z\"\
+        ,\"description\":\"View DynamoDB table status and perform CRUD operations\"\
+        ,\"name\":\"Manage DynamoDB\",\"slug\":\"dynamodb_console\",\"tags\":[\"aws\"\
+        ],\"tile_background\":\"bento-box-table\",\"tile_icon_action_fqn\":\"com.datadoghq.aws.dynamodb.describe_table\"\
+        ,\"updated_at\":\"2026-05-18T17:02:00.038636Z\"}},{\"id\":\"cc9872f6-9a15-454e-8f02-beec66ce1bde\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-28T21:17:42.039633Z\"\
+        ,\"description\":\"Rebuild or restart Elastic Beanstalk applications\",\"\
+        name\":\"Manage Elastic Beanstalk Apps\",\"slug\":\"elastic_beanstalk_console\"\
+        ,\"tags\":[\"aws\"],\"tile_background\":\"search-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.aws.elasticbeanstalk.listApplications\",\"updated_at\":\"\
+        2026-05-18T17:02:03.613799Z\"}},{\"id\":\"84c7ba6f-d69b-4e7c-aa0b-56ba9022ff50\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-05T19:50:21.700674Z\"\
+        ,\"description\":\"List, start or stop your Compute Engine instances\",\"\
+        name\":\"Manage Google Cloud Compute\",\"slug\":\"gcp-cloud-compute-management-console\"\
+        ,\"tags\":[\"gcp\"],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.gcp.compute.listInstances\",\"updated_at\":\"2026-05-18T17:02:11.166133Z\"\
+        }},{\"id\":\"e426403a-5d30-49d2-abed-d2372e8c7744\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-05-02T20:27:46.472898Z\",\"description\"\
+        :\"Select a service \\u0026 trigger an incident\",\"name\":\"Trigger Incident\
+        \ in Pagerduty\",\"slug\":\"pagerduty_trigger_incident\",\"tags\":[\"paging\"\
+        ,\"datadog\"],\"tile_background\":\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.pagerduty.trigger_incident\"\
+        ,\"updated_at\":\"2026-05-18T17:02:15.92158Z\"}},{\"id\":\"e6b74e1f-7f36-49b4-abfe-7c9ebf067ff2\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-04-08T20:09:58.363312Z\"\
+        ,\"description\":\"View autoscaling group capacity and trigger a change\"\
+        ,\"name\":\"Manage AWS Autoscaling Groups\",\"slug\":\"aws_autoscaling_groups\"\
+        ,\"tags\":[\"aws\"],\"tile_background\":\"three-callout-prompt\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.aws.autoscaling.describe_auto_scaling_group\",\"updated_at\"\
+        :\"2026-05-18T17:02:03.420659Z\"}},{\"id\":\"9913dec9-e949-45e6-908a-587ffb823a0c\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-05-02T20:27:47.592154Z\"\
+        ,\"description\":\"Renew, describe, delete and request private and public\
+        \ certificates\",\"name\":\"Manage AWS Certificates\",\"slug\":\"manage-aws-certificates\"\
+        ,\"tags\":[\"aws\"],\"tile_background\":\"one-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.aws.acm.requestPublicCertificate\",\"updated_at\":\"2026-05-18T17:02:04.316282Z\"\
+        }},{\"id\":\"d837c301-edcd-48fb-8250-a4e9fb9add11\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-04-29T18:37:39.200777Z\",\"description\"\
+        :\"Create new tickets in Jira\",\"name\":\"Create Jira Ticket\",\"slug\":\"\
+        jira-ticket-creator\",\"tags\":[\"software_delivery\"],\"tile_background\"\
+        :\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.jira.create_issue\",\"\
+        updated_at\":\"2026-05-18T17:02:04.229225Z\"}},{\"id\":\"25bc3ad1-724c-4750-9bc2-112a59e76b6a\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-08-22T01:16:30.733428Z\"\
+        ,\"description\":\"Use this form to create a new entity definition YAML in\
+        \ Github.\",\"name\":\"Create Catalog Entity Definition\",\"slug\":\"create_catalog_entity_definition\"\
+        ,\"tags\":[\"datadog\",\"software_delivery\"],\"tile_background\":\"people-modal\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.github.createOrUpdateFile\",\"updated_at\"\
+        :\"2026-05-18T17:02:03.431113Z\"}},{\"id\":\"7d2e21d5-1e1f-4abc-aebb-880ef86882f5\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-07-21T00:43:24.42963Z\"\
+        ,\"description\":\"How to add bar charts to apps\",\"name\":\"How To: Bar\
+        \ Charts\",\"slug\":\"how_to__bar_charts\",\"tags\":[\"datadog\",\"howTo\"\
+        ],\"tile_background\":\"table\",\"tile_icon_action_fqn\":\"com.datadoghq.dd.teams.listTeams\"\
+        ,\"updated_at\":\"2026-05-18T17:02:03.801347Z\"}},{\"id\":\"6bf5671b-3195-4ea5-b3fe-eba97d25b26a\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-07-02T16:43:02.148346Z\"\
+        ,\"description\":\"Scaffolder app is used to create new software components\
+        \ from template repositories. It takes inputs from developers and generates\
+        \ a new repository or a PR based on the provided data and the template.\"\
+        ,\"name\":\"Scaffold New Project in GitLab\",\"slug\":\"scaffold-new-project-in-gitlab\"\
+        ,\"tags\":[\"software_delivery\"],\"tile_background\":\"table-with-modal\"\
+        ,\"tile_icon_action_fqn\":\"com.datadoghq.gitlab.getProjectDeployments\",\"\
+        updated_at\":\"2026-05-18T17:01:20.860684Z\"}},{\"id\":\"f5998cda-c054-48d9-9e88-ae37ab1990cb\"\
+        ,\"type\":\"blueprint\",\"attributes\":{\"created_at\":\"2025-07-18T16:51:32.667124Z\"\
+        ,\"description\":\"See how to make form fields dynamic and dependent on other\
+        \ fields.\",\"name\":\"How to: Form With Dynamic Fields\",\"slug\":\"how_to__form_with_dynamic_fields\"\
+        ,\"tags\":[\"howTo\"],\"tile_background\":\"people-modal\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.github.createOrUpdateFile\",\"updated_at\":\"2026-05-18T17:02:03.923635Z\"\
+        }},{\"id\":\"6e27f913-7170-4977-b2b1-243015b9fafd\",\"type\":\"blueprint\"\
+        ,\"attributes\":{\"created_at\":\"2025-07-17T23:29:17.423877Z\",\"description\"\
+        :\"How to persist your app in a datastore using CRUD (Create, Read, Update,\
+        \ Delete) operations\",\"name\":\"How To: Persist Data in Datastore\",\"slug\"\
+        :\"how_to__persist_data_in_datastore_using_crud\",\"tags\":[\"datadog\",\"\
+        howTo\"],\"tile_background\":\"search-callout-table\",\"tile_icon_action_fqn\"\
+        :\"com.datadoghq.dd.apps_datastore.listDatastoreItems\",\"updated_at\":\"\
+        2026-05-18T17:02:04.018585Z\"}}]}"
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

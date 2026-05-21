@@ -767,6 +767,13 @@ datadog\_api\_client.v2.model.app\_builder\_event\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.app\_builder\_list\_tags\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.app_builder_list_tags_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.app\_definition\_type module
 ----------------------------------------------------------
 
@@ -3312,6 +3319,48 @@ datadog\_api\_client.v2.model.billing\_dimensions\_mapping\_response module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.billing_dimensions_mapping_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.blueprint\_attributes module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.blueprint_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.blueprint\_data module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.blueprint_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.blueprint\_data\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.blueprint_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.blueprint\_metadata\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.blueprint_metadata_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.blueprint\_metadata\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.blueprint_metadata_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.blueprint\_native\_action module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.blueprint_native_action
    :members:
    :show-inheritance:
 
@@ -13969,6 +14018,20 @@ datadog\_api\_client.v2.model.get\_app\_response\_data\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.get\_blueprint\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_blueprint_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_blueprints\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_blueprints_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.get\_custom\_framework\_response module
 ---------------------------------------------------------------------
 
@@ -17725,6 +17788,13 @@ datadog\_api\_client.v2.model.list\_assets\_sbo\_ms\_response module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_assets_sbo_ms_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_blueprints\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_blueprints_response
    :members:
    :show-inheritance:
 
@@ -36254,6 +36324,20 @@ datadog\_api\_client.v2.model.table\_row\_resource\_identifier module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.table_row_resource_identifier
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_data module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_data\_type module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_data_type
    :members:
    :show-inheritance:
 
