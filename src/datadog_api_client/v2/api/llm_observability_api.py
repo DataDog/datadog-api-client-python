@@ -53,6 +53,11 @@ from datadog_api_client.v2.model.llm_obs_experiment_request import LLMObsExperim
 from datadog_api_client.v2.model.llm_obs_delete_experiments_request import LLMObsDeleteExperimentsRequest
 from datadog_api_client.v2.model.llm_obs_experiment_update_request import LLMObsExperimentUpdateRequest
 from datadog_api_client.v2.model.llm_obs_experiment_events_request import LLMObsExperimentEventsRequest
+from datadog_api_client.v2.model.llm_obs_integration_account import LLMObsIntegrationAccount
+from datadog_api_client.v2.model.llm_obs_integration_name import LLMObsIntegrationName
+from datadog_api_client.v2.model.llm_obs_integration_inference_response import LLMObsIntegrationInferenceResponse
+from datadog_api_client.v2.model.llm_obs_integration_inference_request import LLMObsIntegrationInferenceRequest
+from datadog_api_client.v2.model.llm_obs_integration_model import LLMObsIntegrationModel
 from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
 from datadog_api_client.v2.model.llm_obs_project_response import LLMObsProjectResponse
 from datadog_api_client.v2.model.llm_obs_project_request import LLMObsProjectRequest
@@ -250,6 +255,38 @@ class LLMObservabilityApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_llm_obs_integration_inference_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsIntegrationInferenceResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/integrations/{integration}/{account_id}/inference",
+                "operation_id": "create_llm_obs_integration_inference",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "integration": {
+                    "required": True,
+                    "openapi_types": (LLMObsIntegrationName,),
+                    "attribute": "integration",
+                    "location": "path",
+                },
+                "account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsIntegrationInferenceRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -714,6 +751,58 @@ class LLMObservabilityApi:
                     "openapi_types": (int,),
                     "attribute": "page[limit]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_integration_accounts_endpoint = _Endpoint(
+            settings={
+                "response_type": ([LLMObsIntegrationAccount],),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/integrations/{integration}/accounts",
+                "operation_id": "list_llm_obs_integration_accounts",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "integration": {
+                    "required": True,
+                    "openapi_types": (LLMObsIntegrationName,),
+                    "attribute": "integration",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_integration_models_endpoint = _Endpoint(
+            settings={
+                "response_type": ([LLMObsIntegrationModel],),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/integrations/{integration}/{account_id}/models",
+                "operation_id": "list_llm_obs_integration_models",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "integration": {
+                    "required": True,
+                    "openapi_types": (LLMObsIntegrationName,),
+                    "attribute": "integration",
+                    "location": "path",
+                },
+                "account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -1249,6 +1338,33 @@ class LLMObservabilityApi:
 
         return self._create_llm_obs_experiment_events_endpoint.call_with_http_info(**kwargs)
 
+    def create_llm_obs_integration_inference(
+        self,
+        integration: LLMObsIntegrationName,
+        account_id: str,
+        body: LLMObsIntegrationInferenceRequest,
+    ) -> LLMObsIntegrationInferenceResponse:
+        """Run an LLM inference.
+
+        Run an LLM inference request through the specified integration and account, returning the model response and token usage.
+
+        :param integration: The name of the LLM integration.
+        :type integration: LLMObsIntegrationName
+        :param account_id: The ID of the integration account.
+        :type account_id: str
+        :param body: Inference request parameters.
+        :type body: LLMObsIntegrationInferenceRequest
+        :rtype: LLMObsIntegrationInferenceResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration"] = integration
+
+        kwargs["account_id"] = account_id
+
+        kwargs["body"] = body
+
+        return self._create_llm_obs_integration_inference_endpoint.call_with_http_info(**kwargs)
+
     def create_llm_obs_project(
         self,
         body: LLMObsProjectRequest,
@@ -1654,6 +1770,45 @@ class LLMObservabilityApi:
             kwargs["page_limit"] = page_limit
 
         return self._list_llm_obs_experiments_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_integration_accounts(
+        self,
+        integration: LLMObsIntegrationName,
+    ) -> List[LLMObsIntegrationAccount]:
+        """List LLM integration accounts.
+
+        Retrieve the list of configured accounts for the specified LLM provider integration.
+
+        :param integration: The name of the LLM integration.
+        :type integration: LLMObsIntegrationName
+        :rtype: [LLMObsIntegrationAccount]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration"] = integration
+
+        return self._list_llm_obs_integration_accounts_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_integration_models(
+        self,
+        integration: LLMObsIntegrationName,
+        account_id: str,
+    ) -> List[LLMObsIntegrationModel]:
+        """List LLM integration models.
+
+        Retrieve the list of models available for the specified LLM provider integration and account.
+
+        :param integration: The name of the LLM integration.
+        :type integration: LLMObsIntegrationName
+        :param account_id: The ID of the integration account.
+        :type account_id: str
+        :rtype: [LLMObsIntegrationModel]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration"] = integration
+
+        kwargs["account_id"] = account_id
+
+        return self._list_llm_obs_integration_models_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_projects(
         self,

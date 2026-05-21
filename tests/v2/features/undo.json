@@ -3797,6 +3797,24 @@
       "type": "unsafe"
     }
   },
+  "ListLLMObsIntegrationAccounts": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsIntegrationInference": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLLMObsIntegrationModels": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLLMObsProjects": {
     "tag": "LLM Observability",
     "undo": {
