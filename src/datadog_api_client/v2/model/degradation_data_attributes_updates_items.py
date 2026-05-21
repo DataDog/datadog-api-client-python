@@ -39,6 +39,7 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
             "created_at": (datetime,),
             "description": (str,),
             "id": (UUID,),
+            "last_modified_by_user_uuid": (str,),
             "modified_at": (datetime,),
             "started_at": (datetime,),
             "status": (CreateDegradationRequestDataAttributesStatus,),
@@ -49,6 +50,7 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         "created_at": "created_at",
         "description": "description",
         "id": "id",
+        "last_modified_by_user_uuid": "last_modified_by_user_uuid",
         "modified_at": "modified_at",
         "started_at": "started_at",
         "status": "status",
@@ -67,6 +69,7 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         id: Union[UUID, UnsetType] = unset,
+        last_modified_by_user_uuid: Union[str, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         started_at: Union[datetime, UnsetType] = unset,
         status: Union[CreateDegradationRequestDataAttributesStatus, UnsetType] = unset,
@@ -87,6 +90,9 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         :param id: Identifier of the update.
         :type id: UUID, optional
 
+        :param last_modified_by_user_uuid: UUID of the user who last modified the resource.
+        :type last_modified_by_user_uuid: str, optional
+
         :param modified_at: Timestamp of when the update was last modified.
         :type modified_at: datetime, optional
 
@@ -104,6 +110,8 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
             kwargs["description"] = description
         if id is not unset:
             kwargs["id"] = id
+        if last_modified_by_user_uuid is not unset:
+            kwargs["last_modified_by_user_uuid"] = last_modified_by_user_uuid
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if started_at is not unset:

@@ -3,23 +3,18 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    unset,
-    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_maintenance_request_data_attributes_components_affected_items import (
         CreateMaintenanceRequestDataAttributesComponentsAffectedItems,
-    )
-    from datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items import (
-        CreateMaintenanceRequestDataAttributesUpdatesItems,
     )
 
 
@@ -28,9 +23,6 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.create_maintenance_request_data_attributes_components_affected_items import (
             CreateMaintenanceRequestDataAttributesComponentsAffectedItems,
-        )
-        from datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items import (
-            CreateMaintenanceRequestDataAttributesUpdatesItems,
         )
 
         return {
@@ -41,7 +33,6 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
             "scheduled_description": (str,),
             "start_date": (datetime,),
             "title": (str,),
-            "updates": ([CreateMaintenanceRequestDataAttributesUpdatesItems],),
         }
 
     attribute_map = {
@@ -52,7 +43,6 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
         "scheduled_description": "scheduled_description",
         "start_date": "start_date",
         "title": "title",
-        "updates": "updates",
     }
 
     def __init__(
@@ -64,7 +54,6 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
         scheduled_description: str,
         start_date: datetime,
         title: str,
-        updates: Union[List[CreateMaintenanceRequestDataAttributesUpdatesItems], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -90,12 +79,7 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
 
         :param title: The title of the maintenance.
         :type title: str
-
-        :param updates:
-        :type updates: [CreateMaintenanceRequestDataAttributesUpdatesItems], optional
         """
-        if updates is not unset:
-            kwargs["updates"] = updates
         super().__init__(kwargs)
 
         self_.completed_date = completed_date
