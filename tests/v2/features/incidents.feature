@@ -21,6 +21,282 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Batch create incident rule execution states returns "Bad Request" response
+    Given operation "BatchCreateIncidentRuleExecutionStates" enabled
+    And new "BatchCreateIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rules": [{"last_executed_at": "2024-01-01T00:00:00.000Z", "rule_uuid": "00000000-0000-0000-0000-000000000000"}]}, "type": "incident_rule_execution_states"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Batch create incident rule execution states returns "Created" response
+    Given operation "BatchCreateIncidentRuleExecutionStates" enabled
+    And new "BatchCreateIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rules": [{"last_executed_at": "2024-01-01T00:00:00.000Z", "rule_uuid": "00000000-0000-0000-0000-000000000000"}]}, "type": "incident_rule_execution_states"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Batch create incident rule execution states returns "Not Found" response
+    Given operation "BatchCreateIncidentRuleExecutionStates" enabled
+    And new "BatchCreateIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rules": [{"last_executed_at": "2024-01-01T00:00:00.000Z", "rule_uuid": "00000000-0000-0000-0000-000000000000"}]}, "type": "incident_rule_execution_states"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Batch update incident rule execution states returns "Bad Request" response
+    Given operation "BatchUpdateIncidentRuleExecutionStates" enabled
+    And new "BatchUpdateIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rules": [{"last_executed_at": "2024-01-01T00:00:00.000Z", "rule_uuid": "00000000-0000-0000-0000-000000000000"}]}, "type": "incident_rule_execution_states"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Batch update incident rule execution states returns "Not Found" response
+    Given operation "BatchUpdateIncidentRuleExecutionStates" enabled
+    And new "BatchUpdateIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rules": [{"last_executed_at": "2024-01-01T00:00:00.000Z", "rule_uuid": "00000000-0000-0000-0000-000000000000"}]}, "type": "incident_rule_execution_states"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Batch update incident rule execution states returns "OK" response
+    Given operation "BatchUpdateIncidentRuleExecutionStates" enabled
+    And new "BatchUpdateIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rules": [{"last_executed_at": "2024-01-01T00:00:00.000Z", "rule_uuid": "00000000-0000-0000-0000-000000000000"}]}, "type": "incident_rule_execution_states"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a Statuspage incident for an incident returns "Bad Request" response
+    Given operation "CreateIncidentStatuspageIncident" enabled
+    And new "CreateIncidentStatuspageIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"body": "We are investigating the issue.", "deliver_notifications": true, "impact": "major", "name": "Service Outage", "page_id": "abc123", "status": "investigating"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a Statuspage incident for an incident returns "Not Found" response
+    Given operation "CreateIncidentStatuspageIncident" enabled
+    And new "CreateIncidentStatuspageIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"body": "We are investigating the issue.", "deliver_notifications": true, "impact": "major", "name": "Service Outage", "page_id": "abc123", "status": "investigating"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a Statuspage incident for an incident returns "OK" response
+    Given operation "CreateIncidentStatuspageIncident" enabled
+    And new "CreateIncidentStatuspageIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"body": "We are investigating the issue.", "deliver_notifications": true, "impact": "major", "name": "Service Outage", "page_id": "abc123", "status": "investigating"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a status page email subscription returns "Bad Request" response
+    Given operation "CreateStatuspageEmailSubscription" enabled
+    And new "CreateStatuspageEmailSubscription" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"email": "user@example.com"}, "type": "statuspage_email_subscription"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create a status page email subscription returns "Created" response
+    Given operation "CreateStatuspageEmailSubscription" enabled
+    And new "CreateStatuspageEmailSubscription" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"email": "user@example.com"}, "type": "statuspage_email_subscription"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Google Meet space returns "Bad Request" response
+    Given operation "CreateIncidentGoogleMeetSpace" enabled
+    And new "CreateIncidentGoogleMeetSpace" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Google Meet space returns "Created" response
+    Given operation "CreateIncidentGoogleMeetSpace" enabled
+    And new "CreateIncidentGoogleMeetSpace" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Google Meet space returns "Not Found" response
+    Given operation "CreateIncidentGoogleMeetSpace" enabled
+    And new "CreateIncidentGoogleMeetSpace" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Jira issue returns "Bad Request" response
+    Given operation "CreateIncidentJiraIssue" enabled
+    And new "CreateIncidentJiraIssue" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_id": "123456", "issue_type_id": "10001", "project_id": "10000", "template_id": "00000000-0000-0000-0000-000000000000"}, "type": "incident_jira_issues"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Jira issue returns "Created" response
+    Given operation "CreateIncidentJiraIssue" enabled
+    And new "CreateIncidentJiraIssue" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_id": "123456", "issue_type_id": "10001", "project_id": "10000", "template_id": "00000000-0000-0000-0000-000000000000"}, "type": "incident_jira_issues"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Jira issue returns "Not Found" response
+    Given operation "CreateIncidentJiraIssue" enabled
+    And new "CreateIncidentJiraIssue" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_id": "123456", "issue_type_id": "10001", "project_id": "10000", "template_id": "00000000-0000-0000-0000-000000000000"}, "type": "incident_jira_issues"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Jira template returns "Bad Request" response
+    Given operation "CreateIncidentJiraTemplate" enabled
+    And new "CreateIncidentJiraTemplate" request
+    And body with value {"data": {"attributes": {"account_id": "123456", "field_configurations": [{"incident_field": "title", "jira_field_key": "summary", "jira_field_type": "string", "sync_direction": "bidirectional"}], "is_default": false, "issue_id": "10001", "name": "Default Jira Template", "project_id": "10000", "project_key": "INC", "sync_enabled": true, "type": "jira"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "incidents_jira_templates"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Jira template returns "Created" response
+    Given operation "CreateIncidentJiraTemplate" enabled
+    And new "CreateIncidentJiraTemplate" request
+    And body with value {"data": {"attributes": {"account_id": "123456", "field_configurations": [{"incident_field": "title", "jira_field_key": "summary", "jira_field_type": "string", "sync_direction": "bidirectional"}], "is_default": false, "issue_id": "10001", "name": "Default Jira Template", "project_id": "10000", "project_key": "INC", "sync_enabled": true, "type": "jira"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "incidents_jira_templates"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Microsoft Teams configuration returns "Bad Request" response
+    Given operation "CreateIncidentMicrosoftTeamsConfiguration" enabled
+    And new "CreateIncidentMicrosoftTeamsConfiguration" request
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "post_meeting_summary": true}, "type": "microsoft_teams_configurations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Microsoft Teams configuration returns "Created" response
+    Given operation "CreateIncidentMicrosoftTeamsConfiguration" enabled
+    And new "CreateIncidentMicrosoftTeamsConfiguration" request
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "post_meeting_summary": true}, "type": "microsoft_teams_configurations"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Microsoft Teams online meeting returns "Bad Request" response
+    Given operation "CreateIncidentMSTeamsOnlineMeeting" enabled
+    And new "CreateIncidentMSTeamsOnlineMeeting" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Microsoft Teams online meeting returns "Created" response
+    Given operation "CreateIncidentMSTeamsOnlineMeeting" enabled
+    And new "CreateIncidentMSTeamsOnlineMeeting" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Microsoft Teams online meeting returns "Not Found" response
+    Given operation "CreateIncidentMSTeamsOnlineMeeting" enabled
+    And new "CreateIncidentMSTeamsOnlineMeeting" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Zoom configuration returns "Bad Request" response
+    Given operation "CreateIncidentZoomConfiguration" enabled
+    And new "CreateIncidentZoomConfiguration" request
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "meeting_chat_timeline_sync": false, "post_meeting_summary": true}, "type": "zoom_configurations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Zoom configuration returns "Created" response
+    Given operation "CreateIncidentZoomConfiguration" enabled
+    And new "CreateIncidentZoomConfiguration" request
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "meeting_chat_timeline_sync": false, "post_meeting_summary": true}, "type": "zoom_configurations"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Zoom meeting returns "Bad Request" response
+    Given operation "CreateIncidentZoomMeeting" enabled
+    And new "CreateIncidentZoomMeeting" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"topic": "Incident INC-123 War Room"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Zoom meeting returns "Created" response
+    Given operation "CreateIncidentZoomMeeting" enabled
+    And new "CreateIncidentZoomMeeting" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"topic": "Incident INC-123 War Room"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident Zoom meeting returns "Not Found" response
+    Given operation "CreateIncidentZoomMeeting" enabled
+    And new "CreateIncidentZoomMeeting" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"topic": "Incident INC-123 War Room"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident communication returns "Bad Request" response
+    Given operation "CreateIncidentCommunication" enabled
+    And new "CreateIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"communication_type": "manual", "content": {"grouping_key": "update-1", "handles": [{"created_at": "2024-01-01T00:00:00.000Z", "display_name": "#incidents-channel", "handle": "@slack-incidents-channel"}], "message": "Incident update for INC-123.", "status": 0, "subject": "Incident INC-123: Update"}}, "type": "communication"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident communication returns "Created" response
+    Given operation "CreateIncidentCommunication" enabled
+    And new "CreateIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"communication_type": "manual", "content": {"grouping_key": "update-1", "handles": [{"created_at": "2024-01-01T00:00:00.000Z", "display_name": "#incidents-channel", "handle": "@slack-incidents-channel"}], "message": "Incident update for INC-123.", "status": 0, "subject": "Incident INC-123: Update"}}, "type": "communication"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident communication returns "Not Found" response
+    Given operation "CreateIncidentCommunication" enabled
+    And new "CreateIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"communication_type": "manual", "content": {"grouping_key": "update-1", "handles": [{"created_at": "2024-01-01T00:00:00.000Z", "display_name": "#incidents-channel", "handle": "@slack-incidents-channel"}], "message": "Incident update for INC-123.", "status": 0, "subject": "Incident INC-123: Update"}}, "type": "communication"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @skip @team:DataDog/incident-app
   Scenario: Create an incident impact returns "Bad Request" response
     Given operation "CreateIncidentImpact" enabled
@@ -130,6 +406,65 @@ Feature: Incidents
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
     And body with value {"data": {"attributes": {"customer_impact_scope": "Example customer impact scope", "customer_impacted": false, "fields": {"severity": {"type": "dropdown", "value": "SEV-5"}}, "incident_type_uuid": "00000000-0000-0000-0000-000000000000", "initial_cells": [{"cell_type": "markdown", "content": {"content": "An example timeline cell message."}, "important": false}], "is_test": false, "notification_handles": [{"display_name": "Jane Doe", "handle": "@user@email.com"}, {"display_name": "Slack Channel", "handle": "@slack-channel"}, {"display_name": "Incident Workflow", "handle": "@workflow-from-incident"}], "title": "A test incident title"}, "relationships": {"commander_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incidents"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident role assignment returns "Bad Request" response
+    Given operation "CreateIncidentRoleAssignment" enabled
+    And new "CreateIncidentRoleAssignment" request
+    And body with value {"data": {"attributes": {"role": "commander"}, "relationships": {"reserved_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}, "responder": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "user_defined_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}}, "type": "incident_role_assignments"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident role assignment returns "Conflict" response
+    Given operation "CreateIncidentRoleAssignment" enabled
+    And new "CreateIncidentRoleAssignment" request
+    And body with value {"data": {"attributes": {"role": "commander"}, "relationships": {"reserved_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}, "responder": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "user_defined_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}}, "type": "incident_role_assignments"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident role assignment returns "Created" response
+    Given operation "CreateIncidentRoleAssignment" enabled
+    And new "CreateIncidentRoleAssignment" request
+    And body with value {"data": {"attributes": {"role": "commander"}, "relationships": {"reserved_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}, "responder": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "user_defined_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}}, "type": "incident_role_assignments"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident role assignment returns "Not Found" response
+    Given operation "CreateIncidentRoleAssignment" enabled
+    And new "CreateIncidentRoleAssignment" request
+    And body with value {"data": {"attributes": {"role": "commander"}, "relationships": {"reserved_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}, "responder": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "user_defined_role": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_reserved_roles"}}}, "type": "incident_role_assignments"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident timeline entry returns "Bad Request" response
+    Given operation "CreateIncidentTimelineEntry" enabled
+    And new "CreateIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cell_type": "markdown", "content": {"message": "Investigating the issue."}, "display_time": "2024-01-01T00:00:00.000Z", "important": false}, "type": "incident_timeline_cells"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident timeline entry returns "Created" response
+    Given operation "CreateIncidentTimelineEntry" enabled
+    And new "CreateIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cell_type": "markdown", "content": {"message": "Investigating the issue."}, "display_time": "2024-01-01T00:00:00.000Z", "important": false}, "type": "incident_timeline_cells"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident timeline entry returns "Not Found" response
+    Given operation "CreateIncidentTimelineEntry" enabled
+    And new "CreateIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cell_type": "markdown", "content": {"message": "Investigating the issue."}, "display_time": "2024-01-01T00:00:00.000Z", "important": false}, "type": "incident_timeline_cells"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -297,6 +632,36 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Create or update incident automation data returns "Bad Request" response
+    Given operation "UpsertIncidentAutomationData" enabled
+    And new "UpsertIncidentAutomationData" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "key" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"value": "completed"}, "type": "incidents_automation_data"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create or update incident automation data returns "Not Found" response
+    Given operation "UpsertIncidentAutomationData" enabled
+    And new "UpsertIncidentAutomationData" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "key" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"value": "completed"}, "type": "incidents_automation_data"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create or update incident automation data returns "OK" response
+    Given operation "UpsertIncidentAutomationData" enabled
+    And new "UpsertIncidentAutomationData" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "key" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"value": "completed"}, "type": "incidents_automation_data"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Create postmortem attachment returns "Bad Request" response
     Given operation "CreateIncidentPostmortemAttachment" enabled
     And new "CreateIncidentPostmortemAttachment" request
@@ -379,6 +744,57 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident Jira template returns "Bad Request" response
+    Given operation "DeleteIncidentJiraTemplate" enabled
+    And new "DeleteIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident Jira template returns "No Content" response
+    Given operation "DeleteIncidentJiraTemplate" enabled
+    And new "DeleteIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident Jira template returns "Not Found" response
+    Given operation "DeleteIncidentJiraTemplate" enabled
+    And new "DeleteIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident communication returns "Bad Request" response
+    Given operation "DeleteIncidentCommunication" enabled
+    And new "DeleteIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident communication returns "No Content" response
+    Given operation "DeleteIncidentCommunication" enabled
+    And new "DeleteIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident communication returns "Not Found" response
+    Given operation "DeleteIncidentCommunication" enabled
+    And new "DeleteIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @skip @team:DataDog/incident-app
   Scenario: Delete an incident impact returns "No Content" response
     Given there is a valid "incident" in the system
@@ -449,6 +865,57 @@ Feature: Incidents
     Given operation "DeleteIncidentNotificationRule" enabled
     And new "DeleteIncidentNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident role assignment returns "Bad Request" response
+    Given operation "DeleteIncidentRoleAssignment" enabled
+    And new "DeleteIncidentRoleAssignment" request
+    And request contains "role_assignment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident role assignment returns "No Content" response
+    Given operation "DeleteIncidentRoleAssignment" enabled
+    And new "DeleteIncidentRoleAssignment" request
+    And request contains "role_assignment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident role assignment returns "Not Found" response
+    Given operation "DeleteIncidentRoleAssignment" enabled
+    And new "DeleteIncidentRoleAssignment" request
+    And request contains "role_assignment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident timeline entry returns "Bad Request" response
+    Given operation "DeleteIncidentTimelineEntry" enabled
+    And new "DeleteIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident timeline entry returns "No Content" response
+    Given operation "DeleteIncidentTimelineEntry" enabled
+    And new "DeleteIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident timeline entry returns "Not Found" response
+    Given operation "DeleteIncidentTimelineEntry" enabled
+    And new "DeleteIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -626,6 +1093,46 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Export incidents returns "Bad Request" response
+    Given operation "ExportIncidents" enabled
+    And new "ExportIncidents" request
+    And body with value {"fields": ["title", "severity", "state"], "query": "state:active"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Export incidents returns "OK" response
+    Given operation "ExportIncidents" enabled
+    And new "ExportIncidents" request
+    And body with value {"fields": ["title", "severity", "state"], "query": "state:active"}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get PagerDuty related incidents returns "Bad Request" response
+    Given operation "GetIncidentPagerdutyRelatedIncidents" enabled
+    And new "GetIncidentPagerdutyRelatedIncidents" request
+    And request contains "pagerduty_incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get PagerDuty related incidents returns "Not Found" response
+    Given operation "GetIncidentPagerdutyRelatedIncidents" enabled
+    And new "GetIncidentPagerdutyRelatedIncidents" request
+    And request contains "pagerduty_incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get PagerDuty related incidents returns "OK" response
+    Given operation "GetIncidentPagerdutyRelatedIncidents" enabled
+    And new "GetIncidentPagerdutyRelatedIncidents" request
+    And request contains "pagerduty_incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -741,6 +1248,57 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response has 3 items
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident Jira template returns "Bad Request" response
+    Given operation "GetIncidentJiraTemplate" enabled
+    And new "GetIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident Jira template returns "Not Found" response
+    Given operation "GetIncidentJiraTemplate" enabled
+    And new "GetIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident Jira template returns "OK" response
+    Given operation "GetIncidentJiraTemplate" enabled
+    And new "GetIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident communication returns "Bad Request" response
+    Given operation "GetIncidentCommunication" enabled
+    And new "GetIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident communication returns "Not Found" response
+    Given operation "GetIncidentCommunication" enabled
+    And new "GetIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident communication returns "OK" response
+    Given operation "GetIncidentCommunication" enabled
+    And new "GetIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:Datadog/incident-app
   Scenario: Get an incident notification rule returns "Bad Request" response
     Given operation "GetIncidentNotificationRule" enabled
@@ -762,6 +1320,46 @@ Feature: Incidents
     Given operation "GetIncidentNotificationRule" enabled
     And new "GetIncidentNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident reserved role returns "Not Found" response
+    Given operation "GetIncidentReservedRole" enabled
+    And new "GetIncidentReservedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident reserved role returns "OK" response
+    Given operation "GetIncidentReservedRole" enabled
+    And new "GetIncidentReservedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident role assignment returns "Bad Request" response
+    Given operation "GetIncidentRoleAssignment" enabled
+    And new "GetIncidentRoleAssignment" request
+    And request contains "role_assignment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident role assignment returns "Not Found" response
+    Given operation "GetIncidentRoleAssignment" enabled
+    And new "GetIncidentRoleAssignment" request
+    And request contains "role_assignment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident role assignment returns "OK" response
+    Given operation "GetIncidentRoleAssignment" enabled
+    And new "GetIncidentRoleAssignment" request
+    And request contains "role_assignment_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -792,6 +1390,49 @@ Feature: Incidents
   Scenario: Get global incident settings returns "OK" response
     Given operation "GetGlobalIncidentSettings" enabled
     And new "GetGlobalIncidentSettings" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident automation data returns "Bad Request" response
+    Given operation "GetIncidentAutomationData" enabled
+    And new "GetIncidentAutomationData" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident automation data returns "Not Found" response
+    Given operation "GetIncidentAutomationData" enabled
+    And new "GetIncidentAutomationData" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident automation data returns "OK" response
+    Given operation "GetIncidentAutomationData" enabled
+    And new "GetIncidentAutomationData" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident case source link returns "Not Found" response
+    Given operation "GetIncidentCaseSourceLink" enabled
+    And new "GetIncidentCaseSourceLink" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident case source link returns "OK" response
+    Given operation "GetIncidentCaseSourceLink" enabled
+    And new "GetIncidentCaseSourceLink" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -874,6 +1515,65 @@ Feature: Incidents
     And the response "data" has field "attributes"
     And the response "data" has field "relationships"
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident page source link returns "Not Found" response
+    Given operation "GetIncidentPageSourceLink" enabled
+    And new "GetIncidentPageSourceLink" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident page source link returns "OK" response
+    Given operation "GetIncidentPageSourceLink" enabled
+    And new "GetIncidentPageSourceLink" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident status page suggestion returns "Not Found" response
+    Given operation "GetIncidentStatusPagesSuggestion" enabled
+    And new "GetIncidentStatusPagesSuggestion" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident status page suggestion returns "OK" response
+    Given operation "GetIncidentStatusPagesSuggestion" enabled
+    And new "GetIncidentStatusPagesSuggestion" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident timeline entry thread returns "Bad Request" response
+    Given operation "GetIncidentTimelineEntryThread" enabled
+    And new "GetIncidentTimelineEntryThread" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident timeline entry thread returns "Not Found" response
+    Given operation "GetIncidentTimelineEntryThread" enabled
+    And new "GetIncidentTimelineEntryThread" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get incident timeline entry thread returns "OK" response
+    Given operation "GetIncidentTimelineEntryThread" enabled
+    And new "GetIncidentTimelineEntryThread" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:Datadog/incident-app
   Scenario: Get incident todo details returns "Bad Request" response
     Given operation "GetIncidentTodo" enabled
@@ -954,6 +1654,13 @@ Feature: Incidents
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Get status page subscription preferences returns "OK" response
+    Given operation "GetStatuspageSubscriptionPreferences" enabled
+    And new "GetStatuspageSubscriptionPreferences" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -1006,6 +1713,20 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: List PagerDuty services returns "Bad Request" response
+    Given operation "ListIncidentPagerdutyServices" enabled
+    And new "ListIncidentPagerdutyServices" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List PagerDuty services returns "OK" response
+    Given operation "ListIncidentPagerdutyServices" enabled
+    And new "ListIncidentPagerdutyServices" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: List an incident's impacts returns "Bad Request" response
     Given new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "REPLACE.ME"
@@ -1042,6 +1763,20 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident Jira templates returns "Bad Request" response
+    Given operation "ListIncidentJiraTemplates" enabled
+    And new "ListIncidentJiraTemplates" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident Jira templates returns "OK" response
+    Given operation "ListIncidentJiraTemplates" enabled
+    And new "ListIncidentJiraTemplates" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/incident-app
   Scenario: List incident attachments returns "Bad Request" response
     Given operation "ListIncidentAttachments" enabled
@@ -1060,6 +1795,30 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 1
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident communications returns "Bad Request" response
+    Given operation "ListIncidentCommunications" enabled
+    And new "ListIncidentCommunications" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident communications returns "Not Found" response
+    Given operation "ListIncidentCommunications" enabled
+    And new "ListIncidentCommunications" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident communications returns "OK" response
+    Given operation "ListIncidentCommunications" enabled
+    And new "ListIncidentCommunications" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:Datadog/incident-app
   Scenario: List incident notification rules returns "Bad Request" response
@@ -1109,6 +1868,68 @@ Feature: Incidents
     And the response "data" has length 0
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: List incident reserved roles returns "OK" response
+    Given operation "ListIncidentReservedRoles" enabled
+    And new "ListIncidentReservedRoles" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident rule execution states returns "Bad Request" response
+    Given operation "ListIncidentRuleExecutionStates" enabled
+    And new "ListIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident rule execution states returns "Not Found" response
+    Given operation "ListIncidentRuleExecutionStates" enabled
+    And new "ListIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident rule execution states returns "OK" response
+    Given operation "ListIncidentRuleExecutionStates" enabled
+    And new "ListIncidentRuleExecutionStates" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident template variables returns "OK" response
+    Given operation "ListIncidentTemplateVariables" enabled
+    And new "ListIncidentTemplateVariables" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident timeline entries returns "Bad Request" response
+    Given operation "ListIncidentTimelineEntries" enabled
+    And new "ListIncidentTimelineEntries" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident timeline entries returns "Not Found" response
+    Given operation "ListIncidentTimelineEntries" enabled
+    And new "ListIncidentTimelineEntries" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident timeline entries returns "OK" response
+    Given operation "ListIncidentTimelineEntries" enabled
+    And new "ListIncidentTimelineEntries" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: List postmortem templates returns "Bad Request" response
     Given operation "ListIncidentPostmortemTemplates" enabled
     And new "ListIncidentPostmortemTemplates" request
@@ -1122,6 +1943,79 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List status page email subscriptions returns "Not Found" response
+    Given operation "ListStatuspageEmailSubscriptions" enabled
+    And new "ListStatuspageEmailSubscriptions" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List status page email subscriptions returns "OK" response
+    Given operation "ListStatuspageEmailSubscriptions" enabled
+    And new "ListStatuspageEmailSubscriptions" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Partially update an incident notification rule returns "Bad Request" response
+    Given operation "PatchIncidentNotificationRule" enabled
+    And new "PatchIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Partially update an incident notification rule returns "Not Found" response
+    Given operation "PatchIncidentNotificationRule" enabled
+    And new "PatchIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:Datadog/incident-app
+  Scenario: Partially update an incident notification rule returns "OK" response
+    Given operation "PatchIncidentNotificationRule" enabled
+    And new "PatchIncidentNotificationRule" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Publish an incident status page notice returns "Bad Request" response
+    Given operation "CreateIncidentStatusPageNotice" enabled
+    And new "CreateIncidentStatusPageNotice" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"components": {"component_1": "degraded_performance"}, "message": "We are investigating reports of elevated error rates.", "status": "investigating", "title": "Service degradation detected."}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Publish an incident status page notice returns "Not Found" response
+    Given operation "CreateIncidentStatusPageNotice" enabled
+    And new "CreateIncidentStatusPageNotice" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"components": {"component_1": "degraded_performance"}, "message": "We are investigating reports of elevated error rates.", "status": "investigating", "title": "Service degradation detected."}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Publish an incident status page notice returns "OK" response
+    Given operation "CreateIncidentStatusPageNotice" enabled
+    And new "CreateIncidentStatusPageNotice" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"components": {"component_1": "degraded_performance"}, "message": "We are investigating reports of elevated error rates.", "status": "investigating", "title": "Service degradation detected."}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/incident-app
   Scenario: Remove commander from an incident returns "OK" response
     Given operation "UpdateIncident" enabled
@@ -1132,6 +2026,33 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data.relationships.commander_user.data" is equal to null
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Render an incident template returns "Bad Request" response
+    Given operation "RenderIncidentTemplate" enabled
+    And new "RenderIncidentTemplate" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"content": "Incident INC-123 is SEV-1.", "datetime_format": "2006-01-02T15:04:05Z07:00", "timezone": "America/New_York", "validate_links": false, "validate_variables": false}, "type": "rendered_templates"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Render an incident template returns "Not Found" response
+    Given operation "RenderIncidentTemplate" enabled
+    And new "RenderIncidentTemplate" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"content": "Incident INC-123 is SEV-1.", "datetime_format": "2006-01-02T15:04:05Z07:00", "timezone": "America/New_York", "validate_links": false, "validate_variables": false}, "type": "rendered_templates"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Render an incident template returns "OK" response
+    Given operation "RenderIncidentTemplate" enabled
+    And new "RenderIncidentTemplate" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"content": "Incident INC-123 is SEV-1.", "datetime_format": "2006-01-02T15:04:05Z07:00", "timezone": "America/New_York", "validate_links": false, "validate_variables": false}, "type": "rendered_templates"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Search for incidents returns "Bad Request" response
@@ -1169,6 +2090,53 @@ Feature: Incidents
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Search incidents returns "Bad Request" response
+    Given operation "SearchIncidentsV2" enabled
+    And new "SearchIncidentsV2" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Search incidents returns "OK" response
+    Given operation "SearchIncidentsV2" enabled
+    And new "SearchIncidentsV2" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update a Statuspage incident for an incident returns "Bad Request" response
+    Given operation "UpdateIncidentStatuspageIncident" enabled
+    And new "UpdateIncidentStatuspageIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"body": "We are investigating the issue.", "deliver_notifications": true, "impact": "major", "name": "Service Outage", "page_id": "abc123", "status": "investigating"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update a Statuspage incident for an incident returns "Not Found" response
+    Given operation "UpdateIncidentStatuspageIncident" enabled
+    And new "UpdateIncidentStatuspageIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"body": "We are investigating the issue.", "deliver_notifications": true, "impact": "major", "name": "Service Outage", "page_id": "abc123", "status": "investigating"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update a Statuspage incident for an incident returns "OK" response
+    Given operation "UpdateIncidentStatuspageIncident" enabled
+    And new "UpdateIncidentStatuspageIncident" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"body": "We are investigating the issue.", "deliver_notifications": true, "impact": "major", "name": "Service Outage", "page_id": "abc123", "status": "investigating"}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Update an existing incident integration metadata returns "Bad Request" response
@@ -1232,6 +2200,117 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Jira template returns "Bad Request" response
+    Given operation "UpdateIncidentJiraTemplate" enabled
+    And new "UpdateIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_id": "123456", "field_configurations": [{"incident_field": "title", "jira_field_key": "summary", "jira_field_type": "string", "sync_direction": "bidirectional"}], "is_default": false, "issue_id": "10001", "name": "Default Jira Template", "project_id": "10000", "project_key": "INC", "sync_enabled": true, "type": "jira"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "incidents_jira_templates"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Jira template returns "Not Found" response
+    Given operation "UpdateIncidentJiraTemplate" enabled
+    And new "UpdateIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_id": "123456", "field_configurations": [{"incident_field": "title", "jira_field_key": "summary", "jira_field_type": "string", "sync_direction": "bidirectional"}], "is_default": false, "issue_id": "10001", "name": "Default Jira Template", "project_id": "10000", "project_key": "INC", "sync_enabled": true, "type": "jira"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "incidents_jira_templates"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Jira template returns "OK" response
+    Given operation "UpdateIncidentJiraTemplate" enabled
+    And new "UpdateIncidentJiraTemplate" request
+    And request contains "template_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_id": "123456", "field_configurations": [{"incident_field": "title", "jira_field_key": "summary", "jira_field_type": "string", "sync_direction": "bidirectional"}], "is_default": false, "issue_id": "10001", "name": "Default Jira Template", "project_id": "10000", "project_key": "INC", "sync_enabled": true, "type": "jira"}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}}, "type": "incidents_jira_templates"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Microsoft Teams configuration returns "Bad Request" response
+    Given operation "UpdateIncidentMicrosoftTeamsConfiguration" enabled
+    And new "UpdateIncidentMicrosoftTeamsConfiguration" request
+    And request contains "configuration_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "post_meeting_summary": true}, "type": "microsoft_teams_configurations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Microsoft Teams configuration returns "Not Found" response
+    Given operation "UpdateIncidentMicrosoftTeamsConfiguration" enabled
+    And new "UpdateIncidentMicrosoftTeamsConfiguration" request
+    And request contains "configuration_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "post_meeting_summary": true}, "type": "microsoft_teams_configurations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Microsoft Teams configuration returns "OK" response
+    Given operation "UpdateIncidentMicrosoftTeamsConfiguration" enabled
+    And new "UpdateIncidentMicrosoftTeamsConfiguration" request
+    And request contains "configuration_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "post_meeting_summary": true}, "type": "microsoft_teams_configurations"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Zoom configuration returns "Bad Request" response
+    Given operation "UpdateIncidentZoomConfiguration" enabled
+    And new "UpdateIncidentZoomConfiguration" request
+    And request contains "configuration_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "meeting_chat_timeline_sync": false, "post_meeting_summary": true}, "type": "zoom_configurations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Zoom configuration returns "Not Found" response
+    Given operation "UpdateIncidentZoomConfiguration" enabled
+    And new "UpdateIncidentZoomConfiguration" request
+    And request contains "configuration_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "meeting_chat_timeline_sync": false, "post_meeting_summary": true}, "type": "zoom_configurations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident Zoom configuration returns "OK" response
+    Given operation "UpdateIncidentZoomConfiguration" enabled
+    And new "UpdateIncidentZoomConfiguration" request
+    And request contains "configuration_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"manual_meeting_creation": false, "meeting_chat_timeline_sync": false, "post_meeting_summary": true}, "type": "zoom_configurations"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident communication returns "Bad Request" response
+    Given operation "UpdateIncidentCommunication" enabled
+    And new "UpdateIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"communication_type": "manual", "content": {"grouping_key": "update-1", "handles": [{"created_at": "2024-01-01T00:00:00.000Z", "display_name": "#incidents-channel", "handle": "@slack-incidents-channel"}], "message": "Incident update for INC-123.", "status": 0, "subject": "Incident INC-123: Update"}}, "type": "communication"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident communication returns "Not Found" response
+    Given operation "UpdateIncidentCommunication" enabled
+    And new "UpdateIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"communication_type": "manual", "content": {"grouping_key": "update-1", "handles": [{"created_at": "2024-01-01T00:00:00.000Z", "display_name": "#incidents-channel", "handle": "@slack-incidents-channel"}], "message": "Incident update for INC-123.", "status": 0, "subject": "Incident INC-123: Update"}}, "type": "communication"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident communication returns "OK" response
+    Given operation "UpdateIncidentCommunication" enabled
+    And new "UpdateIncidentCommunication" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "communication_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"communication_type": "manual", "content": {"grouping_key": "update-1", "handles": [{"created_at": "2024-01-01T00:00:00.000Z", "display_name": "#incidents-channel", "handle": "@slack-incidents-channel"}], "message": "Incident update for INC-123.", "status": 0, "subject": "Incident INC-123: Update"}}, "type": "communication"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:Datadog/incident-app
   Scenario: Update an incident notification rule returns "Bad Request" response
     Given operation "UpdateIncidentNotificationRule" enabled
@@ -1256,6 +2335,69 @@ Feature: Incidents
     And new "UpdateIncidentNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"conditions": [{"field": "severity", "values": ["SEV-1", "SEV-2"]}], "enabled": true, "handles": ["@team-email@company.com", "@slack-channel"], "renotify_on": ["status", "severity"], "trigger": "incident_created_trigger", "visibility": "organization"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incident_types"}}, "notification_template": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "notification_templates"}}}, "type": "incident_notification_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident status page notice returns "Bad Request" response
+    Given operation "UpdateIncidentStatusPageNotice" enabled
+    And new "UpdateIncidentStatusPageNotice" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_id" parameter from "REPLACE.ME"
+    And request contains "notice_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"message": "The issue has been resolved.", "status": "resolved", "title": "Service degradation resolved."}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident status page notice returns "Not Found" response
+    Given operation "UpdateIncidentStatusPageNotice" enabled
+    And new "UpdateIncidentStatusPageNotice" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_id" parameter from "REPLACE.ME"
+    And request contains "notice_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"message": "The issue has been resolved.", "status": "resolved", "title": "Service degradation resolved."}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident status page notice returns "OK" response
+    Given operation "UpdateIncidentStatusPageNotice" enabled
+    And new "UpdateIncidentStatusPageNotice" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "statuspage_id" parameter from "REPLACE.ME"
+    And request contains "notice_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"message": "The issue has been resolved.", "status": "resolved", "title": "Service degradation resolved."}, "type": "incident_integrations"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident timeline entry returns "Bad Request" response
+    Given operation "UpdateIncidentTimelineEntry" enabled
+    And new "UpdateIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cell_type": "markdown", "content": {"message": "Investigating the issue."}, "display_time": "2024-01-01T00:00:00.000Z", "important": false}, "type": "incident_timeline_cells"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident timeline entry returns "Not Found" response
+    Given operation "UpdateIncidentTimelineEntry" enabled
+    And new "UpdateIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cell_type": "markdown", "content": {"message": "Investigating the issue."}, "display_time": "2024-01-01T00:00:00.000Z", "important": false}, "type": "incident_timeline_cells"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident timeline entry returns "OK" response
+    Given operation "UpdateIncidentTimelineEntry" enabled
+    And new "UpdateIncidentTimelineEntry" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "timeline_entry_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cell_type": "markdown", "content": {"message": "Investigating the issue."}, "display_time": "2024-01-01T00:00:00.000Z", "important": false}, "type": "incident_timeline_cells"}}
     When the request is sent
     Then the response status is 200 OK
 

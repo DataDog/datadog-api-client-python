@@ -2571,6 +2571,54 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentJiraTemplates": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentJiraTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentJiraTemplate",
+      "parameters": [
+        {
+          "name": "template_id",
+          "source": "data.id"
+        }
+      ]
+    }
+  },
+  "DeleteIncidentJiraTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentJiraTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentJiraTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateIncidentMicrosoftTeamsConfiguration": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentMicrosoftTeamsConfiguration": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentNotificationRules": {
     "tag": "Incidents",
     "undo": {
@@ -2600,6 +2648,12 @@
     "tag": "Incidents",
     "undo": {
       "type": "safe"
+    }
+  },
+  "PatchIncidentNotificationRule": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "UpdateIncidentNotificationRule": {
@@ -2682,6 +2736,24 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentReservedRoles": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetIncidentReservedRole": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListIncidentTemplateVariables": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListIncidentTypes": {
     "tag": "Incidents",
     "undo": {
@@ -2756,6 +2828,18 @@
       "type": "idempotent"
     }
   },
+  "CreateIncidentZoomConfiguration": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentZoomConfiguration": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ImportIncident": {
     "tag": "Incidents",
     "undo": {
@@ -2769,10 +2853,70 @@
       "type": "unsafe"
     }
   },
+  "ListIncidentPagerdutyServices": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetIncidentPagerdutyRelatedIncidents": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentRoleAssignment": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentRoleAssignment",
+      "parameters": [
+        {
+          "name": "role_assignment_id",
+          "source": "data.id"
+        }
+      ]
+    }
+  },
+  "DeleteIncidentRoleAssignment": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentRoleAssignment": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SearchIncidents": {
     "tag": "Incidents",
     "undo": {
       "type": "safe"
+    }
+  },
+  "SearchIncidentsV2": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ExportIncidents": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentStatuspageIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentStatuspageIncident": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "DeleteIncident": {
@@ -2836,6 +2980,70 @@
       "type": "idempotent"
     }
   },
+  "GetIncidentAutomationData": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertIncidentAutomationData": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentCaseSourceLink": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListIncidentCommunications": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentCommunication": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentCommunication",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.attributes.incident_id"
+        },
+        {
+          "name": "communication_id",
+          "source": "data.id"
+        }
+      ]
+    }
+  },
+  "DeleteIncidentCommunication": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentCommunication": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentCommunication": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateIncidentGoogleMeetSpace": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentImpacts": {
     "tag": "Incidents",
     "undo": {
@@ -2863,6 +3071,24 @@
     "tag": "Incidents",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "CreateIncidentJiraIssue": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateIncidentMSTeamsOnlineMeeting": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentPageSourceLink": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListIncidentIntegrations": {
@@ -2942,6 +3168,94 @@
     }
   },
   "UpdateIncidentTodo": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RenderIncidentTemplate": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListIncidentRuleExecutionStates": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "BatchCreateIncidentRuleExecutionStates": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "BatchUpdateIncidentRuleExecutionStates": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentStatusPagesSuggestion": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentStatusPageNotice": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentStatusPageNotice": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListIncidentTimelineEntries": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentTimelineEntry": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentTimelineEntry",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.attributes.incident_id"
+        },
+        {
+          "name": "timeline_entry_id",
+          "source": "data.id"
+        }
+      ]
+    }
+  },
+  "DeleteIncidentTimelineEntry": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentTimelineEntry": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentTimelineEntryThread": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentZoomMeeting": {
     "tag": "Incidents",
     "undo": {
       "type": "idempotent"
@@ -6947,6 +7261,12 @@
       "type": "safe"
     }
   },
+  "GetStatuspageSubscriptionPreferences": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteStatusPage": {
     "tag": "Status Pages",
     "undo": {
@@ -7084,6 +7404,18 @@
   },
   "PublishStatusPage": {
     "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListStatuspageEmailSubscriptions": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateStatuspageEmailSubscription": {
+    "tag": "Incidents",
     "undo": {
       "type": "idempotent"
     }
