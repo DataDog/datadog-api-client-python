@@ -1309,6 +1309,13 @@ from datadog_api_client.v2.model.cost_metrics_response import CostMetricsRespons
 from datadog_api_client.v2.model.cost_orchestrator import CostOrchestrator
 from datadog_api_client.v2.model.cost_orchestrator_type import CostOrchestratorType
 from datadog_api_client.v2.model.cost_orchestrators_response import CostOrchestratorsResponse
+from datadog_api_client.v2.model.cost_recommendation_array import CostRecommendationArray
+from datadog_api_client.v2.model.cost_recommendation_data import CostRecommendationData
+from datadog_api_client.v2.model.cost_recommendation_data_attributes import CostRecommendationDataAttributes
+from datadog_api_client.v2.model.cost_recommendation_data_attributes_potential_daily_savings import (
+    CostRecommendationDataAttributesPotentialDailySavings,
+)
+from datadog_api_client.v2.model.cost_recommendation_data_type import CostRecommendationDataType
 from datadog_api_client.v2.model.cost_tag import CostTag
 from datadog_api_client.v2.model.cost_tag_attributes import CostTagAttributes
 from datadog_api_client.v2.model.cost_tag_description import CostTagDescription
@@ -5571,6 +5578,10 @@ from datadog_api_client.v2.model.recommendation_attributes import Recommendation
 from datadog_api_client.v2.model.recommendation_data import RecommendationData
 from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
 from datadog_api_client.v2.model.recommendation_type import RecommendationType
+from datadog_api_client.v2.model.recommendations_filter_request import RecommendationsFilterRequest
+from datadog_api_client.v2.model.recommendations_filter_request_sort_items import RecommendationsFilterRequestSortItems
+from datadog_api_client.v2.model.recommendations_page_meta import RecommendationsPageMeta
+from datadog_api_client.v2.model.recommendations_page_meta_page import RecommendationsPageMetaPage
 from datadog_api_client.v2.model.reference_table_create_source_type import ReferenceTableCreateSourceType
 from datadog_api_client.v2.model.reference_table_schema_field_type import ReferenceTableSchemaFieldType
 from datadog_api_client.v2.model.reference_table_sort_type import ReferenceTableSortType
@@ -8997,6 +9008,11 @@ __all__ = [
     "CostOrchestrator",
     "CostOrchestratorType",
     "CostOrchestratorsResponse",
+    "CostRecommendationArray",
+    "CostRecommendationData",
+    "CostRecommendationDataAttributes",
+    "CostRecommendationDataAttributesPotentialDailySavings",
+    "CostRecommendationDataType",
     "CostTag",
     "CostTagAttributes",
     "CostTagDescription",
@@ -11935,6 +11951,10 @@ __all__ = [
     "RecommendationData",
     "RecommendationDocument",
     "RecommendationType",
+    "RecommendationsFilterRequest",
+    "RecommendationsFilterRequestSortItems",
+    "RecommendationsPageMeta",
+    "RecommendationsPageMetaPage",
     "ReferenceTableCreateSourceType",
     "ReferenceTableSchemaFieldType",
     "ReferenceTableSortType",
