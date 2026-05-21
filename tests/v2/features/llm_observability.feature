@@ -589,6 +589,40 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM integration accounts returns "Bad Request" response
+    Given operation "ListLLMObsIntegrationAccounts" enabled
+    And new "ListLLMObsIntegrationAccounts" request
+    And request contains "integration" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM integration accounts returns "OK" response
+    Given operation "ListLLMObsIntegrationAccounts" enabled
+    And new "ListLLMObsIntegrationAccounts" request
+    And request contains "integration" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM integration models returns "Bad Request" response
+    Given operation "ListLLMObsIntegrationModels" enabled
+    And new "ListLLMObsIntegrationModels" request
+    And request contains "integration" parameter from "REPLACE.ME"
+    And request contains "account_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM integration models returns "OK" response
+    Given operation "ListLLMObsIntegrationModels" enabled
+    And new "ListLLMObsIntegrationModels" request
+    And request contains "integration" parameter from "REPLACE.ME"
+    And request contains "account_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: List events for an LLM Observability experiment returns "Bad Request" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
@@ -638,6 +672,26 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "events"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Run an LLM inference returns "Bad Request" response
+    Given operation "CreateLLMObsIntegrationInference" enabled
+    And new "CreateLLMObsIntegrationInference" request
+    And request contains "integration" parameter from "REPLACE.ME"
+    And request contains "account_id" parameter from "REPLACE.ME"
+    And body with value {"anthropic_metadata": {"effort": "medium", "thinking": {"budget_tokens": 1024, "type": "enabled"}}, "azure_openai_metadata": {"deployment_id": "my-gpt4-deployment", "model_version": "0613", "resource_name": "my-azure-resource"}, "bedrock_metadata": {"region": "us-east-1"}, "frequency_penalty": 0.0, "json_schema": "{\"type\":\"object\",\"properties\":{\"answer\":{\"type\":\"string\"}}}", "max_completion_tokens": 1024, "max_tokens": 1024, "messages": [{"content": "What is the capital of France?", "contents": [{"type": "text", "value": {"text": "Hello, how can I help you?", "tool_call": {"arguments": {"location": "San Francisco"}, "name": "get_weather", "tool_id": "call_abc123", "type": "function"}, "tool_call_result": {"name": "get_weather", "result": "The weather in San Francisco is 68\u00b0F and sunny.", "tool_id": "call_abc123", "type": "function"}}}], "id": "msg_001", "role": "user", "tool_calls": [{"arguments": {"location": "San Francisco"}, "name": "get_weather", "tool_id": "call_abc123", "type": "function"}], "tool_results": [{"name": "get_weather", "result": "The weather in San Francisco is 68\u00b0F and sunny.", "tool_id": "call_abc123", "type": "function"}]}], "model_id": "gpt-4o", "openai_metadata": {"reasoning_effort": "medium", "reasoning_summary": "auto"}, "presence_penalty": 0.0, "temperature": 0.7, "tools": [{"function": {"description": "Get the current weather for a location.", "name": "get_weather", "parameters": {"properties": {"location": {"type": "string"}}, "type": "object"}}, "type": "function"}], "top_k": 50, "top_p": 1.0, "vertex_ai_metadata": {"location": "us-central1", "project": "my-gcp-project", "project_ids": ["my-gcp-project"]}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Run an LLM inference returns "OK" response
+    Given operation "CreateLLMObsIntegrationInference" enabled
+    And new "CreateLLMObsIntegrationInference" request
+    And request contains "integration" parameter from "REPLACE.ME"
+    And request contains "account_id" parameter from "REPLACE.ME"
+    And body with value {"anthropic_metadata": {"effort": "medium", "thinking": {"budget_tokens": 1024, "type": "enabled"}}, "azure_openai_metadata": {"deployment_id": "my-gpt4-deployment", "model_version": "0613", "resource_name": "my-azure-resource"}, "bedrock_metadata": {"region": "us-east-1"}, "frequency_penalty": 0.0, "json_schema": "{\"type\":\"object\",\"properties\":{\"answer\":{\"type\":\"string\"}}}", "max_completion_tokens": 1024, "max_tokens": 1024, "messages": [{"content": "What is the capital of France?", "contents": [{"type": "text", "value": {"text": "Hello, how can I help you?", "tool_call": {"arguments": {"location": "San Francisco"}, "name": "get_weather", "tool_id": "call_abc123", "type": "function"}, "tool_call_result": {"name": "get_weather", "result": "The weather in San Francisco is 68\u00b0F and sunny.", "tool_id": "call_abc123", "type": "function"}}}], "id": "msg_001", "role": "user", "tool_calls": [{"arguments": {"location": "San Francisco"}, "name": "get_weather", "tool_id": "call_abc123", "type": "function"}], "tool_results": [{"name": "get_weather", "result": "The weather in San Francisco is 68\u00b0F and sunny.", "tool_id": "call_abc123", "type": "function"}]}], "model_id": "gpt-4o", "openai_metadata": {"reasoning_effort": "medium", "reasoning_summary": "auto"}, "presence_penalty": 0.0, "temperature": 0.7, "tools": [{"function": {"description": "Get the current weather for a location.", "name": "get_weather", "parameters": {"properties": {"location": {"type": "string"}}, "type": "object"}}, "type": "function"}], "top_k": 50, "top_p": 1.0, "vertex_ai_metadata": {"location": "us-central1", "project": "my-gcp-project", "project_ids": ["my-gcp-project"]}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Search LLM Observability experimentation entities returns "Bad Request" response

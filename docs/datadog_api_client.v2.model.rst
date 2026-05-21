@@ -18330,6 +18330,48 @@ datadog\_api\_client.v2.model.llm\_obs\_annotation\_schema module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_anthropic\_effort module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_anthropic_effort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_anthropic\_metadata module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_anthropic_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_anthropic\_thinking\_config module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_anthropic_thinking_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_anthropic\_thinking\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_anthropic_thinking_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_azure\_open\_ai\_metadata module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_azure_open_ai_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_bedrock\_metadata module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_bedrock_metadata
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_content\_block module
 -------------------------------------------------------------
 
@@ -19317,6 +19359,125 @@ datadog\_api\_client.v2.model.llm\_obs\_experiments\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_inference\_code module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_code
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_content module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_content
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_content\_value module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_content_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_error\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_error_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_function module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_function
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_message module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_message
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_run\_result module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_run_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_tool module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_tool
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_tool\_call module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_tool_call
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_inference\_tool\_result module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_inference_tool_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_integration\_account module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_integration_account
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_integration\_inference\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_integration_inference_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_integration\_inference\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_integration_inference_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_integration\_model module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_integration_model
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_integration\_model\_region\_prefix\_overrides module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_integration_model_region_prefix_overrides
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_integration\_name module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_integration_name
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_internal\_reasoning module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_internal_reasoning
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_label\_schema module
 ------------------------------------------------------------
 
@@ -19342,6 +19503,27 @@ datadog\_api\_client.v2.model.llm\_obs\_metric\_score\_type module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_metric_score_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_open\_ai\_metadata module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_open_ai_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_open\_ai\_reasoning\_effort module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_open_ai_reasoning_effort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_open\_ai\_reasoning\_summary module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_open_ai_reasoning_summary
    :members:
    :show-inheritance:
 
@@ -19594,6 +19776,13 @@ datadog\_api\_client.v2.model.llm\_obs\_trace\_interaction\_type module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_trace_interaction_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_vertex\_ai\_metadata module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_vertex_ai_metadata
    :members:
    :show-inheritance:
 

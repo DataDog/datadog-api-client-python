@@ -3323,6 +3323,12 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_request im
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_annotation_schema import LLMObsAnnotationSchema
+from datadog_api_client.v2.model.llm_obs_anthropic_effort import LLMObsAnthropicEffort
+from datadog_api_client.v2.model.llm_obs_anthropic_metadata import LLMObsAnthropicMetadata
+from datadog_api_client.v2.model.llm_obs_anthropic_thinking_config import LLMObsAnthropicThinkingConfig
+from datadog_api_client.v2.model.llm_obs_anthropic_thinking_type import LLMObsAnthropicThinkingType
+from datadog_api_client.v2.model.llm_obs_azure_open_ai_metadata import LLMObsAzureOpenAIMetadata
+from datadog_api_client.v2.model.llm_obs_bedrock_metadata import LLMObsBedrockMetadata
 from datadog_api_client.v2.model.llm_obs_content_block import LLMObsContentBlock
 from datadog_api_client.v2.model.llm_obs_content_block_header_level import LLMObsContentBlockHeaderLevel
 from datadog_api_client.v2.model.llm_obs_content_block_llm_obs_trace_interaction_type import (
@@ -3550,10 +3556,32 @@ from datadog_api_client.v2.model.llm_obs_experimentation_sort_field_direction im
 )
 from datadog_api_client.v2.model.llm_obs_experimentation_type import LLMObsExperimentationType
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
+from datadog_api_client.v2.model.llm_obs_inference_code import LLMObsInferenceCode
+from datadog_api_client.v2.model.llm_obs_inference_content import LLMObsInferenceContent
+from datadog_api_client.v2.model.llm_obs_inference_content_value import LLMObsInferenceContentValue
+from datadog_api_client.v2.model.llm_obs_inference_error_response import LLMObsInferenceErrorResponse
+from datadog_api_client.v2.model.llm_obs_inference_function import LLMObsInferenceFunction
+from datadog_api_client.v2.model.llm_obs_inference_message import LLMObsInferenceMessage
+from datadog_api_client.v2.model.llm_obs_inference_run_result import LLMObsInferenceRunResult
+from datadog_api_client.v2.model.llm_obs_inference_tool import LLMObsInferenceTool
+from datadog_api_client.v2.model.llm_obs_inference_tool_call import LLMObsInferenceToolCall
+from datadog_api_client.v2.model.llm_obs_inference_tool_result import LLMObsInferenceToolResult
+from datadog_api_client.v2.model.llm_obs_integration_account import LLMObsIntegrationAccount
+from datadog_api_client.v2.model.llm_obs_integration_inference_request import LLMObsIntegrationInferenceRequest
+from datadog_api_client.v2.model.llm_obs_integration_inference_response import LLMObsIntegrationInferenceResponse
+from datadog_api_client.v2.model.llm_obs_integration_model import LLMObsIntegrationModel
+from datadog_api_client.v2.model.llm_obs_integration_model_region_prefix_overrides import (
+    LLMObsIntegrationModelRegionPrefixOverrides,
+)
+from datadog_api_client.v2.model.llm_obs_integration_name import LLMObsIntegrationName
+from datadog_api_client.v2.model.llm_obs_internal_reasoning import LLMObsInternalReasoning
 from datadog_api_client.v2.model.llm_obs_label_schema import LLMObsLabelSchema
 from datadog_api_client.v2.model.llm_obs_label_schema_type import LLMObsLabelSchemaType
 from datadog_api_client.v2.model.llm_obs_metric_assessment import LLMObsMetricAssessment
 from datadog_api_client.v2.model.llm_obs_metric_score_type import LLMObsMetricScoreType
+from datadog_api_client.v2.model.llm_obs_open_ai_metadata import LLMObsOpenAIMetadata
+from datadog_api_client.v2.model.llm_obs_open_ai_reasoning_effort import LLMObsOpenAIReasoningEffort
+from datadog_api_client.v2.model.llm_obs_open_ai_reasoning_summary import LLMObsOpenAIReasoningSummary
 from datadog_api_client.v2.model.llm_obs_project_data_attributes_request import LLMObsProjectDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_project_data_attributes_response import LLMObsProjectDataAttributesResponse
 from datadog_api_client.v2.model.llm_obs_project_data_request import LLMObsProjectDataRequest
@@ -3592,6 +3620,7 @@ from datadog_api_client.v2.model.llm_obs_trace_annotated_interaction_item import
 from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_response_item import LLMObsTraceInteractionResponseItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTraceInteractionType
+from datadog_api_client.v2.model.llm_obs_vertex_ai_metadata import LLMObsVertexAIMetadata
 from datadog_api_client.v2.model.language import Language
 from datadog_api_client.v2.model.launch_darkly_api_key import LaunchDarklyAPIKey
 from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
@@ -10499,6 +10528,12 @@ __all__ = [
     "LLMObsAnnotationQueueUpdateRequest",
     "LLMObsAnnotationQueuesResponse",
     "LLMObsAnnotationSchema",
+    "LLMObsAnthropicEffort",
+    "LLMObsAnthropicMetadata",
+    "LLMObsAnthropicThinkingConfig",
+    "LLMObsAnthropicThinkingType",
+    "LLMObsAzureOpenAIMetadata",
+    "LLMObsBedrockMetadata",
     "LLMObsContentBlock",
     "LLMObsContentBlockHeaderLevel",
     "LLMObsContentBlockLLMObsTraceInteractionType",
@@ -10640,10 +10675,30 @@ __all__ = [
     "LLMObsExperimentationSortFieldDirection",
     "LLMObsExperimentationType",
     "LLMObsExperimentsResponse",
+    "LLMObsInferenceCode",
+    "LLMObsInferenceContent",
+    "LLMObsInferenceContentValue",
+    "LLMObsInferenceErrorResponse",
+    "LLMObsInferenceFunction",
+    "LLMObsInferenceMessage",
+    "LLMObsInferenceRunResult",
+    "LLMObsInferenceTool",
+    "LLMObsInferenceToolCall",
+    "LLMObsInferenceToolResult",
+    "LLMObsIntegrationAccount",
+    "LLMObsIntegrationInferenceRequest",
+    "LLMObsIntegrationInferenceResponse",
+    "LLMObsIntegrationModel",
+    "LLMObsIntegrationModelRegionPrefixOverrides",
+    "LLMObsIntegrationName",
+    "LLMObsInternalReasoning",
     "LLMObsLabelSchema",
     "LLMObsLabelSchemaType",
     "LLMObsMetricAssessment",
     "LLMObsMetricScoreType",
+    "LLMObsOpenAIMetadata",
+    "LLMObsOpenAIReasoningEffort",
+    "LLMObsOpenAIReasoningSummary",
     "LLMObsProjectDataAttributesRequest",
     "LLMObsProjectDataAttributesResponse",
     "LLMObsProjectDataRequest",
@@ -10680,6 +10735,7 @@ __all__ = [
     "LLMObsTraceInteractionItem",
     "LLMObsTraceInteractionResponseItem",
     "LLMObsTraceInteractionType",
+    "LLMObsVertexAIMetadata",
     "Language",
     "LaunchDarklyAPIKey",
     "LaunchDarklyAPIKeyType",
