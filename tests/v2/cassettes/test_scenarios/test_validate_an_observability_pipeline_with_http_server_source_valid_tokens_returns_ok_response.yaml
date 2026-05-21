@@ -1,0 +1,23 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"config":{"destinations":[{"id":"datadog-logs-destination","inputs":["my-processor-group"],"type":"datadog_logs"}],"processor_groups":[{"enabled":true,"id":"my-processor-group","include":"service:my-service","inputs":["http-server-source"],"processors":[{"enabled":true,"id":"filter-processor","include":"status:error","type":"filter"}]}],"sources":[{"auth_strategy":"none","decoding":"json","id":"http-server-source","type":"http_server","valid_tokens":[{"enabled":true,"field_to_add":{"key":"token_name","value":"primary_token"},"path_to_token":{"header":"X-Token"},"token_key":"HTTP_SERVER_TOKEN"},{"enabled":true,"path_to_token":"path","token_key":"HTTP_SERVER_TOKEN_BACKUP"}]}]},"name":"Pipeline
+      with HTTP server valid_tokens"},"type":"pipelines"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/obs-pipelines/pipelines/validate
+  response:
+    body:
+      string: '{"errors":[]}
+
+        '
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

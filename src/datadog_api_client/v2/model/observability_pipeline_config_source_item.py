@@ -73,6 +73,11 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param username_key: Name of the environment variable or secret that holds the username (used when `auth_strategy` is `basic`).
         :type username_key: str, optional
 
+        :param valid_tokens: A list of tokens that are accepted for authenticating incoming HTTP requests. When set,
+            the source rejects any request whose token does not match an enabled entry in this list.
+            Cannot be combined with the `plain` auth strategy.
+        :type valid_tokens: [ObservabilityPipelineHttpServerSourceValidToken], optional
+
         :param bootstrap_servers_key: Name of the environment variable or secret that holds the Kafka bootstrap servers list.
         :type bootstrap_servers_key: str, optional
 
