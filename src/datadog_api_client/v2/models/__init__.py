@@ -4604,6 +4604,18 @@ from datadog_api_client.v2.model.observability_pipeline_http_server_source_auth_
 from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
     ObservabilityPipelineHttpServerSourceType,
 )
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token import (
+    ObservabilityPipelineHttpServerSourceValidToken,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token_path_to_token import (
+    ObservabilityPipelineHttpServerSourceValidTokenPathToToken,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token_path_to_token_header import (
+    ObservabilityPipelineHttpServerSourceValidTokenPathToTokenHeader,
+)
+from datadog_api_client.v2.model.observability_pipeline_http_server_source_valid_token_path_to_token_location import (
+    ObservabilityPipelineHttpServerSourceValidTokenPathToTokenLocation,
+)
 from datadog_api_client.v2.model.observability_pipeline_kafka_destination import ObservabilityPipelineKafkaDestination
 from datadog_api_client.v2.model.observability_pipeline_kafka_destination_compression import (
     ObservabilityPipelineKafkaDestinationCompression,
@@ -4949,6 +4961,9 @@ from datadog_api_client.v2.model.observability_pipeline_socket_source_framing_oc
 )
 from datadog_api_client.v2.model.observability_pipeline_socket_source_mode import ObservabilityPipelineSocketSourceMode
 from datadog_api_client.v2.model.observability_pipeline_socket_source_type import ObservabilityPipelineSocketSourceType
+from datadog_api_client.v2.model.observability_pipeline_source_valid_token_field_to_add import (
+    ObservabilityPipelineSourceValidTokenFieldToAdd,
+)
 from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
 from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
 from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
@@ -4975,6 +4990,9 @@ from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_t
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import ObservabilityPipelineSplunkHecSource
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type import (
     ObservabilityPipelineSplunkHecSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_valid_token import (
+    ObservabilityPipelineSplunkHecSourceValidToken,
 )
 from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source import ObservabilityPipelineSplunkTcpSource
 from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source_type import (
@@ -11308,6 +11326,10 @@ __all__ = [
     "ObservabilityPipelineHttpServerSource",
     "ObservabilityPipelineHttpServerSourceAuthStrategy",
     "ObservabilityPipelineHttpServerSourceType",
+    "ObservabilityPipelineHttpServerSourceValidToken",
+    "ObservabilityPipelineHttpServerSourceValidTokenPathToToken",
+    "ObservabilityPipelineHttpServerSourceValidTokenPathToTokenHeader",
+    "ObservabilityPipelineHttpServerSourceValidTokenPathToTokenLocation",
     "ObservabilityPipelineKafkaDestination",
     "ObservabilityPipelineKafkaDestinationCompression",
     "ObservabilityPipelineKafkaDestinationEncoding",
@@ -11433,6 +11455,7 @@ __all__ = [
     "ObservabilityPipelineSocketSourceFramingOctetCountingMethod",
     "ObservabilityPipelineSocketSourceMode",
     "ObservabilityPipelineSocketSourceType",
+    "ObservabilityPipelineSourceValidTokenFieldToAdd",
     "ObservabilityPipelineSpec",
     "ObservabilityPipelineSpecData",
     "ObservabilityPipelineSplitArrayProcessor",
@@ -11444,6 +11467,7 @@ __all__ = [
     "ObservabilityPipelineSplunkHecDestinationType",
     "ObservabilityPipelineSplunkHecSource",
     "ObservabilityPipelineSplunkHecSourceType",
+    "ObservabilityPipelineSplunkHecSourceValidToken",
     "ObservabilityPipelineSplunkTcpSource",
     "ObservabilityPipelineSplunkTcpSourceType",
     "ObservabilityPipelineSumoLogicDestination",
