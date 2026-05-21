@@ -56,6 +56,8 @@ from datadog_api_client.v2.model.gcp_usage_cost_config_post_request import GCPUs
 from datadog_api_client.v2.model.gcp_uc_config_response import GcpUcConfigResponse
 from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPUsageCostConfigPatchRequest
 from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
+from datadog_api_client.v2.model.cost_recommendation_array import CostRecommendationArray
+from datadog_api_client.v2.model.recommendations_filter_request import RecommendationsFilterRequest
 from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDescriptionsResponse
 from datadog_api_client.v2.model.cost_tag_keys_response import CostTagKeysResponse
 from datadog_api_client.v2.model.cost_tag_key_response import CostTagKeyResponse
@@ -1507,6 +1509,36 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._search_cost_recommendations_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations",
+                "operation_id": "search_cost_recommendations",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (str,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page[token]",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RecommendationsFilterRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_cost_awscur_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AwsCURConfigsResponse,),
@@ -2941,6 +2973,35 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._reorder_tag_pipelines_rulesets_endpoint.call_with_http_info(**kwargs)
+
+    def search_cost_recommendations(
+        self,
+        body: RecommendationsFilterRequest,
+        *,
+        page_size: Union[str, UnsetType] = unset,
+        page_token: Union[str, UnsetType] = unset,
+    ) -> CostRecommendationArray:
+        """Search cost recommendations.
+
+        List cost recommendations matching a filter, with pagination and sorting.
+
+        :type body: RecommendationsFilterRequest
+        :param page_size: Number of results per page (1–10000).
+        :type page_size: str, optional
+        :param page_token: Pagination token from a previous response.
+        :type page_token: str, optional
+        :rtype: CostRecommendationArray
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_token is not unset:
+            kwargs["page_token"] = page_token
+
+        kwargs["body"] = body
+
+        return self._search_cost_recommendations_endpoint.call_with_http_info(**kwargs)
 
     def update_cost_awscur_config(
         self,

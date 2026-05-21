@@ -7137,6 +7137,41 @@ datadog\_api\_client.v2.model.cost\_orchestrators\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_recommendation\_array module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_recommendation_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_recommendation\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_recommendation_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_recommendation\_data\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_recommendation_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_recommendation\_data\_attributes\_potential\_daily\_savings module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_recommendation_data_attributes_potential_daily_savings
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_recommendation\_data\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_recommendation_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_tag module
 ----------------------------------------------
 
@@ -27518,6 +27553,34 @@ datadog\_api\_client.v2.model.recommendation\_type module
 ---------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.recommendation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendations\_filter\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendations_filter_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendations\_filter\_request\_sort\_items module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendations_filter_request_sort_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendations\_page\_meta module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendations_page_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.recommendations\_page\_meta\_page module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.recommendations_page_meta_page
    :members:
    :show-inheritance:
 

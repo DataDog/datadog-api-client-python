@@ -1826,6 +1826,12 @@
       "type": "safe"
     }
   },
+  "SearchCostRecommendations": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCostTagDescriptions": {
     "tag": "Cloud Cost Management",
     "undo": {

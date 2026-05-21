@@ -736,6 +736,14 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 204 Successfully reordered rulesets
 
+  @generated @skip @team:DataDog/ccm-optimize
+  Scenario: Search cost recommendations returns "OK" response
+    Given operation "SearchCostRecommendations" enabled
+    And new "SearchCostRecommendations" request
+    And body with value {"filter": "@resource_table:aws_ec2_instance", "sort": [{"expression": "potential_daily_savings.amount", "order": "DESC"}]}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/cloud-cost-management
   Scenario: Update Cloud Cost Management AWS CUR config returns "Not Found" response
     Given new "UpdateCostAWSCURConfig" request
