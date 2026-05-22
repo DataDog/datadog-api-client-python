@@ -4696,6 +4696,7 @@ from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_ty
     ObservabilityPipelineMetricTagsProcessorType,
 )
 from datadog_api_client.v2.model.observability_pipeline_metric_value import ObservabilityPipelineMetricValue
+from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
 from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
     ObservabilityPipelineNewRelicDestination,
 )
@@ -11428,6 +11429,7 @@ __all__ = [
     "ObservabilityPipelineMetricTagsProcessorRuleMode",
     "ObservabilityPipelineMetricTagsProcessorType",
     "ObservabilityPipelineMetricValue",
+    "ObservabilityPipelineMtlsServerTls",
     "ObservabilityPipelineNewRelicDestination",
     "ObservabilityPipelineNewRelicDestinationRegion",
     "ObservabilityPipelineNewRelicDestinationType",
