@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, List, Union
+from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -30,7 +30,6 @@ from datadog_api_client.v2.model.org_group_policy_override_create_request import
 from datadog_api_client.v2.model.org_group_policy_override_update_request import OrgGroupPolicyOverrideUpdateRequest
 from datadog_api_client.v2.model.org_group_list_response import OrgGroupListResponse
 from datadog_api_client.v2.model.org_group_sort_option import OrgGroupSortOption
-from datadog_api_client.v2.model.org_group_include_option import OrgGroupIncludeOption
 from datadog_api_client.v2.model.org_group_response import OrgGroupResponse
 from datadog_api_client.v2.model.org_group_create_request import OrgGroupCreateRequest
 from datadog_api_client.v2.model.org_group_update_request import OrgGroupUpdateRequest
@@ -484,12 +483,6 @@ class OrgGroupsApi:
                     "attribute": "sort",
                     "location": "query",
                 },
-                "include": {
-                    "openapi_types": ([OrgGroupIncludeOption],),
-                    "attribute": "include",
-                    "location": "query",
-                    "collection_format": "csv",
-                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -929,7 +922,6 @@ class OrgGroupsApi:
         page_number: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         sort: Union[OrgGroupSortOption, UnsetType] = unset,
-        include: Union[List[OrgGroupIncludeOption], UnsetType] = unset,
     ) -> OrgGroupListResponse:
         """List org groups.
 
@@ -941,8 +933,6 @@ class OrgGroupsApi:
         :type page_size: int, optional
         :param sort: Field to sort org groups by. Supported values: ``name`` , ``uuid`` , ``-name`` , ``-uuid``. Defaults to ``uuid``.
         :type sort: OrgGroupSortOption, optional
-        :param include: List of related resources to include.
-        :type include: [OrgGroupIncludeOption], optional
         :rtype: OrgGroupListResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -954,9 +944,6 @@ class OrgGroupsApi:
 
         if sort is not unset:
             kwargs["sort"] = sort
-
-        if include is not unset:
-            kwargs["include"] = include
 
         return self._list_org_groups_endpoint.call_with_http_info(**kwargs)
 

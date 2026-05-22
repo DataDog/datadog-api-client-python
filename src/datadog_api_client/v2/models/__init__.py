@@ -5237,7 +5237,6 @@ from datadog_api_client.v2.model.org_group_create_attributes import OrgGroupCrea
 from datadog_api_client.v2.model.org_group_create_data import OrgGroupCreateData
 from datadog_api_client.v2.model.org_group_create_request import OrgGroupCreateRequest
 from datadog_api_client.v2.model.org_group_data import OrgGroupData
-from datadog_api_client.v2.model.org_group_include_option import OrgGroupIncludeOption
 from datadog_api_client.v2.model.org_group_list_response import OrgGroupListResponse
 from datadog_api_client.v2.model.org_group_membership_attributes import OrgGroupMembershipAttributes
 from datadog_api_client.v2.model.org_group_membership_bulk_update_attributes import (
@@ -5251,7 +5250,6 @@ from datadog_api_client.v2.model.org_group_membership_bulk_update_request import
 from datadog_api_client.v2.model.org_group_membership_bulk_update_type import OrgGroupMembershipBulkUpdateType
 from datadog_api_client.v2.model.org_group_membership_data import OrgGroupMembershipData
 from datadog_api_client.v2.model.org_group_membership_list_response import OrgGroupMembershipListResponse
-from datadog_api_client.v2.model.org_group_membership_relationship_data import OrgGroupMembershipRelationshipData
 from datadog_api_client.v2.model.org_group_membership_relationships import OrgGroupMembershipRelationships
 from datadog_api_client.v2.model.org_group_membership_response import OrgGroupMembershipResponse
 from datadog_api_client.v2.model.org_group_membership_sort_option import OrgGroupMembershipSortOption
@@ -5259,7 +5257,6 @@ from datadog_api_client.v2.model.org_group_membership_type import OrgGroupMember
 from datadog_api_client.v2.model.org_group_membership_update_data import OrgGroupMembershipUpdateData
 from datadog_api_client.v2.model.org_group_membership_update_relationships import OrgGroupMembershipUpdateRelationships
 from datadog_api_client.v2.model.org_group_membership_update_request import OrgGroupMembershipUpdateRequest
-from datadog_api_client.v2.model.org_group_memberships_relationship import OrgGroupMembershipsRelationship
 from datadog_api_client.v2.model.org_group_pagination_links import OrgGroupPaginationLinks
 from datadog_api_client.v2.model.org_group_pagination_meta import OrgGroupPaginationMeta
 from datadog_api_client.v2.model.org_group_pagination_meta_page import OrgGroupPaginationMetaPage
@@ -5307,7 +5304,6 @@ from datadog_api_client.v2.model.org_group_policy_update_data import OrgGroupPol
 from datadog_api_client.v2.model.org_group_policy_update_request import OrgGroupPolicyUpdateRequest
 from datadog_api_client.v2.model.org_group_relationship_to_one import OrgGroupRelationshipToOne
 from datadog_api_client.v2.model.org_group_relationship_to_one_data import OrgGroupRelationshipToOneData
-from datadog_api_client.v2.model.org_group_relationships import OrgGroupRelationships
 from datadog_api_client.v2.model.org_group_response import OrgGroupResponse
 from datadog_api_client.v2.model.org_group_sort_option import OrgGroupSortOption
 from datadog_api_client.v2.model.org_group_type import OrgGroupType
@@ -11874,7 +11870,6 @@ __all__ = [
     "OrgGroupCreateData",
     "OrgGroupCreateRequest",
     "OrgGroupData",
-    "OrgGroupIncludeOption",
     "OrgGroupListResponse",
     "OrgGroupMembershipAttributes",
     "OrgGroupMembershipBulkUpdateAttributes",
@@ -11884,7 +11879,6 @@ __all__ = [
     "OrgGroupMembershipBulkUpdateType",
     "OrgGroupMembershipData",
     "OrgGroupMembershipListResponse",
-    "OrgGroupMembershipRelationshipData",
     "OrgGroupMembershipRelationships",
     "OrgGroupMembershipResponse",
     "OrgGroupMembershipSortOption",
@@ -11892,7 +11886,6 @@ __all__ = [
     "OrgGroupMembershipUpdateData",
     "OrgGroupMembershipUpdateRelationships",
     "OrgGroupMembershipUpdateRequest",
-    "OrgGroupMembershipsRelationship",
     "OrgGroupPaginationLinks",
     "OrgGroupPaginationMeta",
     "OrgGroupPaginationMetaPage",
@@ -11934,7 +11927,6 @@ __all__ = [
     "OrgGroupPolicyUpdateRequest",
     "OrgGroupRelationshipToOne",
     "OrgGroupRelationshipToOneData",
-    "OrgGroupRelationships",
     "OrgGroupResponse",
     "OrgGroupSortOption",
     "OrgGroupType",
