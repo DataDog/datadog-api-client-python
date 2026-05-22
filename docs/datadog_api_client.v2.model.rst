@@ -11092,6 +11092,55 @@ datadog\_api\_client.v2.model.entity\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.entity\_context\_entity module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_context_entity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_context\_entity\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_context_entity_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_context\_page module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_context_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_context\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_context_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_context\_response\_meta module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_context_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_context\_revision module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_context_revision
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_context\_revision\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_context_revision_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_data module
 -------------------------------------------------
 
@@ -29845,6 +29894,146 @@ datadog\_api\_client.v2.model.saml\_assertion\_attributes\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sample\_log\_generation\_bulk\_subscription\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_bulk_subscription_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_bulk\_subscription\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_bulk_subscription_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_bulk\_subscription\_item\_meta module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_bulk_subscription_item_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_bulk\_subscription\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_bulk_subscription_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_bulk\_subscription\_request\_type module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_bulk_subscription_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_bulk\_subscription\_response module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_bulk_subscription_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_bulk\_subscription\_result\_item module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_bulk_subscription_result_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_duration module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_duration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_create\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_create\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_create\_request module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_request\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_resource\_type module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscription\_status module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscription_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscriptions\_response module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscriptions_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscriptions\_response\_meta module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscriptions_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sample\_log\_generation\_subscriptions\_status\_filter module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sample_log_generation_subscriptions_status_filter
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sbom module
 -----------------------------------------
 
@@ -30965,6 +31154,34 @@ datadog\_api\_client.v2.model.security\_filter\_update\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_filter\_version\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_filter_version_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_filter\_version\_entry module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_filter_version_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_filter\_version\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_filter_version_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_filter\_versions\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_filter_versions_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_filters\_response module
 ----------------------------------------------------------------
 
@@ -31214,6 +31431,132 @@ datadog\_api\_client.v2.model.security\_monitoring\_filter\_action module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_filter_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_create\_attributes module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_create\_data module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_create\_request module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_resource\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_response module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_secrets module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_secrets
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_settings module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_settings
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_state module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_update\_attributes module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_update\_data module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_update\_request module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_configs\_response module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_configs_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_credentials\_validate\_attributes module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_credentials\_validate\_data module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_credentials\_validate\_request module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_type
    :members:
    :show-inheritance:
 
@@ -33503,6 +33846,41 @@ datadog\_api\_client.v2.model.shift\_included module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.shift_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.signal\_entities\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.signal_entities_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.signal\_entities\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.signal_entities_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.signal\_entities\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.signal_entities_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.signal\_entities\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.signal_entities_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.signal\_entity\_identity module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.signal_entity_identity
    :members:
    :show-inheritance:
 
