@@ -4279,6 +4279,21 @@ from datadog_api_client.v2.model.observability_pipeline_add_hostname_processor i
 from datadog_api_client.v2.model.observability_pipeline_add_hostname_processor_type import (
     ObservabilityPipelineAddHostnameProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processor import (
+    ObservabilityPipelineAddMetricTagsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processor_type import (
+    ObservabilityPipelineAddMetricTagsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_aggregate_processor import (
+    ObservabilityPipelineAggregateProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_mode import (
+    ObservabilityPipelineAggregateProcessorMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_type import (
+    ObservabilityPipelineAggregateProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
     ObservabilityPipelineAmazonDataFirehoseSource,
 )
@@ -4826,6 +4841,15 @@ from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_
 from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor_type import (
     ObservabilityPipelineRenameFieldsProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_rename_metric_tags_processor import (
+    ObservabilityPipelineRenameMetricTagsProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_rename_metric_tags_processor_tag import (
+    ObservabilityPipelineRenameMetricTagsProcessorTag,
+)
+from datadog_api_client.v2.model.observability_pipeline_rename_metric_tags_processor_type import (
+    ObservabilityPipelineRenameMetricTagsProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_rsyslog_destination import (
     ObservabilityPipelineRsyslogDestination,
 )
@@ -5067,6 +5091,27 @@ from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source_type im
     ObservabilityPipelineSyslogNgSourceType,
 )
 from datadog_api_client.v2.model.observability_pipeline_syslog_source_mode import ObservabilityPipelineSyslogSourceMode
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor import (
+    ObservabilityPipelineTagCardinalityLimitProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_action import (
+    ObservabilityPipelineTagCardinalityLimitProcessorAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_limit import (
+    ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit,
+)
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_mode import (
+    ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_limit import (
+    ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit,
+)
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_mode import (
+    ObservabilityPipelineTagCardinalityLimitProcessorPerTagMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_type import (
+    ObservabilityPipelineTagCardinalityLimitProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_throttle_processor import ObservabilityPipelineThrottleProcessor
 from datadog_api_client.v2.model.observability_pipeline_throttle_processor_type import (
     ObservabilityPipelineThrottleProcessorType,
@@ -11401,6 +11446,11 @@ __all__ = [
     "ObservabilityPipelineAddFieldsProcessorType",
     "ObservabilityPipelineAddHostnameProcessor",
     "ObservabilityPipelineAddHostnameProcessorType",
+    "ObservabilityPipelineAddMetricTagsProcessor",
+    "ObservabilityPipelineAddMetricTagsProcessorType",
+    "ObservabilityPipelineAggregateProcessor",
+    "ObservabilityPipelineAggregateProcessorMode",
+    "ObservabilityPipelineAggregateProcessorType",
     "ObservabilityPipelineAmazonDataFirehoseSource",
     "ObservabilityPipelineAmazonDataFirehoseSourceType",
     "ObservabilityPipelineAmazonOpenSearchDestination",
@@ -11602,6 +11652,9 @@ __all__ = [
     "ObservabilityPipelineRenameFieldsProcessor",
     "ObservabilityPipelineRenameFieldsProcessorField",
     "ObservabilityPipelineRenameFieldsProcessorType",
+    "ObservabilityPipelineRenameMetricTagsProcessor",
+    "ObservabilityPipelineRenameMetricTagsProcessorTag",
+    "ObservabilityPipelineRenameMetricTagsProcessorType",
     "ObservabilityPipelineRsyslogDestination",
     "ObservabilityPipelineRsyslogDestinationType",
     "ObservabilityPipelineRsyslogSource",
@@ -11691,6 +11744,13 @@ __all__ = [
     "ObservabilityPipelineSyslogNgSource",
     "ObservabilityPipelineSyslogNgSourceType",
     "ObservabilityPipelineSyslogSourceMode",
+    "ObservabilityPipelineTagCardinalityLimitProcessor",
+    "ObservabilityPipelineTagCardinalityLimitProcessorAction",
+    "ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit",
+    "ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode",
+    "ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit",
+    "ObservabilityPipelineTagCardinalityLimitProcessorPerTagMode",
+    "ObservabilityPipelineTagCardinalityLimitProcessorType",
     "ObservabilityPipelineThrottleProcessor",
     "ObservabilityPipelineThrottleProcessorType",
     "ObservabilityPipelineTls",

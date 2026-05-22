@@ -22705,6 +22705,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_add\_hostname\_processor\
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_add\_metric\_tags\_processor module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_add\_metric\_tags\_processor\_type module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_aggregate\_processor module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_aggregate_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_aggregate\_processor\_mode module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_aggregate_processor_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_aggregate\_processor\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_aggregate_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_data\_firehose\_source module
 --------------------------------------------------------------------------------------------
 
@@ -24105,6 +24140,27 @@ datadog\_api\_client.v2.model.observability\_pipeline\_rename\_fields\_processor
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_rename\_metric\_tags\_processor module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_rename_metric_tags_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_rename\_metric\_tags\_processor\_tag module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_rename_metric_tags_processor_tag
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_rename\_metric\_tags\_processor\_type module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_rename_metric_tags_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_rsyslog\_destination module
 ----------------------------------------------------------------------------------
 
@@ -24725,6 +24781,55 @@ datadog\_api\_client.v2.model.observability\_pipeline\_syslog\_source\_mode modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_syslog_source_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_action module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_per\_metric\_limit module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_limit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_per\_metric\_mode module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_per\_tag\_limit module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_limit
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_per\_tag\_mode module
+----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_type module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_type
    :members:
    :show-inheritance:
 
