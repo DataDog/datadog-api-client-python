@@ -25505,13 +25505,6 @@ datadog\_api\_client.v2.model.org\_group\_data module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.org\_group\_include\_option module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.org_group_include_option
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.org\_group\_list\_response module
 ---------------------------------------------------------------
 
@@ -25575,13 +25568,6 @@ datadog\_api\_client.v2.model.org\_group\_membership\_list\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.org\_group\_membership\_relationship\_data module
--------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.org_group_membership_relationship_data
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.org\_group\_membership\_relationships module
 --------------------------------------------------------------------------
 
@@ -25628,13 +25614,6 @@ datadog\_api\_client.v2.model.org\_group\_membership\_update\_request module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.org_group_membership_update_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.org\_group\_memberships\_relationship module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.org_group_memberships_relationship
    :members:
    :show-inheritance:
 
@@ -25922,13 +25901,6 @@ datadog\_api\_client.v2.model.org\_group\_relationship\_to\_one\_data module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.org_group_relationship_to_one_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.org\_group\_relationships module
---------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.org_group_relationships
    :members:
    :show-inheritance:
 

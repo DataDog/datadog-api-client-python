@@ -60,7 +60,7 @@ Feature: Org Groups
   Scenario: Create an org group policy returns "Bad Request" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -68,7 +68,7 @@ Feature: Org Groups
   Scenario: Create an org group policy returns "Conflict" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -76,7 +76,7 @@ Feature: Org Groups
   Scenario: Create an org group policy returns "Created" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED", "policy_name": "monitor_timezone", "policy_type": "org_config"}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -398,7 +398,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -407,7 +407,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -416,7 +416,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "DEFAULT"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 200 OK
 

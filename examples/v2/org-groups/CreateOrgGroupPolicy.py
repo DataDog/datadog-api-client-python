@@ -20,7 +20,7 @@ body = OrgGroupPolicyCreateRequest(
     data=OrgGroupPolicyCreateData(
         attributes=OrgGroupPolicyCreateAttributes(
             content=dict([("value", "UTC")]),
-            enforcement_tier=OrgGroupPolicyEnforcementTier.DEFAULT,
+            enforcement_tier=OrgGroupPolicyEnforcementTier.OVERRIDE_ALLOWED,
             policy_name="monitor_timezone",
             policy_type=OrgGroupPolicyPolicyType.ORG_CONFIG,
         ),

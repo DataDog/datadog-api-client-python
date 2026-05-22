@@ -14,19 +14,19 @@ from typing import ClassVar
 
 class OrgGroupPolicyEnforcementTier(ModelSimple):
     """
-    The enforcement tier of the policy. `DEFAULT` means the policy is set but member orgs may mutate it. `ENFORCE` means the policy is strictly controlled and mutations are blocked for affected orgs. `DELEGATE` means each member org controls its own value.
+    The enforcement tier of the policy. `OVERRIDE_ALLOWED` means the policy is set but member orgs may mutate it. `GROUP_MANAGED` means the policy is strictly controlled and mutations are blocked for affected orgs. `DELEGATE` means each member org controls its own value.
 
-    :param value: If omitted defaults to "DEFAULT". Must be one of ["DEFAULT", "ENFORCE", "DELEGATE"].
+    :param value: If omitted defaults to "OVERRIDE_ALLOWED". Must be one of ["OVERRIDE_ALLOWED", "GROUP_MANAGED", "DELEGATE"].
     :type value: str
     """
 
     allowed_values = {
-        "DEFAULT",
-        "ENFORCE",
+        "OVERRIDE_ALLOWED",
+        "GROUP_MANAGED",
         "DELEGATE",
     }
-    DEFAULT: ClassVar["OrgGroupPolicyEnforcementTier"]
-    ENFORCE: ClassVar["OrgGroupPolicyEnforcementTier"]
+    OVERRIDE_ALLOWED: ClassVar["OrgGroupPolicyEnforcementTier"]
+    GROUP_MANAGED: ClassVar["OrgGroupPolicyEnforcementTier"]
     DELEGATE: ClassVar["OrgGroupPolicyEnforcementTier"]
 
     @cached_property
@@ -36,6 +36,6 @@ class OrgGroupPolicyEnforcementTier(ModelSimple):
         }
 
 
-OrgGroupPolicyEnforcementTier.DEFAULT = OrgGroupPolicyEnforcementTier("DEFAULT")
-OrgGroupPolicyEnforcementTier.ENFORCE = OrgGroupPolicyEnforcementTier("ENFORCE")
+OrgGroupPolicyEnforcementTier.OVERRIDE_ALLOWED = OrgGroupPolicyEnforcementTier("OVERRIDE_ALLOWED")
+OrgGroupPolicyEnforcementTier.GROUP_MANAGED = OrgGroupPolicyEnforcementTier("GROUP_MANAGED")
 OrgGroupPolicyEnforcementTier.DELEGATE = OrgGroupPolicyEnforcementTier("DELEGATE")
