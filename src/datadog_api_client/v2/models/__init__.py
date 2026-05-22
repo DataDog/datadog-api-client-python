@@ -2844,10 +2844,63 @@ from datadog_api_client.v2.model.ip_allowlist_type import IPAllowlistType
 from datadog_api_client.v2.model.ip_allowlist_update_request import IPAllowlistUpdateRequest
 from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
 from datadog_api_client.v2.model.incident_attachment_type import IncidentAttachmentType
+from datadog_api_client.v2.model.incident_automation_data_attributes_request import (
+    IncidentAutomationDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_automation_data_attributes_response import (
+    IncidentAutomationDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_automation_data_data_request import IncidentAutomationDataDataRequest
+from datadog_api_client.v2.model.incident_automation_data_data_response import IncidentAutomationDataDataResponse
+from datadog_api_client.v2.model.incident_automation_data_request import IncidentAutomationDataRequest
+from datadog_api_client.v2.model.incident_automation_data_response import IncidentAutomationDataResponse
+from datadog_api_client.v2.model.incident_automation_data_type import IncidentAutomationDataType
+from datadog_api_client.v2.model.incident_batch_create_rule_execution_states_data import (
+    IncidentBatchCreateRuleExecutionStatesData,
+)
+from datadog_api_client.v2.model.incident_batch_create_rule_execution_states_data_attributes import (
+    IncidentBatchCreateRuleExecutionStatesDataAttributes,
+)
+from datadog_api_client.v2.model.incident_batch_create_rule_execution_states_request import (
+    IncidentBatchCreateRuleExecutionStatesRequest,
+)
+from datadog_api_client.v2.model.incident_batch_update_rule_execution_states_data import (
+    IncidentBatchUpdateRuleExecutionStatesData,
+)
+from datadog_api_client.v2.model.incident_batch_update_rule_execution_states_data_attributes import (
+    IncidentBatchUpdateRuleExecutionStatesDataAttributes,
+)
+from datadog_api_client.v2.model.incident_batch_update_rule_execution_states_request import (
+    IncidentBatchUpdateRuleExecutionStatesRequest,
+)
+from datadog_api_client.v2.model.incident_case_link_data import IncidentCaseLinkData
+from datadog_api_client.v2.model.incident_case_link_data_attributes import IncidentCaseLinkDataAttributes
+from datadog_api_client.v2.model.incident_case_link_response import IncidentCaseLinkResponse
+from datadog_api_client.v2.model.incident_case_link_type import IncidentCaseLinkType
+from datadog_api_client.v2.model.incident_communication_content import IncidentCommunicationContent
+from datadog_api_client.v2.model.incident_communication_content_handle import IncidentCommunicationContentHandle
+from datadog_api_client.v2.model.incident_communication_data_attributes_request import (
+    IncidentCommunicationDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_communication_data_attributes_response import (
+    IncidentCommunicationDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_communication_data_request import IncidentCommunicationDataRequest
+from datadog_api_client.v2.model.incident_communication_data_response import IncidentCommunicationDataResponse
+from datadog_api_client.v2.model.incident_communication_kind import IncidentCommunicationKind
+from datadog_api_client.v2.model.incident_communication_request import IncidentCommunicationRequest
+from datadog_api_client.v2.model.incident_communication_response import IncidentCommunicationResponse
+from datadog_api_client.v2.model.incident_communication_type import IncidentCommunicationType
+from datadog_api_client.v2.model.incident_communications_response import IncidentCommunicationsResponse
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
+from datadog_api_client.v2.model.incident_create_zoom_meeting_data import IncidentCreateZoomMeetingData
+from datadog_api_client.v2.model.incident_create_zoom_meeting_data_attributes import (
+    IncidentCreateZoomMeetingDataAttributes,
+)
+from datadog_api_client.v2.model.incident_create_zoom_meeting_request import IncidentCreateZoomMeetingRequest
 from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
 from datadog_api_client.v2.model.incident_field_attributes_multiple_value import IncidentFieldAttributesMultipleValue
 from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
@@ -2855,6 +2908,15 @@ from datadog_api_client.v2.model.incident_field_attributes_single_value_type imp
     IncidentFieldAttributesSingleValueType,
 )
 from datadog_api_client.v2.model.incident_field_attributes_value_type import IncidentFieldAttributesValueType
+from datadog_api_client.v2.model.incident_google_meet_integration_data_attributes import (
+    IncidentGoogleMeetIntegrationDataAttributes,
+)
+from datadog_api_client.v2.model.incident_google_meet_integration_data_response import (
+    IncidentGoogleMeetIntegrationDataResponse,
+)
+from datadog_api_client.v2.model.incident_google_meet_integration_response import IncidentGoogleMeetIntegrationResponse
+from datadog_api_client.v2.model.incident_google_meet_integration_type import IncidentGoogleMeetIntegrationType
+from datadog_api_client.v2.model.incident_google_meet_space import IncidentGoogleMeetSpace
 from datadog_api_client.v2.model.incident_handle_attributes_fields import IncidentHandleAttributesFields
 from datadog_api_client.v2.model.incident_handle_attributes_request import IncidentHandleAttributesRequest
 from datadog_api_client.v2.model.incident_handle_attributes_response import IncidentHandleAttributesResponse
@@ -2921,6 +2983,72 @@ from datadog_api_client.v2.model.incident_integration_metadata_response_included
 )
 from datadog_api_client.v2.model.incident_integration_metadata_type import IncidentIntegrationMetadataType
 from datadog_api_client.v2.model.incident_integration_relationships import IncidentIntegrationRelationships
+from datadog_api_client.v2.model.incident_jira_issue_data_attributes_request import (
+    IncidentJiraIssueDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_jira_issue_data_request import IncidentJiraIssueDataRequest
+from datadog_api_client.v2.model.incident_jira_issue_integration_data_attributes import (
+    IncidentJiraIssueIntegrationDataAttributes,
+)
+from datadog_api_client.v2.model.incident_jira_issue_integration_data_response import (
+    IncidentJiraIssueIntegrationDataResponse,
+)
+from datadog_api_client.v2.model.incident_jira_issue_integration_response import IncidentJiraIssueIntegrationResponse
+from datadog_api_client.v2.model.incident_jira_issue_integration_type import IncidentJiraIssueIntegrationType
+from datadog_api_client.v2.model.incident_jira_issue_request import IncidentJiraIssueRequest
+from datadog_api_client.v2.model.incident_jira_issue_type import IncidentJiraIssueType
+from datadog_api_client.v2.model.incident_jira_template_data_attributes_request import (
+    IncidentJiraTemplateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_jira_template_data_attributes_response import (
+    IncidentJiraTemplateDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_jira_template_data_request import IncidentJiraTemplateDataRequest
+from datadog_api_client.v2.model.incident_jira_template_data_response import IncidentJiraTemplateDataResponse
+from datadog_api_client.v2.model.incident_jira_template_field_configuration import (
+    IncidentJiraTemplateFieldConfiguration,
+)
+from datadog_api_client.v2.model.incident_jira_template_incident_type_relationship import (
+    IncidentJiraTemplateIncidentTypeRelationship,
+)
+from datadog_api_client.v2.model.incident_jira_template_incident_type_relationship_data import (
+    IncidentJiraTemplateIncidentTypeRelationshipData,
+)
+from datadog_api_client.v2.model.incident_jira_template_relationships import IncidentJiraTemplateRelationships
+from datadog_api_client.v2.model.incident_jira_template_request import IncidentJiraTemplateRequest
+from datadog_api_client.v2.model.incident_jira_template_response import IncidentJiraTemplateResponse
+from datadog_api_client.v2.model.incident_jira_template_type import IncidentJiraTemplateType
+from datadog_api_client.v2.model.incident_jira_templates_response import IncidentJiraTemplatesResponse
+from datadog_api_client.v2.model.incident_ms_teams_channel import IncidentMSTeamsChannel
+from datadog_api_client.v2.model.incident_ms_teams_integration_data_attributes import (
+    IncidentMSTeamsIntegrationDataAttributes,
+)
+from datadog_api_client.v2.model.incident_ms_teams_integration_data_response import (
+    IncidentMSTeamsIntegrationDataResponse,
+)
+from datadog_api_client.v2.model.incident_ms_teams_integration_response import IncidentMSTeamsIntegrationResponse
+from datadog_api_client.v2.model.incident_microsoft_teams_configuration_data_attributes_request import (
+    IncidentMicrosoftTeamsConfigurationDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_microsoft_teams_configuration_data_attributes_response import (
+    IncidentMicrosoftTeamsConfigurationDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_microsoft_teams_configuration_data_request import (
+    IncidentMicrosoftTeamsConfigurationDataRequest,
+)
+from datadog_api_client.v2.model.incident_microsoft_teams_configuration_data_response import (
+    IncidentMicrosoftTeamsConfigurationDataResponse,
+)
+from datadog_api_client.v2.model.incident_microsoft_teams_configuration_request import (
+    IncidentMicrosoftTeamsConfigurationRequest,
+)
+from datadog_api_client.v2.model.incident_microsoft_teams_configuration_response import (
+    IncidentMicrosoftTeamsConfigurationResponse,
+)
+from datadog_api_client.v2.model.incident_microsoft_teams_configuration_type import (
+    IncidentMicrosoftTeamsConfigurationType,
+)
+from datadog_api_client.v2.model.incident_microsoft_teams_integration_type import IncidentMicrosoftTeamsIntegrationType
 from datadog_api_client.v2.model.incident_non_datadog_creator import IncidentNonDatadogCreator
 from datadog_api_client.v2.model.incident_notification_handle import IncidentNotificationHandle
 from datadog_api_client.v2.model.incident_notification_rule import IncidentNotificationRule
@@ -2982,9 +3110,38 @@ from datadog_api_client.v2.model.incident_notification_template_update_attribute
 from datadog_api_client.v2.model.incident_notification_template_update_data import (
     IncidentNotificationTemplateUpdateData,
 )
+from datadog_api_client.v2.model.incident_pagerduty_incident_data_response import IncidentPagerdutyIncidentDataResponse
+from datadog_api_client.v2.model.incident_pagerduty_related_incidents_response import (
+    IncidentPagerdutyRelatedIncidentsResponse,
+)
+from datadog_api_client.v2.model.incident_pagerduty_service_data import IncidentPagerdutyServiceData
+from datadog_api_client.v2.model.incident_pagerduty_service_data_attributes import (
+    IncidentPagerdutyServiceDataAttributes,
+)
+from datadog_api_client.v2.model.incident_pagerduty_service_type import IncidentPagerdutyServiceType
+from datadog_api_client.v2.model.incident_pagerduty_services_response import IncidentPagerdutyServicesResponse
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_relationship_data import IncidentRelationshipData
+from datadog_api_client.v2.model.incident_render_template_data_attributes_request import (
+    IncidentRenderTemplateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_render_template_data_request import IncidentRenderTemplateDataRequest
+from datadog_api_client.v2.model.incident_render_template_request import IncidentRenderTemplateRequest
+from datadog_api_client.v2.model.incident_rendered_template_data import IncidentRenderedTemplateData
+from datadog_api_client.v2.model.incident_rendered_template_data_attributes import (
+    IncidentRenderedTemplateDataAttributes,
+)
+from datadog_api_client.v2.model.incident_rendered_template_response import IncidentRenderedTemplateResponse
+from datadog_api_client.v2.model.incident_rendered_template_type import IncidentRenderedTemplateType
+from datadog_api_client.v2.model.incident_reserved_role_data_attributes_response import (
+    IncidentReservedRoleDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_reserved_role_data_response import IncidentReservedRoleDataResponse
+from datadog_api_client.v2.model.incident_reserved_role_policy import IncidentReservedRolePolicy
+from datadog_api_client.v2.model.incident_reserved_role_response import IncidentReservedRoleResponse
+from datadog_api_client.v2.model.incident_reserved_role_type import IncidentReservedRoleType
+from datadog_api_client.v2.model.incident_reserved_roles_response import IncidentReservedRolesResponse
 from datadog_api_client.v2.model.incident_resource_type import IncidentResourceType
 from datadog_api_client.v2.model.incident_responders_type import IncidentRespondersType
 from datadog_api_client.v2.model.incident_response import IncidentResponse
@@ -2994,6 +3151,47 @@ from datadog_api_client.v2.model.incident_response_included_item import Incident
 from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
 from datadog_api_client.v2.model.incident_response_meta_pagination import IncidentResponseMetaPagination
 from datadog_api_client.v2.model.incident_response_relationships import IncidentResponseRelationships
+from datadog_api_client.v2.model.incident_role_assignment_data_attributes_request import (
+    IncidentRoleAssignmentDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_role_assignment_data_attributes_response import (
+    IncidentRoleAssignmentDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_role_assignment_data_request import IncidentRoleAssignmentDataRequest
+from datadog_api_client.v2.model.incident_role_assignment_data_response import IncidentRoleAssignmentDataResponse
+from datadog_api_client.v2.model.incident_role_assignment_relationships_request import (
+    IncidentRoleAssignmentRelationshipsRequest,
+)
+from datadog_api_client.v2.model.incident_role_assignment_relationships_response import (
+    IncidentRoleAssignmentRelationshipsResponse,
+)
+from datadog_api_client.v2.model.incident_role_assignment_request import IncidentRoleAssignmentRequest
+from datadog_api_client.v2.model.incident_role_assignment_responder_relationship import (
+    IncidentRoleAssignmentResponderRelationship,
+)
+from datadog_api_client.v2.model.incident_role_assignment_responder_relationship_data import (
+    IncidentRoleAssignmentResponderRelationshipData,
+)
+from datadog_api_client.v2.model.incident_role_assignment_response import IncidentRoleAssignmentResponse
+from datadog_api_client.v2.model.incident_role_assignment_role_relationship import (
+    IncidentRoleAssignmentRoleRelationship,
+)
+from datadog_api_client.v2.model.incident_role_assignment_role_relationship_data import (
+    IncidentRoleAssignmentRoleRelationshipData,
+)
+from datadog_api_client.v2.model.incident_role_assignment_type import IncidentRoleAssignmentType
+from datadog_api_client.v2.model.incident_rule_execution_state_data_attributes_response import (
+    IncidentRuleExecutionStateDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_rule_execution_state_data_response import (
+    IncidentRuleExecutionStateDataResponse,
+)
+from datadog_api_client.v2.model.incident_rule_execution_state_rule import IncidentRuleExecutionStateRule
+from datadog_api_client.v2.model.incident_rule_execution_state_type import IncidentRuleExecutionStateType
+from datadog_api_client.v2.model.incident_rule_execution_states_response import IncidentRuleExecutionStatesResponse
+from datadog_api_client.v2.model.incident_search_incidents_export_request import IncidentSearchIncidentsExportRequest
+from datadog_api_client.v2.model.incident_search_incidents_include_type import IncidentSearchIncidentsIncludeType
+from datadog_api_client.v2.model.incident_search_incidents_sort_order import IncidentSearchIncidentsSortOrder
 from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
 from datadog_api_client.v2.model.incident_search_response_attributes import IncidentSearchResponseAttributes
 from datadog_api_client.v2.model.incident_search_response_data import IncidentSearchResponseData
@@ -3027,6 +3225,78 @@ from datadog_api_client.v2.model.incident_service_update_data import IncidentSer
 from datadog_api_client.v2.model.incident_service_update_request import IncidentServiceUpdateRequest
 from datadog_api_client.v2.model.incident_services_response import IncidentServicesResponse
 from datadog_api_client.v2.model.incident_severity import IncidentSeverity
+from datadog_api_client.v2.model.incident_status_page_notice_create_data import IncidentStatusPageNoticeCreateData
+from datadog_api_client.v2.model.incident_status_page_notice_create_data_attributes import (
+    IncidentStatusPageNoticeCreateDataAttributes,
+)
+from datadog_api_client.v2.model.incident_status_page_notice_create_request import IncidentStatusPageNoticeCreateRequest
+from datadog_api_client.v2.model.incident_status_page_notice_integration_data_attributes import (
+    IncidentStatusPageNoticeIntegrationDataAttributes,
+)
+from datadog_api_client.v2.model.incident_status_page_notice_integration_data_response import (
+    IncidentStatusPageNoticeIntegrationDataResponse,
+)
+from datadog_api_client.v2.model.incident_status_page_notice_integration_response import (
+    IncidentStatusPageNoticeIntegrationResponse,
+)
+from datadog_api_client.v2.model.incident_status_page_notice_integration_type import (
+    IncidentStatusPageNoticeIntegrationType,
+)
+from datadog_api_client.v2.model.incident_status_page_notice_update_data import IncidentStatusPageNoticeUpdateData
+from datadog_api_client.v2.model.incident_status_page_notice_update_data_attributes import (
+    IncidentStatusPageNoticeUpdateDataAttributes,
+)
+from datadog_api_client.v2.model.incident_status_page_notice_update_request import IncidentStatusPageNoticeUpdateRequest
+from datadog_api_client.v2.model.incident_status_pages_suggestion_data import IncidentStatusPagesSuggestionData
+from datadog_api_client.v2.model.incident_status_pages_suggestion_data_attributes import (
+    IncidentStatusPagesSuggestionDataAttributes,
+)
+from datadog_api_client.v2.model.incident_status_pages_suggestion_response import IncidentStatusPagesSuggestionResponse
+from datadog_api_client.v2.model.incident_status_pages_suggestion_type import IncidentStatusPagesSuggestionType
+from datadog_api_client.v2.model.incident_statuspage_incident_data_attributes_request import (
+    IncidentStatuspageIncidentDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_statuspage_incident_data_attributes_response import (
+    IncidentStatuspageIncidentDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_statuspage_incident_data_request import IncidentStatuspageIncidentDataRequest
+from datadog_api_client.v2.model.incident_statuspage_incident_data_response import (
+    IncidentStatuspageIncidentDataResponse,
+)
+from datadog_api_client.v2.model.incident_statuspage_incident_entry import IncidentStatuspageIncidentEntry
+from datadog_api_client.v2.model.incident_statuspage_incident_request import IncidentStatuspageIncidentRequest
+from datadog_api_client.v2.model.incident_statuspage_incident_response import IncidentStatuspageIncidentResponse
+from datadog_api_client.v2.model.incident_statuspage_incident_type import IncidentStatuspageIncidentType
+from datadog_api_client.v2.model.incident_statuspage_preferences_data import IncidentStatuspagePreferencesData
+from datadog_api_client.v2.model.incident_statuspage_preferences_data_attributes import (
+    IncidentStatuspagePreferencesDataAttributes,
+)
+from datadog_api_client.v2.model.incident_statuspage_preferences_response import IncidentStatuspagePreferencesResponse
+from datadog_api_client.v2.model.incident_statuspage_preferences_type import IncidentStatuspagePreferencesType
+from datadog_api_client.v2.model.incident_statuspage_subscription_data_attributes_request import (
+    IncidentStatuspageSubscriptionDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_statuspage_subscription_data_attributes_response import (
+    IncidentStatuspageSubscriptionDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_statuspage_subscription_data_request import (
+    IncidentStatuspageSubscriptionDataRequest,
+)
+from datadog_api_client.v2.model.incident_statuspage_subscription_data_response import (
+    IncidentStatuspageSubscriptionDataResponse,
+)
+from datadog_api_client.v2.model.incident_statuspage_subscription_request import IncidentStatuspageSubscriptionRequest
+from datadog_api_client.v2.model.incident_statuspage_subscription_response import IncidentStatuspageSubscriptionResponse
+from datadog_api_client.v2.model.incident_statuspage_subscription_type import IncidentStatuspageSubscriptionType
+from datadog_api_client.v2.model.incident_statuspage_subscriptions_response import (
+    IncidentStatuspageSubscriptionsResponse,
+)
+from datadog_api_client.v2.model.incident_template_variable_data import IncidentTemplateVariableData
+from datadog_api_client.v2.model.incident_template_variable_data_attributes import (
+    IncidentTemplateVariableDataAttributes,
+)
+from datadog_api_client.v2.model.incident_template_variable_type import IncidentTemplateVariableType
+from datadog_api_client.v2.model.incident_template_variables_response import IncidentTemplateVariablesResponse
 from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
 from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
     IncidentTimelineCellMarkdownContentType,
@@ -3037,6 +3307,23 @@ from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attribut
 from datadog_api_client.v2.model.incident_timeline_cell_markdown_create_attributes_content import (
     IncidentTimelineCellMarkdownCreateAttributesContent,
 )
+from datadog_api_client.v2.model.incident_timeline_cell_source import IncidentTimelineCellSource
+from datadog_api_client.v2.model.incident_timeline_cell_type import IncidentTimelineCellType
+from datadog_api_client.v2.model.incident_timeline_entries_response import IncidentTimelineEntriesResponse
+from datadog_api_client.v2.model.incident_timeline_entry_content import IncidentTimelineEntryContent
+from datadog_api_client.v2.model.incident_timeline_entry_data_attributes_request import (
+    IncidentTimelineEntryDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_timeline_entry_data_attributes_response import (
+    IncidentTimelineEntryDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_timeline_entry_data_request import IncidentTimelineEntryDataRequest
+from datadog_api_client.v2.model.incident_timeline_entry_data_response import IncidentTimelineEntryDataResponse
+from datadog_api_client.v2.model.incident_timeline_entry_request import IncidentTimelineEntryRequest
+from datadog_api_client.v2.model.incident_timeline_entry_response import IncidentTimelineEntryResponse
+from datadog_api_client.v2.model.incident_timeline_entry_type import IncidentTimelineEntryType
+from datadog_api_client.v2.model.incident_timeline_thread_data_response import IncidentTimelineThreadDataResponse
+from datadog_api_client.v2.model.incident_timeline_thread_response import IncidentTimelineThreadResponse
 from datadog_api_client.v2.model.incident_todo_anonymous_assignee import IncidentTodoAnonymousAssignee
 from datadog_api_client.v2.model.incident_todo_anonymous_assignee_source import IncidentTodoAnonymousAssigneeSource
 from datadog_api_client.v2.model.incident_todo_assignee import IncidentTodoAssignee
@@ -3099,6 +3386,22 @@ from datadog_api_client.v2.model.incident_user_defined_field_type import Inciden
 from datadog_api_client.v2.model.incident_user_defined_field_update_data import IncidentUserDefinedFieldUpdateData
 from datadog_api_client.v2.model.incident_user_defined_field_update_request import IncidentUserDefinedFieldUpdateRequest
 from datadog_api_client.v2.model.incident_user_defined_field_valid_value import IncidentUserDefinedFieldValidValue
+from datadog_api_client.v2.model.incident_zoom_configuration_data_attributes_request import (
+    IncidentZoomConfigurationDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_zoom_configuration_data_attributes_response import (
+    IncidentZoomConfigurationDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_zoom_configuration_data_request import IncidentZoomConfigurationDataRequest
+from datadog_api_client.v2.model.incident_zoom_configuration_data_response import IncidentZoomConfigurationDataResponse
+from datadog_api_client.v2.model.incident_zoom_configuration_request import IncidentZoomConfigurationRequest
+from datadog_api_client.v2.model.incident_zoom_configuration_response import IncidentZoomConfigurationResponse
+from datadog_api_client.v2.model.incident_zoom_configuration_type import IncidentZoomConfigurationType
+from datadog_api_client.v2.model.incident_zoom_integration_data_attributes import IncidentZoomIntegrationDataAttributes
+from datadog_api_client.v2.model.incident_zoom_integration_data_response import IncidentZoomIntegrationDataResponse
+from datadog_api_client.v2.model.incident_zoom_integration_response import IncidentZoomIntegrationResponse
+from datadog_api_client.v2.model.incident_zoom_integration_type import IncidentZoomIntegrationType
+from datadog_api_client.v2.model.incident_zoom_meeting import IncidentZoomMeeting
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.include_type import IncludeType
 from datadog_api_client.v2.model.input_schema import InputSchema
@@ -10192,15 +10495,51 @@ __all__ = [
     "IPAllowlistUpdateRequest",
     "IdPMetadataFormData",
     "IncidentAttachmentType",
+    "IncidentAutomationDataAttributesRequest",
+    "IncidentAutomationDataAttributesResponse",
+    "IncidentAutomationDataDataRequest",
+    "IncidentAutomationDataDataResponse",
+    "IncidentAutomationDataRequest",
+    "IncidentAutomationDataResponse",
+    "IncidentAutomationDataType",
+    "IncidentBatchCreateRuleExecutionStatesData",
+    "IncidentBatchCreateRuleExecutionStatesDataAttributes",
+    "IncidentBatchCreateRuleExecutionStatesRequest",
+    "IncidentBatchUpdateRuleExecutionStatesData",
+    "IncidentBatchUpdateRuleExecutionStatesDataAttributes",
+    "IncidentBatchUpdateRuleExecutionStatesRequest",
+    "IncidentCaseLinkData",
+    "IncidentCaseLinkDataAttributes",
+    "IncidentCaseLinkResponse",
+    "IncidentCaseLinkType",
+    "IncidentCommunicationContent",
+    "IncidentCommunicationContentHandle",
+    "IncidentCommunicationDataAttributesRequest",
+    "IncidentCommunicationDataAttributesResponse",
+    "IncidentCommunicationDataRequest",
+    "IncidentCommunicationDataResponse",
+    "IncidentCommunicationKind",
+    "IncidentCommunicationRequest",
+    "IncidentCommunicationResponse",
+    "IncidentCommunicationType",
+    "IncidentCommunicationsResponse",
     "IncidentCreateAttributes",
     "IncidentCreateData",
     "IncidentCreateRelationships",
     "IncidentCreateRequest",
+    "IncidentCreateZoomMeetingData",
+    "IncidentCreateZoomMeetingDataAttributes",
+    "IncidentCreateZoomMeetingRequest",
     "IncidentFieldAttributes",
     "IncidentFieldAttributesMultipleValue",
     "IncidentFieldAttributesSingleValue",
     "IncidentFieldAttributesSingleValueType",
     "IncidentFieldAttributesValueType",
+    "IncidentGoogleMeetIntegrationDataAttributes",
+    "IncidentGoogleMeetIntegrationDataResponse",
+    "IncidentGoogleMeetIntegrationResponse",
+    "IncidentGoogleMeetIntegrationType",
+    "IncidentGoogleMeetSpace",
     "IncidentHandleAttributesFields",
     "IncidentHandleAttributesRequest",
     "IncidentHandleAttributesResponse",
@@ -10253,6 +10592,38 @@ __all__ = [
     "IncidentIntegrationMetadataResponseIncludedItem",
     "IncidentIntegrationMetadataType",
     "IncidentIntegrationRelationships",
+    "IncidentJiraIssueDataAttributesRequest",
+    "IncidentJiraIssueDataRequest",
+    "IncidentJiraIssueIntegrationDataAttributes",
+    "IncidentJiraIssueIntegrationDataResponse",
+    "IncidentJiraIssueIntegrationResponse",
+    "IncidentJiraIssueIntegrationType",
+    "IncidentJiraIssueRequest",
+    "IncidentJiraIssueType",
+    "IncidentJiraTemplateDataAttributesRequest",
+    "IncidentJiraTemplateDataAttributesResponse",
+    "IncidentJiraTemplateDataRequest",
+    "IncidentJiraTemplateDataResponse",
+    "IncidentJiraTemplateFieldConfiguration",
+    "IncidentJiraTemplateIncidentTypeRelationship",
+    "IncidentJiraTemplateIncidentTypeRelationshipData",
+    "IncidentJiraTemplateRelationships",
+    "IncidentJiraTemplateRequest",
+    "IncidentJiraTemplateResponse",
+    "IncidentJiraTemplateType",
+    "IncidentJiraTemplatesResponse",
+    "IncidentMSTeamsChannel",
+    "IncidentMSTeamsIntegrationDataAttributes",
+    "IncidentMSTeamsIntegrationDataResponse",
+    "IncidentMSTeamsIntegrationResponse",
+    "IncidentMicrosoftTeamsConfigurationDataAttributesRequest",
+    "IncidentMicrosoftTeamsConfigurationDataAttributesResponse",
+    "IncidentMicrosoftTeamsConfigurationDataRequest",
+    "IncidentMicrosoftTeamsConfigurationDataResponse",
+    "IncidentMicrosoftTeamsConfigurationRequest",
+    "IncidentMicrosoftTeamsConfigurationResponse",
+    "IncidentMicrosoftTeamsConfigurationType",
+    "IncidentMicrosoftTeamsIntegrationType",
     "IncidentNonDatadogCreator",
     "IncidentNotificationHandle",
     "IncidentNotificationRule",
@@ -10286,9 +10657,28 @@ __all__ = [
     "IncidentNotificationTemplateType",
     "IncidentNotificationTemplateUpdateAttributes",
     "IncidentNotificationTemplateUpdateData",
+    "IncidentPagerdutyIncidentDataResponse",
+    "IncidentPagerdutyRelatedIncidentsResponse",
+    "IncidentPagerdutyServiceData",
+    "IncidentPagerdutyServiceDataAttributes",
+    "IncidentPagerdutyServiceType",
+    "IncidentPagerdutyServicesResponse",
     "IncidentPostmortemType",
     "IncidentRelatedObject",
     "IncidentRelationshipData",
+    "IncidentRenderTemplateDataAttributesRequest",
+    "IncidentRenderTemplateDataRequest",
+    "IncidentRenderTemplateRequest",
+    "IncidentRenderedTemplateData",
+    "IncidentRenderedTemplateDataAttributes",
+    "IncidentRenderedTemplateResponse",
+    "IncidentRenderedTemplateType",
+    "IncidentReservedRoleDataAttributesResponse",
+    "IncidentReservedRoleDataResponse",
+    "IncidentReservedRolePolicy",
+    "IncidentReservedRoleResponse",
+    "IncidentReservedRoleType",
+    "IncidentReservedRolesResponse",
     "IncidentResourceType",
     "IncidentRespondersType",
     "IncidentResponse",
@@ -10298,6 +10688,27 @@ __all__ = [
     "IncidentResponseMeta",
     "IncidentResponseMetaPagination",
     "IncidentResponseRelationships",
+    "IncidentRoleAssignmentDataAttributesRequest",
+    "IncidentRoleAssignmentDataAttributesResponse",
+    "IncidentRoleAssignmentDataRequest",
+    "IncidentRoleAssignmentDataResponse",
+    "IncidentRoleAssignmentRelationshipsRequest",
+    "IncidentRoleAssignmentRelationshipsResponse",
+    "IncidentRoleAssignmentRequest",
+    "IncidentRoleAssignmentResponderRelationship",
+    "IncidentRoleAssignmentResponderRelationshipData",
+    "IncidentRoleAssignmentResponse",
+    "IncidentRoleAssignmentRoleRelationship",
+    "IncidentRoleAssignmentRoleRelationshipData",
+    "IncidentRoleAssignmentType",
+    "IncidentRuleExecutionStateDataAttributesResponse",
+    "IncidentRuleExecutionStateDataResponse",
+    "IncidentRuleExecutionStateRule",
+    "IncidentRuleExecutionStateType",
+    "IncidentRuleExecutionStatesResponse",
+    "IncidentSearchIncidentsExportRequest",
+    "IncidentSearchIncidentsIncludeType",
+    "IncidentSearchIncidentsSortOrder",
     "IncidentSearchResponse",
     "IncidentSearchResponseAttributes",
     "IncidentSearchResponseData",
@@ -10325,10 +10736,61 @@ __all__ = [
     "IncidentServiceUpdateRequest",
     "IncidentServicesResponse",
     "IncidentSeverity",
+    "IncidentStatusPageNoticeCreateData",
+    "IncidentStatusPageNoticeCreateDataAttributes",
+    "IncidentStatusPageNoticeCreateRequest",
+    "IncidentStatusPageNoticeIntegrationDataAttributes",
+    "IncidentStatusPageNoticeIntegrationDataResponse",
+    "IncidentStatusPageNoticeIntegrationResponse",
+    "IncidentStatusPageNoticeIntegrationType",
+    "IncidentStatusPageNoticeUpdateData",
+    "IncidentStatusPageNoticeUpdateDataAttributes",
+    "IncidentStatusPageNoticeUpdateRequest",
+    "IncidentStatusPagesSuggestionData",
+    "IncidentStatusPagesSuggestionDataAttributes",
+    "IncidentStatusPagesSuggestionResponse",
+    "IncidentStatusPagesSuggestionType",
+    "IncidentStatuspageIncidentDataAttributesRequest",
+    "IncidentStatuspageIncidentDataAttributesResponse",
+    "IncidentStatuspageIncidentDataRequest",
+    "IncidentStatuspageIncidentDataResponse",
+    "IncidentStatuspageIncidentEntry",
+    "IncidentStatuspageIncidentRequest",
+    "IncidentStatuspageIncidentResponse",
+    "IncidentStatuspageIncidentType",
+    "IncidentStatuspagePreferencesData",
+    "IncidentStatuspagePreferencesDataAttributes",
+    "IncidentStatuspagePreferencesResponse",
+    "IncidentStatuspagePreferencesType",
+    "IncidentStatuspageSubscriptionDataAttributesRequest",
+    "IncidentStatuspageSubscriptionDataAttributesResponse",
+    "IncidentStatuspageSubscriptionDataRequest",
+    "IncidentStatuspageSubscriptionDataResponse",
+    "IncidentStatuspageSubscriptionRequest",
+    "IncidentStatuspageSubscriptionResponse",
+    "IncidentStatuspageSubscriptionType",
+    "IncidentStatuspageSubscriptionsResponse",
+    "IncidentTemplateVariableData",
+    "IncidentTemplateVariableDataAttributes",
+    "IncidentTemplateVariableType",
+    "IncidentTemplateVariablesResponse",
     "IncidentTimelineCellCreateAttributes",
     "IncidentTimelineCellMarkdownContentType",
     "IncidentTimelineCellMarkdownCreateAttributes",
     "IncidentTimelineCellMarkdownCreateAttributesContent",
+    "IncidentTimelineCellSource",
+    "IncidentTimelineCellType",
+    "IncidentTimelineEntriesResponse",
+    "IncidentTimelineEntryContent",
+    "IncidentTimelineEntryDataAttributesRequest",
+    "IncidentTimelineEntryDataAttributesResponse",
+    "IncidentTimelineEntryDataRequest",
+    "IncidentTimelineEntryDataResponse",
+    "IncidentTimelineEntryRequest",
+    "IncidentTimelineEntryResponse",
+    "IncidentTimelineEntryType",
+    "IncidentTimelineThreadDataResponse",
+    "IncidentTimelineThreadResponse",
     "IncidentTodoAnonymousAssignee",
     "IncidentTodoAnonymousAssigneeSource",
     "IncidentTodoAssignee",
@@ -10383,6 +10845,18 @@ __all__ = [
     "IncidentUserDefinedFieldUpdateData",
     "IncidentUserDefinedFieldUpdateRequest",
     "IncidentUserDefinedFieldValidValue",
+    "IncidentZoomConfigurationDataAttributesRequest",
+    "IncidentZoomConfigurationDataAttributesResponse",
+    "IncidentZoomConfigurationDataRequest",
+    "IncidentZoomConfigurationDataResponse",
+    "IncidentZoomConfigurationRequest",
+    "IncidentZoomConfigurationResponse",
+    "IncidentZoomConfigurationType",
+    "IncidentZoomIntegrationDataAttributes",
+    "IncidentZoomIntegrationDataResponse",
+    "IncidentZoomIntegrationResponse",
+    "IncidentZoomIntegrationType",
+    "IncidentZoomMeeting",
     "IncidentsResponse",
     "IncludeType",
     "InputSchema",
