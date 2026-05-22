@@ -19,7 +19,9 @@ class MonitorThresholds(ModelNormal):
     def openapi_types(_):
         return {
             "critical": (float,),
+            "critical_query": (str,),
             "critical_recovery": (float, none_type),
+            "critical_recovery_query": (str,),
             "ok": (float, none_type),
             "unknown": (float, none_type),
             "warning": (float, none_type),
@@ -28,7 +30,9 @@ class MonitorThresholds(ModelNormal):
 
     attribute_map = {
         "critical": "critical",
+        "critical_query": "critical_query",
         "critical_recovery": "critical_recovery",
+        "critical_recovery_query": "critical_recovery_query",
         "ok": "ok",
         "unknown": "unknown",
         "warning": "warning",
@@ -38,7 +42,9 @@ class MonitorThresholds(ModelNormal):
     def __init__(
         self_,
         critical: Union[float, UnsetType] = unset,
+        critical_query: Union[str, UnsetType] = unset,
         critical_recovery: Union[float, none_type, UnsetType] = unset,
+        critical_recovery_query: Union[str, UnsetType] = unset,
         ok: Union[float, none_type, UnsetType] = unset,
         unknown: Union[float, none_type, UnsetType] = unset,
         warning: Union[float, none_type, UnsetType] = unset,
@@ -51,8 +57,14 @@ class MonitorThresholds(ModelNormal):
         :param critical: The monitor ``CRITICAL`` threshold.
         :type critical: float, optional
 
+        :param critical_query: Query evaluated as a dynamic ``CRITICAL`` threshold. Only supported on metric monitors with a formula query and options['variables']. Cannot be combined with static thresholds. This field is in preview.
+        :type critical_query: str, optional
+
         :param critical_recovery: The monitor ``CRITICAL`` recovery threshold.
         :type critical_recovery: float, none_type, optional
+
+        :param critical_recovery_query: Query evaluated as a dynamic ``CRITICAL`` recovery threshold. Only supported on metric monitors with a formula query and options['variables']. Cannot be combined with static thresholds. This field is in preview.
+        :type critical_recovery_query: str, optional
 
         :param ok: The monitor ``OK`` threshold.
         :type ok: float, none_type, optional
@@ -68,8 +80,12 @@ class MonitorThresholds(ModelNormal):
         """
         if critical is not unset:
             kwargs["critical"] = critical
+        if critical_query is not unset:
+            kwargs["critical_query"] = critical_query
         if critical_recovery is not unset:
             kwargs["critical_recovery"] = critical_recovery
+        if critical_recovery_query is not unset:
+            kwargs["critical_recovery_query"] = critical_recovery_query
         if ok is not unset:
             kwargs["ok"] = ok
         if unknown is not unset:
