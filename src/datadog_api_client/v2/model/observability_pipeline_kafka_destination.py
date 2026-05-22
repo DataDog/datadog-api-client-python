@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_kafka_destination_compression import (
         ObservabilityPipelineKafkaDestinationCompression,
     )
@@ -27,6 +28,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_kafka_destination_type import (
         ObservabilityPipelineKafkaDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
 
 
@@ -49,6 +59,7 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_kafka_destination_compression import (
             ObservabilityPipelineKafkaDestinationCompression,
         )
@@ -66,6 +77,7 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
 
         return {
             "bootstrap_servers_key": (str,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "compression": (ObservabilityPipelineKafkaDestinationCompression,),
             "encoding": (ObservabilityPipelineKafkaDestinationEncoding,),
             "headers_key": (str,),
@@ -85,6 +97,7 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
 
     attribute_map = {
         "bootstrap_servers_key": "bootstrap_servers_key",
+        "buffer": "buffer",
         "compression": "compression",
         "encoding": "encoding",
         "headers_key": "headers_key",
@@ -110,6 +123,13 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
         topic: str,
         type: ObservabilityPipelineKafkaDestinationType,
         bootstrap_servers_key: Union[str, UnsetType] = unset,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         compression: Union[ObservabilityPipelineKafkaDestinationCompression, UnsetType] = unset,
         headers_key: Union[str, UnsetType] = unset,
         key_field: Union[str, UnsetType] = unset,
@@ -129,6 +149,9 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
 
         :param bootstrap_servers_key: Name of the environment variable or secret that holds the Kafka bootstrap servers list.
         :type bootstrap_servers_key: str, optional
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param compression: Compression codec for Kafka messages.
         :type compression: ObservabilityPipelineKafkaDestinationCompression, optional
@@ -177,6 +200,8 @@ class ObservabilityPipelineKafkaDestination(ModelNormal):
         """
         if bootstrap_servers_key is not unset:
             kwargs["bootstrap_servers_key"] = bootstrap_servers_key
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if compression is not unset:
             kwargs["compression"] = compression
         if headers_key is not unset:

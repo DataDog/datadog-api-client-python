@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_batch_settings import (
         ObservabilityPipelineAmazonS3GenericBatchSettings,
     )
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression import (
         ObservabilityPipelineAmazonS3GenericCompression,
     )
@@ -29,6 +30,15 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_destination_type import (
         ObservabilityPipelineAmazonS3GenericDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression_zstd import (
         ObservabilityPipelineAmazonS3GenericCompressionZstd,
@@ -54,6 +64,7 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_batch_settings import (
             ObservabilityPipelineAmazonS3GenericBatchSettings,
         )
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_compression import (
             ObservabilityPipelineAmazonS3GenericCompression,
         )
@@ -71,6 +82,7 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
             "auth": (ObservabilityPipelineAwsAuth,),
             "batch_settings": (ObservabilityPipelineAmazonS3GenericBatchSettings,),
             "bucket": (str,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "compression": (ObservabilityPipelineAmazonS3GenericCompression,),
             "encoding": (ObservabilityPipelineAmazonS3GenericEncoding,),
             "id": (str,),
@@ -85,6 +97,7 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
         "auth": "auth",
         "batch_settings": "batch_settings",
         "bucket": "bucket",
+        "buffer": "buffer",
         "compression": "compression",
         "encoding": "encoding",
         "id": "id",
@@ -116,6 +129,13 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
         type: ObservabilityPipelineAmazonS3GenericDestinationType,
         auth: Union[ObservabilityPipelineAwsAuth, UnsetType] = unset,
         batch_settings: Union[ObservabilityPipelineAmazonS3GenericBatchSettings, UnsetType] = unset,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         key_prefix: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -133,6 +153,9 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
 
         :param bucket: S3 bucket name.
         :type bucket: str
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param compression: Compression algorithm applied to encoded logs.
         :type compression: ObservabilityPipelineAmazonS3GenericCompression
@@ -162,6 +185,8 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
             kwargs["auth"] = auth
         if batch_settings is not unset:
             kwargs["batch_settings"] = batch_settings
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
         super().__init__(kwargs)

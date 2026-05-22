@@ -14,19 +14,31 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination_type import (
         ObservabilityPipelineCloudPremDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
 
 
 class ObservabilityPipelineCloudPremDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination_type import (
             ObservabilityPipelineCloudPremDestinationType,
         )
 
         return {
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "endpoint_url_key": (str,),
             "id": (str,),
             "inputs": ([str],),
@@ -34,6 +46,7 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         }
 
     attribute_map = {
+        "buffer": "buffer",
         "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "inputs": "inputs",
@@ -45,6 +58,13 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         id: str,
         inputs: List[str],
         type: ObservabilityPipelineCloudPremDestinationType,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         endpoint_url_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -52,6 +72,9 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         The ``cloud_prem`` destination sends logs to Datadog CloudPrem.
 
         **Supported pipeline types:** logs
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param endpoint_url_key: Name of the environment variable or secret that holds the CloudPrem endpoint URL.
         :type endpoint_url_key: str, optional
@@ -65,6 +88,8 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         :param type: The destination type. The value should always be ``cloud_prem``.
         :type type: ObservabilityPipelineCloudPremDestinationType
         """
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if endpoint_url_key is not unset:
             kwargs["endpoint_url_key"] = endpoint_url_key
         super().__init__(kwargs)
