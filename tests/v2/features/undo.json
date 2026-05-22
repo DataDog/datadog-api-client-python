@@ -2550,6 +2550,24 @@
       "type": "unsafe"
     }
   },
+  "DeleteEntityIntegrationConfig": {
+    "tag": "Entity Integration Configs",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetEntityIntegrationConfig": {
+    "tag": "Entity Integration Configs",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateEntityIntegrationConfig": {
+    "tag": "Entity Integration Configs",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidents": {
     "tag": "Incidents",
     "undo": {

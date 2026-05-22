@@ -284,6 +284,13 @@ datadog\_api\_client.v2.api.downtimes\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.entity\_integration\_configs\_api module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.entity_integration_configs_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.entity\_risk\_scores\_api module
 ------------------------------------------------------------
 

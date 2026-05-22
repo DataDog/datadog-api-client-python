@@ -11148,6 +11148,69 @@ datadog\_api\_client.v2.model.entity\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.entity\_integration\_config\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_payload module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_payload
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_request\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_request\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_request\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_integration\_config\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_integration_config_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_meta module
 -------------------------------------------------
 
