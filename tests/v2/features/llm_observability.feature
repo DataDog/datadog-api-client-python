@@ -418,6 +418,33 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Get LLM Observability dataset draft state returns "Bad Request" response
+    Given operation "GetLLMObsDatasetDraftState" enabled
+    And new "GetLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get LLM Observability dataset draft state returns "Not Found" response
+    Given operation "GetLLMObsDatasetDraftState" enabled
+    And new "GetLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get LLM Observability dataset draft state returns "OK" response
+    Given operation "GetLLMObsDatasetDraftState" enabled
+    And new "GetLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Get a custom evaluator configuration returns "Bad Request" response
     Given operation "GetLLMObsCustomEvalConfig" enabled
     And new "GetLLMObsCustomEvalConfig" request
@@ -533,6 +560,33 @@ Feature: LLM Observability
   Scenario: List LLM Observability dataset records returns "OK" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability dataset versions returns "Bad Request" response
+    Given operation "ListLLMObsDatasetVersions" enabled
+    And new "ListLLMObsDatasetVersions" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability dataset versions returns "Not Found" response
+    Given operation "ListLLMObsDatasetVersions" enabled
+    And new "ListLLMObsDatasetVersions" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability dataset versions returns "OK" response
+    Given operation "ListLLMObsDatasetVersions" enabled
+    And new "ListLLMObsDatasetVersions" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -663,6 +717,33 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Lock LLM Observability dataset draft state returns "Bad Request" response
+    Given operation "LockLLMObsDatasetDraftState" enabled
+    And new "LockLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Lock LLM Observability dataset draft state returns "Not Found" response
+    Given operation "LockLLMObsDatasetDraftState" enabled
+    And new "LockLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Lock LLM Observability dataset draft state returns "OK" response
+    Given operation "LockLLMObsDatasetDraftState" enabled
+    And new "LockLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Push events for an LLM Observability experiment returns "Accepted" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
@@ -762,6 +843,33 @@ Feature: LLM Observability
     Given operation "SimpleSearchLLMObsExperimentation" enabled
     And new "SimpleSearchLLMObsExperimentation" request
     And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 50, "number": 1}, "sort": [{"direction": "desc", "field": "created_at"}]}, "type": "experimentation"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Unlock LLM Observability dataset draft state returns "Bad Request" response
+    Given operation "UnlockLLMObsDatasetDraftState" enabled
+    And new "UnlockLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Unlock LLM Observability dataset draft state returns "Not Found" response
+    Given operation "UnlockLLMObsDatasetDraftState" enabled
+    And new "UnlockLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Unlock LLM Observability dataset draft state returns "OK" response
+    Given operation "UnlockLLMObsDatasetDraftState" enabled
+    And new "UnlockLLMObsDatasetDraftState" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

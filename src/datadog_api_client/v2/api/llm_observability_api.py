@@ -73,11 +73,13 @@ from datadog_api_client.v2.model.llm_obs_dataset_response import LLMObsDatasetRe
 from datadog_api_client.v2.model.llm_obs_dataset_request import LLMObsDatasetRequest
 from datadog_api_client.v2.model.llm_obs_delete_datasets_request import LLMObsDeleteDatasetsRequest
 from datadog_api_client.v2.model.llm_obs_dataset_update_request import LLMObsDatasetUpdateRequest
+from datadog_api_client.v2.model.llm_obs_dataset_draft_state_response import LLMObsDatasetDraftStateResponse
 from datadog_api_client.v2.model.llm_obs_dataset_records_list_response import LLMObsDatasetRecordsListResponse
 from datadog_api_client.v2.model.llm_obs_dataset_records_mutation_response import LLMObsDatasetRecordsMutationResponse
 from datadog_api_client.v2.model.llm_obs_dataset_records_update_request import LLMObsDatasetRecordsUpdateRequest
 from datadog_api_client.v2.model.llm_obs_dataset_records_request import LLMObsDatasetRecordsRequest
 from datadog_api_client.v2.model.llm_obs_delete_dataset_records_request import LLMObsDeleteDatasetRecordsRequest
+from datadog_api_client.v2.model.llm_obs_dataset_versions_response import LLMObsDatasetVersionsResponse
 from datadog_api_client.v2.model.llm_obs_experiment_events_v2_response import LLMObsExperimentEventsV2Response
 
 
@@ -614,6 +616,35 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._get_llm_obs_dataset_draft_state_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDatasetDraftStateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/draft_state",
+                "operation_id": "get_llm_obs_dataset_draft_state",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_llm_obs_annotation_queues_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationQueuesResponse,),
@@ -721,6 +752,35 @@ class LLMObservabilityApi:
                     "openapi_types": (int,),
                     "attribute": "page[limit]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_dataset_versions_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDatasetVersionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/versions",
+                "operation_id": "list_llm_obs_dataset_versions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -970,6 +1030,35 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._lock_llm_obs_dataset_draft_state_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDatasetDraftStateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/draft_state/lock",
+                "operation_id": "lock_llm_obs_dataset_draft_state",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._search_llm_obs_experimentation_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentationSearchResponse,),
@@ -1027,6 +1116,35 @@ class LLMObservabilityApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._unlock_llm_obs_dataset_draft_state_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/draft_state/unlock",
+                "operation_id": "unlock_llm_obs_dataset_draft_state",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -1664,6 +1782,28 @@ class LLMObservabilityApi:
 
         return self._get_llm_obs_custom_eval_config_endpoint.call_with_http_info(**kwargs)
 
+    def get_llm_obs_dataset_draft_state(
+        self,
+        project_id: str,
+        dataset_id: str,
+    ) -> LLMObsDatasetDraftStateResponse:
+        """Get LLM Observability dataset draft state.
+
+        Retrieve the draft state of a dataset, including whether it is currently locked for editing and which user holds the lock.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :rtype: LLMObsDatasetDraftStateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        return self._get_llm_obs_dataset_draft_state_endpoint.call_with_http_info(**kwargs)
+
     def list_llm_obs_annotation_queues(
         self,
         *,
@@ -1772,6 +1912,28 @@ class LLMObservabilityApi:
             kwargs["page_limit"] = page_limit
 
         return self._list_llm_obs_datasets_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_dataset_versions(
+        self,
+        project_id: str,
+        dataset_id: str,
+    ) -> LLMObsDatasetVersionsResponse:
+        """List LLM Observability dataset versions.
+
+        List the active versions of a dataset. A version is created each time a dataset is referenced by an experiment run.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :rtype: LLMObsDatasetVersionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        return self._list_llm_obs_dataset_versions_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_experiment_events(
         self,
@@ -2007,6 +2169,28 @@ class LLMObservabilityApi:
 
         return self._list_llm_obs_spans_endpoint.call_with_http_info(**kwargs)
 
+    def lock_llm_obs_dataset_draft_state(
+        self,
+        project_id: str,
+        dataset_id: str,
+    ) -> LLMObsDatasetDraftStateResponse:
+        """Lock LLM Observability dataset draft state.
+
+        Acquire the draft lock on a dataset for the calling user. The lock prevents other users from concurrently editing the dataset draft.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :rtype: LLMObsDatasetDraftStateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        return self._lock_llm_obs_dataset_draft_state_endpoint.call_with_http_info(**kwargs)
+
     def search_llm_obs_experimentation(
         self,
         body: LLMObsExperimentationSearchRequest,
@@ -2064,6 +2248,28 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._simple_search_llm_obs_experimentation_endpoint.call_with_http_info(**kwargs)
+
+    def unlock_llm_obs_dataset_draft_state(
+        self,
+        project_id: str,
+        dataset_id: str,
+    ) -> None:
+        """Unlock LLM Observability dataset draft state.
+
+        Release the draft lock on a dataset held by the calling user, allowing other users to edit the dataset draft.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        return self._unlock_llm_obs_dataset_draft_state_endpoint.call_with_http_info(**kwargs)
 
     def update_llm_obs_annotation_queue(
         self,
