@@ -6231,6 +6231,55 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityMonitoringIntegrationConfigs": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityMonitoringIntegrationConfig": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityMonitoringIntegrationConfig",
+      "parameters": [
+        {
+          "name": "integration_config_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ValidateSecurityMonitoringIntegrationCredentials": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteSecurityMonitoringIntegrationConfig": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityMonitoringIntegrationConfig": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityMonitoringIntegrationConfig": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ValidateSecurityMonitoringIntegrationConfig": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityFilters": {
     "tag": "Security Monitoring",
     "undo": {
@@ -6248,6 +6297,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ListSecurityFilterVersions": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "DeleteSecurityFilter": {
@@ -6347,6 +6402,12 @@
       "type": "idempotent"
     }
   },
+  "GetEntityContext": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {
@@ -6432,6 +6493,37 @@
       "type": "safe"
     }
   },
+  "ListSampleLogGenerationSubscriptions": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSampleLogGenerationSubscription": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSampleLogGenerationSubscription",
+      "parameters": [
+        {
+          "name": "content_pack_id",
+          "source": "data.attributes.content_pack_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "BulkCreateSampleLogGenerationSubscriptions": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSampleLogGenerationSubscription": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSecurityMonitoringSignals": {
     "tag": "Security Monitoring",
     "undo": {
@@ -6472,6 +6564,12 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetSignalEntities": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
     }
   },
   "EditSecurityMonitoringSignalIncidents": {
