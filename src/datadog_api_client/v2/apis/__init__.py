@@ -38,6 +38,7 @@ from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
+from datadog_api_client.v2.api.entity_integration_configs_api import EntityIntegrationConfigsApi
 from datadog_api_client.v2.api.entity_risk_scores_api import EntityRiskScoresApi
 from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
 from datadog_api_client.v2.api.events_api import EventsApi
@@ -153,6 +154,7 @@ __all__ = [
     "DeploymentGatesApi",
     "DomainAllowlistApi",
     "DowntimesApi",
+    "EntityIntegrationConfigsApi",
     "EntityRiskScoresApi",
     "ErrorTrackingApi",
     "EventsApi",

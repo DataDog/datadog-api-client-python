@@ -2131,6 +2131,17 @@ from datadog_api_client.v2.model.entity_context_response_meta import EntityConte
 from datadog_api_client.v2.model.entity_context_revision import EntityContextRevision
 from datadog_api_client.v2.model.entity_context_revision_attributes import EntityContextRevisionAttributes
 from datadog_api_client.v2.model.entity_data import EntityData
+from datadog_api_client.v2.model.entity_integration_config_attributes import EntityIntegrationConfigAttributes
+from datadog_api_client.v2.model.entity_integration_config_data import EntityIntegrationConfigData
+from datadog_api_client.v2.model.entity_integration_config_payload import EntityIntegrationConfigPayload
+from datadog_api_client.v2.model.entity_integration_config_request import EntityIntegrationConfigRequest
+from datadog_api_client.v2.model.entity_integration_config_request_attributes import (
+    EntityIntegrationConfigRequestAttributes,
+)
+from datadog_api_client.v2.model.entity_integration_config_request_data import EntityIntegrationConfigRequestData
+from datadog_api_client.v2.model.entity_integration_config_request_type import EntityIntegrationConfigRequestType
+from datadog_api_client.v2.model.entity_integration_config_response import EntityIntegrationConfigResponse
+from datadog_api_client.v2.model.entity_integration_config_type import EntityIntegrationConfigType
 from datadog_api_client.v2.model.entity_meta import EntityMeta
 from datadog_api_client.v2.model.entity_relationships import EntityRelationships
 from datadog_api_client.v2.model.entity_response_array import EntityResponseArray
@@ -9802,6 +9813,15 @@ __all__ = [
     "EntityContextRevision",
     "EntityContextRevisionAttributes",
     "EntityData",
+    "EntityIntegrationConfigAttributes",
+    "EntityIntegrationConfigData",
+    "EntityIntegrationConfigPayload",
+    "EntityIntegrationConfigRequest",
+    "EntityIntegrationConfigRequestAttributes",
+    "EntityIntegrationConfigRequestData",
+    "EntityIntegrationConfigRequestType",
+    "EntityIntegrationConfigResponse",
+    "EntityIntegrationConfigType",
     "EntityMeta",
     "EntityRelationships",
     "EntityResponseArray",
