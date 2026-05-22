@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
     from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type import (
         ObservabilityPipelineSplunkHecSourceType,
     )
@@ -33,7 +33,9 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
+            ObservabilityPipelineMtlsServerTls,
+        )
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type import (
             ObservabilityPipelineSplunkHecSourceType,
         )
@@ -45,7 +47,7 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
             "address_key": (str,),
             "id": (str,),
             "store_hec_token": (bool,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineMtlsServerTls,),
             "type": (ObservabilityPipelineSplunkHecSourceType,),
             "valid_tokens": ([ObservabilityPipelineSplunkHecSourceValidToken],),
         }
@@ -65,7 +67,7 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
         type: ObservabilityPipelineSplunkHecSourceType,
         address_key: Union[str, UnsetType] = unset,
         store_hec_token: Union[bool, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
         valid_tokens: Union[List[ObservabilityPipelineSplunkHecSourceValidToken], UnsetType] = unset,
         **kwargs,
     ):
@@ -84,8 +86,8 @@ class ObservabilityPipelineSplunkHecSource(ModelNormal):
             This allows downstream components to forward the token to other Splunk HEC destinations.
         :type store_hec_token: bool, optional
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
+        :type tls: ObservabilityPipelineMtlsServerTls, optional
 
         :param type: The source type. Always ``splunk_hec``.
         :type type: ObservabilityPipelineSplunkHecSourceType
