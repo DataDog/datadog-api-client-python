@@ -160,6 +160,10 @@ class UsageSummaryDateOrg(ModelNormal):
             "ingested_events_bytes_sum": (int,),
             "iot_device_agg_sum": (int,),
             "iot_device_top99p_sum": (int,),
+            "llm_observability_15day_retention_spans_sum": (int,),
+            "llm_observability_30day_retention_spans_sum": (int,),
+            "llm_observability_60day_retention_spans_sum": (int,),
+            "llm_observability_90day_retention_spans_sum": (int,),
             "llm_observability_min_spend_sum": (int,),
             "llm_observability_sum": (int,),
             "mobile_rum_lite_session_count_sum": (int,),
@@ -416,6 +420,10 @@ class UsageSummaryDateOrg(ModelNormal):
         "ingested_events_bytes_sum": "ingested_events_bytes_sum",
         "iot_device_agg_sum": "iot_device_agg_sum",
         "iot_device_top99p_sum": "iot_device_top99p_sum",
+        "llm_observability_15day_retention_spans_sum": "llm_observability_15day_retention_spans_sum",
+        "llm_observability_30day_retention_spans_sum": "llm_observability_30day_retention_spans_sum",
+        "llm_observability_60day_retention_spans_sum": "llm_observability_60day_retention_spans_sum",
+        "llm_observability_90day_retention_spans_sum": "llm_observability_90day_retention_spans_sum",
         "llm_observability_min_spend_sum": "llm_observability_min_spend_sum",
         "llm_observability_sum": "llm_observability_sum",
         "mobile_rum_lite_session_count_sum": "mobile_rum_lite_session_count_sum",
@@ -673,6 +681,10 @@ class UsageSummaryDateOrg(ModelNormal):
         ingested_events_bytes_sum: Union[int, UnsetType] = unset,
         iot_device_agg_sum: Union[int, UnsetType] = unset,
         iot_device_top99p_sum: Union[int, UnsetType] = unset,
+        llm_observability_15day_retention_spans_sum: Union[int, UnsetType] = unset,
+        llm_observability_30day_retention_spans_sum: Union[int, UnsetType] = unset,
+        llm_observability_60day_retention_spans_sum: Union[int, UnsetType] = unset,
+        llm_observability_90day_retention_spans_sum: Union[int, UnsetType] = unset,
         llm_observability_min_spend_sum: Union[int, UnsetType] = unset,
         llm_observability_sum: Union[int, UnsetType] = unset,
         mobile_rum_lite_session_count_sum: Union[int, UnsetType] = unset,
@@ -1216,6 +1228,18 @@ class UsageSummaryDateOrg(ModelNormal):
 
         :param iot_device_top99p_sum: Shows the 99th percentile of all IoT devices over all hours in the current date for the given org.
         :type iot_device_top99p_sum: int, optional
+
+        :param llm_observability_15day_retention_spans_sum: Shows the sum of all LLM Observability spans with 15-day retention over all hours in the current date for the given org.
+        :type llm_observability_15day_retention_spans_sum: int, optional
+
+        :param llm_observability_30day_retention_spans_sum: Shows the sum of all LLM Observability spans with 30-day retention over all hours in the current date for the given org.
+        :type llm_observability_30day_retention_spans_sum: int, optional
+
+        :param llm_observability_60day_retention_spans_sum: Shows the sum of all LLM Observability spans with 60-day retention over all hours in the current date for the given org.
+        :type llm_observability_60day_retention_spans_sum: int, optional
+
+        :param llm_observability_90day_retention_spans_sum: Shows the sum of all LLM Observability spans with 90-day retention over all hours in the current date for the given org.
+        :type llm_observability_90day_retention_spans_sum: int, optional
 
         :param llm_observability_min_spend_sum: Shows the sum of all LLM Observability minimum spend over all hours in the current date for the given org.
         :type llm_observability_min_spend_sum: int, optional
@@ -1845,6 +1869,14 @@ class UsageSummaryDateOrg(ModelNormal):
             kwargs["iot_device_agg_sum"] = iot_device_agg_sum
         if iot_device_top99p_sum is not unset:
             kwargs["iot_device_top99p_sum"] = iot_device_top99p_sum
+        if llm_observability_15day_retention_spans_sum is not unset:
+            kwargs["llm_observability_15day_retention_spans_sum"] = llm_observability_15day_retention_spans_sum
+        if llm_observability_30day_retention_spans_sum is not unset:
+            kwargs["llm_observability_30day_retention_spans_sum"] = llm_observability_30day_retention_spans_sum
+        if llm_observability_60day_retention_spans_sum is not unset:
+            kwargs["llm_observability_60day_retention_spans_sum"] = llm_observability_60day_retention_spans_sum
+        if llm_observability_90day_retention_spans_sum is not unset:
+            kwargs["llm_observability_90day_retention_spans_sum"] = llm_observability_90day_retention_spans_sum
         if llm_observability_min_spend_sum is not unset:
             kwargs["llm_observability_min_spend_sum"] = llm_observability_min_spend_sum
         if llm_observability_sum is not unset:

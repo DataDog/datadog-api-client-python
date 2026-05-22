@@ -171,6 +171,10 @@ class UsageSummaryResponse(ModelNormal):
             "last_updated": (datetime,),
             "live_indexed_events_agg_sum": (int,),
             "live_ingested_bytes_agg_sum": (int,),
+            "llm_observability_15day_retention_spans_agg_sum": (int,),
+            "llm_observability_30day_retention_spans_agg_sum": (int,),
+            "llm_observability_60day_retention_spans_agg_sum": (int,),
+            "llm_observability_90day_retention_spans_agg_sum": (int,),
             "llm_observability_agg_sum": (int,),
             "llm_observability_min_spend_agg_sum": (int,),
             "logs_by_retention": (LogsByRetention,),
@@ -432,6 +436,10 @@ class UsageSummaryResponse(ModelNormal):
         "last_updated": "last_updated",
         "live_indexed_events_agg_sum": "live_indexed_events_agg_sum",
         "live_ingested_bytes_agg_sum": "live_ingested_bytes_agg_sum",
+        "llm_observability_15day_retention_spans_agg_sum": "llm_observability_15day_retention_spans_agg_sum",
+        "llm_observability_30day_retention_spans_agg_sum": "llm_observability_30day_retention_spans_agg_sum",
+        "llm_observability_60day_retention_spans_agg_sum": "llm_observability_60day_retention_spans_agg_sum",
+        "llm_observability_90day_retention_spans_agg_sum": "llm_observability_90day_retention_spans_agg_sum",
         "llm_observability_agg_sum": "llm_observability_agg_sum",
         "llm_observability_min_spend_agg_sum": "llm_observability_min_spend_agg_sum",
         "logs_by_retention": "logs_by_retention",
@@ -694,6 +702,10 @@ class UsageSummaryResponse(ModelNormal):
         last_updated: Union[datetime, UnsetType] = unset,
         live_indexed_events_agg_sum: Union[int, UnsetType] = unset,
         live_ingested_bytes_agg_sum: Union[int, UnsetType] = unset,
+        llm_observability_15day_retention_spans_agg_sum: Union[int, UnsetType] = unset,
+        llm_observability_30day_retention_spans_agg_sum: Union[int, UnsetType] = unset,
+        llm_observability_60day_retention_spans_agg_sum: Union[int, UnsetType] = unset,
+        llm_observability_90day_retention_spans_agg_sum: Union[int, UnsetType] = unset,
         llm_observability_agg_sum: Union[int, UnsetType] = unset,
         llm_observability_min_spend_agg_sum: Union[int, UnsetType] = unset,
         logs_by_retention: Union[LogsByRetention, UnsetType] = unset,
@@ -1246,6 +1258,18 @@ class UsageSummaryResponse(ModelNormal):
 
         :param live_ingested_bytes_agg_sum: Shows the sum of all live logs bytes ingested over all hours in the current month for all organizations (data available as of December 1, 2020).
         :type live_ingested_bytes_agg_sum: int, optional
+
+        :param llm_observability_15day_retention_spans_agg_sum: Sum of all LLM Observability spans with 15-day retention for all hours in the current month for all organizations.
+        :type llm_observability_15day_retention_spans_agg_sum: int, optional
+
+        :param llm_observability_30day_retention_spans_agg_sum: Sum of all LLM Observability spans with 30-day retention for all hours in the current month for all organizations.
+        :type llm_observability_30day_retention_spans_agg_sum: int, optional
+
+        :param llm_observability_60day_retention_spans_agg_sum: Sum of all LLM Observability spans with 60-day retention for all hours in the current month for all organizations.
+        :type llm_observability_60day_retention_spans_agg_sum: int, optional
+
+        :param llm_observability_90day_retention_spans_agg_sum: Sum of all LLM Observability spans with 90-day retention for all hours in the current month for all organizations.
+        :type llm_observability_90day_retention_spans_agg_sum: int, optional
 
         :param llm_observability_agg_sum: Sum of all LLM observability sessions for all hours in the current month for all organizations.
         :type llm_observability_agg_sum: int, optional
@@ -1898,6 +1922,14 @@ class UsageSummaryResponse(ModelNormal):
             kwargs["live_indexed_events_agg_sum"] = live_indexed_events_agg_sum
         if live_ingested_bytes_agg_sum is not unset:
             kwargs["live_ingested_bytes_agg_sum"] = live_ingested_bytes_agg_sum
+        if llm_observability_15day_retention_spans_agg_sum is not unset:
+            kwargs["llm_observability_15day_retention_spans_agg_sum"] = llm_observability_15day_retention_spans_agg_sum
+        if llm_observability_30day_retention_spans_agg_sum is not unset:
+            kwargs["llm_observability_30day_retention_spans_agg_sum"] = llm_observability_30day_retention_spans_agg_sum
+        if llm_observability_60day_retention_spans_agg_sum is not unset:
+            kwargs["llm_observability_60day_retention_spans_agg_sum"] = llm_observability_60day_retention_spans_agg_sum
+        if llm_observability_90day_retention_spans_agg_sum is not unset:
+            kwargs["llm_observability_90day_retention_spans_agg_sum"] = llm_observability_90day_retention_spans_agg_sum
         if llm_observability_agg_sum is not unset:
             kwargs["llm_observability_agg_sum"] = llm_observability_agg_sum
         if llm_observability_min_spend_agg_sum is not unset:
