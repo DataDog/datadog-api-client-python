@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_http_client_destination_auth_strategy import (
         ObservabilityPipelineHttpClientDestinationAuthStrategy,
     )
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_http_client_destination_compression import (
         ObservabilityPipelineHttpClientDestinationCompression,
     )
@@ -27,6 +28,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_http_client_destination_type import (
         ObservabilityPipelineHttpClientDestinationType,
     )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
+    )
 
 
 class ObservabilityPipelineHttpClientDestination(ModelNormal):
@@ -35,6 +45,7 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_http_client_destination_auth_strategy import (
             ObservabilityPipelineHttpClientDestinationAuthStrategy,
         )
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_http_client_destination_compression import (
             ObservabilityPipelineHttpClientDestinationCompression,
         )
@@ -48,6 +59,7 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
 
         return {
             "auth_strategy": (ObservabilityPipelineHttpClientDestinationAuthStrategy,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "compression": (ObservabilityPipelineHttpClientDestinationCompression,),
             "custom_key": (str,),
             "encoding": (ObservabilityPipelineHttpClientDestinationEncoding,),
@@ -63,6 +75,7 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
 
     attribute_map = {
         "auth_strategy": "auth_strategy",
+        "buffer": "buffer",
         "compression": "compression",
         "custom_key": "custom_key",
         "encoding": "encoding",
@@ -83,6 +96,13 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
         inputs: List[str],
         type: ObservabilityPipelineHttpClientDestinationType,
         auth_strategy: Union[ObservabilityPipelineHttpClientDestinationAuthStrategy, UnsetType] = unset,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         compression: Union[ObservabilityPipelineHttpClientDestinationCompression, UnsetType] = unset,
         custom_key: Union[str, UnsetType] = unset,
         password_key: Union[str, UnsetType] = unset,
@@ -99,6 +119,9 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
 
         :param auth_strategy: HTTP authentication strategy.
         :type auth_strategy: ObservabilityPipelineHttpClientDestinationAuthStrategy, optional
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param compression: Compression configuration for HTTP requests.
         :type compression: ObservabilityPipelineHttpClientDestinationCompression, optional
@@ -135,6 +158,8 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
         """
         if auth_strategy is not unset:
             kwargs["auth_strategy"] = auth_strategy
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if compression is not unset:
             kwargs["compression"] = compression
         if custom_key is not unset:
