@@ -3704,6 +3704,12 @@
       "type": "unsafe"
     }
   },
+  "GetLLMObsAnnotatedInteractionsByTraceIDs": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLLMObsAnnotationQueues": {
     "tag": "LLM Observability",
     "undo": {

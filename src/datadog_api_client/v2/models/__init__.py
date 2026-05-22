@@ -3277,7 +3277,22 @@ from datadog_api_client.v2.model.kind_data import KindData
 from datadog_api_client.v2.model.kind_metadata import KindMetadata
 from datadog_api_client.v2.model.kind_obj import KindObj
 from datadog_api_client.v2.model.kind_response_meta import KindResponseMeta
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_by_trace_item import (
+    LLMObsAnnotatedInteractionByTraceItem,
+)
 from datadog_api_client.v2.model.llm_obs_annotated_interaction_item import LLMObsAnnotatedInteractionItem
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_data_attributes_response import (
+    LLMObsAnnotatedInteractionsByTraceDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_data_response import (
+    LLMObsAnnotatedInteractionsByTraceDataResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_response import (
+    LLMObsAnnotatedInteractionsByTraceResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_type import (
+    LLMObsAnnotatedInteractionsByTraceType,
+)
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_data_attributes_response import (
     LLMObsAnnotatedInteractionsDataAttributesResponse,
 )
@@ -3350,6 +3365,7 @@ from datadog_api_client.v2.model.llm_obs_anthropic_effort import LLMObsAnthropic
 from datadog_api_client.v2.model.llm_obs_anthropic_metadata import LLMObsAnthropicMetadata
 from datadog_api_client.v2.model.llm_obs_anthropic_thinking_config import LLMObsAnthropicThinkingConfig
 from datadog_api_client.v2.model.llm_obs_anthropic_thinking_type import LLMObsAnthropicThinkingType
+from datadog_api_client.v2.model.llm_obs_any_interaction_type import LLMObsAnyInteractionType
 from datadog_api_client.v2.model.llm_obs_azure_open_ai_metadata import LLMObsAzureOpenAIMetadata
 from datadog_api_client.v2.model.llm_obs_bedrock_metadata import LLMObsBedrockMetadata
 from datadog_api_client.v2.model.llm_obs_content_block import LLMObsContentBlock
@@ -10663,7 +10679,12 @@ __all__ = [
     "KindMetadata",
     "KindObj",
     "KindResponseMeta",
+    "LLMObsAnnotatedInteractionByTraceItem",
     "LLMObsAnnotatedInteractionItem",
+    "LLMObsAnnotatedInteractionsByTraceDataAttributesResponse",
+    "LLMObsAnnotatedInteractionsByTraceDataResponse",
+    "LLMObsAnnotatedInteractionsByTraceResponse",
+    "LLMObsAnnotatedInteractionsByTraceType",
     "LLMObsAnnotatedInteractionsDataAttributesResponse",
     "LLMObsAnnotatedInteractionsDataResponse",
     "LLMObsAnnotatedInteractionsResponse",
@@ -10700,6 +10721,7 @@ __all__ = [
     "LLMObsAnthropicMetadata",
     "LLMObsAnthropicThinkingConfig",
     "LLMObsAnthropicThinkingType",
+    "LLMObsAnyInteractionType",
     "LLMObsAzureOpenAIMetadata",
     "LLMObsBedrockMetadata",
     "LLMObsContentBlock",
