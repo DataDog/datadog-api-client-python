@@ -37678,6 +37678,20 @@ datadog\_api\_client.v2.model.tenancy\_products\_list module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.test\_example module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_example
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.test\_examples\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.test_examples_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.test\_optimization\_delete\_service\_settings\_request module
 -------------------------------------------------------------------------------------------
 

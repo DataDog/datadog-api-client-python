@@ -7776,6 +7776,12 @@
       "type": "idempotent"
     }
   },
+  "ListTestExamples": {
+    "tag": "Test Examples",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateFlakyTests": {
     "tag": "Test Optimization",
     "undo": {
