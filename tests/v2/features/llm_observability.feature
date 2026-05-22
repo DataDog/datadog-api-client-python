@@ -442,6 +442,22 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Get annotated interactions by content IDs returns "Bad Request" response
+    Given operation "GetLLMObsAnnotatedInteractionsByTraceIDs" enabled
+    And new "GetLLMObsAnnotatedInteractionsByTraceIDs" request
+    And request contains "contentIds" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get annotated interactions by content IDs returns "OK" response
+    Given operation "GetLLMObsAnnotatedInteractionsByTraceIDs" enabled
+    And new "GetLLMObsAnnotatedInteractionsByTraceIDs" request
+    And request contains "contentIds" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Get annotated queue interactions returns "Bad Request" response
     Given operation "GetLLMObsAnnotatedInteractions" enabled
     And new "GetLLMObsAnnotatedInteractions" request

@@ -18253,10 +18253,45 @@ datadog\_api\_client.v2.model.list\_vulnerable\_assets\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_annotated\_interaction\_by\_trace\_item module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotated_interaction_by_trace_item
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_annotated\_interaction\_item module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_annotated_interaction_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotated\_interactions\_by\_trace\_data\_attributes\_response module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotated\_interactions\_by\_trace\_data\_response module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotated\_interactions\_by\_trace\_response module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotated\_interactions\_by\_trace\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_type
    :members:
    :show-inheritance:
 
@@ -18509,6 +18544,13 @@ datadog\_api\_client.v2.model.llm\_obs\_anthropic\_thinking\_type module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_anthropic_thinking_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_any\_interaction\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_any_interaction_type
    :members:
    :show-inheritance:
 

@@ -15,6 +15,9 @@ from datadog_api_client.v2.model.llm_obs_custom_eval_config_response import LLMO
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_request import LLMObsCustomEvalConfigUpdateRequest
 from datadog_api_client.v2.model.llm_obs_data_deletion_response import LLMObsDataDeletionResponse
 from datadog_api_client.v2.model.llm_obs_data_deletion_request import LLMObsDataDeletionRequest
+from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_response import (
+    LLMObsAnnotatedInteractionsByTraceResponse,
+)
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObsAnnotationQueueResponse
 from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
@@ -515,6 +518,48 @@ class LLMObservabilityApi:
                     "openapi_types": (str,),
                     "attribute": "queue_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_annotated_interactions_by_trace_i_ds_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotatedInteractionsByTraceResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotated-interactions",
+                "operation_id": "get_llm_obs_annotated_interactions_by_trace_i_ds",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "content_ids": {
+                    "required": True,
+                    "openapi_types": ([str],),
+                    "attribute": "contentIds",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "offset": {
+                    "validation": {
+                        "inclusive_maximum": 2147483647,
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "offset",
+                    "location": "query",
+                },
+                "limit": {
+                    "validation": {
+                        "inclusive_maximum": 2147483647,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1554,6 +1599,36 @@ class LLMObservabilityApi:
         kwargs["queue_id"] = queue_id
 
         return self._get_llm_obs_annotated_interactions_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_annotated_interactions_by_trace_i_ds(
+        self,
+        content_ids: List[str],
+        *,
+        offset: Union[int, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+    ) -> LLMObsAnnotatedInteractionsByTraceResponse:
+        """Get annotated interactions by content IDs.
+
+        Returns annotated interactions across all annotation queues for the given content IDs. Results include queue metadata (ID and name) for each interaction.
+
+        :param content_ids: One or more content IDs to retrieve annotated interactions for. At least one is required.
+        :type content_ids: [str]
+        :param offset: Pagination offset. Must be >= 0. Defaults to 0.
+        :type offset: int, optional
+        :param limit: Maximum number of results to return. Must be > 0. Defaults to 100.
+        :type limit: int, optional
+        :rtype: LLMObsAnnotatedInteractionsByTraceResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["content_ids"] = content_ids
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        return self._get_llm_obs_annotated_interactions_by_trace_i_ds_endpoint.call_with_http_info(**kwargs)
 
     def get_llm_obs_annotation_queue_label_schema(
         self,
