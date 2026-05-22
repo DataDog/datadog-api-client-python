@@ -3925,6 +3925,24 @@
       "type": "idempotent"
     }
   },
+  "GetLLMObsDatasetDraftState": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "LockLLMObsDatasetDraftState": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UnlockLLMObsDatasetDraftState": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLLMObsDatasetRecords": {
     "tag": "LLM Observability",
     "undo": {
@@ -3960,6 +3978,12 @@
       "operationId": "TODO",
       "parameters": [],
       "type": "unsafe"
+    }
+  },
+  "ListLLMObsDatasetVersions": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListLLMObsExperimentEvents": {

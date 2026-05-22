@@ -3425,6 +3425,13 @@ from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_request import 
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_response import LLMObsDatasetDataAttributesResponse
 from datadog_api_client.v2.model.llm_obs_dataset_data_request import LLMObsDatasetDataRequest
 from datadog_api_client.v2.model.llm_obs_dataset_data_response import LLMObsDatasetDataResponse
+from datadog_api_client.v2.model.llm_obs_dataset_draft_state_data import LLMObsDatasetDraftStateData
+from datadog_api_client.v2.model.llm_obs_dataset_draft_state_data_attributes import (
+    LLMObsDatasetDraftStateDataAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_draft_state_response import LLMObsDatasetDraftStateResponse
+from datadog_api_client.v2.model.llm_obs_dataset_draft_state_type import LLMObsDatasetDraftStateType
+from datadog_api_client.v2.model.llm_obs_dataset_draft_state_user import LLMObsDatasetDraftStateUser
 from datadog_api_client.v2.model.llm_obs_dataset_record_data_response import LLMObsDatasetRecordDataResponse
 from datadog_api_client.v2.model.llm_obs_dataset_record_item import LLMObsDatasetRecordItem
 from datadog_api_client.v2.model.llm_obs_dataset_record_update_item import LLMObsDatasetRecordUpdateItem
@@ -3451,6 +3458,10 @@ from datadog_api_client.v2.model.llm_obs_dataset_update_data_attributes_request 
 )
 from datadog_api_client.v2.model.llm_obs_dataset_update_data_request import LLMObsDatasetUpdateDataRequest
 from datadog_api_client.v2.model.llm_obs_dataset_update_request import LLMObsDatasetUpdateRequest
+from datadog_api_client.v2.model.llm_obs_dataset_version_data import LLMObsDatasetVersionData
+from datadog_api_client.v2.model.llm_obs_dataset_version_data_attributes import LLMObsDatasetVersionDataAttributes
+from datadog_api_client.v2.model.llm_obs_dataset_version_type import LLMObsDatasetVersionType
+from datadog_api_client.v2.model.llm_obs_dataset_versions_response import LLMObsDatasetVersionsResponse
 from datadog_api_client.v2.model.llm_obs_datasets_response import LLMObsDatasetsResponse
 from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_data_attributes_request import (
     LLMObsDeleteAnnotationQueueInteractionsDataAttributesRequest,
@@ -10806,6 +10817,11 @@ __all__ = [
     "LLMObsDatasetDataAttributesResponse",
     "LLMObsDatasetDataRequest",
     "LLMObsDatasetDataResponse",
+    "LLMObsDatasetDraftStateData",
+    "LLMObsDatasetDraftStateDataAttributes",
+    "LLMObsDatasetDraftStateResponse",
+    "LLMObsDatasetDraftStateType",
+    "LLMObsDatasetDraftStateUser",
     "LLMObsDatasetRecordDataResponse",
     "LLMObsDatasetRecordItem",
     "LLMObsDatasetRecordUpdateItem",
@@ -10824,6 +10840,10 @@ __all__ = [
     "LLMObsDatasetUpdateDataAttributesRequest",
     "LLMObsDatasetUpdateDataRequest",
     "LLMObsDatasetUpdateRequest",
+    "LLMObsDatasetVersionData",
+    "LLMObsDatasetVersionDataAttributes",
+    "LLMObsDatasetVersionType",
+    "LLMObsDatasetVersionsResponse",
     "LLMObsDatasetsResponse",
     "LLMObsDeleteAnnotationQueueInteractionsDataAttributesRequest",
     "LLMObsDeleteAnnotationQueueInteractionsDataRequest",
