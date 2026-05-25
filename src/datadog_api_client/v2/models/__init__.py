@@ -155,6 +155,51 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
+from datadog_api_client.v2.model.ai_custom_rule_data_type import AiCustomRuleDataType
+from datadog_api_client.v2.model.ai_custom_rule_item import AiCustomRuleItem
+from datadog_api_client.v2.model.ai_custom_rule_request import AiCustomRuleRequest
+from datadog_api_client.v2.model.ai_custom_rule_request_attributes import AiCustomRuleRequestAttributes
+from datadog_api_client.v2.model.ai_custom_rule_request_data import AiCustomRuleRequestData
+from datadog_api_client.v2.model.ai_custom_rule_response import AiCustomRuleResponse
+from datadog_api_client.v2.model.ai_custom_rule_response_data import AiCustomRuleResponseData
+from datadog_api_client.v2.model.ai_custom_rule_revision_data_type import AiCustomRuleRevisionDataType
+from datadog_api_client.v2.model.ai_custom_rule_revision_execution_mode import AiCustomRuleRevisionExecutionMode
+from datadog_api_client.v2.model.ai_custom_rule_revision_request import AiCustomRuleRevisionRequest
+from datadog_api_client.v2.model.ai_custom_rule_revision_request_attributes import AiCustomRuleRevisionRequestAttributes
+from datadog_api_client.v2.model.ai_custom_rule_revision_request_data import AiCustomRuleRevisionRequestData
+from datadog_api_client.v2.model.ai_custom_rule_revision_response import AiCustomRuleRevisionResponse
+from datadog_api_client.v2.model.ai_custom_rule_revision_response_attributes import (
+    AiCustomRuleRevisionResponseAttributes,
+)
+from datadog_api_client.v2.model.ai_custom_rule_revision_response_data import AiCustomRuleRevisionResponseData
+from datadog_api_client.v2.model.ai_custom_rule_revisions_response import AiCustomRuleRevisionsResponse
+from datadog_api_client.v2.model.ai_custom_ruleset_data_type import AiCustomRulesetDataType
+from datadog_api_client.v2.model.ai_custom_ruleset_request import AiCustomRulesetRequest
+from datadog_api_client.v2.model.ai_custom_ruleset_request_attributes import AiCustomRulesetRequestAttributes
+from datadog_api_client.v2.model.ai_custom_ruleset_request_data import AiCustomRulesetRequestData
+from datadog_api_client.v2.model.ai_custom_ruleset_response import AiCustomRulesetResponse
+from datadog_api_client.v2.model.ai_custom_ruleset_response_attributes import AiCustomRulesetResponseAttributes
+from datadog_api_client.v2.model.ai_custom_ruleset_response_data import AiCustomRulesetResponseData
+from datadog_api_client.v2.model.ai_custom_ruleset_update_attributes import AiCustomRulesetUpdateAttributes
+from datadog_api_client.v2.model.ai_custom_ruleset_update_data import AiCustomRulesetUpdateData
+from datadog_api_client.v2.model.ai_custom_ruleset_update_request import AiCustomRulesetUpdateRequest
+from datadog_api_client.v2.model.ai_custom_rulesets_response import AiCustomRulesetsResponse
+from datadog_api_client.v2.model.ai_memory_violation_result_data_type import AiMemoryViolationResultDataType
+from datadog_api_client.v2.model.ai_memory_violation_result_request import AiMemoryViolationResultRequest
+from datadog_api_client.v2.model.ai_memory_violation_result_request_attributes import (
+    AiMemoryViolationResultRequestAttributes,
+)
+from datadog_api_client.v2.model.ai_memory_violation_result_request_data import AiMemoryViolationResultRequestData
+from datadog_api_client.v2.model.ai_memory_violation_result_response_attributes import (
+    AiMemoryViolationResultResponseAttributes,
+)
+from datadog_api_client.v2.model.ai_memory_violation_result_response_data import AiMemoryViolationResultResponseData
+from datadog_api_client.v2.model.ai_memory_violation_results_response import AiMemoryViolationResultsResponse
+from datadog_api_client.v2.model.ai_memory_violation_type import AiMemoryViolationType
+from datadog_api_client.v2.model.ai_prompt_data_type import AiPromptDataType
+from datadog_api_client.v2.model.ai_prompt_response_attributes import AiPromptResponseAttributes
+from datadog_api_client.v2.model.ai_prompt_response_data import AiPromptResponseData
+from datadog_api_client.v2.model.ai_prompts_response import AiPromptsResponse
 from datadog_api_client.v2.model.alert_event_attributes import AlertEventAttributes
 from datadog_api_client.v2.model.alert_event_attributes_links_item import AlertEventAttributesLinksItem
 from datadog_api_client.v2.model.alert_event_attributes_links_item_category import AlertEventAttributesLinksItemCategory
@@ -180,6 +225,21 @@ from datadog_api_client.v2.model.allocation_exposure_schedule_data_type import A
 from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
 from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.allocation_type import AllocationType
+from datadog_api_client.v2.model.analysis_edit import AnalysisEdit
+from datadog_api_client.v2.model.analysis_edit_type import AnalysisEditType
+from datadog_api_client.v2.model.analysis_fix import AnalysisFix
+from datadog_api_client.v2.model.analysis_position import AnalysisPosition
+from datadog_api_client.v2.model.analysis_request import AnalysisRequest
+from datadog_api_client.v2.model.analysis_request_data import AnalysisRequestData
+from datadog_api_client.v2.model.analysis_request_data_attributes import AnalysisRequestDataAttributes
+from datadog_api_client.v2.model.analysis_request_data_type import AnalysisRequestDataType
+from datadog_api_client.v2.model.analysis_request_rule import AnalysisRequestRule
+from datadog_api_client.v2.model.analysis_response import AnalysisResponse
+from datadog_api_client.v2.model.analysis_response_data import AnalysisResponseData
+from datadog_api_client.v2.model.analysis_response_data_attributes import AnalysisResponseDataAttributes
+from datadog_api_client.v2.model.analysis_response_data_type import AnalysisResponseDataType
+from datadog_api_client.v2.model.analysis_rule_response import AnalysisRuleResponse
+from datadog_api_client.v2.model.analysis_violation import AnalysisViolation
 from datadog_api_client.v2.model.annotation import Annotation
 from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
 from datadog_api_client.v2.model.annotation_display_bounds import AnnotationDisplayBounds
@@ -1825,6 +1885,7 @@ from datadog_api_client.v2.model.custom_rule_revisions_response import CustomRul
 from datadog_api_client.v2.model.custom_ruleset import CustomRuleset
 from datadog_api_client.v2.model.custom_ruleset_attributes import CustomRulesetAttributes
 from datadog_api_client.v2.model.custom_ruleset_data_type import CustomRulesetDataType
+from datadog_api_client.v2.model.custom_ruleset_list_response import CustomRulesetListResponse
 from datadog_api_client.v2.model.custom_ruleset_request import CustomRulesetRequest
 from datadog_api_client.v2.model.custom_ruleset_request_data import CustomRulesetRequestData
 from datadog_api_client.v2.model.custom_ruleset_request_data_attributes import CustomRulesetRequestDataAttributes
@@ -1923,6 +1984,12 @@ from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItems
 from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
 from datadog_api_client.v2.model.datastore_trigger import DatastoreTrigger
 from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
+from datadog_api_client.v2.model.default_rulesets_per_language_data import DefaultRulesetsPerLanguageData
+from datadog_api_client.v2.model.default_rulesets_per_language_data_attributes import (
+    DefaultRulesetsPerLanguageDataAttributes,
+)
+from datadog_api_client.v2.model.default_rulesets_per_language_data_type import DefaultRulesetsPerLanguageDataType
+from datadog_api_client.v2.model.default_rulesets_per_language_response import DefaultRulesetsPerLanguageResponse
 from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.degradation_array import DegradationArray
 from datadog_api_client.v2.model.degradation_data import DegradationData
@@ -2652,6 +2719,14 @@ from datadog_api_client.v2.model.get_app_key_registration_response import GetApp
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
 from datadog_api_client.v2.model.get_app_response_data import GetAppResponseData
 from datadog_api_client.v2.model.get_app_response_data_attributes import GetAppResponseDataAttributes
+from datadog_api_client.v2.model.get_ast_request import GetAstRequest
+from datadog_api_client.v2.model.get_ast_request_data import GetAstRequestData
+from datadog_api_client.v2.model.get_ast_request_data_attributes import GetAstRequestDataAttributes
+from datadog_api_client.v2.model.get_ast_request_data_type import GetAstRequestDataType
+from datadog_api_client.v2.model.get_ast_response import GetAstResponse
+from datadog_api_client.v2.model.get_ast_response_data import GetAstResponseData
+from datadog_api_client.v2.model.get_ast_response_data_attributes import GetAstResponseDataAttributes
+from datadog_api_client.v2.model.get_ast_response_data_type import GetAstResponseDataType
 from datadog_api_client.v2.model.get_blueprint_response import GetBlueprintResponse
 from datadog_api_client.v2.model.get_blueprints_response import GetBlueprintsResponse
 from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
@@ -4259,6 +4334,11 @@ from datadog_api_client.v2.model.mute_findings_request_data_attributes import Mu
 from datadog_api_client.v2.model.mute_findings_request_data_relationships import MuteFindingsRequestDataRelationships
 from datadog_api_client.v2.model.mute_findings_response import MuteFindingsResponse
 from datadog_api_client.v2.model.mute_findings_response_data import MuteFindingsResponseData
+from datadog_api_client.v2.model.node_type import NodeType
+from datadog_api_client.v2.model.node_types_response import NodeTypesResponse
+from datadog_api_client.v2.model.node_types_response_data import NodeTypesResponseData
+from datadog_api_client.v2.model.node_types_response_data_attributes import NodeTypesResponseDataAttributes
+from datadog_api_client.v2.model.node_types_response_data_type import NodeTypesResponseDataType
 from datadog_api_client.v2.model.notebook_create_data import NotebookCreateData
 from datadog_api_client.v2.model.notebook_create_request import NotebookCreateRequest
 from datadog_api_client.v2.model.notebook_resource_type import NotebookResourceType
@@ -6094,6 +6174,10 @@ from datadog_api_client.v2.model.sample_log_generation_subscriptions_response_me
 from datadog_api_client.v2.model.sample_log_generation_subscriptions_status_filter import (
     SampleLogGenerationSubscriptionsStatusFilter,
 )
+from datadog_api_client.v2.model.sast_ruleset_data import SastRulesetData
+from datadog_api_client.v2.model.sast_ruleset_data_attributes import SastRulesetDataAttributes
+from datadog_api_client.v2.model.sast_ruleset_response import SastRulesetResponse
+from datadog_api_client.v2.model.sast_rulesets_response import SastRulesetsResponse
 from datadog_api_client.v2.model.sca_request import ScaRequest
 from datadog_api_client.v2.model.sca_request_data import ScaRequestData
 from datadog_api_client.v2.model.sca_request_data_attributes import ScaRequestDataAttributes
@@ -8364,6 +8448,45 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "AddMemberTeamRequest",
     "Advisory",
+    "AiCustomRuleDataType",
+    "AiCustomRuleItem",
+    "AiCustomRuleRequest",
+    "AiCustomRuleRequestAttributes",
+    "AiCustomRuleRequestData",
+    "AiCustomRuleResponse",
+    "AiCustomRuleResponseData",
+    "AiCustomRuleRevisionDataType",
+    "AiCustomRuleRevisionExecutionMode",
+    "AiCustomRuleRevisionRequest",
+    "AiCustomRuleRevisionRequestAttributes",
+    "AiCustomRuleRevisionRequestData",
+    "AiCustomRuleRevisionResponse",
+    "AiCustomRuleRevisionResponseAttributes",
+    "AiCustomRuleRevisionResponseData",
+    "AiCustomRuleRevisionsResponse",
+    "AiCustomRulesetDataType",
+    "AiCustomRulesetRequest",
+    "AiCustomRulesetRequestAttributes",
+    "AiCustomRulesetRequestData",
+    "AiCustomRulesetResponse",
+    "AiCustomRulesetResponseAttributes",
+    "AiCustomRulesetResponseData",
+    "AiCustomRulesetUpdateAttributes",
+    "AiCustomRulesetUpdateData",
+    "AiCustomRulesetUpdateRequest",
+    "AiCustomRulesetsResponse",
+    "AiMemoryViolationResultDataType",
+    "AiMemoryViolationResultRequest",
+    "AiMemoryViolationResultRequestAttributes",
+    "AiMemoryViolationResultRequestData",
+    "AiMemoryViolationResultResponseAttributes",
+    "AiMemoryViolationResultResponseData",
+    "AiMemoryViolationResultsResponse",
+    "AiMemoryViolationType",
+    "AiPromptDataType",
+    "AiPromptResponseAttributes",
+    "AiPromptResponseData",
+    "AiPromptsResponse",
     "AlertEventAttributes",
     "AlertEventAttributesLinksItem",
     "AlertEventAttributesLinksItemCategory",
@@ -8387,6 +8510,21 @@ __all__ = [
     "AllocationExposureScheduleResponse",
     "AllocationResponse",
     "AllocationType",
+    "AnalysisEdit",
+    "AnalysisEditType",
+    "AnalysisFix",
+    "AnalysisPosition",
+    "AnalysisRequest",
+    "AnalysisRequestData",
+    "AnalysisRequestDataAttributes",
+    "AnalysisRequestDataType",
+    "AnalysisRequestRule",
+    "AnalysisResponse",
+    "AnalysisResponseData",
+    "AnalysisResponseDataAttributes",
+    "AnalysisResponseDataType",
+    "AnalysisRuleResponse",
+    "AnalysisViolation",
     "Annotation",
     "AnnotationDisplay",
     "AnnotationDisplayBounds",
@@ -9576,6 +9714,7 @@ __all__ = [
     "CustomRuleset",
     "CustomRulesetAttributes",
     "CustomRulesetDataType",
+    "CustomRulesetListResponse",
     "CustomRulesetRequest",
     "CustomRulesetRequestData",
     "CustomRulesetRequestDataAttributes",
@@ -9674,6 +9813,10 @@ __all__ = [
     "DatastorePrimaryKeyGenerationStrategy",
     "DatastoreTrigger",
     "DatastoreTriggerWrapper",
+    "DefaultRulesetsPerLanguageData",
+    "DefaultRulesetsPerLanguageDataAttributes",
+    "DefaultRulesetsPerLanguageDataType",
+    "DefaultRulesetsPerLanguageResponse",
     "Degradation",
     "DegradationArray",
     "DegradationData",
@@ -10251,6 +10394,14 @@ __all__ = [
     "GetAppResponse",
     "GetAppResponseData",
     "GetAppResponseDataAttributes",
+    "GetAstRequest",
+    "GetAstRequestData",
+    "GetAstRequestDataAttributes",
+    "GetAstRequestDataType",
+    "GetAstResponse",
+    "GetAstResponseData",
+    "GetAstResponseDataAttributes",
+    "GetAstResponseDataType",
     "GetBlueprintResponse",
     "GetBlueprintsResponse",
     "GetCustomFrameworkResponse",
@@ -11460,6 +11611,11 @@ __all__ = [
     "MuteFindingsRequestDataRelationships",
     "MuteFindingsResponse",
     "MuteFindingsResponseData",
+    "NodeType",
+    "NodeTypesResponse",
+    "NodeTypesResponseData",
+    "NodeTypesResponseDataAttributes",
+    "NodeTypesResponseDataType",
     "NotebookCreateData",
     "NotebookCreateRequest",
     "NotebookResourceType",
@@ -12581,6 +12737,10 @@ __all__ = [
     "SampleLogGenerationSubscriptionsResponse",
     "SampleLogGenerationSubscriptionsResponseMeta",
     "SampleLogGenerationSubscriptionsStatusFilter",
+    "SastRulesetData",
+    "SastRulesetDataAttributes",
+    "SastRulesetResponse",
+    "SastRulesetsResponse",
     "ScaRequest",
     "ScaRequestData",
     "ScaRequestDataAttributes",

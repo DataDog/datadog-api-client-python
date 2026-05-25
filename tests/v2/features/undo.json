@@ -7040,6 +7040,121 @@
       "type": "safe"
     }
   },
+  "ListAiMemoryViolationResults": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiMemoryViolationResult": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAiMemoryViolationResult": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAiPrompts": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAiCustomRulesets": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAiCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAiCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateAiCustomRule": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAiCustomRule": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiCustomRule": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAiCustomRuleRevisions": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiCustomRuleRevision": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiCustomRuleRevision": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListStaticAnalysisCodegenRulesets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCustomRulesets": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCustomRuleset": {
+    "tag": "Static Analysis",
+    "undo": {
+      "operationId": "DeleteCustomRuleset",
+      "parameters": [
+        {
+          "name": "ruleset_name",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "DeleteCustomRuleset": {
     "tag": "Static Analysis",
     "undo": {
@@ -7102,6 +7217,12 @@
       "type": "safe"
     }
   },
+  "GetStaticAnalysisDefaultRulesets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListMultipleRulesets": {
     "tag": "Security Monitoring",
     "undo": {
@@ -7110,7 +7231,37 @@
       "type": "unsafe"
     }
   },
+  "GetStaticAnalysisRuleset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSecretsRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateStaticAnalysisServerAnalysis": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateStaticAnalysisAst": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetStaticAnalysisNodeTypes": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetStaticAnalysisTreeSitterWasm": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"

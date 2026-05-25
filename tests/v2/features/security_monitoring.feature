@@ -25,6 +25,22 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Analyze code returns "Bad Request" response
+    Given operation "CreateStaticAnalysisServerAnalysis" enabled
+    And new "CreateStaticAnalysisServerAnalysis" request
+    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "filename": "test.py", "language": "python", "rules": [{"category": "BEST_PRACTICES", "checksum": "abc123def456", "code": "ZnVuY3Rpb24gdmlzaXQobm9kZSkge30=", "entity_checked": null, "id": "python-best-practices/no-exit", "language": "python", "regex": null, "severity": "WARNING", "tree_sitter_query": "KGNhbGwgbmFtZTogKGF0dHJpYnV0ZSkpQHZhbA==", "type": "TREE_SITTER_QUERY"}]}, "type": "analysis_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Analyze code returns "OK" response
+    Given operation "CreateStaticAnalysisServerAnalysis" enabled
+    And new "CreateStaticAnalysisServerAnalysis" request
+    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "filename": "test.py", "language": "python", "rules": [{"category": "BEST_PRACTICES", "checksum": "abc123def456", "code": "ZnVuY3Rpb24gdmlzaXQobm9kZSkge30=", "entity_checked": null, "id": "python-best-practices/no-exit", "language": "python", "regex": null, "severity": "WARNING", "tree_sitter_query": "KGNhbGwgbmFtZTogKGF0dHJpYnV0ZSkpQHZhbA==", "type": "TREE_SITTER_QUERY"}]}, "type": "analysis_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/k9-investigation
   Scenario: Attach security finding to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
@@ -1076,6 +1092,22 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get AST for source code returns "Bad Request" response
+    Given operation "CreateStaticAnalysisAst" enabled
+    And new "CreateStaticAnalysisAst" request
+    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "language": "python"}, "type": "get_ast_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get AST for source code returns "OK" response
+    Given operation "CreateStaticAnalysisAst" enabled
+    And new "CreateStaticAnalysisAst" request
+    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "language": "python"}, "type": "get_ast_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: Get SBOM returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given new "GetSBOM" request
@@ -1097,6 +1129,30 @@ Feature: Security Monitoring
     Given new "GetSBOM" request
     And request contains "asset_type" parameter with value "Repository"
     And request contains "filter[asset_name]" parameter with value "github.com/datadog/datadog-agent"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get a SAST ruleset returns "Bad Request" response
+    Given operation "GetStaticAnalysisRuleset" enabled
+    And new "GetStaticAnalysisRuleset" request
+    And request contains "ruleset_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get a SAST ruleset returns "Not Found" response
+    Given operation "GetStaticAnalysisRuleset" enabled
+    And new "GetStaticAnalysisRuleset" request
+    And request contains "ruleset_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get a SAST ruleset returns "OK" response
+    Given operation "GetStaticAnalysisRuleset" enabled
+    And new "GetStaticAnalysisRuleset" request
+    And request contains "ruleset_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1515,6 +1571,22 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get default rulesets for a language returns "Bad Request" response
+    Given operation "GetStaticAnalysisDefaultRulesets" enabled
+    And new "GetStaticAnalysisDefaultRulesets" request
+    And request contains "language" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get default rulesets for a language returns "OK" response
+    Given operation "GetStaticAnalysisDefaultRulesets" enabled
+    And new "GetStaticAnalysisDefaultRulesets" request
+    And request contains "language" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Get details of a signal-based notification rule returns "Bad Request" response
     Given new "GetSignalNotificationRule" request
@@ -1616,6 +1688,22 @@ Feature: Security Monitoring
     And the response "data[0].attributes" has field "query_filter"
     And the response "data[0].attributes" has field "url"
 
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get node types for a language returns "Bad Request" response
+    Given operation "GetStaticAnalysisNodeTypes" enabled
+    And new "GetStaticAnalysisNodeTypes" request
+    And request contains "language" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get node types for a language returns "OK" response
+    Given operation "GetStaticAnalysisNodeTypes" enabled
+    And new "GetStaticAnalysisNodeTypes" request
+    And request contains "language" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip-go @skip-java @skip-ruby @team:DataDog/k9-cloud-siem
   Scenario: Get rule version history returns "OK" response
     Given operation "GetRuleVersionHistory" enabled
@@ -1715,6 +1803,22 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get tree-sitter WASM file returns "BLOB with the content of the WASM file" response
+    Given operation "GetStaticAnalysisTreeSitterWasm" enabled
+    And new "GetStaticAnalysisTreeSitterWasm" request
+    And request contains "file" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 BLOB with the content of the WASM file
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: Get tree-sitter WASM file returns "Bad Request" response
+    Given operation "GetStaticAnalysisTreeSitterWasm" enabled
+    And new "GetStaticAnalysisTreeSitterWasm" request
+    And request contains "file" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given new "ListAssetsSBOMs" request
@@ -1740,6 +1844,20 @@ Feature: Security Monitoring
     Given new "ListAssetsSBOMs" request
     And request contains "filter[package_name]" parameter with value "pandas"
     And request contains "filter[asset_type]" parameter with value "Service"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: List codegen rulesets returns "Bad Request" response
+    Given operation "ListStaticAnalysisCodegenRulesets" enabled
+    And new "ListStaticAnalysisCodegenRulesets" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-vm-ast
+  Scenario: List codegen rulesets returns "OK" response
+    Given operation "ListStaticAnalysisCodegenRulesets" enabled
+    And new "ListStaticAnalysisCodegenRulesets" request
     When the request is sent
     Then the response status is 200 OK
 

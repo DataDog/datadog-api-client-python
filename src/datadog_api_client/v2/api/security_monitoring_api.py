@@ -219,9 +219,17 @@ from datadog_api_client.v2.model.job_create_response import JobCreateResponse
 from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
 from datadog_api_client.v2.model.historical_job_response import HistoricalJobResponse
+from datadog_api_client.v2.model.sast_rulesets_response import SastRulesetsResponse
+from datadog_api_client.v2.model.default_rulesets_per_language_response import DefaultRulesetsPerLanguageResponse
 from datadog_api_client.v2.model.get_multiple_rulesets_response import GetMultipleRulesetsResponse
 from datadog_api_client.v2.model.get_multiple_rulesets_request import GetMultipleRulesetsRequest
+from datadog_api_client.v2.model.sast_ruleset_response import SastRulesetResponse
 from datadog_api_client.v2.model.secret_rule_array import SecretRuleArray
+from datadog_api_client.v2.model.analysis_response import AnalysisResponse
+from datadog_api_client.v2.model.analysis_request import AnalysisRequest
+from datadog_api_client.v2.model.get_ast_response import GetAstResponse
+from datadog_api_client.v2.model.get_ast_request import GetAstRequest
+from datadog_api_client.v2.model.node_types_response import NodeTypesResponse
 
 
 class SecurityMonitoringApi:
@@ -754,6 +762,46 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateNotificationRuleParameters,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_static_analysis_ast_endpoint = _Endpoint(
+            settings={
+                "response_type": (GetAstResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/static-analysis-server/get-ast",
+                "operation_id": "create_static_analysis_ast",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (GetAstRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_static_analysis_server_analysis_endpoint = _Endpoint(
+            settings={
+                "response_type": (AnalysisResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/static-analysis-server/analyze",
+                "operation_id": "create_static_analysis_server_analysis",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AnalysisRequest,),
                     "location": "body",
                 },
             },
@@ -1815,6 +1863,108 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_static_analysis_default_rulesets_endpoint = _Endpoint(
+            settings={
+                "response_type": (DefaultRulesetsPerLanguageResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/default-rulesets/{language}",
+                "operation_id": "get_static_analysis_default_rulesets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "language": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "language",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_static_analysis_node_types_endpoint = _Endpoint(
+            settings={
+                "response_type": (NodeTypesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/static-analysis-server/node-types/{language}",
+                "operation_id": "get_static_analysis_node_types",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "language": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "language",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_static_analysis_ruleset_endpoint = _Endpoint(
+            settings={
+                "response_type": (SastRulesetResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/rulesets/{ruleset_name}",
+                "operation_id": "get_static_analysis_ruleset",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "ruleset_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "ruleset_name",
+                    "location": "path",
+                },
+                "include_tests": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_tests",
+                    "location": "query",
+                },
+                "include_testing_rules": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_testing_rules",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_static_analysis_tree_sitter_wasm_endpoint = _Endpoint(
+            settings={
+                "response_type": (file_type,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/static-analysis-server/tree-sitter-wasm/{file}",
+                "operation_id": "get_static_analysis_tree_sitter_wasm",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "file": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "file",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/octet-stream", "application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_suggested_actions_matching_signal_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalSuggestedActionsResponse,),
@@ -2579,6 +2729,22 @@ class SecurityMonitoringApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_static_analysis_codegen_rulesets_endpoint = _Endpoint(
+            settings={
+                "response_type": (SastRulesetsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis/codegen/rulesets",
+                "operation_id": "list_static_analysis_codegen_rulesets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -3905,6 +4071,38 @@ class SecurityMonitoringApi:
 
         return self._create_signal_notification_rule_endpoint.call_with_http_info(**kwargs)
 
+    def create_static_analysis_ast(
+        self,
+        body: GetAstRequest,
+    ) -> GetAstResponse:
+        """Get AST for source code.
+
+        Parse source code into an abstract syntax tree (AST) for the specified language.
+
+        :type body: GetAstRequest
+        :rtype: GetAstResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_static_analysis_ast_endpoint.call_with_http_info(**kwargs)
+
+    def create_static_analysis_server_analysis(
+        self,
+        body: AnalysisRequest,
+    ) -> AnalysisResponse:
+        """Analyze code.
+
+        Run static analysis rules against a source code file and return violations found.
+
+        :type body: AnalysisRequest
+        :rtype: AnalysisResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_static_analysis_server_analysis_endpoint.call_with_http_info(**kwargs)
+
     def create_vulnerability_notification_rule(
         self,
         body: CreateNotificationRuleParameters,
@@ -4770,6 +4968,87 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_signal_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_static_analysis_default_rulesets(
+        self,
+        language: str,
+    ) -> DefaultRulesetsPerLanguageResponse:
+        """Get default rulesets for a language.
+
+        Get the default SAST ruleset names for a given programming language.
+
+        :param language: The programming language for which to retrieve the default rulesets.
+        :type language: str
+        :rtype: DefaultRulesetsPerLanguageResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["language"] = language
+
+        return self._get_static_analysis_default_rulesets_endpoint.call_with_http_info(**kwargs)
+
+    def get_static_analysis_node_types(
+        self,
+        language: str,
+    ) -> NodeTypesResponse:
+        """Get node types for a language.
+
+        Retrieve tree-sitter node type definitions for a given programming language.
+
+        :param language: The programming language for which to retrieve node type definitions.
+        :type language: str
+        :rtype: NodeTypesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["language"] = language
+
+        return self._get_static_analysis_node_types_endpoint.call_with_http_info(**kwargs)
+
+    def get_static_analysis_ruleset(
+        self,
+        ruleset_name: str,
+        *,
+        include_tests: Union[bool, UnsetType] = unset,
+        include_testing_rules: Union[bool, UnsetType] = unset,
+    ) -> SastRulesetResponse:
+        """Get a SAST ruleset.
+
+        Get a SAST ruleset by name, including all its rules.
+
+        :param ruleset_name: The name of the ruleset to retrieve.
+        :type ruleset_name: str
+        :param include_tests: When true, test cases for each rule are included in the response.
+        :type include_tests: bool, optional
+        :param include_testing_rules: When true, rules that are in testing mode are included in the response.
+        :type include_testing_rules: bool, optional
+        :rtype: SastRulesetResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["ruleset_name"] = ruleset_name
+
+        if include_tests is not unset:
+            kwargs["include_tests"] = include_tests
+
+        if include_testing_rules is not unset:
+            kwargs["include_testing_rules"] = include_testing_rules
+
+        return self._get_static_analysis_ruleset_endpoint.call_with_http_info(**kwargs)
+
+    def get_static_analysis_tree_sitter_wasm(
+        self,
+        file: str,
+    ) -> file_type:
+        """Get tree-sitter WASM file.
+
+        Download the WebAssembly binary for a tree-sitter grammar by file name.
+
+        :param file: The name of the WASM file to download.
+        :type file: str
+        :rtype: file_type
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["file"] = file
+
+        return self._get_static_analysis_tree_sitter_wasm_endpoint.call_with_http_info(**kwargs)
 
     def get_suggested_actions_matching_signal(
         self,
@@ -5863,6 +6142,18 @@ class SecurityMonitoringApi:
             kwargs["page_number"] = page_number
 
         return self._list_security_monitoring_suppressions_endpoint.call_with_http_info(**kwargs)
+
+    def list_static_analysis_codegen_rulesets(
+        self,
+    ) -> SastRulesetsResponse:
+        """List codegen rulesets.
+
+        Get the rulesets relevant for code generation for the authenticated user.
+
+        :rtype: SastRulesetsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_static_analysis_codegen_rulesets_endpoint.call_with_http_info(**kwargs)
 
     def list_vulnerabilities(
         self,
