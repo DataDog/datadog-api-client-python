@@ -6487,6 +6487,61 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityMonitoringDatasets": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityMonitoringDataset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityMonitoringDataset",
+      "parameters": [
+        {
+          "name": "dataset_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "BatchGetSecurityMonitoringDatasetDependencies": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteSecurityMonitoringDataset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityMonitoringDataset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityMonitoringDataset": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityMonitoringDatasetByVersion": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSecurityMonitoringDatasetVersionHistory": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetEntityContext": {
     "tag": "Security Monitoring",
     "undo": {
