@@ -28,14 +28,12 @@ class RecommendationsFilterRequest(ModelNormal):
 
         return {
             "filter": (str,),
-            "scope": (str,),
             "sort": ([RecommendationsFilterRequestSortItems],),
             "view": (str,),
         }
 
     attribute_map = {
         "filter": "filter",
-        "scope": "scope",
         "sort": "sort",
         "view": "view",
     }
@@ -43,7 +41,6 @@ class RecommendationsFilterRequest(ModelNormal):
     def __init__(
         self_,
         filter: Union[str, UnsetType] = unset,
-        scope: Union[str, UnsetType] = unset,
         sort: Union[List[RecommendationsFilterRequestSortItems], UnsetType] = unset,
         view: Union[str, UnsetType] = unset,
         **kwargs,
@@ -54,9 +51,6 @@ class RecommendationsFilterRequest(ModelNormal):
         :param filter: Filter expression applied to the recommendations.
         :type filter: str, optional
 
-        :param scope: Recommendations scope. Defaults to ``ccm`` ; use ``experiment`` for experimental recommendations or ``*`` for both.
-        :type scope: str, optional
-
         :param sort: Ordered list of sort clauses applied to the result set.
         :type sort: [RecommendationsFilterRequestSortItems], optional
 
@@ -65,8 +59,6 @@ class RecommendationsFilterRequest(ModelNormal):
         """
         if filter is not unset:
             kwargs["filter"] = filter
-        if scope is not unset:
-            kwargs["scope"] = scope
         if sort is not unset:
             kwargs["sort"] = sort
         if view is not unset:

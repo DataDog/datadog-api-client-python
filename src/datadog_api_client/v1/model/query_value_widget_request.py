@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
     from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+    from datadog_api_client.v1.model.query_value_widget_comparison import QueryValueWidgetComparison
     from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.widget_formula import WidgetFormula
     from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
@@ -61,6 +62,7 @@ class QueryValueWidgetRequest(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
         from datadog_api_client.v1.model.log_query_definition import LogQueryDefinition
+        from datadog_api_client.v1.model.query_value_widget_comparison import QueryValueWidgetComparison
         from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
         from datadog_api_client.v1.model.widget_formula import WidgetFormula
         from datadog_api_client.v1.model.process_query_definition import ProcessQueryDefinition
@@ -71,6 +73,7 @@ class QueryValueWidgetRequest(ModelNormal):
             "aggregator": (WidgetAggregator,),
             "apm_query": (LogQueryDefinition,),
             "audit_query": (LogQueryDefinition,),
+            "comparison": (QueryValueWidgetComparison,),
             "conditional_formats": ([WidgetConditionalFormat],),
             "event_query": (LogQueryDefinition,),
             "formulas": ([WidgetFormula],),
@@ -89,6 +92,7 @@ class QueryValueWidgetRequest(ModelNormal):
         "aggregator": "aggregator",
         "apm_query": "apm_query",
         "audit_query": "audit_query",
+        "comparison": "comparison",
         "conditional_formats": "conditional_formats",
         "event_query": "event_query",
         "formulas": "formulas",
@@ -108,6 +112,7 @@ class QueryValueWidgetRequest(ModelNormal):
         aggregator: Union[WidgetAggregator, UnsetType] = unset,
         apm_query: Union[LogQueryDefinition, UnsetType] = unset,
         audit_query: Union[LogQueryDefinition, UnsetType] = unset,
+        comparison: Union[QueryValueWidgetComparison, UnsetType] = unset,
         conditional_formats: Union[List[WidgetConditionalFormat], UnsetType] = unset,
         event_query: Union[LogQueryDefinition, UnsetType] = unset,
         formulas: Union[List[WidgetFormula], UnsetType] = unset,
@@ -152,6 +157,9 @@ class QueryValueWidgetRequest(ModelNormal):
         :param audit_query: The log query.
         :type audit_query: LogQueryDefinition, optional
 
+        :param comparison: A change indicator that compares the current value to a historical period.
+        :type comparison: QueryValueWidgetComparison, optional
+
         :param conditional_formats: List of conditional formats.
         :type conditional_formats: [WidgetConditionalFormat], optional
 
@@ -194,6 +202,8 @@ class QueryValueWidgetRequest(ModelNormal):
             kwargs["apm_query"] = apm_query
         if audit_query is not unset:
             kwargs["audit_query"] = audit_query
+        if comparison is not unset:
+            kwargs["comparison"] = comparison
         if conditional_formats is not unset:
             kwargs["conditional_formats"] = conditional_formats
         if event_query is not unset:
