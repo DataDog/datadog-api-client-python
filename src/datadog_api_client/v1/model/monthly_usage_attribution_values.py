@@ -171,6 +171,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
             "serverless_apps_apm_usage": (float,),
             "serverless_apps_percentage": (float,),
             "serverless_apps_usage": (float,),
+            "siem_12mo_retention_percentage": (float,),
+            "siem_12mo_retention_usage": (float,),
+            "siem_6mo_retention_percentage": (float,),
+            "siem_6mo_retention_usage": (float,),
             "siem_analyzed_logs_add_on_percentage": (float,),
             "siem_analyzed_logs_add_on_usage": (float,),
             "siem_ingested_bytes_percentage": (float,),
@@ -340,6 +344,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         "serverless_apps_apm_usage": "serverless_apps_apm_usage",
         "serverless_apps_percentage": "serverless_apps_percentage",
         "serverless_apps_usage": "serverless_apps_usage",
+        "siem_12mo_retention_percentage": "siem_12mo_retention_percentage",
+        "siem_12mo_retention_usage": "siem_12mo_retention_usage",
+        "siem_6mo_retention_percentage": "siem_6mo_retention_percentage",
+        "siem_6mo_retention_usage": "siem_6mo_retention_usage",
         "siem_analyzed_logs_add_on_percentage": "siem_analyzed_logs_add_on_percentage",
         "siem_analyzed_logs_add_on_usage": "siem_analyzed_logs_add_on_usage",
         "siem_ingested_bytes_percentage": "siem_ingested_bytes_percentage",
@@ -510,6 +518,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         serverless_apps_apm_usage: Union[float, UnsetType] = unset,
         serverless_apps_percentage: Union[float, UnsetType] = unset,
         serverless_apps_usage: Union[float, UnsetType] = unset,
+        siem_12mo_retention_percentage: Union[float, UnsetType] = unset,
+        siem_12mo_retention_usage: Union[float, UnsetType] = unset,
+        siem_6mo_retention_percentage: Union[float, UnsetType] = unset,
+        siem_6mo_retention_usage: Union[float, UnsetType] = unset,
         siem_analyzed_logs_add_on_percentage: Union[float, UnsetType] = unset,
         siem_analyzed_logs_add_on_usage: Union[float, UnsetType] = unset,
         siem_ingested_bytes_percentage: Union[float, UnsetType] = unset,
@@ -989,6 +1001,18 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param serverless_apps_usage: The total Serverless Apps usage by tag(s).
         :type serverless_apps_usage: float, optional
 
+        :param siem_12mo_retention_percentage: The percentage of Cloud SIEM Indexed Logs (12-month retention) usage by tag(s).
+        :type siem_12mo_retention_percentage: float, optional
+
+        :param siem_12mo_retention_usage: The Cloud SIEM Indexed Logs (12-month retention) usage by tag(s).
+        :type siem_12mo_retention_usage: float, optional
+
+        :param siem_6mo_retention_percentage: The percentage of Cloud SIEM Indexed Logs (6-month retention) usage by tag(s).
+        :type siem_6mo_retention_percentage: float, optional
+
+        :param siem_6mo_retention_usage: The Cloud SIEM Indexed Logs (6-month retention) usage by tag(s).
+        :type siem_6mo_retention_usage: float, optional
+
         :param siem_analyzed_logs_add_on_percentage: The percentage of log events analyzed by Cloud SIEM usage by tag(s).
         :type siem_analyzed_logs_add_on_percentage: float, optional
 
@@ -1335,6 +1359,14 @@ class MonthlyUsageAttributionValues(ModelNormal):
             kwargs["serverless_apps_percentage"] = serverless_apps_percentage
         if serverless_apps_usage is not unset:
             kwargs["serverless_apps_usage"] = serverless_apps_usage
+        if siem_12mo_retention_percentage is not unset:
+            kwargs["siem_12mo_retention_percentage"] = siem_12mo_retention_percentage
+        if siem_12mo_retention_usage is not unset:
+            kwargs["siem_12mo_retention_usage"] = siem_12mo_retention_usage
+        if siem_6mo_retention_percentage is not unset:
+            kwargs["siem_6mo_retention_percentage"] = siem_6mo_retention_percentage
+        if siem_6mo_retention_usage is not unset:
+            kwargs["siem_6mo_retention_usage"] = siem_6mo_retention_usage
         if siem_analyzed_logs_add_on_percentage is not unset:
             kwargs["siem_analyzed_logs_add_on_percentage"] = siem_analyzed_logs_add_on_percentage
         if siem_analyzed_logs_add_on_usage is not unset:
