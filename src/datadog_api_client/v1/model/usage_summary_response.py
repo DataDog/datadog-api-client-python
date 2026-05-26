@@ -258,6 +258,7 @@ class UsageSummaryResponse(ModelNormal):
             "serverless_apps_azure_count_avg_sum": (int,),
             "serverless_apps_azure_function_app_instances_avg_sum": (int,),
             "serverless_apps_azure_web_app_instances_avg_sum": (int,),
+            "serverless_apps_dsm_fargate_tasks_avg_sum": (int,),
             "serverless_apps_ecs_avg_sum": (int,),
             "serverless_apps_eks_avg_sum": (int,),
             "serverless_apps_excl_fargate_avg_sum": (int,),
@@ -522,6 +523,7 @@ class UsageSummaryResponse(ModelNormal):
         "serverless_apps_azure_count_avg_sum": "serverless_apps_azure_count_avg_sum",
         "serverless_apps_azure_function_app_instances_avg_sum": "serverless_apps_azure_function_app_instances_avg_sum",
         "serverless_apps_azure_web_app_instances_avg_sum": "serverless_apps_azure_web_app_instances_avg_sum",
+        "serverless_apps_dsm_fargate_tasks_avg_sum": "serverless_apps_dsm_fargate_tasks_avg_sum",
         "serverless_apps_ecs_avg_sum": "serverless_apps_ecs_avg_sum",
         "serverless_apps_eks_avg_sum": "serverless_apps_eks_avg_sum",
         "serverless_apps_excl_fargate_avg_sum": "serverless_apps_excl_fargate_avg_sum",
@@ -787,6 +789,7 @@ class UsageSummaryResponse(ModelNormal):
         serverless_apps_azure_count_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_azure_function_app_instances_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_azure_web_app_instances_avg_sum: Union[int, UnsetType] = unset,
+        serverless_apps_dsm_fargate_tasks_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_ecs_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_eks_avg_sum: Union[int, UnsetType] = unset,
         serverless_apps_excl_fargate_avg_sum: Union[int, UnsetType] = unset,
@@ -1517,6 +1520,9 @@ class UsageSummaryResponse(ModelNormal):
         :param serverless_apps_azure_web_app_instances_avg_sum: Sum of the average number of Serverless Apps for Azure Web App instances in the current month for all organizations.
         :type serverless_apps_azure_web_app_instances_avg_sum: int, optional
 
+        :param serverless_apps_dsm_fargate_tasks_avg_sum: Sum of the average number of DSM Fargate ECS tasks monitored under Serverless Apps DSM in the current month for all organizations.
+        :type serverless_apps_dsm_fargate_tasks_avg_sum: int, optional
+
         :param serverless_apps_ecs_avg_sum: Sum of the average number of Serverless Apps for Elastic Container Service in the current month for all organizations.
         :type serverless_apps_ecs_avg_sum: int, optional
 
@@ -2130,6 +2136,8 @@ class UsageSummaryResponse(ModelNormal):
             ] = serverless_apps_azure_function_app_instances_avg_sum
         if serverless_apps_azure_web_app_instances_avg_sum is not unset:
             kwargs["serverless_apps_azure_web_app_instances_avg_sum"] = serverless_apps_azure_web_app_instances_avg_sum
+        if serverless_apps_dsm_fargate_tasks_avg_sum is not unset:
+            kwargs["serverless_apps_dsm_fargate_tasks_avg_sum"] = serverless_apps_dsm_fargate_tasks_avg_sum
         if serverless_apps_ecs_avg_sum is not unset:
             kwargs["serverless_apps_ecs_avg_sum"] = serverless_apps_ecs_avg_sum
         if serverless_apps_eks_avg_sum is not unset:

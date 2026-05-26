@@ -247,6 +247,7 @@ class UsageSummaryDate(ModelNormal):
             "serverless_apps_azure_count_avg": (int,),
             "serverless_apps_azure_function_app_instances_avg": (int,),
             "serverless_apps_azure_web_app_instances_avg": (int,),
+            "serverless_apps_dsm_fargate_tasks_avg": (int,),
             "serverless_apps_ecs_avg": (int,),
             "serverless_apps_eks_avg": (int,),
             "serverless_apps_excl_fargate_avg": (int,),
@@ -500,6 +501,7 @@ class UsageSummaryDate(ModelNormal):
         "serverless_apps_azure_count_avg": "serverless_apps_azure_count_avg",
         "serverless_apps_azure_function_app_instances_avg": "serverless_apps_azure_function_app_instances_avg",
         "serverless_apps_azure_web_app_instances_avg": "serverless_apps_azure_web_app_instances_avg",
+        "serverless_apps_dsm_fargate_tasks_avg": "serverless_apps_dsm_fargate_tasks_avg",
         "serverless_apps_ecs_avg": "serverless_apps_ecs_avg",
         "serverless_apps_eks_avg": "serverless_apps_eks_avg",
         "serverless_apps_excl_fargate_avg": "serverless_apps_excl_fargate_avg",
@@ -754,6 +756,7 @@ class UsageSummaryDate(ModelNormal):
         serverless_apps_azure_count_avg: Union[int, UnsetType] = unset,
         serverless_apps_azure_function_app_instances_avg: Union[int, UnsetType] = unset,
         serverless_apps_azure_web_app_instances_avg: Union[int, UnsetType] = unset,
+        serverless_apps_dsm_fargate_tasks_avg: Union[int, UnsetType] = unset,
         serverless_apps_ecs_avg: Union[int, UnsetType] = unset,
         serverless_apps_eks_avg: Union[int, UnsetType] = unset,
         serverless_apps_excl_fargate_avg: Union[int, UnsetType] = unset,
@@ -1455,6 +1458,9 @@ class UsageSummaryDate(ModelNormal):
         :param serverless_apps_azure_web_app_instances_avg: Shows the average number of Serverless Apps for Azure Web App instances for the current date for all organizations.
         :type serverless_apps_azure_web_app_instances_avg: int, optional
 
+        :param serverless_apps_dsm_fargate_tasks_avg: Shows the average number of DSM Fargate ECS tasks monitored under Serverless Apps DSM for the current date for all organizations.
+        :type serverless_apps_dsm_fargate_tasks_avg: int, optional
+
         :param serverless_apps_ecs_avg: Shows the average number of Serverless Apps for Elastic Container Service for the current date for all organizations.
         :type serverless_apps_ecs_avg: int, optional
 
@@ -2026,6 +2032,8 @@ class UsageSummaryDate(ModelNormal):
             ] = serverless_apps_azure_function_app_instances_avg
         if serverless_apps_azure_web_app_instances_avg is not unset:
             kwargs["serverless_apps_azure_web_app_instances_avg"] = serverless_apps_azure_web_app_instances_avg
+        if serverless_apps_dsm_fargate_tasks_avg is not unset:
+            kwargs["serverless_apps_dsm_fargate_tasks_avg"] = serverless_apps_dsm_fargate_tasks_avg
         if serverless_apps_ecs_avg is not unset:
             kwargs["serverless_apps_ecs_avg"] = serverless_apps_ecs_avg
         if serverless_apps_eks_avg is not unset:
