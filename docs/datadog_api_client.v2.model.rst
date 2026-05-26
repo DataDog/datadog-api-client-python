@@ -32302,6 +32302,237 @@ datadog\_api\_client.v2.model.security\_monitoring\_critical\_assets\_response m
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_attributes\_request module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_attributes\_response module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_column module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_create\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_create\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_create\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_create\_response\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_create_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_create\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_create_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_definition module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_dependencies\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_dependencies\_request\_attributes module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_dependencies\_request\_data module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_dependencies\_response module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_dependencies_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_dependents\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_dependents_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_dependents\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_dependents_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_dependents\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_dependents_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_search module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_time\_window module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_time_window
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_update\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_update\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_update\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_update_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_version\_entry module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_version_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_version\_field\_change module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_version_field_change
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_version\_history\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_version_history_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_version\_history\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_version_history_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_version\_history\_entries module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_version_history_entries
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_version\_history\_response module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_version_history_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_dataset\_version\_history\_type module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_dataset_version_history_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_datasets\_list\_meta module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_datasets_list_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_datasets\_list\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_datasets_list_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_filter module
 -----------------------------------------------------------------
 
