@@ -109,7 +109,7 @@ class ApplicationSecurityWafCustomRuleAttributes(ModelNormal):
         :param metadata: Metadata associated with the WAF Custom Rule.
         :type metadata: ApplicationSecurityWafCustomRuleMetadata, optional
 
-        :param name: The Name of the WAF custom rule.
+        :param name: The name of the WAF custom rule.
         :type name: str
 
         :param path_glob: The path glob for the WAF custom rule.
