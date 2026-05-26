@@ -69,6 +69,9 @@ from datadog_api_client.v1.model.check_status_widget_definition import CheckStat
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
 from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
 from datadog_api_client.v1.model.cohort_widget_definition_type import CohortWidgetDefinitionType
+from datadog_api_client.v1.model.comparison_custom_timeframe import ComparisonCustomTimeframe
+from datadog_api_client.v1.model.comparison_duration import ComparisonDuration
+from datadog_api_client.v1.model.comparison_duration_type import ComparisonDurationType
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.dashboard import Dashboard
@@ -667,6 +670,11 @@ from datadog_api_client.v1.model.product_analytics_funnel_widget_definition impo
     ProductAnalyticsFunnelWidgetDefinition,
 )
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v1.model.query_value_widget_comparison import QueryValueWidgetComparison
+from datadog_api_client.v1.model.query_value_widget_comparison_directionality import (
+    QueryValueWidgetComparisonDirectionality,
+)
+from datadog_api_client.v1.model.query_value_widget_comparison_type import QueryValueWidgetComparisonType
 from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
 from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
 from datadog_api_client.v1.model.query_value_widget_request import QueryValueWidgetRequest
@@ -1436,6 +1444,9 @@ __all__ = [
     "CheckStatusWidgetDefinitionType",
     "CohortWidgetDefinition",
     "CohortWidgetDefinitionType",
+    "ComparisonCustomTimeframe",
+    "ComparisonDuration",
+    "ComparisonDurationType",
     "ContentEncoding",
     "Creator",
     "Dashboard",
@@ -1896,6 +1907,9 @@ __all__ = [
     "ProductAnalyticsFunnelRequestType",
     "ProductAnalyticsFunnelWidgetDefinition",
     "QuerySortOrder",
+    "QueryValueWidgetComparison",
+    "QueryValueWidgetComparisonDirectionality",
+    "QueryValueWidgetComparisonType",
     "QueryValueWidgetDefinition",
     "QueryValueWidgetDefinitionType",
     "QueryValueWidgetRequest",

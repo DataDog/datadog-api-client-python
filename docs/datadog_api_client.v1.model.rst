@@ -501,6 +501,27 @@ datadog\_api\_client.v1.model.cohort\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.comparison\_custom\_timeframe module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.comparison_custom_timeframe
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.comparison\_duration module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.comparison_duration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.comparison\_duration\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.comparison_duration_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.content\_encoding module
 ------------------------------------------------------
 
@@ -3718,6 +3739,27 @@ datadog\_api\_client.v1.model.query\_sort\_order module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.query_sort_order
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.query\_value\_widget\_comparison module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.query_value_widget_comparison
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.query\_value\_widget\_comparison\_directionality module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.query_value_widget_comparison_directionality
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.query\_value\_widget\_comparison\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.query_value_widget_comparison_type
    :members:
    :show-inheritance:
 
