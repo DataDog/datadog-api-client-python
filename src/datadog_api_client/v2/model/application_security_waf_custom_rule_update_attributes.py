@@ -94,7 +94,7 @@ class ApplicationSecurityWafCustomRuleUpdateAttributes(ModelNormal):
         :param enabled: Indicates whether the WAF custom rule is enabled.
         :type enabled: bool
 
-        :param name: The Name of the WAF custom rule.
+        :param name: The name of the WAF custom rule.
         :type name: str
 
         :param path_glob: The path glob for the WAF custom rule.

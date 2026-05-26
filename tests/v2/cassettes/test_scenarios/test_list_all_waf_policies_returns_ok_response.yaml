@@ -1,0 +1,30 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/asm/waf/policies
+  response:
+    body:
+      string: '{"data":[{"id":"recommended","type":"policy","attributes":{"description":"Monitor
+        security scanners and application attacks such as Server-Side-Request-Forgery
+        (SSRF), SQL Injection, Log4Shell, and Cross-Site-Scripting (XSS).","isDefault":true,"name":"Managed
+        - Monitoring-only","rules":[],"rulesets":[],"scope":[],"version":0},"meta":{}},{"id":"recommended-blocking","type":"policy","attributes":{"description":"Block
+        known attack tools without impacting legitimate security scans.\nBlock application
+        attacks such as Server-Side-Request-Forgery (SSRF), SQL Injection, Log4Shell,
+        and Cross-Site-Scripting (XSS). Rules are curated to reduce the risk of blocking
+        legitimate traffic. Previously known as \"Datadog Recommended\".","isDefault":false,"name":"Managed
+        - Block attack tools \u0026 application attacks","protectionPresets":["all-confidence-one"],"rules":[],"rulesets":[],"scope":[],"version":0},"meta":{}},{"id":"recommended-attack-tools","type":"policy","attributes":{"description":"Block
+        known attack tools without impacting legitimate security scans.\nMonitor application
+        attacks such as Server-Side-Request-Forgery (SSRF), SQL Injection, Log4Shell,
+        and Cross-Site-Scripting (XSS).","isDefault":false,"name":"Managed - Block
+        attack tools","protectionPresets":["attack-tools"],"rules":[],"rulesets":[],"scope":[],"version":0},"meta":{}}]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
