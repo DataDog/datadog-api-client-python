@@ -18,6 +18,46 @@ Feature: Events
     And an instance of "Events" API
 
   @generated @skip @team:DataDog/event-management
+  Scenario: Create an event email address returns "Bad Request" response
+    Given operation "CreateEventEmailAddress" enabled
+    And new "CreateEventEmailAddress" request
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "Email address for production alerts.", "format": "json", "notify_handles": ["@slack-my-channel"], "tags": ["env:production", "team:my-team"]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Create an event email address returns "Created" response
+    Given operation "CreateEventEmailAddress" enabled
+    And new "CreateEventEmailAddress" request
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "Email address for production alerts.", "format": "json", "notify_handles": ["@slack-my-channel"], "tags": ["env:production", "team:my-team"]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Create an event email address returns "Method Not Allowed" response
+    Given operation "CreateEventEmailAddress" enabled
+    And new "CreateEventEmailAddress" request
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "Email address for production alerts.", "format": "json", "notify_handles": ["@slack-my-channel"], "tags": ["env:production", "team:my-team"]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 405 Method Not Allowed
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Create an on-call event email address returns "Bad Request" response
+    Given operation "CreateOnCallEventEmailAddress" enabled
+    And new "CreateOnCallEventEmailAddress" request
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "On-call email address for my team.", "format": "json", "tags": ["env:production", "team:my-team"], "team_handle": "my-team"}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Create an on-call event email address returns "Created" response
+    Given operation "CreateOnCallEventEmailAddress" enabled
+    And new "CreateOnCallEventEmailAddress" request
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "On-call email address for my team.", "format": "json", "tags": ["env:production", "team:my-team"], "team_handle": "my-team"}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/event-management
   Scenario: Get a list of events returns "Bad Request" response
     Given new "ListEvents" request
     When the request is sent
@@ -51,6 +91,30 @@ Feature: Events
     And the response "data" has length 0
 
   @generated @skip @team:DataDog/event-management
+  Scenario: Get an event email address returns "Bad Request" response
+    Given operation "GetEventEmailAddress" enabled
+    And new "GetEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Get an event email address returns "Not Found" response
+    Given operation "GetEventEmailAddress" enabled
+    And new "GetEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Get an event email address returns "OK" response
+    Given operation "GetEventEmailAddress" enabled
+    And new "GetEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/event-management
   Scenario: Get an event returns "Bad Request" response
     Given new "GetEvent" request
     And request contains "event_id" parameter from "REPLACE.ME"
@@ -71,6 +135,29 @@ Feature: Events
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/event-management
+  Scenario: List event email addresses returns "OK" response
+    Given operation "ListEventEmailAddresses" enabled
+    And new "ListEventEmailAddresses" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: List on-call event email addresses returns "Bad Request" response
+    Given operation "ListOnCallEventEmailAddresses" enabled
+    And new "ListOnCallEventEmailAddresses" request
+    And request contains "filter[team_handle]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: List on-call event email addresses returns "OK" response
+    Given operation "ListOnCallEventEmailAddresses" enabled
+    And new "ListOnCallEventEmailAddresses" request
+    And request contains "filter[team_handle]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/event-management
   Scenario: Post an event returns "Bad request" response
     Given new "CreateEvent" request
@@ -86,6 +173,54 @@ Feature: Events
     Then the response status is 202 OK
     And the response "data.type" is equal to "event"
     And the response "data.attributes.attributes.evt" has field "uid"
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Revoke an event email address returns "Bad Request" response
+    Given operation "DeleteEventEmailAddress" enabled
+    And new "DeleteEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Revoke an event email address returns "No Content" response
+    Given operation "DeleteEventEmailAddress" enabled
+    And new "DeleteEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Revoke an event email address returns "Not Found" response
+    Given operation "DeleteEventEmailAddress" enabled
+    And new "DeleteEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Revoke an on-call event email address returns "Bad Request" response
+    Given operation "DeleteOnCallEventEmailAddress" enabled
+    And new "DeleteOnCallEventEmailAddress" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Revoke an on-call event email address returns "No Content" response
+    Given operation "DeleteOnCallEventEmailAddress" enabled
+    And new "DeleteOnCallEventEmailAddress" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Revoke an on-call event email address returns "Not Found" response
+    Given operation "DeleteOnCallEventEmailAddress" enabled
+    And new "DeleteOnCallEventEmailAddress" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @team:DataDog/event-management
   Scenario: Search events returns "Bad Request" response
@@ -109,3 +244,30 @@ Feature: Events
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Update an event email address returns "Bad Request" response
+    Given operation "UpdateEventEmailAddress" enabled
+    And new "UpdateEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "Updated description for the email address.", "notify_handles": ["@slack-my-channel"], "tags": ["env:production", "team:my-team"]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Update an event email address returns "Not Found" response
+    Given operation "UpdateEventEmailAddress" enabled
+    And new "UpdateEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "Updated description for the email address.", "notify_handles": ["@slack-my-channel"], "tags": ["env:production", "team:my-team"]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/event-management
+  Scenario: Update an event email address returns "OK" response
+    Given operation "UpdateEventEmailAddress" enabled
+    And new "UpdateEventEmailAddress" request
+    And request contains "email_uuid" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"alert_type": "info", "description": "Updated description for the email address.", "notify_handles": ["@slack-my-channel"], "tags": ["env:production", "team:my-team"]}, "type": "event_emails"}}
+    When the request is sent
+    Then the response status is 200 OK
