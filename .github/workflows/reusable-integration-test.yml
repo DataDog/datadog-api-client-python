@@ -89,20 +89,20 @@ jobs:
           scope: DataDog/datadog-api-spec
           policy: datadog-api-client-python.reusable-integration-test.post-status
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: DataDog/datadog-api-client-python
           ref: ${{ inputs.target-branch || github.ref }}
       - name: Post pending status check
         if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/') && (inputs.enable-status-reporting || github.event_name != 'workflow_call')
-        uses: DataDog/github-actions/post-status-check@v2
+        uses: DataDog/github-actions/post-status-check@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           repo: ${{ inputs.target-repo || 'datadog-api-spec' }}
           status: pending
           context: ${{ inputs.status-context || 'integration' }}
       - name: Set up Python 3.12
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
         with:
           python-version: "3.12"
           cache: "pip"
@@ -129,7 +129,7 @@ jobs:
           DD_TRACE_PROPAGATION_STYLE_INJECT: "datadog"
       - name: Post failure status check
         if: failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/') && (inputs.enable-status-reporting || github.event_name != 'workflow_call')
-        uses: DataDog/github-actions/post-status-check@v2
+        uses: DataDog/github-actions/post-status-check@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           repo: ${{ inputs.target-repo || 'datadog-api-spec' }}
@@ -137,7 +137,7 @@ jobs:
           context: ${{ inputs.status-context || 'integration' }}
       - name: Post success status check
         if: "!failure() && github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'datadog-api-spec/generated/') && (inputs.enable-status-reporting || github.event_name != 'workflow_call')"
-        uses: DataDog/github-actions/post-status-check@v2
+        uses: DataDog/github-actions/post-status-check@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           repo: ${{ inputs.target-repo || 'datadog-api-spec' }}
