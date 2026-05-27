@@ -1898,6 +1898,12 @@
       "type": "safe"
     }
   },
+  "ListCostTagMetadataMonths": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCostTagMetadataOrchestrators": {
     "tag": "Cloud Cost Management",
     "undo": {

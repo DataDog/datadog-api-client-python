@@ -7872,6 +7872,27 @@ datadog\_api\_client.v2.model.cost\_tag\_metadata\_daily\_filter module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cost\_tag\_metadata\_month module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_metadata_month
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_metadata\_month\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_metadata_month_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cost\_tag\_metadata\_months\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cost_tag_metadata_months_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cost\_tag\_type module
 ----------------------------------------------------
 
