@@ -36,6 +36,7 @@ class TeamsResponse(ModelNormal):
             "included": ([TeamIncluded],),
             "links": (TeamsResponseLinks,),
             "meta": (TeamsResponseMeta,),
+            "test": (bool,),
         }
 
     attribute_map = {
@@ -43,6 +44,7 @@ class TeamsResponse(ModelNormal):
         "included": "included",
         "links": "links",
         "meta": "meta",
+        "test": "test",
     }
 
     def __init__(
@@ -51,6 +53,7 @@ class TeamsResponse(ModelNormal):
         included: Union[List[Union[TeamIncluded, User, TeamLink, UserTeamPermission]], UnsetType] = unset,
         links: Union[TeamsResponseLinks, UnsetType] = unset,
         meta: Union[TeamsResponseMeta, UnsetType] = unset,
+        test: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -67,6 +70,9 @@ class TeamsResponse(ModelNormal):
 
         :param meta: Teams response metadata.
         :type meta: TeamsResponseMeta, optional
+
+        :param test: Indicates whether the response is from a test environment.
+        :type test: bool, optional
         """
         if data is not unset:
             kwargs["data"] = data
@@ -76,4 +82,6 @@ class TeamsResponse(ModelNormal):
             kwargs["links"] = links
         if meta is not unset:
             kwargs["meta"] = meta
+        if test is not unset:
+            kwargs["test"] = test
         super().__init__(kwargs)
