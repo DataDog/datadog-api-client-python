@@ -1434,6 +1434,9 @@ from datadog_api_client.v2.model.cost_tag_key_sources_response import CostTagKey
 from datadog_api_client.v2.model.cost_tag_key_type import CostTagKeyType
 from datadog_api_client.v2.model.cost_tag_keys_response import CostTagKeysResponse
 from datadog_api_client.v2.model.cost_tag_metadata_daily_filter import CostTagMetadataDailyFilter
+from datadog_api_client.v2.model.cost_tag_metadata_month import CostTagMetadataMonth
+from datadog_api_client.v2.model.cost_tag_metadata_month_type import CostTagMetadataMonthType
+from datadog_api_client.v2.model.cost_tag_metadata_months_response import CostTagMetadataMonthsResponse
 from datadog_api_client.v2.model.cost_tag_type import CostTagType
 from datadog_api_client.v2.model.cost_tags_response import CostTagsResponse
 from datadog_api_client.v2.model.coverage_summary_attributes import CoverageSummaryAttributes
@@ -9539,6 +9542,9 @@ __all__ = [
     "CostTagKeyType",
     "CostTagKeysResponse",
     "CostTagMetadataDailyFilter",
+    "CostTagMetadataMonth",
+    "CostTagMetadataMonthType",
+    "CostTagMetadataMonthsResponse",
     "CostTagType",
     "CostTagsResponse",
     "CoverageSummaryAttributes",

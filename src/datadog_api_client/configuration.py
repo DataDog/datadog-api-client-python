@@ -445,6 +445,7 @@ class Configuration:
                 "v2.list_cost_tag_key_sources": False,
                 "v2.list_cost_tag_metadata": False,
                 "v2.list_cost_tag_metadata_metrics": False,
+                "v2.list_cost_tag_metadata_months": False,
                 "v2.list_cost_tag_metadata_orchestrators": False,
                 "v2.search_cost_recommendations": False,
                 "v2.create_dashboard_secure_embed": False,
