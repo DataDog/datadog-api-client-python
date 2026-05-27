@@ -473,13 +473,6 @@ datadog\_api\_client.v2.api.network\_device\_monitoring\_api module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.o\_auth2\_client\_public\_api module
-----------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.o_auth2_client_public_api
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.api.observability\_pipelines\_api module
 ----------------------------------------------------------------
 

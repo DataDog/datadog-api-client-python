@@ -1434,6 +1434,9 @@ from datadog_api_client.v2.model.cost_tag_key_sources_response import CostTagKey
 from datadog_api_client.v2.model.cost_tag_key_type import CostTagKeyType
 from datadog_api_client.v2.model.cost_tag_keys_response import CostTagKeysResponse
 from datadog_api_client.v2.model.cost_tag_metadata_daily_filter import CostTagMetadataDailyFilter
+from datadog_api_client.v2.model.cost_tag_metadata_month import CostTagMetadataMonth
+from datadog_api_client.v2.model.cost_tag_metadata_month_type import CostTagMetadataMonthType
+from datadog_api_client.v2.model.cost_tag_metadata_months_response import CostTagMetadataMonthsResponse
 from datadog_api_client.v2.model.cost_tag_type import CostTagType
 from datadog_api_client.v2.model.cost_tags_response import CostTagsResponse
 from datadog_api_client.v2.model.coverage_summary_attributes import CoverageSummaryAttributes
@@ -4396,19 +4399,6 @@ from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRe
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
-from datadog_api_client.v2.model.o_auth_client_registration_error import OAuthClientRegistrationError
-from datadog_api_client.v2.model.o_auth_client_registration_grant_type import OAuthClientRegistrationGrantType
-from datadog_api_client.v2.model.o_auth_client_registration_request import OAuthClientRegistrationRequest
-from datadog_api_client.v2.model.o_auth_client_registration_response import OAuthClientRegistrationResponse
-from datadog_api_client.v2.model.o_auth_client_registration_response_type import OAuthClientRegistrationResponseType
-from datadog_api_client.v2.model.o_auth_oidc_scope import OAuthOidcScope
-from datadog_api_client.v2.model.o_auth_scopes_restriction import OAuthScopesRestriction
-from datadog_api_client.v2.model.o_auth_scopes_restriction_response import OAuthScopesRestrictionResponse
-from datadog_api_client.v2.model.o_auth_scopes_restriction_response_attributes import (
-    OAuthScopesRestrictionResponseAttributes,
-)
-from datadog_api_client.v2.model.o_auth_scopes_restriction_response_data import OAuthScopesRestrictionResponseData
-from datadog_api_client.v2.model.o_auth_scopes_restriction_type import OAuthScopesRestrictionType
 from datadog_api_client.v2.model.oci_config import OCIConfig
 from datadog_api_client.v2.model.oci_config_attributes import OCIConfigAttributes
 from datadog_api_client.v2.model.oci_config_type import OCIConfigType
@@ -5208,6 +5198,15 @@ from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_t
 )
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_type import (
     ObservabilityPipelineSplunkHecDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination import (
+    ObservabilityPipelineSplunkHecMetricsDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination_compression import (
+    ObservabilityPipelineSplunkHecMetricsDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination_type import (
+    ObservabilityPipelineSplunkHecMetricsDestinationType,
 )
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import ObservabilityPipelineSplunkHecSource
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type import (
@@ -8235,12 +8234,6 @@ from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_attr
 from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_data import (
     UpsertCloudInventorySyncConfigRequestData,
 )
-from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data import UpsertOAuthScopesRestrictionData
-from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data_attributes import (
-    UpsertOAuthScopesRestrictionDataAttributes,
-)
-from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_request import UpsertOAuthScopesRestrictionRequest
-from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_type import UpsertOAuthScopesRestrictionType
 from datadog_api_client.v2.model.urgency import Urgency
 from datadog_api_client.v2.model.url_param import UrlParam
 from datadog_api_client.v2.model.url_param_update import UrlParamUpdate
@@ -9558,6 +9551,9 @@ __all__ = [
     "CostTagKeyType",
     "CostTagKeysResponse",
     "CostTagMetadataDailyFilter",
+    "CostTagMetadataMonth",
+    "CostTagMetadataMonthType",
+    "CostTagMetadataMonthsResponse",
     "CostTagType",
     "CostTagsResponse",
     "CoverageSummaryAttributes",
@@ -11780,17 +11776,6 @@ __all__ = [
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
     "NullableUserRelationshipData",
-    "OAuthClientRegistrationError",
-    "OAuthClientRegistrationGrantType",
-    "OAuthClientRegistrationRequest",
-    "OAuthClientRegistrationResponse",
-    "OAuthClientRegistrationResponseType",
-    "OAuthOidcScope",
-    "OAuthScopesRestriction",
-    "OAuthScopesRestrictionResponse",
-    "OAuthScopesRestrictionResponseAttributes",
-    "OAuthScopesRestrictionResponseData",
-    "OAuthScopesRestrictionType",
     "OCIConfig",
     "OCIConfigAttributes",
     "OCIConfigType",
@@ -12085,6 +12070,9 @@ __all__ = [
     "ObservabilityPipelineSplunkHecDestinationEncoding",
     "ObservabilityPipelineSplunkHecDestinationTokenStrategy",
     "ObservabilityPipelineSplunkHecDestinationType",
+    "ObservabilityPipelineSplunkHecMetricsDestination",
+    "ObservabilityPipelineSplunkHecMetricsDestinationCompression",
+    "ObservabilityPipelineSplunkHecMetricsDestinationType",
     "ObservabilityPipelineSplunkHecSource",
     "ObservabilityPipelineSplunkHecSourceType",
     "ObservabilityPipelineSplunkHecSourceValidToken",
@@ -14197,10 +14185,6 @@ __all__ = [
     "UpsertCloudInventorySyncConfigRequest",
     "UpsertCloudInventorySyncConfigRequestAttributes",
     "UpsertCloudInventorySyncConfigRequestData",
-    "UpsertOAuthScopesRestrictionData",
-    "UpsertOAuthScopesRestrictionDataAttributes",
-    "UpsertOAuthScopesRestrictionRequest",
-    "UpsertOAuthScopesRestrictionType",
     "Urgency",
     "UrlParam",
     "UrlParamUpdate",
