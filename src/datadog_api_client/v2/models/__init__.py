@@ -7882,6 +7882,8 @@ from datadog_api_client.v2.model.tenancy_products_data_attributes_products_items
 )
 from datadog_api_client.v2.model.tenancy_products_data_type import TenancyProductsDataType
 from datadog_api_client.v2.model.tenancy_products_list import TenancyProductsList
+from datadog_api_client.v2.model.test_example import TestExample
+from datadog_api_client.v2.model.test_examples_response import TestExamplesResponse
 from datadog_api_client.v2.model.test_optimization_delete_service_settings_request import (
     TestOptimizationDeleteServiceSettingsRequest,
 )
@@ -13963,6 +13965,8 @@ __all__ = [
     "TenancyProductsDataAttributesProductsItems",
     "TenancyProductsDataType",
     "TenancyProductsList",
+    "TestExample",
+    "TestExamplesResponse",
     "TestOptimizationDeleteServiceSettingsRequest",
     "TestOptimizationDeleteServiceSettingsRequestAttributes",
     "TestOptimizationDeleteServiceSettingsRequestData",
