@@ -9,14 +9,14 @@ Feature: Service Accounts
     And a valid "appKeyAuth" key in the system
     And an instance of "ServiceAccounts" API
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Create a service account returns "Bad Request" response
     Given new "CreateServiceAccount" request
     And body with value {"data": {"attributes": {"email": "jane.doe@example.com", "service_account": true}, "relationships": {"roles": {"data": [{"id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "type": "roles"}]}}, "type": "users"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management @team:DataDog/org-management
+  @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Create a service account returns "OK" response
     Given there is a valid "role" in the system
     And new "CreateServiceAccount" request
@@ -29,7 +29,7 @@ Feature: Service Accounts
     And the response "data.attributes.service_account" is equal to true
     And the response "data.relationships.roles.data[0].id" is equal to "{{ role.data.id }}"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Create an access token for a service account returns "Bad Request" response
     Given new "CreateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -37,7 +37,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Create an access token for a service account returns "Created" response
     Given there is a valid "service_account_user" in the system
     And new "CreateServiceAccountAccessToken" request
@@ -49,7 +49,7 @@ Feature: Service Accounts
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.relationships.owned_by.data.id" has the same value as "service_account_user.data.id"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Create an access token for a service account returns "Not Found" response
     Given new "CreateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -57,7 +57,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Create an application key for this service account returns "Bad Request" response
     Given new "CreateServiceAccountApplicationKey" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -65,7 +65,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management @team:DataDog/org-management
+  @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Create an application key for this service account returns "Created" response
     Given there is a valid "service_account_user" in the system
     And new "CreateServiceAccountApplicationKey" request
@@ -76,7 +76,7 @@ Feature: Service Accounts
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.relationships.owned_by.data.id" has the same value as "service_account_user.data.id"
 
-  @team:DataDog/credentials-management @team:DataDog/org-management
+  @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Create an application key with scopes for this service account returns "Created" response
     Given there is a valid "service_account_user" in the system
     And new "CreateServiceAccountApplicationKey" request
@@ -88,7 +88,7 @@ Feature: Service Accounts
     And the response "data.attributes.scopes" is equal to ["dashboards_read", "dashboards_write", "dashboards_public_share"]
     And the response "data.relationships.owned_by.data.id" has the same value as "service_account_user.data.id"
 
-  @team:DataDog/credentials-management @team:DataDog/org-management
+  @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Delete an application key for this service account returns "No Content" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -98,7 +98,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Delete an application key for this service account returns "Not Found" response
     Given new "DeleteServiceAccountApplicationKey" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -106,7 +106,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Edit an application key for this service account returns "Bad Request" response
     Given new "UpdateServiceAccountApplicationKey" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -115,7 +115,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Edit an application key for this service account returns "Not Found" response
     Given new "UpdateServiceAccountApplicationKey" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -124,7 +124,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management @team:DataDog/org-management
+  @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Edit an application key for this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -138,7 +138,7 @@ Feature: Service Accounts
     And the response "data.type" is equal to "application_keys"
     And the response "data.id" is equal to "{{ service_account_application_key.data.id }}"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get an access token for a service account returns "Not Found" response
     Given new "GetServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -146,7 +146,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get an access token for a service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_access_token" for "service_account_user"
@@ -159,7 +159,7 @@ Feature: Service Accounts
     And the response "data.type" is equal to "personal_access_tokens"
     And the response "data.id" is equal to "{{ service_account_access_token.data.id }}"
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Get one application key for this service account returns "Not Found" response
     Given new "GetServiceAccountApplicationKey" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -167,7 +167,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management @team:DataDog/org-management
+  @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: Get one application key for this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_application_key" for "service_account_user"
@@ -180,21 +180,21 @@ Feature: Service Accounts
     And the response "data.type" is equal to "application_keys"
     And the response "data.id" is equal to "{{ service_account_application_key.data.id }}"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: List access tokens for a service account returns "Bad Request" response
     Given new "ListServiceAccountAccessTokens" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: List access tokens for a service account returns "Not Found" response
     Given new "ListServiceAccountAccessTokens" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: List access tokens for a service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And new "ListServiceAccountAccessTokens" request
@@ -203,21 +203,21 @@ Feature: Service Accounts
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: List application keys for this service account returns "Bad Request" response
     Given new "ListServiceAccountApplicationKeys" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
+  @generated @skip @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: List application keys for this service account returns "Not Found" response
     Given new "ListServiceAccountApplicationKeys" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management @team:DataDog/org-management
+  @team:DataDog/credential-management @team:DataDog/org-management
   Scenario: List application keys for this service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And new "ListServiceAccountApplicationKeys" request
@@ -226,7 +226,7 @@ Feature: Service Accounts
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Revoke an access token for a service account returns "No Content" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_access_token" for "service_account_user"
@@ -236,7 +236,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Revoke an access token for a service account returns "Not Found" response
     Given new "RevokeServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -244,7 +244,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Update an access token for a service account returns "Bad Request" response
     Given new "UpdateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -253,7 +253,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Update an access token for a service account returns "Not Found" response
     Given new "UpdateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
@@ -262,7 +262,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Update an access token for a service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_access_token" for "service_account_user"
