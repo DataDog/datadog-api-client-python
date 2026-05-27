@@ -34,12 +34,12 @@ jobs:
         exclude: ${{ fromJSON(inputs.matrix-exclude) }}
     runs-on: ${{ matrix.platform }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: DataDog/datadog-api-client-python
           ref: ${{ inputs.target-branch || github.ref }}
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
         with:
           python-version: ${{ matrix.python-version }}
           cache: "pip"

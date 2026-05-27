@@ -23,12 +23,12 @@ jobs:
   examples:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           repository: DataDog/datadog-api-client-python
           ref: ${{ inputs.target-branch || github.ref }}
       - name: Install Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@42375524e23c412d93fb67b49958b491fce71c38 # v5.4.0
         with:
           python-version: ${{ inputs.python-version }}
           cache: "pip"
