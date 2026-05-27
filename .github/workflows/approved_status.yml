@@ -32,7 +32,7 @@ jobs:
           scope: DataDog/datadog-api-spec
           policy: datadog-api-client-python.approved_status.post-review-status
       - name: Post PR review status check
-        uses: DataDog/github-actions/post-review-status@v2
+        uses: DataDog/github-actions/post-review-status@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
           repo: datadog-api-spec
