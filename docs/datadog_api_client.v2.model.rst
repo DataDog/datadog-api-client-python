@@ -29068,6 +29068,174 @@ datadog\_api\_client.v2.model.reorder\_ruleset\_resource\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.replay\_analysis\_affected\_session module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_affected_session
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_data\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_data\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_meta module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_session\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_session_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_session\_data\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_session_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_session\_data\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_session_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issue\_sessions\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issue_sessions_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_issues\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_issues_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_llm\_details module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_llm_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_page\_meta module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_page_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_representative\_session module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_representative_session
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_screenshot module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_screenshot
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_analysis\_signal module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_analysis_signal
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_chapter module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_chapter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_data\_attributes\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_data\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_data\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_request\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.replay\_summary\_response\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.replay_summary_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_request module
 --------------------------------------------------------------------------
 
