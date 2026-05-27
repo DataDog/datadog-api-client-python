@@ -65,7 +65,6 @@ from datadog_api_client.v2.model.cost_tag_key_metadata_response import CostTagKe
 from datadog_api_client.v2.model.cost_tag_metadata_daily_filter import CostTagMetadataDailyFilter
 from datadog_api_client.v2.model.cost_currency_response import CostCurrencyResponse
 from datadog_api_client.v2.model.cost_metrics_response import CostMetricsResponse
-from datadog_api_client.v2.model.cost_tag_metadata_months_response import CostTagMetadataMonthsResponse
 from datadog_api_client.v2.model.cost_orchestrators_response import CostOrchestratorsResponse
 from datadog_api_client.v2.model.cost_tag_key_sources_response import CostTagKeySourcesResponse
 from datadog_api_client.v2.model.cost_tags_response import CostTagsResponse
@@ -1272,29 +1271,6 @@ class CloudCostManagementApi:
                     "location": "query",
                 },
                 "filter_provider": {
-                    "openapi_types": (str,),
-                    "attribute": "filter[provider]",
-                    "location": "query",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._list_cost_tag_metadata_months_endpoint = _Endpoint(
-            settings={
-                "response_type": (CostTagMetadataMonthsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cost/tag_metadata/months",
-                "operation_id": "list_cost_tag_metadata_months",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "filter_provider": {
-                    "required": True,
                     "openapi_types": (str,),
                     "attribute": "filter[provider]",
                     "location": "query",
@@ -2795,27 +2771,6 @@ class CloudCostManagementApi:
             kwargs["filter_provider"] = filter_provider
 
         return self._list_cost_tag_metadata_metrics_endpoint.call_with_http_info(**kwargs)
-
-    def list_cost_tag_metadata_months(
-        self,
-        filter_provider: str,
-    ) -> CostTagMetadataMonthsResponse:
-        """List Cloud Cost Management tag metadata months.
-
-        List months that have Cloud Cost Management tag metadata for a given provider,
-        ordered most-recent first. The response is capped at 36 months.
-
-        :param filter_provider: Provider to scope the query to. Use the value of the ``providername`` tag in CCM
-            (for example, ``aws`` , ``azure`` , ``gcp`` , ``Oracle`` , ``Confluent Cloud`` , ``Snowflake`` ).
-            For costs uploaded through the Custom Costs API, use ``custom``.
-            Values are case-sensitive.
-        :type filter_provider: str
-        :rtype: CostTagMetadataMonthsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["filter_provider"] = filter_provider
-
-        return self._list_cost_tag_metadata_months_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_tag_metadata_orchestrators(
         self,
