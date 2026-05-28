@@ -2159,6 +2159,13 @@ from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFind
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
+from datadog_api_client.v2.model.device_base_array import DeviceBaseArray
+from datadog_api_client.v2.model.device_base_data import DeviceBaseData
+from datadog_api_client.v2.model.device_base_data_attributes import DeviceBaseDataAttributes
+from datadog_api_client.v2.model.device_details import DeviceDetails
+from datadog_api_client.v2.model.device_details_data import DeviceDetailsData
+from datadog_api_client.v2.model.device_details_data_attributes import DeviceDetailsDataAttributes
+from datadog_api_client.v2.model.device_details_data_type import DeviceDetailsDataType
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.dns_metric_key import DnsMetricKey
 from datadog_api_client.v2.model.domain_allowlist import DomainAllowlist
@@ -2897,6 +2904,11 @@ from datadog_api_client.v2.model.google_chat_update_organization_handle_request_
 )
 from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
 from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
+from datadog_api_client.v2.model.graph_item_array import GraphItemArray
+from datadog_api_client.v2.model.graph_item_data import GraphItemData
+from datadog_api_client.v2.model.graph_item_data_attributes import GraphItemDataAttributes
+from datadog_api_client.v2.model.graph_item_data_attributes_counts_items import GraphItemDataAttributesCountsItems
+from datadog_api_client.v2.model.graph_item_data_type import GraphItemDataType
 from datadog_api_client.v2.model.grey_noise_api_key import GreyNoiseAPIKey
 from datadog_api_client.v2.model.grey_noise_api_key_type import GreyNoiseAPIKeyType
 from datadog_api_client.v2.model.grey_noise_api_key_update import GreyNoiseAPIKeyUpdate
@@ -3286,6 +3298,10 @@ from datadog_api_client.v2.model.issue_case_reference import IssueCaseReference
 from datadog_api_client.v2.model.issue_case_relationship import IssueCaseRelationship
 from datadog_api_client.v2.model.issue_case_relationships import IssueCaseRelationships
 from datadog_api_client.v2.model.issue_case_resource_type import IssueCaseResourceType
+from datadog_api_client.v2.model.issue_definition_array import IssueDefinitionArray
+from datadog_api_client.v2.model.issue_definition_data import IssueDefinitionData
+from datadog_api_client.v2.model.issue_definition_data_attributes import IssueDefinitionDataAttributes
+from datadog_api_client.v2.model.issue_definition_data_type import IssueDefinitionDataType
 from datadog_api_client.v2.model.issue_included import IssueIncluded
 from datadog_api_client.v2.model.issue_language import IssueLanguage
 from datadog_api_client.v2.model.issue_platform import IssuePlatform
@@ -4399,6 +4415,19 @@ from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRe
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
+from datadog_api_client.v2.model.o_auth_client_registration_error import OAuthClientRegistrationError
+from datadog_api_client.v2.model.o_auth_client_registration_grant_type import OAuthClientRegistrationGrantType
+from datadog_api_client.v2.model.o_auth_client_registration_request import OAuthClientRegistrationRequest
+from datadog_api_client.v2.model.o_auth_client_registration_response import OAuthClientRegistrationResponse
+from datadog_api_client.v2.model.o_auth_client_registration_response_type import OAuthClientRegistrationResponseType
+from datadog_api_client.v2.model.o_auth_oidc_scope import OAuthOidcScope
+from datadog_api_client.v2.model.o_auth_scopes_restriction import OAuthScopesRestriction
+from datadog_api_client.v2.model.o_auth_scopes_restriction_response import OAuthScopesRestrictionResponse
+from datadog_api_client.v2.model.o_auth_scopes_restriction_response_attributes import (
+    OAuthScopesRestrictionResponseAttributes,
+)
+from datadog_api_client.v2.model.o_auth_scopes_restriction_response_data import OAuthScopesRestrictionResponseData
+from datadog_api_client.v2.model.o_auth_scopes_restriction_type import OAuthScopesRestrictionType
 from datadog_api_client.v2.model.oci_config import OCIConfig
 from datadog_api_client.v2.model.oci_config_attributes import OCIConfigAttributes
 from datadog_api_client.v2.model.oci_config_type import OCIConfigType
@@ -5474,6 +5503,10 @@ from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponse
 from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
+from datadog_api_client.v2.model.overview_item_array import OverviewItemArray
+from datadog_api_client.v2.model.overview_item_data import OverviewItemData
+from datadog_api_client.v2.model.overview_item_data_attributes import OverviewItemDataAttributes
+from datadog_api_client.v2.model.overview_item_data_type import OverviewItemDataType
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
 from datadog_api_client.v2.model.page_urgency import PageUrgency
 from datadog_api_client.v2.model.paginated_response_meta import PaginatedResponseMeta
@@ -8234,6 +8267,12 @@ from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_attr
 from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_data import (
     UpsertCloudInventorySyncConfigRequestData,
 )
+from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data import UpsertOAuthScopesRestrictionData
+from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data_attributes import (
+    UpsertOAuthScopesRestrictionDataAttributes,
+)
+from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_request import UpsertOAuthScopesRestrictionRequest
+from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_type import UpsertOAuthScopesRestrictionType
 from datadog_api_client.v2.model.urgency import Urgency
 from datadog_api_client.v2.model.url_param import UrlParam
 from datadog_api_client.v2.model.url_param_update import UrlParamUpdate
@@ -10038,6 +10077,13 @@ __all__ = [
     "DetailedFindingType",
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
+    "DeviceBaseArray",
+    "DeviceBaseData",
+    "DeviceBaseDataAttributes",
+    "DeviceDetails",
+    "DeviceDetailsData",
+    "DeviceDetailsDataAttributes",
+    "DeviceDetailsDataType",
     "DevicesListData",
     "DnsMetricKey",
     "DomainAllowlist",
@@ -10622,6 +10668,11 @@ __all__ = [
     "GoogleChatUpdateOrganizationHandleRequestData",
     "GoogleMeetConfigurationReference",
     "GoogleMeetConfigurationReferenceData",
+    "GraphItemArray",
+    "GraphItemData",
+    "GraphItemDataAttributes",
+    "GraphItemDataAttributesCountsItems",
+    "GraphItemDataType",
     "GreyNoiseAPIKey",
     "GreyNoiseAPIKeyType",
     "GreyNoiseAPIKeyUpdate",
@@ -10937,6 +10988,10 @@ __all__ = [
     "IssueCaseRelationship",
     "IssueCaseRelationships",
     "IssueCaseResourceType",
+    "IssueDefinitionArray",
+    "IssueDefinitionData",
+    "IssueDefinitionDataAttributes",
+    "IssueDefinitionDataType",
     "IssueIncluded",
     "IssueLanguage",
     "IssuePlatform",
@@ -11776,6 +11831,17 @@ __all__ = [
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
     "NullableUserRelationshipData",
+    "OAuthClientRegistrationError",
+    "OAuthClientRegistrationGrantType",
+    "OAuthClientRegistrationRequest",
+    "OAuthClientRegistrationResponse",
+    "OAuthClientRegistrationResponseType",
+    "OAuthOidcScope",
+    "OAuthScopesRestriction",
+    "OAuthScopesRestrictionResponse",
+    "OAuthScopesRestrictionResponseAttributes",
+    "OAuthScopesRestrictionResponseData",
+    "OAuthScopesRestrictionType",
     "OCIConfig",
     "OCIConfigAttributes",
     "OCIConfigType",
@@ -12283,6 +12349,10 @@ __all__ = [
     "OutputSchema",
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
+    "OverviewItemArray",
+    "OverviewItemData",
+    "OverviewItemDataAttributes",
+    "OverviewItemDataType",
     "OverwriteAllocationsRequest",
     "PageUrgency",
     "PaginatedResponseMeta",
@@ -14185,6 +14255,10 @@ __all__ = [
     "UpsertCloudInventorySyncConfigRequest",
     "UpsertCloudInventorySyncConfigRequestAttributes",
     "UpsertCloudInventorySyncConfigRequestData",
+    "UpsertOAuthScopesRestrictionData",
+    "UpsertOAuthScopesRestrictionDataAttributes",
+    "UpsertOAuthScopesRestrictionRequest",
+    "UpsertOAuthScopesRestrictionType",
     "Urgency",
     "UrlParam",
     "UrlParamUpdate",

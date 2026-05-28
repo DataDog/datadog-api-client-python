@@ -38,6 +38,7 @@ from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
+from datadog_api_client.v2.api.end_user_device_monitoring_api import EndUserDeviceMonitoringApi
 from datadog_api_client.v2.api.entity_integration_configs_api import EntityIntegrationConfigsApi
 from datadog_api_client.v2.api.entity_risk_scores_api import EntityRiskScoresApi
 from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
@@ -65,6 +66,7 @@ from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftT
 from datadog_api_client.v2.api.model_lab_api_api import ModelLabAPIApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
+from datadog_api_client.v2.api.o_auth2_client_public_api import OAuth2ClientPublicApi
 from datadog_api_client.v2.api.oci_integration_api import OCIIntegrationApi
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
@@ -154,6 +156,7 @@ __all__ = [
     "DeploymentGatesApi",
     "DomainAllowlistApi",
     "DowntimesApi",
+    "EndUserDeviceMonitoringApi",
     "EntityIntegrationConfigsApi",
     "EntityRiskScoresApi",
     "ErrorTrackingApi",
@@ -181,6 +184,7 @@ __all__ = [
     "ModelLabAPIApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
+    "OAuth2ClientPublicApi",
     "OCIIntegrationApi",
     "ObservabilityPipelinesApi",
     "OktaIntegrationApi",
