@@ -40,6 +40,7 @@ class MaintenanceDataAttributes(ModelNormal):
             "completed_description": (str,),
             "components_affected": ([MaintenanceDataAttributesComponentsAffectedItems],),
             "in_progress_description": (str,),
+            "is_backfilled": (bool,),
             "modified_at": (datetime,),
             "published_date": (datetime,),
             "scheduled_description": (str,),
@@ -54,6 +55,7 @@ class MaintenanceDataAttributes(ModelNormal):
         "completed_description": "completed_description",
         "components_affected": "components_affected",
         "in_progress_description": "in_progress_description",
+        "is_backfilled": "is_backfilled",
         "modified_at": "modified_at",
         "published_date": "published_date",
         "scheduled_description": "scheduled_description",
@@ -69,6 +71,7 @@ class MaintenanceDataAttributes(ModelNormal):
         completed_description: Union[str, UnsetType] = unset,
         components_affected: Union[List[MaintenanceDataAttributesComponentsAffectedItems], UnsetType] = unset,
         in_progress_description: Union[str, UnsetType] = unset,
+        is_backfilled: Union[bool, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         published_date: Union[datetime, UnsetType] = unset,
         scheduled_description: Union[str, UnsetType] = unset,
@@ -92,6 +95,9 @@ class MaintenanceDataAttributes(ModelNormal):
 
         :param in_progress_description: The description shown while the maintenance is in progress.
         :type in_progress_description: str, optional
+
+        :param is_backfilled: Whether the maintenance was backfilled.
+        :type is_backfilled: bool, optional
 
         :param modified_at: Timestamp of when the maintenance was last modified.
         :type modified_at: datetime, optional
@@ -122,6 +128,8 @@ class MaintenanceDataAttributes(ModelNormal):
             kwargs["components_affected"] = components_affected
         if in_progress_description is not unset:
             kwargs["in_progress_description"] = in_progress_description
+        if is_backfilled is not unset:
+            kwargs["is_backfilled"] = is_backfilled
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if published_date is not unset:
