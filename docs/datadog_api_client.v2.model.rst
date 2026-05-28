@@ -33163,6 +33163,34 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_case\_create module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_convert\_bulk\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_convert\_bulk\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_convert\_bulk\_data\_type module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_convert\_bulk\_payload module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_payload
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_convert\_payload module
 ---------------------------------------------------------------------------------
 

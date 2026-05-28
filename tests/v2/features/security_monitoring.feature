@@ -116,6 +116,27 @@ Feature: Security Monitoring
     And the response "data.attributes.insights" has item with field "resource_id" with value "MmUzMzZkODQ2YTI3NDU0OTk4NDk3NzhkOTY5YjU2Zjh-YWJjZGI1ODI4OTYzNWM3ZmUwZTBlOWRkYTRiMGUyOGQ="
 
   @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Bulk convert rules to Terraform returns "Bad Request" response
+    Given new "BulkConvertExistingSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["def-000-u7q", "def-000-7dd"]}, "id": "convert_bulk", "type": "security_monitoring_rules_convert_bulk"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Bulk convert rules to Terraform returns "Not Found" response
+    Given new "BulkConvertExistingSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["def-000-u7q", "def-000-7dd"]}, "id": "convert_bulk", "type": "security_monitoring_rules_convert_bulk"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Bulk convert rules to Terraform returns "OK" response
+    Given new "BulkConvertExistingSecurityMonitoringRules" request
+    And body with value {"data": {"attributes": {"ruleIds": ["def-000-u7q", "def-000-7dd"]}, "id": "convert_bulk", "type": "security_monitoring_rules_convert_bulk"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Bulk delete security monitoring rules returns "Bad Request" response
     Given new "BulkDeleteSecurityMonitoringRules" request
     And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "type": "bulk_delete_rules"}}

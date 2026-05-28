@@ -6688,6 +6688,12 @@
       "type": "idempotent"
     }
   },
+  "BulkConvertExistingSecurityMonitoringRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "TestSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {

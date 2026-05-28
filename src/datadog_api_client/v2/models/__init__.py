@@ -6702,6 +6702,16 @@ from datadog_api_client.v2.model.security_monitoring_rule_case_action_options_fl
 )
 from datadog_api_client.v2.model.security_monitoring_rule_case_action_type import SecurityMonitoringRuleCaseActionType
 from datadog_api_client.v2.model.security_monitoring_rule_case_create import SecurityMonitoringRuleCaseCreate
+from datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_attributes import (
+    SecurityMonitoringRuleConvertBulkAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_data import SecurityMonitoringRuleConvertBulkData
+from datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_data_type import (
+    SecurityMonitoringRuleConvertBulkDataType,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_payload import (
+    SecurityMonitoringRuleConvertBulkPayload,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
 from datadog_api_client.v2.model.security_monitoring_rule_convert_response import SecurityMonitoringRuleConvertResponse
 from datadog_api_client.v2.model.security_monitoring_rule_create_payload import SecurityMonitoringRuleCreatePayload
@@ -13232,6 +13242,10 @@ __all__ = [
     "SecurityMonitoringRuleCaseActionOptionsFlaggedIPType",
     "SecurityMonitoringRuleCaseActionType",
     "SecurityMonitoringRuleCaseCreate",
+    "SecurityMonitoringRuleConvertBulkAttributes",
+    "SecurityMonitoringRuleConvertBulkData",
+    "SecurityMonitoringRuleConvertBulkDataType",
+    "SecurityMonitoringRuleConvertBulkPayload",
     "SecurityMonitoringRuleConvertPayload",
     "SecurityMonitoringRuleConvertResponse",
     "SecurityMonitoringRuleCreatePayload",
