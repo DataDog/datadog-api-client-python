@@ -25470,27 +25470,6 @@ datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_destination\
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_metrics\_destination module
------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_metrics\_destination\_compression module
-------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination_compression
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_metrics\_destination\_type module
------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination_type
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_source module
 ---------------------------------------------------------------------------------
 
