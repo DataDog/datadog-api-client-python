@@ -148,6 +148,7 @@ class DistributionWidgetRequest(ModelNormal):
             FormulaAndFunctionMetricQueryDefinition,
             FormulaAndFunctionEventQueryDefinition,
             FormulaAndFunctionApmResourceStatsQueryDefinition,
+            FormulaAndFunctionApmMetricsQueryDefinition,
             UnsetType,
         ] = unset,
         request_type: Union[WidgetHistogramRequestType, UnsetType] = unset,
