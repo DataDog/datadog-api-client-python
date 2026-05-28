@@ -30,9 +30,9 @@ class PersonalAccessTokenCreateRequest(ModelNormal):
 
     def __init__(self_, data: PersonalAccessTokenCreateData, **kwargs):
         """
-        Request used to create a personal access token.
+        Request used to create an access token.
 
-        :param data: Object used to create a personal access token.
+        :param data: Object used to create an access token.
         :type data: PersonalAccessTokenCreateData
         """
         super().__init__(kwargs)

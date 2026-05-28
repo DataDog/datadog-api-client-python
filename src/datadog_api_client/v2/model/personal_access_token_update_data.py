@@ -40,12 +40,12 @@ class PersonalAccessTokenUpdateData(ModelNormal):
         self_, attributes: PersonalAccessTokenUpdateAttributes, id: str, type: PersonalAccessTokensType, **kwargs
     ):
         """
-        Object used to update a personal access token.
+        Object used to update an access token.
 
-        :param attributes: Attributes used to update a personal access token.
+        :param attributes: Attributes used to update an access token.
         :type attributes: PersonalAccessTokenUpdateAttributes
 
-        :param id: ID of the personal access token.
+        :param id: ID of the access token.
         :type id: str
 
         :param type: Personal access tokens resource type.

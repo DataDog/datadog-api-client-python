@@ -5196,7 +5196,7 @@
       "operationId": "RevokePersonalAccessToken",
       "parameters": [
         {
-          "name": "pat_id",
+          "name": "token_id",
           "source": "data.id"
         }
       ],
@@ -6975,7 +6975,7 @@
           "source": "data.relationships.owned_by.data.id"
         },
         {
-          "name": "pat_id",
+          "name": "token_id",
           "source": "data.id"
         }
       ],

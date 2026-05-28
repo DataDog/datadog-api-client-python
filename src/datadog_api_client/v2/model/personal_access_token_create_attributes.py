@@ -29,15 +29,15 @@ class PersonalAccessTokenCreateAttributes(ModelNormal):
 
     def __init__(self_, expires_at: datetime, name: str, scopes: List[str], **kwargs):
         """
-        Attributes used to create a personal access token.
+        Attributes used to create an access token.
 
-        :param expires_at: Expiration date of the personal access token. Must be at least 24 hours in the future.
+        :param expires_at: Expiration date of the access token. Must be at least 24 hours in the future.
         :type expires_at: datetime
 
-        :param name: Name of the personal access token.
+        :param name: Name of the access token.
         :type name: str
 
-        :param scopes: Array of scopes to grant the personal access token.
+        :param scopes: Array of scopes to grant the access token.
         :type scopes: [str]
         """
         super().__init__(kwargs)

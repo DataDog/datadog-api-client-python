@@ -32,9 +32,9 @@ class PersonalAccessTokenCreateResponse(ModelNormal):
 
     def __init__(self_, data: Union[FullPersonalAccessToken, UnsetType] = unset, **kwargs):
         """
-        Response for creating a personal access token. Includes the token key.
+        Response for creating an access token. Includes the token key.
 
-        :param data: Datadog personal access token, including the token key.
+        :param data: Datadog access token, including the token key.
         :type data: FullPersonalAccessToken, optional
         """
         if data is not unset:

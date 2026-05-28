@@ -28,12 +28,12 @@ class PersonalAccessTokenUpdateAttributes(ModelNormal):
 
     def __init__(self_, name: Union[str, UnsetType] = unset, scopes: Union[List[str], UnsetType] = unset, **kwargs):
         """
-        Attributes used to update a personal access token.
+        Attributes used to update an access token.
 
-        :param name: Name of the personal access token.
+        :param name: Name of the access token.
         :type name: str, optional
 
-        :param scopes: Array of scopes to grant the personal access token.
+        :param scopes: Array of scopes to grant the access token.
         :type scopes: [str], optional
         """
         if name is not unset:

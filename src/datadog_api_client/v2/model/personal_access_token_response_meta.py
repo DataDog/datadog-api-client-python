@@ -34,7 +34,7 @@ class PersonalAccessTokenResponseMeta(ModelNormal):
 
     def __init__(self_, page: Union[PersonalAccessTokenResponseMetaPage, UnsetType] = unset, **kwargs):
         """
-        Additional information related to the personal access token response.
+        Additional information related to the access token response.
 
         :param page: Pagination information.
         :type page: PersonalAccessTokenResponseMetaPage, optional

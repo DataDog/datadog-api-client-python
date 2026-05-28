@@ -1,5 +1,5 @@
 """
-Get all personal access tokens returns "OK" response
+Get all access tokens returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

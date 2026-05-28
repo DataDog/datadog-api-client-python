@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.service_account_access_token_create_attributes import (
         ServiceAccountAccessTokenCreateAttributes,
     )
-    from datadog_api_client.v2.model.personal_access_tokens_type import PersonalAccessTokensType
+    from datadog_api_client.v2.model.service_access_tokens_type import ServiceAccessTokensType
 
 
 class ServiceAccountAccessTokenCreateData(ModelNormal):
@@ -24,11 +24,11 @@ class ServiceAccountAccessTokenCreateData(ModelNormal):
         from datadog_api_client.v2.model.service_account_access_token_create_attributes import (
             ServiceAccountAccessTokenCreateAttributes,
         )
-        from datadog_api_client.v2.model.personal_access_tokens_type import PersonalAccessTokensType
+        from datadog_api_client.v2.model.service_access_tokens_type import ServiceAccessTokensType
 
         return {
             "attributes": (ServiceAccountAccessTokenCreateAttributes,),
-            "type": (PersonalAccessTokensType,),
+            "type": (ServiceAccessTokensType,),
         }
 
     attribute_map = {
@@ -36,17 +36,15 @@ class ServiceAccountAccessTokenCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_, attributes: ServiceAccountAccessTokenCreateAttributes, type: PersonalAccessTokensType, **kwargs
-    ):
+    def __init__(self_, attributes: ServiceAccountAccessTokenCreateAttributes, type: ServiceAccessTokensType, **kwargs):
         """
         Object used to create a service account access token.
 
         :param attributes: Attributes used to create a service account access token.
         :type attributes: ServiceAccountAccessTokenCreateAttributes
 
-        :param type: Personal access tokens resource type.
-        :type type: PersonalAccessTokensType
+        :param type: Service access tokens resource type.
+        :type type: ServiceAccessTokensType
         """
         super().__init__(kwargs)
 

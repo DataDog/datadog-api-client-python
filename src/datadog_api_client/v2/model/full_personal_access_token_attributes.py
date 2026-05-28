@@ -53,24 +53,24 @@ class FullPersonalAccessTokenAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a full personal access token, including the token key.
+        Attributes of a full access token, including the token key.
 
-        :param created_at: Creation date of the personal access token.
+        :param created_at: Creation date of the access token.
         :type created_at: datetime, optional
 
-        :param expires_at: Expiration date of the personal access token.
+        :param expires_at: Expiration date of the access token.
         :type expires_at: datetime, none_type, optional
 
-        :param key: The personal access token key. Only returned upon creation.
+        :param key: The access token key. Only returned upon creation.
         :type key: str, optional
 
-        :param name: Name of the personal access token.
+        :param name: Name of the access token.
         :type name: str, optional
 
-        :param public_portion: The public portion of the personal access token.
+        :param public_portion: The public portion of the access token.
         :type public_portion: str, optional
 
-        :param scopes: Array of scopes granted to the personal access token.
+        :param scopes: Array of scopes granted to the access token.
         :type scopes: [str], optional
         """
         if created_at is not unset:

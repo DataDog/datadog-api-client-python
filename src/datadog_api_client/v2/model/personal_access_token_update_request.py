@@ -30,9 +30,9 @@ class PersonalAccessTokenUpdateRequest(ModelNormal):
 
     def __init__(self_, data: PersonalAccessTokenUpdateData, **kwargs):
         """
-        Request used to update a personal access token.
+        Request used to update an access token.
 
-        :param data: Object used to update a personal access token.
+        :param data: Object used to update an access token.
         :type data: PersonalAccessTokenUpdateData
         """
         super().__init__(kwargs)
