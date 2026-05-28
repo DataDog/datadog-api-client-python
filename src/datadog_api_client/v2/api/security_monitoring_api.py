@@ -3448,7 +3448,7 @@ class SecurityMonitoringApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/siem-historical-detections/histsignals/search",
                 "operation_id": "search_security_monitoring_histsignals",
-                "http_method": "GET",
+                "http_method": "POST",
                 "version": "v2",
             },
             params_map={
