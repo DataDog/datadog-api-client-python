@@ -411,6 +411,43 @@
       "type": "safe"
     }
   },
+  "ListAnnotations": {
+    "tag": "Annotations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAnnotation": {
+    "tag": "Annotations",
+    "undo": {
+      "operationId": "DeleteAnnotation",
+      "parameters": [
+        {
+          "name": "annotation_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetPageAnnotations": {
+    "tag": "Annotations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteAnnotation": {
+    "tag": "Annotations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAnnotation": {
+    "tag": "Annotations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "AnonymizeUsers": {
     "tag": "Users",
     "undo": {

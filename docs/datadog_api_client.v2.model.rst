@@ -767,6 +767,41 @@ datadog\_api\_client.v2.model.annotation module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.annotation\_attributes module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_color module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_color
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_create\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_create\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_data module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.annotation\_display module
 --------------------------------------------------------
 
@@ -781,10 +816,66 @@ datadog\_api\_client.v2.model.annotation\_display\_bounds module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.annotation\_in\_page module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_in_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_kind module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_kind
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.annotation\_markdown\_text\_annotation module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.annotation_markdown_text_annotation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_request\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_type module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotation\_update\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotation_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotations\_in\_page\_map module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotations_in_page_map
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.annotations\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.annotations_response
    :members:
    :show-inheritance:
 
@@ -27129,6 +27220,34 @@ datadog\_api\_client.v2.model.overwrite\_allocations\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.page\_annotations\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.page_annotations_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.page\_annotations\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.page_annotations_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.page\_annotations\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.page_annotations_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.page\_annotations\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.page_annotations_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.page\_urgency module
 --------------------------------------------------
 
@@ -41308,6 +41427,13 @@ datadog\_api\_client.v2.model.weekday module
 --------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.weekday
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.widget\_annotations\_map module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.widget_annotations_map
    :members:
    :show-inheritance:
 

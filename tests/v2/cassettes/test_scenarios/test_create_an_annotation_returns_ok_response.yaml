@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"color":"blue","description":"Deployed v2.3.1 to
+      production.","page_id":"dashboard:abc-def-xyz","start_time":1704067200000,"type":"pointInTime","widget_ids":["1234567890"]},"type":"annotation"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/annotation
+  response:
+    body:
+      string: '{"data":{"id":"2035c4df-a060-4466-93ec-9304a039bbed","type":"annotation","attributes":{"author_id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","color":"blue","created_at":1779913697490,"description":"Deployed
+        v2.3.1 to production.","end_time":null,"modified_at":1779913697490,"page_id":"dashboard:abc-def-xyz","start_time":1704067200000,"type":"pointInTime","widget_ids":["1234567890"]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/annotation/2035c4df-a060-4466-93ec-9304a039bbed
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

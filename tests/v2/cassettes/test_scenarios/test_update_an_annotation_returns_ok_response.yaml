@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"color":"blue","description":"Deployed v2.3.1 to
+      production.","page_id":"dashboard:abc-def-xyz","start_time":1704067200000,"type":"pointInTime"},"type":"annotation"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/annotation
+  response:
+    body:
+      string: '{"data":{"id":"9f257ed0-87fb-42f8-9aaf-89397e766d15","type":"annotation","attributes":{"author_id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","color":"blue","created_at":1779913698596,"description":"Deployed
+        v2.3.1 to production.","end_time":null,"modified_at":1779913698596,"page_id":"dashboard:abc-def-xyz","start_time":1704067200000,"type":"pointInTime"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"color":"green","description":"Updated annotation.","page_id":"dashboard:abc-def-xyz","start_time":1704067200000,"type":"pointInTime"},"type":"annotation"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/annotation/9f257ed0-87fb-42f8-9aaf-89397e766d15
+  response:
+    body:
+      string: '{"data":{"id":"9f257ed0-87fb-42f8-9aaf-89397e766d15","type":"annotation","attributes":{"author_id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","color":"green","created_at":1779913698596,"description":"Updated
+        annotation.","end_time":null,"modified_at":1779913698699,"page_id":"dashboard:abc-def-xyz","start_time":1704067200000,"type":"pointInTime"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/annotation/9f257ed0-87fb-42f8-9aaf-89397e766d15
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

@@ -6,6 +6,7 @@ from datadog_api_client.v2.api.aws_logs_integration_api import AWSLogsIntegratio
 from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
 from datadog_api_client.v2.api.actions_datastores_api import ActionsDatastoresApi
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
+from datadog_api_client.v2.api.annotations_api import AnnotationsApi
 from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 from datadog_api_client.v2.api.application_security_api import ApplicationSecurityApi
 from datadog_api_client.v2.api.audit_api import AuditApi
@@ -123,6 +124,7 @@ __all__ = [
     "ActionConnectionApi",
     "ActionsDatastoresApi",
     "AgentlessScanningApi",
+    "AnnotationsApi",
     "AppBuilderApi",
     "ApplicationSecurityApi",
     "AuditApi",

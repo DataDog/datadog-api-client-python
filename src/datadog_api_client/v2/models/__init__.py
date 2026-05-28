@@ -241,9 +241,22 @@ from datadog_api_client.v2.model.analysis_response_data_type import AnalysisResp
 from datadog_api_client.v2.model.analysis_rule_response import AnalysisRuleResponse
 from datadog_api_client.v2.model.analysis_violation import AnalysisViolation
 from datadog_api_client.v2.model.annotation import Annotation
+from datadog_api_client.v2.model.annotation_attributes import AnnotationAttributes
+from datadog_api_client.v2.model.annotation_color import AnnotationColor
+from datadog_api_client.v2.model.annotation_create_attributes import AnnotationCreateAttributes
+from datadog_api_client.v2.model.annotation_create_request import AnnotationCreateRequest
+from datadog_api_client.v2.model.annotation_data import AnnotationData
 from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
 from datadog_api_client.v2.model.annotation_display_bounds import AnnotationDisplayBounds
+from datadog_api_client.v2.model.annotation_in_page import AnnotationInPage
+from datadog_api_client.v2.model.annotation_kind import AnnotationKind
 from datadog_api_client.v2.model.annotation_markdown_text_annotation import AnnotationMarkdownTextAnnotation
+from datadog_api_client.v2.model.annotation_request_data import AnnotationRequestData
+from datadog_api_client.v2.model.annotation_response import AnnotationResponse
+from datadog_api_client.v2.model.annotation_type import AnnotationType
+from datadog_api_client.v2.model.annotation_update_request import AnnotationUpdateRequest
+from datadog_api_client.v2.model.annotations_in_page_map import AnnotationsInPageMap
+from datadog_api_client.v2.model.annotations_response import AnnotationsResponse
 from datadog_api_client.v2.model.anonymize_user_error import AnonymizeUserError
 from datadog_api_client.v2.model.anonymize_users_request import AnonymizeUsersRequest
 from datadog_api_client.v2.model.anonymize_users_request_attributes import AnonymizeUsersRequestAttributes
@@ -5498,6 +5511,10 @@ from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
+from datadog_api_client.v2.model.page_annotations_attributes import PageAnnotationsAttributes
+from datadog_api_client.v2.model.page_annotations_data import PageAnnotationsData
+from datadog_api_client.v2.model.page_annotations_response import PageAnnotationsResponse
+from datadog_api_client.v2.model.page_annotations_type import PageAnnotationsType
 from datadog_api_client.v2.model.page_urgency import PageUrgency
 from datadog_api_client.v2.model.paginated_response_meta import PaginatedResponseMeta
 from datadog_api_client.v2.model.pagination import Pagination
@@ -8404,6 +8421,7 @@ from datadog_api_client.v2.model.web_integration_account_update_request_data imp
 )
 from datadog_api_client.v2.model.web_integration_accounts_response import WebIntegrationAccountsResponse
 from datadog_api_client.v2.model.weekday import Weekday
+from datadog_api_client.v2.model.widget_annotations_map import WidgetAnnotationsMap
 from datadog_api_client.v2.model.widget_attributes import WidgetAttributes
 from datadog_api_client.v2.model.widget_data import WidgetData
 from datadog_api_client.v2.model.widget_definition import WidgetDefinition
@@ -8665,9 +8683,22 @@ __all__ = [
     "AnalysisRuleResponse",
     "AnalysisViolation",
     "Annotation",
+    "AnnotationAttributes",
+    "AnnotationColor",
+    "AnnotationCreateAttributes",
+    "AnnotationCreateRequest",
+    "AnnotationData",
     "AnnotationDisplay",
     "AnnotationDisplayBounds",
+    "AnnotationInPage",
+    "AnnotationKind",
     "AnnotationMarkdownTextAnnotation",
+    "AnnotationRequestData",
+    "AnnotationResponse",
+    "AnnotationType",
+    "AnnotationUpdateRequest",
+    "AnnotationsInPageMap",
+    "AnnotationsResponse",
     "AnonymizeUserError",
     "AnonymizeUsersRequest",
     "AnonymizeUsersRequestAttributes",
@@ -12332,6 +12363,10 @@ __all__ = [
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
     "OverwriteAllocationsRequest",
+    "PageAnnotationsAttributes",
+    "PageAnnotationsData",
+    "PageAnnotationsResponse",
+    "PageAnnotationsType",
     "PageUrgency",
     "PaginatedResponseMeta",
     "Pagination",
@@ -14364,6 +14399,7 @@ __all__ = [
     "WebIntegrationAccountUpdateRequestData",
     "WebIntegrationAccountsResponse",
     "Weekday",
+    "WidgetAnnotationsMap",
     "WidgetAttributes",
     "WidgetData",
     "WidgetDefinition",
