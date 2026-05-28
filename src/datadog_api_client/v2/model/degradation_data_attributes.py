@@ -45,6 +45,7 @@ class DegradationDataAttributes(ModelNormal):
             "components_affected": ([DegradationDataAttributesComponentsAffectedItems],),
             "created_at": (datetime,),
             "description": (str,),
+            "is_backfilled": (bool,),
             "modified_at": (datetime,),
             "source": (DegradationDataAttributesSource,),
             "status": (CreateDegradationRequestDataAttributesStatus,),
@@ -56,6 +57,7 @@ class DegradationDataAttributes(ModelNormal):
         "components_affected": "components_affected",
         "created_at": "created_at",
         "description": "description",
+        "is_backfilled": "is_backfilled",
         "modified_at": "modified_at",
         "source": "source",
         "status": "status",
@@ -68,6 +70,7 @@ class DegradationDataAttributes(ModelNormal):
         components_affected: Union[List[DegradationDataAttributesComponentsAffectedItems], UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        is_backfilled: Union[bool, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         source: Union[DegradationDataAttributesSource, UnsetType] = unset,
         status: Union[CreateDegradationRequestDataAttributesStatus, UnsetType] = unset,
@@ -86,6 +89,9 @@ class DegradationDataAttributes(ModelNormal):
 
         :param description: Description of the degradation.
         :type description: str, optional
+
+        :param is_backfilled: Whether the degradation was backfilled.
+        :type is_backfilled: bool, optional
 
         :param modified_at: Timestamp of when the degradation was last modified.
         :type modified_at: datetime, optional
@@ -108,6 +114,8 @@ class DegradationDataAttributes(ModelNormal):
             kwargs["created_at"] = created_at
         if description is not unset:
             kwargs["description"] = description
+        if is_backfilled is not unset:
+            kwargs["is_backfilled"] = is_backfilled
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if source is not unset:
