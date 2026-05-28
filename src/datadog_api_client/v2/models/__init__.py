@@ -6502,79 +6502,6 @@ from datadog_api_client.v2.model.security_monitoring_critical_asset_update_reque
 from datadog_api_client.v2.model.security_monitoring_critical_assets_response import (
     SecurityMonitoringCriticalAssetsResponse,
 )
-from datadog_api_client.v2.model.security_monitoring_dataset_attributes_request import (
-    SecurityMonitoringDatasetAttributesRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_attributes_response import (
-    SecurityMonitoringDatasetAttributesResponse,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_column import SecurityMonitoringDatasetColumn
-from datadog_api_client.v2.model.security_monitoring_dataset_create_data import SecurityMonitoringDatasetCreateData
-from datadog_api_client.v2.model.security_monitoring_dataset_create_request import (
-    SecurityMonitoringDatasetCreateRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_create_response import (
-    SecurityMonitoringDatasetCreateResponse,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_create_response_data import (
-    SecurityMonitoringDatasetCreateResponseData,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_create_type import SecurityMonitoringDatasetCreateType
-from datadog_api_client.v2.model.security_monitoring_dataset_data import SecurityMonitoringDatasetData
-from datadog_api_client.v2.model.security_monitoring_dataset_definition import SecurityMonitoringDatasetDefinition
-from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request import (
-    SecurityMonitoringDatasetDependenciesRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request_attributes import (
-    SecurityMonitoringDatasetDependenciesRequestAttributes,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request_data import (
-    SecurityMonitoringDatasetDependenciesRequestData,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_response import (
-    SecurityMonitoringDatasetDependenciesResponse,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependents_attributes import (
-    SecurityMonitoringDatasetDependentsAttributes,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependents_data import (
-    SecurityMonitoringDatasetDependentsData,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependents_type import (
-    SecurityMonitoringDatasetDependentsType,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_response import SecurityMonitoringDatasetResponse
-from datadog_api_client.v2.model.security_monitoring_dataset_search import SecurityMonitoringDatasetSearch
-from datadog_api_client.v2.model.security_monitoring_dataset_time_window import SecurityMonitoringDatasetTimeWindow
-from datadog_api_client.v2.model.security_monitoring_dataset_type import SecurityMonitoringDatasetType
-from datadog_api_client.v2.model.security_monitoring_dataset_update_data import SecurityMonitoringDatasetUpdateData
-from datadog_api_client.v2.model.security_monitoring_dataset_update_request import (
-    SecurityMonitoringDatasetUpdateRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_update_type import SecurityMonitoringDatasetUpdateType
-from datadog_api_client.v2.model.security_monitoring_dataset_version_entry import SecurityMonitoringDatasetVersionEntry
-from datadog_api_client.v2.model.security_monitoring_dataset_version_field_change import (
-    SecurityMonitoringDatasetVersionFieldChange,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_version_history_attributes import (
-    SecurityMonitoringDatasetVersionHistoryAttributes,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_version_history_data import (
-    SecurityMonitoringDatasetVersionHistoryData,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_version_history_entries import (
-    SecurityMonitoringDatasetVersionHistoryEntries,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_version_history_response import (
-    SecurityMonitoringDatasetVersionHistoryResponse,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_version_history_type import (
-    SecurityMonitoringDatasetVersionHistoryType,
-)
-from datadog_api_client.v2.model.security_monitoring_datasets_list_meta import SecurityMonitoringDatasetsListMeta
-from datadog_api_client.v2.model.security_monitoring_datasets_list_response import (
-    SecurityMonitoringDatasetsListResponse,
-)
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
 from datadog_api_client.v2.model.security_monitoring_integration_config_attributes import (
@@ -13104,39 +13031,6 @@ __all__ = [
     "SecurityMonitoringCriticalAssetUpdateData",
     "SecurityMonitoringCriticalAssetUpdateRequest",
     "SecurityMonitoringCriticalAssetsResponse",
-    "SecurityMonitoringDatasetAttributesRequest",
-    "SecurityMonitoringDatasetAttributesResponse",
-    "SecurityMonitoringDatasetColumn",
-    "SecurityMonitoringDatasetCreateData",
-    "SecurityMonitoringDatasetCreateRequest",
-    "SecurityMonitoringDatasetCreateResponse",
-    "SecurityMonitoringDatasetCreateResponseData",
-    "SecurityMonitoringDatasetCreateType",
-    "SecurityMonitoringDatasetData",
-    "SecurityMonitoringDatasetDefinition",
-    "SecurityMonitoringDatasetDependenciesRequest",
-    "SecurityMonitoringDatasetDependenciesRequestAttributes",
-    "SecurityMonitoringDatasetDependenciesRequestData",
-    "SecurityMonitoringDatasetDependenciesResponse",
-    "SecurityMonitoringDatasetDependentsAttributes",
-    "SecurityMonitoringDatasetDependentsData",
-    "SecurityMonitoringDatasetDependentsType",
-    "SecurityMonitoringDatasetResponse",
-    "SecurityMonitoringDatasetSearch",
-    "SecurityMonitoringDatasetTimeWindow",
-    "SecurityMonitoringDatasetType",
-    "SecurityMonitoringDatasetUpdateData",
-    "SecurityMonitoringDatasetUpdateRequest",
-    "SecurityMonitoringDatasetUpdateType",
-    "SecurityMonitoringDatasetVersionEntry",
-    "SecurityMonitoringDatasetVersionFieldChange",
-    "SecurityMonitoringDatasetVersionHistoryAttributes",
-    "SecurityMonitoringDatasetVersionHistoryData",
-    "SecurityMonitoringDatasetVersionHistoryEntries",
-    "SecurityMonitoringDatasetVersionHistoryResponse",
-    "SecurityMonitoringDatasetVersionHistoryType",
-    "SecurityMonitoringDatasetsListMeta",
-    "SecurityMonitoringDatasetsListResponse",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
     "SecurityMonitoringIntegrationConfigAttributes",

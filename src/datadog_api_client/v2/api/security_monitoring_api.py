@@ -127,28 +127,6 @@ from datadog_api_client.v2.model.get_suppression_version_history_response import
 from datadog_api_client.v2.model.security_monitoring_content_pack_states_response import (
     SecurityMonitoringContentPackStatesResponse,
 )
-from datadog_api_client.v2.model.security_monitoring_datasets_list_response import (
-    SecurityMonitoringDatasetsListResponse,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_create_response import (
-    SecurityMonitoringDatasetCreateResponse,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_create_request import (
-    SecurityMonitoringDatasetCreateRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_response import (
-    SecurityMonitoringDatasetDependenciesResponse,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_dependencies_request import (
-    SecurityMonitoringDatasetDependenciesRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_response import SecurityMonitoringDatasetResponse
-from datadog_api_client.v2.model.security_monitoring_dataset_update_request import (
-    SecurityMonitoringDatasetUpdateRequest,
-)
-from datadog_api_client.v2.model.security_monitoring_dataset_version_history_response import (
-    SecurityMonitoringDatasetVersionHistoryResponse,
-)
 from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
@@ -326,26 +304,6 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AttachJiraIssueRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._batch_get_security_monitoring_dataset_dependencies_endpoint = _Endpoint(
-            settings={
-                "response_type": (SecurityMonitoringDatasetDependenciesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets/dependencies",
-                "operation_id": "batch_get_security_monitoring_dataset_dependencies",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (SecurityMonitoringDatasetDependenciesRequest,),
                     "location": "body",
                 },
             },
@@ -731,26 +689,6 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-        self._create_security_monitoring_dataset_endpoint = _Endpoint(
-            settings={
-                "response_type": (SecurityMonitoringDatasetCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets",
-                "operation_id": "create_security_monitoring_dataset",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (SecurityMonitoringDatasetCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._create_security_monitoring_integration_config_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringIntegrationConfigResponse,),
@@ -1026,29 +964,6 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "critical_asset_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
-            },
-            api_client=api_client,
-        )
-
-        self._delete_security_monitoring_dataset_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets/{dataset_id}",
-                "operation_id": "delete_security_monitoring_dataset",
-                "http_method": "DELETE",
-                "version": "v2",
-            },
-            params_map={
-                "dataset_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "dataset_id",
                     "location": "path",
                 },
             },
@@ -1699,91 +1614,6 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "critical_asset_id",
                     "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_security_monitoring_dataset_endpoint = _Endpoint(
-            settings={
-                "response_type": (SecurityMonitoringDatasetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets/{dataset_id}",
-                "operation_id": "get_security_monitoring_dataset",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "dataset_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "dataset_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_security_monitoring_dataset_by_version_endpoint = _Endpoint(
-            settings={
-                "response_type": (SecurityMonitoringDatasetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets/{dataset_id}/version/{version}",
-                "operation_id": "get_security_monitoring_dataset_by_version",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "dataset_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "dataset_id",
-                    "location": "path",
-                },
-                "version": {
-                    "required": True,
-                    "openapi_types": (int,),
-                    "attribute": "version",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
-        self._get_security_monitoring_dataset_version_history_endpoint = _Endpoint(
-            settings={
-                "response_type": (SecurityMonitoringDatasetVersionHistoryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets/{dataset_id}/version_history",
-                "operation_id": "get_security_monitoring_dataset_version_history",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "dataset_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "dataset_id",
-                    "location": "path",
-                },
-                "page_size": {
-                    "openapi_types": (int,),
-                    "attribute": "page[size]",
-                    "location": "query",
-                },
-                "page_number": {
-                    "openapi_types": (int,),
-                    "attribute": "page[number]",
-                    "location": "query",
                 },
             },
             headers_map={
@@ -2709,43 +2539,6 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-        self._list_security_monitoring_datasets_endpoint = _Endpoint(
-            settings={
-                "response_type": (SecurityMonitoringDatasetsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets",
-                "operation_id": "list_security_monitoring_datasets",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={
-                "page_size": {
-                    "openapi_types": (int,),
-                    "attribute": "page[size]",
-                    "location": "query",
-                },
-                "page_number": {
-                    "openapi_types": (int,),
-                    "attribute": "page[number]",
-                    "location": "query",
-                },
-                "sort": {
-                    "openapi_types": (str,),
-                    "attribute": "sort",
-                    "location": "query",
-                },
-                "filter_query": {
-                    "openapi_types": (str,),
-                    "attribute": "filter[query]",
-                    "location": "query",
-                },
-            },
-            headers_map={
-                "accept": ["application/json"],
-            },
-            api_client=api_client,
-        )
-
         self._list_security_monitoring_histsignals_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsListResponse,),
@@ -3630,32 +3423,6 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
-        self._update_security_monitoring_dataset_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/datasets/{dataset_id}",
-                "operation_id": "update_security_monitoring_dataset",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "dataset_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "dataset_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (SecurityMonitoringDatasetUpdateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._update_security_monitoring_integration_config_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringIntegrationConfigResponse,),
@@ -3874,23 +3641,6 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
-
-    def batch_get_security_monitoring_dataset_dependencies(
-        self,
-        body: SecurityMonitoringDatasetDependenciesRequest,
-    ) -> SecurityMonitoringDatasetDependenciesResponse:
-        """Get dataset dependencies.
-
-        Return, for each of the requested datasets, the list of detection rules that depend
-        on it. Useful for understanding the impact of updating or deleting a dataset.
-
-        :type body: SecurityMonitoringDatasetDependenciesRequest
-        :rtype: SecurityMonitoringDatasetDependenciesResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._batch_get_security_monitoring_dataset_dependencies_endpoint.call_with_http_info(**kwargs)
 
     def bulk_create_sample_log_generation_subscriptions(
         self,
@@ -4246,23 +3996,6 @@ class SecurityMonitoringApi:
 
         return self._create_security_monitoring_critical_asset_endpoint.call_with_http_info(**kwargs)
 
-    def create_security_monitoring_dataset(
-        self,
-        body: SecurityMonitoringDatasetCreateRequest,
-    ) -> SecurityMonitoringDatasetCreateResponse:
-        """Create a dataset.
-
-        Create a new Cloud SIEM dataset. A dataset bundles a data source, a set of
-        indexes, and a search query that can be referenced from detection rules.
-
-        :type body: SecurityMonitoringDatasetCreateRequest
-        :rtype: SecurityMonitoringDatasetCreateResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._create_security_monitoring_dataset_endpoint.call_with_http_info(**kwargs)
-
     def create_security_monitoring_integration_config(
         self,
         body: SecurityMonitoringIntegrationConfigCreateRequest,
@@ -4500,24 +4233,6 @@ class SecurityMonitoringApi:
         kwargs["critical_asset_id"] = critical_asset_id
 
         return self._delete_security_monitoring_critical_asset_endpoint.call_with_http_info(**kwargs)
-
-    def delete_security_monitoring_dataset(
-        self,
-        dataset_id: str,
-    ) -> None:
-        """Delete a dataset.
-
-        Delete a Cloud SIEM dataset. Out-of-the-box datasets cannot be deleted and
-        deleting a dataset that is referenced by a detection rule is rejected.
-
-        :param dataset_id: The UUID of the dataset.
-        :type dataset_id: str
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["dataset_id"] = dataset_id
-
-        return self._delete_security_monitoring_dataset_endpoint.call_with_http_info(**kwargs)
 
     def delete_security_monitoring_integration_config(
         self,
@@ -5061,75 +4776,6 @@ class SecurityMonitoringApi:
         kwargs["critical_asset_id"] = critical_asset_id
 
         return self._get_security_monitoring_critical_asset_endpoint.call_with_http_info(**kwargs)
-
-    def get_security_monitoring_dataset(
-        self,
-        dataset_id: str,
-    ) -> SecurityMonitoringDatasetResponse:
-        """Get a dataset.
-
-        Get the current version of a Cloud SIEM dataset by ID.
-
-        :param dataset_id: The UUID of the dataset.
-        :type dataset_id: str
-        :rtype: SecurityMonitoringDatasetResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["dataset_id"] = dataset_id
-
-        return self._get_security_monitoring_dataset_endpoint.call_with_http_info(**kwargs)
-
-    def get_security_monitoring_dataset_by_version(
-        self,
-        dataset_id: str,
-        version: int,
-    ) -> SecurityMonitoringDatasetResponse:
-        """Get a dataset at a specific version.
-
-        Retrieve a specific historical version of a Cloud SIEM dataset.
-
-        :param dataset_id: The UUID of the dataset.
-        :type dataset_id: str
-        :param version: The version number of the dataset to retrieve.
-        :type version: int
-        :rtype: SecurityMonitoringDatasetResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["dataset_id"] = dataset_id
-
-        kwargs["version"] = version
-
-        return self._get_security_monitoring_dataset_by_version_endpoint.call_with_http_info(**kwargs)
-
-    def get_security_monitoring_dataset_version_history(
-        self,
-        dataset_id: str,
-        *,
-        page_size: Union[int, UnsetType] = unset,
-        page_number: Union[int, UnsetType] = unset,
-    ) -> SecurityMonitoringDatasetVersionHistoryResponse:
-        """Get the version history of a dataset.
-
-        Retrieve the version history of a Cloud SIEM dataset, including the changes made at each version.
-
-        :param dataset_id: The UUID of the dataset.
-        :type dataset_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 100.
-        :type page_size: int, optional
-        :param page_number: Specific page number to return.
-        :type page_number: int, optional
-        :rtype: SecurityMonitoringDatasetVersionHistoryResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["dataset_id"] = dataset_id
-
-        if page_size is not unset:
-            kwargs["page_size"] = page_size
-
-        if page_number is not unset:
-            kwargs["page_number"] = page_number
-
-        return self._get_security_monitoring_dataset_version_history_endpoint.call_with_http_info(**kwargs)
 
     def get_security_monitoring_histsignal(
         self,
@@ -6240,44 +5886,6 @@ class SecurityMonitoringApi:
         kwargs: Dict[str, Any] = {}
         return self._list_security_monitoring_critical_assets_endpoint.call_with_http_info(**kwargs)
 
-    def list_security_monitoring_datasets(
-        self,
-        *,
-        page_size: Union[int, UnsetType] = unset,
-        page_number: Union[int, UnsetType] = unset,
-        sort: Union[str, UnsetType] = unset,
-        filter_query: Union[str, UnsetType] = unset,
-    ) -> SecurityMonitoringDatasetsListResponse:
-        """List datasets.
-
-        List all Cloud SIEM datasets available to the organization, including both
-        customer-defined datasets and Datadog out-of-the-box datasets.
-
-        :param page_size: Size for a given page. The maximum allowed value is 100.
-        :type page_size: int, optional
-        :param page_number: Specific page number to return.
-        :type page_number: int, optional
-        :param sort: Attribute used to sort datasets. Prefix with ``-`` to sort in descending order.
-        :type sort: str, optional
-        :param filter_query: A search query to filter datasets by name or description.
-        :type filter_query: str, optional
-        :rtype: SecurityMonitoringDatasetsListResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        if page_size is not unset:
-            kwargs["page_size"] = page_size
-
-        if page_number is not unset:
-            kwargs["page_number"] = page_number
-
-        if sort is not unset:
-            kwargs["sort"] = sort
-
-        if filter_query is not unset:
-            kwargs["filter_query"] = filter_query
-
-        return self._list_security_monitoring_datasets_endpoint.call_with_http_info(**kwargs)
-
     def list_security_monitoring_histsignals(
         self,
         *,
@@ -7382,28 +6990,6 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_security_monitoring_critical_asset_endpoint.call_with_http_info(**kwargs)
-
-    def update_security_monitoring_dataset(
-        self,
-        dataset_id: str,
-        body: SecurityMonitoringDatasetUpdateRequest,
-    ) -> None:
-        """Update a dataset.
-
-        Update an existing Cloud SIEM dataset. The current version of the dataset can be
-        provided to detect concurrent modifications.
-
-        :param dataset_id: The UUID of the dataset.
-        :type dataset_id: str
-        :type body: SecurityMonitoringDatasetUpdateRequest
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["dataset_id"] = dataset_id
-
-        kwargs["body"] = body
-
-        return self._update_security_monitoring_dataset_endpoint.call_with_http_info(**kwargs)
 
     def update_security_monitoring_integration_config(
         self,
