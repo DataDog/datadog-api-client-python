@@ -108,7 +108,7 @@ class HostMapWidgetDefinition(ModelNormal):
         :param notes: Notes on the title.
         :type notes: str, optional
 
-        :param requests: List of definitions.
+        :param requests: Query definition for the host map widget. Supports two mutually exclusive formats distinguished by the presence of ``request_type`` : the legacy metric-based format ( ``fill`` / ``size`` ) and the infrastructure-backed format ( ``request_type`` , ``node_type`` , ``enrichments`` ).
         :type requests: HostMapWidgetDefinitionRequests
 
         :param scope: List of tags used to filter the map.

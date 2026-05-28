@@ -1467,6 +1467,76 @@ datadog\_api\_client.v1.model.host\_map\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.host\_map\_widget\_dimension module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_dimension
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_formula module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_formula
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_group\_by module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_infrastructure\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_infrastructure_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_infrastructure\_request\_leaf module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_infrastructure_request_leaf
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_infrastructure\_request\_request\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_infrastructure_request_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_infrastructure\_style module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_infrastructure_style
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_node\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_node_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_scalar\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_scalar_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_scalar\_request\_response\_format module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_scalar_request_response_format
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.host\_meta module
 -----------------------------------------------
 

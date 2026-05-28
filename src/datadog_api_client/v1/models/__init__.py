@@ -260,6 +260,22 @@ from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidget
 from datadog_api_client.v1.model.host_map_widget_definition_requests import HostMapWidgetDefinitionRequests
 from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
 from datadog_api_client.v1.model.host_map_widget_definition_type import HostMapWidgetDefinitionType
+from datadog_api_client.v1.model.host_map_widget_dimension import HostMapWidgetDimension
+from datadog_api_client.v1.model.host_map_widget_formula import HostMapWidgetFormula
+from datadog_api_client.v1.model.host_map_widget_group_by import HostMapWidgetGroupBy
+from datadog_api_client.v1.model.host_map_widget_infrastructure_request import HostMapWidgetInfrastructureRequest
+from datadog_api_client.v1.model.host_map_widget_infrastructure_request_leaf import (
+    HostMapWidgetInfrastructureRequestLeaf,
+)
+from datadog_api_client.v1.model.host_map_widget_infrastructure_request_request_type import (
+    HostMapWidgetInfrastructureRequestRequestType,
+)
+from datadog_api_client.v1.model.host_map_widget_infrastructure_style import HostMapWidgetInfrastructureStyle
+from datadog_api_client.v1.model.host_map_widget_node_type import HostMapWidgetNodeType
+from datadog_api_client.v1.model.host_map_widget_scalar_request import HostMapWidgetScalarRequest
+from datadog_api_client.v1.model.host_map_widget_scalar_request_response_format import (
+    HostMapWidgetScalarRequestResponseFormat,
+)
 from datadog_api_client.v1.model.host_meta import HostMeta
 from datadog_api_client.v1.model.host_meta_install_method import HostMetaInstallMethod
 from datadog_api_client.v1.model.host_metrics import HostMetrics
@@ -1585,6 +1601,16 @@ __all__ = [
     "HostMapWidgetDefinitionRequests",
     "HostMapWidgetDefinitionStyle",
     "HostMapWidgetDefinitionType",
+    "HostMapWidgetDimension",
+    "HostMapWidgetFormula",
+    "HostMapWidgetGroupBy",
+    "HostMapWidgetInfrastructureRequest",
+    "HostMapWidgetInfrastructureRequestLeaf",
+    "HostMapWidgetInfrastructureRequestRequestType",
+    "HostMapWidgetInfrastructureStyle",
+    "HostMapWidgetNodeType",
+    "HostMapWidgetScalarRequest",
+    "HostMapWidgetScalarRequestResponseFormat",
     "HostMeta",
     "HostMetaInstallMethod",
     "HostMetrics",
