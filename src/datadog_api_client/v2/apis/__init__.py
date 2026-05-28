@@ -6,6 +6,7 @@ from datadog_api_client.v2.api.aws_logs_integration_api import AWSLogsIntegratio
 from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
 from datadog_api_client.v2.api.actions_datastores_api import ActionsDatastoresApi
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
+from datadog_api_client.v2.api.annotations_api import AnnotationsApi
 from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 from datadog_api_client.v2.api.application_security_api import ApplicationSecurityApi
 from datadog_api_client.v2.api.audit_api import AuditApi
@@ -65,6 +66,7 @@ from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftT
 from datadog_api_client.v2.api.model_lab_api_api import ModelLabAPIApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
+from datadog_api_client.v2.api.o_auth2_client_public_api import OAuth2ClientPublicApi
 from datadog_api_client.v2.api.oci_integration_api import OCIIntegrationApi
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
@@ -122,6 +124,7 @@ __all__ = [
     "ActionConnectionApi",
     "ActionsDatastoresApi",
     "AgentlessScanningApi",
+    "AnnotationsApi",
     "AppBuilderApi",
     "ApplicationSecurityApi",
     "AuditApi",
@@ -181,6 +184,7 @@ __all__ = [
     "ModelLabAPIApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
+    "OAuth2ClientPublicApi",
     "OCIIntegrationApi",
     "ObservabilityPipelinesApi",
     "OktaIntegrationApi",

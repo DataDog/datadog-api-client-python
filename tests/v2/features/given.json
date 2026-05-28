@@ -96,6 +96,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"color\": \"blue\",\n      \"description\": \"Deployed v2.3.1 to production.\",\n      \"page_id\": \"dashboard:abc-def-xyz\",\n      \"start_time\": 1704067200000,\n      \"type\": \"pointInTime\"\n    },\n    \"type\": \"annotation\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"annotation\" in the system",
+    "key": "annotation",
+    "tag": "Annotations",
+    "operationId": "CreateAnnotation"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"api_keys\"\n  }\n}"
       }
     ],

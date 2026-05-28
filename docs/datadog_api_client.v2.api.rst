@@ -25,6 +25,13 @@ datadog\_api\_client.v2.api.agentless\_scanning\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.annotations\_api module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.annotations_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.api\_management\_api module
 -------------------------------------------------------
 
@@ -470,6 +477,13 @@ datadog\_api\_client.v2.api.network\_device\_monitoring\_api module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.network_device_monitoring_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.o\_auth2\_client\_public\_api module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.o_auth2_client_public_api
    :members:
    :show-inheritance:
 
