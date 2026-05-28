@@ -12,7 +12,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/siem-historical-detections/jobs
   response:
     body:
-      string: '{"data":{"id":"8ce2a4d4-db9e-445d-93bb-b60980d56d25","type":"historicalDetectionsJob"}}'
+      string: '{"data":{"id":"1fa783c4-c6ce-430c-972c-43a2ccde1420","type":"historicalDetectionsJob"}}'
     headers:
       content-type:
       - application/vnd.api+json
