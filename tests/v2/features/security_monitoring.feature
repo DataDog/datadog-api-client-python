@@ -2300,56 +2300,49 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Mute or unmute security findings returns "Accepted" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 202 Accepted
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Mute or unmute security findings returns "Bad Request" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Mute or unmute security findings returns "Not Found" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Mute or unmute security findings returns "Unprocessable Entity" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "PENDING_FIX"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
   @team:DataDog/k9-investigation
   Scenario: Mute security findings returns "Accepted" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "RISK_ACCEPTED"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 202 Accepted
 
   @team:DataDog/k9-investigation
   Scenario: Mute security findings returns "Not Found" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "RISK_ACCEPTED"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:DataDog/k9-investigation
   Scenario: Mute security findings returns "Unprocessable Entity" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1, "is_muted": true, "reason": "RISK_ACCEPTED"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
@@ -2573,24 +2566,21 @@ Feature: Security Monitoring
 
   @team:DataDog/k9-investigation
   Scenario: Unmute security findings returns "Accepted" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "Resolved.", "is_muted": false, "reason": "NO_PENDING_FIX"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 202 Accepted
 
   @team:DataDog/k9-investigation
   Scenario: Unmute security findings returns "Not Found" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "Resolved.", "is_muted": false, "reason": "NO_PENDING_FIX"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:DataDog/k9-investigation
   Scenario: Unmute security findings returns "Unprocessable Entity" response
-    Given operation "MuteSecurityFindings" enabled
-    And new "MuteSecurityFindings" request
+    Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "Resolved.", "is_muted": false, "reason": "RISK_ACCEPTED"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity

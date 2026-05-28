@@ -41,7 +41,6 @@ body = MuteFindingsRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["mute_security_findings"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.mute_security_findings(body=body)
