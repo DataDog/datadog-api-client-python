@@ -1874,6 +1874,30 @@
       "type": "safe"
     }
   },
+  "DeleteCostTagDescriptionByKey": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCostTagDescriptionByKey": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertCostTagDescriptionByKey": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GenerateCostTagDescriptionByKey": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCostTagKeys": {
     "tag": "Cloud Cost Management",
     "undo": {
@@ -4676,6 +4700,30 @@
     "tag": "Cloud Network Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "DeleteScopesRestriction": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetScopesRestriction": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertScopesRestriction": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RegisterOAuthClient": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListPipelines": {

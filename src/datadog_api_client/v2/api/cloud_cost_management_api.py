@@ -59,6 +59,9 @@ from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
 from datadog_api_client.v2.model.cost_recommendation_array import CostRecommendationArray
 from datadog_api_client.v2.model.recommendations_filter_request import RecommendationsFilterRequest
 from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDescriptionsResponse
+from datadog_api_client.v2.model.cost_tag_description_response import CostTagDescriptionResponse
+from datadog_api_client.v2.model.cost_tag_description_upsert_request import CostTagDescriptionUpsertRequest
+from datadog_api_client.v2.model.generate_cost_tag_description_response import GenerateCostTagDescriptionResponse
 from datadog_api_client.v2.model.cost_tag_keys_response import CostTagKeysResponse
 from datadog_api_client.v2.model.cost_tag_key_response import CostTagKeyResponse
 from datadog_api_client.v2.model.cost_tag_key_metadata_response import CostTagKeyMetadataResponse
@@ -281,6 +284,34 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._delete_cost_tag_description_by_key_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tag_descriptions/{tag_key}",
+                "operation_id": "delete_cost_tag_description_by_key",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "tag_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "tag_key",
+                    "location": "path",
+                },
+                "cloud": {
+                    "openapi_types": (str,),
+                    "attribute": "cloud",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_custom_allocation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -346,6 +377,29 @@ class CloudCostManagementApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._generate_cost_tag_description_by_key_endpoint = _Endpoint(
+            settings={
+                "response_type": (GenerateCostTagDescriptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tag_descriptions/{tag_key}/generate",
+                "operation_id": "generate_cost_tag_description_by_key",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "tag_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "tag_key",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -840,6 +894,34 @@ class CloudCostManagementApi:
                     "openapi_types": (int,),
                     "attribute": "cloud_account_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_cost_tag_description_by_key_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostTagDescriptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tag_descriptions/{tag_key}",
+                "operation_id": "get_cost_tag_description_by_key",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "tag_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "tag_key",
+                    "location": "path",
+                },
+                "filter_cloud": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[cloud]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1734,6 +1816,32 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._upsert_cost_tag_description_by_key_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/tag_descriptions/{tag_key}",
+                "operation_id": "upsert_cost_tag_description_by_key",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "tag_key": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "tag_key",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CostTagDescriptionUpsertRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._validate_budget_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetValidationResponse,),
@@ -1952,6 +2060,30 @@ class CloudCostManagementApi:
 
         return self._delete_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
+    def delete_cost_tag_description_by_key(
+        self,
+        tag_key: str,
+        *,
+        cloud: Union[str, UnsetType] = unset,
+    ) -> None:
+        """Delete a Cloud Cost Management tag description.
+
+        Delete a Cloud Cost Management tag key description. When ``cloud`` is omitted, deletes every description for the tag key, falling back to Datadog's global default when available. When ``cloud`` is provided, deletes only the description scoped to that cloud provider.
+
+        :param tag_key: The tag key whose description is being deleted.
+        :type tag_key: str
+        :param cloud: Cloud provider to scope the deletion to (for example, ``aws`` ). Omit to delete every description for the tag key.
+        :type cloud: str, optional
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["tag_key"] = tag_key
+
+        if cloud is not unset:
+            kwargs["cloud"] = cloud
+
+        return self._delete_cost_tag_description_by_key_endpoint.call_with_http_info(**kwargs)
+
     def delete_custom_allocation_rule(
         self,
         rule_id: int,
@@ -2002,6 +2134,23 @@ class CloudCostManagementApi:
         kwargs["ruleset_id"] = ruleset_id
 
         return self._delete_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
+
+    def generate_cost_tag_description_by_key(
+        self,
+        tag_key: str,
+    ) -> GenerateCostTagDescriptionResponse:
+        """Generate a Cloud Cost Management tag description.
+
+        Use AI to draft a Cloud Cost Management tag key description based on associated cost data. The generated description is returned in the response and is not persisted by this endpoint; follow up with ``UpsertCostTagDescriptionByKey`` to save it.
+
+        :param tag_key: The tag key to generate an AI description for.
+        :type tag_key: str
+        :rtype: GenerateCostTagDescriptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["tag_key"] = tag_key
+
+        return self._generate_cost_tag_description_by_key_endpoint.call_with_http_info(**kwargs)
 
     def get_budget(
         self,
@@ -2417,6 +2566,30 @@ class CloudCostManagementApi:
         kwargs["cloud_account_id"] = cloud_account_id
 
         return self._get_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
+
+    def get_cost_tag_description_by_key(
+        self,
+        tag_key: str,
+        *,
+        filter_cloud: Union[str, UnsetType] = unset,
+    ) -> CostTagDescriptionResponse:
+        """Get a Cloud Cost Management tag description.
+
+        Get the Cloud Cost Management description for a single tag key. Use ``filter[cloud]`` to scope the lookup to a specific cloud provider; when omitted, the response resolves the description in fallback order (cloud-specific organization override, then cloudless organization default, then Datadog's global default).
+
+        :param tag_key: The tag key whose description is being fetched.
+        :type tag_key: str
+        :param filter_cloud: Cloud provider to scope the lookup to (for example, ``aws`` ). Omit to use the resolved fallback.
+        :type filter_cloud: str, optional
+        :rtype: CostTagDescriptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["tag_key"] = tag_key
+
+        if filter_cloud is not unset:
+            kwargs["filter_cloud"] = filter_cloud
+
+        return self._get_cost_tag_description_by_key_endpoint.call_with_http_info(**kwargs)
 
     def get_cost_tag_key(
         self,
@@ -3199,6 +3372,27 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._upsert_budget_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_cost_tag_description_by_key(
+        self,
+        tag_key: str,
+        body: CostTagDescriptionUpsertRequest,
+    ) -> None:
+        """Upsert a Cloud Cost Management tag description.
+
+        Create or update a Cloud Cost Management tag key description. The new description and optional cloud scoping are supplied in the request body. Omit ``cloud`` to set a cross-cloud default for the tag key.
+
+        :param tag_key: The tag key whose description is being upserted.
+        :type tag_key: str
+        :type body: CostTagDescriptionUpsertRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["tag_key"] = tag_key
+
+        kwargs["body"] = body
+
+        return self._upsert_cost_tag_description_by_key_endpoint.call_with_http_info(**kwargs)
 
     def validate_budget(
         self,
