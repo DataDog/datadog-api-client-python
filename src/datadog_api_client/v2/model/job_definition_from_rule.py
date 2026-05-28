@@ -14,9 +14,17 @@ from datadog_api_client.model_utils import (
 
 
 class JobDefinitionFromRule(ModelNormal):
+    validations = {
+        "case_index": {
+            "inclusive_maximum": 9,
+            "inclusive_minimum": 0,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
+            "case_index": (int,),
             "_from": (int,),
             "id": (str,),
             "index": (str,),
@@ -25,6 +33,7 @@ class JobDefinitionFromRule(ModelNormal):
         }
 
     attribute_map = {
+        "case_index": "caseIndex",
         "_from": "from",
         "id": "id",
         "index": "index",
@@ -33,10 +42,20 @@ class JobDefinitionFromRule(ModelNormal):
     }
 
     def __init__(
-        self_, _from: int, id: str, index: str, to: int, notifications: Union[List[str], UnsetType] = unset, **kwargs
+        self_,
+        _from: int,
+        id: str,
+        index: str,
+        to: int,
+        case_index: Union[int, UnsetType] = unset,
+        notifications: Union[List[str], UnsetType] = unset,
+        **kwargs,
     ):
         """
         Definition of a historical job based on a security monitoring rule.
+
+        :param case_index: Zero-based index of the rule case to use as the job's signal condition. When omitted, all cases are evaluated. Up to 10 cases are supported, so valid values are 0 to 9.
+        :type case_index: int, optional
 
         :param _from: Starting time of data analyzed by the job.
         :type _from: int
@@ -53,6 +72,8 @@ class JobDefinitionFromRule(ModelNormal):
         :param to: Ending time of data analyzed by the job.
         :type to: int
         """
+        if case_index is not unset:
+            kwargs["case_index"] = case_index
         if notifications is not unset:
             kwargs["notifications"] = notifications
         super().__init__(kwargs)

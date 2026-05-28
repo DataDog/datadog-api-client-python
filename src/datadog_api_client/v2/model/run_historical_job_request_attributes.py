@@ -26,21 +26,21 @@ class RunHistoricalJobRequestAttributes(ModelNormal):
 
         return {
             "from_rule": (JobDefinitionFromRule,),
-            "id": (str,),
             "job_definition": (JobDefinition,),
+            "signal_output": (bool,),
         }
 
     attribute_map = {
         "from_rule": "fromRule",
-        "id": "id",
         "job_definition": "jobDefinition",
+        "signal_output": "signalOutput",
     }
 
     def __init__(
         self_,
         from_rule: Union[JobDefinitionFromRule, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         job_definition: Union[JobDefinition, UnsetType] = unset,
+        signal_output: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -49,16 +49,16 @@ class RunHistoricalJobRequestAttributes(ModelNormal):
         :param from_rule: Definition of a historical job based on a security monitoring rule.
         :type from_rule: JobDefinitionFromRule, optional
 
-        :param id: Request ID.
-        :type id: str, optional
-
         :param job_definition: Definition of a historical job.
         :type job_definition: JobDefinition, optional
+
+        :param signal_output: Whether the job outputs signals when results are converted.
+        :type signal_output: bool, optional
         """
         if from_rule is not unset:
             kwargs["from_rule"] = from_rule
-        if id is not unset:
-            kwargs["id"] = id
         if job_definition is not unset:
             kwargs["job_definition"] = job_definition
+        if signal_output is not unset:
+            kwargs["signal_output"] = signal_output
         super().__init__(kwargs)

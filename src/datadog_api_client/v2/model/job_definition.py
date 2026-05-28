@@ -25,6 +25,18 @@ if TYPE_CHECKING:
 
 
 class JobDefinition(ModelNormal):
+    validations = {
+        "cases": {
+            "max_items": 10,
+        },
+        "queries": {
+            "max_items": 10,
+        },
+        "third_party_cases": {
+            "max_items": 10,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.calculated_field import CalculatedField
@@ -94,7 +106,7 @@ class JobDefinition(ModelNormal):
         :param calculated_fields: Calculated fields.
         :type calculated_fields: [CalculatedField], optional
 
-        :param cases: Cases used for generating job results.
+        :param cases: Cases used for generating job results. Up to 10 cases are allowed.
         :type cases: [SecurityMonitoringRuleCaseCreate]
 
         :param _from: Starting time of data analyzed by the job.
@@ -115,7 +127,7 @@ class JobDefinition(ModelNormal):
         :param options: Job options.
         :type options: HistoricalJobOptions, optional
 
-        :param queries: Queries for selecting logs analyzed by the job.
+        :param queries: Queries for selecting logs analyzed by the job. Up to 10 queries are allowed.
         :type queries: [HistoricalJobQuery]
 
         :param reference_tables: Reference tables used in the queries.
@@ -124,7 +136,7 @@ class JobDefinition(ModelNormal):
         :param tags: Tags for generated signals.
         :type tags: [str], optional
 
-        :param third_party_cases: Cases for generating results from third-party detection method. Only available for third-party detection method.
+        :param third_party_cases: Cases for generating results from third-party detection method. Only available for third-party detection method. Up to 10 cases are allowed.
         :type third_party_cases: [SecurityMonitoringThirdPartyRuleCaseCreate], optional
 
         :param to: Ending time of data analyzed by the job.

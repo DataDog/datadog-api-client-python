@@ -31,6 +31,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
             "job_name": (str,),
             "job_status": (str,),
             "modified_at": (str,),
+            "progress_rate": (float,),
             "signal_output": (bool,),
         }
 
@@ -43,6 +44,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
         "job_name": "jobName",
         "job_status": "jobStatus",
         "modified_at": "modifiedAt",
+        "progress_rate": "progressRate",
         "signal_output": "signalOutput",
     }
 
@@ -56,6 +58,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
         job_name: Union[str, UnsetType] = unset,
         job_status: Union[str, UnsetType] = unset,
         modified_at: Union[str, UnsetType] = unset,
+        progress_rate: Union[float, UnsetType] = unset,
         signal_output: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -86,6 +89,9 @@ class HistoricalJobResponseAttributes(ModelNormal):
         :param modified_at: Last modification time of the job.
         :type modified_at: str, optional
 
+        :param progress_rate: Job execution progress as a value between 0 and 1. Available for ongoing jobs.
+        :type progress_rate: float, optional
+
         :param signal_output: Whether the job outputs signals.
         :type signal_output: bool, optional
         """
@@ -105,6 +111,8 @@ class HistoricalJobResponseAttributes(ModelNormal):
             kwargs["job_status"] = job_status
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
+        if progress_rate is not unset:
+            kwargs["progress_rate"] = progress_rate
         if signal_output is not unset:
             kwargs["signal_output"] = signal_output
         super().__init__(kwargs)
