@@ -190,6 +190,20 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Delete a Cloud Cost Management tag description returns "Bad Request" response
+    Given new "DeleteCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Delete a Cloud Cost Management tag description returns "No Content" response
+    Given new "DeleteCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
   @team:DataDog/cloud-cost-management
   Scenario: Delete a budget returns "Bad Request" response
     Given new "DeleteBudget" request
@@ -217,6 +231,20 @@ Feature: Cloud Cost Management
     And request contains "ruleset_id" parameter with value "ee10c3ff-312f-464c-b4f6-46adaa6d00a1"
     When the request is sent
     Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Generate a Cloud Cost Management tag description returns "Bad Request" response
+    Given new "GenerateCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Generate a Cloud Cost Management tag description returns "OK" response
+    Given new "GenerateCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Get Custom Costs File returns "OK" response
@@ -249,6 +277,27 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data.type" is equal to "gcp_uc_config"
     And the response "data.attributes.account_id" is equal to "123456_ABCDEF_123ABC"
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a Cloud Cost Management tag description returns "Bad Request" response
+    Given new "GetCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a Cloud Cost Management tag description returns "Not Found" response
+    Given new "GetCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a Cloud Cost Management tag description returns "OK" response
+    Given new "GetCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Get a Cloud Cost Management tag key returns "Bad Request" response
@@ -872,6 +921,22 @@ Feature: Cloud Cost Management
     And body with value [{"BilledCost": 100.5, "BillingCurrency": "USD", "ChargeDescription": "Monthly usage charge for my service", "ChargePeriodEnd": "2023-02-28", "ChargePeriodStart": "2023-02-01"}]
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Upsert a Cloud Cost Management tag description returns "Bad Request" response
+    Given new "UpsertCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cloud": "aws", "description": "AWS account that owns this cost."}, "id": "account_id", "type": "cost_tag_description"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Upsert a Cloud Cost Management tag description returns "No Content" response
+    Given new "UpsertCostTagDescriptionByKey" request
+    And request contains "tag_key" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cloud": "aws", "description": "AWS account that owns this cost."}, "id": "account_id", "type": "cost_tag_description"}}
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Validate CSV budget returns "OK" response
