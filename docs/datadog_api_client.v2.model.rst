@@ -26275,6 +26275,83 @@ datadog\_api\_client.v2.model.open\_api\_file module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.opsgenie\_account\_create\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_create\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_create\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_response\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_response\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_update\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_update\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_account\_update\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_account_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.opsgenie\_accounts\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.opsgenie_accounts_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.opsgenie\_service\_create\_attributes module
 --------------------------------------------------------------------------
 

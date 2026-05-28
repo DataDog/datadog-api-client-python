@@ -678,6 +678,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"api_key\": \"00000000-0000-0000-0000-000000000000\",\n      \"region\": \"us\"\n    },\n    \"type\": \"opsgenie-account\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"opsgenie_account\" in the system",
+    "key": "opsgenie_account",
+    "tag": "Opsgenie Integration",
+    "operationId": "CreateOpsgenieAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"opsgenie_api_key\": \"00000000-0000-0000-0000-000000000000\",\n      \"region\": \"us\"\n     },\n     \"type\": \"opsgenie-service\"\n  }\n}"
       }
     ],

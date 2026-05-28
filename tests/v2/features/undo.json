@@ -3456,6 +3456,37 @@
       "type": "idempotent"
     }
   },
+  "ListOpsgenieAccounts": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOpsgenieAccount": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "operationId": "DeleteOpsgenieAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOpsgenieAccount": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateOpsgenieAccount": {
+    "tag": "Opsgenie Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOpsgenieServices": {
     "tag": "Opsgenie Integration",
     "undo": {
