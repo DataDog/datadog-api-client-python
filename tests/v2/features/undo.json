@@ -1561,6 +1561,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteSyncConfig": {
+    "tag": "Storage Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetCodeCoverageBranchSummary": {
     "tag": "Code Coverage",
     "undo": {

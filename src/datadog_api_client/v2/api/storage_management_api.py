@@ -21,6 +21,29 @@ class StorageManagementApi:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
 
+        self._delete_sync_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cloudinventoryservice/syncconfigs/{id}",
+                "operation_id": "delete_sync_config",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._upsert_sync_config_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudInventorySyncConfigResponse,),
@@ -40,6 +63,23 @@ class StorageManagementApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def delete_sync_config(
+        self,
+        id: str,
+    ) -> None:
+        """Delete a Storage Management configuration.
+
+        Delete a Storage Management configuration by its unique identifier. Deleting a configuration stops inventory file synchronization for the associated cloud account.
+
+        :param id: Unique identifier of the Storage Management configuration.
+        :type id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._delete_sync_config_endpoint.call_with_http_info(**kwargs)
 
     def upsert_sync_config(
         self,
