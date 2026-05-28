@@ -618,6 +618,8 @@ class Configuration:
                 "v2.query_event_filtered_users": False,
                 "v2.query_users": False,
                 "v2.update_connection": False,
+                "v2.get_pruned_trace_by_id": False,
+                "v2.get_trace_by_id": False,
                 "v2.create_scorecard_outcomes_batch": False,
                 "v2.list_entity_risk_scores": False,
                 "v2.create_incident_service": False,

@@ -5381,6 +5381,12 @@
       "type": "safe"
     }
   },
+  "GetPrunedTraceByID": {
+    "tag": "APM Trace",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "QueryScalarData": {
     "tag": "Metrics",
     "undo": {
@@ -8172,6 +8178,12 @@
   },
   "SearchFlakyTests": {
     "tag": "Test Optimization",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetTraceByID": {
+    "tag": "APM Trace",
     "undo": {
       "type": "safe"
     }

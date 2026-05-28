@@ -15,6 +15,8 @@ from datadog_api_client.v2.model.api_keys_sort import APIKeysSort
 from datadog_api_client.v2.model.api_keys_type import APIKeysType
 from datadog_api_client.v2.model.api_trigger import APITrigger
 from datadog_api_client.v2.model.api_trigger_wrapper import APITriggerWrapper
+from datadog_api_client.v2.model.apm_span_error_flag import APMSpanErrorFlag
+from datadog_api_client.v2.model.apm_trace_span import APMTraceSpan
 from datadog_api_client.v2.model.aws_account_create_request import AWSAccountCreateRequest
 from datadog_api_client.v2.model.aws_account_create_request_attributes import AWSAccountCreateRequestAttributes
 from datadog_api_client.v2.model.aws_account_create_request_data import AWSAccountCreateRequestData
@@ -5764,6 +5766,10 @@ from datadog_api_client.v2.model.projected_cost_attributes import ProjectedCostA
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
 from datadog_api_client.v2.model.projected_cost_type import ProjectedCostType
 from datadog_api_client.v2.model.projects_response import ProjectsResponse
+from datadog_api_client.v2.model.pruned_trace_attributes import PrunedTraceAttributes
+from datadog_api_client.v2.model.pruned_trace_data import PrunedTraceData
+from datadog_api_client.v2.model.pruned_trace_response import PrunedTraceResponse
+from datadog_api_client.v2.model.pruned_trace_type import PrunedTraceType
 from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
 from datadog_api_client.v2.model.publish_request_type import PublishRequestType
 from datadog_api_client.v2.model.put_apps_datastore_item_response_array import PutAppsDatastoreItemResponseArray
@@ -7474,6 +7480,8 @@ from datadog_api_client.v2.model.suite_json_patch_request_data import SuiteJsonP
 from datadog_api_client.v2.model.suite_json_patch_request_data_attributes import SuiteJsonPatchRequestDataAttributes
 from datadog_api_client.v2.model.suite_json_patch_type import SuiteJsonPatchType
 from datadog_api_client.v2.model.suite_search_response_type import SuiteSearchResponseType
+from datadog_api_client.v2.model.summarized_span import SummarizedSpan
+from datadog_api_client.v2.model.summarized_trace import SummarizedTrace
 from datadog_api_client.v2.model.suppression_version_history import SuppressionVersionHistory
 from datadog_api_client.v2.model.suppression_versions import SuppressionVersions
 from datadog_api_client.v2.model.sync_property import SyncProperty
@@ -8070,6 +8078,10 @@ from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResp
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.token_type import TokenType
+from datadog_api_client.v2.model.trace_attributes import TraceAttributes
+from datadog_api_client.v2.model.trace_data import TraceData
+from datadog_api_client.v2.model.trace_response import TraceResponse
+from datadog_api_client.v2.model.trace_type import TraceType
 from datadog_api_client.v2.model.trigger import Trigger
 from datadog_api_client.v2.model.trigger_attributes import TriggerAttributes
 from datadog_api_client.v2.model.trigger_investigation_request import TriggerInvestigationRequest
@@ -8485,6 +8497,8 @@ __all__ = [
     "APIKeysType",
     "APITrigger",
     "APITriggerWrapper",
+    "APMSpanErrorFlag",
+    "APMTraceSpan",
     "AWSAccountCreateRequest",
     "AWSAccountCreateRequestAttributes",
     "AWSAccountCreateRequestData",
@@ -12558,6 +12572,10 @@ __all__ = [
     "ProjectedCostResponse",
     "ProjectedCostType",
     "ProjectsResponse",
+    "PrunedTraceAttributes",
+    "PrunedTraceData",
+    "PrunedTraceResponse",
+    "PrunedTraceType",
     "PublishAppResponse",
     "PublishRequestType",
     "PutAppsDatastoreItemResponseArray",
@@ -13714,6 +13732,8 @@ __all__ = [
     "SuiteJsonPatchRequestDataAttributes",
     "SuiteJsonPatchType",
     "SuiteSearchResponseType",
+    "SummarizedSpan",
+    "SummarizedTrace",
     "SuppressionVersionHistory",
     "SuppressionVersions",
     "SyncProperty",
@@ -14130,6 +14150,10 @@ __all__ = [
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
     "TokenType",
+    "TraceAttributes",
+    "TraceData",
+    "TraceResponse",
+    "TraceType",
     "Trigger",
     "TriggerAttributes",
     "TriggerInvestigationRequest",

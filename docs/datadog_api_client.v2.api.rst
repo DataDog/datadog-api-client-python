@@ -53,6 +53,13 @@ datadog\_api\_client.v2.api.apm\_retention\_filters\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.apm\_trace\_api module
+--------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.apm_trace_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.app\_builder\_api module
 ----------------------------------------------------
 

@@ -1215,6 +1215,20 @@ datadog\_api\_client.v2.model.apm\_retention\_filter\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.apm\_span\_error\_flag module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_span_error_flag
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.apm\_trace\_span module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.apm_trace_span
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.app\_builder\_event module
 --------------------------------------------------------
 
@@ -28585,6 +28599,34 @@ datadog\_api\_client.v2.model.projects\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.pruned\_trace\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pruned_trace_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pruned\_trace\_data module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pruned_trace_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pruned\_trace\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pruned_trace_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pruned\_trace\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pruned_trace_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.publish\_app\_response module
 -----------------------------------------------------------
 
@@ -36635,6 +36677,20 @@ datadog\_api\_client.v2.model.suite\_search\_response\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.summarized\_span module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.summarized_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.summarized\_trace module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.summarized_trace
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.suppression\_version\_history module
 ------------------------------------------------------------------
 
@@ -39544,6 +39600,34 @@ datadog\_api\_client.v2.model.token\_type module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.token_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.trace\_attributes module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.trace_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.trace\_data module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.trace_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.trace\_response module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.trace_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.trace\_type module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.trace_type
    :members:
    :show-inheritance:
 
