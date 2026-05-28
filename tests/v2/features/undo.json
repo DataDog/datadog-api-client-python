@@ -2382,6 +2382,36 @@
       "type": "idempotent"
     }
   },
+  "GetEUDMDevices": {
+    "tag": "End User Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEUDMDevice": {
+    "tag": "End User Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEUDMGraph": {
+    "tag": "End User Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEUDMIssues": {
+    "tag": "End User Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEUDMOverview": {
+    "tag": "End User Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListEvents": {
     "tag": "Events",
     "undo": {
@@ -4676,6 +4706,30 @@
     "tag": "Cloud Network Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "DeleteScopesRestriction": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetScopesRestriction": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertScopesRestriction": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RegisterOAuthClient": {
+    "tag": "OAuth2 Client Public",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListPipelines": {

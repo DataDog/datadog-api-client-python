@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/eudm/overview
+  response:
+    body:
+      string: '{"data":[{"id":"total","type":"overview_items","attributes":{"name":"total","value":0}},{"id":"healthy","type":"overview_items","attributes":{"name":"healthy","value":0}},{"id":"degraded","type":"overview_items","attributes":{"name":"degraded","value":0}},{"id":"critical","type":"overview_items","attributes":{"name":"critical","value":0}},{"id":"inactive","type":"overview_items","attributes":{"name":"inactive","value":0}},{"id":"high-cpu","type":"overview_items","attributes":{"name":"high-cpu","value":0}},{"id":"weak-wifi","type":"overview_items","attributes":{"name":"weak-wifi","value":0}},{"id":"recent-restart","type":"overview_items","attributes":{"name":"recent-restart","value":0}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

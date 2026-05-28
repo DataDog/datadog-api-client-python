@@ -11043,6 +11043,55 @@ datadog\_api\_client.v2.model.device\_attributes\_interface\_statuses module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.device\_base\_array module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_base_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.device\_base\_data module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_base_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.device\_base\_data\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_base_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.device\_details module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.device\_details\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_details_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.device\_details\_data\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_details_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.device\_details\_data\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_details_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.devices\_list\_data module
 --------------------------------------------------------
 
@@ -15369,6 +15418,41 @@ datadog\_api\_client.v2.model.google\_meet\_configuration\_reference\_data modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.graph\_item\_array module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.graph_item_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.graph\_item\_data module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.graph_item_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.graph\_item\_data\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.graph_item_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.graph\_item\_data\_attributes\_counts\_items module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.graph_item_data_attributes_counts_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.graph\_item\_data\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.graph_item_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.grey\_noise\_api\_key module
 ----------------------------------------------------------
 
@@ -17571,6 +17655,34 @@ datadog\_api\_client.v2.model.issue\_case\_resource\_type module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.issue_case_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_definition\_array module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_definition_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_definition\_data module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_definition_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_definition\_data\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_definition_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_definition\_data\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_definition_data_type
    :members:
    :show-inheritance:
 
@@ -23447,6 +23559,83 @@ datadog\_api\_client.v2.model.nullable\_user\_relationship\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.o\_auth\_client\_registration\_error module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_client_registration_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_client\_registration\_grant\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_client_registration_grant_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_client\_registration\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_client_registration_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_client\_registration\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_client_registration_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_client\_registration\_response\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_client_registration_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_oidc\_scope module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_oidc_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_scopes\_restriction module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_scopes_restriction
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_scopes\_restriction\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_scopes_restriction_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_scopes\_restriction\_response\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_scopes_restriction_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_scopes\_restriction\_response\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_scopes_restriction_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth\_scopes\_restriction\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth_scopes_restriction_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline module
 ------------------------------------------------------------
 
@@ -26986,6 +27175,34 @@ datadog\_api\_client.v2.model.output\_schema\_parameters\_type module
 ---------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.output_schema_parameters_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.overview\_item\_array module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.overview_item_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.overview\_item\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.overview_item_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.overview\_item\_data\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.overview_item_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.overview\_item\_data\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.overview_item_data_type
    :members:
    :show-inheritance:
 
@@ -40258,6 +40475,34 @@ datadog\_api\_client.v2.model.upsert\_cloud\_inventory\_sync\_config\_request\_d
 ------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_o\_auth\_scopes\_restriction\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_o\_auth\_scopes\_restriction\_data\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_o\_auth\_scopes\_restriction\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.upsert\_o\_auth\_scopes\_restriction\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_type
    :members:
    :show-inheritance:
 

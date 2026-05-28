@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/eudm/issues
+  response:
+    body:
+      string: '{"data":[{"id":"high-cpu","type":"issue_definitions","attributes":{"category":"cpu","label":"CPU
+        Usage above 70%","level":"warning"}},{"id":"critical-cpu","type":"issue_definitions","attributes":{"category":"cpu","label":"CPU
+        Usage above 90%","level":"critical"}},{"id":"high-memory","type":"issue_definitions","attributes":{"category":"memory","label":"Memory
+        Usage above 75%","level":"warning"}},{"id":"critical-memory","type":"issue_definitions","attributes":{"category":"memory","label":"Memory
+        Usage above 90%","level":"critical"}},{"id":"high-disk","type":"issue_definitions","attributes":{"category":"disk","label":"Disk
+        Usage above 80%","level":"warning"}},{"id":"critical-disk","type":"issue_definitions","attributes":{"category":"disk","label":"Disk
+        Usage above 95%","level":"critical"}},{"id":"low-battery-capacity","type":"issue_definitions","attributes":{"category":"battery","label":"Battery
+        Capacity below 80%","level":"warning"}},{"id":"critical-battery-capacity","type":"issue_definitions","attributes":{"category":"battery","label":"Battery
+        Capacity below 70%","level":"critical"}},{"id":"weak-wifi","type":"issue_definitions","attributes":{"category":"wifi","label":"Poor
+        WiFi Connectivity","level":"warning"}},{"id":"recent-restart","type":"issue_definitions","attributes":{"category":"notable_events","label":"Recent
+        System Restart","level":"info"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

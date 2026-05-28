@@ -1,0 +1,35 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/eudm/devices
+  response:
+    body:
+      string: '{"data":[{"id":"LAPTOP-DEMO-001","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.72.2","cpu_model":"Apple
+        M1 Pro","cpu_cores":10,"cpu_logical_processors":10,"cpu_usage":11.4,"mem_usage":47.1,"memory_total_kb":16777216,"disk_usage":38.2,"ip_address":"192.0.2.10","issues":[],"kernel_name":"Darwin","last_seen":"2026-05-26T22:49:00Z","manufacturer":"Apple","model_name":"MacBook
+        Pro","model_number":"MacBookPro18,3","os":"macOS","os_version":"macOS 15.6.1
+        arm64","resource_id":"10000000000001","serial_number":"TESTDEVICE001","status":"healthy","type":"laptop","uptime":432000.0,"wlan_bssid":"00:00:5e:00:53:01","wlan_rssi":-55.0,"wlan_ssid":"corp-wifi"}},{"id":"LAPTOP-DEMO-002","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.72.2","cpu_model":"Intel(R)
+        Core(TM) i7-1185G7","cpu_cores":4,"cpu_logical_processors":8,"cpu_usage":76.2,"mem_usage":81.5,"memory_total_kb":16777216,"disk_usage":62.4,"ip_address":"192.0.2.11","issues":["high-cpu","high-memory"],"kernel_name":"WindowsNT","last_seen":"2026-05-26T22:48:30Z","manufacturer":"Dell
+        Inc.","model_name":"Latitude 5420","model_number":"Latitude 5420","os":"Windows","os_version":"Windows
+        11 Pro 10.0 Build 22631","resource_id":"10000000000002","serial_number":"TESTDEVICE002","status":"degraded","type":"laptop","uptime":86400.0,"wlan_bssid":"00:00:5e:00:53:02","wlan_rssi":-72.5,"wlan_ssid":"corp-wifi"}},{"id":"LAPTOP-DEMO-003","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.71.0","cpu_model":"Intel(R)
+        Core(TM) i5-1135G7","cpu_cores":4,"cpu_logical_processors":8,"cpu_usage":92.8,"mem_usage":95.2,"memory_total_kb":8388608,"disk_usage":96.5,"ip_address":"198.51.100.10","issues":["critical-cpu","critical-memory","critical-disk"],"kernel_name":"WindowsNT","last_seen":"2026-05-26T22:47:00Z","manufacturer":"Lenovo","model_name":"ThinkPad
+        X1 Carbon","model_number":"20XW","os":"Windows","os_version":"Windows 10 Pro
+        10.0 Build 19045","resource_id":"10000000000003","serial_number":"TESTDEVICE003","status":"critical","type":"laptop","uptime":7200.0,"wlan_bssid":"00:00:5e:00:53:03","wlan_rssi":-81.0,"wlan_ssid":"guest-network"}},{"id":"DESKTOP-DEMO-001","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.72.2","cpu_model":"AMD
+        Ryzen 7 5800X","cpu_cores":8,"cpu_logical_processors":16,"cpu_usage":8.3,"mem_usage":32.0,"memory_total_kb":33554432,"disk_usage":41.7,"ip_address":"192.0.2.20","issues":[],"kernel_name":"WindowsNT","last_seen":"2026-05-26T22:49:00Z","manufacturer":"Custom","model_name":"Workstation","model_number":"","os":"Windows","os_version":"Windows
+        11 Pro 10.0 Build 26100","resource_id":"10000000000004","serial_number":"TESTDEVICE004","status":"healthy","type":"desktop","uptime":1209600.0,"wlan_bssid":"","wlan_ssid":""}},{"id":"LAPTOP-DEMO-004","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.72.2","battery_max_capacity_pct":73,"cpu_model":"Apple
+        M2","cpu_cores":8,"cpu_logical_processors":8,"cpu_usage":22.1,"mem_usage":55.0,"memory_total_kb":16777216,"disk_usage":51.0,"ip_address":"192.0.2.21","issues":["low-battery-capacity"],"kernel_name":"Darwin","last_seen":"2026-05-26T22:49:00Z","manufacturer":"Apple","model_name":"MacBook
+        Air","model_number":"Mac14,2","os":"macOS","os_version":"macOS 26.4.1 arm64","resource_id":"10000000000005","serial_number":"TESTDEVICE005","status":"degraded","type":"laptop","uptime":14400.0,"wlan_bssid":"00:00:5e:00:53:05","wlan_rssi":-62.0,"wlan_ssid":"home-network"}},{"id":"LAPTOP-DEMO-005","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.70.0","ip_address":"203.0.113.10","issues":[],"kernel_name":"WindowsNT","last_seen":"2026-05-20T08:15:00Z","manufacturer":"HP","model_name":"EliteBook
+        840","model_number":"G9","os":"Windows","os_version":"Windows 11 Pro 10.0
+        Build 22621","resource_id":"10000000000006","serial_number":"TESTDEVICE006","status":"inactive","type":"laptop","wlan_ssid":"","wlan_bssid":""}},{"id":"DESKTOP-DEMO-002","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.72.2","cpu_cores":16,"cpu_logical_processors":32,"cpu_model":"AMD
+        Ryzen 9 7950X","cpu_usage":14.6,"mem_usage":28.4,"memory_total_kb":67108864,"disk_usage":22.1,"ip_address":"198.51.100.20","issues":[],"kernel_name":"Linux","last_seen":"2026-05-26T22:49:00Z","manufacturer":"Custom","model_name":"Workstation","model_number":"","os":"linux","os_version":"Ubuntu
+        24.04 LTS","resource_id":"10000000000007","serial_number":"TESTDEVICE007","status":"healthy","type":"desktop","uptime":2592000.0}},{"id":"DEVICE-DEMO-UNKNOWN","type":"devices","attributes":{"agent_key":"00000000000000000000000000000000","agent_version":"7.65.0","ip_address":"203.0.113.20","issues":["recent-restart"],"last_seen":"2026-05-26T22:35:00Z","os":"","os_version":"","resource_id":"10000000000008","status":"healthy","type":"unknown"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
