@@ -19646,6 +19646,62 @@ datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_batch\_update\_data\_attributes\_request module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_batch_update_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_batch\_update\_data\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_batch_update_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_batch\_update\_insert\_record module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_batch_update_insert_record
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_batch\_update\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_batch_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_batch\_update\_update\_record module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_batch_update_update_record
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_clone\_data\_attributes\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_clone_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_clone\_data\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_clone_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_clone\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_clone_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_dataset\_data\_attributes\_request module
 ---------------------------------------------------------------------------------
 
@@ -19709,6 +19765,13 @@ datadog\_api\_client.v2.model.llm\_obs\_dataset\_draft\_state\_user module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_export\_format module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_export_format
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_dataset\_record\_data\_response module
 ------------------------------------------------------------------------------
 
@@ -19720,6 +19783,13 @@ datadog\_api\_client.v2.model.llm\_obs\_dataset\_record\_item module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_dataset_record_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_record\_tag\_operations module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_record_tag_operations
    :members:
    :show-inheritance:
 
@@ -19793,6 +19863,13 @@ datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_update\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_records\_upload\_file module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_records_upload_file
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_dataset\_request module
 ---------------------------------------------------------------
 
@@ -19804,6 +19881,27 @@ datadog\_api\_client.v2.model.llm\_obs\_dataset\_response module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_dataset_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_restore\_version\_data\_attributes\_request module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_restore_version_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_restore\_version\_data\_request module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_restore_version_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_dataset\_restore\_version\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_dataset_restore_version_request
    :members:
    :show-inheritance:
 
