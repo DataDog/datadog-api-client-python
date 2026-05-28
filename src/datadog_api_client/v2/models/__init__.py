@@ -5199,6 +5199,15 @@ from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_t
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_type import (
     ObservabilityPipelineSplunkHecDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination import (
+    ObservabilityPipelineSplunkHecMetricsDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination_compression import (
+    ObservabilityPipelineSplunkHecMetricsDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination_type import (
+    ObservabilityPipelineSplunkHecMetricsDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source import ObservabilityPipelineSplunkHecSource
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_source_type import (
     ObservabilityPipelineSplunkHecSourceType,
@@ -12061,6 +12070,9 @@ __all__ = [
     "ObservabilityPipelineSplunkHecDestinationEncoding",
     "ObservabilityPipelineSplunkHecDestinationTokenStrategy",
     "ObservabilityPipelineSplunkHecDestinationType",
+    "ObservabilityPipelineSplunkHecMetricsDestination",
+    "ObservabilityPipelineSplunkHecMetricsDestinationCompression",
+    "ObservabilityPipelineSplunkHecMetricsDestinationType",
     "ObservabilityPipelineSplunkHecSource",
     "ObservabilityPipelineSplunkHecSourceType",
     "ObservabilityPipelineSplunkHecSourceValidToken",

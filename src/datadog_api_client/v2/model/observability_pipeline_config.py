@@ -97,6 +97,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination import (
         ObservabilityPipelineDatadogMetricsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination import (
+        ObservabilityPipelineSplunkHecMetricsDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
     )
@@ -200,6 +203,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSyslogNgDestination,
                 ObservabilityPipelineDatabricksZerobusDestination,
                 ObservabilityPipelineDatadogMetricsDestination,
+                ObservabilityPipelineSplunkHecMetricsDestination,
             ]
         ],
         sources: List[
