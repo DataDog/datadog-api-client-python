@@ -36607,6 +36607,153 @@ datadog\_api\_client.v2.model.status\_pages\_user\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.statuspage\_account\_create\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_create\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_create\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_response\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_response\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_update\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_update\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_account\_update\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_account_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_create\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_create\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_create\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_response\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_response\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_update\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_update\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_setting\_update\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_setting_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.statuspage\_url\_settings\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.statuspage_url_settings_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.step module
 -----------------------------------------
 

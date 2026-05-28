@@ -105,6 +105,7 @@ from datadog_api_client.v2.api.spans_api import SpansApi
 from datadog_api_client.v2.api.spans_metrics_api import SpansMetricsApi
 from datadog_api_client.v2.api.static_analysis_api import StaticAnalysisApi
 from datadog_api_client.v2.api.status_pages_api import StatusPagesApi
+from datadog_api_client.v2.api.statuspage_integration_api import StatuspageIntegrationApi
 from datadog_api_client.v2.api.storage_management_api import StorageManagementApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
@@ -224,6 +225,7 @@ __all__ = [
     "SpansMetricsApi",
     "StaticAnalysisApi",
     "StatusPagesApi",
+    "StatuspageIntegrationApi",
     "StorageManagementApi",
     "SyntheticsApi",
     "TeamsApi",

@@ -3554,6 +3554,62 @@
       "type": "safe"
     }
   },
+  "DeleteStatuspageAccount": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetStatuspageAccount": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateStatuspageAccount": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateStatuspageAccount": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "operationId": "DeleteStatuspageAccount",
+      "type": "unsafe"
+    }
+  },
+  "ListStatuspageUrlSettings": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateStatuspageUrlSetting": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "operationId": "DeleteStatuspageUrlSetting",
+      "parameters": [
+        {
+          "name": "statuspage_url_setting_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteStatuspageUrlSetting": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateStatuspageUrlSetting": {
+    "tag": "Statuspage Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIntegrations": {
     "tag": "Integrations",
     "undo": {
