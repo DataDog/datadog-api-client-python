@@ -110,6 +110,76 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Batch update LLM Observability dataset records returns "Bad Request" response
+    Given operation "BatchUpdateLLMObsDataset" enabled
+    And new "BatchUpdateLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"create_new_version": true, "delete_records": [], "insert_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}, "tags": []}], "tags": [], "update_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}}]}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Batch update LLM Observability dataset records returns "Not Found" response
+    Given operation "BatchUpdateLLMObsDataset" enabled
+    And new "BatchUpdateLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"create_new_version": true, "delete_records": [], "insert_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}, "tags": []}], "tags": [], "update_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}}]}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Batch update LLM Observability dataset records returns "OK" response
+    Given operation "BatchUpdateLLMObsDataset" enabled
+    And new "BatchUpdateLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"create_new_version": true, "delete_records": [], "insert_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}, "tags": []}], "tags": [], "update_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}}]}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Batch update LLM Observability dataset records returns "Payload Too Large" response
+    Given operation "BatchUpdateLLMObsDataset" enabled
+    And new "BatchUpdateLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"create_new_version": true, "delete_records": [], "insert_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}, "tags": []}], "tags": [], "update_records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null, "tag_operations": {"add": [], "remove": [], "set": []}}]}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 413 Payload Too Large
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Clone an LLM Observability dataset returns "Bad Request" response
+    Given operation "CloneLLMObsDataset" enabled
+    And new "CloneLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Clone of the original dataset for experimentation.", "name": "My cloned dataset"}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Clone an LLM Observability dataset returns "Not Found" response
+    Given operation "CloneLLMObsDataset" enabled
+    And new "CloneLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Clone of the original dataset for experimentation.", "name": "My cloned dataset"}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Clone an LLM Observability dataset returns "OK" response
+    Given operation "CloneLLMObsDataset" enabled
+    And new "CloneLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Clone of the original dataset for experimentation.", "name": "My cloned dataset"}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Create an LLM Observability annotation queue returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
@@ -416,6 +486,33 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"interaction_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "interactions"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Export an LLM Observability dataset returns "Bad Request" response
+    Given operation "ExportLLMObsDataset" enabled
+    And new "ExportLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Export an LLM Observability dataset returns "Not Found" response
+    Given operation "ExportLLMObsDataset" enabled
+    And new "ExportLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Export an LLM Observability dataset returns "OK" response
+    Given operation "ExportLLMObsDataset" enabled
+    And new "ExportLLMObsDataset" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Get LLM Observability dataset draft state returns "Bad Request" response
@@ -771,6 +868,36 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Restore an LLM Observability dataset version returns "Bad Request" response
+    Given operation "RestoreLLMObsDatasetVersion" enabled
+    And new "RestoreLLMObsDatasetVersion" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"dataset_version": 1}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Restore an LLM Observability dataset version returns "Not Found" response
+    Given operation "RestoreLLMObsDatasetVersion" enabled
+    And new "RestoreLLMObsDatasetVersion" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"dataset_version": 1}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Restore an LLM Observability dataset version returns "OK" response
+    Given operation "RestoreLLMObsDatasetVersion" enabled
+    And new "RestoreLLMObsDatasetVersion" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"dataset_version": 1}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Run an LLM inference returns "Bad Request" response
     Given operation "CreateLLMObsIntegrationInference" enabled
     And new "CreateLLMObsIntegrationInference" request
@@ -1038,5 +1165,32 @@ Feature: LLM Observability
     And new "UpdateLLMObsAnnotationQueueLabelSchema" request
     And request contains "queue_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}}, "type": "queues"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Upload records to an LLM Observability dataset returns "Bad Request" response
+    Given operation "UploadLLMObsDatasetRecordsFile" enabled
+    And new "UploadLLMObsDatasetRecordsFile" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Upload records to an LLM Observability dataset returns "Not Found" response
+    Given operation "UploadLLMObsDatasetRecordsFile" enabled
+    And new "UploadLLMObsDatasetRecordsFile" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Upload records to an LLM Observability dataset returns "OK" response
+    Given operation "UploadLLMObsDatasetRecordsFile" enabled
+    And new "UploadLLMObsDatasetRecordsFile" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "dataset_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK

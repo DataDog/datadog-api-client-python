@@ -8,6 +8,7 @@ from typing import Any, Dict, List, Union
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    file_type,
     UnsetType,
     unset,
 )
@@ -73,12 +74,16 @@ from datadog_api_client.v2.model.llm_obs_dataset_response import LLMObsDatasetRe
 from datadog_api_client.v2.model.llm_obs_dataset_request import LLMObsDatasetRequest
 from datadog_api_client.v2.model.llm_obs_delete_datasets_request import LLMObsDeleteDatasetsRequest
 from datadog_api_client.v2.model.llm_obs_dataset_update_request import LLMObsDatasetUpdateRequest
-from datadog_api_client.v2.model.llm_obs_dataset_draft_state_response import LLMObsDatasetDraftStateResponse
-from datadog_api_client.v2.model.llm_obs_dataset_records_list_response import LLMObsDatasetRecordsListResponse
 from datadog_api_client.v2.model.llm_obs_dataset_records_mutation_response import LLMObsDatasetRecordsMutationResponse
+from datadog_api_client.v2.model.llm_obs_dataset_batch_update_request import LLMObsDatasetBatchUpdateRequest
+from datadog_api_client.v2.model.llm_obs_dataset_clone_request import LLMObsDatasetCloneRequest
+from datadog_api_client.v2.model.llm_obs_dataset_draft_state_response import LLMObsDatasetDraftStateResponse
+from datadog_api_client.v2.model.llm_obs_dataset_export_format import LLMObsDatasetExportFormat
+from datadog_api_client.v2.model.llm_obs_dataset_records_list_response import LLMObsDatasetRecordsListResponse
 from datadog_api_client.v2.model.llm_obs_dataset_records_update_request import LLMObsDatasetRecordsUpdateRequest
 from datadog_api_client.v2.model.llm_obs_dataset_records_request import LLMObsDatasetRecordsRequest
 from datadog_api_client.v2.model.llm_obs_delete_dataset_records_request import LLMObsDeleteDatasetRecordsRequest
+from datadog_api_client.v2.model.llm_obs_dataset_restore_version_request import LLMObsDatasetRestoreVersionRequest
 from datadog_api_client.v2.model.llm_obs_dataset_versions_response import LLMObsDatasetVersionsResponse
 from datadog_api_client.v2.model.llm_obs_experiment_events_v2_response import LLMObsExperimentEventsV2Response
 
@@ -106,6 +111,70 @@ class LLMObservabilityApi:
                 "body": {
                     "required": True,
                     "openapi_types": (LLMObsExperimentationAnalyticsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._batch_update_llm_obs_dataset_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDatasetRecordsMutationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/batch_update",
+                "operation_id": "batch_update_llm_obs_dataset",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsDatasetBatchUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._clone_llm_obs_dataset_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDatasetResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/clone",
+                "operation_id": "clone_llm_obs_dataset",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsDatasetCloneRequest,),
                     "location": "body",
                 },
             },
@@ -502,6 +571,48 @@ class LLMObservabilityApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._export_llm_obs_dataset_endpoint = _Endpoint(
+            settings={
+                "response_type": (str,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/export",
+                "operation_id": "export_llm_obs_dataset",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+                "format": {
+                    "openapi_types": (LLMObsDatasetExportFormat,),
+                    "attribute": "format",
+                    "location": "query",
+                },
+                "version": {
+                    "validation": {
+                        "inclusive_maximum": 2147483647,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "version",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["text/csv", "application/json"],
+            },
             api_client=api_client,
         )
 
@@ -1059,6 +1170,38 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._restore_llm_obs_dataset_version_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/restore",
+                "operation_id": "restore_llm_obs_dataset_version",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsDatasetRestoreVersionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._search_llm_obs_experimentation_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentationSearchResponse,),
@@ -1342,6 +1485,59 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._upload_llm_obs_dataset_records_file_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v2/{project_id}/datasets/{dataset_id}/records/upload",
+                "operation_id": "upload_llm_obs_dataset_records_file",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+                "deduplicate": {
+                    "openapi_types": (bool,),
+                    "attribute": "deduplicate",
+                    "location": "query",
+                },
+                "overwrite": {
+                    "openapi_types": (bool,),
+                    "attribute": "overwrite",
+                    "location": "query",
+                },
+                "tags": {
+                    "openapi_types": ([str],),
+                    "attribute": "tags",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "include_user_data": {
+                    "openapi_types": (bool,),
+                    "attribute": "include[user_data]",
+                    "location": "query",
+                },
+                "file": {
+                    "openapi_types": (file_type,),
+                    "attribute": "file",
+                    "location": "form",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["multipart/form-data"]},
+            api_client=api_client,
+        )
+
     def aggregate_llm_obs_experimentation(
         self,
         body: LLMObsExperimentationAnalyticsRequest,
@@ -1361,6 +1557,60 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._aggregate_llm_obs_experimentation_endpoint.call_with_http_info(**kwargs)
+
+    def batch_update_llm_obs_dataset(
+        self,
+        project_id: str,
+        dataset_id: str,
+        body: LLMObsDatasetBatchUpdateRequest,
+    ) -> LLMObsDatasetRecordsMutationResponse:
+        """Batch update LLM Observability dataset records.
+
+        Insert, update, and delete records in a single dataset operation. By default, a new dataset version is created when the batch is applied.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :param body: Batch update payload.
+        :type body: LLMObsDatasetBatchUpdateRequest
+        :rtype: LLMObsDatasetRecordsMutationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        kwargs["body"] = body
+
+        return self._batch_update_llm_obs_dataset_endpoint.call_with_http_info(**kwargs)
+
+    def clone_llm_obs_dataset(
+        self,
+        project_id: str,
+        dataset_id: str,
+        body: LLMObsDatasetCloneRequest,
+    ) -> LLMObsDatasetResponse:
+        """Clone an LLM Observability dataset.
+
+        Clone a dataset, copying its current records into a new dataset within the same project.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the source LLM Observability dataset to clone.
+        :type dataset_id: str
+        :param body: Clone dataset payload.
+        :type body: LLMObsDatasetCloneRequest
+        :rtype: LLMObsDatasetResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        kwargs["body"] = body
+
+        return self._clone_llm_obs_dataset_endpoint.call_with_http_info(**kwargs)
 
     def create_llm_obs_annotation_queue(
         self,
@@ -1700,6 +1950,41 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._delete_llm_obs_projects_endpoint.call_with_http_info(**kwargs)
+
+    def export_llm_obs_dataset(
+        self,
+        project_id: str,
+        dataset_id: str,
+        *,
+        format: Union[LLMObsDatasetExportFormat, UnsetType] = unset,
+        version: Union[int, UnsetType] = unset,
+    ) -> str:
+        """Export an LLM Observability dataset.
+
+        Download the contents of a dataset as a CSV file. The download is streamed and includes one row per dataset record.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :param format: Export format for the dataset contents. Only ``csv`` is currently supported.
+        :type format: LLMObsDatasetExportFormat, optional
+        :param version: Version of the dataset to export. If omitted, the current version is used. Must be between 0 and the current version of the dataset, inclusive.
+        :type version: int, optional
+        :rtype: str
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        if format is not unset:
+            kwargs["format"] = format
+
+        if version is not unset:
+            kwargs["version"] = version
+
+        return self._export_llm_obs_dataset_endpoint.call_with_http_info(**kwargs)
 
     def get_llm_obs_annotated_interactions(
         self,
@@ -2191,6 +2476,33 @@ class LLMObservabilityApi:
 
         return self._lock_llm_obs_dataset_draft_state_endpoint.call_with_http_info(**kwargs)
 
+    def restore_llm_obs_dataset_version(
+        self,
+        project_id: str,
+        dataset_id: str,
+        body: LLMObsDatasetRestoreVersionRequest,
+    ) -> None:
+        """Restore an LLM Observability dataset version.
+
+        Restore a dataset to a previous version. The dataset's current version is bumped, and its records are replaced with the records from the specified prior version.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :param body: Restore dataset version payload.
+        :type body: LLMObsDatasetRestoreVersionRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        kwargs["body"] = body
+
+        return self._restore_llm_obs_dataset_version_endpoint.call_with_http_info(**kwargs)
+
     def search_llm_obs_experimentation(
         self,
         body: LLMObsExperimentationSearchRequest,
@@ -2437,3 +2749,63 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._update_llm_obs_project_endpoint.call_with_http_info(**kwargs)
+
+    def upload_llm_obs_dataset_records_file(
+        self,
+        project_id: str,
+        dataset_id: str,
+        *,
+        deduplicate: Union[bool, UnsetType] = unset,
+        overwrite: Union[bool, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        include_user_data: Union[bool, UnsetType] = unset,
+        file: Union[file_type, UnsetType] = unset,
+    ) -> None:
+        """Upload records to an LLM Observability dataset.
+
+        Upload records to a dataset from a file. The request is a ``multipart/form-data`` upload containing a single ``file`` part.
+        Currently only CSV is supported. The CSV must include an ``input`` column. Optional columns are ``id`` , ``expected_output`` , ``metadata`` , and ``tags``.
+
+        The response is a Server-Sent Events stream ( ``text/event-stream`` ) emitting progress updates while records are processed. The stream emits the following named events:
+
+        * ``progress`` : incremental record counts written so far.
+        * ``completed`` : terminal event with a JSON body containing ``records_created``.
+        * ``error`` : terminal event with a JSON body containing an error ``message``.
+
+        :param project_id: The ID of the LLM Observability project.
+        :type project_id: str
+        :param dataset_id: The ID of the LLM Observability dataset.
+        :type dataset_id: str
+        :param deduplicate: Whether to skip records whose ``input`` already exists in the dataset. Defaults to ``false``.
+        :type deduplicate: bool, optional
+        :param overwrite: Whether to overwrite existing records that share the same user-provided ``id``. Defaults to ``true``.
+        :type overwrite: bool, optional
+        :param tags: Tags to apply to every uploaded record, in addition to any tags defined on individual rows. Can be repeated, e.g. ``tags=env:prod&tags=team:ai``.
+        :type tags: [str], optional
+        :param include_user_data: Whether to enrich the response with user metadata.
+        :type include_user_data: bool, optional
+        :param file: The records file to upload. Currently only CSV is supported. The file must include an ``input`` column. Optional columns include ``id`` , ``expected_output`` , ``metadata`` , and ``tags``.
+        :type file: file_type, optional
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["dataset_id"] = dataset_id
+
+        if deduplicate is not unset:
+            kwargs["deduplicate"] = deduplicate
+
+        if overwrite is not unset:
+            kwargs["overwrite"] = overwrite
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if include_user_data is not unset:
+            kwargs["include_user_data"] = include_user_data
+
+        if file is not unset:
+            kwargs["file"] = file
+
+        return self._upload_llm_obs_dataset_records_file_endpoint.call_with_http_info(**kwargs)

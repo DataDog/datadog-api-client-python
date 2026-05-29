@@ -4016,6 +4016,20 @@
       "type": "idempotent"
     }
   },
+  "BatchUpdateLLMObsDataset": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CloneLLMObsDataset": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
   "GetLLMObsDatasetDraftState": {
     "tag": "LLM Observability",
     "undo": {
@@ -4032,6 +4046,12 @@
     "tag": "LLM Observability",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ExportLLMObsDataset": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
     }
   },
   "ListLLMObsDatasetRecords": {
@@ -4071,10 +4091,22 @@
       "type": "unsafe"
     }
   },
+  "RestoreLLMObsDatasetVersion": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLLMObsDatasetVersions": {
     "tag": "LLM Observability",
     "undo": {
       "type": "safe"
+    }
+  },
+  "UploadLLMObsDatasetRecordsFile": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListLLMObsExperimentEvents": {

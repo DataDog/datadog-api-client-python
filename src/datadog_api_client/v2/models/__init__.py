@@ -3566,6 +3566,18 @@ from datadog_api_client.v2.model.llm_obs_data_deletion_response import LLMObsDat
 from datadog_api_client.v2.model.llm_obs_data_deletion_response_attributes import LLMObsDataDeletionResponseAttributes
 from datadog_api_client.v2.model.llm_obs_data_deletion_response_data import LLMObsDataDeletionResponseData
 from datadog_api_client.v2.model.llm_obs_data_deletion_response_type import LLMObsDataDeletionResponseType
+from datadog_api_client.v2.model.llm_obs_dataset_batch_update_data_attributes_request import (
+    LLMObsDatasetBatchUpdateDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_batch_update_data_request import LLMObsDatasetBatchUpdateDataRequest
+from datadog_api_client.v2.model.llm_obs_dataset_batch_update_insert_record import LLMObsDatasetBatchUpdateInsertRecord
+from datadog_api_client.v2.model.llm_obs_dataset_batch_update_request import LLMObsDatasetBatchUpdateRequest
+from datadog_api_client.v2.model.llm_obs_dataset_batch_update_update_record import LLMObsDatasetBatchUpdateUpdateRecord
+from datadog_api_client.v2.model.llm_obs_dataset_clone_data_attributes_request import (
+    LLMObsDatasetCloneDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_clone_data_request import LLMObsDatasetCloneDataRequest
+from datadog_api_client.v2.model.llm_obs_dataset_clone_request import LLMObsDatasetCloneRequest
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_request import LLMObsDatasetDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_dataset_data_attributes_response import LLMObsDatasetDataAttributesResponse
 from datadog_api_client.v2.model.llm_obs_dataset_data_request import LLMObsDatasetDataRequest
@@ -3577,8 +3589,10 @@ from datadog_api_client.v2.model.llm_obs_dataset_draft_state_data_attributes imp
 from datadog_api_client.v2.model.llm_obs_dataset_draft_state_response import LLMObsDatasetDraftStateResponse
 from datadog_api_client.v2.model.llm_obs_dataset_draft_state_type import LLMObsDatasetDraftStateType
 from datadog_api_client.v2.model.llm_obs_dataset_draft_state_user import LLMObsDatasetDraftStateUser
+from datadog_api_client.v2.model.llm_obs_dataset_export_format import LLMObsDatasetExportFormat
 from datadog_api_client.v2.model.llm_obs_dataset_record_data_response import LLMObsDatasetRecordDataResponse
 from datadog_api_client.v2.model.llm_obs_dataset_record_item import LLMObsDatasetRecordItem
+from datadog_api_client.v2.model.llm_obs_dataset_record_tag_operations import LLMObsDatasetRecordTagOperations
 from datadog_api_client.v2.model.llm_obs_dataset_record_update_item import LLMObsDatasetRecordUpdateItem
 from datadog_api_client.v2.model.llm_obs_dataset_records_data_attributes_request import (
     LLMObsDatasetRecordsDataAttributesRequest,
@@ -3595,8 +3609,16 @@ from datadog_api_client.v2.model.llm_obs_dataset_records_update_data_request imp
     LLMObsDatasetRecordsUpdateDataRequest,
 )
 from datadog_api_client.v2.model.llm_obs_dataset_records_update_request import LLMObsDatasetRecordsUpdateRequest
+from datadog_api_client.v2.model.llm_obs_dataset_records_upload_file import LLMObsDatasetRecordsUploadFile
 from datadog_api_client.v2.model.llm_obs_dataset_request import LLMObsDatasetRequest
 from datadog_api_client.v2.model.llm_obs_dataset_response import LLMObsDatasetResponse
+from datadog_api_client.v2.model.llm_obs_dataset_restore_version_data_attributes_request import (
+    LLMObsDatasetRestoreVersionDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_restore_version_data_request import (
+    LLMObsDatasetRestoreVersionDataRequest,
+)
+from datadog_api_client.v2.model.llm_obs_dataset_restore_version_request import LLMObsDatasetRestoreVersionRequest
 from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
 from datadog_api_client.v2.model.llm_obs_dataset_update_data_attributes_request import (
     LLMObsDatasetUpdateDataAttributesRequest,
@@ -11237,6 +11259,14 @@ __all__ = [
     "LLMObsDataDeletionResponseAttributes",
     "LLMObsDataDeletionResponseData",
     "LLMObsDataDeletionResponseType",
+    "LLMObsDatasetBatchUpdateDataAttributesRequest",
+    "LLMObsDatasetBatchUpdateDataRequest",
+    "LLMObsDatasetBatchUpdateInsertRecord",
+    "LLMObsDatasetBatchUpdateRequest",
+    "LLMObsDatasetBatchUpdateUpdateRecord",
+    "LLMObsDatasetCloneDataAttributesRequest",
+    "LLMObsDatasetCloneDataRequest",
+    "LLMObsDatasetCloneRequest",
     "LLMObsDatasetDataAttributesRequest",
     "LLMObsDatasetDataAttributesResponse",
     "LLMObsDatasetDataRequest",
@@ -11246,8 +11276,10 @@ __all__ = [
     "LLMObsDatasetDraftStateResponse",
     "LLMObsDatasetDraftStateType",
     "LLMObsDatasetDraftStateUser",
+    "LLMObsDatasetExportFormat",
     "LLMObsDatasetRecordDataResponse",
     "LLMObsDatasetRecordItem",
+    "LLMObsDatasetRecordTagOperations",
     "LLMObsDatasetRecordUpdateItem",
     "LLMObsDatasetRecordsDataAttributesRequest",
     "LLMObsDatasetRecordsDataRequest",
@@ -11258,8 +11290,12 @@ __all__ = [
     "LLMObsDatasetRecordsUpdateDataAttributesRequest",
     "LLMObsDatasetRecordsUpdateDataRequest",
     "LLMObsDatasetRecordsUpdateRequest",
+    "LLMObsDatasetRecordsUploadFile",
     "LLMObsDatasetRequest",
     "LLMObsDatasetResponse",
+    "LLMObsDatasetRestoreVersionDataAttributesRequest",
+    "LLMObsDatasetRestoreVersionDataRequest",
+    "LLMObsDatasetRestoreVersionRequest",
     "LLMObsDatasetType",
     "LLMObsDatasetUpdateDataAttributesRequest",
     "LLMObsDatasetUpdateDataRequest",
