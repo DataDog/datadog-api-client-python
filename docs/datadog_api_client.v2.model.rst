@@ -31007,6 +31007,76 @@ datadog\_api\_client.v2.model.rum\_metrics\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_editability module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_editability
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_id module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_update\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_update\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_update\_request module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filter_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_permanent\_retention\_filters\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_permanent_retention_filters_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_product\_analytics\_retention\_scale module
 ------------------------------------------------------------------------------
 

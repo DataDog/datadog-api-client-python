@@ -70,6 +70,22 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 25
 
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Get a permanent RUM retention filter returns "Not Found" response
+    Given new "GetPermanentRetentionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Get a permanent RUM retention filter returns "OK" response
+    Given new "GetPermanentRetentionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/rum-backend
   Scenario: Get all RUM retention filters returns "OK" response
     Given new "ListRetentionFilters" request
@@ -77,6 +93,13 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 3
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Get all permanent RUM retention filters returns "OK" response
+    Given new "ListPermanentRetentionFilters" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/rum-backend
   Scenario: Order RUM retention filters returns "Bad Request" response
@@ -130,3 +153,30 @@ Feature: Rum Retention Filters
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.query" is equal to "view_query"
     And the response "data.attributes.sample_rate" is equal to 100
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Update a permanent RUM retention filter returns "Bad Request" response
+    Given new "UpdatePermanentRetentionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}, "id": "synthetics_sessions", "type": "permanent_retention_filters"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Update a permanent RUM retention filter returns "Not Found" response
+    Given new "UpdatePermanentRetentionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}, "id": "synthetics_sessions", "type": "permanent_retention_filters"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Update a permanent RUM retention filter returns "Updated" response
+    Given new "UpdatePermanentRetentionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}, "id": "synthetics_sessions", "type": "permanent_retention_filters"}}
+    When the request is sent
+    Then the response status is 200 Updated
