@@ -12,6 +12,12 @@ from datadog_api_client.v2.model.rum_retention_filters_order_request import RumR
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
 from datadog_api_client.v2.model.rum_retention_filter_response import RumRetentionFilterResponse
 from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
+from datadog_api_client.v2.model.rum_permanent_retention_filters_response import RumPermanentRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_permanent_retention_filter_response import RumPermanentRetentionFilterResponse
+from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RumPermanentRetentionFilterID
+from datadog_api_client.v2.model.rum_permanent_retention_filter_update_request import (
+    RumPermanentRetentionFilterUpdateRequest,
+)
 from datadog_api_client.v2.model.rum_retention_filter_update_request import RumRetentionFilterUpdateRequest
 
 
@@ -80,6 +86,35 @@ class RumRetentionFiltersApi:
             api_client=api_client,
         )
 
+        self._get_permanent_retention_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (RumPermanentRetentionFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}",
+                "operation_id": "get_permanent_retention_filter",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "permanent_rf_id": {
+                    "required": True,
+                    "openapi_types": (RumPermanentRetentionFilterID,),
+                    "attribute": "permanent_rf_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionFilterResponse,),
@@ -100,6 +135,29 @@ class RumRetentionFiltersApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "rf_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_permanent_retention_filters_endpoint = _Endpoint(
+            settings={
+                "response_type": (RumPermanentRetentionFiltersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent",
+                "operation_id": "list_permanent_retention_filters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
                     "location": "path",
                 },
             },
@@ -151,6 +209,38 @@ class RumRetentionFiltersApi:
                 "body": {
                     "required": True,
                     "openapi_types": (RumRetentionFiltersOrderRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_permanent_retention_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (RumPermanentRetentionFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}",
+                "operation_id": "update_permanent_retention_filter",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "permanent_rf_id": {
+                    "required": True,
+                    "openapi_types": (RumPermanentRetentionFilterID,),
+                    "attribute": "permanent_rf_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RumPermanentRetentionFilterUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -235,6 +325,28 @@ class RumRetentionFiltersApi:
 
         return self._delete_retention_filter_endpoint.call_with_http_info(**kwargs)
 
+    def get_permanent_retention_filter(
+        self,
+        app_id: str,
+        permanent_rf_id: RumPermanentRetentionFilterID,
+    ) -> RumPermanentRetentionFilterResponse:
+        """Get a permanent RUM retention filter.
+
+        Get a permanent RUM retention filter for a RUM application by its identifier.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :param permanent_rf_id: The identifier of the permanent RUM retention filter.
+        :type permanent_rf_id: RumPermanentRetentionFilterID
+        :rtype: RumPermanentRetentionFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["permanent_rf_id"] = permanent_rf_id
+
+        return self._get_permanent_retention_filter_endpoint.call_with_http_info(**kwargs)
+
     def get_retention_filter(
         self,
         app_id: str,
@@ -256,6 +368,25 @@ class RumRetentionFiltersApi:
         kwargs["rf_id"] = rf_id
 
         return self._get_retention_filter_endpoint.call_with_http_info(**kwargs)
+
+    def list_permanent_retention_filters(
+        self,
+        app_id: str,
+    ) -> RumPermanentRetentionFiltersResponse:
+        """Get all permanent RUM retention filters.
+
+        Get the list of permanent RUM retention filters for a RUM application.
+        Permanent retention filters are predefined filters that cannot be created or deleted.
+        For each filter, the ``editability`` block indicates which cross-product fields can be updated.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :rtype: RumPermanentRetentionFiltersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        return self._list_permanent_retention_filters_endpoint.call_with_http_info(**kwargs)
 
     def list_retention_filters(
         self,
@@ -296,6 +427,35 @@ class RumRetentionFiltersApi:
         kwargs["body"] = body
 
         return self._order_retention_filters_endpoint.call_with_http_info(**kwargs)
+
+    def update_permanent_retention_filter(
+        self,
+        app_id: str,
+        permanent_rf_id: RumPermanentRetentionFilterID,
+        body: RumPermanentRetentionFilterUpdateRequest,
+    ) -> RumPermanentRetentionFilterResponse:
+        """Update a permanent RUM retention filter.
+
+        Update the cross-product sampling configuration of a permanent RUM retention filter for a RUM application.
+        Only fields marked as editable in the ``editability`` block of the filter can be updated.
+        Updating a non-editable field returns a ``400`` response.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :param permanent_rf_id: The identifier of the permanent RUM retention filter.
+        :type permanent_rf_id: RumPermanentRetentionFilterID
+        :param body: New configuration of the permanent RUM retention filter.
+        :type body: RumPermanentRetentionFilterUpdateRequest
+        :rtype: RumPermanentRetentionFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["permanent_rf_id"] = permanent_rf_id
+
+        kwargs["body"] = body
+
+        return self._update_permanent_retention_filter_endpoint.call_with_http_info(**kwargs)
 
     def update_retention_filter(
         self,
