@@ -255,6 +255,8 @@ class KeyManagementApi:
 
         Creates an API key with a given name.
 
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
+
         :type body: ApiKey
         :rtype: ApiKeyResponse
         """
@@ -272,6 +274,8 @@ class KeyManagementApi:
         Create an application key with a given name.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
+
         :type body: ApplicationKey
         :rtype: ApplicationKeyResponse
         """
@@ -287,6 +291,8 @@ class KeyManagementApi:
         """Delete an API key.
 
         Delete a given API key.
+
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
 
         :param key: The specific API key you are working with.
         :type key: str
@@ -306,6 +312,8 @@ class KeyManagementApi:
         Delete a given application key.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
+
         :param key: The specific APP key you are working with.
         :type key: str
         :rtype: ApplicationKeyResponse
@@ -322,6 +330,8 @@ class KeyManagementApi:
         """Get API key.
 
         Get a given API key.
+
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
 
         :param key: The specific API key you are working with.
         :type key: str
@@ -341,6 +351,8 @@ class KeyManagementApi:
         Get a given application key.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
 
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
+
         :param key: The specific APP key you are working with.
         :type key: str
         :rtype: ApplicationKeyResponse
@@ -357,6 +369,8 @@ class KeyManagementApi:
 
         Get all API keys available for your account.
 
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
+
         :rtype: ApiKeyListResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -369,6 +383,8 @@ class KeyManagementApi:
 
         Get all application keys available for your Datadog account.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
+
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
 
         :rtype: ApplicationKeyListResponse
         """
@@ -383,6 +399,8 @@ class KeyManagementApi:
         """Edit an API key.
 
         Edit an API key name.
+
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
 
         :param key: The specific API key you are working with.
         :type key: str
@@ -405,6 +423,8 @@ class KeyManagementApi:
 
         Edit an application key name.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
+
+        **Note** : This endpoint is disabled for the Government sites (US1-FED and US2-FED). Use the `V2 Key Management <https://docs.datadoghq.com/api/latest/key-management/>`_ endpoints instead.
 
         :param key: The specific APP key you are working with.
         :type key: str
