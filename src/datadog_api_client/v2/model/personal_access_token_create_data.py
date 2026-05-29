@@ -36,9 +36,9 @@ class PersonalAccessTokenCreateData(ModelNormal):
 
     def __init__(self_, attributes: PersonalAccessTokenCreateAttributes, type: PersonalAccessTokensType, **kwargs):
         """
-        Object used to create a personal access token.
+        Object used to create an access token.
 
-        :param attributes: Attributes used to create a personal access token.
+        :param attributes: Attributes used to create an access token.
         :type attributes: PersonalAccessTokenCreateAttributes
 
         :param type: Personal access tokens resource type.

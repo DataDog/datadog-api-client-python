@@ -49,15 +49,15 @@ class PersonalAccessToken(ModelNormal):
         **kwargs,
     ):
         """
-        Datadog personal access token.
+        Datadog access token.
 
-        :param attributes: Attributes of a personal access token.
+        :param attributes: Attributes of an access token.
         :type attributes: PersonalAccessTokenAttributes, optional
 
-        :param id: ID of the personal access token.
+        :param id: ID of the access token.
         :type id: str, optional
 
-        :param relationships: Resources related to the personal access token.
+        :param relationships: Resources related to the access token.
         :type relationships: PersonalAccessTokenRelationships, optional
 
         :param type: Personal access tokens resource type.

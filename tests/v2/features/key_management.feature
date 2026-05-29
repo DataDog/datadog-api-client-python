@@ -245,7 +245,7 @@ Feature: Key Management
   Scenario: Get a personal access token returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetPersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "token_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -254,7 +254,7 @@ Feature: Key Management
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
     And new "GetPersonalAccessToken" request
-    And request contains "pat_id" parameter from "personal_access_token.data.id"
+    And request contains "token_id" parameter from "personal_access_token.data.id"
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "personal_access_tokens"
@@ -277,6 +277,20 @@ Feature: Key Management
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "api_keys"
     And the response "data[0].attributes" has field "date_last_used"
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Get all access tokens returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListPersonalAccessTokens" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/credentials-management
+  Scenario: Get all access tokens returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListPersonalAccessTokens" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/credentials-management
   Scenario: Get all application keys owned by current user returns "Bad Request" response
@@ -324,13 +338,6 @@ Feature: Key Management
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "application_keys"
     And the response "data[0].attributes" has field "last_used_at"
-
-  @generated @skip @team:DataDog/credentials-management
-  Scenario: Get all personal access tokens returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListPersonalAccessTokens" request
-    When the request is sent
-    Then the response status is 400 Bad Request
 
   @team:DataDog/credentials-management
   Scenario: Get all personal access tokens returns "OK" response
@@ -396,7 +403,7 @@ Feature: Key Management
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
     And new "RevokePersonalAccessToken" request
-    And request contains "pat_id" parameter from "personal_access_token.data.id"
+    And request contains "token_id" parameter from "personal_access_token.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
@@ -404,7 +411,7 @@ Feature: Key Management
   Scenario: Revoke a personal access token returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "RevokePersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "token_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -412,7 +419,7 @@ Feature: Key Management
   Scenario: Update a personal access token returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdatePersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "token_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "Updated Personal Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "personal_access_tokens"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -421,7 +428,7 @@ Feature: Key Management
   Scenario: Update a personal access token returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdatePersonalAccessToken" request
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "token_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"name": "Updated Personal Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "personal_access_tokens"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -431,7 +438,7 @@ Feature: Key Management
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
     And new "UpdatePersonalAccessToken" request
-    And request contains "pat_id" parameter from "personal_access_token.data.id"
+    And request contains "token_id" parameter from "personal_access_token.data.id"
     And body with value {"data": {"type": "personal_access_tokens", "id": "{{ personal_access_token.data.id }}", "attributes": {"name": "{{ unique }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK

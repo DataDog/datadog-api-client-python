@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.personal_access_token import PersonalAccessToken
+    from datadog_api_client.v2.model.access_token_list_item import AccessTokenListItem
     from datadog_api_client.v2.model.personal_access_token_response_meta import PersonalAccessTokenResponseMeta
 
 
 class ListPersonalAccessTokensResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.personal_access_token import PersonalAccessToken
+        from datadog_api_client.v2.model.access_token_list_item import AccessTokenListItem
         from datadog_api_client.v2.model.personal_access_token_response_meta import PersonalAccessTokenResponseMeta
 
         return {
-            "data": ([PersonalAccessToken],),
+            "data": ([AccessTokenListItem],),
             "meta": (PersonalAccessTokenResponseMeta,),
         }
 
@@ -36,17 +36,17 @@ class ListPersonalAccessTokensResponse(ModelNormal):
 
     def __init__(
         self_,
-        data: Union[List[PersonalAccessToken], UnsetType] = unset,
+        data: Union[List[AccessTokenListItem], UnsetType] = unset,
         meta: Union[PersonalAccessTokenResponseMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Response for a list of personal access tokens.
+        Response for a list of access tokens. Includes both personal and service access tokens.
 
-        :param data: Array of personal access tokens.
-        :type data: [PersonalAccessToken], optional
+        :param data: Array of access tokens. Includes both personal and service access tokens.
+        :type data: [AccessTokenListItem], optional
 
-        :param meta: Additional information related to the personal access token response.
+        :param meta: Additional information related to the access token response.
         :type meta: PersonalAccessTokenResponseMeta, optional
         """
         if data is not unset:

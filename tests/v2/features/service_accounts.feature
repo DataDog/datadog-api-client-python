@@ -33,7 +33,7 @@ Feature: Service Accounts
   Scenario: Create an access token for a service account returns "Bad Request" response
     Given new "CreateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"expires_at": "2025-12-31T23:59:59+00:00", "name": "Service Account Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "type": "personal_access_tokens"}}
+    And body with value {"data": {"attributes": {"expires_at": "2025-12-31T23:59:59+00:00", "name": "Service Account Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "type": "service_access_tokens"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -42,10 +42,10 @@ Feature: Service Accounts
     Given there is a valid "service_account_user" in the system
     And new "CreateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "service_account_user.data.id"
-    And body with value {"data": {"type": "personal_access_tokens", "attributes": {"name": "{{ unique }}", "scopes": ["dashboards_read"]}}}
+    And body with value {"data": {"type": "service_access_tokens", "attributes": {"name": "{{ unique }}", "scopes": ["dashboards_read"]}}}
     When the request is sent
     Then the response status is 201 Created
-    And the response "data.type" is equal to "personal_access_tokens"
+    And the response "data.type" is equal to "service_access_tokens"
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.relationships.owned_by.data.id" has the same value as "service_account_user.data.id"
 
@@ -53,7 +53,7 @@ Feature: Service Accounts
   Scenario: Create an access token for a service account returns "Not Found" response
     Given new "CreateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"expires_at": "2025-12-31T23:59:59+00:00", "name": "Service Account Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "type": "personal_access_tokens"}}
+    And body with value {"data": {"attributes": {"expires_at": "2025-12-31T23:59:59+00:00", "name": "Service Account Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "type": "service_access_tokens"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -142,7 +142,7 @@ Feature: Service Accounts
   Scenario: Get an access token for a service account returns "Not Found" response
     Given new "GetServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "token_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -152,11 +152,11 @@ Feature: Service Accounts
     And there is a valid "service_account_access_token" for "service_account_user"
     And new "GetServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "service_account_user.data.id"
-    And request contains "pat_id" parameter from "service_account_access_token.data.id"
+    And request contains "token_id" parameter from "service_account_access_token.data.id"
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" has the same value as "service_account_access_token.data.attributes.name"
-    And the response "data.type" is equal to "personal_access_tokens"
+    And the response "data.type" is equal to "service_access_tokens"
     And the response "data.id" is equal to "{{ service_account_access_token.data.id }}"
 
   @generated @skip @team:DataDog/credentials-management @team:DataDog/org-management
@@ -232,7 +232,7 @@ Feature: Service Accounts
     And there is a valid "service_account_access_token" for "service_account_user"
     And new "RevokeServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "service_account_user.data.id"
-    And request contains "pat_id" parameter from "service_account_access_token.data.id"
+    And request contains "token_id" parameter from "service_account_access_token.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
@@ -240,7 +240,7 @@ Feature: Service Accounts
   Scenario: Revoke an access token for a service account returns "Not Found" response
     Given new "RevokeServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
-    And request contains "pat_id" parameter from "REPLACE.ME"
+    And request contains "token_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -248,8 +248,8 @@ Feature: Service Accounts
   Scenario: Update an access token for a service account returns "Bad Request" response
     Given new "UpdateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
-    And request contains "pat_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Updated Personal Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "personal_access_tokens"}}
+    And request contains "token_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Updated Service Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "service_access_tokens"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -257,8 +257,8 @@ Feature: Service Accounts
   Scenario: Update an access token for a service account returns "Not Found" response
     Given new "UpdateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "REPLACE.ME"
-    And request contains "pat_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Updated Personal Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "personal_access_tokens"}}
+    And request contains "token_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Updated Service Access Token", "scopes": ["dashboards_read", "dashboards_write"]}, "id": "00112233-4455-6677-8899-aabbccddeeff", "type": "service_access_tokens"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -268,10 +268,10 @@ Feature: Service Accounts
     And there is a valid "service_account_access_token" for "service_account_user"
     And new "UpdateServiceAccountAccessToken" request
     And request contains "service_account_id" parameter from "service_account_user.data.id"
-    And request contains "pat_id" parameter from "service_account_access_token.data.id"
-    And body with value {"data": {"id": "{{ service_account_access_token.data.id }}", "type": "personal_access_tokens", "attributes": {"name": "{{ service_account_access_token.data.attributes.name }}-updated"}}}
+    And request contains "token_id" parameter from "service_account_access_token.data.id"
+    And body with value {"data": {"id": "{{ service_account_access_token.data.id }}", "type": "service_access_tokens", "attributes": {"name": "{{ service_account_access_token.data.attributes.name }}-updated"}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ service_account_access_token.data.attributes.name }}-updated"
-    And the response "data.type" is equal to "personal_access_tokens"
+    And the response "data.type" is equal to "service_access_tokens"
     And the response "data.id" is equal to "{{ service_account_access_token.data.id }}"

@@ -126,6 +126,10 @@ from datadog_api_client.v2.model.aws_regions_include_all import AWSRegionsInclud
 from datadog_api_client.v2.model.aws_regions_include_only import AWSRegionsIncludeOnly
 from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
 from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
+from datadog_api_client.v2.model.access_token_list_item import AccessTokenListItem
+from datadog_api_client.v2.model.access_token_list_item_relationships import AccessTokenListItemRelationships
+from datadog_api_client.v2.model.access_token_owner_type import AccessTokenOwnerType
+from datadog_api_client.v2.model.access_tokens_type import AccessTokensType
 from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
 from datadog_api_client.v2.model.action_connection_attributes import ActionConnectionAttributes
 from datadog_api_client.v2.model.action_connection_attributes_update import ActionConnectionAttributesUpdate
@@ -2698,6 +2702,8 @@ from datadog_api_client.v2.model.full_custom_framework_data import FullCustomFra
 from datadog_api_client.v2.model.full_custom_framework_data_attributes import FullCustomFrameworkDataAttributes
 from datadog_api_client.v2.model.full_personal_access_token import FullPersonalAccessToken
 from datadog_api_client.v2.model.full_personal_access_token_attributes import FullPersonalAccessTokenAttributes
+from datadog_api_client.v2.model.full_service_access_token import FullServiceAccessToken
+from datadog_api_client.v2.model.full_service_access_token_attributes import FullServiceAccessTokenAttributes
 from datadog_api_client.v2.model.gcp_credentials import GCPCredentials
 from datadog_api_client.v2.model.gcp_credentials_update import GCPCredentialsUpdate
 from datadog_api_client.v2.model.gcp_integration import GCPIntegration
@@ -3913,6 +3919,7 @@ from datadog_api_client.v2.model.list_scorecard_scores_meta import ListScorecard
 from datadog_api_client.v2.model.list_scorecard_scores_response import ListScorecardScoresResponse
 from datadog_api_client.v2.model.list_scorecards_response import ListScorecardsResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
+from datadog_api_client.v2.model.list_service_access_tokens_response import ListServiceAccessTokensResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
 from datadog_api_client.v2.model.list_tags_response_data_attributes import ListTagsResponseDataAttributes
@@ -5887,6 +5894,8 @@ from datadog_api_client.v2.model.relation_response_type import RelationResponseT
 from datadog_api_client.v2.model.relation_to_entity import RelationToEntity
 from datadog_api_client.v2.model.relation_type import RelationType
 from datadog_api_client.v2.model.relationship_item import RelationshipItem
+from datadog_api_client.v2.model.relationship_to_access_token_owner import RelationshipToAccessTokenOwner
+from datadog_api_client.v2.model.relationship_to_access_token_owner_data import RelationshipToAccessTokenOwnerData
 from datadog_api_client.v2.model.relationship_to_incident import RelationshipToIncident
 from datadog_api_client.v2.model.relationship_to_incident_attachment import RelationshipToIncidentAttachment
 from datadog_api_client.v2.model.relationship_to_incident_attachment_data import RelationshipToIncidentAttachmentData
@@ -5936,6 +5945,8 @@ from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute import
 from datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data import (
     RelationshipToSAMLAssertionAttributeData,
 )
+from datadog_api_client.v2.model.relationship_to_service_account import RelationshipToServiceAccount
+from datadog_api_client.v2.model.relationship_to_service_account_data import RelationshipToServiceAccountData
 from datadog_api_client.v2.model.relationship_to_team import RelationshipToTeam
 from datadog_api_client.v2.model.relationship_to_team_data import RelationshipToTeamData
 from datadog_api_client.v2.model.relationship_to_team_link_data import RelationshipToTeamLinkData
@@ -7075,6 +7086,14 @@ from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import 
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type import (
     SensitiveDataScannerTextReplacementType,
 )
+from datadog_api_client.v2.model.service_access_token import ServiceAccessToken
+from datadog_api_client.v2.model.service_access_token_attributes import ServiceAccessTokenAttributes
+from datadog_api_client.v2.model.service_access_token_create_response import ServiceAccessTokenCreateResponse
+from datadog_api_client.v2.model.service_access_token_relationships import ServiceAccessTokenRelationships
+from datadog_api_client.v2.model.service_access_token_response import ServiceAccessTokenResponse
+from datadog_api_client.v2.model.service_access_token_response_meta import ServiceAccessTokenResponseMeta
+from datadog_api_client.v2.model.service_access_token_response_meta_page import ServiceAccessTokenResponseMetaPage
+from datadog_api_client.v2.model.service_access_tokens_type import ServiceAccessTokensType
 from datadog_api_client.v2.model.service_account_access_token_create_attributes import (
     ServiceAccountAccessTokenCreateAttributes,
 )
@@ -7082,9 +7101,17 @@ from datadog_api_client.v2.model.service_account_access_token_create_data import
 from datadog_api_client.v2.model.service_account_access_token_create_request import (
     ServiceAccountAccessTokenCreateRequest,
 )
+from datadog_api_client.v2.model.service_account_access_token_update_attributes import (
+    ServiceAccountAccessTokenUpdateAttributes,
+)
+from datadog_api_client.v2.model.service_account_access_token_update_data import ServiceAccountAccessTokenUpdateData
+from datadog_api_client.v2.model.service_account_access_token_update_request import (
+    ServiceAccountAccessTokenUpdateRequest,
+)
 from datadog_api_client.v2.model.service_account_create_attributes import ServiceAccountCreateAttributes
 from datadog_api_client.v2.model.service_account_create_data import ServiceAccountCreateData
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
+from datadog_api_client.v2.model.service_account_type import ServiceAccountType
 from datadog_api_client.v2.model.service_definition_create_response import ServiceDefinitionCreateResponse
 from datadog_api_client.v2.model.service_definition_data import ServiceDefinitionData
 from datadog_api_client.v2.model.service_definition_data_attributes import ServiceDefinitionDataAttributes
@@ -8588,6 +8615,10 @@ __all__ = [
     "AWSRegionsIncludeOnly",
     "AWSResourcesConfig",
     "AWSTracesConfig",
+    "AccessTokenListItem",
+    "AccessTokenListItemRelationships",
+    "AccessTokenOwnerType",
+    "AccessTokensType",
     "AccountFilteringConfig",
     "ActionConnectionAttributes",
     "ActionConnectionAttributesUpdate",
@@ -10536,6 +10567,8 @@ __all__ = [
     "FullCustomFrameworkDataAttributes",
     "FullPersonalAccessToken",
     "FullPersonalAccessTokenAttributes",
+    "FullServiceAccessToken",
+    "FullServiceAccessTokenAttributes",
     "GCPCredentials",
     "GCPCredentialsUpdate",
     "GCPIntegration",
@@ -11459,6 +11492,7 @@ __all__ = [
     "ListScorecardScoresResponse",
     "ListScorecardsResponse",
     "ListSecurityFindingsResponse",
+    "ListServiceAccessTokensResponse",
     "ListTagsResponse",
     "ListTagsResponseData",
     "ListTagsResponseDataAttributes",
@@ -12683,6 +12717,8 @@ __all__ = [
     "RelationToEntity",
     "RelationType",
     "RelationshipItem",
+    "RelationshipToAccessTokenOwner",
+    "RelationshipToAccessTokenOwnerData",
     "RelationshipToIncident",
     "RelationshipToIncidentAttachment",
     "RelationshipToIncidentAttachmentData",
@@ -12718,6 +12754,8 @@ __all__ = [
     "RelationshipToRuleDataObject",
     "RelationshipToSAMLAssertionAttribute",
     "RelationshipToSAMLAssertionAttributeData",
+    "RelationshipToServiceAccount",
+    "RelationshipToServiceAccountData",
     "RelationshipToTeam",
     "RelationshipToTeamData",
     "RelationshipToTeamLinkData",
@@ -13421,12 +13459,24 @@ __all__ = [
     "SensitiveDataScannerSuppressions",
     "SensitiveDataScannerTextReplacement",
     "SensitiveDataScannerTextReplacementType",
+    "ServiceAccessToken",
+    "ServiceAccessTokenAttributes",
+    "ServiceAccessTokenCreateResponse",
+    "ServiceAccessTokenRelationships",
+    "ServiceAccessTokenResponse",
+    "ServiceAccessTokenResponseMeta",
+    "ServiceAccessTokenResponseMetaPage",
+    "ServiceAccessTokensType",
     "ServiceAccountAccessTokenCreateAttributes",
     "ServiceAccountAccessTokenCreateData",
     "ServiceAccountAccessTokenCreateRequest",
+    "ServiceAccountAccessTokenUpdateAttributes",
+    "ServiceAccountAccessTokenUpdateData",
+    "ServiceAccountAccessTokenUpdateRequest",
     "ServiceAccountCreateAttributes",
     "ServiceAccountCreateData",
     "ServiceAccountCreateRequest",
+    "ServiceAccountType",
     "ServiceDefinitionCreateResponse",
     "ServiceDefinitionData",
     "ServiceDefinitionDataAttributes",

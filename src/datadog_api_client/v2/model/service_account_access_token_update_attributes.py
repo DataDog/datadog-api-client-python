@@ -1,0 +1,43 @@
+# Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
+# This product includes software developed at Datadog (https://www.datadoghq.com/).
+# Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
+
+from typing import List, Union
+
+from datadog_api_client.model_utils import (
+    ModelNormal,
+    cached_property,
+    unset,
+    UnsetType,
+)
+
+
+class ServiceAccountAccessTokenUpdateAttributes(ModelNormal):
+    @cached_property
+    def openapi_types(_):
+        return {
+            "name": (str,),
+            "scopes": ([str],),
+        }
+
+    attribute_map = {
+        "name": "name",
+        "scopes": "scopes",
+    }
+
+    def __init__(self_, name: Union[str, UnsetType] = unset, scopes: Union[List[str], UnsetType] = unset, **kwargs):
+        """
+        Attributes used to update a service account access token.
+
+        :param name: Name of the access token.
+        :type name: str, optional
+
+        :param scopes: Array of scopes to grant the access token.
+        :type scopes: [str], optional
+        """
+        if name is not unset:
+            kwargs["name"] = name
+        if scopes is not unset:
+            kwargs["scopes"] = scopes
+        super().__init__(kwargs)

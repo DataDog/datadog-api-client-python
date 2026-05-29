@@ -259,16 +259,16 @@ class KeyManagementApi:
             settings={
                 "response_type": (PersonalAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/personal_access_tokens/{pat_id}",
+                "endpoint_path": "/api/v2/personal_access_tokens/{token_id}",
                 "operation_id": "get_personal_access_token",
                 "http_method": "GET",
                 "version": "v2",
             },
             params_map={
-                "pat_id": {
+                "token_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_id",
+                    "attribute": "token_id",
                     "location": "path",
                 },
             },
@@ -484,9 +484,9 @@ class KeyManagementApi:
                     "attribute": "filter",
                     "location": "query",
                 },
-                "filter_owner_uuid": {
+                "filter_owned_by": {
                     "openapi_types": ([str],),
-                    "attribute": "filter[owner_uuid]",
+                    "attribute": "filter[owned_by]",
                     "location": "query",
                     "collection_format": "multi",
                 },
@@ -501,16 +501,16 @@ class KeyManagementApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/personal_access_tokens/{pat_id}",
+                "endpoint_path": "/api/v2/personal_access_tokens/{token_id}",
                 "operation_id": "revoke_personal_access_token",
                 "http_method": "DELETE",
                 "version": "v2",
             },
             params_map={
-                "pat_id": {
+                "token_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_id",
+                    "attribute": "token_id",
                     "location": "path",
                 },
             },
@@ -602,16 +602,16 @@ class KeyManagementApi:
             settings={
                 "response_type": (PersonalAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/personal_access_tokens/{pat_id}",
+                "endpoint_path": "/api/v2/personal_access_tokens/{token_id}",
                 "operation_id": "update_personal_access_token",
                 "http_method": "PATCH",
                 "version": "v2",
             },
             params_map={
-                "pat_id": {
+                "token_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "pat_id",
+                    "attribute": "token_id",
                     "location": "path",
                 },
                 "body": {
@@ -823,18 +823,18 @@ class KeyManagementApi:
 
     def get_personal_access_token(
         self,
-        pat_id: str,
+        token_id: str,
     ) -> PersonalAccessTokenResponse:
         """Get a personal access token.
 
-        Get a specific personal access token by its UUID.
+        Get a specific personal access token by its ID.
 
-        :param pat_id: The ID of the personal access token.
-        :type pat_id: str
+        :param token_id: The ID of the access token.
+        :type token_id: str
         :rtype: PersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["pat_id"] = pat_id
+        kwargs["token_id"] = token_id
 
         return self._get_personal_access_token_endpoint.call_with_http_info(**kwargs)
 
@@ -1040,24 +1040,24 @@ class KeyManagementApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[PersonalAccessTokensSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
-        filter_owner_uuid: Union[List[str], UnsetType] = unset,
+        filter_owned_by: Union[List[str], UnsetType] = unset,
     ) -> ListPersonalAccessTokensResponse:
-        """Get all personal access tokens.
+        """Get all access tokens.
 
-        List all personal access tokens for the organization.
+        List all access tokens for the organization.
 
         :param page_size: Size for a given page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-        :param sort: Personal access token attribute used to sort results. Sort order is ascending
+        :param sort: Access token attribute used to sort results. Sort order is ascending
             by default. In order to specify a descending sort, prefix the
             attribute with a minus sign.
         :type sort: PersonalAccessTokensSort, optional
-        :param filter: Filter personal access tokens by the specified string.
+        :param filter: Filter access tokens by the specified string.
         :type filter: str, optional
-        :param filter_owner_uuid: Filter personal access tokens by the owner's UUID. Supports multiple values.
-        :type filter_owner_uuid: [str], optional
+        :param filter_owned_by: Filter access tokens by the owner's ID. Supports multiple values.
+        :type filter_owned_by: [str], optional
         :rtype: ListPersonalAccessTokensResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -1073,25 +1073,25 @@ class KeyManagementApi:
         if filter is not unset:
             kwargs["filter"] = filter
 
-        if filter_owner_uuid is not unset:
-            kwargs["filter_owner_uuid"] = filter_owner_uuid
+        if filter_owned_by is not unset:
+            kwargs["filter_owned_by"] = filter_owned_by
 
         return self._list_personal_access_tokens_endpoint.call_with_http_info(**kwargs)
 
     def revoke_personal_access_token(
         self,
-        pat_id: str,
+        token_id: str,
     ) -> None:
         """Revoke a personal access token.
 
         Revoke a specific personal access token.
 
-        :param pat_id: The ID of the personal access token.
-        :type pat_id: str
+        :param token_id: The ID of the access token.
+        :type token_id: str
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["pat_id"] = pat_id
+        kwargs["token_id"] = token_id
 
         return self._revoke_personal_access_token_endpoint.call_with_http_info(**kwargs)
 
@@ -1161,20 +1161,20 @@ class KeyManagementApi:
 
     def update_personal_access_token(
         self,
-        pat_id: str,
+        token_id: str,
         body: PersonalAccessTokenUpdateRequest,
     ) -> PersonalAccessTokenResponse:
         """Update a personal access token.
 
         Update a specific personal access token.
 
-        :param pat_id: The ID of the personal access token.
-        :type pat_id: str
+        :param token_id: The ID of the access token.
+        :type token_id: str
         :type body: PersonalAccessTokenUpdateRequest
         :rtype: PersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["pat_id"] = pat_id
+        kwargs["token_id"] = token_id
 
         kwargs["body"] = body
 

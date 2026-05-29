@@ -4,6 +4,34 @@ datadog\_api\_client.v2.model package
 Submodules
 ----------
 
+datadog\_api\_client.v2.model.access\_token\_list\_item module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.access_token_list_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.access\_token\_list\_item\_relationships module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.access_token_list_item_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.access\_token\_owner\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.access_token_owner_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.access\_tokens\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.access_tokens_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.account\_filtering\_config module
 ---------------------------------------------------------------
 
@@ -14354,6 +14382,20 @@ datadog\_api\_client.v2.model.full\_personal\_access\_token\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.full\_service\_access\_token module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.full_service_access_token
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.full\_service\_access\_token\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.full_service_access_token_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.gcp\_credentials module
 -----------------------------------------------------
 
@@ -19020,6 +19062,13 @@ datadog\_api\_client.v2.model.list\_security\_findings\_response module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_security_findings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_service\_access\_tokens\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_service_access_tokens_response
    :members:
    :show-inheritance:
 
@@ -29012,6 +29061,20 @@ datadog\_api\_client.v2.model.relationship\_item module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.relationship\_to\_access\_token\_owner module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_access_token_owner
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_access\_token\_owner\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_access_token_owner_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.relationship\_to\_incident module
 ---------------------------------------------------------------
 
@@ -29254,6 +29317,20 @@ datadog\_api\_client.v2.model.relationship\_to\_saml\_assertion\_attribute\_data
 ---------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.relationship_to_saml_assertion_attribute_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_service\_account module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_service_account
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.relationship\_to\_service\_account\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.relationship_to_service_account_data
    :members:
    :show-inheritance:
 
@@ -34486,6 +34563,62 @@ datadog\_api\_client.v2.model.sensitive\_data\_scanner\_text\_replacement\_type 
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.service\_access\_token module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_token
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_access\_token\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_token_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_access\_token\_create\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_token_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_access\_token\_relationships module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_token_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_access\_token\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_token_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_access\_token\_response\_meta module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_token_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_access\_token\_response\_meta\_page module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_token_response_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_access\_tokens\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_access_tokens_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.service\_account\_access\_token\_create\_attributes module
 ----------------------------------------------------------------------------------------
 
@@ -34507,6 +34640,27 @@ datadog\_api\_client.v2.model.service\_account\_access\_token\_create\_request m
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.service\_account\_access\_token\_update\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_access_token_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_account\_access\_token\_update\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_access_token_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_account\_access\_token\_update\_request module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_access_token_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.service\_account\_create\_attributes module
 -------------------------------------------------------------------------
 
@@ -34525,6 +34679,13 @@ datadog\_api\_client.v2.model.service\_account\_create\_request module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.service_account_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_account\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_account_type
    :members:
    :show-inheritance:
 

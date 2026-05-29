@@ -1344,7 +1344,7 @@
       },
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"scopes\": [\"dashboards_read\"]\n    },\n    \"type\": \"personal_access_tokens\"\n  }\n}"
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"scopes\": [\"dashboards_read\"]\n    },\n    \"type\": \"service_access_tokens\"\n  }\n}"
       }
     ],
     "step": "there is a valid \"service_account_access_token\" for \"service_account_user\"",

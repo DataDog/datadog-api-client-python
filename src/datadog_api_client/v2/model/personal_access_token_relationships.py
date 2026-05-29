@@ -32,7 +32,7 @@ class PersonalAccessTokenRelationships(ModelNormal):
 
     def __init__(self_, owned_by: Union[RelationshipToUser, UnsetType] = unset, **kwargs):
         """
-        Resources related to the personal access token.
+        Resources related to the access token.
 
         :param owned_by: Relationship to user.
         :type owned_by: RelationshipToUser, optional

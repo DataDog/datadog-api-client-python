@@ -28,7 +28,7 @@ class PersonalAccessTokenResponseMetaPage(ModelNormal):
         """
         Pagination information.
 
-        :param total_filtered_count: Total filtered personal access token count.
+        :param total_filtered_count: Total filtered access token count.
         :type total_filtered_count: int, optional
         """
         if total_filtered_count is not unset:

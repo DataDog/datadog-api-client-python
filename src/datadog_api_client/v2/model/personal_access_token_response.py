@@ -32,9 +32,9 @@ class PersonalAccessTokenResponse(ModelNormal):
 
     def __init__(self_, data: Union[PersonalAccessToken, UnsetType] = unset, **kwargs):
         """
-        Response for retrieving a personal access token.
+        Response for retrieving an access token.
 
-        :param data: Datadog personal access token.
+        :param data: Datadog access token.
         :type data: PersonalAccessToken, optional
         """
         if data is not unset:

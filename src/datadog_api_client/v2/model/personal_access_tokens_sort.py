@@ -16,7 +16,7 @@ class PersonalAccessTokensSort(ModelSimple):
     """
     Sorting options
 
-    :param value: If omitted defaults to "name". Must be one of ["name", "-name", "created_at", "-created_at", "expires_at", "-expires_at"].
+    :param value: If omitted defaults to "name". Must be one of ["name", "-name", "created_at", "-created_at", "expires_at", "-expires_at", "last_used_at", "-last_used_at"].
     :type value: str
     """
 
@@ -27,6 +27,8 @@ class PersonalAccessTokensSort(ModelSimple):
         "-created_at",
         "expires_at",
         "-expires_at",
+        "last_used_at",
+        "-last_used_at",
     }
     NAME_ASCENDING: ClassVar["PersonalAccessTokensSort"]
     NAME_DESCENDING: ClassVar["PersonalAccessTokensSort"]
@@ -34,6 +36,8 @@ class PersonalAccessTokensSort(ModelSimple):
     CREATED_AT_DESCENDING: ClassVar["PersonalAccessTokensSort"]
     EXPIRES_AT_ASCENDING: ClassVar["PersonalAccessTokensSort"]
     EXPIRES_AT_DESCENDING: ClassVar["PersonalAccessTokensSort"]
+    LAST_USED_AT_ASCENDING: ClassVar["PersonalAccessTokensSort"]
+    LAST_USED_AT_DESCENDING: ClassVar["PersonalAccessTokensSort"]
 
     @cached_property
     def openapi_types(_):
@@ -48,3 +52,5 @@ PersonalAccessTokensSort.CREATED_AT_ASCENDING = PersonalAccessTokensSort("create
 PersonalAccessTokensSort.CREATED_AT_DESCENDING = PersonalAccessTokensSort("-created_at")
 PersonalAccessTokensSort.EXPIRES_AT_ASCENDING = PersonalAccessTokensSort("expires_at")
 PersonalAccessTokensSort.EXPIRES_AT_DESCENDING = PersonalAccessTokensSort("-expires_at")
+PersonalAccessTokensSort.LAST_USED_AT_ASCENDING = PersonalAccessTokensSort("last_used_at")
+PersonalAccessTokensSort.LAST_USED_AT_DESCENDING = PersonalAccessTokensSort("-last_used_at")
