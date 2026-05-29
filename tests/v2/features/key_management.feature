@@ -19,7 +19,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Create a personal access token returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreatePersonalAccessToken" request
@@ -249,7 +249,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Get a personal access token returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
@@ -339,7 +339,7 @@ Feature: Key Management
     And the response "data[0].type" is equal to "application_keys"
     And the response "data[0].attributes" has field "last_used_at"
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Get all personal access tokens returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
@@ -398,7 +398,7 @@ Feature: Key Management
     And the response "data.attributes" has field "scopes"
     And the response "data.attributes" has field "last_used_at"
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Revoke a personal access token returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
@@ -433,7 +433,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Update a personal access token returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
