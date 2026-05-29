@@ -582,6 +582,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.markers" is equal to [{"display_type": "percentile", "value": "50"}, {"display_type": "percentile", "value": "99"}]
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with hostmap infra widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/hostmap_infra_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "hostmap"
+    And the response "widgets[0].definition.requests" is equal to {"request_type": "infrastructure_hostmap", "node_type": "host", "filter": "env:prod", "group_by": [{"column": "tags", "key": "service"}], "enrichments": [{"response_format": "scalar", "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {host}"}], "formulas": [{"formula": "query1", "dimension": "fill"}]}], "style": {"palette": "green_to_orange", "palette_flip": false}}
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with hostmap widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/hostmap_widget.json"

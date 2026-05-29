@@ -14,10 +14,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.host_map_widget_infrastructure_request import HostMapWidgetInfrastructureRequest
     from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
     from datadog_api_client.v1.model.host_map_widget_scalar_request import HostMapWidgetScalarRequest
-    from datadog_api_client.v1.model.host_map_request import HostMapRequest
     from datadog_api_client.v1.model.host_map_widget_group_by import HostMapWidgetGroupBy
     from datadog_api_client.v1.model.host_map_widget_node_type import HostMapWidgetNodeType
     from datadog_api_client.v1.model.host_map_widget_infrastructure_request_request_type import (
@@ -26,15 +24,11 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.host_map_widget_infrastructure_style import HostMapWidgetInfrastructureStyle
 
 
-class HostMapWidgetDefinitionRequests(ModelNormal):
+class HostMapWidgetInfrastructureRequestLeaf(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.host_map_widget_infrastructure_request import (
-            HostMapWidgetInfrastructureRequest,
-        )
         from datadog_api_client.v1.model.widget_conditional_format import WidgetConditionalFormat
         from datadog_api_client.v1.model.host_map_widget_scalar_request import HostMapWidgetScalarRequest
-        from datadog_api_client.v1.model.host_map_request import HostMapRequest
         from datadog_api_client.v1.model.host_map_widget_group_by import HostMapWidgetGroupBy
         from datadog_api_client.v1.model.host_map_widget_node_type import HostMapWidgetNodeType
         from datadog_api_client.v1.model.host_map_widget_infrastructure_request_request_type import (
@@ -43,67 +37,50 @@ class HostMapWidgetDefinitionRequests(ModelNormal):
         from datadog_api_client.v1.model.host_map_widget_infrastructure_style import HostMapWidgetInfrastructureStyle
 
         return {
-            "child": (HostMapWidgetInfrastructureRequest,),
             "conditional_formats": ([WidgetConditionalFormat],),
             "enrichments": ([HostMapWidgetScalarRequest],),
-            "fill": (HostMapRequest,),
             "filter": (str,),
             "group_by": ([HostMapWidgetGroupBy],),
             "no_group_hosts": (bool,),
             "no_metric_hosts": (bool,),
             "node_type": (HostMapWidgetNodeType,),
             "request_type": (HostMapWidgetInfrastructureRequestRequestType,),
-            "size": (HostMapRequest,),
             "style": (HostMapWidgetInfrastructureStyle,),
         }
 
     attribute_map = {
-        "child": "child",
         "conditional_formats": "conditional_formats",
         "enrichments": "enrichments",
-        "fill": "fill",
         "filter": "filter",
         "group_by": "group_by",
         "no_group_hosts": "no_group_hosts",
         "no_metric_hosts": "no_metric_hosts",
         "node_type": "node_type",
         "request_type": "request_type",
-        "size": "size",
         "style": "style",
     }
 
     def __init__(
         self_,
-        child: Union[HostMapWidgetInfrastructureRequest, UnsetType] = unset,
+        enrichments: List[HostMapWidgetScalarRequest],
+        node_type: HostMapWidgetNodeType,
+        request_type: HostMapWidgetInfrastructureRequestRequestType,
         conditional_formats: Union[List[WidgetConditionalFormat], UnsetType] = unset,
-        enrichments: Union[List[HostMapWidgetScalarRequest], UnsetType] = unset,
-        fill: Union[HostMapRequest, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         group_by: Union[List[HostMapWidgetGroupBy], UnsetType] = unset,
         no_group_hosts: Union[bool, UnsetType] = unset,
         no_metric_hosts: Union[bool, UnsetType] = unset,
-        node_type: Union[HostMapWidgetNodeType, UnsetType] = unset,
-        request_type: Union[HostMapWidgetInfrastructureRequestRequestType, UnsetType] = unset,
-        size: Union[HostMapRequest, UnsetType] = unset,
         style: Union[HostMapWidgetInfrastructureStyle, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Query definition for the host map widget. Supports two mutually exclusive formats distinguished by the presence of ``request_type`` : the legacy metric-based format ( ``fill`` / ``size`` ) and the infrastructure-backed format ( ``request_type`` , ``node_type`` , ``enrichments`` ).
-
-        :param child: Infrastructure-backed request for the host map widget. Supports entity-based
-            visualization with metric query enrichments, tag-based filtering, flexible grouping,
-            and hierarchical views.
-        :type child: HostMapWidgetInfrastructureRequest, optional
+        Infrastructure-backed host map child request (leaf node, no further nesting supported).
 
         :param conditional_formats: List of conditional formatting rules applied to fill values.
         :type conditional_formats: [WidgetConditionalFormat], optional
 
         :param enrichments: Metric or event queries joined to the entity set. Each formula specifies a visual dimension.
-        :type enrichments: [HostMapWidgetScalarRequest], optional
-
-        :param fill: Updated host map.
-        :type fill: HostMapRequest, optional
+        :type enrichments: [HostMapWidgetScalarRequest]
 
         :param filter: Filter string for the entity set in tag format (for example, ``env:prod`` ).
         :type filter: str, optional
@@ -119,25 +96,16 @@ class HostMapWidgetDefinitionRequests(ModelNormal):
         :type no_metric_hosts: bool, optional
 
         :param node_type: Which type of infrastructure entity to visualize in the host map.
-        :type node_type: HostMapWidgetNodeType, optional
+        :type node_type: HostMapWidgetNodeType
 
         :param request_type: Identifies this as an infrastructure-backed host map request.
-        :type request_type: HostMapWidgetInfrastructureRequestRequestType, optional
-
-        :param size: Updated host map.
-        :type size: HostMapRequest, optional
+        :type request_type: HostMapWidgetInfrastructureRequestRequestType
 
         :param style: Style configuration for the infrastructure host map.
         :type style: HostMapWidgetInfrastructureStyle, optional
         """
-        if child is not unset:
-            kwargs["child"] = child
         if conditional_formats is not unset:
             kwargs["conditional_formats"] = conditional_formats
-        if enrichments is not unset:
-            kwargs["enrichments"] = enrichments
-        if fill is not unset:
-            kwargs["fill"] = fill
         if filter is not unset:
             kwargs["filter"] = filter
         if group_by is not unset:
@@ -146,12 +114,10 @@ class HostMapWidgetDefinitionRequests(ModelNormal):
             kwargs["no_group_hosts"] = no_group_hosts
         if no_metric_hosts is not unset:
             kwargs["no_metric_hosts"] = no_metric_hosts
-        if node_type is not unset:
-            kwargs["node_type"] = node_type
-        if request_type is not unset:
-            kwargs["request_type"] = request_type
-        if size is not unset:
-            kwargs["size"] = size
         if style is not unset:
             kwargs["style"] = style
         super().__init__(kwargs)
+
+        self_.enrichments = enrichments
+        self_.node_type = node_type
+        self_.request_type = request_type
