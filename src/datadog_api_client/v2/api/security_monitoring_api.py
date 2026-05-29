@@ -166,6 +166,9 @@ from datadog_api_client.v2.model.security_monitoring_rule_convert_response impor
 from datadog_api_client.v2.model.security_monitoring_rule_convert_payload import SecurityMonitoringRuleConvertPayload
 from datadog_api_client.v2.model.security_monitoring_standard_rule_payload import SecurityMonitoringStandardRulePayload
 from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import SecurityMonitoringSignalRulePayload
+from datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_payload import (
+    SecurityMonitoringRuleConvertBulkPayload,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
 from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
@@ -350,6 +353,26 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._bulk_convert_existing_security_monitoring_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (file_type,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/convert/bulk",
+                "operation_id": "bulk_convert_existing_security_monitoring_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleConvertBulkPayload,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/zip", "application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -3891,6 +3914,28 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._batch_get_security_monitoring_dataset_dependencies_endpoint.call_with_http_info(**kwargs)
+
+    def bulk_convert_existing_security_monitoring_rules(
+        self,
+        body: SecurityMonitoringRuleConvertBulkPayload,
+    ) -> file_type:
+        """Bulk convert rules to Terraform.
+
+        Convert a list of existing security monitoring rules to Terraform for the Datadog provider
+        resource ``datadog_security_monitoring_rule``. Returns a ZIP archive containing one Terraform
+        file per rule. You can convert rules for the following types:
+
+        * App and API Protection
+        * Cloud SIEM (log detection and signal correlation)
+        * Workload Protection
+
+        :type body: SecurityMonitoringRuleConvertBulkPayload
+        :rtype: file_type
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._bulk_convert_existing_security_monitoring_rules_endpoint.call_with_http_info(**kwargs)
 
     def bulk_create_sample_log_generation_subscriptions(
         self,
