@@ -37,7 +37,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Create an access token for a service account returns "Created" response
     Given there is a valid "service_account_user" in the system
     And new "CreateServiceAccountAccessToken" request
@@ -146,7 +146,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Get an access token for a service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_access_token" for "service_account_user"
@@ -194,7 +194,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: List access tokens for a service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And new "ListServiceAccountAccessTokens" request
@@ -226,7 +226,7 @@ Feature: Service Accounts
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Revoke an access token for a service account returns "No Content" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_access_token" for "service_account_user"
@@ -262,7 +262,7 @@ Feature: Service Accounts
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credentials-management
   Scenario: Update an access token for a service account returns "OK" response
     Given there is a valid "service_account_user" in the system
     And there is a valid "service_account_access_token" for "service_account_user"
