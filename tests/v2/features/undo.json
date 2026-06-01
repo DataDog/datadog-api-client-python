@@ -5494,6 +5494,12 @@
       "type": "unsafe"
     }
   },
+  "ListReferenceTableRows": {
+    "tag": "Reference Tables",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateReferenceTableUpload": {
     "tag": "Reference Tables",
     "undo": {
