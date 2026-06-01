@@ -74,7 +74,7 @@ class DashboardUsageAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Usage statistics for a dashboard.
+        Usage statistics for a dashboard. The ``viewer`` field and all view-count fields ( ``total_views`` , ``viewed_at`` , ``total_views_by_type`` ) are populated only when Real User Monitoring (RUM) is active for the org.
 
         :param author: A user referenced from a dashboard usage record (author or viewer).
         :type author: DashboardUsageUser, none_type, optional
@@ -97,13 +97,13 @@ class DashboardUsageAttributes(ModelNormal):
         :param title: The dashboard title.
         :type title: str, optional
 
-        :param total_views: The total number of times the dashboard has been viewed.
+        :param total_views: Total view count for the dashboard. Counts only views captured by Real User Monitoring (RUM); ``0`` in orgs without RUM.
         :type total_views: int, optional
 
-        :param total_views_by_type: View counts keyed by view type. Possible keys are ``in_app`` , ``embed`` , ``public`` , ``shared`` , ``api`` , and ``unknown``.
+        :param total_views_by_type: View counts keyed by view type ( ``in_app`` , ``embed`` , ``public`` , ``shared`` , ``api`` , ``unknown`` ). Counts only views captured by Real User Monitoring (RUM); empty in orgs without RUM.
         :type total_views_by_type: {str: (int,)}, none_type, optional
 
-        :param viewed_at: When the dashboard was most recently viewed.
+        :param viewed_at: When the dashboard was most recently viewed. Populated only when Real User Monitoring (RUM) is active for the org; ``null`` in orgs without RUM.
         :type viewed_at: datetime, none_type, optional
 
         :param viewer: A user referenced from a dashboard usage record (author or viewer).

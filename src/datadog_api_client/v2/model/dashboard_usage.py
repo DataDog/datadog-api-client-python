@@ -38,7 +38,7 @@ class DashboardUsage(ModelNormal):
         """
         A single dashboard usage record.
 
-        :param attributes: Usage statistics for a dashboard.
+        :param attributes: Usage statistics for a dashboard. The ``viewer`` field and all view-count fields ( ``total_views`` , ``viewed_at`` , ``total_views_by_type`` ) are populated only when Real User Monitoring (RUM) is active for the org.
         :type attributes: DashboardUsageAttributes
 
         :param id: The dashboard ID.

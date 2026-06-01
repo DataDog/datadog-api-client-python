@@ -71,3 +71,31 @@ Feature: Dashboards
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 590 items
+
+  @replay-only @team:DataDog/dashboards-backend
+  Scenario: Get usage stats for all dashboards with both filters returns "OK" response
+    Given operation "ListDashboardsUsage" enabled
+    And new "ListDashboardsUsage" request
+    And request contains "filter[edited_before]" parameter with value "2025-04-26T00:00:00Z"
+    And request contains "filter[viewed_before]" parameter with value "2025-04-26T00:00:00Z"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "meta.page" has field "total"
+
+  @replay-only @team:DataDog/dashboards-backend
+  Scenario: Get usage stats for all dashboards with edited_before filter returns "OK" response
+    Given operation "ListDashboardsUsage" enabled
+    And new "ListDashboardsUsage" request
+    And request contains "filter[edited_before]" parameter with value "2025-04-26T00:00:00Z"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "meta.page" has field "total"
+
+  @replay-only @team:DataDog/dashboards-backend
+  Scenario: Get usage stats for all dashboards with viewed_before filter returns "OK" response
+    Given operation "ListDashboardsUsage" enabled
+    And new "ListDashboardsUsage" request
+    And request contains "filter[viewed_before]" parameter with value "2025-04-26T00:00:00Z"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "meta.page" has field "total"

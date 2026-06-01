@@ -78,6 +78,16 @@ class DashboardsApi:
                     "attribute": "page[offset]",
                     "location": "query",
                 },
+                "filter_edited_before": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[edited_before]",
+                    "location": "query",
+                },
+                "filter_viewed_before": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[viewed_before]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -91,7 +101,7 @@ class DashboardsApi:
     ) -> DashboardUsageResponse:
         """Get usage stats for a dashboard.
 
-        Get usage statistics for a single dashboard. The response includes view counts, the most recent view and edit times, widget counts, and the dashboard quality score.
+        Get usage statistics for a single dashboard. The response includes view counts, the most recent view and edit times, widget counts, and the dashboard quality score. View-count fields depend on Real User Monitoring (RUM) and are ``null`` or ``0`` in orgs without RUM.
 
         :param dashboard_id: The ID of the dashboard.
         :type dashboard_id: str
@@ -107,15 +117,21 @@ class DashboardsApi:
         *,
         page_limit: Union[int, UnsetType] = unset,
         page_offset: Union[int, UnsetType] = unset,
+        filter_edited_before: Union[str, UnsetType] = unset,
+        filter_viewed_before: Union[str, UnsetType] = unset,
     ) -> ListDashboardsUsageResponse:
         """Get usage stats for all dashboards.
 
-        Get paginated usage statistics for every dashboard in the caller's organization. Use ``page[limit]`` and ``page[offset]`` to walk the result set.
+        Get paginated usage statistics for every dashboard in the caller's organization. Use ``page[limit]`` and ``page[offset]`` to walk the result set. Use ``filter[edited_before]`` or ``filter[viewed_before]`` to narrow results by recency. View-count fields depend on Real User Monitoring (RUM) and are ``null`` or ``0`` in orgs without RUM.
 
         :param page_limit: Maximum number of dashboards to return per page. Server-side maximum is 500; values above 500 return a 400 Bad Request.
         :type page_limit: int, optional
         :param page_offset: Zero-based offset into the result set.
         :type page_offset: int, optional
+        :param filter_edited_before: Return only dashboards whose last edit ( ``edited_at`` ) is strictly before this ISO 8601 timestamp ( ``edited_at < value`` ; boundary matches are excluded). Must include a timezone offset (for example, ``Z`` or ``+00:00`` ); naive timestamps return HTTP 400.
+        :type filter_edited_before: str, optional
+        :param filter_viewed_before: Return only dashboards whose most recent view ( ``viewed_at`` ) is strictly before this ISO 8601 timestamp, including dashboards that have never been viewed. Must include a timezone offset; naive timestamps return HTTP 400. Orgs without Real User Monitoring (RUM) will see all dashboards returned by this filter.
+        :type filter_viewed_before: str, optional
         :rtype: ListDashboardsUsageResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -125,6 +141,12 @@ class DashboardsApi:
         if page_offset is not unset:
             kwargs["page_offset"] = page_offset
 
+        if filter_edited_before is not unset:
+            kwargs["filter_edited_before"] = filter_edited_before
+
+        if filter_viewed_before is not unset:
+            kwargs["filter_viewed_before"] = filter_viewed_before
+
         return self._list_dashboards_usage_endpoint.call_with_http_info(**kwargs)
 
     def list_dashboards_usage_with_pagination(
@@ -132,6 +154,8 @@ class DashboardsApi:
         *,
         page_limit: Union[int, UnsetType] = unset,
         page_offset: Union[int, UnsetType] = unset,
+        filter_edited_before: Union[str, UnsetType] = unset,
+        filter_viewed_before: Union[str, UnsetType] = unset,
     ) -> collections.abc.Iterable[DashboardUsage]:
         """Get usage stats for all dashboards.
 
@@ -141,6 +165,10 @@ class DashboardsApi:
         :type page_limit: int, optional
         :param page_offset: Zero-based offset into the result set.
         :type page_offset: int, optional
+        :param filter_edited_before: Return only dashboards whose last edit ( ``edited_at`` ) is strictly before this ISO 8601 timestamp ( ``edited_at < value`` ; boundary matches are excluded). Must include a timezone offset (for example, ``Z`` or ``+00:00`` ); naive timestamps return HTTP 400.
+        :type filter_edited_before: str, optional
+        :param filter_viewed_before: Return only dashboards whose most recent view ( ``viewed_at`` ) is strictly before this ISO 8601 timestamp, including dashboards that have never been viewed. Must include a timezone offset; naive timestamps return HTTP 400. Orgs without Real User Monitoring (RUM) will see all dashboards returned by this filter.
+        :type filter_viewed_before: str, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[DashboardUsage]
@@ -151,6 +179,12 @@ class DashboardsApi:
 
         if page_offset is not unset:
             kwargs["page_offset"] = page_offset
+
+        if filter_edited_before is not unset:
+            kwargs["filter_edited_before"] = filter_edited_before
+
+        if filter_viewed_before is not unset:
+            kwargs["filter_viewed_before"] = filter_viewed_before
 
         local_page_size = get_attribute_from_path(kwargs, "page_limit", 250)
         endpoint = self._list_dashboards_usage_endpoint
