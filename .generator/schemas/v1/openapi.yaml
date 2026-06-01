@@ -34701,7 +34701,7 @@ paths:
       description: |-
         Validate the monitor provided in the request.
 
-        **Note**: Log monitors require an unscoped App Key.
+        **Note**: Log monitors require an unscoped App Key and `logs_read_data` permission.
       operationId: ValidateMonitor
       requestBody:
         content:
@@ -35061,7 +35061,10 @@ paths:
           - monitors_read
   /api/v1/monitor/{monitor_id}/validate:
     post:
-      description: Validate the monitor provided in the request.
+      description: |-
+        Validate the monitor provided in the request.
+
+        **Note**: Log monitors require an unscoped App Key and `logs_read_data` permission.
       operationId: ValidateExistingMonitor
       parameters:
         - description: The ID of the monitor

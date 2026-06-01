@@ -952,6 +952,8 @@ class MonitorsApi:
 
         Validate the monitor provided in the request.
 
+        **Note** : Log monitors require an unscoped App Key and ``logs_read_data`` permission.
+
         :param monitor_id: The ID of the monitor
         :type monitor_id: int
         :param body: Monitor request object
@@ -973,7 +975,7 @@ class MonitorsApi:
 
         Validate the monitor provided in the request.
 
-        **Note** : Log monitors require an unscoped App Key.
+        **Note** : Log monitors require an unscoped App Key and ``logs_read_data`` permission.
 
         :param body: Monitor request object
         :type body: Monitor
