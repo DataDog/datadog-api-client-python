@@ -112,7 +112,7 @@ class RestrictionPoliciesApi:
 
         Deletes the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page``.
         :type resource_id: str
         :rtype: None
         """
@@ -129,7 +129,7 @@ class RestrictionPoliciesApi:
 
         Retrieves the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page``.
         :type resource_id: str
         :rtype: RestrictionPolicyResponse
         """
@@ -178,6 +178,7 @@ class RestrictionPoliciesApi:
         * Logs Pipelines: ``logs-pipeline``
         * Case Management Projects: ``case-management-project``
         * Monitor Notification Rules: ``monitor-notification-rule``
+        * Status Pages: ``status-page``
 
         **Supported relations for resources**
 
@@ -236,9 +237,11 @@ class RestrictionPoliciesApi:
              - ``viewer`` , ``contributor`` , ``manager``
            * - Monitor Notification Rules
              - ``viewer`` , ``editor``
+           * - Status Pages
+             - ``viewer`` , ``responder`` , ``manager``
 
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page``.
         :type resource_id: str
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
