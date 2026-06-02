@@ -57,6 +57,11 @@ class CloudNetworkMonitoringApi:
                     "attribute": "tags",
                     "location": "query",
                 },
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
                 "limit": {
                     "validation": {
                         "inclusive_maximum": 7500,
@@ -103,6 +108,11 @@ class CloudNetworkMonitoringApi:
                     "attribute": "tags",
                     "location": "query",
                 },
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
                 "limit": {
                     "validation": {
                         "inclusive_maximum": 7500,
@@ -126,6 +136,7 @@ class CloudNetworkMonitoringApi:
         to: Union[int, UnsetType] = unset,
         group_by: Union[str, UnsetType] = unset,
         tags: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
     ) -> SingleAggregatedConnectionResponseArray:
         """Get all aggregated connections.
@@ -140,6 +151,8 @@ class CloudNetworkMonitoringApi:
         :type group_by: str, optional
         :param tags: Comma-separated list of tags to filter connections by.
         :type tags: str, optional
+        :param query: Free-form search query using AND/OR/NOT operators, wildcards, and parentheses. When provided, takes precedence over the ``tags`` parameter.
+        :type query: str, optional
         :param limit: The number of connections to be returned. The maximum value is 7500. The default is 100.
         :type limit: int, optional
         :rtype: SingleAggregatedConnectionResponseArray
@@ -157,6 +170,9 @@ class CloudNetworkMonitoringApi:
         if tags is not unset:
             kwargs["tags"] = tags
 
+        if query is not unset:
+            kwargs["query"] = query
+
         if limit is not unset:
             kwargs["limit"] = limit
 
@@ -169,6 +185,7 @@ class CloudNetworkMonitoringApi:
         to: Union[int, UnsetType] = unset,
         group_by: Union[str, UnsetType] = unset,
         tags: Union[str, UnsetType] = unset,
+        query: Union[str, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
     ) -> SingleAggregatedDnsResponseArray:
         """Get all aggregated DNS traffic.
@@ -183,6 +200,8 @@ class CloudNetworkMonitoringApi:
         :type group_by: str, optional
         :param tags: Comma-separated list of tags to filter DNS traffic by.
         :type tags: str, optional
+        :param query: Free-form search query using AND/OR/NOT operators, wildcards, and parentheses. When provided, takes precedence over the ``tags`` parameter.
+        :type query: str, optional
         :param limit: The number of aggregated DNS entries to be returned. The maximum value is 7500. The default is 100.
         :type limit: int, optional
         :rtype: SingleAggregatedDnsResponseArray
@@ -199,6 +218,9 @@ class CloudNetworkMonitoringApi:
 
         if tags is not unset:
             kwargs["tags"] = tags
+
+        if query is not unset:
+            kwargs["query"] = query
 
         if limit is not unset:
             kwargs["limit"] = limit
