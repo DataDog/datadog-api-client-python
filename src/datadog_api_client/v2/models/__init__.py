@@ -589,6 +589,16 @@ from datadog_api_client.v2.model.assign_seats_user_request_data_attributes impor
 from datadog_api_client.v2.model.assign_seats_user_response import AssignSeatsUserResponse
 from datadog_api_client.v2.model.assign_seats_user_response_data import AssignSeatsUserResponseData
 from datadog_api_client.v2.model.assign_seats_user_response_data_attributes import AssignSeatsUserResponseDataAttributes
+from datadog_api_client.v2.model.assignee_data_type import AssigneeDataType
+from datadog_api_client.v2.model.assignee_request import AssigneeRequest
+from datadog_api_client.v2.model.assignee_request_data import AssigneeRequestData
+from datadog_api_client.v2.model.assignee_request_data_attributes import AssigneeRequestDataAttributes
+from datadog_api_client.v2.model.assignee_request_data_relationships import AssigneeRequestDataRelationships
+from datadog_api_client.v2.model.assignee_response import AssigneeResponse
+from datadog_api_client.v2.model.assignee_response_data import AssigneeResponseData
+from datadog_api_client.v2.model.assignee_response_data_attributes import AssigneeResponseDataAttributes
+from datadog_api_client.v2.model.assignee_response_meta import AssigneeResponseMeta
+from datadog_api_client.v2.model.assignment_result import AssignmentResult
 from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
 from datadog_api_client.v2.model.attach_case_request_data import AttachCaseRequestData
 from datadog_api_client.v2.model.attach_case_request_data_relationships import AttachCaseRequestDataRelationships
@@ -597,6 +607,14 @@ from datadog_api_client.v2.model.attach_jira_issue_request_data import AttachJir
 from datadog_api_client.v2.model.attach_jira_issue_request_data_attributes import AttachJiraIssueRequestDataAttributes
 from datadog_api_client.v2.model.attach_jira_issue_request_data_relationships import (
     AttachJiraIssueRequestDataRelationships,
+)
+from datadog_api_client.v2.model.attach_service_now_ticket_request import AttachServiceNowTicketRequest
+from datadog_api_client.v2.model.attach_service_now_ticket_request_data import AttachServiceNowTicketRequestData
+from datadog_api_client.v2.model.attach_service_now_ticket_request_data_attributes import (
+    AttachServiceNowTicketRequestDataAttributes,
+)
+from datadog_api_client.v2.model.attach_service_now_ticket_request_data_relationships import (
+    AttachServiceNowTicketRequestDataRelationships,
 )
 from datadog_api_client.v2.model.attachment import Attachment
 from datadog_api_client.v2.model.attachment_array import AttachmentArray
@@ -1702,6 +1720,14 @@ from datadog_api_client.v2.model.create_ruleset_request_data_attributes_rules_it
     CreateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems,
 )
 from datadog_api_client.v2.model.create_ruleset_request_data_type import CreateRulesetRequestDataType
+from datadog_api_client.v2.model.create_service_now_ticket_request_array import CreateServiceNowTicketRequestArray
+from datadog_api_client.v2.model.create_service_now_ticket_request_data import CreateServiceNowTicketRequestData
+from datadog_api_client.v2.model.create_service_now_ticket_request_data_attributes import (
+    CreateServiceNowTicketRequestDataAttributes,
+)
+from datadog_api_client.v2.model.create_service_now_ticket_request_data_relationships import (
+    CreateServiceNowTicketRequestDataRelationships,
+)
 from datadog_api_client.v2.model.create_status_page_request import CreateStatusPageRequest
 from datadog_api_client.v2.model.create_status_page_request_data import CreateStatusPageRequestData
 from datadog_api_client.v2.model.create_status_page_request_data_attributes import CreateStatusPageRequestDataAttributes
@@ -2620,6 +2646,8 @@ from datadog_api_client.v2.model.finding_jira_issue_result import FindingJiraIss
 from datadog_api_client.v2.model.finding_mute import FindingMute
 from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 from datadog_api_client.v2.model.finding_rule import FindingRule
+from datadog_api_client.v2.model.finding_service_now_ticket import FindingServiceNowTicket
+from datadog_api_client.v2.model.finding_service_now_ticket_result import FindingServiceNowTicketResult
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_type import FindingType
 from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
@@ -7354,6 +7382,7 @@ from datadog_api_client.v2.model.service_now_ticket_create_data import ServiceNo
 from datadog_api_client.v2.model.service_now_ticket_create_request import ServiceNowTicketCreateRequest
 from datadog_api_client.v2.model.service_now_ticket_resource_type import ServiceNowTicketResourceType
 from datadog_api_client.v2.model.service_now_ticket_result import ServiceNowTicketResult
+from datadog_api_client.v2.model.service_now_tickets_data_type import ServiceNowTicketsDataType
 from datadog_api_client.v2.model.service_now_user_attributes import ServiceNowUserAttributes
 from datadog_api_client.v2.model.service_now_user_data import ServiceNowUserData
 from datadog_api_client.v2.model.service_now_user_type import ServiceNowUserType
@@ -9151,6 +9180,16 @@ __all__ = [
     "AssignSeatsUserResponse",
     "AssignSeatsUserResponseData",
     "AssignSeatsUserResponseDataAttributes",
+    "AssigneeDataType",
+    "AssigneeRequest",
+    "AssigneeRequestData",
+    "AssigneeRequestDataAttributes",
+    "AssigneeRequestDataRelationships",
+    "AssigneeResponse",
+    "AssigneeResponseData",
+    "AssigneeResponseDataAttributes",
+    "AssigneeResponseMeta",
+    "AssignmentResult",
     "AttachCaseRequest",
     "AttachCaseRequestData",
     "AttachCaseRequestDataRelationships",
@@ -9158,6 +9197,10 @@ __all__ = [
     "AttachJiraIssueRequestData",
     "AttachJiraIssueRequestDataAttributes",
     "AttachJiraIssueRequestDataRelationships",
+    "AttachServiceNowTicketRequest",
+    "AttachServiceNowTicketRequestData",
+    "AttachServiceNowTicketRequestDataAttributes",
+    "AttachServiceNowTicketRequestDataRelationships",
     "Attachment",
     "AttachmentArray",
     "AttachmentData",
@@ -10030,6 +10073,10 @@ __all__ = [
     "CreateRulesetRequestDataAttributesRulesItemsReferenceTable",
     "CreateRulesetRequestDataAttributesRulesItemsReferenceTableFieldPairsItems",
     "CreateRulesetRequestDataType",
+    "CreateServiceNowTicketRequestArray",
+    "CreateServiceNowTicketRequestData",
+    "CreateServiceNowTicketRequestDataAttributes",
+    "CreateServiceNowTicketRequestDataRelationships",
     "CreateStatusPageRequest",
     "CreateStatusPageRequestData",
     "CreateStatusPageRequestDataAttributes",
@@ -10688,6 +10735,8 @@ __all__ = [
     "FindingMute",
     "FindingMuteReason",
     "FindingRule",
+    "FindingServiceNowTicket",
+    "FindingServiceNowTicketResult",
     "FindingStatus",
     "FindingType",
     "FindingVulnerabilityType",
@@ -13872,6 +13921,7 @@ __all__ = [
     "ServiceNowTicketCreateRequest",
     "ServiceNowTicketResourceType",
     "ServiceNowTicketResult",
+    "ServiceNowTicketsDataType",
     "ServiceNowUserAttributes",
     "ServiceNowUserData",
     "ServiceNowUserType",

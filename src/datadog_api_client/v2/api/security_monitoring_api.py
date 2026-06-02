@@ -41,6 +41,8 @@ from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
 from datadog_api_client.v2.model.security_findings_data import SecurityFindingsData
+from datadog_api_client.v2.model.assignee_response import AssigneeResponse
+from datadog_api_client.v2.model.assignee_request import AssigneeRequest
 from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
 from datadog_api_client.v2.model.finding_case_response_array import FindingCaseResponseArray
 from datadog_api_client.v2.model.create_case_request_array import CreateCaseRequestArray
@@ -51,6 +53,8 @@ from datadog_api_client.v2.model.create_jira_issue_request_array import CreateJi
 from datadog_api_client.v2.model.mute_findings_response import MuteFindingsResponse
 from datadog_api_client.v2.model.mute_findings_request import MuteFindingsRequest
 from datadog_api_client.v2.model.security_findings_search_request import SecurityFindingsSearchRequest
+from datadog_api_client.v2.model.attach_service_now_ticket_request import AttachServiceNowTicketRequest
+from datadog_api_client.v2.model.create_service_now_ticket_request_array import CreateServiceNowTicketRequestArray
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponentLicenseType
@@ -329,6 +333,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AttachJiraIssueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._attach_service_now_ticket_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/servicenow_tickets",
+                "operation_id": "attach_service_now_ticket",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AttachServiceNowTicketRequest,),
                     "location": "body",
                 },
             },
@@ -827,6 +851,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (SecurityMonitoringSuppressionCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_service_now_tickets_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/servicenow_tickets",
+                "operation_id": "create_service_now_tickets",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateServiceNowTicketRequestArray,),
                     "location": "body",
                 },
             },
@@ -3581,6 +3625,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._update_findings_assignee_endpoint = _Endpoint(
+            settings={
+                "response_type": (AssigneeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/assignee",
+                "operation_id": "update_findings_assignee",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AssigneeRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_resource_evaluation_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateResourceEvaluationFiltersResponse,),
@@ -3897,6 +3961,23 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
+
+    def attach_service_now_ticket(
+        self,
+        body: AttachServiceNowTicketRequest,
+    ) -> FindingCaseResponse:
+        """Attach security findings to a ServiceNow ticket.
+
+        Attach security findings to a ServiceNow ticket by providing the ServiceNow ticket URL.
+        You can attach up to 50 security findings per ServiceNow ticket. If the ServiceNow ticket is not linked to any case, this operation will create a case for the security findings and link the ServiceNow ticket to the newly created case. Security findings that are already attached to another ServiceNow ticket will be detached from their previous ServiceNow ticket and attached to the specified ServiceNow ticket.
+
+        :type body: AttachServiceNowTicketRequest
+        :rtype: FindingCaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._attach_service_now_ticket_endpoint.call_with_http_info(**kwargs)
 
     def batch_get_security_monitoring_dataset_dependencies(
         self,
@@ -4364,6 +4445,23 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_security_monitoring_suppression_endpoint.call_with_http_info(**kwargs)
+
+    def create_service_now_tickets(
+        self,
+        body: CreateServiceNowTicketRequestArray,
+    ) -> FindingCaseResponseArray:
+        """Create ServiceNow tickets for security findings.
+
+        Create ServiceNow tickets for security findings.
+        This operation creates a case in Datadog and a ServiceNow ticket linked to that case for bidirectional sync between Datadog and ServiceNow. You can create up to 50 ServiceNow tickets per request and associate up to 50 security findings per ServiceNow ticket. Security findings that are already attached to another ServiceNow ticket will be detached from their previous ServiceNow ticket and attached to the newly created ServiceNow ticket.
+
+        :type body: CreateServiceNowTicketRequestArray
+        :rtype: FindingCaseResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_service_now_tickets_endpoint.call_with_http_info(**kwargs)
 
     def create_signal_notification_rule(
         self,
@@ -7366,6 +7464,23 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_custom_framework_endpoint.call_with_http_info(**kwargs)
+
+    def update_findings_assignee(
+        self,
+        body: AssigneeRequest,
+    ) -> AssigneeResponse:
+        """Assign or unassign security findings.
+
+        Assign or unassign security findings.
+        You can assign up to 100 security findings per request. Set ``assignee_id`` to the unique identifier of the Datadog user you want to assign the findings to. Omit ``assignee_id`` (or set it to ``null`` ) to unassign the findings. Per-finding warnings and failures are returned in the response ``meta`` object.
+
+        :type body: AssigneeRequest
+        :rtype: AssigneeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_findings_assignee_endpoint.call_with_http_info(**kwargs)
 
     def update_resource_evaluation_filters(
         self,
