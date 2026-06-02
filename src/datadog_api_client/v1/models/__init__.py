@@ -312,6 +312,8 @@ from datadog_api_client.v1.model.list_stream_column_width import ListStreamColum
 from datadog_api_client.v1.model.list_stream_compute_aggregation import ListStreamComputeAggregation
 from datadog_api_client.v1.model.list_stream_compute_items import ListStreamComputeItems
 from datadog_api_client.v1.model.list_stream_group_by_items import ListStreamGroupByItems
+from datadog_api_client.v1.model.list_stream_issue_persona import ListStreamIssuePersona
+from datadog_api_client.v1.model.list_stream_issue_state import ListStreamIssueState
 from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
 from datadog_api_client.v1.model.list_stream_response_format import ListStreamResponseFormat
 from datadog_api_client.v1.model.list_stream_source import ListStreamSource
@@ -1647,6 +1649,8 @@ __all__ = [
     "ListStreamComputeAggregation",
     "ListStreamComputeItems",
     "ListStreamGroupByItems",
+    "ListStreamIssuePersona",
+    "ListStreamIssueState",
     "ListStreamQuery",
     "ListStreamResponseFormat",
     "ListStreamSource",
