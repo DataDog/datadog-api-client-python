@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
     from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
     from datadog_api_client.v2.model.finding_jira_issue import FindingJiraIssue
+    from datadog_api_client.v2.model.finding_service_now_ticket import FindingServiceNowTicket
 
 
 class FindingCaseResponseDataAttributes(ModelNormal):
@@ -26,6 +27,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
         from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
         from datadog_api_client.v2.model.finding_jira_issue import FindingJiraIssue
+        from datadog_api_client.v2.model.finding_service_now_ticket import FindingServiceNowTicket
 
         return {
             "archived_at": (datetime,),
@@ -41,6 +43,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
             "key": (str,),
             "modified_at": (datetime,),
             "priority": (str,),
+            "servicenow_ticket": (FindingServiceNowTicket,),
             "status": (str,),
             "status_group": (str,),
             "status_name": (str,),
@@ -62,6 +65,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         "key": "key",
         "modified_at": "modified_at",
         "priority": "priority",
+        "servicenow_ticket": "servicenow_ticket",
         "status": "status",
         "status_group": "status_group",
         "status_name": "status_name",
@@ -84,6 +88,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         key: Union[str, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         priority: Union[str, UnsetType] = unset,
+        servicenow_ticket: Union[FindingServiceNowTicket, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         status_group: Union[str, UnsetType] = unset,
         status_name: Union[str, UnsetType] = unset,
@@ -133,6 +138,9 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         :param priority: Priority of the case.
         :type priority: str, optional
 
+        :param servicenow_ticket: ServiceNow ticket associated with the case.
+        :type servicenow_ticket: FindingServiceNowTicket, optional
+
         :param status: Status of the case.
         :type status: str, optional
 
@@ -174,6 +182,8 @@ class FindingCaseResponseDataAttributes(ModelNormal):
             kwargs["modified_at"] = modified_at
         if priority is not unset:
             kwargs["priority"] = priority
+        if servicenow_ticket is not unset:
+            kwargs["servicenow_ticket"] = servicenow_ticket
         if status is not unset:
             kwargs["status"] = status
         if status_group is not unset:

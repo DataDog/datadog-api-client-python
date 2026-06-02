@@ -41,6 +41,30 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Assign or unassign security findings returns "Accepted" response
+    Given operation "UpdateFindingsAssignee" enabled
+    And new "UpdateFindingsAssignee" request
+    And body with value {"data": {"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "assignee"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Assign or unassign security findings returns "Bad Request" response
+    Given operation "UpdateFindingsAssignee" enabled
+    And new "UpdateFindingsAssignee" request
+    And body with value {"data": {"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "assignee"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Assign or unassign security findings returns "Not Found" response
+    Given operation "UpdateFindingsAssignee" enabled
+    And new "UpdateFindingsAssignee" request
+    And body with value {"data": {"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "assignee"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:DataDog/k9-investigation
   Scenario: Attach security finding to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
@@ -86,6 +110,30 @@ Feature: Security Monitoring
     And the response "data.attributes.insights" has item with field "resource_id" with value "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI="
     And the response "data.attributes.insights" has item with field "resource_id" with value "MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM="
     And the response "data.attributes.jira_issue.result.issue_url" is equal to "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Attach security findings to a ServiceNow ticket returns "Bad Request" response
+    Given operation "AttachServiceNowTicket" enabled
+    And new "AttachServiceNowTicket" request
+    And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Attach security findings to a ServiceNow ticket returns "Not Found" response
+    Given operation "AttachServiceNowTicket" enabled
+    And new "AttachServiceNowTicket" request
+    And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Attach security findings to a ServiceNow ticket returns "OK" response
+    Given operation "AttachServiceNowTicket" enabled
+    And new "AttachServiceNowTicket" request
+    And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/k9-investigation
   Scenario: Attach security findings to a case returns "Bad Request" response
@@ -479,6 +527,30 @@ Feature: Security Monitoring
   Scenario: Create Jira issues for security findings returns "Not Found" response
     Given new "CreateJiraIssues" request
     And body with value {"data": [{"attributes": {}, "relationships": {"findings": {"data": [{"id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=", "type": "findings"}]}, "project": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "projects"}}}, "type": "jira_issues"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Create ServiceNow tickets for security findings returns "Bad Request" response
+    Given operation "CreateServiceNowTickets" enabled
+    And new "CreateServiceNowTickets" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Create ServiceNow tickets for security findings returns "Created" response
+    Given operation "CreateServiceNowTickets" enabled
+    And new "CreateServiceNowTickets" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Create ServiceNow tickets for security findings returns "Not Found" response
+    Given operation "CreateServiceNowTickets" enabled
+    And new "CreateServiceNowTickets" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
