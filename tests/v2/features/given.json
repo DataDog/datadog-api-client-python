@@ -726,6 +726,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"access_token_url\": \"https://example.com/oauth/token\",\n      \"client_id\": \"my-client-id\",\n      \"client_secret\": \"my-client-secret\"\n    },\n    \"type\": \"webhooks-auth-method-oauth2-client-credentials\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"webhooks_oauth2_client_credentials\" in the system",
+    "key": "webhooks_oauth2_client_credentials",
+    "tag": "Webhooks Integration",
+    "operationId": "CreateOAuth2ClientCredentials"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"cloudflare-accounts\",\n    \"attributes\": {\n      \"api_key\": \"fakekey\",\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"email\": \"dev@datadog.com\",\n      \"zones\": [\"zone-id-1\", \"zone-id-2\"],\n      \"resources\": [\"web\", \"dns\"]\n    }\n  }\n}"
       }
     ],

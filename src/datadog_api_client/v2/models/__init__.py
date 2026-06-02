@@ -8543,6 +8543,46 @@ from datadog_api_client.v2.model.web_integration_account_update_request_data imp
     WebIntegrationAccountUpdateRequestData,
 )
 from datadog_api_client.v2.model.web_integration_accounts_response import WebIntegrationAccountsResponse
+from datadog_api_client.v2.model.webhooks_auth_method_attributes import WebhooksAuthMethodAttributes
+from datadog_api_client.v2.model.webhooks_auth_method_protocol import WebhooksAuthMethodProtocol
+from datadog_api_client.v2.model.webhooks_auth_method_relationships import WebhooksAuthMethodRelationships
+from datadog_api_client.v2.model.webhooks_auth_method_response_data import WebhooksAuthMethodResponseData
+from datadog_api_client.v2.model.webhooks_auth_method_type import WebhooksAuthMethodType
+from datadog_api_client.v2.model.webhooks_auth_methods_response import WebhooksAuthMethodsResponse
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_create_attributes import (
+    WebhooksOAuth2ClientCredentialsCreateAttributes,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_create_data import (
+    WebhooksOAuth2ClientCredentialsCreateData,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_create_request import (
+    WebhooksOAuth2ClientCredentialsCreateRequest,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_relationship import (
+    WebhooksOAuth2ClientCredentialsRelationship,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_relationship_data import (
+    WebhooksOAuth2ClientCredentialsRelationshipData,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_response import (
+    WebhooksOAuth2ClientCredentialsResponse,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_response_attributes import (
+    WebhooksOAuth2ClientCredentialsResponseAttributes,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_response_data import (
+    WebhooksOAuth2ClientCredentialsResponseData,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_type import WebhooksOAuth2ClientCredentialsType
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_update_attributes import (
+    WebhooksOAuth2ClientCredentialsUpdateAttributes,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_update_data import (
+    WebhooksOAuth2ClientCredentialsUpdateData,
+)
+from datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_update_request import (
+    WebhooksOAuth2ClientCredentialsUpdateRequest,
+)
 from datadog_api_client.v2.model.weekday import Weekday
 from datadog_api_client.v2.model.widget_annotations_map import WidgetAnnotationsMap
 from datadog_api_client.v2.model.widget_attributes import WidgetAttributes
@@ -14618,6 +14658,24 @@ __all__ = [
     "WebIntegrationAccountUpdateRequestAttributes",
     "WebIntegrationAccountUpdateRequestData",
     "WebIntegrationAccountsResponse",
+    "WebhooksAuthMethodAttributes",
+    "WebhooksAuthMethodProtocol",
+    "WebhooksAuthMethodRelationships",
+    "WebhooksAuthMethodResponseData",
+    "WebhooksAuthMethodType",
+    "WebhooksAuthMethodsResponse",
+    "WebhooksOAuth2ClientCredentialsCreateAttributes",
+    "WebhooksOAuth2ClientCredentialsCreateData",
+    "WebhooksOAuth2ClientCredentialsCreateRequest",
+    "WebhooksOAuth2ClientCredentialsRelationship",
+    "WebhooksOAuth2ClientCredentialsRelationshipData",
+    "WebhooksOAuth2ClientCredentialsResponse",
+    "WebhooksOAuth2ClientCredentialsResponseAttributes",
+    "WebhooksOAuth2ClientCredentialsResponseData",
+    "WebhooksOAuth2ClientCredentialsType",
+    "WebhooksOAuth2ClientCredentialsUpdateAttributes",
+    "WebhooksOAuth2ClientCredentialsUpdateData",
+    "WebhooksOAuth2ClientCredentialsUpdateRequest",
     "Weekday",
     "WidgetAnnotationsMap",
     "WidgetAttributes",
