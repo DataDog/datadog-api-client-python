@@ -1022,9 +1022,9 @@ class MetricsApi:
     ) -> MetricVolumesResponse:
         """List distinct metric volumes by metric name.
 
-        View hourly average metric volumes for the given metric name over the look back period.
-
-        Custom metrics generated in-app from other products will return ``null`` for ingested volumes.
+        View hourly average cardinality for the given metric name over the look back period.
+        For Metric Name Pricing customers, view total point volume for the given metric name
+        over the look back period.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
