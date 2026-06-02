@@ -702,6 +702,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"api_key\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"type\": \"statuspage-account\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"statuspage_account\" in the system",
+    "key": "statuspage_account",
+    "tag": "Statuspage Integration",
+    "operationId": "CreateStatuspageAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"url\": \"https://example.statuspage.io\",\n      \"custom_tags\": \"team:collaboration-integrations\"\n    },\n    \"type\": \"statuspage-url-setting\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"statuspage_url_setting\" in the system",
+    "key": "statuspage_url_setting",
+    "tag": "Statuspage Integration",
+    "operationId": "CreateStatuspageUrlSetting"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"cloudflare-accounts\",\n    \"attributes\": {\n      \"api_key\": \"fakekey\",\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"email\": \"dev@datadog.com\",\n      \"zones\": [\"zone-id-1\", \"zone-id-2\"],\n      \"resources\": [\"web\", \"dns\"]\n    }\n  }\n}"
       }
     ],

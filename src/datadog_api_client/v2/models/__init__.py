@@ -7558,6 +7558,29 @@ from datadog_api_client.v2.model.status_pages_component_group_type import Status
 from datadog_api_client.v2.model.status_pages_user import StatusPagesUser
 from datadog_api_client.v2.model.status_pages_user_attributes import StatusPagesUserAttributes
 from datadog_api_client.v2.model.status_pages_user_type import StatusPagesUserType
+from datadog_api_client.v2.model.statuspage_account_create_attributes import StatuspageAccountCreateAttributes
+from datadog_api_client.v2.model.statuspage_account_create_data import StatuspageAccountCreateData
+from datadog_api_client.v2.model.statuspage_account_create_request import StatuspageAccountCreateRequest
+from datadog_api_client.v2.model.statuspage_account_response import StatuspageAccountResponse
+from datadog_api_client.v2.model.statuspage_account_response_attributes import StatuspageAccountResponseAttributes
+from datadog_api_client.v2.model.statuspage_account_response_data import StatuspageAccountResponseData
+from datadog_api_client.v2.model.statuspage_account_type import StatuspageAccountType
+from datadog_api_client.v2.model.statuspage_account_update_attributes import StatuspageAccountUpdateAttributes
+from datadog_api_client.v2.model.statuspage_account_update_data import StatuspageAccountUpdateData
+from datadog_api_client.v2.model.statuspage_account_update_request import StatuspageAccountUpdateRequest
+from datadog_api_client.v2.model.statuspage_url_setting_create_attributes import StatuspageUrlSettingCreateAttributes
+from datadog_api_client.v2.model.statuspage_url_setting_create_data import StatuspageUrlSettingCreateData
+from datadog_api_client.v2.model.statuspage_url_setting_create_request import StatuspageUrlSettingCreateRequest
+from datadog_api_client.v2.model.statuspage_url_setting_response import StatuspageUrlSettingResponse
+from datadog_api_client.v2.model.statuspage_url_setting_response_attributes import (
+    StatuspageUrlSettingResponseAttributes,
+)
+from datadog_api_client.v2.model.statuspage_url_setting_response_data import StatuspageUrlSettingResponseData
+from datadog_api_client.v2.model.statuspage_url_setting_type import StatuspageUrlSettingType
+from datadog_api_client.v2.model.statuspage_url_setting_update_attributes import StatuspageUrlSettingUpdateAttributes
+from datadog_api_client.v2.model.statuspage_url_setting_update_data import StatuspageUrlSettingUpdateData
+from datadog_api_client.v2.model.statuspage_url_setting_update_request import StatuspageUrlSettingUpdateRequest
+from datadog_api_client.v2.model.statuspage_url_settings_response import StatuspageUrlSettingsResponse
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
@@ -13874,6 +13897,27 @@ __all__ = [
     "StatusPagesUser",
     "StatusPagesUserAttributes",
     "StatusPagesUserType",
+    "StatuspageAccountCreateAttributes",
+    "StatuspageAccountCreateData",
+    "StatuspageAccountCreateRequest",
+    "StatuspageAccountResponse",
+    "StatuspageAccountResponseAttributes",
+    "StatuspageAccountResponseData",
+    "StatuspageAccountType",
+    "StatuspageAccountUpdateAttributes",
+    "StatuspageAccountUpdateData",
+    "StatuspageAccountUpdateRequest",
+    "StatuspageUrlSettingCreateAttributes",
+    "StatuspageUrlSettingCreateData",
+    "StatuspageUrlSettingCreateRequest",
+    "StatuspageUrlSettingResponse",
+    "StatuspageUrlSettingResponseAttributes",
+    "StatuspageUrlSettingResponseData",
+    "StatuspageUrlSettingType",
+    "StatuspageUrlSettingUpdateAttributes",
+    "StatuspageUrlSettingUpdateData",
+    "StatuspageUrlSettingUpdateRequest",
+    "StatuspageUrlSettingsResponse",
     "Step",
     "StepDisplay",
     "StepDisplayBounds",
