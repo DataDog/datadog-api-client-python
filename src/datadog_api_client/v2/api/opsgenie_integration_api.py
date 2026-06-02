@@ -7,6 +7,10 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.v2.model.opsgenie_accounts_response import OpsgenieAccountsResponse
+from datadog_api_client.v2.model.opsgenie_account_response import OpsgenieAccountResponse
+from datadog_api_client.v2.model.opsgenie_account_create_request import OpsgenieAccountCreateRequest
+from datadog_api_client.v2.model.opsgenie_account_update_request import OpsgenieAccountUpdateRequest
 from datadog_api_client.v2.model.opsgenie_services_response import OpsgenieServicesResponse
 from datadog_api_client.v2.model.opsgenie_service_response import OpsgenieServiceResponse
 from datadog_api_client.v2.model.opsgenie_service_create_request import OpsgenieServiceCreateRequest
@@ -23,6 +27,26 @@ class OpsgenieIntegrationApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_opsgenie_account_endpoint = _Endpoint(
+            settings={
+                "response_type": (OpsgenieAccountResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/opsgenie/accounts",
+                "operation_id": "create_opsgenie_account",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (OpsgenieAccountCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_opsgenie_service_endpoint = _Endpoint(
             settings={
@@ -41,6 +65,29 @@ class OpsgenieIntegrationApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_opsgenie_account_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/opsgenie/accounts/{account_id}",
+                "operation_id": "delete_opsgenie_account",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -90,6 +137,22 @@ class OpsgenieIntegrationApi:
             api_client=api_client,
         )
 
+        self._list_opsgenie_accounts_endpoint = _Endpoint(
+            settings={
+                "response_type": (OpsgenieAccountsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/opsgenie/accounts",
+                "operation_id": "list_opsgenie_accounts",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_opsgenie_services_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieServicesResponse,),
@@ -103,6 +166,32 @@ class OpsgenieIntegrationApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._update_opsgenie_account_endpoint = _Endpoint(
+            settings={
+                "response_type": (OpsgenieAccountResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/opsgenie/accounts/{account_id}",
+                "operation_id": "update_opsgenie_account",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "account_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "account_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (OpsgenieAccountUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -132,6 +221,23 @@ class OpsgenieIntegrationApi:
             api_client=api_client,
         )
 
+    def create_opsgenie_account(
+        self,
+        body: OpsgenieAccountCreateRequest,
+    ) -> OpsgenieAccountResponse:
+        """Create a new Opsgenie account.
+
+        Create a new Opsgenie account in the Datadog Opsgenie integration.
+
+        :param body: Opsgenie account payload.
+        :type body: OpsgenieAccountCreateRequest
+        :rtype: OpsgenieAccountResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_opsgenie_account_endpoint.call_with_http_info(**kwargs)
+
     def create_opsgenie_service(
         self,
         body: OpsgenieServiceCreateRequest,
@@ -148,6 +254,23 @@ class OpsgenieIntegrationApi:
         kwargs["body"] = body
 
         return self._create_opsgenie_service_endpoint.call_with_http_info(**kwargs)
+
+    def delete_opsgenie_account(
+        self,
+        account_id: str,
+    ) -> None:
+        """Delete an Opsgenie account.
+
+        Delete a single Opsgenie account from the Datadog Opsgenie integration.
+
+        :param account_id: The UUID of the Opsgenie account.
+        :type account_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["account_id"] = account_id
+
+        return self._delete_opsgenie_account_endpoint.call_with_http_info(**kwargs)
 
     def delete_opsgenie_service(
         self,
@@ -183,6 +306,18 @@ class OpsgenieIntegrationApi:
 
         return self._get_opsgenie_service_endpoint.call_with_http_info(**kwargs)
 
+    def list_opsgenie_accounts(
+        self,
+    ) -> OpsgenieAccountsResponse:
+        """Get all Opsgenie accounts.
+
+        Get a list of all Opsgenie accounts from the Datadog Opsgenie integration.
+
+        :rtype: OpsgenieAccountsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_opsgenie_accounts_endpoint.call_with_http_info(**kwargs)
+
     def list_opsgenie_services(
         self,
     ) -> OpsgenieServicesResponse:
@@ -194,6 +329,28 @@ class OpsgenieIntegrationApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_opsgenie_services_endpoint.call_with_http_info(**kwargs)
+
+    def update_opsgenie_account(
+        self,
+        account_id: str,
+        body: OpsgenieAccountUpdateRequest,
+    ) -> OpsgenieAccountResponse:
+        """Update an Opsgenie account.
+
+        Update a single Opsgenie account in the Datadog Opsgenie integration.
+
+        :param account_id: The UUID of the Opsgenie account.
+        :type account_id: str
+        :param body: Opsgenie account payload.
+        :type body: OpsgenieAccountUpdateRequest
+        :rtype: OpsgenieAccountResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["account_id"] = account_id
+
+        kwargs["body"] = body
+
+        return self._update_opsgenie_account_endpoint.call_with_http_info(**kwargs)
 
     def update_opsgenie_service(
         self,

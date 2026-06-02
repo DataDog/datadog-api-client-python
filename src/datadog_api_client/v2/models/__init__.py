@@ -5395,6 +5395,17 @@ from datadog_api_client.v2.model.open_ai_integration_type import OpenAIIntegrati
 from datadog_api_client.v2.model.open_ai_integration_update import OpenAIIntegrationUpdate
 from datadog_api_client.v2.model.open_api_endpoint import OpenAPIEndpoint
 from datadog_api_client.v2.model.open_api_file import OpenAPIFile
+from datadog_api_client.v2.model.opsgenie_account_create_attributes import OpsgenieAccountCreateAttributes
+from datadog_api_client.v2.model.opsgenie_account_create_data import OpsgenieAccountCreateData
+from datadog_api_client.v2.model.opsgenie_account_create_request import OpsgenieAccountCreateRequest
+from datadog_api_client.v2.model.opsgenie_account_response import OpsgenieAccountResponse
+from datadog_api_client.v2.model.opsgenie_account_response_attributes import OpsgenieAccountResponseAttributes
+from datadog_api_client.v2.model.opsgenie_account_response_data import OpsgenieAccountResponseData
+from datadog_api_client.v2.model.opsgenie_account_type import OpsgenieAccountType
+from datadog_api_client.v2.model.opsgenie_account_update_attributes import OpsgenieAccountUpdateAttributes
+from datadog_api_client.v2.model.opsgenie_account_update_data import OpsgenieAccountUpdateData
+from datadog_api_client.v2.model.opsgenie_account_update_request import OpsgenieAccountUpdateRequest
+from datadog_api_client.v2.model.opsgenie_accounts_response import OpsgenieAccountsResponse
 from datadog_api_client.v2.model.opsgenie_service_create_attributes import OpsgenieServiceCreateAttributes
 from datadog_api_client.v2.model.opsgenie_service_create_data import OpsgenieServiceCreateData
 from datadog_api_client.v2.model.opsgenie_service_create_request import OpsgenieServiceCreateRequest
@@ -12340,6 +12351,17 @@ __all__ = [
     "OpenAIIntegrationUpdate",
     "OpenAPIEndpoint",
     "OpenAPIFile",
+    "OpsgenieAccountCreateAttributes",
+    "OpsgenieAccountCreateData",
+    "OpsgenieAccountCreateRequest",
+    "OpsgenieAccountResponse",
+    "OpsgenieAccountResponseAttributes",
+    "OpsgenieAccountResponseData",
+    "OpsgenieAccountType",
+    "OpsgenieAccountUpdateAttributes",
+    "OpsgenieAccountUpdateData",
+    "OpsgenieAccountUpdateRequest",
+    "OpsgenieAccountsResponse",
     "OpsgenieServiceCreateAttributes",
     "OpsgenieServiceCreateData",
     "OpsgenieServiceCreateRequest",
