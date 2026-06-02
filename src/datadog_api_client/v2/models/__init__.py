@@ -161,6 +161,45 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
+from datadog_api_client.v2.model.aggregated_high_frozen_frame_rate import AggregatedHighFrozenFrameRate
+from datadog_api_client.v2.model.aggregated_high_script_eval import AggregatedHighScriptEval
+from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
+from datadog_api_client.v2.model.aggregated_long_tasks_request import AggregatedLongTasksRequest
+from datadog_api_client.v2.model.aggregated_long_tasks_request_attributes import AggregatedLongTasksRequestAttributes
+from datadog_api_client.v2.model.aggregated_long_tasks_request_data import AggregatedLongTasksRequestData
+from datadog_api_client.v2.model.aggregated_long_tasks_request_type import AggregatedLongTasksRequestType
+from datadog_api_client.v2.model.aggregated_long_tasks_response import AggregatedLongTasksResponse
+from datadog_api_client.v2.model.aggregated_long_tasks_response_attributes import AggregatedLongTasksResponseAttributes
+from datadog_api_client.v2.model.aggregated_long_tasks_response_data import AggregatedLongTasksResponseData
+from datadog_api_client.v2.model.aggregated_low_cache_hit_rate import AggregatedLowCacheHitRate
+from datadog_api_client.v2.model.aggregated_mobile_scroll_friction import AggregatedMobileScrollFriction
+from datadog_api_client.v2.model.aggregated_resource import AggregatedResource
+from datadog_api_client.v2.model.aggregated_resource_timing_breakdown import AggregatedResourceTimingBreakdown
+from datadog_api_client.v2.model.aggregated_signals_problems_request import AggregatedSignalsProblemsRequest
+from datadog_api_client.v2.model.aggregated_signals_problems_request_attributes import (
+    AggregatedSignalsProblemsRequestAttributes,
+)
+from datadog_api_client.v2.model.aggregated_signals_problems_request_data import AggregatedSignalsProblemsRequestData
+from datadog_api_client.v2.model.aggregated_signals_problems_request_type import AggregatedSignalsProblemsRequestType
+from datadog_api_client.v2.model.aggregated_signals_problems_response import AggregatedSignalsProblemsResponse
+from datadog_api_client.v2.model.aggregated_signals_problems_response_attributes import (
+    AggregatedSignalsProblemsResponseAttributes,
+)
+from datadog_api_client.v2.model.aggregated_signals_problems_response_data import AggregatedSignalsProblemsResponseData
+from datadog_api_client.v2.model.aggregated_slow_fcp_high_bytes import AggregatedSlowFCPHighBytes
+from datadog_api_client.v2.model.aggregated_slow_interaction_long_task import AggregatedSlowInteractionLongTask
+from datadog_api_client.v2.model.aggregated_uncompressed_resource import AggregatedUncompressedResource
+from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria import AggregatedWaterfallPerformanceCriteria
+from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria_metric import (
+    AggregatedWaterfallPerformanceCriteriaMetric,
+)
+from datadog_api_client.v2.model.aggregated_waterfall_request import AggregatedWaterfallRequest
+from datadog_api_client.v2.model.aggregated_waterfall_request_attributes import AggregatedWaterfallRequestAttributes
+from datadog_api_client.v2.model.aggregated_waterfall_request_data import AggregatedWaterfallRequestData
+from datadog_api_client.v2.model.aggregated_waterfall_request_type import AggregatedWaterfallRequestType
+from datadog_api_client.v2.model.aggregated_waterfall_response import AggregatedWaterfallResponse
+from datadog_api_client.v2.model.aggregated_waterfall_response_attributes import AggregatedWaterfallResponseAttributes
+from datadog_api_client.v2.model.aggregated_waterfall_response_data import AggregatedWaterfallResponseData
 from datadog_api_client.v2.model.ai_custom_rule_data_type import AiCustomRuleDataType
 from datadog_api_client.v2.model.ai_custom_rule_item import AiCustomRuleItem
 from datadog_api_client.v2.model.ai_custom_rule_request import AiCustomRuleRequest
@@ -4038,6 +4077,8 @@ from datadog_api_client.v2.model.logs_sort import LogsSort
 from datadog_api_client.v2.model.logs_sort_order import LogsSortOrder
 from datadog_api_client.v2.model.logs_storage_tier import LogsStorageTier
 from datadog_api_client.v2.model.logs_warning import LogsWarning
+from datadog_api_client.v2.model.long_task_metric_stats import LongTaskMetricStats
+from datadog_api_client.v2.model.long_task_stats_per_view import LongTaskStatsPerView
 from datadog_api_client.v2.model.ms_teams_integration_metadata import MSTeamsIntegrationMetadata
 from datadog_api_client.v2.model.ms_teams_integration_metadata_teams_item import MSTeamsIntegrationMetadataTeamsItem
 from datadog_api_client.v2.model.maintenance import Maintenance
@@ -7298,6 +7339,8 @@ from datadog_api_client.v2.model.signal_entities_data import SignalEntitiesData
 from datadog_api_client.v2.model.signal_entities_response import SignalEntitiesResponse
 from datadog_api_client.v2.model.signal_entities_type import SignalEntitiesType
 from datadog_api_client.v2.model.signal_entity_identity import SignalEntityIdentity
+from datadog_api_client.v2.model.signals_problems_detections import SignalsProblemsDetections
+from datadog_api_client.v2.model.signals_problems_sample_metadata import SignalsProblemsSampleMetadata
 from datadog_api_client.v2.model.simple_monitor_user_template import SimpleMonitorUserTemplate
 from datadog_api_client.v2.model.single_aggregated_connection_response_array import (
     SingleAggregatedConnectionResponseArray,
@@ -8189,6 +8232,7 @@ from datadog_api_client.v2.model.timeseries_response_times import TimeseriesResp
 from datadog_api_client.v2.model.timeseries_response_values import TimeseriesResponseValues
 from datadog_api_client.v2.model.timeseries_response_values_list import TimeseriesResponseValuesList
 from datadog_api_client.v2.model.token_type import TokenType
+from datadog_api_client.v2.model.top_long_task_invoker import TopLongTaskInvoker
 from datadog_api_client.v2.model.trace_attributes import TraceAttributes
 from datadog_api_client.v2.model.trace_data import TraceData
 from datadog_api_client.v2.model.trace_response import TraceResponse
@@ -8774,6 +8818,39 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "AddMemberTeamRequest",
     "Advisory",
+    "AggregatedHighFrozenFrameRate",
+    "AggregatedHighScriptEval",
+    "AggregatedLongTasksByInvokerType",
+    "AggregatedLongTasksRequest",
+    "AggregatedLongTasksRequestAttributes",
+    "AggregatedLongTasksRequestData",
+    "AggregatedLongTasksRequestType",
+    "AggregatedLongTasksResponse",
+    "AggregatedLongTasksResponseAttributes",
+    "AggregatedLongTasksResponseData",
+    "AggregatedLowCacheHitRate",
+    "AggregatedMobileScrollFriction",
+    "AggregatedResource",
+    "AggregatedResourceTimingBreakdown",
+    "AggregatedSignalsProblemsRequest",
+    "AggregatedSignalsProblemsRequestAttributes",
+    "AggregatedSignalsProblemsRequestData",
+    "AggregatedSignalsProblemsRequestType",
+    "AggregatedSignalsProblemsResponse",
+    "AggregatedSignalsProblemsResponseAttributes",
+    "AggregatedSignalsProblemsResponseData",
+    "AggregatedSlowFCPHighBytes",
+    "AggregatedSlowInteractionLongTask",
+    "AggregatedUncompressedResource",
+    "AggregatedWaterfallPerformanceCriteria",
+    "AggregatedWaterfallPerformanceCriteriaMetric",
+    "AggregatedWaterfallRequest",
+    "AggregatedWaterfallRequestAttributes",
+    "AggregatedWaterfallRequestData",
+    "AggregatedWaterfallRequestType",
+    "AggregatedWaterfallResponse",
+    "AggregatedWaterfallResponseAttributes",
+    "AggregatedWaterfallResponseData",
     "AiCustomRuleDataType",
     "AiCustomRuleItem",
     "AiCustomRuleRequest",
@@ -11721,6 +11798,8 @@ __all__ = [
     "LogsSortOrder",
     "LogsStorageTier",
     "LogsWarning",
+    "LongTaskMetricStats",
+    "LongTaskStatsPerView",
     "MSTeamsIntegrationMetadata",
     "MSTeamsIntegrationMetadataTeamsItem",
     "Maintenance",
@@ -13761,6 +13840,8 @@ __all__ = [
     "SignalEntitiesResponse",
     "SignalEntitiesType",
     "SignalEntityIdentity",
+    "SignalsProblemsDetections",
+    "SignalsProblemsSampleMetadata",
     "SimpleMonitorUserTemplate",
     "SingleAggregatedConnectionResponseArray",
     "SingleAggregatedConnectionResponseData",
@@ -14386,6 +14467,7 @@ __all__ = [
     "TimeseriesResponseValues",
     "TimeseriesResponseValuesList",
     "TokenType",
+    "TopLongTaskInvoker",
     "TraceAttributes",
     "TraceData",
     "TraceResponse",

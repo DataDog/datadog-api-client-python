@@ -249,6 +249,237 @@ datadog\_api\_client.v2.model.advisory module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aggregated\_high\_frozen\_frame\_rate module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_high_frozen_frame_rate
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_high\_script\_eval module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_high_script_eval
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_by\_invoker\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_request\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_request\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_response\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_long\_tasks\_response\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_long_tasks_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_low\_cache\_hit\_rate module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_low_cache_hit_rate
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_mobile\_scroll\_friction module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_mobile_scroll_friction
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_resource module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_resource\_timing\_breakdown module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_resource_timing_breakdown
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_signals\_problems\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_signals_problems_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_signals\_problems\_request\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_signals_problems_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_signals\_problems\_request\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_signals_problems_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_signals\_problems\_request\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_signals_problems_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_signals\_problems\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_signals_problems_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_signals\_problems\_response\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_signals_problems_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_signals\_problems\_response\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_signals_problems_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_slow\_fcp\_high\_bytes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_slow_fcp_high_bytes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_slow\_interaction\_long\_task module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_slow_interaction_long_task
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_uncompressed\_resource module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_uncompressed_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_performance\_criteria module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_performance_criteria
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_performance\_criteria\_metric module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_performance_criteria_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_request\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_request\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_response\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aggregated\_waterfall\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aggregated_waterfall_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ai\_custom\_rule\_data\_type module
 -----------------------------------------------------------------
 
@@ -21592,6 +21823,20 @@ datadog\_api\_client.v2.model.logs\_warning module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.long\_task\_metric\_stats module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.long_task_metric_stats
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.long\_task\_stats\_per\_view module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.long_task_stats_per_view
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.maintenance module
 ------------------------------------------------
 
@@ -35781,6 +36026,20 @@ datadog\_api\_client.v2.model.signal\_entity\_identity module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.signals\_problems\_detections module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.signals_problems_detections
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.signals\_problems\_sample\_metadata module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.signals_problems_sample_metadata
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.simple\_monitor\_user\_template module
 --------------------------------------------------------------------
 
@@ -40195,6 +40454,13 @@ datadog\_api\_client.v2.model.token\_type module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.token_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.top\_long\_task\_invoker module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.top_long_task_invoker
    :members:
    :show-inheritance:
 

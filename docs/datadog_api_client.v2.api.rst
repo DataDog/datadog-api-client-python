@@ -613,6 +613,13 @@ datadog\_api\_client.v2.api.rum\_audience\_management\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.rum\_insights\_api module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_insights_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.rum\_metrics\_api module
 ----------------------------------------------------
 
