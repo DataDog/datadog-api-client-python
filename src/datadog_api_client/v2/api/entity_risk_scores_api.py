@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.security_entity_risk_scores_response import SecurityEntityRiskScoresResponse
+from datadog_api_client.v2.model.security_entity_risk_score_response import SecurityEntityRiskScoreResponse
 
 
 class EntityRiskScoresApi:
@@ -23,6 +24,29 @@ class EntityRiskScoresApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._get_entity_risk_score_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityEntityRiskScoreResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security-entities/risk-scores/{entity_id}",
+                "operation_id": "get_entity_risk_score",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "entity_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "entity_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
 
         self._list_entity_risk_scores_endpoint = _Endpoint(
             settings={
@@ -81,6 +105,23 @@ class EntityRiskScoresApi:
             },
             api_client=api_client,
         )
+
+    def get_entity_risk_score(
+        self,
+        entity_id: str,
+    ) -> SecurityEntityRiskScoreResponse:
+        """Get Entity Risk Score.
+
+        Get the risk score for a specific entity by its ID. Returns security risk assessment including risk score, severity, detected signals, misconfigurations, and identity risks.
+
+        :param entity_id: The URL-encoded unique identifier for the entity.
+        :type entity_id: str
+        :rtype: SecurityEntityRiskScoreResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["entity_id"] = entity_id
+
+        return self._get_entity_risk_score_endpoint.call_with_http_info(**kwargs)
 
     def list_entity_risk_scores(
         self,

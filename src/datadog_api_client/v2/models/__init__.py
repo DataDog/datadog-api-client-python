@@ -6568,6 +6568,7 @@ from datadog_api_client.v2.model.security_entity_risk_score_attributes import Se
 from datadog_api_client.v2.model.security_entity_risk_score_attributes_severity import (
     SecurityEntityRiskScoreAttributesSeverity,
 )
+from datadog_api_client.v2.model.security_entity_risk_score_response import SecurityEntityRiskScoreResponse
 from datadog_api_client.v2.model.security_entity_risk_score_type import SecurityEntityRiskScoreType
 from datadog_api_client.v2.model.security_entity_risk_scores_meta import SecurityEntityRiskScoresMeta
 from datadog_api_client.v2.model.security_entity_risk_scores_response import SecurityEntityRiskScoresResponse
@@ -13429,6 +13430,7 @@ __all__ = [
     "SecurityEntityRiskScore",
     "SecurityEntityRiskScoreAttributes",
     "SecurityEntityRiskScoreAttributesSeverity",
+    "SecurityEntityRiskScoreResponse",
     "SecurityEntityRiskScoreType",
     "SecurityEntityRiskScoresMeta",
     "SecurityEntityRiskScoresResponse",

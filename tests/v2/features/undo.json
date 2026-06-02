@@ -6396,6 +6396,12 @@
       "type": "safe"
     }
   },
+  "GetEntityRiskScore": {
+    "tag": "Entity Risk Scores",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "CSM Threats",
     "undo": {

@@ -629,6 +629,7 @@ class Configuration:
                 "v2.query_aggregated_signals_problems": False,
                 "v2.query_aggregated_waterfall": False,
                 "v2.create_scorecard_outcomes_batch": False,
+                "v2.get_entity_risk_score": False,
                 "v2.list_entity_risk_scores": False,
                 "v2.create_incident_service": False,
                 "v2.delete_incident_service": False,

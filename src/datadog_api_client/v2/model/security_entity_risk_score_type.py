@@ -14,14 +14,14 @@ from typing import ClassVar
 
 class SecurityEntityRiskScoreType(ModelSimple):
     """
-    Resource type
+    Resource type.
 
-    :param value: If omitted defaults to "security_entity_risk_score". Must be one of ["security_entity_risk_score"].
+    :param value: If omitted defaults to "SecurityEntityRiskScore". Must be one of ["SecurityEntityRiskScore"].
     :type value: str
     """
 
     allowed_values = {
-        "security_entity_risk_score",
+        "SecurityEntityRiskScore",
     }
     SECURITY_ENTITY_RISK_SCORE: ClassVar["SecurityEntityRiskScoreType"]
 
@@ -32,4 +32,4 @@ class SecurityEntityRiskScoreType(ModelSimple):
         }
 
 
-SecurityEntityRiskScoreType.SECURITY_ENTITY_RISK_SCORE = SecurityEntityRiskScoreType("security_entity_risk_score")
+SecurityEntityRiskScoreType.SECURITY_ENTITY_RISK_SCORE = SecurityEntityRiskScoreType("SecurityEntityRiskScore")

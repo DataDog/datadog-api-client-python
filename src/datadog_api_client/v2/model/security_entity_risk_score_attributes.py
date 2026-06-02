@@ -31,13 +31,15 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
         )
 
         return {
+            "account_ids": ([str],),
             "config_risks": (SecurityEntityConfigRisks,),
-            "entity_id": (str,),
             "entity_metadata": (SecurityEntityMetadata,),
             "entity_name": (str,),
             "entity_providers": ([str],),
             "entity_roles": ([str],),
+            "entity_sub_types": ([str],),
             "entity_type": (str,),
+            "entity_types": ([str],),
             "first_detected": (int,),
             "last_activity_title": (str,),
             "last_detected": (int,),
@@ -48,13 +50,15 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "account_ids": "accountIds",
         "config_risks": "configRisks",
-        "entity_id": "entityID",
         "entity_metadata": "entityMetadata",
         "entity_name": "entityName",
         "entity_providers": "entityProviders",
         "entity_roles": "entityRoles",
+        "entity_sub_types": "entitySubTypes",
         "entity_type": "entityType",
+        "entity_types": "entityTypes",
         "first_detected": "firstDetected",
         "last_activity_title": "lastActivityTitle",
         "last_detected": "lastDetected",
@@ -66,11 +70,11 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
 
     def __init__(
         self_,
+        account_ids: List[str],
         config_risks: SecurityEntityConfigRisks,
-        entity_id: str,
         entity_metadata: SecurityEntityMetadata,
         entity_providers: List[str],
-        entity_type: str,
+        entity_sub_types: List[str],
         first_detected: int,
         last_activity_title: str,
         last_detected: int,
@@ -80,64 +84,76 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
         signals_detected: int,
         entity_name: Union[str, UnsetType] = unset,
         entity_roles: Union[List[str], UnsetType] = unset,
+        entity_type: Union[str, UnsetType] = unset,
+        entity_types: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
-        Attributes of an entity risk score
+        Attributes of an entity risk score.
+
+        :param account_ids: Cloud account IDs associated with the entity.
+        :type account_ids: [str]
 
         :param config_risks: Configuration risks associated with the entity
         :type config_risks: SecurityEntityConfigRisks
 
-        :param entity_id: Unique identifier for the entity
-        :type entity_id: str
-
         :param entity_metadata: Metadata about the entity from cloud providers
         :type entity_metadata: SecurityEntityMetadata
 
-        :param entity_name: Human-readable name of the entity
+        :param entity_name: Human-readable name of the entity.
         :type entity_name: str, optional
 
-        :param entity_providers: Cloud providers associated with the entity
+        :param entity_providers: Cloud providers associated with the entity.
         :type entity_providers: [str]
 
-        :param entity_roles: Roles associated with the entity
+        :param entity_roles: Roles associated with the entity.
         :type entity_roles: [str], optional
 
-        :param entity_type: Type of the entity (e.g., aws_iam_user, aws_ec2_instance)
-        :type entity_type: str
+        :param entity_sub_types: Sub-types associated with the entity.
+        :type entity_sub_types: [str]
 
-        :param first_detected: Timestamp when the entity was first detected (Unix milliseconds)
+        :param entity_type: Type of the entity (for example, aws_iam_user, aws_ec2_instance).
+        :type entity_type: str, optional
+
+        :param entity_types: All types associated with the entity.
+        :type entity_types: [str], optional
+
+        :param first_detected: Timestamp when the entity was first detected (Unix milliseconds).
         :type first_detected: int
 
-        :param last_activity_title: Title of the most recent signal detected for this entity
+        :param last_activity_title: Title of the most recent signal detected for this entity.
         :type last_activity_title: str
 
-        :param last_detected: Timestamp when the entity was last detected (Unix milliseconds)
+        :param last_detected: Timestamp when the entity was last detected (Unix milliseconds).
         :type last_detected: int
 
-        :param risk_score: Current risk score for the entity
+        :param risk_score: Current risk score for the entity.
         :type risk_score: int
 
-        :param risk_score_evolution: Change in risk score compared to previous period
+        :param risk_score_evolution: Change in risk score compared to previous period.
         :type risk_score_evolution: int
 
         :param severity: Severity level based on risk score
         :type severity: SecurityEntityRiskScoreAttributesSeverity
 
-        :param signals_detected: Number of security signals detected for this entity
+        :param signals_detected: Number of security signals detected for this entity.
         :type signals_detected: int
         """
         if entity_name is not unset:
             kwargs["entity_name"] = entity_name
         if entity_roles is not unset:
             kwargs["entity_roles"] = entity_roles
+        if entity_type is not unset:
+            kwargs["entity_type"] = entity_type
+        if entity_types is not unset:
+            kwargs["entity_types"] = entity_types
         super().__init__(kwargs)
 
+        self_.account_ids = account_ids
         self_.config_risks = config_risks
-        self_.entity_id = entity_id
         self_.entity_metadata = entity_metadata
         self_.entity_providers = entity_providers
-        self_.entity_type = entity_type
+        self_.entity_sub_types = entity_sub_types
         self_.first_detected = first_detected
         self_.last_activity_title = last_activity_title
         self_.last_detected = last_detected

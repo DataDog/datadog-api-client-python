@@ -40,13 +40,13 @@ class SecurityEntityRiskScore(ModelNormal):
         """
         An entity risk score containing security risk assessment information
 
-        :param attributes: Attributes of an entity risk score
+        :param attributes: Attributes of an entity risk score.
         :type attributes: SecurityEntityRiskScoreAttributes
 
         :param id: Unique identifier for the entity
         :type id: str
 
-        :param type: Resource type
+        :param type: Resource type.
         :type type: SecurityEntityRiskScoreType
         """
         super().__init__(kwargs)
