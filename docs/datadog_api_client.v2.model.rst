@@ -32946,6 +32946,13 @@ datadog\_api\_client.v2.model.security\_entity\_risk\_score\_attributes\_severit
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_entity\_risk\_score\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_entity_risk_score_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_entity\_risk\_score\_type module
 ------------------------------------------------------------------------
 
