@@ -142,6 +142,28 @@ Feature: Workflow Automation
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/workflow-automation-dev
+  Scenario: List workflows returns "Bad Request" response
+    Given new "ListWorkflows" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/workflow-automation-dev
+  Scenario: List workflows returns "OK" response
+    Given there is a valid "workflow" in the system
+    And new "ListWorkflows" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @replay-only @skip-validation @team:DataDog/workflow-automation-dev @with-pagination
+  Scenario: List workflows returns "OK" response with pagination
+    Given new "ListWorkflows" request
+    And request contains "filter[query]" parameter with value "{{ unique }}"
+    And request contains "limit" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 0 items
+
   @team:DataDog/workflow-automation-dev
   Scenario: Update an existing Workflow returns "Bad request" response
     Given there is a valid "workflow" in the system

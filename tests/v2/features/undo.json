@@ -8477,6 +8477,12 @@
       "type": "safe"
     }
   },
+  "ListWorkflows": {
+    "tag": "Workflow Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateWorkflow": {
     "tag": "Workflow Automation",
     "undo": {
