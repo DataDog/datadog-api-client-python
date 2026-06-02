@@ -1,5 +1,5 @@
 """
-Remove rum replay session from playlist returns "No Content" response
+Remove RUM replay session from playlist returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration

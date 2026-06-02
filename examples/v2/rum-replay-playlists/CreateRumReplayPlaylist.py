@@ -1,5 +1,5 @@
 """
-Create rum replay playlist returns "Created" response
+Create RUM replay playlist returns "Created" response
 """
 
 from datadog_api_client import ApiClient, Configuration

@@ -40,12 +40,12 @@ class RumMetricUpdateData(ModelNormal):
         self_, attributes: RumMetricUpdateAttributes, type: RumMetricType, id: Union[str, UnsetType] = unset, **kwargs
     ):
         """
-        The new rum-based metric properties.
+        The new RUM-based metric properties.
 
-        :param attributes: The rum-based metric properties that will be updated.
+        :param attributes: The RUM-based metric properties that will be updated.
         :type attributes: RumMetricUpdateAttributes
 
-        :param id: The name of the rum-based metric.
+        :param id: The name of the RUM-based metric.
         :type id: str, optional
 
         :param type: The type of the resource. The value should always be rum_metrics.

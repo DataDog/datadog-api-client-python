@@ -46,12 +46,12 @@ class RumMetricUpdateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The rum-based metric properties that will be updated.
+        The RUM-based metric properties that will be updated.
 
-        :param compute: The compute rule to compute the rum-based metric.
+        :param compute: The compute rule to compute the RUM-based metric.
         :type compute: RumMetricUpdateCompute, optional
 
-        :param filter: The rum-based metric filter. Events matching this filter will be aggregated in this metric.
+        :param filter: The RUM-based metric filter. Events matching this filter will be aggregated in this metric.
         :type filter: RumMetricFilter, optional
 
         :param group_by: The rules for the group by.

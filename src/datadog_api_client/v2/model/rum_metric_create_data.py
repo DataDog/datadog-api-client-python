@@ -36,12 +36,12 @@ class RumMetricCreateData(ModelNormal):
 
     def __init__(self_, attributes: RumMetricCreateAttributes, id: str, type: RumMetricType, **kwargs):
         """
-        The new rum-based metric properties.
+        The new RUM-based metric properties.
 
-        :param attributes: The object describing the Datadog rum-based metric to create.
+        :param attributes: The object describing the Datadog RUM-based metric to create.
         :type attributes: RumMetricCreateAttributes
 
-        :param id: The name of the rum-based metric.
+        :param id: The name of the RUM-based metric.
         :type id: str
 
         :param type: The type of the resource. The value should always be rum_metrics.

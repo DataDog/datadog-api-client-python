@@ -1,5 +1,5 @@
 """
-Delete rum replay playlist returns "No Content" response
+Delete RUM replay playlist returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration

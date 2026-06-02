@@ -5,11 +5,11 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test-Delete_a_rum_based_metric_returns_Not_Found_response-1732807881
+    uri: https://api.datadoghq.com/api/v2/rum/config/metrics/Test-Delete_a_RUM_based_metric_returns_Not_Found_response-1780403559
   response:
     body:
       string: '{"errors":[{"status":"404","title":"Not Found","detail":"not_found(Metric
-        with name ''Test-Delete_a_rum_based_metric_returns_Not_Found_response-1732807881''
+        with name ''Test-Delete_a_RUM_based_metric_returns_Not_Found_response-1780403559''
         not found)"}]}'
     headers:
       content-type:
