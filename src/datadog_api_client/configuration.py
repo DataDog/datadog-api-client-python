@@ -674,6 +674,7 @@ class Configuration:
                 "v2.revert_custom_rule_revision": False,
                 "v2.update_ai_custom_ruleset": False,
                 "v2.update_custom_ruleset": False,
+                "v2.get_widgets_from_image": False,
                 "v2.add_member_team": False,
                 "v2.list_member_teams": False,
                 "v2.remove_member_team": False,
