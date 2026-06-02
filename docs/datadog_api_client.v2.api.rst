@@ -655,6 +655,13 @@ datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.salesforce\_integration\_api module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.salesforce_integration_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.scorecards\_api module
 --------------------------------------------------
 

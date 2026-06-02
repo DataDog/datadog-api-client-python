@@ -6265,6 +6265,40 @@ from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
 from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
 from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
 from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
+from datadog_api_client.v2.model.salesforce_incidents_organization_response_attributes import (
+    SalesforceIncidentsOrganizationResponseAttributes,
+)
+from datadog_api_client.v2.model.salesforce_incidents_organization_response_data import (
+    SalesforceIncidentsOrganizationResponseData,
+)
+from datadog_api_client.v2.model.salesforce_incidents_organization_type import SalesforceIncidentsOrganizationType
+from datadog_api_client.v2.model.salesforce_incidents_organizations_response import (
+    SalesforceIncidentsOrganizationsResponse,
+)
+from datadog_api_client.v2.model.salesforce_incidents_template_create_attributes import (
+    SalesforceIncidentsTemplateCreateAttributes,
+)
+from datadog_api_client.v2.model.salesforce_incidents_template_create_data import SalesforceIncidentsTemplateCreateData
+from datadog_api_client.v2.model.salesforce_incidents_template_create_request import (
+    SalesforceIncidentsTemplateCreateRequest,
+)
+from datadog_api_client.v2.model.salesforce_incidents_template_priority import SalesforceIncidentsTemplatePriority
+from datadog_api_client.v2.model.salesforce_incidents_template_response import SalesforceIncidentsTemplateResponse
+from datadog_api_client.v2.model.salesforce_incidents_template_response_attributes import (
+    SalesforceIncidentsTemplateResponseAttributes,
+)
+from datadog_api_client.v2.model.salesforce_incidents_template_response_data import (
+    SalesforceIncidentsTemplateResponseData,
+)
+from datadog_api_client.v2.model.salesforce_incidents_template_type import SalesforceIncidentsTemplateType
+from datadog_api_client.v2.model.salesforce_incidents_template_update_attributes import (
+    SalesforceIncidentsTemplateUpdateAttributes,
+)
+from datadog_api_client.v2.model.salesforce_incidents_template_update_data import SalesforceIncidentsTemplateUpdateData
+from datadog_api_client.v2.model.salesforce_incidents_template_update_request import (
+    SalesforceIncidentsTemplateUpdateRequest,
+)
+from datadog_api_client.v2.model.salesforce_incidents_templates_response import SalesforceIncidentsTemplatesResponse
 from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_attributes import (
     SampleLogGenerationBulkSubscriptionAttributes,
 )
@@ -13148,6 +13182,22 @@ __all__ = [
     "SLOReportStatusGetResponse",
     "SLOReportStatusGetResponseAttributes",
     "SLOReportStatusGetResponseData",
+    "SalesforceIncidentsOrganizationResponseAttributes",
+    "SalesforceIncidentsOrganizationResponseData",
+    "SalesforceIncidentsOrganizationType",
+    "SalesforceIncidentsOrganizationsResponse",
+    "SalesforceIncidentsTemplateCreateAttributes",
+    "SalesforceIncidentsTemplateCreateData",
+    "SalesforceIncidentsTemplateCreateRequest",
+    "SalesforceIncidentsTemplatePriority",
+    "SalesforceIncidentsTemplateResponse",
+    "SalesforceIncidentsTemplateResponseAttributes",
+    "SalesforceIncidentsTemplateResponseData",
+    "SalesforceIncidentsTemplateType",
+    "SalesforceIncidentsTemplateUpdateAttributes",
+    "SalesforceIncidentsTemplateUpdateData",
+    "SalesforceIncidentsTemplateUpdateRequest",
+    "SalesforceIncidentsTemplatesResponse",
     "SampleLogGenerationBulkSubscriptionAttributes",
     "SampleLogGenerationBulkSubscriptionData",
     "SampleLogGenerationBulkSubscriptionItemMeta",

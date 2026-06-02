@@ -3524,6 +3524,49 @@
       "type": "idempotent"
     }
   },
+  "GetIncidentTemplates": {
+    "tag": "Salesforce Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentTemplate": {
+    "tag": "Salesforce Integration",
+    "undo": {
+      "operationId": "DeleteIncidentTemplate",
+      "parameters": [
+        {
+          "name": "incident_template_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentTemplate": {
+    "tag": "Salesforce Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateIncidentTemplate": {
+    "tag": "Salesforce Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSalesforceOrganizations": {
+    "tag": "Salesforce Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteSalesforceOrganization": {
+    "tag": "Salesforce Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListServiceNowAssignmentGroups": {
     "tag": "ServiceNow Integration",
     "undo": {
