@@ -7688,6 +7688,11 @@ from datadog_api_client.v2.model.statuspage_url_setting_update_attributes import
 from datadog_api_client.v2.model.statuspage_url_setting_update_data import StatuspageUrlSettingUpdateData
 from datadog_api_client.v2.model.statuspage_url_setting_update_request import StatuspageUrlSettingUpdateRequest
 from datadog_api_client.v2.model.statuspage_url_settings_response import StatuspageUrlSettingsResponse
+from datadog_api_client.v2.model.stegadography_get_widgets_form_data import StegadographyGetWidgetsFormData
+from datadog_api_client.v2.model.stegadography_widget_attributes import StegadographyWidgetAttributes
+from datadog_api_client.v2.model.stegadography_widget_data import StegadographyWidgetData
+from datadog_api_client.v2.model.stegadography_widget_type import StegadographyWidgetType
+from datadog_api_client.v2.model.stegadography_widgets_response import StegadographyWidgetsResponse
 from datadog_api_client.v2.model.step import Step
 from datadog_api_client.v2.model.step_display import StepDisplay
 from datadog_api_client.v2.model.step_display_bounds import StepDisplayBounds
@@ -14141,6 +14146,11 @@ __all__ = [
     "StatuspageUrlSettingUpdateData",
     "StatuspageUrlSettingUpdateRequest",
     "StatuspageUrlSettingsResponse",
+    "StegadographyGetWidgetsFormData",
+    "StegadographyWidgetAttributes",
+    "StegadographyWidgetData",
+    "StegadographyWidgetType",
+    "StegadographyWidgetsResponse",
     "Step",
     "StepDisplay",
     "StepDisplayBounds",

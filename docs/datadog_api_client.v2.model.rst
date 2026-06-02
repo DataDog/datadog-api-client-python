@@ -37727,6 +37727,41 @@ datadog\_api\_client.v2.model.statuspage\_url\_settings\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.stegadography\_get\_widgets\_form\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stegadography_get_widgets_form_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stegadography\_widget\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stegadography_widget_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stegadography\_widget\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stegadography_widget_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stegadography\_widget\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stegadography_widget_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stegadography\_widgets\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stegadography_widgets_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.step module
 -----------------------------------------
 
