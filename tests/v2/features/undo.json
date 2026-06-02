@@ -3641,6 +3641,43 @@
       "type": "idempotent"
     }
   },
+  "GetAllAuthMethods": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOAuth2ClientCredentials": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "operationId": "DeleteOAuth2ClientCredentials",
+      "parameters": [
+        {
+          "name": "auth_method_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOAuth2ClientCredentials": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOAuth2ClientCredentials": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOAuth2ClientCredentials": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIntegrations": {
     "tag": "Integrations",
     "undo": {

@@ -42102,6 +42102,132 @@ datadog\_api\_client.v2.model.web\_integration\_accounts\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.webhooks\_auth\_method\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_auth_method_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_auth\_method\_protocol module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_auth_method_protocol
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_auth\_method\_relationships module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_auth_method_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_auth\_method\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_auth_method_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_auth\_method\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_auth_method_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_auth\_methods\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_auth_methods_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_create\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_create\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_create\_request module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_relationship module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_relationship\_data module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_response module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_response\_attributes module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_response\_data module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_update\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_update\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.webhooks\_o\_auth2\_client\_credentials\_update\_request module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.webhooks_o_auth2_client_credentials_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.weekday module
 --------------------------------------------
 

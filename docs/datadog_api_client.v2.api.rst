@@ -809,6 +809,13 @@ datadog\_api\_client.v2.api.web\_integrations\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.webhooks\_integration\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.webhooks_integration_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.widgets\_api module
 -----------------------------------------------
 
