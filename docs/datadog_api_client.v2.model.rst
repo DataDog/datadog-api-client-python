@@ -31399,6 +31399,118 @@ datadog\_api\_client.v2.model.run\_historical\_job\_request\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.salesforce\_incidents\_organization\_response\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_organization_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_organization\_response\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_organization_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_organization\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_organization_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_organizations\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_organizations_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_create\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_create\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_create\_request module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_priority module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_priority
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_response\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_response\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_update\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_update\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_template\_update\_request module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_template_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.salesforce\_incidents\_templates\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.salesforce_incidents_templates_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.saml\_assertion\_attribute module
 ---------------------------------------------------------------
 

@@ -702,6 +702,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"salesforce_org_id\": \"596da4af-0563-4097-90ff-07230c3f9db3\",\n      \"name\": \"{{ unique }}\",\n      \"subject\": \"Datadog Incident: Production Outage\",\n      \"description\": \"An incident was detected by Datadog monitors.\",\n      \"owner_id\": \"005000000000000\",\n      \"priority\": \"High\"\n    },\n    \"type\": \"salesforce-incidents-incident-template\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"salesforce_incidents_template\" in the system",
+    "key": "salesforce_incidents_template",
+    "tag": "Salesforce Integration",
+    "operationId": "CreateIncidentTemplate"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"api_key\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"type\": \"statuspage-account\"\n  }\n}"
       }
     ],
