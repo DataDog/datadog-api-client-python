@@ -6151,6 +6151,24 @@
       "type": "safe"
     }
   },
+  "QueryAggregatedLongTasks": {
+    "tag": "RUM Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryAggregatedSignalsProblems": {
+    "tag": "RUM Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryAggregatedWaterfall": {
+    "tag": "RUM Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListRumReplayPlaylists": {
     "tag": "Rum Replay Playlists",
     "undo": {
