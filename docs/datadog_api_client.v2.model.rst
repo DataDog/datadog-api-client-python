@@ -18120,6 +18120,20 @@ datadog\_api\_client.v2.model.issue\_case\_jira\_issue\_result module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.issue\_case\_linear\_issue module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_linear_issue
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.issue\_case\_linear\_issue\_result module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.issue_case_linear_issue_result
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.issue\_case\_reference module
 -----------------------------------------------------------
 

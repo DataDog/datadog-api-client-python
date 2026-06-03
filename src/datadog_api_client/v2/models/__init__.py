@@ -3380,6 +3380,8 @@ from datadog_api_client.v2.model.issue_case_attributes import IssueCaseAttribute
 from datadog_api_client.v2.model.issue_case_insight import IssueCaseInsight
 from datadog_api_client.v2.model.issue_case_jira_issue import IssueCaseJiraIssue
 from datadog_api_client.v2.model.issue_case_jira_issue_result import IssueCaseJiraIssueResult
+from datadog_api_client.v2.model.issue_case_linear_issue import IssueCaseLinearIssue
+from datadog_api_client.v2.model.issue_case_linear_issue_result import IssueCaseLinearIssueResult
 from datadog_api_client.v2.model.issue_case_reference import IssueCaseReference
 from datadog_api_client.v2.model.issue_case_relationship import IssueCaseRelationship
 from datadog_api_client.v2.model.issue_case_relationships import IssueCaseRelationships
@@ -11379,6 +11381,8 @@ __all__ = [
     "IssueCaseInsight",
     "IssueCaseJiraIssue",
     "IssueCaseJiraIssueResult",
+    "IssueCaseLinearIssue",
+    "IssueCaseLinearIssueResult",
     "IssueCaseReference",
     "IssueCaseRelationship",
     "IssueCaseRelationships",

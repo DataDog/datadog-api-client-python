@@ -23,17 +23,20 @@ class IssueCaseJiraIssue(ModelNormal):
         from datadog_api_client.v2.model.issue_case_jira_issue_result import IssueCaseJiraIssueResult
 
         return {
+            "error_message": (str,),
             "result": (IssueCaseJiraIssueResult,),
             "status": (str,),
         }
 
     attribute_map = {
+        "error_message": "error_message",
         "result": "result",
         "status": "status",
     }
 
     def __init__(
         self_,
+        error_message: Union[str, UnsetType] = unset,
         result: Union[IssueCaseJiraIssueResult, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         **kwargs,
@@ -41,12 +44,17 @@ class IssueCaseJiraIssue(ModelNormal):
         """
         Jira issue of the case.
 
+        :param error_message: Error message set when the Jira issue creation fails.
+        :type error_message: str, optional
+
         :param result: Contains the identifiers and URL for a successfully created Jira issue.
         :type result: IssueCaseJiraIssueResult, optional
 
         :param status: Creation status of the Jira issue.
         :type status: str, optional
         """
+        if error_message is not unset:
+            kwargs["error_message"] = error_message
         if result is not unset:
             kwargs["result"] = result
         if status is not unset:

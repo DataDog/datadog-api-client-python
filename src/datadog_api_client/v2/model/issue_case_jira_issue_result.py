@@ -17,29 +17,38 @@ class IssueCaseJiraIssueResult(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "account_id": (str,),
             "issue_id": (str,),
             "issue_key": (str,),
             "issue_url": (str,),
+            "project_id": (str,),
             "project_key": (str,),
         }
 
     attribute_map = {
+        "account_id": "account_id",
         "issue_id": "issue_id",
         "issue_key": "issue_key",
         "issue_url": "issue_url",
+        "project_id": "project_id",
         "project_key": "project_key",
     }
 
     def __init__(
         self_,
+        account_id: Union[str, UnsetType] = unset,
         issue_id: Union[str, UnsetType] = unset,
         issue_key: Union[str, UnsetType] = unset,
         issue_url: Union[str, UnsetType] = unset,
+        project_id: Union[str, UnsetType] = unset,
         project_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         Contains the identifiers and URL for a successfully created Jira issue.
+
+        :param account_id: Jira account identifier.
+        :type account_id: str, optional
 
         :param issue_id: Jira issue identifier.
         :type issue_id: str, optional
@@ -50,15 +59,22 @@ class IssueCaseJiraIssueResult(ModelNormal):
         :param issue_url: Jira issue URL.
         :type issue_url: str, optional
 
+        :param project_id: Jira project identifier.
+        :type project_id: str, optional
+
         :param project_key: Jira project key.
         :type project_key: str, optional
         """
+        if account_id is not unset:
+            kwargs["account_id"] = account_id
         if issue_id is not unset:
             kwargs["issue_id"] = issue_id
         if issue_key is not unset:
             kwargs["issue_key"] = issue_key
         if issue_url is not unset:
             kwargs["issue_url"] = issue_url
+        if project_id is not unset:
+            kwargs["project_id"] = project_id
         if project_key is not unset:
             kwargs["project_key"] = project_key
         super().__init__(kwargs)

@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.issue_case_insight import IssueCaseInsight
     from datadog_api_client.v2.model.issue_case_jira_issue import IssueCaseJiraIssue
+    from datadog_api_client.v2.model.issue_case_linear_issue import IssueCaseLinearIssue
     from datadog_api_client.v2.model.case_priority import CasePriority
     from datadog_api_client.v2.model.case_status import CaseStatus
 
@@ -26,6 +27,7 @@ class IssueCaseAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.issue_case_insight import IssueCaseInsight
         from datadog_api_client.v2.model.issue_case_jira_issue import IssueCaseJiraIssue
+        from datadog_api_client.v2.model.issue_case_linear_issue import IssueCaseLinearIssue
         from datadog_api_client.v2.model.case_priority import CasePriority
         from datadog_api_client.v2.model.case_status import CaseStatus
 
@@ -39,6 +41,7 @@ class IssueCaseAttributes(ModelNormal):
             "insights": ([IssueCaseInsight],),
             "jira_issue": (IssueCaseJiraIssue,),
             "key": (str,),
+            "linear_issue": (IssueCaseLinearIssue,),
             "modified_at": (datetime,),
             "priority": (CasePriority,),
             "status": (CaseStatus,),
@@ -56,6 +59,7 @@ class IssueCaseAttributes(ModelNormal):
         "insights": "insights",
         "jira_issue": "jira_issue",
         "key": "key",
+        "linear_issue": "linear_issue",
         "modified_at": "modified_at",
         "priority": "priority",
         "status": "status",
@@ -74,6 +78,7 @@ class IssueCaseAttributes(ModelNormal):
         insights: Union[List[IssueCaseInsight], UnsetType] = unset,
         jira_issue: Union[IssueCaseJiraIssue, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
+        linear_issue: Union[IssueCaseLinearIssue, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         priority: Union[CasePriority, UnsetType] = unset,
         status: Union[CaseStatus, UnsetType] = unset,
@@ -111,6 +116,9 @@ class IssueCaseAttributes(ModelNormal):
         :param key: Key of the case.
         :type key: str, optional
 
+        :param linear_issue: Linear issue of the case.
+        :type linear_issue: IssueCaseLinearIssue, optional
+
         :param modified_at: Timestamp of when the case was last modified.
         :type modified_at: datetime, optional
 
@@ -144,6 +152,8 @@ class IssueCaseAttributes(ModelNormal):
             kwargs["jira_issue"] = jira_issue
         if key is not unset:
             kwargs["key"] = key
+        if linear_issue is not unset:
+            kwargs["linear_issue"] = linear_issue
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if priority is not unset:
