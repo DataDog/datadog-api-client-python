@@ -8562,6 +8562,12 @@
       "type": "safe"
     }
   },
+  "GetUsageSummaryAvailableFields": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetUsageAttributionTypes": {
     "tag": "Usage Metering",
     "undo": {
