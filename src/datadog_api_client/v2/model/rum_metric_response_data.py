@@ -44,12 +44,12 @@ class RumMetricResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        The RUM-based metric properties.
+        The rum-based metric properties.
 
-        :param attributes: The object describing a Datadog RUM-based metric.
+        :param attributes: The object describing a Datadog rum-based metric.
         :type attributes: RumMetricResponseAttributes, optional
 
-        :param id: The name of the RUM-based metric.
+        :param id: The name of the rum-based metric.
         :type id: str, optional
 
         :param type: The type of the resource. The value should always be rum_metrics.

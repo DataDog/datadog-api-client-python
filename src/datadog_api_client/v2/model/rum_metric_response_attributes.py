@@ -56,15 +56,15 @@ class RumMetricResponseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The object describing a Datadog RUM-based metric.
+        The object describing a Datadog rum-based metric.
 
-        :param compute: The compute rule to compute the RUM-based metric.
+        :param compute: The compute rule to compute the rum-based metric.
         :type compute: RumMetricResponseCompute, optional
 
         :param event_type: The type of RUM events to filter on.
         :type event_type: RumMetricEventType, optional
 
-        :param filter: The RUM-based metric filter. RUM events matching this filter will be aggregated in this metric.
+        :param filter: The rum-based metric filter. RUM events matching this filter will be aggregated in this metric.
         :type filter: RumMetricResponseFilter, optional
 
         :param group_by: The rules for the group by.

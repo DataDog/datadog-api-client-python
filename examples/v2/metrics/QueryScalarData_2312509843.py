@@ -1,5 +1,5 @@
 """
-Scalar cross product query with RUM data source returns "OK" response
+Scalar cross product query with rum data source returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

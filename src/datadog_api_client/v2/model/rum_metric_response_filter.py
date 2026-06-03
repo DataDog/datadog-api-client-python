@@ -26,7 +26,7 @@ class RumMetricResponseFilter(ModelNormal):
 
     def __init__(self_, query: Union[str, UnsetType] = unset, **kwargs):
         """
-        The RUM-based metric filter. RUM events matching this filter will be aggregated in this metric.
+        The rum-based metric filter. RUM events matching this filter will be aggregated in this metric.
 
         :param query: The search query - following the RUM search syntax.
         :type query: str, optional

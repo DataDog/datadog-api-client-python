@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"formulas":[{"formula":"a","limit":{"count":10,"order":"desc"}}],"from":1780399944000,"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","indexes":["*"],"name":"a","search":{"query":"*"}}],"to":1780403544000},"type":"scalar_request"}}'
+    body: '{"data":{"attributes":{"formulas":[{"formula":"a","limit":{"count":10,"order":"desc"}}],"from":1776290799000,"queries":[{"compute":{"aggregation":"count"},"data_source":"rum","indexes":["*"],"name":"a","search":{"query":"*"}}],"to":1776294399000},"type":"scalar_request"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/query/scalar
   response:
     body:
-      string: '{"data":{"id":"0","type":"scalar_response","attributes":{"columns":[{"name":"a","values":[340.0],"type":"number","meta":{"unit":null}}]}}}'
+      string: '{"data":{"id":"0","type":"scalar_response","attributes":{"columns":[{"name":"a","values":[338.0],"type":"number","meta":{"unit":null}}]}}}'
     headers:
       content-type:
       - application/vnd.api+json

@@ -345,15 +345,6 @@ Feature: Metrics
     And the response "data.attributes.columns[0].name" is equal to "a"
 
   @skip-validation @team:Datadog/timeseries-query
-  Scenario: Scalar cross product query with RUM data source returns "OK" response
-    Given a valid "appKeyAuth" key in the system
-    And new "QueryScalarData" request
-    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "rum", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data.type" is equal to "scalar_response"
-
-  @skip-validation @team:Datadog/timeseries-query
   Scenario: Scalar cross product query with apm_dependency_stats data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -489,6 +480,15 @@ Feature: Metrics
     And the response "data.type" is equal to "scalar_response"
 
   @skip-validation @team:Datadog/timeseries-query
+  Scenario: Scalar cross product query with rum data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryScalarData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "queries": [{"data_source": "rum", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "scalar_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "scalar_response"
+
+  @skip-validation @team:Datadog/timeseries-query
   Scenario: Scalar cross product query with security_signals data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -582,15 +582,6 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:datadog.estimated_usage.metrics.custom{*}", "name": "a"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "data.type" is equal to "timeseries_response"
-
-  @skip-validation @team:Datadog/timeseries-query
-  Scenario: Timeseries cross product query with RUM data source returns "OK" response
-    Given a valid "appKeyAuth" key in the system
-    And new "QueryTimeseriesData" request
-    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "rum", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
@@ -726,6 +717,15 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "profiles", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "timeseries_response"
+
+  @skip-validation @team:Datadog/timeseries-query
+  Scenario: Timeseries cross product query with rum data source returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "QueryTimeseriesData" request
+    And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "rum", "name": "a", "compute": {"aggregation": "count"}, "search": {"query": "*"}, "indexes": ["*"]}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"

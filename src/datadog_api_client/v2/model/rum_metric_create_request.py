@@ -30,9 +30,9 @@ class RumMetricCreateRequest(ModelNormal):
 
     def __init__(self_, data: RumMetricCreateData, **kwargs):
         """
-        The new RUM-based metric body.
+        The new rum-based metric body.
 
-        :param data: The new RUM-based metric properties.
+        :param data: The new rum-based metric properties.
         :type data: RumMetricCreateData
         """
         super().__init__(kwargs)

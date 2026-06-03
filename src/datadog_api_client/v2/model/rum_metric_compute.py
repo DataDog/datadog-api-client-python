@@ -42,7 +42,7 @@ class RumMetricCompute(ModelNormal):
         **kwargs,
     ):
         """
-        The compute rule to compute the RUM-based metric.
+        The compute rule to compute the rum-based metric.
 
         :param aggregation_type: The type of aggregation to use.
         :type aggregation_type: RumMetricComputeAggregationType
@@ -51,7 +51,7 @@ class RumMetricCompute(ModelNormal):
             Only present when ``aggregation_type`` is ``distribution``.
         :type include_percentiles: bool, optional
 
-        :param path: The path to the value the RUM-based metric will aggregate on.
+        :param path: The path to the value the rum-based metric will aggregate on.
             Only present when ``aggregation_type`` is ``distribution``.
         :type path: str, optional
         """

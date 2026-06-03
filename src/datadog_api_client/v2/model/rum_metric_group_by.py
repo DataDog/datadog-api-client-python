@@ -30,7 +30,7 @@ class RumMetricGroupBy(ModelNormal):
         """
         A group by rule.
 
-        :param path: The path to the value the RUM-based metric will be aggregated over.
+        :param path: The path to the value the rum-based metric will be aggregated over.
         :type path: str
 
         :param tag_name: Eventual name of the tag that gets created. By default, ``path`` is used as the tag name.

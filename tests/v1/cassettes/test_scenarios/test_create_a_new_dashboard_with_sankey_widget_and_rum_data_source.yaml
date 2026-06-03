@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_sankey_widget_and_RUM_data_source-1780403541","widgets":[{"definition":{"requests":[{"query":{"data_source":"rum","mode":"source","query_string":"@type:view"},"request_type":"sankey"}],"title":"","title_align":"left","title_size":"16","type":"sankey"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
+    body: '{"description":"","layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_sankey_widget_and_rum_data_source-1767367579","widgets":[{"definition":{"requests":[{"query":{"data_source":"rum","mode":"source","query_string":"@type:view"},"request_type":"sankey"}],"title":"","title_align":"left","title_size":"16","type":"sankey"},"layout":{"height":15,"width":47,"x":0,"y":0}}]}'
     headers:
       accept:
       - application/json
@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v1/dashboard
   response:
     body:
-      string: '{"id":"js9-hx8-hsy","title":"Test-Create_a_new_dashboard_with_sankey_widget_and_RUM_data_source-1780403541","description":"","author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
-        Account","layout_type":"free","url":"/dashboard/js9-hx8-hsy/test-createanewdashboardwithsankeywidgetandrumdatasource-1780403541","template_variables":[],"widgets":[{"definition":{"requests":[{"query":{"data_source":"rum","mode":"source","query_string":"@type:view"},"request_type":"sankey"}],"title":"","title_align":"left","title_size":"16","type":"sankey"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":8566545221037666}],"notify_list":[],"created_at":"2026-06-02T12:32:21.497655+00:00","modified_at":"2026-06-02T12:32:21.497655+00:00","restricted_roles":[]}'
+      string: '{"id":"pgj-vt6-zeg","title":"Test-Create_a_new_dashboard_with_sankey_widget_and_rum_data_source-1767367579","description":"","author_handle":"sophie.cao@datadoghq.com","author_name":"Sophie
+        Cao","layout_type":"free","url":"/dashboard/pgj-vt6-zeg/test-createanewdashboardwithsankeywidgetandrumdatasource-1767367579","template_variables":[],"widgets":[{"definition":{"requests":[{"query":{"data_source":"rum","mode":"source","query_string":"@type:view"},"request_type":"sankey"}],"title":"","title_align":"left","title_size":"16","type":"sankey"},"layout":{"height":15,"width":47,"x":0,"y":0},"id":1607494419972582}],"notify_list":[],"created_at":"2026-01-02T15:26:19.817734+00:00","modified_at":"2026-01-02T15:26:19.817734+00:00","restricted_roles":[]}'
     headers:
       content-type:
       - application/json
@@ -24,10 +24,10 @@ interactions:
       accept:
       - application/json
     method: DELETE
-    uri: https://api.datadoghq.com/api/v1/dashboard/js9-hx8-hsy
+    uri: https://api.datadoghq.com/api/v1/dashboard/pgj-vt6-zeg
   response:
     body:
-      string: '{"deleted_dashboard_id":"js9-hx8-hsy"}'
+      string: '{"deleted_dashboard_id":"pgj-vt6-zeg"}'
     headers:
       content-type:
       - application/json

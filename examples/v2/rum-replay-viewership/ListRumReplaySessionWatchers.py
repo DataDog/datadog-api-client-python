@@ -1,5 +1,5 @@
 """
-List RUM replay session watchers returns "OK" response
+List rum replay session watchers returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

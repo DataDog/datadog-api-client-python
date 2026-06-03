@@ -1,5 +1,5 @@
 """
-List RUM replay viewership history sessions returns "OK" response
+List rum replay viewership history sessions returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

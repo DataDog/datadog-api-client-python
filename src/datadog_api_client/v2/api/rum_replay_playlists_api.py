@@ -293,7 +293,7 @@ class RumReplayPlaylistsApi:
         *,
         data_source: Union[str, UnsetType] = unset,
     ) -> PlaylistsSession:
-        """Add RUM replay session to playlist.
+        """Add rum replay session to playlist.
 
         Add a session to a playlist.
 
@@ -324,7 +324,7 @@ class RumReplayPlaylistsApi:
         playlist_id: int,
         body: SessionIdArray,
     ) -> None:
-        """Bulk remove RUM replay playlist sessions.
+        """Bulk remove rum replay playlist sessions.
 
         Remove sessions from a playlist.
 
@@ -344,7 +344,7 @@ class RumReplayPlaylistsApi:
         self,
         body: Playlist,
     ) -> Playlist:
-        """Create RUM replay playlist.
+        """Create rum replay playlist.
 
         Create a playlist.
 
@@ -360,7 +360,7 @@ class RumReplayPlaylistsApi:
         self,
         playlist_id: int,
     ) -> None:
-        """Delete RUM replay playlist.
+        """Delete rum replay playlist.
 
         Delete a playlist.
 
@@ -377,7 +377,7 @@ class RumReplayPlaylistsApi:
         self,
         playlist_id: int,
     ) -> Playlist:
-        """Get RUM replay playlist.
+        """Get rum replay playlist.
 
         Get a playlist.
 
@@ -398,7 +398,7 @@ class RumReplayPlaylistsApi:
         page_number: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
     ) -> PlaylistArray:
-        """List RUM replay playlists.
+        """List rum replay playlists.
 
         List playlists.
 
@@ -434,7 +434,7 @@ class RumReplayPlaylistsApi:
         page_number: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
     ) -> PlaylistsSessionArray:
-        """List RUM replay playlist sessions.
+        """List rum replay playlist sessions.
 
         List sessions in a playlist.
 
@@ -462,7 +462,7 @@ class RumReplayPlaylistsApi:
         playlist_id: int,
         session_id: str,
     ) -> None:
-        """Remove RUM replay session from playlist.
+        """Remove rum replay session from playlist.
 
         Remove a session from a playlist.
 
@@ -484,7 +484,7 @@ class RumReplayPlaylistsApi:
         playlist_id: int,
         body: Playlist,
     ) -> Playlist:
-        """Update RUM replay playlist.
+        """Update rum replay playlist.
 
         Update a playlist.
 

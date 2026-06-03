@@ -837,18 +837,6 @@ Feature: Dashboards
     And the response "widgets[0].definition.inputs[0]" is equal to {"name": "environment", "value": "$env.value"}
 
   @team:DataDog/dashboards-backend
-  Scenario: Create a new dashboard with sankey widget and RUM data source
-    Given new "CreateDashboard" request
-    And body from file "dashboards_json_payload/sankey_rum_widget.json"
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "widgets[0].definition.type" is equal to "sankey"
-    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "rum"
-    And the response "widgets[0].definition.requests[0].query.query_string" is equal to "@type:view"
-    And the response "widgets[0].definition.requests[0].query.mode" is equal to "source"
-    And the response "widgets[0].definition.requests[0].request_type" is equal to "sankey"
-
-  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with sankey widget and network data source
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/sankey_network_widget.json"
@@ -870,6 +858,18 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "sankey"
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "product_analytics"
     And the response "widgets[0].definition.requests[0].query.query_string" is equal to "@type:session"
+    And the response "widgets[0].definition.requests[0].query.mode" is equal to "source"
+    And the response "widgets[0].definition.requests[0].request_type" is equal to "sankey"
+
+  @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with sankey widget and rum data source
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/sankey_rum_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "sankey"
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "rum"
+    And the response "widgets[0].definition.requests[0].query.query_string" is equal to "@type:view"
     And the response "widgets[0].definition.requests[0].query.mode" is equal to "source"
     And the response "widgets[0].definition.requests[0].request_type" is equal to "sankey"
 

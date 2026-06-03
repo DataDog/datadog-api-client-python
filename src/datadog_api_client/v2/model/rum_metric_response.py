@@ -32,9 +32,9 @@ class RumMetricResponse(ModelNormal):
 
     def __init__(self_, data: Union[RumMetricResponseData, UnsetType] = unset, **kwargs):
         """
-        The RUM-based metric object.
+        The rum-based metric object.
 
-        :param data: The RUM-based metric properties.
+        :param data: The rum-based metric properties.
         :type data: RumMetricResponseData, optional
         """
         if data is not unset:

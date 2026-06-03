@@ -165,7 +165,7 @@ class RumReplayViewershipApi:
         session_id: str,
         body: Watch,
     ) -> Watch:
-        """Create RUM replay session watch.
+        """Create rum replay session watch.
 
         Record a session watch.
 
@@ -185,7 +185,7 @@ class RumReplayViewershipApi:
         self,
         session_id: str,
     ) -> None:
-        """Delete RUM replay session watch.
+        """Delete rum replay session watch.
 
         Delete session watch history.
 
@@ -205,7 +205,7 @@ class RumReplayViewershipApi:
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
     ) -> WatcherArray:
-        """List RUM replay session watchers.
+        """List rum replay session watchers.
 
         List session watchers.
 
@@ -239,7 +239,7 @@ class RumReplayViewershipApi:
         page_size: Union[int, UnsetType] = unset,
         filter_application_id: Union[str, UnsetType] = unset,
     ) -> ViewershipHistorySessionArray:
-        """List RUM replay viewership history sessions.
+        """List rum replay viewership history sessions.
 
         List watched sessions.
 

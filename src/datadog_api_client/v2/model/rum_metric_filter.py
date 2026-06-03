@@ -23,7 +23,7 @@ class RumMetricFilter(ModelNormal):
 
     def __init__(self_, **kwargs):
         """
-        The RUM-based metric filter. Events matching this filter will be aggregated in this metric.
+        The rum-based metric filter. Events matching this filter will be aggregated in this metric.
 
         :param query: The search query - following the RUM search syntax.
         :type query: str

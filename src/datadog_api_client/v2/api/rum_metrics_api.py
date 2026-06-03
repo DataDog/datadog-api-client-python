@@ -15,7 +15,7 @@ from datadog_api_client.v2.model.rum_metric_update_request import RumMetricUpdat
 
 class RumMetricsApi:
     """
-    Manage configuration of `RUM-based metrics <https://app.datadoghq.com/rum/generate-metrics>`_ for your organization.
+    Manage configuration of `rum-based metrics <https://app.datadoghq.com/rum/generate-metrics>`_ for your organization.
     """
 
     def __init__(self, api_client=None):
@@ -135,12 +135,12 @@ class RumMetricsApi:
         self,
         body: RumMetricCreateRequest,
     ) -> RumMetricResponse:
-        """Create a RUM-based metric.
+        """Create a rum-based metric.
 
         Create a metric based on your organization's RUM data.
-        Returns the RUM-based metric object from the request body when the request is successful.
+        Returns the rum-based metric object from the request body when the request is successful.
 
-        :param body: The definition of the new RUM-based metric.
+        :param body: The definition of the new rum-based metric.
         :type body: RumMetricCreateRequest
         :rtype: RumMetricResponse
         """
@@ -153,11 +153,11 @@ class RumMetricsApi:
         self,
         metric_id: str,
     ) -> None:
-        """Delete a RUM-based metric.
+        """Delete a rum-based metric.
 
-        Delete a specific RUM-based metric from your organization.
+        Delete a specific rum-based metric from your organization.
 
-        :param metric_id: The name of the RUM-based metric.
+        :param metric_id: The name of the rum-based metric.
         :type metric_id: str
         :rtype: None
         """
@@ -170,11 +170,11 @@ class RumMetricsApi:
         self,
         metric_id: str,
     ) -> RumMetricResponse:
-        """Get a RUM-based metric.
+        """Get a rum-based metric.
 
-        Get a specific RUM-based metric from your organization.
+        Get a specific rum-based metric from your organization.
 
-        :param metric_id: The name of the RUM-based metric.
+        :param metric_id: The name of the rum-based metric.
         :type metric_id: str
         :rtype: RumMetricResponse
         """
@@ -186,9 +186,9 @@ class RumMetricsApi:
     def list_rum_metrics(
         self,
     ) -> RumMetricsResponse:
-        """Get all RUM-based metrics.
+        """Get all rum-based metrics.
 
-        Get the list of configured RUM-based metrics with their definitions.
+        Get the list of configured rum-based metrics with their definitions.
 
         :rtype: RumMetricsResponse
         """
@@ -200,14 +200,14 @@ class RumMetricsApi:
         metric_id: str,
         body: RumMetricUpdateRequest,
     ) -> RumMetricResponse:
-        """Update a RUM-based metric.
+        """Update a rum-based metric.
 
-        Update a specific RUM-based metric from your organization.
-        Returns the RUM-based metric object from the request body when the request is successful.
+        Update a specific rum-based metric from your organization.
+        Returns the rum-based metric object from the request body when the request is successful.
 
-        :param metric_id: The name of the RUM-based metric.
+        :param metric_id: The name of the rum-based metric.
         :type metric_id: str
-        :param body: New definition of the RUM-based metric.
+        :param body: New definition of the rum-based metric.
         :type body: RumMetricUpdateRequest
         :rtype: RumMetricResponse
         """
