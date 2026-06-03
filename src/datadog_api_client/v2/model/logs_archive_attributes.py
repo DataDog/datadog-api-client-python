@@ -38,7 +38,9 @@ class LogsArchiveAttributes(ModelNormal):
             "compression_method": (LogsArchiveAttributesCompressionMethod,),
             "destination": (LogsArchiveDestination,),
             "include_tags": (bool,),
+            "lookup_attributes": ([str],),
             "name": (str,),
+            "partitioning_attributes": ([str],),
             "query": (str,),
             "rehydration_max_scan_size_in_gb": (int, none_type),
             "rehydration_tags": ([str],),
@@ -49,7 +51,9 @@ class LogsArchiveAttributes(ModelNormal):
         "compression_method": "compression_method",
         "destination": "destination",
         "include_tags": "include_tags",
+        "lookup_attributes": "lookup_attributes",
         "name": "name",
+        "partitioning_attributes": "partitioning_attributes",
         "query": "query",
         "rehydration_max_scan_size_in_gb": "rehydration_max_scan_size_in_gb",
         "rehydration_tags": "rehydration_tags",
@@ -68,6 +72,8 @@ class LogsArchiveAttributes(ModelNormal):
         query: str,
         compression_method: Union[LogsArchiveAttributesCompressionMethod, UnsetType] = unset,
         include_tags: Union[bool, UnsetType] = unset,
+        lookup_attributes: Union[List[str], UnsetType] = unset,
+        partitioning_attributes: Union[List[str], UnsetType] = unset,
         rehydration_max_scan_size_in_gb: Union[int, none_type, UnsetType] = unset,
         rehydration_tags: Union[List[str], UnsetType] = unset,
         state: Union[LogsArchiveState, UnsetType] = unset,
@@ -86,8 +92,14 @@ class LogsArchiveAttributes(ModelNormal):
             If it is set to "false", the tags will be deleted when the logs are sent to the archive.
         :type include_tags: bool, optional
 
+        :param lookup_attributes: An array of attributes to use as lookup keys for the archive.
+        :type lookup_attributes: [str], optional
+
         :param name: The archive name.
         :type name: str
+
+        :param partitioning_attributes: An array of attributes to use as partition keys for the archive. The attribute used most frequently for querying should be first.
+        :type partitioning_attributes: [str], optional
 
         :param query: The archive query/filter. Logs matching this query are included in the archive.
         :type query: str
@@ -105,6 +117,10 @@ class LogsArchiveAttributes(ModelNormal):
             kwargs["compression_method"] = compression_method
         if include_tags is not unset:
             kwargs["include_tags"] = include_tags
+        if lookup_attributes is not unset:
+            kwargs["lookup_attributes"] = lookup_attributes
+        if partitioning_attributes is not unset:
+            kwargs["partitioning_attributes"] = partitioning_attributes
         if rehydration_max_scan_size_in_gb is not unset:
             kwargs["rehydration_max_scan_size_in_gb"] = rehydration_max_scan_size_in_gb
         if rehydration_tags is not unset:

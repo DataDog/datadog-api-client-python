@@ -28,7 +28,15 @@ body = LogsArchiveCreateRequest(
                 type=LogsArchiveDestinationAzureType.AZURE,
             ),
             include_tags=False,
+            lookup_attributes=[
+                "trace_id",
+                "user_id",
+            ],
             name="Nginx Archive",
+            partitioning_attributes=[
+                "service",
+                "status",
+            ],
             query="source:nginx",
             rehydration_max_scan_size_in_gb=100,
             rehydration_tags=[
