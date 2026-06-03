@@ -662,6 +662,13 @@ datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.rum\_retention\_filters\_hardcoded\_api module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_retention_filters_hardcoded_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.salesforce\_integration\_api module
 ---------------------------------------------------------------
 
