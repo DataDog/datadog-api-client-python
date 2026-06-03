@@ -31329,6 +31329,76 @@ datadog\_api\_client.v2.model.rum\_compute\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_config\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_create\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_create\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_create\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_data module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_update\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_update\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_config\_update\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_config_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_cross\_product\_sampling module
 ------------------------------------------------------------------
 

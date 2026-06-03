@@ -6266,6 +6266,16 @@ from datadog_api_client.v2.model.ruleset_status_resp_array import RulesetStatusR
 from datadog_api_client.v2.model.ruleset_status_resp_data import RulesetStatusRespData
 from datadog_api_client.v2.model.ruleset_status_resp_data_attributes import RulesetStatusRespDataAttributes
 from datadog_api_client.v2.model.ruleset_status_resp_data_type import RulesetStatusRespDataType
+from datadog_api_client.v2.model.rum_config_attributes import RumConfigAttributes
+from datadog_api_client.v2.model.rum_config_create_attributes import RumConfigCreateAttributes
+from datadog_api_client.v2.model.rum_config_create_data import RumConfigCreateData
+from datadog_api_client.v2.model.rum_config_create_request import RumConfigCreateRequest
+from datadog_api_client.v2.model.rum_config_data import RumConfigData
+from datadog_api_client.v2.model.rum_config_response import RumConfigResponse
+from datadog_api_client.v2.model.rum_config_type import RumConfigType
+from datadog_api_client.v2.model.rum_config_update_attributes import RumConfigUpdateAttributes
+from datadog_api_client.v2.model.rum_config_update_data import RumConfigUpdateData
+from datadog_api_client.v2.model.rum_config_update_request import RumConfigUpdateRequest
 from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
 from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
 from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
@@ -13291,6 +13301,16 @@ __all__ = [
     "RulesetStatusRespData",
     "RulesetStatusRespDataAttributes",
     "RulesetStatusRespDataType",
+    "RumConfigAttributes",
+    "RumConfigCreateAttributes",
+    "RumConfigCreateData",
+    "RumConfigCreateRequest",
+    "RumConfigData",
+    "RumConfigResponse",
+    "RumConfigType",
+    "RumConfigUpdateAttributes",
+    "RumConfigUpdateData",
+    "RumConfigUpdateRequest",
     "RumCrossProductSampling",
     "RumCrossProductSamplingCreate",
     "RumCrossProductSamplingUpdate",
