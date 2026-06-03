@@ -7918,6 +7918,12 @@
       "type": "idempotent"
     }
   },
+  "GetStegadographyWidgets": {
+    "tag": "Stegadography",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetApiMultistepSubtests": {
     "tag": "Synthetics",
     "undo": {
