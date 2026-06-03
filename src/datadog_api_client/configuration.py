@@ -295,6 +295,8 @@ class Configuration:
                 "v2.list_llm_obs_datasets": False,
                 "v2.list_llm_obs_dataset_versions": False,
                 "v2.list_llm_obs_experiment_events": False,
+                "v2.list_llm_obs_experiment_events_v1": False,
+                "v2.list_llm_obs_experiment_events_v2": False,
                 "v2.list_llm_obs_experiments": False,
                 "v2.list_llm_obs_integration_accounts": False,
                 "v2.list_llm_obs_integration_models": False,

@@ -235,7 +235,7 @@ Feature: LLM Observability
   Scenario: Create an LLM Observability experiment returns "Bad Request" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
-    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
+    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "parent_experiment_id": "3fd6b5e0-8910-4b1c-a7d0-5b84de329012", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -243,7 +243,7 @@ Feature: LLM Observability
   Scenario: Create an LLM Observability experiment returns "Created" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
-    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
+    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "parent_experiment_id": "3fd6b5e0-8910-4b1c-a7d0-5b84de329012", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -251,7 +251,7 @@ Feature: LLM Observability
   Scenario: Create an LLM Observability experiment returns "OK" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
-    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
+    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "parent_experiment_id": "3fd6b5e0-8910-4b1c-a7d0-5b84de329012", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -714,6 +714,54 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability experiment events (v2) returns "Bad Request" response
+    Given operation "ListLLMObsExperimentEventsV2" enabled
+    And new "ListLLMObsExperimentEventsV2" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability experiment events (v2) returns "Not Found" response
+    Given operation "ListLLMObsExperimentEventsV2" enabled
+    And new "ListLLMObsExperimentEventsV2" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability experiment events (v2) returns "OK" response
+    Given operation "ListLLMObsExperimentEventsV2" enabled
+    And new "ListLLMObsExperimentEventsV2" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability experiment spans (v1) returns "Bad Request" response
+    Given operation "ListLLMObsExperimentEventsV1" enabled
+    And new "ListLLMObsExperimentEventsV1" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability experiment spans (v1) returns "Not Found" response
+    Given operation "ListLLMObsExperimentEventsV1" enabled
+    And new "ListLLMObsExperimentEventsV1" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List LLM Observability experiment spans (v1) returns "OK" response
+    Given operation "ListLLMObsExperimentEventsV1" enabled
+    And new "ListLLMObsExperimentEventsV1" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: List LLM Observability experiments returns "Bad Request" response
     Given operation "ListLLMObsExperiments" enabled
     And new "ListLLMObsExperiments" request
@@ -1092,7 +1140,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "type": "experiments"}}
+    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "status": "completed"}, "type": "experiments"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1101,7 +1149,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "type": "experiments"}}
+    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "status": "completed"}, "type": "experiments"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1110,7 +1158,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "type": "experiments"}}
+    And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "status": "completed"}, "type": "experiments"}}
     When the request is sent
     Then the response status is 200 OK
 

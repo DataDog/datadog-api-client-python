@@ -20703,6 +20703,13 @@ datadog\_api\_client.v2.model.llm\_obs\_experiment\_span module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_span\_data\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_span_data_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_experiment\_span\_error module
 ----------------------------------------------------------------------
 
@@ -20724,10 +20731,31 @@ datadog\_api\_client.v2.model.llm\_obs\_experiment\_span\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_span\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_span_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_experiment\_span\_with\_evals module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_experiment_span_with_evals
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_spans\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_spans_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_status module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_status
    :members:
    :show-inheritance:
 
@@ -20756,6 +20784,13 @@ datadog\_api\_client.v2.model.llm\_obs\_experiment\_update\_request module
 --------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_experiment_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_experiment\_user module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_experiment_user
    :members:
    :show-inheritance:
 
