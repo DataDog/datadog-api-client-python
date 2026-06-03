@@ -1,5 +1,5 @@
 """
-Update rum replay playlist returns "OK" response
+Update RUM replay playlist returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

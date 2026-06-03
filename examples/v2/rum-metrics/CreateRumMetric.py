@@ -1,5 +1,5 @@
 """
-Create a rum-based metric returns "Created" response
+Create a RUM-based metric returns "Created" response
 """
 
 from datadog_api_client import ApiClient, Configuration

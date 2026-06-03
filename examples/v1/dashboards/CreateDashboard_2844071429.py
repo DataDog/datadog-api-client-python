@@ -1,5 +1,5 @@
 """
-Create a new dashboard with sankey widget and rum data source
+Create a new dashboard with sankey widget and RUM data source
 """
 
 from datadog_api_client import ApiClient, Configuration

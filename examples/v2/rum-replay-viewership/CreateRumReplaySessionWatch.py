@@ -1,5 +1,5 @@
 """
-Create rum replay session watch returns "Created" response
+Create RUM replay session watch returns "Created" response
 """
 
 from datadog_api_client import ApiClient, Configuration

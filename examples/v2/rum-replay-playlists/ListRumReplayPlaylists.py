@@ -1,5 +1,5 @@
 """
-List rum replay playlists returns "OK" response
+List RUM replay playlists returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

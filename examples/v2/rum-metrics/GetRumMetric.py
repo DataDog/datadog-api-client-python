@@ -1,5 +1,5 @@
 """
-Get a rum-based metric returns "OK" response
+Get a RUM-based metric returns "OK" response
 """
 
 from os import environ
