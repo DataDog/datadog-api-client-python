@@ -26,6 +26,7 @@ from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageRespons
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
+from datadog_api_client.v2.model.usage_summary_available_fields_response import UsageSummaryAvailableFieldsResponse
 from datadog_api_client.v2.model.usage_attribution_types_response import UsageAttributionTypesResponse
 
 
@@ -457,6 +458,22 @@ class UsageMeteringApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_usage_summary_available_fields_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageSummaryAvailableFieldsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/summary/available_fields",
+                "operation_id": "get_usage_summary_available_fields",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json;datetime-format=rfc3339"],
             },
@@ -908,3 +925,21 @@ class UsageMeteringApi:
 
         warnings.warn("get_usage_observability_pipelines is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_observability_pipelines_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_summary_available_fields(
+        self,
+    ) -> UsageSummaryAvailableFieldsResponse:
+        """Get available fields for usage summary.
+
+        List the field names returned by ``GET /api/v1/usage/summary`` at each of its
+        three response levels. Each list contains every key the data endpoint
+        emits—both typed fields declared in the OpenAPI spec and untyped keys
+        exposed through ``additionalProperties`` (the latter used for billing
+        dimensions and usage types added after the v1 schema freeze).
+
+        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+
+        :rtype: UsageSummaryAvailableFieldsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_usage_summary_available_fields_endpoint.call_with_http_info(**kwargs)

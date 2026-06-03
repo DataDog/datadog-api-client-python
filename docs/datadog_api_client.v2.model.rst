@@ -42074,6 +42074,34 @@ datadog\_api\_client.v2.model.usage\_observability\_pipelines\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.usage\_summary\_available\_fields\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_summary_available_fields_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.usage\_summary\_available\_fields\_body module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_summary_available_fields_body
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.usage\_summary\_available\_fields\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_summary_available_fields_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.usage\_summary\_available\_fields\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.usage_summary_available_fields_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.usage\_time\_series\_object module
 ----------------------------------------------------------------
 

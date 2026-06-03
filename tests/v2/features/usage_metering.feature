@@ -45,6 +45,29 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @team:DataDog/billing-hub
+  Scenario: Get available fields for usage summary returns "Bad Request" response
+    Given new "GetUsageSummaryAvailableFields" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/billing-hub
+  Scenario: Get available fields for usage summary returns "OK" response
+    Given new "GetUsageSummaryAvailableFields" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "all"
+    And the response "data.type" is equal to "usage_summary_available_fields"
+    And the response "data.attributes" has field "response_fields"
+    And the response "data.attributes" has field "date_fields"
+    And the response "data.attributes" has field "date_org_fields"
+
+  @generated @skip @team:DataDog/billing-hub
+  Scenario: Get available fields for usage summary returns "OK." response
+    Given new "GetUsageSummaryAvailableFields" request
+    When the request is sent
+    Then the response status is 200 OK.
+
+  @team:DataDog/billing-hub
   Scenario: Get billing dimension mapping for usage endpoints returns "Bad Request" response
     Given new "GetBillingDimensionMapping" request
     When the request is sent

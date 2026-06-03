@@ -8571,6 +8571,10 @@ from datadog_api_client.v2.model.usage_attribution_types_type import UsageAttrib
 from datadog_api_client.v2.model.usage_data_object import UsageDataObject
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
+from datadog_api_client.v2.model.usage_summary_available_fields_attributes import UsageSummaryAvailableFieldsAttributes
+from datadog_api_client.v2.model.usage_summary_available_fields_body import UsageSummaryAvailableFieldsBody
+from datadog_api_client.v2.model.usage_summary_available_fields_response import UsageSummaryAvailableFieldsResponse
+from datadog_api_client.v2.model.usage_summary_available_fields_type import UsageSummaryAvailableFieldsType
 from datadog_api_client.v2.model.usage_time_series_object import UsageTimeSeriesObject
 from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesType
 from datadog_api_client.v2.model.user import User
@@ -14808,6 +14812,10 @@ __all__ = [
     "UsageDataObject",
     "UsageLambdaTracedInvocationsResponse",
     "UsageObservabilityPipelinesResponse",
+    "UsageSummaryAvailableFieldsAttributes",
+    "UsageSummaryAvailableFieldsBody",
+    "UsageSummaryAvailableFieldsResponse",
+    "UsageSummaryAvailableFieldsType",
     "UsageTimeSeriesObject",
     "UsageTimeSeriesType",
     "User",
