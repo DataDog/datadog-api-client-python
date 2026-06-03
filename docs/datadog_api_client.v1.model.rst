@@ -1810,6 +1810,20 @@ datadog\_api\_client.v1.model.list\_stream\_group\_by\_items module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.list\_stream\_issue\_persona module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.list_stream_issue_persona
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.list\_stream\_issue\_state module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.list_stream_issue_state
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.list\_stream\_query module
 --------------------------------------------------------
 
