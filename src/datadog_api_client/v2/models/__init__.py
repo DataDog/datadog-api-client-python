@@ -3928,6 +3928,13 @@ from datadog_api_client.v2.model.leaked_key import LeakedKey
 from datadog_api_client.v2.model.leaked_key_attributes import LeakedKeyAttributes
 from datadog_api_client.v2.model.leaked_key_type import LeakedKeyType
 from datadog_api_client.v2.model.library import Library
+from datadog_api_client.v2.model.licenses_list_response import LicensesListResponse
+from datadog_api_client.v2.model.licenses_list_response_data import LicensesListResponseData
+from datadog_api_client.v2.model.licenses_list_response_data_attributes import LicensesListResponseDataAttributes
+from datadog_api_client.v2.model.licenses_list_response_data_attributes_licenses_items import (
+    LicensesListResponseDataAttributesLicensesItems,
+)
+from datadog_api_client.v2.model.licenses_list_response_data_type import LicensesListResponseDataType
 from datadog_api_client.v2.model.links import Links
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
@@ -4157,6 +4164,17 @@ from datadog_api_client.v2.model.managed_orgs_relationship_to_orgs import Manage
 from datadog_api_client.v2.model.managed_orgs_relationships import ManagedOrgsRelationships
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.managed_orgs_type import ManagedOrgsType
+from datadog_api_client.v2.model.mcp_scan_request import McpScanRequest
+from datadog_api_client.v2.model.mcp_scan_request_data import McpScanRequestData
+from datadog_api_client.v2.model.mcp_scan_request_data_attributes import McpScanRequestDataAttributes
+from datadog_api_client.v2.model.mcp_scan_request_data_attributes_libraries_items import (
+    McpScanRequestDataAttributesLibrariesItems,
+)
+from datadog_api_client.v2.model.mcp_scan_request_data_type import McpScanRequestDataType
+from datadog_api_client.v2.model.mcp_scan_request_response import McpScanRequestResponse
+from datadog_api_client.v2.model.mcp_scan_request_response_data import McpScanRequestResponseData
+from datadog_api_client.v2.model.mcp_scan_request_response_data_attributes import McpScanRequestResponseDataAttributes
+from datadog_api_client.v2.model.mcp_scan_request_response_data_type import McpScanRequestResponseDataType
 from datadog_api_client.v2.model.member_team import MemberTeam
 from datadog_api_client.v2.model.member_team_type import MemberTeamType
 from datadog_api_client.v2.model.metadata import Metadata
@@ -6493,6 +6511,7 @@ from datadog_api_client.v2.model.scalar_formula_response_type import ScalarFormu
 from datadog_api_client.v2.model.scalar_meta import ScalarMeta
 from datadog_api_client.v2.model.scalar_query import ScalarQuery
 from datadog_api_client.v2.model.scalar_response import ScalarResponse
+from datadog_api_client.v2.model.scan_result_response import ScanResultResponse
 from datadog_api_client.v2.model.scanned_asset_metadata import ScannedAssetMetadata
 from datadog_api_client.v2.model.scanned_asset_metadata_asset import ScannedAssetMetadataAsset
 from datadog_api_client.v2.model.scanned_asset_metadata_attributes import ScannedAssetMetadataAttributes
@@ -11748,6 +11767,11 @@ __all__ = [
     "LeakedKeyAttributes",
     "LeakedKeyType",
     "Library",
+    "LicensesListResponse",
+    "LicensesListResponseData",
+    "LicensesListResponseDataAttributes",
+    "LicensesListResponseDataAttributesLicensesItems",
+    "LicensesListResponseDataType",
     "Links",
     "ListAPIsResponse",
     "ListAPIsResponseData",
@@ -11945,6 +11969,15 @@ __all__ = [
     "ManagedOrgsRelationships",
     "ManagedOrgsResponse",
     "ManagedOrgsType",
+    "McpScanRequest",
+    "McpScanRequestData",
+    "McpScanRequestDataAttributes",
+    "McpScanRequestDataAttributesLibrariesItems",
+    "McpScanRequestDataType",
+    "McpScanRequestResponse",
+    "McpScanRequestResponseData",
+    "McpScanRequestResponseDataAttributes",
+    "McpScanRequestResponseDataType",
     "MemberTeam",
     "MemberTeamType",
     "Metadata",
@@ -13421,6 +13454,7 @@ __all__ = [
     "ScalarMeta",
     "ScalarQuery",
     "ScalarResponse",
+    "ScanResultResponse",
     "ScannedAssetMetadata",
     "ScannedAssetMetadataAsset",
     "ScannedAssetMetadataAttributes",

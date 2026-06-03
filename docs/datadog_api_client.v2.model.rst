@@ -18946,6 +18946,41 @@ datadog\_api\_client.v2.model.library module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.licenses\_list\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_response\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_response\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_response\_data\_attributes\_licenses\_items module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_response_data_attributes_licenses_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.licenses\_list\_response\_data\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.licenses_list_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.links module
 ------------------------------------------
 
@@ -22198,6 +22233,69 @@ datadog\_api\_client.v2.model.managed\_orgs\_type module
 --------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.managed_orgs_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_data\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_data\_attributes\_libraries\_items module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_data_attributes_libraries_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_data\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_response\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_response\_data\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_scan\_request\_response\_data\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_scan_request_response_data_type
    :members:
    :show-inheritance:
 
@@ -32488,6 +32586,13 @@ datadog\_api\_client.v2.model.scalar\_response module
 -----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.scalar_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.scan\_result\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scan_result_response
    :members:
    :show-inheritance:
 

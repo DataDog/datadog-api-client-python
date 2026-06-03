@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.sca_request import ScaRequest
+from datadog_api_client.v2.model.mcp_scan_request_response import McpScanRequestResponse
+from datadog_api_client.v2.model.mcp_scan_request import McpScanRequest
+from datadog_api_client.v2.model.scan_result_response import ScanResultResponse
+from datadog_api_client.v2.model.licenses_list_response import LicensesListResponse
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_response import ResolveVulnerableSymbolsResponse
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
 from datadog_api_client.v2.model.ai_memory_violation_results_response import AiMemoryViolationResultsResponse
@@ -265,6 +269,26 @@ class StaticAnalysisApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_sca_scan_endpoint = _Endpoint(
+            settings={
+                "response_type": (McpScanRequestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis-sca/dependencies/scan",
+                "operation_id": "create_sca_scan",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (McpScanRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -569,6 +593,29 @@ class StaticAnalysisApi:
             api_client=api_client,
         )
 
+        self._get_sca_scan_endpoint = _Endpoint(
+            settings={
+                "response_type": (ScanResultResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/static-analysis-sca/dependencies/scan/{job_id}",
+                "operation_id": "get_sca_scan",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "job_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "job_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_ai_custom_rule_revisions_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRuleRevisionsResponse,),
@@ -712,6 +759,22 @@ class StaticAnalysisApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets",
                 "operation_id": "list_custom_rulesets",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_sca_licenses_endpoint = _Endpoint(
+            settings={
+                "response_type": (LicensesListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/static-analysis-sca/licenses/list",
+                "operation_id": "list_sca_licenses",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -976,6 +1039,20 @@ class StaticAnalysisApi:
 
         return self._create_sca_result_endpoint.call_with_http_info(**kwargs)
 
+    def create_sca_scan(
+        self,
+        body: McpScanRequest,
+    ) -> McpScanRequestResponse:
+        """Submit libraries for vulnerability scanning.
+
+        :type body: McpScanRequest
+        :rtype: McpScanRequestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_sca_scan_endpoint.call_with_http_info(**kwargs)
+
     def delete_ai_custom_rule(
         self,
         ruleset_name: str,
@@ -1203,6 +1280,21 @@ class StaticAnalysisApi:
 
         return self._get_custom_ruleset_endpoint.call_with_http_info(**kwargs)
 
+    def get_sca_scan(
+        self,
+        job_id: str,
+    ) -> ScanResultResponse:
+        """Retrieve a dependency scan result.
+
+        :param job_id: The job identifier returned when the scan was submitted.
+        :type job_id: str
+        :rtype: ScanResultResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["job_id"] = job_id
+
+        return self._get_sca_scan_endpoint.call_with_http_info(**kwargs)
+
     def list_ai_custom_rule_revisions(
         self,
         ruleset_name: str,
@@ -1427,6 +1519,16 @@ class StaticAnalysisApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_custom_rulesets_endpoint.call_with_http_info(**kwargs)
+
+    def list_sca_licenses(
+        self,
+    ) -> LicensesListResponse:
+        """Get the list of SPDX licenses.
+
+        :rtype: LicensesListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_sca_licenses_endpoint.call_with_http_info(**kwargs)
 
     def revert_custom_rule_revision(
         self,

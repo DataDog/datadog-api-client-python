@@ -434,6 +434,13 @@ Feature: Static Analysis
     When the request is sent
     Then the response status is 200 Successful response
 
+  @generated @skip @team:DataDog/k9-vm-sca
+  Scenario: Get the list of SPDX licenses returns "OK" response
+    Given operation "ListSCALicenses" enabled
+    And new "ListSCALicenses" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-vm-ast
   Scenario: List AI custom rule revisions returns "Bad Request" response
     Given operation "ListAiCustomRuleRevisions" enabled
@@ -578,6 +585,22 @@ Feature: Static Analysis
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-vm-sca
+  Scenario: Retrieve a dependency scan result returns "Not Found" response
+    Given operation "GetSCAScan" enabled
+    And new "GetSCAScan" request
+    And request contains "job_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-vm-sca
+  Scenario: Retrieve a dependency scan result returns "OK" response
+    Given operation "GetSCAScan" enabled
+    And new "GetSCAScan" request
+    And request contains "job_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/k9-vm-ast
   Scenario: Revert Custom Rule Revision returns "Bad request" response
     Given operation "RevertCustomRuleRevision" enabled
@@ -678,6 +701,22 @@ Feature: Static Analysis
     And request contains "ruleset_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 Successful response
+
+  @generated @skip @team:DataDog/k9-vm-sca
+  Scenario: Submit libraries for vulnerability scanning returns "Accepted" response
+    Given operation "CreateSCAScan" enabled
+    And new "CreateSCAScan" request
+    And body with value {"data": {"attributes": {"commit_hash": "0e9fc8de83eaabecd722e1cd0ed44fb489fe15fc", "libraries": [{"exclusions": [], "is_dev": false, "is_direct": true, "package_manager": "nuget", "purl": "pkg:nuget/Newtonsoft.Json@13.0.1", "target_frameworks": []}], "resource_name": "my-org/my-repo"}, "type": "mcpscanrequest"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/k9-vm-sca
+  Scenario: Submit libraries for vulnerability scanning returns "Bad Request" response
+    Given operation "CreateSCAScan" enabled
+    And new "CreateSCAScan" request
+    And body with value {"data": {"attributes": {"commit_hash": "0e9fc8de83eaabecd722e1cd0ed44fb489fe15fc", "libraries": [{"exclusions": [], "is_dev": false, "is_direct": true, "package_manager": "nuget", "purl": "pkg:nuget/Newtonsoft.Json@13.0.1", "target_frameworks": []}], "resource_name": "my-org/my-repo"}, "type": "mcpscanrequest"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-vm-ast
   Scenario: Update Custom Ruleset returns "Bad request" response

@@ -7525,6 +7525,24 @@
       "type": "safe"
     }
   },
+  "CreateSCAScan": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSCAScan": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSCALicenses": {
+    "tag": "Static Analysis",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateSCAResolveVulnerableSymbols": {
     "tag": "Static Analysis",
     "undo": {
