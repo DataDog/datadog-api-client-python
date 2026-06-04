@@ -25,6 +25,8 @@ from datadog_api_client.v2.model.aws_event_bridge_create_response import AWSEven
 from datadog_api_client.v2.model.aws_event_bridge_create_request import AWSEventBridgeCreateRequest
 from datadog_api_client.v2.model.aws_new_external_id_response import AWSNewExternalIDResponse
 from datadog_api_client.v2.model.aws_integration_iam_permissions_response import AWSIntegrationIamPermissionsResponse
+from datadog_api_client.v2.model.aws_ccm_config_validation_response import AWSCcmConfigValidationResponse
+from datadog_api_client.v2.model.aws_ccm_config_validation_request import AWSCcmConfigValidationRequest
 
 
 class AWSIntegrationApi:
@@ -386,6 +388,26 @@ class AWSIntegrationApi:
             api_client=api_client,
         )
 
+        self._validate_awsccm_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSCcmConfigValidationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/validate_ccm_config",
+                "operation_id": "validate_awsccm_config",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSCcmConfigValidationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_aws_account(
         self,
         body: AWSAccountCreateRequest,
@@ -678,3 +700,21 @@ class AWSIntegrationApi:
         kwargs["body"] = body
 
         return self._update_aws_account_ccm_config_endpoint.call_with_http_info(**kwargs)
+
+    def validate_awsccm_config(
+        self,
+        body: AWSCcmConfigValidationRequest,
+    ) -> AWSCcmConfigValidationResponse:
+        """Validate AWS CCM config.
+
+        Validate a Cloud Cost Management config for an AWS account using Cost and Usage Report
+        (CUR) 2.0 against Datadog's ingest requirements without persisting it.
+
+        :param body: Validate a Cloud Cost Management config for an AWS account integration config.
+        :type body: AWSCcmConfigValidationRequest
+        :rtype: AWSCcmConfigValidationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._validate_awsccm_config_endpoint.call_with_http_info(**kwargs)

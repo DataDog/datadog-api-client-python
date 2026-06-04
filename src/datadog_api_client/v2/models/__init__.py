@@ -43,6 +43,19 @@ from datadog_api_client.v2.model.aws_ccm_config_response import AWSCcmConfigResp
 from datadog_api_client.v2.model.aws_ccm_config_response_attributes import AWSCcmConfigResponseAttributes
 from datadog_api_client.v2.model.aws_ccm_config_response_data import AWSCcmConfigResponseData
 from datadog_api_client.v2.model.aws_ccm_config_type import AWSCcmConfigType
+from datadog_api_client.v2.model.aws_ccm_config_validation_issue import AWSCcmConfigValidationIssue
+from datadog_api_client.v2.model.aws_ccm_config_validation_issue_code import AWSCcmConfigValidationIssueCode
+from datadog_api_client.v2.model.aws_ccm_config_validation_request import AWSCcmConfigValidationRequest
+from datadog_api_client.v2.model.aws_ccm_config_validation_request_attributes import (
+    AWSCcmConfigValidationRequestAttributes,
+)
+from datadog_api_client.v2.model.aws_ccm_config_validation_request_data import AWSCcmConfigValidationRequestData
+from datadog_api_client.v2.model.aws_ccm_config_validation_response import AWSCcmConfigValidationResponse
+from datadog_api_client.v2.model.aws_ccm_config_validation_response_attributes import (
+    AWSCcmConfigValidationResponseAttributes,
+)
+from datadog_api_client.v2.model.aws_ccm_config_validation_response_data import AWSCcmConfigValidationResponseData
+from datadog_api_client.v2.model.aws_ccm_config_validation_type import AWSCcmConfigValidationType
 from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_attributes_response import (
     AWSCloudAuthPersonaMappingAttributesResponse,
 )
@@ -8880,6 +8893,15 @@ __all__ = [
     "AWSCcmConfigResponseAttributes",
     "AWSCcmConfigResponseData",
     "AWSCcmConfigType",
+    "AWSCcmConfigValidationIssue",
+    "AWSCcmConfigValidationIssueCode",
+    "AWSCcmConfigValidationRequest",
+    "AWSCcmConfigValidationRequestAttributes",
+    "AWSCcmConfigValidationRequestData",
+    "AWSCcmConfigValidationResponse",
+    "AWSCcmConfigValidationResponseAttributes",
+    "AWSCcmConfigValidationResponseData",
+    "AWSCcmConfigValidationType",
     "AWSCloudAuthPersonaMappingAttributesResponse",
     "AWSCloudAuthPersonaMappingCreateAttributes",
     "AWSCloudAuthPersonaMappingCreateData",

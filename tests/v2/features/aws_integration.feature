@@ -292,3 +292,19 @@ Feature: AWS Integration
     And body with value {"data": {"attributes": {"account_tags": ["key:value"], "auth_config": {"role_name": "DatadogIntegrationRole"}, "aws_account_id": "123456789012", "aws_partition": "aws", "logs_config": {"lambda_forwarder": {"lambdas": ["arn:aws:lambda:us-east-1:123456789012:function:DatadogLambdaLogForwarder"], "log_source_config": {"tag_filters": [{"source": "s3", "tags": ["test:test"]}]}, "sources": ["s3"]}}, "metrics_config": {"automute_enabled": true, "collect_cloudwatch_alarms": true, "collect_custom_metrics": true, "enabled": true, "tag_filters": [{"namespace": "AWS/EC2", "tags": ["key:value"]}]}, "resources_config": {"cloud_security_posture_management_collection": false, "extended_collection": false}, "traces_config": {}}, "type": "account"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Validate AWS CCM config returns "AWS CCM Config validation result" response
+    Given operation "ValidateAWSCCMConfig" enabled
+    And new "ValidateAWSCCMConfig" request
+    And body with value {"data": {"attributes": {"account_id": "123456789012", "bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports"}, "type": "ccm_config_validation"}}
+    When the request is sent
+    Then the response status is 200 AWS CCM Config validation result
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Validate AWS CCM config returns "Bad Request" response
+    Given operation "ValidateAWSCCMConfig" enabled
+    And new "ValidateAWSCCMConfig" request
+    And body with value {"data": {"attributes": {"account_id": "123456789012", "bucket_name": "billing", "bucket_region": "us-east-1", "report_name": "cost-and-usage-report", "report_prefix": "reports"}, "type": "ccm_config_validation"}}
+    When the request is sent
+    Then the response status is 400 Bad Request

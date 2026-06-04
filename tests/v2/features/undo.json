@@ -3193,6 +3193,12 @@
       "type": "safe"
     }
   },
+  "ValidateAWSCCMConfig": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListGCPSTSAccounts": {
     "tag": "GCP Integration",
     "undo": {

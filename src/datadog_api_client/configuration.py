@@ -550,6 +550,7 @@ class Configuration:
                 "v2.delete_aws_account_ccm_config": False,
                 "v2.get_aws_account_ccm_config": False,
                 "v2.update_aws_account_ccm_config": False,
+                "v2.validate_awsccm_config": False,
                 "v2.create_jira_issue_template": False,
                 "v2.delete_jira_account": False,
                 "v2.delete_jira_issue_template": False,
