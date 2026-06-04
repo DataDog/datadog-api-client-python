@@ -10469,6 +10469,69 @@ datadog\_api\_client.v2.model.custom\_ruleset\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.customer\_org\_disable\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_request\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_request\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_response\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_response\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_status module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.customer\_org\_disable\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.customer_org_disable_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.cvss module
 -----------------------------------------
 

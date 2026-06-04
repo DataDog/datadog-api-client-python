@@ -2008,6 +2008,15 @@ from datadog_api_client.v2.model.custom_ruleset_request import CustomRulesetRequ
 from datadog_api_client.v2.model.custom_ruleset_request_data import CustomRulesetRequestData
 from datadog_api_client.v2.model.custom_ruleset_request_data_attributes import CustomRulesetRequestDataAttributes
 from datadog_api_client.v2.model.custom_ruleset_response import CustomRulesetResponse
+from datadog_api_client.v2.model.customer_org_disable_request import CustomerOrgDisableRequest
+from datadog_api_client.v2.model.customer_org_disable_request_attributes import CustomerOrgDisableRequestAttributes
+from datadog_api_client.v2.model.customer_org_disable_request_data import CustomerOrgDisableRequestData
+from datadog_api_client.v2.model.customer_org_disable_response import CustomerOrgDisableResponse
+from datadog_api_client.v2.model.customer_org_disable_response_attributes import CustomerOrgDisableResponseAttributes
+from datadog_api_client.v2.model.customer_org_disable_response_data import CustomerOrgDisableResponseData
+from datadog_api_client.v2.model.customer_org_disable_response_type import CustomerOrgDisableResponseType
+from datadog_api_client.v2.model.customer_org_disable_status import CustomerOrgDisableStatus
+from datadog_api_client.v2.model.customer_org_disable_type import CustomerOrgDisableType
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
 from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
 from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
@@ -10339,6 +10348,15 @@ __all__ = [
     "CustomRulesetRequestData",
     "CustomRulesetRequestDataAttributes",
     "CustomRulesetResponse",
+    "CustomerOrgDisableRequest",
+    "CustomerOrgDisableRequestAttributes",
+    "CustomerOrgDisableRequestData",
+    "CustomerOrgDisableResponse",
+    "CustomerOrgDisableResponseAttributes",
+    "CustomerOrgDisableResponseData",
+    "CustomerOrgDisableResponseType",
+    "CustomerOrgDisableStatus",
+    "CustomerOrgDisableType",
     "DORADeploymentFetchResponse",
     "DORADeploymentObject",
     "DORADeploymentObjectAttributes",
