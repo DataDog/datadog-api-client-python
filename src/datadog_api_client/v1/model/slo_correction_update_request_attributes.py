@@ -28,6 +28,7 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
             "duration": (int,),
             "end": (int,),
             "rrule": (str,),
+            "slo_query": (str,),
             "start": (int,),
             "timezone": (str,),
         }
@@ -38,6 +39,7 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         "duration": "duration",
         "end": "end",
         "rrule": "rrule",
+        "slo_query": "slo_query",
         "start": "start",
         "timezone": "timezone",
     }
@@ -49,6 +51,7 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
         duration: Union[int, UnsetType] = unset,
         end: Union[int, UnsetType] = unset,
         rrule: Union[str, UnsetType] = unset,
+        slo_query: Union[str, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
         timezone: Union[str, UnsetType] = unset,
         **kwargs,
@@ -72,6 +75,11 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
             are ``FREQ`` , ``INTERVAL`` , ``COUNT`` , ``UNTIL`` and ``BYDAY``.
         :type rrule: str, optional
 
+        :param slo_query: Query that matches the SLOs this correction applies to.
+            The query uses the `Events search syntax <https://docs.datadoghq.com/events/explorer/searching/>`_
+            and can filter SLOs by SLO tags.
+        :type slo_query: str, optional
+
         :param start: Starting time of the correction in epoch seconds.
         :type start: int, optional
 
@@ -88,6 +96,8 @@ class SLOCorrectionUpdateRequestAttributes(ModelNormal):
             kwargs["end"] = end
         if rrule is not unset:
             kwargs["rrule"] = rrule
+        if slo_query is not unset:
+            kwargs["slo_query"] = slo_query
         if start is not unset:
             kwargs["start"] = start
         if timezone is not unset:

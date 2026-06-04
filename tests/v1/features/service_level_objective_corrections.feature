@@ -49,6 +49,16 @@ Feature: Service Level Objective Corrections
     And the response "data.type" is equal to "correction"
     And the response "data.attributes.rrule" is equal to "FREQ=DAILY;INTERVAL=10;COUNT=5"
 
+  @team:DataDog/slo-app
+  Scenario: Create an SLO correction with slo_query returns "OK" response
+    Given new "CreateSLOCorrection" request
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_query": "env:prod service:checkout", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "correction"
+    And the response "data.attributes.category" is equal to "Scheduled Maintenance"
+    And the response "data.attributes.slo_query" is equal to "env:prod service:checkout"
+
   @generated @skip @team:DataDog/slo-app
   Scenario: Delete an SLO correction returns "Not found" response
     Given new "DeleteSLOCorrection" request
@@ -114,7 +124,7 @@ Feature: Service Level Objective Corrections
   Scenario: Update an SLO correction returns "Not Found" response
     Given new "UpdateSLOCorrection" request
     And request contains "slo_correction_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "duration": 3600, "end": 1600000000, "rrule": "FREQ=DAILY;INTERVAL=10;COUNT=5", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "duration": 3600, "end": 1600000000, "rrule": "FREQ=DAILY;INTERVAL=10;COUNT=5", "slo_query": "env:prod service:checkout", "start": 1600000000, "timezone": "UTC"}, "type": "correction"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -130,3 +140,14 @@ Feature: Service Level Objective Corrections
     And the response "data.id" has the same value as "correction.data.id"
     And the response "data.attributes.slo_id" has the same value as "correction.data.attributes.slo_id"
     And the response "data.attributes.category" is equal to "Deployment"
+
+  @team:DataDog/slo-app
+  Scenario: Update an SLO correction with slo_query returns "OK" response
+    Given there is a valid "correction_with_query" in the system
+    And new "UpdateSLOCorrection" request
+    And request contains "slo_correction_id" parameter from "correction_with_query.data.id"
+    And body with value {"data": {"attributes": {"category": "Scheduled Maintenance", "description": "{{ unique }}", "end": {{ timestamp("now + 1h") }}, "slo_query": "env:staging service:checkout", "start": {{ timestamp("now") }}, "timezone": "UTC"}, "type": "correction"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "correction_with_query.data.id"
+    And the response "data.attributes.slo_query" is equal to "env:staging service:checkout"

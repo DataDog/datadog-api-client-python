@@ -32,7 +32,7 @@ class SLOCorrectionCreateRequest(ModelNormal):
 
     def __init__(self_, data: Union[SLOCorrectionCreateData, UnsetType] = unset, **kwargs):
         """
-        An object that defines a correction to be applied to an SLO.
+        An object that defines a correction to be applied to one or more SLOs.
 
         :param data: The data object associated with the SLO correction to be created.
         :type data: SLOCorrectionCreateData, optional

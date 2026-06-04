@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"category":"Scheduled Maintenance","description":"Test-Create_an_SLO_correction_with_slo_query_returns_OK_response-1779914722","end":1779918322,"slo_query":"env:prod
+      service:checkout","start":1779914722,"timezone":"UTC"},"type":"correction"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/slo/correction
+  response:
+    body:
+      string: '{"data":{"type":"correction","id":"fb3a5c0a-5a0c-11f1-8207-da7ad0902002","attributes":{"slo_id":null,"start":1779914722,"end":1779918322,"description":"Test-Create_an_SLO_correction_with_slo_query_returns_OK_response-1779914722","category":"Scheduled
+        Maintenance","timezone":"UTC","created_at":null,"modified_at":null,"rrule":null,"duration":null,"slo_query":"env:prod
+        service:checkout","creator":{"data":{"type":"users","id":"780cfef8-1736-4a4e-a826-b875b1cadcec","attributes":{"uuid":"780cfef8-1736-4a4e-a826-b875b1cadcec","handle":"blaise.vonohlen@datadoghq.com","email":"blaise.vonohlen@datadoghq.com","name":"Blaise
+        von Ohlen","icon":"https://secure.gravatar.com/avatar/c78d8282d57321884e8f77172229634f?s=48&d=retro"}}},"modifier":null}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/slo/correction/fb3a5c0a-5a0c-11f1-8207-da7ad0902002
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
