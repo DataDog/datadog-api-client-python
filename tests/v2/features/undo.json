@@ -5202,6 +5202,12 @@
       "type": "safe"
     }
   },
+  "DisableCustomerOrg": {
+    "tag": "Customer Org",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {
