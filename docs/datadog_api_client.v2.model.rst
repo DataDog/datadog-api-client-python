@@ -12142,6 +12142,20 @@ datadog\_api\_client.v2.model.downtime\_update\_request\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.elf\_sourcemap\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elf_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elf\_sourcemap\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elf_sourcemap_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_attributes module
 -------------------------------------------------------
 
@@ -14613,6 +14627,20 @@ datadog\_api\_client.v2.model.fleet\_tracers\_response\_meta module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.flutter\_sourcemap\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flutter_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.flutter\_sourcemap\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flutter_sourcemap_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.form\_trigger module
 --------------------------------------------------
 
@@ -16349,6 +16377,20 @@ datadog\_api\_client.v2.model.idp\_metadata\_form\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.il2\_cpp\_sourcemap\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.il2_cpp_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.il2\_cpp\_sourcemap\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.il2_cpp_sourcemap_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_attachment\_type module
 ---------------------------------------------------------------
 
@@ -18001,6 +18043,20 @@ datadog\_api\_client.v2.model.io\_c\_source module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ios\_sourcemap\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ios_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ios\_sourcemap\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ios_sourcemap_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ip\_allowlist\_attributes module
 --------------------------------------------------------------
 
@@ -18729,6 +18785,20 @@ datadog\_api\_client.v2.model.job\_definition\_from\_rule module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.js\_sourcemap\_attributes module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.js_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.js\_sourcemap\_data module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.js_sourcemap_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.json\_patch\_operation module
 -----------------------------------------------------------
 
@@ -18761,6 +18831,20 @@ datadog\_api\_client.v2.model.jsonapi\_error\_response module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.jsonapi_error_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jvm\_sourcemap\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jvm_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.jvm\_sourcemap\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.jvm_sourcemap_data
    :members:
    :show-inheritance:
 
@@ -19489,6 +19573,13 @@ datadog\_api\_client.v2.model.list\_service\_access\_tokens\_response module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_service_access_tokens_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_sourcemaps\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_sourcemaps_response
    :members:
    :show-inheritance:
 
@@ -24025,6 +24116,20 @@ datadog\_api\_client.v2.model.mute\_findings\_response\_data module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.mute_findings_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ndk\_sourcemap\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ndk_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ndk\_sourcemap\_data module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ndk_sourcemap_data
    :members:
    :show-inheritance:
 
@@ -29583,6 +29688,20 @@ datadog\_api\_client.v2.model.raw\_error\_budget\_remaining module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.raw_error_budget_remaining
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.react\_native\_sourcemap\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.react_native_sourcemap_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.react\_native\_sourcemap\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.react_native_sourcemap_data
    :members:
    :show-inheritance:
 
@@ -36418,6 +36537,62 @@ datadog\_api\_client.v2.model.service\_now\_users\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.service\_repository\_info\_data\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_repository\_info\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_repository\_info\_request\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_repository\_info\_request\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_repository\_info\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_repository\_info\_response\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_repository\_info\_response\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.service\_repository\_info\_status module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.service_repository_info_status
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.session\_id\_array module
 -------------------------------------------------------
 
@@ -36863,6 +37038,76 @@ datadog\_api\_client.v2.model.sort\_direction module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.sort_direction
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemap\_data\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemap_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemap\_file\_attributes module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemap_file_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemap\_file\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemap_file_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemap\_file\_data\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemap_file_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemap\_file\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemap_file_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemap\_item module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemap_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemap\_map\_kind module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemap_map_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemaps\_list\_meta module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemaps_list_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemaps\_list\_meta\_page module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemaps_list_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sourcemaps\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sourcemaps_response
    :members:
    :show-inheritance:
 

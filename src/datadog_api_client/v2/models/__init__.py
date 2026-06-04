@@ -2306,6 +2306,8 @@ from datadog_api_client.v2.model.downtime_status import DowntimeStatus
 from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRequest
 from datadog_api_client.v2.model.downtime_update_request_attributes import DowntimeUpdateRequestAttributes
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
+from datadog_api_client.v2.model.elf_sourcemap_attributes import ELFSourcemapAttributes
+from datadog_api_client.v2.model.elf_sourcemap_data import ELFSourcemapData
 from datadog_api_client.v2.model.epss import EPSS
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_context_entity import EntityContextEntity
@@ -2749,6 +2751,8 @@ from datadog_api_client.v2.model.fleet_tracers_response import FleetTracersRespo
 from datadog_api_client.v2.model.fleet_tracers_response_data import FleetTracersResponseData
 from datadog_api_client.v2.model.fleet_tracers_response_data_attributes import FleetTracersResponseDataAttributes
 from datadog_api_client.v2.model.fleet_tracers_response_meta import FleetTracersResponseMeta
+from datadog_api_client.v2.model.flutter_sourcemap_attributes import FlutterSourcemapAttributes
+from datadog_api_client.v2.model.flutter_sourcemap_data import FlutterSourcemapData
 from datadog_api_client.v2.model.form_trigger import FormTrigger
 from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
@@ -3052,6 +3056,10 @@ from datadog_api_client.v2.model.hourly_usage_metadata import HourlyUsageMetadat
 from datadog_api_client.v2.model.hourly_usage_pagination import HourlyUsagePagination
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
+from datadog_api_client.v2.model.il2_cpp_sourcemap_attributes import IL2CPPSourcemapAttributes
+from datadog_api_client.v2.model.il2_cpp_sourcemap_data import IL2CPPSourcemapData
+from datadog_api_client.v2.model.ios_sourcemap_attributes import IOSSourcemapAttributes
+from datadog_api_client.v2.model.ios_sourcemap_data import IOSSourcemapData
 from datadog_api_client.v2.model.ip_allowlist_attributes import IPAllowlistAttributes
 from datadog_api_client.v2.model.ip_allowlist_data import IPAllowlistData
 from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
@@ -3441,6 +3449,10 @@ from datadog_api_client.v2.model.item_api_payload_meta_schema_field import ItemA
 from datadog_api_client.v2.model.jsonapi_error_item import JSONAPIErrorItem
 from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
+from datadog_api_client.v2.model.js_sourcemap_attributes import JSSourcemapAttributes
+from datadog_api_client.v2.model.js_sourcemap_data import JSSourcemapData
+from datadog_api_client.v2.model.jvm_sourcemap_attributes import JVMSourcemapAttributes
+from datadog_api_client.v2.model.jvm_sourcemap_data import JVMSourcemapData
 from datadog_api_client.v2.model.jira_account_attributes import JiraAccountAttributes
 from datadog_api_client.v2.model.jira_account_data import JiraAccountData
 from datadog_api_client.v2.model.jira_account_relationship import JiraAccountRelationship
@@ -4023,6 +4035,7 @@ from datadog_api_client.v2.model.list_scorecard_scores_response import ListScore
 from datadog_api_client.v2.model.list_scorecards_response import ListScorecardsResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.list_service_access_tokens_response import ListServiceAccessTokensResponse
+from datadog_api_client.v2.model.list_sourcemaps_response import ListSourcemapsResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
 from datadog_api_client.v2.model.list_tags_response_data_attributes import ListTagsResponseDataAttributes
@@ -4510,6 +4523,8 @@ from datadog_api_client.v2.model.mute_findings_request_data_attributes import Mu
 from datadog_api_client.v2.model.mute_findings_request_data_relationships import MuteFindingsRequestDataRelationships
 from datadog_api_client.v2.model.mute_findings_response import MuteFindingsResponse
 from datadog_api_client.v2.model.mute_findings_response_data import MuteFindingsResponseData
+from datadog_api_client.v2.model.ndk_sourcemap_attributes import NDKSourcemapAttributes
+from datadog_api_client.v2.model.ndk_sourcemap_data import NDKSourcemapData
 from datadog_api_client.v2.model.node_type import NodeType
 from datadog_api_client.v2.model.node_types_response import NodeTypesResponse
 from datadog_api_client.v2.model.node_types_response_data import NodeTypesResponseData
@@ -5995,6 +6010,8 @@ from datadog_api_client.v2.model.rum_sort import RUMSort
 from datadog_api_client.v2.model.rum_sort_order import RUMSortOrder
 from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.raw_error_budget_remaining import RawErrorBudgetRemaining
+from datadog_api_client.v2.model.react_native_sourcemap_attributes import ReactNativeSourcemapAttributes
+from datadog_api_client.v2.model.react_native_sourcemap_data import ReactNativeSourcemapData
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
 from datadog_api_client.v2.model.recommendation_attributes import RecommendationAttributes
@@ -7433,6 +7450,18 @@ from datadog_api_client.v2.model.service_now_user_attributes import ServiceNowUs
 from datadog_api_client.v2.model.service_now_user_data import ServiceNowUserData
 from datadog_api_client.v2.model.service_now_user_type import ServiceNowUserType
 from datadog_api_client.v2.model.service_now_users_response import ServiceNowUsersResponse
+from datadog_api_client.v2.model.service_repository_info_data_type import ServiceRepositoryInfoDataType
+from datadog_api_client.v2.model.service_repository_info_request import ServiceRepositoryInfoRequest
+from datadog_api_client.v2.model.service_repository_info_request_attributes import (
+    ServiceRepositoryInfoRequestAttributes,
+)
+from datadog_api_client.v2.model.service_repository_info_request_data import ServiceRepositoryInfoRequestData
+from datadog_api_client.v2.model.service_repository_info_response import ServiceRepositoryInfoResponse
+from datadog_api_client.v2.model.service_repository_info_response_attributes import (
+    ServiceRepositoryInfoResponseAttributes,
+)
+from datadog_api_client.v2.model.service_repository_info_response_data import ServiceRepositoryInfoResponseData
+from datadog_api_client.v2.model.service_repository_info_status import ServiceRepositoryInfoStatus
 from datadog_api_client.v2.model.session_id_array import SessionIdArray
 from datadog_api_client.v2.model.session_id_data import SessionIdData
 from datadog_api_client.v2.model.shift import Shift
@@ -7504,6 +7533,16 @@ from datadog_api_client.v2.model.snapshot_update_request_data_attributes import 
 from datadog_api_client.v2.model.snapshot_update_request_data_type import SnapshotUpdateRequestDataType
 from datadog_api_client.v2.model.software_catalog_trigger_wrapper import SoftwareCatalogTriggerWrapper
 from datadog_api_client.v2.model.sort_direction import SortDirection
+from datadog_api_client.v2.model.sourcemap_data_type import SourcemapDataType
+from datadog_api_client.v2.model.sourcemap_file_attributes import SourcemapFileAttributes
+from datadog_api_client.v2.model.sourcemap_file_data import SourcemapFileData
+from datadog_api_client.v2.model.sourcemap_file_data_type import SourcemapFileDataType
+from datadog_api_client.v2.model.sourcemap_file_response import SourcemapFileResponse
+from datadog_api_client.v2.model.sourcemap_item import SourcemapItem
+from datadog_api_client.v2.model.sourcemap_map_kind import SourcemapMapKind
+from datadog_api_client.v2.model.sourcemaps_list_meta import SourcemapsListMeta
+from datadog_api_client.v2.model.sourcemaps_list_meta_page import SourcemapsListMetaPage
+from datadog_api_client.v2.model.sourcemaps_response import SourcemapsResponse
 from datadog_api_client.v2.model.span import Span
 from datadog_api_client.v2.model.spans_aggregate_bucket import SpansAggregateBucket
 from datadog_api_client.v2.model.spans_aggregate_bucket_attributes import SpansAggregateBucketAttributes
@@ -10532,6 +10571,8 @@ __all__ = [
     "DowntimeUpdateRequest",
     "DowntimeUpdateRequestAttributes",
     "DowntimeUpdateRequestData",
+    "ELFSourcemapAttributes",
+    "ELFSourcemapData",
     "EPSS",
     "EntityAttributes",
     "EntityContextEntity",
@@ -10887,6 +10928,8 @@ __all__ = [
     "FleetTracersResponseData",
     "FleetTracersResponseDataAttributes",
     "FleetTracersResponseMeta",
+    "FlutterSourcemapAttributes",
+    "FlutterSourcemapData",
     "FormTrigger",
     "FormTriggerWrapper",
     "FormulaLimit",
@@ -11134,6 +11177,10 @@ __all__ = [
     "HourlyUsagePagination",
     "HourlyUsageResponse",
     "HourlyUsageType",
+    "IL2CPPSourcemapAttributes",
+    "IL2CPPSourcemapData",
+    "IOSSourcemapAttributes",
+    "IOSSourcemapData",
     "IPAllowlistAttributes",
     "IPAllowlistData",
     "IPAllowlistEntry",
@@ -11443,6 +11490,10 @@ __all__ = [
     "JSONAPIErrorItem",
     "JSONAPIErrorItemSource",
     "JSONAPIErrorResponse",
+    "JSSourcemapAttributes",
+    "JSSourcemapData",
+    "JVMSourcemapAttributes",
+    "JVMSourcemapData",
     "JiraAccountAttributes",
     "JiraAccountData",
     "JiraAccountRelationship",
@@ -11859,6 +11910,7 @@ __all__ = [
     "ListScorecardsResponse",
     "ListSecurityFindingsResponse",
     "ListServiceAccessTokensResponse",
+    "ListSourcemapsResponse",
     "ListTagsResponse",
     "ListTagsResponseData",
     "ListTagsResponseDataAttributes",
@@ -12232,6 +12284,8 @@ __all__ = [
     "MuteFindingsRequestDataRelationships",
     "MuteFindingsResponse",
     "MuteFindingsResponseData",
+    "NDKSourcemapAttributes",
+    "NDKSourcemapData",
     "NodeType",
     "NodeTypesResponse",
     "NodeTypesResponseData",
@@ -13079,6 +13133,8 @@ __all__ = [
     "RUMSortOrder",
     "RUMWarning",
     "RawErrorBudgetRemaining",
+    "ReactNativeSourcemapAttributes",
+    "ReactNativeSourcemapData",
     "ReadinessGate",
     "ReadinessGateThresholdType",
     "RecommendationAttributes",
@@ -14015,6 +14071,14 @@ __all__ = [
     "ServiceNowUserData",
     "ServiceNowUserType",
     "ServiceNowUsersResponse",
+    "ServiceRepositoryInfoDataType",
+    "ServiceRepositoryInfoRequest",
+    "ServiceRepositoryInfoRequestAttributes",
+    "ServiceRepositoryInfoRequestData",
+    "ServiceRepositoryInfoResponse",
+    "ServiceRepositoryInfoResponseAttributes",
+    "ServiceRepositoryInfoResponseData",
+    "ServiceRepositoryInfoStatus",
     "SessionIdArray",
     "SessionIdData",
     "Shift",
@@ -14072,6 +14136,16 @@ __all__ = [
     "SnapshotUpdateRequestDataType",
     "SoftwareCatalogTriggerWrapper",
     "SortDirection",
+    "SourcemapDataType",
+    "SourcemapFileAttributes",
+    "SourcemapFileData",
+    "SourcemapFileDataType",
+    "SourcemapFileResponse",
+    "SourcemapItem",
+    "SourcemapMapKind",
+    "SourcemapsListMeta",
+    "SourcemapsListMetaPage",
+    "SourcemapsResponse",
     "Span",
     "SpansAggregateBucket",
     "SpansAggregateBucketAttributes",
