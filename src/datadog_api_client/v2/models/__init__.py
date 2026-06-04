@@ -4547,6 +4547,10 @@ from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRe
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
 from datadog_api_client.v2.model.nullable_user_relationship_data import NullableUserRelationshipData
+from datadog_api_client.v2.model.o_auth2_well_known_sites_attributes import OAuth2WellKnownSitesAttributes
+from datadog_api_client.v2.model.o_auth2_well_known_sites_data import OAuth2WellKnownSitesData
+from datadog_api_client.v2.model.o_auth2_well_known_sites_env_type import OAuth2WellKnownSitesEnvType
+from datadog_api_client.v2.model.o_auth2_well_known_sites_response import OAuth2WellKnownSitesResponse
 from datadog_api_client.v2.model.o_auth_client_registration_error import OAuthClientRegistrationError
 from datadog_api_client.v2.model.o_auth_client_registration_grant_type import OAuthClientRegistrationGrantType
 from datadog_api_client.v2.model.o_auth_client_registration_request import OAuthClientRegistrationRequest
@@ -12269,6 +12273,10 @@ __all__ = [
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
     "NullableUserRelationshipData",
+    "OAuth2WellKnownSitesAttributes",
+    "OAuth2WellKnownSitesData",
+    "OAuth2WellKnownSitesEnvType",
+    "OAuth2WellKnownSitesResponse",
     "OAuthClientRegistrationError",
     "OAuthClientRegistrationGrantType",
     "OAuthClientRegistrationRequest",

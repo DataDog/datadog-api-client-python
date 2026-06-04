@@ -10,6 +10,7 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     UUID,
 )
+from datadog_api_client.v2.model.o_auth2_well_known_sites_response import OAuth2WellKnownSitesResponse
 from datadog_api_client.v2.model.o_auth_scopes_restriction_response import OAuthScopesRestrictionResponse
 from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_request import UpsertOAuthScopesRestrictionRequest
 from datadog_api_client.v2.model.o_auth_client_registration_response import OAuthClientRegistrationResponse
@@ -46,6 +47,22 @@ class OAuth2ClientPublicApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_o_auth2_well_known_sites_endpoint = _Endpoint(
+            settings={
+                "response_type": (OAuth2WellKnownSitesResponse,),
+                "auth": [],
+                "endpoint_path": "/api/v2/oauth2/.well-known/sites",
+                "operation_id": "get_o_auth2_well_known_sites",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -135,6 +152,18 @@ class OAuth2ClientPublicApi:
         kwargs["client_uuid"] = client_uuid
 
         return self._delete_scopes_restriction_endpoint.call_with_http_info(**kwargs)
+
+    def get_o_auth2_well_known_sites(
+        self,
+    ) -> OAuth2WellKnownSitesResponse:
+        """Get OAuth2 well-known sites.
+
+        Retrieve the list of public OAuth2 sites available for the current environment. This endpoint is used for OAuth2 discovery and returns sites where users can authenticate.
+
+        :rtype: OAuth2WellKnownSitesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_o_auth2_well_known_sites_endpoint.call_with_http_info(**kwargs)
 
     def get_scopes_restriction(
         self,
