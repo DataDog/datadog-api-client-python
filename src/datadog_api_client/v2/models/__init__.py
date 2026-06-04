@@ -5653,6 +5653,10 @@ from datadog_api_client.v2.model.org_group_update_data import OrgGroupUpdateData
 from datadog_api_client.v2.model.org_group_update_request import OrgGroupUpdateRequest
 from datadog_api_client.v2.model.org_relationship_data import OrgRelationshipData
 from datadog_api_client.v2.model.org_resource_type import OrgResourceType
+from datadog_api_client.v2.model.org_saml_preferences_attributes import OrgSAMLPreferencesAttributes
+from datadog_api_client.v2.model.org_saml_preferences_data import OrgSAMLPreferencesData
+from datadog_api_client.v2.model.org_saml_preferences_type import OrgSAMLPreferencesType
+from datadog_api_client.v2.model.org_saml_preferences_update_request import OrgSAMLPreferencesUpdateRequest
 from datadog_api_client.v2.model.organization import Organization
 from datadog_api_client.v2.model.organization_attributes import OrganizationAttributes
 from datadog_api_client.v2.model.organizations_type import OrganizationsType
@@ -6389,6 +6393,15 @@ from datadog_api_client.v2.model.run_historical_job_request_data_type import Run
 from datadog_api_client.v2.model.saml_assertion_attribute import SAMLAssertionAttribute
 from datadog_api_client.v2.model.saml_assertion_attribute_attributes import SAMLAssertionAttributeAttributes
 from datadog_api_client.v2.model.saml_assertion_attributes_type import SAMLAssertionAttributesType
+from datadog_api_client.v2.model.saml_configuration import SAMLConfiguration
+from datadog_api_client.v2.model.saml_configuration_attributes import SAMLConfigurationAttributes
+from datadog_api_client.v2.model.saml_configuration_relationships import SAMLConfigurationRelationships
+from datadog_api_client.v2.model.saml_configuration_response import SAMLConfigurationResponse
+from datadog_api_client.v2.model.saml_configuration_update_attributes import SAMLConfigurationUpdateAttributes
+from datadog_api_client.v2.model.saml_configuration_update_data import SAMLConfigurationUpdateData
+from datadog_api_client.v2.model.saml_configuration_update_request import SAMLConfigurationUpdateRequest
+from datadog_api_client.v2.model.saml_configurations_response import SAMLConfigurationsResponse
+from datadog_api_client.v2.model.saml_configurations_type import SAMLConfigurationsType
 from datadog_api_client.v2.model.sbom import SBOM
 from datadog_api_client.v2.model.sbom_attributes import SBOMAttributes
 from datadog_api_client.v2.model.sbom_component import SBOMComponent
@@ -12861,6 +12874,10 @@ __all__ = [
     "OrgGroupUpdateRequest",
     "OrgRelationshipData",
     "OrgResourceType",
+    "OrgSAMLPreferencesAttributes",
+    "OrgSAMLPreferencesData",
+    "OrgSAMLPreferencesType",
+    "OrgSAMLPreferencesUpdateRequest",
     "Organization",
     "OrganizationAttributes",
     "OrganizationsType",
@@ -13463,6 +13480,15 @@ __all__ = [
     "SAMLAssertionAttribute",
     "SAMLAssertionAttributeAttributes",
     "SAMLAssertionAttributesType",
+    "SAMLConfiguration",
+    "SAMLConfigurationAttributes",
+    "SAMLConfigurationRelationships",
+    "SAMLConfigurationResponse",
+    "SAMLConfigurationUpdateAttributes",
+    "SAMLConfigurationUpdateData",
+    "SAMLConfigurationUpdateRequest",
+    "SAMLConfigurationsResponse",
+    "SAMLConfigurationsType",
     "SBOM",
     "SBOMAttributes",
     "SBOMComponent",
