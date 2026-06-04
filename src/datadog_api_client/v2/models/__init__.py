@@ -3761,16 +3761,21 @@ from datadog_api_client.v2.model.llm_obs_experiment_request import LLMObsExperim
 from datadog_api_client.v2.model.llm_obs_experiment_response import LLMObsExperimentResponse
 from datadog_api_client.v2.model.llm_obs_experiment_run_data_response import LLMObsExperimentRunDataResponse
 from datadog_api_client.v2.model.llm_obs_experiment_span import LLMObsExperimentSpan
+from datadog_api_client.v2.model.llm_obs_experiment_span_data_response import LLMObsExperimentSpanDataResponse
 from datadog_api_client.v2.model.llm_obs_experiment_span_error import LLMObsExperimentSpanError
 from datadog_api_client.v2.model.llm_obs_experiment_span_meta import LLMObsExperimentSpanMeta
 from datadog_api_client.v2.model.llm_obs_experiment_span_status import LLMObsExperimentSpanStatus
+from datadog_api_client.v2.model.llm_obs_experiment_span_type import LLMObsExperimentSpanType
 from datadog_api_client.v2.model.llm_obs_experiment_span_with_evals import LLMObsExperimentSpanWithEvals
+from datadog_api_client.v2.model.llm_obs_experiment_spans_response import LLMObsExperimentSpansResponse
+from datadog_api_client.v2.model.llm_obs_experiment_status import LLMObsExperimentStatus
 from datadog_api_client.v2.model.llm_obs_experiment_type import LLMObsExperimentType
 from datadog_api_client.v2.model.llm_obs_experiment_update_data_attributes_request import (
     LLMObsExperimentUpdateDataAttributesRequest,
 )
 from datadog_api_client.v2.model.llm_obs_experiment_update_data_request import LLMObsExperimentUpdateDataRequest
 from datadog_api_client.v2.model.llm_obs_experiment_update_request import LLMObsExperimentUpdateRequest
+from datadog_api_client.v2.model.llm_obs_experiment_user import LLMObsExperimentUser
 from datadog_api_client.v2.model.llm_obs_experimentation_analytics_aggregate import (
     LLMObsExperimentationAnalyticsAggregate,
 )
@@ -11646,14 +11651,19 @@ __all__ = [
     "LLMObsExperimentResponse",
     "LLMObsExperimentRunDataResponse",
     "LLMObsExperimentSpan",
+    "LLMObsExperimentSpanDataResponse",
     "LLMObsExperimentSpanError",
     "LLMObsExperimentSpanMeta",
     "LLMObsExperimentSpanStatus",
+    "LLMObsExperimentSpanType",
     "LLMObsExperimentSpanWithEvals",
+    "LLMObsExperimentSpansResponse",
+    "LLMObsExperimentStatus",
     "LLMObsExperimentType",
     "LLMObsExperimentUpdateDataAttributesRequest",
     "LLMObsExperimentUpdateDataRequest",
     "LLMObsExperimentUpdateRequest",
+    "LLMObsExperimentUser",
     "LLMObsExperimentationAnalyticsAggregate",
     "LLMObsExperimentationAnalyticsCompute",
     "LLMObsExperimentationAnalyticsDataAttributesRequest",

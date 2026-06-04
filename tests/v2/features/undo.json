@@ -4090,6 +4090,12 @@
       "type": "idempotent"
     }
   },
+  "ListLLMObsExperimentEventsV1": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateLLMObsExperimentEvents": {
     "tag": "LLM Observability",
     "undo": {
@@ -4265,6 +4271,12 @@
     }
   },
   "ListLLMObsDatasetVersions": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLLMObsExperimentEventsV2": {
     "tag": "LLM Observability",
     "undo": {
       "type": "safe"

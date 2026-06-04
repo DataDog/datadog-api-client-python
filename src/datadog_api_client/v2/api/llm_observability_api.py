@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -56,6 +57,7 @@ from datadog_api_client.v2.model.llm_obs_experiment_response import LLMObsExperi
 from datadog_api_client.v2.model.llm_obs_experiment_request import LLMObsExperimentRequest
 from datadog_api_client.v2.model.llm_obs_delete_experiments_request import LLMObsDeleteExperimentsRequest
 from datadog_api_client.v2.model.llm_obs_experiment_update_request import LLMObsExperimentUpdateRequest
+from datadog_api_client.v2.model.llm_obs_experiment_spans_response import LLMObsExperimentSpansResponse
 from datadog_api_client.v2.model.llm_obs_experiment_events_request import LLMObsExperimentEventsRequest
 from datadog_api_client.v2.model.llm_obs_integration_account import LLMObsIntegrationAccount
 from datadog_api_client.v2.model.llm_obs_integration_name import LLMObsIntegrationName
@@ -933,6 +935,52 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._list_llm_obs_experiment_events_v1_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsExperimentSpansResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/experiments/{experiment_id}/events",
+                "operation_id": "list_llm_obs_experiment_events_v1",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "experiment_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "experiment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_experiment_events_v2_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsExperimentEventsV2Response,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v2/experiments/{experiment_id}/events",
+                "operation_id": "list_llm_obs_experiment_events_v2",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "experiment_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "experiment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_llm_obs_experiments_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentsResponse,),
@@ -958,12 +1006,50 @@ class LLMObservabilityApi:
                     "attribute": "filter[id]",
                     "location": "query",
                 },
+                "filter_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[name]",
+                    "location": "query",
+                },
+                "filter_experiment": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[experiment]",
+                    "location": "query",
+                },
+                "filter_metadata": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[metadata]",
+                    "location": "query",
+                },
+                "filter_parent_experiment_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[parent_experiment_id]",
+                    "location": "query",
+                },
+                "filter_is_deleted": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[is_deleted]",
+                    "location": "query",
+                },
+                "include_user_data": {
+                    "openapi_types": (bool,),
+                    "attribute": "include[user_data]",
+                    "location": "query",
+                },
+                "include_dataset_names": {
+                    "openapi_types": (bool,),
+                    "attribute": "include[dataset_names]",
+                    "location": "query",
+                },
                 "page_cursor": {
                     "openapi_types": (str,),
                     "attribute": "page[cursor]",
                     "location": "query",
                 },
                 "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 5000,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[limit]",
                     "location": "query",
@@ -2250,12 +2336,55 @@ class LLMObservabilityApi:
 
         return self._list_llm_obs_experiment_events_endpoint.call_with_http_info(**kwargs)
 
+    def list_llm_obs_experiment_events_v1(
+        self,
+        experiment_id: str,
+    ) -> LLMObsExperimentSpansResponse:
+        """List LLM Observability experiment spans (v1). **Deprecated**.
+
+        Retrieve spans with their evaluation metrics for a given experiment. Returns spans only, with no summary metrics and no pagination. Deprecated in favor of ``ListLLMObsExperimentEventsV3``.
+
+        :param experiment_id: The ID of the LLM Observability experiment.
+        :type experiment_id: str
+        :rtype: LLMObsExperimentSpansResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["experiment_id"] = experiment_id
+
+        warnings.warn("list_llm_obs_experiment_events_v1 is deprecated", DeprecationWarning, stacklevel=2)
+        return self._list_llm_obs_experiment_events_v1_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_experiment_events_v2(
+        self,
+        experiment_id: str,
+    ) -> LLMObsExperimentEventsV2Response:
+        """List LLM Observability experiment events (v2). **Deprecated**.
+
+        Retrieve spans and experiment-level summary metrics for a given experiment. Returns the full events payload without pagination. Deprecated: use ``ListLLMObsExperimentEventsV3`` instead.
+
+        :param experiment_id: The ID of the LLM Observability experiment.
+        :type experiment_id: str
+        :rtype: LLMObsExperimentEventsV2Response
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["experiment_id"] = experiment_id
+
+        warnings.warn("list_llm_obs_experiment_events_v2 is deprecated", DeprecationWarning, stacklevel=2)
+        return self._list_llm_obs_experiment_events_v2_endpoint.call_with_http_info(**kwargs)
+
     def list_llm_obs_experiments(
         self,
         *,
         filter_project_id: Union[str, UnsetType] = unset,
         filter_dataset_id: Union[str, UnsetType] = unset,
         filter_id: Union[str, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
+        filter_experiment: Union[str, UnsetType] = unset,
+        filter_metadata: Union[str, UnsetType] = unset,
+        filter_parent_experiment_id: Union[str, UnsetType] = unset,
+        filter_is_deleted: Union[bool, UnsetType] = unset,
+        include_user_data: Union[bool, UnsetType] = unset,
+        include_dataset_names: Union[bool, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> LLMObsExperimentsResponse:
@@ -2269,9 +2398,26 @@ class LLMObservabilityApi:
         :type filter_dataset_id: str, optional
         :param filter_id: Filter experiments by experiment ID. Can be specified multiple times.
         :type filter_id: str, optional
-        :param page_cursor: Use the Pagination cursor to retrieve the next page of results.
+        :param filter_name: Filter experiments by their exact run name.
+        :type filter_name: str, optional
+        :param filter_experiment: Filter by logical experiment name. This is the ``name`` field set when creating an experiment through ``POST /experiments``. Returns all experiment runs that share the same name, enabling cross-commit and cross-branch comparisons.
+        :type filter_experiment: str, optional
+        :param filter_metadata: Filter by JSONB metadata containment. Provide a JSON object string where
+            experiments whose metadata contains all specified key-value pairs are returned.
+            For example: ``{"commit":"abc123","branch":"main"}``.
+        :type filter_metadata: str, optional
+        :param filter_parent_experiment_id: Filter experiments by the ID of their parent (baseline) experiment. Returns all experiments that were run against the given baseline. Can be specified multiple times.
+        :type filter_parent_experiment_id: str, optional
+        :param filter_is_deleted: When ``true`` , return only soft-deleted experiments. Defaults to ``false``.
+        :type filter_is_deleted: bool, optional
+        :param include_user_data: When ``true`` , enrich each experiment with its author's user data in the ``author`` field.
+        :type include_user_data: bool, optional
+        :param include_dataset_names: When ``true`` , enrich each experiment with its dataset name in the ``dataset_name`` field.
+        :type include_dataset_names: bool, optional
+        :param page_cursor: Use the pagination cursor returned in ``meta.after`` to retrieve the next page of results.
         :type page_cursor: str, optional
-        :param page_limit: Maximum number of results to return per page.
+        :param page_limit: Maximum number of results to return per page. Values above 5000 are clamped
+            to 5000. Defaults to 5000.
         :type page_limit: int, optional
         :rtype: LLMObsExperimentsResponse
         """
@@ -2284,6 +2430,27 @@ class LLMObservabilityApi:
 
         if filter_id is not unset:
             kwargs["filter_id"] = filter_id
+
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
+
+        if filter_experiment is not unset:
+            kwargs["filter_experiment"] = filter_experiment
+
+        if filter_metadata is not unset:
+            kwargs["filter_metadata"] = filter_metadata
+
+        if filter_parent_experiment_id is not unset:
+            kwargs["filter_parent_experiment_id"] = filter_parent_experiment_id
+
+        if filter_is_deleted is not unset:
+            kwargs["filter_is_deleted"] = filter_is_deleted
+
+        if include_user_data is not unset:
+            kwargs["include_user_data"] = include_user_data
+
+        if include_dataset_names is not unset:
+            kwargs["include_dataset_names"] = include_dataset_names
 
         if page_cursor is not unset:
             kwargs["page_cursor"] = page_cursor

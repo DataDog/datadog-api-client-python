@@ -18,6 +18,12 @@ from datadog_api_client.model_utils import (
 
 
 class LLMObsExperimentDataAttributesRequest(ModelNormal):
+    validations = {
+        "run_count": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -58,7 +64,9 @@ class LLMObsExperimentDataAttributesRequest(ModelNormal):
                 },
             ),
             "name": (str,),
+            "parent_experiment_id": (str,),
             "project_id": (str,),
+            "run_count": (int,),
         }
 
     attribute_map = {
@@ -69,19 +77,23 @@ class LLMObsExperimentDataAttributesRequest(ModelNormal):
         "ensure_unique": "ensure_unique",
         "metadata": "metadata",
         "name": "name",
+        "parent_experiment_id": "parent_experiment_id",
         "project_id": "project_id",
+        "run_count": "run_count",
     }
 
     def __init__(
         self_,
-        dataset_id: str,
         name: str,
         project_id: str,
         config: Union[Dict[str, Any], UnsetType] = unset,
+        dataset_id: Union[str, UnsetType] = unset,
         dataset_version: Union[int, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         ensure_unique: Union[bool, UnsetType] = unset,
         metadata: Union[Dict[str, Any], UnsetType] = unset,
+        parent_experiment_id: Union[str, UnsetType] = unset,
+        run_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -91,7 +103,7 @@ class LLMObsExperimentDataAttributesRequest(ModelNormal):
         :type config: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param dataset_id: Identifier of the dataset used in this experiment.
-        :type dataset_id: str
+        :type dataset_id: str, optional
 
         :param dataset_version: Version of the dataset to use. Defaults to the current version if not specified.
         :type dataset_version: int, optional
@@ -108,11 +120,19 @@ class LLMObsExperimentDataAttributesRequest(ModelNormal):
         :param name: Name of the experiment.
         :type name: str
 
+        :param parent_experiment_id: Identifier of the parent (baseline) experiment this experiment is run against.
+        :type parent_experiment_id: str, optional
+
         :param project_id: Identifier of the project this experiment belongs to.
         :type project_id: str
+
+        :param run_count: Number of runs configured for this experiment.
+        :type run_count: int, optional
         """
         if config is not unset:
             kwargs["config"] = config
+        if dataset_id is not unset:
+            kwargs["dataset_id"] = dataset_id
         if dataset_version is not unset:
             kwargs["dataset_version"] = dataset_version
         if description is not unset:
@@ -121,8 +141,11 @@ class LLMObsExperimentDataAttributesRequest(ModelNormal):
             kwargs["ensure_unique"] = ensure_unique
         if metadata is not unset:
             kwargs["metadata"] = metadata
+        if parent_experiment_id is not unset:
+            kwargs["parent_experiment_id"] = parent_experiment_id
+        if run_count is not unset:
+            kwargs["run_count"] = run_count
         super().__init__(kwargs)
 
-        self_.dataset_id = dataset_id
         self_.name = name
         self_.project_id = project_id
