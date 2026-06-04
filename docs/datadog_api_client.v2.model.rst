@@ -24406,6 +24406,34 @@ datadog\_api\_client.v2.model.nullable\_user\_relationship\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.o\_auth2\_well\_known\_sites\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth2_well_known_sites_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth2\_well\_known\_sites\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth2_well_known_sites_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth2\_well\_known\_sites\_env\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth2_well_known_sites_env_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.o\_auth2\_well\_known\_sites\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.o_auth2_well_known_sites_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.o\_auth\_client\_registration\_error module
 -------------------------------------------------------------------------
 
