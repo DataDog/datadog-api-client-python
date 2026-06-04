@@ -19716,10 +19716,52 @@ datadog\_api\_client.v2.model.llm\_obs\_annotated\_interactions\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_assessment module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_assessment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_error module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_error
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_annotation\_item module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_annotation_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_item\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_item_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_label\_value module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_label_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_label\_value\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_label_value_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_label\_value\_value module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_label_value_value
    :members:
    :show-inheritance:
 
@@ -19909,6 +19951,55 @@ datadog\_api\_client.v2.model.llm\_obs\_annotation\_schema module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_annotation_schema
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotations\_data\_attributes\_request module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotations_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotations\_data\_attributes\_response module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotations_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotations\_data\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotations_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotations\_data\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotations_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotations\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotations_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotations\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotations_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_annotations\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotations_type
    :members:
    :show-inheritance:
 
@@ -20542,6 +20633,13 @@ datadog\_api\_client.v2.model.llm\_obs\_datasets\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_delete\_annotation\_error module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotation_error
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_delete\_annotation\_queue\_interactions\_data\_attributes\_request module
 -----------------------------------------------------------------------------------------------------------------
 
@@ -20560,6 +20658,48 @@ datadog\_api\_client.v2.model.llm\_obs\_delete\_annotation\_queue\_interactions\
 -----------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_annotations\_data\_attributes\_request module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotations_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_annotations\_data\_attributes\_response module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotations_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_annotations\_data\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotations_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_annotations\_data\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotations_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_annotations\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotations_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_delete\_annotations\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_delete_annotations_response
    :members:
    :show-inheritance:
 
@@ -21561,6 +21701,13 @@ datadog\_api\_client.v2.model.llm\_obs\_trace\_interaction\_type module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_trace_interaction_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_upsert\_annotation\_item module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_upsert_annotation_item
    :members:
    :show-inheritance:
 

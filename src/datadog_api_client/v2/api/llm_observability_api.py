@@ -25,6 +25,10 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObs
 from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_response import LLMObsAnnotatedInteractionsResponse
+from datadog_api_client.v2.model.llm_obs_annotations_response import LLMObsAnnotationsResponse
+from datadog_api_client.v2.model.llm_obs_annotations_request import LLMObsAnnotationsRequest
+from datadog_api_client.v2.model.llm_obs_delete_annotations_response import LLMObsDeleteAnnotationsResponse
+from datadog_api_client.v2.model.llm_obs_delete_annotations_request import LLMObsDeleteAnnotationsRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queue_interactions_response import (
     LLMObsAnnotationQueueInteractionsResponse,
 )
@@ -432,6 +436,32 @@ class LLMObservabilityApi:
                 },
             },
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_llm_obs_annotations_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDeleteAnnotationsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotations/delete",
+                "operation_id": "delete_llm_obs_annotations",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsDeleteAnnotationsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1624,6 +1654,32 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._upsert_llm_obs_annotations_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotationsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotations",
+                "operation_id": "upsert_llm_obs_annotations",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsAnnotationsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def aggregate_llm_obs_experimentation(
         self,
         body: LLMObsExperimentationAnalyticsRequest,
@@ -1920,6 +1976,28 @@ class LLMObservabilityApi:
 
         return self._delete_llm_obs_annotation_queue_interactions_endpoint.call_with_http_info(**kwargs)
 
+    def delete_llm_obs_annotations(
+        self,
+        queue_id: str,
+        body: LLMObsDeleteAnnotationsRequest,
+    ) -> LLMObsDeleteAnnotationsResponse:
+        """Delete annotations.
+
+        Delete one or more annotations from an annotation queue.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :param body: Delete annotations payload.
+        :type body: LLMObsDeleteAnnotationsRequest
+        :rtype: LLMObsDeleteAnnotationsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["body"] = body
+
+        return self._delete_llm_obs_annotations_endpoint.call_with_http_info(**kwargs)
+
     def delete_llm_obs_custom_eval_config(
         self,
         eval_name: str,
@@ -2098,7 +2176,8 @@ class LLMObservabilityApi:
     ) -> LLMObsAnnotatedInteractionsByTraceResponse:
         """Get annotated interactions by content IDs.
 
-        Returns annotated interactions across all annotation queues for the given content IDs. Results include queue metadata (ID and name) for each interaction.
+        Returns annotated interactions across all annotation queues for the given content IDs.
+        Results include queue metadata (ID and name) for each interaction.
 
         :param content_ids: One or more content IDs to retrieve annotated interactions for. At least one is required.
         :type content_ids: [str]
@@ -2976,3 +3055,28 @@ class LLMObservabilityApi:
             kwargs["file"] = file
 
         return self._upload_llm_obs_dataset_records_file_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_llm_obs_annotations(
+        self,
+        queue_id: str,
+        body: LLMObsAnnotationsRequest,
+    ) -> LLMObsAnnotationsResponse:
+        """Create or update annotations.
+
+        Create or update annotations on interactions in a queue. Each annotation is matched
+        by ``interaction_id`` and the requesting user's identity.
+        Results and errors in the response are linked to request items by ``interaction_id``.
+        Errors for individual items are returned in the ``errors`` field without blocking the rest of the batch.
+
+        :param queue_id: The ID of the LLM Observability annotation queue.
+        :type queue_id: str
+        :param body: Payload for creating or updating annotations.
+        :type body: LLMObsAnnotationsRequest
+        :rtype: LLMObsAnnotationsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["body"] = body
+
+        return self._upsert_llm_obs_annotations_endpoint.call_with_http_info(**kwargs)

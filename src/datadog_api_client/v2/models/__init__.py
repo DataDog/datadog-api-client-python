@@ -3527,7 +3527,13 @@ from datadog_api_client.v2.model.llm_obs_annotated_interactions_data_response im
 )
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_response import LLMObsAnnotatedInteractionsResponse
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_type import LLMObsAnnotatedInteractionsType
+from datadog_api_client.v2.model.llm_obs_annotation_assessment import LLMObsAnnotationAssessment
+from datadog_api_client.v2.model.llm_obs_annotation_error import LLMObsAnnotationError
 from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
+from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
+from datadog_api_client.v2.model.llm_obs_annotation_label_value import LLMObsAnnotationLabelValue
+from datadog_api_client.v2.model.llm_obs_annotation_label_value_response import LLMObsAnnotationLabelValueResponse
+from datadog_api_client.v2.model.llm_obs_annotation_label_value_value import LLMObsAnnotationLabelValueValue
 from datadog_api_client.v2.model.llm_obs_annotation_queue_data_attributes_request import (
     LLMObsAnnotationQueueDataAttributesRequest,
 )
@@ -3587,6 +3593,17 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_update_data_request im
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queues_response import LLMObsAnnotationQueuesResponse
 from datadog_api_client.v2.model.llm_obs_annotation_schema import LLMObsAnnotationSchema
+from datadog_api_client.v2.model.llm_obs_annotations_data_attributes_request import (
+    LLMObsAnnotationsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_annotations_data_attributes_response import (
+    LLMObsAnnotationsDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotations_data_request import LLMObsAnnotationsDataRequest
+from datadog_api_client.v2.model.llm_obs_annotations_data_response import LLMObsAnnotationsDataResponse
+from datadog_api_client.v2.model.llm_obs_annotations_request import LLMObsAnnotationsRequest
+from datadog_api_client.v2.model.llm_obs_annotations_response import LLMObsAnnotationsResponse
+from datadog_api_client.v2.model.llm_obs_annotations_type import LLMObsAnnotationsType
 from datadog_api_client.v2.model.llm_obs_anthropic_effort import LLMObsAnthropicEffort
 from datadog_api_client.v2.model.llm_obs_anthropic_metadata import LLMObsAnthropicMetadata
 from datadog_api_client.v2.model.llm_obs_anthropic_thinking_config import LLMObsAnthropicThinkingConfig
@@ -3711,6 +3728,7 @@ from datadog_api_client.v2.model.llm_obs_dataset_version_data_attributes import 
 from datadog_api_client.v2.model.llm_obs_dataset_version_type import LLMObsDatasetVersionType
 from datadog_api_client.v2.model.llm_obs_dataset_versions_response import LLMObsDatasetVersionsResponse
 from datadog_api_client.v2.model.llm_obs_datasets_response import LLMObsDatasetsResponse
+from datadog_api_client.v2.model.llm_obs_delete_annotation_error import LLMObsDeleteAnnotationError
 from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_data_attributes_request import (
     LLMObsDeleteAnnotationQueueInteractionsDataAttributesRequest,
 )
@@ -3720,6 +3738,16 @@ from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_da
 from datadog_api_client.v2.model.llm_obs_delete_annotation_queue_interactions_request import (
     LLMObsDeleteAnnotationQueueInteractionsRequest,
 )
+from datadog_api_client.v2.model.llm_obs_delete_annotations_data_attributes_request import (
+    LLMObsDeleteAnnotationsDataAttributesRequest,
+)
+from datadog_api_client.v2.model.llm_obs_delete_annotations_data_attributes_response import (
+    LLMObsDeleteAnnotationsDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_delete_annotations_data_request import LLMObsDeleteAnnotationsDataRequest
+from datadog_api_client.v2.model.llm_obs_delete_annotations_data_response import LLMObsDeleteAnnotationsDataResponse
+from datadog_api_client.v2.model.llm_obs_delete_annotations_request import LLMObsDeleteAnnotationsRequest
+from datadog_api_client.v2.model.llm_obs_delete_annotations_response import LLMObsDeleteAnnotationsResponse
 from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_attributes_request import (
     LLMObsDeleteDatasetRecordsDataAttributesRequest,
 )
@@ -3923,6 +3951,7 @@ from datadog_api_client.v2.model.llm_obs_trace_annotated_interaction_item import
 from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_response_item import LLMObsTraceInteractionResponseItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTraceInteractionType
+from datadog_api_client.v2.model.llm_obs_upsert_annotation_item import LLMObsUpsertAnnotationItem
 from datadog_api_client.v2.model.llm_obs_vertex_ai_metadata import LLMObsVertexAIMetadata
 from datadog_api_client.v2.model.language import Language
 from datadog_api_client.v2.model.launch_darkly_api_key import LaunchDarklyAPIKey
@@ -11554,7 +11583,13 @@ __all__ = [
     "LLMObsAnnotatedInteractionsDataResponse",
     "LLMObsAnnotatedInteractionsResponse",
     "LLMObsAnnotatedInteractionsType",
+    "LLMObsAnnotationAssessment",
+    "LLMObsAnnotationError",
     "LLMObsAnnotationItem",
+    "LLMObsAnnotationItemResponse",
+    "LLMObsAnnotationLabelValue",
+    "LLMObsAnnotationLabelValueResponse",
+    "LLMObsAnnotationLabelValueValue",
     "LLMObsAnnotationQueueDataAttributesRequest",
     "LLMObsAnnotationQueueDataAttributesResponse",
     "LLMObsAnnotationQueueDataRequest",
@@ -11582,6 +11617,13 @@ __all__ = [
     "LLMObsAnnotationQueueUpdateRequest",
     "LLMObsAnnotationQueuesResponse",
     "LLMObsAnnotationSchema",
+    "LLMObsAnnotationsDataAttributesRequest",
+    "LLMObsAnnotationsDataAttributesResponse",
+    "LLMObsAnnotationsDataRequest",
+    "LLMObsAnnotationsDataResponse",
+    "LLMObsAnnotationsRequest",
+    "LLMObsAnnotationsResponse",
+    "LLMObsAnnotationsType",
     "LLMObsAnthropicEffort",
     "LLMObsAnthropicMetadata",
     "LLMObsAnthropicThinkingConfig",
@@ -11672,9 +11714,16 @@ __all__ = [
     "LLMObsDatasetVersionType",
     "LLMObsDatasetVersionsResponse",
     "LLMObsDatasetsResponse",
+    "LLMObsDeleteAnnotationError",
     "LLMObsDeleteAnnotationQueueInteractionsDataAttributesRequest",
     "LLMObsDeleteAnnotationQueueInteractionsDataRequest",
     "LLMObsDeleteAnnotationQueueInteractionsRequest",
+    "LLMObsDeleteAnnotationsDataAttributesRequest",
+    "LLMObsDeleteAnnotationsDataAttributesResponse",
+    "LLMObsDeleteAnnotationsDataRequest",
+    "LLMObsDeleteAnnotationsDataResponse",
+    "LLMObsDeleteAnnotationsRequest",
+    "LLMObsDeleteAnnotationsResponse",
     "LLMObsDeleteDatasetRecordsDataAttributesRequest",
     "LLMObsDeleteDatasetRecordsDataRequest",
     "LLMObsDeleteDatasetRecordsRequest",
@@ -11818,6 +11867,7 @@ __all__ = [
     "LLMObsTraceInteractionItem",
     "LLMObsTraceInteractionResponseItem",
     "LLMObsTraceInteractionType",
+    "LLMObsUpsertAnnotationItem",
     "LLMObsVertexAIMetadata",
     "Language",
     "LaunchDarklyAPIKey",

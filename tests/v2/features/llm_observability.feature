@@ -316,6 +316,33 @@ Feature: LLM Observability
     Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update annotations returns "Bad Request" response
+    Given operation "UpsertLLMObsAnnotations" enabled
+    And new "UpsertLLMObsAnnotations" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"annotations": [{"interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update annotations returns "Not Found — the queue does not exist." response
+    Given operation "UpsertLLMObsAnnotations" enabled
+    And new "UpsertLLMObsAnnotations" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"annotations": [{"interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
+    When the request is sent
+    Then the response status is 404 Not Found — the queue does not exist.
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update annotations returns "OK — annotations created or updated. Per-item errors are listed in `errors`." response
+    Given operation "UpsertLLMObsAnnotations" enabled
+    And new "UpsertLLMObsAnnotations" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"annotations": [{"interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
+    When the request is sent
+    Then the response status is 200 OK — annotations created or updated. Per-item errors are listed in `errors`.
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Delete LLM Observability data returns "Accepted" response
     Given operation "DeleteLLMObsData" enabled
     And new "DeleteLLMObsData" request
@@ -486,6 +513,33 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"interaction_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "interactions"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete annotations returns "Bad Request" response
+    Given operation "DeleteLLMObsAnnotations" enabled
+    And new "DeleteLLMObsAnnotations" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"annotation_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "annotations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete annotations returns "Not Found — the queue does not exist." response
+    Given operation "DeleteLLMObsAnnotations" enabled
+    And new "DeleteLLMObsAnnotations" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"annotation_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "annotations"}}
+    When the request is sent
+    Then the response status is 404 Not Found — the queue does not exist.
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete annotations returns "OK — annotations deleted. Errors for annotations that could not be deleted are listed in `errors`." response
+    Given operation "DeleteLLMObsAnnotations" enabled
+    And new "DeleteLLMObsAnnotations" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"annotation_ids": ["00000000-0000-0000-0000-000000000000", "00000000-0000-0000-0000-000000000001"]}, "type": "annotations"}}
+    When the request is sent
+    Then the response status is 200 OK — annotations deleted. Errors for annotations that could not be deleted are listed in `errors`.
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Export an LLM Observability dataset returns "Bad Request" response
