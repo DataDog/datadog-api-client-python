@@ -24,6 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
     from datadog_api_client.v1.model.synthetics_basic_auth_oauth_client import SyntheticsBasicAuthOauthClient
     from datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop import SyntheticsBasicAuthOauthROP
+    from datadog_api_client.v1.model.synthetics_basic_auth_jwt import SyntheticsBasicAuthJWT
 
 
 class SyntheticsCITest(ModelNormal):
@@ -82,6 +83,7 @@ class SyntheticsCITest(ModelNormal):
             SyntheticsBasicAuthDigest,
             SyntheticsBasicAuthOauthClient,
             SyntheticsBasicAuthOauthROP,
+            SyntheticsBasicAuthJWT,
             UnsetType,
         ] = unset,
         body: Union[str, UnsetType] = unset,
