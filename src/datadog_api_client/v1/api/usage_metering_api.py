@@ -2170,11 +2170,11 @@ class UsageMeteringApi:
 
         Get all usage across your account.
 
-        Newly added billing dimensions and usage types appear as untyped keys on the
+        SDK users only: Newly added billing dimensions and usage types appear as untyped keys on the
         ``additionalProperties`` map of ``UsageSummaryResponse`` , ``UsageSummaryDate`` , and
-        ``UsageSummaryDateOrg`` instead of as typed fields. Call
-        ``GET /api/v2/usage/summary/available_fields`` to enumerate every key returned
-        at each response level—both typed fields and ``additionalProperties`` keys.
+        ``UsageSummaryDateOrg`` instead of as typed fields. To enumerate every key at each
+        response level—both typed fields and ``additionalProperties`` keys—make a request to the
+        `Get available fields for usage summary API <https://docs.datadoghq.com/api/latest/usage-metering/#get-usage-summary-available-fields>`_.
 
         This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
 
