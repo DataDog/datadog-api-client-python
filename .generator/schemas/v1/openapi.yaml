@@ -43428,7 +43428,7 @@ paths:
         operator: OR
         permissions:
           - user_access_invite
-  "/api/v1/user/{user_handle}":
+  /api/v1/user/{user_handle}:
     delete:
       description: |-
         Delete a user from an organization.
