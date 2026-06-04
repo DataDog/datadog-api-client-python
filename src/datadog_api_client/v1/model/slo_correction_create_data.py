@@ -48,6 +48,8 @@ class SLOCorrectionCreateData(ModelNormal):
         The data object associated with the SLO correction to be created.
 
         :param attributes: The attribute object associated with the SLO correction to be created.
+
+            Exactly one of ``slo_id`` or ``slo_query`` must be provided.
         :type attributes: SLOCorrectionCreateRequestAttributes, optional
 
         :param type: SLO correction resource type.

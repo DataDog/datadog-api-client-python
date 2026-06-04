@@ -159,7 +159,8 @@ class ServiceLevelObjectiveCorrectionsApi:
     ) -> SLOCorrectionResponse:
         """Create an SLO correction.
 
-        Create an SLO Correction.
+        Create an SLO correction. Use ``slo_id`` to apply the correction to a single SLO, or ``slo_query`` to apply the
+        correction to SLOs that match a query. Exactly one of ``slo_id`` or ``slo_query`` is required.
 
         :param body: Create an SLO Correction
         :type body: SLOCorrectionCreateRequest

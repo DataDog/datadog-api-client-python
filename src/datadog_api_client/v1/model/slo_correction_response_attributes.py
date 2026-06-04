@@ -41,7 +41,8 @@ class SLOCorrectionResponseAttributes(ModelNormal):
             "modified_at": (int, none_type),
             "modifier": (SLOCorrectionResponseAttributesModifier,),
             "rrule": (str, none_type),
-            "slo_id": (str,),
+            "slo_id": (str, none_type),
+            "slo_query": (str, none_type),
             "start": (int,),
             "timezone": (str,),
         }
@@ -57,6 +58,7 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         "modifier": "modifier",
         "rrule": "rrule",
         "slo_id": "slo_id",
+        "slo_query": "slo_query",
         "start": "start",
         "timezone": "timezone",
     }
@@ -75,7 +77,8 @@ class SLOCorrectionResponseAttributes(ModelNormal):
         modified_at: Union[int, none_type, UnsetType] = unset,
         modifier: Union[SLOCorrectionResponseAttributesModifier, none_type, UnsetType] = unset,
         rrule: Union[str, none_type, UnsetType] = unset,
-        slo_id: Union[str, UnsetType] = unset,
+        slo_id: Union[str, none_type, UnsetType] = unset,
+        slo_query: Union[str, none_type, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
         timezone: Union[str, UnsetType] = unset,
         **kwargs,
@@ -111,8 +114,11 @@ class SLOCorrectionResponseAttributes(ModelNormal):
             are ``FREQ`` , ``INTERVAL`` , ``COUNT`` , ``UNTIL`` and ``BYDAY``.
         :type rrule: str, none_type, optional
 
-        :param slo_id: ID of the SLO that this correction applies to.
-        :type slo_id: str, optional
+        :param slo_id: ID of the single SLO that this correction applies to.
+        :type slo_id: str, none_type, optional
+
+        :param slo_query: Query that matches the SLOs this correction applies to.
+        :type slo_query: str, none_type, optional
 
         :param start: Starting time of the correction in epoch seconds.
         :type start: int, optional
@@ -140,6 +146,8 @@ class SLOCorrectionResponseAttributes(ModelNormal):
             kwargs["rrule"] = rrule
         if slo_id is not unset:
             kwargs["slo_id"] = slo_id
+        if slo_query is not unset:
+            kwargs["slo_query"] = slo_query
         if start is not unset:
             kwargs["start"] = start
         if timezone is not unset:

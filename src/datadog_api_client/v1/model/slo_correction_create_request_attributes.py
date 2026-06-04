@@ -29,6 +29,7 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
             "end": (int,),
             "rrule": (str,),
             "slo_id": (str,),
+            "slo_query": (str,),
             "start": (int,),
             "timezone": (str,),
         }
@@ -40,6 +41,7 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
         "end": "end",
         "rrule": "rrule",
         "slo_id": "slo_id",
+        "slo_query": "slo_query",
         "start": "start",
         "timezone": "timezone",
     }
@@ -47,17 +49,20 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
     def __init__(
         self_,
         category: SLOCorrectionCategory,
-        slo_id: str,
         start: int,
         description: Union[str, UnsetType] = unset,
         duration: Union[int, UnsetType] = unset,
         end: Union[int, UnsetType] = unset,
         rrule: Union[str, UnsetType] = unset,
+        slo_id: Union[str, UnsetType] = unset,
+        slo_query: Union[str, UnsetType] = unset,
         timezone: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         The attribute object associated with the SLO correction to be created.
+
+        Exactly one of ``slo_id`` or ``slo_query`` must be provided.
 
         :param category: Category the SLO correction belongs to.
         :type category: SLOCorrectionCategory
@@ -75,8 +80,13 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
             are ``FREQ`` , ``INTERVAL`` , ``COUNT`` , ``UNTIL`` and ``BYDAY``.
         :type rrule: str, optional
 
-        :param slo_id: ID of the SLO that this correction applies to.
-        :type slo_id: str
+        :param slo_id: ID of the single SLO that this correction applies to.
+        :type slo_id: str, optional
+
+        :param slo_query: Query that matches the SLOs this correction applies to.
+            The query uses the `Events search syntax <https://docs.datadoghq.com/events/explorer/searching/>`_
+            and can filter SLOs by SLO tags.
+        :type slo_query: str, optional
 
         :param start: Starting time of the correction in epoch seconds.
         :type start: int
@@ -92,10 +102,13 @@ class SLOCorrectionCreateRequestAttributes(ModelNormal):
             kwargs["end"] = end
         if rrule is not unset:
             kwargs["rrule"] = rrule
+        if slo_id is not unset:
+            kwargs["slo_id"] = slo_id
+        if slo_query is not unset:
+            kwargs["slo_query"] = slo_query
         if timezone is not unset:
             kwargs["timezone"] = timezone
         super().__init__(kwargs)
 
         self_.category = category
-        self_.slo_id = slo_id
         self_.start = start
