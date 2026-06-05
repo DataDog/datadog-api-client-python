@@ -4005,6 +4005,29 @@
       "type": "safe"
     }
   },
+  "UpsertLLMObsAnnotations": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "DeleteLLMObsAnnotations",
+      "parameters": [
+        {
+          "name": "queue_id",
+          "source": "path.queue_id"
+        },
+        {
+          "name": "body",
+          "template": "{\"data\": {\"type\": \"annotations\", \"attributes\": {\"annotation_ids\": [\"{{ data.attributes.annotations[0].id }}\"]}}}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsAnnotations": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateLLMObsAnnotationQueueInteractions": {
     "tag": "LLM Observability",
     "undo": {
