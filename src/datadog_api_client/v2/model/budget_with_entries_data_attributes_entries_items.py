@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_costs import (
+        BudgetWithEntriesDataAttributesEntriesItemsCosts,
+    )
     from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
         BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
     )
@@ -22,18 +25,23 @@ if TYPE_CHECKING:
 class BudgetWithEntriesDataAttributesEntriesItems(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_costs import (
+            BudgetWithEntriesDataAttributesEntriesItemsCosts,
+        )
         from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
             BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
         )
 
         return {
             "amount": (float,),
+            "costs": (BudgetWithEntriesDataAttributesEntriesItemsCosts,),
             "month": (int,),
             "tag_filters": ([BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems],),
         }
 
     attribute_map = {
         "amount": "amount",
+        "costs": "costs",
         "month": "month",
         "tag_filters": "tag_filters",
     }
@@ -41,6 +49,7 @@ class BudgetWithEntriesDataAttributesEntriesItems(ModelNormal):
     def __init__(
         self_,
         amount: Union[float, UnsetType] = unset,
+        costs: Union[BudgetWithEntriesDataAttributesEntriesItemsCosts, UnsetType] = unset,
         month: Union[int, UnsetType] = unset,
         tag_filters: Union[List[BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems], UnsetType] = unset,
         **kwargs,
@@ -51,6 +60,9 @@ class BudgetWithEntriesDataAttributesEntriesItems(ModelNormal):
         :param amount: The budgeted amount for this entry.
         :type amount: float, optional
 
+        :param costs: Cost data for a single budget entry.
+        :type costs: BudgetWithEntriesDataAttributesEntriesItemsCosts, optional
+
         :param month: The month this budget entry applies to, in YYYYMM format.
         :type month: int, optional
 
@@ -59,6 +71,8 @@ class BudgetWithEntriesDataAttributesEntriesItems(ModelNormal):
         """
         if amount is not unset:
             kwargs["amount"] = amount
+        if costs is not unset:
+            kwargs["costs"] = costs
         if month is not unset:
             kwargs["month"] = month
         if tag_filters is not unset:

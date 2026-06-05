@@ -420,6 +420,26 @@ class CloudCostManagementApi:
                     "attribute": "budget_id",
                     "location": "path",
                 },
+                "actual": {
+                    "openapi_types": (bool,),
+                    "attribute": "actual",
+                    "location": "query",
+                },
+                "forecast": {
+                    "openapi_types": (bool,),
+                    "attribute": "forecast",
+                    "location": "query",
+                },
+                "start": {
+                    "openapi_types": (int,),
+                    "attribute": "start",
+                    "location": "query",
+                },
+                "end": {
+                    "openapi_types": (int,),
+                    "attribute": "end",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -2155,17 +2175,42 @@ class CloudCostManagementApi:
     def get_budget(
         self,
         budget_id: str,
+        *,
+        actual: Union[bool, UnsetType] = unset,
+        forecast: Union[bool, UnsetType] = unset,
+        start: Union[int, UnsetType] = unset,
+        end: Union[int, UnsetType] = unset,
     ) -> BudgetWithEntries:
         """Get budget.
 
-        Get a budget
+        Get a budget by ID. Pass ``actual=true`` or ``forecast=true`` to include cost data in the response. Use ``start`` and ``end`` (millisecond epochs, both required) to set the cost window. When ``forecast=true`` , each entry also includes ``ootb_forecast`` (the ML forecast before overrides) and ``custom_forecast`` ( ``null`` if no override is set, a number if one is).
 
         :param budget_id: Budget id.
         :type budget_id: str
+        :param actual: When ``true`` , includes actual cost data in the response.
+        :type actual: bool, optional
+        :param forecast: When ``true`` , includes forecast cost data in the response, including ``ootb_forecast`` and ``custom_forecast`` per entry.
+        :type forecast: bool, optional
+        :param start: Start of the cost window in milliseconds since epoch. Must be used together with ``end``.
+        :type start: int, optional
+        :param end: End of the cost window in milliseconds since epoch. Must be used together with ``start``.
+        :type end: int, optional
         :rtype: BudgetWithEntries
         """
         kwargs: Dict[str, Any] = {}
         kwargs["budget_id"] = budget_id
+
+        if actual is not unset:
+            kwargs["actual"] = actual
+
+        if forecast is not unset:
+            kwargs["forecast"] = forecast
+
+        if start is not unset:
+            kwargs["start"] = start
+
+        if end is not unset:
+            kwargs["end"] = end
 
         return self._get_budget_endpoint.call_with_http_info(**kwargs)
 
