@@ -65,6 +65,28 @@ class SyntheticsBasicAuth(ModelComposed):
 
         :param token_api_authentication: Type of token to use when performing the authentication.
         :type token_api_authentication: SyntheticsBasicAuthOauthTokenApiAuthentication
+
+        :param add_claims: Standard JWT claims to automatically inject.
+        :type add_claims: SyntheticsBasicAuthJWTAddClaims, optional
+
+        :param algorithm: Algorithm to use for the JWT authentication.
+        :type algorithm: SyntheticsBasicAuthJWTAlgorithm
+
+        :param expires_in: Token time-to-live in seconds.
+        :type expires_in: int, optional
+
+        :param header: Custom JWT header as a JSON string.
+        :type header: str, optional
+
+        :param payload: JWT claims as a JSON string.
+        :type payload: str
+
+        :param secret: Signing key for the JWT authentication. Use the shared secret for `HS256`
+            or the private key (PEM format) for `RS256` and `ES256`.
+        :type secret: str
+
+        :param token_prefix: Prefix added before the token in the `Authorization` header. Defaults to `Bearer`.
+        :type token_prefix: str, optional
         """
         super().__init__(kwargs)
 
@@ -83,6 +105,7 @@ class SyntheticsBasicAuth(ModelComposed):
         from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
         from datadog_api_client.v1.model.synthetics_basic_auth_oauth_client import SyntheticsBasicAuthOauthClient
         from datadog_api_client.v1.model.synthetics_basic_auth_oauth_rop import SyntheticsBasicAuthOauthROP
+        from datadog_api_client.v1.model.synthetics_basic_auth_jwt import SyntheticsBasicAuthJWT
 
         return {
             "oneOf": [
@@ -92,5 +115,6 @@ class SyntheticsBasicAuth(ModelComposed):
                 SyntheticsBasicAuthDigest,
                 SyntheticsBasicAuthOauthClient,
                 SyntheticsBasicAuthOauthROP,
+                SyntheticsBasicAuthJWT,
             ],
         }

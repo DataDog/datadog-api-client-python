@@ -5457,6 +5457,34 @@ datadog\_api\_client.v1.model.synthetics\_basic\_auth\_digest\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.synthetics\_basic\_auth\_jwt module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_jwt
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_basic\_auth\_jwt\_add\_claims module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_jwt_add_claims
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_basic\_auth\_jwt\_algorithm module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_jwt_algorithm
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.synthetics\_basic\_auth\_jwt\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.synthetics_basic_auth_jwt_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.synthetics\_basic\_auth\_ntlm module
 ------------------------------------------------------------------
 
