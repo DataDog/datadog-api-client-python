@@ -28046,6 +28046,34 @@ datadog\_api\_client.v2.model.org\_resource\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.org\_saml\_preferences\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_saml_preferences_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_saml\_preferences\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_saml_preferences_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_saml\_preferences\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_saml_preferences_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_saml\_preferences\_update\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_saml_preferences_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.organization module
 -------------------------------------------------
 
@@ -32369,6 +32397,69 @@ datadog\_api\_client.v2.model.saml\_assertion\_attributes\_type module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.saml_assertion_attributes_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configuration module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configuration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configuration\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configuration_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configuration\_relationships module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configuration_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configuration\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configuration_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configuration\_update\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configuration_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configuration\_update\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configuration_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configuration\_update\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configuration_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configurations\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configurations_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.saml\_configurations\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.saml_configurations_type
    :members:
    :show-inheritance:
 

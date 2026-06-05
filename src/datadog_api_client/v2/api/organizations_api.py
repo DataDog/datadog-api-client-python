@@ -13,9 +13,13 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
+from datadog_api_client.v2.model.org_saml_preferences_update_request import OrgSAMLPreferencesUpdateRequest
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
 from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
 from datadog_api_client.v2.model.org_config_write_request import OrgConfigWriteRequest
+from datadog_api_client.v2.model.saml_configurations_response import SAMLConfigurationsResponse
+from datadog_api_client.v2.model.saml_configuration_response import SAMLConfigurationResponse
+from datadog_api_client.v2.model.saml_configuration_update_request import SAMLConfigurationUpdateRequest
 
 
 class OrganizationsApi:
@@ -42,6 +46,29 @@ class OrganizationsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "org_config_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_saml_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (SAMLConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/saml_configurations/{saml_config_uuid}",
+                "operation_id": "get_saml_configuration",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "saml_config_uuid": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "saml_config_uuid",
                     "location": "path",
                 },
             },
@@ -89,6 +116,22 @@ class OrganizationsApi:
             api_client=api_client,
         )
 
+        self._list_saml_configurations_endpoint = _Endpoint(
+            settings={
+                "response_type": (SAMLConfigurationsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/saml_configurations",
+                "operation_id": "list_saml_configurations",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._update_org_config_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgConfigGetResponse,),
@@ -108,6 +151,52 @@ class OrganizationsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (OrgConfigWriteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_org_saml_configurations_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/org/saml_configurations",
+                "operation_id": "update_org_saml_configurations",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (OrgSAMLPreferencesUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_saml_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (SAMLConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/saml_configurations/{saml_config_uuid}",
+                "operation_id": "update_saml_configuration",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "saml_config_uuid": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "saml_config_uuid",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SAMLConfigurationUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -152,6 +241,23 @@ class OrganizationsApi:
 
         return self._get_org_config_endpoint.call_with_http_info(**kwargs)
 
+    def get_saml_configuration(
+        self,
+        saml_config_uuid: str,
+    ) -> SAMLConfigurationResponse:
+        """Get a SAML configuration.
+
+        Get a single SAML configuration for the current organization by its UUID.
+
+        :param saml_config_uuid: The UUID of the SAML configuration.
+        :type saml_config_uuid: str
+        :rtype: SAMLConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["saml_config_uuid"] = saml_config_uuid
+
+        return self._get_saml_configuration_endpoint.call_with_http_info(**kwargs)
+
     def list_org_configs(
         self,
     ) -> OrgConfigListResponse:
@@ -183,6 +289,18 @@ class OrganizationsApi:
 
         return self._list_orgs_endpoint.call_with_http_info(**kwargs)
 
+    def list_saml_configurations(
+        self,
+    ) -> SAMLConfigurationsResponse:
+        """List SAML configurations.
+
+        Get the list of SAML configurations for the current organization. An organization has at most one SAML configuration.
+
+        :rtype: SAMLConfigurationsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_saml_configurations_endpoint.call_with_http_info(**kwargs)
+
     def update_org_config(
         self,
         org_config_name: str,
@@ -203,6 +321,50 @@ class OrganizationsApi:
         kwargs["body"] = body
 
         return self._update_org_config_endpoint.call_with_http_info(**kwargs)
+
+    def update_org_saml_configurations(
+        self,
+        body: OrgSAMLPreferencesUpdateRequest,
+    ) -> None:
+        """Update organization SAML preferences.
+
+        Update the SAML preferences for the current organization.
+
+        Use this endpoint to set the just-in-time (JIT) provisioning domains and the default role
+        assigned to just-in-time provisioned users.
+
+        :type body: OrgSAMLPreferencesUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_org_saml_configurations_endpoint.call_with_http_info(**kwargs)
+
+    def update_saml_configuration(
+        self,
+        saml_config_uuid: str,
+        body: SAMLConfigurationUpdateRequest,
+    ) -> SAMLConfigurationResponse:
+        """Update a SAML configuration.
+
+        Update a single SAML configuration for the current organization.
+
+        Use this endpoint to enable or disable identity-provider-initiated login, set the
+        just-in-time provisioning domains, and set the default role assigned to
+        just-in-time provisioned users. A default role is required to enable just-in-time provisioning.
+
+        :param saml_config_uuid: The UUID of the SAML configuration.
+        :type saml_config_uuid: str
+        :type body: SAMLConfigurationUpdateRequest
+        :rtype: SAMLConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["saml_config_uuid"] = saml_config_uuid
+
+        kwargs["body"] = body
+
+        return self._update_saml_configuration_endpoint.call_with_http_info(**kwargs)
 
     def upload_idp_metadata(
         self,

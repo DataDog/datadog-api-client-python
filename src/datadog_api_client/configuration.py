@@ -598,6 +598,7 @@ class Configuration:
                 "v2.get_scopes_restriction": False,
                 "v2.register_o_auth_client": False,
                 "v2.upsert_scopes_restriction": False,
+                "v2.update_org_saml_configurations": False,
                 "v2.disable_customer_org": False,
                 "v2.bulk_update_org_group_memberships": False,
                 "v2.create_org_group": False,

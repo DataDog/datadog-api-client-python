@@ -5208,6 +5208,12 @@
       "type": "unsafe"
     }
   },
+  "UpdateOrgSamlConfigurations": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListOrgConfigs": {
     "tag": "Organizations",
     "undo": {
@@ -6304,7 +6310,25 @@
       "type": "safe"
     }
   },
+  "ListSAMLConfigurations": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UploadIdPMetadata": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSAMLConfiguration": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSAMLConfiguration": {
     "tag": "Organizations",
     "undo": {
       "type": "idempotent"
