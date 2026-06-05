@@ -1364,6 +1364,13 @@ def validate_and_convert_types(
         valid_classes_coercible = remove_uncoercible(
             valid_classes, input_value, spec_property_naming, must_convert=False
         )
+        # Preserve integer precision past 2^53: skip the (int, float) upconversion
+        # when `int` is already a valid target. Without this guard, the loop below
+        # would call `float(big_int)` for additionalProperties (whose default
+        # `additional_properties_type` contains both float and int) and silently
+        # round any integer above 2^53 to the nearest float64 representation.
+        if type(input_value) is int and int in valid_classes and float in valid_classes_coercible:
+            valid_classes_coercible = [c for c in valid_classes_coercible if c is not float]
         if valid_classes_coercible:
             return attempt_convert_item(
                 input_value,

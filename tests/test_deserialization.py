@@ -308,3 +308,34 @@ def test_get_api_test():
     path_to_item = ["received_data", "config", "steps"]
     converted_value = validate_and_convert_types(value, required_types_mixed, path_to_item, True, True, Configuration())
     assert isinstance(converted_value[0], UnparsedObject)
+
+
+def test_additional_properties_preserve_integer_precision():
+    """JSON integers above 2^53 must survive deserialization into a model's
+    additionalProperties without being silently rounded to float64."""
+    from datadog_api_client.v1.model.usage_summary_response import UsageSummaryResponse
+
+    # 2^53 + 1 — the smallest integer not exactly representable in float64.
+    edge = 9007199254740993
+    # A real byte-count value seen in /api/v1/usage/summary at large orgs.
+    realistic = 56355942906113522
+
+    body = json.dumps({"some_unknown_field": edge, "another_unknown_field": realistic})
+    config = Configuration()
+    deserialized = validate_and_convert_types(
+        json.loads(body), (UsageSummaryResponse,), ["received_data"], True, True, config
+    )
+
+    v_edge = deserialized["some_unknown_field"]
+    v_real = deserialized["another_unknown_field"]
+    assert type(v_edge) is int and v_edge == edge, f"expected int {edge}, got {type(v_edge).__name__} {v_edge!r}"
+    assert (
+        type(v_real) is int and v_real == realistic
+    ), f"expected int {realistic}, got {type(v_real).__name__} {v_real!r}"
+
+
+def test_schema_declared_float_still_upconverts_int_input():
+    """Regression guard: when the schema explicitly declares a field as float,
+    an integer JSON value must still upconvert to float."""
+    converted = validate_and_convert_types(3, (float,), ["received_data"], True, True, Configuration())
+    assert type(converted) is float and converted == 3.0
