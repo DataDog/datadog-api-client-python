@@ -3210,6 +3210,69 @@ datadog\_api\_client.v2.model.aws\_ccm\_config\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_issue module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_issue
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_issue\_code module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_issue_code
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_request\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_request\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_response\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_response\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_ccm\_config\_validation\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_ccm_config_validation_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_cloud\_auth\_persona\_mapping\_attributes\_response module
 ---------------------------------------------------------------------------------------------
 
