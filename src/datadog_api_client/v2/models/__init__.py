@@ -6371,6 +6371,19 @@ from datadog_api_client.v2.model.rum_permanent_retention_filter_update_request i
     RumPermanentRetentionFilterUpdateRequest,
 )
 from datadog_api_client.v2.model.rum_permanent_retention_filters_response import RumPermanentRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_rate_limit_adaptive_config import RumRateLimitAdaptiveConfig
+from datadog_api_client.v2.model.rum_rate_limit_config_attributes import RumRateLimitConfigAttributes
+from datadog_api_client.v2.model.rum_rate_limit_config_data import RumRateLimitConfigData
+from datadog_api_client.v2.model.rum_rate_limit_config_response import RumRateLimitConfigResponse
+from datadog_api_client.v2.model.rum_rate_limit_config_type import RumRateLimitConfigType
+from datadog_api_client.v2.model.rum_rate_limit_config_update_attributes import RumRateLimitConfigUpdateAttributes
+from datadog_api_client.v2.model.rum_rate_limit_config_update_data import RumRateLimitConfigUpdateData
+from datadog_api_client.v2.model.rum_rate_limit_config_update_request import RumRateLimitConfigUpdateRequest
+from datadog_api_client.v2.model.rum_rate_limit_custom_config import RumRateLimitCustomConfig
+from datadog_api_client.v2.model.rum_rate_limit_mode import RumRateLimitMode
+from datadog_api_client.v2.model.rum_rate_limit_quota_reached_action import RumRateLimitQuotaReachedAction
+from datadog_api_client.v2.model.rum_rate_limit_scope_type import RumRateLimitScopeType
+from datadog_api_client.v2.model.rum_rate_limit_window_type import RumRateLimitWindowType
 from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
 from datadog_api_client.v2.model.rum_retention_filter_create_attributes import RumRetentionFilterCreateAttributes
 from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
@@ -13458,6 +13471,19 @@ __all__ = [
     "RumPermanentRetentionFilterUpdateData",
     "RumPermanentRetentionFilterUpdateRequest",
     "RumPermanentRetentionFiltersResponse",
+    "RumRateLimitAdaptiveConfig",
+    "RumRateLimitConfigAttributes",
+    "RumRateLimitConfigData",
+    "RumRateLimitConfigResponse",
+    "RumRateLimitConfigType",
+    "RumRateLimitConfigUpdateAttributes",
+    "RumRateLimitConfigUpdateData",
+    "RumRateLimitConfigUpdateRequest",
+    "RumRateLimitCustomConfig",
+    "RumRateLimitMode",
+    "RumRateLimitQuotaReachedAction",
+    "RumRateLimitScopeType",
+    "RumRateLimitWindowType",
     "RumRetentionFilterAttributes",
     "RumRetentionFilterCreateAttributes",
     "RumRetentionFilterCreateData",
