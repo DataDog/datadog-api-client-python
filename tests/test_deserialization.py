@@ -328,12 +328,10 @@ def test_additional_properties_preserve_integer_precision():
 
     v_edge = deserialized["some_unknown_field"]
     v_real = deserialized["another_unknown_field"]
-    assert type(v_edge) is int and v_edge == edge, (
-        f"expected int {edge}, got {type(v_edge).__name__} {v_edge!r}"
-    )
-    assert type(v_real) is int and v_real == realistic, (
-        f"expected int {realistic}, got {type(v_real).__name__} {v_real!r}"
-    )
+    assert type(v_edge) is int and v_edge == edge, f"expected int {edge}, got {type(v_edge).__name__} {v_edge!r}"
+    assert (
+        type(v_real) is int and v_real == realistic
+    ), f"expected int {realistic}, got {type(v_real).__name__} {v_real!r}"
 
 
 def test_schema_declared_float_still_upconverts_int_input():
