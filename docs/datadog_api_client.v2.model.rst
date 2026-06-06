@@ -4421,6 +4421,20 @@ datadog\_api\_client.v2.model.budget\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.budget\_attributes\_costs module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_attributes_costs
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_attributes\_costs\_unit module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_attributes_costs_unit
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.budget\_validation\_request module
 ----------------------------------------------------------------
 
@@ -4488,6 +4502,13 @@ datadog\_api\_client.v2.model.budget\_with\_entries\_data\_attributes\_entries\_
 --------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.budget\_with\_entries\_data\_attributes\_entries\_items\_costs module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_costs
    :members:
    :show-inheritance:
 

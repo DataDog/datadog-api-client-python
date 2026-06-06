@@ -811,6 +811,8 @@ from datadog_api_client.v2.model.branch_coverage_summary_request_type import Bra
 from datadog_api_client.v2.model.budget import Budget
 from datadog_api_client.v2.model.budget_array import BudgetArray
 from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
+from datadog_api_client.v2.model.budget_attributes_costs import BudgetAttributesCosts
+from datadog_api_client.v2.model.budget_attributes_costs_unit import BudgetAttributesCostsUnit
 from datadog_api_client.v2.model.budget_validation_request import BudgetValidationRequest
 from datadog_api_client.v2.model.budget_validation_request_data import BudgetValidationRequestData
 from datadog_api_client.v2.model.budget_validation_response import BudgetValidationResponse
@@ -824,6 +826,9 @@ from datadog_api_client.v2.model.budget_with_entries_data import BudgetWithEntri
 from datadog_api_client.v2.model.budget_with_entries_data_attributes import BudgetWithEntriesDataAttributes
 from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items import (
     BudgetWithEntriesDataAttributesEntriesItems,
+)
+from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_costs import (
+    BudgetWithEntriesDataAttributesEntriesItemsCosts,
 )
 from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
     BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
@@ -9536,6 +9541,8 @@ __all__ = [
     "Budget",
     "BudgetArray",
     "BudgetAttributes",
+    "BudgetAttributesCosts",
+    "BudgetAttributesCostsUnit",
     "BudgetValidationRequest",
     "BudgetValidationRequestData",
     "BudgetValidationResponse",
@@ -9546,6 +9553,7 @@ __all__ = [
     "BudgetWithEntriesData",
     "BudgetWithEntriesDataAttributes",
     "BudgetWithEntriesDataAttributesEntriesItems",
+    "BudgetWithEntriesDataAttributesEntriesItemsCosts",
     "BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems",
     "BudgetWithEntriesDataType",
     "BulkDeleteAppsDatastoreItemsRequest",
