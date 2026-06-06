@@ -49,7 +49,7 @@ class IPAllowlistData(ModelNormal):
         :param attributes: Attributes of the IP allowlist.
         :type attributes: IPAllowlistAttributes, optional
 
-        :param id: The unique identifier of the org.
+        :param id: The unique identifier of the organization.
         :type id: str, optional
 
         :param type: IP allowlist type.
