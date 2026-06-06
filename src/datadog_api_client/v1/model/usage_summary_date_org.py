@@ -950,10 +950,10 @@ class UsageSummaryDateOrg(ModelNormal):
         """
         Global hourly report of all data billed by Datadog for a given organization.
 
-        Newly added billing dimensions and usage types appear as untyped keys on the
-        ``additionalProperties`` map instead of as typed fields. Call
-        ``GET /api/v2/usage/summary/available_fields`` to enumerate every key returned
-        at this response level—both typed fields and ``additionalProperties`` keys.
+        SDK users only: Newly added billing dimensions and usage types appear as untyped keys on the
+        ``additionalProperties`` map instead of as typed fields. To enumerate every key at this
+        response level—both typed fields and ``additionalProperties`` keys—make a request to the
+        `Get available fields for usage summary API <https://docs.datadoghq.com/api/latest/usage-metering/#get-usage-summary-available-fields>`_.
 
         :param account_name: The account name.
         :type account_name: str, optional
