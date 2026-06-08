@@ -32288,6 +32288,97 @@ datadog\_api\_client.v2.model.rum\_query\_page\_options module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_rate\_limit\_adaptive\_config module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_adaptive_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_config\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_config\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_config\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_config\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_config\_update\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_config\_update\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_config_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_config\_update\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_config_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_custom\_config module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_custom_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_mode module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_quota\_reached\_action module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_quota_reached_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_scope\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_scope_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_rate\_limit\_window\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_rate_limit_window_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_response\_links module
 ---------------------------------------------------------
 

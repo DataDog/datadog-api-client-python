@@ -6210,6 +6210,24 @@
       "type": "idempotent"
     }
   },
+  "DeleteRumRateLimitConfig": {
+    "tag": "Rum Rate Limit",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRumRateLimitConfig": {
+    "tag": "Rum Rate Limit",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRumRateLimitConfig": {
+    "tag": "Rum Rate Limit",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListRUMEvents": {
     "tag": "RUM",
     "undo": {
