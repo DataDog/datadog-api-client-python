@@ -394,6 +394,7 @@ class Configuration:
                 "v2.cancel_historical_job": False,
                 "v2.convert_job_result_to_signal": False,
                 "v2.convert_security_monitoring_terraform_resource": False,
+                "v2.create_io_c_triage_state": False,
                 "v2.create_sample_log_generation_subscription": False,
                 "v2.create_security_monitoring_dataset": False,
                 "v2.create_security_monitoring_integration_config": False,

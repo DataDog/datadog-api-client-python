@@ -18169,6 +18169,55 @@ datadog\_api\_client.v2.model.io\_c\_source module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.io\_c\_triage\_event module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_triage_event
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_triage\_write\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_triage_write_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_triage\_write\_request\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_triage_write_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_triage\_write\_request\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_triage_write_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_triage\_write\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_triage_write_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_triage\_write\_response\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_triage_write_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.io\_c\_triage\_write\_response\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.io_c_triage_write_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ios\_sourcemap\_attributes module
 ---------------------------------------------------------------
 

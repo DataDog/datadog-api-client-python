@@ -954,6 +954,22 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: Create or update an indicator triage state returns "Bad Request" response
+    Given operation "CreateIoCTriageState" enabled
+    And new "CreateIoCTriageState" request
+    And body with value {"data": {"attributes": {"indicator": "192.0.2.1", "triage_state": "invalid_state"}, "type": "ioc_triage_state"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: Create or update an indicator triage state returns "Created" response
+    Given operation "CreateIoCTriageState" enabled
+    And new "CreateIoCTriageState" request
+    And body with value {"data": {"attributes": {"indicator": "192.0.2.1", "triage_state": "reviewed"}, "type": "ioc_triage_state"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Deactivate content pack returns "Accepted" response
     Given operation "DeactivateContentPack" enabled
@@ -1730,7 +1746,8 @@ Feature: Security Monitoring
   Scenario: Get an indicator of compromise returns "OK" response
     Given operation "GetIndicatorOfCompromise" enabled
     And new "GetIndicatorOfCompromise" request
-    And request contains "indicator" parameter with value "masscan/1.3 (https://github.com/robertdavidgraham/masscan)"
+    And request contains "indicator" parameter with value "192.0.2.1"
+    And request contains "include_triage_history" parameter with value true
     When the request is sent
     Then the response status is 200 OK
 

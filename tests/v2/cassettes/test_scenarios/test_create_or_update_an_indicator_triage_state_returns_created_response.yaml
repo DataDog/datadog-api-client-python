@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"indicator":"192.0.2.1","triage_state":"reviewed"},"type":"ioc_triage_state"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/siem/ioc-explorer/triage
+  response:
+    body:
+      string: '{"data":{"id":"2e6eff68-4ffa-4cab-b9bb-d9ce1ef3b42a","type":"ioc_triage_state","attributes":{"created_at":"2026-06-05T12:22:26.488248Z","indicator":"192.0.2.1","triage_state":"reviewed","triaged_at":"2026-06-05T12:22:26.488248Z","triaged_by":"dc6535c4-0b70-47aa-9c6a-9b0fc0be3f19"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+version: 1

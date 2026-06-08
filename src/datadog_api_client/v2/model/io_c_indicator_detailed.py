@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.io_c_source import IoCSource
     from datadog_api_client.v2.model.io_c_score_effect import IoCScoreEffect
     from datadog_api_client.v2.model.io_c_signal_severity_count import IoCSignalSeverityCount
+    from datadog_api_client.v2.model.io_c_triage_event import IoCTriageEvent
 
 
 class IoCIndicatorDetailed(ModelNormal):
@@ -31,6 +32,7 @@ class IoCIndicatorDetailed(ModelNormal):
         from datadog_api_client.v2.model.io_c_source import IoCSource
         from datadog_api_client.v2.model.io_c_score_effect import IoCScoreEffect
         from datadog_api_client.v2.model.io_c_signal_severity_count import IoCSignalSeverityCount
+        from datadog_api_client.v2.model.io_c_triage_event import IoCTriageEvent
 
         return {
             "additional_data": (
@@ -78,6 +80,10 @@ class IoCIndicatorDetailed(ModelNormal):
             "signal_tier": (int,),
             "suspicious_sources": ([IoCSource], none_type),
             "tags": ([str],),
+            "triage_history": ([IoCTriageEvent],),
+            "triage_state": (str,),
+            "triaged_at": (datetime,),
+            "triaged_by": (str,),
             "users": ({str: ([str],)},),
         }
 
@@ -112,6 +118,10 @@ class IoCIndicatorDetailed(ModelNormal):
         "signal_tier": "signal_tier",
         "suspicious_sources": "suspicious_sources",
         "tags": "tags",
+        "triage_history": "triage_history",
+        "triage_state": "triage_state",
+        "triaged_at": "triaged_at",
+        "triaged_by": "triaged_by",
         "users": "users",
     }
 
@@ -147,6 +157,10 @@ class IoCIndicatorDetailed(ModelNormal):
         signal_tier: Union[int, UnsetType] = unset,
         suspicious_sources: Union[List[IoCSource], none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
+        triage_history: Union[List[IoCTriageEvent], UnsetType] = unset,
+        triage_state: Union[str, UnsetType] = unset,
+        triaged_at: Union[datetime, UnsetType] = unset,
+        triaged_by: Union[str, UnsetType] = unset,
         users: Union[Dict[str, List[str]], UnsetType] = unset,
         **kwargs,
     ):
@@ -243,6 +257,18 @@ class IoCIndicatorDetailed(ModelNormal):
         :param tags: Tags associated with the indicator.
         :type tags: [str], optional
 
+        :param triage_history: Full triage history timeline. Returned only when ``include_triage_history`` is true.
+        :type triage_history: [IoCTriageEvent], optional
+
+        :param triage_state: Current triage state of the indicator: not_reviewed or reviewed.
+        :type triage_state: str, optional
+
+        :param triaged_at: Timestamp when the indicator was last triaged.
+        :type triaged_at: datetime, optional
+
+        :param triaged_by: UUID of the user who last triaged the indicator.
+        :type triaged_by: str, optional
+
         :param users: Users associated with this indicator, grouped by category.
         :type users: {str: ([str],)}, optional
         """
@@ -306,6 +332,14 @@ class IoCIndicatorDetailed(ModelNormal):
             kwargs["suspicious_sources"] = suspicious_sources
         if tags is not unset:
             kwargs["tags"] = tags
+        if triage_history is not unset:
+            kwargs["triage_history"] = triage_history
+        if triage_state is not unset:
+            kwargs["triage_state"] = triage_state
+        if triaged_at is not unset:
+            kwargs["triaged_at"] = triaged_at
+        if triaged_by is not unset:
+            kwargs["triaged_by"] = triaged_by
         if users is not unset:
             kwargs["users"] = users
         super().__init__(kwargs)
