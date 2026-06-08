@@ -8,6 +8,7 @@ from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWa
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v2.model.downtime_response import DowntimeResponse
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
@@ -332,6 +333,55 @@ def test_additional_properties_preserve_integer_precision():
     assert (
         type(v_real) is int and v_real == realistic
     ), f"expected int {realistic}, got {type(v_real).__name__} {v_real!r}"
+
+
+def test_empty_group_by_list_does_not_raise_on_serialization():
+    """Regression guard: a query_value widget with group_by: [] must not raise
+    IndexError when the response is printed or serialized via to_dict().
+
+    The oneOf matcher for FormulaAndFunctionEventQueryGroupByConfig cannot
+    resolve an empty list to a variant, leaving _composed_instances empty.
+    model_to_dict() and get_oneof_instance() must handle this gracefully."""
+    body = """{
+        "id": "abc-def-ghi",
+        "title": "Test Dashboard",
+        "layout_type": "ordered",
+        "widgets": [
+            {
+                "id": 1234567890,
+                "definition": {
+                    "type": "query_value",
+                    "requests": [
+                        {
+                            "response_format": "scalar",
+                            "queries": [
+                                {
+                                    "data_source": "logs",
+                                    "name": "query1",
+                                    "search": {"query": ""},
+                                    "indexes": ["*"],
+                                    "compute": {"aggregation": "count"},
+                                    "group_by": [],
+                                    "storage": "hot"
+                                }
+                            ]
+                        }
+                    ],
+                    "autoscale": true,
+                    "precision": 2
+                },
+                "layout": {"x": 0, "y": 0, "width": 2, "height": 2}
+            }
+        ]
+    }"""
+    config = Configuration()
+    deserialized_data = validate_and_convert_types(
+        json.loads(body), (Dashboard,), ["received_data"], True, True, config
+    )
+    assert isinstance(deserialized_data, Dashboard)
+    result = model_to_dict(deserialized_data)
+    assert result["title"] == "Test Dashboard"
+    assert str(deserialized_data) != ""
 
 
 def test_schema_declared_float_still_upconverts_int_input():
