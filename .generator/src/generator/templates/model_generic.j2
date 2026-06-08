@@ -74,6 +74,9 @@ class {{ name }}(ModelNormal):
 {%- if model.nullable %}
     _nullable = True
 {%- endif %}
+{%- if model.get("x-keep-typed-in-additional-properties") %}
+    _keep_typed_in_additional_properties = True
+{%- endif %}
 
 {%- if model.properties %}
     @cached_property
