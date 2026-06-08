@@ -4617,6 +4617,49 @@
       "type": "unsafe"
     }
   },
+  "ListTagIndexingRules": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteTagIndexingRule",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderTagIndexingRules": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListActiveMetricConfigurations": {
     "tag": "Metrics",
     "undo": {
@@ -4642,6 +4685,37 @@
     }
   },
   "GetMetricTagCardinalityDetails": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteTagIndexingRuleExemption": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagIndexingRuleExemption": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTagIndexingRuleExemption": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteTagIndexingRuleExemption",
+      "parameters": [
+        {
+          "name": "metric_name",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListTagIndexingRulesForMetric": {
     "tag": "Metrics",
     "undo": {
       "type": "safe"

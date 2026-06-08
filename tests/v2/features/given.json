@@ -905,6 +905,34 @@
   {
     "parameters": [
       {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"tag_indexing_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique_alnum }}\",\n      \"metric_name_matches\": [\"dd.{{ unique_alnum }}.*\"],\n      \"tags\": [\"env\", \"service\"]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"tag_indexing_rule\" in the system",
+    "key": "tag_indexing_rule",
+    "tag": "Metrics",
+    "operationId": "CreateTagIndexingRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "metric_name",
+        "value": "\"{{ unique_metric_name }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"tag_indexing_rule_exemptions\",\n    \"attributes\": {\n      \"reason\": \"BDD test exemption\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"tag_indexing_rule_exemption\" in the system",
+    "key": "tag_indexing_rule_exemption",
+    "tag": "Metrics",
+    "operationId": "CreateTagIndexingRuleExemption"
+  },
+  {
+    "parameters": [
+      {
         "name": "metric_name",
         "value": "\"{{ unique_alnum }}\""
       },
