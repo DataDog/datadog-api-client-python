@@ -24,6 +24,11 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import Me
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
+from datadog_api_client.v2.model.tag_indexing_rules_response import TagIndexingRulesResponse
+from datadog_api_client.v2.model.tag_indexing_rule_response import TagIndexingRuleResponse
+from datadog_api_client.v2.model.tag_indexing_rule_create_request import TagIndexingRuleCreateRequest
+from datadog_api_client.v2.model.tag_indexing_rule_order_request import TagIndexingRuleOrderRequest
+from datadog_api_client.v2.model.tag_indexing_rule_update_request import TagIndexingRuleUpdateRequest
 from datadog_api_client.v2.model.metric_suggested_tags_and_aggregations_response import (
     MetricSuggestedTagsAndAggregationsResponse,
 )
@@ -31,6 +36,8 @@ from datadog_api_client.v2.model.metric_all_tags_response import MetricAllTagsRe
 from datadog_api_client.v2.model.metric_assets_response import MetricAssetsResponse
 from datadog_api_client.v2.model.metric_estimate_response import MetricEstimateResponse
 from datadog_api_client.v2.model.metric_tag_cardinalities_response import MetricTagCardinalitiesResponse
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_response import TagIndexingRuleExemptionResponse
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_create_request import TagIndexingRuleExemptionCreateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
 from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
@@ -114,6 +121,52 @@ class MetricsApi:
             api_client=api_client,
         )
 
+        self._create_tag_indexing_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/tag-indexing-rules",
+                "operation_id": "create_tag_indexing_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TagIndexingRuleCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_tag_indexing_rule_exemption_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRuleExemptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/tag-indexing-rule-exemptions",
+                "operation_id": "create_tag_indexing_rule_exemption",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TagIndexingRuleExemptionCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_bulk_tags_metrics_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricBulkTagConfigResponse,),
@@ -140,6 +193,52 @@ class MetricsApi:
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "delete_tag_configuration",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_tag_indexing_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/tag-indexing-rules/{id}",
+                "operation_id": "delete_tag_indexing_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_tag_indexing_rule_exemption_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/tag-indexing-rule-exemptions",
+                "operation_id": "delete_tag_indexing_rule_exemption",
                 "http_method": "DELETE",
                 "version": "v2",
             },
@@ -221,6 +320,52 @@ class MetricsApi:
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tag-cardinalities",
                 "operation_id": "get_metric_tag_cardinality_details",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_tag_indexing_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/tag-indexing-rules/{id}",
+                "operation_id": "get_tag_indexing_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_tag_indexing_rule_exemption_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRuleExemptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/tag-indexing-rule-exemptions",
+                "operation_id": "get_tag_indexing_rule_exemption",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -396,6 +541,61 @@ class MetricsApi:
             api_client=api_client,
         )
 
+        self._list_tag_indexing_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/tag-indexing-rules",
+                "operation_id": "list_tag_indexing_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "search": {
+                    "openapi_types": (str,),
+                    "attribute": "search",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_tag_indexing_rules_for_metric_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/tag-indexing-rules",
+                "operation_id": "list_tag_indexing_rules_for_metric",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_tags_by_metric_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricAllTagsResponse,),
@@ -521,6 +721,26 @@ class MetricsApi:
             api_client=api_client,
         )
 
+        self._reorder_tag_indexing_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/tag-indexing-rules/order",
+                "operation_id": "reorder_tag_indexing_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TagIndexingRuleOrderRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._submit_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (IntakePayloadAccepted,),
@@ -565,6 +785,32 @@ class MetricsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (MetricTagConfigurationUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_tag_indexing_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/tag-indexing-rules/{id}",
+                "operation_id": "update_tag_indexing_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TagIndexingRuleUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -619,6 +865,46 @@ class MetricsApi:
 
         return self._create_tag_configuration_endpoint.call_with_http_info(**kwargs)
 
+    def create_tag_indexing_rule(
+        self,
+        body: TagIndexingRuleCreateRequest,
+    ) -> TagIndexingRuleResponse:
+        """Create a tag indexing rule.
+
+        Create a tag indexing rule for the org. ``rule_order`` is assigned server-side as max+1
+        among existing rules; use the reorder endpoint to change the evaluation order.
+        Requires the ``Manage Tags for Metrics`` permission.
+
+        :type body: TagIndexingRuleCreateRequest
+        :rtype: TagIndexingRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_tag_indexing_rule_endpoint.call_with_http_info(**kwargs)
+
+    def create_tag_indexing_rule_exemption(
+        self,
+        metric_name: str,
+        body: TagIndexingRuleExemptionCreateRequest,
+    ) -> TagIndexingRuleExemptionResponse:
+        """Create a tag indexing rule exemption.
+
+        Exempt a metric from all tag indexing rules. The response includes the created
+        exemption resource. Requires the ``Manage Tags for Metrics`` permission.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :type body: TagIndexingRuleExemptionCreateRequest
+        :rtype: TagIndexingRuleExemptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        kwargs["body"] = body
+
+        return self._create_tag_indexing_rule_exemption_endpoint.call_with_http_info(**kwargs)
+
     def delete_bulk_tags_metrics_configuration(
         self,
         body: MetricBulkTagConfigDeleteRequest,
@@ -656,6 +942,44 @@ class MetricsApi:
         kwargs["metric_name"] = metric_name
 
         return self._delete_tag_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_tag_indexing_rule(
+        self,
+        id: str,
+    ) -> None:
+        """Delete a tag indexing rule.
+
+        Soft-delete a tag indexing rule. Idempotent: returns 204 whether the rule existed or was already deleted.
+        Remaining rules in the org are automatically re-sequenced to keep ``rule_order`` dense and 1-based.
+        Requires the ``Manage Tags for Metrics`` permission.
+
+        :param id: ID of the tag indexing rule.
+        :type id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._delete_tag_indexing_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_tag_indexing_rule_exemption(
+        self,
+        metric_name: str,
+    ) -> None:
+        """Delete a tag indexing rule exemption.
+
+        Remove a metric's exemption from tag indexing rules. Idempotent: returns 204 whether or not
+        an exemption existed. Any associated legacy tag configuration record is also removed.
+        Requires the ``Manage Tags for Metrics`` permission.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._delete_tag_indexing_rule_exemption_endpoint.call_with_http_info(**kwargs)
 
     def estimate_metrics_output_series(
         self,
@@ -721,6 +1045,43 @@ class MetricsApi:
         kwargs["metric_name"] = metric_name
 
         return self._get_metric_tag_cardinality_details_endpoint.call_with_http_info(**kwargs)
+
+    def get_tag_indexing_rule(
+        self,
+        id: str,
+    ) -> TagIndexingRuleResponse:
+        """Get a tag indexing rule.
+
+        Get a single tag indexing rule by its UUID.
+
+        :param id: ID of the tag indexing rule.
+        :type id: str
+        :rtype: TagIndexingRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._get_tag_indexing_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_tag_indexing_rule_exemption(
+        self,
+        metric_name: str,
+    ) -> TagIndexingRuleExemptionResponse:
+        """Get a tag indexing rule exemption.
+
+        Returns why a metric is excluded from tag indexing rules.
+        Returns 200 with ``kind=exemption`` when an explicit exemption exists, 200 with
+        ``kind=legacy_tag_configuration`` when the metric has a legacy tag configuration acting as an
+        implicit exclusion, or 404 when neither applies.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: TagIndexingRuleExemptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._get_tag_indexing_rule_exemption_endpoint.call_with_http_info(**kwargs)
 
     def list_active_metric_configurations(
         self,
@@ -954,6 +1315,55 @@ class MetricsApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def list_tag_indexing_rules(
+        self,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        search: Union[str, UnsetType] = unset,
+    ) -> TagIndexingRulesResponse:
+        """List tag indexing rules.
+
+        List tag indexing rules for an org, sorted by ``rule_order`` , with offset/limit pagination.
+
+        :param page_limit: Page size (1–1000, default 100).
+        :type page_limit: int, optional
+        :param page_offset: Page offset from the start of the list (default 0).
+        :type page_offset: int, optional
+        :param search: Substring filter on rule name.
+        :type search: str, optional
+        :rtype: TagIndexingRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if search is not unset:
+            kwargs["search"] = search
+
+        return self._list_tag_indexing_rules_endpoint.call_with_http_info(**kwargs)
+
+    def list_tag_indexing_rules_for_metric(
+        self,
+        metric_name: str,
+    ) -> TagIndexingRulesResponse:
+        """List tag indexing rules for a metric.
+
+        List the tag indexing rules that apply to a given metric, sorted by ``rule_order``.
+        Matching is performed server-side using each rule's ``metric_name_matches`` glob patterns.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: TagIndexingRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._list_tag_indexing_rules_for_metric_endpoint.call_with_http_info(**kwargs)
+
     def list_tags_by_metric_name(
         self,
         metric_name: str,
@@ -1076,6 +1486,24 @@ class MetricsApi:
 
         return self._query_timeseries_data_endpoint.call_with_http_info(**kwargs)
 
+    def reorder_tag_indexing_rules(
+        self,
+        body: TagIndexingRuleOrderRequest,
+    ) -> None:
+        """Reorder tag indexing rules.
+
+        Atomically re-sequence the tag indexing rules for an org to match the supplied list of rule UUIDs.
+        The server assigns ``rule_order`` 1, 2, … matching each rule UUID by position in the list.
+        Requires the ``Manage Tags for Metrics`` permission.
+
+        :type body: TagIndexingRuleOrderRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._reorder_tag_indexing_rules_endpoint.call_with_http_info(**kwargs)
+
     def submit_metrics(
         self,
         body: MetricPayload,
@@ -1134,3 +1562,26 @@ class MetricsApi:
         kwargs["body"] = body
 
         return self._update_tag_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def update_tag_indexing_rule(
+        self,
+        id: str,
+        body: TagIndexingRuleUpdateRequest,
+    ) -> TagIndexingRuleResponse:
+        """Update a tag indexing rule.
+
+        Partially update a tag indexing rule. Fields omitted from the request body are left unchanged.
+        Setting ``rule_order`` to a value already used by another rule returns 409; use the
+        reorder endpoint for atomic re-sequencing. Requires the ``Manage Tags for Metrics`` permission.
+
+        :param id: ID of the tag indexing rule.
+        :type id: str
+        :type body: TagIndexingRuleUpdateRequest
+        :rtype: TagIndexingRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._update_tag_indexing_rule_endpoint.call_with_http_info(**kwargs)

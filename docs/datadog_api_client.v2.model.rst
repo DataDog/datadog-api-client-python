@@ -40324,6 +40324,188 @@ datadog\_api\_client.v2.model.tag\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_create\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_create\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_create\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_dynamic\_tags module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_dynamic_tags
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_exemption\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_exemption_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_exemption\_create\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_exemption_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_exemption\_create\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_exemption_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_exemption\_create\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_exemption_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_exemption\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_exemption_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_exemption\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_exemption_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_exemption\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_exemption_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_metric\_match module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_metric_match
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_options module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_options\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_options_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_order\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_order_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_order\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_order_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_order\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_order_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_update\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_update\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rule\_update\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rules\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rules_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_indexing\_rules\_response\_meta module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_indexing_rules_response_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.tags\_event\_attribute module
 -----------------------------------------------------------
 

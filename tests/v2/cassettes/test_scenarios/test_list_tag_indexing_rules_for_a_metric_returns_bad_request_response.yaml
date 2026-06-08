@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/metrics/1invalid/tag-indexing-rules
+  response:
+    body:
+      string: '{"errors":["Invalid metric name: metric name must start with a letter
+        and only contain letters, numbers, dots, and underscores"]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

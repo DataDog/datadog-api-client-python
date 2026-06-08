@@ -8169,6 +8169,34 @@ from datadog_api_client.v2.model.table_row_resource_data_type import TableRowRes
 from datadog_api_client.v2.model.table_row_resource_identifier import TableRowResourceIdentifier
 from datadog_api_client.v2.model.tag_data import TagData
 from datadog_api_client.v2.model.tag_data_type import TagDataType
+from datadog_api_client.v2.model.tag_indexing_rule_attributes import TagIndexingRuleAttributes
+from datadog_api_client.v2.model.tag_indexing_rule_create_attributes import TagIndexingRuleCreateAttributes
+from datadog_api_client.v2.model.tag_indexing_rule_create_data import TagIndexingRuleCreateData
+from datadog_api_client.v2.model.tag_indexing_rule_create_request import TagIndexingRuleCreateRequest
+from datadog_api_client.v2.model.tag_indexing_rule_data import TagIndexingRuleData
+from datadog_api_client.v2.model.tag_indexing_rule_dynamic_tags import TagIndexingRuleDynamicTags
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_attributes import TagIndexingRuleExemptionAttributes
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_create_attributes import (
+    TagIndexingRuleExemptionCreateAttributes,
+)
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_create_data import TagIndexingRuleExemptionCreateData
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_create_request import TagIndexingRuleExemptionCreateRequest
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_data import TagIndexingRuleExemptionData
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_response import TagIndexingRuleExemptionResponse
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_type import TagIndexingRuleExemptionType
+from datadog_api_client.v2.model.tag_indexing_rule_metric_match import TagIndexingRuleMetricMatch
+from datadog_api_client.v2.model.tag_indexing_rule_options import TagIndexingRuleOptions
+from datadog_api_client.v2.model.tag_indexing_rule_options_data import TagIndexingRuleOptionsData
+from datadog_api_client.v2.model.tag_indexing_rule_order_attributes import TagIndexingRuleOrderAttributes
+from datadog_api_client.v2.model.tag_indexing_rule_order_data import TagIndexingRuleOrderData
+from datadog_api_client.v2.model.tag_indexing_rule_order_request import TagIndexingRuleOrderRequest
+from datadog_api_client.v2.model.tag_indexing_rule_response import TagIndexingRuleResponse
+from datadog_api_client.v2.model.tag_indexing_rule_type import TagIndexingRuleType
+from datadog_api_client.v2.model.tag_indexing_rule_update_attributes import TagIndexingRuleUpdateAttributes
+from datadog_api_client.v2.model.tag_indexing_rule_update_data import TagIndexingRuleUpdateData
+from datadog_api_client.v2.model.tag_indexing_rule_update_request import TagIndexingRuleUpdateRequest
+from datadog_api_client.v2.model.tag_indexing_rules_response import TagIndexingRulesResponse
+from datadog_api_client.v2.model.tag_indexing_rules_response_meta import TagIndexingRulesResponseMeta
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.targeting_rule import TargetingRule
 from datadog_api_client.v2.model.targeting_rule_request import TargetingRuleRequest
@@ -14689,6 +14717,32 @@ __all__ = [
     "TableRowResourceIdentifier",
     "TagData",
     "TagDataType",
+    "TagIndexingRuleAttributes",
+    "TagIndexingRuleCreateAttributes",
+    "TagIndexingRuleCreateData",
+    "TagIndexingRuleCreateRequest",
+    "TagIndexingRuleData",
+    "TagIndexingRuleDynamicTags",
+    "TagIndexingRuleExemptionAttributes",
+    "TagIndexingRuleExemptionCreateAttributes",
+    "TagIndexingRuleExemptionCreateData",
+    "TagIndexingRuleExemptionCreateRequest",
+    "TagIndexingRuleExemptionData",
+    "TagIndexingRuleExemptionResponse",
+    "TagIndexingRuleExemptionType",
+    "TagIndexingRuleMetricMatch",
+    "TagIndexingRuleOptions",
+    "TagIndexingRuleOptionsData",
+    "TagIndexingRuleOrderAttributes",
+    "TagIndexingRuleOrderData",
+    "TagIndexingRuleOrderRequest",
+    "TagIndexingRuleResponse",
+    "TagIndexingRuleType",
+    "TagIndexingRuleUpdateAttributes",
+    "TagIndexingRuleUpdateData",
+    "TagIndexingRuleUpdateRequest",
+    "TagIndexingRulesResponse",
+    "TagIndexingRulesResponseMeta",
     "TagsEventAttribute",
     "TargetingRule",
     "TargetingRuleRequest",
