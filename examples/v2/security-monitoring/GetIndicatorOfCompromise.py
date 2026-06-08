@@ -10,7 +10,8 @@ configuration.unstable_operations["get_indicator_of_compromise"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.get_indicator_of_compromise(
-        indicator="masscan/1.3 (https://github.com/robertdavidgraham/masscan)",
+        indicator="192.0.2.1",
+        include_triage_history=True,
     )
 
     print(response)

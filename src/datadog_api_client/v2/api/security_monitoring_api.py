@@ -64,6 +64,8 @@ from datadog_api_client.v2.model.scanned_assets_metadata import ScannedAssetsMet
 from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.io_c_explorer_list_response import IoCExplorerListResponse
 from datadog_api_client.v2.model.get_io_c_indicator_response import GetIoCIndicatorResponse
+from datadog_api_client.v2.model.io_c_triage_write_response import IoCTriageWriteResponse
+from datadog_api_client.v2.model.io_c_triage_write_request import IoCTriageWriteRequest
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
@@ -691,6 +693,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateCustomFrameworkRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_io_c_triage_state_endpoint = _Endpoint(
+            settings={
+                "response_type": (IoCTriageWriteResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/siem/ioc-explorer/triage",
+                "operation_id": "create_io_c_triage_state",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IoCTriageWriteRequest,),
                     "location": "body",
                 },
             },
@@ -1576,6 +1598,30 @@ class SecurityMonitoringApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "indicator",
+                    "location": "query",
+                },
+                "ocsf": {
+                    "openapi_types": (bool,),
+                    "attribute": "ocsf",
+                    "location": "query",
+                },
+                "include_triage_history": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_triage_history",
+                    "location": "query",
+                },
+                "triage_history_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "triage_history_limit",
+                    "location": "query",
+                },
+                "triage_history_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "triage_history_offset",
                     "location": "query",
                 },
             },
@@ -2576,6 +2622,21 @@ class SecurityMonitoringApi:
                 "sort_order": {
                     "openapi_types": (str,),
                     "attribute": "sort[order]",
+                    "location": "query",
+                },
+                "ocsf": {
+                    "openapi_types": (bool,),
+                    "attribute": "ocsf",
+                    "location": "query",
+                },
+                "worked_by": {
+                    "openapi_types": (str,),
+                    "attribute": "worked_by",
+                    "location": "query",
+                },
+                "triage_state": {
+                    "openapi_types": (str,),
+                    "attribute": "triage_state",
                     "location": "query",
                 },
             },
@@ -4295,6 +4356,24 @@ class SecurityMonitoringApi:
 
         return self._create_custom_framework_endpoint.call_with_http_info(**kwargs)
 
+    def create_io_c_triage_state(
+        self,
+        body: IoCTriageWriteRequest,
+    ) -> IoCTriageWriteResponse:
+        """Create or update an indicator triage state.
+
+        Set the triage state of an indicator of compromise (IoC). This creates or
+        updates the triage state for the indicator in your organization.
+
+        :param body: The triage state to set for the indicator.
+        :type body: IoCTriageWriteRequest
+        :rtype: IoCTriageWriteResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_io_c_triage_state_endpoint.call_with_http_info(**kwargs)
+
     def create_jira_issues(
         self,
         body: CreateJiraIssueRequestArray,
@@ -5029,6 +5108,11 @@ class SecurityMonitoringApi:
     def get_indicator_of_compromise(
         self,
         indicator: str,
+        *,
+        ocsf: Union[bool, UnsetType] = unset,
+        include_triage_history: Union[bool, UnsetType] = unset,
+        triage_history_limit: Union[int, UnsetType] = unset,
+        triage_history_offset: Union[int, UnsetType] = unset,
     ) -> GetIoCIndicatorResponse:
         """Get an indicator of compromise.
 
@@ -5036,10 +5120,30 @@ class SecurityMonitoringApi:
 
         :param indicator: The indicator value to look up (for example, an IP address or domain).
         :type indicator: str
+        :param ocsf: When true, return only OCSF field-based matches. When false, return regex/message-based matches.
+        :type ocsf: bool, optional
+        :param include_triage_history: Include full triage history for the indicator.
+        :type include_triage_history: bool, optional
+        :param triage_history_limit: Maximum number of triage history events returned. Only applied when ``include_triage_history`` is true.
+        :type triage_history_limit: int, optional
+        :param triage_history_offset: Pagination offset into the triage history. Only applied when ``include_triage_history`` is true.
+        :type triage_history_offset: int, optional
         :rtype: GetIoCIndicatorResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["indicator"] = indicator
+
+        if ocsf is not unset:
+            kwargs["ocsf"] = ocsf
+
+        if include_triage_history is not unset:
+            kwargs["include_triage_history"] = include_triage_history
+
+        if triage_history_limit is not unset:
+            kwargs["triage_history_limit"] = triage_history_limit
+
+        if triage_history_offset is not unset:
+            kwargs["triage_history_offset"] = triage_history_offset
 
         return self._get_indicator_of_compromise_endpoint.call_with_http_info(**kwargs)
 
@@ -6042,6 +6146,9 @@ class SecurityMonitoringApi:
         query: Union[str, UnsetType] = unset,
         sort_column: Union[str, UnsetType] = unset,
         sort_order: Union[str, UnsetType] = unset,
+        ocsf: Union[bool, UnsetType] = unset,
+        worked_by: Union[str, UnsetType] = unset,
+        triage_state: Union[str, UnsetType] = unset,
     ) -> IoCExplorerListResponse:
         """List indicators of compromise.
 
@@ -6057,6 +6164,12 @@ class SecurityMonitoringApi:
         :type sort_column: str, optional
         :param sort_order: Sort order: asc or desc.
         :type sort_order: str, optional
+        :param ocsf: When true, return only OCSF field-based matches. When false, return regex/message-based matches.
+        :type ocsf: bool, optional
+        :param worked_by: Filter indicators whose triage state was updated by a specific user UUID.
+        :type worked_by: str, optional
+        :param triage_state: Filter by triage state: not_reviewed or reviewed.
+        :type triage_state: str, optional
         :rtype: IoCExplorerListResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -6074,6 +6187,15 @@ class SecurityMonitoringApi:
 
         if sort_order is not unset:
             kwargs["sort_order"] = sort_order
+
+        if ocsf is not unset:
+            kwargs["ocsf"] = ocsf
+
+        if worked_by is not unset:
+            kwargs["worked_by"] = worked_by
+
+        if triage_state is not unset:
+            kwargs["triage_state"] = triage_state
 
         return self._list_indicators_of_compromise_endpoint.call_with_http_info(**kwargs)
 
