@@ -578,8 +578,6 @@ class ModelComposed(OpenApiModel):
 
     def get_oneof_instance(self):
         """Returns the oneOf instance"""
-        if not self._composed_instances:
-            return self
         return self._composed_instances[0]
 
     def __eq__(self, other):
@@ -1499,7 +1497,7 @@ def model_to_dict(model_instance, serialize=True):
 
     model_instances = [model_instance]
     model = model_instance
-    while model._composed_schemas and model._composed_instances:
+    while model._composed_schemas:
         model_instances.extend(model._composed_instances)
         model = model.get_oneof_instance()
 
