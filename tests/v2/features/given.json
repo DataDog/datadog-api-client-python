@@ -502,6 +502,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"forms\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"A simple test form.\",\n      \"anonymous\": false,\n      \"single_response\": false,\n      \"idp_survey\": false,\n      \"data_definition\": {},\n      \"ui_definition\": {}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"form\" in the system",
+    "key": "form",
+    "tag": "Forms",
+    "operationId": "CreateForm"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"forms\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"A simple test form.\",\n      \"anonymous\": false,\n      \"single_response\": false,\n      \"idp_survey\": false,\n      \"data_definition\": {},\n      \"ui_definition\": {}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"form_published\" in the system",
+    "key": "form_published",
+    "tag": "Forms",
+    "operationId": "CreateAndPublishForm"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
     ],

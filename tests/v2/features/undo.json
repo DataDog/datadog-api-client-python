@@ -2609,6 +2609,50 @@
       "type": "unsafe"
     }
   },
+  "ListForms": {
+    "tag": "Forms",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateAndPublishForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetHamrOrgConnection": {
     "tag": "High Availability MultiRegion",
     "undo": {

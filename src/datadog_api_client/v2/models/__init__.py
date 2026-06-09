@@ -1657,6 +1657,9 @@ from datadog_api_client.v2.model.create_feature_flag_attributes import CreateFea
 from datadog_api_client.v2.model.create_feature_flag_data import CreateFeatureFlagData
 from datadog_api_client.v2.model.create_feature_flag_data_type import CreateFeatureFlagDataType
 from datadog_api_client.v2.model.create_feature_flag_request import CreateFeatureFlagRequest
+from datadog_api_client.v2.model.create_form_data import CreateFormData
+from datadog_api_client.v2.model.create_form_data_attributes import CreateFormDataAttributes
+from datadog_api_client.v2.model.create_form_request import CreateFormRequest
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
 from datadog_api_client.v2.model.create_incident_notification_template_request import (
     CreateIncidentNotificationTemplateRequest,
@@ -2178,6 +2181,8 @@ from datadog_api_client.v2.model.delete_apps_request_data_items import DeleteApp
 from datadog_api_client.v2.model.delete_apps_response import DeleteAppsResponse
 from datadog_api_client.v2.model.delete_apps_response_data_items import DeleteAppsResponseDataItems
 from datadog_api_client.v2.model.delete_custom_framework_response import DeleteCustomFrameworkResponse
+from datadog_api_client.v2.model.delete_form_data import DeleteFormData
+from datadog_api_client.v2.model.delete_form_response import DeleteFormResponse
 from datadog_api_client.v2.model.deleted_suite_response_data import DeletedSuiteResponseData
 from datadog_api_client.v2.model.deleted_suite_response_data_attributes import DeletedSuiteResponseDataAttributes
 from datadog_api_client.v2.model.deleted_suites_request_delete import DeletedSuitesRequestDelete
@@ -2775,8 +2780,22 @@ from datadog_api_client.v2.model.fleet_tracers_response_data_attributes import F
 from datadog_api_client.v2.model.fleet_tracers_response_meta import FleetTracersResponseMeta
 from datadog_api_client.v2.model.flutter_sourcemap_attributes import FlutterSourcemapAttributes
 from datadog_api_client.v2.model.flutter_sourcemap_data import FlutterSourcemapData
+from datadog_api_client.v2.model.form_data import FormData
+from datadog_api_client.v2.model.form_data_attributes import FormDataAttributes
+from datadog_api_client.v2.model.form_data_definition import FormDataDefinition
+from datadog_api_client.v2.model.form_data_definition_type import FormDataDefinitionType
+from datadog_api_client.v2.model.form_datastore_config_attributes import FormDatastoreConfigAttributes
+from datadog_api_client.v2.model.form_publication_attributes import FormPublicationAttributes
+from datadog_api_client.v2.model.form_response import FormResponse
 from datadog_api_client.v2.model.form_trigger import FormTrigger
 from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
+from datadog_api_client.v2.model.form_type import FormType
+from datadog_api_client.v2.model.form_ui_definition import FormUiDefinition
+from datadog_api_client.v2.model.form_ui_definition_ui_theme import FormUiDefinitionUiTheme
+from datadog_api_client.v2.model.form_ui_definition_ui_theme_primary_color import FormUiDefinitionUiThemePrimaryColor
+from datadog_api_client.v2.model.form_version_attributes import FormVersionAttributes
+from datadog_api_client.v2.model.form_version_state import FormVersionState
+from datadog_api_client.v2.model.forms_response import FormsResponse
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.freshservice_api_key import FreshserviceAPIKey
@@ -10237,6 +10256,9 @@ __all__ = [
     "CreateFeatureFlagData",
     "CreateFeatureFlagDataType",
     "CreateFeatureFlagRequest",
+    "CreateFormData",
+    "CreateFormDataAttributes",
+    "CreateFormRequest",
     "CreateIncidentNotificationRuleRequest",
     "CreateIncidentNotificationTemplateRequest",
     "CreateJiraIssueRequestArray",
@@ -10590,6 +10612,8 @@ __all__ = [
     "DeleteAppsResponse",
     "DeleteAppsResponseDataItems",
     "DeleteCustomFrameworkResponse",
+    "DeleteFormData",
+    "DeleteFormResponse",
     "DeletedSuiteResponseData",
     "DeletedSuiteResponseDataAttributes",
     "DeletedSuitesRequestDelete",
@@ -11059,8 +11083,22 @@ __all__ = [
     "FleetTracersResponseMeta",
     "FlutterSourcemapAttributes",
     "FlutterSourcemapData",
+    "FormData",
+    "FormDataAttributes",
+    "FormDataDefinition",
+    "FormDataDefinitionType",
+    "FormDatastoreConfigAttributes",
+    "FormPublicationAttributes",
+    "FormResponse",
     "FormTrigger",
     "FormTriggerWrapper",
+    "FormType",
+    "FormUiDefinition",
+    "FormUiDefinitionUiTheme",
+    "FormUiDefinitionUiThemePrimaryColor",
+    "FormVersionAttributes",
+    "FormVersionState",
+    "FormsResponse",
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
     "FreshserviceAPIKey",
