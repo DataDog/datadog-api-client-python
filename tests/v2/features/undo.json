@@ -2031,6 +2031,42 @@
       "type": "safe"
     }
   },
+  "ListCSMAgentlessHosts": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCSMAgentlessHostFacetInfo": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCSMAgentlessHostFacets": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCSMUnifiedHosts": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCSMUnifiedHostFacetInfo": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCSMUnifiedHostFacets": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetCurrentUser": {
     "tag": "Users",
     "undo": {

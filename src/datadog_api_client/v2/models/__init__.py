@@ -1816,6 +1816,15 @@ from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRe
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
 from datadog_api_client.v2.model.csm_agent_data import CsmAgentData
+from datadog_api_client.v2.model.csm_agentless_host_attributes import CsmAgentlessHostAttributes
+from datadog_api_client.v2.model.csm_agentless_host_data import CsmAgentlessHostData
+from datadog_api_client.v2.model.csm_agentless_host_facet_attributes import CsmAgentlessHostFacetAttributes
+from datadog_api_client.v2.model.csm_agentless_host_facet_data import CsmAgentlessHostFacetData
+from datadog_api_client.v2.model.csm_agentless_host_facet_type import CsmAgentlessHostFacetType
+from datadog_api_client.v2.model.csm_agentless_host_facets_response import CsmAgentlessHostFacetsResponse
+from datadog_api_client.v2.model.csm_agentless_host_resource_type import CsmAgentlessHostResourceType
+from datadog_api_client.v2.model.csm_agentless_host_type import CsmAgentlessHostType
+from datadog_api_client.v2.model.csm_agentless_hosts_response import CsmAgentlessHostsResponse
 from datadog_api_client.v2.model.csm_agents_attributes import CsmAgentsAttributes
 from datadog_api_client.v2.model.csm_agents_response import CsmAgentsResponse
 from datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_attributes import (
@@ -1825,7 +1834,14 @@ from datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_data impor
 from datadog_api_client.v2.model.csm_cloud_accounts_coverage_analysis_response import (
     CsmCloudAccountsCoverageAnalysisResponse,
 )
+from datadog_api_client.v2.model.csm_cloud_provider import CsmCloudProvider
 from datadog_api_client.v2.model.csm_coverage_analysis import CsmCoverageAnalysis
+from datadog_api_client.v2.model.csm_facet_info_type import CsmFacetInfoType
+from datadog_api_client.v2.model.csm_host_facet_info_attributes import CsmHostFacetInfoAttributes
+from datadog_api_client.v2.model.csm_host_facet_info_data import CsmHostFacetInfoData
+from datadog_api_client.v2.model.csm_host_facet_info_item import CsmHostFacetInfoItem
+from datadog_api_client.v2.model.csm_host_facet_info_meta import CsmHostFacetInfoMeta
+from datadog_api_client.v2.model.csm_host_facet_info_response import CsmHostFacetInfoResponse
 from datadog_api_client.v2.model.csm_hosts_and_containers_coverage_analysis_attributes import (
     CsmHostsAndContainersCoverageAnalysisAttributes,
 )
@@ -1840,6 +1856,16 @@ from datadog_api_client.v2.model.csm_serverless_coverage_analysis_attributes imp
 )
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_data import CsmServerlessCoverageAnalysisData
 from datadog_api_client.v2.model.csm_serverless_coverage_analysis_response import CsmServerlessCoverageAnalysisResponse
+from datadog_api_client.v2.model.csm_settings_meta import CsmSettingsMeta
+from datadog_api_client.v2.model.csm_unified_host_attributes import CsmUnifiedHostAttributes
+from datadog_api_client.v2.model.csm_unified_host_data import CsmUnifiedHostData
+from datadog_api_client.v2.model.csm_unified_host_facet_data import CsmUnifiedHostFacetData
+from datadog_api_client.v2.model.csm_unified_host_facet_type import CsmUnifiedHostFacetType
+from datadog_api_client.v2.model.csm_unified_host_facets_response import CsmUnifiedHostFacetsResponse
+from datadog_api_client.v2.model.csm_unified_host_source import CsmUnifiedHostSource
+from datadog_api_client.v2.model.csm_unified_host_type import CsmUnifiedHostType
+from datadog_api_client.v2.model.csm_unified_hosts_meta import CsmUnifiedHostsMeta
+from datadog_api_client.v2.model.csm_unified_hosts_response import CsmUnifiedHostsResponse
 from datadog_api_client.v2.model.custom_attribute_config import CustomAttributeConfig
 from datadog_api_client.v2.model.custom_attribute_config_attributes_create import CustomAttributeConfigAttributesCreate
 from datadog_api_client.v2.model.custom_attribute_config_create import CustomAttributeConfigCreate
@@ -10332,18 +10358,44 @@ __all__ = [
     "CreateWorkflowResponse",
     "Creator",
     "CsmAgentData",
+    "CsmAgentlessHostAttributes",
+    "CsmAgentlessHostData",
+    "CsmAgentlessHostFacetAttributes",
+    "CsmAgentlessHostFacetData",
+    "CsmAgentlessHostFacetType",
+    "CsmAgentlessHostFacetsResponse",
+    "CsmAgentlessHostResourceType",
+    "CsmAgentlessHostType",
+    "CsmAgentlessHostsResponse",
     "CsmAgentsAttributes",
     "CsmAgentsResponse",
     "CsmCloudAccountsCoverageAnalysisAttributes",
     "CsmCloudAccountsCoverageAnalysisData",
     "CsmCloudAccountsCoverageAnalysisResponse",
+    "CsmCloudProvider",
     "CsmCoverageAnalysis",
+    "CsmFacetInfoType",
+    "CsmHostFacetInfoAttributes",
+    "CsmHostFacetInfoData",
+    "CsmHostFacetInfoItem",
+    "CsmHostFacetInfoMeta",
+    "CsmHostFacetInfoResponse",
     "CsmHostsAndContainersCoverageAnalysisAttributes",
     "CsmHostsAndContainersCoverageAnalysisData",
     "CsmHostsAndContainersCoverageAnalysisResponse",
     "CsmServerlessCoverageAnalysisAttributes",
     "CsmServerlessCoverageAnalysisData",
     "CsmServerlessCoverageAnalysisResponse",
+    "CsmSettingsMeta",
+    "CsmUnifiedHostAttributes",
+    "CsmUnifiedHostData",
+    "CsmUnifiedHostFacetData",
+    "CsmUnifiedHostFacetType",
+    "CsmUnifiedHostFacetsResponse",
+    "CsmUnifiedHostSource",
+    "CsmUnifiedHostType",
+    "CsmUnifiedHostsMeta",
+    "CsmUnifiedHostsResponse",
     "CustomAttributeConfig",
     "CustomAttributeConfigAttributesCreate",
     "CustomAttributeConfigCreate",
