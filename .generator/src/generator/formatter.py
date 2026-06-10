@@ -168,12 +168,12 @@ class CustomRenderer(m2r2.RestRenderer):
 def docstring(text):
     if not text:
         return text
-    return (
+    converted = (
         m2r2.convert((text or "").replace("\\n", "\\\\n"), renderer=CustomRenderer())[1:-1]
         .replace("\\ ", " ")
-        .replace("\\`", "\\\\`")
         .replace("\n\n\n", "\n\n")
     )
+    return converted.replace("\\", "\\\\")
 
 
 def _merge_imports(a, b):
