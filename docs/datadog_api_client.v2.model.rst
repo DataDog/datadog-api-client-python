@@ -9678,6 +9678,69 @@ datadog\_api\_client.v2.model.csm\_agent\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.csm\_agentless\_host\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_host\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_host\_facet\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_facet_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_host\_facet\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_facet_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_host\_facet\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_facet_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_host\_facets\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_facets_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_host\_resource\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_host\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_host_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_agentless\_hosts\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_agentless_hosts_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.csm\_agents\_attributes module
 ------------------------------------------------------------
 
@@ -9727,10 +9790,59 @@ datadog\_api\_client.v2.model.csm\_cloud\_accounts\_coverage\_analysis\_response
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.csm\_cloud\_provider module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_cloud_provider
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.csm\_coverage\_analysis module
 ------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.csm_coverage_analysis
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_facet\_info\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_facet_info_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_host\_facet\_info\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_host_facet_info_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_host\_facet\_info\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_host_facet_info_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_host\_facet\_info\_item module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_host_facet_info_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_host\_facet\_info\_meta module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_host_facet_info_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_host\_facet\_info\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_host_facet_info_response
    :members:
    :show-inheritance:
 
@@ -9773,6 +9885,76 @@ datadog\_api\_client.v2.model.csm\_serverless\_coverage\_analysis\_response modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.csm_serverless_coverage_analysis_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_settings\_meta module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_settings_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_host\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_host_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_host\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_host_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_host\_facet\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_host_facet_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_host\_facet\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_host_facet_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_host\_facets\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_host_facets_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_host\_source module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_host_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_host\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_host_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_hosts\_meta module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_hosts_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.csm\_unified\_hosts\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.csm_unified_hosts_response
    :members:
    :show-inheritance:
 
