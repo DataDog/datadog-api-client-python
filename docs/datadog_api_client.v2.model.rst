@@ -24770,6 +24770,13 @@ datadog\_api\_client.v2.model.notification\_rule\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.notification\_rules\_list\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rules_list_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.notification\_rules\_type module
 --------------------------------------------------------------
 

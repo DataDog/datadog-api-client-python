@@ -11,6 +11,12 @@ from datadog_api_client.model_utils import (
 
 
 class AssignmentResult(ModelNormal):
+    validations = {
+        "status": {
+            "inclusive_maximum": 599,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {

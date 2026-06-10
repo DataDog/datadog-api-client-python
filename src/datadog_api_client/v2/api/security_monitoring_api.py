@@ -64,6 +64,7 @@ from datadog_api_client.v2.model.scanned_assets_metadata import ScannedAssetsMet
 from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.io_c_explorer_list_response import IoCExplorerListResponse
 from datadog_api_client.v2.model.get_io_c_indicator_response import GetIoCIndicatorResponse
+from datadog_api_client.v2.model.notification_rules_list_response import NotificationRulesListResponse
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
@@ -2086,7 +2087,7 @@ class SecurityMonitoringApi:
 
         self._get_signal_notification_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (dict,),
+                "response_type": (NotificationRulesListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/signals/notification_rules",
                 "operation_id": "get_signal_notification_rules",
@@ -2326,7 +2327,7 @@ class SecurityMonitoringApi:
 
         self._get_vulnerability_notification_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (dict,),
+                "response_type": (NotificationRulesListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules",
                 "operation_id": "get_vulnerability_notification_rules",
@@ -5456,12 +5457,12 @@ class SecurityMonitoringApi:
 
     def get_signal_notification_rules(
         self,
-    ) -> dict:
+    ) -> NotificationRulesListResponse:
         """Get the list of signal-based notification rules.
 
         Returns the list of notification rules for security signals.
 
-        :rtype: dict
+        :rtype: NotificationRulesListResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._get_signal_notification_rules_endpoint.call_with_http_info(**kwargs)
@@ -5651,12 +5652,12 @@ class SecurityMonitoringApi:
 
     def get_vulnerability_notification_rules(
         self,
-    ) -> dict:
+    ) -> NotificationRulesListResponse:
         """Get the list of vulnerability notification rules.
 
         Returns the list of notification rules for security vulnerabilities.
 
-        :rtype: dict
+        :rtype: NotificationRulesListResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._get_vulnerability_notification_rules_endpoint.call_with_http_info(**kwargs)
