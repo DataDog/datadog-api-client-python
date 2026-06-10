@@ -2738,13 +2738,6 @@ from datadog_api_client.v2.model.fleet_agents_response import FleetAgentsRespons
 from datadog_api_client.v2.model.fleet_agents_response_data import FleetAgentsResponseData
 from datadog_api_client.v2.model.fleet_agents_response_data_attributes import FleetAgentsResponseDataAttributes
 from datadog_api_client.v2.model.fleet_agents_response_meta import FleetAgentsResponseMeta
-from datadog_api_client.v2.model.fleet_cluster_attributes import FleetClusterAttributes
-from datadog_api_client.v2.model.fleet_cluster_node_count_by_status import FleetClusterNodeCountByStatus
-from datadog_api_client.v2.model.fleet_cluster_pod_count_by_state import FleetClusterPodCountByState
-from datadog_api_client.v2.model.fleet_clusters_response import FleetClustersResponse
-from datadog_api_client.v2.model.fleet_clusters_response_data import FleetClustersResponseData
-from datadog_api_client.v2.model.fleet_clusters_response_data_attributes import FleetClustersResponseDataAttributes
-from datadog_api_client.v2.model.fleet_clusters_response_meta import FleetClustersResponseMeta
 from datadog_api_client.v2.model.fleet_configuration_file import FleetConfigurationFile
 from datadog_api_client.v2.model.fleet_configuration_layer import FleetConfigurationLayer
 from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
@@ -2772,12 +2765,6 @@ from datadog_api_client.v2.model.fleet_deployments_page import FleetDeploymentsP
 from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
 from datadog_api_client.v2.model.fleet_deployments_response_meta import FleetDeploymentsResponseMeta
 from datadog_api_client.v2.model.fleet_detected_integration import FleetDetectedIntegration
-from datadog_api_client.v2.model.fleet_instrumented_pod_group_attributes import FleetInstrumentedPodGroupAttributes
-from datadog_api_client.v2.model.fleet_instrumented_pods_response import FleetInstrumentedPodsResponse
-from datadog_api_client.v2.model.fleet_instrumented_pods_response_data import FleetInstrumentedPodsResponseData
-from datadog_api_client.v2.model.fleet_instrumented_pods_response_data_attributes import (
-    FleetInstrumentedPodsResponseDataAttributes,
-)
 from datadog_api_client.v2.model.fleet_integration_details import FleetIntegrationDetails
 from datadog_api_client.v2.model.fleet_integrations_by_status import FleetIntegrationsByStatus
 from datadog_api_client.v2.model.fleet_otel_collector import FleetOtelCollector
@@ -11055,13 +11042,6 @@ __all__ = [
     "FleetAgentsResponseData",
     "FleetAgentsResponseDataAttributes",
     "FleetAgentsResponseMeta",
-    "FleetClusterAttributes",
-    "FleetClusterNodeCountByStatus",
-    "FleetClusterPodCountByState",
-    "FleetClustersResponse",
-    "FleetClustersResponseData",
-    "FleetClustersResponseDataAttributes",
-    "FleetClustersResponseMeta",
     "FleetConfigurationFile",
     "FleetConfigurationLayer",
     "FleetDeployment",
@@ -11085,10 +11065,6 @@ __all__ = [
     "FleetDeploymentsResponse",
     "FleetDeploymentsResponseMeta",
     "FleetDetectedIntegration",
-    "FleetInstrumentedPodGroupAttributes",
-    "FleetInstrumentedPodsResponse",
-    "FleetInstrumentedPodsResponseData",
-    "FleetInstrumentedPodsResponseDataAttributes",
     "FleetIntegrationDetails",
     "FleetIntegrationsByStatus",
     "FleetOtelCollector",

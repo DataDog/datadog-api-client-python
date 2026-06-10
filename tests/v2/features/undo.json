@@ -23,18 +23,6 @@
       "type": "safe"
     }
   },
-  "ListFleetClusters": {
-    "tag": "Fleet Automation",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListFleetInstrumentedPods": {
-    "tag": "Fleet Automation",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "ListFleetDeployments": {
     "tag": "Fleet Automation",
     "undo": {
