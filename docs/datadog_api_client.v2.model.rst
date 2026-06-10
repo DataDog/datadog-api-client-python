@@ -31112,6 +31112,160 @@ datadog\_api\_client.v2.model.reorder\_ruleset\_resource\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.report\_schedule\_author module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_author
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_author\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_author_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_author\_relationship module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_author_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_author\_relationship\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_author_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_author\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_author_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_create\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_create\_request\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_create\_request\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_delivery\_format module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_delivery_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_included\_resource module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_included_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_patch\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_patch\_request\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_patch_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_patch\_request\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_patch_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_resource\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_response\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_response\_attributes\_delivery\_format module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_response_attributes_delivery_format
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_response\_relationships module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_response_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_status module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_template\_variable module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.resolve\_vulnerable\_symbols\_request module
 --------------------------------------------------------------------------
 

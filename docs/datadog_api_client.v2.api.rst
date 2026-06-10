@@ -613,6 +613,13 @@ datadog\_api\_client.v2.api.reference\_tables\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.report\_schedules\_api module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.report_schedules_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.restriction\_policies\_api module
 -------------------------------------------------------------
 

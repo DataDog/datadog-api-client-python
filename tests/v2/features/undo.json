@@ -6126,6 +6126,19 @@
       "type": "idempotent"
     }
   },
+  "CreateReportSchedule": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "PatchReportSchedule": {
+    "tag": "Report Schedules",
+    "undo": {
+      "operationId": "PatchReportSchedule",
+      "type": "idempotent"
+    }
+  },
   "DeleteRestrictionPolicy": {
     "tag": "Restriction Policies",
     "undo": {
