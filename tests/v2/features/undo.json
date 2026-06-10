@@ -816,19 +816,19 @@
     }
   },
   "ListInvestigations": {
-    "tag": "Bits AI",
+    "tag": "Bits AI SRE",
     "undo": {
       "type": "safe"
     }
   },
   "TriggerInvestigation": {
-    "tag": "Bits AI",
+    "tag": "Bits AI SRE",
     "undo": {
       "type": "unsafe"
     }
   },
   "GetInvestigation": {
-    "tag": "Bits AI",
+    "tag": "Bits AI SRE",
     "undo": {
       "type": "safe"
     }

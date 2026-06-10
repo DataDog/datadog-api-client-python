@@ -21,9 +21,9 @@ from datadog_api_client.v2.model.trigger_investigation_request import TriggerInv
 from datadog_api_client.v2.model.get_investigation_response import GetInvestigationResponse
 
 
-class BitsAIApi:
+class BitsAISREApi:
     """
-    Use the Bits AI endpoints to retrieve AI-powered investigations.
+    Use the Bits AI SRE endpoints to retrieve AI-powered investigations.
     """
 
     def __init__(self, api_client=None):
@@ -113,9 +113,9 @@ class BitsAIApi:
         self,
         id: str,
     ) -> GetInvestigationResponse:
-        """Get a Bits AI investigation.
+        """Get a Bits AI SRE investigation.
 
-        Get a specific Bits AI investigation by ID.
+        Get a specific Bits AI SRE investigation by ID.
 
         :param id: The ID of the investigation.
         :type id: str
@@ -133,9 +133,9 @@ class BitsAIApi:
         page_limit: Union[int, UnsetType] = unset,
         filter_monitor_id: Union[int, UnsetType] = unset,
     ) -> ListInvestigationsResponse:
-        """List Bits AI investigations.
+        """List Bits AI SRE investigations.
 
-        List all Bits AI investigations for the organization.
+        List all Bits AI SRE investigations for the organization.
 
         :param page_offset: Offset for pagination.
         :type page_offset: int, optional
@@ -164,7 +164,7 @@ class BitsAIApi:
         page_limit: Union[int, UnsetType] = unset,
         filter_monitor_id: Union[int, UnsetType] = unset,
     ) -> collections.abc.Iterable[ListInvestigationsResponseData]:
-        """List Bits AI investigations.
+        """List Bits AI SRE investigations.
 
         Provide a paginated version of :meth:`list_investigations`, returning all items.
 
@@ -204,9 +204,9 @@ class BitsAIApi:
         self,
         body: TriggerInvestigationRequest,
     ) -> TriggerInvestigationResponse:
-        """Trigger a Bits AI investigation.
+        """Trigger a Bits AI SRE investigation.
 
-        Trigger a new Bits AI investigation based on a monitor alert.
+        Trigger a new Bits AI SRE investigation based on a monitor alert.
 
         :param body: Trigger investigation request body.
         :type body: TriggerInvestigationRequest
