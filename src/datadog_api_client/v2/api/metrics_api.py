@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -822,7 +823,9 @@ class MetricsApi:
         self,
         body: MetricBulkTagConfigCreateRequest,
     ) -> MetricBulkTagConfigResponse:
-        """Configure tags for multiple metrics.
+        """Configure tags for multiple metrics. **Deprecated**.
+
+        **Note** : This endpoint is deprecated. Use `Tag Indexing Rules </api/latest/metrics/#create-a-tag-indexing-rule>`_ ( ``POST /api/v2/metrics/tag-indexing-rules`` ) instead.
 
         Create and define a list of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
         Metrics are selected by passing a metric name prefix. Use the Delete method of this API path to remove tag configurations.
@@ -838,6 +841,7 @@ class MetricsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
     def create_tag_configuration(
@@ -909,7 +913,9 @@ class MetricsApi:
         self,
         body: MetricBulkTagConfigDeleteRequest,
     ) -> MetricBulkTagConfigResponse:
-        """Delete tags for multiple metrics.
+        """Delete tags for multiple metrics. **Deprecated**.
+
+        **Note** : This endpoint is deprecated. Use `Tag Indexing Rules </api/latest/metrics/#create-a-tag-indexing-rule>`_ ( ``POST /api/v2/metrics/tag-indexing-rules`` ) instead.
 
         Delete all custom lists of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
         Metrics are selected by passing a metric name prefix.
@@ -922,6 +928,7 @@ class MetricsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("delete_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
     def delete_tag_configuration(
