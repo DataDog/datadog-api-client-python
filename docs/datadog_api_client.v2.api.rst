@@ -228,6 +228,13 @@ datadog\_api\_client.v2.api.csm\_coverage\_analysis\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.csm\_ownership\_api module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.csm_ownership_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.csm\_settings\_api module
 -----------------------------------------------------
 

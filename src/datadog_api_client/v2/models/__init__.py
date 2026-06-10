@@ -5750,6 +5750,38 @@ from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
+from datadog_api_client.v2.model.ownership_evidence_attributes import OwnershipEvidenceAttributes
+from datadog_api_client.v2.model.ownership_evidence_data import OwnershipEvidenceData
+from datadog_api_client.v2.model.ownership_evidence_response import OwnershipEvidenceResponse
+from datadog_api_client.v2.model.ownership_evidence_type import OwnershipEvidenceType
+from datadog_api_client.v2.model.ownership_evidence_version import OwnershipEvidenceVersion
+from datadog_api_client.v2.model.ownership_feedback_action import OwnershipFeedbackAction
+from datadog_api_client.v2.model.ownership_feedback_request import OwnershipFeedbackRequest
+from datadog_api_client.v2.model.ownership_feedback_request_attributes import OwnershipFeedbackRequestAttributes
+from datadog_api_client.v2.model.ownership_feedback_request_data import OwnershipFeedbackRequestData
+from datadog_api_client.v2.model.ownership_feedback_response import OwnershipFeedbackResponse
+from datadog_api_client.v2.model.ownership_feedback_result_attributes import OwnershipFeedbackResultAttributes
+from datadog_api_client.v2.model.ownership_feedback_result_data import OwnershipFeedbackResultData
+from datadog_api_client.v2.model.ownership_feedback_result_type import OwnershipFeedbackResultType
+from datadog_api_client.v2.model.ownership_feedback_type import OwnershipFeedbackType
+from datadog_api_client.v2.model.ownership_history_attributes import OwnershipHistoryAttributes
+from datadog_api_client.v2.model.ownership_history_data import OwnershipHistoryData
+from datadog_api_client.v2.model.ownership_history_item import OwnershipHistoryItem
+from datadog_api_client.v2.model.ownership_history_pagination import OwnershipHistoryPagination
+from datadog_api_client.v2.model.ownership_history_response import OwnershipHistoryResponse
+from datadog_api_client.v2.model.ownership_history_type import OwnershipHistoryType
+from datadog_api_client.v2.model.ownership_inference_attributes import OwnershipInferenceAttributes
+from datadog_api_client.v2.model.ownership_inference_data import OwnershipInferenceData
+from datadog_api_client.v2.model.ownership_inference_item import OwnershipInferenceItem
+from datadog_api_client.v2.model.ownership_inference_list_attributes import OwnershipInferenceListAttributes
+from datadog_api_client.v2.model.ownership_inference_list_data import OwnershipInferenceListData
+from datadog_api_client.v2.model.ownership_inference_list_response import OwnershipInferenceListResponse
+from datadog_api_client.v2.model.ownership_inference_response import OwnershipInferenceResponse
+from datadog_api_client.v2.model.ownership_inference_source import OwnershipInferenceSource
+from datadog_api_client.v2.model.ownership_inference_status import OwnershipInferenceStatus
+from datadog_api_client.v2.model.ownership_inference_type import OwnershipInferenceType
+from datadog_api_client.v2.model.ownership_inferences_type import OwnershipInferencesType
+from datadog_api_client.v2.model.ownership_owner_type import OwnershipOwnerType
 from datadog_api_client.v2.model.page_annotations_attributes import PageAnnotationsAttributes
 from datadog_api_client.v2.model.page_annotations_data import PageAnnotationsData
 from datadog_api_client.v2.model.page_annotations_response import PageAnnotationsResponse
@@ -13067,6 +13099,38 @@ __all__ = [
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
     "OverwriteAllocationsRequest",
+    "OwnershipEvidenceAttributes",
+    "OwnershipEvidenceData",
+    "OwnershipEvidenceResponse",
+    "OwnershipEvidenceType",
+    "OwnershipEvidenceVersion",
+    "OwnershipFeedbackAction",
+    "OwnershipFeedbackRequest",
+    "OwnershipFeedbackRequestAttributes",
+    "OwnershipFeedbackRequestData",
+    "OwnershipFeedbackResponse",
+    "OwnershipFeedbackResultAttributes",
+    "OwnershipFeedbackResultData",
+    "OwnershipFeedbackResultType",
+    "OwnershipFeedbackType",
+    "OwnershipHistoryAttributes",
+    "OwnershipHistoryData",
+    "OwnershipHistoryItem",
+    "OwnershipHistoryPagination",
+    "OwnershipHistoryResponse",
+    "OwnershipHistoryType",
+    "OwnershipInferenceAttributes",
+    "OwnershipInferenceData",
+    "OwnershipInferenceItem",
+    "OwnershipInferenceListAttributes",
+    "OwnershipInferenceListData",
+    "OwnershipInferenceListResponse",
+    "OwnershipInferenceResponse",
+    "OwnershipInferenceSource",
+    "OwnershipInferenceStatus",
+    "OwnershipInferenceType",
+    "OwnershipInferencesType",
+    "OwnershipOwnerType",
     "PageAnnotationsAttributes",
     "PageAnnotationsData",
     "PageAnnotationsResponse",
