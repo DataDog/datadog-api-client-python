@@ -4633,7 +4633,19 @@ from datadog_api_client.v2.model.notification_channel_push_config_type import No
 from datadog_api_client.v2.model.notification_channel_type import NotificationChannelType
 from datadog_api_client.v2.model.notification_rule import NotificationRule
 from datadog_api_client.v2.model.notification_rule_attributes import NotificationRuleAttributes
+from datadog_api_client.v2.model.notification_rule_preview_notification_status import (
+    NotificationRulePreviewNotificationStatus,
+)
+from datadog_api_client.v2.model.notification_rule_preview_response import NotificationRulePreviewResponse
+from datadog_api_client.v2.model.notification_rule_preview_response_attributes import (
+    NotificationRulePreviewResponseAttributes,
+)
+from datadog_api_client.v2.model.notification_rule_preview_response_data import NotificationRulePreviewResponseData
+from datadog_api_client.v2.model.notification_rule_preview_response_type import NotificationRulePreviewResponseType
+from datadog_api_client.v2.model.notification_rule_preview_result import NotificationRulePreviewResult
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
+from datadog_api_client.v2.model.notification_rule_routing import NotificationRuleRouting
+from datadog_api_client.v2.model.notification_rule_routing_mode import NotificationRuleRoutingMode
 from datadog_api_client.v2.model.notification_rules_list_response import NotificationRulesListResponse
 from datadog_api_client.v2.model.notification_rules_type import NotificationRulesType
 from datadog_api_client.v2.model.notion_api_key import NotionAPIKey
@@ -12560,7 +12572,15 @@ __all__ = [
     "NotificationChannelType",
     "NotificationRule",
     "NotificationRuleAttributes",
+    "NotificationRulePreviewNotificationStatus",
+    "NotificationRulePreviewResponse",
+    "NotificationRulePreviewResponseAttributes",
+    "NotificationRulePreviewResponseData",
+    "NotificationRulePreviewResponseType",
+    "NotificationRulePreviewResult",
     "NotificationRuleResponse",
+    "NotificationRuleRouting",
+    "NotificationRuleRoutingMode",
     "NotificationRulesListResponse",
     "NotificationRulesType",
     "NotionAPIKey",
