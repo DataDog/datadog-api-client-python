@@ -2019,6 +2019,42 @@
       "type": "safe"
     }
   },
+  "ListOwnershipInferences": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOwnershipHistory": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOwnershipInference": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOwnershipEvidence": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOwnershipFeedback": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListOwnershipHistoryByOwnerType": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListCSMAgentlessHosts": {
     "tag": "CSM Settings",
     "undo": {

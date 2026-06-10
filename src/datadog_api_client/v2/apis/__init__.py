@@ -17,6 +17,7 @@ from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPi
 from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
 from datadog_api_client.v2.api.csm_agents_api import CSMAgentsApi
 from datadog_api_client.v2.api.csm_coverage_analysis_api import CSMCoverageAnalysisApi
+from datadog_api_client.v2.api.csm_ownership_api import CSMOwnershipApi
 from datadog_api_client.v2.api.csm_settings_api import CSMSettingsApi
 from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
@@ -145,6 +146,7 @@ __all__ = [
     "CIVisibilityTestsApi",
     "CSMAgentsApi",
     "CSMCoverageAnalysisApi",
+    "CSMOwnershipApi",
     "CSMSettingsApi",
     "CSMThreatsApi",
     "CaseManagementApi",
