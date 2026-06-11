@@ -3134,6 +3134,14 @@ from datadog_api_client.v2.model.ip_allowlist_response import IPAllowlistRespons
 from datadog_api_client.v2.model.ip_allowlist_type import IPAllowlistType
 from datadog_api_client.v2.model.ip_allowlist_update_request import IPAllowlistUpdateRequest
 from datadog_api_client.v2.model.idp_metadata_form_data import IdPMetadataFormData
+from datadog_api_client.v2.model.identity_provider_attributes import IdentityProviderAttributes
+from datadog_api_client.v2.model.identity_provider_data import IdentityProviderData
+from datadog_api_client.v2.model.identity_provider_response import IdentityProviderResponse
+from datadog_api_client.v2.model.identity_provider_type import IdentityProviderType
+from datadog_api_client.v2.model.identity_provider_update_attributes import IdentityProviderUpdateAttributes
+from datadog_api_client.v2.model.identity_provider_update_data import IdentityProviderUpdateData
+from datadog_api_client.v2.model.identity_provider_update_request import IdentityProviderUpdateRequest
+from datadog_api_client.v2.model.identity_providers_response import IdentityProvidersResponse
 from datadog_api_client.v2.model.incident_attachment_type import IncidentAttachmentType
 from datadog_api_client.v2.model.incident_create_attributes import IncidentCreateAttributes
 from datadog_api_client.v2.model.incident_create_data import IncidentCreateData
@@ -5647,6 +5655,39 @@ from datadog_api_client.v2.model.opsgenie_service_update_request import Opsgenie
 from datadog_api_client.v2.model.opsgenie_services_response import OpsgenieServicesResponse
 from datadog_api_client.v2.model.order_direction import OrderDirection
 from datadog_api_client.v2.model.org_attributes import OrgAttributes
+from datadog_api_client.v2.model.org_authorized_client_attributes import OrgAuthorizedClientAttributes
+from datadog_api_client.v2.model.org_authorized_client_data import OrgAuthorizedClientData
+from datadog_api_client.v2.model.org_authorized_client_relationship_o_auth2_client import (
+    OrgAuthorizedClientRelationshipOAuth2Client,
+)
+from datadog_api_client.v2.model.org_authorized_client_relationship_o_auth2_client_data import (
+    OrgAuthorizedClientRelationshipOAuth2ClientData,
+)
+from datadog_api_client.v2.model.org_authorized_client_relationship_o_auth2_client_data_type import (
+    OrgAuthorizedClientRelationshipOAuth2ClientDataType,
+)
+from datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients import (
+    OrgAuthorizedClientRelationshipUserAuthorizedClients,
+)
+from datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients_data import (
+    OrgAuthorizedClientRelationshipUserAuthorizedClientsData,
+)
+from datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients_data_type import (
+    OrgAuthorizedClientRelationshipUserAuthorizedClientsDataType,
+)
+from datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients_links import (
+    OrgAuthorizedClientRelationshipUserAuthorizedClientsLinks,
+)
+from datadog_api_client.v2.model.org_authorized_client_relationships import OrgAuthorizedClientRelationships
+from datadog_api_client.v2.model.org_authorized_client_response import OrgAuthorizedClientResponse
+from datadog_api_client.v2.model.org_authorized_client_type import OrgAuthorizedClientType
+from datadog_api_client.v2.model.org_authorized_client_update_attributes import OrgAuthorizedClientUpdateAttributes
+from datadog_api_client.v2.model.org_authorized_client_update_data import OrgAuthorizedClientUpdateData
+from datadog_api_client.v2.model.org_authorized_client_update_request import OrgAuthorizedClientUpdateRequest
+from datadog_api_client.v2.model.org_authorized_client_user_authorizations_sort import (
+    OrgAuthorizedClientUserAuthorizationsSort,
+)
+from datadog_api_client.v2.model.org_authorized_clients_response import OrgAuthorizedClientsResponse
 from datadog_api_client.v2.model.org_config_get_response import OrgConfigGetResponse
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
 from datadog_api_client.v2.model.org_config_read import OrgConfigRead
@@ -8815,6 +8856,7 @@ from datadog_api_client.v2.model.update_tenancy_config_data_attributes_regions_c
 )
 from datadog_api_client.v2.model.update_tenancy_config_data_type import UpdateTenancyConfigDataType
 from datadog_api_client.v2.model.update_tenancy_config_request import UpdateTenancyConfigRequest
+from datadog_api_client.v2.model.update_user_identity_providers_request import UpdateUserIdentityProvidersRequest
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
 from datadog_api_client.v2.model.upsert_allocation_request import UpsertAllocationRequest
@@ -8873,6 +8915,37 @@ from datadog_api_client.v2.model.usage_time_series_type import UsageTimeSeriesTy
 from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_attributes import UserAttributes
 from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
+from datadog_api_client.v2.model.user_authorized_client_attributes import UserAuthorizedClientAttributes
+from datadog_api_client.v2.model.user_authorized_client_data import UserAuthorizedClientData
+from datadog_api_client.v2.model.user_authorized_client_relationship_o_auth2_client import (
+    UserAuthorizedClientRelationshipOAuth2Client,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationship_o_auth2_client_data import (
+    UserAuthorizedClientRelationshipOAuth2ClientData,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationship_o_auth2_client_data_type import (
+    UserAuthorizedClientRelationshipOAuth2ClientDataType,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationship_scope_data import (
+    UserAuthorizedClientRelationshipScopeData,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationship_scope_data_type import (
+    UserAuthorizedClientRelationshipScopeDataType,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationship_scopes import (
+    UserAuthorizedClientRelationshipScopes,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationship_user import UserAuthorizedClientRelationshipUser
+from datadog_api_client.v2.model.user_authorized_client_relationship_user_data import (
+    UserAuthorizedClientRelationshipUserData,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationship_user_data_type import (
+    UserAuthorizedClientRelationshipUserDataType,
+)
+from datadog_api_client.v2.model.user_authorized_client_relationships import UserAuthorizedClientRelationships
+from datadog_api_client.v2.model.user_authorized_client_response import UserAuthorizedClientResponse
+from datadog_api_client.v2.model.user_authorized_client_type import UserAuthorizedClientType
+from datadog_api_client.v2.model.user_authorized_clients_response import UserAuthorizedClientsResponse
 from datadog_api_client.v2.model.user_create_attributes import UserCreateAttributes
 from datadog_api_client.v2.model.user_create_data import UserCreateData
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
@@ -8884,7 +8957,17 @@ from datadog_api_client.v2.model.user_invitation_response_data import UserInvita
 from datadog_api_client.v2.model.user_invitations_request import UserInvitationsRequest
 from datadog_api_client.v2.model.user_invitations_response import UserInvitationsResponse
 from datadog_api_client.v2.model.user_invitations_type import UserInvitationsType
+from datadog_api_client.v2.model.user_override_identity_provider_attributes import (
+    UserOverrideIdentityProviderAttributes,
+)
+from datadog_api_client.v2.model.user_override_identity_provider_data import UserOverrideIdentityProviderData
+from datadog_api_client.v2.model.user_override_identity_provider_data_type import UserOverrideIdentityProviderDataType
+from datadog_api_client.v2.model.user_override_identity_providers_response import UserOverrideIdentityProvidersResponse
 from datadog_api_client.v2.model.user_relationship_data import UserRelationshipData
+from datadog_api_client.v2.model.user_relationship_identity_provider_data import UserRelationshipIdentityProviderData
+from datadog_api_client.v2.model.user_relationship_identity_provider_data_type import (
+    UserRelationshipIdentityProviderDataType,
+)
 from datadog_api_client.v2.model.user_relationships import UserRelationships
 from datadog_api_client.v2.model.user_resource_type import UserResourceType
 from datadog_api_client.v2.model.user_response import UserResponse
@@ -11502,6 +11585,14 @@ __all__ = [
     "IPAllowlistType",
     "IPAllowlistUpdateRequest",
     "IdPMetadataFormData",
+    "IdentityProviderAttributes",
+    "IdentityProviderData",
+    "IdentityProviderResponse",
+    "IdentityProviderType",
+    "IdentityProviderUpdateAttributes",
+    "IdentityProviderUpdateData",
+    "IdentityProviderUpdateRequest",
+    "IdentityProvidersResponse",
     "IncidentAttachmentType",
     "IncidentCreateAttributes",
     "IncidentCreateData",
@@ -13085,6 +13176,23 @@ __all__ = [
     "OpsgenieServicesResponse",
     "OrderDirection",
     "OrgAttributes",
+    "OrgAuthorizedClientAttributes",
+    "OrgAuthorizedClientData",
+    "OrgAuthorizedClientRelationshipOAuth2Client",
+    "OrgAuthorizedClientRelationshipOAuth2ClientData",
+    "OrgAuthorizedClientRelationshipOAuth2ClientDataType",
+    "OrgAuthorizedClientRelationshipUserAuthorizedClients",
+    "OrgAuthorizedClientRelationshipUserAuthorizedClientsData",
+    "OrgAuthorizedClientRelationshipUserAuthorizedClientsDataType",
+    "OrgAuthorizedClientRelationshipUserAuthorizedClientsLinks",
+    "OrgAuthorizedClientRelationships",
+    "OrgAuthorizedClientResponse",
+    "OrgAuthorizedClientType",
+    "OrgAuthorizedClientUpdateAttributes",
+    "OrgAuthorizedClientUpdateData",
+    "OrgAuthorizedClientUpdateRequest",
+    "OrgAuthorizedClientUserAuthorizationsSort",
+    "OrgAuthorizedClientsResponse",
     "OrgConfigGetResponse",
     "OrgConfigListResponse",
     "OrgConfigRead",
@@ -15337,6 +15445,7 @@ __all__ = [
     "UpdateTenancyConfigDataAttributesRegionsConfig",
     "UpdateTenancyConfigDataType",
     "UpdateTenancyConfigRequest",
+    "UpdateUserIdentityProvidersRequest",
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
     "UpsertAllocationRequest",
@@ -15381,6 +15490,21 @@ __all__ = [
     "User",
     "UserAttributes",
     "UserAttributesStatus",
+    "UserAuthorizedClientAttributes",
+    "UserAuthorizedClientData",
+    "UserAuthorizedClientRelationshipOAuth2Client",
+    "UserAuthorizedClientRelationshipOAuth2ClientData",
+    "UserAuthorizedClientRelationshipOAuth2ClientDataType",
+    "UserAuthorizedClientRelationshipScopeData",
+    "UserAuthorizedClientRelationshipScopeDataType",
+    "UserAuthorizedClientRelationshipScopes",
+    "UserAuthorizedClientRelationshipUser",
+    "UserAuthorizedClientRelationshipUserData",
+    "UserAuthorizedClientRelationshipUserDataType",
+    "UserAuthorizedClientRelationships",
+    "UserAuthorizedClientResponse",
+    "UserAuthorizedClientType",
+    "UserAuthorizedClientsResponse",
     "UserCreateAttributes",
     "UserCreateData",
     "UserCreateRequest",
@@ -15392,7 +15516,13 @@ __all__ = [
     "UserInvitationsRequest",
     "UserInvitationsResponse",
     "UserInvitationsType",
+    "UserOverrideIdentityProviderAttributes",
+    "UserOverrideIdentityProviderData",
+    "UserOverrideIdentityProviderDataType",
+    "UserOverrideIdentityProvidersResponse",
     "UserRelationshipData",
+    "UserRelationshipIdentityProviderData",
+    "UserRelationshipIdentityProviderDataType",
     "UserRelationships",
     "UserResourceType",
     "UserResponse",
