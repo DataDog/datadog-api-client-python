@@ -14,17 +14,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.notification_rule_routing import NotificationRuleRouting
     from datadog_api_client.v2.model.selectors import Selectors
 
 
 class PatchNotificationRuleParametersDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.notification_rule_routing import NotificationRuleRouting
         from datadog_api_client.v2.model.selectors import Selectors
 
         return {
             "enabled": (bool,),
             "name": (str,),
+            "routing": (NotificationRuleRouting,),
             "selectors": (Selectors,),
             "targets": ([str],),
             "time_aggregation": (int,),
@@ -34,6 +37,7 @@ class PatchNotificationRuleParametersDataAttributes(ModelNormal):
     attribute_map = {
         "enabled": "enabled",
         "name": "name",
+        "routing": "routing",
         "selectors": "selectors",
         "targets": "targets",
         "time_aggregation": "time_aggregation",
@@ -44,6 +48,7 @@ class PatchNotificationRuleParametersDataAttributes(ModelNormal):
         self_,
         enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        routing: Union[NotificationRuleRouting, UnsetType] = unset,
         selectors: Union[Selectors, UnsetType] = unset,
         targets: Union[List[str], UnsetType] = unset,
         time_aggregation: Union[int, UnsetType] = unset,
@@ -58,6 +63,9 @@ class PatchNotificationRuleParametersDataAttributes(ModelNormal):
 
         :param name: Name of the notification rule.
         :type name: str, optional
+
+        :param routing: Routing configuration for the notification rule.
+        :type routing: NotificationRuleRouting, optional
 
         :param selectors: Selectors are used to filter security issues for which notifications should be generated.
             Users can specify rule severities, rule types, a query to filter security issues on tags and attributes, and the trigger source.
@@ -83,6 +91,8 @@ class PatchNotificationRuleParametersDataAttributes(ModelNormal):
             kwargs["enabled"] = enabled
         if name is not unset:
             kwargs["name"] = name
+        if routing is not unset:
+            kwargs["routing"] = routing
         if selectors is not unset:
             kwargs["selectors"] = selectors
         if targets is not unset:

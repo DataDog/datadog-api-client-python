@@ -14,17 +14,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.notification_rule_routing import NotificationRuleRouting
     from datadog_api_client.v2.model.selectors import Selectors
 
 
 class CreateNotificationRuleParametersDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.notification_rule_routing import NotificationRuleRouting
         from datadog_api_client.v2.model.selectors import Selectors
 
         return {
             "enabled": (bool,),
             "name": (str,),
+            "routing": (NotificationRuleRouting,),
             "selectors": (Selectors,),
             "targets": ([str],),
             "time_aggregation": (int,),
@@ -33,6 +36,7 @@ class CreateNotificationRuleParametersDataAttributes(ModelNormal):
     attribute_map = {
         "enabled": "enabled",
         "name": "name",
+        "routing": "routing",
         "selectors": "selectors",
         "targets": "targets",
         "time_aggregation": "time_aggregation",
@@ -44,6 +48,7 @@ class CreateNotificationRuleParametersDataAttributes(ModelNormal):
         selectors: Selectors,
         targets: List[str],
         enabled: Union[bool, UnsetType] = unset,
+        routing: Union[NotificationRuleRouting, UnsetType] = unset,
         time_aggregation: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -55,6 +60,9 @@ class CreateNotificationRuleParametersDataAttributes(ModelNormal):
 
         :param name: Name of the notification rule.
         :type name: str
+
+        :param routing: Routing configuration for the notification rule.
+        :type routing: NotificationRuleRouting, optional
 
         :param selectors: Selectors are used to filter security issues for which notifications should be generated.
             Users can specify rule severities, rule types, a query to filter security issues on tags and attributes, and the trigger source.
@@ -75,6 +83,8 @@ class CreateNotificationRuleParametersDataAttributes(ModelNormal):
         """
         if enabled is not unset:
             kwargs["enabled"] = enabled
+        if routing is not unset:
+            kwargs["routing"] = routing
         if time_aggregation is not unset:
             kwargs["time_aggregation"] = time_aggregation
         super().__init__(kwargs)

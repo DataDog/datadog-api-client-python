@@ -759,7 +759,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Create a new signal-based notification rule returns "Bad Request" response
     Given new "CreateSignalNotificationRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -773,7 +773,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Create a new vulnerability-based notification rule returns "Bad Request" response
     Given new "CreateVulnerabilityNotificationRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -2470,7 +2470,7 @@ Feature: Security Monitoring
   Scenario: Patch a signal-based notification rule returns "The server cannot process the request because it contains invalid data." response
     Given new "PatchSignalNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
@@ -2504,7 +2504,7 @@ Feature: Security Monitoring
   Scenario: Patch a vulnerability-based notification rule returns "The server cannot process the request because it contains invalid data." response
     Given new "PatchVulnerabilityNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
@@ -2608,6 +2608,20 @@ Feature: Security Monitoring
     Given operation "CreateSampleLogGenerationSubscription" enabled
     And new "CreateSampleLogGenerationSubscription" request
     And body with value {"data": {"attributes": {"content_pack_id": "aws-cloudtrail", "duration": "3d"}, "type": "subscription_requests"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Test a notification rule returns "Bad Request" response
+    Given new "SendSecurityMonitoringNotificationPreview" request
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-siem
+  Scenario: Test a notification rule returns "OK" response
+    Given new "SendSecurityMonitoringNotificationPreview" request
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "env:prod", "rule_types": ["log_detection"], "severities": ["critical"], "trigger_source": "security_signals"}, "targets": ["@john.doe@email.com"]}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 200 OK
 

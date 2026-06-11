@@ -24819,10 +24819,66 @@ datadog\_api\_client.v2.model.notification\_rule\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.notification\_rule\_preview\_notification\_status module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_preview_notification_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_preview\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_preview_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_preview\_response\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_preview_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_preview\_response\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_preview_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_preview\_response\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_preview_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_preview\_result module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_preview_result
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.notification\_rule\_response module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.notification_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_routing module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_routing
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_routing\_mode module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_routing_mode
    :members:
    :show-inheritance:
 

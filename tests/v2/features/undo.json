@@ -7038,6 +7038,12 @@
       "type": "safe"
     }
   },
+  "SendSecurityMonitoringNotificationPreview": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityFilters": {
     "tag": "Security Monitoring",
     "undo": {

@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"enabled":true,"name":"Rule 1","selectors":{"query":"env:prod","rule_types":["log_detection"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@john.doe@email.com"]},"type":"notification_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/notification_rules/send_notification_preview
+  response:
+    body:
+      string: '{"data":{"id":"rka-loa-zwu","attributes":{"preview_results":[{"rule_type":"log_detection","notification_status":"DEFAULT"}]},"type":"notification_preview_response"}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

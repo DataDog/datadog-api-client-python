@@ -103,6 +103,7 @@ from datadog_api_client.v2.model.security_monitoring_integration_credentials_val
 from datadog_api_client.v2.model.security_monitoring_integration_config_update_request import (
     SecurityMonitoringIntegrationConfigUpdateRequest,
 )
+from datadog_api_client.v2.model.notification_rule_preview_response import NotificationRulePreviewResponse
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -3541,6 +3542,26 @@ class SecurityMonitoringApi:
             params_map={
                 "body": {
                     "openapi_types": (SecurityMonitoringSignalListRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._send_security_monitoring_notification_preview_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRulePreviewResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/notification_rules/send_notification_preview",
+                "operation_id": "send_security_monitoring_notification_preview",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateNotificationRuleParameters,),
                     "location": "body",
                 },
             },
@@ -7402,6 +7423,22 @@ class SecurityMonitoringApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def send_security_monitoring_notification_preview(
+        self,
+        body: CreateNotificationRuleParameters,
+    ) -> NotificationRulePreviewResponse:
+        """Test a notification rule.
+
+        Send a notification preview to test that a notification rule's targets are properly configured.
+
+        :type body: CreateNotificationRuleParameters
+        :rtype: NotificationRulePreviewResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._send_security_monitoring_notification_preview_endpoint.call_with_http_info(**kwargs)
 
     def test_existing_security_monitoring_rule(
         self,
