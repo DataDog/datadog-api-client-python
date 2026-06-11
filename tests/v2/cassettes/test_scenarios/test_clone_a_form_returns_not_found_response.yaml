@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"name":"Copy of My Form"},"type":"forms"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms/00000000-0000-0000-0000-000000000001/clone
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"32db2695-29bd-4280-b547-3737365608c3","title":"form
+        not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

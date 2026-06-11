@@ -2713,6 +2713,43 @@
       "type": "safe"
     }
   },
+  "UpdateForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CloneForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "PublishForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpsertFormVersion": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpsertAndPublishFormVersion": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetHamrOrgConnection": {
     "tag": "High Availability MultiRegion",
     "undo": {

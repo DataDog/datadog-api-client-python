@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"form_update":{"datastore_config":{"datastore_id":"5108ea24-dd83-4696-9caa-f069f73d0fad","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"An
+      updated description.","name":"Updated Form Name"}},"id":"22f6006a-2302-4926-9396-d2dfcf7b0b34","type":"forms"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/forms/00000000-0000-0000-0000-000000000001
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"c5564241-69a8-4a9e-af78-20c7913fbf5b","title":"form
+        not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1
