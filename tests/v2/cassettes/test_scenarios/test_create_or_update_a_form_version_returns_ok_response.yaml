@@ -1,0 +1,60 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"anonymous":false,"data_definition":{},"description":"A
+      simple test form.","idp_survey":false,"name":"Test-Create_or_update_a_form_version_returns_OK_response-1781117399","single_response":false,"ui_definition":{}},"type":"forms"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms
+  response:
+    body:
+      string: '{"data":{"id":"49ccfa97-825c-46f8-872b-5368fd1b56a4","type":"forms","attributes":{"active":true,"anonymous":false,"created_at":"2026-06-10T18:50:00.188982Z","datastore_config":{"datastore_id":"be7e7cf5-6a73-4d07-9654-a40997bee800","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"A
+        simple test form.","idp_survey":false,"modified_at":"2026-06-10T18:50:00.188982Z","name":"Test-Create_or_update_a_form_version_returns_OK_response-1781117399","org_id":321813,"self_service":false,"single_response":false,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":{"id":"376765","state":"draft","version":1,"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d","definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"S2KAuCoip8JbyZNOT2gYbpUouidttEGvYWyvqeoMQjE=\\\",\\\"timestamp\\\":1781117400,\\\"proof\\\":\\\"MGUCMQDyae03EWzAe3gENsZt4WVLiPP8TGQg7UO7I28dcEK5w70MRYRf9x18lDXfOEDoPrgCMCHlQeXp/K5AKKmyVYwtJd9VI1SsJoOBOXbj26BhPKZBF386oH7LxK45J12htxj9hw==\\\"}\",\"version\":1}","data_definition":{},"ui_definition":{},"created_at":"2026-06-10T18:50:00.188982Z","modified_at":"2026-06-10T18:50:00.188982Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"data_definition":{"description":"Welcome to the
+      Engineering Experience Survey.","required":[],"title":"Developer Experience
+      Survey","type":"object"},"state":"frozen","ui_definition":{"ui:order":[],"ui:theme":{"primaryColor":"gray"}},"upsert_params":{"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d","insert_only":false,"match_policy":"none"}},"type":"form_versions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms/49ccfa97-825c-46f8-872b-5368fd1b56a4/versions
+  response:
+    body:
+      string: '{"data":{"id":"376765","type":"form_versions","attributes":{"created_at":"2026-06-10T18:50:00.188982Z","data_definition":{"description":"Welcome
+        to the Engineering Experience Survey.","required":[],"title":"Developer Experience
+        Survey","type":"object"},"definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\",\\\"timestamp\\\":1781117400,\\\"proof\\\":\\\"MGQCMGbAihRvSVO+KjM9uttjprG+2ZR6D5kKoXwIS4em5mjg9StXgu/pi08NfU4WMdTD8wIwcxxGWh+MzG6awNnii2Cjl46YNhPBV39JpU03mlQsb+9cGVgqL2JYVsDaAJ0G+YzN\\\"}\",\"version\":1}","etag":"30586851d6ab0b26080d3f34629e5e2cfb9f2f57457eec927b72eafefae81e48","modified_at":"2026-06-10T18:50:00.568923Z","state":"frozen","ui_definition":{"ui:order":[],"ui:theme":{"primaryColor":"gray"}},"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/forms/49ccfa97-825c-46f8-872b-5368fd1b56a4
+  response:
+    body:
+      string: '{"data":{"id":"49ccfa97-825c-46f8-872b-5368fd1b56a4","type":"forms"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

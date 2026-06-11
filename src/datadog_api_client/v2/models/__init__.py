@@ -1177,6 +1177,9 @@ from datadog_api_client.v2.model.clickup_credentials_update import ClickupCreden
 from datadog_api_client.v2.model.clickup_integration import ClickupIntegration
 from datadog_api_client.v2.model.clickup_integration_type import ClickupIntegrationType
 from datadog_api_client.v2.model.clickup_integration_update import ClickupIntegrationUpdate
+from datadog_api_client.v2.model.clone_form_data import CloneFormData
+from datadog_api_client.v2.model.clone_form_data_attributes import CloneFormDataAttributes
+from datadog_api_client.v2.model.clone_form_request import CloneFormRequest
 from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
@@ -2799,6 +2802,9 @@ from datadog_api_client.v2.model.form_data_definition import FormDataDefinition
 from datadog_api_client.v2.model.form_data_definition_type import FormDataDefinitionType
 from datadog_api_client.v2.model.form_datastore_config_attributes import FormDatastoreConfigAttributes
 from datadog_api_client.v2.model.form_publication_attributes import FormPublicationAttributes
+from datadog_api_client.v2.model.form_publication_data import FormPublicationData
+from datadog_api_client.v2.model.form_publication_response import FormPublicationResponse
+from datadog_api_client.v2.model.form_publication_type import FormPublicationType
 from datadog_api_client.v2.model.form_response import FormResponse
 from datadog_api_client.v2.model.form_trigger import FormTrigger
 from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
@@ -2806,8 +2812,12 @@ from datadog_api_client.v2.model.form_type import FormType
 from datadog_api_client.v2.model.form_ui_definition import FormUiDefinition
 from datadog_api_client.v2.model.form_ui_definition_ui_theme import FormUiDefinitionUiTheme
 from datadog_api_client.v2.model.form_ui_definition_ui_theme_primary_color import FormUiDefinitionUiThemePrimaryColor
+from datadog_api_client.v2.model.form_update_attributes import FormUpdateAttributes
 from datadog_api_client.v2.model.form_version_attributes import FormVersionAttributes
+from datadog_api_client.v2.model.form_version_data import FormVersionData
+from datadog_api_client.v2.model.form_version_response import FormVersionResponse
 from datadog_api_client.v2.model.form_version_state import FormVersionState
+from datadog_api_client.v2.model.form_version_type import FormVersionType
 from datadog_api_client.v2.model.forms_response import FormsResponse
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
@@ -4008,6 +4018,7 @@ from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTra
 from datadog_api_client.v2.model.llm_obs_upsert_annotation_item import LLMObsUpsertAnnotationItem
 from datadog_api_client.v2.model.llm_obs_vertex_ai_metadata import LLMObsVertexAIMetadata
 from datadog_api_client.v2.model.language import Language
+from datadog_api_client.v2.model.latest_version_match_policy import LatestVersionMatchPolicy
 from datadog_api_client.v2.model.launch_darkly_api_key import LaunchDarklyAPIKey
 from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
 from datadog_api_client.v2.model.launch_darkly_api_key_update import LaunchDarklyAPIKeyUpdate
@@ -6065,6 +6076,9 @@ from datadog_api_client.v2.model.pruned_trace_data import PrunedTraceData
 from datadog_api_client.v2.model.pruned_trace_response import PrunedTraceResponse
 from datadog_api_client.v2.model.pruned_trace_type import PrunedTraceType
 from datadog_api_client.v2.model.publish_app_response import PublishAppResponse
+from datadog_api_client.v2.model.publish_form_data import PublishFormData
+from datadog_api_client.v2.model.publish_form_data_attributes import PublishFormDataAttributes
+from datadog_api_client.v2.model.publish_form_request import PublishFormRequest
 from datadog_api_client.v2.model.publish_request_type import PublishRequestType
 from datadog_api_client.v2.model.put_apps_datastore_item_response_array import PutAppsDatastoreItemResponseArray
 from datadog_api_client.v2.model.put_apps_datastore_item_response_data import PutAppsDatastoreItemResponseData
@@ -8732,6 +8746,9 @@ from datadog_api_client.v2.model.update_flaky_tests_response_attributes import U
 from datadog_api_client.v2.model.update_flaky_tests_response_data import UpdateFlakyTestsResponseData
 from datadog_api_client.v2.model.update_flaky_tests_response_data_type import UpdateFlakyTestsResponseDataType
 from datadog_api_client.v2.model.update_flaky_tests_response_result import UpdateFlakyTestsResponseResult
+from datadog_api_client.v2.model.update_form_data import UpdateFormData
+from datadog_api_client.v2.model.update_form_data_attributes import UpdateFormDataAttributes
+from datadog_api_client.v2.model.update_form_request import UpdateFormRequest
 from datadog_api_client.v2.model.update_on_call_notification_rule_request import UpdateOnCallNotificationRuleRequest
 from datadog_api_client.v2.model.update_on_call_notification_rule_request_attributes import (
     UpdateOnCallNotificationRuleRequestAttributes,
@@ -8801,6 +8818,14 @@ from datadog_api_client.v2.model.update_tenancy_config_request import UpdateTena
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
 from datadog_api_client.v2.model.upsert_allocation_request import UpsertAllocationRequest
+from datadog_api_client.v2.model.upsert_and_publish_form_version_data import UpsertAndPublishFormVersionData
+from datadog_api_client.v2.model.upsert_and_publish_form_version_data_attributes import (
+    UpsertAndPublishFormVersionDataAttributes,
+)
+from datadog_api_client.v2.model.upsert_and_publish_form_version_request import UpsertAndPublishFormVersionRequest
+from datadog_api_client.v2.model.upsert_and_publish_form_version_upsert_params import (
+    UpsertAndPublishFormVersionUpsertParams,
+)
 from datadog_api_client.v2.model.upsert_catalog_entity_request import UpsertCatalogEntityRequest
 from datadog_api_client.v2.model.upsert_catalog_entity_response import UpsertCatalogEntityResponse
 from datadog_api_client.v2.model.upsert_catalog_entity_response_included_item import (
@@ -8815,6 +8840,10 @@ from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_attr
 from datadog_api_client.v2.model.upsert_cloud_inventory_sync_config_request_data import (
     UpsertCloudInventorySyncConfigRequestData,
 )
+from datadog_api_client.v2.model.upsert_form_version_data import UpsertFormVersionData
+from datadog_api_client.v2.model.upsert_form_version_data_attributes import UpsertFormVersionDataAttributes
+from datadog_api_client.v2.model.upsert_form_version_request import UpsertFormVersionRequest
+from datadog_api_client.v2.model.upsert_form_version_upsert_params import UpsertFormVersionUpsertParams
 from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data import UpsertOAuthScopesRestrictionData
 from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_data_attributes import (
     UpsertOAuthScopesRestrictionDataAttributes,
@@ -10000,6 +10029,9 @@ __all__ = [
     "ClickupIntegration",
     "ClickupIntegrationType",
     "ClickupIntegrationUpdate",
+    "CloneFormData",
+    "CloneFormDataAttributes",
+    "CloneFormRequest",
     "CloudAssetType",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
@@ -11194,6 +11226,9 @@ __all__ = [
     "FormDataDefinitionType",
     "FormDatastoreConfigAttributes",
     "FormPublicationAttributes",
+    "FormPublicationData",
+    "FormPublicationResponse",
+    "FormPublicationType",
     "FormResponse",
     "FormTrigger",
     "FormTriggerWrapper",
@@ -11201,8 +11236,12 @@ __all__ = [
     "FormUiDefinition",
     "FormUiDefinitionUiTheme",
     "FormUiDefinitionUiThemePrimaryColor",
+    "FormUpdateAttributes",
     "FormVersionAttributes",
+    "FormVersionData",
+    "FormVersionResponse",
     "FormVersionState",
+    "FormVersionType",
     "FormsResponse",
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
@@ -12107,6 +12146,7 @@ __all__ = [
     "LLMObsUpsertAnnotationItem",
     "LLMObsVertexAIMetadata",
     "Language",
+    "LatestVersionMatchPolicy",
     "LaunchDarklyAPIKey",
     "LaunchDarklyAPIKeyType",
     "LaunchDarklyAPIKeyUpdate",
@@ -13404,6 +13444,9 @@ __all__ = [
     "PrunedTraceResponse",
     "PrunedTraceType",
     "PublishAppResponse",
+    "PublishFormData",
+    "PublishFormDataAttributes",
+    "PublishFormRequest",
     "PublishRequestType",
     "PutAppsDatastoreItemResponseArray",
     "PutAppsDatastoreItemResponseData",
@@ -15255,6 +15298,9 @@ __all__ = [
     "UpdateFlakyTestsResponseData",
     "UpdateFlakyTestsResponseDataType",
     "UpdateFlakyTestsResponseResult",
+    "UpdateFormData",
+    "UpdateFormDataAttributes",
+    "UpdateFormRequest",
     "UpdateOnCallNotificationRuleRequest",
     "UpdateOnCallNotificationRuleRequestAttributes",
     "UpdateOnCallNotificationRuleRequestData",
@@ -15294,6 +15340,10 @@ __all__ = [
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
     "UpsertAllocationRequest",
+    "UpsertAndPublishFormVersionData",
+    "UpsertAndPublishFormVersionDataAttributes",
+    "UpsertAndPublishFormVersionRequest",
+    "UpsertAndPublishFormVersionUpsertParams",
     "UpsertCatalogEntityRequest",
     "UpsertCatalogEntityResponse",
     "UpsertCatalogEntityResponseIncludedItem",
@@ -15302,6 +15352,10 @@ __all__ = [
     "UpsertCloudInventorySyncConfigRequest",
     "UpsertCloudInventorySyncConfigRequestAttributes",
     "UpsertCloudInventorySyncConfigRequestData",
+    "UpsertFormVersionData",
+    "UpsertFormVersionDataAttributes",
+    "UpsertFormVersionRequest",
+    "UpsertFormVersionUpsertParams",
     "UpsertOAuthScopesRestrictionData",
     "UpsertOAuthScopesRestrictionDataAttributes",
     "UpsertOAuthScopesRestrictionRequest",

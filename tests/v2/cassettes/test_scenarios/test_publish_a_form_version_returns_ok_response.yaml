@@ -1,0 +1,56 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"anonymous":false,"data_definition":{},"description":"A
+      simple test form.","idp_survey":false,"name":"Test-Publish_a_form_version_returns_OK_response-1781117401","single_response":false,"ui_definition":{}},"type":"forms"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms
+  response:
+    body:
+      string: '{"data":{"id":"c73796e4-0dd3-4da4-8a9a-9297ba412b3e","type":"forms","attributes":{"active":true,"anonymous":false,"created_at":"2026-06-10T18:50:01.747408Z","datastore_config":{"datastore_id":"23249c30-b740-4a4b-8c23-34fb653dfdea","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"A
+        simple test form.","idp_survey":false,"modified_at":"2026-06-10T18:50:01.747408Z","name":"Test-Publish_a_form_version_returns_OK_response-1781117401","org_id":321813,"self_service":false,"single_response":false,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":{"id":"376767","state":"draft","version":1,"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d","definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\",\\\"timestamp\\\":1781117401,\\\"proof\\\":\\\"MGYCMQCE98ZIPD8JYrsEi1xXxe+8SVCjLroQbr+RRxKDmhfT++nN4tdcUXYYNtpNJDundgwCMQDG5TdraksHELR6ovN9xQtacfKq3wr2rKAIejh6Ut7m+jO5dmLml90pBOQMnAFXed4=\\\"}\",\"version\":1}","data_definition":{},"ui_definition":{},"created_at":"2026-06-10T18:50:01.747408Z","modified_at":"2026-06-10T18:50:01.747408Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"version":1},"type":"form_publications"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms/c73796e4-0dd3-4da4-8a9a-9297ba412b3e/publish
+  response:
+    body:
+      string: '{"data":{"id":"380020","type":"form_publications","attributes":{"created_at":"2026-06-10T18:50:02.131227Z","form_id":"c73796e4-0dd3-4da4-8a9a-9297ba412b3e","form_version":1,"modified_at":"2026-06-10T18:50:02.131227Z","org_id":321813,"publish_seq":1,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/forms/c73796e4-0dd3-4da4-8a9a-9297ba412b3e
+  response:
+    body:
+      string: '{"data":{"id":"c73796e4-0dd3-4da4-8a9a-9297ba412b3e","type":"forms"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

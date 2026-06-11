@@ -1,0 +1,61 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"anonymous":false,"data_definition":{},"description":"A
+      simple test form.","idp_survey":false,"name":"Test-Upsert_and_publish_a_form_version_returns_OK_response-1781193472","single_response":false,"ui_definition":{}},"type":"forms"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms
+  response:
+    body:
+      string: '{"data":{"id":"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b","type":"forms","attributes":{"active":true,"anonymous":false,"created_at":"2026-06-11T15:57:53.185492Z","datastore_config":{"datastore_id":"37899277-a526-4668-966b-e26a258347a4","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"A
+        simple test form.","idp_survey":false,"modified_at":"2026-06-11T15:57:53.185492Z","name":"Test-Upsert_and_publish_a_form_version_returns_OK_response-1781193472","org_id":321813,"self_service":false,"single_response":false,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":{"id":"380435","state":"draft","version":1,"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d","definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"S2KAuCoip8JbyZNOT2gYbpUouidttEGvYWyvqeoMQjE=\\\",\\\"timestamp\\\":1781193473,\\\"proof\\\":\\\"MGUCMQD5kghzucjG+znH/JVQhgs9+82KuT/veBwvMPxHafCX3toxbVfSadP16IDWljuo2SYCMFjmS1y3rcGEBUCajP/BE82sUdc9L8jxA57Jz6lvCsuDKC7BfFYVq2FjSrj19aS9Pg==\\\"}\",\"version\":1}","data_definition":{},"ui_definition":{},"created_at":"2026-06-11T15:57:53.185492Z","modified_at":"2026-06-11T15:57:53.185492Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"data_definition":{"description":"Welcome to the
+      Engineering Experience Survey.","required":[],"title":"Developer Experience
+      Survey","type":"object"},"ui_definition":{"ui:order":[],"ui:theme":{"primaryColor":"gray"}},"upsert_params":{"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d"}},"type":"form_versions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms/25824ea9-3c52-4f43-8539-a2d4cd7f9a3b/versions/upsert_and_publish
+  response:
+    body:
+      string: '{"data":{"id":"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b","type":"forms","attributes":{"active":true,"anonymous":false,"created_at":"2026-06-11T15:57:53.185492Z","datastore_config":{"datastore_id":"37899277-a526-4668-966b-e26a258347a4","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"A
+        simple test form.","idp_survey":false,"modified_at":"2026-06-11T15:57:53.185492Z","name":"Test-Upsert_and_publish_a_form_version_returns_OK_response-1781193472","org_id":321813,"publication":{"id":"383651","org_id":321813,"form_id":"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b","publish_seq":1,"form_version":1,"created_at":"2026-06-11T15:57:53.39063Z","modified_at":"2026-06-11T15:57:53.39063Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"self_service":false,"single_response":false,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":{"id":"380435","state":"frozen","version":1,"etag":"30586851d6ab0b26080d3f34629e5e2cfb9f2f57457eec927b72eafefae81e48","definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\",\\\"timestamp\\\":1781193473,\\\"proof\\\":\\\"MGUCMQCtGifKZr+EjEtnFk2ZKxy0DThB02mQ5wMJ3vB5L7zgTpHR+6k38mxLM1CqP2YFeQgCMHL7aBH2pJzR7yrv2YvaWNnv2puOld4laoRAWzCcuHgxHVWnp7wEcrvebyDbNej+2g==\\\"}\",\"version\":1}","data_definition":{"description":"Welcome
+        to the Engineering Experience Survey.","required":[],"title":"Developer Experience
+        Survey","type":"object"},"ui_definition":{"ui:order":[],"ui:theme":{"primaryColor":"gray"}},"created_at":"2026-06-11T15:57:53.185492Z","modified_at":"2026-06-11T15:57:53.39063Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/forms/25824ea9-3c52-4f43-8539-a2d4cd7f9a3b
+  response:
+    body:
+      string: '{"data":{"id":"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b","type":"forms"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
