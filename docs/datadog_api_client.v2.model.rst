@@ -16804,6 +16804,62 @@ datadog\_api\_client.v2.model.httpci\_app\_errors module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.identity\_provider\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_provider_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.identity\_provider\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_provider_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.identity\_provider\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_provider_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.identity\_provider\_type module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_provider_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.identity\_provider\_update\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_provider_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.identity\_provider\_update\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_provider_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.identity\_provider\_update\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_provider_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.identity\_providers\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.identity_providers_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.idp\_metadata\_form\_data module
 --------------------------------------------------------------
 
@@ -27973,6 +28029,125 @@ datadog\_api\_client.v2.model.org\_attributes module
 ----------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.org_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationship\_o\_auth2\_client module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationship_o_auth2_client
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationship\_o\_auth2\_client\_data module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationship_o_auth2_client_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationship\_o\_auth2\_client\_data\_type module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationship_o_auth2_client_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationship\_user\_authorized\_clients module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationship\_user\_authorized\_clients\_data module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationship\_user\_authorized\_clients\_data\_type module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationship\_user\_authorized\_clients\_links module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationship_user_authorized_clients_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_relationships module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_update\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_update\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_update\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_client\_user\_authorizations\_sort module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_client_user_authorizations_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_authorized\_clients\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_authorized_clients_response
    :members:
    :show-inheritance:
 
@@ -43691,6 +43866,13 @@ datadog\_api\_client.v2.model.update\_tenancy\_config\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_user\_identity\_providers\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_user_identity_providers_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_workflow\_request module
 --------------------------------------------------------------
 
@@ -43999,6 +44181,111 @@ datadog\_api\_client.v2.model.user\_attributes\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.user\_authorized\_client\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_o\_auth2\_client module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_o_auth2_client
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_o\_auth2\_client\_data module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_o_auth2_client_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_o\_auth2\_client\_data\_type module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_o_auth2_client_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_scope\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_scope_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_scope\_data\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_scope_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_scopes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_scopes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_user module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_user\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationship\_user\_data\_type module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationship_user_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_relationships module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_client\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_client_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_authorized\_clients\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_authorized_clients_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.user\_create\_attributes module
 -------------------------------------------------------------
 
@@ -44076,10 +44363,52 @@ datadog\_api\_client.v2.model.user\_invitations\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.user\_override\_identity\_provider\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_override_identity_provider_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_override\_identity\_provider\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_override_identity_provider_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_override\_identity\_provider\_data\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_override_identity_provider_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_override\_identity\_providers\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_override_identity_providers_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.user\_relationship\_data module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.user_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_relationship\_identity\_provider\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_relationship_identity_provider_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.user\_relationship\_identity\_provider\_data\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.user_relationship_identity_provider_data_type
    :members:
    :show-inheritance:
 

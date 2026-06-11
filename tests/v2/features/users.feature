@@ -125,6 +125,20 @@ Feature: Users
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/org-management
+  Scenario: Get identity provider overrides for a user returns "Not found" response
+    Given new "GetUserIdentityProviders" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not found
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Get identity provider overrides for a user returns "OK" response
+    Given new "GetUserIdentityProviders" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
   Scenario: Get user details returns "Not found" response
     Given new "GetUser" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -256,3 +270,27 @@ Feature: Users
     And body with value {"data": {"attributes": {"title": null}, "id": "00000000-0000-feed-0000-000000000000", "type": "users"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Update identity provider overrides for a user returns "Bad Request" response
+    Given new "UpdateUserIdentityProviders" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000001", "type": "identity_providers"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Update identity provider overrides for a user returns "No Content" response
+    Given new "UpdateUserIdentityProviders" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000001", "type": "identity_providers"}]}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: Update identity provider overrides for a user returns "Not found" response
+    Given new "UpdateUserIdentityProviders" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000001", "type": "identity_providers"}]}
+    When the request is sent
+    Then the response status is 404 Not found

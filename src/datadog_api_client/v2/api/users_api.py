@@ -26,7 +26,9 @@ from datadog_api_client.v2.model.users_response import UsersResponse
 from datadog_api_client.v2.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v2.model.user import User
 from datadog_api_client.v2.model.user_create_request import UserCreateRequest
+from datadog_api_client.v2.model.user_override_identity_providers_response import UserOverrideIdentityProvidersResponse
 from datadog_api_client.v2.model.permissions_response import PermissionsResponse
+from datadog_api_client.v2.model.update_user_identity_providers_request import UpdateUserIdentityProvidersRequest
 
 
 class UsersApi:
@@ -170,6 +172,29 @@ class UsersApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/users/{user_id}",
                 "operation_id": "get_user",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_user_identity_providers_endpoint = _Endpoint(
+            settings={
+                "response_type": (UserOverrideIdentityProvidersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/users/{user_id}/identity_providers",
+                "operation_id": "get_user_identity_providers",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -346,6 +371,32 @@ class UsersApi:
             api_client=api_client,
         )
 
+        self._update_user_identity_providers_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/users/{user_id}/relationships/identity_providers",
+                "operation_id": "update_user_identity_providers",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateUserIdentityProvidersRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def anonymize_users(
         self,
         body: AnonymizeUsersRequest,
@@ -464,6 +515,24 @@ class UsersApi:
         kwargs["user_id"] = user_id
 
         return self._get_user_endpoint.call_with_http_info(**kwargs)
+
+    def get_user_identity_providers(
+        self,
+        user_id: str,
+    ) -> UserOverrideIdentityProvidersResponse:
+        """Get identity provider overrides for a user.
+
+        Get the identity provider overrides for a specific user in the organization.
+        When a user has no overrides set, they use the organization's default identity providers.
+
+        :param user_id: The ID of the user.
+        :type user_id: str
+        :rtype: UserOverrideIdentityProvidersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        return self._get_user_identity_providers_endpoint.call_with_http_info(**kwargs)
 
     def list_user_organizations(
         self,
@@ -680,3 +749,26 @@ class UsersApi:
         kwargs["body"] = body
 
         return self._update_user_endpoint.call_with_http_info(**kwargs)
+
+    def update_user_identity_providers(
+        self,
+        user_id: str,
+        body: UpdateUserIdentityProvidersRequest,
+    ) -> None:
+        """Update identity provider overrides for a user.
+
+        Set the identity provider overrides for a specific user in the organization.
+        Pass an empty list to remove all overrides, reverting the user to the organization's
+        default identity providers.
+
+        :param user_id: The ID of the user.
+        :type user_id: str
+        :type body: UpdateUserIdentityProvidersRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        kwargs["body"] = body
+
+        return self._update_user_identity_providers_endpoint.call_with_http_info(**kwargs)
