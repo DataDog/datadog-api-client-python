@@ -6238,6 +6238,30 @@ from datadog_api_client.v2.model.reorder_rule_resource_data_type import ReorderR
 from datadog_api_client.v2.model.reorder_ruleset_resource_array import ReorderRulesetResourceArray
 from datadog_api_client.v2.model.reorder_ruleset_resource_data import ReorderRulesetResourceData
 from datadog_api_client.v2.model.reorder_ruleset_resource_data_type import ReorderRulesetResourceDataType
+from datadog_api_client.v2.model.report_schedule_author import ReportScheduleAuthor
+from datadog_api_client.v2.model.report_schedule_author_attributes import ReportScheduleAuthorAttributes
+from datadog_api_client.v2.model.report_schedule_author_relationship import ReportScheduleAuthorRelationship
+from datadog_api_client.v2.model.report_schedule_author_relationship_data import ReportScheduleAuthorRelationshipData
+from datadog_api_client.v2.model.report_schedule_author_type import ReportScheduleAuthorType
+from datadog_api_client.v2.model.report_schedule_create_request import ReportScheduleCreateRequest
+from datadog_api_client.v2.model.report_schedule_create_request_attributes import ReportScheduleCreateRequestAttributes
+from datadog_api_client.v2.model.report_schedule_create_request_data import ReportScheduleCreateRequestData
+from datadog_api_client.v2.model.report_schedule_delivery_format import ReportScheduleDeliveryFormat
+from datadog_api_client.v2.model.report_schedule_included_resource import ReportScheduleIncludedResource
+from datadog_api_client.v2.model.report_schedule_patch_request import ReportSchedulePatchRequest
+from datadog_api_client.v2.model.report_schedule_patch_request_attributes import ReportSchedulePatchRequestAttributes
+from datadog_api_client.v2.model.report_schedule_patch_request_data import ReportSchedulePatchRequestData
+from datadog_api_client.v2.model.report_schedule_resource_type import ReportScheduleResourceType
+from datadog_api_client.v2.model.report_schedule_response import ReportScheduleResponse
+from datadog_api_client.v2.model.report_schedule_response_attributes import ReportScheduleResponseAttributes
+from datadog_api_client.v2.model.report_schedule_response_attributes_delivery_format import (
+    ReportScheduleResponseAttributesDeliveryFormat,
+)
+from datadog_api_client.v2.model.report_schedule_response_data import ReportScheduleResponseData
+from datadog_api_client.v2.model.report_schedule_response_relationships import ReportScheduleResponseRelationships
+from datadog_api_client.v2.model.report_schedule_status import ReportScheduleStatus
+from datadog_api_client.v2.model.report_schedule_template_variable import ReportScheduleTemplateVariable
+from datadog_api_client.v2.model.report_schedule_type import ReportScheduleType
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data import ResolveVulnerableSymbolsRequestData
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data_attributes import (
@@ -13513,6 +13537,28 @@ __all__ = [
     "ReorderRulesetResourceArray",
     "ReorderRulesetResourceData",
     "ReorderRulesetResourceDataType",
+    "ReportScheduleAuthor",
+    "ReportScheduleAuthorAttributes",
+    "ReportScheduleAuthorRelationship",
+    "ReportScheduleAuthorRelationshipData",
+    "ReportScheduleAuthorType",
+    "ReportScheduleCreateRequest",
+    "ReportScheduleCreateRequestAttributes",
+    "ReportScheduleCreateRequestData",
+    "ReportScheduleDeliveryFormat",
+    "ReportScheduleIncludedResource",
+    "ReportSchedulePatchRequest",
+    "ReportSchedulePatchRequestAttributes",
+    "ReportSchedulePatchRequestData",
+    "ReportScheduleResourceType",
+    "ReportScheduleResponse",
+    "ReportScheduleResponseAttributes",
+    "ReportScheduleResponseAttributesDeliveryFormat",
+    "ReportScheduleResponseData",
+    "ReportScheduleResponseRelationships",
+    "ReportScheduleStatus",
+    "ReportScheduleTemplateVariable",
+    "ReportScheduleType",
     "ResolveVulnerableSymbolsRequest",
     "ResolveVulnerableSymbolsRequestData",
     "ResolveVulnerableSymbolsRequestDataAttributes",
