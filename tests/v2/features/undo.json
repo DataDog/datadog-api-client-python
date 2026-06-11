@@ -3775,6 +3775,12 @@
       "type": "safe"
     }
   },
+  "ListSlackUserBindings": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteStatuspageAccount": {
     "tag": "Statuspage Integration",
     "undo": {
