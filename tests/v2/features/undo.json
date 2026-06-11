@@ -5145,6 +5145,12 @@
       "type": "idempotent"
     }
   },
+  "ListNetworkHealthInsights": {
+    "tag": "Network Health Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetAggregatedConnections": {
     "tag": "Cloud Network Monitoring",
     "undo": {
