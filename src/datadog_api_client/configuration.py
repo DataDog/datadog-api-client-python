@@ -612,6 +612,7 @@ class Configuration:
                 "v2.update_monitor_user_template": False,
                 "v2.validate_existing_monitor_user_template": False,
                 "v2.validate_monitor_user_template": False,
+                "v2.list_network_health_insights": False,
                 "v2.delete_scopes_restriction": False,
                 "v2.get_o_auth2_well_known_sites": False,
                 "v2.get_scopes_restriction": False,

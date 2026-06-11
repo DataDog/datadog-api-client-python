@@ -4610,6 +4610,13 @@ from datadog_api_client.v2.model.mute_findings_response import MuteFindingsRespo
 from datadog_api_client.v2.model.mute_findings_response_data import MuteFindingsResponseData
 from datadog_api_client.v2.model.ndk_sourcemap_attributes import NDKSourcemapAttributes
 from datadog_api_client.v2.model.ndk_sourcemap_data import NDKSourcemapData
+from datadog_api_client.v2.model.network_health_insight import NetworkHealthInsight
+from datadog_api_client.v2.model.network_health_insight_attributes import NetworkHealthInsightAttributes
+from datadog_api_client.v2.model.network_health_insight_category import NetworkHealthInsightCategory
+from datadog_api_client.v2.model.network_health_insight_failure_type import NetworkHealthInsightFailureType
+from datadog_api_client.v2.model.network_health_insight_traffic_volume import NetworkHealthInsightTrafficVolume
+from datadog_api_client.v2.model.network_health_insights_response import NetworkHealthInsightsResponse
+from datadog_api_client.v2.model.network_health_insights_type import NetworkHealthInsightsType
 from datadog_api_client.v2.model.node_type import NodeType
 from datadog_api_client.v2.model.node_types_response import NodeTypesResponse
 from datadog_api_client.v2.model.node_types_response_data import NodeTypesResponseData
@@ -12574,6 +12581,13 @@ __all__ = [
     "MuteFindingsResponseData",
     "NDKSourcemapAttributes",
     "NDKSourcemapData",
+    "NetworkHealthInsight",
+    "NetworkHealthInsightAttributes",
+    "NetworkHealthInsightCategory",
+    "NetworkHealthInsightFailureType",
+    "NetworkHealthInsightTrafficVolume",
+    "NetworkHealthInsightsResponse",
+    "NetworkHealthInsightsType",
     "NodeType",
     "NodeTypesResponse",
     "NodeTypesResponseData",

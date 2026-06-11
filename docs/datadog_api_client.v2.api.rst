@@ -515,6 +515,13 @@ datadog\_api\_client.v2.api.network\_device\_monitoring\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.network\_health\_insights\_api module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.network_health_insights_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.o\_auth2\_client\_public\_api module
 ----------------------------------------------------------------
 

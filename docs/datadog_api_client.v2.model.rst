@@ -24658,6 +24658,55 @@ datadog\_api\_client.v2.model.ndk\_sourcemap\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.network\_health\_insight module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.network_health_insight
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.network\_health\_insight\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.network_health_insight_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.network\_health\_insight\_category module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.network_health_insight_category
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.network\_health\_insight\_failure\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.network_health_insight_failure_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.network\_health\_insight\_traffic\_volume module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.network_health_insight_traffic_volume
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.network\_health\_insights\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.network_health_insights_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.network\_health\_insights\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.network_health_insights_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.node\_type module
 -----------------------------------------------
 

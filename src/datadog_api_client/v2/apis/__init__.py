@@ -71,6 +71,7 @@ from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftT
 from datadog_api_client.v2.api.model_lab_api_api import ModelLabAPIApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
+from datadog_api_client.v2.api.network_health_insights_api import NetworkHealthInsightsApi
 from datadog_api_client.v2.api.o_auth2_client_public_api import OAuth2ClientPublicApi
 from datadog_api_client.v2.api.oci_integration_api import OCIIntegrationApi
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
@@ -202,6 +203,7 @@ __all__ = [
     "ModelLabAPIApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
+    "NetworkHealthInsightsApi",
     "OAuth2ClientPublicApi",
     "OCIIntegrationApi",
     "ObservabilityPipelinesApi",
