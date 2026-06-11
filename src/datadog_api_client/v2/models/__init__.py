@@ -7689,6 +7689,7 @@ from datadog_api_client.v2.model.single_aggregated_dns_response_data_attributes_
     SingleAggregatedDnsResponseDataAttributesMetricsItems,
 )
 from datadog_api_client.v2.model.single_aggregated_dns_response_data_type import SingleAggregatedDnsResponseDataType
+from datadog_api_client.v2.model.single_entity_context_response import SingleEntityContextResponse
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
@@ -14488,6 +14489,7 @@ __all__ = [
     "SingleAggregatedDnsResponseDataAttributesGroupByItems",
     "SingleAggregatedDnsResponseDataAttributesMetricsItems",
     "SingleAggregatedDnsResponseDataType",
+    "SingleEntityContextResponse",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",
