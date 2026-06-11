@@ -3043,6 +3043,12 @@ from datadog_api_client.v2.model.google_chat_create_organization_handle_request_
 from datadog_api_client.v2.model.google_chat_create_organization_handle_request_data import (
     GoogleChatCreateOrganizationHandleRequestData,
 )
+from datadog_api_client.v2.model.google_chat_delegated_user_attributes import GoogleChatDelegatedUserAttributes
+from datadog_api_client.v2.model.google_chat_delegated_user_data import GoogleChatDelegatedUserData
+from datadog_api_client.v2.model.google_chat_delegated_user_response import GoogleChatDelegatedUserResponse
+from datadog_api_client.v2.model.google_chat_delegated_user_type import GoogleChatDelegatedUserType
+from datadog_api_client.v2.model.google_chat_organization_attributes import GoogleChatOrganizationAttributes
+from datadog_api_client.v2.model.google_chat_organization_data import GoogleChatOrganizationData
 from datadog_api_client.v2.model.google_chat_organization_handle_response import GoogleChatOrganizationHandleResponse
 from datadog_api_client.v2.model.google_chat_organization_handle_response_attributes import (
     GoogleChatOrganizationHandleResponseAttributes,
@@ -3052,6 +3058,35 @@ from datadog_api_client.v2.model.google_chat_organization_handle_response_data i
 )
 from datadog_api_client.v2.model.google_chat_organization_handle_type import GoogleChatOrganizationHandleType
 from datadog_api_client.v2.model.google_chat_organization_handles_response import GoogleChatOrganizationHandlesResponse
+from datadog_api_client.v2.model.google_chat_organization_relationships import GoogleChatOrganizationRelationships
+from datadog_api_client.v2.model.google_chat_organization_relationships_delegated_user import (
+    GoogleChatOrganizationRelationshipsDelegatedUser,
+)
+from datadog_api_client.v2.model.google_chat_organization_relationships_delegated_user_data import (
+    GoogleChatOrganizationRelationshipsDelegatedUserData,
+)
+from datadog_api_client.v2.model.google_chat_organization_response import GoogleChatOrganizationResponse
+from datadog_api_client.v2.model.google_chat_organization_type import GoogleChatOrganizationType
+from datadog_api_client.v2.model.google_chat_organizations_response import GoogleChatOrganizationsResponse
+from datadog_api_client.v2.model.google_chat_target_audience_attributes import GoogleChatTargetAudienceAttributes
+from datadog_api_client.v2.model.google_chat_target_audience_create_request import GoogleChatTargetAudienceCreateRequest
+from datadog_api_client.v2.model.google_chat_target_audience_create_request_attributes import (
+    GoogleChatTargetAudienceCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.google_chat_target_audience_create_request_data import (
+    GoogleChatTargetAudienceCreateRequestData,
+)
+from datadog_api_client.v2.model.google_chat_target_audience_data import GoogleChatTargetAudienceData
+from datadog_api_client.v2.model.google_chat_target_audience_response import GoogleChatTargetAudienceResponse
+from datadog_api_client.v2.model.google_chat_target_audience_type import GoogleChatTargetAudienceType
+from datadog_api_client.v2.model.google_chat_target_audience_update_request import GoogleChatTargetAudienceUpdateRequest
+from datadog_api_client.v2.model.google_chat_target_audience_update_request_attributes import (
+    GoogleChatTargetAudienceUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.google_chat_target_audience_update_request_data import (
+    GoogleChatTargetAudienceUpdateRequestData,
+)
+from datadog_api_client.v2.model.google_chat_target_audiences_response import GoogleChatTargetAudiencesResponse
 from datadog_api_client.v2.model.google_chat_update_organization_handle_request import (
     GoogleChatUpdateOrganizationHandleRequest,
 )
@@ -11421,11 +11456,34 @@ __all__ = [
     "GoogleChatCreateOrganizationHandleRequest",
     "GoogleChatCreateOrganizationHandleRequestAttributes",
     "GoogleChatCreateOrganizationHandleRequestData",
+    "GoogleChatDelegatedUserAttributes",
+    "GoogleChatDelegatedUserData",
+    "GoogleChatDelegatedUserResponse",
+    "GoogleChatDelegatedUserType",
+    "GoogleChatOrganizationAttributes",
+    "GoogleChatOrganizationData",
     "GoogleChatOrganizationHandleResponse",
     "GoogleChatOrganizationHandleResponseAttributes",
     "GoogleChatOrganizationHandleResponseData",
     "GoogleChatOrganizationHandleType",
     "GoogleChatOrganizationHandlesResponse",
+    "GoogleChatOrganizationRelationships",
+    "GoogleChatOrganizationRelationshipsDelegatedUser",
+    "GoogleChatOrganizationRelationshipsDelegatedUserData",
+    "GoogleChatOrganizationResponse",
+    "GoogleChatOrganizationType",
+    "GoogleChatOrganizationsResponse",
+    "GoogleChatTargetAudienceAttributes",
+    "GoogleChatTargetAudienceCreateRequest",
+    "GoogleChatTargetAudienceCreateRequestAttributes",
+    "GoogleChatTargetAudienceCreateRequestData",
+    "GoogleChatTargetAudienceData",
+    "GoogleChatTargetAudienceResponse",
+    "GoogleChatTargetAudienceType",
+    "GoogleChatTargetAudienceUpdateRequest",
+    "GoogleChatTargetAudienceUpdateRequestAttributes",
+    "GoogleChatTargetAudienceUpdateRequestData",
+    "GoogleChatTargetAudiencesResponse",
     "GoogleChatUpdateOrganizationHandleRequest",
     "GoogleChatUpdateOrganizationHandleRequestAttributes",
     "GoogleChatUpdateOrganizationHandleRequestData",

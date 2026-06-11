@@ -10,6 +10,38 @@ Feature: Google Chat Integration
     And an instance of "GoogleChatIntegration" API
 
   @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create a target audience returns "Bad Request" response
+    Given new "CreateGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"audience_id": "fake-audience-id-1", "audience_name": "fake audience name 1"}, "type": "google-chat-target-audience"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create a target audience returns "CREATED" response
+    Given new "CreateGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"audience_id": "fake-audience-id-1", "audience_name": "fake audience name 1"}, "type": "google-chat-target-audience"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create a target audience returns "Conflict" response
+    Given new "CreateGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"audience_id": "fake-audience-id-1", "audience_name": "fake audience name 1"}, "type": "google-chat-target-audience"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Create a target audience returns "Not Found" response
+    Given new "CreateGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"audience_id": "fake-audience-id-1", "audience_name": "fake audience name 1"}, "type": "google-chat-target-audience"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
   Scenario: Create organization handle returns "Bad Request" response
     Given new "CreateOrganizationHandle" request
     And request contains "organization_binding_id" parameter from "REPLACE.ME"
@@ -43,6 +75,36 @@ Feature: Google Chat Integration
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete a Google Chat organization binding returns "Bad Request" response
+    Given new "DeleteGoogleChatOrganization" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete a Google Chat organization binding returns "OK" response
+    Given new "DeleteGoogleChatOrganization" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete a target audience returns "Not Found" response
+    Given new "DeleteGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And request contains "target_audience_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete a target audience returns "OK" response
+    Given new "DeleteGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And request contains "target_audience_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/chat-integrations
   Scenario: Delete organization handle returns "Bad Request" response
     Given new "DeleteOrganizationHandle" request
     And request contains "organization_binding_id" parameter from "REPLACE.ME"
@@ -58,6 +120,56 @@ Feature: Google Chat Integration
     And request contains "handle_id" parameter from "organization_handle.data.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete the delegated user returns "Not Found" response
+    Given new "DeleteGoogleChatDelegatedUser" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete the delegated user returns "OK" response
+    Given new "DeleteGoogleChatDelegatedUser" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get a Google Chat organization binding returns "Not Found" response
+    Given new "GetGoogleChatOrganization" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get a Google Chat organization binding returns "OK" response
+    Given new "GetGoogleChatOrganization" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get a target audience returns "Not Found" response
+    Given new "GetGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And request contains "target_audience_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get a target audience returns "OK" response
+    Given new "GetGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And request contains "target_audience_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get all Google Chat organization bindings returns "OK" response
+    Given new "ListGoogleChatOrganizations" request
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/chat-integrations
   Scenario: Get all organization handles returns "Bad Request" response
@@ -81,6 +193,20 @@ Feature: Google Chat Integration
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "google-chat-organization-handle"
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get all target audiences returns "Not Found" response
+    Given new "ListGoogleChatTargetAudiences" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get all target audiences returns "OK" response
+    Given new "ListGoogleChatTargetAudiences" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/chat-integrations
   Scenario: Get organization handle returns "Bad Request" response
@@ -135,6 +261,47 @@ Feature: Google Chat Integration
     Then the response status is 200 OK
     And the response "data.attributes.resource_name" is equal to "spaces/AAQA-zFIks8"
     And the response "data.attributes.organization_binding_id" is equal to "e54cb570-c674-529c-769d-84b312288ed7"
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get the delegated user returns "Not Found" response
+    Given new "GetGoogleChatDelegatedUser" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Get the delegated user returns "OK" response
+    Given new "GetGoogleChatDelegatedUser" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update a target audience returns "Bad Request" response
+    Given new "UpdateGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And request contains "target_audience_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"audience_id": "fake-audience-id-1", "audience_name": "fake audience name 1"}, "type": "google-chat-target-audience"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update a target audience returns "Not Found" response
+    Given new "UpdateGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And request contains "target_audience_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"audience_id": "fake-audience-id-1", "audience_name": "fake audience name 1"}, "type": "google-chat-target-audience"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Update a target audience returns "OK" response
+    Given new "UpdateGoogleChatTargetAudience" request
+    And request contains "organization_binding_id" parameter from "REPLACE.ME"
+    And request contains "target_audience_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"audience_id": "fake-audience-id-1", "audience_name": "fake audience name 1"}, "type": "google-chat-target-audience"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/chat-integrations
   Scenario: Update organization handle returns "Bad Request" response

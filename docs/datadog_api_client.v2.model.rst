@@ -16335,6 +16335,48 @@ datadog\_api\_client.v2.model.google\_chat\_create\_organization\_handle\_reques
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.google\_chat\_delegated\_user\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_delegated_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_delegated\_user\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_delegated_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_delegated\_user\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_delegated_user_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_delegated\_user\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_delegated_user_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.google\_chat\_organization\_handle\_response module
 ---------------------------------------------------------------------------------
 
@@ -16367,6 +16409,125 @@ datadog\_api\_client.v2.model.google\_chat\_organization\_handles\_response modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.google_chat_organization_handles_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_relationships module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_relationships\_delegated\_user module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_relationships_delegated_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_relationships\_delegated\_user\_data module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_relationships_delegated_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organization\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organization_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_organizations\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_organizations_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_create\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_create\_request\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_create\_request\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_update\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_update\_request\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audience\_update\_request\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audience_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_chat\_target\_audiences\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_chat_target_audiences_response
    :members:
    :show-inheritance:
 
