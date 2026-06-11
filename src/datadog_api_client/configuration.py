@@ -418,6 +418,7 @@ class Configuration:
                 "v2.get_security_monitoring_histsignals_by_job_id": False,
                 "v2.get_security_monitoring_integration_config": False,
                 "v2.get_signal_entities": False,
+                "v2.get_single_entity_context": False,
                 "v2.get_static_analysis_default_rulesets": False,
                 "v2.get_static_analysis_node_types": False,
                 "v2.get_static_analysis_ruleset": False,

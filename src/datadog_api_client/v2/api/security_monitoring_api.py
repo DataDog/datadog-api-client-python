@@ -156,6 +156,7 @@ from datadog_api_client.v2.model.security_monitoring_dataset_version_history_res
     SecurityMonitoringDatasetVersionHistoryResponse,
 )
 from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
+from datadog_api_client.v2.model.single_entity_context_response import SingleEntityContextResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
@@ -2096,6 +2097,44 @@ class SecurityMonitoringApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_single_entity_context_endpoint = _Endpoint(
+            settings={
+                "response_type": (SingleEntityContextResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/entity_context/{id}",
+                "operation_id": "get_single_entity_context",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "_from": {
+                    "openapi_types": (str,),
+                    "attribute": "from",
+                    "location": "query",
+                },
+                "to": {
+                    "openapi_types": (str,),
+                    "attribute": "to",
+                    "location": "query",
+                },
+                "as_of": {
+                    "openapi_types": (str,),
+                    "attribute": "as_of",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -5487,6 +5526,49 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_signal_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_single_entity_context(
+        self,
+        id: str,
+        *,
+        _from: Union[str, UnsetType] = unset,
+        to: Union[str, UnsetType] = unset,
+        as_of: Union[str, UnsetType] = unset,
+    ) -> SingleEntityContextResponse:
+        """Get a single entity context.
+
+        Get a single entity from the Cloud SIEM entity context store by its identifier, returning the historical
+        revisions of the entity in the requested time range. The endpoint can either return revisions across an
+        interval ( ``from`` / ``to`` ) or the snapshot of the entity at a single point in time ( ``as_of`` ); the two modes
+        are mutually exclusive.
+
+        :param id: The unique identifier of the entity to retrieve.
+        :type id: str
+        :param _from: The start of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now-7d`` ).
+            Defaults to ``now-7d``. Ignored when ``as_of`` is set.
+        :type _from: str, optional
+        :param to: The end of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now`` ).
+            Defaults to ``now``. Ignored when ``as_of`` is set.
+        :type to: str, optional
+        :param as_of: A point in time at which to query the entity revisions, as an RFC3339 timestamp, a Unix timestamp
+            (in seconds), or a relative time (for example, ``now-1d`` ). When set, ``from`` and ``to`` are ignored.
+            Cannot be combined with custom ``from`` / ``to`` values.
+        :type as_of: str, optional
+        :rtype: SingleEntityContextResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if _from is not unset:
+            kwargs["_from"] = _from
+
+        if to is not unset:
+            kwargs["to"] = to
+
+        if as_of is not unset:
+            kwargs["as_of"] = as_of
+
+        return self._get_single_entity_context_endpoint.call_with_http_info(**kwargs)
 
     def get_static_analysis_default_rulesets(
         self,

@@ -1608,6 +1608,30 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get a single entity context returns "Bad Request" response
+    Given operation "GetSingleEntityContext" enabled
+    And new "GetSingleEntityContext" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get a single entity context returns "Not Found" response
+    Given operation "GetSingleEntityContext" enabled
+    And new "GetSingleEntityContext" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get a single entity context returns "OK" response
+    Given operation "GetSingleEntityContext" enabled
+    And new "GetSingleEntityContext" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip-validation @team:DataDog/k9-cloud-siem
   Scenario: Get a suppression rule returns "Not Found" response
     Given new "GetSecurityMonitoringSuppression" request

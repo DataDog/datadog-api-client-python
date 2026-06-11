@@ -7227,6 +7227,12 @@
       "type": "safe"
     }
   },
+  "GetSingleEntityContext": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {
