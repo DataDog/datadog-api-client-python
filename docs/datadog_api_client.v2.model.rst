@@ -20031,6 +20031,13 @@ datadog\_api\_client.v2.model.list\_service\_access\_tokens\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_shared\_dashboards\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_shared_dashboards_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_sourcemaps\_response module
 ---------------------------------------------------------------
 
@@ -37920,6 +37927,146 @@ datadog\_api\_client.v2.model.session\_id\_data module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.session_id_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_global\_time module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_global_time
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_included module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_included
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_included\_dashboard module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_included_dashboard
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_included\_dashboard\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_included_dashboard_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_included\_dashboard\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_included_dashboard_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_included\_user module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_included_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_included\_user\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_included_user_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_invitee module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_invitee
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_relationship\_dashboard module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_relationship_dashboard
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_relationship\_dashboard\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_relationship_dashboard_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_relationship\_sharer module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_relationship_sharer
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_relationships module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_response\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_selectable\_template\_variable module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_selectable_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_share\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_share_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_status module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_viewing\_preferences module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_viewing_preferences
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.shared\_dashboard\_viewing\_preferences\_theme module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.shared_dashboard_viewing_preferences_theme
    :members:
    :show-inheritance:
 

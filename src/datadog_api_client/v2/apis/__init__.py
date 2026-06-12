@@ -37,6 +37,7 @@ from datadog_api_client.v2.api.customer_org_api import CustomerOrgApi
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecureEmbedApi
+from datadog_api_client.v2.api.dashboard_sharing_api import DashboardSharingApi
 from datadog_api_client.v2.api.dashboards_api import DashboardsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
@@ -169,6 +170,7 @@ __all__ = [
     "DORAMetricsApi",
     "DashboardListsApi",
     "DashboardSecureEmbedApi",
+    "DashboardSharingApi",
     "DashboardsApi",
     "DataDeletionApi",
     "DatasetsApi",

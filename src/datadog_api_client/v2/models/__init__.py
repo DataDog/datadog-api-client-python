@@ -4131,6 +4131,7 @@ from datadog_api_client.v2.model.list_scorecard_scores_response import ListScore
 from datadog_api_client.v2.model.list_scorecards_response import ListScorecardsResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.list_service_access_tokens_response import ListServiceAccessTokensResponse
+from datadog_api_client.v2.model.list_shared_dashboards_response import ListSharedDashboardsResponse
 from datadog_api_client.v2.model.list_sourcemaps_response import ListSourcemapsResponse
 from datadog_api_client.v2.model.list_tags_response import ListTagsResponse
 from datadog_api_client.v2.model.list_tags_response_data import ListTagsResponseData
@@ -7669,6 +7670,34 @@ from datadog_api_client.v2.model.service_repository_info_response_data import Se
 from datadog_api_client.v2.model.service_repository_info_status import ServiceRepositoryInfoStatus
 from datadog_api_client.v2.model.session_id_array import SessionIdArray
 from datadog_api_client.v2.model.session_id_data import SessionIdData
+from datadog_api_client.v2.model.shared_dashboard_global_time import SharedDashboardGlobalTime
+from datadog_api_client.v2.model.shared_dashboard_included import SharedDashboardIncluded
+from datadog_api_client.v2.model.shared_dashboard_included_dashboard import SharedDashboardIncludedDashboard
+from datadog_api_client.v2.model.shared_dashboard_included_dashboard_attributes import (
+    SharedDashboardIncludedDashboardAttributes,
+)
+from datadog_api_client.v2.model.shared_dashboard_included_dashboard_type import SharedDashboardIncludedDashboardType
+from datadog_api_client.v2.model.shared_dashboard_included_user import SharedDashboardIncludedUser
+from datadog_api_client.v2.model.shared_dashboard_included_user_attributes import SharedDashboardIncludedUserAttributes
+from datadog_api_client.v2.model.shared_dashboard_invitee import SharedDashboardInvitee
+from datadog_api_client.v2.model.shared_dashboard_relationship_dashboard import SharedDashboardRelationshipDashboard
+from datadog_api_client.v2.model.shared_dashboard_relationship_dashboard_data import (
+    SharedDashboardRelationshipDashboardData,
+)
+from datadog_api_client.v2.model.shared_dashboard_relationship_sharer import SharedDashboardRelationshipSharer
+from datadog_api_client.v2.model.shared_dashboard_relationships import SharedDashboardRelationships
+from datadog_api_client.v2.model.shared_dashboard_response import SharedDashboardResponse
+from datadog_api_client.v2.model.shared_dashboard_response_attributes import SharedDashboardResponseAttributes
+from datadog_api_client.v2.model.shared_dashboard_selectable_template_variable import (
+    SharedDashboardSelectableTemplateVariable,
+)
+from datadog_api_client.v2.model.shared_dashboard_share_type import SharedDashboardShareType
+from datadog_api_client.v2.model.shared_dashboard_status import SharedDashboardStatus
+from datadog_api_client.v2.model.shared_dashboard_type import SharedDashboardType
+from datadog_api_client.v2.model.shared_dashboard_viewing_preferences import SharedDashboardViewingPreferences
+from datadog_api_client.v2.model.shared_dashboard_viewing_preferences_theme import (
+    SharedDashboardViewingPreferencesTheme,
+)
 from datadog_api_client.v2.model.shift import Shift
 from datadog_api_client.v2.model.shift_data import ShiftData
 from datadog_api_client.v2.model.shift_data_attributes import ShiftDataAttributes
@@ -12245,6 +12274,7 @@ __all__ = [
     "ListScorecardsResponse",
     "ListSecurityFindingsResponse",
     "ListServiceAccessTokensResponse",
+    "ListSharedDashboardsResponse",
     "ListSourcemapsResponse",
     "ListTagsResponse",
     "ListTagsResponseData",
@@ -14519,6 +14549,26 @@ __all__ = [
     "ServiceRepositoryInfoStatus",
     "SessionIdArray",
     "SessionIdData",
+    "SharedDashboardGlobalTime",
+    "SharedDashboardIncluded",
+    "SharedDashboardIncludedDashboard",
+    "SharedDashboardIncludedDashboardAttributes",
+    "SharedDashboardIncludedDashboardType",
+    "SharedDashboardIncludedUser",
+    "SharedDashboardIncludedUserAttributes",
+    "SharedDashboardInvitee",
+    "SharedDashboardRelationshipDashboard",
+    "SharedDashboardRelationshipDashboardData",
+    "SharedDashboardRelationshipSharer",
+    "SharedDashboardRelationships",
+    "SharedDashboardResponse",
+    "SharedDashboardResponseAttributes",
+    "SharedDashboardSelectableTemplateVariable",
+    "SharedDashboardShareType",
+    "SharedDashboardStatus",
+    "SharedDashboardType",
+    "SharedDashboardViewingPreferences",
+    "SharedDashboardViewingPreferencesTheme",
     "Shift",
     "ShiftData",
     "ShiftDataAttributes",
