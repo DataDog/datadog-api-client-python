@@ -38287,6 +38287,27 @@ datadog\_api\_client.v2.model.slack\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.slack\_user\_binding\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slack_user_binding_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slack\_user\_binding\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slack_user_binding_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.slack\_user\_bindings\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.slack_user_bindings_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.slo\_data\_source module
 ------------------------------------------------------
 

@@ -788,6 +788,13 @@ datadog\_api\_client.v2.api.service\_now\_integration\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.slack\_integration\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.slack_integration_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.software\_catalog\_api module
 ---------------------------------------------------------
 

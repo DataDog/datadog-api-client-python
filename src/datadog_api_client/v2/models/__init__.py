@@ -7743,6 +7743,9 @@ from datadog_api_client.v2.model.single_entity_context_response import SingleEnt
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
+from datadog_api_client.v2.model.slack_user_binding_data import SlackUserBindingData
+from datadog_api_client.v2.model.slack_user_binding_type import SlackUserBindingType
+from datadog_api_client.v2.model.slack_user_bindings_response import SlackUserBindingsResponse
 from datadog_api_client.v2.model.slo_data_source import SloDataSource
 from datadog_api_client.v2.model.slo_query import SloQuery
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
@@ -14600,6 +14603,9 @@ __all__ = [
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
     "SlackTriggerWrapper",
+    "SlackUserBindingData",
+    "SlackUserBindingType",
+    "SlackUserBindingsResponse",
     "SloDataSource",
     "SloQuery",
     "SloReportCreateRequest",
