@@ -1,0 +1,24 @@
+interactions:
+- request:
+    body: '{"filter":{"query":"source:python"},"name":"testPipelineArrayMapInvalid","processors":[{"is_enabled":true,"name":"invalid
+      preserve_source","preserve_source":false,"processors":[{"sources":["$sourceElem.id"],"target":"$targetElem.uid","type":"attribute-remapper"}],"source":"items","target":"items","type":"array-map-processor"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines
+  response:
+    body:
+      string: '{"error":{"code":"InvalidArgument","message":"Invalid Pipeline","details":[{"code":"InvalidArgument","message":"preserve_source:false
+        is not allowed when source equals target"}]}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

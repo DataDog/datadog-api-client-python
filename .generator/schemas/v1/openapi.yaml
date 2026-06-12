@@ -6182,6 +6182,76 @@ components:
       type: string
       x-enum-varnames:
         - ARITHMETIC_PROCESSOR
+    LogsArrayMapProcessor:
+      description: |-
+        The array-map processor transforms each element of a source array by running
+        sub-processors against it and writing results to a target array.
+        Sub-processors reference the current element via `$sourceElem` (read) and
+        `$targetElem` (write). Parent log attributes are read via plain paths as usual.
+        Supported sub-processor types: `attribute-remapper`, `string-builder-processor`,
+        `arithmetic-processor`, `category-processor`.
+        `is_enabled` on sub-processors is ignored; sub-processor execution is gated
+        entirely by the parent array-map's `is_enabled` flag.
+      properties:
+        is_enabled:
+          default: false
+          description: Whether or not the processor is enabled.
+          type: boolean
+        name:
+          description: Name of the processor.
+          type: string
+        preserve_source:
+          default: true
+          description: |-
+            When `false` and `source != target`, the source attribute is removed after
+            processing. Cannot be `false` when `source == target`.
+          type: boolean
+        processors:
+          description: |-
+            Sub-processors applied to each element. Allowed types: `attribute-remapper`,
+            `string-builder-processor`, `arithmetic-processor`, `category-processor`.
+          items:
+            $ref: "#/components/schemas/LogsArrayMapSubProcessor"
+          type: array
+        source:
+          description: |-
+            Attribute path of the source array. Elements are read-only via `$sourceElem`
+            inside sub-processors.
+          example: detail.resource.s3BucketDetails
+          type: string
+        target:
+          description: |-
+            Attribute path of the output array. Sub-processors write to `$targetElem`
+            (or `$targetElem.<field>`) to build each output element.
+          example: ocsf.resources
+          type: string
+        type:
+          $ref: "#/components/schemas/LogsArrayMapProcessorType"
+      required:
+        - source
+        - target
+        - processors
+        - type
+      type: object
+    LogsArrayMapProcessorType:
+      default: array-map-processor
+      description: Type of logs array-map processor.
+      enum:
+        - array-map-processor
+      example: array-map-processor
+      type: string
+      x-enum-varnames:
+        - ARRAY_MAP_PROCESSOR
+    LogsArrayMapSubProcessor:
+      description: |-
+        A sub-processor used inside an array-map processor.
+        Allowed types: `attribute-remapper`, `string-builder-processor`,
+        `arithmetic-processor`, `category-processor`.
+      oneOf:
+        - $ref: "#/components/schemas/LogsAttributeRemapper"
+        - $ref: "#/components/schemas/LogsStringBuilderProcessor"
+        - $ref: "#/components/schemas/LogsArithmeticProcessor"
+        - $ref: "#/components/schemas/LogsCategoryProcessor"
     LogsArrayProcessor:
       description: |-
         A processor for extracting, aggregating, or transforming values from JSON arrays within your logs.
@@ -7237,6 +7307,7 @@ components:
         - $ref: "#/components/schemas/LogsDecoderProcessor"
         - $ref: "#/components/schemas/LogsSchemaProcessor"
         - $ref: "#/components/schemas/LogsExcludeAttributeProcessor"
+        - $ref: "#/components/schemas/LogsArrayMapProcessor"
     LogsQueryCompute:
       description: Define computation for a log query.
       properties:
