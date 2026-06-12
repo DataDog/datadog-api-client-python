@@ -1,3 +1,16 @@
+from datadog_api_client.v2.model.ai_guard_action import AIGuardAction
+from datadog_api_client.v2.model.ai_guard_content_part import AIGuardContentPart
+from datadog_api_client.v2.model.ai_guard_evaluate_request import AIGuardEvaluateRequest
+from datadog_api_client.v2.model.ai_guard_evaluate_response import AIGuardEvaluateResponse
+from datadog_api_client.v2.model.ai_guard_image_url import AIGuardImageURL
+from datadog_api_client.v2.model.ai_guard_message import AIGuardMessage
+from datadog_api_client.v2.model.ai_guard_message_content import AIGuardMessageContent
+from datadog_api_client.v2.model.ai_guard_message_role import AIGuardMessageRole
+from datadog_api_client.v2.model.ai_guard_meta import AIGuardMeta
+from datadog_api_client.v2.model.ai_guard_sds_finding import AIGuardSdsFinding
+from datadog_api_client.v2.model.ai_guard_sds_finding_location import AIGuardSdsFindingLocation
+from datadog_api_client.v2.model.ai_guard_tool_call import AIGuardToolCall
+from datadog_api_client.v2.model.ai_guard_tool_call_function import AIGuardToolCallFunction
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
 from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData
@@ -9149,6 +9162,19 @@ from datadog_api_client.v2.model.zoom_configuration_reference import ZoomConfigu
 from datadog_api_client.v2.model.zoom_configuration_reference_data import ZoomConfigurationReferenceData
 
 __all__ = [
+    "AIGuardAction",
+    "AIGuardContentPart",
+    "AIGuardEvaluateRequest",
+    "AIGuardEvaluateResponse",
+    "AIGuardImageURL",
+    "AIGuardMessage",
+    "AIGuardMessageContent",
+    "AIGuardMessageRole",
+    "AIGuardMeta",
+    "AIGuardSdsFinding",
+    "AIGuardSdsFindingLocation",
+    "AIGuardToolCall",
+    "AIGuardToolCallFunction",
     "APIErrorResponse",
     "APIKeyCreateAttributes",
     "APIKeyCreateData",
