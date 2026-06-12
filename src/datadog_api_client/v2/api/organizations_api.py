@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.global_orgs_response import GlobalOrgsResponse
 from datadog_api_client.v2.model.global_org_data import GlobalOrgData
+from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.org_saml_preferences_update_request import OrgSAMLPreferencesUpdateRequest
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
@@ -171,6 +172,26 @@ class OrganizationsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._update_login_org_configs_max_session_duration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/login/org_configs/max_session_duration",
+                "operation_id": "update_login_org_configs_max_session_duration",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (MaxSessionDurationUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -417,6 +438,23 @@ class OrganizationsApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_saml_configurations_endpoint.call_with_http_info(**kwargs)
+
+    def update_login_org_configs_max_session_duration(
+        self,
+        body: MaxSessionDurationUpdateRequest,
+    ) -> None:
+        """Update the maximum session duration.
+
+        Update the maximum session duration for the current organization.
+        The duration is specified in seconds.
+
+        :type body: MaxSessionDurationUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_login_org_configs_max_session_duration_endpoint.call_with_http_info(**kwargs)
 
     def update_org_config(
         self,
