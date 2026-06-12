@@ -16230,10 +16230,80 @@ datadog\_api\_client.v2.model.global\_incident\_settings\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.global\_org module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_org
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_org\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_org_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_org\_data module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_org_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.global\_org\_identifier module
 ------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.global_org_identifier
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_org\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_org_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_org\_user module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_org_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_orgs\_links module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_orgs_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_orgs\_meta module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_orgs_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_orgs\_meta\_page module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_orgs_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_orgs\_meta\_page\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_orgs_meta_page_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.global\_orgs\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.global_orgs_response
    :members:
    :show-inheritance:
 
