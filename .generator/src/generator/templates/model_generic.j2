@@ -74,6 +74,11 @@ class {{ name }}(ModelNormal):
 {%- if model.nullable %}
     _nullable = True
 {%- endif %}
+{%- if model.get("x-keep-typed-in-additional-properties") %}
+    # Cross-SDK semantic marker. In Python, typed fields are already accessible via
+    # bracket notation (model["key"]) through _data_store, so no runtime change is needed.
+    _keep_typed_in_additional_properties = True
+{%- endif %}
 
 {%- if model.properties %}
     @cached_property
