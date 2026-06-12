@@ -2756,6 +2756,12 @@
       "type": "idempotent"
     }
   },
+  "ListGlobalOrgs": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetHamrOrgConnection": {
     "tag": "High Availability MultiRegion",
     "undo": {

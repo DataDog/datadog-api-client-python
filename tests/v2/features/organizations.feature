@@ -61,6 +61,27 @@ Feature: Organizations
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: List global orgs returns "Bad Request" response
+    Given new "ListGlobalOrgs" request
+    And request contains "user_handle" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: List global orgs returns "OK" response
+    Given new "ListGlobalOrgs" request
+    And request contains "user_handle" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/delegated-auth-login @with-pagination
+  Scenario: List global orgs returns "OK" response with pagination
+    Given new "ListGlobalOrgs" request
+    And request contains "user_handle" parameter from "REPLACE.ME"
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/org-management
   Scenario: List your managed organizations returns "OK" response
     Given new "ListOrgs" request

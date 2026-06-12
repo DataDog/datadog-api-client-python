@@ -3018,7 +3018,17 @@ from datadog_api_client.v2.model.global_incident_settings_data_response import G
 from datadog_api_client.v2.model.global_incident_settings_request import GlobalIncidentSettingsRequest
 from datadog_api_client.v2.model.global_incident_settings_response import GlobalIncidentSettingsResponse
 from datadog_api_client.v2.model.global_incident_settings_type import GlobalIncidentSettingsType
+from datadog_api_client.v2.model.global_org import GlobalOrg
+from datadog_api_client.v2.model.global_org_attributes import GlobalOrgAttributes
+from datadog_api_client.v2.model.global_org_data import GlobalOrgData
 from datadog_api_client.v2.model.global_org_identifier import GlobalOrgIdentifier
+from datadog_api_client.v2.model.global_org_type import GlobalOrgType
+from datadog_api_client.v2.model.global_org_user import GlobalOrgUser
+from datadog_api_client.v2.model.global_orgs_links import GlobalOrgsLinks
+from datadog_api_client.v2.model.global_orgs_meta import GlobalOrgsMeta
+from datadog_api_client.v2.model.global_orgs_meta_page import GlobalOrgsMetaPage
+from datadog_api_client.v2.model.global_orgs_meta_page_type import GlobalOrgsMetaPageType
+from datadog_api_client.v2.model.global_orgs_response import GlobalOrgsResponse
 from datadog_api_client.v2.model.global_variable_data import GlobalVariableData
 from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
 from datadog_api_client.v2.model.global_variable_json_patch_request_data import GlobalVariableJsonPatchRequestData
@@ -11460,7 +11470,17 @@ __all__ = [
     "GlobalIncidentSettingsRequest",
     "GlobalIncidentSettingsResponse",
     "GlobalIncidentSettingsType",
+    "GlobalOrg",
+    "GlobalOrgAttributes",
+    "GlobalOrgData",
     "GlobalOrgIdentifier",
+    "GlobalOrgType",
+    "GlobalOrgUser",
+    "GlobalOrgsLinks",
+    "GlobalOrgsMeta",
+    "GlobalOrgsMetaPage",
+    "GlobalOrgsMetaPageType",
+    "GlobalOrgsResponse",
     "GlobalVariableData",
     "GlobalVariableJsonPatchRequest",
     "GlobalVariableJsonPatchRequestData",
