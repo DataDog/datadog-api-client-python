@@ -2165,6 +2165,12 @@
       "type": "safe"
     }
   },
+  "ListSharedDashboardsByDashboardId": {
+    "tag": "Dashboard Sharing",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateDashboardSecureEmbed": {
     "tag": "Dashboard Secure Embed",
     "undo": {

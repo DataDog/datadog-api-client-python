@@ -270,6 +270,13 @@ datadog\_api\_client.v2.api.dashboard\_secure\_embed\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.dashboard\_sharing\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.dashboard_sharing_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.dashboards\_api module
 --------------------------------------------------
 
