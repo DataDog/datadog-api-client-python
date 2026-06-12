@@ -3339,19 +3339,6 @@ from datadog_api_client.v2.model.incident_search_response_property_field_facet_d
 from datadog_api_client.v2.model.incident_search_response_user_facet_data import IncidentSearchResponseUserFacetData
 from datadog_api_client.v2.model.incident_search_results_type import IncidentSearchResultsType
 from datadog_api_client.v2.model.incident_search_sort_order import IncidentSearchSortOrder
-from datadog_api_client.v2.model.incident_service_create_attributes import IncidentServiceCreateAttributes
-from datadog_api_client.v2.model.incident_service_create_data import IncidentServiceCreateData
-from datadog_api_client.v2.model.incident_service_create_request import IncidentServiceCreateRequest
-from datadog_api_client.v2.model.incident_service_included_items import IncidentServiceIncludedItems
-from datadog_api_client.v2.model.incident_service_relationships import IncidentServiceRelationships
-from datadog_api_client.v2.model.incident_service_response import IncidentServiceResponse
-from datadog_api_client.v2.model.incident_service_response_attributes import IncidentServiceResponseAttributes
-from datadog_api_client.v2.model.incident_service_response_data import IncidentServiceResponseData
-from datadog_api_client.v2.model.incident_service_type import IncidentServiceType
-from datadog_api_client.v2.model.incident_service_update_attributes import IncidentServiceUpdateAttributes
-from datadog_api_client.v2.model.incident_service_update_data import IncidentServiceUpdateData
-from datadog_api_client.v2.model.incident_service_update_request import IncidentServiceUpdateRequest
-from datadog_api_client.v2.model.incident_services_response import IncidentServicesResponse
 from datadog_api_client.v2.model.incident_severity import IncidentSeverity
 from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
 from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
@@ -11712,19 +11699,6 @@ __all__ = [
     "IncidentSearchResponseUserFacetData",
     "IncidentSearchResultsType",
     "IncidentSearchSortOrder",
-    "IncidentServiceCreateAttributes",
-    "IncidentServiceCreateData",
-    "IncidentServiceCreateRequest",
-    "IncidentServiceIncludedItems",
-    "IncidentServiceRelationships",
-    "IncidentServiceResponse",
-    "IncidentServiceResponseAttributes",
-    "IncidentServiceResponseData",
-    "IncidentServiceType",
-    "IncidentServiceUpdateAttributes",
-    "IncidentServiceUpdateData",
-    "IncidentServiceUpdateRequest",
-    "IncidentServicesResponse",
     "IncidentSeverity",
     "IncidentTimelineCellCreateAttributes",
     "IncidentTimelineCellMarkdownContentType",

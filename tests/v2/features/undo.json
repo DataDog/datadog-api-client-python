@@ -7762,25 +7762,6 @@
       "type": "idempotent"
     }
   },
-  "ListIncidentServices": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "operationId": "DeleteIncidentService",
-      "parameters": [
-        {
-          "name": "service_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
   "ListServiceDefinitions": {
     "tag": "Service Definition",
     "undo": {
@@ -7810,24 +7791,6 @@
     "tag": "Service Definition",
     "undo": {
       "type": "safe"
-    }
-  },
-  "DeleteIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "ListSecurityMonitoringHistsignals": {
