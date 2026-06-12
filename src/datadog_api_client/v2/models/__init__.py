@@ -5051,6 +5051,12 @@ from datadog_api_client.v2.model.observability_pipeline_generate_metrics_process
 from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor_type import (
     ObservabilityPipelineGenerateMetricsProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor import (
+    ObservabilityPipelineGenerateMetricsV2Processor,
+)
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor_type import (
+    ObservabilityPipelineGenerateMetricsV2ProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_generated_metric import ObservabilityPipelineGeneratedMetric
 from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_field import (
     ObservabilityPipelineGeneratedMetricIncrementByField,
@@ -12895,6 +12901,8 @@ __all__ = [
     "ObservabilityPipelineGcpAuth",
     "ObservabilityPipelineGenerateMetricsProcessor",
     "ObservabilityPipelineGenerateMetricsProcessorType",
+    "ObservabilityPipelineGenerateMetricsV2Processor",
+    "ObservabilityPipelineGenerateMetricsV2ProcessorType",
     "ObservabilityPipelineGeneratedMetric",
     "ObservabilityPipelineGeneratedMetricIncrementByField",
     "ObservabilityPipelineGeneratedMetricIncrementByFieldStrategy",

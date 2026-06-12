@@ -26170,6 +26170,20 @@ datadog\_api\_client.v2.model.observability\_pipeline\_generate\_metrics\_proces
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_generate\_metrics\_v2\_processor module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_generate\_metrics\_v2\_processor\_type module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_generated\_metric module
 -------------------------------------------------------------------------------
 

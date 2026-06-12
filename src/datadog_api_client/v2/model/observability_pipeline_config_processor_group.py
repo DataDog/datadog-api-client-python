@@ -38,6 +38,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
         ObservabilityPipelineGenerateMetricsProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor import (
+        ObservabilityPipelineGenerateMetricsV2Processor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
         ObservabilityPipelineOcsfMapperProcessor,
     )
@@ -128,6 +131,7 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
                 ObservabilityPipelineDedupeProcessor,
                 ObservabilityPipelineEnrichmentTableProcessor,
                 ObservabilityPipelineGenerateMetricsProcessor,
+                ObservabilityPipelineGenerateMetricsV2Processor,
                 ObservabilityPipelineOcsfMapperProcessor,
                 ObservabilityPipelineParseGrokProcessor,
                 ObservabilityPipelineParseJSONProcessor,
