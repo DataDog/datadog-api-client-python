@@ -3510,6 +3510,35 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._restore_security_monitoring_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}/restore/{version}",
+                "operation_id": "restore_security_monitoring_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "version",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._run_historical_job_endpoint = _Endpoint(
             settings={
                 "response_type": (JobCreateResponse,),
@@ -7369,6 +7398,30 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def restore_security_monitoring_rule(
+        self,
+        rule_id: str,
+        version: int,
+    ) -> SecurityMonitoringRuleResponse:
+        """Restore a rule to a historical version.
+
+        Restores a custom detection rule to a previously saved historical version.
+        Only custom rules can be restored. Default and partner rules return 400.
+        The restore creates a new version entry; it does not overwrite history.
+
+        :param rule_id: The ID of the rule.
+        :type rule_id: str
+        :param version: The historical version number of the rule.
+        :type version: int
+        :rtype: SecurityMonitoringRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["version"] = version
+
+        return self._restore_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
 
     def run_historical_job(
         self,

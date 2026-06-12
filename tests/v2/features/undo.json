@@ -7445,6 +7445,12 @@
       "type": "idempotent"
     }
   },
+  "RestoreSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "TestExistingSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {
