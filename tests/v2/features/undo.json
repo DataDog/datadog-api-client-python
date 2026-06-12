@@ -5790,12 +5790,6 @@
       "type": "safe"
     }
   },
-  "MuteFindings": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "GetFinding": {
     "tag": "Security Monitoring",
     "undo": {
