@@ -22061,6 +22061,335 @@ datadog\_api\_client.v2.model.llm\_obs\_open\_ai\_reasoning\_summary module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_activity\_progress module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_activity_progress
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_clustered\_point module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_clustered_point
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_clustered\_point\_ref module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_clustered_point_ref
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_clustered\_points\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_clustered\_points\_response\_attributes module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_clustered\_points\_response\_data module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_clustered\_points\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_clustered_points_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_item module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_response\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_snapshot module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_snapshot
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_upsert\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_upsert_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_upsert\_request\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_upsert_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_config\_upsert\_request\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_config_upsert_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_configs\_list\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_configs_list_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_configs\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_configs_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_configs\_response\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_configs_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_configs\_response\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_configs_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_request\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_run\_status\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_run_status_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_run\_status\_response\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_run_status_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_run\_status\_response\_data module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_run_status_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_run\_status\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_run_status_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_run\_summary module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_run_summary
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_runs\_list\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_runs_list_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_runs\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_runs_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_runs\_response\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_runs_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_runs\_response\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_runs_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topic module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topic
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topic\_with\_clustered\_points module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topic_with_clustered_points
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_response\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_response\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_with\_clustered\_points\_response module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_with\_clustered\_points\_response\_attributes module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_with\_clustered\_points\_response\_data module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_topics\_with\_clustered\_points\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_trigger\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_trigger_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_trigger\_request\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_trigger_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_trigger\_request\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_trigger_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_trigger\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_trigger_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_trigger\_response\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_trigger_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_trigger\_response\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_trigger_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_patterns\_trigger\_response\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_patterns_trigger_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_project\_data\_attributes\_request module
 ---------------------------------------------------------------------------------
 
