@@ -4311,6 +4311,10 @@ from datadog_api_client.v2.model.managed_orgs_relationship_to_orgs import Manage
 from datadog_api_client.v2.model.managed_orgs_relationships import ManagedOrgsRelationships
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.managed_orgs_type import ManagedOrgsType
+from datadog_api_client.v2.model.max_session_duration_type import MaxSessionDurationType
+from datadog_api_client.v2.model.max_session_duration_update_attributes import MaxSessionDurationUpdateAttributes
+from datadog_api_client.v2.model.max_session_duration_update_data import MaxSessionDurationUpdateData
+from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
 from datadog_api_client.v2.model.mcp_scan_request import McpScanRequest
 from datadog_api_client.v2.model.mcp_scan_request_data import McpScanRequestData
 from datadog_api_client.v2.model.mcp_scan_request_data_attributes import McpScanRequestDataAttributes
@@ -12461,6 +12465,10 @@ __all__ = [
     "ManagedOrgsRelationships",
     "ManagedOrgsResponse",
     "ManagedOrgsType",
+    "MaxSessionDurationType",
+    "MaxSessionDurationUpdateAttributes",
+    "MaxSessionDurationUpdateData",
+    "MaxSessionDurationUpdateRequest",
     "McpScanRequest",
     "McpScanRequestData",
     "McpScanRequestDataAttributes",

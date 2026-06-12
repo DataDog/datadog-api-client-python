@@ -4560,6 +4560,12 @@
       "type": "safe"
     }
   },
+  "UpdateLoginOrgConfigsMaxSessionDuration": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {
