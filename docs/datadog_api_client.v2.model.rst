@@ -1817,6 +1817,41 @@ datadog\_api\_client.v2.model.application\_security\_policy\_update\_request mod
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.application\_security\_service\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_service_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_service\_resource module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_service_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_service\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_service_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_services\_metadata module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_services_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.application\_security\_services\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.application_security_services_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.application\_security\_waf\_custom\_rule\_action module
 -------------------------------------------------------------------------------------
 

@@ -404,6 +404,11 @@ from datadog_api_client.v2.model.application_security_policy_update_data import 
 from datadog_api_client.v2.model.application_security_policy_update_request import (
     ApplicationSecurityPolicyUpdateRequest,
 )
+from datadog_api_client.v2.model.application_security_service_attributes import ApplicationSecurityServiceAttributes
+from datadog_api_client.v2.model.application_security_service_resource import ApplicationSecurityServiceResource
+from datadog_api_client.v2.model.application_security_service_type import ApplicationSecurityServiceType
+from datadog_api_client.v2.model.application_security_services_metadata import ApplicationSecurityServicesMetadata
+from datadog_api_client.v2.model.application_security_services_response import ApplicationSecurityServicesResponse
 from datadog_api_client.v2.model.application_security_waf_custom_rule_action import (
     ApplicationSecurityWafCustomRuleAction,
 )
@@ -9440,6 +9445,11 @@ __all__ = [
     "ApplicationSecurityPolicyUpdateAttributes",
     "ApplicationSecurityPolicyUpdateData",
     "ApplicationSecurityPolicyUpdateRequest",
+    "ApplicationSecurityServiceAttributes",
+    "ApplicationSecurityServiceResource",
+    "ApplicationSecurityServiceType",
+    "ApplicationSecurityServicesMetadata",
+    "ApplicationSecurityServicesResponse",
     "ApplicationSecurityWafCustomRuleAction",
     "ApplicationSecurityWafCustomRuleActionAction",
     "ApplicationSecurityWafCustomRuleActionParameters",
