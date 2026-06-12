@@ -674,7 +674,7 @@ class MonitorsApi:
     ) -> MonitorConfigPolicyListResponse:
         """Get all monitor configuration policies.
 
-        Get all monitor configuration policies.
+        Get all monitor configuration policies. Returns a list of all policies.
 
         :rtype: MonitorConfigPolicyListResponse
         """
