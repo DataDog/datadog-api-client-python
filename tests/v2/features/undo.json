@@ -3529,6 +3529,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteMSTeamsUserBinding": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListWorkflowsWebhookHandles": {
     "tag": "Microsoft Teams Integration",
     "undo": {
