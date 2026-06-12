@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,10 +13,21 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.deployment_gates_evaluation_configuration import (
+        DeploymentGatesEvaluationConfiguration,
+    )
+
+
 class DeploymentGatesEvaluationRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.deployment_gates_evaluation_configuration import (
+            DeploymentGatesEvaluationConfiguration,
+        )
+
         return {
+            "configuration": (DeploymentGatesEvaluationConfiguration,),
             "env": (str,),
             "identifier": (str,),
             "primary_tag": (str,),
@@ -25,6 +36,7 @@ class DeploymentGatesEvaluationRequestAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "configuration": "configuration",
         "env": "env",
         "identifier": "identifier",
         "primary_tag": "primary_tag",
@@ -36,6 +48,7 @@ class DeploymentGatesEvaluationRequestAttributes(ModelNormal):
         self_,
         env: str,
         service: str,
+        configuration: Union[DeploymentGatesEvaluationConfiguration, UnsetType] = unset,
         identifier: Union[str, UnsetType] = unset,
         primary_tag: Union[str, UnsetType] = unset,
         version: Union[str, UnsetType] = unset,
@@ -43,6 +56,13 @@ class DeploymentGatesEvaluationRequestAttributes(ModelNormal):
     ):
         """
         Attributes for a deployment gate evaluation request.
+        When ``configuration`` is provided, rules are evaluated inline from that configuration.
+        When omitted, rules are resolved from the preconfigured gate for the given service and environment.
+
+        :param configuration: Inline rule definitions for a deployment gate evaluation. When provided, rules are evaluated
+            directly from this configuration instead of using the preconfigured gate rules.
+            At least one rule is required.
+        :type configuration: DeploymentGatesEvaluationConfiguration, optional
 
         :param env: The environment of the deployment.
         :type env: str
@@ -59,6 +79,8 @@ class DeploymentGatesEvaluationRequestAttributes(ModelNormal):
         :param version: The version of the deployment. Required for APM Faulty Deployment Detection rules.
         :type version: str, optional
         """
+        if configuration is not unset:
+            kwargs["configuration"] = configuration
         if identifier is not unset:
             kwargs["identifier"] = identifier
         if primary_tag is not unset:

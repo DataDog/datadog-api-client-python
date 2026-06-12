@@ -11659,6 +11659,13 @@ datadog\_api\_client.v2.model.deployment\_gate\_rules\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_configuration module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_configuration
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_request module
 ---------------------------------------------------------------------------
 
@@ -11750,6 +11757,34 @@ datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_result\_response\_d
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.deployment\_gates\_evaluation\_rule module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_evaluation_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_fdd\_rule module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_fdd_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_fdd\_rule\_options module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_fdd_rule_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_fdd\_rule\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_fdd_rule_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.deployment\_gates\_list\_response module
 ----------------------------------------------------------------------
 
@@ -11768,6 +11803,27 @@ datadog\_api\_client.v2.model.deployment\_gates\_list\_response\_meta\_page modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.deployment_gates_list_response_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_monitor\_rule module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_monitor_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_monitor\_rule\_options module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_monitor_rule_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.deployment\_gates\_monitor\_rule\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.deployment_gates_monitor_rule_type
    :members:
    :show-inheritance:
 

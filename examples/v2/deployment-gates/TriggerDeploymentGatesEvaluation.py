@@ -4,6 +4,7 @@ Trigger a deployment gate evaluation returns "Accepted" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
+from datadog_api_client.v2.model.deployment_gates_evaluation_configuration import DeploymentGatesEvaluationConfiguration
 from datadog_api_client.v2.model.deployment_gates_evaluation_request import DeploymentGatesEvaluationRequest
 from datadog_api_client.v2.model.deployment_gates_evaluation_request_attributes import (
     DeploymentGatesEvaluationRequestAttributes,
@@ -12,10 +13,27 @@ from datadog_api_client.v2.model.deployment_gates_evaluation_request_data import
 from datadog_api_client.v2.model.deployment_gates_evaluation_request_data_type import (
     DeploymentGatesEvaluationRequestDataType,
 )
+from datadog_api_client.v2.model.deployment_gates_monitor_rule import DeploymentGatesMonitorRule
+from datadog_api_client.v2.model.deployment_gates_monitor_rule_options import DeploymentGatesMonitorRuleOptions
+from datadog_api_client.v2.model.deployment_gates_monitor_rule_type import DeploymentGatesMonitorRuleType
 
 body = DeploymentGatesEvaluationRequest(
     data=DeploymentGatesEvaluationRequestData(
         attributes=DeploymentGatesEvaluationRequestAttributes(
+            configuration=DeploymentGatesEvaluationConfiguration(
+                dry_run=False,
+                rules=[
+                    DeploymentGatesMonitorRule(
+                        dry_run=False,
+                        name="error rate monitors",
+                        options=DeploymentGatesMonitorRuleOptions(
+                            duration=300,
+                            query="service:transaction-backend env:production",
+                        ),
+                        type=DeploymentGatesMonitorRuleType.MONITOR,
+                    ),
+                ],
+            ),
             env="staging",
             identifier="pre-deploy",
             primary_tag="region:us-east-1",
