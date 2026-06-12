@@ -3389,7 +3389,37 @@
       "type": "idempotent"
     }
   },
+  "ListGoogleChatOrganizations": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSpaceByDisplayName": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteGoogleChatOrganization": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGoogleChatOrganization": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteGoogleChatDelegatedUser": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGoogleChatDelegatedUser": {
     "tag": "Google Chat Integration",
     "undo": {
       "type": "safe"
@@ -3432,6 +3462,48 @@
     }
   },
   "UpdateOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListGoogleChatTargetAudiences": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGoogleChatTargetAudience": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "operationId": "DeleteGoogleChatTargetAudience",
+      "parameters": [
+        {
+          "name": "organization_binding_id",
+          "origin": "path",
+          "source": "organization_binding_id"
+        },
+        {
+          "name": "target_audience_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteGoogleChatTargetAudience": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGoogleChatTargetAudience": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGoogleChatTargetAudience": {
     "tag": "Google Chat Integration",
     "undo": {
       "type": "idempotent"

@@ -677,6 +677,22 @@
   {
     "parameters": [
       {
+        "name": "organization_binding_id",
+        "value": "\"e54cb570-c674-529c-769d-84b312288ed7\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"google-chat-target-audience\",\n    \"attributes\": {\n      \"audience_name\": \"{{ unique }}\",\n      \"audience_id\": \"{{ unique }}\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"google_chat_target_audience\" in the system",
+    "key": "google_chat_target_audience",
+    "tag": "Google Chat Integration",
+    "operationId": "CreateGoogleChatTargetAudience"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"tenant_id\": \"4d3bac44-0230-4732-9e70-cc00736f0a97\",\n      \"team_id\": \"e5f50a58-c929-4fb3-8866-e2cd836de3c2\",\n      \"channel_id\": \"19:iD_D2xy_sAa-JV851JJYwIa6mlW9F9Nxm3SLyZq68qY1@thread.tacv2\"\n     },\n     \"type\": \"tenant-based-handle\"\n  }\n}"
       }
