@@ -1,0 +1,74 @@
+interactions:
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule","name":"Test-Restore_a_rule_to_a_historical_version_returns_Conflict_response-1781258242","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[],"type":"log_detection"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules
+  response:
+    body:
+      string: '{"name":"Test-Restore_a_rule_to_a_historical_version_returns_Conflict_response-1781258242","createdAt":1781258244898,"isDefault":false,"isPartner":false,"isEnabled":true,"isBeta":false,"isDeleted":false,"isDeprecated":false,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"logs"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0"}],"message":"Test rule","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"version":1,"id":"xrz-jfq-dfm","blocking":false,"metadata":{"entities":null,"sources":null},"creationAuthorId":2320499,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"updater":{"handle":"","name":""}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"cases":[{"condition":"a > 0","name":"","notifications":[],"status":"info"}],"filters":[],"isEnabled":true,"message":"Test
+      rule updated","name":"Test-Restore_a_rule_to_a_historical_version_returns_Conflict_response-1781258242-updated","options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"queries":[{"aggregation":"count","distinctFields":[],"groupByFields":[],"metrics":[],"query":"@test:true"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/xrz-jfq-dfm
+  response:
+    body:
+      string: '{"name":"Test-Restore_a_rule_to_a_historical_version_returns_Conflict_response-1781258242-updated","isEnabled":true,"queries":[{"query":"@test:true","groupByFields":[],"hasOptionalGroupByFields":false,"distinctFields":[],"aggregation":"count","name":"","dataSource":"logs"}],"options":{"evaluationWindow":900,"detectionMethod":"threshold","maxSignalDuration":86400,"keepAlive":3600},"cases":[{"name":"","status":"info","notifications":[],"condition":"a
+        \u003e 0"}],"message":"Test rule updated","tags":[],"hasExtendedTitle":false,"type":"log_detection","filters":[],"id":"xrz-jfq-dfm","version":2,"createdAt":1781258244898,"creationAuthorId":2320499,"updateAuthorId":2320499,"updatedAt":1781258245104,"isDefault":false,"blocking":false,"isBeta":false,"isDeleted":false,"isDeprecated":false,"metadata":{"entities":null,"sources":null}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/xrz-jfq-dfm/restore/2
+  response:
+    body:
+      string: '{"error":{"code":"AlreadyExists","message":"Cannot restore: target
+        version is the current version."}}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 409
+      message: Conflict
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/rules/xrz-jfq-dfm
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

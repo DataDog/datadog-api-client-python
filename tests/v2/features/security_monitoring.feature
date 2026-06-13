@@ -2532,6 +2532,48 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "Bad Request" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "Conflict" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And there is a valid "security_rule" in the system
+    And there is a valid "security_rule_updated" in the system
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "security_rule.id"
+    And request contains "version" parameter with value 2
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "Not Found" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And there is a valid "security_rule" in the system
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "security_rule.id"
+    And request contains "version" parameter with value 9999
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-validation @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "OK" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And there is a valid "security_rule" in the system
+    And there is a valid "security_rule_updated" in the system
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "security_rule.id"
+    And request contains "version" parameter with value 1
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "id" has the same value as "security_rule.id"
+
   @generated @skip @team:DataDog/k9-vm-ast
   Scenario: Returns a list of Secrets rules returns "OK" response
     Given operation "GetSecretsRules" enabled
