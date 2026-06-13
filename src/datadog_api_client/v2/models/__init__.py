@@ -2241,6 +2241,7 @@ from datadog_api_client.v2.model.deployment_gate_response_data_attributes_update
     DeploymentGateResponseDataAttributesUpdatedBy,
 )
 from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
+from datadog_api_client.v2.model.deployment_gates_evaluation_configuration import DeploymentGatesEvaluationConfiguration
 from datadog_api_client.v2.model.deployment_gates_evaluation_request import DeploymentGatesEvaluationRequest
 from datadog_api_client.v2.model.deployment_gates_evaluation_request_attributes import (
     DeploymentGatesEvaluationRequestAttributes,
@@ -2272,9 +2273,16 @@ from datadog_api_client.v2.model.deployment_gates_evaluation_result_response_dat
 from datadog_api_client.v2.model.deployment_gates_evaluation_result_response_data_type import (
     DeploymentGatesEvaluationResultResponseDataType,
 )
+from datadog_api_client.v2.model.deployment_gates_evaluation_rule import DeploymentGatesEvaluationRule
+from datadog_api_client.v2.model.deployment_gates_fdd_rule import DeploymentGatesFDDRule
+from datadog_api_client.v2.model.deployment_gates_fdd_rule_options import DeploymentGatesFDDRuleOptions
+from datadog_api_client.v2.model.deployment_gates_fdd_rule_type import DeploymentGatesFDDRuleType
 from datadog_api_client.v2.model.deployment_gates_list_response import DeploymentGatesListResponse
 from datadog_api_client.v2.model.deployment_gates_list_response_meta import DeploymentGatesListResponseMeta
 from datadog_api_client.v2.model.deployment_gates_list_response_meta_page import DeploymentGatesListResponseMetaPage
+from datadog_api_client.v2.model.deployment_gates_monitor_rule import DeploymentGatesMonitorRule
+from datadog_api_client.v2.model.deployment_gates_monitor_rule_options import DeploymentGatesMonitorRuleOptions
+from datadog_api_client.v2.model.deployment_gates_monitor_rule_type import DeploymentGatesMonitorRuleType
 from datadog_api_client.v2.model.deployment_gates_rule_response import DeploymentGatesRuleResponse
 from datadog_api_client.v2.model.deployment_metadata import DeploymentMetadata
 from datadog_api_client.v2.model.deployment_relationship import DeploymentRelationship
@@ -10861,6 +10869,7 @@ __all__ = [
     "DeploymentGateResponseDataAttributesCreatedBy",
     "DeploymentGateResponseDataAttributesUpdatedBy",
     "DeploymentGateRulesResponse",
+    "DeploymentGatesEvaluationConfiguration",
     "DeploymentGatesEvaluationRequest",
     "DeploymentGatesEvaluationRequestAttributes",
     "DeploymentGatesEvaluationRequestData",
@@ -10874,9 +10883,16 @@ __all__ = [
     "DeploymentGatesEvaluationResultResponseAttributesGateStatus",
     "DeploymentGatesEvaluationResultResponseData",
     "DeploymentGatesEvaluationResultResponseDataType",
+    "DeploymentGatesEvaluationRule",
+    "DeploymentGatesFDDRule",
+    "DeploymentGatesFDDRuleOptions",
+    "DeploymentGatesFDDRuleType",
     "DeploymentGatesListResponse",
     "DeploymentGatesListResponseMeta",
     "DeploymentGatesListResponseMetaPage",
+    "DeploymentGatesMonitorRule",
+    "DeploymentGatesMonitorRuleOptions",
+    "DeploymentGatesMonitorRuleType",
     "DeploymentGatesRuleResponse",
     "DeploymentMetadata",
     "DeploymentRelationship",
