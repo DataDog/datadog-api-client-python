@@ -35,8 +35,6 @@ from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_status import FindingStatus
 from datadog_api_client.v2.model.finding_vulnerability_type import FindingVulnerabilityType
 from datadog_api_client.v2.model.finding import Finding
-from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
-from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
 from datadog_api_client.v2.model.get_finding_response import GetFindingResponse
 from datadog_api_client.v2.model.list_security_findings_response import ListSecurityFindingsResponse
 from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
@@ -3415,26 +3413,6 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["application/json"],
             },
-            api_client=api_client,
-        )
-
-        self._mute_findings_endpoint = _Endpoint(
-            settings={
-                "response_type": (BulkMuteFindingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/posture_management/findings",
-                "operation_id": "mute_findings",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (BulkMuteFindingsRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -7280,33 +7258,6 @@ class SecurityMonitoringApi:
             kwargs["filter_operating_system_version"] = filter_operating_system_version
 
         return self._list_vulnerable_assets_endpoint.call_with_http_info(**kwargs)
-
-    def mute_findings(
-        self,
-        body: BulkMuteFindingsRequest,
-    ) -> BulkMuteFindingsResponse:
-        """Mute or unmute a batch of findings.
-
-        Mute or unmute findings.
-
-        :param body: **Attributes**
-
-            All findings are updated with the same attributes. The request body must include at least two attributes: ``muted`` and ``reason``.
-            The allowed reasons depend on whether the finding is being muted or unmuted:
-
-            * To mute a finding: ``PENDING_FIX`` , ``FALSE_POSITIVE`` , ``ACCEPTED_RISK`` , ``OTHER``.
-            * To unmute a finding : ``NO_PENDING_FIX`` , ``HUMAN_ERROR`` , ``NO_LONGER_ACCEPTED_RISK`` , ``OTHER``.
-
-            **Meta**
-
-            The request body must include a list of the finding IDs to be updated.
-        :type body: BulkMuteFindingsRequest
-        :rtype: BulkMuteFindingsResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._mute_findings_endpoint.call_with_http_info(**kwargs)
 
     def mute_security_findings(
         self,

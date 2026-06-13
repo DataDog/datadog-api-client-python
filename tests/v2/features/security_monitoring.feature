@@ -2383,38 +2383,6 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/cloud-security-posture-management
-  Scenario: Mute or unmute a batch of findings returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
-    Given operation "MuteFindings" enabled
-    And new "MuteFindings" request
-    And body with value {"data": {"attributes": {"mute": {"expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "dbe5f567-192b-4404-b908-29b70e1c9f76", "meta": {"findings": [{"finding_id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw=="}]}, "type": "finding"}}
-    When the request is sent
-    Then the response status is 400 Bad Request: The server cannot process the request due to invalid syntax in the request.
-
-  @generated @skip @team:DataDog/cloud-security-posture-management
-  Scenario: Mute or unmute a batch of findings returns "Invalid Request: The server understands the request syntax but cannot process it due to invalid data." response
-    Given operation "MuteFindings" enabled
-    And new "MuteFindings" request
-    And body with value {"data": {"attributes": {"mute": {"expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "dbe5f567-192b-4404-b908-29b70e1c9f76", "meta": {"findings": [{"finding_id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw=="}]}, "type": "finding"}}
-    When the request is sent
-    Then the response status is 422 Invalid Request: The server understands the request syntax but cannot process it due to invalid data.
-
-  @generated @skip @team:DataDog/cloud-security-posture-management
-  Scenario: Mute or unmute a batch of findings returns "Not Found: The requested finding cannot be found." response
-    Given operation "MuteFindings" enabled
-    And new "MuteFindings" request
-    And body with value {"data": {"attributes": {"mute": {"expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "dbe5f567-192b-4404-b908-29b70e1c9f76", "meta": {"findings": [{"finding_id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw=="}]}, "type": "finding"}}
-    When the request is sent
-    Then the response status is 404 Not Found: The requested finding cannot be found.
-
-  @replay-only @team:DataDog/cloud-security-posture-management
-  Scenario: Mute or unmute a batch of findings returns "OK" response
-    Given operation "MuteFindings" enabled
-    And new "MuteFindings" request
-    And body with value {"data": {"attributes": {"mute": {"expiration_date": 1778721573794, "muted": true, "reason": "ACCEPTED_RISK"}}, "id": "dbe5f567-192b-4404-b908-29b70e1c9f76", "meta": {"findings":[{"finding_id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw=="}]}, "type": "finding"}}
-    When the request is sent
-    Then the response status is 200 OK
-
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Mute or unmute security findings returns "Accepted" response
     Given new "MuteSecurityFindings" request
