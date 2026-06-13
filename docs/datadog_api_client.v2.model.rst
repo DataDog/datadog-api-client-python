@@ -10987,6 +10987,20 @@ datadog\_api\_client.v2.model.data\_export\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.data\_observability\_monitor\_run\_status module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_observability_monitor_run_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.data\_observability\_monitor\_run\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.data_observability_monitor_run_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.data\_relationships\_teams module
 ---------------------------------------------------------------
 
@@ -15786,6 +15800,27 @@ datadog\_api\_client.v2.model.get\_data\_deletions\_response\_body module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.get_data_deletions_response_body
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_data\_observability\_monitor\_run\_status\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_data_observability_monitor_run_status_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_data\_observability\_monitor\_run\_status\_response\_attributes module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_data_observability_monitor_run_status_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.get\_data\_observability\_monitor\_run\_status\_response\_data module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.get_data_observability_monitor_run_status_response_data
    :members:
    :show-inheritance:
 
@@ -31574,6 +31609,90 @@ datadog\_api\_client.v2.model.report\_schedule\_included\_resource module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.report\_schedule\_included\_resource\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_included_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_index\_template\_variable module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_index_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_resource\_relationship module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_resource_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_resource\_relationship\_data module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_resource_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response\_links module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response\_meta module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response\_pagination module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response\_pagination\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response_pagination_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_list\_response\_relationships module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_list_response_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.report\_schedule\_patch\_request module
 ---------------------------------------------------------------------
 
@@ -31592,6 +31711,27 @@ datadog\_api\_client.v2.model.report\_schedule\_patch\_request\_data module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.report_schedule_patch_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_query\_parameter\_value module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_query_parameter_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_resource module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_resource
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_resource\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_resource_attributes
    :members:
    :show-inheritance:
 
@@ -31648,6 +31788,27 @@ datadog\_api\_client.v2.model.report\_schedule\_template\_variable module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.report_schedule_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_toggle\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_toggle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_toggle\_request\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_toggle_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.report\_schedule\_toggle\_request\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.report_schedule_toggle_request_data
    :members:
    :show-inheritance:
 
@@ -33545,6 +33706,20 @@ datadog\_api\_client.v2.model.rum\_warning module
 -------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.rum_warning
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.run\_data\_observability\_monitor\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.run_data_observability_monitor_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.run\_data\_observability\_monitor\_response\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.run_data_observability_monitor_response_data
    :members:
    :show-inheritance:
 

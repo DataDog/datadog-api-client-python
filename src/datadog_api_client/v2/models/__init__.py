@@ -2121,6 +2121,8 @@ from datadog_api_client.v2.model.data_deletion_response_item import DataDeletion
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
 from datadog_api_client.v2.model.data_export_config import DataExportConfig
+from datadog_api_client.v2.model.data_observability_monitor_run_status import DataObservabilityMonitorRunStatus
+from datadog_api_client.v2.model.data_observability_monitor_run_type import DataObservabilityMonitorRunType
 from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
 from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
@@ -2925,6 +2927,15 @@ from datadog_api_client.v2.model.get_blueprint_response import GetBlueprintRespo
 from datadog_api_client.v2.model.get_blueprints_response import GetBlueprintsResponse
 from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
 from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
+from datadog_api_client.v2.model.get_data_observability_monitor_run_status_response import (
+    GetDataObservabilityMonitorRunStatusResponse,
+)
+from datadog_api_client.v2.model.get_data_observability_monitor_run_status_response_attributes import (
+    GetDataObservabilityMonitorRunStatusResponseAttributes,
+)
+from datadog_api_client.v2.model.get_data_observability_monitor_run_status_response_data import (
+    GetDataObservabilityMonitorRunStatusResponseData,
+)
 from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
 from datadog_api_client.v2.model.get_device_data import GetDeviceData
 from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
@@ -6324,9 +6335,32 @@ from datadog_api_client.v2.model.report_schedule_create_request_attributes impor
 from datadog_api_client.v2.model.report_schedule_create_request_data import ReportScheduleCreateRequestData
 from datadog_api_client.v2.model.report_schedule_delivery_format import ReportScheduleDeliveryFormat
 from datadog_api_client.v2.model.report_schedule_included_resource import ReportScheduleIncludedResource
+from datadog_api_client.v2.model.report_schedule_included_resource_type import ReportScheduleIncludedResourceType
+from datadog_api_client.v2.model.report_schedule_index_template_variable import ReportScheduleIndexTemplateVariable
+from datadog_api_client.v2.model.report_schedule_list_resource_relationship import (
+    ReportScheduleListResourceRelationship,
+)
+from datadog_api_client.v2.model.report_schedule_list_resource_relationship_data import (
+    ReportScheduleListResourceRelationshipData,
+)
+from datadog_api_client.v2.model.report_schedule_list_response import ReportScheduleListResponse
+from datadog_api_client.v2.model.report_schedule_list_response_attributes import ReportScheduleListResponseAttributes
+from datadog_api_client.v2.model.report_schedule_list_response_data import ReportScheduleListResponseData
+from datadog_api_client.v2.model.report_schedule_list_response_links import ReportScheduleListResponseLinks
+from datadog_api_client.v2.model.report_schedule_list_response_meta import ReportScheduleListResponseMeta
+from datadog_api_client.v2.model.report_schedule_list_response_pagination import ReportScheduleListResponsePagination
+from datadog_api_client.v2.model.report_schedule_list_response_pagination_type import (
+    ReportScheduleListResponsePaginationType,
+)
+from datadog_api_client.v2.model.report_schedule_list_response_relationships import (
+    ReportScheduleListResponseRelationships,
+)
 from datadog_api_client.v2.model.report_schedule_patch_request import ReportSchedulePatchRequest
 from datadog_api_client.v2.model.report_schedule_patch_request_attributes import ReportSchedulePatchRequestAttributes
 from datadog_api_client.v2.model.report_schedule_patch_request_data import ReportSchedulePatchRequestData
+from datadog_api_client.v2.model.report_schedule_query_parameter_value import ReportScheduleQueryParameterValue
+from datadog_api_client.v2.model.report_schedule_resource import ReportScheduleResource
+from datadog_api_client.v2.model.report_schedule_resource_attributes import ReportScheduleResourceAttributes
 from datadog_api_client.v2.model.report_schedule_resource_type import ReportScheduleResourceType
 from datadog_api_client.v2.model.report_schedule_response import ReportScheduleResponse
 from datadog_api_client.v2.model.report_schedule_response_attributes import ReportScheduleResponseAttributes
@@ -6337,6 +6371,9 @@ from datadog_api_client.v2.model.report_schedule_response_data import ReportSche
 from datadog_api_client.v2.model.report_schedule_response_relationships import ReportScheduleResponseRelationships
 from datadog_api_client.v2.model.report_schedule_status import ReportScheduleStatus
 from datadog_api_client.v2.model.report_schedule_template_variable import ReportScheduleTemplateVariable
+from datadog_api_client.v2.model.report_schedule_toggle_request import ReportScheduleToggleRequest
+from datadog_api_client.v2.model.report_schedule_toggle_request_attributes import ReportScheduleToggleRequestAttributes
+from datadog_api_client.v2.model.report_schedule_toggle_request_data import ReportScheduleToggleRequestData
 from datadog_api_client.v2.model.report_schedule_type import ReportScheduleType
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data import ResolveVulnerableSymbolsRequestData
@@ -6606,6 +6643,10 @@ from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
 from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
+from datadog_api_client.v2.model.run_data_observability_monitor_response import RunDataObservabilityMonitorResponse
+from datadog_api_client.v2.model.run_data_observability_monitor_response_data import (
+    RunDataObservabilityMonitorResponseData,
+)
 from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.run_historical_job_request_attributes import RunHistoricalJobRequestAttributes
 from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
@@ -10765,6 +10806,8 @@ __all__ = [
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
     "DataExportConfig",
+    "DataObservabilityMonitorRunStatus",
+    "DataObservabilityMonitorRunType",
     "DataRelationshipsTeams",
     "DataRelationshipsTeamsDataItems",
     "DataRelationshipsTeamsDataItemsType",
@@ -11417,6 +11460,9 @@ __all__ = [
     "GetBlueprintsResponse",
     "GetCustomFrameworkResponse",
     "GetDataDeletionsResponseBody",
+    "GetDataObservabilityMonitorRunStatusResponse",
+    "GetDataObservabilityMonitorRunStatusResponseAttributes",
+    "GetDataObservabilityMonitorRunStatusResponseData",
     "GetDeviceAttributes",
     "GetDeviceData",
     "GetDeviceResponse",
@@ -13726,9 +13772,24 @@ __all__ = [
     "ReportScheduleCreateRequestData",
     "ReportScheduleDeliveryFormat",
     "ReportScheduleIncludedResource",
+    "ReportScheduleIncludedResourceType",
+    "ReportScheduleIndexTemplateVariable",
+    "ReportScheduleListResourceRelationship",
+    "ReportScheduleListResourceRelationshipData",
+    "ReportScheduleListResponse",
+    "ReportScheduleListResponseAttributes",
+    "ReportScheduleListResponseData",
+    "ReportScheduleListResponseLinks",
+    "ReportScheduleListResponseMeta",
+    "ReportScheduleListResponsePagination",
+    "ReportScheduleListResponsePaginationType",
+    "ReportScheduleListResponseRelationships",
     "ReportSchedulePatchRequest",
     "ReportSchedulePatchRequestAttributes",
     "ReportSchedulePatchRequestData",
+    "ReportScheduleQueryParameterValue",
+    "ReportScheduleResource",
+    "ReportScheduleResourceAttributes",
     "ReportScheduleResourceType",
     "ReportScheduleResponse",
     "ReportScheduleResponseAttributes",
@@ -13737,6 +13798,9 @@ __all__ = [
     "ReportScheduleResponseRelationships",
     "ReportScheduleStatus",
     "ReportScheduleTemplateVariable",
+    "ReportScheduleToggleRequest",
+    "ReportScheduleToggleRequestAttributes",
+    "ReportScheduleToggleRequestData",
     "ReportScheduleType",
     "ResolveVulnerableSymbolsRequest",
     "ResolveVulnerableSymbolsRequestData",
@@ -13956,6 +14020,8 @@ __all__ = [
     "RumRetentionFiltersOrderRequest",
     "RumRetentionFiltersOrderResponse",
     "RumRetentionFiltersResponse",
+    "RunDataObservabilityMonitorResponse",
+    "RunDataObservabilityMonitorResponseData",
     "RunHistoricalJobRequest",
     "RunHistoricalJobRequestAttributes",
     "RunHistoricalJobRequestData",
