@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.report_schedule_response_data import ReportScheduleResponseData
     from datadog_api_client.v2.model.report_schedule_included_resource import ReportScheduleIncludedResource
     from datadog_api_client.v2.model.report_schedule_author import ReportScheduleAuthor
+    from datadog_api_client.v2.model.report_schedule_resource import ReportScheduleResource
 
 
 class ReportScheduleResponse(ModelNormal):
@@ -38,7 +39,9 @@ class ReportScheduleResponse(ModelNormal):
     def __init__(
         self_,
         data: ReportScheduleResponseData,
-        included: Union[List[Union[ReportScheduleIncludedResource, ReportScheduleAuthor]], UnsetType] = unset,
+        included: Union[
+            List[Union[ReportScheduleIncludedResource, ReportScheduleAuthor, ReportScheduleResource]], UnsetType
+        ] = unset,
         **kwargs,
     ):
         """

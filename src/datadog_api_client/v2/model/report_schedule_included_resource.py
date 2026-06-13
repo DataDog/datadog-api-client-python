@@ -36,9 +36,11 @@ class ReportScheduleIncludedResource(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.report_schedule_author import ReportScheduleAuthor
+        from datadog_api_client.v2.model.report_schedule_resource import ReportScheduleResource
 
         return {
             "oneOf": [
                 ReportScheduleAuthor,
+                ReportScheduleResource,
             ],
         }
