@@ -40,6 +40,7 @@ from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecure
 from datadog_api_client.v2.api.dashboard_sharing_api import DashboardSharingApi
 from datadog_api_client.v2.api.dashboards_api import DashboardsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
+from datadog_api_client.v2.api.data_observability_api import DataObservabilityApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
@@ -87,7 +88,6 @@ from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
-from datadog_api_client.v2.api.rum_retention_filters_hardcoded_api import RUMRetentionFiltersHardcodedApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
@@ -173,6 +173,7 @@ __all__ = [
     "DashboardSharingApi",
     "DashboardsApi",
     "DataDeletionApi",
+    "DataObservabilityApi",
     "DatasetsApi",
     "DeploymentGatesApi",
     "DomainAllowlistApi",
@@ -220,7 +221,6 @@ __all__ = [
     "ProductAnalyticsApi",
     "RUMApi",
     "RUMInsightsApi",
-    "RUMRetentionFiltersHardcodedApi",
     "ReferenceTablesApi",
     "ReportSchedulesApi",
     "RestrictionPoliciesApi",
