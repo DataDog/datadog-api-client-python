@@ -7885,7 +7885,12 @@ from datadog_api_client.v2.model.spans_sort_order import SpansSortOrder
 from datadog_api_client.v2.model.spans_type import SpansType
 from datadog_api_client.v2.model.spans_warning import SpansWarning
 from datadog_api_client.v2.model.spec import Spec
+from datadog_api_client.v2.model.spec_attributes import SpecAttributes
+from datadog_api_client.v2.model.spec_attributes_status import SpecAttributesStatus
+from datadog_api_client.v2.model.spec_data import SpecData
+from datadog_api_client.v2.model.spec_type import SpecType
 from datadog_api_client.v2.model.spec_version import SpecVersion
+from datadog_api_client.v2.model.specs_list_response import SpecsListResponse
 from datadog_api_client.v2.model.split_api_key import SplitAPIKey
 from datadog_api_client.v2.model.split_api_key_type import SplitAPIKeyType
 from datadog_api_client.v2.model.split_api_key_update import SplitAPIKeyUpdate
@@ -14769,7 +14774,12 @@ __all__ = [
     "SpansType",
     "SpansWarning",
     "Spec",
+    "SpecAttributes",
+    "SpecAttributesStatus",
+    "SpecData",
+    "SpecType",
     "SpecVersion",
+    "SpecsListResponse",
     "SplitAPIKey",
     "SplitAPIKeyType",
     "SplitAPIKeyUpdate",
