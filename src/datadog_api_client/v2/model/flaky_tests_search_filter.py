@@ -49,6 +49,8 @@ class FlakyTestsSearchFilter(ModelNormal):
             * ``@git.branch``
             * ``@test.codeowners``
             * ``env``
+            * ``failure_rate``
+            * ``pipelines_failed``
         :type query: str, optional
         """
         if include_history is not unset:
