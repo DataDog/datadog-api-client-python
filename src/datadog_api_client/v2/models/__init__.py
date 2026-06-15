@@ -3018,7 +3018,17 @@ from datadog_api_client.v2.model.global_incident_settings_data_response import G
 from datadog_api_client.v2.model.global_incident_settings_request import GlobalIncidentSettingsRequest
 from datadog_api_client.v2.model.global_incident_settings_response import GlobalIncidentSettingsResponse
 from datadog_api_client.v2.model.global_incident_settings_type import GlobalIncidentSettingsType
+from datadog_api_client.v2.model.global_org import GlobalOrg
+from datadog_api_client.v2.model.global_org_attributes import GlobalOrgAttributes
+from datadog_api_client.v2.model.global_org_data import GlobalOrgData
 from datadog_api_client.v2.model.global_org_identifier import GlobalOrgIdentifier
+from datadog_api_client.v2.model.global_org_type import GlobalOrgType
+from datadog_api_client.v2.model.global_org_user import GlobalOrgUser
+from datadog_api_client.v2.model.global_orgs_links import GlobalOrgsLinks
+from datadog_api_client.v2.model.global_orgs_meta import GlobalOrgsMeta
+from datadog_api_client.v2.model.global_orgs_meta_page import GlobalOrgsMetaPage
+from datadog_api_client.v2.model.global_orgs_meta_page_type import GlobalOrgsMetaPageType
+from datadog_api_client.v2.model.global_orgs_response import GlobalOrgsResponse
 from datadog_api_client.v2.model.global_variable_data import GlobalVariableData
 from datadog_api_client.v2.model.global_variable_json_patch_request import GlobalVariableJsonPatchRequest
 from datadog_api_client.v2.model.global_variable_json_patch_request_data import GlobalVariableJsonPatchRequestData
@@ -3339,19 +3349,6 @@ from datadog_api_client.v2.model.incident_search_response_property_field_facet_d
 from datadog_api_client.v2.model.incident_search_response_user_facet_data import IncidentSearchResponseUserFacetData
 from datadog_api_client.v2.model.incident_search_results_type import IncidentSearchResultsType
 from datadog_api_client.v2.model.incident_search_sort_order import IncidentSearchSortOrder
-from datadog_api_client.v2.model.incident_service_create_attributes import IncidentServiceCreateAttributes
-from datadog_api_client.v2.model.incident_service_create_data import IncidentServiceCreateData
-from datadog_api_client.v2.model.incident_service_create_request import IncidentServiceCreateRequest
-from datadog_api_client.v2.model.incident_service_included_items import IncidentServiceIncludedItems
-from datadog_api_client.v2.model.incident_service_relationships import IncidentServiceRelationships
-from datadog_api_client.v2.model.incident_service_response import IncidentServiceResponse
-from datadog_api_client.v2.model.incident_service_response_attributes import IncidentServiceResponseAttributes
-from datadog_api_client.v2.model.incident_service_response_data import IncidentServiceResponseData
-from datadog_api_client.v2.model.incident_service_type import IncidentServiceType
-from datadog_api_client.v2.model.incident_service_update_attributes import IncidentServiceUpdateAttributes
-from datadog_api_client.v2.model.incident_service_update_data import IncidentServiceUpdateData
-from datadog_api_client.v2.model.incident_service_update_request import IncidentServiceUpdateRequest
-from datadog_api_client.v2.model.incident_services_response import IncidentServicesResponse
 from datadog_api_client.v2.model.incident_severity import IncidentSeverity
 from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
 from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
@@ -4314,6 +4311,10 @@ from datadog_api_client.v2.model.managed_orgs_relationship_to_orgs import Manage
 from datadog_api_client.v2.model.managed_orgs_relationships import ManagedOrgsRelationships
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.managed_orgs_type import ManagedOrgsType
+from datadog_api_client.v2.model.max_session_duration_type import MaxSessionDurationType
+from datadog_api_client.v2.model.max_session_duration_update_attributes import MaxSessionDurationUpdateAttributes
+from datadog_api_client.v2.model.max_session_duration_update_data import MaxSessionDurationUpdateData
+from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
 from datadog_api_client.v2.model.mcp_scan_request import McpScanRequest
 from datadog_api_client.v2.model.mcp_scan_request_data import McpScanRequestData
 from datadog_api_client.v2.model.mcp_scan_request_data_attributes import McpScanRequestDataAttributes
@@ -5053,6 +5054,12 @@ from datadog_api_client.v2.model.observability_pipeline_generate_metrics_process
 )
 from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor_type import (
     ObservabilityPipelineGenerateMetricsProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor import (
+    ObservabilityPipelineGenerateMetricsV2Processor,
+)
+from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor_type import (
+    ObservabilityPipelineGenerateMetricsV2ProcessorType,
 )
 from datadog_api_client.v2.model.observability_pipeline_generated_metric import ObservabilityPipelineGeneratedMetric
 from datadog_api_client.v2.model.observability_pipeline_generated_metric_increment_by_field import (
@@ -11473,7 +11480,17 @@ __all__ = [
     "GlobalIncidentSettingsRequest",
     "GlobalIncidentSettingsResponse",
     "GlobalIncidentSettingsType",
+    "GlobalOrg",
+    "GlobalOrgAttributes",
+    "GlobalOrgData",
     "GlobalOrgIdentifier",
+    "GlobalOrgType",
+    "GlobalOrgUser",
+    "GlobalOrgsLinks",
+    "GlobalOrgsMeta",
+    "GlobalOrgsMetaPage",
+    "GlobalOrgsMetaPageType",
+    "GlobalOrgsResponse",
     "GlobalVariableData",
     "GlobalVariableJsonPatchRequest",
     "GlobalVariableJsonPatchRequestData",
@@ -11712,19 +11729,6 @@ __all__ = [
     "IncidentSearchResponseUserFacetData",
     "IncidentSearchResultsType",
     "IncidentSearchSortOrder",
-    "IncidentServiceCreateAttributes",
-    "IncidentServiceCreateData",
-    "IncidentServiceCreateRequest",
-    "IncidentServiceIncludedItems",
-    "IncidentServiceRelationships",
-    "IncidentServiceResponse",
-    "IncidentServiceResponseAttributes",
-    "IncidentServiceResponseData",
-    "IncidentServiceType",
-    "IncidentServiceUpdateAttributes",
-    "IncidentServiceUpdateData",
-    "IncidentServiceUpdateRequest",
-    "IncidentServicesResponse",
     "IncidentSeverity",
     "IncidentTimelineCellCreateAttributes",
     "IncidentTimelineCellMarkdownContentType",
@@ -12461,6 +12465,10 @@ __all__ = [
     "ManagedOrgsRelationships",
     "ManagedOrgsResponse",
     "ManagedOrgsType",
+    "MaxSessionDurationType",
+    "MaxSessionDurationUpdateAttributes",
+    "MaxSessionDurationUpdateData",
+    "MaxSessionDurationUpdateRequest",
     "McpScanRequest",
     "McpScanRequestData",
     "McpScanRequestDataAttributes",
@@ -12901,6 +12909,8 @@ __all__ = [
     "ObservabilityPipelineGcpAuth",
     "ObservabilityPipelineGenerateMetricsProcessor",
     "ObservabilityPipelineGenerateMetricsProcessorType",
+    "ObservabilityPipelineGenerateMetricsV2Processor",
+    "ObservabilityPipelineGenerateMetricsV2ProcessorType",
     "ObservabilityPipelineGeneratedMetric",
     "ObservabilityPipelineGeneratedMetricIncrementByField",
     "ObservabilityPipelineGeneratedMetricIncrementByFieldStrategy",

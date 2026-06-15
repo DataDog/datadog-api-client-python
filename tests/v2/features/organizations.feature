@@ -61,6 +61,27 @@ Feature: Organizations
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: List global orgs returns "Bad Request" response
+    Given new "ListGlobalOrgs" request
+    And request contains "user_handle" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: List global orgs returns "OK" response
+    Given new "ListGlobalOrgs" request
+    And request contains "user_handle" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/delegated-auth-login @with-pagination
+  Scenario: List global orgs returns "OK" response with pagination
+    Given new "ListGlobalOrgs" request
+    And request contains "user_handle" parameter from "REPLACE.ME"
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/org-management
   Scenario: List your managed organizations returns "OK" response
     Given new "ListOrgs" request
@@ -146,6 +167,20 @@ Feature: Organizations
     And body with value {"data": {"attributes": {"default_role_uuids": ["8dd1cf3c-0c75-11ea-ad28-fb5701eabc7d"], "jit_domains": ["example.com"]}, "id": "00000000-0000-0000-0000-000000000000", "type": "saml_preferences"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: Update the maximum session duration returns "Bad Request" response
+    Given new "UpdateLoginOrgConfigsMaxSessionDuration" request
+    And body with value {"data": {"attributes": {"max_session_duration": 604800}, "type": "max_session_duration"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: Update the maximum session duration returns "No Content" response
+    Given new "UpdateLoginOrgConfigsMaxSessionDuration" request
+    And body with value {"data": {"attributes": {"max_session_duration": 604800}, "type": "max_session_duration"}}
+    When the request is sent
+    Then the response status is 204 No Content
 
   @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/delegated-auth-login
   Scenario: Upload IdP metadata returns "Bad Request - caused by either malformed XML or invalid SAML IdP metadata" response

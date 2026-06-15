@@ -3,15 +3,21 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     file_type,
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.global_orgs_response import GlobalOrgsResponse
+from datadog_api_client.v2.model.global_org_data import GlobalOrgData
+from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.org_saml_preferences_update_request import OrgSAMLPreferencesUpdateRequest
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
@@ -78,6 +84,43 @@ class OrganizationsApi:
             api_client=api_client,
         )
 
+        self._list_global_orgs_endpoint = _Endpoint(
+            settings={
+                "response_type": (GlobalOrgsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/global_orgs",
+                "operation_id": "list_global_orgs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "user_handle": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_handle",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_org_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgConfigListResponse,),
@@ -129,6 +172,26 @@ class OrganizationsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._update_login_org_configs_max_session_duration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/login/org_configs/max_session_duration",
+                "operation_id": "update_login_org_configs_max_session_duration",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (MaxSessionDurationUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -258,6 +321,81 @@ class OrganizationsApi:
 
         return self._get_saml_configuration_endpoint.call_with_http_info(**kwargs)
 
+    def list_global_orgs(
+        self,
+        user_handle: str,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+    ) -> GlobalOrgsResponse:
+        """List global orgs.
+
+        Returns organizations across regions for the authenticated user. The ``user_handle`` query parameter must match the authenticated user's handle.
+
+        :param user_handle: The handle of the authenticated user.
+        :type user_handle: str
+        :param page_limit: Maximum number of results returned.
+        :type page_limit: int, optional
+        :param page_cursor: String to query the next page of results.
+            This key is provided with each valid response from the API in ``meta.page.next_cursor``.
+        :type page_cursor: str, optional
+        :rtype: GlobalOrgsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_handle"] = user_handle
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        return self._list_global_orgs_endpoint.call_with_http_info(**kwargs)
+
+    def list_global_orgs_with_pagination(
+        self,
+        user_handle: str,
+        *,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[GlobalOrgData]:
+        """List global orgs.
+
+        Provide a paginated version of :meth:`list_global_orgs`, returning all items.
+
+        :param user_handle: The handle of the authenticated user.
+        :type user_handle: str
+        :param page_limit: Maximum number of results returned.
+        :type page_limit: int, optional
+        :param page_cursor: String to query the next page of results.
+            This key is provided with each valid response from the API in ``meta.page.next_cursor``.
+        :type page_cursor: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[GlobalOrgData]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_handle"] = user_handle
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
+        endpoint = self._list_global_orgs_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "page_cursor",
+            "cursor_path": "meta.page.next_cursor",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
     def list_org_configs(
         self,
     ) -> OrgConfigListResponse:
@@ -300,6 +438,23 @@ class OrganizationsApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_saml_configurations_endpoint.call_with_http_info(**kwargs)
+
+    def update_login_org_configs_max_session_duration(
+        self,
+        body: MaxSessionDurationUpdateRequest,
+    ) -> None:
+        """Update the maximum session duration.
+
+        Update the maximum session duration for the current organization.
+        The duration is specified in seconds.
+
+        :type body: MaxSessionDurationUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_login_org_configs_max_session_duration_endpoint.call_with_http_info(**kwargs)
 
     def update_org_config(
         self,

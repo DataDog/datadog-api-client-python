@@ -56,7 +56,6 @@ from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi
 from datadog_api_client.v2.api.google_chat_integration_api import GoogleChatIntegrationApi
 from datadog_api_client.v2.api.high_availability_multi_region_api import HighAvailabilityMultiRegionApi
 from datadog_api_client.v2.api.ip_allowlist_api import IPAllowlistApi
-from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.api.integrations_api import IntegrationsApi
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
@@ -190,7 +189,6 @@ __all__ = [
     "GoogleChatIntegrationApi",
     "HighAvailabilityMultiRegionApi",
     "IPAllowlistApi",
-    "IncidentServicesApi",
     "IncidentsApi",
     "IntegrationsApi",
     "JiraIntegrationApi",
