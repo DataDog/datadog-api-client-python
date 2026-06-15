@@ -1423,6 +1423,22 @@
     "operationId": "CreateSecurityMonitoringRule"
   },
   {
+    "parameters": [
+      {
+        "name": "rule_id",
+        "source": "security_rule.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"name\": \"{{ unique }}-updated\",\n  \"queries\": [{\n    \"query\": \"@test:true\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metrics\": []\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule updated\",\n  \"tags\": [],\n  \"isEnabled\": true\n}"
+      }
+    ],
+    "step": "there is a valid \"security_rule_updated\" in the system",
+    "key": "security_rule_updated",
+    "tag": "Security Monitoring",
+    "operationId": "UpdateSecurityMonitoringRule"
+  },
+  {
     "step": "a valid \"configuration\" in the system",
     "key": "configuration",
     "tag": "Sensitive Data Scanner",
