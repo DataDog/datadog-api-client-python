@@ -40,6 +40,7 @@ from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecure
 from datadog_api_client.v2.api.dashboard_sharing_api import DashboardSharingApi
 from datadog_api_client.v2.api.dashboards_api import DashboardsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
+from datadog_api_client.v2.api.data_observability_api import DataObservabilityApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
@@ -173,6 +174,7 @@ __all__ = [
     "DashboardSharingApi",
     "DashboardsApi",
     "DataDeletionApi",
+    "DataObservabilityApi",
     "DatasetsApi",
     "DeploymentGatesApi",
     "DomainAllowlistApi",
