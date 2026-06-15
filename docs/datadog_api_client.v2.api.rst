@@ -291,6 +291,13 @@ datadog\_api\_client.v2.api.data\_deletion\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.data\_observability\_api module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.data_observability_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.datasets\_api module
 ------------------------------------------------
 
@@ -708,13 +715,6 @@ datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.rum_retention_filters_api
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.api.rum\_retention\_filters\_hardcoded\_api module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.rum_retention_filters_hardcoded_api
    :members:
    :show-inheritance:
 

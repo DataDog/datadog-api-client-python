@@ -6419,24 +6419,6 @@
       "type": "unsafe"
     }
   },
-  "ListHardcodedRetentionFilters": {
-    "tag": "RUM Retention Filters Hardcoded",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetHardcodedRetentionFilter": {
-    "tag": "RUM Retention Filters Hardcoded",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateHardcodedRetentionFilter": {
-    "tag": "RUM Retention Filters Hardcoded",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "OrderRetentionFilters": {
     "tag": "Rum Retention Filters",
     "undo": {

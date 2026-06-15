@@ -2121,6 +2121,8 @@ from datadog_api_client.v2.model.data_deletion_response_item import DataDeletion
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
 from datadog_api_client.v2.model.data_export_config import DataExportConfig
+from datadog_api_client.v2.model.data_observability_monitor_run_status import DataObservabilityMonitorRunStatus
+from datadog_api_client.v2.model.data_observability_monitor_run_type import DataObservabilityMonitorRunType
 from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
 from datadog_api_client.v2.model.data_relationships_teams_data_items import DataRelationshipsTeamsDataItems
 from datadog_api_client.v2.model.data_relationships_teams_data_items_type import DataRelationshipsTeamsDataItemsType
@@ -2925,6 +2927,15 @@ from datadog_api_client.v2.model.get_blueprint_response import GetBlueprintRespo
 from datadog_api_client.v2.model.get_blueprints_response import GetBlueprintsResponse
 from datadog_api_client.v2.model.get_custom_framework_response import GetCustomFrameworkResponse
 from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
+from datadog_api_client.v2.model.get_data_observability_monitor_run_status_response import (
+    GetDataObservabilityMonitorRunStatusResponse,
+)
+from datadog_api_client.v2.model.get_data_observability_monitor_run_status_response_attributes import (
+    GetDataObservabilityMonitorRunStatusResponseAttributes,
+)
+from datadog_api_client.v2.model.get_data_observability_monitor_run_status_response_data import (
+    GetDataObservabilityMonitorRunStatusResponseData,
+)
 from datadog_api_client.v2.model.get_device_attributes import GetDeviceAttributes
 from datadog_api_client.v2.model.get_device_data import GetDeviceData
 from datadog_api_client.v2.model.get_device_response import GetDeviceResponse
@@ -6517,28 +6528,6 @@ from datadog_api_client.v2.model.ruleset_status_resp_data_type import RulesetSta
 from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
 from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
 from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
-from datadog_api_client.v2.model.rum_hardcoded_cross_product_sampling import RumHardcodedCrossProductSampling
-from datadog_api_client.v2.model.rum_hardcoded_cross_product_sampling_editability import (
-    RumHardcodedCrossProductSamplingEditability,
-)
-from datadog_api_client.v2.model.rum_hardcoded_cross_product_sampling_update import (
-    RumHardcodedCrossProductSamplingUpdate,
-)
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_attributes import RumHardcodedRetentionFilterAttributes
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_data import RumHardcodedRetentionFilterData
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_event_type import RumHardcodedRetentionFilterEventType
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_meta import RumHardcodedRetentionFilterMeta
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_meta_source import RumHardcodedRetentionFilterMetaSource
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_response import RumHardcodedRetentionFilterResponse
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_type import RumHardcodedRetentionFilterType
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_update_attributes import (
-    RumHardcodedRetentionFilterUpdateAttributes,
-)
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_update_data import RumHardcodedRetentionFilterUpdateData
-from datadog_api_client.v2.model.rum_hardcoded_retention_filter_update_request import (
-    RumHardcodedRetentionFilterUpdateRequest,
-)
-from datadog_api_client.v2.model.rum_hardcoded_retention_filters_response import RumHardcodedRetentionFiltersResponse
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -6606,6 +6595,10 @@ from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
 from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
+from datadog_api_client.v2.model.run_data_observability_monitor_response import RunDataObservabilityMonitorResponse
+from datadog_api_client.v2.model.run_data_observability_monitor_response_data import (
+    RunDataObservabilityMonitorResponseData,
+)
 from datadog_api_client.v2.model.run_historical_job_request import RunHistoricalJobRequest
 from datadog_api_client.v2.model.run_historical_job_request_attributes import RunHistoricalJobRequestAttributes
 from datadog_api_client.v2.model.run_historical_job_request_data import RunHistoricalJobRequestData
@@ -10765,6 +10758,8 @@ __all__ = [
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
     "DataExportConfig",
+    "DataObservabilityMonitorRunStatus",
+    "DataObservabilityMonitorRunType",
     "DataRelationshipsTeams",
     "DataRelationshipsTeamsDataItems",
     "DataRelationshipsTeamsDataItemsType",
@@ -11417,6 +11412,9 @@ __all__ = [
     "GetBlueprintsResponse",
     "GetCustomFrameworkResponse",
     "GetDataDeletionsResponseBody",
+    "GetDataObservabilityMonitorRunStatusResponse",
+    "GetDataObservabilityMonitorRunStatusResponseAttributes",
+    "GetDataObservabilityMonitorRunStatusResponseData",
     "GetDeviceAttributes",
     "GetDeviceData",
     "GetDeviceResponse",
@@ -13881,20 +13879,6 @@ __all__ = [
     "RumCrossProductSampling",
     "RumCrossProductSamplingCreate",
     "RumCrossProductSamplingUpdate",
-    "RumHardcodedCrossProductSampling",
-    "RumHardcodedCrossProductSamplingEditability",
-    "RumHardcodedCrossProductSamplingUpdate",
-    "RumHardcodedRetentionFilterAttributes",
-    "RumHardcodedRetentionFilterData",
-    "RumHardcodedRetentionFilterEventType",
-    "RumHardcodedRetentionFilterMeta",
-    "RumHardcodedRetentionFilterMetaSource",
-    "RumHardcodedRetentionFilterResponse",
-    "RumHardcodedRetentionFilterType",
-    "RumHardcodedRetentionFilterUpdateAttributes",
-    "RumHardcodedRetentionFilterUpdateData",
-    "RumHardcodedRetentionFilterUpdateRequest",
-    "RumHardcodedRetentionFiltersResponse",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",
@@ -13956,6 +13940,8 @@ __all__ = [
     "RumRetentionFiltersOrderRequest",
     "RumRetentionFiltersOrderResponse",
     "RumRetentionFiltersResponse",
+    "RunDataObservabilityMonitorResponse",
+    "RunDataObservabilityMonitorResponseData",
     "RunHistoricalJobRequest",
     "RunHistoricalJobRequestAttributes",
     "RunHistoricalJobRequestData",
