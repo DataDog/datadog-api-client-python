@@ -8655,6 +8655,49 @@
       "type": "safe"
     }
   },
+  "ListTagPolicies": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "operationId": "DeleteTagPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagPolicyScore": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListTagPipelinesRulesets": {
     "tag": "Cloud Cost Management",
     "undo": {

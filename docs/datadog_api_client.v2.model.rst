@@ -41962,6 +41962,160 @@ datadog\_api\_client.v2.model.tag\_indexing\_rules\_response\_meta module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.tag\_policies\_list\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policies_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_attributes module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_create\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_create\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_create\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_create\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_create_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_data module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_include module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_include
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_relationships module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_resource\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_score\_attributes module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_score_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_score\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_score_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_score\_relationship module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_score_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_score\_relationship\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_score_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_score\_resource\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_score_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_score\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_score_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_source module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_type module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_update\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_update\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.tag\_policy\_update\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.tag_policy_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.tags\_event\_attribute module
 -----------------------------------------------------------
 
