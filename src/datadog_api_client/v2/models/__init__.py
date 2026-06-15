@@ -4020,6 +4020,81 @@ from datadog_api_client.v2.model.llm_obs_metric_score_type import LLMObsMetricSc
 from datadog_api_client.v2.model.llm_obs_open_ai_metadata import LLMObsOpenAIMetadata
 from datadog_api_client.v2.model.llm_obs_open_ai_reasoning_effort import LLMObsOpenAIReasoningEffort
 from datadog_api_client.v2.model.llm_obs_open_ai_reasoning_summary import LLMObsOpenAIReasoningSummary
+from datadog_api_client.v2.model.llm_obs_patterns_activity_progress import LLMObsPatternsActivityProgress
+from datadog_api_client.v2.model.llm_obs_patterns_clustered_point import LLMObsPatternsClusteredPoint
+from datadog_api_client.v2.model.llm_obs_patterns_clustered_point_ref import LLMObsPatternsClusteredPointRef
+from datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response import LLMObsPatternsClusteredPointsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response_attributes import (
+    LLMObsPatternsClusteredPointsResponseAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response_data import (
+    LLMObsPatternsClusteredPointsResponseData,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_clustered_points_type import LLMObsPatternsClusteredPointsType
+from datadog_api_client.v2.model.llm_obs_patterns_config_attributes import LLMObsPatternsConfigAttributes
+from datadog_api_client.v2.model.llm_obs_patterns_config_item import LLMObsPatternsConfigItem
+from datadog_api_client.v2.model.llm_obs_patterns_config_response import LLMObsPatternsConfigResponse
+from datadog_api_client.v2.model.llm_obs_patterns_config_response_data import LLMObsPatternsConfigResponseData
+from datadog_api_client.v2.model.llm_obs_patterns_config_snapshot import LLMObsPatternsConfigSnapshot
+from datadog_api_client.v2.model.llm_obs_patterns_config_type import LLMObsPatternsConfigType
+from datadog_api_client.v2.model.llm_obs_patterns_config_upsert_request import LLMObsPatternsConfigUpsertRequest
+from datadog_api_client.v2.model.llm_obs_patterns_config_upsert_request_attributes import (
+    LLMObsPatternsConfigUpsertRequestAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_config_upsert_request_data import (
+    LLMObsPatternsConfigUpsertRequestData,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_configs_list_type import LLMObsPatternsConfigsListType
+from datadog_api_client.v2.model.llm_obs_patterns_configs_response import LLMObsPatternsConfigsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_configs_response_attributes import (
+    LLMObsPatternsConfigsResponseAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_configs_response_data import LLMObsPatternsConfigsResponseData
+from datadog_api_client.v2.model.llm_obs_patterns_request_type import LLMObsPatternsRequestType
+from datadog_api_client.v2.model.llm_obs_patterns_run_status_response import LLMObsPatternsRunStatusResponse
+from datadog_api_client.v2.model.llm_obs_patterns_run_status_response_attributes import (
+    LLMObsPatternsRunStatusResponseAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_run_status_response_data import LLMObsPatternsRunStatusResponseData
+from datadog_api_client.v2.model.llm_obs_patterns_run_status_type import LLMObsPatternsRunStatusType
+from datadog_api_client.v2.model.llm_obs_patterns_run_summary import LLMObsPatternsRunSummary
+from datadog_api_client.v2.model.llm_obs_patterns_runs_list_type import LLMObsPatternsRunsListType
+from datadog_api_client.v2.model.llm_obs_patterns_runs_response import LLMObsPatternsRunsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_runs_response_attributes import LLMObsPatternsRunsResponseAttributes
+from datadog_api_client.v2.model.llm_obs_patterns_runs_response_data import LLMObsPatternsRunsResponseData
+from datadog_api_client.v2.model.llm_obs_patterns_topic import LLMObsPatternsTopic
+from datadog_api_client.v2.model.llm_obs_patterns_topic_with_clustered_points import (
+    LLMObsPatternsTopicWithClusteredPoints,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_topics_response import LLMObsPatternsTopicsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_topics_response_attributes import (
+    LLMObsPatternsTopicsResponseAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_topics_response_data import LLMObsPatternsTopicsResponseData
+from datadog_api_client.v2.model.llm_obs_patterns_topics_type import LLMObsPatternsTopicsType
+from datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response import (
+    LLMObsPatternsTopicsWithClusteredPointsResponse,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response_attributes import (
+    LLMObsPatternsTopicsWithClusteredPointsResponseAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response_data import (
+    LLMObsPatternsTopicsWithClusteredPointsResponseData,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_type import (
+    LLMObsPatternsTopicsWithClusteredPointsType,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_request import LLMObsPatternsTriggerRequest
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_request_attributes import (
+    LLMObsPatternsTriggerRequestAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_request_data import LLMObsPatternsTriggerRequestData
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_response import LLMObsPatternsTriggerResponse
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_response_attributes import (
+    LLMObsPatternsTriggerResponseAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_response_data import LLMObsPatternsTriggerResponseData
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_response_type import LLMObsPatternsTriggerResponseType
 from datadog_api_client.v2.model.llm_obs_project_data_attributes_request import LLMObsProjectDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_project_data_attributes_response import LLMObsProjectDataAttributesResponse
 from datadog_api_client.v2.model.llm_obs_project_data_request import LLMObsProjectDataRequest
@@ -12199,6 +12274,53 @@ __all__ = [
     "LLMObsOpenAIMetadata",
     "LLMObsOpenAIReasoningEffort",
     "LLMObsOpenAIReasoningSummary",
+    "LLMObsPatternsActivityProgress",
+    "LLMObsPatternsClusteredPoint",
+    "LLMObsPatternsClusteredPointRef",
+    "LLMObsPatternsClusteredPointsResponse",
+    "LLMObsPatternsClusteredPointsResponseAttributes",
+    "LLMObsPatternsClusteredPointsResponseData",
+    "LLMObsPatternsClusteredPointsType",
+    "LLMObsPatternsConfigAttributes",
+    "LLMObsPatternsConfigItem",
+    "LLMObsPatternsConfigResponse",
+    "LLMObsPatternsConfigResponseData",
+    "LLMObsPatternsConfigSnapshot",
+    "LLMObsPatternsConfigType",
+    "LLMObsPatternsConfigUpsertRequest",
+    "LLMObsPatternsConfigUpsertRequestAttributes",
+    "LLMObsPatternsConfigUpsertRequestData",
+    "LLMObsPatternsConfigsListType",
+    "LLMObsPatternsConfigsResponse",
+    "LLMObsPatternsConfigsResponseAttributes",
+    "LLMObsPatternsConfigsResponseData",
+    "LLMObsPatternsRequestType",
+    "LLMObsPatternsRunStatusResponse",
+    "LLMObsPatternsRunStatusResponseAttributes",
+    "LLMObsPatternsRunStatusResponseData",
+    "LLMObsPatternsRunStatusType",
+    "LLMObsPatternsRunSummary",
+    "LLMObsPatternsRunsListType",
+    "LLMObsPatternsRunsResponse",
+    "LLMObsPatternsRunsResponseAttributes",
+    "LLMObsPatternsRunsResponseData",
+    "LLMObsPatternsTopic",
+    "LLMObsPatternsTopicWithClusteredPoints",
+    "LLMObsPatternsTopicsResponse",
+    "LLMObsPatternsTopicsResponseAttributes",
+    "LLMObsPatternsTopicsResponseData",
+    "LLMObsPatternsTopicsType",
+    "LLMObsPatternsTopicsWithClusteredPointsResponse",
+    "LLMObsPatternsTopicsWithClusteredPointsResponseAttributes",
+    "LLMObsPatternsTopicsWithClusteredPointsResponseData",
+    "LLMObsPatternsTopicsWithClusteredPointsType",
+    "LLMObsPatternsTriggerRequest",
+    "LLMObsPatternsTriggerRequestAttributes",
+    "LLMObsPatternsTriggerRequestData",
+    "LLMObsPatternsTriggerResponse",
+    "LLMObsPatternsTriggerResponseAttributes",
+    "LLMObsPatternsTriggerResponseData",
+    "LLMObsPatternsTriggerResponseType",
     "LLMObsProjectDataAttributesRequest",
     "LLMObsProjectDataAttributesResponse",
     "LLMObsProjectDataRequest",
