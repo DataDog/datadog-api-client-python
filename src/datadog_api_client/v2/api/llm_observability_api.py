@@ -75,6 +75,18 @@ from datadog_api_client.v2.model.llm_obs_delete_projects_request import LLMObsDe
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_spans_response import LLMObsSpansResponse
 from datadog_api_client.v2.model.llm_obs_search_spans_request import LLMObsSearchSpansRequest
+from datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response import LLMObsPatternsClusteredPointsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_configs_response import LLMObsPatternsConfigsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_config_response import LLMObsPatternsConfigResponse
+from datadog_api_client.v2.model.llm_obs_patterns_config_upsert_request import LLMObsPatternsConfigUpsertRequest
+from datadog_api_client.v2.model.llm_obs_patterns_runs_response import LLMObsPatternsRunsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_response import LLMObsPatternsTriggerResponse
+from datadog_api_client.v2.model.llm_obs_patterns_trigger_request import LLMObsPatternsTriggerRequest
+from datadog_api_client.v2.model.llm_obs_patterns_run_status_response import LLMObsPatternsRunStatusResponse
+from datadog_api_client.v2.model.llm_obs_patterns_topics_response import LLMObsPatternsTopicsResponse
+from datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response import (
+    LLMObsPatternsTopicsWithClusteredPointsResponse,
+)
 from datadog_api_client.v2.model.llm_obs_datasets_response import LLMObsDatasetsResponse
 from datadog_api_client.v2.model.llm_obs_dataset_response import LLMObsDatasetResponse
 from datadog_api_client.v2.model.llm_obs_dataset_request import LLMObsDatasetRequest
@@ -586,6 +598,29 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._delete_llm_obs_patterns_config_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs/{config_id}",
+                "operation_id": "delete_llm_obs_patterns_config",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "config_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_llm_obs_projects_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -780,6 +815,45 @@ class LLMObservabilityApi:
                     "openapi_types": (str,),
                     "attribute": "dataset_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_patterns_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs/latest",
+                "operation_id": "get_llm_obs_patterns_config",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_patterns_run_status_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsRunStatusResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-runs/status",
+                "operation_id": "get_llm_obs_patterns_run_status",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "config_id",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1143,6 +1217,139 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._list_llm_obs_patterns_clustered_points_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsClusteredPointsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-clustered-points",
+                "operation_id": "list_llm_obs_patterns_clustered_points",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "topic_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "topic_id",
+                    "location": "query",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page_size",
+                    "location": "query",
+                },
+                "page_token": {
+                    "openapi_types": (str,),
+                    "attribute": "page_token",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_patterns_configs_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsConfigsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs",
+                "operation_id": "list_llm_obs_patterns_configs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_patterns_runs_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsRunsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-runs",
+                "operation_id": "list_llm_obs_patterns_runs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "config_id",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_patterns_topics_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsTopicsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-topics",
+                "operation_id": "list_llm_obs_patterns_topics",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "config_id",
+                    "location": "query",
+                },
+                "run_id": {
+                    "openapi_types": (str,),
+                    "attribute": "run_id",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_patterns_topics_with_clustered_points_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsTopicsWithClusteredPointsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-topics/with-cluster-points",
+                "operation_id": "list_llm_obs_patterns_topics_with_clustered_points",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "config_id",
+                    "location": "query",
+                },
+                "run_id": {
+                    "openapi_types": (str,),
+                    "attribute": "run_id",
+                    "location": "query",
+                },
+                "include_metrics": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_metrics",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_llm_obs_projects_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsProjectsResponse,),
@@ -1371,6 +1578,26 @@ class LLMObservabilityApi:
                 "body": {
                     "required": True,
                     "openapi_types": (LLMObsExperimentationSimpleSearchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._trigger_llm_obs_patterns_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsTriggerResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-runs",
+                "operation_id": "trigger_llm_obs_patterns",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsPatternsTriggerRequest,),
                     "location": "body",
                 },
             },
@@ -1673,6 +1900,26 @@ class LLMObservabilityApi:
                 "body": {
                     "required": True,
                     "openapi_types": (LLMObsAnnotationsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._upsert_llm_obs_patterns_config_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs",
+                "operation_id": "upsert_llm_obs_patterns_config",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsPatternsConfigUpsertRequest,),
                     "location": "body",
                 },
             },
@@ -2098,6 +2345,23 @@ class LLMObservabilityApi:
 
         return self._delete_llm_obs_experiments_endpoint.call_with_http_info(**kwargs)
 
+    def delete_llm_obs_patterns_config(
+        self,
+        config_id: str,
+    ) -> None:
+        """Delete a patterns configuration.
+
+        Delete a patterns configuration by its ID.
+
+        :param config_id: The ID of the patterns configuration.
+        :type config_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["config_id"] = config_id
+
+        return self._delete_llm_obs_patterns_config_endpoint.call_with_http_info(**kwargs)
+
     def delete_llm_obs_projects(
         self,
         body: LLMObsDeleteProjectsRequest,
@@ -2253,6 +2517,36 @@ class LLMObservabilityApi:
         kwargs["dataset_id"] = dataset_id
 
         return self._get_llm_obs_dataset_draft_state_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_patterns_config(
+        self,
+    ) -> LLMObsPatternsConfigResponse:
+        """Get a patterns configuration.
+
+        Retrieve the patterns configuration for the organization.
+
+        :rtype: LLMObsPatternsConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_llm_obs_patterns_config_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_patterns_run_status(
+        self,
+        config_id: str,
+    ) -> LLMObsPatternsRunStatusResponse:
+        """Get patterns run status.
+
+        Retrieve the status and step-by-step progress of the current or most recent
+        patterns run for a configuration.
+
+        :param config_id: The ID of the patterns configuration.
+        :type config_id: str
+        :rtype: LLMObsPatternsRunStatusResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["config_id"] = config_id
+
+        return self._get_llm_obs_patterns_run_status_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_annotation_queues(
         self,
@@ -2578,6 +2872,124 @@ class LLMObservabilityApi:
 
         return self._list_llm_obs_integration_models_endpoint.call_with_http_info(**kwargs)
 
+    def list_llm_obs_patterns_clustered_points(
+        self,
+        topic_id: str,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_token: Union[str, UnsetType] = unset,
+    ) -> LLMObsPatternsClusteredPointsResponse:
+        """List patterns clustered points.
+
+        List the data points grouped into a topic. For a parent topic, points from all
+        of its leaf topics are returned.
+
+        :param topic_id: The ID of the topic to retrieve clustered points for.
+        :type topic_id: str
+        :param page_size: Maximum number of clustered points to return per page.
+        :type page_size: int, optional
+        :param page_token: Pagination token to retrieve the next page of clustered points.
+        :type page_token: str, optional
+        :rtype: LLMObsPatternsClusteredPointsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["topic_id"] = topic_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_token is not unset:
+            kwargs["page_token"] = page_token
+
+        return self._list_llm_obs_patterns_clustered_points_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_patterns_configs(
+        self,
+    ) -> LLMObsPatternsConfigsResponse:
+        """List patterns configurations.
+
+        List all patterns configurations for the organization.
+
+        :rtype: LLMObsPatternsConfigsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_llm_obs_patterns_configs_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_patterns_runs(
+        self,
+        config_id: str,
+    ) -> LLMObsPatternsRunsResponse:
+        """List patterns runs.
+
+        List the completed patterns runs for a configuration.
+
+        :param config_id: The ID of the patterns configuration.
+        :type config_id: str
+        :rtype: LLMObsPatternsRunsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["config_id"] = config_id
+
+        return self._list_llm_obs_patterns_runs_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_patterns_topics(
+        self,
+        config_id: str,
+        *,
+        run_id: Union[str, UnsetType] = unset,
+    ) -> LLMObsPatternsTopicsResponse:
+        """List patterns topics.
+
+        List the topics discovered by a patterns run. When no run is specified,
+        the most recent completed run is used.
+
+        :param config_id: The ID of the patterns configuration.
+        :type config_id: str
+        :param run_id: The ID of a specific patterns run. Defaults to the most recent completed run.
+        :type run_id: str, optional
+        :rtype: LLMObsPatternsTopicsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["config_id"] = config_id
+
+        if run_id is not unset:
+            kwargs["run_id"] = run_id
+
+        return self._list_llm_obs_patterns_topics_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_patterns_topics_with_clustered_points(
+        self,
+        config_id: str,
+        *,
+        run_id: Union[str, UnsetType] = unset,
+        include_metrics: Union[bool, UnsetType] = unset,
+    ) -> LLMObsPatternsTopicsWithClusteredPointsResponse:
+        """List patterns topics with clustered points.
+
+        List the topics discovered by a patterns run, with the clustered points attached
+        inline to each leaf topic. When no run is specified, the most recent completed
+        run is used.
+
+        :param config_id: The ID of the patterns configuration.
+        :type config_id: str
+        :param run_id: The ID of a specific patterns run. Defaults to the most recent completed run.
+        :type run_id: str, optional
+        :param include_metrics: When true, enrich each clustered point with span metrics such as status,
+            duration, token counts, estimated cost, and evaluations.
+        :type include_metrics: bool, optional
+        :rtype: LLMObsPatternsTopicsWithClusteredPointsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["config_id"] = config_id
+
+        if run_id is not unset:
+            kwargs["run_id"] = run_id
+
+        if include_metrics is not unset:
+            kwargs["include_metrics"] = include_metrics
+
+        return self._list_llm_obs_patterns_topics_with_clustered_points_endpoint.call_with_http_info(**kwargs)
+
     def list_llm_obs_projects(
         self,
         *,
@@ -2806,6 +3218,23 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._simple_search_llm_obs_experimentation_endpoint.call_with_http_info(**kwargs)
+
+    def trigger_llm_obs_patterns(
+        self,
+        body: LLMObsPatternsTriggerRequest,
+    ) -> LLMObsPatternsTriggerResponse:
+        """Trigger a patterns run.
+
+        Start a patterns run for a given configuration. The run executes asynchronously.
+
+        :param body: Trigger patterns payload.
+        :type body: LLMObsPatternsTriggerRequest
+        :rtype: LLMObsPatternsTriggerResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._trigger_llm_obs_patterns_endpoint.call_with_http_info(**kwargs)
 
     def unlock_llm_obs_dataset_draft_state(
         self,
@@ -3080,3 +3509,20 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._upsert_llm_obs_annotations_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_llm_obs_patterns_config(
+        self,
+        body: LLMObsPatternsConfigUpsertRequest,
+    ) -> LLMObsPatternsConfigResponse:
+        """Create or update a patterns configuration.
+
+        Create a new patterns configuration, or update an existing one when a configuration ID is provided.
+
+        :param body: Patterns configuration payload.
+        :type body: LLMObsPatternsConfigUpsertRequest
+        :rtype: LLMObsPatternsConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._upsert_llm_obs_patterns_config_endpoint.call_with_http_info(**kwargs)

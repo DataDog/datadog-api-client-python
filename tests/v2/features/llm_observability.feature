@@ -316,6 +316,30 @@ Feature: LLM Observability
     Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a patterns configuration returns "Bad Request" response
+    Given operation "UpsertLLMObsPatternsConfig" enabled
+    And new "UpsertLLMObsPatternsConfig" request
+    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a patterns configuration returns "Not Found" response
+    Given operation "UpsertLLMObsPatternsConfig" enabled
+    And new "UpsertLLMObsPatternsConfig" request
+    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a patterns configuration returns "OK" response
+    Given operation "UpsertLLMObsPatternsConfig" enabled
+    And new "UpsertLLMObsPatternsConfig" request
+    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Create or update annotations returns "Bad Request" response
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
@@ -472,6 +496,30 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete a patterns configuration returns "Bad Request" response
+    Given operation "DeleteLLMObsPatternsConfig" enabled
+    And new "DeleteLLMObsPatternsConfig" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete a patterns configuration returns "No Content" response
+    Given operation "DeleteLLMObsPatternsConfig" enabled
+    And new "DeleteLLMObsPatternsConfig" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete a patterns configuration returns "Not Found" response
+    Given operation "DeleteLLMObsPatternsConfig" enabled
+    And new "DeleteLLMObsPatternsConfig" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Delete an LLM Observability annotation queue returns "No Content" response
     Given operation "DeleteLLMObsAnnotationQueue" enabled
     And new "DeleteLLMObsAnnotationQueue" request
@@ -620,6 +668,27 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Get a patterns configuration returns "Bad Request" response
+    Given operation "GetLLMObsPatternsConfig" enabled
+    And new "GetLLMObsPatternsConfig" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get a patterns configuration returns "Not Found" response
+    Given operation "GetLLMObsPatternsConfig" enabled
+    And new "GetLLMObsPatternsConfig" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get a patterns configuration returns "OK" response
+    Given operation "GetLLMObsPatternsConfig" enabled
+    And new "GetLLMObsPatternsConfig" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Get annotated interactions by content IDs returns "Bad Request" response
     Given operation "GetLLMObsAnnotatedInteractionsByTraceIDs" enabled
     And new "GetLLMObsAnnotatedInteractionsByTraceIDs" request
@@ -672,6 +741,30 @@ Feature: LLM Observability
     Given operation "GetLLMObsAnnotationQueueLabelSchema" enabled
     And new "GetLLMObsAnnotationQueueLabelSchema" request
     And request contains "queue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get patterns run status returns "Bad Request" response
+    Given operation "GetLLMObsPatternsRunStatus" enabled
+    And new "GetLLMObsPatternsRunStatus" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get patterns run status returns "Not Found" response
+    Given operation "GetLLMObsPatternsRunStatus" enabled
+    And new "GetLLMObsPatternsRunStatus" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get patterns run status returns "OK" response
+    Given operation "GetLLMObsPatternsRunStatus" enabled
+    And new "GetLLMObsPatternsRunStatus" request
+    And request contains "config_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -916,6 +1009,116 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns clustered points returns "Bad Request" response
+    Given operation "ListLLMObsPatternsClusteredPoints" enabled
+    And new "ListLLMObsPatternsClusteredPoints" request
+    And request contains "topic_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns clustered points returns "Not Found" response
+    Given operation "ListLLMObsPatternsClusteredPoints" enabled
+    And new "ListLLMObsPatternsClusteredPoints" request
+    And request contains "topic_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns clustered points returns "OK" response
+    Given operation "ListLLMObsPatternsClusteredPoints" enabled
+    And new "ListLLMObsPatternsClusteredPoints" request
+    And request contains "topic_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns configurations returns "Bad Request" response
+    Given operation "ListLLMObsPatternsConfigs" enabled
+    And new "ListLLMObsPatternsConfigs" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns configurations returns "OK" response
+    Given operation "ListLLMObsPatternsConfigs" enabled
+    And new "ListLLMObsPatternsConfigs" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns runs returns "Bad Request" response
+    Given operation "ListLLMObsPatternsRuns" enabled
+    And new "ListLLMObsPatternsRuns" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns runs returns "Not Found" response
+    Given operation "ListLLMObsPatternsRuns" enabled
+    And new "ListLLMObsPatternsRuns" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns runs returns "OK" response
+    Given operation "ListLLMObsPatternsRuns" enabled
+    And new "ListLLMObsPatternsRuns" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns topics returns "Bad Request" response
+    Given operation "ListLLMObsPatternsTopics" enabled
+    And new "ListLLMObsPatternsTopics" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns topics returns "Not Found" response
+    Given operation "ListLLMObsPatternsTopics" enabled
+    And new "ListLLMObsPatternsTopics" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns topics returns "OK" response
+    Given operation "ListLLMObsPatternsTopics" enabled
+    And new "ListLLMObsPatternsTopics" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns topics with clustered points returns "Bad Request" response
+    Given operation "ListLLMObsPatternsTopicsWithClusteredPoints" enabled
+    And new "ListLLMObsPatternsTopicsWithClusteredPoints" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns topics with clustered points returns "Not Found" response
+    Given operation "ListLLMObsPatternsTopicsWithClusteredPoints" enabled
+    And new "ListLLMObsPatternsTopicsWithClusteredPoints" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: List patterns topics with clustered points returns "OK" response
+    Given operation "ListLLMObsPatternsTopicsWithClusteredPoints" enabled
+    And new "ListLLMObsPatternsTopicsWithClusteredPoints" request
+    And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Lock LLM Observability dataset draft state returns "Bad Request" response
     Given operation "LockLLMObsDatasetDraftState" enabled
     And new "LockLLMObsDatasetDraftState" request
@@ -1074,6 +1277,30 @@ Feature: LLM Observability
     And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 50, "number": 1}, "sort": [{"direction": "desc", "field": "created_at"}]}, "type": "experimentation"}}
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Trigger a patterns run returns "Accepted" response
+    Given operation "TriggerLLMObsPatterns" enabled
+    And new "TriggerLLMObsPatterns" request
+    And body with value {"data": {"attributes": {"config_id": "a7c8d9e0-1234-5678-9abc-def012345678"}, "type": "topic_discovery"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Trigger a patterns run returns "Bad Request" response
+    Given operation "TriggerLLMObsPatterns" enabled
+    And new "TriggerLLMObsPatterns" request
+    And body with value {"data": {"attributes": {"config_id": "a7c8d9e0-1234-5678-9abc-def012345678"}, "type": "topic_discovery"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Trigger a patterns run returns "Not Found" response
+    Given operation "TriggerLLMObsPatterns" enabled
+    And new "TriggerLLMObsPatterns" request
+    And body with value {"data": {"attributes": {"config_id": "a7c8d9e0-1234-5678-9abc-def012345678"}, "type": "topic_discovery"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Unlock LLM Observability dataset draft state returns "Bad Request" response
