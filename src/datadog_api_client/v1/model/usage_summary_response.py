@@ -20,6 +20,10 @@ if TYPE_CHECKING:
 
 
 class UsageSummaryResponse(ModelNormal):
+    # Cross-SDK semantic marker. In Python, typed fields are already accessible via
+    # bracket notation (model["key"]) through _data_store, so no runtime change is needed.
+    _keep_typed_in_additional_properties = True
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.logs_by_retention import LogsByRetention
