@@ -3,14 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+import collections
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.list_workflows_response import ListWorkflowsResponse
+from datadog_api_client.v2.model.workflow_list_item import WorkflowListItem
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
@@ -216,6 +221,59 @@ class WorkflowAutomationApi:
             api_client=api_client,
         )
 
+        self._list_workflows_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListWorkflowsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/workflows",
+                "operation_id": "list_workflows",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "limit": {
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "page": {
+                    "openapi_types": (int,),
+                    "attribute": "page",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "filter_trigger_ids": {
+                    "openapi_types": ([str],),
+                    "attribute": "filter[triggerIds]",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "filter_include_unpublished": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[includeUnpublished]",
+                    "location": "query",
+                },
+                "filter_include_specs": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[includeSpecs]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._update_workflow_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateWorkflowResponse,),
@@ -386,6 +444,129 @@ class WorkflowAutomationApi:
             kwargs["page_number"] = page_number
 
         return self._list_workflow_instances_endpoint.call_with_http_info(**kwargs)
+
+    def list_workflows(
+        self,
+        *,
+        limit: Union[int, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_trigger_ids: Union[List[str], UnsetType] = unset,
+        filter_include_unpublished: Union[bool, UnsetType] = unset,
+        filter_include_specs: Union[bool, UnsetType] = unset,
+    ) -> ListWorkflowsResponse:
+        """List workflows.
+
+        List all workflows in your organization. This API requires a `registered application key <https://docs.datadoghq.com/api/latest/action-connection/#register-a-new-app-key>`_. Alternatively, you can configure these permissions `in the UI <https://docs.datadoghq.com/account_management/api-app-keys/#actions-api-access>`_.
+
+        :param limit: The maximum number of workflows to return per page.
+        :type limit: int, optional
+        :param page: The page number to return, starting from 0.
+        :type page: int, optional
+        :param sort: The sort order for the returned workflows. Provide a comma-separated list of fields, each optionally prefixed with ``-`` for descending order. Supported fields are ``name`` , ``createdAt`` , ``updatedAt`` , ``creatorName`` , ``ownerName`` , and ``lastExecutedAt``.
+        :type sort: str, optional
+        :param filter_query: A search query used to filter the returned workflows. The query performs a case-insensitive substring match against each workflow's name, creator name, and handle. If the query contains a colon (for example, ``team:infra`` ), the query is treated as a ``key:value`` tag filter.
+        :type filter_query: str, optional
+        :param filter_trigger_ids: Filters the returned workflows by one or more trigger types, such as ``monitor`` , ``schedule`` , or ``githubWebhook``. To specify the multiple types, repeat this parameter.
+        :type filter_trigger_ids: [str], optional
+        :param filter_include_unpublished: Whether to include unpublished workflows in the response.
+        :type filter_include_unpublished: bool, optional
+        :param filter_include_specs: Whether to include the full spec of each workflow in the response. When ``false`` (the default), each workflow's ``spec`` is returned as ``null``.
+        :type filter_include_specs: bool, optional
+        :rtype: ListWorkflowsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_trigger_ids is not unset:
+            kwargs["filter_trigger_ids"] = filter_trigger_ids
+
+        if filter_include_unpublished is not unset:
+            kwargs["filter_include_unpublished"] = filter_include_unpublished
+
+        if filter_include_specs is not unset:
+            kwargs["filter_include_specs"] = filter_include_specs
+
+        return self._list_workflows_endpoint.call_with_http_info(**kwargs)
+
+    def list_workflows_with_pagination(
+        self,
+        *,
+        limit: Union[int, UnsetType] = unset,
+        page: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_trigger_ids: Union[List[str], UnsetType] = unset,
+        filter_include_unpublished: Union[bool, UnsetType] = unset,
+        filter_include_specs: Union[bool, UnsetType] = unset,
+    ) -> collections.abc.Iterable[WorkflowListItem]:
+        """List workflows.
+
+        Provide a paginated version of :meth:`list_workflows`, returning all items.
+
+        :param limit: The maximum number of workflows to return per page.
+        :type limit: int, optional
+        :param page: The page number to return, starting from 0.
+        :type page: int, optional
+        :param sort: The sort order for the returned workflows. Provide a comma-separated list of fields, each optionally prefixed with ``-`` for descending order. Supported fields are ``name`` , ``createdAt`` , ``updatedAt`` , ``creatorName`` , ``ownerName`` , and ``lastExecutedAt``.
+        :type sort: str, optional
+        :param filter_query: A search query used to filter the returned workflows. The query performs a case-insensitive substring match against each workflow's name, creator name, and handle. If the query contains a colon (for example, ``team:infra`` ), the query is treated as a ``key:value`` tag filter.
+        :type filter_query: str, optional
+        :param filter_trigger_ids: Filters the returned workflows by one or more trigger types, such as ``monitor`` , ``schedule`` , or ``githubWebhook``. To specify the multiple types, repeat this parameter.
+        :type filter_trigger_ids: [str], optional
+        :param filter_include_unpublished: Whether to include unpublished workflows in the response.
+        :type filter_include_unpublished: bool, optional
+        :param filter_include_specs: Whether to include the full spec of each workflow in the response. When ``false`` (the default), each workflow's ``spec`` is returned as ``null``.
+        :type filter_include_specs: bool, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[WorkflowListItem]
+        """
+        kwargs: Dict[str, Any] = {}
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if page is not unset:
+            kwargs["page"] = page
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_trigger_ids is not unset:
+            kwargs["filter_trigger_ids"] = filter_trigger_ids
+
+        if filter_include_unpublished is not unset:
+            kwargs["filter_include_unpublished"] = filter_include_unpublished
+
+        if filter_include_specs is not unset:
+            kwargs["filter_include_specs"] = filter_include_specs
+
+        local_page_size = get_attribute_from_path(kwargs, "limit", 50)
+        endpoint = self._list_workflows_endpoint
+        set_attribute_from_path(kwargs, "limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page",
+            "page_start": 0,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_workflow(
         self,

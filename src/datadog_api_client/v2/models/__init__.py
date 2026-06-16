@@ -4263,6 +4263,9 @@ from datadog_api_client.v2.model.list_teams_include import ListTeamsInclude
 from datadog_api_client.v2.model.list_teams_sort import ListTeamsSort
 from datadog_api_client.v2.model.list_vulnerabilities_response import ListVulnerabilitiesResponse
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
+from datadog_api_client.v2.model.list_workflows_response import ListWorkflowsResponse
+from datadog_api_client.v2.model.list_workflows_response_meta import ListWorkflowsResponseMeta
+from datadog_api_client.v2.model.list_workflows_response_meta_page import ListWorkflowsResponseMetaPage
 from datadog_api_client.v2.model.log import Log
 from datadog_api_client.v2.model.log_attributes import LogAttributes
 from datadog_api_client.v2.model.log_type import LogType
@@ -9233,6 +9236,8 @@ from datadog_api_client.v2.model.workflow_instance_list_item import WorkflowInst
 from datadog_api_client.v2.model.workflow_list_instances_response import WorkflowListInstancesResponse
 from datadog_api_client.v2.model.workflow_list_instances_response_meta import WorkflowListInstancesResponseMeta
 from datadog_api_client.v2.model.workflow_list_instances_response_meta_page import WorkflowListInstancesResponseMetaPage
+from datadog_api_client.v2.model.workflow_list_item import WorkflowListItem
+from datadog_api_client.v2.model.workflow_list_item_attributes import WorkflowListItemAttributes
 from datadog_api_client.v2.model.workflow_trigger_wrapper import WorkflowTriggerWrapper
 from datadog_api_client.v2.model.workflow_user_relationship import WorkflowUserRelationship
 from datadog_api_client.v2.model.workflow_user_relationship_data import WorkflowUserRelationshipData
@@ -12500,6 +12505,9 @@ __all__ = [
     "ListTeamsSort",
     "ListVulnerabilitiesResponse",
     "ListVulnerableAssetsResponse",
+    "ListWorkflowsResponse",
+    "ListWorkflowsResponseMeta",
+    "ListWorkflowsResponseMetaPage",
     "Log",
     "LogAttributes",
     "LogType",
@@ -15824,6 +15832,8 @@ __all__ = [
     "WorkflowListInstancesResponse",
     "WorkflowListInstancesResponseMeta",
     "WorkflowListInstancesResponseMetaPage",
+    "WorkflowListItem",
+    "WorkflowListItemAttributes",
     "WorkflowTriggerWrapper",
     "WorkflowUserRelationship",
     "WorkflowUserRelationshipData",

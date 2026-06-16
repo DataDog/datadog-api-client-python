@@ -20304,6 +20304,27 @@ datadog\_api\_client.v2.model.list\_vulnerable\_assets\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_workflows\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_workflows_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_workflows\_response\_meta module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_workflows_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_workflows\_response\_meta\_page module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_workflows_response_meta_page
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_annotated\_interaction\_by\_trace\_item module
 --------------------------------------------------------------------------------------
 
@@ -45914,6 +45935,20 @@ datadog\_api\_client.v2.model.workflow\_list\_instances\_response\_meta\_page mo
 ------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.workflow_list_instances_response_meta_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_list\_item module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_list_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.workflow\_list\_item\_attributes module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.workflow_list_item_attributes
    :members:
    :show-inheritance:
 

@@ -1,0 +1,18 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/workflows?filter%5Bquery%5D=Test-List_workflows_returns_OK_response_with_pagination-1780350762&limit=2&page=0
+  response:
+    body:
+      string: '{"data":[],"meta":{"page":{"totalCount":547,"totalFilteredCount":0}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1
