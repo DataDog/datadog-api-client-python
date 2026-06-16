@@ -445,7 +445,6 @@ class Configuration:
                 "v2.list_static_analysis_codegen_rulesets": False,
                 "v2.list_vulnerabilities": False,
                 "v2.list_vulnerable_assets": False,
-                "v2.mute_findings": False,
                 "v2.restore_security_monitoring_rule": False,
                 "v2.run_historical_job": False,
                 "v2.search_security_monitoring_histsignals": False,
