@@ -46,7 +46,6 @@ body = AttachServiceNowTicketRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["attach_service_now_ticket"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.attach_service_now_ticket(body=body)
