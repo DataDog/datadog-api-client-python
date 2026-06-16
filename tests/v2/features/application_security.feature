@@ -148,6 +148,14 @@ Feature: Application Security
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/asm-backend
+  Scenario: Get Application Security details for a service returns "OK" response
+    Given operation "GetAsmServiceByName" enabled
+    And new "GetAsmServiceByName" request
+    And request contains "service_filter" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/asm-backend
   Scenario: Get a WAF Policy returns "OK" response
     Given there is a valid "policy" in the system
