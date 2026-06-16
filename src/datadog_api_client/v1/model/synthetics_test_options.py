@@ -51,6 +51,7 @@ class SyntheticsTestOptions(ModelNormal):
             "accept_self_signed": (bool,),
             "allow_insecure": (bool,),
             "blocked_request_patterns": ([str],),
+            "capture_network_payloads": (bool,),
             "check_certificate_revocation": (bool,),
             "ci": (SyntheticsTestCiOptions,),
             "device_ids": ([str],),
@@ -80,6 +81,7 @@ class SyntheticsTestOptions(ModelNormal):
         "accept_self_signed": "accept_self_signed",
         "allow_insecure": "allow_insecure",
         "blocked_request_patterns": "blockedRequestPatterns",
+        "capture_network_payloads": "captureNetworkPayloads",
         "check_certificate_revocation": "checkCertificateRevocation",
         "ci": "ci",
         "device_ids": "device_ids",
@@ -110,6 +112,7 @@ class SyntheticsTestOptions(ModelNormal):
         accept_self_signed: Union[bool, UnsetType] = unset,
         allow_insecure: Union[bool, UnsetType] = unset,
         blocked_request_patterns: Union[List[str], UnsetType] = unset,
+        capture_network_payloads: Union[bool, UnsetType] = unset,
         check_certificate_revocation: Union[bool, UnsetType] = unset,
         ci: Union[SyntheticsTestCiOptions, UnsetType] = unset,
         device_ids: Union[List[str], UnsetType] = unset,
@@ -147,6 +150,9 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param blocked_request_patterns: Array of URL patterns to block.
         :type blocked_request_patterns: [str], optional
+
+        :param capture_network_payloads: Capture HTTP request/response headers and bodies for Fetch/XHR calls made during browser tests.
+        :type capture_network_payloads: bool, optional
 
         :param check_certificate_revocation: For SSL tests, whether or not the test should fail on revoked certificate in stapled OCSP.
         :type check_certificate_revocation: bool, optional
@@ -235,6 +241,8 @@ class SyntheticsTestOptions(ModelNormal):
             kwargs["allow_insecure"] = allow_insecure
         if blocked_request_patterns is not unset:
             kwargs["blocked_request_patterns"] = blocked_request_patterns
+        if capture_network_payloads is not unset:
+            kwargs["capture_network_payloads"] = capture_network_payloads
         if check_certificate_revocation is not unset:
             kwargs["check_certificate_revocation"] = check_certificate_revocation
         if ci is not unset:
