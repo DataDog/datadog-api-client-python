@@ -113,21 +113,24 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Attach security findings to a ServiceNow ticket returns "Bad Request" response
-    Given new "AttachServiceNowTicket" request
+    Given operation "AttachServiceNowTicket" enabled
+    And new "AttachServiceNowTicket" request
     And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Attach security findings to a ServiceNow ticket returns "Not Found" response
-    Given new "AttachServiceNowTicket" request
+    Given operation "AttachServiceNowTicket" enabled
+    And new "AttachServiceNowTicket" request
     And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Attach security findings to a ServiceNow ticket returns "OK" response
-    Given new "AttachServiceNowTicket" request
+    Given operation "AttachServiceNowTicket" enabled
+    And new "AttachServiceNowTicket" request
     And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
     When the request is sent
     Then the response status is 200 OK
@@ -529,21 +532,24 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Create ServiceNow tickets for security findings returns "Bad Request" response
-    Given new "CreateServiceNowTickets" request
+    Given operation "CreateServiceNowTickets" enabled
+    And new "CreateServiceNowTickets" request
     And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Create ServiceNow tickets for security findings returns "Created" response
-    Given new "CreateServiceNowTickets" request
+    Given operation "CreateServiceNowTickets" enabled
+    And new "CreateServiceNowTickets" request
     And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Create ServiceNow tickets for security findings returns "Not Found" response
-    Given new "CreateServiceNowTickets" request
+    Given operation "CreateServiceNowTickets" enabled
+    And new "CreateServiceNowTickets" request
     And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 404 Not Found
@@ -947,6 +953,22 @@ Feature: Security Monitoring
     And body with value {"data": [{"attributes": {}, "relationships": {"findings": {"data": [{"id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=", "type": "findings"}]}, "project": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "projects"}}}, "type": "cases"}]}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: Create or update an indicator triage state returns "Bad Request" response
+    Given operation "CreateIoCTriageState" enabled
+    And new "CreateIoCTriageState" request
+    And body with value {"data": {"attributes": {"indicator": "192.0.2.1", "triage_state": "invalid_state"}, "type": "ioc_triage_state"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @skip-terraform-config @team:DataDog/k9-cloud-siem
+  Scenario: Create or update an indicator triage state returns "Created" response
+    Given operation "CreateIoCTriageState" enabled
+    And new "CreateIoCTriageState" request
+    And body with value {"data": {"attributes": {"indicator": "192.0.2.1", "triage_state": "reviewed"}, "type": "ioc_triage_state"}}
+    When the request is sent
+    Then the response status is 201 Created
 
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Deactivate content pack returns "Accepted" response
@@ -1748,7 +1770,8 @@ Feature: Security Monitoring
   Scenario: Get an indicator of compromise returns "OK" response
     Given operation "GetIndicatorOfCompromise" enabled
     And new "GetIndicatorOfCompromise" request
-    And request contains "indicator" parameter with value "masscan/1.3 (https://github.com/robertdavidgraham/masscan)"
+    And request contains "indicator" parameter with value "192.0.2.1"
+    And request contains "include_triage_history" parameter with value true
     When the request is sent
     Then the response status is 200 OK
 

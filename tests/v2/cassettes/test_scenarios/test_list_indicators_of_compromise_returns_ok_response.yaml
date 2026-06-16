@@ -8,9 +8,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security/siem/ioc-explorer?limit=1
   response:
     body:
-      string: '{"data":{"id":"a4e3b616-e180-4b47-a379-43da9c5b300e","type":"ioc_explorer_response","attributes":{"data":[{"id":"43.228.157.121","indicator":"43.228.157.121","indicator_type":"IP
-        Address","score":8,"as_type":"hosting","malicious_sources":[{"name":"threatfox"}],"suspicious_sources":[{"name":"tor"},{"name":"SPUR"}],"benign_sources":null,"categories":["malware","tor","hosting_proxy"],"tags":[],"signal_matches":0,"log_matches":14,"signal_tier":0,"max_trust_score":"RAISE_SCORE","m_sources":"RAISE_SCORE","m_persistence":"NO_EFFECT","m_signal":"NO_EFFECT","m_as_type":"NO_EFFECT","as_geo":{"city":"Frankfurt
-        am Main","country_code":"DE","country_name":"Germany"}}],"metadata":{"count":25091},"paging":{"offset":1}}}}'
+      string: '{"data":{"id":"22b62903-4053-42ed-9448-c750da2ecd81","type":"ioc_explorer_response","attributes":{"data":[{"id":"192.0.2.1","indicator":"192.0.2.1","indicator_type":"IP
+        Address","score":4,"as_type":"hosting","malicious_sources":null,"suspicious_sources":[{"name":"SOURCE1"}],"benign_sources":null,"categories":["hosting_proxy"],"tags":[],"signal_matches":1,"log_matches":7,"signal_tier":0,"max_trust_score":"RAISE_SCORE","m_sources":"NO_EFFECT","m_persistence":"NO_EFFECT","m_signal":"NO_EFFECT","m_as_type":"NO_EFFECT","triage_state":"reviewed","triaged_at":"2026-06-03T18:55:42.108938Z","triaged_by":"00000000-0000-0000-0000-000000000000"}],"metadata":{"count":585},"paging":{"offset":1}}}}'
     headers:
       content-type:
       - application/vnd.api+json

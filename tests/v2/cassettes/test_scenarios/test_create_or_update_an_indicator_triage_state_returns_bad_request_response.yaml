@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"indicator":"192.0.2.1","triage_state":"invalid_state"},"type":"ioc_triage_state"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/siem/ioc-explorer/triage
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"invalid triage_state"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1
