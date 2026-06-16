@@ -286,7 +286,7 @@ Feature: Deployment Gates
   Scenario: Trigger a deployment gate evaluation returns "Accepted" response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
-    And body with value {"data": {"attributes": {"env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
+    And body with value {"data": {"attributes": {"configuration": {"dry_run": false, "rules": [{"dry_run": false, "name": "error rate monitors", "options": {"duration": 300, "query": "service:transaction-backend env:production"}, "type": "monitor"}]}, "env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
     When the request is sent
     Then the response status is 202 Accepted
 
@@ -294,7 +294,7 @@ Feature: Deployment Gates
   Scenario: Trigger a deployment gate evaluation returns "Bad request." response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
-    And body with value {"data": {"attributes": {"env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
+    And body with value {"data": {"attributes": {"configuration": {"dry_run": false, "rules": [{"dry_run": false, "name": "error rate monitors", "options": {"duration": 300, "query": "service:transaction-backend env:production"}, "type": "monitor"}]}, "env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
     When the request is sent
     Then the response status is 400 Bad request.
 
@@ -302,7 +302,7 @@ Feature: Deployment Gates
   Scenario: Trigger a deployment gate evaluation returns "Deployment gate not found." response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
-    And body with value {"data": {"attributes": {"env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
+    And body with value {"data": {"attributes": {"configuration": {"dry_run": false, "rules": [{"dry_run": false, "name": "error rate monitors", "options": {"duration": 300, "query": "service:transaction-backend env:production"}, "type": "monitor"}]}, "env": "staging", "identifier": "pre-deploy", "primary_tag": "region:us-east-1", "service": "transaction-backend", "version": "v1.2.3"}, "type": "deployment_gates_evaluation_request"}}
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 

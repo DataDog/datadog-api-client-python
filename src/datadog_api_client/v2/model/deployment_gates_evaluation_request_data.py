@@ -50,6 +50,8 @@ class DeploymentGatesEvaluationRequestData(ModelNormal):
         Data for a deployment gate evaluation request.
 
         :param attributes: Attributes for a deployment gate evaluation request.
+            When ``configuration`` is provided, rules are evaluated inline from that configuration.
+            When omitted, rules are resolved from the preconfigured gate for the given service and environment.
         :type attributes: DeploymentGatesEvaluationRequestAttributes
 
         :param type: JSON:API type for a deployment gate evaluation request.
