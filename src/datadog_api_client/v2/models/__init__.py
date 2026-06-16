@@ -839,14 +839,6 @@ from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data_a
 from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data_type import (
     BulkDeleteAppsDatastoreItemsRequestDataType,
 )
-from datadog_api_client.v2.model.bulk_mute_findings_request import BulkMuteFindingsRequest
-from datadog_api_client.v2.model.bulk_mute_findings_request_attributes import BulkMuteFindingsRequestAttributes
-from datadog_api_client.v2.model.bulk_mute_findings_request_data import BulkMuteFindingsRequestData
-from datadog_api_client.v2.model.bulk_mute_findings_request_meta import BulkMuteFindingsRequestMeta
-from datadog_api_client.v2.model.bulk_mute_findings_request_meta_findings import BulkMuteFindingsRequestMetaFindings
-from datadog_api_client.v2.model.bulk_mute_findings_request_properties import BulkMuteFindingsRequestProperties
-from datadog_api_client.v2.model.bulk_mute_findings_response import BulkMuteFindingsResponse
-from datadog_api_client.v2.model.bulk_mute_findings_response_data import BulkMuteFindingsResponseData
 from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request import BulkPutAppsDatastoreItemsRequest
 from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request_data import BulkPutAppsDatastoreItemsRequestData
 from datadog_api_client.v2.model.bulk_put_apps_datastore_items_request_data_attributes import (
@@ -9895,14 +9887,6 @@ __all__ = [
     "BulkDeleteAppsDatastoreItemsRequestData",
     "BulkDeleteAppsDatastoreItemsRequestDataAttributes",
     "BulkDeleteAppsDatastoreItemsRequestDataType",
-    "BulkMuteFindingsRequest",
-    "BulkMuteFindingsRequestAttributes",
-    "BulkMuteFindingsRequestData",
-    "BulkMuteFindingsRequestMeta",
-    "BulkMuteFindingsRequestMetaFindings",
-    "BulkMuteFindingsRequestProperties",
-    "BulkMuteFindingsResponse",
-    "BulkMuteFindingsResponseData",
     "BulkPutAppsDatastoreItemsRequest",
     "BulkPutAppsDatastoreItemsRequestData",
     "BulkPutAppsDatastoreItemsRequestDataAttributes",
