@@ -1,0 +1,39 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"anonymous":false,"data_definition":{},"description":"A
+      form to collect user feedback.","idp_survey":false,"name":"User Feedback Form","single_response":false,"ui_definition":{}},"type":"forms"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms
+  response:
+    body:
+      string: '{"data":{"id":"edb7d6d5-e21c-4fd0-845d-679317b5c2c9","type":"forms","attributes":{"active":true,"anonymous":false,"created_at":"2026-06-04T18:34:04.103183Z","datastore_config":{"datastore_id":"7cc8dadd-3529-4d0f-b8cb-f8c11c165867","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"A
+        form to collect user feedback.","idp_survey":false,"modified_at":"2026-06-04T18:34:04.103183Z","name":"User
+        Feedback Form","org_id":321813,"self_service":false,"single_response":false,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":{"id":"354653","state":"draft","version":1,"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d","definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\",\\\"timestamp\\\":1780598044,\\\"proof\\\":\\\"MGQCMHsaS9oy6ZDzhUZuJQAYiivxgo9XKx5NjTW/0wafPecXBQ3lr27bKejXr4ihAuwxsgIwPfgedZacZ4t3Qg8p0+jrXH5MBdZx9hrat8mijVibYuLUd2n+bxaY0xcghHKwbtu4\\\"}\",\"version\":1}","data_definition":{},"ui_definition":{},"created_at":"2026-06-04T18:34:04.103183Z","modified_at":"2026-06-04T18:34:04.103183Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/forms/edb7d6d5-e21c-4fd0-845d-679317b5c2c9
+  response:
+    body:
+      string: '{"data":{"id":"edb7d6d5-e21c-4fd0-845d-679317b5c2c9","type":"forms"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

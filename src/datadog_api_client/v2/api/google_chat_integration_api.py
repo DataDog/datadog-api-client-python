@@ -7,7 +7,10 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.v2.model.google_chat_organizations_response import GoogleChatOrganizationsResponse
 from datadog_api_client.v2.model.google_chat_app_named_space_response import GoogleChatAppNamedSpaceResponse
+from datadog_api_client.v2.model.google_chat_organization_response import GoogleChatOrganizationResponse
+from datadog_api_client.v2.model.google_chat_delegated_user_response import GoogleChatDelegatedUserResponse
 from datadog_api_client.v2.model.google_chat_organization_handles_response import GoogleChatOrganizationHandlesResponse
 from datadog_api_client.v2.model.google_chat_organization_handle_response import GoogleChatOrganizationHandleResponse
 from datadog_api_client.v2.model.google_chat_create_organization_handle_request import (
@@ -16,6 +19,10 @@ from datadog_api_client.v2.model.google_chat_create_organization_handle_request 
 from datadog_api_client.v2.model.google_chat_update_organization_handle_request import (
     GoogleChatUpdateOrganizationHandleRequest,
 )
+from datadog_api_client.v2.model.google_chat_target_audiences_response import GoogleChatTargetAudiencesResponse
+from datadog_api_client.v2.model.google_chat_target_audience_response import GoogleChatTargetAudienceResponse
+from datadog_api_client.v2.model.google_chat_target_audience_create_request import GoogleChatTargetAudienceCreateRequest
+from datadog_api_client.v2.model.google_chat_target_audience_update_request import GoogleChatTargetAudienceUpdateRequest
 
 
 class GoogleChatIntegrationApi:
@@ -28,6 +35,32 @@ class GoogleChatIntegrationApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_google_chat_target_audience_endpoint = _Endpoint(
+            settings={
+                "response_type": (GoogleChatTargetAudienceResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences",
+                "operation_id": "create_google_chat_target_audience",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (GoogleChatTargetAudienceCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_organization_handle_endpoint = _Endpoint(
             settings={
@@ -52,6 +85,81 @@ class GoogleChatIntegrationApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_google_chat_delegated_user_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/delegated-user",
+                "operation_id": "delete_google_chat_delegated_user",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_google_chat_organization_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}",
+                "operation_id": "delete_google_chat_organization",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_google_chat_target_audience_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences/{target_audience_id}",
+                "operation_id": "delete_google_chat_target_audience",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+                "target_audience_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "target_audience_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -80,6 +188,81 @@ class GoogleChatIntegrationApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_google_chat_delegated_user_endpoint = _Endpoint(
+            settings={
+                "response_type": (GoogleChatDelegatedUserResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/delegated-user",
+                "operation_id": "get_google_chat_delegated_user",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_google_chat_organization_endpoint = _Endpoint(
+            settings={
+                "response_type": (GoogleChatOrganizationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}",
+                "operation_id": "get_google_chat_organization",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_google_chat_target_audience_endpoint = _Endpoint(
+            settings={
+                "response_type": (GoogleChatTargetAudienceResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences/{target_audience_id}",
+                "operation_id": "get_google_chat_target_audience",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+                "target_audience_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "target_audience_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -142,6 +325,45 @@ class GoogleChatIntegrationApi:
             api_client=api_client,
         )
 
+        self._list_google_chat_organizations_endpoint = _Endpoint(
+            settings={
+                "response_type": (GoogleChatOrganizationsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations",
+                "operation_id": "list_google_chat_organizations",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_google_chat_target_audiences_endpoint = _Endpoint(
+            settings={
+                "response_type": (GoogleChatTargetAudiencesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences",
+                "operation_id": "list_google_chat_target_audiences",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_organization_handles_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatOrganizationHandlesResponse,),
@@ -162,6 +384,38 @@ class GoogleChatIntegrationApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._update_google_chat_target_audience_endpoint = _Endpoint(
+            settings={
+                "response_type": (GoogleChatTargetAudienceResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences/{target_audience_id}",
+                "operation_id": "update_google_chat_target_audience",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "organization_binding_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "organization_binding_id",
+                    "location": "path",
+                },
+                "target_audience_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "target_audience_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (GoogleChatTargetAudienceUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -197,6 +451,28 @@ class GoogleChatIntegrationApi:
             api_client=api_client,
         )
 
+    def create_google_chat_target_audience(
+        self,
+        organization_binding_id: str,
+        body: GoogleChatTargetAudienceCreateRequest,
+    ) -> GoogleChatTargetAudienceResponse:
+        """Create a target audience.
+
+        Create a target audience for a Google Chat organization binding in the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :param body: Target audience payload.
+        :type body: GoogleChatTargetAudienceCreateRequest
+        :rtype: GoogleChatTargetAudienceResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        kwargs["body"] = body
+
+        return self._create_google_chat_target_audience_endpoint.call_with_http_info(**kwargs)
+
     def create_organization_handle(
         self,
         organization_binding_id: str,
@@ -219,6 +495,62 @@ class GoogleChatIntegrationApi:
 
         return self._create_organization_handle_endpoint.call_with_http_info(**kwargs)
 
+    def delete_google_chat_delegated_user(
+        self,
+        organization_binding_id: str,
+    ) -> None:
+        """Delete the delegated user.
+
+        Delete the delegated user for a Google Chat organization binding from the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        return self._delete_google_chat_delegated_user_endpoint.call_with_http_info(**kwargs)
+
+    def delete_google_chat_organization(
+        self,
+        organization_binding_id: str,
+    ) -> None:
+        """Delete a Google Chat organization binding.
+
+        Delete a Google Chat organization binding from the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        return self._delete_google_chat_organization_endpoint.call_with_http_info(**kwargs)
+
+    def delete_google_chat_target_audience(
+        self,
+        organization_binding_id: str,
+        target_audience_id: str,
+    ) -> None:
+        """Delete a target audience.
+
+        Delete a target audience from a Google Chat organization binding in the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :param target_audience_id: Your target audience ID.
+        :type target_audience_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        kwargs["target_audience_id"] = target_audience_id
+
+        return self._delete_google_chat_target_audience_endpoint.call_with_http_info(**kwargs)
+
     def delete_organization_handle(
         self,
         organization_binding_id: str,
@@ -240,6 +572,62 @@ class GoogleChatIntegrationApi:
         kwargs["handle_id"] = handle_id
 
         return self._delete_organization_handle_endpoint.call_with_http_info(**kwargs)
+
+    def get_google_chat_delegated_user(
+        self,
+        organization_binding_id: str,
+    ) -> GoogleChatDelegatedUserResponse:
+        """Get the delegated user.
+
+        Get the delegated user for a Google Chat organization binding in the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :rtype: GoogleChatDelegatedUserResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        return self._get_google_chat_delegated_user_endpoint.call_with_http_info(**kwargs)
+
+    def get_google_chat_organization(
+        self,
+        organization_binding_id: str,
+    ) -> GoogleChatOrganizationResponse:
+        """Get a Google Chat organization binding.
+
+        Get a Google Chat organization binding from the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :rtype: GoogleChatOrganizationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        return self._get_google_chat_organization_endpoint.call_with_http_info(**kwargs)
+
+    def get_google_chat_target_audience(
+        self,
+        organization_binding_id: str,
+        target_audience_id: str,
+    ) -> GoogleChatTargetAudienceResponse:
+        """Get a target audience.
+
+        Get a target audience for a Google Chat organization binding in the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :param target_audience_id: Your target audience ID.
+        :type target_audience_id: str
+        :rtype: GoogleChatTargetAudienceResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        kwargs["target_audience_id"] = target_audience_id
+
+        return self._get_google_chat_target_audience_endpoint.call_with_http_info(**kwargs)
 
     def get_organization_handle(
         self,
@@ -285,6 +673,35 @@ class GoogleChatIntegrationApi:
 
         return self._get_space_by_display_name_endpoint.call_with_http_info(**kwargs)
 
+    def list_google_chat_organizations(
+        self,
+    ) -> GoogleChatOrganizationsResponse:
+        """Get all Google Chat organization bindings.
+
+        Get a list of all Google Chat organization bindings in the Datadog Google Chat integration.
+
+        :rtype: GoogleChatOrganizationsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_google_chat_organizations_endpoint.call_with_http_info(**kwargs)
+
+    def list_google_chat_target_audiences(
+        self,
+        organization_binding_id: str,
+    ) -> GoogleChatTargetAudiencesResponse:
+        """Get all target audiences.
+
+        Get a list of all target audiences for a Google Chat organization binding in the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :rtype: GoogleChatTargetAudiencesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        return self._list_google_chat_target_audiences_endpoint.call_with_http_info(**kwargs)
+
     def list_organization_handles(
         self,
         organization_binding_id: str,
@@ -301,6 +718,33 @@ class GoogleChatIntegrationApi:
         kwargs["organization_binding_id"] = organization_binding_id
 
         return self._list_organization_handles_endpoint.call_with_http_info(**kwargs)
+
+    def update_google_chat_target_audience(
+        self,
+        organization_binding_id: str,
+        target_audience_id: str,
+        body: GoogleChatTargetAudienceUpdateRequest,
+    ) -> GoogleChatTargetAudienceResponse:
+        """Update a target audience.
+
+        Update a target audience for a Google Chat organization binding in the Datadog Google Chat integration.
+
+        :param organization_binding_id: Your organization binding ID.
+        :type organization_binding_id: str
+        :param target_audience_id: Your target audience ID.
+        :type target_audience_id: str
+        :param body: Target audience payload.
+        :type body: GoogleChatTargetAudienceUpdateRequest
+        :rtype: GoogleChatTargetAudienceResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["organization_binding_id"] = organization_binding_id
+
+        kwargs["target_audience_id"] = target_audience_id
+
+        kwargs["body"] = body
+
+        return self._update_google_chat_target_audience_endpoint.call_with_http_info(**kwargs)
 
     def update_organization_handle(
         self,

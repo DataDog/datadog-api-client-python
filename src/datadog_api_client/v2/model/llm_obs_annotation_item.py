@@ -79,7 +79,7 @@ class LLMObsAnnotationItem(ModelNormal):
         :param interaction_id: Identifier of the interaction this annotation belongs to.
         :type interaction_id: str
 
-        :param label_values: The label values for this annotation.
+        :param label_values: Label values for this annotation.
         :type label_values: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}
 
         :param modified_at: Timestamp when the annotation was last modified.

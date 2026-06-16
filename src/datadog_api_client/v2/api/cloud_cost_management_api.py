@@ -1287,6 +1287,11 @@ class CloudCostManagementApi:
                     "attribute": "filter[provider]",
                     "location": "query",
                 },
+                "filter_metric": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[metric]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -2884,6 +2889,7 @@ class CloudCostManagementApi:
         filter_month: str,
         *,
         filter_provider: Union[str, UnsetType] = unset,
+        filter_metric: Union[str, UnsetType] = unset,
     ) -> CostTagKeySourcesResponse:
         """List Cloud Cost Management tag sources.
 
@@ -2893,6 +2899,8 @@ class CloudCostManagementApi:
         :type filter_month: str
         :param filter_provider: Filter results to a specific provider. Common cloud values are ``aws`` , ``azure`` , ``gcp`` , ``Oracle`` (OCI), and ``custom``. SaaS billing integrations (for example, ``Snowflake`` , ``MongoDB`` , ``Databricks`` ) are also accepted using their display-name string. Values are case-sensitive.
         :type filter_provider: str, optional
+        :param filter_metric: Filter results to tag keys that have data for a specific Cloud Cost Management metric (for example, ``aws.cost.net.amortized`` ). When omitted, all tag keys for the requested period are returned.
+        :type filter_metric: str, optional
         :rtype: CostTagKeySourcesResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -2900,6 +2908,9 @@ class CloudCostManagementApi:
 
         if filter_provider is not unset:
             kwargs["filter_provider"] = filter_provider
+
+        if filter_metric is not unset:
+            kwargs["filter_metric"] = filter_metric
 
         return self._list_cost_tag_key_sources_endpoint.call_with_http_info(**kwargs)
 

@@ -91,6 +91,29 @@ class MicrosoftTeamsIntegrationApi:
             api_client=api_client,
         )
 
+        self._delete_ms_teams_user_binding_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/ms-teams/configuration/user-binding/{tenant_id}",
+                "operation_id": "delete_ms_teams_user_binding",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "tenant_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "tenant_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_tenant_based_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -352,6 +375,23 @@ class MicrosoftTeamsIntegrationApi:
         kwargs["body"] = body
 
         return self._create_workflows_webhook_handle_endpoint.call_with_http_info(**kwargs)
+
+    def delete_ms_teams_user_binding(
+        self,
+        tenant_id: str,
+    ) -> None:
+        """Delete user binding.
+
+        Delete the user binding for a given tenant from the Datadog Microsoft Teams integration.
+
+        :param tenant_id: Your tenant id.
+        :type tenant_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["tenant_id"] = tenant_id
+
+        return self._delete_ms_teams_user_binding_endpoint.call_with_http_info(**kwargs)
 
     def delete_tenant_based_handle(
         self,

@@ -51,7 +51,7 @@ class LLMObsAnnotatedInteractionsDataResponse(ModelNormal):
         :param attributes: Attributes containing the list of annotated interactions.
         :type attributes: LLMObsAnnotatedInteractionsDataAttributesResponse
 
-        :param id: The queue ID.
+        :param id: The annotation queue ID.
         :type id: str
 
         :param type: Resource type for annotated interactions.

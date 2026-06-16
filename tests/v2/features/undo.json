@@ -23,18 +23,6 @@
       "type": "safe"
     }
   },
-  "ListFleetClusters": {
-    "tag": "Fleet Automation",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListFleetInstrumentedPods": {
-    "tag": "Fleet Automation",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "ListFleetDeployments": {
     "tag": "Fleet Automation",
     "undo": {
@@ -2031,6 +2019,78 @@
       "type": "safe"
     }
   },
+  "ListOwnershipInferences": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOwnershipHistory": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOwnershipInference": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOwnershipEvidence": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOwnershipFeedback": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListOwnershipHistoryByOwnerType": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCSMAgentlessHosts": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCSMAgentlessHostFacetInfo": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCSMAgentlessHostFacets": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCSMUnifiedHosts": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCSMUnifiedHostFacetInfo": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListCSMUnifiedHostFacets": {
+    "tag": "CSM Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetCurrentUser": {
     "tag": "Users",
     "undo": {
@@ -2101,6 +2161,12 @@
   },
   "UpdateDashboardListItems": {
     "tag": "Dashboard Lists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSharedDashboardsByDashboardId": {
+    "tag": "Dashboard Sharing",
     "undo": {
       "type": "safe"
     }
@@ -2607,6 +2673,93 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ListForms": {
+    "tag": "Forms",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateAndPublishForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CloneForm": {
+    "tag": "Forms",
+    "undo": {
+      "operationId": "DeleteForm",
+      "parameters": [
+        {
+          "name": "form_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "PublishForm": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpsertFormVersion": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpsertAndPublishFormVersion": {
+    "tag": "Forms",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListGlobalOrgs": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
     }
   },
   "GetHamrOrgConnection": {
@@ -3193,6 +3346,12 @@
       "type": "safe"
     }
   },
+  "ValidateAWSCCMConfig": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListGCPSTSAccounts": {
     "tag": "GCP Integration",
     "undo": {
@@ -3236,7 +3395,37 @@
       "type": "idempotent"
     }
   },
+  "ListGoogleChatOrganizations": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSpaceByDisplayName": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteGoogleChatOrganization": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGoogleChatOrganization": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteGoogleChatDelegatedUser": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGoogleChatDelegatedUser": {
     "tag": "Google Chat Integration",
     "undo": {
       "type": "safe"
@@ -3279,6 +3468,48 @@
     }
   },
   "UpdateOrganizationHandle": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListGoogleChatTargetAudiences": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGoogleChatTargetAudience": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "operationId": "DeleteGoogleChatTargetAudience",
+      "parameters": [
+        {
+          "name": "organization_binding_id",
+          "origin": "path",
+          "source": "organization_binding_id"
+        },
+        {
+          "name": "target_audience_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteGoogleChatTargetAudience": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGoogleChatTargetAudience": {
+    "tag": "Google Chat Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGoogleChatTargetAudience": {
     "tag": "Google Chat Integration",
     "undo": {
       "type": "idempotent"
@@ -3371,6 +3602,12 @@
     }
   },
   "UpdateTenantBasedHandle": {
+    "tag": "Microsoft Teams Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteMSTeamsUserBinding": {
     "tag": "Microsoft Teams Integration",
     "undo": {
       "type": "idempotent"
@@ -3624,6 +3861,12 @@
   },
   "ListServiceNowUsers": {
     "tag": "ServiceNow Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSlackUserBindings": {
+    "tag": "Slack Integration",
     "undo": {
       "type": "safe"
     }
@@ -4005,6 +4248,29 @@
       "type": "safe"
     }
   },
+  "UpsertLLMObsAnnotations": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "DeleteLLMObsAnnotations",
+      "parameters": [
+        {
+          "name": "queue_id",
+          "source": "path.queue_id"
+        },
+        {
+          "name": "body",
+          "template": "{\"data\": {\"type\": \"annotations\", \"attributes\": {\"annotation_ids\": [\"{{ data.attributes.annotations[0].id }}\"]}}}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsAnnotations": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateLLMObsAnnotationQueueInteractions": {
     "tag": "LLM Observability",
     "undo": {
@@ -4161,6 +4427,68 @@
       "type": "safe"
     }
   },
+  "ListLLMObsPatternsClusteredPoints": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLLMObsPatternsConfigs": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertLLMObsPatternsConfig": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetLLMObsPatternsConfig": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteLLMObsPatternsConfig": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListLLMObsPatternsRuns": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "TriggerLLMObsPatterns": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "TODO",
+      "parameters": [],
+      "type": "unsafe"
+    }
+  },
+  "GetLLMObsPatternsRunStatus": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLLMObsPatternsTopics": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLLMObsPatternsTopicsWithClusteredPoints": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLLMObsDatasets": {
     "tag": "LLM Observability",
     "undo": {
@@ -4292,6 +4620,12 @@
     "tag": "LLM Observability",
     "undo": {
       "type": "safe"
+    }
+  },
+  "UpdateLoginOrgConfigsMaxSessionDuration": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "SubmitLog": {
@@ -4588,6 +4922,49 @@
       "type": "unsafe"
     }
   },
+  "ListTagIndexingRules": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteTagIndexingRule",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderTagIndexingRules": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTagIndexingRule": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListActiveMetricConfigurations": {
     "tag": "Metrics",
     "undo": {
@@ -4613,6 +4990,37 @@
     }
   },
   "GetMetricTagCardinalityDetails": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteTagIndexingRuleExemption": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagIndexingRuleExemption": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTagIndexingRuleExemption": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteTagIndexingRuleExemption",
+      "parameters": [
+        {
+          "name": "metric_name",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListTagIndexingRulesForMetric": {
     "tag": "Metrics",
     "undo": {
       "type": "safe"
@@ -4936,6 +5344,12 @@
     "tag": "Network Device Monitoring",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "ListNetworkHealthInsights": {
+    "tag": "Network Health Insights",
+    "undo": {
+      "type": "safe"
     }
   },
   "GetAggregatedConnections": {
@@ -5919,6 +6333,19 @@
       "type": "idempotent"
     }
   },
+  "CreateReportSchedule": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "PatchReportSchedule": {
+    "tag": "Report Schedules",
+    "undo": {
+      "operationId": "PatchReportSchedule",
+      "type": "idempotent"
+    }
+  },
   "DeleteRestrictionPolicy": {
     "tag": "Restriction Policies",
     "undo": {
@@ -6054,24 +6481,6 @@
       "type": "unsafe"
     }
   },
-  "ListHardcodedRetentionFilters": {
-    "tag": "RUM Retention Filters Hardcoded",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetHardcodedRetentionFilter": {
-    "tag": "RUM Retention Filters Hardcoded",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateHardcodedRetentionFilter": {
-    "tag": "RUM Retention Filters Hardcoded",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "OrderRetentionFilters": {
     "tag": "Rum Retention Filters",
     "undo": {
@@ -6177,6 +6586,24 @@
   },
   "UpdateRumMetric": {
     "tag": "Rum Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteRumRateLimitConfig": {
+    "tag": "Rum Rate Limit",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRumRateLimitConfig": {
+    "tag": "Rum Rate Limit",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRumRateLimitConfig": {
+    "tag": "Rum Rate Limit",
     "undo": {
       "type": "idempotent"
     }
@@ -6800,6 +7227,12 @@
       "type": "safe"
     }
   },
+  "SendSecurityMonitoringNotificationPreview": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityFilters": {
     "tag": "Security Monitoring",
     "undo": {
@@ -6983,6 +7416,12 @@
       "type": "safe"
     }
   },
+  "GetSingleEntityContext": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {
@@ -7057,6 +7496,12 @@
     }
   },
   "ConvertExistingSecurityMonitoringRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RestoreSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"
@@ -7379,25 +7824,6 @@
       "type": "idempotent"
     }
   },
-  "ListIncidentServices": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "operationId": "DeleteIncidentService",
-      "parameters": [
-        {
-          "name": "service_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
   "ListServiceDefinitions": {
     "tag": "Service Definition",
     "undo": {
@@ -7427,24 +7853,6 @@
     "tag": "Service Definition",
     "undo": {
       "type": "safe"
-    }
-  },
-  "DeleteIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateIncidentService": {
-    "tag": "Incident Services",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "ListSecurityMonitoringHistsignals": {
@@ -8243,6 +8651,49 @@
   },
   "PatchGlobalVariable": {
     "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListTagPolicies": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "operationId": "DeleteTagPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTagPolicy": {
+    "tag": "Tag Policies",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTagPolicyScore": {
+    "tag": "Tag Policies",
     "undo": {
       "type": "safe"
     }

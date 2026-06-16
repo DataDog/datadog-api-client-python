@@ -17,6 +17,8 @@ from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPi
 from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
 from datadog_api_client.v2.api.csm_agents_api import CSMAgentsApi
 from datadog_api_client.v2.api.csm_coverage_analysis_api import CSMCoverageAnalysisApi
+from datadog_api_client.v2.api.csm_ownership_api import CSMOwnershipApi
+from datadog_api_client.v2.api.csm_settings_api import CSMSettingsApi
 from datadog_api_client.v2.api.csm_threats_api import CSMThreatsApi
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.api.case_management_attribute_api import CaseManagementAttributeApi
@@ -35,8 +37,10 @@ from datadog_api_client.v2.api.customer_org_api import CustomerOrgApi
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecureEmbedApi
+from datadog_api_client.v2.api.dashboard_sharing_api import DashboardSharingApi
 from datadog_api_client.v2.api.dashboards_api import DashboardsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
+from datadog_api_client.v2.api.data_observability_api import DataObservabilityApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
@@ -48,11 +52,11 @@ from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationApi
 from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
+from datadog_api_client.v2.api.forms_api import FormsApi
 from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi
 from datadog_api_client.v2.api.google_chat_integration_api import GoogleChatIntegrationApi
 from datadog_api_client.v2.api.high_availability_multi_region_api import HighAvailabilityMultiRegionApi
 from datadog_api_client.v2.api.ip_allowlist_api import IPAllowlistApi
-from datadog_api_client.v2.api.incident_services_api import IncidentServicesApi
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.api.integrations_api import IntegrationsApi
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
@@ -68,6 +72,7 @@ from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftT
 from datadog_api_client.v2.api.model_lab_api_api import ModelLabAPIApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
+from datadog_api_client.v2.api.network_health_insights_api import NetworkHealthInsightsApi
 from datadog_api_client.v2.api.o_auth2_client_public_api import OAuth2ClientPublicApi
 from datadog_api_client.v2.api.oci_integration_api import OCIIntegrationApi
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
@@ -83,12 +88,13 @@ from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
-from datadog_api_client.v2.api.rum_retention_filters_hardcoded_api import RUMRetentionFiltersHardcodedApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
+from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.rum_audience_management_api import RumAudienceManagementApi
 from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
+from datadog_api_client.v2.api.rum_rate_limit_api import RumRateLimitApi
 from datadog_api_client.v2.api.rum_replay_heatmaps_api import RumReplayHeatmapsApi
 from datadog_api_client.v2.api.rum_replay_playlists_api import RumReplayPlaylistsApi
 from datadog_api_client.v2.api.rum_replay_sessions_api import RumReplaySessionsApi
@@ -103,6 +109,7 @@ from datadog_api_client.v2.api.service_accounts_api import ServiceAccountsApi
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.api.service_now_integration_api import ServiceNowIntegrationApi
+from datadog_api_client.v2.api.slack_integration_api import SlackIntegrationApi
 from datadog_api_client.v2.api.software_catalog_api import SoftwareCatalogApi
 from datadog_api_client.v2.api.spa_api import SpaApi
 from datadog_api_client.v2.api.spans_api import SpansApi
@@ -113,6 +120,7 @@ from datadog_api_client.v2.api.statuspage_integration_api import StatuspageInteg
 from datadog_api_client.v2.api.stegadography_api import StegadographyApi
 from datadog_api_client.v2.api.storage_management_api import StorageManagementApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
+from datadog_api_client.v2.api.tag_policies_api import TagPoliciesApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
@@ -143,6 +151,8 @@ __all__ = [
     "CIVisibilityTestsApi",
     "CSMAgentsApi",
     "CSMCoverageAnalysisApi",
+    "CSMOwnershipApi",
+    "CSMSettingsApi",
     "CSMThreatsApi",
     "CaseManagementApi",
     "CaseManagementAttributeApi",
@@ -161,8 +171,10 @@ __all__ = [
     "DORAMetricsApi",
     "DashboardListsApi",
     "DashboardSecureEmbedApi",
+    "DashboardSharingApi",
     "DashboardsApi",
     "DataDeletionApi",
+    "DataObservabilityApi",
     "DatasetsApi",
     "DeploymentGatesApi",
     "DomainAllowlistApi",
@@ -174,11 +186,11 @@ __all__ = [
     "FastlyIntegrationApi",
     "FeatureFlagsApi",
     "FleetAutomationApi",
+    "FormsApi",
     "GCPIntegrationApi",
     "GoogleChatIntegrationApi",
     "HighAvailabilityMultiRegionApi",
     "IPAllowlistApi",
-    "IncidentServicesApi",
     "IncidentsApi",
     "IntegrationsApi",
     "JiraIntegrationApi",
@@ -194,6 +206,7 @@ __all__ = [
     "ModelLabAPIApi",
     "MonitorsApi",
     "NetworkDeviceMonitoringApi",
+    "NetworkHealthInsightsApi",
     "OAuth2ClientPublicApi",
     "OCIIntegrationApi",
     "ObservabilityPipelinesApi",
@@ -209,12 +222,13 @@ __all__ = [
     "ProductAnalyticsApi",
     "RUMApi",
     "RUMInsightsApi",
-    "RUMRetentionFiltersHardcodedApi",
     "ReferenceTablesApi",
+    "ReportSchedulesApi",
     "RestrictionPoliciesApi",
     "RolesApi",
     "RumAudienceManagementApi",
     "RumMetricsApi",
+    "RumRateLimitApi",
     "RumReplayHeatmapsApi",
     "RumReplayPlaylistsApi",
     "RumReplaySessionsApi",
@@ -229,6 +243,7 @@ __all__ = [
     "ServiceDefinitionApi",
     "ServiceLevelObjectivesApi",
     "ServiceNowIntegrationApi",
+    "SlackIntegrationApi",
     "SoftwareCatalogApi",
     "SpaApi",
     "SpansApi",
@@ -239,6 +254,7 @@ __all__ = [
     "StegadographyApi",
     "StorageManagementApi",
     "SyntheticsApi",
+    "TagPoliciesApi",
     "TeamsApi",
     "TestOptimizationApi",
     "UsageMeteringApi",

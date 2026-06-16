@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"anonymous":false,"data_definition":{},"description":"A
+      simple test form.","idp_survey":false,"name":"Test-Get_a_form_returns_OK_response-1780598047","single_response":false,"ui_definition":{}},"type":"forms"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms
+  response:
+    body:
+      string: '{"data":{"id":"b42493d4-fbd0-4139-b4b9-4815f414621d","type":"forms","attributes":{"active":true,"anonymous":false,"created_at":"2026-06-04T18:34:07.632566Z","datastore_config":{"datastore_id":"9aace6ce-ee9d-4c81-b176-22bed53ff080","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"A
+        simple test form.","idp_survey":false,"modified_at":"2026-06-04T18:34:07.632566Z","name":"Test-Get_a_form_returns_OK_response-1780598047","org_id":321813,"self_service":false,"single_response":false,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":{"id":"354656","state":"draft","version":1,"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d","definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\",\\\"timestamp\\\":1780598047,\\\"proof\\\":\\\"MGUCMQCkP+Usa2zK0v4SsSDBHsE4p88u025oyaRrAnNTiTXLwGr3K0W4/MAFeeosBwZonE0CMGYsqH/GAJUKeY0ZZGl8GZp2QeY1l3byimzWXRLf36CHhuB1Pshv/7bi0WoYYCOQIg==\\\"}\",\"version\":1}","data_definition":{},"ui_definition":{},"created_at":"2026-06-04T18:34:07.632566Z","modified_at":"2026-06-04T18:34:07.632566Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/forms/b42493d4-fbd0-4139-b4b9-4815f414621d
+  response:
+    body:
+      string: '{"data":{"id":"b42493d4-fbd0-4139-b4b9-4815f414621d","type":"forms","attributes":{"active":true,"anonymous":false,"created_at":"2026-06-04T18:34:07.632566Z","datastore_config":{"datastore_id":"9aace6ce-ee9d-4c81-b176-22bed53ff080","primary_column_name":"id","primary_key_generation_strategy":"none"},"description":"A
+        simple test form.","idp_survey":false,"modified_at":"2026-06-04T18:34:07.632566Z","name":"Test-Get_a_form_returns_OK_response-1780598047","org_id":321813,"self_service":false,"single_response":false,"user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","version":{"id":"354656","state":"draft","version":1,"etag":"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d","definition_signature":"{\"signature\":\"{\\\"version\\\":2,\\\"algorithm\\\":\\\"ecdsa-p384\\\",\\\"pubkey\\\":\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\",\\\"timestamp\\\":1780598047,\\\"proof\\\":\\\"MGUCMQCkP+Usa2zK0v4SsSDBHsE4p88u025oyaRrAnNTiTXLwGr3K0W4/MAFeeosBwZonE0CMGYsqH/GAJUKeY0ZZGl8GZp2QeY1l3byimzWXRLf36CHhuB1Pshv/7bi0WoYYCOQIg==\\\"}\",\"version\":1}","data_definition":{},"ui_definition":{},"created_at":"2026-06-04T18:34:07.632566Z","modified_at":"2026-06-04T18:34:07.632566Z","user_id":2320499,"user_uuid":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/forms/b42493d4-fbd0-4139-b4b9-4815f414621d
+  response:
+    body:
+      string: '{"data":{"id":"b42493d4-fbd0-4139-b4b9-4815f414621d","type":"forms"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

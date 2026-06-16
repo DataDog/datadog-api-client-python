@@ -959,6 +959,10 @@ from datadog_api_client.v1.model.synthetics_assertion_x_path_target_target impor
 from datadog_api_client.v1.model.synthetics_basic_auth import SyntheticsBasicAuth
 from datadog_api_client.v1.model.synthetics_basic_auth_digest import SyntheticsBasicAuthDigest
 from datadog_api_client.v1.model.synthetics_basic_auth_digest_type import SyntheticsBasicAuthDigestType
+from datadog_api_client.v1.model.synthetics_basic_auth_jwt import SyntheticsBasicAuthJWT
+from datadog_api_client.v1.model.synthetics_basic_auth_jwt_add_claims import SyntheticsBasicAuthJWTAddClaims
+from datadog_api_client.v1.model.synthetics_basic_auth_jwt_algorithm import SyntheticsBasicAuthJWTAlgorithm
+from datadog_api_client.v1.model.synthetics_basic_auth_jwt_type import SyntheticsBasicAuthJWTType
 from datadog_api_client.v1.model.synthetics_basic_auth_ntlm import SyntheticsBasicAuthNTLM
 from datadog_api_client.v1.model.synthetics_basic_auth_ntlm_type import SyntheticsBasicAuthNTLMType
 from datadog_api_client.v1.model.synthetics_basic_auth_oauth_client import SyntheticsBasicAuthOauthClient
@@ -2170,6 +2174,10 @@ __all__ = [
     "SyntheticsBasicAuth",
     "SyntheticsBasicAuthDigest",
     "SyntheticsBasicAuthDigestType",
+    "SyntheticsBasicAuthJWT",
+    "SyntheticsBasicAuthJWTAddClaims",
+    "SyntheticsBasicAuthJWTAlgorithm",
+    "SyntheticsBasicAuthJWTType",
     "SyntheticsBasicAuthNTLM",
     "SyntheticsBasicAuthNTLMType",
     "SyntheticsBasicAuthOauthClient",

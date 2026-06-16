@@ -228,6 +228,20 @@ datadog\_api\_client.v2.api.csm\_coverage\_analysis\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.csm\_ownership\_api module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.csm_ownership_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.csm\_settings\_api module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.csm_settings_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.csm\_threats\_api module
 ----------------------------------------------------
 
@@ -256,6 +270,13 @@ datadog\_api\_client.v2.api.dashboard\_secure\_embed\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.dashboard\_sharing\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.dashboard_sharing_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.dashboards\_api module
 --------------------------------------------------
 
@@ -267,6 +288,13 @@ datadog\_api\_client.v2.api.data\_deletion\_api module
 ------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.data_deletion_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.data\_observability\_api module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.data_observability_api
    :members:
    :show-inheritance:
 
@@ -354,6 +382,13 @@ datadog\_api\_client.v2.api.fleet\_automation\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.forms\_api module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.forms_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.gcp\_integration\_api module
 --------------------------------------------------------
 
@@ -372,13 +407,6 @@ datadog\_api\_client.v2.api.high\_availability\_multi\_region\_api module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.high_availability_multi_region_api
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.api.incident\_services\_api module
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.incident_services_api
    :members:
    :show-inheritance:
 
@@ -494,6 +522,13 @@ datadog\_api\_client.v2.api.network\_device\_monitoring\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.network\_health\_insights\_api module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.network_health_insights_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.o\_auth2\_client\_public\_api module
 ----------------------------------------------------------------
 
@@ -592,6 +627,13 @@ datadog\_api\_client.v2.api.reference\_tables\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.report\_schedules\_api module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.report_schedules_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.restriction\_policies\_api module
 -------------------------------------------------------------
 
@@ -634,6 +676,13 @@ datadog\_api\_client.v2.api.rum\_metrics\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.rum\_rate\_limit\_api module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_rate_limit_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.rum\_replay\_heatmaps\_api module
 -------------------------------------------------------------
 
@@ -666,13 +715,6 @@ datadog\_api\_client.v2.api.rum\_retention\_filters\_api module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.rum_retention_filters_api
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.api.rum\_retention\_filters\_hardcoded\_api module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.rum_retention_filters_hardcoded_api
    :members:
    :show-inheritance:
 
@@ -736,6 +778,13 @@ datadog\_api\_client.v2.api.service\_now\_integration\_api module
 -----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.service_now_integration_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.slack\_integration\_api module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.slack_integration_api
    :members:
    :show-inheritance:
 
@@ -806,6 +855,13 @@ datadog\_api\_client.v2.api.synthetics\_api module
 --------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.synthetics_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.tag\_policies\_api module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.tag_policies_api
    :members:
    :show-inheritance:
 

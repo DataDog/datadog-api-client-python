@@ -390,6 +390,11 @@ class KeyManagementApi:
                     "attribute": "filter[created_at][end]",
                     "location": "query",
                 },
+                "filter_owned_by": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[owned_by]",
+                    "location": "query",
+                },
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
@@ -928,6 +933,7 @@ class KeyManagementApi:
         filter: Union[str, UnsetType] = unset,
         filter_created_at_start: Union[str, UnsetType] = unset,
         filter_created_at_end: Union[str, UnsetType] = unset,
+        filter_owned_by: Union[str, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
     ) -> ListApplicationKeysResponse:
         """Get all application keys.
@@ -948,6 +954,8 @@ class KeyManagementApi:
         :type filter_created_at_start: str, optional
         :param filter_created_at_end: Only include application keys created on or before the specified date.
         :type filter_created_at_end: str, optional
+        :param filter_owned_by: Filter application keys by owner ID.
+        :type filter_owned_by: str, optional
         :param include: Resource path for related resources to include in the response. Only ``owned_by`` is supported.
         :type include: str, optional
         :rtype: ListApplicationKeysResponse
@@ -970,6 +978,9 @@ class KeyManagementApi:
 
         if filter_created_at_end is not unset:
             kwargs["filter_created_at_end"] = filter_created_at_end
+
+        if filter_owned_by is not unset:
+            kwargs["filter_owned_by"] = filter_owned_by
 
         if include is not unset:
             kwargs["include"] = include

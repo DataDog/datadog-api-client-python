@@ -1,0 +1,48 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"metric_name_matches":["dd.TestDeleteatagindexingrulereturnsNoContentresponse1780591176.*"],"name":"TestDeleteatagindexingrulereturnsNoContentresponse1780591176","tags":["env","service"]},"type":"tag_indexing_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/metrics/tag-indexing-rules
+  response:
+    body:
+      string: '{"data":{"id":"223d99dd-9c0a-4181-82b7-53d234bf5b26","type":"tag_indexing_rules","attributes":{"created_at":"2026-06-04T16:39:36.77795Z","created_by_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","exclude_tags_mode":false,"metric_name_matches":["dd.TestDeleteatagindexingrulereturnsNoContentresponse1780591176.*"],"modified_at":"2026-06-04T16:39:36.77795Z","modified_by_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"TestDeleteatagindexingrulereturnsNoContentresponse1780591176","options":{"version":1,"data":{"override_previous_rules":false,"manage_preexisting_metrics":true}},"rule_order":1,"tags":["env","service"]}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/metrics/tag-indexing-rules/223d99dd-9c0a-4181-82b7-53d234bf5b26
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/metrics/tag-indexing-rules/223d99dd-9c0a-4181-82b7-53d234bf5b26
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

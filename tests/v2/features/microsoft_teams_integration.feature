@@ -146,6 +146,27 @@ Feature: Microsoft Teams Integration
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete user binding returns "Bad Request" response
+    Given new "DeleteMSTeamsUserBinding" request
+    And request contains "tenant_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete user binding returns "Failed Precondition" response
+    Given new "DeleteMSTeamsUserBinding" request
+    And request contains "tenant_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 412 Failed Precondition
+
+  @generated @skip @team:DataDog/chat-integrations
+  Scenario: Delete user binding returns "No Content" response
+    Given new "DeleteMSTeamsUserBinding" request
+    And request contains "tenant_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
   @team:DataDog/chat-integrations
   Scenario: Delete workflow webhook handle returns "OK" response
     Given there is a valid "workflows_webhook_handle" in the system

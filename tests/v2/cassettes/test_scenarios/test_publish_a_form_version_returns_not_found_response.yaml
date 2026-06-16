@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"version":1},"type":"form_publications"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/forms/00000000-0000-0000-0000-000000000001/publish
+  response:
+    body:
+      string: '{"errors":[{"status":"404","id":"890f7bea-c0e2-45f9-a06a-e3214a19be57","title":"form
+        not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

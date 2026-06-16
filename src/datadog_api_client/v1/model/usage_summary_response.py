@@ -984,18 +984,23 @@ class UsageSummaryResponse(ModelNormal):
         :type agent_host_top99p_sum: int, optional
 
         :param ai_credits_agent_builder_ai_credits_agg_sum: Shows the sum of all AI credits used by Agent Builder over all hours in the current month for all organizations.
+            Values are returned in micro-credits. Divide by 1,000,000 to get AI credits.
         :type ai_credits_agent_builder_ai_credits_agg_sum: int, optional
 
         :param ai_credits_agg_sum: Shows the sum of all AI credits over all hours in the current month for all organizations.
+            Values are returned in micro-credits. Divide by 1,000,000 to get AI credits.
         :type ai_credits_agg_sum: int, optional
 
         :param ai_credits_bits_assistant_ai_credits_agg_sum: Shows the sum of all AI credits used by Bits AI Assistant over all hours in the current month for all organizations.
+            Values are returned in micro-credits. Divide by 1,000,000 to get AI credits.
         :type ai_credits_bits_assistant_ai_credits_agg_sum: int, optional
 
         :param ai_credits_bits_dev_ai_credits_agg_sum: Shows the sum of all AI credits used by Bits AI Dev over all hours in the current month for all organizations.
+            Values are returned in micro-credits. Divide by 1,000,000 to get AI credits.
         :type ai_credits_bits_dev_ai_credits_agg_sum: int, optional
 
         :param ai_credits_bits_sre_ai_credits_agg_sum: Shows the sum of all AI credits used by Bits AI SRE over all hours in the current month for all organizations.
+            Values are returned in micro-credits. Divide by 1,000,000 to get AI credits.
         :type ai_credits_bits_sre_ai_credits_agg_sum: int, optional
 
         :param apm_azure_app_service_host_top99p_sum: Shows the 99th percentile of all Azure app services using APM over all hours in the current month all organizations.
@@ -1269,6 +1274,7 @@ class UsageSummaryResponse(ModelNormal):
         :type dbm_queries_avg_sum: int, optional
 
         :param do_jobs_monitoring_orchestrators_job_hours_agg_sum: Shows the sum of all orchestrator job hours over all hours in the current month for all organizations.
+            Values are returned in seconds. Divide by 3,600 to convert to hours.
         :type do_jobs_monitoring_orchestrators_job_hours_agg_sum: int, optional
 
         :param end_date: Shows the last date of usage in the current month for all organizations.
@@ -1410,93 +1416,123 @@ class UsageSummaryResponse(ModelNormal):
         :type indexed_points_agg_sum: int, optional
 
         :param infra_cpu_agg_sum: Shows the sum of all Infrastructure vCPU cores over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_agg_sum: int, optional
 
         :param infra_cpu_avg_sum: Shows the average of all Infrastructure vCPU cores over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_agent_agg_sum: Shows the sum of all default Infrastructure host vCPU cores reported by the Datadog Agent over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_agent_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_agent_avg_sum: Shows the average of all default Infrastructure host vCPU cores reported by the Datadog Agent over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_agent_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_agent_basic_agg_sum: Shows the sum of all default basic Infrastructure host vCPU cores reported by the Datadog Agent over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_agent_basic_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_agent_basic_avg_sum: Shows the average of all default basic Infrastructure host vCPU cores reported by the Datadog Agent over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_agent_basic_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_aws_agg_sum: Shows the sum of all default Infrastructure host vCPU cores on AWS over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_aws_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_aws_avg_sum: Shows the average of all default Infrastructure host vCPU cores on AWS over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_aws_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_azure_agg_sum: Shows the sum of all default Infrastructure host vCPU cores on Azure over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_azure_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_azure_avg_sum: Shows the average of all default Infrastructure host vCPU cores on Azure over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_azure_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_gcp_agg_sum: Shows the sum of all default Infrastructure host vCPU cores on GCP over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_gcp_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_gcp_avg_sum: Shows the average of all default Infrastructure host vCPU cores on GCP over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_gcp_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_nutanix_agg_sum: Shows the sum of all default Infrastructure host vCPU cores on Nutanix over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_nutanix_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_nutanix_avg_sum: Shows the average of all default Infrastructure host vCPU cores on Nutanix over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_nutanix_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_nutanix_basic_agg_sum: Shows the sum of all default basic Infrastructure host vCPU cores on Nutanix over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_nutanix_basic_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_nutanix_basic_avg_sum: Shows the average of all default basic Infrastructure host vCPU cores on Nutanix over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_nutanix_basic_avg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_opentelemetry_agg_sum: Shows the sum of all default Infrastructure host vCPU cores reported by OpenTelemetry over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_opentelemetry_agg_sum: int, optional
 
         :param infra_cpu_default_infra_host_vcpu_opentelemetry_avg_sum: Shows the average of all default Infrastructure host vCPU cores reported by OpenTelemetry over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_default_infra_host_vcpu_opentelemetry_avg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_agent_agg_sum: Shows the sum of all observed Infrastructure host vCPU cores reported by the Datadog Agent over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_agent_agg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_agent_avg_sum: Shows the average of all observed Infrastructure host vCPU cores reported by the Datadog Agent over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_agent_avg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_aws_agg_sum: Shows the sum of all observed Infrastructure host vCPU cores on AWS over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_aws_agg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_aws_avg_sum: Shows the average of all observed Infrastructure host vCPU cores on AWS over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_aws_avg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_azure_agg_sum: Shows the sum of all observed Infrastructure host vCPU cores on Azure over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_azure_agg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_azure_avg_sum: Shows the average of all observed Infrastructure host vCPU cores on Azure over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_azure_avg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_gcp_agg_sum: Shows the sum of all observed Infrastructure host vCPU cores on GCP over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_gcp_agg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_gcp_avg_sum: Shows the average of all observed Infrastructure host vCPU cores on GCP over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_gcp_avg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_nutanix_agg_sum: Shows the sum of all observed Infrastructure host vCPU cores on Nutanix over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_nutanix_agg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_nutanix_avg_sum: Shows the average of all observed Infrastructure host vCPU cores on Nutanix over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_nutanix_avg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_opentelemetry_agg_sum: Shows the sum of all observed Infrastructure host vCPU cores reported by OpenTelemetry over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_opentelemetry_agg_sum: int, optional
 
         :param infra_cpu_observed_infra_host_vcpu_opentelemetry_avg_sum: Shows the average of all observed Infrastructure host vCPU cores reported by OpenTelemetry over all hours in the current month for all organizations.
+            Values are returned in millicores. Divide by 1,000 to convert to cores.
         :type infra_cpu_observed_infra_host_vcpu_opentelemetry_avg_sum: int, optional
 
         :param infra_edge_monitoring_devices_top99p_sum: Shows the 99th percentile of all Edge Devices Monitoring devices over all hours in the current month for all organizations.

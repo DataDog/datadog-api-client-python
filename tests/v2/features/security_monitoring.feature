@@ -759,7 +759,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Create a new signal-based notification rule returns "Bad Request" response
     Given new "CreateSignalNotificationRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -773,7 +773,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Create a new vulnerability-based notification rule returns "Bad Request" response
     Given new "CreateVulnerabilityNotificationRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1605,6 +1605,30 @@ Feature: Security Monitoring
   Scenario: Get a signal's details returns "OK" response
     Given new "GetSecurityMonitoringSignal" request
     And request contains "signal_id" parameter with value "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptMDdQUnF3QUE"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get a single entity context returns "Bad Request" response
+    Given operation "GetSingleEntityContext" enabled
+    And new "GetSingleEntityContext" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get a single entity context returns "Not Found" response
+    Given operation "GetSingleEntityContext" enabled
+    And new "GetSingleEntityContext" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Get a single entity context returns "OK" response
+    Given operation "GetSingleEntityContext" enabled
+    And new "GetSingleEntityContext" request
+    And request contains "id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -2470,7 +2494,7 @@ Feature: Security Monitoring
   Scenario: Patch a signal-based notification rule returns "The server cannot process the request because it contains invalid data." response
     Given new "PatchSignalNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
@@ -2504,9 +2528,51 @@ Feature: Security Monitoring
   Scenario: Patch a vulnerability-based notification rule returns "The server cannot process the request because it contains invalid data." response
     Given new "PatchVulnerabilityNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "Bad Request" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "Conflict" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And there is a valid "security_rule" in the system
+    And there is a valid "security_rule_updated" in the system
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "security_rule.id"
+    And request contains "version" parameter with value 2
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "Not Found" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And there is a valid "security_rule" in the system
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "security_rule.id"
+    And request contains "version" parameter with value 9999
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip-validation @team:DataDog/k9-cloud-siem
+  Scenario: Restore a rule to a historical version returns "OK" response
+    Given operation "RestoreSecurityMonitoringRule" enabled
+    And there is a valid "security_rule" in the system
+    And there is a valid "security_rule_updated" in the system
+    And new "RestoreSecurityMonitoringRule" request
+    And request contains "rule_id" parameter from "security_rule.id"
+    And request contains "version" parameter with value 1
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "id" has the same value as "security_rule.id"
 
   @generated @skip @team:DataDog/k9-vm-ast
   Scenario: Returns a list of Secrets rules returns "OK" response
@@ -2608,6 +2674,20 @@ Feature: Security Monitoring
     Given operation "CreateSampleLogGenerationSubscription" enabled
     And new "CreateSampleLogGenerationSubscription" request
     And body with value {"data": {"attributes": {"content_pack_id": "aws-cloudtrail", "duration": "3d"}, "type": "subscription_requests"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-cloud-siem
+  Scenario: Test a notification rule returns "Bad Request" response
+    Given new "SendSecurityMonitoringNotificationPreview" request
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "routing": {"mode": "manual"}, "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-cloud-siem
+  Scenario: Test a notification rule returns "OK" response
+    Given new "SendSecurityMonitoringNotificationPreview" request
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "env:prod", "rule_types": ["log_detection"], "severities": ["critical"], "trigger_source": "security_signals"}, "targets": ["@john.doe@email.com"]}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 200 OK
 

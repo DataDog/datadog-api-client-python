@@ -64,6 +64,7 @@ from datadog_api_client.v2.model.scanned_assets_metadata import ScannedAssetsMet
 from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
 from datadog_api_client.v2.model.io_c_explorer_list_response import IoCExplorerListResponse
 from datadog_api_client.v2.model.get_io_c_indicator_response import GetIoCIndicatorResponse
+from datadog_api_client.v2.model.notification_rules_list_response import NotificationRulesListResponse
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
@@ -102,6 +103,7 @@ from datadog_api_client.v2.model.security_monitoring_integration_credentials_val
 from datadog_api_client.v2.model.security_monitoring_integration_config_update_request import (
     SecurityMonitoringIntegrationConfigUpdateRequest,
 )
+from datadog_api_client.v2.model.notification_rule_preview_response import NotificationRulePreviewResponse
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
 from datadog_api_client.v2.model.security_filter_response import SecurityFilterResponse
 from datadog_api_client.v2.model.security_filter_create_request import SecurityFilterCreateRequest
@@ -154,6 +156,7 @@ from datadog_api_client.v2.model.security_monitoring_dataset_version_history_res
     SecurityMonitoringDatasetVersionHistoryResponse,
 )
 from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
+from datadog_api_client.v2.model.single_entity_context_response import SingleEntityContextResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
@@ -2086,7 +2089,7 @@ class SecurityMonitoringApi:
 
         self._get_signal_notification_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (dict,),
+                "response_type": (NotificationRulesListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/signals/notification_rules",
                 "operation_id": "get_signal_notification_rules",
@@ -2094,6 +2097,44 @@ class SecurityMonitoringApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_single_entity_context_endpoint = _Endpoint(
+            settings={
+                "response_type": (SingleEntityContextResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/entity_context/{id}",
+                "operation_id": "get_single_entity_context",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "_from": {
+                    "openapi_types": (str,),
+                    "attribute": "from",
+                    "location": "query",
+                },
+                "to": {
+                    "openapi_types": (str,),
+                    "attribute": "to",
+                    "location": "query",
+                },
+                "as_of": {
+                    "openapi_types": (str,),
+                    "attribute": "as_of",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -2326,7 +2367,7 @@ class SecurityMonitoringApi:
 
         self._get_vulnerability_notification_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (dict,),
+                "response_type": (NotificationRulesListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules",
                 "operation_id": "get_vulnerability_notification_rules",
@@ -3469,6 +3510,35 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._restore_security_monitoring_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}/restore/{version}",
+                "operation_id": "restore_security_monitoring_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "version",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._run_historical_job_endpoint = _Endpoint(
             settings={
                 "response_type": (JobCreateResponse,),
@@ -3540,6 +3610,26 @@ class SecurityMonitoringApi:
             params_map={
                 "body": {
                     "openapi_types": (SecurityMonitoringSignalListRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._send_security_monitoring_notification_preview_endpoint = _Endpoint(
+            settings={
+                "response_type": (NotificationRulePreviewResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/notification_rules/send_notification_preview",
+                "operation_id": "send_security_monitoring_notification_preview",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateNotificationRuleParameters,),
                     "location": "body",
                 },
             },
@@ -5456,15 +5546,58 @@ class SecurityMonitoringApi:
 
     def get_signal_notification_rules(
         self,
-    ) -> dict:
+    ) -> NotificationRulesListResponse:
         """Get the list of signal-based notification rules.
 
         Returns the list of notification rules for security signals.
 
-        :rtype: dict
+        :rtype: NotificationRulesListResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._get_signal_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def get_single_entity_context(
+        self,
+        id: str,
+        *,
+        _from: Union[str, UnsetType] = unset,
+        to: Union[str, UnsetType] = unset,
+        as_of: Union[str, UnsetType] = unset,
+    ) -> SingleEntityContextResponse:
+        """Get a single entity context.
+
+        Get a single entity from the Cloud SIEM entity context store by its identifier, returning the historical
+        revisions of the entity in the requested time range. The endpoint can either return revisions across an
+        interval ( ``from`` / ``to`` ) or the snapshot of the entity at a single point in time ( ``as_of`` ); the two modes
+        are mutually exclusive.
+
+        :param id: The unique identifier of the entity to retrieve.
+        :type id: str
+        :param _from: The start of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now-7d`` ).
+            Defaults to ``now-7d``. Ignored when ``as_of`` is set.
+        :type _from: str, optional
+        :param to: The end of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now`` ).
+            Defaults to ``now``. Ignored when ``as_of`` is set.
+        :type to: str, optional
+        :param as_of: A point in time at which to query the entity revisions, as an RFC3339 timestamp, a Unix timestamp
+            (in seconds), or a relative time (for example, ``now-1d`` ). When set, ``from`` and ``to`` are ignored.
+            Cannot be combined with custom ``from`` / ``to`` values.
+        :type as_of: str, optional
+        :rtype: SingleEntityContextResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if _from is not unset:
+            kwargs["_from"] = _from
+
+        if to is not unset:
+            kwargs["to"] = to
+
+        if as_of is not unset:
+            kwargs["as_of"] = as_of
+
+        return self._get_single_entity_context_endpoint.call_with_http_info(**kwargs)
 
     def get_static_analysis_default_rulesets(
         self,
@@ -5651,12 +5784,12 @@ class SecurityMonitoringApi:
 
     def get_vulnerability_notification_rules(
         self,
-    ) -> dict:
+    ) -> NotificationRulesListResponse:
         """Get the list of vulnerability notification rules.
 
         Returns the list of notification rules for security vulnerabilities.
 
-        :rtype: dict
+        :rtype: NotificationRulesListResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._get_vulnerability_notification_rules_endpoint.call_with_http_info(**kwargs)
@@ -7266,6 +7399,30 @@ class SecurityMonitoringApi:
 
         return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
 
+    def restore_security_monitoring_rule(
+        self,
+        rule_id: str,
+        version: int,
+    ) -> SecurityMonitoringRuleResponse:
+        """Restore a rule to a historical version.
+
+        Restores a custom detection rule to a previously saved historical version.
+        Only custom rules can be restored. Default and partner rules return 400.
+        The restore creates a new version entry; it does not overwrite history.
+
+        :param rule_id: The ID of the rule.
+        :type rule_id: str
+        :param version: The historical version number of the rule.
+        :type version: int
+        :rtype: SecurityMonitoringRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["version"] = version
+
+        return self._restore_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
     def run_historical_job(
         self,
         body: RunHistoricalJobRequest,
@@ -7401,6 +7558,22 @@ class SecurityMonitoringApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def send_security_monitoring_notification_preview(
+        self,
+        body: CreateNotificationRuleParameters,
+    ) -> NotificationRulePreviewResponse:
+        """Test a notification rule.
+
+        Send a notification preview to test that a notification rule's targets are properly configured.
+
+        :type body: CreateNotificationRuleParameters
+        :rtype: NotificationRulePreviewResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._send_security_monitoring_notification_preview_endpoint.call_with_http_info(**kwargs)
 
     def test_existing_security_monitoring_rule(
         self,

@@ -502,6 +502,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"forms\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"A simple test form.\",\n      \"anonymous\": false,\n      \"single_response\": false,\n      \"idp_survey\": false,\n      \"data_definition\": {},\n      \"ui_definition\": {}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"form\" in the system",
+    "key": "form",
+    "tag": "Forms",
+    "operationId": "CreateForm"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"forms\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"A simple test form.\",\n      \"anonymous\": false,\n      \"single_response\": false,\n      \"idp_survey\": false,\n      \"data_definition\": {},\n      \"ui_definition\": {}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"form_published\" in the system",
+    "key": "form_published",
+    "tag": "Forms",
+    "operationId": "CreateAndPublishForm"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"title\": \"{{ unique }}\",\n      \"customer_impacted\": false\n     },\n     \"type\": \"incidents\"\n  }\n}"
       }
     ],
@@ -649,6 +673,22 @@
     "key": "organization_handle",
     "tag": "Google Chat Integration",
     "operationId": "CreateOrganizationHandle"
+  },
+  {
+    "parameters": [
+      {
+        "name": "organization_binding_id",
+        "value": "\"e54cb570-c674-529c-769d-84b312288ed7\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"google-chat-target-audience\",\n    \"attributes\": {\n      \"audience_name\": \"{{ unique }}\",\n      \"audience_id\": \"{{ unique }}\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"google_chat_target_audience\" in the system",
+    "key": "google_chat_target_audience",
+    "tag": "Google Chat Integration",
+    "operationId": "CreateGoogleChatTargetAudience"
   },
   {
     "parameters": [
@@ -901,6 +941,34 @@
     "key": "restriction_query",
     "tag": "Logs Restriction Queries",
     "operationId": "CreateRestrictionQuery"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"tag_indexing_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique_alnum }}\",\n      \"metric_name_matches\": [\"dd.{{ unique_alnum }}.*\"],\n      \"tags\": [\"env\", \"service\"]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"tag_indexing_rule\" in the system",
+    "key": "tag_indexing_rule",
+    "tag": "Metrics",
+    "operationId": "CreateTagIndexingRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "metric_name",
+        "value": "\"{{ unique_metric_name }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"tag_indexing_rule_exemptions\",\n    \"attributes\": {\n      \"reason\": \"BDD test exemption\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"tag_indexing_rule_exemption\" in the system",
+    "key": "tag_indexing_rule_exemption",
+    "tag": "Metrics",
+    "operationId": "CreateTagIndexingRuleExemption"
   },
   {
     "parameters": [
@@ -1355,6 +1423,22 @@
     "operationId": "CreateSecurityMonitoringRule"
   },
   {
+    "parameters": [
+      {
+        "name": "rule_id",
+        "source": "security_rule.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"name\": \"{{ unique }}-updated\",\n  \"queries\": [{\n    \"query\": \"@test:true\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metrics\": []\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule updated\",\n  \"tags\": [],\n  \"isEnabled\": true\n}"
+      }
+    ],
+    "step": "there is a valid \"security_rule_updated\" in the system",
+    "key": "security_rule_updated",
+    "tag": "Security Monitoring",
+    "operationId": "UpdateSecurityMonitoringRule"
+  },
+  {
     "step": "a valid \"configuration\" in the system",
     "key": "configuration",
     "tag": "Sensitive Data Scanner",
@@ -1427,18 +1511,6 @@
     "key": "service_account_application_key",
     "tag": "Service Accounts",
     "operationId": "CreateServiceAccountApplicationKey"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"services\"\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"service\" in the system",
-    "key": "service",
-    "tag": "Incident Services",
-    "operationId": "CreateIncidentService"
   },
   {
     "parameters": [
