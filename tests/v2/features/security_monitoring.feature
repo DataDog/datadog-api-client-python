@@ -113,24 +113,21 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Attach security findings to a ServiceNow ticket returns "Bad Request" response
-    Given operation "AttachServiceNowTicket" enabled
-    And new "AttachServiceNowTicket" request
+    Given new "AttachServiceNowTicket" request
     And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Attach security findings to a ServiceNow ticket returns "Not Found" response
-    Given operation "AttachServiceNowTicket" enabled
-    And new "AttachServiceNowTicket" request
+    Given new "AttachServiceNowTicket" request
     And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Attach security findings to a ServiceNow ticket returns "OK" response
-    Given operation "AttachServiceNowTicket" enabled
-    And new "AttachServiceNowTicket" request
+    Given new "AttachServiceNowTicket" request
     And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
     When the request is sent
     Then the response status is 200 OK
@@ -532,24 +529,21 @@ Feature: Security Monitoring
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Create ServiceNow tickets for security findings returns "Bad Request" response
-    Given operation "CreateServiceNowTickets" enabled
-    And new "CreateServiceNowTickets" request
+    Given new "CreateServiceNowTickets" request
     And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Create ServiceNow tickets for security findings returns "Created" response
-    Given operation "CreateServiceNowTickets" enabled
-    And new "CreateServiceNowTickets" request
+    Given new "CreateServiceNowTickets" request
     And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/k9-investigation
   Scenario: Create ServiceNow tickets for security findings returns "Not Found" response
-    Given operation "CreateServiceNowTickets" enabled
-    And new "CreateServiceNowTickets" request
+    Given new "CreateServiceNowTickets" request
     And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 404 Not Found
