@@ -39,6 +39,7 @@ from datadog_api_client.v2.model.application_security_policy_create_request impo
 from datadog_api_client.v2.model.application_security_policy_update_request import (
     ApplicationSecurityPolicyUpdateRequest,
 )
+from datadog_api_client.v2.model.application_security_services_response import ApplicationSecurityServicesResponse
 
 
 class ApplicationSecurityApi:
@@ -245,6 +246,29 @@ class ApplicationSecurityApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "policy_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_asm_service_by_name_endpoint = _Endpoint(
+            settings={
+                "response_type": (ApplicationSecurityServicesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/asm/services/{service_filter}",
+                "operation_id": "get_asm_service_by_name",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "service_filter": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service_filter",
                     "location": "path",
                 },
             },
@@ -535,6 +559,27 @@ class ApplicationSecurityApi:
         kwargs["policy_id"] = policy_id
 
         return self._get_application_security_waf_policy_endpoint.call_with_http_info(**kwargs)
+
+    def get_asm_service_by_name(
+        self,
+        service_filter: str,
+    ) -> ApplicationSecurityServicesResponse:
+        """Get Application Security details for a service.
+
+        Retrieve Application Security details for services matching the given name.
+        Returns Application Security activation, compatibility, and product enablement
+        information for each matching ``(service, environment)`` pair, along with a count
+        of services that have Application Security Management (Threats) enabled.
+
+        :param service_filter: The name of the service to retrieve Application Security details for.
+            Returns all matching services across environments.
+        :type service_filter: str
+        :rtype: ApplicationSecurityServicesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["service_filter"] = service_filter
+
+        return self._get_asm_service_by_name_endpoint.call_with_http_info(**kwargs)
 
     def list_application_security_waf_custom_rules(
         self,

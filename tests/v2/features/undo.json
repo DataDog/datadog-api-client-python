@@ -6883,6 +6883,12 @@
       "type": "safe"
     }
   },
+  "GetAsmServiceByName": {
+    "tag": "Application Security",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DownloadCloudWorkloadPolicyFile": {
     "tag": "CSM Threats",
     "undo": {
