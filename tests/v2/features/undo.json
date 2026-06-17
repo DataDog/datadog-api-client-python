@@ -2762,6 +2762,12 @@
       "type": "safe"
     }
   },
+  "ListGovernanceInsights": {
+    "tag": "Governance Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetHamrOrgConnection": {
     "tag": "High Availability MultiRegion",
     "undo": {

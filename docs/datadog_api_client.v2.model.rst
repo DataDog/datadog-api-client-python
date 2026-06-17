@@ -16706,6 +16706,97 @@ datadog\_api\_client.v2.model.google\_meet\_configuration\_reference\_data modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.governance\_best\_practice\_definition module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_best_practice_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_audit\_compute module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_audit_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_audit\_query module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_audit_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_event\_compute module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_event_compute
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_event\_query module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_event_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_metric\_query module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_metric_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_percentage\_query module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_percentage_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_query\_config module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_query_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_resource\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insight\_usage\_query module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_usage_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_insights\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insights_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.grey\_noise\_api\_key module
 ----------------------------------------------------------
 
