@@ -52,6 +52,7 @@ body = CreateServiceNowTicketRequestArray(
 )
 
 configuration = Configuration()
+configuration.unstable_operations["create_service_now_tickets"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.create_service_now_tickets(body=body)

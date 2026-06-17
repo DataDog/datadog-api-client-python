@@ -3492,6 +3492,14 @@ from datadog_api_client.v2.model.io_c_indicator_detailed import IoCIndicatorDeta
 from datadog_api_client.v2.model.io_c_score_effect import IoCScoreEffect
 from datadog_api_client.v2.model.io_c_signal_severity_count import IoCSignalSeverityCount
 from datadog_api_client.v2.model.io_c_source import IoCSource
+from datadog_api_client.v2.model.io_c_triage_event import IoCTriageEvent
+from datadog_api_client.v2.model.io_c_triage_state import IoCTriageState
+from datadog_api_client.v2.model.io_c_triage_write_request import IoCTriageWriteRequest
+from datadog_api_client.v2.model.io_c_triage_write_request_attributes import IoCTriageWriteRequestAttributes
+from datadog_api_client.v2.model.io_c_triage_write_request_data import IoCTriageWriteRequestData
+from datadog_api_client.v2.model.io_c_triage_write_response import IoCTriageWriteResponse
+from datadog_api_client.v2.model.io_c_triage_write_response_attributes import IoCTriageWriteResponseAttributes
+from datadog_api_client.v2.model.io_c_triage_write_response_data import IoCTriageWriteResponseData
 from datadog_api_client.v2.model.issue import Issue
 from datadog_api_client.v2.model.issue_assignee_relationship import IssueAssigneeRelationship
 from datadog_api_client.v2.model.issue_attributes import IssueAttributes
@@ -11942,6 +11950,14 @@ __all__ = [
     "IoCScoreEffect",
     "IoCSignalSeverityCount",
     "IoCSource",
+    "IoCTriageEvent",
+    "IoCTriageState",
+    "IoCTriageWriteRequest",
+    "IoCTriageWriteRequestAttributes",
+    "IoCTriageWriteRequestData",
+    "IoCTriageWriteResponse",
+    "IoCTriageWriteResponseAttributes",
+    "IoCTriageWriteResponseData",
     "Issue",
     "IssueAssigneeRelationship",
     "IssueAttributes",

@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.io_c_geo_location import IoCGeoLocation
     from datadog_api_client.v2.model.io_c_source import IoCSource
     from datadog_api_client.v2.model.io_c_score_effect import IoCScoreEffect
+    from datadog_api_client.v2.model.io_c_triage_state import IoCTriageState
 
 
 class IoCIndicator(ModelNormal):
@@ -27,6 +28,7 @@ class IoCIndicator(ModelNormal):
         from datadog_api_client.v2.model.io_c_geo_location import IoCGeoLocation
         from datadog_api_client.v2.model.io_c_source import IoCSource
         from datadog_api_client.v2.model.io_c_score_effect import IoCScoreEffect
+        from datadog_api_client.v2.model.io_c_triage_state import IoCTriageState
 
         return {
             "as_geo": (IoCGeoLocation,),
@@ -50,6 +52,9 @@ class IoCIndicator(ModelNormal):
             "signal_tier": (int,),
             "suspicious_sources": ([IoCSource], none_type),
             "tags": ([str],),
+            "triage_state": (IoCTriageState,),
+            "triaged_at": (datetime,),
+            "triaged_by": (str,),
         }
 
     attribute_map = {
@@ -74,6 +79,9 @@ class IoCIndicator(ModelNormal):
         "signal_tier": "signal_tier",
         "suspicious_sources": "suspicious_sources",
         "tags": "tags",
+        "triage_state": "triage_state",
+        "triaged_at": "triaged_at",
+        "triaged_by": "triaged_by",
     }
 
     def __init__(
@@ -99,6 +107,9 @@ class IoCIndicator(ModelNormal):
         signal_tier: Union[int, UnsetType] = unset,
         suspicious_sources: Union[List[IoCSource], none_type, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
+        triage_state: Union[IoCTriageState, UnsetType] = unset,
+        triaged_at: Union[datetime, UnsetType] = unset,
+        triaged_by: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -166,6 +177,15 @@ class IoCIndicator(ModelNormal):
 
         :param tags: Tags associated with the indicator.
         :type tags: [str], optional
+
+        :param triage_state: Current triage state of the indicator.
+        :type triage_state: IoCTriageState, optional
+
+        :param triaged_at: Timestamp when the indicator was last triaged.
+        :type triaged_at: datetime, optional
+
+        :param triaged_by: UUID of the user who last triaged the indicator.
+        :type triaged_by: str, optional
         """
         if as_geo is not unset:
             kwargs["as_geo"] = as_geo
@@ -209,4 +229,10 @@ class IoCIndicator(ModelNormal):
             kwargs["suspicious_sources"] = suspicious_sources
         if tags is not unset:
             kwargs["tags"] = tags
+        if triage_state is not unset:
+            kwargs["triage_state"] = triage_state
+        if triaged_at is not unset:
+            kwargs["triaged_at"] = triaged_at
+        if triaged_by is not unset:
+            kwargs["triaged_by"] = triaged_by
         super().__init__(kwargs)

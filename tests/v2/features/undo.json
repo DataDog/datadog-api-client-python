@@ -7012,6 +7012,12 @@
       "type": "safe"
     }
   },
+  "CreateIoCTriageState": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSignalNotificationRules": {
     "tag": "Security Monitoring",
     "undo": {
