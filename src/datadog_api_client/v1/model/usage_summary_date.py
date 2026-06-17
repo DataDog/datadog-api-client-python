@@ -943,10 +943,11 @@ class UsageSummaryDate(ModelNormal):
         """
         Response with hourly report of all data billed by Datadog for all organizations.
 
-        Newly added billing dimensions and usage types appear as untyped keys on the
-        ``additionalProperties`` map instead of as typed fields. Call
-        ``GET /api/v2/usage/summary/available_fields`` to enumerate every key returned
-        at this response level—both typed fields and ``additionalProperties`` keys.
+        For SDK users only: all fields at this response level are accessible through the
+        ``additionalProperties`` map. Existing typed-field getters are unchanged. New billing
+        dimensions will not have typed-field getters. Use
+        `Get available fields for usage summary <https://docs.datadoghq.com/api/latest/usage-metering/#get-usage-summary-available-fields>`_
+        to enumerate every available key.
 
         :param agent_host_top99p: Shows the 99th percentile of all agent hosts over all hours in the current date for all organizations.
         :type agent_host_top99p: int, optional
