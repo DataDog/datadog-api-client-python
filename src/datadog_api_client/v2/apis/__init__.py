@@ -4,6 +4,7 @@ from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFilt
 from datadog_api_client.v2.api.apm_trace_api import APMTraceApi
 from datadog_api_client.v2.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v2.api.aws_logs_integration_api import AWSLogsIntegrationApi
+from datadog_api_client.v2.api.awswif_api import AWSWIFApi
 from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
 from datadog_api_client.v2.api.actions_datastores_api import ActionsDatastoresApi
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
@@ -42,6 +43,7 @@ from datadog_api_client.v2.api.dashboards_api import DashboardsApi
 from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
 from datadog_api_client.v2.api.data_observability_api import DataObservabilityApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
+from datadog_api_client.v2.api.delegated_token_api import DelegatedTokenApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
@@ -59,6 +61,7 @@ from datadog_api_client.v2.api.governance_insights_api import GovernanceInsights
 from datadog_api_client.v2.api.high_availability_multi_region_api import HighAvailabilityMultiRegionApi
 from datadog_api_client.v2.api.ip_allowlist_api import IPAllowlistApi
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
+from datadog_api_client.v2.api.intake_key_api import IntakeKeyApi
 from datadog_api_client.v2.api.integrations_api import IntegrationsApi
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
@@ -139,6 +142,7 @@ __all__ = [
     "APMTraceApi",
     "AWSIntegrationApi",
     "AWSLogsIntegrationApi",
+    "AWSWIFApi",
     "ActionConnectionApi",
     "ActionsDatastoresApi",
     "AgentlessScanningApi",
@@ -177,6 +181,7 @@ __all__ = [
     "DataDeletionApi",
     "DataObservabilityApi",
     "DatasetsApi",
+    "DelegatedTokenApi",
     "DeploymentGatesApi",
     "DomainAllowlistApi",
     "DowntimesApi",
@@ -194,6 +199,7 @@ __all__ = [
     "HighAvailabilityMultiRegionApi",
     "IPAllowlistApi",
     "IncidentsApi",
+    "IntakeKeyApi",
     "IntegrationsApi",
     "JiraIntegrationApi",
     "KeyManagementApi",

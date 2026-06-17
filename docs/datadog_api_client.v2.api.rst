@@ -102,6 +102,13 @@ datadog\_api\_client.v2.api.aws\_logs\_integration\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.aws\_wif\_api module
+------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.aws_wif_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.bits\_ai\_api module
 ------------------------------------------------
 
@@ -305,6 +312,13 @@ datadog\_api\_client.v2.api.datasets\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.delegated\_token\_api module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.delegated_token_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.deployment\_gates\_api module
 ---------------------------------------------------------
 
@@ -421,6 +435,13 @@ datadog\_api\_client.v2.api.incidents\_api module
 -------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.incidents_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.intake\_key\_api module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.intake_key_api
    :members:
    :show-inheritance:
 
