@@ -3124,6 +3124,19 @@ from datadog_api_client.v2.model.google_chat_update_organization_handle_request_
 )
 from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
 from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
+from datadog_api_client.v2.model.governance_best_practice_definition import GovernanceBestPracticeDefinition
+from datadog_api_client.v2.model.governance_insight_attributes import GovernanceInsightAttributes
+from datadog_api_client.v2.model.governance_insight_audit_compute import GovernanceInsightAuditCompute
+from datadog_api_client.v2.model.governance_insight_audit_query import GovernanceInsightAuditQuery
+from datadog_api_client.v2.model.governance_insight_data import GovernanceInsightData
+from datadog_api_client.v2.model.governance_insight_event_compute import GovernanceInsightEventCompute
+from datadog_api_client.v2.model.governance_insight_event_query import GovernanceInsightEventQuery
+from datadog_api_client.v2.model.governance_insight_metric_query import GovernanceInsightMetricQuery
+from datadog_api_client.v2.model.governance_insight_percentage_query import GovernanceInsightPercentageQuery
+from datadog_api_client.v2.model.governance_insight_query_config import GovernanceInsightQueryConfig
+from datadog_api_client.v2.model.governance_insight_resource_type import GovernanceInsightResourceType
+from datadog_api_client.v2.model.governance_insight_usage_query import GovernanceInsightUsageQuery
+from datadog_api_client.v2.model.governance_insights_response import GovernanceInsightsResponse
 from datadog_api_client.v2.model.grey_noise_api_key import GreyNoiseAPIKey
 from datadog_api_client.v2.model.grey_noise_api_key_type import GreyNoiseAPIKeyType
 from datadog_api_client.v2.model.grey_noise_api_key_update import GreyNoiseAPIKeyUpdate
@@ -11656,6 +11669,19 @@ __all__ = [
     "GoogleChatUpdateOrganizationHandleRequestData",
     "GoogleMeetConfigurationReference",
     "GoogleMeetConfigurationReferenceData",
+    "GovernanceBestPracticeDefinition",
+    "GovernanceInsightAttributes",
+    "GovernanceInsightAuditCompute",
+    "GovernanceInsightAuditQuery",
+    "GovernanceInsightData",
+    "GovernanceInsightEventCompute",
+    "GovernanceInsightEventQuery",
+    "GovernanceInsightMetricQuery",
+    "GovernanceInsightPercentageQuery",
+    "GovernanceInsightQueryConfig",
+    "GovernanceInsightResourceType",
+    "GovernanceInsightUsageQuery",
+    "GovernanceInsightsResponse",
     "GreyNoiseAPIKey",
     "GreyNoiseAPIKeyType",
     "GreyNoiseAPIKeyUpdate",

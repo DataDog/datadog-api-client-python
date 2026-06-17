@@ -526,6 +526,7 @@ class Configuration:
                 "v2.upsert_and_publish_form_version": False,
                 "v2.upsert_form_version": False,
                 "v2.update_org_saml_configurations": False,
+                "v2.list_governance_insights": False,
                 "v2.create_hamr_org_connection": False,
                 "v2.get_hamr_org_connection": False,
                 "v2.delete_entity_integration_config": False,
