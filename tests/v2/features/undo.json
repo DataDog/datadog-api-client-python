@@ -2255,6 +2255,12 @@
       "type": "idempotent"
     }
   },
+  "GetDelegatedToken": {
+    "tag": "Delegated Token",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateDataDeletionRequest": {
     "tag": "Data Deletion",
     "undo": {
@@ -3229,6 +3235,12 @@
   },
   "UpdateIncidentTodo": {
     "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIntakeKey": {
+    "tag": "Intake Key",
     "undo": {
       "type": "idempotent"
     }
@@ -9383,6 +9395,68 @@
   },
   "UpdateWidget": {
     "tag": "Widgets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAwsWifIntakeMappings": {
+    "tag": "AWS WIF",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAwsWifIntakeMapping": {
+    "tag": "AWS WIF",
+    "undo": {
+      "operationId": "DeleteAwsWifIntakeMapping",
+      "parameters": [
+        {
+          "name": "config_uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAwsWifIntakeMapping": {
+    "tag": "AWS WIF",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAwsWifIntakeMapping": {
+    "tag": "AWS WIF",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAwsWifPersonaMappings": {
+    "tag": "AWS WIF",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAwsWifPersonaMapping": {
+    "tag": "AWS WIF",
+    "undo": {
+      "operationId": "DeleteAwsWifPersonaMapping",
+      "parameters": [
+        {
+          "name": "config_uuid",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAwsWifPersonaMapping": {
+    "tag": "AWS WIF",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAwsWifPersonaMapping": {
+    "tag": "AWS WIF",
     "undo": {
       "type": "safe"
     }

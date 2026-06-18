@@ -739,6 +739,21 @@ from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
 from datadog_api_client.v2.model.aws_scan_options_update_attributes import AwsScanOptionsUpdateAttributes
 from datadog_api_client.v2.model.aws_scan_options_update_data import AwsScanOptionsUpdateData
 from datadog_api_client.v2.model.aws_scan_options_update_request import AwsScanOptionsUpdateRequest
+from datadog_api_client.v2.model.aws_wif_intake_mapping_attributes import AwsWifIntakeMappingAttributes
+from datadog_api_client.v2.model.aws_wif_intake_mapping_create_data import AwsWifIntakeMappingCreateData
+from datadog_api_client.v2.model.aws_wif_intake_mapping_create_request import AwsWifIntakeMappingCreateRequest
+from datadog_api_client.v2.model.aws_wif_intake_mapping_data import AwsWifIntakeMappingData
+from datadog_api_client.v2.model.aws_wif_intake_mapping_response import AwsWifIntakeMappingResponse
+from datadog_api_client.v2.model.aws_wif_intake_mapping_type import AwsWifIntakeMappingType
+from datadog_api_client.v2.model.aws_wif_intake_mappings_response import AwsWifIntakeMappingsResponse
+from datadog_api_client.v2.model.aws_wif_persona_mapping_attributes import AwsWifPersonaMappingAttributes
+from datadog_api_client.v2.model.aws_wif_persona_mapping_create_attributes import AwsWifPersonaMappingCreateAttributes
+from datadog_api_client.v2.model.aws_wif_persona_mapping_create_data import AwsWifPersonaMappingCreateData
+from datadog_api_client.v2.model.aws_wif_persona_mapping_create_request import AwsWifPersonaMappingCreateRequest
+from datadog_api_client.v2.model.aws_wif_persona_mapping_data import AwsWifPersonaMappingData
+from datadog_api_client.v2.model.aws_wif_persona_mapping_response import AwsWifPersonaMappingResponse
+from datadog_api_client.v2.model.aws_wif_persona_mapping_type import AwsWifPersonaMappingType
+from datadog_api_client.v2.model.aws_wif_persona_mappings_response import AwsWifPersonaMappingsResponse
 from datadog_api_client.v2.model.azure_credentials import AzureCredentials
 from datadog_api_client.v2.model.azure_credentials_update import AzureCredentialsUpdate
 from datadog_api_client.v2.model.azure_integration import AzureIntegration
@@ -2198,6 +2213,10 @@ from datadog_api_client.v2.model.degradation_data_relationships_status_page_data
     DegradationDataRelationshipsStatusPageData,
 )
 from datadog_api_client.v2.model.degradation_included import DegradationIncluded
+from datadog_api_client.v2.model.delegated_token_attributes import DelegatedTokenAttributes
+from datadog_api_client.v2.model.delegated_token_data import DelegatedTokenData
+from datadog_api_client.v2.model.delegated_token_response import DelegatedTokenResponse
+from datadog_api_client.v2.model.delegated_token_type import DelegatedTokenType
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_datastore_item_request import DeleteAppsDatastoreItemRequest
@@ -3475,6 +3494,10 @@ from datadog_api_client.v2.model.include_type import IncludeType
 from datadog_api_client.v2.model.input_schema import InputSchema
 from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParameters
 from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
+from datadog_api_client.v2.model.intake_api_key_attributes import IntakeAPIKeyAttributes
+from datadog_api_client.v2.model.intake_api_key_data import IntakeAPIKeyData
+from datadog_api_client.v2.model.intake_api_key_response import IntakeAPIKeyResponse
+from datadog_api_client.v2.model.intake_api_key_type import IntakeAPIKeyType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.integration import Integration
 from datadog_api_client.v2.model.integration_attributes import IntegrationAttributes
@@ -9928,6 +9951,21 @@ __all__ = [
     "AwsScanOptionsUpdateAttributes",
     "AwsScanOptionsUpdateData",
     "AwsScanOptionsUpdateRequest",
+    "AwsWifIntakeMappingAttributes",
+    "AwsWifIntakeMappingCreateData",
+    "AwsWifIntakeMappingCreateRequest",
+    "AwsWifIntakeMappingData",
+    "AwsWifIntakeMappingResponse",
+    "AwsWifIntakeMappingType",
+    "AwsWifIntakeMappingsResponse",
+    "AwsWifPersonaMappingAttributes",
+    "AwsWifPersonaMappingCreateAttributes",
+    "AwsWifPersonaMappingCreateData",
+    "AwsWifPersonaMappingCreateRequest",
+    "AwsWifPersonaMappingData",
+    "AwsWifPersonaMappingResponse",
+    "AwsWifPersonaMappingType",
+    "AwsWifPersonaMappingsResponse",
     "AzureCredentials",
     "AzureCredentialsUpdate",
     "AzureIntegration",
@@ -11019,6 +11057,10 @@ __all__ = [
     "DegradationDataRelationshipsStatusPage",
     "DegradationDataRelationshipsStatusPageData",
     "DegradationIncluded",
+    "DelegatedTokenAttributes",
+    "DelegatedTokenData",
+    "DelegatedTokenResponse",
+    "DelegatedTokenType",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsDatastoreItemRequest",
@@ -12030,6 +12072,10 @@ __all__ = [
     "InputSchema",
     "InputSchemaParameters",
     "InputSchemaParametersType",
+    "IntakeAPIKeyAttributes",
+    "IntakeAPIKeyData",
+    "IntakeAPIKeyResponse",
+    "IntakeAPIKeyType",
     "IntakePayloadAccepted",
     "Integration",
     "IntegrationAttributes",

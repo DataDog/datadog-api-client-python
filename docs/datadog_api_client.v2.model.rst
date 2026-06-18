@@ -4029,6 +4029,111 @@ datadog\_api\_client.v2.model.aws\_traces\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_wif\_intake\_mapping\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_intake_mapping_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_intake\_mapping\_create\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_intake_mapping_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_intake\_mapping\_create\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_intake_mapping_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_intake\_mapping\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_intake_mapping_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_intake\_mapping\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_intake_mapping_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_intake\_mapping\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_intake_mapping_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_intake\_mappings\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_intake_mappings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mapping\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mapping_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mapping\_create\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mapping_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mapping\_create\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mapping_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mapping\_create\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mapping_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mapping\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mapping_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mapping\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mapping_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mapping\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mapping_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_wif\_persona\_mappings\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_wif_persona_mappings_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.azure\_credentials module
 -------------------------------------------------------
 
@@ -11400,6 +11505,34 @@ datadog\_api\_client.v2.model.degradation\_included module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.delegated\_token\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.delegated_token_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.delegated\_token\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.delegated_token_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.delegated\_token\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.delegated_token_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.delegated\_token\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.delegated_token_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 
@@ -18635,6 +18768,34 @@ datadog\_api\_client.v2.model.input\_schema\_parameters\_type module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.input_schema_parameters_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.intake\_api\_key\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.intake_api_key_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.intake\_api\_key\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.intake_api_key_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.intake\_api\_key\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.intake_api_key_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.intake\_api\_key\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.intake_api_key_type
    :members:
    :show-inheritance:
 

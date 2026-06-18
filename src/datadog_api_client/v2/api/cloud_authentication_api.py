@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -110,7 +111,7 @@ class CloudAuthenticationApi:
         self,
         body: AWSCloudAuthPersonaMappingCreateRequest,
     ) -> AWSCloudAuthPersonaMappingResponse:
-        """Create an AWS cloud authentication persona mapping.
+        """Create an AWS cloud authentication persona mapping. **Deprecated**.
 
         Create an AWS cloud authentication persona mapping. This endpoint associates an AWS IAM principal with a Datadog user.
 
@@ -120,13 +121,14 @@ class CloudAuthenticationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_aws_cloud_auth_persona_mapping is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_aws_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_cloud_auth_persona_mapping(
         self,
         persona_mapping_id: str,
     ) -> None:
-        """Delete an AWS cloud authentication persona mapping.
+        """Delete an AWS cloud authentication persona mapping. **Deprecated**.
 
         Delete an AWS cloud authentication persona mapping by ID. This removes the association between an AWS IAM principal and a Datadog user.
 
@@ -137,13 +139,14 @@ class CloudAuthenticationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["persona_mapping_id"] = persona_mapping_id
 
+        warnings.warn("delete_aws_cloud_auth_persona_mapping is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_aws_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
 
     def get_aws_cloud_auth_persona_mapping(
         self,
         persona_mapping_id: str,
     ) -> AWSCloudAuthPersonaMappingResponse:
-        """Get an AWS cloud authentication persona mapping.
+        """Get an AWS cloud authentication persona mapping. **Deprecated**.
 
         Get a specific AWS cloud authentication persona mapping by ID. This endpoint retrieves a single configured persona mapping that associates an AWS IAM principal with a Datadog user.
 
@@ -154,16 +157,18 @@ class CloudAuthenticationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["persona_mapping_id"] = persona_mapping_id
 
+        warnings.warn("get_aws_cloud_auth_persona_mapping is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_aws_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
 
     def list_aws_cloud_auth_persona_mappings(
         self,
     ) -> AWSCloudAuthPersonaMappingsResponse:
-        """List AWS cloud authentication persona mappings.
+        """List AWS cloud authentication persona mappings. **Deprecated**.
 
         List all AWS cloud authentication persona mappings. This endpoint retrieves all configured persona mappings that associate AWS IAM principals with Datadog users.
 
         :rtype: AWSCloudAuthPersonaMappingsResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_aws_cloud_auth_persona_mappings is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_aws_cloud_auth_persona_mappings_endpoint.call_with_http_info(**kwargs)
