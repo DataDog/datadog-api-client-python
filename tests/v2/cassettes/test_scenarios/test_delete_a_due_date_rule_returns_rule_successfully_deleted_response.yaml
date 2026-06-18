@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"due_days_per_severity":[{"due_in_days":7,"severity":"critical"}],"due_from":"first_seen"},"enabled":true,"name":"Test-Delete_a_due_date_rule_returns_Rule_successfully_deleted_response-1781624464","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}},"type":"due_date_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/due_date_rules
+  response:
+    body:
+      string: '{"data":{"id":"139c64ad-97f6-4b26-8579-05a2e2792b6c","type":"due_date_rules","attributes":{"action":{"due_days_per_severity":[{"severity":"critical","due_in_days":7}],"due_from":"first_seen"},"created_at":1781624464907,"created_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"modified_at":1781624464907,"modified_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"name":"Test-Delete_a_due_date_rule_returns_Rule_successfully_deleted_response-1781624464","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/due_date_rules/139c64ad-97f6-4b26-8579-05a2e2792b6c
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/due_date_rules/139c64ad-97f6-4b26-8579-05a2e2792b6c
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"rule does
+        not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

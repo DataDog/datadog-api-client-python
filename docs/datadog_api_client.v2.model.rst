@@ -2979,6 +2979,13 @@ datadog\_api\_client.v2.model.automation\_rule\_action\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.automation\_rule\_actor\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.automation_rule_actor_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.automation\_rule\_attributes module
 -----------------------------------------------------------------
 
@@ -3007,6 +3014,20 @@ datadog\_api\_client.v2.model.automation\_rule\_create\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.automation\_rule\_created\_by module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.automation_rule_created_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.automation\_rule\_modified\_by module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.automation_rule_modified_by
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.automation\_rule\_relationships module
 --------------------------------------------------------------------
 
@@ -3018,6 +3039,13 @@ datadog\_api\_client.v2.model.automation\_rule\_response module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.automation_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.automation\_rule\_scope module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.automation_rule_scope
    :members:
    :show-inheritance:
 
@@ -12552,6 +12580,111 @@ datadog\_api\_client.v2.model.downtime\_update\_request\_data module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.downtime_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_from module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_from
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_per\_severity\_item module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_per_severity_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_action module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_attributes\_create module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_attributes_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_attributes\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_create\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_data\_create module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_data_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_data\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_reorder\_item module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_reorder_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_reorder\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_reorder_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rule\_update\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_rules\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_rules_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.due\_date\_severity module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.due_date_severity
    :members:
    :show-inheritance:
 
@@ -25463,6 +25596,97 @@ datadog\_api\_client.v2.model.mute\_findings\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.mute\_reason module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_reason
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_action module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_attributes\_create module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_attributes_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_attributes\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_create\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_data\_create module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_data_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_data\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_reorder\_item module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_reorder_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_reorder\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_reorder_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_response module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_type module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rule\_update\_request module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mute\_rules\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mute_rules_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ndk\_sourcemap\_attributes module
 ---------------------------------------------------------------
 
@@ -35396,6 +35620,27 @@ datadog\_api\_client.v2.model.secure\_embed\_viewing\_preferences\_theme module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_automation\_rules\_links module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_automation_rules_links
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_automation\_rules\_meta module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_automation_rules_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_automation\_rules\_page\_info module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_automation_rules_page_info
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_entity\_config\_risks module
 --------------------------------------------------------------------
 
@@ -35589,6 +35834,13 @@ datadog\_api\_client.v2.model.security\_filters\_response module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_filters_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_finding\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_finding_type
    :members:
    :show-inheritance:
 
@@ -43527,6 +43779,104 @@ datadog\_api\_client.v2.model.test\_optimization\_update\_service\_settings\_req
 -------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.test_optimization_update_service_settings_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_action module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_action\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_action_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_attributes\_create module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_attributes_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_attributes\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_create\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_data\_create module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_data_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_data\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_reorder\_item module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_reorder_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_reorder\_request module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_reorder_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rule\_update\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_rules\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_rules_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ticket\_creation\_target module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ticket_creation_target
    :members:
    :show-inheritance:
 

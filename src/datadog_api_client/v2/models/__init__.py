@@ -685,12 +685,16 @@ from datadog_api_client.v2.model.automation_rule import AutomationRule
 from datadog_api_client.v2.model.automation_rule_action import AutomationRuleAction
 from datadog_api_client.v2.model.automation_rule_action_data import AutomationRuleActionData
 from datadog_api_client.v2.model.automation_rule_action_type import AutomationRuleActionType
+from datadog_api_client.v2.model.automation_rule_actor_type import AutomationRuleActorType
 from datadog_api_client.v2.model.automation_rule_attributes import AutomationRuleAttributes
 from datadog_api_client.v2.model.automation_rule_create import AutomationRuleCreate
 from datadog_api_client.v2.model.automation_rule_create_attributes import AutomationRuleCreateAttributes
 from datadog_api_client.v2.model.automation_rule_create_request import AutomationRuleCreateRequest
+from datadog_api_client.v2.model.automation_rule_created_by import AutomationRuleCreatedBy
+from datadog_api_client.v2.model.automation_rule_modified_by import AutomationRuleModifiedBy
 from datadog_api_client.v2.model.automation_rule_relationships import AutomationRuleRelationships
 from datadog_api_client.v2.model.automation_rule_response import AutomationRuleResponse
+from datadog_api_client.v2.model.automation_rule_scope import AutomationRuleScope
 from datadog_api_client.v2.model.automation_rule_trigger import AutomationRuleTrigger
 from datadog_api_client.v2.model.automation_rule_trigger_data import AutomationRuleTriggerData
 from datadog_api_client.v2.model.automation_rule_trigger_type import AutomationRuleTriggerType
@@ -2369,6 +2373,21 @@ from datadog_api_client.v2.model.downtime_status import DowntimeStatus
 from datadog_api_client.v2.model.downtime_update_request import DowntimeUpdateRequest
 from datadog_api_client.v2.model.downtime_update_request_attributes import DowntimeUpdateRequestAttributes
 from datadog_api_client.v2.model.downtime_update_request_data import DowntimeUpdateRequestData
+from datadog_api_client.v2.model.due_date_from import DueDateFrom
+from datadog_api_client.v2.model.due_date_per_severity_item import DueDatePerSeverityItem
+from datadog_api_client.v2.model.due_date_rule_action import DueDateRuleAction
+from datadog_api_client.v2.model.due_date_rule_attributes_create import DueDateRuleAttributesCreate
+from datadog_api_client.v2.model.due_date_rule_attributes_response import DueDateRuleAttributesResponse
+from datadog_api_client.v2.model.due_date_rule_create_request import DueDateRuleCreateRequest
+from datadog_api_client.v2.model.due_date_rule_data_create import DueDateRuleDataCreate
+from datadog_api_client.v2.model.due_date_rule_data_response import DueDateRuleDataResponse
+from datadog_api_client.v2.model.due_date_rule_reorder_item import DueDateRuleReorderItem
+from datadog_api_client.v2.model.due_date_rule_reorder_request import DueDateRuleReorderRequest
+from datadog_api_client.v2.model.due_date_rule_response import DueDateRuleResponse
+from datadog_api_client.v2.model.due_date_rule_type import DueDateRuleType
+from datadog_api_client.v2.model.due_date_rule_update_request import DueDateRuleUpdateRequest
+from datadog_api_client.v2.model.due_date_rules_response import DueDateRulesResponse
+from datadog_api_client.v2.model.due_date_severity import DueDateSeverity
 from datadog_api_client.v2.model.elf_sourcemap_attributes import ELFSourcemapAttributes
 from datadog_api_client.v2.model.elf_sourcemap_data import ELFSourcemapData
 from datadog_api_client.v2.model.epss import EPSS
@@ -4771,6 +4790,19 @@ from datadog_api_client.v2.model.mute_findings_request_data_attributes import Mu
 from datadog_api_client.v2.model.mute_findings_request_data_relationships import MuteFindingsRequestDataRelationships
 from datadog_api_client.v2.model.mute_findings_response import MuteFindingsResponse
 from datadog_api_client.v2.model.mute_findings_response_data import MuteFindingsResponseData
+from datadog_api_client.v2.model.mute_reason import MuteReason
+from datadog_api_client.v2.model.mute_rule_action import MuteRuleAction
+from datadog_api_client.v2.model.mute_rule_attributes_create import MuteRuleAttributesCreate
+from datadog_api_client.v2.model.mute_rule_attributes_response import MuteRuleAttributesResponse
+from datadog_api_client.v2.model.mute_rule_create_request import MuteRuleCreateRequest
+from datadog_api_client.v2.model.mute_rule_data_create import MuteRuleDataCreate
+from datadog_api_client.v2.model.mute_rule_data_response import MuteRuleDataResponse
+from datadog_api_client.v2.model.mute_rule_reorder_item import MuteRuleReorderItem
+from datadog_api_client.v2.model.mute_rule_reorder_request import MuteRuleReorderRequest
+from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
+from datadog_api_client.v2.model.mute_rule_type import MuteRuleType
+from datadog_api_client.v2.model.mute_rule_update_request import MuteRuleUpdateRequest
+from datadog_api_client.v2.model.mute_rules_response import MuteRulesResponse
 from datadog_api_client.v2.model.ndk_sourcemap_attributes import NDKSourcemapAttributes
 from datadog_api_client.v2.model.ndk_sourcemap_data import NDKSourcemapData
 from datadog_api_client.v2.model.network_health_insight import NetworkHealthInsight
@@ -6997,6 +7029,9 @@ from datadog_api_client.v2.model.secure_embed_update_response_data import Secure
 from datadog_api_client.v2.model.secure_embed_update_response_type import SecureEmbedUpdateResponseType
 from datadog_api_client.v2.model.secure_embed_viewing_preferences import SecureEmbedViewingPreferences
 from datadog_api_client.v2.model.secure_embed_viewing_preferences_theme import SecureEmbedViewingPreferencesTheme
+from datadog_api_client.v2.model.security_automation_rules_links import SecurityAutomationRulesLinks
+from datadog_api_client.v2.model.security_automation_rules_meta import SecurityAutomationRulesMeta
+from datadog_api_client.v2.model.security_automation_rules_page_info import SecurityAutomationRulesPageInfo
 from datadog_api_client.v2.model.security_entity_config_risks import SecurityEntityConfigRisks
 from datadog_api_client.v2.model.security_entity_metadata import SecurityEntityMetadata
 from datadog_api_client.v2.model.security_entity_risk_score import SecurityEntityRiskScore
@@ -7028,6 +7063,7 @@ from datadog_api_client.v2.model.security_filter_version_entry import SecurityFi
 from datadog_api_client.v2.model.security_filter_version_type import SecurityFilterVersionType
 from datadog_api_client.v2.model.security_filter_versions_response import SecurityFilterVersionsResponse
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
+from datadog_api_client.v2.model.security_finding_type import SecurityFindingType
 from datadog_api_client.v2.model.security_findings_attributes import SecurityFindingsAttributes
 from datadog_api_client.v2.model.security_findings_data import SecurityFindingsData
 from datadog_api_client.v2.model.security_findings_data_type import SecurityFindingsDataType
@@ -8784,6 +8820,20 @@ from datadog_api_client.v2.model.test_optimization_update_service_settings_reque
 from datadog_api_client.v2.model.test_optimization_update_service_settings_request_data_type import (
     TestOptimizationUpdateServiceSettingsRequestDataType,
 )
+from datadog_api_client.v2.model.ticket_creation_rule_action import TicketCreationRuleAction
+from datadog_api_client.v2.model.ticket_creation_rule_action_response import TicketCreationRuleActionResponse
+from datadog_api_client.v2.model.ticket_creation_rule_attributes_create import TicketCreationRuleAttributesCreate
+from datadog_api_client.v2.model.ticket_creation_rule_attributes_response import TicketCreationRuleAttributesResponse
+from datadog_api_client.v2.model.ticket_creation_rule_create_request import TicketCreationRuleCreateRequest
+from datadog_api_client.v2.model.ticket_creation_rule_data_create import TicketCreationRuleDataCreate
+from datadog_api_client.v2.model.ticket_creation_rule_data_response import TicketCreationRuleDataResponse
+from datadog_api_client.v2.model.ticket_creation_rule_reorder_item import TicketCreationRuleReorderItem
+from datadog_api_client.v2.model.ticket_creation_rule_reorder_request import TicketCreationRuleReorderRequest
+from datadog_api_client.v2.model.ticket_creation_rule_response import TicketCreationRuleResponse
+from datadog_api_client.v2.model.ticket_creation_rule_type import TicketCreationRuleType
+from datadog_api_client.v2.model.ticket_creation_rule_update_request import TicketCreationRuleUpdateRequest
+from datadog_api_client.v2.model.ticket_creation_rules_response import TicketCreationRulesResponse
+from datadog_api_client.v2.model.ticket_creation_target import TicketCreationTarget
 from datadog_api_client.v2.model.time_restriction import TimeRestriction
 from datadog_api_client.v2.model.time_restrictions import TimeRestrictions
 from datadog_api_client.v2.model.timeline_cell import TimelineCell
@@ -9802,12 +9852,16 @@ __all__ = [
     "AutomationRuleAction",
     "AutomationRuleActionData",
     "AutomationRuleActionType",
+    "AutomationRuleActorType",
     "AutomationRuleAttributes",
     "AutomationRuleCreate",
     "AutomationRuleCreateAttributes",
     "AutomationRuleCreateRequest",
+    "AutomationRuleCreatedBy",
+    "AutomationRuleModifiedBy",
     "AutomationRuleRelationships",
     "AutomationRuleResponse",
+    "AutomationRuleScope",
     "AutomationRuleTrigger",
     "AutomationRuleTriggerData",
     "AutomationRuleTriggerType",
@@ -11074,6 +11128,21 @@ __all__ = [
     "DowntimeUpdateRequest",
     "DowntimeUpdateRequestAttributes",
     "DowntimeUpdateRequestData",
+    "DueDateFrom",
+    "DueDatePerSeverityItem",
+    "DueDateRuleAction",
+    "DueDateRuleAttributesCreate",
+    "DueDateRuleAttributesResponse",
+    "DueDateRuleCreateRequest",
+    "DueDateRuleDataCreate",
+    "DueDateRuleDataResponse",
+    "DueDateRuleReorderItem",
+    "DueDateRuleReorderRequest",
+    "DueDateRuleResponse",
+    "DueDateRuleType",
+    "DueDateRuleUpdateRequest",
+    "DueDateRulesResponse",
+    "DueDateSeverity",
     "ELFSourcemapAttributes",
     "ELFSourcemapData",
     "EPSS",
@@ -12920,6 +12989,19 @@ __all__ = [
     "MuteFindingsRequestDataRelationships",
     "MuteFindingsResponse",
     "MuteFindingsResponseData",
+    "MuteReason",
+    "MuteRuleAction",
+    "MuteRuleAttributesCreate",
+    "MuteRuleAttributesResponse",
+    "MuteRuleCreateRequest",
+    "MuteRuleDataCreate",
+    "MuteRuleDataResponse",
+    "MuteRuleReorderItem",
+    "MuteRuleReorderRequest",
+    "MuteRuleResponse",
+    "MuteRuleType",
+    "MuteRuleUpdateRequest",
+    "MuteRulesResponse",
     "NDKSourcemapAttributes",
     "NDKSourcemapData",
     "NetworkHealthInsight",
@@ -14348,6 +14430,9 @@ __all__ = [
     "SecureEmbedUpdateResponseType",
     "SecureEmbedViewingPreferences",
     "SecureEmbedViewingPreferencesTheme",
+    "SecurityAutomationRulesLinks",
+    "SecurityAutomationRulesMeta",
+    "SecurityAutomationRulesPageInfo",
     "SecurityEntityConfigRisks",
     "SecurityEntityMetadata",
     "SecurityEntityRiskScore",
@@ -14377,6 +14462,7 @@ __all__ = [
     "SecurityFilterVersionType",
     "SecurityFilterVersionsResponse",
     "SecurityFiltersResponse",
+    "SecurityFindingType",
     "SecurityFindingsAttributes",
     "SecurityFindingsData",
     "SecurityFindingsDataType",
@@ -15509,6 +15595,20 @@ __all__ = [
     "TestOptimizationUpdateServiceSettingsRequestAttributes",
     "TestOptimizationUpdateServiceSettingsRequestData",
     "TestOptimizationUpdateServiceSettingsRequestDataType",
+    "TicketCreationRuleAction",
+    "TicketCreationRuleActionResponse",
+    "TicketCreationRuleAttributesCreate",
+    "TicketCreationRuleAttributesResponse",
+    "TicketCreationRuleCreateRequest",
+    "TicketCreationRuleDataCreate",
+    "TicketCreationRuleDataResponse",
+    "TicketCreationRuleReorderItem",
+    "TicketCreationRuleReorderRequest",
+    "TicketCreationRuleResponse",
+    "TicketCreationRuleType",
+    "TicketCreationRuleUpdateRequest",
+    "TicketCreationRulesResponse",
+    "TicketCreationTarget",
     "TimeRestriction",
     "TimeRestrictions",
     "TimelineCell",
