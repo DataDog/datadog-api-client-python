@@ -6731,6 +6731,30 @@ from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
 from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_sdk_config_attributes import RumSdkConfigAttributes
+from datadog_api_client.v2.model.rum_sdk_config_data import RumSdkConfigData
+from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RumSdkConfigDynamicOption
+from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_pair import RumSdkConfigDynamicOptionPair
+from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_serialized_type import (
+    RumSdkConfigDynamicOptionSerializedType,
+)
+from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_strategy import RumSdkConfigDynamicOptionStrategy
+from datadog_api_client.v2.model.rum_sdk_config_match_option import RumSdkConfigMatchOption
+from datadog_api_client.v2.model.rum_sdk_config_match_option_serialized_type import (
+    RumSdkConfigMatchOptionSerializedType,
+)
+from datadog_api_client.v2.model.rum_sdk_config_meta import RumSdkConfigMeta
+from datadog_api_client.v2.model.rum_sdk_config_response import RumSdkConfigResponse
+from datadog_api_client.v2.model.rum_sdk_config_rum_attributes import RumSdkConfigRumAttributes
+from datadog_api_client.v2.model.rum_sdk_config_rum_update_attributes import RumSdkConfigRumUpdateAttributes
+from datadog_api_client.v2.model.rum_sdk_config_serialized_regex import RumSdkConfigSerializedRegex
+from datadog_api_client.v2.model.rum_sdk_config_serialized_regex_type import RumSdkConfigSerializedRegexType
+from datadog_api_client.v2.model.rum_sdk_config_tracing_url_config import RumSdkConfigTracingUrlConfig
+from datadog_api_client.v2.model.rum_sdk_config_tracing_url_propagator_type import RumSdkConfigTracingUrlPropagatorType
+from datadog_api_client.v2.model.rum_sdk_config_type import RumSdkConfigType
+from datadog_api_client.v2.model.rum_sdk_config_update_attributes import RumSdkConfigUpdateAttributes
+from datadog_api_client.v2.model.rum_sdk_config_update_data import RumSdkConfigUpdateData
+from datadog_api_client.v2.model.rum_sdk_config_update_request import RumSdkConfigUpdateRequest
 from datadog_api_client.v2.model.run_data_observability_monitor_response import RunDataObservabilityMonitorResponse
 from datadog_api_client.v2.model.run_data_observability_monitor_response_data import (
     RunDataObservabilityMonitorResponseData,
@@ -14226,6 +14250,26 @@ __all__ = [
     "RumRetentionFiltersOrderRequest",
     "RumRetentionFiltersOrderResponse",
     "RumRetentionFiltersResponse",
+    "RumSdkConfigAttributes",
+    "RumSdkConfigData",
+    "RumSdkConfigDynamicOption",
+    "RumSdkConfigDynamicOptionPair",
+    "RumSdkConfigDynamicOptionSerializedType",
+    "RumSdkConfigDynamicOptionStrategy",
+    "RumSdkConfigMatchOption",
+    "RumSdkConfigMatchOptionSerializedType",
+    "RumSdkConfigMeta",
+    "RumSdkConfigResponse",
+    "RumSdkConfigRumAttributes",
+    "RumSdkConfigRumUpdateAttributes",
+    "RumSdkConfigSerializedRegex",
+    "RumSdkConfigSerializedRegexType",
+    "RumSdkConfigTracingUrlConfig",
+    "RumSdkConfigTracingUrlPropagatorType",
+    "RumSdkConfigType",
+    "RumSdkConfigUpdateAttributes",
+    "RumSdkConfigUpdateData",
+    "RumSdkConfigUpdateRequest",
     "RunDataObservabilityMonitorResponse",
     "RunDataObservabilityMonitorResponseData",
     "RunHistoricalJobRequest",

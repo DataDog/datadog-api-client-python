@@ -34213,6 +34213,146 @@ datadog\_api\_client.v2.model.rum\_retention\_filters\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_sdk\_config\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_dynamic\_option module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_dynamic_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_dynamic\_option\_pair module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_dynamic_option_pair
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_dynamic\_option\_serialized\_type module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_dynamic_option_serialized_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_dynamic\_option\_strategy module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_dynamic_option_strategy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_match\_option module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_match_option
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_match\_option\_serialized\_type module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_match_option_serialized_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_meta module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_rum\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_rum_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_rum\_update\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_rum_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_serialized\_regex module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_serialized_regex
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_serialized\_regex\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_serialized_regex_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_tracing\_url\_config module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_tracing_url_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_tracing\_url\_propagator\_type module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_tracing_url_propagator_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_update\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_update\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_sdk\_config\_update\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_sdk_config_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_search\_events\_request module
 -----------------------------------------------------------------
 

@@ -89,6 +89,7 @@ from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
+from datadog_api_client.v2.api.rum_remote_config_api import RUMRemoteConfigApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
@@ -224,6 +225,7 @@ __all__ = [
     "ProductAnalyticsApi",
     "RUMApi",
     "RUMInsightsApi",
+    "RUMRemoteConfigApi",
     "ReferenceTablesApi",
     "ReportSchedulesApi",
     "RestrictionPoliciesApi",

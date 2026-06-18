@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/rum/configs/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+  response:
+    body:
+      string: '{"errors":[{"title":"Forbidden"}]}
+
+        '
+    headers:
+      content-type:
+      - text/plain; charset=utf-8
+    status:
+      code: 403
+      message: Forbidden
+version: 1

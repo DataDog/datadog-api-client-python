@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"rum":{"default_privacy_level":"mask","enable_privacy_for_action_name":true,"session_replay_sample_rate":20,"session_sample_rate":75}},"id":"aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa","type":"rum_sdk_config"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PUT
+    uri: https://api.datadoghq.com/api/v2/remote_config/products/rum/configs/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa
+  response:
+    body:
+      string: '{"errors":[{"title":"Forbidden"}]}
+
+        '
+    headers:
+      content-type:
+      - text/plain; charset=utf-8
+    status:
+      code: 403
+      message: Forbidden
+version: 1

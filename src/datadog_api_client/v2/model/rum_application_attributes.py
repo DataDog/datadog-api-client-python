@@ -42,6 +42,7 @@ class RUMApplicationAttributes(ModelNormal):
             "name": (str,),
             "org_id": (int,),
             "product_scales": (RUMProductScales,),
+            "remote_config_id": (str,),
             "type": (str,),
             "updated_at": (int,),
             "updated_by_handle": (str,),
@@ -58,6 +59,7 @@ class RUMApplicationAttributes(ModelNormal):
         "name": "name",
         "org_id": "org_id",
         "product_scales": "product_scales",
+        "remote_config_id": "remote_config_id",
         "type": "type",
         "updated_at": "updated_at",
         "updated_by_handle": "updated_by_handle",
@@ -78,6 +80,7 @@ class RUMApplicationAttributes(ModelNormal):
         hash: Union[str, UnsetType] = unset,
         is_active: Union[bool, UnsetType] = unset,
         product_scales: Union[RUMProductScales, UnsetType] = unset,
+        remote_config_id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -113,6 +116,9 @@ class RUMApplicationAttributes(ModelNormal):
         :param product_scales: Product Scales configuration for the RUM application.
         :type product_scales: RUMProductScales, optional
 
+        :param remote_config_id: ID of the RUM SDK remote configuration for the application, if one exists.
+        :type remote_config_id: str, optional
+
         :param type: Type of the RUM application. Supported values are ``browser`` , ``ios`` , ``android`` , ``react-native`` , ``flutter`` , ``roku`` , ``electron`` , ``unity`` , ``kotlin-multiplatform``.
         :type type: str
 
@@ -130,6 +136,8 @@ class RUMApplicationAttributes(ModelNormal):
             kwargs["is_active"] = is_active
         if product_scales is not unset:
             kwargs["product_scales"] = product_scales
+        if remote_config_id is not unset:
+            kwargs["remote_config_id"] = remote_config_id
         super().__init__(kwargs)
 
         self_.application_id = application_id
