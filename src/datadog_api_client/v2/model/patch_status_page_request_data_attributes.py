@@ -39,6 +39,8 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
             "enabled": (bool,),
             "favicon": (str,),
             "name": (str,),
+            "slack_app_icon": (str,),
+            "slack_subscriptions_enabled": (bool,),
             "subscriptions_enabled": (bool,),
             "type": (CreateStatusPageRequestDataAttributesType,),
             "visualization_type": (CreateStatusPageRequestDataAttributesVisualizationType,),
@@ -51,6 +53,8 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         "enabled": "enabled",
         "favicon": "favicon",
         "name": "name",
+        "slack_app_icon": "slack_app_icon",
+        "slack_subscriptions_enabled": "slack_subscriptions_enabled",
         "subscriptions_enabled": "subscriptions_enabled",
         "type": "type",
         "visualization_type": "visualization_type",
@@ -64,6 +68,8 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         enabled: Union[bool, UnsetType] = unset,
         favicon: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        slack_app_icon: Union[str, UnsetType] = unset,
+        slack_subscriptions_enabled: Union[bool, UnsetType] = unset,
         subscriptions_enabled: Union[bool, UnsetType] = unset,
         type: Union[CreateStatusPageRequestDataAttributesType, UnsetType] = unset,
         visualization_type: Union[CreateStatusPageRequestDataAttributesVisualizationType, UnsetType] = unset,
@@ -90,6 +96,12 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         :param name: The name of the status page.
         :type name: str, optional
 
+        :param slack_app_icon: The Slack app icon URL for the status page.
+        :type slack_app_icon: str, optional
+
+        :param slack_subscriptions_enabled: Whether Slack subscriptions are enabled for the status page.
+        :type slack_subscriptions_enabled: bool, optional
+
         :param subscriptions_enabled: Whether users can subscribe to the status page.
         :type subscriptions_enabled: bool, optional
 
@@ -111,6 +123,10 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
             kwargs["favicon"] = favicon
         if name is not unset:
             kwargs["name"] = name
+        if slack_app_icon is not unset:
+            kwargs["slack_app_icon"] = slack_app_icon
+        if slack_subscriptions_enabled is not unset:
+            kwargs["slack_subscriptions_enabled"] = slack_subscriptions_enabled
         if subscriptions_enabled is not unset:
             kwargs["subscriptions_enabled"] = subscriptions_enabled
         if type is not unset:

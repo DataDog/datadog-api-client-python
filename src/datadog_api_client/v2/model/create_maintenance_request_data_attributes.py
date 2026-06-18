@@ -3,12 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -49,11 +51,13 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
         self_,
         completed_date: datetime,
         completed_description: str,
-        components_affected: List[CreateMaintenanceRequestDataAttributesComponentsAffectedItems],
         in_progress_description: str,
         scheduled_description: str,
         start_date: datetime,
         title: str,
+        components_affected: Union[
+            List[CreateMaintenanceRequestDataAttributesComponentsAffectedItems], UnsetType
+        ] = unset,
         **kwargs,
     ):
         """
@@ -66,7 +70,7 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
         :type completed_description: str
 
         :param components_affected: The components affected by the maintenance.
-        :type components_affected: [CreateMaintenanceRequestDataAttributesComponentsAffectedItems]
+        :type components_affected: [CreateMaintenanceRequestDataAttributesComponentsAffectedItems], optional
 
         :param in_progress_description: The description shown while the maintenance is in progress.
         :type in_progress_description: str
@@ -80,11 +84,12 @@ class CreateMaintenanceRequestDataAttributes(ModelNormal):
         :param title: The title of the maintenance.
         :type title: str
         """
+        if components_affected is not unset:
+            kwargs["components_affected"] = components_affected
         super().__init__(kwargs)
 
         self_.completed_date = completed_date
         self_.completed_description = completed_description
-        self_.components_affected = components_affected
         self_.in_progress_description = in_progress_description
         self_.scheduled_description = scheduled_description
         self_.start_date = start_date
