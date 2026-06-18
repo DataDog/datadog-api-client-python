@@ -690,6 +690,13 @@ datadog\_api\_client.v2.api.rum\_rate\_limit\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.rum\_remote\_config\_api module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_remote_config_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.rum\_replay\_heatmaps\_api module
 -------------------------------------------------------------
 

@@ -6302,6 +6302,18 @@
       "type": "idempotent"
     }
   },
+  "GetRumSdkConfig": {
+    "tag": "RUM Remote Config",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRumSdkConfig": {
+    "tag": "RUM Remote Config",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListReplayHeatmapSnapshots": {
     "tag": "Rum Replay Heatmaps",
     "undo": {
