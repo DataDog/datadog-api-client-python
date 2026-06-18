@@ -45889,6 +45889,76 @@ datadog\_api\_client.v2.model.variant\_weight\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.vercel\_api\_key module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_api_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_config\_attributes module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_config\_data\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_config_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_config\_data\_response\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_config_data_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_config\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_environment module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_environment
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_log\_source module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_log_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_logs\_config module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_logs_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_token\_create\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_token_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.vercel\_trace\_config module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.vercel_trace_config
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.version\_history\_update module
 -------------------------------------------------------------
 

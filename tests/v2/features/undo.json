@@ -9305,6 +9305,24 @@
       "type": "safe"
     }
   },
+  "GetVercelConfig": {
+    "tag": "Vercel",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateVercelConfig": {
+    "tag": "Vercel",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateVercelToken": {
+    "tag": "Vercel",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "ListWebIntegrationAccounts": {
     "tag": "Web Integrations",
     "undo": {

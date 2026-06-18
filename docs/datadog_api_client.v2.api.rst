@@ -907,6 +907,13 @@ datadog\_api\_client.v2.api.users\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.vercel\_api module
+----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.vercel_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.web\_integrations\_api module
 ---------------------------------------------------------
 

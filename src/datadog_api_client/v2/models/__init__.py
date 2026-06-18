@@ -9199,6 +9199,16 @@ from datadog_api_client.v2.model.value_type import ValueType
 from datadog_api_client.v2.model.variant import Variant
 from datadog_api_client.v2.model.variant_weight import VariantWeight
 from datadog_api_client.v2.model.variant_weight_request import VariantWeightRequest
+from datadog_api_client.v2.model.vercel_api_key import VercelApiKey
+from datadog_api_client.v2.model.vercel_config_attributes import VercelConfigAttributes
+from datadog_api_client.v2.model.vercel_config_data_response import VercelConfigDataResponse
+from datadog_api_client.v2.model.vercel_config_data_response_type import VercelConfigDataResponseType
+from datadog_api_client.v2.model.vercel_config_response import VercelConfigResponse
+from datadog_api_client.v2.model.vercel_environment import VercelEnvironment
+from datadog_api_client.v2.model.vercel_log_source import VercelLogSource
+from datadog_api_client.v2.model.vercel_logs_config import VercelLogsConfig
+from datadog_api_client.v2.model.vercel_token_create_request import VercelTokenCreateRequest
+from datadog_api_client.v2.model.vercel_trace_config import VercelTraceConfig
 from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
 from datadog_api_client.v2.model.version_history_update_type import VersionHistoryUpdateType
 from datadog_api_client.v2.model.viewership_history_session_array import ViewershipHistorySessionArray
@@ -15920,6 +15930,16 @@ __all__ = [
     "Variant",
     "VariantWeight",
     "VariantWeightRequest",
+    "VercelApiKey",
+    "VercelConfigAttributes",
+    "VercelConfigDataResponse",
+    "VercelConfigDataResponseType",
+    "VercelConfigResponse",
+    "VercelEnvironment",
+    "VercelLogSource",
+    "VercelLogsConfig",
+    "VercelTokenCreateRequest",
+    "VercelTraceConfig",
     "VersionHistoryUpdate",
     "VersionHistoryUpdateType",
     "ViewershipHistorySessionArray",
