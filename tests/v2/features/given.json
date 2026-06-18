@@ -1294,6 +1294,42 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"due_date_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"rule\": {\n        \"finding_types\": [\"misconfiguration\"],\n        \"query\": \"env:staging\"\n      },\n      \"action\": {\n        \"due_days_per_severity\": [\n          {\"severity\": \"critical\", \"due_in_days\": 7}\n        ],\n        \"due_from\": \"first_seen\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_due_date_rule\" in the system",
+    "key": "valid_due_date_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityFindingsAutomationDueDateRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"mute_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"rule\": {\n        \"finding_types\": [\"misconfiguration\"],\n        \"query\": \"env:staging\"\n      },\n      \"action\": {\n        \"reason\": \"risk_accepted\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_mute_rule\" in the system",
+    "key": "valid_mute_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityFindingsAutomationMuteRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"ticket_creation_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"rule\": {\n        \"finding_types\": [\"misconfiguration\"],\n        \"query\": \"env:staging\"\n      },\n      \"action\": {\n        \"project_id\": \"11111111-1111-1111-1111-111111111111\",\n        \"target\": \"jira\",\n        \"max_tickets_per_day\": 10\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_ticket_creation_rule\" in the system",
+    "key": "valid_ticket_creation_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityFindingsAutomationTicketCreationRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"notification_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"selectors\": {\n        \"rule_types\": [\"signal_correlation\"],\n        \"trigger_source\": \"security_signals\",\n        \"severities\": [\"critical\"],\n        \"query\": \"env:test\"\n      },\n      \"targets\": [\"@email@email.com\"],\n      \"enabled\": true\n    }\n  }\n}"
       }
     ],

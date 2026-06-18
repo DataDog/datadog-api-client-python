@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"max_tickets_per_day":10,"project_id":"11111111-1111-1111-1111-111111111111","target":"jira"},"enabled":true,"name":"Test-Get_all_ticket_creation_rules_returns_Successfully_retrieved_the_list_of_ticket_creation_rules_respo-1781624473","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}},"type":"ticket_creation_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/ticket_creation_rules
+  response:
+    body:
+      string: '{"data":{"id":"399d69c3-6fcd-4538-b0cc-05e6db5aac38","type":"ticket_creation_rules","attributes":{"action":{"project_id":"11111111-1111-1111-1111-111111111111","target":"jira","max_tickets_per_day":10},"created_at":1781624473944,"created_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"modified_at":1781624473944,"modified_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"name":"Test-Get_all_ticket_creation_rules_returns_Successfully_retrieved_the_list_of_ticket_creation_rules_respo-1781624473","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/ticket_creation_rules
+  response:
+    body:
+      string: '{"data":[{"id":"399d69c3-6fcd-4538-b0cc-05e6db5aac38","type":"ticket_creation_rules","attributes":{"action":{"project_id":"11111111-1111-1111-1111-111111111111","target":"jira","max_tickets_per_day":10},"created_at":1781624473944,"created_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"modified_at":1781624473944,"modified_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"name":"Test-Get_all_ticket_creation_rules_returns_Successfully_retrieved_the_list_of_ticket_creation_rules_respo-1781624473","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}}}],"meta":{"page":{"total_filtered_count":1}},"links":{"first":"/api/v2/security/findings/automation/ticket_creation_rules?page[size]=1000\u0026page[number]=0","last":"/api/v2/security/findings/automation/ticket_creation_rules?page[size]=1000\u0026page[number]=0"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/ticket_creation_rules/399d69c3-6fcd-4538-b0cc-05e6db5aac38
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

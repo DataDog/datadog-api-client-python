@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"due_days_per_severity":[{"due_in_days":7,"severity":"critical"}],"due_from":"first_seen"},"enabled":true,"name":"Test-Reorder_due_date_rules_returns_Successfully_reordered_the_due_date_rules_response-1781624474","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}},"type":"due_date_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/due_date_rules
+  response:
+    body:
+      string: '{"data":{"id":"64e53941-8eba-42f9-946b-6422bead1eea","type":"due_date_rules","attributes":{"action":{"due_days_per_severity":[{"severity":"critical","due_in_days":7}],"due_from":"first_seen"},"created_at":1781624475039,"created_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"modified_at":1781624475039,"modified_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"name":"Test-Reorder_due_date_rules_returns_Successfully_reordered_the_due_date_rules_response-1781624474","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":[{"id":"64e53941-8eba-42f9-946b-6422bead1eea","type":"due_date_rules"}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/due_date_rules/reorder
+  response:
+    body:
+      string: '{"data":[{"type":"due_date_rules","id":"64e53941-8eba-42f9-946b-6422bead1eea"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/due_date_rules/64e53941-8eba-42f9-946b-6422bead1eea
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

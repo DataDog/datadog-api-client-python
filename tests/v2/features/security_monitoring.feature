@@ -756,6 +756,60 @@ Feature: Security Monitoring
     And the response "message" is equal to "Test rule"
     And the response "isEnabled" is equal to true
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a due date rule returns "Bad Request" response
+    Given operation "CreateSecurityFindingsAutomationDueDateRule" enabled
+    And new "CreateSecurityFindingsAutomationDueDateRule" request
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Create a due date rule returns "Successfully created the due date rule" response
+    Given operation "CreateSecurityFindingsAutomationDueDateRule" enabled
+    And new "CreateSecurityFindingsAutomationDueDateRule" request
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen"}, "enabled": true, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "due_date_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the due date rule
+    And the response "data.type" is equal to "due_date_rules"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.enabled" is equal to true
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a due date rule returns "Unprocessable Entity" response
+    Given operation "CreateSecurityFindingsAutomationDueDateRule" enabled
+    And new "CreateSecurityFindingsAutomationDueDateRule" request
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a mute rule returns "Bad Request" response
+    Given operation "CreateSecurityFindingsAutomationMuteRule" enabled
+    And new "CreateSecurityFindingsAutomationMuteRule" request
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Create a mute rule returns "Successfully created the mute rule" response
+    Given operation "CreateSecurityFindingsAutomationMuteRule" enabled
+    And new "CreateSecurityFindingsAutomationMuteRule" request
+    And body with value {"data": {"attributes": {"action": {"reason": "risk_accepted"}, "enabled": true, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the mute rule
+    And the response "data.type" is equal to "mute_rules"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.enabled" is equal to true
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a mute rule returns "Unprocessable Entity" response
+    Given operation "CreateSecurityFindingsAutomationMuteRule" enabled
+    And new "CreateSecurityFindingsAutomationMuteRule" request
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Create a new signal-based notification rule returns "Bad Request" response
     Given new "CreateSignalNotificationRule" request
@@ -869,6 +923,33 @@ Feature: Security Monitoring
     And the response "data.attributes.enabled" is equal to true
     And the response "data.attributes.rule_query" is equal to "type:log_detection source:cloudtrail"
     And the response "data.attributes.data_exclusion_query" is equal to "account_id:12345"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a ticket creation rule returns "Bad Request" response
+    Given operation "CreateSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "CreateSecurityFindingsAutomationTicketCreationRule" request
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Create a ticket creation rule returns "Successfully created the ticket creation rule" response
+    Given operation "CreateSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "CreateSecurityFindingsAutomationTicketCreationRule" request
+    And body with value {"data": {"attributes": {"action": {"max_tickets_per_day": 10, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "ticket_creation_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the ticket creation rule
+    And the response "data.type" is equal to "ticket_creation_rules"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.enabled" is equal to true
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a ticket creation rule returns "Unprocessable Entity" response
+    Given operation "CreateSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "CreateSecurityFindingsAutomationTicketCreationRule" request
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Create an entity context sync configuration returns "Bad Request" response
@@ -1042,6 +1123,40 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a due date rule returns "Not Found" response
+    Given operation "DeleteSecurityFindingsAutomationDueDateRule" enabled
+    And new "DeleteSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Delete a due date rule returns "Rule successfully deleted." response
+    Given operation "DeleteSecurityFindingsAutomationDueDateRule" enabled
+    And there is a valid "valid_due_date_rule" in the system
+    And new "DeleteSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "valid_due_date_rule.data.id"
+    When the request is sent
+    Then the response status is 204 Rule successfully deleted.
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a mute rule returns "Not Found" response
+    Given operation "DeleteSecurityFindingsAutomationMuteRule" enabled
+    And new "DeleteSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Delete a mute rule returns "Rule successfully deleted." response
+    Given operation "DeleteSecurityFindingsAutomationMuteRule" enabled
+    And there is a valid "valid_mute_rule" in the system
+    And new "DeleteSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "valid_mute_rule.data.id"
+    When the request is sent
+    Then the response status is 204 Rule successfully deleted.
+
   @skip @team:DataDog/k9-cloud-siem
   Scenario: Delete a non existing rule returns "Not Found" response
     Given new "DeleteSecurityMonitoringRule" request
@@ -1100,6 +1215,23 @@ Feature: Security Monitoring
     And request contains "suppression_id" parameter from "suppression.data.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a ticket creation rule returns "Not Found" response
+    Given operation "DeleteSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "DeleteSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Delete a ticket creation rule returns "Rule successfully deleted." response
+    Given operation "DeleteSecurityFindingsAutomationTicketCreationRule" enabled
+    And there is a valid "valid_ticket_creation_rule" in the system
+    And new "DeleteSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "valid_ticket_creation_rule.data.id"
+    When the request is sent
+    Then the response status is 204 Rule successfully deleted.
 
   @team:DataDog/cloud-security-posture-management
   Scenario: Delete a vulnerability-based notification rule returns "Not Found" response
@@ -1408,6 +1540,25 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get a due date rule returns "Not Found" response
+    Given operation "GetSecurityFindingsAutomationDueDateRule" enabled
+    And new "GetSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Get a due date rule returns "Successfully retrieved the due date rule" response
+    Given operation "GetSecurityFindingsAutomationDueDateRule" enabled
+    And there is a valid "valid_due_date_rule" in the system
+    And new "GetSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "valid_due_date_rule.data.id"
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the due date rule
+    And the response "data.id" is equal to "{{ valid_due_date_rule.data.id }}"
+    And the response "data.type" is equal to "due_date_rules"
+
   @generated @skip @team:DataDog/cloud-security-posture-management
   Scenario: Get a finding returns "Bad Request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "GetFinding" enabled
@@ -1528,6 +1679,25 @@ Feature: Security Monitoring
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get a mute rule returns "Not Found" response
+    Given operation "GetSecurityFindingsAutomationMuteRule" enabled
+    And new "GetSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Get a mute rule returns "Successfully retrieved the mute rule" response
+    Given operation "GetSecurityFindingsAutomationMuteRule" enabled
+    And there is a valid "valid_mute_rule" in the system
+    And new "GetSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "valid_mute_rule.data.id"
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the mute rule
+    And the response "data.id" is equal to "{{ valid_mute_rule.data.id }}"
+    And the response "data.type" is equal to "mute_rules"
 
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Get a quick list of security signals returns "Bad Request" response
@@ -1680,11 +1850,48 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get a ticket creation rule returns "Not Found" response
+    Given operation "GetSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "GetSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Get a ticket creation rule returns "Successfully retrieved the ticket creation rule" response
+    Given operation "GetSecurityFindingsAutomationTicketCreationRule" enabled
+    And there is a valid "valid_ticket_creation_rule" in the system
+    And new "GetSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "valid_ticket_creation_rule.data.id"
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the ticket creation rule
+    And the response "data.id" is equal to "{{ valid_ticket_creation_rule.data.id }}"
+    And the response "data.type" is equal to "ticket_creation_rules"
+
   @team:DataDog/k9-cloud-siem
   Scenario: Get all critical assets returns "OK" response
     Given new "ListSecurityMonitoringCriticalAssets" request
     When the request is sent
     Then the response status is 200 OK
+
+  @team:DataDog/k9-automation
+  Scenario: Get all due date rules returns "Successfully retrieved the list of due date rules" response
+    Given operation "ListSecurityFindingsAutomationDueDateRules" enabled
+    And there is a valid "valid_due_date_rule" in the system
+    And new "ListSecurityFindingsAutomationDueDateRules" request
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the list of due date rules
+    And the response "data" has item with field "id" with value "{{ valid_due_date_rule.data.id }}"
+
+  @team:DataDog/k9-automation
+  Scenario: Get all mute rules returns "Successfully retrieved the list of mute rules" response
+    Given operation "ListSecurityFindingsAutomationMuteRules" enabled
+    And there is a valid "valid_mute_rule" in the system
+    And new "ListSecurityFindingsAutomationMuteRules" request
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the list of mute rules
+    And the response "data" has item with field "id" with value "{{ valid_mute_rule.data.id }}"
 
   @team:DataDog/k9-cloud-siem
   Scenario: Get all security filters returns "OK" response
@@ -1733,6 +1940,15 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
     And the response "data[0].attributes.name" is equal to "suppression2 {{ unique_hash }}"
+
+  @team:DataDog/k9-automation
+  Scenario: Get all ticket creation rules returns "Successfully retrieved the list of ticket creation rules" response
+    Given operation "ListSecurityFindingsAutomationTicketCreationRules" enabled
+    And there is a valid "valid_ticket_creation_rule" in the system
+    And new "ListSecurityFindingsAutomationTicketCreationRules" request
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the list of ticket creation rules
+    And the response "data" has item with field "id" with value "{{ valid_ticket_creation_rule.data.id }}"
 
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Get an entity context sync configuration returns "Not Found" response
@@ -2517,6 +2733,81 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder due date rules returns "Bad Request" response
+    Given operation "ReorderSecurityFindingsAutomationDueDateRules" enabled
+    And new "ReorderSecurityFindingsAutomationDueDateRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "due_date_rules"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Reorder due date rules returns "Successfully reordered the due date rules" response
+    Given operation "ReorderSecurityFindingsAutomationDueDateRules" enabled
+    And there is a valid "valid_due_date_rule" in the system
+    And new "ReorderSecurityFindingsAutomationDueDateRules" request
+    And body with value {"data": [{"id": "{{ valid_due_date_rule.data.id }}", "type": "due_date_rules"}]}
+    When the request is sent
+    Then the response status is 200 Successfully reordered the due date rules
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder due date rules returns "Unprocessable Entity" response
+    Given operation "ReorderSecurityFindingsAutomationDueDateRules" enabled
+    And new "ReorderSecurityFindingsAutomationDueDateRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "due_date_rules"}]}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder mute rules returns "Bad Request" response
+    Given operation "ReorderSecurityFindingsAutomationMuteRules" enabled
+    And new "ReorderSecurityFindingsAutomationMuteRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "mute_rules"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Reorder mute rules returns "Successfully reordered the mute rules" response
+    Given operation "ReorderSecurityFindingsAutomationMuteRules" enabled
+    And there is a valid "valid_mute_rule" in the system
+    And new "ReorderSecurityFindingsAutomationMuteRules" request
+    And body with value {"data": [{"id": "{{ valid_mute_rule.data.id }}", "type": "mute_rules"}]}
+    When the request is sent
+    Then the response status is 200 Successfully reordered the mute rules
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder mute rules returns "Unprocessable Entity" response
+    Given operation "ReorderSecurityFindingsAutomationMuteRules" enabled
+    And new "ReorderSecurityFindingsAutomationMuteRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "mute_rules"}]}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder ticket creation rules returns "Bad Request" response
+    Given operation "ReorderSecurityFindingsAutomationTicketCreationRules" enabled
+    And new "ReorderSecurityFindingsAutomationTicketCreationRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "ticket_creation_rules"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Reorder ticket creation rules returns "Successfully reordered the ticket creation rules" response
+    Given operation "ReorderSecurityFindingsAutomationTicketCreationRules" enabled
+    And there is a valid "valid_ticket_creation_rule" in the system
+    And new "ReorderSecurityFindingsAutomationTicketCreationRules" request
+    And body with value {"data": [{"id": "{{ valid_ticket_creation_rule.data.id }}", "type": "ticket_creation_rules"}]}
+    When the request is sent
+    Then the response status is 200 Successfully reordered the ticket creation rules
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder ticket creation rules returns "Unprocessable Entity" response
+    Given operation "ReorderSecurityFindingsAutomationTicketCreationRules" enabled
+    And new "ReorderSecurityFindingsAutomationTicketCreationRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "ticket_creation_rules"}]}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Restore a rule to a historical version returns "Bad Request" response
     Given operation "RestoreSecurityMonitoringRule" enabled
@@ -2862,6 +3153,84 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a due date rule returns "Bad Request" response
+    Given operation "UpdateSecurityFindingsAutomationDueDateRule" enabled
+    And new "UpdateSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a due date rule returns "Not Found" response
+    Given operation "UpdateSecurityFindingsAutomationDueDateRule" enabled
+    And new "UpdateSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Update a due date rule returns "Successfully updated the due date rule" response
+    Given operation "UpdateSecurityFindingsAutomationDueDateRule" enabled
+    And there is a valid "valid_due_date_rule" in the system
+    And new "UpdateSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "valid_due_date_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 14, "severity": "critical"}], "due_from": "first_seen"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "due_date_rules"}}
+    When the request is sent
+    Then the response status is 200 Successfully updated the due date rule
+    And the response "data.id" is equal to "{{ valid_due_date_rule.data.id }}"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a due date rule returns "Unprocessable Entity" response
+    Given operation "UpdateSecurityFindingsAutomationDueDateRule" enabled
+    And new "UpdateSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a mute rule returns "Bad Request" response
+    Given operation "UpdateSecurityFindingsAutomationMuteRule" enabled
+    And new "UpdateSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a mute rule returns "Not Found" response
+    Given operation "UpdateSecurityFindingsAutomationMuteRule" enabled
+    And new "UpdateSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Update a mute rule returns "Successfully updated the mute rule" response
+    Given operation "UpdateSecurityFindingsAutomationMuteRule" enabled
+    And there is a valid "valid_mute_rule" in the system
+    And new "UpdateSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "valid_mute_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"reason": "false_positive"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 200 Successfully updated the mute rule
+    And the response "data.id" is equal to "{{ valid_mute_rule.data.id }}"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a mute rule returns "Unprocessable Entity" response
+    Given operation "UpdateSecurityFindingsAutomationMuteRule" enabled
+    And new "UpdateSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Update a security filter returns "Bad Request" response
     Given new "UpdateSecurityFilter" request
@@ -2933,6 +3302,45 @@ Feature: Security Monitoring
     And the response "data.type" is equal to "suppressions"
     And the response "data.attributes.suppression_query" is equal to "env:staging status:low"
     And the response "data.attributes.version" is equal to 2
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a ticket creation rule returns "Bad Request" response
+    Given operation "UpdateSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a ticket creation rule returns "Not Found" response
+    Given operation "UpdateSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Update a ticket creation rule returns "Successfully updated the ticket creation rule" response
+    Given operation "UpdateSecurityFindingsAutomationTicketCreationRule" enabled
+    And there is a valid "valid_ticket_creation_rule" in the system
+    And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "valid_ticket_creation_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"max_tickets_per_day": 5, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "ticket_creation_rules"}}
+    When the request is sent
+    Then the response status is 200 Successfully updated the ticket creation rule
+    And the response "data.id" is equal to "{{ valid_ticket_creation_rule.data.id }}"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a ticket creation rule returns "Unprocessable Entity" response
+    Given operation "UpdateSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/k9-cloud-siem
   Scenario: Update an entity context sync configuration returns "Bad Request" response

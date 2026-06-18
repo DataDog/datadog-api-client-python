@@ -6913,6 +6913,135 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityFindingsAutomationDueDateRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityFindingsAutomationDueDateRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityFindingsAutomationDueDateRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderSecurityFindingsAutomationDueDateRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSecurityFindingsAutomationDueDateRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityFindingsAutomationDueDateRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityFindingsAutomationDueDateRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListSecurityFindingsAutomationMuteRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityFindingsAutomationMuteRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityFindingsAutomationMuteRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderSecurityFindingsAutomationMuteRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSecurityFindingsAutomationMuteRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityFindingsAutomationMuteRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityFindingsAutomationMuteRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListSecurityFindingsAutomationTicketCreationRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityFindingsAutomationTicketCreationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityFindingsAutomationTicketCreationRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderSecurityFindingsAutomationTicketCreationRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSecurityFindingsAutomationTicketCreationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityFindingsAutomationTicketCreationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityFindingsAutomationTicketCreationRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DetachCase": {
     "tag": "Security Monitoring",
     "undo": {
