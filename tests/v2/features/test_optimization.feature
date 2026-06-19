@@ -187,21 +187,21 @@ Feature: Test Optimization
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Update Test Optimization service settings returns "Bad Request" response
     Given new "UpdateTestOptimizationServiceSettings" request
-    And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "code_coverage_enabled": false, "early_flake_detection_enabled": false, "env": "prod", "failed_test_replay_enabled": false, "pr_comments_enabled": true, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": false}, "type": "test_optimization_update_service_settings_request"}}
+    And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "auto_test_retries_enabled_inherit": false, "code_coverage_enabled": false, "code_coverage_enabled_inherit": false, "early_flake_detection_enabled": false, "early_flake_detection_enabled_inherit": false, "env": "prod", "failed_test_replay_enabled": false, "failed_test_replay_enabled_inherit": false, "pr_comments_enabled": false, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": true, "test_impact_analysis_enabled_inherit": true}, "type": "test_optimization_update_service_settings_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Update Test Optimization service settings returns "Not Found" response
     Given new "UpdateTestOptimizationServiceSettings" request
-    And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "code_coverage_enabled": false, "early_flake_detection_enabled": false, "env": "prod", "failed_test_replay_enabled": false, "pr_comments_enabled": true, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": false}, "type": "test_optimization_update_service_settings_request"}}
+    And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "auto_test_retries_enabled_inherit": false, "code_coverage_enabled": false, "code_coverage_enabled_inherit": false, "early_flake_detection_enabled": false, "early_flake_detection_enabled_inherit": false, "env": "prod", "failed_test_replay_enabled": false, "failed_test_replay_enabled_inherit": false, "pr_comments_enabled": false, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": true, "test_impact_analysis_enabled_inherit": true}, "type": "test_optimization_update_service_settings_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Update Test Optimization service settings returns "OK" response
     Given new "UpdateTestOptimizationServiceSettings" request
-    And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "code_coverage_enabled": false, "early_flake_detection_enabled": false, "env": "prod", "failed_test_replay_enabled": false, "pr_comments_enabled": true, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": false}, "type": "test_optimization_update_service_settings_request"}}
+    And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "auto_test_retries_enabled_inherit": false, "code_coverage_enabled": false, "code_coverage_enabled_inherit": false, "early_flake_detection_enabled": false, "early_flake_detection_enabled_inherit": false, "env": "prod", "failed_test_replay_enabled": false, "failed_test_replay_enabled_inherit": false, "pr_comments_enabled": false, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": true, "test_impact_analysis_enabled_inherit": true}, "type": "test_optimization_update_service_settings_request"}}
     When the request is sent
     Then the response status is 200 OK
 
