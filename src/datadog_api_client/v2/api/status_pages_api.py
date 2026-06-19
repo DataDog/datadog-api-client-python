@@ -26,6 +26,8 @@ from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.create_degradation_request import CreateDegradationRequest
 from datadog_api_client.v2.model.create_backfilled_degradation_request import CreateBackfilledDegradationRequest
 from datadog_api_client.v2.model.patch_degradation_request import PatchDegradationRequest
+from datadog_api_client.v2.model.degradation_update import DegradationUpdate
+from datadog_api_client.v2.model.patch_degradation_update_request import PatchDegradationUpdateRequest
 from datadog_api_client.v2.model.maintenance import Maintenance
 from datadog_api_client.v2.model.create_maintenance_request import CreateMaintenanceRequest
 from datadog_api_client.v2.model.create_backfilled_maintenance_request import CreateBackfilledMaintenanceRequest
@@ -310,6 +312,49 @@ class StatusPagesApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._edit_degradation_update_endpoint = _Endpoint(
+            settings={
+                "response_type": (DegradationUpdate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradations/{degradation_id}/updates/{update_id}",
+                "operation_id": "edit_degradation_update",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "degradation_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "degradation_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "update_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "update_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchDegradationUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -616,6 +661,41 @@ class StatusPagesApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "page_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._soft_delete_degradation_update_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradations/{degradation_id}/updates/{update_id}",
+                "operation_id": "soft_delete_degradation_update",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "degradation_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "degradation_id",
+                    "location": "path",
+                },
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "update_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "update_id",
                     "location": "path",
                 },
             },
@@ -1041,6 +1121,44 @@ class StatusPagesApi:
 
         return self._delete_status_page_endpoint.call_with_http_info(**kwargs)
 
+    def edit_degradation_update(
+        self,
+        degradation_id: UUID,
+        page_id: UUID,
+        update_id: UUID,
+        body: PatchDegradationUpdateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> DegradationUpdate:
+        """Edit degradation update.
+
+        Edits a specific degradation update.
+
+        :param degradation_id: The ID of the degradation.
+        :type degradation_id: UUID
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param update_id: The ID of the degradation update.
+        :type update_id: UUID
+        :type body: PatchDegradationUpdateRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, degradation, status_page.
+        :type include: str, optional
+        :rtype: DegradationUpdate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["degradation_id"] = degradation_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["page_id"] = page_id
+
+        kwargs["update_id"] = update_id
+
+        kwargs["body"] = body
+
+        return self._edit_degradation_update_endpoint.call_with_http_info(**kwargs)
+
     def get_component(
         self,
         page_id: UUID,
@@ -1327,6 +1445,33 @@ class StatusPagesApi:
         kwargs["page_id"] = page_id
 
         return self._publish_status_page_endpoint.call_with_http_info(**kwargs)
+
+    def soft_delete_degradation_update(
+        self,
+        degradation_id: UUID,
+        page_id: UUID,
+        update_id: UUID,
+    ) -> None:
+        """Soft delete degradation update.
+
+        Soft-deletes a degradation update.
+
+        :param degradation_id: The ID of the degradation.
+        :type degradation_id: UUID
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param update_id: The ID of the degradation update.
+        :type update_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["degradation_id"] = degradation_id
+
+        kwargs["page_id"] = page_id
+
+        kwargs["update_id"] = update_id
+
+        return self._soft_delete_degradation_update_endpoint.call_with_http_info(**kwargs)
 
     def unpublish_status_page(
         self,

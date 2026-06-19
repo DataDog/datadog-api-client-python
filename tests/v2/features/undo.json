@@ -8521,6 +8521,18 @@
       "type": "idempotent"
     }
   },
+  "SoftDeleteDegradationUpdate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditDegradationUpdate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateMaintenance": {
     "tag": "Status Pages",
     "undo": {

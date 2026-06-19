@@ -43,8 +43,11 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
             "components": ([CreateStatusPageRequestDataAttributesComponentsItems],),
             "domain_prefix": (str,),
             "email_header_image": (str,),
+            "enabled": (bool,),
             "favicon": (str,),
             "name": (str,),
+            "slack_app_icon": (str,),
+            "slack_subscriptions_enabled": (bool,),
             "subscriptions_enabled": (bool,),
             "type": (CreateStatusPageRequestDataAttributesType,),
             "visualization_type": (CreateStatusPageRequestDataAttributesVisualizationType,),
@@ -55,8 +58,11 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         "components": "components",
         "domain_prefix": "domain_prefix",
         "email_header_image": "email_header_image",
+        "enabled": "enabled",
         "favicon": "favicon",
         "name": "name",
+        "slack_app_icon": "slack_app_icon",
+        "slack_subscriptions_enabled": "slack_subscriptions_enabled",
         "subscriptions_enabled": "subscriptions_enabled",
         "type": "type",
         "visualization_type": "visualization_type",
@@ -71,7 +77,10 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         company_logo: Union[str, UnsetType] = unset,
         components: Union[List[CreateStatusPageRequestDataAttributesComponentsItems], UnsetType] = unset,
         email_header_image: Union[str, UnsetType] = unset,
+        enabled: Union[bool, UnsetType] = unset,
         favicon: Union[str, UnsetType] = unset,
+        slack_app_icon: Union[str, UnsetType] = unset,
+        slack_subscriptions_enabled: Union[bool, UnsetType] = unset,
         subscriptions_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -90,11 +99,20 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         :param email_header_image: Base64-encoded image data included in email notifications sent to status page subscribers.
         :type email_header_image: str, optional
 
+        :param enabled: Whether the status page is enabled.
+        :type enabled: bool, optional
+
         :param favicon: Base64-encoded image data displayed in the browser tab.
         :type favicon: str, optional
 
         :param name: The name of the status page.
         :type name: str
+
+        :param slack_app_icon: The Slack app icon URL for the status page.
+        :type slack_app_icon: str, optional
+
+        :param slack_subscriptions_enabled: Whether Slack subscriptions are enabled for the status page.
+        :type slack_subscriptions_enabled: bool, optional
 
         :param subscriptions_enabled: Whether users can subscribe to the status page.
         :type subscriptions_enabled: bool, optional
@@ -111,8 +129,14 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
             kwargs["components"] = components
         if email_header_image is not unset:
             kwargs["email_header_image"] = email_header_image
+        if enabled is not unset:
+            kwargs["enabled"] = enabled
         if favicon is not unset:
             kwargs["favicon"] = favicon
+        if slack_app_icon is not unset:
+            kwargs["slack_app_icon"] = slack_app_icon
+        if slack_subscriptions_enabled is not unset:
+            kwargs["slack_subscriptions_enabled"] = slack_subscriptions_enabled
         if subscriptions_enabled is not unset:
             kwargs["subscriptions_enabled"] = subscriptions_enabled
         super().__init__(kwargs)

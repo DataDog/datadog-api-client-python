@@ -3,12 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -47,17 +49,19 @@ class CreateBackfilledMaintenanceRequestDataAttributesUpdatesItems(ModelNormal):
 
     def __init__(
         self_,
-        components_affected: List[CreateMaintenanceRequestDataAttributesComponentsAffectedItems],
         description: str,
         started_at: datetime,
         status: CreateMaintenanceRequestDataAttributesUpdatesItemsStatus,
+        components_affected: Union[
+            List[CreateMaintenanceRequestDataAttributesComponentsAffectedItems], UnsetType
+        ] = unset,
         **kwargs,
     ):
         """
         A backfilled maintenance update entry.
 
         :param components_affected: The components affected.
-        :type components_affected: [CreateMaintenanceRequestDataAttributesComponentsAffectedItems]
+        :type components_affected: [CreateMaintenanceRequestDataAttributesComponentsAffectedItems], optional
 
         :param description: A description of the update.
         :type description: str
@@ -68,9 +72,10 @@ class CreateBackfilledMaintenanceRequestDataAttributesUpdatesItems(ModelNormal):
         :param status: The status of a maintenance update.
         :type status: CreateMaintenanceRequestDataAttributesUpdatesItemsStatus
         """
+        if components_affected is not unset:
+            kwargs["components_affected"] = components_affected
         super().__init__(kwargs)
 
-        self_.components_affected = components_affected
         self_.description = description
         self_.started_at = started_at
         self_.status = status

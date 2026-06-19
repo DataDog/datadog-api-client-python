@@ -37,6 +37,8 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
         return {
             "components_affected": ([DegradationDataAttributesUpdatesItemsComponentsAffectedItems],),
             "created_at": (datetime,),
+            "deleted_at": (str,),
+            "deleted_by_user_uuid": (str,),
             "description": (str,),
             "id": (UUID,),
             "last_modified_by_user_uuid": (str,),
@@ -48,6 +50,8 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
     attribute_map = {
         "components_affected": "components_affected",
         "created_at": "created_at",
+        "deleted_at": "deleted_at",
+        "deleted_by_user_uuid": "deleted_by_user_uuid",
         "description": "description",
         "id": "id",
         "last_modified_by_user_uuid": "last_modified_by_user_uuid",
@@ -67,6 +71,8 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
             List[DegradationDataAttributesUpdatesItemsComponentsAffectedItems], UnsetType
         ] = unset,
         created_at: Union[datetime, UnsetType] = unset,
+        deleted_at: Union[str, UnsetType] = unset,
+        deleted_by_user_uuid: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         id: Union[UUID, UnsetType] = unset,
         last_modified_by_user_uuid: Union[str, UnsetType] = unset,
@@ -83,6 +89,12 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
 
         :param created_at: Timestamp of when the update was created.
         :type created_at: datetime, optional
+
+        :param deleted_at: The date and time the resource was deleted.
+        :type deleted_at: str, optional
+
+        :param deleted_by_user_uuid: UUID of the user who deleted the resource.
+        :type deleted_by_user_uuid: str, optional
 
         :param description: Description of the update.
         :type description: str, optional
@@ -106,6 +118,10 @@ class DegradationDataAttributesUpdatesItems(ModelNormal):
             kwargs["components_affected"] = components_affected
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if deleted_at is not unset:
+            kwargs["deleted_at"] = deleted_at
+        if deleted_by_user_uuid is not unset:
+            kwargs["deleted_by_user_uuid"] = deleted_by_user_uuid
         if description is not unset:
             kwargs["description"] = description
         if id is not unset:

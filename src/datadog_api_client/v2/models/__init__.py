@@ -2198,6 +2198,32 @@ from datadog_api_client.v2.model.degradation_data_relationships_status_page_data
     DegradationDataRelationshipsStatusPageData,
 )
 from datadog_api_client.v2.model.degradation_included import DegradationIncluded
+from datadog_api_client.v2.model.degradation_update import DegradationUpdate
+from datadog_api_client.v2.model.degradation_update_data import DegradationUpdateData
+from datadog_api_client.v2.model.degradation_update_data_attributes import DegradationUpdateDataAttributes
+from datadog_api_client.v2.model.degradation_update_data_attributes_components_affected_items import (
+    DegradationUpdateDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.degradation_update_data_relationships import DegradationUpdateDataRelationships
+from datadog_api_client.v2.model.degradation_update_data_relationships_degradation import (
+    DegradationUpdateDataRelationshipsDegradation,
+)
+from datadog_api_client.v2.model.degradation_update_data_relationships_degradation_data import (
+    DegradationUpdateDataRelationshipsDegradationData,
+)
+from datadog_api_client.v2.model.degradation_update_data_relationships_status_page import (
+    DegradationUpdateDataRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.degradation_update_data_relationships_status_page_data import (
+    DegradationUpdateDataRelationshipsStatusPageData,
+)
+from datadog_api_client.v2.model.degradation_update_data_relationships_user import (
+    DegradationUpdateDataRelationshipsUser,
+)
+from datadog_api_client.v2.model.degradation_update_data_relationships_user_data import (
+    DegradationUpdateDataRelationshipsUserData,
+)
+from datadog_api_client.v2.model.degradation_update_included import DegradationUpdateIncluded
 from datadog_api_client.v2.model.delete_app_response import DeleteAppResponse
 from datadog_api_client.v2.model.delete_app_response_data import DeleteAppResponseData
 from datadog_api_client.v2.model.delete_apps_datastore_item_request import DeleteAppsDatastoreItemRequest
@@ -6043,6 +6069,15 @@ from datadog_api_client.v2.model.patch_degradation_request_data_attributes_statu
     PatchDegradationRequestDataAttributesStatus,
 )
 from datadog_api_client.v2.model.patch_degradation_request_data_type import PatchDegradationRequestDataType
+from datadog_api_client.v2.model.patch_degradation_update_request import PatchDegradationUpdateRequest
+from datadog_api_client.v2.model.patch_degradation_update_request_data import PatchDegradationUpdateRequestData
+from datadog_api_client.v2.model.patch_degradation_update_request_data_attributes import (
+    PatchDegradationUpdateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.patch_degradation_update_request_data_attributes_status import (
+    PatchDegradationUpdateRequestDataAttributesStatus,
+)
+from datadog_api_client.v2.model.patch_degradation_update_request_data_type import PatchDegradationUpdateRequestDataType
 from datadog_api_client.v2.model.patch_incident_notification_template_request import (
     PatchIncidentNotificationTemplateRequest,
 )
@@ -11019,6 +11054,18 @@ __all__ = [
     "DegradationDataRelationshipsStatusPage",
     "DegradationDataRelationshipsStatusPageData",
     "DegradationIncluded",
+    "DegradationUpdate",
+    "DegradationUpdateData",
+    "DegradationUpdateDataAttributes",
+    "DegradationUpdateDataAttributesComponentsAffectedItems",
+    "DegradationUpdateDataRelationships",
+    "DegradationUpdateDataRelationshipsDegradation",
+    "DegradationUpdateDataRelationshipsDegradationData",
+    "DegradationUpdateDataRelationshipsStatusPage",
+    "DegradationUpdateDataRelationshipsStatusPageData",
+    "DegradationUpdateDataRelationshipsUser",
+    "DegradationUpdateDataRelationshipsUserData",
+    "DegradationUpdateIncluded",
     "DeleteAppResponse",
     "DeleteAppResponseData",
     "DeleteAppsDatastoreItemRequest",
@@ -13682,6 +13729,11 @@ __all__ = [
     "PatchDegradationRequestDataAttributesComponentsAffectedItems",
     "PatchDegradationRequestDataAttributesStatus",
     "PatchDegradationRequestDataType",
+    "PatchDegradationUpdateRequest",
+    "PatchDegradationUpdateRequestData",
+    "PatchDegradationUpdateRequestDataAttributes",
+    "PatchDegradationUpdateRequestDataAttributesStatus",
+    "PatchDegradationUpdateRequestDataType",
     "PatchIncidentNotificationTemplateRequest",
     "PatchMaintenanceRequest",
     "PatchMaintenanceRequestData",

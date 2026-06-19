@@ -11400,6 +11400,90 @@ datadog\_api\_client.v2.model.degradation\_included module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.degradation\_update module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_attributes\_components\_affected\_items module
+-------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_attributes_components_affected_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_relationships module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_relationships\_degradation module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_relationships_degradation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_relationships\_degradation\_data module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_relationships_degradation_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_relationships\_status\_page module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_relationships_status_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_relationships\_status\_page\_data module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_relationships_status_page_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_relationships\_user module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_relationships_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_data\_relationships\_user\_data module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_data_relationships_user_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.degradation\_update\_included module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_update_included
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.delete\_app\_response module
 ----------------------------------------------------------
 
@@ -30262,6 +30346,41 @@ datadog\_api\_client.v2.model.patch\_degradation\_request\_data\_type module
 ----------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.patch_degradation_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_degradation\_update\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_degradation_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_degradation\_update\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_degradation_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_degradation\_update\_request\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_degradation_update_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_degradation\_update\_request\_data\_attributes\_status module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_degradation_update_request_data_attributes_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_degradation\_update\_request\_data\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_degradation_update_request_data_type
    :members:
    :show-inheritance:
 
