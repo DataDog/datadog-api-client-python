@@ -51,6 +51,7 @@ class TestOptimizationUpdateServiceSettingsRequestData(ModelNormal):
 
         :param attributes: Attributes for updating Test Optimization service settings.
             All non-required fields are optional; only provided fields will be updated.
+            Setting a field to ``null`` is a no-op. To reset a setting to inherit from the repository level, use the corresponding ``<setting>_inherit`` field.
         :type attributes: TestOptimizationUpdateServiceSettingsRequestAttributes
 
         :param type: JSON:API type for update service settings request.

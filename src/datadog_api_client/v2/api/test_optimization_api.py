@@ -342,7 +342,9 @@ class TestOptimizationApi:
         """Update Test Optimization service settings.
 
         Partially update Test Optimization settings for a specific service identified by repository, service name, and environment.
-        Only provided fields are updated; null or omitted fields are left unchanged.
+        Only provided fields are updated; setting a field to ``null`` is a no-op.
+        To reset a setting to inherit from the repository level, use the corresponding ``<setting>_inherit`` field.
+        The ``pr_comments_enabled`` field is ignored as it cannot be overridden at the service level.
 
         :type body: TestOptimizationUpdateServiceSettingsRequest
         :rtype: TestOptimizationServiceSettingsResponse
