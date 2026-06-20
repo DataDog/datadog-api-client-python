@@ -4191,6 +4191,57 @@
       "type": "idempotent"
     }
   },
+  "ListAmsIntegrationAccounts": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAmsIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "operationId": "DeleteAmsIntegrationAccount",
+      "parameters": [
+        {
+          "name": "integration_name",
+          "source": "integration_name"
+        },
+        {
+          "name": "interface_id",
+          "source": "interface_id"
+        },
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetAmsIntegrationAccountSchema": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteAmsIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAmsIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAmsIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetIPAllowlist": {
     "tag": "IP Allowlist",
     "undo": {

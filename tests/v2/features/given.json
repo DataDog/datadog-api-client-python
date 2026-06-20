@@ -837,6 +837,26 @@
   {
     "parameters": [
       {
+        "name": "integration_name",
+        "value": "\"twilio\""
+      },
+      {
+        "name": "interface_id",
+        "value": "\"twilio.messaging\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"Account\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"settings\": {\n        \"api_key\": \"SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"account_sid\": \"ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"events\": true,\n        \"messages\": true,\n        \"alerts\": true,\n        \"call_summaries\": true,\n        \"ccm_enabled\": true,\n        \"censor_logs\": true\n      },\n      \"secrets\": {\n        \"api_key_token\": \"test_secret_token_value\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"web_integration_account\" in the system",
+    "key": "web_integration_account",
+    "tag": "Integration Accounts",
+    "operationId": "CreateAmsIntegrationAccount"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"enabled\": false,\n      \"entries\": []\n    },\n    \"type\": \"ip_allowlist\"\n  }\n}"
       }
