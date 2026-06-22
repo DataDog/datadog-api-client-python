@@ -1363,6 +1363,11 @@ class CloudCostManagementApi:
                     "attribute": "filter[provider]",
                     "location": "query",
                 },
+                "filter_enabled_metrics_only": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[enabled_metrics_only]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -2961,6 +2966,7 @@ class CloudCostManagementApi:
         filter_month: str,
         *,
         filter_provider: Union[str, UnsetType] = unset,
+        filter_enabled_metrics_only: Union[bool, UnsetType] = unset,
     ) -> CostMetricsResponse:
         """List available Cloud Cost Management metrics.
 
@@ -2970,6 +2976,8 @@ class CloudCostManagementApi:
         :type filter_month: str
         :param filter_provider: Filter results to a specific provider. Common cloud values are ``aws`` , ``azure`` , ``gcp`` , ``Oracle`` (OCI), and ``custom``. SaaS billing integrations (for example, ``Snowflake`` , ``MongoDB`` , ``Databricks`` ) are also accepted using their display-name string. Values are case-sensitive.
         :type filter_provider: str, optional
+        :param filter_enabled_metrics_only: When ``true`` , only return metrics for currently enabled accounts. When omitted or ``false`` , return all metrics present in tag metadata. Metrics not recognized by Cloud Cost Management are always excluded.
+        :type filter_enabled_metrics_only: bool, optional
         :rtype: CostMetricsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -2977,6 +2985,9 @@ class CloudCostManagementApi:
 
         if filter_provider is not unset:
             kwargs["filter_provider"] = filter_provider
+
+        if filter_enabled_metrics_only is not unset:
+            kwargs["filter_enabled_metrics_only"] = filter_enabled_metrics_only
 
         return self._list_cost_tag_metadata_metrics_endpoint.call_with_http_info(**kwargs)
 
