@@ -29,6 +29,8 @@ from datadog_api_client.v2.model.uc_config_pair import UCConfigPair
 from datadog_api_client.v2.model.azure_uc_config_patch_request import AzureUCConfigPatchRequest
 from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
 from datadog_api_client.v2.model.validation_response import ValidationResponse
+from datadog_api_client.v2.model.custom_forecast_response import CustomForecastResponse
+from datadog_api_client.v2.model.custom_forecast_upsert_request import CustomForecastUpsertRequest
 from datadog_api_client.v2.model.budget_validation_response import BudgetValidationResponse
 from datadog_api_client.v2.model.budget_validation_request import BudgetValidationRequest
 from datadog_api_client.v2.model.budget_array import BudgetArray
@@ -349,6 +351,29 @@ class CloudCostManagementApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "file_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_custom_forecast_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/budget/{budget_id}/custom-forecast",
+                "operation_id": "delete_custom_forecast",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "budget_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "budget_id",
                     "location": "path",
                 },
             },
@@ -1847,6 +1872,26 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._upsert_custom_forecast_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomForecastResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/budget/custom-forecast",
+                "operation_id": "upsert_custom_forecast",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CustomForecastUpsertRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._validate_budget_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetValidationResponse,),
@@ -2122,6 +2167,23 @@ class CloudCostManagementApi:
         kwargs["file_id"] = file_id
 
         return self._delete_custom_costs_file_endpoint.call_with_http_info(**kwargs)
+
+    def delete_custom_forecast(
+        self,
+        budget_id: str,
+    ) -> None:
+        """Delete a budget's custom forecast.
+
+        Delete the custom forecast for a budget.
+
+        :param budget_id: Budget id.
+        :type budget_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["budget_id"] = budget_id
+
+        return self._delete_custom_forecast_endpoint.call_with_http_info(**kwargs)
 
     def delete_tag_pipelines_ruleset(
         self,
@@ -3404,6 +3466,23 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._upsert_cost_tag_description_by_key_endpoint.call_with_http_info(**kwargs)
+
+    def upsert_custom_forecast(
+        self,
+        body: CustomForecastUpsertRequest,
+    ) -> CustomForecastResponse:
+        """Create or replace a budget's custom forecast.
+
+        Create or replace the custom forecast for an existing budget.
+        Pass an empty ``entries`` list to delete the custom forecast for the budget.
+
+        :type body: CustomForecastUpsertRequest
+        :rtype: CustomForecastResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._upsert_custom_forecast_endpoint.call_with_http_info(**kwargs)
 
     def validate_budget(
         self,

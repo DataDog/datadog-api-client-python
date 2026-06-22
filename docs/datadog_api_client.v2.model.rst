@@ -10532,6 +10532,69 @@ datadog\_api\_client.v2.model.custom\_destinations\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.custom\_forecast\_entry module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_entry
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_entry\_tag\_filter module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_entry_tag_filter
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_response\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_response\_data\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_response_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_upsert\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_upsert_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_upsert\_request\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_upsert_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.custom\_forecast\_upsert\_request\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.custom_forecast_upsert_request_data_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.custom\_framework\_control module
 ---------------------------------------------------------------
 
