@@ -6489,6 +6489,32 @@ from datadog_api_client.v2.model.relationship_to_user_team_user import Relations
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
 from datadog_api_client.v2.model.remediation import Remediation
+from datadog_api_client.v2.model.remediation_code_session import RemediationCodeSession
+from datadog_api_client.v2.model.remediation_confidence import RemediationConfidence
+from datadog_api_client.v2.model.remediation_deployment_rollout_state import RemediationDeploymentRolloutState
+from datadog_api_client.v2.model.remediation_ecs_metadata import RemediationEcsMetadata
+from datadog_api_client.v2.model.remediation_execute_request import RemediationExecuteRequest
+from datadog_api_client.v2.model.remediation_execute_response import RemediationExecuteResponse
+from datadog_api_client.v2.model.remediation_get_investigation_response import RemediationGetInvestigationResponse
+from datadog_api_client.v2.model.remediation_guardrail_decision import RemediationGuardrailDecision
+from datadog_api_client.v2.model.remediation_guardrail_verdict import RemediationGuardrailVerdict
+from datadog_api_client.v2.model.remediation_history_event import RemediationHistoryEvent
+from datadog_api_client.v2.model.remediation_investigation import RemediationInvestigation
+from datadog_api_client.v2.model.remediation_investigation_status import RemediationInvestigationStatus
+from datadog_api_client.v2.model.remediation_launch_type import RemediationLaunchType
+from datadog_api_client.v2.model.remediation_list_investigations_response import RemediationListInvestigationsResponse
+from datadog_api_client.v2.model.remediation_plan import RemediationPlan
+from datadog_api_client.v2.model.remediation_plan_source import RemediationPlanSource
+from datadog_api_client.v2.model.remediation_plan_status import RemediationPlanStatus
+from datadog_api_client.v2.model.remediation_problem_container import RemediationProblemContainer
+from datadog_api_client.v2.model.remediation_problem_task import RemediationProblemTask
+from datadog_api_client.v2.model.remediation_proposed_fix import RemediationProposedFix
+from datadog_api_client.v2.model.remediation_pull_request_status import RemediationPullRequestStatus
+from datadog_api_client.v2.model.remediation_risk_level import RemediationRiskLevel
+from datadog_api_client.v2.model.remediation_step import RemediationStep
+from datadog_api_client.v2.model.remediation_step_approval_state import RemediationStepApprovalState
+from datadog_api_client.v2.model.remediation_workload_summary import RemediationWorkloadSummary
+from datadog_api_client.v2.model.remediation_workload_type import RemediationWorkloadType
 from datadog_api_client.v2.model.reorder_retention_filters_request import ReorderRetentionFiltersRequest
 from datadog_api_client.v2.model.reorder_rule_resource_array import ReorderRuleResourceArray
 from datadog_api_client.v2.model.reorder_rule_resource_data import ReorderRuleResourceData
@@ -14069,6 +14095,32 @@ __all__ = [
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
     "Remediation",
+    "RemediationCodeSession",
+    "RemediationConfidence",
+    "RemediationDeploymentRolloutState",
+    "RemediationEcsMetadata",
+    "RemediationExecuteRequest",
+    "RemediationExecuteResponse",
+    "RemediationGetInvestigationResponse",
+    "RemediationGuardrailDecision",
+    "RemediationGuardrailVerdict",
+    "RemediationHistoryEvent",
+    "RemediationInvestigation",
+    "RemediationInvestigationStatus",
+    "RemediationLaunchType",
+    "RemediationListInvestigationsResponse",
+    "RemediationPlan",
+    "RemediationPlanSource",
+    "RemediationPlanStatus",
+    "RemediationProblemContainer",
+    "RemediationProblemTask",
+    "RemediationProposedFix",
+    "RemediationPullRequestStatus",
+    "RemediationRiskLevel",
+    "RemediationStep",
+    "RemediationStepApprovalState",
+    "RemediationWorkloadSummary",
+    "RemediationWorkloadType",
     "ReorderRetentionFiltersRequest",
     "ReorderRuleResourceArray",
     "ReorderRuleResourceData",

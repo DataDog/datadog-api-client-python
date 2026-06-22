@@ -32365,6 +32365,188 @@ datadog\_api\_client.v2.model.remediation module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.remediation\_code\_session module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_code_session
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_confidence module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_confidence
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_deployment\_rollout\_state module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_deployment_rollout_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_ecs\_metadata module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_ecs_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_execute\_request module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_execute_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_execute\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_execute_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_get\_investigation\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_get_investigation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_guardrail\_decision module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_guardrail_decision
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_guardrail\_verdict module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_guardrail_verdict
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_history\_event module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_history_event
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_investigation module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_investigation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_investigation\_status module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_investigation_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_launch\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_launch_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_list\_investigations\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_list_investigations_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_plan module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_plan
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_plan\_source module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_plan_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_plan\_status module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_plan_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_problem\_container module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_problem_container
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_problem\_task module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_problem_task
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_proposed\_fix module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_proposed_fix
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_pull\_request\_status module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_pull_request_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_risk\_level module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_risk_level
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_step module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_step\_approval\_state module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_step_approval_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_workload\_summary module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_workload_summary
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.remediation\_workload\_type module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.remediation_workload_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.reorder\_retention\_filters\_request module
 -------------------------------------------------------------------------
 
