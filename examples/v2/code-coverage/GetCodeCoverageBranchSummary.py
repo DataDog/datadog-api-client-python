@@ -16,6 +16,7 @@ body = BranchCoverageSummaryRequest(
         attributes=BranchCoverageSummaryRequestAttributes(
             branch="prod",
             repository_id="github.com/datadog/shopist",
+            repository_url="https://github.com/datadog/shopist",
         ),
         type=BranchCoverageSummaryRequestType.CI_APP_COVERAGE_BRANCH_SUMMARY_REQUEST,
     ),

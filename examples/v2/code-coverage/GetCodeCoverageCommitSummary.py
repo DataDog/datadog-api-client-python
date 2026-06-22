@@ -16,6 +16,7 @@ body = CommitCoverageSummaryRequest(
         attributes=CommitCoverageSummaryRequestAttributes(
             commit_sha="66adc9350f2cc9b250b69abddab733dd55e1a588",
             repository_id="github.com/datadog/shopist",
+            repository_url="https://github.com/datadog/shopist",
         ),
         type=CommitCoverageSummaryRequestType.CI_APP_COVERAGE_COMMIT_SUMMARY_REQUEST,
     ),

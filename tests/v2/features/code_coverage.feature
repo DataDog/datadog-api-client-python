@@ -13,7 +13,7 @@ Feature: Code Coverage
   Scenario: Get code coverage summary for a branch returns "Bad Request" response
     Given operation "GetCodeCoverageBranchSummary" enabled
     And new "GetCodeCoverageBranchSummary" request
-    And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
+    And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -21,7 +21,7 @@ Feature: Code Coverage
   Scenario: Get code coverage summary for a branch returns "Not Found" response
     Given operation "GetCodeCoverageBranchSummary" enabled
     And new "GetCodeCoverageBranchSummary" request
-    And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
+    And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -29,7 +29,7 @@ Feature: Code Coverage
   Scenario: Get code coverage summary for a branch returns "OK" response
     Given operation "GetCodeCoverageBranchSummary" enabled
     And new "GetCodeCoverageBranchSummary" request
-    And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
+    And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -61,7 +61,7 @@ Feature: Code Coverage
   Scenario: Get code coverage summary for a commit returns "Bad Request" response
     Given operation "GetCodeCoverageCommitSummary" enabled
     And new "GetCodeCoverageCommitSummary" request
-    And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
+    And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -69,7 +69,7 @@ Feature: Code Coverage
   Scenario: Get code coverage summary for a commit returns "Not Found" response
     Given operation "GetCodeCoverageCommitSummary" enabled
     And new "GetCodeCoverageCommitSummary" request
-    And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
+    And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -77,7 +77,7 @@ Feature: Code Coverage
   Scenario: Get code coverage summary for a commit returns "OK" response
     Given operation "GetCodeCoverageCommitSummary" enabled
     And new "GetCodeCoverageCommitSummary" request
-    And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
+    And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
     When the request is sent
     Then the response status is 200 OK
 
