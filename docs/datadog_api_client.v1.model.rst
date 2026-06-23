@@ -1957,6 +1957,55 @@ datadog\_api\_client.v1.model.logs\_arithmetic\_processor\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_array\_map\_arithmetic\_sub\_processor module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_map_arithmetic_sub_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_map\_attribute\_remapper module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_map_attribute_remapper
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_map\_category\_sub\_processor module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_map_category_sub_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_map\_processor module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_map_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_map\_processor\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_map_processor_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_map\_string\_builder\_sub\_processor module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_map_string_builder_sub_processor
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_map\_sub\_processor module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_map_sub_processor
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_array\_processor module
 -----------------------------------------------------------
 

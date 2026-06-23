@@ -36,6 +36,34 @@ Feature: Logs Pipelines
     Then the response status is 200 OK
 
   @team:DataDog/logs-onboarding
+  Scenario: Create a pipeline with Array Map Processor returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayMap", "processors": [{"type": "array-map-processor", "is_enabled": true, "name": "map items", "source": "items", "target": "out", "preserve_source": true, "processors": [{"type": "attribute-remapper", "sources": ["$sourceElem.id"], "target": "$targetElem.uid", "preserve_source": true}, {"type": "string-builder-processor", "template": "item-%{$sourceElem.id}", "target": "$targetElem.label"}]}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/logs-onboarding
+  Scenario: Create a pipeline with Array Map Processor using arithmetic sub-processor returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayMapArithmetic", "processors": [{"type": "array-map-processor", "is_enabled": true, "name": "double counts", "source": "items", "target": "out", "processors": [{"type": "arithmetic-processor", "expression": "$sourceElem.count * 2", "target": "$targetElem.doubled"}]}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/logs-onboarding
+  Scenario: Create a pipeline with Array Map Processor using category sub-processor returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayMapCategory", "processors": [{"type": "array-map-processor", "is_enabled": true, "name": "categorize items", "source": "items", "target": "out", "processors": [{"type": "category-processor", "target": "$targetElem.level", "categories": [{"filter": {"query": "@$sourceElem.status:error"}, "name": "error"}, {"filter": {"query": "*"}, "name": "info"}]}]}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/logs-onboarding
+  Scenario: Create a pipeline with Array Map Processor with preserve_source false returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayMapNoPreserve", "processors": [{"type": "array-map-processor", "is_enabled": true, "name": "map and remove source", "source": "items", "target": "out", "preserve_source": false, "processors": [{"type": "attribute-remapper", "sources": ["$sourceElem.id"], "target": "$targetElem.uid"}]}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/logs-onboarding
   Scenario: Create a pipeline with Array Processor Append Operation returns "OK" response
     Given new "CreateLogsPipeline" request
     And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayAppend", "processors": [{"type": "array-processor", "is_enabled": true, "name": "append_ip_to_array", "operation": {"type": "append", "source": "network.client.ip", "target": "sourceIps"}}], "tags": []}

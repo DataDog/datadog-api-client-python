@@ -1,0 +1,56 @@
+"""
+Create a pipeline with Array Map Processor returns "OK" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v1.api.logs_pipelines_api import LogsPipelinesApi
+from datadog_api_client.v1.model.logs_array_map_attribute_remapper import LogsArrayMapAttributeRemapper
+from datadog_api_client.v1.model.logs_array_map_processor import LogsArrayMapProcessor
+from datadog_api_client.v1.model.logs_array_map_processor_type import LogsArrayMapProcessorType
+from datadog_api_client.v1.model.logs_array_map_string_builder_sub_processor import (
+    LogsArrayMapStringBuilderSubProcessor,
+)
+from datadog_api_client.v1.model.logs_attribute_remapper_type import LogsAttributeRemapperType
+from datadog_api_client.v1.model.logs_filter import LogsFilter
+from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
+from datadog_api_client.v1.model.logs_string_builder_processor_type import LogsStringBuilderProcessorType
+
+body = LogsPipeline(
+    filter=LogsFilter(
+        query="source:python",
+    ),
+    name="testPipelineArrayMap",
+    processors=[
+        LogsArrayMapProcessor(
+            type=LogsArrayMapProcessorType.ARRAY_MAP_PROCESSOR,
+            is_enabled=True,
+            name="map items",
+            source="items",
+            target="out",
+            preserve_source=True,
+            processors=[
+                LogsArrayMapAttributeRemapper(
+                    type=LogsAttributeRemapperType.ATTRIBUTE_REMAPPER,
+                    sources=[
+                        "$sourceElem.id",
+                    ],
+                    target="$targetElem.uid",
+                    preserve_source=True,
+                ),
+                LogsArrayMapStringBuilderSubProcessor(
+                    type=LogsStringBuilderProcessorType.STRING_BUILDER_PROCESSOR,
+                    template="item-%{$sourceElem.id}",
+                    target="$targetElem.label",
+                ),
+            ],
+        ),
+    ],
+    tags=[],
+)
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = LogsPipelinesApi(api_client)
+    response = api_instance.create_logs_pipeline(body=body)
+
+    print(response)

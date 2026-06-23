@@ -1,0 +1,43 @@
+interactions:
+- request:
+    body: '{"filter":{"query":"source:python"},"name":"testPipelineArrayMapArithmetic","processors":[{"is_enabled":true,"name":"double
+      counts","processors":[{"expression":"$sourceElem.count * 2","target":"$targetElem.doubled","type":"arithmetic-processor"}],"source":"items","target":"out","type":"array-map-processor"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines
+  response:
+    body:
+      string: '{"id":"PxfujWHYRaGCWVqVCVrBAg","type":"pipeline","name":"testPipelineArrayMapArithmetic","is_enabled":false,"is_read_only":false,"filter":{"query":"source:python"},"processors":[{"name":"double
+        counts","is_enabled":true,"source":"items","target":"out","processors":[{"expression":"$sourceElem.count
+        * 2","target":"$targetElem.doubled","is_replace_missing":false,"type":"arithmetic-processor"}],"preserve_source":true,"type":"array-map-processor"}],"tags":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines/PxfujWHYRaGCWVqVCVrBAg
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
