@@ -9117,6 +9117,7 @@ from datadog_api_client.v2.model.update_tenancy_config_data_attributes_regions_c
 )
 from datadog_api_client.v2.model.update_tenancy_config_data_type import UpdateTenancyConfigDataType
 from datadog_api_client.v2.model.update_tenancy_config_request import UpdateTenancyConfigRequest
+from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequest
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
 from datadog_api_client.v2.model.upsert_allocation_request import UpsertAllocationRequest
@@ -15869,6 +15870,7 @@ __all__ = [
     "UpdateTenancyConfigDataAttributesRegionsConfig",
     "UpdateTenancyConfigDataType",
     "UpdateTenancyConfigRequest",
+    "UpdateVariantRequest",
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
     "UpsertAllocationRequest",
