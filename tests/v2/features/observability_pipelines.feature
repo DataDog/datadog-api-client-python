@@ -177,6 +177,22 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with ClickHouse destination arrow_stream format returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "clickhouse-destination", "inputs": ["my-processor-group"], "type": "clickhouse", "table": "application_logs", "database": "my_database", "format": "arrow_stream", "batch_encoding": {"codec": "arrow_stream", "allow_nullable_fields": false}, "compression": "gzip", "auth": {"strategy": "basic", "username_key": "CLICKHOUSE_USERNAME", "password_key": "CLICKHOUSE_PASSWORD"}, "batch": {"max_events": 1000, "timeout_secs": 1}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with ClickHouse Destination Arrow Stream"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with ClickHouse destination returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "clickhouse-destination", "inputs": ["my-processor-group"], "type": "clickhouse", "table": "application_logs", "database": "my_database", "compression": "gzip", "auth": {"strategy": "basic", "username_key": "CLICKHOUSE_USERNAME", "password_key": "CLICKHOUSE_PASSWORD"}, "batch": {"max_events": 1000, "timeout_secs": 1}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with ClickHouse Destination"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline with HTTP server source valid_tokens returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["http-server-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "http-server-source", "type": "http_server", "auth_strategy": "none", "decoding": "json", "valid_tokens": [{"token_key": "HTTP_SERVER_TOKEN", "enabled": true, "path_to_token": {"header": "X-Token"}, "field_to_add": {"key": "token_name", "value": "primary_token"}}, {"token_key": "HTTP_SERVER_TOKEN_BACKUP", "enabled": true, "path_to_token": "path"}]}]}, "name": "Pipeline with HTTP server valid_tokens"}, "type": "pipelines"}}
