@@ -45287,6 +45287,13 @@ datadog\_api\_client.v2.model.update\_tenancy\_config\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.update\_variant\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.update_variant_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.update\_workflow\_request module
 --------------------------------------------------------------
 

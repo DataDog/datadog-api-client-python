@@ -2675,6 +2675,24 @@
       "type": "unsafe"
     }
   },
+  "CreateVariantForFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteVariantFromFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "UpdateVariantForFeatureFlag": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListForms": {
     "tag": "Forms",
     "undo": {

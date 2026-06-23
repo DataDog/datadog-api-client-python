@@ -7,6 +7,38 @@ Feature: Feature Flags
     And a valid "appKeyAuth" key in the system
     And an instance of "FeatureFlags" API
 
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Add a variant to a feature flag returns "Bad Request" response
+    Given new "CreateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Add a variant to a feature flag returns "Conflict - A variant with this key already exists on the flag." response
+    Given new "CreateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    When the request is sent
+    Then the response status is 409 Conflict - A variant with this key already exists on the flag.
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Add a variant to a feature flag returns "Created" response
+    Given new "CreateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Add a variant to a feature flag returns "Not Found" response
+    Given new "CreateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @skip @team:DataDog/feature-flags
   Scenario: Archive a feature flag returns "Bad Request" response
     Given new "ArchiveFeatureFlag" request
@@ -127,6 +159,38 @@ Feature: Feature Flags
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "environment_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Delete a variant returns "Bad Request" response
+    Given new "DeleteVariantFromFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Delete a variant returns "Conflict - A pending suggestion already exists for this property." response
+    Given new "DeleteVariantFromFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - A pending suggestion already exists for this property.
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Delete a variant returns "No Content" response
+    Given new "DeleteVariantFromFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Delete a variant returns "Not Found" response
+    Given new "DeleteVariantFromFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -407,6 +471,42 @@ Feature: Feature Flags
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "Updated Test Feature Flag {{ unique }}"
     And the response "data.attributes.description" is equal to "Updated description for the feature flag"
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update a variant returns "Bad Request" response
+    Given new "UpdateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update a variant returns "Conflict - A pending suggestion already exists for this property." response
+    Given new "UpdateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    When the request is sent
+    Then the response status is 409 Conflict - A pending suggestion already exists for this property.
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update a variant returns "Not Found" response
+    Given new "UpdateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Update a variant returns "OK" response
+    Given new "UpdateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    When the request is sent
+    Then the response status is 200 OK
 
   @skip @team:DataDog/feature-flags
   Scenario: Update an environment returns "Bad Request" response

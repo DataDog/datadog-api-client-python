@@ -25,6 +25,9 @@ from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
 from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
+from datadog_api_client.v2.model.variant import Variant
+from datadog_api_client.v2.model.create_variant import CreateVariant
+from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequest
 
 
 class FeatureFlagsApi:
@@ -132,6 +135,32 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._create_variant_for_feature_flag_endpoint = _Endpoint(
+            settings={
+                "response_type": (Variant,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants",
+                "operation_id": "create_variant_for_feature_flag",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateVariant,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_feature_flags_environment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -146,6 +175,35 @@ class FeatureFlagsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "environment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_variant_from_feature_flag_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants/{variant_id}",
+                "operation_id": "delete_variant_from_feature_flag",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "variant_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "variant_id",
                     "location": "path",
                 },
             },
@@ -546,6 +604,38 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._update_variant_for_feature_flag_endpoint = _Endpoint(
+            settings={
+                "response_type": (Variant,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants/{variant_id}",
+                "operation_id": "update_variant_for_feature_flag",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "variant_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "variant_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateVariantRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def archive_feature_flag(
         self,
         feature_flag_id: UUID,
@@ -622,6 +712,33 @@ class FeatureFlagsApi:
 
         return self._create_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
 
+    def create_variant_for_feature_flag(
+        self,
+        feature_flag_id: UUID,
+        body: CreateVariant,
+    ) -> Variant:
+        """Add a variant to a feature flag.
+
+        Adds a single new variant to an existing feature flag. This endpoint is
+        additive-only: it never modifies existing variants. A request whose ``key``
+        already exists on the flag is rejected with ``409 Conflict`` ; a ``value``
+        whose type does not match the flag's ``value_type`` is rejected with ``400``.
+        The server generates the variant UUID and returns it in the response body;
+        callers (for example, the flag-migration tool) need this UUID to reference
+        the new variant in subsequent allocation syncs.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :type body: CreateVariant
+        :rtype: Variant
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["body"] = body
+
+        return self._create_variant_for_feature_flag_endpoint.call_with_http_info(**kwargs)
+
     def delete_feature_flags_environment(
         self,
         environment_id: UUID,
@@ -638,6 +755,30 @@ class FeatureFlagsApi:
         kwargs["environment_id"] = environment_id
 
         return self._delete_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
+
+    def delete_variant_from_feature_flag(
+        self,
+        feature_flag_id: UUID,
+        variant_id: UUID,
+    ) -> None:
+        """Delete a variant.
+
+        Deletes a variant from a feature flag.
+
+        When backend approvals are enabled and the flag requires approval, this endpoint creates and returns a ``FlagSuggestion`` with ``201 Created`` instead of deleting the variant immediately. If a pending suggestion already exists for this flag's variant property, the endpoint returns ``409 Conflict``.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :param variant_id: The ID of the variant.
+        :type variant_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["variant_id"] = variant_id
+
+        return self._delete_variant_from_feature_flag_endpoint.call_with_http_info(**kwargs)
 
     def disable_feature_flag_environment(
         self,
@@ -950,3 +1091,31 @@ class FeatureFlagsApi:
         kwargs["body"] = body
 
         return self._update_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
+
+    def update_variant_for_feature_flag(
+        self,
+        feature_flag_id: UUID,
+        variant_id: UUID,
+        body: UpdateVariantRequest,
+    ) -> Variant:
+        """Update a variant.
+
+        Updates the name and value of an existing variant on a feature flag.
+
+        When backend approvals are enabled and the flag requires approval, this endpoint creates and returns a ``FlagSuggestion`` with ``201 Created`` instead of applying the change immediately. Use the returned suggestion ``id`` to approve or reject the change. If a pending suggestion already exists for this flag's variant property, the endpoint returns ``409 Conflict``.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :param variant_id: The ID of the variant.
+        :type variant_id: UUID
+        :type body: UpdateVariantRequest
+        :rtype: Variant
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["variant_id"] = variant_id
+
+        kwargs["body"] = body
+
+        return self._update_variant_for_feature_flag_endpoint.call_with_http_info(**kwargs)
