@@ -64,20 +64,20 @@ class CIAppCreatePipelineEventRequestAttributesResource(ModelComposed):
         :param tags: A list of user-defined tags. The tags must follow the `key:value` pattern.
         :type tags: [str], none_type, optional
 
+        :param job_id: The parent job UUID (if applicable).
+        :type job_id: str, none_type, optional
+
+        :param job_name: The parent job name (if applicable).
+        :type job_name: str, none_type, optional
+
         :param stage_id: The parent stage UUID (if applicable).
         :type stage_id: str, none_type, optional
 
         :param stage_name: The parent stage name (if applicable).
         :type stage_name: str, none_type, optional
 
-        :param url: The URL to look at the job in the CI provider UI.
-        :type url: str
-
-        :param job_id: The parent job UUID (if applicable).
-        :type job_id: str, none_type, optional
-
-        :param job_name: The parent job name (if applicable).
-        :type job_name: str, none_type, optional
+        :param url: The URL to look at the step in the CI provider UI.
+        :type url: str, none_type, optional
         """
         super().__init__(kwargs)
 

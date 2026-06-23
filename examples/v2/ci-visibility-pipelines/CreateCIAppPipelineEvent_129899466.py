@@ -14,14 +14,14 @@ from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data impor
 from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type import (
     CIAppCreatePipelineEventRequestDataType,
 )
-from datadog_api_client.v2.model.ci_app_pipeline_event_job import CIAppPipelineEventJob
+from datadog_api_client.v2.model.ci_app_pipeline_event_finished_job import CIAppPipelineEventFinishedJob
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
 
 body = CIAppCreatePipelineEventRequest(
     data=CIAppCreatePipelineEventRequestData(
         attributes=CIAppCreatePipelineEventRequestAttributes(
-            resource=CIAppPipelineEventJob(
+            resource=CIAppPipelineEventFinishedJob(
                 level=CIAppPipelineEventJobLevel.JOB,
                 id="cf9456de-8b9e-4c27-aa79-27b1e78c1a33",
                 name="Build image",

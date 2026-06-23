@@ -888,9 +888,14 @@ from datadog_api_client.v2.model.ci_app_group_by_total import CIAppGroupByTotal
 from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
 from datadog_api_client.v2.model.ci_app_pipeline_event import CIAppPipelineEvent
 from datadog_api_client.v2.model.ci_app_pipeline_event_attributes import CIAppPipelineEventAttributes
+from datadog_api_client.v2.model.ci_app_pipeline_event_finished_job import CIAppPipelineEventFinishedJob
 from datadog_api_client.v2.model.ci_app_pipeline_event_finished_pipeline import CIAppPipelineEventFinishedPipeline
+from datadog_api_client.v2.model.ci_app_pipeline_event_in_progress_job import CIAppPipelineEventInProgressJob
 from datadog_api_client.v2.model.ci_app_pipeline_event_in_progress_pipeline import CIAppPipelineEventInProgressPipeline
 from datadog_api_client.v2.model.ci_app_pipeline_event_job import CIAppPipelineEventJob
+from datadog_api_client.v2.model.ci_app_pipeline_event_job_in_progress_status import (
+    CIAppPipelineEventJobInProgressStatus,
+)
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
 from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
 from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
@@ -10072,9 +10077,12 @@ __all__ = [
     "CIAppHostInfo",
     "CIAppPipelineEvent",
     "CIAppPipelineEventAttributes",
+    "CIAppPipelineEventFinishedJob",
     "CIAppPipelineEventFinishedPipeline",
+    "CIAppPipelineEventInProgressJob",
     "CIAppPipelineEventInProgressPipeline",
     "CIAppPipelineEventJob",
+    "CIAppPipelineEventJobInProgressStatus",
     "CIAppPipelineEventJobLevel",
     "CIAppPipelineEventJobStatus",
     "CIAppPipelineEventParameters",

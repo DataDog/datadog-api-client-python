@@ -123,6 +123,13 @@ Feature: CI Visibility Pipelines
     Then the response status is 202 Request accepted for processing
 
   @skip-java @skip-python @skip-typescript @team:DataDog/ci-app-backend
+  Scenario: Send running job event returns "Request accepted for processing" response
+    Given new "CreateCIAppPipelineEvent" request
+    And body with value {"data": {"attributes": {"resource": {"level": "job", "id": "cf9456de-8b9e-4c27-aa79-27b1e78c1a33", "name": "Build image", "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a", "pipeline_name": "Deploy to AWS", "start": "{{ timeISO('now - 120s') }}", "status": "running", "url": "https://my-ci-provider.example/jobs/my-jobs/run/1"}}, "type": "cipipeline_resource_request"}}
+    When the request is sent
+    Then the response status is 202 Request accepted for processing
+
+  @skip-java @skip-python @skip-typescript @team:DataDog/ci-app-backend
   Scenario: Send running pipeline event returns "Request accepted for processing" response
     Given new "CreateCIAppPipelineEvent" request
     And body with value {"data": {"attributes": {"resource": {"level": "pipeline","unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a","name": "Deploy to AWS","url": "https://my-ci-provider.example/pipelines/my-pipeline/run/1","start": "{{ timeISO('now - 120s') }}","status": "running","partial_retry": false,"git": {"repository_url": "https://github.com/DataDog/datadog-agent","sha": "7f263865994b76066c4612fd1965215e7dcb4cd2","author_email": "john.doe@email.com"}}},"type": "cipipeline_resource_request"}}
