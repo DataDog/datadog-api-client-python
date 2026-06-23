@@ -333,6 +333,15 @@ from datadog_api_client.v1.model.logs_api_error_response import LogsAPIErrorResp
 from datadog_api_client.v1.model.logs_api_limit_reached_response import LogsAPILimitReachedResponse
 from datadog_api_client.v1.model.logs_arithmetic_processor import LogsArithmeticProcessor
 from datadog_api_client.v1.model.logs_arithmetic_processor_type import LogsArithmeticProcessorType
+from datadog_api_client.v1.model.logs_array_map_arithmetic_sub_processor import LogsArrayMapArithmeticSubProcessor
+from datadog_api_client.v1.model.logs_array_map_attribute_remapper import LogsArrayMapAttributeRemapper
+from datadog_api_client.v1.model.logs_array_map_category_sub_processor import LogsArrayMapCategorySubProcessor
+from datadog_api_client.v1.model.logs_array_map_processor import LogsArrayMapProcessor
+from datadog_api_client.v1.model.logs_array_map_processor_type import LogsArrayMapProcessorType
+from datadog_api_client.v1.model.logs_array_map_string_builder_sub_processor import (
+    LogsArrayMapStringBuilderSubProcessor,
+)
+from datadog_api_client.v1.model.logs_array_map_sub_processor import LogsArrayMapSubProcessor
 from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
 from datadog_api_client.v1.model.logs_array_processor_operation import LogsArrayProcessorOperation
 from datadog_api_client.v1.model.logs_array_processor_operation_append import LogsArrayProcessorOperationAppend
@@ -1674,6 +1683,13 @@ __all__ = [
     "LogsAPILimitReachedResponse",
     "LogsArithmeticProcessor",
     "LogsArithmeticProcessorType",
+    "LogsArrayMapArithmeticSubProcessor",
+    "LogsArrayMapAttributeRemapper",
+    "LogsArrayMapCategorySubProcessor",
+    "LogsArrayMapProcessor",
+    "LogsArrayMapProcessorType",
+    "LogsArrayMapStringBuilderSubProcessor",
+    "LogsArrayMapSubProcessor",
     "LogsArrayProcessor",
     "LogsArrayProcessorOperation",
     "LogsArrayProcessorOperationAppend",

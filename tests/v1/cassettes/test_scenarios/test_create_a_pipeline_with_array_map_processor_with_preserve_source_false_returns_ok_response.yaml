@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"filter":{"query":"source:python"},"name":"testPipelineArrayMapNoPreserve","processors":[{"is_enabled":true,"name":"map
+      and remove source","preserve_source":false,"processors":[{"sources":["$sourceElem.id"],"target":"$targetElem.uid","type":"attribute-remapper"}],"source":"items","target":"out","type":"array-map-processor"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines
+  response:
+    body:
+      string: '{"id":"hJXlpnp0RD68QPplvOMAcQ","type":"pipeline","name":"testPipelineArrayMapNoPreserve","is_enabled":false,"is_read_only":false,"filter":{"query":"source:python"},"processors":[{"name":"map
+        and remove source","is_enabled":true,"source":"items","target":"out","processors":[{"sources":["$sourceElem.id"],"target":"$targetElem.uid","preserve_source":false,"override_on_conflict":false,"type":"attribute-remapper"}],"preserve_source":false,"type":"array-map-processor"}],"tags":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines/hJXlpnp0RD68QPplvOMAcQ
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

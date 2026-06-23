@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: '{"filter":{"query":"source:python"},"name":"testPipelineArrayMap","processors":[{"is_enabled":true,"name":"map
+      items","preserve_source":true,"processors":[{"preserve_source":true,"sources":["$sourceElem.id"],"target":"$targetElem.uid","type":"attribute-remapper"},{"target":"$targetElem.label","template":"item-%{$sourceElem.id}","type":"string-builder-processor"}],"source":"items","target":"out","type":"array-map-processor"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines
+  response:
+    body:
+      string: '{"id":"9R-fEK0LRyWg0HzDbM-gOg","type":"pipeline","name":"testPipelineArrayMap","is_enabled":false,"is_read_only":false,"filter":{"query":"source:python"},"processors":[{"name":"map
+        items","is_enabled":true,"source":"items","target":"out","processors":[{"sources":["$sourceElem.id"],"target":"$targetElem.uid","preserve_source":true,"override_on_conflict":false,"type":"attribute-remapper"},{"template":"item-%{$sourceElem.id}","target":"$targetElem.label","is_replace_missing":false,"type":"string-builder-processor"}],"preserve_source":true,"type":"array-map-processor"}],"tags":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines/9R-fEK0LRyWg0HzDbM-gOg
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
