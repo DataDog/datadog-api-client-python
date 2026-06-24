@@ -42,7 +42,7 @@ body = UpdateWorkflowRequest(
                     ConnectionEnv(
                         connections=[
                             Connection(
-                                connection_id="11111111-1111-1111-1111-111111111111",
+                                connection_id="e1e64943-c7c5-4487-aece-25aaec7d3aad",
                                 label="INTEGRATION_DATADOG",
                             ),
                         ],
