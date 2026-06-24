@@ -137,6 +137,7 @@ if TYPE_CHECKING:
         ObservabilityPipelineSumoLogicSource,
     )
     from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source import ObservabilityPipelineSyslogNgSource
+    from datadog_api_client.v2.model.observability_pipeline_websocket_source import ObservabilityPipelineWebsocketSource
     from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
         ObservabilityPipelineOpentelemetrySource,
     )
@@ -229,6 +230,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSplunkTcpSource,
                 ObservabilityPipelineSumoLogicSource,
                 ObservabilityPipelineSyslogNgSource,
+                ObservabilityPipelineWebsocketSource,
                 ObservabilityPipelineOpentelemetrySource,
             ]
         ],

@@ -103,6 +103,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
             This allows downstream components to forward the token to other Splunk HEC destinations.
         :type store_hec_token: bool, optional
 
+        :param uri_key: Name of the environment variable or secret that holds the WebSocket server URI (`ws://` or `wss://`).
+        :type uri_key: str, optional
+
         :param grpc_address_key: Environment variable name containing the gRPC server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
         :type grpc_address_key: str, optional
 
@@ -160,6 +163,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source import (
             ObservabilityPipelineSyslogNgSource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_websocket_source import (
+            ObservabilityPipelineWebsocketSource,
+        )
         from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
             ObservabilityPipelineOpentelemetrySource,
         )
@@ -182,6 +188,7 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
                 ObservabilityPipelineSplunkTcpSource,
                 ObservabilityPipelineSumoLogicSource,
                 ObservabilityPipelineSyslogNgSource,
+                ObservabilityPipelineWebsocketSource,
                 ObservabilityPipelineOpentelemetrySource,
             ],
         }
