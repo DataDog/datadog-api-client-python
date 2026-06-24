@@ -16,16 +16,20 @@ class SecurityMonitoringTerraformResourceType(ModelSimple):
     """
     The type of security monitoring resource to export to Terraform.
 
-    :param value: Must be one of ["suppressions", "critical_assets"].
+    :param value: Must be one of ["suppressions", "critical_assets", "security_filters", "rules"].
     :type value: str
     """
 
     allowed_values = {
         "suppressions",
         "critical_assets",
+        "security_filters",
+        "rules",
     }
     SUPPRESSIONS: ClassVar["SecurityMonitoringTerraformResourceType"]
     CRITICAL_ASSETS: ClassVar["SecurityMonitoringTerraformResourceType"]
+    SECURITY_FILTERS: ClassVar["SecurityMonitoringTerraformResourceType"]
+    RULES: ClassVar["SecurityMonitoringTerraformResourceType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +40,5 @@ class SecurityMonitoringTerraformResourceType(ModelSimple):
 
 SecurityMonitoringTerraformResourceType.SUPPRESSIONS = SecurityMonitoringTerraformResourceType("suppressions")
 SecurityMonitoringTerraformResourceType.CRITICAL_ASSETS = SecurityMonitoringTerraformResourceType("critical_assets")
+SecurityMonitoringTerraformResourceType.SECURITY_FILTERS = SecurityMonitoringTerraformResourceType("security_filters")
+SecurityMonitoringTerraformResourceType.RULES = SecurityMonitoringTerraformResourceType("rules")
