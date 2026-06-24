@@ -5,10 +5,15 @@ Create or update a budget returns "OK" response
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.model.budget_attributes import BudgetAttributes
+from datadog_api_client.v2.model.budget_attributes_costs import BudgetAttributesCosts
+from datadog_api_client.v2.model.budget_attributes_costs_unit import BudgetAttributesCostsUnit
 from datadog_api_client.v2.model.budget_with_entries import BudgetWithEntries
 from datadog_api_client.v2.model.budget_with_entries_data import BudgetWithEntriesData
 from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items import (
     BudgetWithEntriesDataAttributesEntriesItems,
+)
+from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_costs import (
+    BudgetWithEntriesDataAttributesEntriesItemsCosts,
 )
 from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
     BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
@@ -17,11 +22,25 @@ from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_ite
 body = BudgetWithEntries(
     data=BudgetWithEntriesData(
         attributes=BudgetAttributes(
+            costs=BudgetAttributesCosts(
+                actual=None,
+                amount=None,
+                forecast=None,
+                ootb_forecast=None,
+            ),
+            costs_unit=BudgetAttributesCostsUnit(),
             created_at=1738258683590,
             created_by="00000000-0a0a-0a0a-aaa0-00000000000a",
             end_month=202502,
             entries=[
                 BudgetWithEntriesDataAttributesEntriesItems(
+                    costs=BudgetWithEntriesDataAttributesEntriesItemsCosts(
+                        actual=None,
+                        amount=None,
+                        custom_forecast=None,
+                        forecast=None,
+                        ootb_forecast=None,
+                    ),
                     tag_filters=[
                         BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems(),
                     ],

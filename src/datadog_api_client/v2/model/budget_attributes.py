@@ -14,6 +14,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.budget_attributes_costs import BudgetAttributesCosts
+    from datadog_api_client.v2.model.budget_attributes_costs_unit import BudgetAttributesCostsUnit
     from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items import (
         BudgetWithEntriesDataAttributesEntriesItems,
     )
@@ -22,11 +24,17 @@ if TYPE_CHECKING:
 class BudgetAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.budget_attributes_costs import BudgetAttributesCosts
+        from datadog_api_client.v2.model.budget_attributes_costs_unit import BudgetAttributesCostsUnit
         from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items import (
             BudgetWithEntriesDataAttributesEntriesItems,
         )
 
         return {
+            "costs": (BudgetAttributesCosts,),
+            "costs_period_end": (int,),
+            "costs_period_start": (int,),
+            "costs_unit": (BudgetAttributesCostsUnit,),
             "created_at": (int,),
             "created_by": (str,),
             "end_month": (int,),
@@ -41,6 +49,10 @@ class BudgetAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "costs": "costs",
+        "costs_period_end": "costs_period_end",
+        "costs_period_start": "costs_period_start",
+        "costs_unit": "costs_unit",
         "created_at": "created_at",
         "created_by": "created_by",
         "end_month": "end_month",
@@ -56,6 +68,10 @@ class BudgetAttributes(ModelNormal):
 
     def __init__(
         self_,
+        costs: Union[BudgetAttributesCosts, UnsetType] = unset,
+        costs_period_end: Union[int, UnsetType] = unset,
+        costs_period_start: Union[int, UnsetType] = unset,
+        costs_unit: Union[BudgetAttributesCostsUnit, UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         created_by: Union[str, UnsetType] = unset,
         end_month: Union[int, UnsetType] = unset,
@@ -71,6 +87,18 @@ class BudgetAttributes(ModelNormal):
     ):
         """
         The attributes of a budget.
+
+        :param costs: Aggregated cost data for the budget over the requested period.
+        :type costs: BudgetAttributesCosts, optional
+
+        :param costs_period_end: The end of the period used to compute cost data, in milliseconds since epoch.
+        :type costs_period_end: int, optional
+
+        :param costs_period_start: The start of the period used to compute cost data, in milliseconds since epoch.
+        :type costs_period_start: int, optional
+
+        :param costs_unit: The unit used for all cost values in the response.
+        :type costs_unit: BudgetAttributesCostsUnit, optional
 
         :param created_at: The timestamp when the budget was created.
         :type created_at: int, optional
@@ -105,6 +133,14 @@ class BudgetAttributes(ModelNormal):
         :param updated_by: The id of the user that created the budget.
         :type updated_by: str, optional
         """
+        if costs is not unset:
+            kwargs["costs"] = costs
+        if costs_period_end is not unset:
+            kwargs["costs_period_end"] = costs_period_end
+        if costs_period_start is not unset:
+            kwargs["costs_period_start"] = costs_period_start
+        if costs_unit is not unset:
+            kwargs["costs_unit"] = costs_unit
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if created_by is not unset:
