@@ -1755,6 +1755,12 @@
       "type": "safe"
     }
   },
+  "UpsertCustomForecast": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ValidateBudget": {
     "tag": "Cloud Cost Management",
     "undo": {
@@ -1771,6 +1777,12 @@
     "tag": "Cloud Cost Management",
     "undo": {
       "type": "safe"
+    }
+  },
+  "DeleteCustomForecast": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "ListBudgets": {

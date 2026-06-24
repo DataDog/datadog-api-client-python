@@ -2020,6 +2020,17 @@ from datadog_api_client.v2.model.custom_destination_update_request_definition im
     CustomDestinationUpdateRequestDefinition,
 )
 from datadog_api_client.v2.model.custom_destinations_response import CustomDestinationsResponse
+from datadog_api_client.v2.model.custom_forecast_entry import CustomForecastEntry
+from datadog_api_client.v2.model.custom_forecast_entry_tag_filter import CustomForecastEntryTagFilter
+from datadog_api_client.v2.model.custom_forecast_response import CustomForecastResponse
+from datadog_api_client.v2.model.custom_forecast_response_data import CustomForecastResponseData
+from datadog_api_client.v2.model.custom_forecast_response_data_attributes import CustomForecastResponseDataAttributes
+from datadog_api_client.v2.model.custom_forecast_type import CustomForecastType
+from datadog_api_client.v2.model.custom_forecast_upsert_request import CustomForecastUpsertRequest
+from datadog_api_client.v2.model.custom_forecast_upsert_request_data import CustomForecastUpsertRequestData
+from datadog_api_client.v2.model.custom_forecast_upsert_request_data_attributes import (
+    CustomForecastUpsertRequestDataAttributes,
+)
 from datadog_api_client.v2.model.custom_framework_control import CustomFrameworkControl
 from datadog_api_client.v2.model.custom_framework_data import CustomFrameworkData
 from datadog_api_client.v2.model.custom_framework_data_attributes import CustomFrameworkDataAttributes
@@ -10950,6 +10961,15 @@ __all__ = [
     "CustomDestinationUpdateRequestAttributes",
     "CustomDestinationUpdateRequestDefinition",
     "CustomDestinationsResponse",
+    "CustomForecastEntry",
+    "CustomForecastEntryTagFilter",
+    "CustomForecastResponse",
+    "CustomForecastResponseData",
+    "CustomForecastResponseDataAttributes",
+    "CustomForecastType",
+    "CustomForecastUpsertRequest",
+    "CustomForecastUpsertRequestData",
+    "CustomForecastUpsertRequestDataAttributes",
     "CustomFrameworkControl",
     "CustomFrameworkData",
     "CustomFrameworkDataAttributes",

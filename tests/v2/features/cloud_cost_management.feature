@@ -68,6 +68,30 @@ Feature: Cloud Cost Management
     And the response "data.attributes.rule_name" is equal to "example-arbitrary-cost-rule"
 
   @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Create or replace a budget's custom forecast returns "Bad Request" response
+    Given operation "UpsertCustomForecast" enabled
+    And new "UpsertCustomForecast" request
+    And body with value {"data": {"attributes": {"budget_uid": "00000000-0000-0000-0000-000000000001", "entries": [{"amount": 400, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}]}, "id": "", "type": "custom_forecast"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Create or replace a budget's custom forecast returns "Not Found" response
+    Given operation "UpsertCustomForecast" enabled
+    And new "UpsertCustomForecast" request
+    And body with value {"data": {"attributes": {"budget_uid": "00000000-0000-0000-0000-000000000001", "entries": [{"amount": 400, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}]}, "id": "", "type": "custom_forecast"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Create or replace a budget's custom forecast returns "OK" response
+    Given operation "UpsertCustomForecast" enabled
+    And new "UpsertCustomForecast" request
+    And body with value {"data": {"attributes": {"budget_uid": "00000000-0000-0000-0000-000000000001", "entries": [{"amount": 400, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}]}, "id": "", "type": "custom_forecast"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or update a budget returns "Bad Request" response
     Given new "UpsertBudget" request
     And body with value {"data": {"attributes": {"created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
@@ -210,6 +234,30 @@ Feature: Cloud Cost Management
     And request contains "budget_id" parameter with value "1"
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Delete a budget's custom forecast returns "Bad Request" response
+    Given operation "DeleteCustomForecast" enabled
+    And new "DeleteCustomForecast" request
+    And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Delete a budget's custom forecast returns "No Content" response
+    Given operation "DeleteCustomForecast" enabled
+    And new "DeleteCustomForecast" request
+    And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Delete a budget's custom forecast returns "Not Found" response
+    Given operation "DeleteCustomForecast" enabled
+    And new "DeleteCustomForecast" request
+    And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Delete budget returns "No Content" response
