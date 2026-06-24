@@ -294,3 +294,11 @@ Feature: Observability Pipelines
     When the request is sent
     Then the response status is 200 OK
     And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with websocket source bearer auth returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["websocket-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "websocket-source", "type": "websocket", "decoding": "json", "auth_strategy": "bearer", "token_key": "WS_BEARER_TOKEN", "uri_key": "WS_URI", "tls": {"mode": "enabled"}}]}, "name": "Pipeline with WebSocket Source"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0

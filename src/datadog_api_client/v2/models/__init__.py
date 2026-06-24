@@ -5817,6 +5817,28 @@ from datadog_api_client.v2.model.observability_pipeline_throttle_processor_type 
     ObservabilityPipelineThrottleProcessorType,
 )
 from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+from datadog_api_client.v2.model.observability_pipeline_websocket_source import ObservabilityPipelineWebsocketSource
+from datadog_api_client.v2.model.observability_pipeline_websocket_source_auth_strategy import (
+    ObservabilityPipelineWebsocketSourceAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_websocket_source_tls import (
+    ObservabilityPipelineWebsocketSourceTls,
+)
+from datadog_api_client.v2.model.observability_pipeline_websocket_source_tls_enabled import (
+    ObservabilityPipelineWebsocketSourceTlsEnabled,
+)
+from datadog_api_client.v2.model.observability_pipeline_websocket_source_tls_enabled_mode import (
+    ObservabilityPipelineWebsocketSourceTlsEnabledMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_websocket_source_tls_with_client_cert import (
+    ObservabilityPipelineWebsocketSourceTlsWithClientCert,
+)
+from datadog_api_client.v2.model.observability_pipeline_websocket_source_tls_with_client_cert_mode import (
+    ObservabilityPipelineWebsocketSourceTlsWithClientCertMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_websocket_source_type import (
+    ObservabilityPipelineWebsocketSourceType,
+)
 from datadog_api_client.v2.model.okta_api_token import OktaAPIToken
 from datadog_api_client.v2.model.okta_api_token_type import OktaAPITokenType
 from datadog_api_client.v2.model.okta_api_token_update import OktaAPITokenUpdate
@@ -13513,6 +13535,14 @@ __all__ = [
     "ObservabilityPipelineThrottleProcessor",
     "ObservabilityPipelineThrottleProcessorType",
     "ObservabilityPipelineTls",
+    "ObservabilityPipelineWebsocketSource",
+    "ObservabilityPipelineWebsocketSourceAuthStrategy",
+    "ObservabilityPipelineWebsocketSourceTls",
+    "ObservabilityPipelineWebsocketSourceTlsEnabled",
+    "ObservabilityPipelineWebsocketSourceTlsEnabledMode",
+    "ObservabilityPipelineWebsocketSourceTlsWithClientCert",
+    "ObservabilityPipelineWebsocketSourceTlsWithClientCertMode",
+    "ObservabilityPipelineWebsocketSourceType",
     "OktaAPIToken",
     "OktaAPITokenType",
     "OktaAPITokenUpdate",
