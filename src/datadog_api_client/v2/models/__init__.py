@@ -3186,6 +3186,18 @@ from datadog_api_client.v2.model.google_chat_update_organization_handle_request_
 from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
 from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
 from datadog_api_client.v2.model.governance_best_practice_definition import GovernanceBestPracticeDefinition
+from datadog_api_client.v2.model.governance_control_attributes import GovernanceControlAttributes
+from datadog_api_client.v2.model.governance_control_data import GovernanceControlData
+from datadog_api_client.v2.model.governance_control_mitigation_definition import GovernanceControlMitigationDefinition
+from datadog_api_client.v2.model.governance_control_parameter_definition import GovernanceControlParameterDefinition
+from datadog_api_client.v2.model.governance_control_parameters_map import GovernanceControlParametersMap
+from datadog_api_client.v2.model.governance_control_resource_type import GovernanceControlResourceType
+from datadog_api_client.v2.model.governance_control_response import GovernanceControlResponse
+from datadog_api_client.v2.model.governance_control_supported_value import GovernanceControlSupportedValue
+from datadog_api_client.v2.model.governance_control_update_attributes import GovernanceControlUpdateAttributes
+from datadog_api_client.v2.model.governance_control_update_data import GovernanceControlUpdateData
+from datadog_api_client.v2.model.governance_control_update_request import GovernanceControlUpdateRequest
+from datadog_api_client.v2.model.governance_controls_response import GovernanceControlsResponse
 from datadog_api_client.v2.model.governance_insight_attributes import GovernanceInsightAttributes
 from datadog_api_client.v2.model.governance_insight_audit_compute import GovernanceInsightAuditCompute
 from datadog_api_client.v2.model.governance_insight_audit_query import GovernanceInsightAuditQuery
@@ -11894,6 +11906,18 @@ __all__ = [
     "GoogleMeetConfigurationReference",
     "GoogleMeetConfigurationReferenceData",
     "GovernanceBestPracticeDefinition",
+    "GovernanceControlAttributes",
+    "GovernanceControlData",
+    "GovernanceControlMitigationDefinition",
+    "GovernanceControlParameterDefinition",
+    "GovernanceControlParametersMap",
+    "GovernanceControlResourceType",
+    "GovernanceControlResponse",
+    "GovernanceControlSupportedValue",
+    "GovernanceControlUpdateAttributes",
+    "GovernanceControlUpdateData",
+    "GovernanceControlUpdateRequest",
+    "GovernanceControlsResponse",
     "GovernanceInsightAttributes",
     "GovernanceInsightAuditCompute",
     "GovernanceInsightAuditQuery",
