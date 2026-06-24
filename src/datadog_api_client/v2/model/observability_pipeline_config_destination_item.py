@@ -106,6 +106,33 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param container_name: The name of the Azure Blob Storage container to store logs in.
         :type container_name: str
 
+        :param batch: Batching configuration for ClickHouse inserts.
+        :type batch: ObservabilityPipelineClickhouseDestinationBatch, optional
+
+        :param batch_encoding: Batch encoding configuration for the ClickHouse destination.
+            Required when `format` is `arrow_stream`. The `codec` field must be set to `arrow_stream`.
+        :type batch_encoding: ObservabilityPipelineClickhouseDestinationBatchEncoding, optional
+
+        :param database: Optional ClickHouse database name. If omitted, the user's default database on the ClickHouse server is used.
+        :type database: str, optional
+
+        :param date_time_best_effort: When `true`, enables flexible DateTime parsing on the ClickHouse server side.
+        :type date_time_best_effort: bool, optional
+
+        :param format: Insert format for events sent to ClickHouse.
+            - `json_each_row`: Maps event fields to columns by name (ClickHouse `JSONEachRow`).
+            - `json_as_object`: Inserts each event into a single `Object('json')` / `JSON` column (ClickHouse `JSONAsObject`).
+            - `json_as_string`: Inserts each event into a single `String`-typed column as raw JSON (ClickHouse `JSONAsString`).
+            - `arrow_stream`: Batches events using Apache Arrow IPC streaming format. Requires `batch_encoding`.
+        :type format: ObservabilityPipelineClickhouseDestinationFormat, optional
+
+        :param skip_unknown_fields: When `true`, fields not present in the target table schema are dropped instead of causing insert errors.
+            When unset, the ClickHouse server's own `input_format_skip_unknown_fields` setting applies.
+        :type skip_unknown_fields: bool, none_type, optional
+
+        :param table: Target ClickHouse table name. Events are inserted into this table.
+        :type table: str
+
         :param routes: A list of routing rules that forward matching logs to Datadog using dedicated API keys.
         :type routes: [ObservabilityPipelineDatadogLogsDestinationRoute], optional
 
@@ -165,9 +192,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param dcr_immutable_id: The immutable ID of the Data Collection Rule (DCR).
         :type dcr_immutable_id: str
-
-        :param table: The name of the Log Analytics table where logs are sent.
-        :type table: str
 
         :param tenant_id: Azure AD tenant ID.
         :type tenant_id: str
@@ -263,6 +287,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
             ObservabilityPipelineAmazonSecurityLakeDestination,
         )
         from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
+        from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination import (
+            ObservabilityPipelineClickhouseDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
             ObservabilityPipelineCloudPremDestination,
         )
@@ -328,6 +355,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineAmazonS3GenericDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 AzureStorageDestination,
+                ObservabilityPipelineClickhouseDestination,
                 ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
                 ObservabilityPipelineDatadogLogsDestination,

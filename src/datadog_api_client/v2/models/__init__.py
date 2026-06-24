@@ -5042,6 +5042,39 @@ from datadog_api_client.v2.model.observability_pipeline_buffer_options_memory_ty
 from datadog_api_client.v2.model.observability_pipeline_buffer_options_when_full import (
     ObservabilityPipelineBufferOptionsWhenFull,
 )
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination import (
+    ObservabilityPipelineClickhouseDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_auth import (
+    ObservabilityPipelineClickhouseDestinationAuth,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_auth_strategy import (
+    ObservabilityPipelineClickhouseDestinationAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_batch import (
+    ObservabilityPipelineClickhouseDestinationBatch,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_batch_encoding import (
+    ObservabilityPipelineClickhouseDestinationBatchEncoding,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_batch_encoding_codec import (
+    ObservabilityPipelineClickhouseDestinationBatchEncodingCodec,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_compression import (
+    ObservabilityPipelineClickhouseDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_compression_algorithm import (
+    ObservabilityPipelineClickhouseDestinationCompressionAlgorithm,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_compression_object import (
+    ObservabilityPipelineClickhouseDestinationCompressionObject,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_format import (
+    ObservabilityPipelineClickhouseDestinationFormat,
+)
+from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_type import (
+    ObservabilityPipelineClickhouseDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
     ObservabilityPipelineCloudPremDestination,
 )
@@ -13195,6 +13228,17 @@ __all__ = [
     "ObservabilityPipelineBufferOptionsDiskType",
     "ObservabilityPipelineBufferOptionsMemoryType",
     "ObservabilityPipelineBufferOptionsWhenFull",
+    "ObservabilityPipelineClickhouseDestination",
+    "ObservabilityPipelineClickhouseDestinationAuth",
+    "ObservabilityPipelineClickhouseDestinationAuthStrategy",
+    "ObservabilityPipelineClickhouseDestinationBatch",
+    "ObservabilityPipelineClickhouseDestinationBatchEncoding",
+    "ObservabilityPipelineClickhouseDestinationBatchEncodingCodec",
+    "ObservabilityPipelineClickhouseDestinationCompression",
+    "ObservabilityPipelineClickhouseDestinationCompressionAlgorithm",
+    "ObservabilityPipelineClickhouseDestinationCompressionObject",
+    "ObservabilityPipelineClickhouseDestinationFormat",
+    "ObservabilityPipelineClickhouseDestinationType",
     "ObservabilityPipelineCloudPremDestination",
     "ObservabilityPipelineCloudPremDestinationType",
     "ObservabilityPipelineConfig",
