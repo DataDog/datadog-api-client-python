@@ -2792,6 +2792,24 @@
       "type": "safe"
     }
   },
+  "ListGovernanceControls": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetGovernanceControl": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGovernanceControl": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListGovernanceInsights": {
     "tag": "Governance Insights",
     "undo": {

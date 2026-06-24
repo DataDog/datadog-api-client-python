@@ -17014,6 +17014,90 @@ datadog\_api\_client.v2.model.governance\_best\_practice\_definition module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.governance\_control\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_mitigation\_definition module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_mitigation_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_parameter\_definition module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_parameter_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_parameters\_map module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_parameters_map
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_resource\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_supported\_value module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_supported_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_update\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_update\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_update\_request module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_controls\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_controls_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.governance\_insight\_attributes module
 --------------------------------------------------------------------
 
