@@ -4578,6 +4578,7 @@ from datadog_api_client.v2.model.metric_origin import MetricOrigin
 from datadog_api_client.v2.model.metric_pagination_meta import MetricPaginationMeta
 from datadog_api_client.v2.model.metric_payload import MetricPayload
 from datadog_api_client.v2.model.metric_point import MetricPoint
+from datadog_api_client.v2.model.metric_relationships import MetricRelationships
 from datadog_api_client.v2.model.metric_resource import MetricResource
 from datadog_api_client.v2.model.metric_slo_asset import MetricSLOAsset
 from datadog_api_client.v2.model.metric_slo_type import MetricSLOType
@@ -4612,6 +4613,8 @@ from datadog_api_client.v2.model.metric_tag_configuration_update_data import Met
 from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
 from datadog_api_client.v2.model.metric_type import MetricType
 from datadog_api_client.v2.model.metric_volumes import MetricVolumes
+from datadog_api_client.v2.model.metric_volumes_relationship import MetricVolumesRelationship
+from datadog_api_client.v2.model.metric_volumes_relationship_data import MetricVolumesRelationshipData
 from datadog_api_client.v2.model.metric_volumes_response import MetricVolumesResponse
 from datadog_api_client.v2.model.metrics_aggregator import MetricsAggregator
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
@@ -13017,6 +13020,7 @@ __all__ = [
     "MetricPaginationMeta",
     "MetricPayload",
     "MetricPoint",
+    "MetricRelationships",
     "MetricResource",
     "MetricSLOAsset",
     "MetricSLOType",
@@ -13043,6 +13047,8 @@ __all__ = [
     "MetricTagConfigurationUpdateRequest",
     "MetricType",
     "MetricVolumes",
+    "MetricVolumesRelationship",
+    "MetricVolumesRelationshipData",
     "MetricVolumesResponse",
     "MetricsAggregator",
     "MetricsAndMetricTagConfigurations",
