@@ -193,6 +193,14 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with ClickHouse destination with all fields set returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "clickhouse-destination", "inputs": ["my-processor-group"], "type": "clickhouse", "endpoint_url_key": "CLICKHOUSE_ENDPOINT_URL", "database": "my_database", "table": "application_logs", "format": "arrow_stream", "skip_unknown_fields": true, "date_time_best_effort": true, "compression": {"algorithm": "gzip", "level": 6}, "auth": {"strategy": "basic", "username_key": "CLICKHOUSE_USERNAME", "password_key": "CLICKHOUSE_PASSWORD"}, "batch": {"max_events": 1000, "timeout_secs": 1}, "batch_encoding": {"codec": "arrow_stream", "allow_nullable_fields": true}, "tls": {"crt_file": "/path/to/cert.crt", "ca_file": "/path/to/ca.crt", "key_file": "/path/to/key.key", "key_pass_key": "TLS_KEY_PASSPHRASE"}, "buffer": {"type": "memory", "max_events": 500, "when_full": "block"}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with ClickHouse Destination All Fields"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline with HTTP server source valid_tokens returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["http-server-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "http-server-source", "type": "http_server", "auth_strategy": "none", "decoding": "json", "valid_tokens": [{"token_key": "HTTP_SERVER_TOKEN", "enabled": true, "path_to_token": {"header": "X-Token"}, "field_to_add": {"key": "token_name", "value": "primary_token"}}, {"token_key": "HTTP_SERVER_TOKEN_BACKUP", "enabled": true, "path_to_token": "path"}]}]}, "name": "Pipeline with HTTP server valid_tokens"}, "type": "pipelines"}}
