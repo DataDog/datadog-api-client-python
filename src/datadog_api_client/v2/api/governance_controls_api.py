@@ -28,7 +28,7 @@ class GovernanceControlsApi:
         self._get_governance_control_endpoint = _Endpoint(
             settings={
                 "response_type": (GovernanceControlResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/control/{detection_type}",
                 "operation_id": "get_governance_control",
                 "http_method": "GET",
@@ -51,7 +51,7 @@ class GovernanceControlsApi:
         self._list_governance_controls_endpoint = _Endpoint(
             settings={
                 "response_type": (GovernanceControlsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/control",
                 "operation_id": "list_governance_controls",
                 "http_method": "GET",
@@ -67,7 +67,7 @@ class GovernanceControlsApi:
         self._update_governance_control_endpoint = _Endpoint(
             settings={
                 "response_type": (GovernanceControlResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/control/{detection_type}",
                 "operation_id": "update_governance_control",
                 "http_method": "PATCH",
