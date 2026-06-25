@@ -24,6 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_batch_encoding import (
         ObservabilityPipelineClickhouseDestinationBatchEncoding,
     )
+    from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
     from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_compression import (
         ObservabilityPipelineClickhouseDestinationCompression,
     )
@@ -33,6 +34,15 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_type import (
         ObservabilityPipelineClickhouseDestinationType,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
+        ObservabilityPipelineDiskBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_options import (
+        ObservabilityPipelineMemoryBufferOptions,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
+        ObservabilityPipelineMemoryBufferSizeOptions,
     )
     from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_compression_object import (
         ObservabilityPipelineClickhouseDestinationCompressionObject,
@@ -51,6 +61,7 @@ class ObservabilityPipelineClickhouseDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_batch_encoding import (
             ObservabilityPipelineClickhouseDestinationBatchEncoding,
         )
+        from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
         from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_compression import (
             ObservabilityPipelineClickhouseDestinationCompression,
         )
@@ -66,6 +77,7 @@ class ObservabilityPipelineClickhouseDestination(ModelNormal):
             "auth": (ObservabilityPipelineClickhouseDestinationAuth,),
             "batch": (ObservabilityPipelineClickhouseDestinationBatch,),
             "batch_encoding": (ObservabilityPipelineClickhouseDestinationBatchEncoding,),
+            "buffer": (ObservabilityPipelineBufferOptions,),
             "compression": (ObservabilityPipelineClickhouseDestinationCompression,),
             "database": (str,),
             "date_time_best_effort": (bool,),
@@ -83,6 +95,7 @@ class ObservabilityPipelineClickhouseDestination(ModelNormal):
         "auth": "auth",
         "batch": "batch",
         "batch_encoding": "batch_encoding",
+        "buffer": "buffer",
         "compression": "compression",
         "database": "database",
         "date_time_best_effort": "date_time_best_effort",
@@ -105,6 +118,13 @@ class ObservabilityPipelineClickhouseDestination(ModelNormal):
         auth: Union[ObservabilityPipelineClickhouseDestinationAuth, UnsetType] = unset,
         batch: Union[ObservabilityPipelineClickhouseDestinationBatch, UnsetType] = unset,
         batch_encoding: Union[ObservabilityPipelineClickhouseDestinationBatchEncoding, UnsetType] = unset,
+        buffer: Union[
+            ObservabilityPipelineBufferOptions,
+            ObservabilityPipelineDiskBufferOptions,
+            ObservabilityPipelineMemoryBufferOptions,
+            ObservabilityPipelineMemoryBufferSizeOptions,
+            UnsetType,
+        ] = unset,
         compression: Union[
             ObservabilityPipelineClickhouseDestinationCompression,
             str,
@@ -134,6 +154,9 @@ class ObservabilityPipelineClickhouseDestination(ModelNormal):
         :param batch_encoding: Batch encoding configuration for the ClickHouse destination.
             Required when ``format`` is ``arrow_stream``. The ``codec`` field must be set to ``arrow_stream``.
         :type batch_encoding: ObservabilityPipelineClickhouseDestinationBatchEncoding, optional
+
+        :param buffer: Configuration for buffer settings on destination components.
+        :type buffer: ObservabilityPipelineBufferOptions, optional
 
         :param compression: Compression setting for outbound HTTP requests to ClickHouse.
             Can be specified as a shorthand string ( ``"gzip"`` or ``"none"`` ) or as an object
@@ -183,6 +206,8 @@ class ObservabilityPipelineClickhouseDestination(ModelNormal):
             kwargs["batch"] = batch
         if batch_encoding is not unset:
             kwargs["batch_encoding"] = batch_encoding
+        if buffer is not unset:
+            kwargs["buffer"] = buffer
         if compression is not unset:
             kwargs["compression"] = compression
         if database is not unset:
