@@ -473,6 +473,11 @@ class MetricsApi:
                     "attribute": "filter[configured]",
                     "location": "query",
                 },
+                "filter_is_configurable": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[is_configurable]",
+                    "location": "query",
+                },
                 "filter_tags_configured": {
                     "openapi_types": (str,),
                     "attribute": "filter[tags_configured]",
@@ -510,6 +515,16 @@ class MetricsApi:
                 "filter_related_assets": {
                     "openapi_types": (bool,),
                     "attribute": "filter[related_assets]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
                     "location": "query",
                 },
                 "window_seconds": {
@@ -1153,6 +1168,7 @@ class MetricsApi:
         self,
         *,
         filter_configured: Union[bool, UnsetType] = unset,
+        filter_is_configurable: Union[bool, UnsetType] = unset,
         filter_tags_configured: Union[str, UnsetType] = unset,
         filter_metric_type: Union[MetricTagConfigurationMetricTypeCategory, UnsetType] = unset,
         filter_include_percentiles: Union[bool, UnsetType] = unset,
@@ -1160,6 +1176,8 @@ class MetricsApi:
         filter_queried_window_seconds: Union[int, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_related_assets: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
@@ -1170,8 +1188,10 @@ class MetricsApi:
 
         Query parameters use bracket notation (for example, ``filter[tags]`` , ``filter[queried][window][seconds]`` ). Pass them as standard URL query strings, URL-encoding the brackets if your client does not handle them. For example: ``GET /api/v2/metrics?filter[tags]=env:prod&window[seconds]=86400&page[size]=500``.
 
-        :param filter_configured: Only return custom metrics that have been configured with Metrics Without Limits.
+        :param filter_configured: Only return custom metrics that have been configured ( ``true`` ) or not configured ( ``false`` ) with Metrics Without Limits.
         :type filter_configured: bool, optional
+        :param filter_is_configurable: Only return metrics that are eligible ( ``true`` ) or ineligible ( ``false`` ) for configuration with Metrics Without Limits.
+        :type filter_is_configurable: bool, optional
         :param filter_tags_configured: Only return metrics that have the given tag key(s) in their Metrics Without Limits configuration (included or excluded).
         :type filter_tags_configured: str, optional
         :param filter_metric_type: Only return metrics of the given metric type.
@@ -1186,6 +1206,10 @@ class MetricsApi:
         :type filter_tags: str, optional
         :param filter_related_assets: Only return metrics that are used in at least one dashboard, monitor, notebook, or SLO.
         :type filter_related_assets: bool, optional
+        :param include: Include related resources in the response. Set to ``metric_volumes`` to include indexed and ingested volume counts for each metric.
+        :type include: str, optional
+        :param sort: Sort results by metric volume. Prefix a key with ``-`` for descending order. Supported keys: ``metric_volumes.indexed_volume`` , ``metric_volumes.ingested_volume`` , ``metric_volumes.indexed_volume_delta`` , ``metric_volumes.ingested_volume_delta``. Requires a paginated request ( ``page[size]`` or ``page[cursor]`` ).
+        :type sort: str, optional
         :param window_seconds: Only return metrics that have been actively reporting in the specified window. The default value is 3600 seconds (1 hour), the maximum value is 2,592,000 seconds (30 days), and the minimum value is 1 second.
         :type window_seconds: int, optional
         :param page_size: Maximum number of results per page. Send ``page[size]`` on the first request to opt in to pagination. On each subsequent request, send ``page[cursor]`` set to the value of ``meta.pagination.next_cursor`` from the previous response. The default value is 10000, the maximum value is 10000, and the minimum value is 1.
@@ -1197,6 +1221,9 @@ class MetricsApi:
         kwargs: Dict[str, Any] = {}
         if filter_configured is not unset:
             kwargs["filter_configured"] = filter_configured
+
+        if filter_is_configurable is not unset:
+            kwargs["filter_is_configurable"] = filter_is_configurable
 
         if filter_tags_configured is not unset:
             kwargs["filter_tags_configured"] = filter_tags_configured
@@ -1218,6 +1245,12 @@ class MetricsApi:
 
         if filter_related_assets is not unset:
             kwargs["filter_related_assets"] = filter_related_assets
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if sort is not unset:
+            kwargs["sort"] = sort
 
         if window_seconds is not unset:
             kwargs["window_seconds"] = window_seconds
@@ -1234,6 +1267,7 @@ class MetricsApi:
         self,
         *,
         filter_configured: Union[bool, UnsetType] = unset,
+        filter_is_configurable: Union[bool, UnsetType] = unset,
         filter_tags_configured: Union[str, UnsetType] = unset,
         filter_metric_type: Union[MetricTagConfigurationMetricTypeCategory, UnsetType] = unset,
         filter_include_percentiles: Union[bool, UnsetType] = unset,
@@ -1241,6 +1275,8 @@ class MetricsApi:
         filter_queried_window_seconds: Union[int, UnsetType] = unset,
         filter_tags: Union[str, UnsetType] = unset,
         filter_related_assets: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
         window_seconds: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
@@ -1249,8 +1285,10 @@ class MetricsApi:
 
         Provide a paginated version of :meth:`list_tag_configurations`, returning all items.
 
-        :param filter_configured: Only return custom metrics that have been configured with Metrics Without Limits.
+        :param filter_configured: Only return custom metrics that have been configured ( ``true`` ) or not configured ( ``false`` ) with Metrics Without Limits.
         :type filter_configured: bool, optional
+        :param filter_is_configurable: Only return metrics that are eligible ( ``true`` ) or ineligible ( ``false`` ) for configuration with Metrics Without Limits.
+        :type filter_is_configurable: bool, optional
         :param filter_tags_configured: Only return metrics that have the given tag key(s) in their Metrics Without Limits configuration (included or excluded).
         :type filter_tags_configured: str, optional
         :param filter_metric_type: Only return metrics of the given metric type.
@@ -1265,6 +1303,10 @@ class MetricsApi:
         :type filter_tags: str, optional
         :param filter_related_assets: Only return metrics that are used in at least one dashboard, monitor, notebook, or SLO.
         :type filter_related_assets: bool, optional
+        :param include: Include related resources in the response. Set to ``metric_volumes`` to include indexed and ingested volume counts for each metric.
+        :type include: str, optional
+        :param sort: Sort results by metric volume. Prefix a key with ``-`` for descending order. Supported keys: ``metric_volumes.indexed_volume`` , ``metric_volumes.ingested_volume`` , ``metric_volumes.indexed_volume_delta`` , ``metric_volumes.ingested_volume_delta``. Requires a paginated request ( ``page[size]`` or ``page[cursor]`` ).
+        :type sort: str, optional
         :param window_seconds: Only return metrics that have been actively reporting in the specified window. The default value is 3600 seconds (1 hour), the maximum value is 2,592,000 seconds (30 days), and the minimum value is 1 second.
         :type window_seconds: int, optional
         :param page_size: Maximum number of results per page. Send ``page[size]`` on the first request to opt in to pagination. On each subsequent request, send ``page[cursor]`` set to the value of ``meta.pagination.next_cursor`` from the previous response. The default value is 10000, the maximum value is 10000, and the minimum value is 1.
@@ -1278,6 +1320,9 @@ class MetricsApi:
         kwargs: Dict[str, Any] = {}
         if filter_configured is not unset:
             kwargs["filter_configured"] = filter_configured
+
+        if filter_is_configurable is not unset:
+            kwargs["filter_is_configurable"] = filter_is_configurable
 
         if filter_tags_configured is not unset:
             kwargs["filter_tags_configured"] = filter_tags_configured
@@ -1299,6 +1344,12 @@ class MetricsApi:
 
         if filter_related_assets is not unset:
             kwargs["filter_related_assets"] = filter_related_assets
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if sort is not unset:
+            kwargs["sort"] = sort
 
         if window_seconds is not unset:
             kwargs["window_seconds"] = window_seconds
