@@ -32,7 +32,7 @@ body = ReportSchedulePatchRequest(
                     ],
                 ),
             ],
-            timeframe="calendar_month",
+            timeframe="1w",
             timezone="America/New_York",
             title="Weekly Infrastructure Report",
         ),

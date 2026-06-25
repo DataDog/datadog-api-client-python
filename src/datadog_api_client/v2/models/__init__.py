@@ -6589,9 +6589,31 @@ from datadog_api_client.v2.model.report_schedule_create_request_attributes impor
 from datadog_api_client.v2.model.report_schedule_create_request_data import ReportScheduleCreateRequestData
 from datadog_api_client.v2.model.report_schedule_delivery_format import ReportScheduleDeliveryFormat
 from datadog_api_client.v2.model.report_schedule_included_resource import ReportScheduleIncludedResource
+from datadog_api_client.v2.model.report_schedule_included_resource_type import ReportScheduleIncludedResourceType
+from datadog_api_client.v2.model.report_schedule_index_template_variable import ReportScheduleIndexTemplateVariable
+from datadog_api_client.v2.model.report_schedule_list_resource_relationship import (
+    ReportScheduleListResourceRelationship,
+)
+from datadog_api_client.v2.model.report_schedule_list_resource_relationship_data import (
+    ReportScheduleListResourceRelationshipData,
+)
+from datadog_api_client.v2.model.report_schedule_list_response import ReportScheduleListResponse
+from datadog_api_client.v2.model.report_schedule_list_response_attributes import ReportScheduleListResponseAttributes
+from datadog_api_client.v2.model.report_schedule_list_response_data import ReportScheduleListResponseData
+from datadog_api_client.v2.model.report_schedule_list_response_links import ReportScheduleListResponseLinks
+from datadog_api_client.v2.model.report_schedule_list_response_meta import ReportScheduleListResponseMeta
+from datadog_api_client.v2.model.report_schedule_list_response_pagination import ReportScheduleListResponsePagination
+from datadog_api_client.v2.model.report_schedule_list_response_pagination_type import (
+    ReportScheduleListResponsePaginationType,
+)
+from datadog_api_client.v2.model.report_schedule_list_response_relationships import (
+    ReportScheduleListResponseRelationships,
+)
 from datadog_api_client.v2.model.report_schedule_patch_request import ReportSchedulePatchRequest
 from datadog_api_client.v2.model.report_schedule_patch_request_attributes import ReportSchedulePatchRequestAttributes
 from datadog_api_client.v2.model.report_schedule_patch_request_data import ReportSchedulePatchRequestData
+from datadog_api_client.v2.model.report_schedule_resource import ReportScheduleResource
+from datadog_api_client.v2.model.report_schedule_resource_attributes import ReportScheduleResourceAttributes
 from datadog_api_client.v2.model.report_schedule_resource_type import ReportScheduleResourceType
 from datadog_api_client.v2.model.report_schedule_response import ReportScheduleResponse
 from datadog_api_client.v2.model.report_schedule_response_attributes import ReportScheduleResponseAttributes
@@ -6602,6 +6624,9 @@ from datadog_api_client.v2.model.report_schedule_response_data import ReportSche
 from datadog_api_client.v2.model.report_schedule_response_relationships import ReportScheduleResponseRelationships
 from datadog_api_client.v2.model.report_schedule_status import ReportScheduleStatus
 from datadog_api_client.v2.model.report_schedule_template_variable import ReportScheduleTemplateVariable
+from datadog_api_client.v2.model.report_schedule_toggle_request import ReportScheduleToggleRequest
+from datadog_api_client.v2.model.report_schedule_toggle_request_attributes import ReportScheduleToggleRequestAttributes
+from datadog_api_client.v2.model.report_schedule_toggle_request_data import ReportScheduleToggleRequestData
 from datadog_api_client.v2.model.report_schedule_type import ReportScheduleType
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data import ResolveVulnerableSymbolsRequestData
@@ -14213,9 +14238,23 @@ __all__ = [
     "ReportScheduleCreateRequestData",
     "ReportScheduleDeliveryFormat",
     "ReportScheduleIncludedResource",
+    "ReportScheduleIncludedResourceType",
+    "ReportScheduleIndexTemplateVariable",
+    "ReportScheduleListResourceRelationship",
+    "ReportScheduleListResourceRelationshipData",
+    "ReportScheduleListResponse",
+    "ReportScheduleListResponseAttributes",
+    "ReportScheduleListResponseData",
+    "ReportScheduleListResponseLinks",
+    "ReportScheduleListResponseMeta",
+    "ReportScheduleListResponsePagination",
+    "ReportScheduleListResponsePaginationType",
+    "ReportScheduleListResponseRelationships",
     "ReportSchedulePatchRequest",
     "ReportSchedulePatchRequestAttributes",
     "ReportSchedulePatchRequestData",
+    "ReportScheduleResource",
+    "ReportScheduleResourceAttributes",
     "ReportScheduleResourceType",
     "ReportScheduleResponse",
     "ReportScheduleResponseAttributes",
@@ -14224,6 +14263,9 @@ __all__ = [
     "ReportScheduleResponseRelationships",
     "ReportScheduleStatus",
     "ReportScheduleTemplateVariable",
+    "ReportScheduleToggleRequest",
+    "ReportScheduleToggleRequestAttributes",
+    "ReportScheduleToggleRequestData",
     "ReportScheduleType",
     "ResolveVulnerableSymbolsRequest",
     "ResolveVulnerableSymbolsRequestData",

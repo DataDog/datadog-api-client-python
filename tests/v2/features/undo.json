@@ -6396,13 +6396,51 @@
   "CreateReportSchedule": {
     "tag": "Report Schedules",
     "undo": {
+      "operationId": "DeleteReportSchedule",
+      "parameters": [
+        {
+          "name": "schedule_uuid",
+          "source": "<RESPONSE_PATH>data.id"
+        }
+      ],
       "type": "unsafe"
+    }
+  },
+  "ListReportSchedules": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetReportSchedulesForResource": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteReportSchedule": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetReportSchedule": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "safe"
     }
   },
   "PatchReportSchedule": {
     "tag": "Report Schedules",
     "undo": {
       "operationId": "PatchReportSchedule",
+      "type": "idempotent"
+    }
+  },
+  "ToggleReportSchedule": {
+    "tag": "Report Schedules",
+    "undo": {
+      "operationId": "ToggleReportSchedule",
       "type": "idempotent"
     }
   },
