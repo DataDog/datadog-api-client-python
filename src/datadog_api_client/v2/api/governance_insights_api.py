@@ -30,7 +30,7 @@ class GovernanceInsightsApi:
         self._list_governance_insights_endpoint = _Endpoint(
             settings={
                 "response_type": (GovernanceInsightsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/insights",
                 "operation_id": "list_governance_insights",
                 "http_method": "GET",

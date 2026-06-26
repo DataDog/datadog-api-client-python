@@ -2792,6 +2792,12 @@
       "type": "safe"
     }
   },
+  "GetGovernanceConfig": {
+    "tag": "Governance Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListGovernanceControls": {
     "tag": "Governance Controls",
     "undo": {
@@ -2810,8 +2816,68 @@
       "type": "idempotent"
     }
   },
+  "ListGovernanceControlDetections": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetGovernanceControlDetection": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGovernanceControlDetection": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGovernanceControlNotificationSettings": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGovernanceControlNotificationSettings": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListGovernanceInsights": {
     "tag": "Governance Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListGovernanceLimits": {
+    "tag": "Governance Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGovernanceMitigation": {
+    "tag": "Governance Controls",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetGovernanceNotificationSettings": {
+    "tag": "Governance Settings",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGovernanceNotificationSettings": {
+    "tag": "Governance Settings",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListGovernanceResourceLimits": {
+    "tag": "Governance Settings",
     "undo": {
       "type": "safe"
     }

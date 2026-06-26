@@ -1468,6 +1468,22 @@ from datadog_api_client.v2.model.container_type import ContainerType
 from datadog_api_client.v2.model.containers_response import ContainersResponse
 from datadog_api_client.v2.model.containers_response_links import ContainersResponseLinks
 from datadog_api_client.v2.model.content_encoding import ContentEncoding
+from datadog_api_client.v2.model.control_notification_event_setting import ControlNotificationEventSetting
+from datadog_api_client.v2.model.control_notification_settings_attributes import ControlNotificationSettingsAttributes
+from datadog_api_client.v2.model.control_notification_settings_data import ControlNotificationSettingsData
+from datadog_api_client.v2.model.control_notification_settings_resource_type import (
+    ControlNotificationSettingsResourceType,
+)
+from datadog_api_client.v2.model.control_notification_settings_response import ControlNotificationSettingsResponse
+from datadog_api_client.v2.model.control_notification_settings_update_attributes import (
+    ControlNotificationSettingsUpdateAttributes,
+)
+from datadog_api_client.v2.model.control_notification_settings_update_data import ControlNotificationSettingsUpdateData
+from datadog_api_client.v2.model.control_notification_settings_update_request import (
+    ControlNotificationSettingsUpdateRequest,
+)
+from datadog_api_client.v2.model.control_notification_target import ControlNotificationTarget
+from datadog_api_client.v2.model.control_notification_target_type import ControlNotificationTargetType
 from datadog_api_client.v2.model.convert_job_results_to_signals_attributes import ConvertJobResultsToSignalsAttributes
 from datadog_api_client.v2.model.convert_job_results_to_signals_data import ConvertJobResultsToSignalsData
 from datadog_api_client.v2.model.convert_job_results_to_signals_data_type import ConvertJobResultsToSignalsDataType
@@ -3186,8 +3202,31 @@ from datadog_api_client.v2.model.google_chat_update_organization_handle_request_
 from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
 from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
 from datadog_api_client.v2.model.governance_best_practice_definition import GovernanceBestPracticeDefinition
+from datadog_api_client.v2.model.governance_config_attributes import GovernanceConfigAttributes
+from datadog_api_client.v2.model.governance_config_data import GovernanceConfigData
+from datadog_api_client.v2.model.governance_config_response import GovernanceConfigResponse
+from datadog_api_client.v2.model.governance_console_config_resource_type import GovernanceConsoleConfigResourceType
 from datadog_api_client.v2.model.governance_control_attributes import GovernanceControlAttributes
 from datadog_api_client.v2.model.governance_control_data import GovernanceControlData
+from datadog_api_client.v2.model.governance_control_detection_assignment_source import (
+    GovernanceControlDetectionAssignmentSource,
+)
+from datadog_api_client.v2.model.governance_control_detection_attributes import GovernanceControlDetectionAttributes
+from datadog_api_client.v2.model.governance_control_detection_data import GovernanceControlDetectionData
+from datadog_api_client.v2.model.governance_control_detection_resource_type import (
+    GovernanceControlDetectionResourceType,
+)
+from datadog_api_client.v2.model.governance_control_detection_response import GovernanceControlDetectionResponse
+from datadog_api_client.v2.model.governance_control_detection_state import GovernanceControlDetectionState
+from datadog_api_client.v2.model.governance_control_detection_update_attributes import (
+    GovernanceControlDetectionUpdateAttributes,
+)
+from datadog_api_client.v2.model.governance_control_detection_update_data import GovernanceControlDetectionUpdateData
+from datadog_api_client.v2.model.governance_control_detection_update_request import (
+    GovernanceControlDetectionUpdateRequest,
+)
+from datadog_api_client.v2.model.governance_control_detection_update_state import GovernanceControlDetectionUpdateState
+from datadog_api_client.v2.model.governance_control_detections_response import GovernanceControlDetectionsResponse
 from datadog_api_client.v2.model.governance_control_mitigation_definition import GovernanceControlMitigationDefinition
 from datadog_api_client.v2.model.governance_control_parameter_definition import GovernanceControlParameterDefinition
 from datadog_api_client.v2.model.governance_control_parameters_map import GovernanceControlParametersMap
@@ -3210,6 +3249,36 @@ from datadog_api_client.v2.model.governance_insight_query_config import Governan
 from datadog_api_client.v2.model.governance_insight_resource_type import GovernanceInsightResourceType
 from datadog_api_client.v2.model.governance_insight_usage_query import GovernanceInsightUsageQuery
 from datadog_api_client.v2.model.governance_insights_response import GovernanceInsightsResponse
+from datadog_api_client.v2.model.governance_limit_attributes import GovernanceLimitAttributes
+from datadog_api_client.v2.model.governance_limit_data import GovernanceLimitData
+from datadog_api_client.v2.model.governance_limit_query import GovernanceLimitQuery
+from datadog_api_client.v2.model.governance_limit_query_config import GovernanceLimitQueryConfig
+from datadog_api_client.v2.model.governance_limit_resource_type import GovernanceLimitResourceType
+from datadog_api_client.v2.model.governance_limits_response import GovernanceLimitsResponse
+from datadog_api_client.v2.model.governance_mitigation_request import GovernanceMitigationRequest
+from datadog_api_client.v2.model.governance_mitigation_request_attributes import GovernanceMitigationRequestAttributes
+from datadog_api_client.v2.model.governance_mitigation_request_data import GovernanceMitigationRequestData
+from datadog_api_client.v2.model.governance_notification_settings_attributes import (
+    GovernanceNotificationSettingsAttributes,
+)
+from datadog_api_client.v2.model.governance_notification_settings_data import GovernanceNotificationSettingsData
+from datadog_api_client.v2.model.governance_notification_settings_resource_type import (
+    GovernanceNotificationSettingsResourceType,
+)
+from datadog_api_client.v2.model.governance_notification_settings_response import GovernanceNotificationSettingsResponse
+from datadog_api_client.v2.model.governance_notification_settings_update_attributes import (
+    GovernanceNotificationSettingsUpdateAttributes,
+)
+from datadog_api_client.v2.model.governance_notification_settings_update_data import (
+    GovernanceNotificationSettingsUpdateData,
+)
+from datadog_api_client.v2.model.governance_notification_settings_update_request import (
+    GovernanceNotificationSettingsUpdateRequest,
+)
+from datadog_api_client.v2.model.governance_resource_limit_attributes import GovernanceResourceLimitAttributes
+from datadog_api_client.v2.model.governance_resource_limit_data import GovernanceResourceLimitData
+from datadog_api_client.v2.model.governance_resource_limit_resource_type import GovernanceResourceLimitResourceType
+from datadog_api_client.v2.model.governance_resource_limits_response import GovernanceResourceLimitsResponse
 from datadog_api_client.v2.model.grey_noise_api_key import GreyNoiseAPIKey
 from datadog_api_client.v2.model.grey_noise_api_key_type import GreyNoiseAPIKeyType
 from datadog_api_client.v2.model.grey_noise_api_key_update import GreyNoiseAPIKeyUpdate
@@ -10650,6 +10719,16 @@ __all__ = [
     "ContainersResponse",
     "ContainersResponseLinks",
     "ContentEncoding",
+    "ControlNotificationEventSetting",
+    "ControlNotificationSettingsAttributes",
+    "ControlNotificationSettingsData",
+    "ControlNotificationSettingsResourceType",
+    "ControlNotificationSettingsResponse",
+    "ControlNotificationSettingsUpdateAttributes",
+    "ControlNotificationSettingsUpdateData",
+    "ControlNotificationSettingsUpdateRequest",
+    "ControlNotificationTarget",
+    "ControlNotificationTargetType",
     "ConvertJobResultsToSignalsAttributes",
     "ConvertJobResultsToSignalsData",
     "ConvertJobResultsToSignalsDataType",
@@ -11934,8 +12013,23 @@ __all__ = [
     "GoogleMeetConfigurationReference",
     "GoogleMeetConfigurationReferenceData",
     "GovernanceBestPracticeDefinition",
+    "GovernanceConfigAttributes",
+    "GovernanceConfigData",
+    "GovernanceConfigResponse",
+    "GovernanceConsoleConfigResourceType",
     "GovernanceControlAttributes",
     "GovernanceControlData",
+    "GovernanceControlDetectionAssignmentSource",
+    "GovernanceControlDetectionAttributes",
+    "GovernanceControlDetectionData",
+    "GovernanceControlDetectionResourceType",
+    "GovernanceControlDetectionResponse",
+    "GovernanceControlDetectionState",
+    "GovernanceControlDetectionUpdateAttributes",
+    "GovernanceControlDetectionUpdateData",
+    "GovernanceControlDetectionUpdateRequest",
+    "GovernanceControlDetectionUpdateState",
+    "GovernanceControlDetectionsResponse",
     "GovernanceControlMitigationDefinition",
     "GovernanceControlParameterDefinition",
     "GovernanceControlParametersMap",
@@ -11958,6 +12052,26 @@ __all__ = [
     "GovernanceInsightResourceType",
     "GovernanceInsightUsageQuery",
     "GovernanceInsightsResponse",
+    "GovernanceLimitAttributes",
+    "GovernanceLimitData",
+    "GovernanceLimitQuery",
+    "GovernanceLimitQueryConfig",
+    "GovernanceLimitResourceType",
+    "GovernanceLimitsResponse",
+    "GovernanceMitigationRequest",
+    "GovernanceMitigationRequestAttributes",
+    "GovernanceMitigationRequestData",
+    "GovernanceNotificationSettingsAttributes",
+    "GovernanceNotificationSettingsData",
+    "GovernanceNotificationSettingsResourceType",
+    "GovernanceNotificationSettingsResponse",
+    "GovernanceNotificationSettingsUpdateAttributes",
+    "GovernanceNotificationSettingsUpdateData",
+    "GovernanceNotificationSettingsUpdateRequest",
+    "GovernanceResourceLimitAttributes",
+    "GovernanceResourceLimitData",
+    "GovernanceResourceLimitResourceType",
+    "GovernanceResourceLimitsResponse",
     "GreyNoiseAPIKey",
     "GreyNoiseAPIKeyType",
     "GreyNoiseAPIKeyUpdate",
