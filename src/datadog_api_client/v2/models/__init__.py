@@ -283,6 +283,38 @@ from datadog_api_client.v2.model.allocation_exposure_schedule_data_type import A
 from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
 from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.allocation_type import AllocationType
+from datadog_api_client.v2.model.ams_integration_account_attributes import AmsIntegrationAccountAttributes
+from datadog_api_client.v2.model.ams_integration_account_create_request import AmsIntegrationAccountCreateRequest
+from datadog_api_client.v2.model.ams_integration_account_create_request_attributes import (
+    AmsIntegrationAccountCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.ams_integration_account_create_request_data import (
+    AmsIntegrationAccountCreateRequestData,
+)
+from datadog_api_client.v2.model.ams_integration_account_response import AmsIntegrationAccountResponse
+from datadog_api_client.v2.model.ams_integration_account_response_data import AmsIntegrationAccountResponseData
+from datadog_api_client.v2.model.ams_integration_account_schema_response import AmsIntegrationAccountSchemaResponse
+from datadog_api_client.v2.model.ams_integration_account_schema_response_properties import (
+    AmsIntegrationAccountSchemaResponseProperties,
+)
+from datadog_api_client.v2.model.ams_integration_account_schema_response_secrets_object import (
+    AmsIntegrationAccountSchemaResponseSecretsObject,
+)
+from datadog_api_client.v2.model.ams_integration_account_schema_response_settings_field import (
+    AmsIntegrationAccountSchemaResponseSettingsField,
+)
+from datadog_api_client.v2.model.ams_integration_account_schema_response_settings_object import (
+    AmsIntegrationAccountSchemaResponseSettingsObject,
+)
+from datadog_api_client.v2.model.ams_integration_account_type import AmsIntegrationAccountType
+from datadog_api_client.v2.model.ams_integration_account_update_request import AmsIntegrationAccountUpdateRequest
+from datadog_api_client.v2.model.ams_integration_account_update_request_attributes import (
+    AmsIntegrationAccountUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.ams_integration_account_update_request_data import (
+    AmsIntegrationAccountUpdateRequestData,
+)
+from datadog_api_client.v2.model.ams_integration_accounts_response import AmsIntegrationAccountsResponse
 from datadog_api_client.v2.model.analysis_edit import AnalysisEdit
 from datadog_api_client.v2.model.analysis_edit_type import AnalysisEditType
 from datadog_api_client.v2.model.analysis_fix import AnalysisFix
@@ -9745,6 +9777,22 @@ __all__ = [
     "AllocationExposureScheduleResponse",
     "AllocationResponse",
     "AllocationType",
+    "AmsIntegrationAccountAttributes",
+    "AmsIntegrationAccountCreateRequest",
+    "AmsIntegrationAccountCreateRequestAttributes",
+    "AmsIntegrationAccountCreateRequestData",
+    "AmsIntegrationAccountResponse",
+    "AmsIntegrationAccountResponseData",
+    "AmsIntegrationAccountSchemaResponse",
+    "AmsIntegrationAccountSchemaResponseProperties",
+    "AmsIntegrationAccountSchemaResponseSecretsObject",
+    "AmsIntegrationAccountSchemaResponseSettingsField",
+    "AmsIntegrationAccountSchemaResponseSettingsObject",
+    "AmsIntegrationAccountType",
+    "AmsIntegrationAccountUpdateRequest",
+    "AmsIntegrationAccountUpdateRequestAttributes",
+    "AmsIntegrationAccountUpdateRequestData",
+    "AmsIntegrationAccountsResponse",
     "AnalysisEdit",
     "AnalysisEditType",
     "AnalysisFix",
