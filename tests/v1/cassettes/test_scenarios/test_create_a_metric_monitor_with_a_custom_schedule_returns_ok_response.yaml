@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"draft_status":"published","message":"some message Notify: @hipchat-channel","name":"Test-Create_a_metric_monitor_with_a_custom_schedule_returns_OK_response-1747261709","options":{"include_tags":false,"notify_audit":false,"scheduling_options":{"custom_schedule":{"recurrences":[{"rrule":"FREQ=DAILY;INTERVAL=1","start":"2024-10-26T09:13:00","timezone":"America/Los_Angeles"}]},"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5}},"query":"avg(current_1mo):avg:system.load.5{*}
+    body: '{"draft_status":"published","message":"some message Notify: @hipchat-channel","name":"Test-Create_a_metric_monitor_with_a_custom_schedule_returns_OK_response-1747261709","options":{"include_tags":false,"notify_audit":false,"on_missing_data":"default","scheduling_options":{"custom_schedule":{"recurrences":[{"rrule":"FREQ=DAILY;INTERVAL=1","start":"2024-10-26T09:13:00","timezone":"America/Los_Angeles"}]},"evaluation_window":{"day_starts":"04:00","month_starts":1}},"thresholds":{"critical":0.5}},"query":"avg(current_1mo):avg:system.load.5{*}
       > 0.5","tags":[],"type":"query alert"}'
     headers:
       accept:
