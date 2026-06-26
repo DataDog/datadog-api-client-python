@@ -91,6 +91,7 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_ecosystem import VulnerabilityEcosystem
+from datadog_api_client.v2.model.cyclone_dx_bom import CycloneDXBom
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
 from datadog_api_client.v2.model.security_monitoring_critical_assets_response import (
     SecurityMonitoringCriticalAssetsResponse,
@@ -2640,6 +2641,26 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._import_security_vulnerabilities_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/vulnerabilities",
+                "operation_id": "import_security_vulnerabilities",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CycloneDXBom,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -6485,6 +6506,37 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_vulnerability_notification_rules_endpoint.call_with_http_info(**kwargs)
+
+    def import_security_vulnerabilities(
+        self,
+        body: CycloneDXBom,
+    ) -> None:
+        """Import security vulnerabilities.
+
+        Import security vulnerabilities from an external scanner in CycloneDX 1.5 format.
+
+        The payload is validated against the CycloneDX 1.5 JSON schema and the following
+        additional constraints:
+
+        * ``metadata`` , ``metadata.component`` , and ``metadata.component.name`` are required.
+        * ``metadata.tools.components`` must contain exactly one element with a ``name`` field.
+        * ``components`` cannot be empty. Each component requires ``bom-ref`` , ``type`` , ``name`` , and ``version``.
+        * When ``type`` is ``library`` , ``purl`` is required and must be a valid PURL.
+        * When ``type`` is ``operating-system`` , ``name`` must be one of the supported OS values:
+          ``alma`` , ``alpine`` , ``amazon`` , ``azurelinux`` , ``bottlerocket`` , ``cbl-mariner`` , ``chainguard`` ,
+          ``centos`` , ``debian`` , ``fedora`` , ``opensuse`` , ``opensuse-leap`` , ``opensuse-tumbleweed`` ,
+          ``oracle`` , ``photon`` , ``redhat`` , ``rocky`` , ``slem`` , ``sles`` , ``ubuntu`` , ``wolfi`` , ``windows`` , ``macos``.
+        * ``vulnerabilities`` cannot be empty. Each vulnerability requires ``id`` , exactly one ``ratings`` entry,
+          and at least one ``affects`` entry.
+        * Each ``affects[].ref`` must match a ``bom-ref`` value in ``components``.
+
+        :type body: CycloneDXBom
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._import_security_vulnerabilities_endpoint.call_with_http_info(**kwargs)
 
     def list_assets_sbo_ms(
         self,

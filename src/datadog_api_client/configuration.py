@@ -443,6 +443,7 @@ class Configuration:
                 "v2.get_static_analysis_node_types": False,
                 "v2.get_static_analysis_ruleset": False,
                 "v2.get_static_analysis_tree_sitter_wasm": False,
+                "v2.import_security_vulnerabilities": False,
                 "v2.list_findings": False,
                 "v2.list_historical_jobs": False,
                 "v2.list_indicators_of_compromise": False,
