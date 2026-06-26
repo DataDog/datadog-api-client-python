@@ -2079,6 +2079,20 @@ from datadog_api_client.v2.model.customer_org_disable_response_data import Custo
 from datadog_api_client.v2.model.customer_org_disable_response_type import CustomerOrgDisableResponseType
 from datadog_api_client.v2.model.customer_org_disable_status import CustomerOrgDisableStatus
 from datadog_api_client.v2.model.customer_org_disable_type import CustomerOrgDisableType
+from datadog_api_client.v2.model.cyclone_dx_bom import CycloneDXBom
+from datadog_api_client.v2.model.cyclone_dx_component import CycloneDXComponent
+from datadog_api_client.v2.model.cyclone_dx_component_type import CycloneDXComponentType
+from datadog_api_client.v2.model.cyclone_dx_metadata import CycloneDXMetadata
+from datadog_api_client.v2.model.cyclone_dx_metadata_component import CycloneDXMetadataComponent
+from datadog_api_client.v2.model.cyclone_dx_metadata_tools import CycloneDXMetadataTools
+from datadog_api_client.v2.model.cyclone_dx_tool_component import CycloneDXToolComponent
+from datadog_api_client.v2.model.cyclone_dx_vulnerability import CycloneDXVulnerability
+from datadog_api_client.v2.model.cyclone_dx_vulnerability_advisory import CycloneDXVulnerabilityAdvisory
+from datadog_api_client.v2.model.cyclone_dx_vulnerability_affects import CycloneDXVulnerabilityAffects
+from datadog_api_client.v2.model.cyclone_dx_vulnerability_analysis import CycloneDXVulnerabilityAnalysis
+from datadog_api_client.v2.model.cyclone_dx_vulnerability_rating import CycloneDXVulnerabilityRating
+from datadog_api_client.v2.model.cyclone_dx_vulnerability_reference import CycloneDXVulnerabilityReference
+from datadog_api_client.v2.model.cyclone_dx_vulnerability_reference_source import CycloneDXVulnerabilityReferenceSource
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
 from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
 from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
@@ -11061,6 +11075,20 @@ __all__ = [
     "CustomerOrgDisableResponseType",
     "CustomerOrgDisableStatus",
     "CustomerOrgDisableType",
+    "CycloneDXBom",
+    "CycloneDXComponent",
+    "CycloneDXComponentType",
+    "CycloneDXMetadata",
+    "CycloneDXMetadataComponent",
+    "CycloneDXMetadataTools",
+    "CycloneDXToolComponent",
+    "CycloneDXVulnerability",
+    "CycloneDXVulnerabilityAdvisory",
+    "CycloneDXVulnerabilityAffects",
+    "CycloneDXVulnerabilityAnalysis",
+    "CycloneDXVulnerabilityRating",
+    "CycloneDXVulnerabilityReference",
+    "CycloneDXVulnerabilityReferenceSource",
     "DORADeploymentFetchResponse",
     "DORADeploymentObject",
     "DORADeploymentObjectAttributes",

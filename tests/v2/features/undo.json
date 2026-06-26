@@ -7294,6 +7294,12 @@
       "type": "safe"
     }
   },
+  "ImportSecurityVulnerabilities": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "GetVulnerabilityNotificationRules": {
     "tag": "Security Monitoring",
     "undo": {

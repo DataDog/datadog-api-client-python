@@ -2309,6 +2309,22 @@ Feature: Security Monitoring
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/k9-cloud-vm
+  Scenario: Import security vulnerabilities returns "Bad Request" response
+    Given operation "ImportSecurityVulnerabilities" enabled
+    And new "ImportSecurityVulnerabilities" request
+    And body with value {"bomFormat": "CycloneDX", "components": [{"bom-ref": "a3390fca-c315-41ae-ae05-af5e7859cdee", "name": "lodash", "purl": "pkg:npm/lodash@4.17.21", "type": "library", "version": "4.17.21"}], "metadata": {"component": {"bom-ref": "host-ref-abc123", "name": "i-12345", "type": "operating-system"}, "tools": {"components": [{"name": "my-scanner", "type": "application"}]}}, "specVersion": "1.5", "version": 1, "vulnerabilities": [{"advisories": [{"url": "https://example.com/advisory/CVE-2021-1234"}], "affects": [{"ref": "a3390fca-c315-41ae-ae05-af5e7859cdee"}], "analysis": {"state": "resolved"}, "cwes": [123, 345], "description": "Sample vulnerability detected in the application.", "detail": "Details about the vulnerability.", "id": "CVE-2021-1234", "ratings": [{"score": 9.0, "severity": "high", "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N"}], "references": [{"id": "GHSA-35m5-8cvj-8783", "source": {"url": "https://example.com"}}]}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-cloud-vm
+  Scenario: Import security vulnerabilities returns "Vulnerabilities accepted successfully." response
+    Given operation "ImportSecurityVulnerabilities" enabled
+    And new "ImportSecurityVulnerabilities" request
+    And body with value {"bomFormat": "CycloneDX", "components": [{"bom-ref": "a3390fca-c315-41ae-ae05-af5e7859cdee", "name": "lodash", "purl": "pkg:npm/lodash@4.17.21", "type": "library", "version": "4.17.21"}], "metadata": {"component": {"bom-ref": "host-ref-abc123", "name": "i-12345", "type": "operating-system"}, "tools": {"components": [{"name": "my-scanner", "type": "application"}]}}, "specVersion": "1.5", "version": 1, "vulnerabilities": [{"advisories": [{"url": "https://example.com/advisory/CVE-2021-1234"}], "affects": [{"ref": "a3390fca-c315-41ae-ae05-af5e7859cdee"}], "analysis": {"state": "resolved"}, "cwes": [123, 345], "description": "Sample vulnerability detected in the application.", "detail": "Details about the vulnerability.", "id": "CVE-2021-1234", "ratings": [{"score": 9.0, "severity": "high", "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:N"}], "references": [{"id": "GHSA-35m5-8cvj-8783", "source": {"url": "https://example.com"}}]}]}
+    When the request is sent
+    Then the response status is 200 Vulnerabilities accepted successfully.
+
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given new "ListAssetsSBOMs" request
     When the request is sent

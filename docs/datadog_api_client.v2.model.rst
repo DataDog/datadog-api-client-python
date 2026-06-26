@@ -10917,6 +10917,104 @@ datadog\_api\_client.v2.model.cvss module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.cyclone\_dx\_bom module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_bom
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_component module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_component\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_component_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_metadata module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_metadata
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_metadata\_component module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_metadata_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_metadata\_tools module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_metadata_tools
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_tool\_component module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_tool_component
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability\_advisory module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability_advisory
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability\_affects module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability_affects
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability\_analysis module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability_analysis
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability\_rating module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability_rating
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability\_reference module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability_reference
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.cyclone\_dx\_vulnerability\_reference\_source module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.cyclone_dx_vulnerability_reference_source
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dashboard\_list\_add\_items\_request module
 -------------------------------------------------------------------------
 
