@@ -6939,7 +6939,7 @@ class SecurityMonitoringApi:
         :type sort_order: str, optional
         :param ocsf: When true, return only OCSF field-based matches. When false, return regex/message-based matches.
         :type ocsf: bool, optional
-        :param worked_by: Filter indicators whose triage state was updated by a specific user UUID.
+        :param worked_by: Filter indicators whose triage state was updated by a specific user identified by their handle.
         :type worked_by: str, optional
         :param triage_state: Filter by triage state.
         :type triage_state: IoCTriageState, optional
