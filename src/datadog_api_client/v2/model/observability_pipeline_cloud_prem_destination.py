@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
     from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination_type import (
         ObservabilityPipelineCloudPremDestinationType,
     )
@@ -34,7 +33,6 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
         from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination_type import (
             ObservabilityPipelineCloudPremDestinationType,
         )
@@ -44,7 +42,6 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
             "endpoint_url_key": (str,),
             "id": (str,),
             "inputs": ([str],),
-            "tls": (ObservabilityPipelineTls,),
             "type": (ObservabilityPipelineCloudPremDestinationType,),
         }
 
@@ -53,7 +50,6 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "inputs": "inputs",
-        "tls": "tls",
         "type": "type",
     }
 
@@ -70,7 +66,6 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
             UnsetType,
         ] = unset,
         endpoint_url_key: Union[str, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -90,9 +85,6 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
-
         :param type: The destination type. The value should always be ``cloud_prem``.
         :type type: ObservabilityPipelineCloudPremDestinationType
         """
@@ -100,8 +92,6 @@ class ObservabilityPipelineCloudPremDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if endpoint_url_key is not unset:
             kwargs["endpoint_url_key"] = endpoint_url_key
-        if tls is not unset:
-            kwargs["tls"] = tls
         super().__init__(kwargs)
 
         self_.id = id
