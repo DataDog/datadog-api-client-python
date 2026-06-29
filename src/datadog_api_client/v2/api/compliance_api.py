@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -91,7 +92,9 @@ class ComplianceApi:
         is_custom: Union[bool, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
     ) -> RuleBasedViewResponse:
-        """Get the rule-based view of compliance findings.
+        """Get the rule-based view of compliance findings. **Deprecated**.
+
+        **This endpoint is deprecated.** Use the `Security Monitoring - Search Security Findings <https://docs.datadoghq.com/api/latest/security-monitoring/search-security-findings/>`_ endpoint instead.
 
         Get an aggregated view of compliance rules with their pass, fail, and muted finding counts.
         Supports filtering by compliance framework, framework version, and additional query filters.
@@ -133,4 +136,5 @@ class ComplianceApi:
         if query is not unset:
             kwargs["query"] = query
 
+        warnings.warn("get_rule_based_view is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_rule_based_view_endpoint.call_with_http_info(**kwargs)
