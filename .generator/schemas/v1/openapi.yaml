@@ -28743,6 +28743,7 @@ paths:
                 - us5.datadoghq.com
                 - ap1.datadoghq.com
                 - ap2.datadoghq.com
+                - uk1.datadoghq.com
                 - datadoghq.eu
                 - ddog-gov.com
                 - us2.ddog-gov.com
@@ -28752,6 +28753,7 @@ paths:
                 - US5
                 - AP1
                 - AP2
+                - UK1
                 - EU1
                 - GOV
                 - US2_GOV
@@ -44289,6 +44291,7 @@ paths:
                 - us5.datadoghq.com
                 - ap1.datadoghq.com
                 - ap2.datadoghq.com
+                - uk1.datadoghq.com
                 - datadoghq.eu
                 - ddog-gov.com
                 - us2.ddog-gov.com
@@ -44298,6 +44301,7 @@ paths:
                 - US5
                 - AP1
                 - AP2
+                - UK1
                 - EU1
                 - GOV
                 - US2_GOV
@@ -44339,6 +44343,7 @@ servers:
           - us5.datadoghq.com
           - ap1.datadoghq.com
           - ap2.datadoghq.com
+          - uk1.datadoghq.com
           - datadoghq.eu
           - ddog-gov.com
           - us2.ddog-gov.com
