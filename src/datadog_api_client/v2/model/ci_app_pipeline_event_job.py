@@ -3,110 +3,15 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    datetime,
-    none_type,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.ci_app_ci_error import CIAppCIError
-    from datadog_api_client.v2.model.ci_app_git_info import CIAppGitInfo
-    from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
-    from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
-    from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
-    from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
-
-
-class CIAppPipelineEventJob(ModelNormal):
-    validations = {
-        "queue_time": {
-            "inclusive_minimum": 0,
-        },
-    }
-
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v2.model.ci_app_ci_error import CIAppCIError
-        from datadog_api_client.v2.model.ci_app_git_info import CIAppGitInfo
-        from datadog_api_client.v2.model.ci_app_pipeline_event_job_level import CIAppPipelineEventJobLevel
-        from datadog_api_client.v2.model.ci_app_host_info import CIAppHostInfo
-        from datadog_api_client.v2.model.ci_app_pipeline_event_parameters import CIAppPipelineEventParameters
-        from datadog_api_client.v2.model.ci_app_pipeline_event_job_status import CIAppPipelineEventJobStatus
-
-        return {
-            "dependencies": ([str], none_type),
-            "end": (datetime,),
-            "error": (CIAppCIError,),
-            "git": (CIAppGitInfo,),
-            "id": (str,),
-            "level": (CIAppPipelineEventJobLevel,),
-            "metrics": ([str],),
-            "name": (str,),
-            "node": (CIAppHostInfo,),
-            "parameters": (CIAppPipelineEventParameters,),
-            "pipeline_name": (str,),
-            "pipeline_unique_id": (str,),
-            "queue_time": (int, none_type),
-            "stage_id": (str, none_type),
-            "stage_name": (str, none_type),
-            "start": (datetime,),
-            "status": (CIAppPipelineEventJobStatus,),
-            "tags": ([str],),
-            "url": (str,),
-        }
-
-    attribute_map = {
-        "dependencies": "dependencies",
-        "end": "end",
-        "error": "error",
-        "git": "git",
-        "id": "id",
-        "level": "level",
-        "metrics": "metrics",
-        "name": "name",
-        "node": "node",
-        "parameters": "parameters",
-        "pipeline_name": "pipeline_name",
-        "pipeline_unique_id": "pipeline_unique_id",
-        "queue_time": "queue_time",
-        "stage_id": "stage_id",
-        "stage_name": "stage_name",
-        "start": "start",
-        "status": "status",
-        "tags": "tags",
-        "url": "url",
-    }
-
-    def __init__(
-        self_,
-        end: datetime,
-        id: str,
-        level: CIAppPipelineEventJobLevel,
-        name: str,
-        pipeline_name: str,
-        pipeline_unique_id: str,
-        start: datetime,
-        status: CIAppPipelineEventJobStatus,
-        url: str,
-        dependencies: Union[List[str], none_type, UnsetType] = unset,
-        error: Union[CIAppCIError, none_type, UnsetType] = unset,
-        git: Union[CIAppGitInfo, none_type, UnsetType] = unset,
-        metrics: Union[List[str], none_type, UnsetType] = unset,
-        node: Union[CIAppHostInfo, none_type, UnsetType] = unset,
-        parameters: Union[CIAppPipelineEventParameters, none_type, UnsetType] = unset,
-        queue_time: Union[int, none_type, UnsetType] = unset,
-        stage_id: Union[str, none_type, UnsetType] = unset,
-        stage_name: Union[str, none_type, UnsetType] = unset,
-        tags: Union[List[str], none_type, UnsetType] = unset,
-        **kwargs,
-    ):
+class CIAppPipelineEventJob(ModelComposed):
+    def __init__(self, **kwargs):
         """
         Details of a CI job.
 
@@ -120,7 +25,7 @@ class CIAppPipelineEventJob(ModelNormal):
         :type error: CIAppCIError, none_type, optional
 
         :param git: If pipelines are triggered due to actions to a Git repository, then all payloads must contain this.
-            Note that either ``tag`` or ``branch`` has to be provided, but not both.
+            Note that either `tag` or `branch` has to be provided, but not both.
         :type git: CIAppGitInfo, none_type, optional
 
         :param id: The UUID for the job. It has to be unique within each pipeline execution.
@@ -129,7 +34,7 @@ class CIAppPipelineEventJob(ModelNormal):
         :param level: Used to distinguish between pipelines, stages, jobs, and steps.
         :type level: CIAppPipelineEventJobLevel
 
-        :param metrics: A list of user-defined metrics. The metrics must follow the ``key:value`` pattern and the value must be numeric.
+        :param metrics: A list of user-defined metrics. The metrics must follow the `key:value` pattern and the value must be numeric.
         :type metrics: [str], none_type, optional
 
         :param name: The name for the job.
@@ -156,46 +61,36 @@ class CIAppPipelineEventJob(ModelNormal):
         :param stage_name: The parent stage name (if applicable).
         :type stage_name: str, none_type, optional
 
-        :param start: Time when the job run instance started (it should not include any queue time). The time format must be RFC3339.
+        :param start: Time when the job run instance started (it should not include any queue time).
+            The time format must be RFC3339.
         :type start: datetime
 
         :param status: The final status of the job.
         :type status: CIAppPipelineEventJobStatus
 
-        :param tags: A list of user-defined tags. The tags must follow the ``key:value`` pattern.
+        :param tags: A list of user-defined tags. The tags must follow the `key:value` pattern.
         :type tags: [str], none_type, optional
 
         :param url: The URL to look at the job in the CI provider UI.
         :type url: str
         """
-        if dependencies is not unset:
-            kwargs["dependencies"] = dependencies
-        if error is not unset:
-            kwargs["error"] = error
-        if git is not unset:
-            kwargs["git"] = git
-        if metrics is not unset:
-            kwargs["metrics"] = metrics
-        if node is not unset:
-            kwargs["node"] = node
-        if parameters is not unset:
-            kwargs["parameters"] = parameters
-        if queue_time is not unset:
-            kwargs["queue_time"] = queue_time
-        if stage_id is not unset:
-            kwargs["stage_id"] = stage_id
-        if stage_name is not unset:
-            kwargs["stage_name"] = stage_name
-        if tags is not unset:
-            kwargs["tags"] = tags
         super().__init__(kwargs)
 
-        self_.end = end
-        self_.id = id
-        self_.level = level
-        self_.name = name
-        self_.pipeline_name = pipeline_name
-        self_.pipeline_unique_id = pipeline_unique_id
-        self_.start = start
-        self_.status = status
-        self_.url = url
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v2.model.ci_app_pipeline_event_finished_job import CIAppPipelineEventFinishedJob
+        from datadog_api_client.v2.model.ci_app_pipeline_event_in_progress_job import CIAppPipelineEventInProgressJob
+
+        return {
+            "oneOf": [
+                CIAppPipelineEventFinishedJob,
+                CIAppPipelineEventInProgressJob,
+            ],
+        }
