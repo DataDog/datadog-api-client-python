@@ -71,6 +71,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Create a tag indexing rule exemption returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRuleExemption" enabled
     And new "CreateTagIndexingRuleExemption" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"reason": "This metric has a pre-existing tag configuration."}, "type": "tag_indexing_rule_exemptions"}}
@@ -80,6 +81,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Create a tag indexing rule exemption returns "Created" response
     Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRuleExemption" enabled
     And new "CreateTagIndexingRuleExemption" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"reason": "This metric has a pre-existing tag configuration."}, "type": "tag_indexing_rule_exemptions"}}
@@ -89,6 +91,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Create a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRule" enabled
     And new "CreateTagIndexingRule" request
     And body with value {"data": {"type": "tag_indexing_rules", "attributes": {"name": "test", "metric_name_matches": ["dd.test.*"], "options": {"version": 99, "data": {"override_previous_rules": false, "manage_preexisting_metrics": true}}}}}
     When the request is sent
@@ -97,6 +100,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Create a tag indexing rule returns "Created" response
     Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRule" enabled
     And new "CreateTagIndexingRule" request
     And body with value {"data": {"attributes": {"exclude_tags_mode": false, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
@@ -123,6 +127,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Delete a tag indexing rule exemption returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "DeleteTagIndexingRuleExemption" enabled
     And new "DeleteTagIndexingRuleExemption" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -131,6 +136,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Delete a tag indexing rule exemption returns "No Content" response
     Given a valid "appKeyAuth" key in the system
+    And operation "DeleteTagIndexingRuleExemption" enabled
     And new "DeleteTagIndexingRuleExemption" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -139,6 +145,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Delete a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "DeleteTagIndexingRule" enabled
     And new "DeleteTagIndexingRule" request
     And request contains "id" parameter with value "not-a-valid-uuid"
     When the request is sent
@@ -147,6 +154,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Delete a tag indexing rule returns "No Content" response
     Given a valid "appKeyAuth" key in the system
+    And operation "DeleteTagIndexingRule" enabled
     And there is a valid "tag_indexing_rule" in the system
     And new "DeleteTagIndexingRule" request
     And request contains "id" parameter from "tag_indexing_rule.data.id"
@@ -222,6 +230,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Get a tag indexing rule exemption returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "GetTagIndexingRuleExemption" enabled
     And new "GetTagIndexingRuleExemption" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -230,6 +239,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Get a tag indexing rule exemption returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
+    And operation "GetTagIndexingRuleExemption" enabled
     And new "GetTagIndexingRuleExemption" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -238,6 +248,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Get a tag indexing rule exemption returns "OK" response
     Given a valid "appKeyAuth" key in the system
+    And operation "GetTagIndexingRuleExemption" enabled
     And new "GetTagIndexingRuleExemption" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -246,6 +257,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Get a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "GetTagIndexingRule" enabled
     And new "GetTagIndexingRule" request
     And request contains "id" parameter with value "not-a-valid-uuid"
     When the request is sent
@@ -254,6 +266,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Get a tag indexing rule returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
+    And operation "GetTagIndexingRule" enabled
     And new "GetTagIndexingRule" request
     And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
@@ -262,6 +275,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Get a tag indexing rule returns "OK" response
     Given a valid "appKeyAuth" key in the system
+    And operation "GetTagIndexingRule" enabled
     And there is a valid "tag_indexing_rule" in the system
     And new "GetTagIndexingRule" request
     And request contains "id" parameter from "tag_indexing_rule.data.id"
@@ -368,6 +382,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: List tag indexing rules for a metric returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagIndexingRulesForMetric" enabled
     And new "ListTagIndexingRulesForMetric" request
     And request contains "metric_name" parameter with value "1invalid"
     When the request is sent
@@ -376,6 +391,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: List tag indexing rules for a metric returns "OK" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagIndexingRulesForMetric" enabled
     And new "ListTagIndexingRulesForMetric" request
     And request contains "metric_name" parameter with value "{{ unique_alnum }}"
     When the request is sent
@@ -384,6 +400,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: List tag indexing rules returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagIndexingRules" enabled
     And new "ListTagIndexingRules" request
     When the request is sent
     Then the response status is 400 Bad Request
@@ -391,6 +408,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: List tag indexing rules returns "OK" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ListTagIndexingRules" enabled
     And new "ListTagIndexingRules" request
     When the request is sent
     Then the response status is 200 OK
@@ -475,6 +493,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Reorder tag indexing rules returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ReorderTagIndexingRules" enabled
     And new "ReorderTagIndexingRules" request
     And body with value {"data": {"attributes": {"rule_ids": []}, "type": "tag_indexing_rules"}}
     When the request is sent
@@ -483,6 +502,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Reorder tag indexing rules returns "No Content" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ReorderTagIndexingRules" enabled
     And there is a valid "tag_indexing_rule" in the system
     And new "ReorderTagIndexingRules" request
     And body with value {"data": {"attributes": {"rule_ids": ["{{ tag_indexing_rule.data.id }}"]}, "type": "tag_indexing_rules"}}
@@ -492,6 +512,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Reorder tag indexing rules returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
+    And operation "ReorderTagIndexingRules" enabled
     And new "ReorderTagIndexingRules" request
     And body with value {"data": {"attributes": {"rule_ids": ["00000000-0000-0000-0000-000000000001", "00000000-0000-0000-0000-000000000002"]}, "type": "tag_indexing_rules"}}
     When the request is sent
@@ -961,6 +982,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Update a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRule" enabled
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter with value "not-a-valid-uuid"
     And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
@@ -970,6 +992,7 @@ Feature: Metrics
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Update a tag indexing rule returns "Conflict" response
     Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRule" enabled
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
@@ -979,6 +1002,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Update a tag indexing rule returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRule" enabled
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
     And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
@@ -988,6 +1012,7 @@ Feature: Metrics
   @team:DataDog/metrics-experience
   Scenario: Update a tag indexing rule returns "OK" response
     Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRule" enabled
     And there is a valid "tag_indexing_rule" in the system
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "tag_indexing_rule.data.id"
