@@ -46,6 +46,7 @@ body = TagIndexingRuleCreateRequest(
 )
 
 configuration = Configuration()
+configuration.unstable_operations["create_tag_indexing_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.create_tag_indexing_rule(body=body)

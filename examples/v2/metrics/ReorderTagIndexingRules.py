@@ -25,6 +25,7 @@ body = TagIndexingRuleOrderRequest(
 )
 
 configuration = Configuration()
+configuration.unstable_operations["reorder_tag_indexing_rules"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     api_instance.reorder_tag_indexing_rules(body=body)
