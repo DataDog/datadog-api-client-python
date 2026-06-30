@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.list_stream_issue_persona import ListStreamIssuePersona
     from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
     from datadog_api_client.v1.model.list_stream_issue_state import ListStreamIssueState
+    from datadog_api_client.v1.model.list_stream_query_version import ListStreamQueryVersion
 
 
 class ListStreamQuery(ModelNormal):
@@ -43,6 +44,7 @@ class ListStreamQuery(ModelNormal):
         from datadog_api_client.v1.model.list_stream_issue_persona import ListStreamIssuePersona
         from datadog_api_client.v1.model.widget_field_sort import WidgetFieldSort
         from datadog_api_client.v1.model.list_stream_issue_state import ListStreamIssueState
+        from datadog_api_client.v1.model.list_stream_query_version import ListStreamQueryVersion
 
         return {
             "assignee_uuids": ([str],),
@@ -59,6 +61,7 @@ class ListStreamQuery(ModelNormal):
             "storage": (str,),
             "suspected_causes": ([str],),
             "team_handles": ([str],),
+            "version": (ListStreamQueryVersion,),
         }
 
     attribute_map = {
@@ -76,6 +79,7 @@ class ListStreamQuery(ModelNormal):
         "storage": "storage",
         "suspected_causes": "suspected_causes",
         "team_handles": "team_handles",
+        "version": "version",
     }
 
     def __init__(
@@ -94,6 +98,7 @@ class ListStreamQuery(ModelNormal):
         storage: Union[str, UnsetType] = unset,
         suspected_causes: Union[List[str], UnsetType] = unset,
         team_handles: Union[List[str], UnsetType] = unset,
+        version: Union[ListStreamQueryVersion, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -140,6 +145,10 @@ class ListStreamQuery(ModelNormal):
 
         :param team_handles: Filter by team handles. Usable only with ``issue_stream``.
         :type team_handles: [str], optional
+
+        :param version: Version of the query for the logs transaction stream widget. When omitted, v1 query behavior is
+            preserved. Set to ``sequential_query`` to use v2 behavior. **This feature is in Preview.**
+        :type version: ListStreamQueryVersion, optional
         """
         if assignee_uuids is not unset:
             kwargs["assignee_uuids"] = assignee_uuids
@@ -165,6 +174,8 @@ class ListStreamQuery(ModelNormal):
             kwargs["suspected_causes"] = suspected_causes
         if team_handles is not unset:
             kwargs["team_handles"] = team_handles
+        if version is not unset:
+            kwargs["version"] = version
         super().__init__(kwargs)
 
         self_.data_source = data_source
