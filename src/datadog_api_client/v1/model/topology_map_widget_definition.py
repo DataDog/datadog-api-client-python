@@ -74,7 +74,7 @@ class TopologyMapWidgetDefinition(ModelNormal):
         :param description: The description of the widget.
         :type description: str, optional
 
-        :param requests: One or more Topology requests.
+        :param requests: One Topology request.
         :type requests: [TopologyRequest]
 
         :param title: Title of your widget.
