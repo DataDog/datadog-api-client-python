@@ -78,7 +78,10 @@ from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
+from datadog_api_client.v1.model.dashboard_default_timeframe_setting import DashboardDefaultTimeframeSetting
 from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
+from datadog_api_client.v1.model.dashboard_fixed_timeframe import DashboardFixedTimeframe
+from datadog_api_client.v1.model.dashboard_fixed_timeframe_type import DashboardFixedTimeframeType
 from datadog_api_client.v1.model.dashboard_global_time import DashboardGlobalTime
 from datadog_api_client.v1.model.dashboard_global_time_live_span import DashboardGlobalTimeLiveSpan
 from datadog_api_client.v1.model.dashboard_invite_type import DashboardInviteType
@@ -86,6 +89,8 @@ from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutTyp
 from datadog_api_client.v1.model.dashboard_list import DashboardList
 from datadog_api_client.v1.model.dashboard_list_delete_response import DashboardListDeleteResponse
 from datadog_api_client.v1.model.dashboard_list_list_response import DashboardListListResponse
+from datadog_api_client.v1.model.dashboard_live_timeframe import DashboardLiveTimeframe
+from datadog_api_client.v1.model.dashboard_live_timeframe_type import DashboardLiveTimeframeType
 from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
 from datadog_api_client.v1.model.dashboard_resource_type import DashboardResourceType
 from datadog_api_client.v1.model.dashboard_restore_request import DashboardRestoreRequest
@@ -1484,7 +1489,10 @@ __all__ = [
     "DashboardBulkActionData",
     "DashboardBulkActionDataList",
     "DashboardBulkDeleteRequest",
+    "DashboardDefaultTimeframeSetting",
     "DashboardDeleteResponse",
+    "DashboardFixedTimeframe",
+    "DashboardFixedTimeframeType",
     "DashboardGlobalTime",
     "DashboardGlobalTimeLiveSpan",
     "DashboardInviteType",
@@ -1492,6 +1500,8 @@ __all__ = [
     "DashboardList",
     "DashboardListDeleteResponse",
     "DashboardListListResponse",
+    "DashboardLiveTimeframe",
+    "DashboardLiveTimeframeType",
     "DashboardReflowType",
     "DashboardResourceType",
     "DashboardRestoreRequest",

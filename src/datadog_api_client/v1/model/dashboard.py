@@ -16,12 +16,15 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v1.model.dashboard_default_timeframe_setting import DashboardDefaultTimeframeSetting
     from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
     from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
     from datadog_api_client.v1.model.dashboard_tab import DashboardTab
     from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
     from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable
     from datadog_api_client.v1.model.widget import Widget
+    from datadog_api_client.v1.model.dashboard_live_timeframe import DashboardLiveTimeframe
+    from datadog_api_client.v1.model.dashboard_fixed_timeframe import DashboardFixedTimeframe
 
 
 class Dashboard(ModelNormal):
@@ -36,6 +39,7 @@ class Dashboard(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.dashboard_default_timeframe_setting import DashboardDefaultTimeframeSetting
         from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
         from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
         from datadog_api_client.v1.model.dashboard_tab import DashboardTab
@@ -47,6 +51,7 @@ class Dashboard(ModelNormal):
             "author_handle": (str,),
             "author_name": (str, none_type),
             "created_at": (datetime,),
+            "default_timeframe": (DashboardDefaultTimeframeSetting,),
             "description": (str, none_type),
             "id": (str,),
             "is_read_only": (bool,),
@@ -68,6 +73,7 @@ class Dashboard(ModelNormal):
         "author_handle": "author_handle",
         "author_name": "author_name",
         "created_at": "created_at",
+        "default_timeframe": "default_timeframe",
         "description": "description",
         "id": "id",
         "is_read_only": "is_read_only",
@@ -101,6 +107,9 @@ class Dashboard(ModelNormal):
         author_handle: Union[str, UnsetType] = unset,
         author_name: Union[str, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
+        default_timeframe: Union[
+            DashboardDefaultTimeframeSetting, DashboardLiveTimeframe, DashboardFixedTimeframe, UnsetType
+        ] = unset,
         description: Union[str, none_type, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         is_read_only: Union[bool, UnsetType] = unset,
@@ -127,6 +136,9 @@ class Dashboard(ModelNormal):
 
         :param created_at: Creation date of the dashboard.
         :type created_at: datetime, optional
+
+        :param default_timeframe: The default timeframe applied when opening the dashboard. Set to ``null`` to clear the dashboard's default timeframe.
+        :type default_timeframe: DashboardDefaultTimeframeSetting, optional
 
         :param description: Description of the dashboard.
         :type description: str, none_type, optional
@@ -183,6 +195,8 @@ class Dashboard(ModelNormal):
             kwargs["author_name"] = author_name
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if default_timeframe is not unset:
+            kwargs["default_timeframe"] = default_timeframe
         if description is not unset:
             kwargs["description"] = description
         if id is not unset:
