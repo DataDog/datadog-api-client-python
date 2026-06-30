@@ -40758,6 +40758,41 @@ datadog\_api\_client.v2.model.spec module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.spec\_attributes module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spec_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.spec\_attributes\_status module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spec_attributes_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.spec\_data module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spec_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.spec\_type module
+-----------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.spec_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.specs\_list\_response module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.specs_list_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.split\_api\_key module
 ----------------------------------------------------
 

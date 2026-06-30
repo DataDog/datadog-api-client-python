@@ -837,6 +837,13 @@ datadog\_api\_client.v2.api.spans\_metrics\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.specs\_api module
+---------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.specs_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.static\_analysis\_api module
 --------------------------------------------------------
 
