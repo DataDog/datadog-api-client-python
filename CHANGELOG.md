@@ -1,5 +1,40 @@
 # CHANGELOG
 
+## 2.57.0/2026-06-30
+
+### Added
+* Add the uk1 data center. [#3730](https://github.com/DataDog/datadog-api-client-python/pull/3730)
+* [obs-pipelines] Add TLS support to cloud_prem destination [#3724](https://github.com/DataDog/datadog-api-client-python/pull/3724)
+* Add OpenAPI spec for k9-integration-api security findings and vulnerabilities [#3721](https://github.com/DataDog/datadog-api-client-python/pull/3721)
+* Document metrics volume includes [#3719](https://github.com/DataDog/datadog-api-client-python/pull/3719)
+* Add buffer configuration to ClickHouse destination [#3718](https://github.com/DataDog/datadog-api-client-python/pull/3718)
+* Add public API endpoints for feature flag variant create, update, and delete [#3715](https://github.com/DataDog/datadog-api-client-python/pull/3715)
+* Add public v2 OpenAPI operations for governance controls [#3713](https://github.com/DataDog/datadog-api-client-python/pull/3713)
+* Add ObservabilityPipelineClickhouseDestination to OpenAPI spec [#3712](https://github.com/DataDog/datadog-api-client-python/pull/3712)
+* Add ObservabilityPipelineWebsocketSource to schema [#3710](https://github.com/DataDog/datadog-api-client-python/pull/3710)
+* Add security_filters and rules resource types to terraform export endpoints [#3708](https://github.com/DataDog/datadog-api-client-python/pull/3708)
+* Add OpenAPI for Cloud Cost Management custom forecast endpoints [#3707](https://github.com/DataDog/datadog-api-client-python/pull/3707)
+* Add Edit and Delete Notice Update and Slack icon support in API spec [#3702](https://github.com/DataDog/datadog-api-client-python/pull/3702)
+* Add OpenAPI spec for RUM Remote Config endpoints [#3699](https://github.com/DataDog/datadog-api-client-python/pull/3699)
+* Add OpenAPI spec for code-coverage PR summary and files endpoints [#3698](https://github.com/DataDog/datadog-api-client-python/pull/3698)
+* Add public API for security findings automation rules [#3695](https://github.com/DataDog/datadog-api-client-python/pull/3695)
+* Add OpenAPI spec for governance insights [#3690](https://github.com/DataDog/datadog-api-client-python/pull/3690)
+* Add OpenAPI specs for reporting schedule endpoints [#3684](https://github.com/DataDog/datadog-api-client-python/pull/3684)
+* Add LogsArrayMapProcessor to OpenAPI v1 spec [#3654](https://github.com/DataDog/datadog-api-client-python/pull/3654)
+* Update GetBudget API spec with cost query parameters and custom forecast fields [#3653](https://github.com/DataDog/datadog-api-client-python/pull/3653)
+
+### Changed
+* Update worked_by param to accept handle instead of UUID [#3728](https://github.com/DataDog/datadog-api-client-python/pull/3728)
+* Add support for running CI jobs [#3714](https://github.com/DataDog/datadog-api-client-python/pull/3714)
+* feat(test-optimization): update service settings API with override and inherit fields [#3697](https://github.com/DataDog/datadog-api-client-python/pull/3697)
+* Mark tag indexing rule endpoints as Preview in API spec [#3696](https://github.com/DataDog/datadog-api-client-python/pull/3696)
+
+### Deprecated
+* Remove Compliance Findings rule-based view endpoint from OpenAPI v2 [#3725](https://github.com/DataDog/datadog-api-client-python/pull/3725)
+
+### Fixed
+* Fix test by adding on_missing_data options to the req payload [#3723](https://github.com/DataDog/datadog-api-client-python/pull/3723)
+
 ## 2.56.0/2026-06-17
 
 ### Added
