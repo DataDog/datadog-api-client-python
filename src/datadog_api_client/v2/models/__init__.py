@@ -1758,6 +1758,17 @@ from datadog_api_client.v2.model.create_service_now_ticket_request_data_attribut
 from datadog_api_client.v2.model.create_service_now_ticket_request_data_relationships import (
     CreateServiceNowTicketRequestDataRelationships,
 )
+from datadog_api_client.v2.model.create_snapshot_additional_config import CreateSnapshotAdditionalConfig
+from datadog_api_client.v2.model.create_snapshot_data_attributes_request import CreateSnapshotDataAttributesRequest
+from datadog_api_client.v2.model.create_snapshot_data_attributes_response import CreateSnapshotDataAttributesResponse
+from datadog_api_client.v2.model.create_snapshot_data_request import CreateSnapshotDataRequest
+from datadog_api_client.v2.model.create_snapshot_data_response import CreateSnapshotDataResponse
+from datadog_api_client.v2.model.create_snapshot_request import CreateSnapshotRequest
+from datadog_api_client.v2.model.create_snapshot_response import CreateSnapshotResponse
+from datadog_api_client.v2.model.create_snapshot_ttl import CreateSnapshotTTL
+from datadog_api_client.v2.model.create_snapshot_template_variable import CreateSnapshotTemplateVariable
+from datadog_api_client.v2.model.create_snapshot_timeseries_legend_type import CreateSnapshotTimeseriesLegendType
+from datadog_api_client.v2.model.create_snapshot_type import CreateSnapshotType
 from datadog_api_client.v2.model.create_status_page_request import CreateStatusPageRequest
 from datadog_api_client.v2.model.create_status_page_request_data import CreateStatusPageRequestData
 from datadog_api_client.v2.model.create_status_page_request_data_attributes import CreateStatusPageRequestDataAttributes
@@ -10887,6 +10898,17 @@ __all__ = [
     "CreateServiceNowTicketRequestData",
     "CreateServiceNowTicketRequestDataAttributes",
     "CreateServiceNowTicketRequestDataRelationships",
+    "CreateSnapshotAdditionalConfig",
+    "CreateSnapshotDataAttributesRequest",
+    "CreateSnapshotDataAttributesResponse",
+    "CreateSnapshotDataRequest",
+    "CreateSnapshotDataResponse",
+    "CreateSnapshotRequest",
+    "CreateSnapshotResponse",
+    "CreateSnapshotTTL",
+    "CreateSnapshotTemplateVariable",
+    "CreateSnapshotTimeseriesLegendType",
+    "CreateSnapshotType",
     "CreateStatusPageRequest",
     "CreateStatusPageRequestData",
     "CreateStatusPageRequestDataAttributes",

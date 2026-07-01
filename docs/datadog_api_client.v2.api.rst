@@ -648,6 +648,13 @@ datadog\_api\_client.v2.api.report\_schedules\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.reporting\_and\_sharing\_api module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.reporting_and_sharing_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.restriction\_policies\_api module
 -------------------------------------------------------------
 
