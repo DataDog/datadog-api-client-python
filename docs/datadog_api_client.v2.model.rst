@@ -20836,6 +20836,20 @@ datadog\_api\_client.v2.model.list\_rows\_response\_links module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.list\_rows\_response\_meta module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_rows_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_rows\_response\_meta\_page module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_rows_response_meta_page
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.list\_rules\_response module
 ----------------------------------------------------------
 
