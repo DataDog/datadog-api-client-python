@@ -8184,6 +8184,12 @@
       "type": "safe"
     }
   },
+  "CreateSnapshot": {
+    "tag": "Reporting and Sharing",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "GetSPARecommendations": {
     "tag": "Spa",
     "undo": {
