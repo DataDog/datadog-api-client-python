@@ -3500,6 +3500,7 @@ from datadog_api_client.v2.model.incident_trigger import IncidentTrigger
 from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
 from datadog_api_client.v2.model.incident_type import IncidentType
 from datadog_api_client.v2.model.incident_type_attributes import IncidentTypeAttributes
+from datadog_api_client.v2.model.incident_type_configuration import IncidentTypeConfiguration
 from datadog_api_client.v2.model.incident_type_create_data import IncidentTypeCreateData
 from datadog_api_client.v2.model.incident_type_create_request import IncidentTypeCreateRequest
 from datadog_api_client.v2.model.incident_type_list_response import IncidentTypeListResponse
@@ -3508,6 +3509,7 @@ from datadog_api_client.v2.model.incident_type_patch_data import IncidentTypePat
 from datadog_api_client.v2.model.incident_type_patch_request import IncidentTypePatchRequest
 from datadog_api_client.v2.model.incident_type_relationships import IncidentTypeRelationships
 from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
+from datadog_api_client.v2.model.incident_type_slug_source import IncidentTypeSlugSource
 from datadog_api_client.v2.model.incident_type_type import IncidentTypeType
 from datadog_api_client.v2.model.incident_type_update_attributes import IncidentTypeUpdateAttributes
 from datadog_api_client.v2.model.incident_update_attributes import IncidentUpdateAttributes
@@ -12219,6 +12221,7 @@ __all__ = [
     "IncidentTriggerWrapper",
     "IncidentType",
     "IncidentTypeAttributes",
+    "IncidentTypeConfiguration",
     "IncidentTypeCreateData",
     "IncidentTypeCreateRequest",
     "IncidentTypeListResponse",
@@ -12227,6 +12230,7 @@ __all__ = [
     "IncidentTypePatchRequest",
     "IncidentTypeRelationships",
     "IncidentTypeResponse",
+    "IncidentTypeSlugSource",
     "IncidentTypeType",
     "IncidentTypeUpdateAttributes",
     "IncidentUpdateAttributes",
