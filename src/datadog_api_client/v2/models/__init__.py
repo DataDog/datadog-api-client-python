@@ -4418,6 +4418,8 @@ from datadog_api_client.v2.model.logs_archive_encryption_s3_type import LogsArch
 from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchiveIntegrationAzure
 from datadog_api_client.v2.model.logs_archive_integration_gcs import LogsArchiveIntegrationGCS
 from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
+from datadog_api_client.v2.model.logs_archive_integration_s3_access_key import LogsArchiveIntegrationS3AccessKey
+from datadog_api_client.v2.model.logs_archive_integration_s3_role import LogsArchiveIntegrationS3Role
 from datadog_api_client.v2.model.logs_archive_order import LogsArchiveOrder
 from datadog_api_client.v2.model.logs_archive_order_attributes import LogsArchiveOrderAttributes
 from datadog_api_client.v2.model.logs_archive_order_definition import LogsArchiveOrderDefinition
@@ -12897,6 +12899,8 @@ __all__ = [
     "LogsArchiveIntegrationAzure",
     "LogsArchiveIntegrationGCS",
     "LogsArchiveIntegrationS3",
+    "LogsArchiveIntegrationS3AccessKey",
+    "LogsArchiveIntegrationS3Role",
     "LogsArchiveOrder",
     "LogsArchiveOrderAttributes",
     "LogsArchiveOrderDefinition",
