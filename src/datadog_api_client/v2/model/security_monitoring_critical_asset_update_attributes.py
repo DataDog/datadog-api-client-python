@@ -33,6 +33,7 @@ class SecurityMonitoringCriticalAssetUpdateAttributes(ModelNormal):
         )
 
         return {
+            "description": (str,),
             "enabled": (bool,),
             "query": (str,),
             "rule_query": (str,),
@@ -42,6 +43,7 @@ class SecurityMonitoringCriticalAssetUpdateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "enabled": "enabled",
         "query": "query",
         "rule_query": "rule_query",
@@ -52,6 +54,7 @@ class SecurityMonitoringCriticalAssetUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
+        description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         rule_query: Union[str, UnsetType] = unset,
@@ -62,6 +65,9 @@ class SecurityMonitoringCriticalAssetUpdateAttributes(ModelNormal):
     ):
         """
         The critical asset properties to be updated.
+
+        :param description: A description of the critical asset.
+        :type description: str, optional
 
         :param enabled: Whether the critical asset is enabled.
         :type enabled: bool, optional
@@ -81,6 +87,8 @@ class SecurityMonitoringCriticalAssetUpdateAttributes(ModelNormal):
         :param version: The version of the critical asset being updated. Used for optimistic locking to prevent concurrent modifications.
         :type version: int, optional
         """
+        if description is not unset:
+            kwargs["description"] = description
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if query is not unset:

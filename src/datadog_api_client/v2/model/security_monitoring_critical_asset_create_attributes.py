@@ -27,6 +27,7 @@ class SecurityMonitoringCriticalAssetCreateAttributes(ModelNormal):
         )
 
         return {
+            "description": (str,),
             "enabled": (bool,),
             "query": (str,),
             "rule_query": (str,),
@@ -35,6 +36,7 @@ class SecurityMonitoringCriticalAssetCreateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "description": "description",
         "enabled": "enabled",
         "query": "query",
         "rule_query": "rule_query",
@@ -47,12 +49,16 @@ class SecurityMonitoringCriticalAssetCreateAttributes(ModelNormal):
         query: str,
         rule_query: str,
         severity: SecurityMonitoringCriticalAssetSeverity,
+        description: Union[str, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
         Object containing the attributes of the critical asset to be created.
+
+        :param description: A description of the critical asset.
+        :type description: str, optional
 
         :param enabled: Whether the critical asset is enabled. Defaults to ``true`` if not specified.
         :type enabled: bool, optional
@@ -69,6 +75,8 @@ class SecurityMonitoringCriticalAssetCreateAttributes(ModelNormal):
         :param tags: List of tags associated with the critical asset.
         :type tags: [str], optional
         """
+        if description is not unset:
+            kwargs["description"] = description
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if tags is not unset:

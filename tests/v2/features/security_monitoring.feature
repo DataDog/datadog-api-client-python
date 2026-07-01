@@ -569,7 +569,7 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Create a critical asset returns "Conflict" response
     Given new "CreateSecurityMonitoringCriticalAsset" request
-    And body with value {"data": {"attributes": {"enabled": true, "query": "security:monitoring", "rule_query": "type:(log_detection OR signal_correlation OR workload_security OR application_security) source:cloudtrail", "severity": "increase", "tags": ["team:database", "source:cloudtrail"]}, "type": "critical_assets"}}
+    And body with value {"data": {"attributes": {"description": "Production database servers handling PII", "enabled": true, "query": "security:monitoring", "rule_query": "type:(log_detection OR signal_correlation OR workload_security OR application_security) source:cloudtrail", "severity": "increase", "tags": ["team:database", "source:cloudtrail"]}, "type": "critical_assets"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -3083,7 +3083,7 @@ Feature: Security Monitoring
   Scenario: Update a critical asset returns "Concurrent Modification" response
     Given new "UpdateSecurityMonitoringCriticalAsset" request
     And request contains "critical_asset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "query": "security:monitoring", "rule_query": "type:log_detection source:cloudtrail", "severity": "increase", "tags": ["technique:T1110-brute-force", "source:cloudtrail"], "version": 1}, "type": "critical_assets"}}
+    And body with value {"data": {"attributes": {"description": "Production database servers handling PII", "enabled": true, "query": "security:monitoring", "rule_query": "type:log_detection source:cloudtrail", "severity": "increase", "tags": ["technique:T1110-brute-force", "source:cloudtrail"], "version": 1}, "type": "critical_assets"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
