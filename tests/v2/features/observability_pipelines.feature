@@ -272,6 +272,14 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @skip @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with amazon_s3_generic destination SSE-KMS encryption returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "generic-s3-destination", "inputs": ["my-processor-group"], "type": "amazon_s3_generic", "bucket": "my-bucket", "region": "us-east-1", "storage_class": "STANDARD", "encoding": {"type": "json"}, "compression": {"algorithm": "gzip", "level": 6}, "server_side_encryption": "aws:kms", "ssekms_key_id": "arn:aws:kms:us-east-1:123456789012:key/mrk-abc123"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with S3 Generic SSE-KMS"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @skip @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline with cloud_prem destination buffer returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "cloud-prem-destination", "inputs": ["my-processor-group"], "type": "cloud_prem", "endpoint_url_key": "CLOUDPREM_ENDPOINT_URL", "buffer": {"type": "disk", "max_size": 1073741824, "when_full": "block"}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with CloudPrem Buffer"}, "type": "pipelines"}}

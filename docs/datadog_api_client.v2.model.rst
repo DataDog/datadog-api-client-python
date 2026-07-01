@@ -26723,6 +26723,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination m
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_server\_side\_encryption module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_server_side_encryption
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_storage\_class module
 -----------------------------------------------------------------------------------------------------
 
