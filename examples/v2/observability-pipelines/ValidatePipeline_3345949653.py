@@ -1,0 +1,99 @@
+"""
+Validate an observability pipeline with parse grok processor source rules returns "OK" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
+from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
+from datadog_api_client.v2.model.observability_pipeline_config_processor_group import (
+    ObservabilityPipelineConfigProcessorGroup,
+)
+from datadog_api_client.v2.model.observability_pipeline_data_attributes import ObservabilityPipelineDataAttributes
+from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
+    ObservabilityPipelineDatadogAgentSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source_type import (
+    ObservabilityPipelineDatadogAgentSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination import (
+    ObservabilityPipelineDatadogLogsDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_logs_destination_type import (
+    ObservabilityPipelineDatadogLogsDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
+    ObservabilityPipelineParseGrokProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule import (
+    ObservabilityPipelineParseGrokProcessorRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_match_rule import (
+    ObservabilityPipelineParseGrokProcessorRuleMatchRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_type import (
+    ObservabilityPipelineParseGrokProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
+from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
+
+body = ObservabilityPipelineSpec(
+    data=ObservabilityPipelineSpecData(
+        attributes=ObservabilityPipelineDataAttributes(
+            config=ObservabilityPipelineConfig(
+                destinations=[
+                    ObservabilityPipelineDatadogLogsDestination(
+                        id="datadog-logs-destination",
+                        inputs=[
+                            "my-processor-group",
+                        ],
+                        type=ObservabilityPipelineDatadogLogsDestinationType.DATADOG_LOGS,
+                    ),
+                ],
+                processor_groups=[
+                    ObservabilityPipelineConfigProcessorGroup(
+                        enabled=True,
+                        id="my-processor-group",
+                        include="service:my-service",
+                        inputs=[
+                            "datadog-agent-source",
+                        ],
+                        processors=[
+                            ObservabilityPipelineParseGrokProcessor(
+                                enabled=True,
+                                id="parse-grok-processor",
+                                include="*",
+                                type=ObservabilityPipelineParseGrokProcessorType.PARSE_GROK,
+                                rules=[
+                                    ObservabilityPipelineParseGrokProcessorRule(
+                                        source="message",
+                                        match_rules=[
+                                            ObservabilityPipelineParseGrokProcessorRuleMatchRule(
+                                                name="MyParsingRule",
+                                                rule="%{word:user}",
+                                            ),
+                                        ],
+                                    ),
+                                ],
+                            ),
+                        ],
+                    ),
+                ],
+                sources=[
+                    ObservabilityPipelineDatadogAgentSource(
+                        id="datadog-agent-source",
+                        type=ObservabilityPipelineDatadogAgentSourceType.DATADOG_AGENT,
+                    ),
+                ],
+            ),
+            name="Pipeline with Parse Grok Source Rules",
+        ),
+        type="pipelines",
+    ),
+)
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = ObservabilityPipelinesApi(api_client)
+    response = api_instance.validate_pipeline(body=body)
+
+    print(response)

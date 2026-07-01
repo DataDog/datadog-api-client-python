@@ -5519,8 +5519,14 @@ from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source_typ
 from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor import (
     ObservabilityPipelineParseGrokProcessor,
 )
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_include_rule import (
+    ObservabilityPipelineParseGrokProcessorIncludeRule,
+)
 from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule import (
     ObservabilityPipelineParseGrokProcessorRule,
+)
+from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_item import (
+    ObservabilityPipelineParseGrokProcessorRuleItem,
 )
 from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_match_rule import (
     ObservabilityPipelineParseGrokProcessorRuleMatchRule,
@@ -13530,7 +13536,9 @@ __all__ = [
     "ObservabilityPipelineOpentelemetrySource",
     "ObservabilityPipelineOpentelemetrySourceType",
     "ObservabilityPipelineParseGrokProcessor",
+    "ObservabilityPipelineParseGrokProcessorIncludeRule",
     "ObservabilityPipelineParseGrokProcessorRule",
+    "ObservabilityPipelineParseGrokProcessorRuleItem",
     "ObservabilityPipelineParseGrokProcessorRuleMatchRule",
     "ObservabilityPipelineParseGrokProcessorRuleSupportRule",
     "ObservabilityPipelineParseGrokProcessorType",

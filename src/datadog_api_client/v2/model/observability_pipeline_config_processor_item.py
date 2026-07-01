@@ -75,11 +75,11 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param disable_library_rules: If set to `true`, disables the default Grok rules provided by Datadog.
         :type disable_library_rules: bool, optional
 
-        :param rules: The list of Grok parsing rules. If multiple matching rules are provided, they are evaluated in order. The first successful match is applied.
-        :type rules: [ObservabilityPipelineParseGrokProcessorRule]
+        :param field: The log field to parse with the Grok rules.
+        :type field: str, optional
 
-        :param field: The name of the log field that contains a JSON string.
-        :type field: str
+        :param rules: The list of Grok parsing rules selected by either source field or include query.
+        :type rules: [ObservabilityPipelineParseGrokProcessorRuleItem]
 
         :param always_use_text_key: Whether to always use a text key for element content.
         :type always_use_text_key: bool, optional

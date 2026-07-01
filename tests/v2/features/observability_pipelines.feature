@@ -296,6 +296,22 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with parse grok processor include rules returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "parse-grok-processor", "include": "*", "type": "parse_grok", "field": "content", "rules": [{"include": "service:foo", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Parse Grok Include Rules"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with parse grok processor source rules returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "parse-grok-processor", "include": "*", "type": "parse_grok", "rules": [{"source": "message", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Parse Grok Source Rules"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline with source secret key returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["http-client-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "http-client-source", "type": "http_client", "decoding": "bytes", "scrape_interval_secs": 15, "scrape_timeout_secs": 5, "auth_strategy": "bearer", "token_key": "HTTP_CLIENT_TOKEN"}]}, "name": "Pipeline with Source Secret"}, "type": "pipelines"}}
