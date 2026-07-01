@@ -28004,10 +28004,24 @@ datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor\_include\_rule module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_include_rule
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor\_rule module
 ------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_parse\_grok\_processor\_rule\_item module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_item
    :members:
    :show-inheritance:
 
