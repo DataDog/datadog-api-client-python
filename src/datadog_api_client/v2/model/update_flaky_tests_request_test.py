@@ -38,7 +38,10 @@ class UpdateFlakyTestsRequestTest(ModelNormal):
         """
         Details of what tests to update and their new attributes.
 
-        :param id: The ID of the flaky test. This is the same ID returned by the Search flaky tests endpoint and corresponds to the test_fingerprint_fqn field in test run events.
+        :param id: The ID of the flaky test. This is the same ID returned by the Search flaky tests endpoint and is the
+            value of the ``@test.fingerprint_fqn`` facet on test events. You can find it by searching on
+            ``@test.fingerprint_fqn`` in the Test Optimization Explorer, or by filtering the Search flaky tests
+            endpoint with the ``fingerprint_fqn`` key.
         :type id: str
 
         :param new_state: The new state to set for the flaky test.

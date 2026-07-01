@@ -49,6 +49,9 @@ class FlakyTestsSearchFilter(ModelNormal):
             * ``@git.branch``
             * ``@test.codeowners``
             * ``env``
+            * ``fingerprint_fqn``
+
+            Use ``fingerprint_fqn`` to filter by a test's stable Fingerprint FQN (the same value as the test's ``id`` ).
         :type query: str, optional
         """
         if include_history is not unset:
