@@ -337,21 +337,21 @@ class FeatureFlagsApi:
                     "attribute": "is_archived",
                     "location": "query",
                 },
-                "limit": {
+                "page_limit": {
                     "validation": {
                         "inclusive_maximum": 1000,
                         "inclusive_minimum": 1,
                     },
                     "openapi_types": (int,),
-                    "attribute": "limit",
+                    "attribute": "page[limit]",
                     "location": "query",
                 },
-                "offset": {
+                "page_offset": {
                     "validation": {
                         "inclusive_minimum": 0,
                     },
                     "openapi_types": (int,),
-                    "attribute": "offset",
+                    "attribute": "page[offset]",
                     "location": "query",
                 },
             },
@@ -864,8 +864,8 @@ class FeatureFlagsApi:
         *,
         key: Union[str, UnsetType] = unset,
         is_archived: Union[bool, UnsetType] = unset,
-        limit: Union[int, UnsetType] = unset,
-        offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
     ) -> ListFeatureFlagsResponse:
         """List feature flags.
 
@@ -876,10 +876,10 @@ class FeatureFlagsApi:
         :type key: str, optional
         :param is_archived: Filter by archived status.
         :type is_archived: bool, optional
-        :param limit: Maximum number of results to return.
-        :type limit: int, optional
-        :param offset: Number of results to skip.
-        :type offset: int, optional
+        :param page_limit: Maximum number of feature flags to return.
+        :type page_limit: int, optional
+        :param page_offset: Number of feature flags to skip for pagination.
+        :type page_offset: int, optional
         :rtype: ListFeatureFlagsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -889,11 +889,11 @@ class FeatureFlagsApi:
         if is_archived is not unset:
             kwargs["is_archived"] = is_archived
 
-        if limit is not unset:
-            kwargs["limit"] = limit
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
 
-        if offset is not unset:
-            kwargs["offset"] = offset
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
 
         return self._list_feature_flags_endpoint.call_with_http_info(**kwargs)
 
