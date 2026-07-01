@@ -18,6 +18,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.logs_archive_integration_s3 import LogsArchiveIntegrationS3
     from datadog_api_client.v2.model.logs_archive_storage_class_s3_type import LogsArchiveStorageClassS3Type
     from datadog_api_client.v2.model.logs_archive_destination_s3_type import LogsArchiveDestinationS3Type
+    from datadog_api_client.v2.model.logs_archive_integration_s3_access_key import LogsArchiveIntegrationS3AccessKey
+    from datadog_api_client.v2.model.logs_archive_integration_s3_role import LogsArchiveIntegrationS3Role
 
 
 class LogsArchiveDestinationS3(ModelNormal):
@@ -49,7 +51,7 @@ class LogsArchiveDestinationS3(ModelNormal):
     def __init__(
         self_,
         bucket: str,
-        integration: LogsArchiveIntegrationS3,
+        integration: Union[LogsArchiveIntegrationS3, LogsArchiveIntegrationS3AccessKey, LogsArchiveIntegrationS3Role],
         type: LogsArchiveDestinationS3Type,
         encryption: Union[LogsArchiveEncryptionS3, UnsetType] = unset,
         path: Union[str, UnsetType] = unset,
@@ -65,7 +67,7 @@ class LogsArchiveDestinationS3(ModelNormal):
         :param encryption: The S3 encryption settings.
         :type encryption: LogsArchiveEncryptionS3, optional
 
-        :param integration: The S3 Archive's integration destination.
+        :param integration: The S3 Archive's integration destination. You must provide one of the following: ``access_key_id`` alone, or both ``account_id`` and ``role_name`` together.
         :type integration: LogsArchiveIntegrationS3
 
         :param path: The archive path.

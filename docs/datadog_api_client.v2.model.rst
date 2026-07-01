@@ -23622,6 +23622,20 @@ datadog\_api\_client.v2.model.logs\_archive\_integration\_s3 module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.logs\_archive\_integration\_s3\_access\_key module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_integration_s3_access_key
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.logs\_archive\_integration\_s3\_role module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.logs_archive_integration_s3_role
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.logs\_archive\_order module
 ---------------------------------------------------------
 
