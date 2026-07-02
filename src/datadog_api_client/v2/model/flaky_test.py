@@ -49,7 +49,10 @@ class FlakyTest(ModelNormal):
         :param attributes: Attributes of a flaky test.
         :type attributes: FlakyTestAttributes, optional
 
-        :param id: Test's ID. This ID is the hash of the test's Fully Qualified Name and Git repository ID. On the Test Runs UI it is the same as the ``test_fingerprint_fqn`` tag.
+        :param id: Test's ID. This ID is the hash of the test's Fully Qualified Name and Git repository ID. It is the
+            value of the ``@test.fingerprint_fqn`` facet on test events, which you can search on in the Test
+            Optimization Explorer to locate a specific test. To filter search results by this ID, use the
+            ``fingerprint_fqn`` search key.
         :type id: str, optional
 
         :param type: The type of the flaky test from Flaky Test Management.

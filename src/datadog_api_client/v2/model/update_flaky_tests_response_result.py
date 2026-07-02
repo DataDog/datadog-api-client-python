@@ -35,7 +35,9 @@ class UpdateFlakyTestsResponseResult(ModelNormal):
         :param error: Error message if the update failed.
         :type error: str, optional
 
-        :param id: The ID of the flaky test from the request. This is the same ID returned by the Search flaky tests endpoint and corresponds to the test_fingerprint_fqn field in test run events.
+        :param id: The ID of the flaky test from the request. This is the value of the ``@test.fingerprint_fqn`` facet
+            on test events, the same ID accepted by the update request and returned by the Search flaky tests
+            endpoint.
         :type id: str
 
         :param success: ``True`` if the update was successful, ``False`` if there were any errors.
