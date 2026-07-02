@@ -94,6 +94,13 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param batch_settings: Event batching settings
         :type batch_settings: ObservabilityPipelineAmazonS3GenericBatchSettings, optional
 
+        :param server_side_encryption: Server-side encryption type for Amazon S3.
+        :type server_side_encryption: ObservabilityPipelineAmazonS3DestinationServerSideEncryption, optional
+
+        :param ssekms_key_id: The AWS KMS key ID used for SSE-KMS encryption.
+            Only applies when `server_side_encryption` is set to `aws:kms`.
+        :type ssekms_key_id: str, optional
+
         :param custom_source_name: Custom source name for the logs in Security Lake.
         :type custom_source_name: str
 

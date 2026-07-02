@@ -5021,6 +5021,9 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_desti
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
     ObservabilityPipelineAmazonS3Destination,
 )
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_server_side_encryption import (
+    ObservabilityPipelineAmazonS3DestinationServerSideEncryption,
+)
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_storage_class import (
     ObservabilityPipelineAmazonS3DestinationStorageClass,
 )
@@ -13356,6 +13359,7 @@ __all__ = [
     "ObservabilityPipelineAmazonOpenSearchDestinationAuthStrategy",
     "ObservabilityPipelineAmazonOpenSearchDestinationType",
     "ObservabilityPipelineAmazonS3Destination",
+    "ObservabilityPipelineAmazonS3DestinationServerSideEncryption",
     "ObservabilityPipelineAmazonS3DestinationStorageClass",
     "ObservabilityPipelineAmazonS3DestinationType",
     "ObservabilityPipelineAmazonS3GenericBatchSettings",
