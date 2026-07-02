@@ -315,6 +315,7 @@ from datadog_api_client.v1.model.list_stream_group_by_items import ListStreamGro
 from datadog_api_client.v1.model.list_stream_issue_persona import ListStreamIssuePersona
 from datadog_api_client.v1.model.list_stream_issue_state import ListStreamIssueState
 from datadog_api_client.v1.model.list_stream_query import ListStreamQuery
+from datadog_api_client.v1.model.list_stream_query_version import ListStreamQueryVersion
 from datadog_api_client.v1.model.list_stream_response_format import ListStreamResponseFormat
 from datadog_api_client.v1.model.list_stream_source import ListStreamSource
 from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
@@ -1665,6 +1666,7 @@ __all__ = [
     "ListStreamIssuePersona",
     "ListStreamIssueState",
     "ListStreamQuery",
+    "ListStreamQueryVersion",
     "ListStreamResponseFormat",
     "ListStreamSource",
     "ListStreamWidgetDefinition",
