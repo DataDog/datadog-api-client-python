@@ -93,6 +93,7 @@ from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
 from datadog_api_client.v2.api.rum_remote_config_api import RUMRemoteConfigApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
+from datadog_api_client.v2.api.reporting_and_sharing_api import ReportingAndSharingApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.api.rum_audience_management_api import RumAudienceManagementApi
@@ -230,6 +231,7 @@ __all__ = [
     "RUMRemoteConfigApi",
     "ReferenceTablesApi",
     "ReportSchedulesApi",
+    "ReportingAndSharingApi",
     "RestrictionPoliciesApi",
     "RolesApi",
     "RumAudienceManagementApi",
