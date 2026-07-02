@@ -722,6 +722,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].query.compute[0].aggregation" is equal to "count"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with logs_transaction_stream list_stream widget and version
+    Given new "CreateDashboard" request
+    And body with value {"layout_type": "ordered", "title": "{{ unique }} with list_stream widget","widgets": [{"definition": {"type": "list_stream","requests": [{"columns":[{"width":"auto","field":"timestamp"}],"query":{"data_source":"logs_transaction_stream","query_string":"","group_by":[{"facet":"service"}],"compute":[{"facet":"service","aggregation":"count"}],"version":"sequential_query"},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "logs_transaction_stream"
+    And the response "widgets[0].definition.requests[0].query.version" is equal to "sequential_query"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with manage_status widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/manage_status_widget.json"
