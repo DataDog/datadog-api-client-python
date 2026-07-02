@@ -18806,6 +18806,13 @@ datadog\_api\_client.v2.model.incident\_type\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_type\_configuration module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_configuration
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incident\_type\_create\_data module
 -----------------------------------------------------------------
 
@@ -18859,6 +18866,13 @@ datadog\_api\_client.v2.model.incident\_type\_response module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.incident_type_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_type\_slug\_source module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_type_slug_source
    :members:
    :show-inheritance:
 

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,10 +14,17 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_type_configuration import IncidentTypeConfiguration
+
+
 class IncidentTypeUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.incident_type_configuration import IncidentTypeConfiguration
+
         return {
+            "configuration": (IncidentTypeConfiguration,),
             "created_at": (datetime,),
             "created_by": (str,),
             "description": (str,),
@@ -29,6 +36,7 @@ class IncidentTypeUpdateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "configuration": "configuration",
         "created_at": "createdAt",
         "created_by": "createdBy",
         "description": "description",
@@ -48,6 +56,7 @@ class IncidentTypeUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
+        configuration: Union[IncidentTypeConfiguration, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         created_by: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
@@ -60,6 +69,9 @@ class IncidentTypeUpdateAttributes(ModelNormal):
     ):
         """
         Incident type's attributes for updates.
+
+        :param configuration: The incident-type-scoped behavior settings. All fields are optional on update. Any field omitted from a PATCH request keeps its current value. This object is read-only on the incident type resource itself and is only mutated through the update (PATCH) endpoint.
+        :type configuration: IncidentTypeConfiguration, optional
 
         :param created_at: Timestamp when the incident type was created.
         :type created_at: datetime, optional
@@ -85,6 +97,8 @@ class IncidentTypeUpdateAttributes(ModelNormal):
         :param prefix: The string that will be prepended to the incident title across the Datadog app.
         :type prefix: str, optional
         """
+        if configuration is not unset:
+            kwargs["configuration"] = configuration
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if created_by is not unset:
