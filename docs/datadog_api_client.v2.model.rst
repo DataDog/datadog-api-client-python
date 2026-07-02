@@ -9482,6 +9482,83 @@ datadog\_api\_client.v2.model.create\_service\_now\_ticket\_request\_data\_relat
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_snapshot\_additional\_config module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_additional_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_data\_attributes\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_data\_attributes\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_data\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_data\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_request module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_template\_variable module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_timeseries\_legend\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_timeseries_legend_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_ttl module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_ttl
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_snapshot\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_snapshot_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_status\_page\_request module
 ------------------------------------------------------------------
 
