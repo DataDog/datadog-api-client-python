@@ -25,6 +25,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding import (
         ObservabilityPipelineAmazonS3GenericEncoding,
     )
+    from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_server_side_encryption import (
+        ObservabilityPipelineAmazonS3DestinationServerSideEncryption,
+    )
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_storage_class import (
         ObservabilityPipelineAmazonS3DestinationStorageClass,
     )
@@ -71,6 +74,9 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_generic_encoding import (
             ObservabilityPipelineAmazonS3GenericEncoding,
         )
+        from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_server_side_encryption import (
+            ObservabilityPipelineAmazonS3DestinationServerSideEncryption,
+        )
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_storage_class import (
             ObservabilityPipelineAmazonS3DestinationStorageClass,
         )
@@ -89,6 +95,8 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
             "inputs": ([str],),
             "key_prefix": (str,),
             "region": (str,),
+            "server_side_encryption": (ObservabilityPipelineAmazonS3DestinationServerSideEncryption,),
+            "ssekms_key_id": (str,),
             "storage_class": (ObservabilityPipelineAmazonS3DestinationStorageClass,),
             "type": (ObservabilityPipelineAmazonS3GenericDestinationType,),
         }
@@ -104,6 +112,8 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
         "inputs": "inputs",
         "key_prefix": "key_prefix",
         "region": "region",
+        "server_side_encryption": "server_side_encryption",
+        "ssekms_key_id": "ssekms_key_id",
         "storage_class": "storage_class",
         "type": "type",
     }
@@ -137,6 +147,8 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
             UnsetType,
         ] = unset,
         key_prefix: Union[str, UnsetType] = unset,
+        server_side_encryption: Union[ObservabilityPipelineAmazonS3DestinationServerSideEncryption, UnsetType] = unset,
+        ssekms_key_id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -175,6 +187,13 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
         :param region: AWS region of the S3 bucket.
         :type region: str
 
+        :param server_side_encryption: Server-side encryption type for Amazon S3.
+        :type server_side_encryption: ObservabilityPipelineAmazonS3DestinationServerSideEncryption, optional
+
+        :param ssekms_key_id: The AWS KMS key ID used for SSE-KMS encryption.
+            Only applies when ``server_side_encryption`` is set to ``aws:kms``.
+        :type ssekms_key_id: str, optional
+
         :param storage_class: S3 storage class.
         :type storage_class: ObservabilityPipelineAmazonS3DestinationStorageClass
 
@@ -189,6 +208,10 @@ class ObservabilityPipelineAmazonS3GenericDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
+        if server_side_encryption is not unset:
+            kwargs["server_side_encryption"] = server_side_encryption
+        if ssekms_key_id is not unset:
+            kwargs["ssekms_key_id"] = ssekms_key_id
         super().__init__(kwargs)
 
         self_.bucket = bucket
