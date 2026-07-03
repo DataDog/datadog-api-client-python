@@ -50,7 +50,7 @@ class NotificationRulePreviewResult(ModelNormal):
             workload_security, signal_correlation, cloud_configuration and infrastructure_configuration.
             Vulnerability-based notification rules can filter vulnerabilities based on rule types application_code_vulnerability,
             application_library_vulnerability, attack_path, container_image_vulnerability, identity_risk, misconfiguration,
-            api_security, host_vulnerability, iac_misconfiguration, sast_vulnerability and secret_vulnerability.
+            api_security, host_vulnerability, iac_misconfiguration, sast_vulnerability, secret_vulnerability and workload_activity.
         :type rule_type: RuleTypesItems
         """
         super().__init__(kwargs)
