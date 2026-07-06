@@ -2318,19 +2318,19 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 Vulnerabilities accepted successfully.
 
+  @team:DataDog/k9-cloud-vm
+  Scenario: List assets SBOMs returns "Bad request: Invalid pagination token." response
+    Given new "ListAssetsSBOMs" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 400 Bad request: Invalid pagination token.
+
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given new "ListAssetsSBOMs" request
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
-
-  @team:DataDog/k9-cloud-vm
-  Scenario: List assets SBOMs returns "Not found: There is no request associated with the provided token." response
-    Given new "ListAssetsSBOMs" request
-    And request contains "page[token]" parameter with value "unknown"
-    And request contains "page[number]" parameter with value 1
-    When the request is sent
-    Then the response status is 404 Not found: There is no request associated with the provided token.
 
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Not found: asset not found" response
@@ -2504,6 +2504,15 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/k9-cloud-vm
+  Scenario: List scanned assets metadata returns "Bad request: Invalid Pagination Token" response
+    Given operation "ListScannedAssetsMetadata" enabled
+    And new "ListScannedAssetsMetadata" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 400 Bad request: Invalid pagination token.
+
   @skip @team:DataDog/k9-cloud-vm
   Scenario: List scanned assets metadata returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListScannedAssetsMetadata" enabled
@@ -2511,12 +2520,10 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/k9-cloud-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List scanned assets metadata returns "Not found: asset not found" response
     Given operation "ListScannedAssetsMetadata" enabled
     And new "ListScannedAssetsMetadata" request
-    And request contains "page[token]" parameter with value "unknown"
-    And request contains "page[number]" parameter with value 1
     When the request is sent
     Then the response status is 404 Not found: asset not found
 
@@ -2550,6 +2557,15 @@ Feature: Security Monitoring
     And the response "meta.page" has field "after"
     And the response "links" has field "next"
 
+  @team:DataDog/k9-cloud-vm
+  Scenario: List vulnerabilities returns "Bad request: Invalid pagination token." response
+    Given operation "ListVulnerabilities" enabled
+    And new "ListVulnerabilities" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 400 Bad request: Invalid pagination token.
+
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List vulnerabilities returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListVulnerabilities" enabled
@@ -2557,12 +2573,10 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/k9-cloud-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List vulnerabilities returns "Not found: There is no request associated with the provided token." response
     Given operation "ListVulnerabilities" enabled
     And new "ListVulnerabilities" request
-    And request contains "page[token]" parameter with value "unknown"
-    And request contains "page[number]" parameter with value 1
     When the request is sent
     Then the response status is 404 Not found: There is no request associated with the provided token.
 
@@ -2576,6 +2590,15 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/k9-cloud-vm
+  Scenario: List vulnerable assets returns "Bad request: Invalid Pagination Token" response
+    Given operation "ListVulnerableAssets" enabled
+    And new "ListVulnerableAssets" request
+    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[number]" parameter with value 1
+    When the request is sent
+    Then the response status is 400 Bad request: Invalid pagination token.
+
   @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List vulnerable assets returns "Bad request: The server cannot process the request due to invalid syntax in the request." response
     Given operation "ListVulnerableAssets" enabled
@@ -2583,12 +2606,10 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad request: The server cannot process the request due to invalid syntax in the request.
 
-  @team:DataDog/k9-cloud-vm
+  @generated @skip @team:DataDog/k9-cloud-vm
   Scenario: List vulnerable assets returns "Not found: There is no request associated with the provided token." response
     Given operation "ListVulnerableAssets" enabled
     And new "ListVulnerableAssets" request
-    And request contains "page[token]" parameter with value "unknown"
-    And request contains "page[number]" parameter with value 1
     When the request is sent
     Then the response status is 404 Not found: There is no request associated with the provided token.
 
