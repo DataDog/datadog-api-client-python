@@ -424,6 +424,13 @@ datadog\_api\_client.v2.api.high\_availability\_multi\_region\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.identity\_providers\_api module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.identity_providers_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.incidents\_api module
 -------------------------------------------------
 
@@ -589,6 +596,13 @@ datadog\_api\_client.v2.api.opsgenie\_integration\_api module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.opsgenie_integration_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.org\_authorized\_clients\_api module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.org_authorized_clients_api
    :members:
    :show-inheritance:
 
@@ -911,6 +925,13 @@ datadog\_api\_client.v2.api.usage\_metering\_api module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.usage_metering_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.user\_authorized\_clients\_api module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.user_authorized_clients_api
    :members:
    :show-inheritance:
 
