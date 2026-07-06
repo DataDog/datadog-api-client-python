@@ -64,6 +64,8 @@ from datadog_api_client.v2.model.finding_case_response import FindingCaseRespons
 from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
 from datadog_api_client.v2.model.attach_jira_issue_request import AttachJiraIssueRequest
 from datadog_api_client.v2.model.create_jira_issue_request_array import CreateJiraIssueRequestArray
+from datadog_api_client.v2.model.attach_linear_issue_request import AttachLinearIssueRequest
+from datadog_api_client.v2.model.create_linear_issue_request_array import CreateLinearIssueRequestArray
 from datadog_api_client.v2.model.mute_findings_response import MuteFindingsResponse
 from datadog_api_client.v2.model.mute_findings_request import MuteFindingsRequest
 from datadog_api_client.v2.model.security_findings_search_request import SecurityFindingsSearchRequest
@@ -354,6 +356,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AttachJiraIssueRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._attach_linear_issue_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/linear_issues",
+                "operation_id": "attach_linear_issue",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AttachLinearIssueRequest,),
                     "location": "body",
                 },
             },
@@ -752,6 +774,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateJiraIssueRequestArray,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_linear_issues_endpoint = _Endpoint(
+            settings={
+                "response_type": (FindingCaseResponseArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/linear_issues",
+                "operation_id": "create_linear_issues",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateLinearIssueRequestArray,),
                     "location": "body",
                 },
             },
@@ -4570,6 +4612,23 @@ class SecurityMonitoringApi:
 
         return self._attach_jira_issue_endpoint.call_with_http_info(**kwargs)
 
+    def attach_linear_issue(
+        self,
+        body: AttachLinearIssueRequest,
+    ) -> FindingCaseResponse:
+        """Attach security findings to a Linear issue.
+
+        Attach security findings to a Linear issue by providing the Linear issue URL.
+        You can attach up to 50 security findings per Linear issue. If the Linear issue is not linked to any case, this operation will create a case for the security findings and link the Linear issue to the newly created case. Security findings that are already attached to another Linear issue will be detached from their previous Linear issue and attached to the specified Linear issue.
+
+        :type body: AttachLinearIssueRequest
+        :rtype: FindingCaseResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._attach_linear_issue_endpoint.call_with_http_info(**kwargs)
+
     def attach_service_now_ticket(
         self,
         body: AttachServiceNowTicketRequest,
@@ -4938,6 +4997,23 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_jira_issues_endpoint.call_with_http_info(**kwargs)
+
+    def create_linear_issues(
+        self,
+        body: CreateLinearIssueRequestArray,
+    ) -> FindingCaseResponseArray:
+        """Create Linear issues for security findings.
+
+        Create Linear issues for security findings.
+        This operation creates a case in Datadog and a Linear issue linked to that case for bidirectional sync between Datadog and Linear. You can create up to 50 Linear issues per request and associate up to 50 security findings per Linear issue. Security findings that are already attached to another Linear issue will be detached from their previous Linear issue and attached to the newly created Linear issue.
+
+        :type body: CreateLinearIssueRequestArray
+        :rtype: FindingCaseResponseArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_linear_issues_endpoint.call_with_http_info(**kwargs)
 
     def create_sample_log_generation_subscription(
         self,

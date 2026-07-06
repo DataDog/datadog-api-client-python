@@ -626,6 +626,14 @@ from datadog_api_client.v2.model.attach_jira_issue_request_data_attributes impor
 from datadog_api_client.v2.model.attach_jira_issue_request_data_relationships import (
     AttachJiraIssueRequestDataRelationships,
 )
+from datadog_api_client.v2.model.attach_linear_issue_request import AttachLinearIssueRequest
+from datadog_api_client.v2.model.attach_linear_issue_request_data import AttachLinearIssueRequestData
+from datadog_api_client.v2.model.attach_linear_issue_request_data_attributes import (
+    AttachLinearIssueRequestDataAttributes,
+)
+from datadog_api_client.v2.model.attach_linear_issue_request_data_relationships import (
+    AttachLinearIssueRequestDataRelationships,
+)
 from datadog_api_client.v2.model.attach_service_now_ticket_request import AttachServiceNowTicketRequest
 from datadog_api_client.v2.model.attach_service_now_ticket_request_data import AttachServiceNowTicketRequestData
 from datadog_api_client.v2.model.attach_service_now_ticket_request_data_attributes import (
@@ -1683,6 +1691,14 @@ from datadog_api_client.v2.model.create_jira_issue_request_data import CreateJir
 from datadog_api_client.v2.model.create_jira_issue_request_data_attributes import CreateJiraIssueRequestDataAttributes
 from datadog_api_client.v2.model.create_jira_issue_request_data_relationships import (
     CreateJiraIssueRequestDataRelationships,
+)
+from datadog_api_client.v2.model.create_linear_issue_request_array import CreateLinearIssueRequestArray
+from datadog_api_client.v2.model.create_linear_issue_request_data import CreateLinearIssueRequestData
+from datadog_api_client.v2.model.create_linear_issue_request_data_attributes import (
+    CreateLinearIssueRequestDataAttributes,
+)
+from datadog_api_client.v2.model.create_linear_issue_request_data_relationships import (
+    CreateLinearIssueRequestDataRelationships,
 )
 from datadog_api_client.v2.model.create_maintenance_request import CreateMaintenanceRequest
 from datadog_api_client.v2.model.create_maintenance_request_data import CreateMaintenanceRequestData
@@ -2799,6 +2815,8 @@ from datadog_api_client.v2.model.finding_data_type import FindingDataType
 from datadog_api_client.v2.model.finding_evaluation import FindingEvaluation
 from datadog_api_client.v2.model.finding_jira_issue import FindingJiraIssue
 from datadog_api_client.v2.model.finding_jira_issue_result import FindingJiraIssueResult
+from datadog_api_client.v2.model.finding_linear_issue import FindingLinearIssue
+from datadog_api_client.v2.model.finding_linear_issue_result import FindingLinearIssueResult
 from datadog_api_client.v2.model.finding_mute import FindingMute
 from datadog_api_client.v2.model.finding_mute_reason import FindingMuteReason
 from datadog_api_client.v2.model.finding_rule import FindingRule
@@ -4297,6 +4315,7 @@ from datadog_api_client.v2.model.licenses_list_response_data_attributes_licenses
     LicensesListResponseDataAttributesLicensesItems,
 )
 from datadog_api_client.v2.model.licenses_list_response_data_type import LicensesListResponseDataType
+from datadog_api_client.v2.model.linear_issues_data_type import LinearIssuesDataType
 from datadog_api_client.v2.model.links import Links
 from datadog_api_client.v2.model.list_apis_response import ListAPIsResponse
 from datadog_api_client.v2.model.list_apis_response_data import ListAPIsResponseData
@@ -10015,6 +10034,10 @@ __all__ = [
     "AttachJiraIssueRequestData",
     "AttachJiraIssueRequestDataAttributes",
     "AttachJiraIssueRequestDataRelationships",
+    "AttachLinearIssueRequest",
+    "AttachLinearIssueRequestData",
+    "AttachLinearIssueRequestDataAttributes",
+    "AttachLinearIssueRequestDataRelationships",
     "AttachServiceNowTicketRequest",
     "AttachServiceNowTicketRequestData",
     "AttachServiceNowTicketRequestDataAttributes",
@@ -10855,6 +10878,10 @@ __all__ = [
     "CreateJiraIssueRequestData",
     "CreateJiraIssueRequestDataAttributes",
     "CreateJiraIssueRequestDataRelationships",
+    "CreateLinearIssueRequestArray",
+    "CreateLinearIssueRequestData",
+    "CreateLinearIssueRequestDataAttributes",
+    "CreateLinearIssueRequestDataRelationships",
     "CreateMaintenanceRequest",
     "CreateMaintenanceRequestData",
     "CreateMaintenanceRequestDataAttributes",
@@ -11668,6 +11695,8 @@ __all__ = [
     "FindingEvaluation",
     "FindingJiraIssue",
     "FindingJiraIssueResult",
+    "FindingLinearIssue",
+    "FindingLinearIssueResult",
     "FindingMute",
     "FindingMuteReason",
     "FindingRule",
@@ -12816,6 +12845,7 @@ __all__ = [
     "LicensesListResponseDataAttributes",
     "LicensesListResponseDataAttributesLicensesItems",
     "LicensesListResponseDataType",
+    "LinearIssuesDataType",
     "Links",
     "ListAPIsResponse",
     "ListAPIsResponseData",

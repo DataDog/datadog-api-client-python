@@ -112,6 +112,30 @@ Feature: Security Monitoring
     And the response "data.attributes.jira_issue.result.issue_url" is equal to "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"
 
   @generated @skip @team:DataDog/k9-investigation
+  Scenario: Attach security findings to a Linear issue returns "Bad Request" response
+    Given operation "AttachLinearIssue" enabled
+    And new "AttachLinearIssue" request
+    And body with value {"data": {"attributes": {"linear_issue_url": "https://linear.app/your-workspace/issue/ENG-123"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "linear_issues"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Attach security findings to a Linear issue returns "Not Found" response
+    Given operation "AttachLinearIssue" enabled
+    And new "AttachLinearIssue" request
+    And body with value {"data": {"attributes": {"linear_issue_url": "https://linear.app/your-workspace/issue/ENG-123"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "linear_issues"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Attach security findings to a Linear issue returns "OK" response
+    Given operation "AttachLinearIssue" enabled
+    And new "AttachLinearIssue" request
+    And body with value {"data": {"attributes": {"linear_issue_url": "https://linear.app/your-workspace/issue/ENG-123"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "linear_issues"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-investigation
   Scenario: Attach security findings to a ServiceNow ticket returns "Bad Request" response
     Given new "AttachServiceNowTicket" request
     And body with value {"data": {"attributes": {"servicenow_ticket_url": "https://example.service-now.com/now/nav/ui/classic/params/target/incident.do?sys_id=abcdef0123456789abcdef0123456789"}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}}
@@ -524,6 +548,30 @@ Feature: Security Monitoring
   Scenario: Create Jira issues for security findings returns "Not Found" response
     Given new "CreateJiraIssues" request
     And body with value {"data": [{"attributes": {}, "relationships": {"findings": {"data": [{"id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=", "type": "findings"}]}, "project": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "projects"}}}, "type": "jira_issues"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Create Linear issues for security findings returns "Bad Request" response
+    Given operation "CreateLinearIssues" enabled
+    And new "CreateLinearIssues" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Linear issue.", "label_ids": ["a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"], "linear_project_id": "d4c3b2a1-6f5e-8b7a-0d9c-2f1e4a3b6c5d", "priority": "NOT_DEFINED", "title": "A title for the Linear issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "linear_issues"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Create Linear issues for security findings returns "Created" response
+    Given operation "CreateLinearIssues" enabled
+    And new "CreateLinearIssues" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Linear issue.", "label_ids": ["a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"], "linear_project_id": "d4c3b2a1-6f5e-8b7a-0d9c-2f1e4a3b6c5d", "priority": "NOT_DEFINED", "title": "A title for the Linear issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "linear_issues"}]}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/k9-investigation
+  Scenario: Create Linear issues for security findings returns "Not Found" response
+    Given operation "CreateLinearIssues" enabled
+    And new "CreateLinearIssues" request
+    And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the Linear issue.", "label_ids": ["a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"], "linear_project_id": "d4c3b2a1-6f5e-8b7a-0d9c-2f1e4a3b6c5d", "priority": "NOT_DEFINED", "title": "A title for the Linear issue."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "linear_issues"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
