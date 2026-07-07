@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
     from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
     from datadog_api_client.v2.model.finding_jira_issue import FindingJiraIssue
+    from datadog_api_client.v2.model.finding_linear_issue import FindingLinearIssue
     from datadog_api_client.v2.model.finding_service_now_ticket import FindingServiceNowTicket
 
 
@@ -27,6 +28,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
         from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
         from datadog_api_client.v2.model.finding_jira_issue import FindingJiraIssue
+        from datadog_api_client.v2.model.finding_linear_issue import FindingLinearIssue
         from datadog_api_client.v2.model.finding_service_now_ticket import FindingServiceNowTicket
 
         return {
@@ -41,6 +43,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
             "insights": ([CaseInsightsItems],),
             "jira_issue": (FindingJiraIssue,),
             "key": (str,),
+            "linear_issue": (FindingLinearIssue,),
             "modified_at": (datetime,),
             "priority": (str,),
             "servicenow_ticket": (FindingServiceNowTicket,),
@@ -63,6 +66,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         "insights": "insights",
         "jira_issue": "jira_issue",
         "key": "key",
+        "linear_issue": "linear_issue",
         "modified_at": "modified_at",
         "priority": "priority",
         "servicenow_ticket": "servicenow_ticket",
@@ -86,6 +90,7 @@ class FindingCaseResponseDataAttributes(ModelNormal):
         insights: Union[List[CaseInsightsItems], UnsetType] = unset,
         jira_issue: Union[FindingJiraIssue, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
+        linear_issue: Union[FindingLinearIssue, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         priority: Union[str, UnsetType] = unset,
         servicenow_ticket: Union[FindingServiceNowTicket, UnsetType] = unset,
@@ -131,6 +136,9 @@ class FindingCaseResponseDataAttributes(ModelNormal):
 
         :param key: Key of the case.
         :type key: str, optional
+
+        :param linear_issue: Linear issue associated with the case.
+        :type linear_issue: FindingLinearIssue, optional
 
         :param modified_at: Timestamp of when the case was last modified.
         :type modified_at: datetime, optional
@@ -178,6 +186,8 @@ class FindingCaseResponseDataAttributes(ModelNormal):
             kwargs["jira_issue"] = jira_issue
         if key is not unset:
             kwargs["key"] = key
+        if linear_issue is not unset:
+            kwargs["linear_issue"] = linear_issue
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if priority is not unset:

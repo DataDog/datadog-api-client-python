@@ -2608,6 +2608,34 @@ datadog\_api\_client.v2.model.attach\_jira\_issue\_request\_data\_relationships 
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.attach\_linear\_issue\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_linear_issue_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_linear\_issue\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_linear_issue_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_linear\_issue\_request\_data\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_linear_issue_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.attach\_linear\_issue\_request\_data\_relationships module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.attach_linear_issue_request_data_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.attach\_service\_now\_ticket\_request module
 --------------------------------------------------------------------------
 
@@ -9146,6 +9174,34 @@ datadog\_api\_client.v2.model.create\_jira\_issue\_request\_data\_relationships 
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.create\_linear\_issue\_request\_array module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_linear_issue_request_array
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_linear\_issue\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_linear_issue_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_linear\_issue\_request\_data\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_linear_issue_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.create\_linear\_issue\_request\_data\_relationships module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.create_linear_issue_request_data_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.create\_maintenance\_request module
 -----------------------------------------------------------------
 
@@ -14844,6 +14900,20 @@ datadog\_api\_client.v2.model.finding\_jira\_issue\_result module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.finding\_linear\_issue module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_linear_issue
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.finding\_linear\_issue\_result module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.finding_linear_issue_result
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.finding\_mute module
 --------------------------------------------------
 
@@ -20469,6 +20539,13 @@ datadog\_api\_client.v2.model.licenses\_list\_response\_data\_type module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.licenses_list_response_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.linear\_issues\_data\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.linear_issues_data_type
    :members:
    :show-inheritance:
 
