@@ -2830,6 +2830,25 @@
       "type": "unsafe"
     }
   },
+  "ListIdentityProviders": {
+    "tag": "Identity Providers",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIdentityProvider": {
+    "tag": "Identity Providers",
+    "undo": {
+      "operationId": "ListIdentityProviders",
+      "type": "idempotent"
+    }
+  },
+  "ListIdentityProviderUsers": {
+    "tag": "Identity Providers",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteEntityIntegrationConfig": {
     "tag": "Entity Integration Configs",
     "undo": {
@@ -5679,6 +5698,52 @@
   "UpdateOrgSamlConfigurations": {
     "tag": "Organizations",
     "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListOrgAuthorizedClients": {
+    "tag": "Org Authorized Clients",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteOrgAuthorizedClient": {
+    "tag": "Org Authorized Clients",
+    "undo": {
+      "operationId": "ListOrgAuthorizedClients",
+      "type": "idempotent"
+    }
+  },
+  "GetOrgAuthorizedClient": {
+    "tag": "Org Authorized Clients",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOrgAuthorizedClient": {
+    "tag": "Org Authorized Clients",
+    "undo": {
+      "operationId": "ListOrgAuthorizedClients",
+      "type": "idempotent"
+    }
+  },
+  "DeleteOrgAuthorizedClientAllUserAuthorizations": {
+    "tag": "Org Authorized Clients",
+    "undo": {
+      "operationId": "ListOrgAuthorizedClientUserAuthorizations",
+      "type": "idempotent"
+    }
+  },
+  "ListOrgAuthorizedClientUserAuthorizations": {
+    "tag": "Org Authorized Clients",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteOrgAuthorizedClientUserAuthorization": {
+    "tag": "Org Authorized Clients",
+    "undo": {
+      "operationId": "ListOrgAuthorizedClientUserAuthorizations",
       "type": "idempotent"
     }
   },
@@ -9349,6 +9414,32 @@
       "type": "safe"
     }
   },
+  "ListUserAuthorizedClients": {
+    "tag": "User Authorized Clients",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteUserAuthorizedClientsByClient": {
+    "tag": "User Authorized Clients",
+    "undo": {
+      "operationId": "ListUserAuthorizedClients",
+      "type": "idempotent"
+    }
+  },
+  "DeleteUserAuthorizedClient": {
+    "tag": "User Authorized Clients",
+    "undo": {
+      "operationId": "ListUserAuthorizedClients",
+      "type": "idempotent"
+    }
+  },
+  "GetUserAuthorizedClient": {
+    "tag": "User Authorized Clients",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SendInvitations": {
     "tag": "Users",
     "undo": {
@@ -9398,6 +9489,12 @@
       "type": "idempotent"
     }
   },
+  "GetUserIdentityProviders": {
+    "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteUserInvitations": {
     "tag": "Users",
     "undo": {
@@ -9414,6 +9511,13 @@
     "tag": "Users",
     "undo": {
       "type": "safe"
+    }
+  },
+  "UpdateUserIdentityProviders": {
+    "tag": "Users",
+    "undo": {
+      "operationId": "GetUserIdentityProviders",
+      "type": "idempotent"
     }
   },
   "GetUserMemberships": {

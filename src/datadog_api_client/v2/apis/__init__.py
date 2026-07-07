@@ -59,6 +59,7 @@ from datadog_api_client.v2.api.governance_controls_api import GovernanceControls
 from datadog_api_client.v2.api.governance_insights_api import GovernanceInsightsApi
 from datadog_api_client.v2.api.high_availability_multi_region_api import HighAvailabilityMultiRegionApi
 from datadog_api_client.v2.api.ip_allowlist_api import IPAllowlistApi
+from datadog_api_client.v2.api.identity_providers_api import IdentityProvidersApi
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.api.integrations_api import IntegrationsApi
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
@@ -82,6 +83,7 @@ from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.on_call_api import OnCallApi
 from datadog_api_client.v2.api.on_call_paging_api import OnCallPagingApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
+from datadog_api_client.v2.api.org_authorized_clients_api import OrgAuthorizedClientsApi
 from datadog_api_client.v2.api.org_connections_api import OrgConnectionsApi
 from datadog_api_client.v2.api.org_groups_api import OrgGroupsApi
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
@@ -128,6 +130,7 @@ from datadog_api_client.v2.api.tag_policies_api import TagPoliciesApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
+from datadog_api_client.v2.api.user_authorized_clients_api import UserAuthorizedClientsApi
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.api.web_integrations_api import WebIntegrationsApi
 from datadog_api_client.v2.api.webhooks_integration_api import WebhooksIntegrationApi
@@ -197,6 +200,7 @@ __all__ = [
     "GovernanceInsightsApi",
     "HighAvailabilityMultiRegionApi",
     "IPAllowlistApi",
+    "IdentityProvidersApi",
     "IncidentsApi",
     "IntegrationsApi",
     "JiraIntegrationApi",
@@ -220,6 +224,7 @@ __all__ = [
     "OnCallApi",
     "OnCallPagingApi",
     "OpsgenieIntegrationApi",
+    "OrgAuthorizedClientsApi",
     "OrgConnectionsApi",
     "OrgGroupsApi",
     "OrganizationsApi",
@@ -266,6 +271,7 @@ __all__ = [
     "TeamsApi",
     "TestOptimizationApi",
     "UsageMeteringApi",
+    "UserAuthorizedClientsApi",
     "UsersApi",
     "WebIntegrationsApi",
     "WebhooksIntegrationApi",
