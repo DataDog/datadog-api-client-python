@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     none_type,
     unset,
     UnsetType,
@@ -26,10 +27,10 @@ class DORADeploymentObjectAttributes(ModelNormal):
         return {
             "custom_tags": ([str],),
             "env": (str,),
-            "finished_at": (int,),
+            "finished_at": (datetime,),
             "git": (DORAGitInfoResponse,),
             "service": (str,),
-            "started_at": (int,),
+            "started_at": (datetime,),
             "team": (str,),
             "version": (str,),
         }
@@ -47,11 +48,11 @@ class DORADeploymentObjectAttributes(ModelNormal):
 
     def __init__(
         self_,
-        finished_at: int,
         service: str,
-        started_at: int,
+        started_at: datetime,
         custom_tags: Union[List[str], none_type, UnsetType] = unset,
         env: Union[str, UnsetType] = unset,
+        finished_at: Union[datetime, UnsetType] = unset,
         git: Union[DORAGitInfoResponse, UnsetType] = unset,
         team: Union[str, UnsetType] = unset,
         version: Union[str, UnsetType] = unset,
@@ -66,8 +67,8 @@ class DORADeploymentObjectAttributes(ModelNormal):
         :param env: Environment name to where the service was deployed.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp when the deployment finished.
-        :type finished_at: int
+        :param finished_at: The time when the deployment finished.
+        :type finished_at: datetime, optional
 
         :param git: Git info returned by DORA Metrics events.
         :type git: DORAGitInfoResponse, optional
@@ -75,8 +76,8 @@ class DORADeploymentObjectAttributes(ModelNormal):
         :param service: Service name.
         :type service: str
 
-        :param started_at: Unix timestamp when the deployment started.
-        :type started_at: int
+        :param started_at: The time when the deployment started.
+        :type started_at: datetime
 
         :param team: Name of the team owning the deployed service.
         :type team: str, optional
@@ -88,6 +89,8 @@ class DORADeploymentObjectAttributes(ModelNormal):
             kwargs["custom_tags"] = custom_tags
         if env is not unset:
             kwargs["env"] = env
+        if finished_at is not unset:
+            kwargs["finished_at"] = finished_at
         if git is not unset:
             kwargs["git"] = git
         if team is not unset:
@@ -96,6 +99,5 @@ class DORADeploymentObjectAttributes(ModelNormal):
             kwargs["version"] = version
         super().__init__(kwargs)
 
-        self_.finished_at = finished_at
         self_.service = service
         self_.started_at = started_at
