@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    datetime,
     none_type,
     unset,
     UnsetType,
@@ -26,12 +27,12 @@ class DORAIncidentObjectAttributes(ModelNormal):
         return {
             "custom_tags": ([str],),
             "env": (str,),
-            "finished_at": (int,),
+            "finished_at": (datetime,),
             "git": (DORAGitInfo,),
             "name": (str,),
             "services": ([str],),
             "severity": (str,),
-            "started_at": (int,),
+            "started_at": (datetime,),
             "team": (str,),
             "version": (str,),
         }
@@ -51,14 +52,14 @@ class DORAIncidentObjectAttributes(ModelNormal):
 
     def __init__(
         self_,
-        started_at: int,
         custom_tags: Union[List[str], none_type, UnsetType] = unset,
         env: Union[str, UnsetType] = unset,
-        finished_at: Union[int, UnsetType] = unset,
+        finished_at: Union[datetime, UnsetType] = unset,
         git: Union[DORAGitInfo, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         services: Union[List[str], UnsetType] = unset,
         severity: Union[str, UnsetType] = unset,
+        started_at: Union[datetime, UnsetType] = unset,
         team: Union[str, UnsetType] = unset,
         version: Union[str, UnsetType] = unset,
         **kwargs,
@@ -72,8 +73,8 @@ class DORAIncidentObjectAttributes(ModelNormal):
         :param env: Environment name that was impacted by the incident.
         :type env: str, optional
 
-        :param finished_at: Unix timestamp when the incident finished.
-        :type finished_at: int, optional
+        :param finished_at: The time when the incident finished.
+        :type finished_at: datetime, optional
 
         :param git: Git info for DORA Metrics events.
         :type git: DORAGitInfo, optional
@@ -87,8 +88,8 @@ class DORAIncidentObjectAttributes(ModelNormal):
         :param severity: Incident severity.
         :type severity: str, optional
 
-        :param started_at: Unix timestamp when the incident started.
-        :type started_at: int
+        :param started_at: The time when the incident started.
+        :type started_at: datetime, optional
 
         :param team: Name of the team owning the services impacted.
         :type team: str, optional
@@ -110,10 +111,10 @@ class DORAIncidentObjectAttributes(ModelNormal):
             kwargs["services"] = services
         if severity is not unset:
             kwargs["severity"] = severity
+        if started_at is not unset:
+            kwargs["started_at"] = started_at
         if team is not unset:
             kwargs["team"] = team
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
-
-        self_.started_at = started_at

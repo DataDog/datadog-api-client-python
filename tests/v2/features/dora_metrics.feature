@@ -88,6 +88,18 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @team:DataDog/ci-app-backend
+  Scenario: Get a list of deployment events returns deployments with date-time timestamps
+    Given a valid "appKeyAuth" key in the system
+    And new "ListDORADeployments" request
+    And body with value {"data": {"attributes": {"from": "2023-08-31T00:00:00Z", "to": "2023-09-01T00:00:00Z"}, "type": "dora_deployments_list_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].type" is equal to "dora_deployment"
+    And the response "data[0].attributes" has field "started_at"
+    And the response "data[0].attributes" has field "finished_at"
+
   @team:DataDog/ci-app-backend
   Scenario: Get a list of failure events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
