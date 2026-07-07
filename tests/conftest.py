@@ -319,12 +319,27 @@ def pytest_recording_configure(config, vcr):
     from vcr import matchers
     from vcr.util import read_body
 
-    is_text_json = matchers._header_checker("text/json")
-    transformer = matchers._transform_json
+    def is_json(headers):
+        return matchers._header_checker("text/json")(headers) or matchers._header_checker("application/json")(headers)
+
+    def normalize_utc_offset(value):
+        # Cassettes record UTC datetimes as "...Z", but the client serializes
+        # tz-aware datetimes via datetime.isoformat() as "...+00:00". The two
+        # denote the same instant, so treat them as equal when matching bodies.
+        if isinstance(value, dict):
+            return {key: normalize_utc_offset(val) for key, val in value.items()}
+        if isinstance(value, list):
+            return [normalize_utc_offset(item) for item in value]
+        if isinstance(value, str) and value.endswith("+00:00"):
+            return value[:-6] + "Z"
+        return value
+
+    def transform(request):
+        return normalize_utc_offset(matchers._transform_json(read_body(request)))
 
     def body(r1, r2):
-        if is_text_json(r1.headers) and is_text_json(r2.headers):
-            assert transformer(read_body(r1)) == transformer(read_body(r2))
+        if is_json(r1.headers) and is_json(r2.headers):
+            assert transform(r1) == transform(r2)
         else:
             matchers.body(r1, r2)
 
