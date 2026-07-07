@@ -2369,7 +2369,7 @@ Feature: Security Monitoring
   @team:DataDog/k9-cloud-vm
   Scenario: List assets SBOMs returns "Bad request: Invalid pagination token." response
     Given new "ListAssetsSBOMs" request
-    And request contains "page[token]" parameter with value "unknown"
+    And request contains "page[token]" parameter with value "SERVICE:unknown"
     And request contains "page[number]" parameter with value 1
     When the request is sent
     Then the response status is 400 Bad request: Invalid pagination token.

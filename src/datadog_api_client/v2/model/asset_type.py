@@ -16,7 +16,7 @@ class AssetType(ModelSimple):
     """
     The asset type
 
-    :param value: Must be one of ["Repository", "Service", "Host", "HostImage", "Image"].
+    :param value: Must be one of ["Repository", "Service", "Host", "HostImage", "Image", "ServerlessFunction"].
     :type value: str
     """
 
@@ -26,12 +26,14 @@ class AssetType(ModelSimple):
         "Host",
         "HostImage",
         "Image",
+        "ServerlessFunction",
     }
     REPOSITORY: ClassVar["AssetType"]
     SERVICE: ClassVar["AssetType"]
     HOST: ClassVar["AssetType"]
     HOSTIMAGE: ClassVar["AssetType"]
     IMAGE: ClassVar["AssetType"]
+    SERVERLESSFUNCTION: ClassVar["AssetType"]
 
     @cached_property
     def openapi_types(_):
@@ -45,3 +47,4 @@ AssetType.SERVICE = AssetType("Service")
 AssetType.HOST = AssetType("Host")
 AssetType.HOSTIMAGE = AssetType("HostImage")
 AssetType.IMAGE = AssetType("Image")
+AssetType.SERVERLESSFUNCTION = AssetType("ServerlessFunction")

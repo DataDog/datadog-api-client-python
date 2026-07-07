@@ -5,11 +5,10 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security/sboms?page%5Btoken%5D=unknown&page%5Bnumber%5D=1
+    uri: https://api.datadoghq.com/api/v2/security/sboms?page%5Btoken%5D=SERVICE%3Aunknown&page%5Bnumber%5D=1
   response:
     body:
-      string: '{"errors":[{"status":"400","title":"Bad request: asset_type","detail":"asset_type
-        filter is required"}]}'
+      string: '{"errors":[{"status":"400","title":"Unexpected internal error"}]}'
     headers:
       content-type:
       - application/vnd.api+json
