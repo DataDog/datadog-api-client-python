@@ -6630,6 +6630,11 @@ class SecurityMonitoringApi:
 
         Get a list of assets SBOMs for an organization.
 
+        The ``filter[asset_type]`` parameter is required for initial requests (when no ``page[token]`` is provided).
+        Subsequent pages encode the asset type in the pagination token, so ``filter[asset_type]`` is not required
+        for paginated requests. Mixing infrastructure asset types ( ``Host`` , ``HostImage`` , ``Image`` , ``ServerlessFunction`` )
+        with code asset types ( ``Repository`` , ``Service`` ) in the same request is not supported and returns a 400 error.
+
         **Pagination**
 
         Please review the `Pagination section <#pagination>`_ for the "List Vulnerabilities" endpoint.
@@ -6646,7 +6651,7 @@ class SecurityMonitoringApi:
         :type page_token: str, optional
         :param page_number: The page number to be retrieved. It should be equal to or greater than 1.
         :type page_number: int, optional
-        :param filter_asset_type: The type of the assets for the SBOM request.
+        :param filter_asset_type: The type of the assets for the SBOM request. Required for initial requests (when no ``page[token]`` is provided). Infrastructure types ( ``Host`` , ``HostImage`` , ``Image`` , ``ServerlessFunction`` ) and code types ( ``Repository`` , ``Service`` ) cannot be mixed in the same request.
         :type filter_asset_type: AssetType, optional
         :param filter_asset_name: The name of the asset for the SBOM request.
         :type filter_asset_name: str, optional
