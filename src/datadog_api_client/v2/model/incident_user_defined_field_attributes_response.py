@@ -38,7 +38,6 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
         )
 
         return {
-            "attached_to": (str,),
             "category": (IncidentUserDefinedFieldCategory,),
             "collected": (IncidentUserDefinedFieldCollected,),
             "created": (datetime,),
@@ -49,17 +48,14 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
             "modified": (datetime, none_type),
             "name": (str,),
             "ordinal": (str, none_type),
-            "prerequisite": (str, none_type),
             "required": (bool,),
             "reserved": (bool,),
-            "table_id": (int,),
             "tag_key": (str, none_type),
             "type": (int, none_type),
             "valid_values": ([IncidentUserDefinedFieldValidValue], none_type),
         }
 
     attribute_map = {
-        "attached_to": "attached_to",
         "category": "category",
         "collected": "collected",
         "created": "created",
@@ -70,27 +66,21 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
         "modified": "modified",
         "name": "name",
         "ordinal": "ordinal",
-        "prerequisite": "prerequisite",
         "required": "required",
         "reserved": "reserved",
-        "table_id": "table_id",
         "tag_key": "tag_key",
         "type": "type",
         "valid_values": "valid_values",
     }
     read_only_vars = {
-        "attached_to",
         "created",
         "deleted",
         "modified",
-        "prerequisite",
         "reserved",
-        "table_id",
     }
 
     def __init__(
         self_,
-        attached_to: str,
         category: Union[IncidentUserDefinedFieldCategory, none_type],
         collected: Union[IncidentUserDefinedFieldCollected, none_type],
         created: datetime,
@@ -101,10 +91,8 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
         modified: Union[datetime, none_type],
         name: str,
         ordinal: Union[str, none_type],
-        prerequisite: Union[str, none_type],
         required: bool,
         reserved: bool,
-        table_id: int,
         tag_key: Union[str, none_type],
         type: Union[int, none_type],
         valid_values: Union[List[IncidentUserDefinedFieldValidValue], none_type],
@@ -112,9 +100,6 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
     ):
         """
         Attributes of an incident user-defined field.
-
-        :param attached_to: The resource type this field is attached to. Always "incidents".
-        :type attached_to: str
 
         :param category: The section in which the field appears: "what_happened" or "why_it_happened". When null, the field appears in the Attributes section.
         :type category: IncidentUserDefinedFieldCategory, none_type
@@ -146,17 +131,11 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
         :param ordinal: A decimal string representing the field's display order in the UI.
         :type ordinal: str, none_type
 
-        :param prerequisite: Reserved for future use. Always null.
-        :type prerequisite: str, none_type
-
         :param required: When true, users must fill out this field on incidents.
         :type required: bool
 
         :param reserved: When true, this field is reserved for system use and cannot be deleted.
         :type reserved: bool
-
-        :param table_id: Reserved for internal use. Always 0.
-        :type table_id: int
 
         :param tag_key: For metric tag-type fields only, the metric tag key that powers the autocomplete options.
         :type tag_key: str, none_type
@@ -169,7 +148,6 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
         """
         super().__init__(kwargs)
 
-        self_.attached_to = attached_to
         self_.category = category
         self_.collected = collected
         self_.created = created
@@ -180,10 +158,8 @@ class IncidentUserDefinedFieldAttributesResponse(ModelNormal):
         self_.modified = modified
         self_.name = name
         self_.ordinal = ordinal
-        self_.prerequisite = prerequisite
         self_.required = required
         self_.reserved = reserved
-        self_.table_id = table_id
         self_.tag_key = tag_key
         self_.type = type
         self_.valid_values = valid_values
