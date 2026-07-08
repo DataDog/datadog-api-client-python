@@ -117,11 +117,17 @@ from datadog_api_client.v2.model.security_monitoring_integration_config_response
 from datadog_api_client.v2.model.security_monitoring_integration_config_create_request import (
     SecurityMonitoringIntegrationConfigCreateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_response import (
+    SecurityMonitoringEntraIdAzureAppRegistrationsResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_integration_credentials_validate_request import (
     SecurityMonitoringIntegrationCredentialsValidateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_integration_config_update_request import (
     SecurityMonitoringIntegrationConfigUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_activate_request import (
+    SecurityMonitoringIntegrationActivateRequest,
 )
 from datadog_api_client.v2.model.notification_rule_preview_response import NotificationRulePreviewResponse
 from datadog_api_client.v2.model.security_filters_response import SecurityFiltersResponse
@@ -314,6 +320,31 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._activate_integration_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringIntegrationConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/{integration_type}/activate",
+                "operation_id": "activate_integration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "integration_type": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_type",
+                    "location": "path",
+                },
+                "body": {
+                    "openapi_types": (SecurityMonitoringIntegrationActivateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1124,6 +1155,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._deactivate_integration_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringIntegrationConfigResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/{integration_type}/deactivate",
+                "operation_id": "deactivate_integration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "integration_type": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "integration_type",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_custom_framework_endpoint = _Endpoint(
             settings={
                 "response_type": (DeleteCustomFrameworkResponse,),
@@ -1714,6 +1768,22 @@ class SecurityMonitoringApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_entra_id_azure_app_registrations_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringEntraIdAzureAppRegistrationsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/entra_id/azure_app_registrations",
+                "operation_id": "get_entra_id_azure_app_registrations",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -4573,6 +4643,32 @@ class SecurityMonitoringApi:
 
         return self._activate_content_pack_endpoint.call_with_http_info(**kwargs)
 
+    def activate_integration(
+        self,
+        integration_type: str,
+        *,
+        body: Union[SecurityMonitoringIntegrationActivateRequest, UnsetType] = unset,
+    ) -> SecurityMonitoringIntegrationConfigResponse:
+        """Activate an entity context sync integration.
+
+        Activate an entity context sync integration for a source type that does not require manually
+        supplied credentials (for example, Entra ID). If an integration of this type already exists,
+        it is returned (re-enabling it first if it was disabled) instead of creating a duplicate.
+
+        :param integration_type: The integration type to activate (for example, ``entra_id`` ).
+        :type integration_type: str
+        :param body: Optional configuration overrides for the integration to activate.
+        :type body: SecurityMonitoringIntegrationActivateRequest, optional
+        :rtype: SecurityMonitoringIntegrationConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration_type"] = integration_type
+
+        if body is not unset:
+            kwargs["body"] = body
+
+        return self._activate_integration_endpoint.call_with_http_info(**kwargs)
+
     def attach_case(
         self,
         case_id: str,
@@ -5300,6 +5396,23 @@ class SecurityMonitoringApi:
 
         return self._deactivate_content_pack_endpoint.call_with_http_info(**kwargs)
 
+    def deactivate_integration(
+        self,
+        integration_type: str,
+    ) -> SecurityMonitoringIntegrationConfigResponse:
+        """Deactivate an entity context sync integration.
+
+        Deactivate all active entity context sync integrations of the given source type (for example, Entra ID).
+
+        :param integration_type: The integration type to deactivate (for example, ``entra_id`` ).
+        :type integration_type: str
+        :rtype: SecurityMonitoringIntegrationConfigResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["integration_type"] = integration_type
+
+        return self._deactivate_integration_endpoint.call_with_http_info(**kwargs)
+
     def delete_custom_framework(
         self,
         handle: str,
@@ -5787,6 +5900,19 @@ class SecurityMonitoringApi:
             kwargs["page_token"] = page_token
 
         return self._get_entity_context_endpoint.call_with_http_info(**kwargs)
+
+    def get_entra_id_azure_app_registrations(
+        self,
+    ) -> SecurityMonitoringEntraIdAzureAppRegistrationsResponse:
+        """Get Entra ID Azure App Registration prerequisites.
+
+        Get the Azure App Registrations discovered for the organization and whether at least one of them has
+        resource collection enabled, which is a prerequisite for activating the Entra ID entity context sync integration.
+
+        :rtype: SecurityMonitoringEntraIdAzureAppRegistrationsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_entra_id_azure_app_registrations_endpoint.call_with_http_info(**kwargs)
 
     def get_finding(
         self,

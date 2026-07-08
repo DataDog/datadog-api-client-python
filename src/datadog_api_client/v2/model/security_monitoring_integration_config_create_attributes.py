@@ -55,7 +55,7 @@ class SecurityMonitoringIntegrationConfigCreateAttributes(ModelNormal):
         domain: str,
         integration_type: SecurityMonitoringIntegrationType,
         name: str,
-        secrets: SecurityMonitoringIntegrationConfigSecrets,
+        secrets: Union[SecurityMonitoringIntegrationConfigSecrets, UnsetType] = unset,
         settings: Union[SecurityMonitoringIntegrationConfigSettings, UnsetType] = unset,
         **kwargs,
     ):
@@ -71,12 +71,15 @@ class SecurityMonitoringIntegrationConfigCreateAttributes(ModelNormal):
         :param name: The display name for the entity context sync configuration.
         :type name: str
 
-        :param secrets: The secrets used to authenticate against the external entity source. The accepted keys depend on the source type (for example, ``admin_email`` for Google Workspace).
-        :type secrets: SecurityMonitoringIntegrationConfigSecrets
+        :param secrets: The secrets used to authenticate against the external entity source. The accepted keys depend on the source type
+            (for example, ``admin_email`` for Google Workspace). Not required for source types that do not use secrets (for example, ``ENTRA_ID`` ).
+        :type secrets: SecurityMonitoringIntegrationConfigSecrets, optional
 
         :param settings: Free-form, non-sensitive settings for the entity context sync. The accepted keys depend on the source type.
         :type settings: SecurityMonitoringIntegrationConfigSettings, optional
         """
+        if secrets is not unset:
+            kwargs["secrets"] = secrets
         if settings is not unset:
             kwargs["settings"] = settings
         super().__init__(kwargs)
@@ -84,4 +87,3 @@ class SecurityMonitoringIntegrationConfigCreateAttributes(ModelNormal):
         self_.domain = domain
         self_.integration_type = integration_type
         self_.name = name
-        self_.secrets = secrets

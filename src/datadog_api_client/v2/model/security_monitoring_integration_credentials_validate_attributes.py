@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -42,7 +44,7 @@ class SecurityMonitoringIntegrationCredentialsValidateAttributes(ModelNormal):
         self_,
         domain: str,
         integration_type: SecurityMonitoringIntegrationType,
-        secrets: SecurityMonitoringIntegrationConfigSecrets,
+        secrets: Union[SecurityMonitoringIntegrationConfigSecrets, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -54,11 +56,13 @@ class SecurityMonitoringIntegrationCredentialsValidateAttributes(ModelNormal):
         :param integration_type: The type of external source that provides entities to Cloud SIEM.
         :type integration_type: SecurityMonitoringIntegrationType
 
-        :param secrets: The secrets used to authenticate against the external entity source. The accepted keys depend on the source type (for example, ``admin_email`` for Google Workspace).
-        :type secrets: SecurityMonitoringIntegrationConfigSecrets
+        :param secrets: The secrets used to authenticate against the external entity source. The accepted keys depend on the source type
+            (for example, ``admin_email`` for Google Workspace). Not required for source types that do not use secrets (for example, ``ENTRA_ID`` ).
+        :type secrets: SecurityMonitoringIntegrationConfigSecrets, optional
         """
+        if secrets is not unset:
+            kwargs["secrets"] = secrets
         super().__init__(kwargs)
 
         self_.domain = domain
         self_.integration_type = integration_type
-        self_.secrets = secrets
