@@ -93,13 +93,13 @@ class HostMapWidgetDefinition(ModelNormal):
         :param description: The description of the widget.
         :type description: str, optional
 
-        :param group: List of tag prefixes to group by.
+        :param group: Deprecated - Only used by the legacy metric-based format. Use ``group_by`` (infrastructure) or a ``group`` dimension (DDSQL) inside ``requests`` instead. **Deprecated**.
         :type group: [str], optional
 
-        :param no_group_hosts: Whether to show the hosts that don’t fit in a group.
+        :param no_group_hosts: Deprecated - Only used by the legacy metric-based format. Use ``no_group_hosts`` inside ``requests`` instead. **Deprecated**.
         :type no_group_hosts: bool, optional
 
-        :param no_metric_hosts: Whether to show the hosts with no metrics.
+        :param no_metric_hosts: Deprecated - Only used by the legacy metric-based format. Use ``no_metric_hosts`` inside ``requests`` instead. **Deprecated**.
         :type no_metric_hosts: bool, optional
 
         :param node_type: Which type of node to use in the map.
@@ -108,13 +108,13 @@ class HostMapWidgetDefinition(ModelNormal):
         :param notes: Notes on the title.
         :type notes: str, optional
 
-        :param requests: Query definition for the host map widget. Supports two mutually exclusive formats distinguished by the presence of ``request_type`` : the legacy metric-based format ( ``fill`` / ``size`` ) and the infrastructure-backed format ( ``request_type`` , ``node_type`` , ``enrichments`` ).
+        :param requests: Query definition for the host map widget. Supports three mutually exclusive formats distinguished by `request_type`: the deprecated legacy metric-based format (`fill`/`size`, no `request_type`), the infrastructure-backed format (`request_type: infrastructure_hostmap ``), and the DDSQL published-dataset format (`` request_type: data_projection`).
         :type requests: HostMapWidgetDefinitionRequests
 
-        :param scope: List of tags used to filter the map.
+        :param scope: Deprecated - Only used by the legacy metric-based format. Use ``filter`` inside ``requests`` instead. **Deprecated**.
         :type scope: [str], optional
 
-        :param style: The style to apply to the widget.
+        :param style: Deprecated - The style to apply to the legacy metric-based host map widget. Use ``HostMapWidgetInfrastructureStyle`` instead. **Deprecated**.
         :type style: HostMapWidgetDefinitionStyle, optional
 
         :param title: Title of the widget.

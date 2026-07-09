@@ -1,0 +1,37 @@
+interactions:
+- request:
+    body: '{"description":null,"layout_type":"free","notify_list":[],"template_variables":[],"title":"Test-Create_a_new_dashboard_with_hostmap_DDSQL_widget-1783526261","widgets":[{"definition":{"requests":{"limit":1000,"projection":{"dimensions":[{"column":"entity_id","dimension":"node"},{"column":"parent_id","dimension":"group"},{"column":"cpu_usage","dimension":"fill"}],"type":"hostmap"},"query":{"data_source":"dataset","dataset_id":"abc-123-def","dataset_provider":"ddsql_query"},"request_type":"data_projection","style":{"palette":"green_to_orange","palette_flip":false}},"title":"","title_align":"left","title_size":"16","type":"hostmap"},"layout":{"height":22,"width":47,"x":0,"y":0}}]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/dashboard
+  response:
+    body:
+      string: '{"id":"ei8-bm4-cy2","title":"Test-Create_a_new_dashboard_with_hostmap_DDSQL_widget-1783526261","description":null,"author_handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","author_name":"CI
+        Account","layout_type":"free","url":"/dashboard/ei8-bm4-cy2/test-createanewdashboardwithhostmapddsqlwidget-1783526261","template_variables":[],"widgets":[{"definition":{"requests":{"limit":1000,"projection":{"dimensions":[{"column":"entity_id","dimension":"node"},{"column":"parent_id","dimension":"group"},{"column":"cpu_usage","dimension":"fill"}],"type":"hostmap"},"query":{"data_source":"dataset","dataset_id":"abc-123-def","dataset_provider":"ddsql_query"},"request_type":"data_projection","style":{"palette":"green_to_orange","palette_flip":false}},"title":"","title_align":"left","title_size":"16","type":"hostmap"},"layout":{"height":22,"width":47,"x":0,"y":0},"id":2962556261296626}],"notify_list":[],"created_at":"2026-07-08T15:57:42.209375+00:00","modified_at":"2026-07-08T15:57:42.209375+00:00","restricted_roles":[]}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/dashboard/ei8-bm4-cy2
+  response:
+    body:
+      string: '{"deleted_dashboard_id":"ei8-bm4-cy2"}'
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1

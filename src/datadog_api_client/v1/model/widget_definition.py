@@ -129,10 +129,10 @@ class WidgetDefinition(ModelComposed):
         :param events: List of widget events. Deprecated - Use `overlay` request type instead.
         :type events: [WidgetEvent], optional
 
-        :param no_group_hosts: Whether to show the hosts that don’t fit in a group.
+        :param no_group_hosts: Deprecated - Only used by the legacy metric-based format. Use `no_group_hosts` inside `requests` instead.
         :type no_group_hosts: bool, optional
 
-        :param no_metric_hosts: Whether to show the hosts with no metrics.
+        :param no_metric_hosts: Deprecated - Only used by the legacy metric-based format. Use `no_metric_hosts` inside `requests` instead.
         :type no_metric_hosts: bool, optional
 
         :param node_type: Which type of node to use in the map.
@@ -141,7 +141,7 @@ class WidgetDefinition(ModelComposed):
         :param notes: Notes on the title.
         :type notes: str, optional
 
-        :param scope: List of tags used to filter the map.
+        :param scope: Deprecated - Only used by the legacy metric-based format. Use `filter` inside `requests` instead.
         :type scope: [str], optional
 
         :param url: URL of the iframe.
