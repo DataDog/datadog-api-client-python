@@ -5900,17 +5900,20 @@ from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_pr
 from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_action import (
     ObservabilityPipelineTagCardinalityLimitProcessorAction,
 )
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_override_type import (
+    ObservabilityPipelineTagCardinalityLimitProcessorOverrideType,
+)
 from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_limit import (
     ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit,
-)
-from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_mode import (
-    ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode,
 )
 from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_limit import (
     ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit,
 )
-from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_mode import (
-    ObservabilityPipelineTagCardinalityLimitProcessorPerTagMode,
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_tracking_mode import (
+    ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_tracking_mode_mode import (
+    ObservabilityPipelineTagCardinalityLimitProcessorTrackingModeMode,
 )
 from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_type import (
     ObservabilityPipelineTagCardinalityLimitProcessorType,
@@ -13840,10 +13843,11 @@ __all__ = [
     "ObservabilityPipelineSyslogSourceMode",
     "ObservabilityPipelineTagCardinalityLimitProcessor",
     "ObservabilityPipelineTagCardinalityLimitProcessorAction",
+    "ObservabilityPipelineTagCardinalityLimitProcessorOverrideType",
     "ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit",
-    "ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode",
     "ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit",
-    "ObservabilityPipelineTagCardinalityLimitProcessorPerTagMode",
+    "ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode",
+    "ObservabilityPipelineTagCardinalityLimitProcessorTrackingModeMode",
     "ObservabilityPipelineTagCardinalityLimitProcessorType",
     "ObservabilityPipelineThrottleProcessor",
     "ObservabilityPipelineThrottleProcessorType",

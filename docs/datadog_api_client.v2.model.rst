@@ -29103,17 +29103,17 @@ datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_override\_type module
+----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_override_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_per\_metric\_limit module
 --------------------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_limit
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_per\_metric\_mode module
--------------------------------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_mode
    :members:
    :show-inheritance:
 
@@ -29124,10 +29124,17 @@ datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_per\_tag\_mode module
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_tracking\_mode module
 ----------------------------------------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_mode
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_tracking_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_tag\_cardinality\_limit\_processor\_tracking\_mode\_mode module
+----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_tracking_mode_mode
    :members:
    :show-inheritance:
 

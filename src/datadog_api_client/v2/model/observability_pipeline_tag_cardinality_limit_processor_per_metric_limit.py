@@ -17,8 +17,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_action import (
         ObservabilityPipelineTagCardinalityLimitProcessorAction,
     )
-    from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_mode import (
-        ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode,
+    from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_override_type import (
+        ObservabilityPipelineTagCardinalityLimitProcessorOverrideType,
     )
     from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_limit import (
         ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit,
@@ -41,8 +41,8 @@ class ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit(ModelNorma
         from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_action import (
             ObservabilityPipelineTagCardinalityLimitProcessorAction,
         )
-        from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_mode import (
-            ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode,
+        from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_override_type import (
+            ObservabilityPipelineTagCardinalityLimitProcessorOverrideType,
         )
         from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_tag_limit import (
             ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit,
@@ -51,7 +51,7 @@ class ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit(ModelNorma
         return {
             "limit_exceeded_action": (ObservabilityPipelineTagCardinalityLimitProcessorAction,),
             "metric_name": (str,),
-            "mode": (ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode,),
+            "override_type": (ObservabilityPipelineTagCardinalityLimitProcessorOverrideType,),
             "per_tag_limits": ([ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit],),
             "value_limit": (int,),
         }
@@ -59,7 +59,7 @@ class ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit(ModelNorma
     attribute_map = {
         "limit_exceeded_action": "limit_exceeded_action",
         "metric_name": "metric_name",
-        "mode": "mode",
+        "override_type": "override_type",
         "per_tag_limits": "per_tag_limits",
         "value_limit": "value_limit",
     }
@@ -67,7 +67,7 @@ class ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit(ModelNorma
     def __init__(
         self_,
         metric_name: str,
-        mode: ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode,
+        override_type: ObservabilityPipelineTagCardinalityLimitProcessorOverrideType,
         limit_exceeded_action: Union[ObservabilityPipelineTagCardinalityLimitProcessorAction, UnsetType] = unset,
         per_tag_limits: Union[List[ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit], UnsetType] = unset,
         value_limit: Union[int, UnsetType] = unset,
@@ -82,13 +82,13 @@ class ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit(ModelNorma
         :param metric_name: The name of the metric this override applies to.
         :type metric_name: str
 
-        :param mode: How the per-metric override is applied. ``tracked`` enforces a custom limit; ``excluded`` skips the metric entirely.
-        :type mode: ObservabilityPipelineTagCardinalityLimitProcessorPerMetricMode
+        :param override_type: How the override is applied. ``limit_override`` enforces a custom limit; ``excluded`` omits the metric or tag from cardinality tracking.
+        :type override_type: ObservabilityPipelineTagCardinalityLimitProcessorOverrideType
 
-        :param per_tag_limits: A list of per-tag cardinality overrides that apply within this metric. Must be omitted when ``mode`` is ``excluded``.
+        :param per_tag_limits: A list of per-tag cardinality overrides that apply within this metric. Must be omitted when ``override_type`` is ``excluded``.
         :type per_tag_limits: [ObservabilityPipelineTagCardinalityLimitProcessorPerTagLimit], optional
 
-        :param value_limit: The maximum number of distinct tag value combinations allowed for this metric. Required when ``mode`` is ``tracked``. Must be omitted when ``mode`` is ``excluded``.
+        :param value_limit: The maximum number of distinct tag value combinations allowed for this metric. Required when ``override_type`` is ``limit_override``. Must be omitted when ``override_type`` is ``excluded``.
         :type value_limit: int, optional
         """
         if limit_exceeded_action is not unset:
@@ -100,4 +100,4 @@ class ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit(ModelNorma
         super().__init__(kwargs)
 
         self_.metric_name = metric_name
-        self_.mode = mode
+        self_.override_type = override_type
