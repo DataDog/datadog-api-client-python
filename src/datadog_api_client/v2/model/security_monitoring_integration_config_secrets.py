@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
 class SecurityMonitoringIntegrationConfigSecrets(ModelNormal):
     def __init__(self_, **kwargs):
         """
-        The secrets used to authenticate against the external entity source. The accepted keys depend on the source type (for example, ``admin_email`` for Google Workspace).
+        The secrets used to authenticate against the external entity source. The accepted keys depend on the source type
+        (for example, ``admin_email`` for Google Workspace). Not required for source types that do not use secrets (for example, ``ENTRA_ID`` ).
         """
         super().__init__(kwargs)

@@ -37139,6 +37139,13 @@ datadog\_api\_client.v2.model.security\_findings\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_azure\_app\_registration module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_azure_app_registration
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_activation module
 ------------------------------------------------------------------------------------
 
@@ -37517,6 +37524,34 @@ datadog\_api\_client.v2.model.security\_monitoring\_datasets\_list\_response mod
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_azure\_app\_registrations\_attributes module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_azure\_app\_registrations\_data module
+-----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_azure\_app\_registrations\_resource\_type module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_azure\_app\_registrations\_response module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_filter module
 -----------------------------------------------------------------
 
@@ -37528,6 +37563,34 @@ datadog\_api\_client.v2.model.security\_monitoring\_filter\_action module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_filter_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_activate\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_activate_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_activate\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_activate_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_activate\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_activate_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_activate\_resource\_type module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_activate_resource_type
    :members:
    :show-inheritance:
 

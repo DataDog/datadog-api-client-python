@@ -77,7 +77,8 @@ class SecurityMonitoringIntegrationConfigUpdateAttributes(ModelNormal):
         :param name: The new display name for the entity context sync configuration.
         :type name: str, optional
 
-        :param secrets: The secrets used to authenticate against the external entity source. The accepted keys depend on the source type (for example, ``admin_email`` for Google Workspace).
+        :param secrets: The secrets used to authenticate against the external entity source. The accepted keys depend on the source type
+            (for example, ``admin_email`` for Google Workspace). Not required for source types that do not use secrets (for example, ``ENTRA_ID`` ).
         :type secrets: SecurityMonitoringIntegrationConfigSecrets, optional
 
         :param settings: Free-form, non-sensitive settings for the entity context sync. The accepted keys depend on the source type.

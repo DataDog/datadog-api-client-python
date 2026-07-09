@@ -7526,6 +7526,12 @@
       "type": "unsafe"
     }
   },
+  "GetEntraIdAzureAppRegistrations": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ValidateSecurityMonitoringIntegrationCredentials": {
     "tag": "Security Monitoring",
     "undo": {
@@ -7554,6 +7560,18 @@
     "tag": "Security Monitoring",
     "undo": {
       "type": "safe"
+    }
+  },
+  "ActivateIntegration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeactivateIntegration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "SendSecurityMonitoringNotificationPreview": {

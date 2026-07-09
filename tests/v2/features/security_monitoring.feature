@@ -10,6 +10,33 @@ Feature: Security Monitoring
     And an instance of "SecurityMonitoring" API
 
   @generated @skip @team:DataDog/cloud-siem
+  Scenario: Activate an entity context sync integration returns "Bad Request" response
+    Given operation "ActivateIntegration" enabled
+    And new "ActivateIntegration" request
+    And request contains "integration_type" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"domain": "default", "name": "My Entra ID Integration", "settings": {"setting1": "value1"}}, "type": "activate_entra_id_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Activate an entity context sync integration returns "Not Found" response
+    Given operation "ActivateIntegration" enabled
+    And new "ActivateIntegration" request
+    And request contains "integration_type" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"domain": "default", "name": "My Entra ID Integration", "settings": {"setting1": "value1"}}, "type": "activate_entra_id_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Activate an entity context sync integration returns "OK" response
+    Given operation "ActivateIntegration" enabled
+    And new "ActivateIntegration" request
+    And request contains "integration_type" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"domain": "default", "name": "My Entra ID Integration", "settings": {"setting1": "value1"}}, "type": "activate_entra_id_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-siem
   Scenario: Activate content pack returns "Accepted" response
     Given operation "ActivateContentPack" enabled
     And new "ActivateContentPack" request
@@ -1094,6 +1121,22 @@ Feature: Security Monitoring
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/cloud-siem
+  Scenario: Deactivate an entity context sync integration returns "Not Found" response
+    Given operation "DeactivateIntegration" enabled
+    And new "DeactivateIntegration" request
+    And request contains "integration_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Deactivate an entity context sync integration returns "OK" response
+    Given operation "DeactivateIntegration" enabled
+    And new "DeactivateIntegration" request
+    And request contains "integration_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-siem
   Scenario: Deactivate content pack returns "Accepted" response
     Given operation "DeactivateContentPack" enabled
     And new "DeactivateContentPack" request
@@ -1436,6 +1479,13 @@ Feature: Security Monitoring
     Given operation "CreateStaticAnalysisAst" enabled
     And new "CreateStaticAnalysisAst" request
     And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "language": "python"}, "type": "get_ast_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Get Entra ID Azure App Registration prerequisites returns "OK" response
+    Given operation "GetEntraIdAzureAppRegistrations" enabled
+    And new "GetEntraIdAzureAppRegistrations" request
     When the request is sent
     Then the response status is 200 OK
 

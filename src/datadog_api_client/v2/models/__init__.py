@@ -7353,6 +7353,9 @@ from datadog_api_client.v2.model.security_findings_search_request_data_attribute
 from datadog_api_client.v2.model.security_findings_search_request_page import SecurityFindingsSearchRequestPage
 from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
 from datadog_api_client.v2.model.security_findings_status import SecurityFindingsStatus
+from datadog_api_client.v2.model.security_monitoring_azure_app_registration import (
+    SecurityMonitoringAzureAppRegistration,
+)
 from datadog_api_client.v2.model.security_monitoring_content_pack_activation import (
     SecurityMonitoringContentPackActivation,
 )
@@ -7483,8 +7486,32 @@ from datadog_api_client.v2.model.security_monitoring_datasets_list_meta import S
 from datadog_api_client.v2.model.security_monitoring_datasets_list_response import (
     SecurityMonitoringDatasetsListResponse,
 )
+from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_attributes import (
+    SecurityMonitoringEntraIdAzureAppRegistrationsAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_data import (
+    SecurityMonitoringEntraIdAzureAppRegistrationsData,
+)
+from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_resource_type import (
+    SecurityMonitoringEntraIdAzureAppRegistrationsResourceType,
+)
+from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_response import (
+    SecurityMonitoringEntraIdAzureAppRegistrationsResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
+from datadog_api_client.v2.model.security_monitoring_integration_activate_attributes import (
+    SecurityMonitoringIntegrationActivateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_activate_data import (
+    SecurityMonitoringIntegrationActivateData,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_activate_request import (
+    SecurityMonitoringIntegrationActivateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_activate_resource_type import (
+    SecurityMonitoringIntegrationActivateResourceType,
+)
 from datadog_api_client.v2.model.security_monitoring_integration_config_attributes import (
     SecurityMonitoringIntegrationConfigAttributes,
 )
@@ -14966,6 +14993,7 @@ __all__ = [
     "SecurityFindingsSearchRequestPage",
     "SecurityFindingsSort",
     "SecurityFindingsStatus",
+    "SecurityMonitoringAzureAppRegistration",
     "SecurityMonitoringContentPackActivation",
     "SecurityMonitoringContentPackIntegrationStatus",
     "SecurityMonitoringContentPackStateAttributes",
@@ -15020,8 +15048,16 @@ __all__ = [
     "SecurityMonitoringDatasetVersionHistoryType",
     "SecurityMonitoringDatasetsListMeta",
     "SecurityMonitoringDatasetsListResponse",
+    "SecurityMonitoringEntraIdAzureAppRegistrationsAttributes",
+    "SecurityMonitoringEntraIdAzureAppRegistrationsData",
+    "SecurityMonitoringEntraIdAzureAppRegistrationsResourceType",
+    "SecurityMonitoringEntraIdAzureAppRegistrationsResponse",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
+    "SecurityMonitoringIntegrationActivateAttributes",
+    "SecurityMonitoringIntegrationActivateData",
+    "SecurityMonitoringIntegrationActivateRequest",
+    "SecurityMonitoringIntegrationActivateResourceType",
     "SecurityMonitoringIntegrationConfigAttributes",
     "SecurityMonitoringIntegrationConfigCreateAttributes",
     "SecurityMonitoringIntegrationConfigCreateData",
