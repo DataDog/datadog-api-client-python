@@ -39,7 +39,7 @@ class HostMapWidgetDefinitionStyle(ModelNormal):
         **kwargs,
     ):
         """
-        The style to apply to the widget.
+        Deprecated - The style to apply to the legacy metric-based host map widget. Use ``HostMapWidgetInfrastructureStyle`` instead.
 
         :param fill_max: Max value to use to color the map.
         :type fill_max: str, optional

@@ -99,6 +99,10 @@ from datadog_api_client.v1.model.dashboard_template_variable_preset_value import
 from datadog_api_client.v1.model.dashboard_type import DashboardType
 from datadog_api_client.v1.model.data_projection_query import DataProjectionQuery
 from datadog_api_client.v1.model.data_projection_request_type import DataProjectionRequestType
+from datadog_api_client.v1.model.dataset_list_query import DatasetListQuery
+from datadog_api_client.v1.model.dataset_list_query_data_source_type import DatasetListQueryDataSourceType
+from datadog_api_client.v1.model.dataset_list_query_sort import DatasetListQuerySort
+from datadog_api_client.v1.model.dataset_list_query_sort_field import DatasetListQuerySortField
 from datadog_api_client.v1.model.delete_shared_dashboard_response import DeleteSharedDashboardResponse
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
 from datadog_api_client.v1.model.distribution_point import DistributionPoint
@@ -257,6 +261,7 @@ from datadog_api_client.v1.model.host import Host
 from datadog_api_client.v1.model.host_list_response import HostListResponse
 from datadog_api_client.v1.model.host_map_request import HostMapRequest
 from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
+from datadog_api_client.v1.model.host_map_widget_definition_request_type import HostMapWidgetDefinitionRequestType
 from datadog_api_client.v1.model.host_map_widget_definition_requests import HostMapWidgetDefinitionRequests
 from datadog_api_client.v1.model.host_map_widget_definition_style import HostMapWidgetDefinitionStyle
 from datadog_api_client.v1.model.host_map_widget_definition_type import HostMapWidgetDefinitionType
@@ -272,6 +277,11 @@ from datadog_api_client.v1.model.host_map_widget_infrastructure_request_request_
 )
 from datadog_api_client.v1.model.host_map_widget_infrastructure_style import HostMapWidgetInfrastructureStyle
 from datadog_api_client.v1.model.host_map_widget_node_type import HostMapWidgetNodeType
+from datadog_api_client.v1.model.host_map_widget_projection import HostMapWidgetProjection
+from datadog_api_client.v1.model.host_map_widget_projection_dimension_mapping import (
+    HostMapWidgetProjectionDimensionMapping,
+)
+from datadog_api_client.v1.model.host_map_widget_projection_type import HostMapWidgetProjectionType
 from datadog_api_client.v1.model.host_map_widget_scalar_request import HostMapWidgetScalarRequest
 from datadog_api_client.v1.model.host_map_widget_scalar_request_response_format import (
     HostMapWidgetScalarRequestResponseFormat,
@@ -713,6 +723,7 @@ from datadog_api_client.v1.model.product_analytics_funnel_request_type import Pr
 from datadog_api_client.v1.model.product_analytics_funnel_widget_definition import (
     ProductAnalyticsFunnelWidgetDefinition,
 )
+from datadog_api_client.v1.model.published_dataset_provider import PublishedDatasetProvider
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
 from datadog_api_client.v1.model.query_value_widget_comparison import QueryValueWidgetComparison
 from datadog_api_client.v1.model.query_value_widget_comparison_directionality import (
@@ -1522,6 +1533,10 @@ __all__ = [
     "DashboardType",
     "DataProjectionQuery",
     "DataProjectionRequestType",
+    "DatasetListQuery",
+    "DatasetListQueryDataSourceType",
+    "DatasetListQuerySort",
+    "DatasetListQuerySortField",
     "DeleteSharedDashboardResponse",
     "DeletedMonitor",
     "DistributionPoint",
@@ -1630,6 +1645,7 @@ __all__ = [
     "HostListResponse",
     "HostMapRequest",
     "HostMapWidgetDefinition",
+    "HostMapWidgetDefinitionRequestType",
     "HostMapWidgetDefinitionRequests",
     "HostMapWidgetDefinitionStyle",
     "HostMapWidgetDefinitionType",
@@ -1641,6 +1657,9 @@ __all__ = [
     "HostMapWidgetInfrastructureRequestRequestType",
     "HostMapWidgetInfrastructureStyle",
     "HostMapWidgetNodeType",
+    "HostMapWidgetProjection",
+    "HostMapWidgetProjectionDimensionMapping",
+    "HostMapWidgetProjectionType",
     "HostMapWidgetScalarRequest",
     "HostMapWidgetScalarRequestResponseFormat",
     "HostMeta",
@@ -1980,6 +1999,7 @@ __all__ = [
     "ProductAnalyticsFunnelRequest",
     "ProductAnalyticsFunnelRequestType",
     "ProductAnalyticsFunnelWidgetDefinition",
+    "PublishedDatasetProvider",
     "QuerySortOrder",
     "QueryValueWidgetComparison",
     "QueryValueWidgetComparisonDirectionality",

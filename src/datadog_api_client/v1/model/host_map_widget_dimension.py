@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class HostMapWidgetDimension(ModelSimple):
     """
-    Visual dimension driven by a formula in the infrastructure host map widget.
+    Visual dimension for the host map widget. Used both by infrastructure-backed formulas and by DDSQL projection columns; `group` is only meaningful for DDSQL projection columns, where repeated entries define the grouping hierarchy.
 
-    :param value: Must be one of ["node", "fill", "size"].
+    :param value: Must be one of ["node", "fill", "size", "group"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class HostMapWidgetDimension(ModelSimple):
         "node",
         "fill",
         "size",
+        "group",
     }
     NODE: ClassVar["HostMapWidgetDimension"]
     FILL: ClassVar["HostMapWidgetDimension"]
     SIZE: ClassVar["HostMapWidgetDimension"]
+    GROUP: ClassVar["HostMapWidgetDimension"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class HostMapWidgetDimension(ModelSimple):
 HostMapWidgetDimension.NODE = HostMapWidgetDimension("node")
 HostMapWidgetDimension.FILL = HostMapWidgetDimension("fill")
 HostMapWidgetDimension.SIZE = HostMapWidgetDimension("size")
+HostMapWidgetDimension.GROUP = HostMapWidgetDimension("group")

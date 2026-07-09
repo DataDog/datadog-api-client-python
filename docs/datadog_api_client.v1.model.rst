@@ -711,6 +711,34 @@ datadog\_api\_client.v1.model.data\_projection\_request\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.dataset\_list\_query module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dataset_list_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dataset\_list\_query\_data\_source\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dataset_list_query_data_source_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dataset\_list\_query\_sort module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dataset_list_query_sort
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dataset\_list\_query\_sort\_field module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dataset_list_query_sort_field
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.delete\_shared\_dashboard\_response module
 ------------------------------------------------------------------------
 
@@ -1446,6 +1474,13 @@ datadog\_api\_client.v1.model.host\_map\_widget\_definition module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.host\_map\_widget\_definition\_request\_type module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_definition_request_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.host\_map\_widget\_definition\_requests module
 ----------------------------------------------------------------------------
 
@@ -1520,6 +1555,27 @@ datadog\_api\_client.v1.model.host\_map\_widget\_node\_type module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.host_map_widget_node_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_projection module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_projection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_projection\_dimension\_mapping module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_projection_dimension_mapping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.host\_map\_widget\_projection\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.host_map_widget_projection_type
    :members:
    :show-inheritance:
 
@@ -3907,6 +3963,13 @@ datadog\_api\_client.v1.model.product\_analytics\_funnel\_widget\_definition mod
 -----------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.product_analytics_funnel_widget_definition
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.published\_dataset\_provider module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.published_dataset_provider
    :members:
    :show-inheritance:
 
