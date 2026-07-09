@@ -2,7 +2,7 @@ interactions:
 - request:
     body: '{"config":{"assertions":[{"operator":"isInMoreThan","target":10,"type":"certificate"}],"request":{"host":"datadoghq.com","port":"{{
       DATADOG_PORT }}"}},"locations":["aws:us-east-2"],"message":"BDD test payload:
-      synthetics_api_ssl_test_payload.json","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1752254637","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"disableAiaIntermediateFetching":true,"tick_every":60},"subtype":"ssl","tags":["testing:api"],"type":"api"}'
+      synthetics_api_ssl_test_payload.json","name":"Test-Create_an_API_SSL_test_returns_OK_Returns_the_created_test_details_response-1752254637","options":{"accept_self_signed":true,"checkCertificateRevocation":true,"disableAiaIntermediateFetching":true,"ignore_certificate_validation":true,"tick_every":60},"subtype":"ssl","tags":["testing:api"],"type":"api"}'
     headers:
       accept:
       - application/json

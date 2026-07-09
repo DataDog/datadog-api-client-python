@@ -63,6 +63,7 @@ class SyntheticsTestOptions(ModelNormal):
             "follow_redirects": (bool,),
             "http_version": (SyntheticsTestOptionsHTTPVersion,),
             "ignore_server_certificate_error": (bool,),
+            "ignore_certificate_validation": (bool,),
             "initial_navigation_timeout": (int,),
             "min_failure_duration": (int,),
             "min_location_failed": (int,),
@@ -93,6 +94,7 @@ class SyntheticsTestOptions(ModelNormal):
         "follow_redirects": "follow_redirects",
         "http_version": "httpVersion",
         "ignore_server_certificate_error": "ignoreServerCertificateError",
+        "ignore_certificate_validation": "ignore_certificate_validation",
         "initial_navigation_timeout": "initialNavigationTimeout",
         "min_failure_duration": "min_failure_duration",
         "min_location_failed": "min_location_failed",
@@ -124,6 +126,7 @@ class SyntheticsTestOptions(ModelNormal):
         follow_redirects: Union[bool, UnsetType] = unset,
         http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
         ignore_server_certificate_error: Union[bool, UnsetType] = unset,
+        ignore_certificate_validation: Union[bool, UnsetType] = unset,
         initial_navigation_timeout: Union[int, UnsetType] = unset,
         min_failure_duration: Union[int, UnsetType] = unset,
         min_location_failed: Union[int, UnsetType] = unset,
@@ -186,6 +189,9 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param ignore_server_certificate_error: Ignore server certificate error for browser tests.
         :type ignore_server_certificate_error: bool, optional
+
+        :param ignore_certificate_validation: For SSL tests, whether or not the test should ignore certificate validation.
+        :type ignore_certificate_validation: bool, optional
 
         :param initial_navigation_timeout: Timeout before declaring the initial step as failed (in seconds) for browser tests.
         :type initial_navigation_timeout: int, optional
@@ -265,6 +271,8 @@ class SyntheticsTestOptions(ModelNormal):
             kwargs["http_version"] = http_version
         if ignore_server_certificate_error is not unset:
             kwargs["ignore_server_certificate_error"] = ignore_server_certificate_error
+        if ignore_certificate_validation is not unset:
+            kwargs["ignore_certificate_validation"] = ignore_certificate_validation
         if initial_navigation_timeout is not unset:
             kwargs["initial_navigation_timeout"] = initial_navigation_timeout
         if min_failure_duration is not unset:
