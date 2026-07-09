@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     unset,
     UnsetType,
 )
@@ -19,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.notebook_cell_response import NotebookCellResponse
     from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
     from datadog_api_client.v1.model.notebook_status import NotebookStatus
+    from datadog_api_client.v1.model.notebook_template_variable import NotebookTemplateVariable
     from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
     from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
     from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
@@ -38,6 +40,7 @@ class NotebooksResponseDataAttributes(ModelNormal):
         from datadog_api_client.v1.model.notebook_cell_response import NotebookCellResponse
         from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
         from datadog_api_client.v1.model.notebook_status import NotebookStatus
+        from datadog_api_client.v1.model.notebook_template_variable import NotebookTemplateVariable
         from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
 
         return {
@@ -48,6 +51,7 @@ class NotebooksResponseDataAttributes(ModelNormal):
             "modified": (datetime,),
             "name": (str,),
             "status": (NotebookStatus,),
+            "template_variables": ([NotebookTemplateVariable], none_type),
             "time": (NotebookGlobalTime,),
         }
 
@@ -59,6 +63,7 @@ class NotebooksResponseDataAttributes(ModelNormal):
         "modified": "modified",
         "name": "name",
         "status": "status",
+        "template_variables": "template_variables",
         "time": "time",
     }
     read_only_vars = {
@@ -75,6 +80,7 @@ class NotebooksResponseDataAttributes(ModelNormal):
         metadata: Union[NotebookMetadata, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
         status: Union[NotebookStatus, UnsetType] = unset,
+        template_variables: Union[List[NotebookTemplateVariable], none_type, UnsetType] = unset,
         time: Union[NotebookGlobalTime, NotebookRelativeTime, NotebookAbsoluteTime, UnsetType] = unset,
         **kwargs,
     ):
@@ -102,6 +108,9 @@ class NotebooksResponseDataAttributes(ModelNormal):
         :param status: Publication status of the notebook. For now, always "published".
         :type status: NotebookStatus, optional
 
+        :param template_variables: List of template variables for this notebook.
+        :type template_variables: [NotebookTemplateVariable], none_type, optional
+
         :param time: Notebook global timeframe.
         :type time: NotebookGlobalTime, optional
         """
@@ -117,6 +126,8 @@ class NotebooksResponseDataAttributes(ModelNormal):
             kwargs["modified"] = modified
         if status is not unset:
             kwargs["status"] = status
+        if template_variables is not unset:
+            kwargs["template_variables"] = template_variables
         if time is not unset:
             kwargs["time"] = time
         super().__init__(kwargs)

@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
     from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
     from datadog_api_client.v1.model.notebook_status import NotebookStatus
+    from datadog_api_client.v1.model.notebook_template_variable import NotebookTemplateVariable
     from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
     from datadog_api_client.v1.model.notebook_relative_time import NotebookRelativeTime
     from datadog_api_client.v1.model.notebook_absolute_time import NotebookAbsoluteTime
@@ -35,6 +37,7 @@ class NotebookCreateDataAttributes(ModelNormal):
         from datadog_api_client.v1.model.notebook_cell_create_request import NotebookCellCreateRequest
         from datadog_api_client.v1.model.notebook_metadata import NotebookMetadata
         from datadog_api_client.v1.model.notebook_status import NotebookStatus
+        from datadog_api_client.v1.model.notebook_template_variable import NotebookTemplateVariable
         from datadog_api_client.v1.model.notebook_global_time import NotebookGlobalTime
 
         return {
@@ -42,6 +45,7 @@ class NotebookCreateDataAttributes(ModelNormal):
             "metadata": (NotebookMetadata,),
             "name": (str,),
             "status": (NotebookStatus,),
+            "template_variables": ([NotebookTemplateVariable], none_type),
             "time": (NotebookGlobalTime,),
         }
 
@@ -50,6 +54,7 @@ class NotebookCreateDataAttributes(ModelNormal):
         "metadata": "metadata",
         "name": "name",
         "status": "status",
+        "template_variables": "template_variables",
         "time": "time",
     }
 
@@ -60,6 +65,7 @@ class NotebookCreateDataAttributes(ModelNormal):
         time: Union[NotebookGlobalTime, NotebookRelativeTime, NotebookAbsoluteTime],
         metadata: Union[NotebookMetadata, UnsetType] = unset,
         status: Union[NotebookStatus, UnsetType] = unset,
+        template_variables: Union[List[NotebookTemplateVariable], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -77,6 +83,9 @@ class NotebookCreateDataAttributes(ModelNormal):
         :param status: Publication status of the notebook. For now, always "published".
         :type status: NotebookStatus, optional
 
+        :param template_variables: List of template variables for this notebook.
+        :type template_variables: [NotebookTemplateVariable], none_type, optional
+
         :param time: Notebook global timeframe.
         :type time: NotebookGlobalTime
         """
@@ -84,6 +93,8 @@ class NotebookCreateDataAttributes(ModelNormal):
             kwargs["metadata"] = metadata
         if status is not unset:
             kwargs["status"] = status
+        if template_variables is not unset:
+            kwargs["template_variables"] = template_variables
         super().__init__(kwargs)
 
         self_.cells = cells

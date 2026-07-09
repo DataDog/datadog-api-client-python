@@ -3364,6 +3364,48 @@ datadog\_api\_client.v1.model.notebook\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.notebook\_template\_variable module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.notebook_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.notebook\_template\_variable\_available\_values\_query module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.notebook_template_variable_available_values_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.notebook\_template\_variable\_available\_values\_query\_group\_by module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.notebook_template_variable_available_values_query_group_by
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.notebook\_template\_variable\_available\_values\_query\_log\_rum\_spans module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.notebook_template_variable_available_values_query_log_rum_spans
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.notebook\_template\_variable\_available\_values\_query\_metrics module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.notebook_template_variable_available_values_query_metrics
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.notebook\_template\_variable\_available\_values\_query\_search module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.notebook_template_variable_available_values_query_search
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.notebook\_timeseries\_cell\_attributes module
 ---------------------------------------------------------------------------
 
