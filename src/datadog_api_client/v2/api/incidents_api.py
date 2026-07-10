@@ -64,6 +64,9 @@ from datadog_api_client.v2.model.incident_impacts_response import IncidentImpact
 from datadog_api_client.v2.model.incident_impact_related_object import IncidentImpactRelatedObject
 from datadog_api_client.v2.model.incident_impact_response import IncidentImpactResponse
 from datadog_api_client.v2.model.incident_impact_create_request import IncidentImpactCreateRequest
+from datadog_api_client.v2.model.incident_postmortem_response import IncidentPostmortemResponse
+from datadog_api_client.v2.model.incident_postmortem_update_request import IncidentPostmortemUpdateRequest
+from datadog_api_client.v2.model.incident_postmortem_create_request import IncidentPostmortemCreateRequest
 from datadog_api_client.v2.model.incident_integration_metadata_list_response import (
     IncidentIntegrationMetadataListResponse,
 )
@@ -257,6 +260,37 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateIncidentNotificationTemplateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_postmortem_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentPostmortemResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/postmortem",
+                "operation_id": "create_incident_postmortem",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentPostmortemCreateRequest,),
                     "location": "body",
                 },
             },
@@ -563,6 +597,29 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_incident_postmortem_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/postmortem",
+                "operation_id": "delete_incident_postmortem",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_incident_postmortem_template_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -777,6 +834,34 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_postmortem_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentPostmortemResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/postmortem",
+                "operation_id": "get_incident_postmortem",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
                     "location": "path",
                 },
                 "include": {
@@ -1470,6 +1555,37 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_postmortem_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentPostmortemResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/postmortem",
+                "operation_id": "update_incident_postmortem",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentPostmortemUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_incident_postmortem_template_endpoint = _Endpoint(
             settings={
                 "response_type": (PostmortemTemplateResponse,),
@@ -1736,6 +1852,38 @@ class IncidentsApi:
 
         return self._create_incident_notification_template_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_postmortem(
+        self,
+        incident_id: str,
+        body: IncidentPostmortemCreateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentPostmortemResponse:
+        """Create postmortem for an incident.
+
+        Create a postmortem for an incident by linking a title and document URL
+        (for example, a Datadog notebook, Confluence page, or Google Doc).
+
+        Only one postmortem is allowed per incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Postmortem creation payload.
+        :type body: IncidentPostmortemCreateRequest
+        :param include: Resources to include in the response. Supported values: ``last_modified_by_user`` , ``postmortem_owner_user`` , ``postmortem_owner_responder`` , ``incident``.
+        :type include: str, optional
+        :rtype: IncidentPostmortemResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_incident_postmortem_endpoint.call_with_http_info(**kwargs)
+
     def create_incident_postmortem_attachment(
         self,
         incident_id: str,
@@ -1981,6 +2129,23 @@ class IncidentsApi:
 
         return self._delete_incident_notification_template_endpoint.call_with_http_info(**kwargs)
 
+    def delete_incident_postmortem(
+        self,
+        incident_id: str,
+    ) -> None:
+        """Delete postmortem for an incident.
+
+        Delete the postmortem attached to an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        return self._delete_incident_postmortem_endpoint.call_with_http_info(**kwargs)
+
     def delete_incident_postmortem_template(
         self,
         template_id: str,
@@ -2159,6 +2324,30 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._get_incident_notification_template_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_postmortem(
+        self,
+        incident_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentPostmortemResponse:
+        """Get postmortem for an incident.
+
+        Get the postmortem attached to an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param include: Resources to include in the response. Supported values: ``last_modified_by_user`` , ``postmortem_owner_user`` , ``postmortem_owner_responder`` , ``incident``.
+        :type include: str, optional
+        :rtype: IncidentPostmortemResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_incident_postmortem_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_postmortem_template(
         self,
@@ -2846,6 +3035,35 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_notification_template_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_postmortem(
+        self,
+        incident_id: str,
+        body: IncidentPostmortemUpdateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentPostmortemResponse:
+        """Update postmortem for an incident.
+
+        Update the postmortem attached to an incident, for example to change its status.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Postmortem update payload.
+        :type body: IncidentPostmortemUpdateRequest
+        :param include: Resources to include in the response. Supported values: ``last_modified_by_user`` , ``postmortem_owner_user`` , ``postmortem_owner_responder`` , ``incident``.
+        :type include: str, optional
+        :rtype: IncidentPostmortemResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_incident_postmortem_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_postmortem_template(
         self,

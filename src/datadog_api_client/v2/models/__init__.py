@@ -3476,7 +3476,18 @@ from datadog_api_client.v2.model.incident_notification_template_update_attribute
 from datadog_api_client.v2.model.incident_notification_template_update_data import (
     IncidentNotificationTemplateUpdateData,
 )
+from datadog_api_client.v2.model.incident_postmortem_attributes import IncidentPostmortemAttributes
+from datadog_api_client.v2.model.incident_postmortem_create_attributes import IncidentPostmortemCreateAttributes
+from datadog_api_client.v2.model.incident_postmortem_create_data import IncidentPostmortemCreateData
+from datadog_api_client.v2.model.incident_postmortem_create_request import IncidentPostmortemCreateRequest
+from datadog_api_client.v2.model.incident_postmortem_data import IncidentPostmortemData
+from datadog_api_client.v2.model.incident_postmortem_included import IncidentPostmortemIncluded
+from datadog_api_client.v2.model.incident_postmortem_relationships import IncidentPostmortemRelationships
+from datadog_api_client.v2.model.incident_postmortem_response import IncidentPostmortemResponse
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
+from datadog_api_client.v2.model.incident_postmortem_update_attributes import IncidentPostmortemUpdateAttributes
+from datadog_api_client.v2.model.incident_postmortem_update_data import IncidentPostmortemUpdateData
+from datadog_api_client.v2.model.incident_postmortem_update_request import IncidentPostmortemUpdateRequest
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_relationship_data import IncidentRelationshipData
 from datadog_api_client.v2.model.incident_resource_type import IncidentResourceType
@@ -4978,6 +4989,9 @@ from datadog_api_client.v2.model.notion_credentials_update import NotionCredenti
 from datadog_api_client.v2.model.notion_integration import NotionIntegration
 from datadog_api_client.v2.model.notion_integration_type import NotionIntegrationType
 from datadog_api_client.v2.model.notion_integration_update import NotionIntegrationUpdate
+from datadog_api_client.v2.model.nullable_relationship_to_incident_responder_data import (
+    NullableRelationshipToIncidentResponderData,
+)
 from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
 from datadog_api_client.v2.model.nullable_relationship_to_user_data import NullableRelationshipToUserData
 from datadog_api_client.v2.model.nullable_user_relationship import NullableUserRelationship
@@ -6355,6 +6369,7 @@ from datadog_api_client.v2.model.postmortem_cell import PostmortemCell
 from datadog_api_client.v2.model.postmortem_cell_attributes import PostmortemCellAttributes
 from datadog_api_client.v2.model.postmortem_cell_definition import PostmortemCellDefinition
 from datadog_api_client.v2.model.postmortem_cell_type import PostmortemCellType
+from datadog_api_client.v2.model.postmortem_status import PostmortemStatus
 from datadog_api_client.v2.model.postmortem_template_attributes_request import PostmortemTemplateAttributesRequest
 from datadog_api_client.v2.model.postmortem_template_attributes_response import PostmortemTemplateAttributesResponse
 from datadog_api_client.v2.model.postmortem_template_data_request import PostmortemTemplateDataRequest
@@ -6636,6 +6651,7 @@ from datadog_api_client.v2.model.relationship_to_incident_notification_template_
 from datadog_api_client.v2.model.relationship_to_incident_postmortem import RelationshipToIncidentPostmortem
 from datadog_api_client.v2.model.relationship_to_incident_postmortem_data import RelationshipToIncidentPostmortemData
 from datadog_api_client.v2.model.relationship_to_incident_request import RelationshipToIncidentRequest
+from datadog_api_client.v2.model.relationship_to_incident_responder import RelationshipToIncidentResponder
 from datadog_api_client.v2.model.relationship_to_incident_responder_data import RelationshipToIncidentResponderData
 from datadog_api_client.v2.model.relationship_to_incident_responders import RelationshipToIncidentResponders
 from datadog_api_client.v2.model.relationship_to_incident_type import RelationshipToIncidentType
@@ -12344,7 +12360,18 @@ __all__ = [
     "IncidentNotificationTemplateType",
     "IncidentNotificationTemplateUpdateAttributes",
     "IncidentNotificationTemplateUpdateData",
+    "IncidentPostmortemAttributes",
+    "IncidentPostmortemCreateAttributes",
+    "IncidentPostmortemCreateData",
+    "IncidentPostmortemCreateRequest",
+    "IncidentPostmortemData",
+    "IncidentPostmortemIncluded",
+    "IncidentPostmortemRelationships",
+    "IncidentPostmortemResponse",
     "IncidentPostmortemType",
+    "IncidentPostmortemUpdateAttributes",
+    "IncidentPostmortemUpdateData",
+    "IncidentPostmortemUpdateRequest",
     "IncidentRelatedObject",
     "IncidentRelationshipData",
     "IncidentResourceType",
@@ -13490,6 +13517,7 @@ __all__ = [
     "NotionIntegration",
     "NotionIntegrationType",
     "NotionIntegrationUpdate",
+    "NullableRelationshipToIncidentResponderData",
     "NullableRelationshipToUser",
     "NullableRelationshipToUserData",
     "NullableUserRelationship",
@@ -14201,6 +14229,7 @@ __all__ = [
     "PostmortemCellAttributes",
     "PostmortemCellDefinition",
     "PostmortemCellType",
+    "PostmortemStatus",
     "PostmortemTemplateAttributesRequest",
     "PostmortemTemplateAttributesResponse",
     "PostmortemTemplateDataRequest",
@@ -14436,6 +14465,7 @@ __all__ = [
     "RelationshipToIncidentPostmortem",
     "RelationshipToIncidentPostmortemData",
     "RelationshipToIncidentRequest",
+    "RelationshipToIncidentResponder",
     "RelationshipToIncidentResponderData",
     "RelationshipToIncidentResponders",
     "RelationshipToIncidentType",

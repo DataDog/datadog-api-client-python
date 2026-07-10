@@ -3218,6 +3218,37 @@
       "type": "idempotent"
     }
   },
+  "DeleteIncidentPostmortem": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentPostmortem": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentPostmortem": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateIncidentPostmortem": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentPostmortem",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.relationships.incident.data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "ListIncidentIntegrations": {
     "tag": "Incidents",
     "undo": {

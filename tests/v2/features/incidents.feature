@@ -315,6 +315,45 @@ Feature: Incidents
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Create postmortem for an incident returns "Bad Request" response
+    Given operation "CreateIncidentPostmortem" enabled
+    And new "CreateIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"document_url": "https://app.datadoghq.com/notebook/123", "title": "Postmortem for IR-123"}, "type": "incident_postmortems"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/incident-app
+  Scenario: Create postmortem for an incident returns "CREATED" response
+    Given operation "CreateIncidentPostmortem" enabled
+    And there is a valid "incident" in the system
+    And new "CreateIncidentPostmortem" request
+    And request contains "incident_id" parameter from "incident.data.id"
+    And body with value {"data": {"attributes": {"document_url": "https://app.datadoghq.com/notebook/123", "title": "Postmortem for IR-123"}, "type": "incident_postmortems"}}
+    When the request is sent
+    Then the response status is 201 CREATED
+    And the response "data.type" is equal to "incident_postmortems"
+    And the response "data.relationships.incident.data.id" has the same value as "incident.data.id"
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create postmortem for an incident returns "Conflict" response
+    Given operation "CreateIncidentPostmortem" enabled
+    And new "CreateIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"document_url": "https://app.datadoghq.com/notebook/123", "title": "Postmortem for IR-123"}, "type": "incident_postmortems"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create postmortem for an incident returns "Not Found" response
+    Given operation "CreateIncidentPostmortem" enabled
+    And new "CreateIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"document_url": "https://app.datadoghq.com/notebook/123", "title": "Postmortem for IR-123"}, "type": "incident_postmortems"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Create postmortem template returns "Bad Request" response
     Given operation "CreateIncidentPostmortemTemplate" enabled
     And new "CreateIncidentPostmortemTemplate" request
@@ -600,6 +639,32 @@ Feature: Incidents
     And request contains "id" parameter from "notification_template.data.id"
     When the request is sent
     Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete postmortem for an incident returns "Bad Request" response
+    Given operation "DeleteIncidentPostmortem" enabled
+    And new "DeleteIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete postmortem for an incident returns "Not Found" response
+    Given operation "DeleteIncidentPostmortem" enabled
+    And new "DeleteIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/incident-app
+  Scenario: Delete postmortem for an incident returns "OK" response
+    Given operation "DeleteIncidentPostmortem" enabled
+    And there is a valid "incident" in the system
+    And there is a valid "postmortem" in the system
+    And new "DeleteIncidentPostmortem" request
+    And request contains "incident_id" parameter from "postmortem.data.relationships.incident.data.id"
+    When the request is sent
+    Then the response status is 204 OK
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Delete postmortem template returns "Bad Request" response
@@ -928,6 +993,33 @@ Feature: Incidents
     And request contains "incident_type_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get postmortem for an incident returns "Bad Request" response
+    Given operation "GetIncidentPostmortem" enabled
+    And new "GetIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get postmortem for an incident returns "Not Found" response
+    Given operation "GetIncidentPostmortem" enabled
+    And new "GetIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/incident-app
+  Scenario: Get postmortem for an incident returns "OK" response
+    Given operation "GetIncidentPostmortem" enabled
+    And there is a valid "incident" in the system
+    And there is a valid "postmortem" in the system
+    And new "GetIncidentPostmortem" request
+    And request contains "incident_id" parameter from "postmortem.data.relationships.incident.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.title" has the same value as "postmortem.data.attributes.title"
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Get postmortem template returns "Bad Request" response
@@ -1479,6 +1571,36 @@ Feature: Incidents
     And the response "data.id" has the same value as "notification_template.data.id"
     And the response "data.attributes.name" has the same value as "unique"
     And the response "data.attributes.category" is equal to "update"
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update postmortem for an incident returns "Bad Request" response
+    Given operation "UpdateIncidentPostmortem" enabled
+    And new "UpdateIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"status": "draft"}, "id": "00000000-0000-abcd-1000-000000000000", "type": "incident_postmortems"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update postmortem for an incident returns "Not Found" response
+    Given operation "UpdateIncidentPostmortem" enabled
+    And new "UpdateIncidentPostmortem" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"status": "draft"}, "id": "00000000-0000-abcd-1000-000000000000", "type": "incident_postmortems"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/incident-app
+  Scenario: Update postmortem for an incident returns "OK" response
+    Given operation "UpdateIncidentPostmortem" enabled
+    And there is a valid "incident" in the system
+    And there is a valid "postmortem" in the system
+    And new "UpdateIncidentPostmortem" request
+    And request contains "incident_id" parameter from "postmortem.data.relationships.incident.data.id"
+    And body with value {"data": {"attributes": {"status": "in_review"}, "id": "{{ postmortem.data.id }}", "type": "incident_postmortems"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.status" is equal to "in_review"
 
   @generated @skip @team:DataDog/incident-app
   Scenario: Update postmortem template returns "Bad Request" response
