@@ -543,6 +543,41 @@ datadog\_api\_client.v1.model.dashboard module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.dashboard\_available\_values\_events\_data\_source module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_available_values_events_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_available\_values\_events\_query module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_available_values_events_query
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_available\_values\_events\_query\_group\_by\_items module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_available_values_events_query_group_by_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_available\_values\_events\_query\_search module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_available_values_events_query_search
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_available\_values\_metrics\_query module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_available_values_metrics_query
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.dashboard\_bulk\_action\_data module
 ------------------------------------------------------------------
 
@@ -673,6 +708,13 @@ datadog\_api\_client.v1.model.dashboard\_template\_variable module
 ------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_template_variable
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_template\_variable\_available\_values\_query module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_template_variable_available_values_query
    :members:
    :show-inheritance:
 

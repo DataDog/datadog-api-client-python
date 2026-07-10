@@ -75,6 +75,17 @@ from datadog_api_client.v1.model.comparison_duration_type import ComparisonDurat
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.dashboard_available_values_events_data_source import (
+    DashboardAvailableValuesEventsDataSource,
+)
+from datadog_api_client.v1.model.dashboard_available_values_events_query import DashboardAvailableValuesEventsQuery
+from datadog_api_client.v1.model.dashboard_available_values_events_query_group_by_items import (
+    DashboardAvailableValuesEventsQueryGroupByItems,
+)
+from datadog_api_client.v1.model.dashboard_available_values_events_query_search import (
+    DashboardAvailableValuesEventsQuerySearch,
+)
+from datadog_api_client.v1.model.dashboard_available_values_metrics_query import DashboardAvailableValuesMetricsQuery
 from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
@@ -94,6 +105,9 @@ from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
 from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
 from datadog_api_client.v1.model.dashboard_tab import DashboardTab
 from datadog_api_client.v1.model.dashboard_template_variable import DashboardTemplateVariable
+from datadog_api_client.v1.model.dashboard_template_variable_available_values_query import (
+    DashboardTemplateVariableAvailableValuesQuery,
+)
 from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
 from datadog_api_client.v1.model.dashboard_template_variable_preset_value import DashboardTemplateVariablePresetValue
 from datadog_api_client.v1.model.dashboard_type import DashboardType
@@ -1509,6 +1523,11 @@ __all__ = [
     "ContentEncoding",
     "Creator",
     "Dashboard",
+    "DashboardAvailableValuesEventsDataSource",
+    "DashboardAvailableValuesEventsQuery",
+    "DashboardAvailableValuesEventsQueryGroupByItems",
+    "DashboardAvailableValuesEventsQuerySearch",
+    "DashboardAvailableValuesMetricsQuery",
     "DashboardBulkActionData",
     "DashboardBulkActionDataList",
     "DashboardBulkDeleteRequest",
@@ -1528,6 +1547,7 @@ __all__ = [
     "DashboardSummaryDefinition",
     "DashboardTab",
     "DashboardTemplateVariable",
+    "DashboardTemplateVariableAvailableValuesQuery",
     "DashboardTemplateVariablePreset",
     "DashboardTemplateVariablePresetValue",
     "DashboardType",
