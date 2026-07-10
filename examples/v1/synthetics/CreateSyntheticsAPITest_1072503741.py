@@ -37,6 +37,7 @@ body = SyntheticsAPITest(
         accept_self_signed=True,
         check_certificate_revocation=True,
         disable_aia_intermediate_fetching=True,
+        ignore_certificate_validation=True,
         tick_every=60,
     ),
     subtype=SyntheticsTestDetailsSubType.SSL,

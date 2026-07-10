@@ -246,6 +246,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK - Returns the created test details.
     And the response "name" is equal to "{{ unique }}"
+    And the response "options.ignore_certificate_validation" is equal to true
 
   @generated @skip @team:DataDog/synthetics-orchestrating-managing
   Scenario: Create an API test returns "- JSON format is wrong" response
