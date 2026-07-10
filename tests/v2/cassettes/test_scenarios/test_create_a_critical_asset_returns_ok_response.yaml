@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"query":"host:testcreateacriticalassetreturnsokresponse1767380942","rule_query":"type:(log_detection
+    body: '{"data":{"attributes":{"query":"host:testcreateacriticalassetreturnsokresponse1783698500","rule_query":"type:(log_detection
       OR signal_correlation OR workload_security OR application_security) source:cloudtrail","severity":"decrease","tags":["team:security","env:test"]},"type":"critical_assets"}}'
     headers:
       accept:
@@ -11,8 +11,10 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets
   response:
     body:
-      string: '{"data":{"id":"93d5a224-589d-4d6d-adbf-f6657f484ecc","type":"critical_assets","attributes":{"creation_author_id":1445416,"creation_date":1767380942322,"creator":{"handle":"frog@datadoghq.com","name":"frog"},"enabled":true,"query":"host:testcreateacriticalassetreturnsokresponse1767380942","rule_query":"type:(log_detection
-        OR signal_correlation OR workload_security OR application_security) source:cloudtrail","severity":"decrease","tags":["team:security","env:test"],"update_author_id":1445416,"update_date":1767380942322,"updater":{"handle":"frog@datadoghq.com","name":"frog"},"version":1}}}'
+      string: '{"data":{"id":"46d617c7-fba8-49f5-9274-dca43a6a97a5","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1783698500440,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"editable":true,"enabled":true,"query":"host:testcreateacriticalassetreturnsokresponse1783698500","rule_query":"type:(log_detection
+        OR signal_correlation OR workload_security OR application_security) source:cloudtrail","severity":"decrease","tags":["team:security","env:test"],"update_author_id":2320499,"update_date":1783698500440,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"version":1}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -25,7 +27,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/93d5a224-589d-4d6d-adbf-f6657f484ecc
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/46d617c7-fba8-49f5-9274-dca43a6a97a5
   response:
     body:
       string: ''

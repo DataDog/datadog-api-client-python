@@ -10,8 +10,8 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets
   response:
     body:
-      string: '{"data":{"id":"a9dfa43c-734a-4984-bed6-68934254cb59","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1768246896448,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"enabled":true,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":2320499,"update_date":1768246896448,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"c0d99d2c-a9c7-431a-9521-e0f4a40f1efd","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1783698502447,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"editable":true,"enabled":true,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":2320499,"update_date":1783698502447,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account"},"version":1}}}'
     headers:
       content-type:
@@ -25,11 +25,11 @@ interactions:
       accept:
       - application/json
     method: GET
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/a9dfa43c-734a-4984-bed6-68934254cb59
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/c0d99d2c-a9c7-431a-9521-e0f4a40f1efd
   response:
     body:
-      string: '{"data":{"id":"a9dfa43c-734a-4984-bed6-68934254cb59","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1768246896448,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
-        Account"},"enabled":true,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":2320499,"update_date":1768246896448,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+      string: '{"data":{"id":"c0d99d2c-a9c7-431a-9521-e0f4a40f1efd","type":"critical_assets","attributes":{"creation_author_id":2320499,"creation_date":1783698502447,"creator":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"editable":true,"enabled":true,"query":"security:monitoring","rule_query":"source:k9","severity":"medium","tags":["team:security"],"update_author_id":2320499,"update_date":1783698502447,"updater":{"handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
         Account"},"version":1}}}'
     headers:
       content-type:
@@ -43,7 +43,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/a9dfa43c-734a-4984-bed6-68934254cb59
+    uri: https://api.datadoghq.com/api/v2/security_monitoring/configuration/critical_assets/c0d99d2c-a9c7-431a-9521-e0f4a40f1efd
   response:
     body:
       string: ''
