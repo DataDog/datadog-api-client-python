@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,11 +14,27 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v1.model.dashboard_template_variable_available_values_query import (
+        DashboardTemplateVariableAvailableValuesQuery,
+    )
+    from datadog_api_client.v1.model.dashboard_available_values_events_query import DashboardAvailableValuesEventsQuery
+    from datadog_api_client.v1.model.dashboard_available_values_metrics_query import (
+        DashboardAvailableValuesMetricsQuery,
+    )
+
+
 class DashboardTemplateVariable(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v1.model.dashboard_template_variable_available_values_query import (
+            DashboardTemplateVariableAvailableValuesQuery,
+        )
+
         return {
             "available_values": ([str], none_type),
+            "available_values_query": (DashboardTemplateVariableAvailableValuesQuery,),
+            "data_source_mappings": ({str: (str,)},),
             "default": (str, none_type),
             "defaults": ([str],),
             "name": (str,),
@@ -28,6 +44,8 @@ class DashboardTemplateVariable(ModelNormal):
 
     attribute_map = {
         "available_values": "available_values",
+        "available_values_query": "available_values_query",
+        "data_source_mappings": "data_source_mappings",
         "default": "default",
         "defaults": "defaults",
         "name": "name",
@@ -39,6 +57,13 @@ class DashboardTemplateVariable(ModelNormal):
         self_,
         name: str,
         available_values: Union[List[str], none_type, UnsetType] = unset,
+        available_values_query: Union[
+            DashboardTemplateVariableAvailableValuesQuery,
+            DashboardAvailableValuesEventsQuery,
+            DashboardAvailableValuesMetricsQuery,
+            UnsetType,
+        ] = unset,
+        data_source_mappings: Union[Dict[str, str], UnsetType] = unset,
         default: Union[str, none_type, UnsetType] = unset,
         defaults: Union[List[str], UnsetType] = unset,
         prefix: Union[str, none_type, UnsetType] = unset,
@@ -50,6 +75,12 @@ class DashboardTemplateVariable(ModelNormal):
 
         :param available_values: The list of values that the template variable drop-down is limited to.
         :type available_values: [str], none_type, optional
+
+        :param available_values_query: A query that dynamically computes the list of values available for this template variable.
+        :type available_values_query: DashboardTemplateVariableAvailableValuesQuery, optional
+
+        :param data_source_mappings: A mapping from data source type to the variable value to use for that data source.
+        :type data_source_mappings: {str: (str,)}, optional
 
         :param default: (deprecated) The default value for the template variable on dashboard load. Cannot be used in conjunction with ``defaults``. **Deprecated**.
         :type default: str, none_type, optional
@@ -68,6 +99,10 @@ class DashboardTemplateVariable(ModelNormal):
         """
         if available_values is not unset:
             kwargs["available_values"] = available_values
+        if available_values_query is not unset:
+            kwargs["available_values_query"] = available_values_query
+        if data_source_mappings is not unset:
+            kwargs["data_source_mappings"] = data_source_mappings
         if default is not unset:
             kwargs["default"] = default
         if defaults is not unset:
