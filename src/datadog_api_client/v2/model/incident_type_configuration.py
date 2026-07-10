@@ -26,7 +26,6 @@ class IncidentTypeConfiguration(ModelNormal):
             "allow_incident_deletion": (bool,),
             "allow_workflows": (bool,),
             "create_message": (str,),
-            "disable_out_of_the_box_postmortem_template": (bool,),
             "editable_timestamps": (bool,),
             "private_incidents": (bool,),
             "private_incidents_by_default": (bool,),
@@ -38,7 +37,6 @@ class IncidentTypeConfiguration(ModelNormal):
         "allow_incident_deletion": "allow_incident_deletion",
         "allow_workflows": "allow_workflows",
         "create_message": "create_message",
-        "disable_out_of_the_box_postmortem_template": "disable_out_of_the_box_postmortem_template",
         "editable_timestamps": "editable_timestamps",
         "private_incidents": "private_incidents",
         "private_incidents_by_default": "private_incidents_by_default",
@@ -51,7 +49,6 @@ class IncidentTypeConfiguration(ModelNormal):
         allow_incident_deletion: Union[bool, UnsetType] = unset,
         allow_workflows: Union[bool, UnsetType] = unset,
         create_message: Union[str, UnsetType] = unset,
-        disable_out_of_the_box_postmortem_template: Union[bool, UnsetType] = unset,
         editable_timestamps: Union[bool, UnsetType] = unset,
         private_incidents: Union[bool, UnsetType] = unset,
         private_incidents_by_default: Union[bool, UnsetType] = unset,
@@ -70,9 +67,6 @@ class IncidentTypeConfiguration(ModelNormal):
 
         :param create_message: An optional message shown to users when they declare an incident of this type.
         :type create_message: str, optional
-
-        :param disable_out_of_the_box_postmortem_template: Whether the out-of-the-box postmortem template is disabled for incidents of this type.
-        :type disable_out_of_the_box_postmortem_template: bool, optional
 
         :param editable_timestamps: Whether responders can edit incident timestamps for incidents of this type.
         :type editable_timestamps: bool, optional
@@ -95,8 +89,6 @@ class IncidentTypeConfiguration(ModelNormal):
             kwargs["allow_workflows"] = allow_workflows
         if create_message is not unset:
             kwargs["create_message"] = create_message
-        if disable_out_of_the_box_postmortem_template is not unset:
-            kwargs["disable_out_of_the_box_postmortem_template"] = disable_out_of_the_box_postmortem_template
         if editable_timestamps is not unset:
             kwargs["editable_timestamps"] = editable_timestamps
         if private_incidents is not unset:
