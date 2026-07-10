@@ -83,7 +83,9 @@ def allows_single_value_input(cls):
     elif issubclass(cls, ModelComposed):
         if not cls._composed_schemas["oneOf"]:
             return False
-        return any(allows_single_value_input(c) for c in cls._composed_schemas["oneOf"] if not isinstance(c, list))
+        return any(
+            isinstance(c, list) or allows_single_value_input(c) for c in cls._composed_schemas["oneOf"]
+        )
     return False
 
 
@@ -169,7 +171,7 @@ class OpenApiModel:
             )
             if isinstance(value, list):
                 for x in value:
-                    if isinstance(x, UnparsedObject):
+                    if isinstance(x, UnparsedObject) or (isinstance(x, OpenApiModel) and x._unparsed):
                         self._unparsed = True
         if name in self.validations:
             check_validations(self.validations[name], name, value, self._configuration)
