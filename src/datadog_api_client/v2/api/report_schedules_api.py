@@ -12,6 +12,9 @@ from datadog_api_client.model_utils import (
     unset,
     UUID,
 )
+from datadog_api_client.v2.model.dataset_report_schedule_list_response import DatasetReportScheduleListResponse
+from datadog_api_client.v2.model.print_report_response import PrintReportResponse
+from datadog_api_client.v2.model.print_report_request import PrintReportRequest
 from datadog_api_client.v2.model.report_schedule_response import ReportScheduleResponse
 from datadog_api_client.v2.model.report_schedule_create_request import ReportScheduleCreateRequest
 from datadog_api_client.v2.model.report_schedule_list_response import ReportScheduleListResponse
@@ -127,6 +130,29 @@ class ReportSchedulesApi:
             api_client=api_client,
         )
 
+        self._list_dataset_report_schedules_endpoint = _Endpoint(
+            settings={
+                "response_type": (DatasetReportScheduleListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/reporting/dataset/{dataset_id}/schedules",
+                "operation_id": "list_dataset_report_schedules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "dataset_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "dataset_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_report_schedules_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleListResponse,),
@@ -195,6 +221,26 @@ class ReportSchedulesApi:
                 "body": {
                     "required": True,
                     "openapi_types": (ReportSchedulePatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._print_report_endpoint = _Endpoint(
+            settings={
+                "response_type": (PrintReportResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/reporting/print",
+                "operation_id": "print_report",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (PrintReportRequest,),
                     "location": "body",
                 },
             },
@@ -306,6 +352,25 @@ class ReportSchedulesApi:
 
         return self._get_report_schedules_for_resource_endpoint.call_with_http_info(**kwargs)
 
+    def list_dataset_report_schedules(
+        self,
+        dataset_id: str,
+    ) -> DatasetReportScheduleListResponse:
+        """List dataset report schedules.
+
+        Retrieve all report schedules for a given published dataset.
+        Returns report schedules belonging to the authenticated user's organization that target the specified dataset.
+        Requires the ``generate_log_reports`` or ``manage_log_reports`` permission.
+
+        :param dataset_id: The identifier of the published dataset to retrieve report schedules for.
+        :type dataset_id: str
+        :rtype: DatasetReportScheduleListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["dataset_id"] = dataset_id
+
+        return self._list_dataset_report_schedules_endpoint.call_with_http_info(**kwargs)
+
     def list_report_schedules(
         self,
         *,
@@ -374,6 +439,24 @@ class ReportSchedulesApi:
         kwargs["body"] = body
 
         return self._patch_report_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def print_report(
+        self,
+        body: PrintReportRequest,
+    ) -> PrintReportResponse:
+        """Print a report.
+
+        Initiate a one-off, print-only report for a dashboard or integration dashboard.
+        The report is rendered as a PDF and made available for download through the URL returned in the response.
+        Requires a reporting permission appropriate to the targeted resource type.
+
+        :type body: PrintReportRequest
+        :rtype: PrintReportResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._print_report_endpoint.call_with_http_info(**kwargs)
 
     def toggle_report_schedule(
         self,

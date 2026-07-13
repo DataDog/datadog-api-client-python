@@ -100,6 +100,27 @@ Feature: Report Schedules
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/reporting-and-sharing
+  Scenario: List dataset report schedules returns "Bad Request" response
+    Given new "ListDatasetReportSchedules" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/reporting-and-sharing
+  Scenario: List dataset report schedules returns "Not Found" response
+    Given new "ListDatasetReportSchedules" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/reporting-and-sharing
+  Scenario: List dataset report schedules returns "OK" response
+    Given new "ListDatasetReportSchedules" request
+    And request contains "dataset_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: List report schedules returns "Bad Request" response
     Given new "ListReportSchedules" request
     When the request is sent
@@ -116,6 +137,34 @@ Feature: Report Schedules
     Given new "ListReportSchedules" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/reporting-and-sharing
+  Scenario: Print a report returns "Bad Request" response
+    Given new "PrintReport" request
+    And body with value {"data": {"attributes": {"from_ts": 1780318800000, "resource_id": "abc-def-ghi", "resource_type": "dashboard", "template_variables": [{"name": "env", "values": ["prod"]}], "timeframe": "1w", "timezone": "America/New_York", "to_ts": 1780923600000}, "type": "report"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/reporting-and-sharing
+  Scenario: Print a report returns "Not Found" response
+    Given new "PrintReport" request
+    And body with value {"data": {"attributes": {"from_ts": 1780318800000, "resource_id": "abc-def-ghi", "resource_type": "dashboard", "template_variables": [{"name": "env", "values": ["prod"]}], "timeframe": "1w", "timezone": "America/New_York", "to_ts": 1780923600000}, "type": "report"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/reporting-and-sharing
+  Scenario: Print a report returns "OK" response
+    Given new "PrintReport" request
+    And body with value {"data": {"attributes": {"from_ts": 1780318800000, "resource_id": "abc-def-ghi", "resource_type": "dashboard", "template_variables": [{"name": "env", "values": ["prod"]}], "timeframe": "1w", "timezone": "America/New_York", "to_ts": 1780923600000}, "type": "report"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/reporting-and-sharing
+  Scenario: Print a report returns "Unprocessable Entity" response
+    Given new "PrintReport" request
+    And body with value {"data": {"attributes": {"from_ts": 1780318800000, "resource_id": "abc-def-ghi", "resource_type": "dashboard", "template_variables": [{"name": "env", "values": ["prod"]}], "timeframe": "1w", "timezone": "America/New_York", "to_ts": 1780923600000}, "type": "report"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Toggle a report schedule returns "Bad Request" response

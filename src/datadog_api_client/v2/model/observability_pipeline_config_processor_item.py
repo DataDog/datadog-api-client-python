@@ -162,6 +162,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param per_metric_limits: A list of per-metric cardinality overrides that take precedence over the default `value_limit`.
         :type per_metric_limits: [ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit], optional
 
+        :param tracking_mode: Controls whether the processor uses exact or probabilistic tag tracking.
+        :type tracking_mode: ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode
+
         :param value_limit: The default maximum number of distinct tag value combinations allowed per metric.
         :type value_limit: int
         """
