@@ -1677,16 +1677,16 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
             else:
                 if isinstance(oneof_class, list):
                     oneof_class = oneof_class[0]
-                    list_oneof_instance = []
                     if model_arg is None and not model_kwargs:
                         # Empty data
-                        oneof_instances.append(list_oneof_instance)
+                        oneof_instances.append([])
                         continue
 
                     # Check if inner type is primitive - follows same pattern as complex objects:
                     # https://github.com/DataDog/datadog-api-client-python/blob/008536d34760ce096e118edc54df613d82194529/.generator/src/generator/templates/model_utils.j2#L1590-L1599
                     if oneof_class in PRIMITIVE_TYPES:
                         # Handle list of primitives (e.g., [str], [float])
+                        list_oneof_instance = []
                         for arg in model_arg:
                             oneof_instance = validate_and_convert_types(
                                 arg,
@@ -1701,24 +1701,21 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                             oneof_instances.append(list_oneof_instance)
                     elif inspect.isclass(oneof_class) and issubclass(oneof_class, ModelSimple):
                         # Handle list of ModelSimple
-                        for arg in model_arg:
-                            oneof_instance = oneof_class(arg, **constant_kwargs)
-                            if not oneof_instance._unparsed:
-                                list_oneof_instance.append(oneof_instance)
-                        if list_oneof_instance:
+                        list_oneof_instance = [oneof_class(arg, **constant_kwargs) for arg in model_arg]
+                        # Reject the branch unless every element parsed.
+                        if list_oneof_instance and not any(item._unparsed for item in list_oneof_instance):
                             oneof_instances.append(list_oneof_instance)
                     else:
                         # Handle list of complex objects (ModelNormal, ModelComposed)
-                        for arg in model_arg:
-                            if constant_kwargs.get("_spec_property_naming"):
-                                oneof_instance = oneof_class(
-                                    **change_keys_js_to_python(arg, oneof_class), **constant_kwargs
-                                )
-                            else:
-                                oneof_instance = oneof_class(**arg, **constant_kwargs)
-                            if not oneof_instance._unparsed:
-                                list_oneof_instance.append(oneof_instance)
-                        if list_oneof_instance:
+                        if constant_kwargs.get("_spec_property_naming"):
+                            list_oneof_instance = [
+                                oneof_class(**change_keys_js_to_python(arg, oneof_class), **constant_kwargs)
+                                for arg in model_arg
+                            ]
+                        else:
+                            list_oneof_instance = [oneof_class(**arg, **constant_kwargs) for arg in model_arg]
+                        # Reject the branch unless every element parsed.
+                        if list_oneof_instance and not any(item._unparsed for item in list_oneof_instance):
                             oneof_instances.append(list_oneof_instance)
                 elif issubclass(oneof_class, ModelSimple):
                     if model_arg is not None:
