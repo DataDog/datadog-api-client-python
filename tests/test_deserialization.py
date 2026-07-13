@@ -405,3 +405,14 @@ def test_one_of_list_branch_unparsed_propagates_to_enclosing_model():
     )
     assert isinstance(definition, FormulaAndFunctionEventQueryDefinition)
     assert definition._unparsed
+
+
+def test_one_of_empty_list_branch_accepted():
+    """An empty array for a oneOf list branch is valid: every element parses
+    vacuously, so the value deserializes to an empty list rather than falling
+    through to ``UnparsedObject`` and marking the enclosing model unparsed."""
+    config = Configuration()
+    group_by = validate_and_convert_types(
+        [], (FormulaAndFunctionEventQueryGroupByConfig,), ["received_data"], True, True, config
+    )
+    assert group_by == []

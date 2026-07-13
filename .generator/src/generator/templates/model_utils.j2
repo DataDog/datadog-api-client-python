@@ -1697,13 +1697,11 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                                 configuration=constant_kwargs.get("_configuration"),
                             )
                             list_oneof_instance.append(oneof_instance)
-                        if list_oneof_instance:
-                            oneof_instances.append(list_oneof_instance)
+                        oneof_instances.append(list_oneof_instance)
                     elif inspect.isclass(oneof_class) and issubclass(oneof_class, ModelSimple):
                         # Handle list of ModelSimple
                         list_oneof_instance = [oneof_class(arg, **constant_kwargs) for arg in model_arg]
-                        # Reject the branch unless every element parsed.
-                        if list_oneof_instance and not any(item._unparsed for item in list_oneof_instance):
+                        if not any(item._unparsed for item in list_oneof_instance):
                             oneof_instances.append(list_oneof_instance)
                     else:
                         # Handle list of complex objects (ModelNormal, ModelComposed)
@@ -1714,8 +1712,7 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                             ]
                         else:
                             list_oneof_instance = [oneof_class(**arg, **constant_kwargs) for arg in model_arg]
-                        # Reject the branch unless every element parsed.
-                        if list_oneof_instance and not any(item._unparsed for item in list_oneof_instance):
+                        if not any(item._unparsed for item in list_oneof_instance):
                             oneof_instances.append(list_oneof_instance)
                 elif issubclass(oneof_class, ModelSimple):
                     if model_arg is not None:
