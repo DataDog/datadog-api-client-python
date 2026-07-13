@@ -3798,6 +3798,104 @@ datadog\_api\_client.v2.model.aws\_logs\_services\_response\_data\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_dd\_name module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_dd_name
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_filter\_match module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_filter_match
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_metric module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_metric
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_namespace module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_namespace
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_request\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_request\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_response\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_response\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filter\_preview\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filter_preview_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filters module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filters\_exclude\_only module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filters_exclude_only
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.aws\_metric\_name\_filters\_include\_only module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.aws_metric_name_filters_include_only
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aws\_metrics\_config module
 ---------------------------------------------------------
 

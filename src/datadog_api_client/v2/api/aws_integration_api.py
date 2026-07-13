@@ -17,6 +17,8 @@ from datadog_api_client.v2.model.aws_account_create_request import AWSAccountCre
 from datadog_api_client.v2.model.aws_account_update_request import AWSAccountUpdateRequest
 from datadog_api_client.v2.model.aws_ccm_config_response import AWSCcmConfigResponse
 from datadog_api_client.v2.model.aws_ccm_config_request import AWSCcmConfigRequest
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_response import AWSMetricNameFilterPreviewResponse
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_request import AWSMetricNameFilterPreviewRequest
 from datadog_api_client.v2.model.aws_namespaces_response import AWSNamespacesResponse
 from datadog_api_client.v2.model.aws_event_bridge_delete_response import AWSEventBridgeDeleteResponse
 from datadog_api_client.v2.model.aws_event_bridge_delete_request import AWSEventBridgeDeleteRequest
@@ -282,6 +284,29 @@ class AWSIntegrationApi:
             api_client=api_client,
         )
 
+        self._get_aws_metric_name_filter_preview_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSMetricNameFilterPreviewResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/metric_name_filter_preview",
+                "operation_id": "get_aws_metric_name_filter_preview",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "aws_account_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "aws_account_config_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_aws_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountsResponse,),
@@ -333,6 +358,32 @@ class AWSIntegrationApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._preview_aws_metric_name_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (AWSMetricNameFilterPreviewResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/metric_name_filter_preview",
+                "operation_id": "preview_aws_metric_name_filter",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "aws_account_config_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "aws_account_config_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AWSMetricNameFilterPreviewRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -609,6 +660,25 @@ class AWSIntegrationApi:
         kwargs: Dict[str, Any] = {}
         return self._get_aws_integration_iam_permissions_standard_endpoint.call_with_http_info(**kwargs)
 
+    def get_aws_metric_name_filter_preview(
+        self,
+        aws_account_config_id: str,
+    ) -> AWSMetricNameFilterPreviewResponse:
+        """Get AWS metric name filter preview.
+
+        Preview which collected CloudWatch metrics would be filtered by the account's saved metric name filters.
+
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_
+            endpoint and query by AWS Account ID.
+        :type aws_account_config_id: str
+        :rtype: AWSMetricNameFilterPreviewResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["aws_account_config_id"] = aws_account_config_id
+
+        return self._get_aws_metric_name_filter_preview_endpoint.call_with_http_info(**kwargs)
+
     def list_aws_accounts(
         self,
         *,
@@ -652,6 +722,31 @@ class AWSIntegrationApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_aws_namespaces_endpoint.call_with_http_info(**kwargs)
+
+    def preview_aws_metric_name_filter(
+        self,
+        aws_account_config_id: str,
+        body: AWSMetricNameFilterPreviewRequest,
+    ) -> AWSMetricNameFilterPreviewResponse:
+        """Preview AWS metric name filter.
+
+        Preview which collected CloudWatch metrics would be filtered by the supplied metric name filters.
+        The filters are not persisted.
+
+        :param aws_account_config_id: Unique Datadog ID of the AWS Account Integration Config. To get the config ID for an account, use the
+            `List all AWS integrations <https://docs.datadoghq.com/api/latest/aws-integration/#list-all-aws-integrations>`_
+            endpoint and query by AWS Account ID.
+        :type aws_account_config_id: str
+        :param body: The metric name filters to preview.
+        :type body: AWSMetricNameFilterPreviewRequest
+        :rtype: AWSMetricNameFilterPreviewResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["aws_account_config_id"] = aws_account_config_id
+
+        kwargs["body"] = body
+
+        return self._preview_aws_metric_name_filter_endpoint.call_with_http_info(**kwargs)
 
     def update_aws_account(
         self,

@@ -121,6 +121,30 @@ from datadog_api_client.v2.model.aws_logs_services_response import AWSLogsServic
 from datadog_api_client.v2.model.aws_logs_services_response_attributes import AWSLogsServicesResponseAttributes
 from datadog_api_client.v2.model.aws_logs_services_response_data import AWSLogsServicesResponseData
 from datadog_api_client.v2.model.aws_logs_services_response_data_type import AWSLogsServicesResponseDataType
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_dd_name import AWSMetricNameFilterPreviewDDName
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_filter_match import (
+    AWSMetricNameFilterPreviewFilterMatch,
+)
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_metric import AWSMetricNameFilterPreviewMetric
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_namespace import AWSMetricNameFilterPreviewNamespace
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_request import AWSMetricNameFilterPreviewRequest
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_request_attributes import (
+    AWSMetricNameFilterPreviewRequestAttributes,
+)
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_request_data import (
+    AWSMetricNameFilterPreviewRequestData,
+)
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_response import AWSMetricNameFilterPreviewResponse
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_response_attributes import (
+    AWSMetricNameFilterPreviewResponseAttributes,
+)
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_response_data import (
+    AWSMetricNameFilterPreviewResponseData,
+)
+from datadog_api_client.v2.model.aws_metric_name_filter_preview_type import AWSMetricNameFilterPreviewType
+from datadog_api_client.v2.model.aws_metric_name_filters import AWSMetricNameFilters
+from datadog_api_client.v2.model.aws_metric_name_filters_exclude_only import AWSMetricNameFiltersExcludeOnly
+from datadog_api_client.v2.model.aws_metric_name_filters_include_only import AWSMetricNameFiltersIncludeOnly
 from datadog_api_client.v2.model.aws_metrics_config import AWSMetricsConfig
 from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
 from datadog_api_client.v2.model.aws_namespace_filters_exclude_only import AWSNamespaceFiltersExcludeOnly
@@ -9771,6 +9795,20 @@ __all__ = [
     "AWSLogsServicesResponseAttributes",
     "AWSLogsServicesResponseData",
     "AWSLogsServicesResponseDataType",
+    "AWSMetricNameFilterPreviewDDName",
+    "AWSMetricNameFilterPreviewFilterMatch",
+    "AWSMetricNameFilterPreviewMetric",
+    "AWSMetricNameFilterPreviewNamespace",
+    "AWSMetricNameFilterPreviewRequest",
+    "AWSMetricNameFilterPreviewRequestAttributes",
+    "AWSMetricNameFilterPreviewRequestData",
+    "AWSMetricNameFilterPreviewResponse",
+    "AWSMetricNameFilterPreviewResponseAttributes",
+    "AWSMetricNameFilterPreviewResponseData",
+    "AWSMetricNameFilterPreviewType",
+    "AWSMetricNameFilters",
+    "AWSMetricNameFiltersExcludeOnly",
+    "AWSMetricNameFiltersIncludeOnly",
     "AWSMetricsConfig",
     "AWSNamespaceFilters",
     "AWSNamespaceFiltersExcludeOnly",

@@ -186,6 +186,22 @@ Feature: AWS Integration
     Then the response status is 200 AWS integration standard IAM permissions.
 
   @generated @skip @team:DataDog/aws-integrations
+  Scenario: Get AWS metric name filter preview returns "AWS metric name filter preview result" response
+    Given operation "GetAWSMetricNameFilterPreview" enabled
+    And new "GetAWSMetricNameFilterPreview" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 AWS metric name filter preview result
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Get AWS metric name filter preview returns "Not Found" response
+    Given operation "GetAWSMetricNameFilterPreview" enabled
+    And new "GetAWSMetricNameFilterPreview" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/aws-integrations
   Scenario: Get all Amazon EventBridge sources returns "Amazon EventBridge sources list." response
     Given new "ListAWSEventBridgeSources" request
     When the request is sent
@@ -248,6 +264,33 @@ Feature: AWS Integration
     Given new "ListAWSNamespaces" request
     When the request is sent
     Then the response status is 200 AWS Namespaces List object
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Preview AWS metric name filter returns "AWS metric name filter preview result" response
+    Given operation "PreviewAWSMetricNameFilter" enabled
+    And new "PreviewAWSMetricNameFilter" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"metric_name_filters": [{"include_only": ["aws.ec2.network_in"], "namespace": "AWS/EC2"}]}, "type": "metric_name_filter_preview"}}
+    When the request is sent
+    Then the response status is 200 AWS metric name filter preview result
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Preview AWS metric name filter returns "Bad Request" response
+    Given operation "PreviewAWSMetricNameFilter" enabled
+    And new "PreviewAWSMetricNameFilter" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"metric_name_filters": [{"include_only": ["aws.ec2.network_in"], "namespace": "AWS/EC2"}]}, "type": "metric_name_filter_preview"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/aws-integrations
+  Scenario: Preview AWS metric name filter returns "Not Found" response
+    Given operation "PreviewAWSMetricNameFilter" enabled
+    And new "PreviewAWSMetricNameFilter" request
+    And request contains "aws_account_config_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"metric_name_filters": [{"include_only": ["aws.ec2.network_in"], "namespace": "AWS/EC2"}]}, "type": "metric_name_filter_preview"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @skip @team:DataDog/aws-integrations
   Scenario: Update AWS CCM config returns "AWS CCM Config object" response
