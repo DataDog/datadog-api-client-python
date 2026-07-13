@@ -35,6 +35,12 @@ class WidgetTime(ModelComposed):
 
         :param to: End time in milliseconds since epoch.
         :type to: int
+
+        :param offset: Number of completed periods before the current period. 0 represents the current period.
+        :type offset: int
+
+        :param timezone: Time zone used to align the calendar period.
+        :type timezone: str, optional
         """
         super().__init__(kwargs)
 
@@ -50,11 +56,13 @@ class WidgetTime(ModelComposed):
         from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
         from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
         from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+        from datadog_api_client.v1.model.widget_calendar_aligned_span import WidgetCalendarAlignedSpan
 
         return {
             "oneOf": [
                 WidgetLegacyLiveSpan,
                 WidgetNewLiveSpan,
                 WidgetNewFixedSpan,
+                WidgetCalendarAlignedSpan,
             ],
         }
