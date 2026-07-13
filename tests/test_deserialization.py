@@ -13,6 +13,15 @@ from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateRes
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
 from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+    FormulaAndFunctionEventQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
+    FormulaAndFunctionEventQueryGroupBy,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by_config import (
+    FormulaAndFunctionEventQueryGroupByConfig,
+)
 
 
 def test_unknown_nested_oneof_in_list():
@@ -339,3 +348,60 @@ def test_schema_declared_float_still_upconverts_int_input():
     an integer JSON value must still upconvert to float."""
     converted = validate_and_convert_types(3, (float,), ["received_data"], True, True, Configuration())
     assert type(converted) is float and converted == 3.0
+
+
+def test_one_of_list_branch_rejected_when_element_unparsed():
+    """A oneOf list branch must reject the whole value when any element fails to
+    parse, rather than silently dropping the bad element and accepting a
+    truncated list. ``FormulaAndFunctionEventQueryGroupByConfig`` is a oneOf
+    whose first branch is ``[FormulaAndFunctionEventQueryGroupBy]``."""
+    value = [
+        {"facet": "@geo.country_iso_code", "sort": {"aggregation": "count", "order": "desc"}},
+        # Unknown aggregation enum -> this element is unparsed.
+        {"facet": "@http.status_code", "sort": {"aggregation": "a non existent aggregation"}},
+    ]
+    config = Configuration()
+    deserialized = validate_and_convert_types(
+        value, (FormulaAndFunctionEventQueryGroupByConfig,), ["received_data"], True, True, config
+    )
+    # The whole value is unparsed rather than a one-element list of the valid item.
+    assert isinstance(deserialized, UnparsedObject)
+
+
+def test_one_of_list_branch_all_valid_yields_objects():
+    """When every element of a oneOf list branch parses, the value deserializes
+    to a list of model objects (not raw dicts)."""
+    config = Configuration()
+
+    valid = [
+        {"facet": "@geo.country_iso_code", "limit": 250, "sort": {"aggregation": "count", "order": "desc"}},
+    ]
+    group_by = validate_and_convert_types(
+        valid, (FormulaAndFunctionEventQueryGroupByConfig,), ["received_data"], True, True, config
+    )
+    assert isinstance(group_by, list)
+    assert isinstance(group_by[0], FormulaAndFunctionEventQueryGroupBy)
+    assert group_by[0].facet == "@geo.country_iso_code"
+    assert str(group_by[0].sort.order) == "desc"
+
+
+def test_one_of_list_branch_unparsed_propagates_to_enclosing_model():
+    """An unparsed element inside a oneOf list branch must propagate ``_unparsed``
+    up to the containing model, rather than being silently dropped so the model
+    looks fully parsed."""
+    config = Configuration()
+    body = {
+        "data_source": "logs",
+        "name": "my_query",
+        "compute": {"aggregation": "count"},
+        "group_by": [
+            {"facet": "@geo.country_iso_code", "sort": {"aggregation": "count", "order": "desc"}},
+            # Unknown aggregation enum -> this element is unparsed.
+            {"facet": "@http.status_code", "sort": {"aggregation": "a non existent aggregation"}},
+        ],
+    }
+    definition = validate_and_convert_types(
+        body, (FormulaAndFunctionEventQueryDefinition,), ["received_data"], True, True, config
+    )
+    assert isinstance(definition, FormulaAndFunctionEventQueryDefinition)
+    assert definition._unparsed
