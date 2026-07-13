@@ -615,6 +615,8 @@ class Configuration:
                 "v2.create_aws_account_ccm_config": False,
                 "v2.delete_aws_account_ccm_config": False,
                 "v2.get_aws_account_ccm_config": False,
+                "v2.get_aws_metric_name_filter_preview": False,
+                "v2.preview_aws_metric_name_filter": False,
                 "v2.update_aws_account_ccm_config": False,
                 "v2.validate_awsccm_config": False,
                 "v2.create_jira_issue_template": False,

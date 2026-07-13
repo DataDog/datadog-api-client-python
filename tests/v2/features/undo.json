@@ -3363,6 +3363,18 @@
       "type": "unsafe"
     }
   },
+  "GetAWSMetricNameFilterPreview": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PreviewAWSMetricNameFilter": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAWSNamespaces": {
     "tag": "AWS Integration",
     "undo": {

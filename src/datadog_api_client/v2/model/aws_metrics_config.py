@@ -14,8 +14,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.aws_metric_name_filters import AWSMetricNameFilters
     from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
     from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
+    from datadog_api_client.v2.model.aws_metric_name_filters_include_only import AWSMetricNameFiltersIncludeOnly
+    from datadog_api_client.v2.model.aws_metric_name_filters_exclude_only import AWSMetricNameFiltersExcludeOnly
     from datadog_api_client.v2.model.aws_namespace_filters_exclude_only import AWSNamespaceFiltersExcludeOnly
     from datadog_api_client.v2.model.aws_namespace_filters_include_only import AWSNamespaceFiltersIncludeOnly
 
@@ -23,6 +26,7 @@ if TYPE_CHECKING:
 class AWSMetricsConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.aws_metric_name_filters import AWSMetricNameFilters
         from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
         from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
 
@@ -31,6 +35,7 @@ class AWSMetricsConfig(ModelNormal):
             "collect_cloudwatch_alarms": (bool,),
             "collect_custom_metrics": (bool,),
             "enabled": (bool,),
+            "metric_name_filters": ([AWSMetricNameFilters],),
             "namespace_filters": (AWSNamespaceFilters,),
             "tag_filters": ([AWSNamespaceTagFilter],),
         }
@@ -40,6 +45,7 @@ class AWSMetricsConfig(ModelNormal):
         "collect_cloudwatch_alarms": "collect_cloudwatch_alarms",
         "collect_custom_metrics": "collect_custom_metrics",
         "enabled": "enabled",
+        "metric_name_filters": "metric_name_filters",
         "namespace_filters": "namespace_filters",
         "tag_filters": "tag_filters",
     }
@@ -50,6 +56,10 @@ class AWSMetricsConfig(ModelNormal):
         collect_cloudwatch_alarms: Union[bool, UnsetType] = unset,
         collect_custom_metrics: Union[bool, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
+        metric_name_filters: Union[
+            List[Union[AWSMetricNameFilters, AWSMetricNameFiltersIncludeOnly, AWSMetricNameFiltersExcludeOnly]],
+            UnsetType,
+        ] = unset,
         namespace_filters: Union[
             AWSNamespaceFilters, AWSNamespaceFiltersExcludeOnly, AWSNamespaceFiltersIncludeOnly, UnsetType
         ] = unset,
@@ -71,6 +81,10 @@ class AWSMetricsConfig(ModelNormal):
         :param enabled: Enable AWS metrics collection. Defaults to ``true``.
         :type enabled: bool, optional
 
+        :param metric_name_filters: AWS CloudWatch metric name filters. Each filter applies to a single namespace.
+            Exactly one of ``include_only`` or ``exclude_only`` must be set on each filter.
+        :type metric_name_filters: [AWSMetricNameFilters], optional
+
         :param namespace_filters: AWS Metrics namespace filters. Defaults to ``exclude_only``.
         :type namespace_filters: AWSNamespaceFilters, optional
 
@@ -85,6 +99,8 @@ class AWSMetricsConfig(ModelNormal):
             kwargs["collect_custom_metrics"] = collect_custom_metrics
         if enabled is not unset:
             kwargs["enabled"] = enabled
+        if metric_name_filters is not unset:
+            kwargs["metric_name_filters"] = metric_name_filters
         if namespace_filters is not unset:
             kwargs["namespace_filters"] = namespace_filters
         if tag_filters is not unset:
