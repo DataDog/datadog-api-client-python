@@ -48,6 +48,10 @@ from datadog_api_client.v2.model.incident_user_defined_field_list_response impor
 from datadog_api_client.v2.model.incident_user_defined_field_response import IncidentUserDefinedFieldResponse
 from datadog_api_client.v2.model.incident_user_defined_field_create_request import IncidentUserDefinedFieldCreateRequest
 from datadog_api_client.v2.model.incident_user_defined_field_update_request import IncidentUserDefinedFieldUpdateRequest
+from datadog_api_client.v2.model.incident_user_defined_roles_response import IncidentUserDefinedRolesResponse
+from datadog_api_client.v2.model.incident_user_defined_role_response import IncidentUserDefinedRoleResponse
+from datadog_api_client.v2.model.incident_user_defined_role_request import IncidentUserDefinedRoleRequest
+from datadog_api_client.v2.model.incident_user_defined_role_patch_request import IncidentUserDefinedRolePatchRequest
 from datadog_api_client.v2.model.incident_import_response import IncidentImportResponse
 from datadog_api_client.v2.model.incident_import_related_object import IncidentImportRelatedObject
 from datadog_api_client.v2.model.incident_import_request import IncidentImportRequest
@@ -381,6 +385,31 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._create_incident_user_defined_role_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedRoleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-roles",
+                "operation_id": "create_incident_user_defined_role",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentUserDefinedRoleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_global_incident_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -661,6 +690,29 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_incident_user_defined_role_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-roles/{role_id}",
+                "operation_id": "delete_incident_user_defined_role",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "role_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_global_incident_settings_endpoint = _Endpoint(
             settings={
                 "response_type": (GlobalIncidentSettingsResponse,),
@@ -880,6 +932,34 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "field_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_user_defined_role_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedRoleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-roles/{role_id}",
+                "operation_id": "get_incident_user_defined_role",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "role_id",
                     "location": "path",
                 },
                 "include": {
@@ -1204,6 +1284,33 @@ class IncidentsApi:
                 },
                 "filter_incident_type": {
                     "openapi_types": (str,),
+                    "attribute": "filter[incident-type]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_user_defined_roles_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedRolesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-roles",
+                "operation_id": "list_incident_user_defined_roles",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_incident_type": {
+                    "openapi_types": (UUID,),
                     "attribute": "filter[incident-type]",
                     "location": "query",
                 },
@@ -1585,6 +1692,37 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_user_defined_role_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentUserDefinedRoleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/user-defined-roles/{role_id}",
+                "operation_id": "update_incident_user_defined_role",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "role_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "role_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentUserDefinedRolePatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_global_incident_handle(
         self,
         body: IncidentHandleRequest,
@@ -1840,6 +1978,29 @@ class IncidentsApi:
 
         return self._create_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_user_defined_role(
+        self,
+        body: IncidentUserDefinedRoleRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedRoleResponse:
+        """Create an incident user-defined role.
+
+        Create a new user-defined role for incidents.
+
+        :type body: IncidentUserDefinedRoleRequest
+        :param include: Comma-separated list of related resources to include in the response.
+        :type include: str, optional
+        :rtype: IncidentUserDefinedRoleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)
+
     def delete_global_incident_handle(
         self,
     ) -> None:
@@ -2054,6 +2215,23 @@ class IncidentsApi:
 
         return self._delete_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
 
+    def delete_incident_user_defined_role(
+        self,
+        role_id: UUID,
+    ) -> None:
+        """Delete an incident user-defined role.
+
+        Delete an existing user-defined role for incidents.
+
+        :param role_id: The UUID of the incident user-defined role.
+        :type role_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["role_id"] = role_id
+
+        return self._delete_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)
+
     def get_global_incident_settings(
         self,
     ) -> GlobalIncidentSettingsResponse:
@@ -2239,6 +2417,30 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._get_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_user_defined_role(
+        self,
+        role_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedRoleResponse:
+        """Get an incident user-defined role.
+
+        Retrieve a single user-defined role for incidents.
+
+        :param role_id: The UUID of the incident user-defined role.
+        :type role_id: UUID
+        :param include: Comma-separated list of related resources to include in the response.
+        :type include: str, optional
+        :rtype: IncidentUserDefinedRoleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["role_id"] = role_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)
 
     def import_incident(
         self,
@@ -2564,6 +2766,31 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._list_incident_user_defined_fields_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_user_defined_roles(
+        self,
+        *,
+        filter_incident_type: Union[UUID, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedRolesResponse:
+        """List incident user-defined roles.
+
+        List all user-defined roles for incidents.
+
+        :param filter_incident_type: Filter roles by incident type UUID.
+        :type filter_incident_type: UUID, optional
+        :param include: Comma-separated list of related resources to include in the response.
+        :type include: str, optional
+        :rtype: IncidentUserDefinedRolesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_incident_type is not unset:
+            kwargs["filter_incident_type"] = filter_incident_type
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_incident_user_defined_roles_endpoint.call_with_http_info(**kwargs)
 
     def search_incidents(
         self,
@@ -2945,3 +3172,31 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_user_defined_field_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_user_defined_role(
+        self,
+        role_id: UUID,
+        body: IncidentUserDefinedRolePatchRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentUserDefinedRoleResponse:
+        """Update an incident user-defined role.
+
+        Update an existing user-defined role for incidents.
+
+        :param role_id: The UUID of the incident user-defined role.
+        :type role_id: UUID
+        :type body: IncidentUserDefinedRolePatchRequest
+        :param include: Comma-separated list of related resources to include in the response.
+        :type include: str, optional
+        :rtype: IncidentUserDefinedRoleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["role_id"] = role_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)

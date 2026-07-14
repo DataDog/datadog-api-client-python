@@ -211,6 +211,22 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident user-defined role returns "Bad Request" response
+    Given operation "CreateIncidentUserDefinedRole" enabled
+    And new "CreateIncidentUserDefinedRole" request
+    And body with value {"data": {"attributes": {"description": "The technical lead for the incident.", "name": "Tech Lead", "policy": {"is_single": true}}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "incident_types"}}}, "type": "incident_user_defined_roles"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Create an incident user-defined role returns "Created" response
+    Given operation "CreateIncidentUserDefinedRole" enabled
+    And new "CreateIncidentUserDefinedRole" request
+    And body with value {"data": {"attributes": {"description": "The technical lead for the incident.", "name": "Tech Lead", "policy": {"is_single": true}}, "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000001", "type": "incident_types"}}}, "type": "incident_user_defined_roles"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Create global incident handle returns "Bad Request" response
     Given operation "CreateGlobalIncidentHandle" enabled
     And new "CreateGlobalIncidentHandle" request
@@ -531,6 +547,30 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident user-defined role returns "Bad Request" response
+    Given operation "DeleteIncidentUserDefinedRole" enabled
+    And new "DeleteIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident user-defined role returns "No Content" response
+    Given operation "DeleteIncidentUserDefinedRole" enabled
+    And new "DeleteIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Delete an incident user-defined role returns "Not Found" response
+    Given operation "DeleteIncidentUserDefinedRole" enabled
+    And new "DeleteIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: Delete global incident handle returns "Bad Request" response
     Given operation "DeleteGlobalIncidentHandle" enabled
     And new "DeleteGlobalIncidentHandle" request
@@ -778,6 +818,30 @@ Feature: Incidents
     Given operation "GetIncidentUserDefinedField" enabled
     And new "GetIncidentUserDefinedField" request
     And request contains "field_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident user-defined role returns "Bad Request" response
+    Given operation "GetIncidentUserDefinedRole" enabled
+    And new "GetIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident user-defined role returns "Not Found" response
+    Given operation "GetIncidentUserDefinedRole" enabled
+    And new "GetIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Get an incident user-defined role returns "OK" response
+    Given operation "GetIncidentUserDefinedRole" enabled
+    And new "GetIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1109,6 +1173,20 @@ Feature: Incidents
     And the response "data" has length 0
 
   @generated @skip @team:DataDog/incident-app
+  Scenario: List incident user-defined roles returns "Bad Request" response
+    Given operation "ListIncidentUserDefinedRoles" enabled
+    And new "ListIncidentUserDefinedRoles" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: List incident user-defined roles returns "OK" response
+    Given operation "ListIncidentUserDefinedRoles" enabled
+    And new "ListIncidentUserDefinedRoles" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
   Scenario: List postmortem templates returns "Bad Request" response
     Given operation "ListIncidentPostmortemTemplates" enabled
     And new "ListIncidentPostmortemTemplates" request
@@ -1345,6 +1423,33 @@ Feature: Incidents
     And new "UpdateIncidentUserDefinedField" request
     And request contains "field_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"category": "what_happened", "collected": "active", "default_value": "critical", "display_name": "Root Cause", "ordinal": "1.5", "required": false, "valid_values": [{"description": "A critical severity incident.", "display_name": "Critical", "short_description": "Critical", "value": "critical"}]}, "id": "00000000-0000-0000-0000-000000000000", "type": "user_defined_field"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident user-defined role returns "Bad Request" response
+    Given operation "UpdateIncidentUserDefinedRole" enabled
+    And new "UpdateIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "The technical lead for the incident.", "name": "Tech Lead", "policy": {"is_single": true}}, "id": "00000000-0000-0000-0000-000000000002", "type": "incident_user_defined_roles"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident user-defined role returns "Not Found" response
+    Given operation "UpdateIncidentUserDefinedRole" enabled
+    And new "UpdateIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "The technical lead for the incident.", "name": "Tech Lead", "policy": {"is_single": true}}, "id": "00000000-0000-0000-0000-000000000002", "type": "incident_user_defined_roles"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident user-defined role returns "OK" response
+    Given operation "UpdateIncidentUserDefinedRole" enabled
+    And new "UpdateIncidentUserDefinedRole" request
+    And request contains "role_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "The technical lead for the incident.", "name": "Tech Lead", "policy": {"is_single": true}}, "id": "00000000-0000-0000-0000-000000000002", "type": "incident_user_defined_roles"}}
     When the request is sent
     Then the response status is 200 OK
 

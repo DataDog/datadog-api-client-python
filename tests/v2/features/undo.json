@@ -3115,6 +3115,43 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentUserDefinedRoles": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentUserDefinedRole": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentUserDefinedRole",
+      "parameters": [
+        {
+          "name": "role_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentUserDefinedRole": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentUserDefinedRole": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIncidentUserDefinedRole": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ImportIncident": {
     "tag": "Incidents",
     "undo": {

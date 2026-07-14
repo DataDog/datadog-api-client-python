@@ -3612,6 +3612,39 @@ from datadog_api_client.v2.model.incident_user_defined_field_type import Inciden
 from datadog_api_client.v2.model.incident_user_defined_field_update_data import IncidentUserDefinedFieldUpdateData
 from datadog_api_client.v2.model.incident_user_defined_field_update_request import IncidentUserDefinedFieldUpdateRequest
 from datadog_api_client.v2.model.incident_user_defined_field_valid_value import IncidentUserDefinedFieldValidValue
+from datadog_api_client.v2.model.incident_user_defined_role_data_attributes_request import (
+    IncidentUserDefinedRoleDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_data_attributes_response import (
+    IncidentUserDefinedRoleDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_data_request import IncidentUserDefinedRoleDataRequest
+from datadog_api_client.v2.model.incident_user_defined_role_data_response import IncidentUserDefinedRoleDataResponse
+from datadog_api_client.v2.model.incident_user_defined_role_incident_type_relationship import (
+    IncidentUserDefinedRoleIncidentTypeRelationship,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_incident_type_relationship_data import (
+    IncidentUserDefinedRoleIncidentTypeRelationshipData,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_included_item import IncidentUserDefinedRoleIncludedItem
+from datadog_api_client.v2.model.incident_user_defined_role_patch_data_attributes_request import (
+    IncidentUserDefinedRolePatchDataAttributesRequest,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_patch_data_request import (
+    IncidentUserDefinedRolePatchDataRequest,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_patch_request import IncidentUserDefinedRolePatchRequest
+from datadog_api_client.v2.model.incident_user_defined_role_policy import IncidentUserDefinedRolePolicy
+from datadog_api_client.v2.model.incident_user_defined_role_relationships_request import (
+    IncidentUserDefinedRoleRelationshipsRequest,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_relationships_response import (
+    IncidentUserDefinedRoleRelationshipsResponse,
+)
+from datadog_api_client.v2.model.incident_user_defined_role_request import IncidentUserDefinedRoleRequest
+from datadog_api_client.v2.model.incident_user_defined_role_response import IncidentUserDefinedRoleResponse
+from datadog_api_client.v2.model.incident_user_defined_role_type import IncidentUserDefinedRoleType
+from datadog_api_client.v2.model.incident_user_defined_roles_response import IncidentUserDefinedRolesResponse
 from datadog_api_client.v2.model.incidents_response import IncidentsResponse
 from datadog_api_client.v2.model.include_type import IncludeType
 from datadog_api_client.v2.model.input_schema import InputSchema
@@ -12488,6 +12521,23 @@ __all__ = [
     "IncidentUserDefinedFieldUpdateData",
     "IncidentUserDefinedFieldUpdateRequest",
     "IncidentUserDefinedFieldValidValue",
+    "IncidentUserDefinedRoleDataAttributesRequest",
+    "IncidentUserDefinedRoleDataAttributesResponse",
+    "IncidentUserDefinedRoleDataRequest",
+    "IncidentUserDefinedRoleDataResponse",
+    "IncidentUserDefinedRoleIncidentTypeRelationship",
+    "IncidentUserDefinedRoleIncidentTypeRelationshipData",
+    "IncidentUserDefinedRoleIncludedItem",
+    "IncidentUserDefinedRolePatchDataAttributesRequest",
+    "IncidentUserDefinedRolePatchDataRequest",
+    "IncidentUserDefinedRolePatchRequest",
+    "IncidentUserDefinedRolePolicy",
+    "IncidentUserDefinedRoleRelationshipsRequest",
+    "IncidentUserDefinedRoleRelationshipsResponse",
+    "IncidentUserDefinedRoleRequest",
+    "IncidentUserDefinedRoleResponse",
+    "IncidentUserDefinedRoleType",
+    "IncidentUserDefinedRolesResponse",
     "IncidentsResponse",
     "IncludeType",
     "InputSchema",
