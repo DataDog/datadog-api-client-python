@@ -425,3 +425,42 @@ def test_one_of_empty_list_not_ambiguous_with_object_branch():
     value = validate_and_convert_types([], (AnyValue,), ["received_data"], True, True, config)
     assert value == []
     assert not isinstance(value, UnparsedObject)
+
+
+def test_one_of_list_branch_of_composed_primitive_items():
+    """``AnyValue`` has an ``[AnyValueItem]`` list branch whose item schema is a
+    ``ModelComposed`` accepting primitives (string/number/object/bool). A JSON
+    array of scalars such as ``["hello", 1]`` must deserialize to that list
+    branch rather than falling through to ``UnparsedObject``."""
+    config = Configuration()
+    value = validate_and_convert_types(["hello", 1], (AnyValue,), ["received_data"], True, True, config)
+    assert not isinstance(value, UnparsedObject)
+    assert isinstance(value, list)
+    assert len(value) == 2
+    assert value[0] == "hello"
+    assert value[1] == 1.0
+
+
+def test_any_value_scalar_branches():
+    """``AnyValue`` must match each scalar oneOf branch without being confused by
+    the ``[AnyValueItem]`` list branch (a string is iterable but is not an array)."""
+    config = Configuration()
+    for raw, expected in (("hello", "hello"), (42, 42.0), (True, True)):
+        value = validate_and_convert_types(raw, (AnyValue,), ["received_data"], True, True, config)
+        assert not isinstance(value, UnparsedObject)
+        assert value == expected
+    obj = validate_and_convert_types({"a": 1}, (AnyValue,), ["received_data"], True, True, config)
+    assert not isinstance(obj, UnparsedObject)
+    assert model_to_dict(obj) == {"a": 1}
+
+
+def test_any_value_mixed_array():
+    """A mixed array of scalars and objects deserializes element-wise."""
+    config = Configuration()
+    value = validate_and_convert_types(["a", {"b": 2}, 3, False], (AnyValue,), ["received_data"], True, True, config)
+    assert not isinstance(value, UnparsedObject)
+    assert isinstance(value, list)
+    assert value[0] == "a"
+    assert model_to_dict(value[1]) == {"b": 2}
+    assert value[2] == 3.0
+    assert value[3] is False
