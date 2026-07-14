@@ -2229,6 +2229,12 @@ from datadog_api_client.v2.model.datadog_integration_update import DatadogIntegr
 from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
 from datadog_api_client.v2.model.dataset_attributes_response import DatasetAttributesResponse
 from datadog_api_client.v2.model.dataset_create_request import DatasetCreateRequest
+from datadog_api_client.v2.model.dataset_report_schedule_list_response import DatasetReportScheduleListResponse
+from datadog_api_client.v2.model.dataset_report_schedule_resource_type import DatasetReportScheduleResourceType
+from datadog_api_client.v2.model.dataset_report_schedule_response_attributes import (
+    DatasetReportScheduleResponseAttributes,
+)
+from datadog_api_client.v2.model.dataset_report_schedule_response_data import DatasetReportScheduleResponseData
 from datadog_api_client.v2.model.dataset_request import DatasetRequest
 from datadog_api_client.v2.model.dataset_response import DatasetResponse
 from datadog_api_client.v2.model.dataset_response_multi import DatasetResponseMulti
@@ -6405,6 +6411,13 @@ from datadog_api_client.v2.model.powerpack_template_variable import PowerpackTem
 from datadog_api_client.v2.model.powerpacks_response_meta import PowerpacksResponseMeta
 from datadog_api_client.v2.model.powerpacks_response_meta_pagination import PowerpacksResponseMetaPagination
 from datadog_api_client.v2.model.preview_entity_response_data import PreviewEntityResponseData
+from datadog_api_client.v2.model.print_report_request import PrintReportRequest
+from datadog_api_client.v2.model.print_report_request_attributes import PrintReportRequestAttributes
+from datadog_api_client.v2.model.print_report_request_data import PrintReportRequestData
+from datadog_api_client.v2.model.print_report_response import PrintReportResponse
+from datadog_api_client.v2.model.print_report_response_attributes import PrintReportResponseAttributes
+from datadog_api_client.v2.model.print_report_response_data import PrintReportResponseData
+from datadog_api_client.v2.model.print_report_type import PrintReportType
 from datadog_api_client.v2.model.process_data_source import ProcessDataSource
 from datadog_api_client.v2.model.process_scalar_query import ProcessScalarQuery
 from datadog_api_client.v2.model.process_summaries_meta import ProcessSummariesMeta
@@ -11392,6 +11405,10 @@ __all__ = [
     "DatasetAttributesRequest",
     "DatasetAttributesResponse",
     "DatasetCreateRequest",
+    "DatasetReportScheduleListResponse",
+    "DatasetReportScheduleResourceType",
+    "DatasetReportScheduleResponseAttributes",
+    "DatasetReportScheduleResponseData",
     "DatasetRequest",
     "DatasetResponse",
     "DatasetResponseMulti",
@@ -14266,6 +14283,13 @@ __all__ = [
     "PowerpacksResponseMeta",
     "PowerpacksResponseMetaPagination",
     "PreviewEntityResponseData",
+    "PrintReportRequest",
+    "PrintReportRequestAttributes",
+    "PrintReportRequestData",
+    "PrintReportResponse",
+    "PrintReportResponseAttributes",
+    "PrintReportResponseData",
+    "PrintReportType",
     "ProcessDataSource",
     "ProcessScalarQuery",
     "ProcessSummariesMeta",

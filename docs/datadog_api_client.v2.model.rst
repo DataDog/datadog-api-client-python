@@ -11575,6 +11575,34 @@ datadog\_api\_client.v2.model.dataset\_create\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dataset\_report\_schedule\_list\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_report_schedule_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_report\_schedule\_resource\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_report_schedule_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_report\_schedule\_response\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_report_schedule_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dataset\_report\_schedule\_response\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dataset_report_schedule_response_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.dataset\_request module
 -----------------------------------------------------
 
@@ -31914,6 +31942,55 @@ datadog\_api\_client.v2.model.preview\_entity\_response\_data module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.preview_entity_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.print\_report\_request module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.print_report_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.print\_report\_request\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.print_report_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.print\_report\_request\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.print_report_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.print\_report\_response module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.print_report_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.print\_report\_response\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.print_report_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.print\_report\_response\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.print_report_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.print\_report\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.print_report_type
    :members:
    :show-inheritance:
 

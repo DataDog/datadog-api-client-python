@@ -6476,6 +6476,18 @@
       "type": "idempotent"
     }
   },
+  "ListDatasetReportSchedules": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PrintReport": {
+    "tag": "Report Schedules",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "CreateReportSchedule": {
     "tag": "Report Schedules",
     "undo": {
