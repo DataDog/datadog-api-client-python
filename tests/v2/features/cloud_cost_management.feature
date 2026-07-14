@@ -375,6 +375,30 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a budget's custom forecast returns "Bad Request" response
+    Given operation "GetCustomForecast" enabled
+    And new "GetCustomForecast" request
+    And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a budget's custom forecast returns "Not Found" response
+    Given operation "GetCustomForecast" enabled
+    And new "GetCustomForecast" request
+    And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get a budget's custom forecast returns "OK" response
+    Given operation "GetCustomForecast" enabled
+    And new "GetCustomForecast" request
+    And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Get a tag pipeline ruleset returns "OK" response
     Given new "GetTagPipelinesRuleset" request

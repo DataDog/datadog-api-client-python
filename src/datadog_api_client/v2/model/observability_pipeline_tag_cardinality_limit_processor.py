@@ -20,6 +20,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_limit import (
         ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit,
     )
+    from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_tracking_mode import (
+        ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode,
+    )
     from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_type import (
         ObservabilityPipelineTagCardinalityLimitProcessorType,
     )
@@ -44,6 +47,9 @@ class ObservabilityPipelineTagCardinalityLimitProcessor(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_per_metric_limit import (
             ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit,
         )
+        from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_tracking_mode import (
+            ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode,
+        )
         from datadog_api_client.v2.model.observability_pipeline_tag_cardinality_limit_processor_type import (
             ObservabilityPipelineTagCardinalityLimitProcessorType,
         )
@@ -55,6 +61,7 @@ class ObservabilityPipelineTagCardinalityLimitProcessor(ModelNormal):
             "include": (str,),
             "limit_exceeded_action": (ObservabilityPipelineTagCardinalityLimitProcessorAction,),
             "per_metric_limits": ([ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit],),
+            "tracking_mode": (ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode,),
             "type": (ObservabilityPipelineTagCardinalityLimitProcessorType,),
             "value_limit": (int,),
         }
@@ -66,6 +73,7 @@ class ObservabilityPipelineTagCardinalityLimitProcessor(ModelNormal):
         "include": "include",
         "limit_exceeded_action": "limit_exceeded_action",
         "per_metric_limits": "per_metric_limits",
+        "tracking_mode": "tracking_mode",
         "type": "type",
         "value_limit": "value_limit",
     }
@@ -76,6 +84,7 @@ class ObservabilityPipelineTagCardinalityLimitProcessor(ModelNormal):
         id: str,
         include: str,
         limit_exceeded_action: ObservabilityPipelineTagCardinalityLimitProcessorAction,
+        tracking_mode: ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode,
         type: ObservabilityPipelineTagCardinalityLimitProcessorType,
         value_limit: int,
         display_name: Union[str, UnsetType] = unset,
@@ -107,6 +116,9 @@ class ObservabilityPipelineTagCardinalityLimitProcessor(ModelNormal):
         :param per_metric_limits: A list of per-metric cardinality overrides that take precedence over the default ``value_limit``.
         :type per_metric_limits: [ObservabilityPipelineTagCardinalityLimitProcessorPerMetricLimit], optional
 
+        :param tracking_mode: Controls whether the processor uses exact or probabilistic tag tracking.
+        :type tracking_mode: ObservabilityPipelineTagCardinalityLimitProcessorTrackingMode
+
         :param type: The processor type. The value must be ``tag_cardinality_limit``.
         :type type: ObservabilityPipelineTagCardinalityLimitProcessorType
 
@@ -123,5 +135,6 @@ class ObservabilityPipelineTagCardinalityLimitProcessor(ModelNormal):
         self_.id = id
         self_.include = include
         self_.limit_exceeded_action = limit_exceeded_action
+        self_.tracking_mode = tracking_mode
         self_.type = type
         self_.value_limit = value_limit

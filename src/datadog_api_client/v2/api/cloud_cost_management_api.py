@@ -1085,6 +1085,29 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_custom_forecast_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomForecastResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/budget/{budget_id}/custom-forecast",
+                "operation_id": "get_custom_forecast",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "budget_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "budget_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_tag_pipelines_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (RulesetResp,),
@@ -2790,6 +2813,23 @@ class CloudCostManagementApi:
         kwargs["file_id"] = file_id
 
         return self._get_custom_costs_file_endpoint.call_with_http_info(**kwargs)
+
+    def get_custom_forecast(
+        self,
+        budget_id: str,
+    ) -> CustomForecastResponse:
+        """Get a budget's custom forecast.
+
+        Get the custom forecast for a budget.
+
+        :param budget_id: Budget id.
+        :type budget_id: str
+        :rtype: CustomForecastResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["budget_id"] = budget_id
+
+        return self._get_custom_forecast_endpoint.call_with_http_info(**kwargs)
 
     def get_tag_pipelines_ruleset(
         self,
