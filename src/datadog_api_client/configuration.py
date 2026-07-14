@@ -490,6 +490,7 @@ class Configuration:
                 "v2.get_commitments_utilization_timeseries": False,
                 "v2.get_cost_anomaly": False,
                 "v2.get_cost_tag_metadata_currency": False,
+                "v2.get_custom_forecast": False,
                 "v2.list_cost_anomalies": False,
                 "v2.list_cost_tag_key_sources": False,
                 "v2.list_cost_tag_metadata": False,

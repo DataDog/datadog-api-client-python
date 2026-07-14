@@ -1785,6 +1785,12 @@
       "type": "idempotent"
     }
   },
+  "GetCustomForecast": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListBudgets": {
     "tag": "Cloud Cost Management",
     "undo": {
