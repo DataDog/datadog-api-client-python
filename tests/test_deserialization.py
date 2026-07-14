@@ -8,6 +8,7 @@ from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWa
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+from datadog_api_client.v2.model.any_value import AnyValue
 from datadog_api_client.v2.model.downtime_response import DowntimeResponse
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
@@ -416,3 +417,11 @@ def test_one_of_empty_list_branch_accepted():
         [], (FormulaAndFunctionEventQueryGroupByConfig,), ["received_data"], True, True, config
     )
     assert group_by == []
+
+
+def test_one_of_empty_list_not_ambiguous_with_object_branch():
+    """``AnyValue`` must match an empty array."""
+    config = Configuration()
+    value = validate_and_convert_types([], (AnyValue,), ["received_data"], True, True, config)
+    assert value == []
+    assert not isinstance(value, UnparsedObject)
