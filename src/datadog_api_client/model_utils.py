@@ -1675,9 +1675,10 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
         single_value_input = allows_single_value_input(oneof_class) if not isinstance(oneof_class, list) else True
 
         with suppress(Exception):
-            if isinstance(model_class, list) and not isinstance(oneof_class, list):
-                continue
-            elif not single_value_input:
+            if not single_value_input:
+                if isinstance(model_arg, list):
+                    # A list input cannot match a non-single-value (object) schema.
+                    continue
                 if constant_kwargs.get("_spec_property_naming"):
                     oneof_instance = oneof_class(
                         **change_keys_js_to_python(model_kwargs, oneof_class), **constant_kwargs
