@@ -19317,6 +19317,125 @@ datadog\_api\_client.v2.model.incident\_user\_defined\_field\_valid\_value modul
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_data\_attributes\_request module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_data\_attributes\_response module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_data_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_data\_request module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_data\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_incident\_type\_relationship module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_incident_type_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_incident\_type\_relationship\_data module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_incident_type_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_included\_item module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_included_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_patch\_data\_attributes\_request module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_patch_data_attributes_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_patch\_data\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_patch_data_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_patch\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_policy module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_policy
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_relationships\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_relationships_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_relationships\_response module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_relationships_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_role\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_role_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.incident\_user\_defined\_roles\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.incident_user_defined_roles_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.incidents\_response module
 --------------------------------------------------------
 
