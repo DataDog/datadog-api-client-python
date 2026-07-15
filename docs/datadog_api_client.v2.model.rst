@@ -36537,6 +36537,139 @@ datadog\_api\_client.v2.model.schedule\_member\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.schedule\_on\_call\_responder\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responder_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responder\_data\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responder_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responder\_data\_relationships module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responder_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responder\_data\_relationships\_shifts module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responder_data_relationships_shifts
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responder\_data\_relationships\_shifts\_data\_items module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responder_data_relationships_shifts_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responder\_data\_relationships\_shifts\_data\_items\_type module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responder_data_relationships_shifts_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responder\_data\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responder_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_relationships module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_relationships\_responders module
+----------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_responders
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_relationships\_responders\_data\_items module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_responders_data_items
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_relationships\_responders\_data\_items\_type module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_responders_data_items_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_relationships\_schedule module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_schedule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_relationships\_schedule\_data module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_schedule_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_relationships\_schedule\_data\_type module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_schedule_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_data\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.schedule\_on\_call\_responders\_included module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_on_call_responders_included
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.schedule\_request\_data\_attributes\_layers\_items\_members\_items module
 -------------------------------------------------------------------------------------------------------
 

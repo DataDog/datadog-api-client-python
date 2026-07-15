@@ -7262,6 +7262,49 @@ from datadog_api_client.v2.model.schedule_member_relationships_user_data_type im
     ScheduleMemberRelationshipsUserDataType,
 )
 from datadog_api_client.v2.model.schedule_member_type import ScheduleMemberType
+from datadog_api_client.v2.model.schedule_on_call_responder_data import ScheduleOnCallResponderData
+from datadog_api_client.v2.model.schedule_on_call_responder_data_attributes import ScheduleOnCallResponderDataAttributes
+from datadog_api_client.v2.model.schedule_on_call_responder_data_relationships import (
+    ScheduleOnCallResponderDataRelationships,
+)
+from datadog_api_client.v2.model.schedule_on_call_responder_data_relationships_shifts import (
+    ScheduleOnCallResponderDataRelationshipsShifts,
+)
+from datadog_api_client.v2.model.schedule_on_call_responder_data_relationships_shifts_data_items import (
+    ScheduleOnCallResponderDataRelationshipsShiftsDataItems,
+)
+from datadog_api_client.v2.model.schedule_on_call_responder_data_relationships_shifts_data_items_type import (
+    ScheduleOnCallResponderDataRelationshipsShiftsDataItemsType,
+)
+from datadog_api_client.v2.model.schedule_on_call_responder_data_type import ScheduleOnCallResponderDataType
+from datadog_api_client.v2.model.schedule_on_call_responders import ScheduleOnCallResponders
+from datadog_api_client.v2.model.schedule_on_call_responders_data import ScheduleOnCallRespondersData
+from datadog_api_client.v2.model.schedule_on_call_responders_data_attributes import (
+    ScheduleOnCallRespondersDataAttributes,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_relationships import (
+    ScheduleOnCallRespondersDataRelationships,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_responders import (
+    ScheduleOnCallRespondersDataRelationshipsResponders,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_responders_data_items import (
+    ScheduleOnCallRespondersDataRelationshipsRespondersDataItems,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_responders_data_items_type import (
+    ScheduleOnCallRespondersDataRelationshipsRespondersDataItemsType,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_schedule import (
+    ScheduleOnCallRespondersDataRelationshipsSchedule,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_schedule_data import (
+    ScheduleOnCallRespondersDataRelationshipsScheduleData,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_relationships_schedule_data_type import (
+    ScheduleOnCallRespondersDataRelationshipsScheduleDataType,
+)
+from datadog_api_client.v2.model.schedule_on_call_responders_data_type import ScheduleOnCallRespondersDataType
+from datadog_api_client.v2.model.schedule_on_call_responders_included import ScheduleOnCallRespondersIncluded
 from datadog_api_client.v2.model.schedule_request_data_attributes_layers_items_members_items import (
     ScheduleRequestDataAttributesLayersItemsMembersItems,
 )
@@ -14946,6 +14989,25 @@ __all__ = [
     "ScheduleMemberRelationshipsUserData",
     "ScheduleMemberRelationshipsUserDataType",
     "ScheduleMemberType",
+    "ScheduleOnCallResponderData",
+    "ScheduleOnCallResponderDataAttributes",
+    "ScheduleOnCallResponderDataRelationships",
+    "ScheduleOnCallResponderDataRelationshipsShifts",
+    "ScheduleOnCallResponderDataRelationshipsShiftsDataItems",
+    "ScheduleOnCallResponderDataRelationshipsShiftsDataItemsType",
+    "ScheduleOnCallResponderDataType",
+    "ScheduleOnCallResponders",
+    "ScheduleOnCallRespondersData",
+    "ScheduleOnCallRespondersDataAttributes",
+    "ScheduleOnCallRespondersDataRelationships",
+    "ScheduleOnCallRespondersDataRelationshipsResponders",
+    "ScheduleOnCallRespondersDataRelationshipsRespondersDataItems",
+    "ScheduleOnCallRespondersDataRelationshipsRespondersDataItemsType",
+    "ScheduleOnCallRespondersDataRelationshipsSchedule",
+    "ScheduleOnCallRespondersDataRelationshipsScheduleData",
+    "ScheduleOnCallRespondersDataRelationshipsScheduleDataType",
+    "ScheduleOnCallRespondersDataType",
+    "ScheduleOnCallRespondersIncluded",
     "ScheduleRequestDataAttributesLayersItemsMembersItems",
     "ScheduleRequestDataAttributesLayersItemsMembersItemsUser",
     "ScheduleTarget",
