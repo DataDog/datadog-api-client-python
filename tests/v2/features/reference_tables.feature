@@ -83,12 +83,28 @@ Feature: Reference Tables
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Delete rows returns "Conflict" response
+    Given new "DeleteRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/redapl-experiences
   Scenario: Delete rows returns "Not Found" response
     Given new "DeleteRows" request
     And request contains "id" parameter from "REPLACE.ME"
     And body with value {"data": [{"id": "primary_key_value", "type": "row"}]}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Delete rows returns "Precondition Failed" response
+    Given new "DeleteRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 412 Precondition Failed
 
   @generated @skip @team:DataDog/redapl-experiences
   Scenario: Delete rows returns "Rows deleted successfully" response
@@ -209,12 +225,28 @@ Feature: Reference Tables
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Upsert rows returns "Conflict" response
+    Given new "UpsertRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"values": {}}, "id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/redapl-experiences
   Scenario: Upsert rows returns "Not Found" response
     Given new "UpsertRows" request
     And request contains "id" parameter from "REPLACE.ME"
     And body with value {"data": [{"attributes": {"values": {}}, "id": "primary_key_value", "type": "row"}]}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/redapl-experiences
+  Scenario: Upsert rows returns "Precondition Failed" response
+    Given new "UpsertRows" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"values": {}}, "id": "primary_key_value", "type": "row"}]}
+    When the request is sent
+    Then the response status is 412 Precondition Failed
 
   @generated @skip @team:DataDog/redapl-experiences
   Scenario: Upsert rows returns "Rows created or updated successfully" response
