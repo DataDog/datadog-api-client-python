@@ -39,6 +39,62 @@ datadog\_api\_client.v2.model.account\_filtering\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.account\_filters module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.account\_filters\_attributes module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.account\_filters\_patch\_data module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters_patch_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.account\_filters\_patch\_request module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters_patch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.account\_filters\_patch\_request\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters_patch_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.account\_filters\_patch\_request\_type module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters_patch_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.account\_filters\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.account\_filters\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.account_filters_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.action\_connection\_attributes module
 -------------------------------------------------------------------
 

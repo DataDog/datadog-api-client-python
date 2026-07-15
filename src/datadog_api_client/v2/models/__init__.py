@@ -168,6 +168,14 @@ from datadog_api_client.v2.model.access_token_list_item_relationships import Acc
 from datadog_api_client.v2.model.access_token_owner_type import AccessTokenOwnerType
 from datadog_api_client.v2.model.access_tokens_type import AccessTokensType
 from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
+from datadog_api_client.v2.model.account_filters import AccountFilters
+from datadog_api_client.v2.model.account_filters_attributes import AccountFiltersAttributes
+from datadog_api_client.v2.model.account_filters_patch_data import AccountFiltersPatchData
+from datadog_api_client.v2.model.account_filters_patch_request import AccountFiltersPatchRequest
+from datadog_api_client.v2.model.account_filters_patch_request_attributes import AccountFiltersPatchRequestAttributes
+from datadog_api_client.v2.model.account_filters_patch_request_type import AccountFiltersPatchRequestType
+from datadog_api_client.v2.model.account_filters_response import AccountFiltersResponse
+from datadog_api_client.v2.model.account_filters_type import AccountFiltersType
 from datadog_api_client.v2.model.action_connection_attributes import ActionConnectionAttributes
 from datadog_api_client.v2.model.action_connection_attributes_update import ActionConnectionAttributesUpdate
 from datadog_api_client.v2.model.action_connection_data import ActionConnectionData
@@ -9924,6 +9932,14 @@ __all__ = [
     "AccessTokenOwnerType",
     "AccessTokensType",
     "AccountFilteringConfig",
+    "AccountFilters",
+    "AccountFiltersAttributes",
+    "AccountFiltersPatchData",
+    "AccountFiltersPatchRequest",
+    "AccountFiltersPatchRequestAttributes",
+    "AccountFiltersPatchRequestType",
+    "AccountFiltersResponse",
+    "AccountFiltersType",
     "ActionConnectionAttributes",
     "ActionConnectionAttributesUpdate",
     "ActionConnectionData",

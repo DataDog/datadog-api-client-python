@@ -409,6 +409,27 @@ Feature: Cloud Cost Management
     And the response "data.attributes.name" is equal to "EVP Cost Tags"
 
   @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get account filters returns "Bad Request" response
+    Given new "GetCostAccountFilters" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get account filters returns "Not Found" response
+    Given new "GetCostAccountFilters" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Get account filters returns "OK" response
+    Given new "GetCostAccountFilters" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Get budget returns "Bad Request" response
     Given new "GetBudget" request
     And request contains "budget_id" parameter from "REPLACE.ME"
@@ -961,6 +982,30 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Update account filters returns "Bad Request" response
+    Given new "UpdateCostAccountFilters" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_filters": {"excluded_accounts": ["123456789123", "123456789143"], "include_new_accounts": true, "included_accounts": ["123456789123", "123456789143"]}}, "type": "account_filters_patch_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Update account filters returns "Not Found" response
+    Given new "UpdateCostAccountFilters" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_filters": {"excluded_accounts": ["123456789123", "123456789143"], "include_new_accounts": true, "included_accounts": ["123456789123", "123456789143"]}}, "type": "account_filters_patch_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-cost-management
+  Scenario: Update account filters returns "OK" response
+    Given new "UpdateCostAccountFilters" request
+    And request contains "cloud_account_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"account_filters": {"excluded_accounts": ["123456789123", "123456789143"], "include_new_accounts": true, "included_accounts": ["123456789123", "123456789143"]}}, "type": "account_filters_patch_request"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Update custom allocation rule returns "OK" response
