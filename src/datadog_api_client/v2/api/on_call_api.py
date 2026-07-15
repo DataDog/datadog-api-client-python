@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -18,6 +19,7 @@ from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
 from datadog_api_client.v2.model.shift import Shift
+from datadog_api_client.v2.model.schedule_on_call_responders import ScheduleOnCallResponders
 from datadog_api_client.v2.model.team_on_call_responders import TeamOnCallResponders
 from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
 from datadog_api_client.v2.model.team_routing_rules_request import TeamRoutingRulesRequest
@@ -322,6 +324,44 @@ class OnCallApi:
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_schedule_on_call_responders_endpoint = _Endpoint(
+            settings={
+                "response_type": (ScheduleOnCallResponders,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/responders",
+                "operation_id": "get_schedule_on_call_responders",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "filter_position": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[position]",
+                    "location": "query",
+                },
+                "filter_at_ts": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[at_ts]",
                     "location": "query",
                 },
             },
@@ -874,6 +914,42 @@ class OnCallApi:
 
         return self._get_on_call_team_routing_rules_endpoint.call_with_http_info(**kwargs)
 
+    def get_schedule_on_call_responders(
+        self,
+        schedule_id: str,
+        *,
+        include: Union[str, UnsetType] = unset,
+        filter_position: Union[str, UnsetType] = unset,
+        filter_at_ts: Union[str, UnsetType] = unset,
+    ) -> ScheduleOnCallResponders:
+        """Get on-call responders for a schedule.
+
+        Retrieves the on-call responders for the specified schedule, grouped by position (previous, current, next), at a given time. Supports schedules with multiple concurrent on-call responders at a position, by returning a list of shifts per position.
+
+        :param schedule_id: The ID of the schedule.
+        :type schedule_id: str
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``schedule`` , ``responders`` , ``responders.shifts`` , ``responders.shifts.user``.
+        :type include: str, optional
+        :param filter_position: Comma-separated list of positions to retrieve. Allowed values: ``previous`` , ``current`` , ``next``. Defaults to ``current`` if omitted.
+        :type filter_position: str, optional
+        :param filter_at_ts: Retrieves the on-call responders at the given timestamp in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). When using timezone offsets with ``+`` or ``-`` , ensure proper URL encoding ( ``+`` should be encoded as ``%2B`` ). Defaults to the current time if omitted.
+        :type filter_at_ts: str, optional
+        :rtype: ScheduleOnCallResponders
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["schedule_id"] = schedule_id
+
+        if filter_position is not unset:
+            kwargs["filter_position"] = filter_position
+
+        if filter_at_ts is not unset:
+            kwargs["filter_at_ts"] = filter_at_ts
+
+        return self._get_schedule_on_call_responders_endpoint.call_with_http_info(**kwargs)
+
     def get_schedule_on_call_user(
         self,
         schedule_id: str,
@@ -881,9 +957,9 @@ class OnCallApi:
         include: Union[str, UnsetType] = unset,
         filter_at_ts: Union[str, UnsetType] = unset,
     ) -> Shift:
-        """Get scheduled on-call user.
+        """Get scheduled on-call user. **Deprecated**.
 
-        Retrieves the user who is on-call for the specified schedule at a given time.
+        Retrieves the user who is on-call for the specified schedule at a given time. This endpoint does not support schedules with multiple concurrent on-call responders at a position. Deprecated. Use ``Get on-call responders for a schedule`` instead.
 
         :param schedule_id: The ID of the schedule.
         :type schedule_id: str
@@ -902,6 +978,7 @@ class OnCallApi:
         if filter_at_ts is not unset:
             kwargs["filter_at_ts"] = filter_at_ts
 
+        warnings.warn("get_schedule_on_call_user is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_schedule_on_call_user_endpoint.call_with_http_info(**kwargs)
 
     def get_team_on_call_users(

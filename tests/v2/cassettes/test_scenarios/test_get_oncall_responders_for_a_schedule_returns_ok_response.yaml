@@ -1,0 +1,87 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"email":"Test-Get_on_call_responders_for_a_schedule_returns_OK_response-1783675897@datadoghq.com","title":"user
+      title"},"type":"users"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/users
+  response:
+    body:
+      string: '{"data":{"type":"users","id":"7f1b523e-fe13-4917-8519-6dd314ef17c0","attributes":{"uuid":"7f1b523e-fe13-4917-8519-6dd314ef17c0","name":null,"handle":"test-get_on_call_responders_for_a_schedule_returns_ok_response-1783675897@datadoghq.com","created_at":"2026-07-10T09:31:38.042683+00:00","modified_at":"2026-07-10T09:31:38.042683+00:00","email":"test-get_on_call_responders_for_a_schedule_returns_ok_response-1783675897@datadoghq.com","icon":"https://secure.gravatar.com/avatar/22b76633087bc3ee4427cc67e8466d5e?s=48&d=retro","title":"user
+        title","verified":false,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Pending","last_login_time":null},"relationships":{"roles":{"data":[]},"org":{"data":{"type":"orgs","id":"4dee724d-00cc-11ea-a77b-570c9d03c6c5"}}}}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: '{"data":{"attributes":{"layers":[{"effective_date":"2026-06-30T09:31:37.503Z","end_date":"2026-07-20T09:31:37.503Z","interval":{"days":1},"members":[{"user":{"id":"7f1b523e-fe13-4917-8519-6dd314ef17c0"}}],"name":"Layer
+      1","restrictions":[{"end_day":"friday","end_time":"17:00:00","start_day":"monday","start_time":"09:00:00"}],"rotation_start":"2026-07-05T09:31:37.503Z"}],"name":"Test-Get_on_call_responders_for_a_schedule_returns_OK_response-1783675897","time_zone":"America/New_York"},"relationships":{"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}},"type":"schedules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules
+  response:
+    body:
+      string: '{"data":{"id":"23545b48-fa23-4ea9-a331-3a38f81195cd","type":"schedules","attributes":{"name":"Test-Get_on_call_responders_for_a_schedule_returns_OK_response-1783675897","tags":[],"time_zone":"America/New_York"},"relationships":{"layers":{"data":[{"id":"03edf431-b1a6-418a-965e-9df50275dc7e","type":"layers"}]},"teams":{"data":[{"id":"65aea9d0-941c-4607-bf8a-14fc0dac2820","type":"teams"}]}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/23545b48-fa23-4ea9-a331-3a38f81195cd/responders
+  response:
+    body:
+      string: '{"data":{"id":"23545b48-fa23-4ea9-a331-3a38f81195cd-1783675898","type":"schedule_oncall_responders","attributes":{"scheduled_at":"2026-07-10T09:31:38.803561233Z"},"relationships":{"responders":{"data":[{"id":"23545b48-fa23-4ea9-a331-3a38f81195cd-1783675898-current","type":"schedule_oncall_responder"}]},"schedule":{"data":{"id":"23545b48-fa23-4ea9-a331-3a38f81195cd","type":"schedules"}}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/on-call/schedules/23545b48-fa23-4ea9-a331-3a38f81195cd
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/users/7f1b523e-fe13-4917-8519-6dd314ef17c0
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
