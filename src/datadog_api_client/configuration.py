@@ -700,6 +700,7 @@ class Configuration:
                 "v2.list_org_group_policies": False,
                 "v2.list_org_group_policy_configs": False,
                 "v2.list_org_group_policy_overrides": False,
+                "v2.list_org_group_policy_suggestions": False,
                 "v2.list_org_groups": False,
                 "v2.update_org_group": False,
                 "v2.update_org_group_membership": False,

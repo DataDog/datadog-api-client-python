@@ -28,6 +28,7 @@ from datadog_api_client.v2.model.org_group_policy_override_sort_option import Or
 from datadog_api_client.v2.model.org_group_policy_override_response import OrgGroupPolicyOverrideResponse
 from datadog_api_client.v2.model.org_group_policy_override_create_request import OrgGroupPolicyOverrideCreateRequest
 from datadog_api_client.v2.model.org_group_policy_override_update_request import OrgGroupPolicyOverrideUpdateRequest
+from datadog_api_client.v2.model.org_group_policy_suggestion_list_response import OrgGroupPolicySuggestionListResponse
 from datadog_api_client.v2.model.org_group_list_response import OrgGroupListResponse
 from datadog_api_client.v2.model.org_group_sort_option import OrgGroupSortOption
 from datadog_api_client.v2.model.org_group_response import OrgGroupResponse
@@ -442,6 +443,29 @@ class OrgGroupsApi:
                 "sort": {
                     "openapi_types": (OrgGroupPolicyOverrideSortOption,),
                     "attribute": "sort",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_org_group_policy_suggestions_endpoint = _Endpoint(
+            settings={
+                "response_type": (OrgGroupPolicySuggestionListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/org_group_policy_suggestions",
+                "operation_id": "list_org_group_policy_suggestions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_org_group_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "filter[org_group_id]",
                     "location": "query",
                 },
             },
@@ -915,6 +939,23 @@ class OrgGroupsApi:
             kwargs["sort"] = sort
 
         return self._list_org_group_policy_overrides_endpoint.call_with_http_info(**kwargs)
+
+    def list_org_group_policy_suggestions(
+        self,
+        filter_org_group_id: UUID,
+    ) -> OrgGroupPolicySuggestionListResponse:
+        """List org group policy suggestions.
+
+        List suggested organization group policies. Requires a filter on org group ID.
+
+        :param filter_org_group_id: Filter policies by org group ID.
+        :type filter_org_group_id: UUID
+        :rtype: OrgGroupPolicySuggestionListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_org_group_id"] = filter_org_group_id
+
+        return self._list_org_group_policy_suggestions_endpoint.call_with_http_info(**kwargs)
 
     def list_org_groups(
         self,

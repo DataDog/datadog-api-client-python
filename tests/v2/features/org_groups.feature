@@ -326,6 +326,22 @@ Feature: Org Groups
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/org-management
+  Scenario: List org group policy suggestions returns "Bad Request" response
+    Given operation "ListOrgGroupPolicySuggestions" enabled
+    And new "ListOrgGroupPolicySuggestions" request
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/org-management
+  Scenario: List org group policy suggestions returns "OK" response
+    Given operation "ListOrgGroupPolicySuggestions" enabled
+    And new "ListOrgGroupPolicySuggestions" request
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/org-management
   Scenario: List org groups returns "Bad Request" response
     Given operation "ListOrgGroups" enabled
     And new "ListOrgGroups" request

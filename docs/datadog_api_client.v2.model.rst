@@ -30790,6 +30790,48 @@ datadog\_api\_client.v2.model.org\_group\_policy\_sort\_option module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.org\_group\_policy\_suggestion\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_suggestion_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_suggestion\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_suggestion_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_suggestion\_list\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_suggestion_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_suggestion\_relationships module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_suggestion_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_suggestion\_status module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_suggestion_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.org\_group\_policy\_suggestion\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.org_group_policy_suggestion_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.org\_group\_policy\_type module
 -------------------------------------------------------------
 
