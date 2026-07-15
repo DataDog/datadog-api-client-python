@@ -158,6 +158,15 @@ Feature: Status Pages
     Then the response status is 200 OK
 
   @team:DataDog/incident-app
+  Scenario: List degradations with source ID filter returns "OK" response
+    Given new "ListDegradations" request
+    And there is a valid "status_page" in the system
+    And there is a valid "degradation" in the system
+    And request contains "filter[source_id]" parameter from "degradation.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/incident-app
   Scenario: List maintenances returns "OK" response
     Given there is a valid "status_page" in the system
     And there is a valid "maintenance" in the system
