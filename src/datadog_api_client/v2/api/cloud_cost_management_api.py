@@ -11,6 +11,8 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.account_filters_response import AccountFiltersResponse
+from datadog_api_client.v2.model.account_filters_patch_request import AccountFiltersPatchRequest
 from datadog_api_client.v2.model.cost_anomalies_response import CostAnomaliesResponse
 from datadog_api_client.v2.model.cost_anomaly_response import CostAnomalyResponse
 from datadog_api_client.v2.model.arbitrary_rule_response_array import ArbitraryRuleResponseArray
@@ -847,6 +849,29 @@ class CloudCostManagementApi:
                     "openapi_types": (CommitmentsCommitmentType,),
                     "attribute": "commitmentType",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_cost_account_filters_endpoint = _Endpoint(
+            settings={
+                "response_type": (AccountFiltersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/account_filters/{cloud_account_id}",
+                "operation_id": "get_cost_account_filters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "cloud_account_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "cloud_account_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -1711,6 +1736,32 @@ class CloudCostManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (RecommendationsFilterRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_cost_account_filters_endpoint = _Endpoint(
+            settings={
+                "response_type": (AccountFiltersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/account_filters/{cloud_account_id}",
+                "operation_id": "update_cost_account_filters",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "cloud_account_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "cloud_account_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AccountFiltersPatchRequest,),
                     "location": "body",
                 },
             },
@@ -2634,6 +2685,23 @@ class CloudCostManagementApi:
 
         return self._get_commitments_utilization_timeseries_endpoint.call_with_http_info(**kwargs)
 
+    def get_cost_account_filters(
+        self,
+        cloud_account_id: int,
+    ) -> AccountFiltersResponse:
+        """Get account filters.
+
+        Get the account filters for a cloud account (AWS CUR 1.0/2.0, OCI, and other clouds).
+
+        :param cloud_account_id: Cloud Account id.
+        :type cloud_account_id: int
+        :rtype: AccountFiltersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["cloud_account_id"] = cloud_account_id
+
+        return self._get_cost_account_filters_endpoint.call_with_http_info(**kwargs)
+
     def get_cost_anomaly(
         self,
         anomaly_id: str,
@@ -3378,6 +3446,27 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._search_cost_recommendations_endpoint.call_with_http_info(**kwargs)
+
+    def update_cost_account_filters(
+        self,
+        cloud_account_id: int,
+        body: AccountFiltersPatchRequest,
+    ) -> AccountFiltersResponse:
+        """Update account filters.
+
+        Update the account filters for a cloud account (AWS CUR 1.0/2.0, OCI, and other clouds).
+
+        :param cloud_account_id: Cloud Account id.
+        :type cloud_account_id: int
+        :type body: AccountFiltersPatchRequest
+        :rtype: AccountFiltersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["cloud_account_id"] = cloud_account_id
+
+        kwargs["body"] = body
+
+        return self._update_cost_account_filters_endpoint.call_with_http_info(**kwargs)
 
     def update_cost_awscur_config(
         self,

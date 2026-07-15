@@ -1622,6 +1622,18 @@
       "type": "safe"
     }
   },
+  "GetCostAccountFilters": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCostAccountFilters": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCostAnomalies": {
     "tag": "Cloud Cost Management",
     "undo": {
