@@ -5959,6 +5959,12 @@
       "type": "idempotent"
     }
   },
+  "ListOrgGroupPolicySuggestions": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOrgGroups": {
     "tag": "Org Groups",
     "undo": {

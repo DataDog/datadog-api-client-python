@@ -6217,6 +6217,12 @@ from datadog_api_client.v2.model.org_group_policy_relationship_to_one_data impor
 from datadog_api_client.v2.model.org_group_policy_relationships import OrgGroupPolicyRelationships
 from datadog_api_client.v2.model.org_group_policy_response import OrgGroupPolicyResponse
 from datadog_api_client.v2.model.org_group_policy_sort_option import OrgGroupPolicySortOption
+from datadog_api_client.v2.model.org_group_policy_suggestion_attributes import OrgGroupPolicySuggestionAttributes
+from datadog_api_client.v2.model.org_group_policy_suggestion_data import OrgGroupPolicySuggestionData
+from datadog_api_client.v2.model.org_group_policy_suggestion_list_response import OrgGroupPolicySuggestionListResponse
+from datadog_api_client.v2.model.org_group_policy_suggestion_relationships import OrgGroupPolicySuggestionRelationships
+from datadog_api_client.v2.model.org_group_policy_suggestion_status import OrgGroupPolicySuggestionStatus
+from datadog_api_client.v2.model.org_group_policy_suggestion_type import OrgGroupPolicySuggestionType
 from datadog_api_client.v2.model.org_group_policy_type import OrgGroupPolicyType
 from datadog_api_client.v2.model.org_group_policy_update_attributes import OrgGroupPolicyUpdateAttributes
 from datadog_api_client.v2.model.org_group_policy_update_data import OrgGroupPolicyUpdateData
@@ -14185,6 +14191,12 @@ __all__ = [
     "OrgGroupPolicyRelationships",
     "OrgGroupPolicyResponse",
     "OrgGroupPolicySortOption",
+    "OrgGroupPolicySuggestionAttributes",
+    "OrgGroupPolicySuggestionData",
+    "OrgGroupPolicySuggestionListResponse",
+    "OrgGroupPolicySuggestionRelationships",
+    "OrgGroupPolicySuggestionStatus",
+    "OrgGroupPolicySuggestionType",
     "OrgGroupPolicyType",
     "OrgGroupPolicyUpdateAttributes",
     "OrgGroupPolicyUpdateData",
