@@ -84,6 +84,7 @@ class SyntheticsTestRequest(ModelNormal):
             "headers": (SyntheticsTestHeaders,),
             "host": (str,),
             "http_version": (SyntheticsTestOptionsHTTPVersion,),
+            "ignore_certificate_validation": (bool,),
             "is_message_base64_encoded": (bool,),
             "mcp_protocol_version": (SyntheticsMCPProtocolVersion,),
             "message": (str,),
@@ -139,6 +140,7 @@ class SyntheticsTestRequest(ModelNormal):
         "headers": "headers",
         "host": "host",
         "http_version": "httpVersion",
+        "ignore_certificate_validation": "ignore_certificate_validation",
         "is_message_base64_encoded": "isMessageBase64Encoded",
         "mcp_protocol_version": "mcpProtocolVersion",
         "message": "message",
@@ -190,6 +192,7 @@ class SyntheticsTestRequest(ModelNormal):
         headers: Union[SyntheticsTestHeaders, UnsetType] = unset,
         host: Union[str, UnsetType] = unset,
         http_version: Union[SyntheticsTestOptionsHTTPVersion, UnsetType] = unset,
+        ignore_certificate_validation: Union[bool, UnsetType] = unset,
         is_message_base64_encoded: Union[bool, UnsetType] = unset,
         mcp_protocol_version: Union[SyntheticsMCPProtocolVersion, UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
@@ -271,6 +274,9 @@ class SyntheticsTestRequest(ModelNormal):
 
         :param http_version: HTTP version to use for a Synthetic test.
         :type http_version: SyntheticsTestOptionsHTTPVersion, optional
+
+        :param ignore_certificate_validation: For SSL tests, whether the test should ignore certificate validation.
+        :type ignore_certificate_validation: bool, optional
 
         :param is_message_base64_encoded: Whether the message is base64 encoded.
         :type is_message_base64_encoded: bool, optional
@@ -366,6 +372,8 @@ class SyntheticsTestRequest(ModelNormal):
             kwargs["host"] = host
         if http_version is not unset:
             kwargs["http_version"] = http_version
+        if ignore_certificate_validation is not unset:
+            kwargs["ignore_certificate_validation"] = ignore_certificate_validation
         if is_message_base64_encoded is not unset:
             kwargs["is_message_base64_encoded"] = is_message_base64_encoded
         if mcp_protocol_version is not unset:

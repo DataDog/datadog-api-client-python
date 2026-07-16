@@ -190,7 +190,7 @@ class SyntheticsTestOptions(ModelNormal):
         :param ignore_server_certificate_error: Ignore server certificate error for browser tests.
         :type ignore_server_certificate_error: bool, optional
 
-        :param ignore_certificate_validation: For SSL tests, whether or not the test should ignore certificate validation.
+        :param ignore_certificate_validation: For SSL tests, whether the test should ignore certificate validation.
         :type ignore_certificate_validation: bool, optional
 
         :param initial_navigation_timeout: Timeout before declaring the initial step as failed (in seconds) for browser tests.
