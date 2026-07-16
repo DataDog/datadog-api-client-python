@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v1.model.topology_query import TopologyQuery
+    from datadog_api_client.v1.model.topology_query_service_map import TopologyQueryServiceMap
     from datadog_api_client.v1.model.topology_request_type import TopologyRequestType
 
 
-class TopologyRequest(ModelNormal):
+class TopologyRequestServiceMap(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v1.model.topology_query import TopologyQuery
+        from datadog_api_client.v1.model.topology_query_service_map import TopologyQueryServiceMap
         from datadog_api_client.v1.model.topology_request_type import TopologyRequestType
 
         return {
-            "query": (TopologyQuery,),
+            "query": (TopologyQueryServiceMap,),
             "request_type": (TopologyRequestType,),
         }
 
@@ -36,15 +36,15 @@ class TopologyRequest(ModelNormal):
 
     def __init__(
         self_,
-        query: Union[TopologyQuery, UnsetType] = unset,
+        query: Union[TopologyQueryServiceMap, UnsetType] = unset,
         request_type: Union[TopologyRequestType, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Request that will return nodes and edges to be used by topology map.
+        Request that returns nodes and edges from the service map data source.
 
-        :param query: Query to service-based topology data sources like the service map or data streams.
-        :type query: TopologyQuery, optional
+        :param query: Query to the service map topology data source.
+        :type query: TopologyQueryServiceMap, optional
 
         :param request_type: Widget request type.
         :type request_type: TopologyRequestType, optional
