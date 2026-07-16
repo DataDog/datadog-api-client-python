@@ -84,7 +84,7 @@ def allows_single_value_input(cls):
     elif issubclass(cls, ModelComposed):
         if not cls._composed_schemas["oneOf"]:
             return False
-        return any(allows_single_value_input(c) for c in cls._composed_schemas["oneOf"] if not isinstance(c, list))
+        return any(isinstance(c, list) or allows_single_value_input(c) for c in cls._composed_schemas["oneOf"])
     return False
 
 
@@ -181,7 +181,7 @@ class OpenApiModel:
             )
             if isinstance(value, list):
                 for x in value:
-                    if isinstance(x, UnparsedObject):
+                    if isinstance(x, UnparsedObject) or (isinstance(x, OpenApiModel) and x._unparsed):
                         self._unparsed = True
         if name in self.validations:
             check_validations(self.validations[name], name, value, self._configuration)
@@ -1676,6 +1676,9 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
 
         with suppress(Exception):
             if not single_value_input:
+                if model_arg is not None and not isinstance(model_arg, dict):
+                    # A non-mapping input (list or scalar) cannot match an object schema.
+                    continue
                 if constant_kwargs.get("_spec_property_naming"):
                     oneof_instance = oneof_class(
                         **change_keys_js_to_python(model_kwargs, oneof_class), **constant_kwargs
@@ -1687,16 +1690,19 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
             else:
                 if isinstance(oneof_class, list):
                     oneof_class = oneof_class[0]
-                    list_oneof_instance = []
                     if model_arg is None and not model_kwargs:
                         # Empty data
-                        oneof_instances.append(list_oneof_instance)
+                        oneof_instances.append([])
+                        continue
+                    if not isinstance(model_arg, list):
+                        # A non-array input cannot match a list schema.
                         continue
 
                     # Check if inner type is primitive - follows same pattern as complex objects:
                     # https://github.com/DataDog/datadog-api-client-python/blob/008536d34760ce096e118edc54df613d82194529/.generator/src/generator/templates/model_utils.j2#L1590-L1599
                     if oneof_class in PRIMITIVE_TYPES:
                         # Handle list of primitives (e.g., [str], [float])
+                        list_oneof_instance = []
                         for arg in model_arg:
                             oneof_instance = validate_and_convert_types(
                                 arg,
@@ -1707,28 +1713,28 @@ def get_oneof_instance(cls, model_kwargs, constant_kwargs, model_arg=None):
                                 configuration=constant_kwargs.get("_configuration"),
                             )
                             list_oneof_instance.append(oneof_instance)
-                        if list_oneof_instance:
-                            oneof_instances.append(list_oneof_instance)
+                        oneof_instances.append(list_oneof_instance)
                     elif inspect.isclass(oneof_class) and issubclass(oneof_class, ModelSimple):
                         # Handle list of ModelSimple
-                        for arg in model_arg:
-                            oneof_instance = oneof_class(arg, **constant_kwargs)
-                            if not oneof_instance._unparsed:
-                                list_oneof_instance.append(oneof_instance)
-                        if list_oneof_instance:
+                        list_oneof_instance = [oneof_class(arg, **constant_kwargs) for arg in model_arg]
+                        if not any(item._unparsed for item in list_oneof_instance):
                             oneof_instances.append(list_oneof_instance)
                     else:
-                        # Handle list of complex objects (ModelNormal, ModelComposed)
+                        # Handle list of complex objects (ModelNormal, ModelComposed).
+                        # Mapping items are unpacked as keyword arguments; scalar items
+                        # are passed positionally so a composed item schema that accepts
+                        # primitives (e.g. AnyValueItem) can resolve them.
+                        spec_property_naming = constant_kwargs.get("_spec_property_naming")
+                        list_oneof_instance = []
                         for arg in model_arg:
-                            if constant_kwargs.get("_spec_property_naming"):
-                                oneof_instance = oneof_class(
-                                    **change_keys_js_to_python(arg, oneof_class), **constant_kwargs
-                                )
+                            if not isinstance(arg, dict):
+                                item = oneof_class(arg, **constant_kwargs)
+                            elif spec_property_naming:
+                                item = oneof_class(**change_keys_js_to_python(arg, oneof_class), **constant_kwargs)
                             else:
-                                oneof_instance = oneof_class(**arg, **constant_kwargs)
-                            if not oneof_instance._unparsed:
-                                list_oneof_instance.append(oneof_instance)
-                        if list_oneof_instance:
+                                item = oneof_class(**arg, **constant_kwargs)
+                            list_oneof_instance.append(item)
+                        if not any(getattr(item, "_unparsed", False) for item in list_oneof_instance):
                             oneof_instances.append(list_oneof_instance)
                 elif issubclass(oneof_class, ModelSimple):
                     if model_arg is not None:

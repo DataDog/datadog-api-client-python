@@ -8,11 +8,21 @@ from datadog_api_client.v1.model.synthetics_api_wait_step import SyntheticsAPIWa
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
 from datadog_api_client.v1.model.synthetics_browser_test import SyntheticsBrowserTest
 from datadog_api_client.v1.model.synthetics_assertion import SyntheticsAssertion
+from datadog_api_client.v2.model.any_value import AnyValue
 from datadog_api_client.v2.model.downtime_response import DowntimeResponse
 from datadog_api_client.v2.model.logs_aggregate_response import LogsAggregateResponse
 from datadog_api_client.v2.model.logs_archive import LogsArchive
 from datadog_api_client.v2.model.logs_archive_destination import LogsArchiveDestination
 from datadog_api_client.v2.model.user_response import UserResponse
+from datadog_api_client.v1.model.formula_and_function_event_query_definition import (
+    FormulaAndFunctionEventQueryDefinition,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by import (
+    FormulaAndFunctionEventQueryGroupBy,
+)
+from datadog_api_client.v1.model.formula_and_function_event_query_group_by_config import (
+    FormulaAndFunctionEventQueryGroupByConfig,
+)
 
 
 def test_unknown_nested_oneof_in_list():
@@ -339,3 +349,118 @@ def test_schema_declared_float_still_upconverts_int_input():
     an integer JSON value must still upconvert to float."""
     converted = validate_and_convert_types(3, (float,), ["received_data"], True, True, Configuration())
     assert type(converted) is float and converted == 3.0
+
+
+def test_one_of_list_branch_rejected_when_element_unparsed():
+    """A oneOf list branch must reject the whole value when any element fails to
+    parse, rather than silently dropping the bad element and accepting a
+    truncated list. ``FormulaAndFunctionEventQueryGroupByConfig`` is a oneOf
+    whose first branch is ``[FormulaAndFunctionEventQueryGroupBy]``."""
+    value = [
+        {"facet": "@geo.country_iso_code", "sort": {"aggregation": "count", "order": "desc"}},
+        # Unknown aggregation enum -> this element is unparsed.
+        {"facet": "@http.status_code", "sort": {"aggregation": "a non existent aggregation"}},
+    ]
+    config = Configuration()
+    deserialized = validate_and_convert_types(
+        value, (FormulaAndFunctionEventQueryGroupByConfig,), ["received_data"], True, True, config
+    )
+    # The whole value is unparsed rather than a one-element list of the valid item.
+    assert isinstance(deserialized, UnparsedObject)
+
+
+def test_one_of_list_branch_all_valid_yields_objects():
+    """When every element of a oneOf list branch parses, the value deserializes
+    to a list of model objects (not raw dicts)."""
+    config = Configuration()
+
+    valid = [
+        {"facet": "@geo.country_iso_code", "limit": 250, "sort": {"aggregation": "count", "order": "desc"}},
+    ]
+    group_by = validate_and_convert_types(
+        valid, (FormulaAndFunctionEventQueryGroupByConfig,), ["received_data"], True, True, config
+    )
+    assert isinstance(group_by, list)
+    assert isinstance(group_by[0], FormulaAndFunctionEventQueryGroupBy)
+    assert group_by[0].facet == "@geo.country_iso_code"
+    assert str(group_by[0].sort.order) == "desc"
+
+
+def test_one_of_list_branch_unparsed_propagates_to_enclosing_model():
+    """An unparsed element inside a oneOf list branch must propagate ``_unparsed``
+    up to the containing model, rather than being silently dropped so the model
+    looks fully parsed."""
+    config = Configuration()
+    body = {
+        "data_source": "logs",
+        "name": "my_query",
+        "compute": {"aggregation": "count"},
+        "group_by": [
+            {"facet": "@geo.country_iso_code", "sort": {"aggregation": "count", "order": "desc"}},
+            # Unknown aggregation enum -> this element is unparsed.
+            {"facet": "@http.status_code", "sort": {"aggregation": "a non existent aggregation"}},
+        ],
+    }
+    definition = validate_and_convert_types(
+        body, (FormulaAndFunctionEventQueryDefinition,), ["received_data"], True, True, config
+    )
+    assert isinstance(definition, FormulaAndFunctionEventQueryDefinition)
+    assert definition._unparsed
+
+
+def test_one_of_empty_list_branch_accepted():
+    """An empty array for a oneOf list branch is valid: every element parses
+    vacuously, so the value deserializes to an empty list rather than falling
+    through to ``UnparsedObject`` and marking the enclosing model unparsed."""
+    config = Configuration()
+    group_by = validate_and_convert_types(
+        [], (FormulaAndFunctionEventQueryGroupByConfig,), ["received_data"], True, True, config
+    )
+    assert group_by == []
+
+
+def test_one_of_empty_list_not_ambiguous_with_object_branch():
+    """``AnyValue`` must match an empty array."""
+    config = Configuration()
+    value = validate_and_convert_types([], (AnyValue,), ["received_data"], True, True, config)
+    assert value == []
+    assert not isinstance(value, UnparsedObject)
+
+
+def test_one_of_list_branch_of_composed_primitive_items():
+    """``AnyValue`` has an ``[AnyValueItem]`` list branch whose item schema is a
+    ``ModelComposed`` accepting primitives (string/number/object/bool). A JSON
+    array of scalars such as ``["hello", 1]`` must deserialize to that list
+    branch rather than falling through to ``UnparsedObject``."""
+    config = Configuration()
+    value = validate_and_convert_types(["hello", 1], (AnyValue,), ["received_data"], True, True, config)
+    assert not isinstance(value, UnparsedObject)
+    assert isinstance(value, list)
+    assert len(value) == 2
+    assert value[0] == "hello"
+    assert value[1] == 1.0
+
+
+def test_any_value_scalar_branches():
+    """``AnyValue`` must match each scalar oneOf branch without being confused by
+    the ``[AnyValueItem]`` list branch (a string is iterable but is not an array)."""
+    config = Configuration()
+    for raw, expected in (("hello", "hello"), (42, 42.0), (True, True)):
+        value = validate_and_convert_types(raw, (AnyValue,), ["received_data"], True, True, config)
+        assert not isinstance(value, UnparsedObject)
+        assert value == expected
+    obj = validate_and_convert_types({"a": 1}, (AnyValue,), ["received_data"], True, True, config)
+    assert not isinstance(obj, UnparsedObject)
+    assert model_to_dict(obj) == {"a": 1}
+
+
+def test_any_value_mixed_array():
+    """A mixed array of scalars and objects deserializes element-wise."""
+    config = Configuration()
+    value = validate_and_convert_types(["a", {"b": 2}, 3, False], (AnyValue,), ["received_data"], True, True, config)
+    assert not isinstance(value, UnparsedObject)
+    assert isinstance(value, list)
+    assert value[0] == "a"
+    assert model_to_dict(value[1]) == {"b": 2}
+    assert value[2] == 3.0
+    assert value[3] is False
