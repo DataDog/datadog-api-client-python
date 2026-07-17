@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,6 +17,21 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.security_monitoring_integration_config_resource_type import (
         SecurityMonitoringIntegrationConfigResourceType,
+    )
+    from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_config_create_attributes import (
+        SecurityMonitoringGoogleWorkspaceIntegrationConfigCreateAttributes,
+    )
+    from datadog_api_client.v2.model.security_monitoring_okta_integration_config_create_attributes import (
+        SecurityMonitoringOktaIntegrationConfigCreateAttributes,
+    )
+    from datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_create_attributes import (
+        SecurityMonitoringEntraIdIntegrationConfigCreateAttributes,
+    )
+    from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_create_attributes import (
+        SecurityMonitoringCrowdStrikeIntegrationConfigCreateAttributes,
+    )
+    from datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_config_create_attributes import (
+        SecurityMonitoringSentinelOneIntegrationConfigCreateAttributes,
     )
 
 
@@ -42,7 +57,14 @@ class SecurityMonitoringIntegrationConfigCreateData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: SecurityMonitoringIntegrationConfigCreateAttributes,
+        attributes: Union[
+            SecurityMonitoringIntegrationConfigCreateAttributes,
+            SecurityMonitoringGoogleWorkspaceIntegrationConfigCreateAttributes,
+            SecurityMonitoringOktaIntegrationConfigCreateAttributes,
+            SecurityMonitoringEntraIdIntegrationConfigCreateAttributes,
+            SecurityMonitoringCrowdStrikeIntegrationConfigCreateAttributes,
+            SecurityMonitoringSentinelOneIntegrationConfigCreateAttributes,
+        ],
         type: SecurityMonitoringIntegrationConfigResourceType,
         **kwargs,
     ):

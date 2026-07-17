@@ -7543,6 +7543,15 @@ from datadog_api_client.v2.model.security_monitoring_critical_asset_update_reque
 from datadog_api_client.v2.model.security_monitoring_critical_assets_response import (
     SecurityMonitoringCriticalAssetsResponse,
 )
+from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_create_attributes import (
+    SecurityMonitoringCrowdStrikeIntegrationConfigCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_update_attributes import (
+    SecurityMonitoringCrowdStrikeIntegrationConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_credentials_validate_attributes import (
+    SecurityMonitoringCrowdStrikeIntegrationCredentialsValidateAttributes,
+)
 from datadog_api_client.v2.model.security_monitoring_dataset_attributes_request import (
     SecurityMonitoringDatasetAttributesRequest,
 )
@@ -7628,8 +7637,26 @@ from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registra
 from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_response import (
     SecurityMonitoringEntraIdAzureAppRegistrationsResponse,
 )
+from datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_create_attributes import (
+    SecurityMonitoringEntraIdIntegrationConfigCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_update_attributes import (
+    SecurityMonitoringEntraIdIntegrationConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_entra_id_integration_credentials_validate_attributes import (
+    SecurityMonitoringEntraIdIntegrationCredentialsValidateAttributes,
+)
 from datadog_api_client.v2.model.security_monitoring_filter import SecurityMonitoringFilter
 from datadog_api_client.v2.model.security_monitoring_filter_action import SecurityMonitoringFilterAction
+from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_config_create_attributes import (
+    SecurityMonitoringGoogleWorkspaceIntegrationConfigCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_config_update_attributes import (
+    SecurityMonitoringGoogleWorkspaceIntegrationConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_credentials_validate_attributes import (
+    SecurityMonitoringGoogleWorkspaceIntegrationCredentialsValidateAttributes,
+)
 from datadog_api_client.v2.model.security_monitoring_integration_activate_attributes import (
     SecurityMonitoringIntegrationActivateAttributes,
 )
@@ -7654,8 +7681,20 @@ from datadog_api_client.v2.model.security_monitoring_integration_config_create_d
 from datadog_api_client.v2.model.security_monitoring_integration_config_create_request import (
     SecurityMonitoringIntegrationConfigCreateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_integration_config_crowd_strike_secrets import (
+    SecurityMonitoringIntegrationConfigCrowdStrikeSecrets,
+)
 from datadog_api_client.v2.model.security_monitoring_integration_config_data import (
     SecurityMonitoringIntegrationConfigData,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_google_workspace_secrets import (
+    SecurityMonitoringIntegrationConfigGoogleWorkspaceSecrets,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_google_workspace_service_account import (
+    SecurityMonitoringIntegrationConfigGoogleWorkspaceServiceAccount,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_config_okta_secrets import (
+    SecurityMonitoringIntegrationConfigOktaSecrets,
 )
 from datadog_api_client.v2.model.security_monitoring_integration_config_resource_type import (
     SecurityMonitoringIntegrationConfigResourceType,
@@ -7663,8 +7702,8 @@ from datadog_api_client.v2.model.security_monitoring_integration_config_resource
 from datadog_api_client.v2.model.security_monitoring_integration_config_response import (
     SecurityMonitoringIntegrationConfigResponse,
 )
-from datadog_api_client.v2.model.security_monitoring_integration_config_secrets import (
-    SecurityMonitoringIntegrationConfigSecrets,
+from datadog_api_client.v2.model.security_monitoring_integration_config_sentinel_one_secrets import (
+    SecurityMonitoringIntegrationConfigSentinelOneSecrets,
 )
 from datadog_api_client.v2.model.security_monitoring_integration_config_settings import (
     SecurityMonitoringIntegrationConfigSettings,
@@ -7694,7 +7733,29 @@ from datadog_api_client.v2.model.security_monitoring_integration_credentials_val
     SecurityMonitoringIntegrationCredentialsValidateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_integration_type import SecurityMonitoringIntegrationType
+from datadog_api_client.v2.model.security_monitoring_integration_type_crowd_strike import (
+    SecurityMonitoringIntegrationTypeCrowdStrike,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_type_entra_id import (
+    SecurityMonitoringIntegrationTypeEntraId,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_type_google_workspace import (
+    SecurityMonitoringIntegrationTypeGoogleWorkspace,
+)
+from datadog_api_client.v2.model.security_monitoring_integration_type_okta import SecurityMonitoringIntegrationTypeOkta
+from datadog_api_client.v2.model.security_monitoring_integration_type_sentinel_one import (
+    SecurityMonitoringIntegrationTypeSentinelOne,
+)
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
+from datadog_api_client.v2.model.security_monitoring_okta_integration_config_create_attributes import (
+    SecurityMonitoringOktaIntegrationConfigCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_okta_integration_config_update_attributes import (
+    SecurityMonitoringOktaIntegrationConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_okta_integration_credentials_validate_attributes import (
+    SecurityMonitoringOktaIntegrationCredentialsValidateAttributes,
+)
 from datadog_api_client.v2.model.security_monitoring_paginated_suppressions_response import (
     SecurityMonitoringPaginatedSuppressionsResponse,
 )
@@ -7812,6 +7873,15 @@ from datadog_api_client.v2.model.security_monitoring_rule_update_payload import 
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
 from datadog_api_client.v2.model.security_monitoring_sku import SecurityMonitoringSKU
 from datadog_api_client.v2.model.security_monitoring_scheduling_options import SecurityMonitoringSchedulingOptions
+from datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_config_create_attributes import (
+    SecurityMonitoringSentinelOneIntegrationConfigCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_config_update_attributes import (
+    SecurityMonitoringSentinelOneIntegrationConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_credentials_validate_attributes import (
+    SecurityMonitoringSentinelOneIntegrationCredentialsValidateAttributes,
+)
 from datadog_api_client.v2.model.security_monitoring_signal import SecurityMonitoringSignal
 from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import SecurityMonitoringSignalArchiveReason
 from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_attributes import (
@@ -15221,6 +15291,9 @@ __all__ = [
     "SecurityMonitoringCriticalAssetUpdateData",
     "SecurityMonitoringCriticalAssetUpdateRequest",
     "SecurityMonitoringCriticalAssetsResponse",
+    "SecurityMonitoringCrowdStrikeIntegrationConfigCreateAttributes",
+    "SecurityMonitoringCrowdStrikeIntegrationConfigUpdateAttributes",
+    "SecurityMonitoringCrowdStrikeIntegrationCredentialsValidateAttributes",
     "SecurityMonitoringDatasetAttributesRequest",
     "SecurityMonitoringDatasetAttributesResponse",
     "SecurityMonitoringDatasetColumn",
@@ -15258,8 +15331,14 @@ __all__ = [
     "SecurityMonitoringEntraIdAzureAppRegistrationsData",
     "SecurityMonitoringEntraIdAzureAppRegistrationsResourceType",
     "SecurityMonitoringEntraIdAzureAppRegistrationsResponse",
+    "SecurityMonitoringEntraIdIntegrationConfigCreateAttributes",
+    "SecurityMonitoringEntraIdIntegrationConfigUpdateAttributes",
+    "SecurityMonitoringEntraIdIntegrationCredentialsValidateAttributes",
     "SecurityMonitoringFilter",
     "SecurityMonitoringFilterAction",
+    "SecurityMonitoringGoogleWorkspaceIntegrationConfigCreateAttributes",
+    "SecurityMonitoringGoogleWorkspaceIntegrationConfigUpdateAttributes",
+    "SecurityMonitoringGoogleWorkspaceIntegrationCredentialsValidateAttributes",
     "SecurityMonitoringIntegrationActivateAttributes",
     "SecurityMonitoringIntegrationActivateData",
     "SecurityMonitoringIntegrationActivateRequest",
@@ -15268,10 +15347,14 @@ __all__ = [
     "SecurityMonitoringIntegrationConfigCreateAttributes",
     "SecurityMonitoringIntegrationConfigCreateData",
     "SecurityMonitoringIntegrationConfigCreateRequest",
+    "SecurityMonitoringIntegrationConfigCrowdStrikeSecrets",
     "SecurityMonitoringIntegrationConfigData",
+    "SecurityMonitoringIntegrationConfigGoogleWorkspaceSecrets",
+    "SecurityMonitoringIntegrationConfigGoogleWorkspaceServiceAccount",
+    "SecurityMonitoringIntegrationConfigOktaSecrets",
     "SecurityMonitoringIntegrationConfigResourceType",
     "SecurityMonitoringIntegrationConfigResponse",
-    "SecurityMonitoringIntegrationConfigSecrets",
+    "SecurityMonitoringIntegrationConfigSentinelOneSecrets",
     "SecurityMonitoringIntegrationConfigSettings",
     "SecurityMonitoringIntegrationConfigState",
     "SecurityMonitoringIntegrationConfigUpdateAttributes",
@@ -15282,7 +15365,15 @@ __all__ = [
     "SecurityMonitoringIntegrationCredentialsValidateData",
     "SecurityMonitoringIntegrationCredentialsValidateRequest",
     "SecurityMonitoringIntegrationType",
+    "SecurityMonitoringIntegrationTypeCrowdStrike",
+    "SecurityMonitoringIntegrationTypeEntraId",
+    "SecurityMonitoringIntegrationTypeGoogleWorkspace",
+    "SecurityMonitoringIntegrationTypeOkta",
+    "SecurityMonitoringIntegrationTypeSentinelOne",
     "SecurityMonitoringListRulesResponse",
+    "SecurityMonitoringOktaIntegrationConfigCreateAttributes",
+    "SecurityMonitoringOktaIntegrationConfigUpdateAttributes",
+    "SecurityMonitoringOktaIntegrationCredentialsValidateAttributes",
     "SecurityMonitoringPaginatedSuppressionsResponse",
     "SecurityMonitoringReferenceTable",
     "SecurityMonitoringRuleAnomalyDetectionOptions",
@@ -15342,6 +15433,9 @@ __all__ = [
     "SecurityMonitoringRuleValidatePayload",
     "SecurityMonitoringSKU",
     "SecurityMonitoringSchedulingOptions",
+    "SecurityMonitoringSentinelOneIntegrationConfigCreateAttributes",
+    "SecurityMonitoringSentinelOneIntegrationConfigUpdateAttributes",
+    "SecurityMonitoringSentinelOneIntegrationCredentialsValidateAttributes",
     "SecurityMonitoringSignal",
     "SecurityMonitoringSignalArchiveReason",
     "SecurityMonitoringSignalAssigneeUpdateAttributes",
