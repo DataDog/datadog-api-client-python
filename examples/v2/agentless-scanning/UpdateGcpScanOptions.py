@@ -16,6 +16,7 @@ body = GcpScanOptionsInputUpdate(
         id="api-spec-test",
         type=GcpScanOptionsInputUpdateDataType.GCP_SCAN_OPTIONS,
         attributes=GcpScanOptionsInputUpdateDataAttributes(
+            cloud_function=True,
             vuln_containers_os=False,
         ),
     ),

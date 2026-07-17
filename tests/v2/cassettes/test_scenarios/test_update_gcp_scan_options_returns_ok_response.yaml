@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"vuln_containers_os":false},"id":"api-spec-test","type":"gcp_scan_options"}}'
+    body: '{"data":{"attributes":{"cloud_function":true,"vuln_containers_os":false},"id":"api-spec-test","type":"gcp_scan_options"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,7 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/agentless_scanning/accounts/gcp/api-spec-test
   response:
     body:
-      string: '{"data":{"id":"api-spec-test","type":"gcp_scan_options","attributes":{"vuln_containers_os":false,"vuln_host_os":true}}}'
+      string: '{"data":{"id":"api-spec-test","type":"gcp_scan_options","attributes":{"cloud_function":true,"compliance_host":false,"vuln_containers_os":false,"vuln_host_os":true}}}'
     headers:
       content-type:
       - application/vnd.api+json

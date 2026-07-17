@@ -14,6 +14,7 @@ body = GcpScanOptions(
         id="new-project",
         type=GcpScanOptionsDataType.GCP_SCAN_OPTIONS,
         attributes=GcpScanOptionsDataAttributes(
+            cloud_function=True,
             vuln_host_os=True,
             vuln_containers_os=True,
         ),

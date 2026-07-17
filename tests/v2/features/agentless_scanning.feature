@@ -52,16 +52,18 @@ Feature: Agentless Scanning
   @skip-validation @team:DataDog/k9-agentless
   Scenario: Create Azure scan options returns "Created" response
     Given new "CreateAzureScanOptions" request
-    And body with value {"data": {"attributes": {"vuln_containers_os": true, "vuln_host_os": true}, "id": "12345678-90ab-cdef-1234-567890abcdef", "type": "azure_scan_options"}}
+    And body with value {"data": {"attributes": {"function": true, "vuln_containers_os": true, "vuln_host_os": true}, "id": "12345678-90ab-cdef-1234-567890abcdef", "type": "azure_scan_options"}}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data.attributes.function" is equal to true
 
   @team:DataDog/k9-agentless
   Scenario: Create GCP scan options returns "Agentless scan options enabled successfully." response
     Given new "CreateGcpScanOptions" request
-    And body with value {"data": {"id": "new-project", "type": "gcp_scan_options", "attributes": {"vuln_host_os": true, "vuln_containers_os": true}}}
+    And body with value {"data": {"id": "new-project", "type": "gcp_scan_options", "attributes": {"cloud_function": true, "vuln_host_os": true, "vuln_containers_os": true}}}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data.attributes.cloud_function" is equal to true
 
   @team:DataDog/k9-agentless
   Scenario: Create GCP scan options returns "Bad Request" response
@@ -301,9 +303,10 @@ Feature: Agentless Scanning
   Scenario: Update GCP scan options returns "OK" response
     Given new "UpdateGcpScanOptions" request
     And request contains "project_id" parameter with value "api-spec-test"
-    And body with value {"data": {"id": "api-spec-test", "type": "gcp_scan_options", "attributes": {"vuln_containers_os": false}}}
+    And body with value {"data": {"id": "api-spec-test", "type": "gcp_scan_options", "attributes": {"cloud_function": true, "vuln_containers_os": false}}}
     When the request is sent
     Then the response status is 200 OK
     And the response "data.id" is equal to "api-spec-test"
     And the response "data.attributes.vuln_host_os" is equal to true
     And the response "data.attributes.vuln_containers_os" is equal to false
+    And the response "data.attributes.cloud_function" is equal to true
