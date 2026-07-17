@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,21 +17,6 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.security_monitoring_integration_config_resource_type import (
         SecurityMonitoringIntegrationConfigResourceType,
-    )
-    from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_credentials_validate_attributes import (
-        SecurityMonitoringGoogleWorkspaceIntegrationCredentialsValidateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_okta_integration_credentials_validate_attributes import (
-        SecurityMonitoringOktaIntegrationCredentialsValidateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_entra_id_integration_credentials_validate_attributes import (
-        SecurityMonitoringEntraIdIntegrationCredentialsValidateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_credentials_validate_attributes import (
-        SecurityMonitoringCrowdStrikeIntegrationCredentialsValidateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_credentials_validate_attributes import (
-        SecurityMonitoringSentinelOneIntegrationCredentialsValidateAttributes,
     )
 
 
@@ -57,14 +42,7 @@ class SecurityMonitoringIntegrationCredentialsValidateData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[
-            SecurityMonitoringIntegrationCredentialsValidateAttributes,
-            SecurityMonitoringGoogleWorkspaceIntegrationCredentialsValidateAttributes,
-            SecurityMonitoringOktaIntegrationCredentialsValidateAttributes,
-            SecurityMonitoringEntraIdIntegrationCredentialsValidateAttributes,
-            SecurityMonitoringCrowdStrikeIntegrationCredentialsValidateAttributes,
-            SecurityMonitoringSentinelOneIntegrationCredentialsValidateAttributes,
-        ],
+        attributes: SecurityMonitoringIntegrationCredentialsValidateAttributes,
         type: SecurityMonitoringIntegrationConfigResourceType,
         **kwargs,
     ):

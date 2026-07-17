@@ -3,60 +3,66 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelComposed,
+    ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
-class SecurityMonitoringIntegrationCredentialsValidateAttributes(ModelComposed):
-    def __init__(self, **kwargs):
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_integration_type import SecurityMonitoringIntegrationType
+    from datadog_api_client.v2.model.security_monitoring_integration_config_secrets import (
+        SecurityMonitoringIntegrationConfigSecrets,
+    )
+
+
+class SecurityMonitoringIntegrationCredentialsValidateAttributes(ModelNormal):
+    @cached_property
+    def openapi_types(_):
+        from datadog_api_client.v2.model.security_monitoring_integration_type import SecurityMonitoringIntegrationType
+        from datadog_api_client.v2.model.security_monitoring_integration_config_secrets import (
+            SecurityMonitoringIntegrationConfigSecrets,
+        )
+
+        return {
+            "domain": (str,),
+            "integration_type": (SecurityMonitoringIntegrationType,),
+            "secrets": (SecurityMonitoringIntegrationConfigSecrets,),
+        }
+
+    attribute_map = {
+        "domain": "domain",
+        "integration_type": "integration_type",
+        "secrets": "secrets",
+    }
+
+    def __init__(
+        self_,
+        domain: str,
+        integration_type: SecurityMonitoringIntegrationType,
+        secrets: Union[SecurityMonitoringIntegrationConfigSecrets, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The credentials to validate against the external entity source.
 
         :param domain: The domain associated with the external entity source.
         :type domain: str
 
-        :param integration_type: The source type for a Google Workspace entity context sync.
-        :type integration_type: SecurityMonitoringIntegrationTypeGoogleWorkspace
+        :param integration_type: The type of external source that provides entities to Cloud SIEM.
+        :type integration_type: SecurityMonitoringIntegrationType
 
-        :param secrets: Credentials for a Google Workspace entity context sync.
-        :type secrets: SecurityMonitoringIntegrationConfigGoogleWorkspaceSecrets
+        :param secrets: The secrets used to authenticate against the external entity source. The accepted keys depend on the source type
+            (for example, ``admin_email`` for Google Workspace). Not required for source types that do not use secrets (for example, ``ENTRA_ID`` ).
+        :type secrets: SecurityMonitoringIntegrationConfigSecrets, optional
         """
+        if secrets is not unset:
+            kwargs["secrets"] = secrets
         super().__init__(kwargs)
 
-    @cached_property
-    def _composed_schemas(_):
-        # we need this here to make our import statements work
-        # we must store _composed_schemas in here so the code is only run
-        # when we invoke this method. If we kept this at the class
-        # level we would get an error because the class level
-        # code would be run when this module is imported, and these composed
-        # classes don't exist yet because their module has not finished
-        # loading
-        from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_credentials_validate_attributes import (
-            SecurityMonitoringGoogleWorkspaceIntegrationCredentialsValidateAttributes,
-        )
-        from datadog_api_client.v2.model.security_monitoring_okta_integration_credentials_validate_attributes import (
-            SecurityMonitoringOktaIntegrationCredentialsValidateAttributes,
-        )
-        from datadog_api_client.v2.model.security_monitoring_entra_id_integration_credentials_validate_attributes import (
-            SecurityMonitoringEntraIdIntegrationCredentialsValidateAttributes,
-        )
-        from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_credentials_validate_attributes import (
-            SecurityMonitoringCrowdStrikeIntegrationCredentialsValidateAttributes,
-        )
-        from datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_credentials_validate_attributes import (
-            SecurityMonitoringSentinelOneIntegrationCredentialsValidateAttributes,
-        )
-
-        return {
-            "oneOf": [
-                SecurityMonitoringGoogleWorkspaceIntegrationCredentialsValidateAttributes,
-                SecurityMonitoringOktaIntegrationCredentialsValidateAttributes,
-                SecurityMonitoringEntraIdIntegrationCredentialsValidateAttributes,
-                SecurityMonitoringCrowdStrikeIntegrationCredentialsValidateAttributes,
-                SecurityMonitoringSentinelOneIntegrationCredentialsValidateAttributes,
-            ],
-        }
+        self_.domain = domain
+        self_.integration_type = integration_type

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,21 +17,6 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.security_monitoring_integration_config_resource_type import (
         SecurityMonitoringIntegrationConfigResourceType,
-    )
-    from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_config_update_attributes import (
-        SecurityMonitoringGoogleWorkspaceIntegrationConfigUpdateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_okta_integration_config_update_attributes import (
-        SecurityMonitoringOktaIntegrationConfigUpdateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_update_attributes import (
-        SecurityMonitoringEntraIdIntegrationConfigUpdateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_update_attributes import (
-        SecurityMonitoringCrowdStrikeIntegrationConfigUpdateAttributes,
-    )
-    from datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_config_update_attributes import (
-        SecurityMonitoringSentinelOneIntegrationConfigUpdateAttributes,
     )
 
 
@@ -57,21 +42,14 @@ class SecurityMonitoringIntegrationConfigUpdateData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[
-            SecurityMonitoringIntegrationConfigUpdateAttributes,
-            SecurityMonitoringGoogleWorkspaceIntegrationConfigUpdateAttributes,
-            SecurityMonitoringOktaIntegrationConfigUpdateAttributes,
-            SecurityMonitoringEntraIdIntegrationConfigUpdateAttributes,
-            SecurityMonitoringCrowdStrikeIntegrationConfigUpdateAttributes,
-            SecurityMonitoringSentinelOneIntegrationConfigUpdateAttributes,
-        ],
+        attributes: SecurityMonitoringIntegrationConfigUpdateAttributes,
         type: SecurityMonitoringIntegrationConfigResourceType,
         **kwargs,
     ):
         """
         The entity context sync configuration fields to update.
 
-        :param attributes: Fields to update on the entity context sync configuration. All fields other than the integration type are optional.
+        :param attributes: Fields to update on the entity context sync configuration. All fields are optional.
         :type attributes: SecurityMonitoringIntegrationConfigUpdateAttributes
 
         :param type: The type of the resource. The value should always be ``integration_config``.
