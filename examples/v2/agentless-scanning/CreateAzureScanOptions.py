@@ -12,6 +12,7 @@ from datadog_api_client.v2.model.azure_scan_options_data_type import AzureScanOp
 body = AzureScanOptions(
     data=AzureScanOptionsData(
         attributes=AzureScanOptionsDataAttributes(
+            function=True,
             vuln_containers_os=True,
             vuln_host_os=True,
         ),

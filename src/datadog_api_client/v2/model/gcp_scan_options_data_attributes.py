@@ -17,12 +17,14 @@ class GcpScanOptionsDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "cloud_function": (bool,),
             "compliance_host": (bool,),
             "vuln_containers_os": (bool,),
             "vuln_host_os": (bool,),
         }
 
     attribute_map = {
+        "cloud_function": "cloud_function",
         "compliance_host": "compliance_host",
         "vuln_containers_os": "vuln_containers_os",
         "vuln_host_os": "vuln_host_os",
@@ -30,6 +32,7 @@ class GcpScanOptionsDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        cloud_function: Union[bool, UnsetType] = unset,
         compliance_host: Union[bool, UnsetType] = unset,
         vuln_containers_os: Union[bool, UnsetType] = unset,
         vuln_host_os: Union[bool, UnsetType] = unset,
@@ -37,6 +40,9 @@ class GcpScanOptionsDataAttributes(ModelNormal):
     ):
         """
         Attributes for GCP scan options configuration.
+
+        :param cloud_function: Indicates if scanning of Cloud Functions is enabled.
+        :type cloud_function: bool, optional
 
         :param compliance_host: Indicates whether host compliance scanning is enabled.
         :type compliance_host: bool, optional
@@ -47,6 +53,8 @@ class GcpScanOptionsDataAttributes(ModelNormal):
         :param vuln_host_os: Indicates if scanning for vulnerabilities in hosts is enabled.
         :type vuln_host_os: bool, optional
         """
+        if cloud_function is not unset:
+            kwargs["cloud_function"] = cloud_function
         if compliance_host is not unset:
             kwargs["compliance_host"] = compliance_host
         if vuln_containers_os is not unset:
