@@ -564,10 +564,31 @@ datadog\_api\_client.v1.model.dashboard\_bulk\_delete\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.dashboard\_default\_timeframe\_setting module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_default_timeframe_setting
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.dashboard\_delete\_response module
 ----------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_delete_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_fixed\_timeframe module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_fixed_timeframe
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_fixed\_timeframe\_type module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_fixed_timeframe_type
    :members:
    :show-inheritance:
 
@@ -617,6 +638,20 @@ datadog\_api\_client.v1.model.dashboard\_list\_list\_response module
 --------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v1.model.dashboard_list_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_live\_timeframe module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_live_timeframe
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.dashboard\_live\_timeframe\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.dashboard_live_timeframe_type
    :members:
    :show-inheritance:
 
