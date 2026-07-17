@@ -37825,6 +37825,27 @@ datadog\_api\_client.v2.model.security\_monitoring\_critical\_assets\_response m
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_crowd\_strike\_integration\_config\_create\_attributes module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_crowd\_strike\_integration\_config\_update\_attributes module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_crowd\_strike\_integration\_credentials\_validate\_attributes module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_credentials_validate_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_dataset\_attributes\_request module
 ---------------------------------------------------------------------------------------
 
@@ -38084,6 +38105,27 @@ datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_azure\_app\_regis
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_integration\_config\_create\_attributes module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_integration\_config\_update\_attributes module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_entra\_id\_integration\_credentials\_validate\_attributes module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_entra_id_integration_credentials_validate_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_filter module
 -----------------------------------------------------------------
 
@@ -38095,6 +38137,27 @@ datadog\_api\_client.v2.model.security\_monitoring\_filter\_action module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_filter_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_google\_workspace\_integration\_config\_create\_attributes module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_google_workspace_integration_config_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_google\_workspace\_integration\_config\_update\_attributes module
+---------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_google_workspace_integration_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_google\_workspace\_integration\_credentials\_validate\_attributes module
+----------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_google_workspace_integration_credentials_validate_attributes
    :members:
    :show-inheritance:
 
@@ -38154,10 +38217,38 @@ datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_create\
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_crowd\_strike\_secrets module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_crowd_strike_secrets
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_data module
 ------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_google\_workspace\_secrets module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_google_workspace_secrets
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_google\_workspace\_service\_account module
+-------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_google_workspace_service_account
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_okta\_secrets module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_okta_secrets
    :members:
    :show-inheritance:
 
@@ -38175,10 +38266,10 @@ datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_respons
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_secrets module
----------------------------------------------------------------------------------------
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_config\_sentinel\_one\_secrets module
+------------------------------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_secrets
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_config_sentinel_one_secrets
    :members:
    :show-inheritance:
 
@@ -38252,10 +38343,66 @@ datadog\_api\_client.v2.model.security\_monitoring\_integration\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_type\_crowd\_strike module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_type_crowd_strike
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_type\_entra\_id module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_type_entra_id
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_type\_google\_workspace module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_type_google_workspace
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_type\_okta module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_type_okta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_integration\_type\_sentinel\_one module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_integration_type_sentinel_one
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_list\_rules\_response module
 --------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_list_rules_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_okta\_integration\_config\_create\_attributes module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_okta_integration_config_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_okta\_integration\_config\_update\_attributes module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_okta_integration_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_okta\_integration\_credentials\_validate\_attributes module
+---------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_okta_integration_credentials_validate_attributes
    :members:
    :show-inheritance:
 
@@ -38662,6 +38809,27 @@ datadog\_api\_client.v2.model.security\_monitoring\_scheduling\_options module
 ------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_scheduling_options
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_sentinel\_one\_integration\_config\_create\_attributes module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_config_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_sentinel\_one\_integration\_config\_update\_attributes module
+-----------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_sentinel\_one\_integration\_credentials\_validate\_attributes module
+------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_sentinel_one_integration_credentials_validate_attributes
    :members:
    :show-inheritance:
 

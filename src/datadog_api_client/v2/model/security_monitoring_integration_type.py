@@ -16,7 +16,7 @@ class SecurityMonitoringIntegrationType(ModelSimple):
     """
     The type of external source that provides entities to Cloud SIEM.
 
-    :param value: Must be one of ["GOOGLE_WORKSPACE", "OKTA", "ENTRA_ID"].
+    :param value: Must be one of ["GOOGLE_WORKSPACE", "OKTA", "ENTRA_ID", "CROWDSTRIKE", "SENTINELONE"].
     :type value: str
     """
 
@@ -24,10 +24,14 @@ class SecurityMonitoringIntegrationType(ModelSimple):
         "GOOGLE_WORKSPACE",
         "OKTA",
         "ENTRA_ID",
+        "CROWDSTRIKE",
+        "SENTINELONE",
     }
     GOOGLE_WORKSPACE: ClassVar["SecurityMonitoringIntegrationType"]
     OKTA: ClassVar["SecurityMonitoringIntegrationType"]
     ENTRA_ID: ClassVar["SecurityMonitoringIntegrationType"]
+    CROWDSTRIKE: ClassVar["SecurityMonitoringIntegrationType"]
+    SENTINELONE: ClassVar["SecurityMonitoringIntegrationType"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +43,5 @@ class SecurityMonitoringIntegrationType(ModelSimple):
 SecurityMonitoringIntegrationType.GOOGLE_WORKSPACE = SecurityMonitoringIntegrationType("GOOGLE_WORKSPACE")
 SecurityMonitoringIntegrationType.OKTA = SecurityMonitoringIntegrationType("OKTA")
 SecurityMonitoringIntegrationType.ENTRA_ID = SecurityMonitoringIntegrationType("ENTRA_ID")
+SecurityMonitoringIntegrationType.CROWDSTRIKE = SecurityMonitoringIntegrationType("CROWDSTRIKE")
+SecurityMonitoringIntegrationType.SENTINELONE = SecurityMonitoringIntegrationType("SENTINELONE")

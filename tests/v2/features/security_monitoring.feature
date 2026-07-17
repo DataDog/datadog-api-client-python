@@ -1024,7 +1024,7 @@ Feature: Security Monitoring
   Scenario: Create an entity context sync configuration returns "Bad Request" response
     Given operation "CreateSecurityMonitoringIntegrationConfig" enabled
     And new "CreateSecurityMonitoringIntegrationConfig" request
-    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration", "secrets": {"admin_email": "test@example.com"}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
+    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration", "secrets": {"admin_email": "admin@example.com", "service_account_json": {"client_email": "svc@my-project.iam.gserviceaccount.com", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----", "project_id": "my-project", "type": "service_account"}}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1032,7 +1032,7 @@ Feature: Security Monitoring
   Scenario: Create an entity context sync configuration returns "OK" response
     Given operation "CreateSecurityMonitoringIntegrationConfig" enabled
     And new "CreateSecurityMonitoringIntegrationConfig" request
-    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration", "secrets": {"admin_email": "test@example.com"}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
+    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration", "secrets": {"admin_email": "admin@example.com", "service_account_json": {"client_email": "svc@my-project.iam.gserviceaccount.com", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----", "project_id": "my-project", "type": "service_account"}}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -3476,7 +3476,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityMonitoringIntegrationConfig" enabled
     And new "UpdateSecurityMonitoringIntegrationConfig" request
     And request contains "integration_config_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"domain": "siem-test.com", "enabled": true, "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration (renamed)", "secrets": {"admin_email": "test@example.com"}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
+    And body with value {"data": {"attributes": {"domain": "siem-test.com", "enabled": true, "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration (renamed)", "secrets": {"admin_email": "admin@example.com", "service_account_json": {"client_email": "svc@my-project.iam.gserviceaccount.com", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----", "project_id": "my-project", "type": "service_account"}}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -3485,7 +3485,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityMonitoringIntegrationConfig" enabled
     And new "UpdateSecurityMonitoringIntegrationConfig" request
     And request contains "integration_config_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"domain": "siem-test.com", "enabled": true, "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration (renamed)", "secrets": {"admin_email": "test@example.com"}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
+    And body with value {"data": {"attributes": {"domain": "siem-test.com", "enabled": true, "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration (renamed)", "secrets": {"admin_email": "admin@example.com", "service_account_json": {"client_email": "svc@my-project.iam.gserviceaccount.com", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----", "project_id": "my-project", "type": "service_account"}}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -3494,7 +3494,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityMonitoringIntegrationConfig" enabled
     And new "UpdateSecurityMonitoringIntegrationConfig" request
     And request contains "integration_config_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"domain": "siem-test.com", "enabled": true, "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration (renamed)", "secrets": {"admin_email": "test@example.com"}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
+    And body with value {"data": {"attributes": {"domain": "siem-test.com", "enabled": true, "integration_type": "GOOGLE_WORKSPACE", "name": "My GWS Integration (renamed)", "secrets": {"admin_email": "admin@example.com", "service_account_json": {"client_email": "svc@my-project.iam.gserviceaccount.com", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----", "project_id": "my-project", "type": "service_account"}}, "settings": {"setting1": "value1"}}, "type": "integration_config"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -3634,7 +3634,7 @@ Feature: Security Monitoring
   Scenario: Validate entity context sync credentials returns "Bad Request" response
     Given operation "ValidateSecurityMonitoringIntegrationCredentials" enabled
     And new "ValidateSecurityMonitoringIntegrationCredentials" request
-    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "secrets": {"admin_email": "test@example.com"}}, "type": "integration_config"}}
+    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "secrets": {"admin_email": "admin@example.com", "service_account_json": {"client_email": "svc@my-project.iam.gserviceaccount.com", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----", "project_id": "my-project", "type": "service_account"}}}, "type": "integration_config"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -3642,6 +3642,6 @@ Feature: Security Monitoring
   Scenario: Validate entity context sync credentials returns "OK" response
     Given operation "ValidateSecurityMonitoringIntegrationCredentials" enabled
     And new "ValidateSecurityMonitoringIntegrationCredentials" request
-    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "secrets": {"admin_email": "test@example.com"}}, "type": "integration_config"}}
+    And body with value {"data": {"attributes": {"domain": "siem-test.com", "integration_type": "GOOGLE_WORKSPACE", "secrets": {"admin_email": "admin@example.com", "service_account_json": {"client_email": "svc@my-project.iam.gserviceaccount.com", "private_key": "-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----", "project_id": "my-project", "type": "service_account"}}}, "type": "integration_config"}}
     When the request is sent
     Then the response status is 200 OK
