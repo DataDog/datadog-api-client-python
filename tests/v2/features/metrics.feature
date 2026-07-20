@@ -106,6 +106,42 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
+  @team:DataDog/metrics-experience
+  Scenario: Create a tag indexing rule with exclude-mode tag usage fields returns "Created" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRule" enabled
+    And new "CreateTagIndexingRule" request
+    And body with value {"data": {"attributes": {"exclude_tags_mode": true, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 3600, "exclude_not_used_in_assets": true}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @team:DataDog/metrics-experience
+  Scenario: Create a tag indexing rule with exclude_not_queried_window_seconds and exclude_tags_mode false returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRule" enabled
+    And new "CreateTagIndexingRule" request
+    And body with value {"data": {"attributes": {"exclude_tags_mode": false, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 3600}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/metrics-experience
+  Scenario: Create a tag indexing rule with exclude_not_queried_window_seconds over the maximum returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRule" enabled
+    And new "CreateTagIndexingRule" request
+    And body with value {"data": {"attributes": {"exclude_tags_mode": true, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 7776001}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/metrics-experience
+  Scenario: Create a tag indexing rule with exclude_not_used_in_assets and exclude_tags_mode false returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateTagIndexingRule" enabled
+    And new "CreateTagIndexingRule" request
+    And body with value {"data": {"attributes": {"exclude_tags_mode": false, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_used_in_assets": true}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @replay-only @skip-validation @team:DataDog/metrics-experience
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric" in the system
@@ -995,7 +1031,7 @@ Feature: Metrics
     And operation "UpdateTagIndexingRule" enabled
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 3600, "exclude_not_used_in_assets": false, "queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -1017,5 +1053,16 @@ Feature: Metrics
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "tag_indexing_rule.data.id"
     And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/metrics-experience
+  Scenario: Update a tag indexing rule with exclude-mode tag usage fields returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRule" enabled
+    And there is a valid "tag_indexing_rule_exclude_mode" in the system
+    And new "UpdateTagIndexingRule" request
+    And request contains "id" parameter from "tag_indexing_rule_exclude_mode.data.id"
+    And body with value {"data": {"attributes": {"exclude_tags_mode": true, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 7200, "exclude_not_used_in_assets": true}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 200 OK
