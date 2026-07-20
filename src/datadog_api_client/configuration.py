@@ -550,6 +550,7 @@ class Configuration:
                 "v2.update_form": False,
                 "v2.upsert_and_publish_form_version": False,
                 "v2.upsert_form_version": False,
+                "v2.update_login_org_configs_mcp_cross_app_access_issuer_url": False,
                 "v2.update_org_saml_configurations": False,
                 "v2.get_governance_control": False,
                 "v2.list_governance_controls": False,

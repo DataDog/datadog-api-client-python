@@ -24763,6 +24763,34 @@ datadog\_api\_client.v2.model.max\_session\_duration\_update\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.mcp\_cross\_app\_access\_issuer\_url\_type module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_cross\_app\_access\_issuer\_url\_update\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_cross\_app\_access\_issuer\_url\_update\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.mcp\_cross\_app\_access\_issuer\_url\_update\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_update_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.mcp\_scan\_request module
 -------------------------------------------------------
 
