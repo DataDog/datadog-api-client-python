@@ -1,0 +1,74 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144","template":[{"content":"Hello","role":"user"}]},"type":"prompt-templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts
+  response:
+    body:
+      string: '{"data":{"id":"c0077820-d57d-54d6-be0c-b62e4e827e67","type":"prompt-templates","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-21T12:32:24.497241896Z","created_from":"sdk-registry","in_registry":true,"last_version_created_at":"2026-07-21T12:32:24.497241896Z","num_versions":1,"prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144","source":"registry"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"template":[{"content":"You are a concise customer
+      support assistant for {{company_name}}.","role":"system"},{"content":"Answer
+      {{customer_name}}''s question: {{question}}","role":"user"}]},"type":"prompt-template-versions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144/versions
+  response:
+    body:
+      string: '{"data":{"id":"a002055b-7e0f-501d-ba5b-45df41fbca73","type":"prompt-template-versions","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-21T12:32:25.272760959Z","prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144","prompt_uuid":"c0077820-d57d-54d6-be0c-b62e4e827e67","template":[{"content":"You
+        are a concise customer support assistant for {{company_name}}.","role":"system"},{"content":"Answer
+        {{customer_name}}''s question: {{question}}","role":"user"}],"version":2,"version_created_at":"2026-07-21T12:32:25.272760959Z"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144
+  response:
+    body:
+      string: '{"data":{"id":"c0077820-d57d-54d6-be0c-b62e4e827e67","type":"prompt-templates","attributes":{"deleted_at":"2026-07-21T12:32:25.768356Z","prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144
+  response:
+    body:
+      string: '{"data":{"id":"c0077820-d57d-54d6-be0c-b62e4e827e67","type":"prompt-templates","attributes":{"deleted_at":"2026-07-21T12:32:26.168974Z","prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

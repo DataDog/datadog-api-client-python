@@ -1,0 +1,20 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"title":"New title"},"type":"prompt-templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/nonexistent-prompt
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"prompt template not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

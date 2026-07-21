@@ -862,6 +862,34 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"prompt-templates\",\n    \"attributes\": {\n      \"prompt_id\": \"{{ unique }}\",\n      \"template\": [{\"role\": \"user\", \"content\": \"Hello\"}]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"prompt\" in the system",
+    "key": "prompt",
+    "tag": "LLM Observability",
+    "operationId": "CreateLLMObsPrompt"
+  },
+  {
+    "parameters": [
+      {
+        "name": "prompt_id",
+        "source": "prompt.data.attributes.prompt_id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"prompt-template-versions\",\n    \"attributes\": {\n      \"template\": [{\"role\": \"user\", \"content\": \"Hello v2\"}]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"prompt_version\" in the system",
+    "key": "prompt_version",
+    "tag": "LLM Observability",
+    "operationId": "CreateLLMObsPromptVersion"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"query\": \"source:nginx\",\n      \"enabled\": false,\n      \"forwarder_destination\": {\n        \"type\": \"http\",\n        \"endpoint\": \"https://example.com\",\n        \"auth\": {\n          \"type\": \"basic\",\n          \"username\": \"my-username\",\n          \"password\": \"my-password\"\n        }\n      },\n      \"forward_tags_restriction_list_type\": \"BLOCK_LIST\",\n      \"forward_tags_restriction_list\": [\"host\"],\n      \"forward_tags\": false\n    },\n    \"type\": \"custom_destination\"\n  }\n}"
       }
     ],

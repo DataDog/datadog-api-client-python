@@ -1,0 +1,92 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"prompt_id":"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190","template":[{"content":"Hello","role":"user"}]},"type":"prompt-templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts
+  response:
+    body:
+      string: '{"data":{"id":"3c7ea2ea-52df-5324-8e77-0f01cf441ef9","type":"prompt-templates","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T15:43:11.158625133Z","created_from":"sdk-registry","in_registry":true,"last_version_created_at":"2026-07-20T15:43:11.158625133Z","num_versions":1,"prompt_id":"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190","source":"registry"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"template":[{"content":"Hello v2","role":"user"}]},"type":"prompt-template-versions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190/versions
+  response:
+    body:
+      string: '{"data":{"id":"c5593d94-81b0-522b-8cae-7fa643ea7ec9","type":"prompt-template-versions","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T15:43:12.623730838Z","prompt_id":"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190","prompt_uuid":"3c7ea2ea-52df-5324-8e77-0f01cf441ef9","template":[{"content":"Hello
+        v2","role":"user"}],"version":2,"version_created_at":"2026-07-20T15:43:12.623730838Z"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"description":"Give concise answers and cite relevant
+      help-center articles."},"type":"prompt-template-versions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190/versions/2
+  response:
+    body:
+      string: '{"data":{"id":"c5593d94-81b0-522b-8cae-7fa643ea7ec9","type":"prompt-template-versions","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T15:43:12.62373Z","description":"Give
+        concise answers and cite relevant help-center articles.","prompt_id":"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190","prompt_uuid":"3c7ea2ea-52df-5324-8e77-0f01cf441ef9","template":[{"role":"user","content":"Hello
+        v2"}],"version":2,"version_created_at":"2026-07-20T15:43:12.62373Z"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190
+  response:
+    body:
+      string: '{"data":{"id":"3c7ea2ea-52df-5324-8e77-0f01cf441ef9","type":"prompt-templates","attributes":{"deleted_at":"2026-07-20T15:43:13.804223Z","prompt_id":"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190
+  response:
+    body:
+      string: '{"data":{"id":"3c7ea2ea-52df-5324-8e77-0f01cf441ef9","type":"prompt-templates","attributes":{"deleted_at":"2026-07-20T15:43:14.36251Z","prompt_id":"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

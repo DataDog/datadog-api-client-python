@@ -3971,6 +3971,14 @@ from datadog_api_client.v2.model.llm_obs_content_block_llm_obs_trace_interaction
 )
 from datadog_api_client.v2.model.llm_obs_content_block_time_frame import LLMObsContentBlockTimeFrame
 from datadog_api_client.v2.model.llm_obs_content_block_type import LLMObsContentBlockType
+from datadog_api_client.v2.model.llm_obs_create_prompt_data import LLMObsCreatePromptData
+from datadog_api_client.v2.model.llm_obs_create_prompt_data_attributes import LLMObsCreatePromptDataAttributes
+from datadog_api_client.v2.model.llm_obs_create_prompt_request import LLMObsCreatePromptRequest
+from datadog_api_client.v2.model.llm_obs_create_prompt_version_data import LLMObsCreatePromptVersionData
+from datadog_api_client.v2.model.llm_obs_create_prompt_version_data_attributes import (
+    LLMObsCreatePromptVersionDataAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_create_prompt_version_request import LLMObsCreatePromptVersionRequest
 from datadog_api_client.v2.model.llm_obs_cursor_meta import LLMObsCursorMeta
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_assessment_criteria import (
     LLMObsCustomEvalConfigAssessmentCriteria,
@@ -4123,6 +4131,9 @@ from datadog_api_client.v2.model.llm_obs_delete_projects_data_attributes_request
 )
 from datadog_api_client.v2.model.llm_obs_delete_projects_data_request import LLMObsDeleteProjectsDataRequest
 from datadog_api_client.v2.model.llm_obs_delete_projects_request import LLMObsDeleteProjectsRequest
+from datadog_api_client.v2.model.llm_obs_deleted_prompt_data import LLMObsDeletedPromptData
+from datadog_api_client.v2.model.llm_obs_deleted_prompt_data_attributes import LLMObsDeletedPromptDataAttributes
+from datadog_api_client.v2.model.llm_obs_deleted_prompt_response import LLMObsDeletedPromptResponse
 from datadog_api_client.v2.model.llm_obs_display_block_annotated_interaction_item import (
     LLMObsDisplayBlockAnnotatedInteractionItem,
 )
@@ -4354,6 +4365,28 @@ from datadog_api_client.v2.model.llm_obs_project_update_data_attributes_request 
 from datadog_api_client.v2.model.llm_obs_project_update_data_request import LLMObsProjectUpdateDataRequest
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
+from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+from datadog_api_client.v2.model.llm_obs_prompt_data import LLMObsPromptData
+from datadog_api_client.v2.model.llm_obs_prompt_data_attributes import LLMObsPromptDataAttributes
+from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
+from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
+from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
+from datadog_api_client.v2.model.llm_obs_prompt_sdk_data import LLMObsPromptSDKData
+from datadog_api_client.v2.model.llm_obs_prompt_sdk_data_attributes import LLMObsPromptSDKDataAttributes
+from datadog_api_client.v2.model.llm_obs_prompt_sdk_response import LLMObsPromptSDKResponse
+from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
+from datadog_api_client.v2.model.llm_obs_prompt_type import LLMObsPromptType
+from datadog_api_client.v2.model.llm_obs_prompt_version_data import LLMObsPromptVersionData
+from datadog_api_client.v2.model.llm_obs_prompt_version_data_attributes import LLMObsPromptVersionDataAttributes
+from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
+from datadog_api_client.v2.model.llm_obs_prompt_version_list_data import LLMObsPromptVersionListData
+from datadog_api_client.v2.model.llm_obs_prompt_version_list_data_attributes import (
+    LLMObsPromptVersionListDataAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_prompt_version_response import LLMObsPromptVersionResponse
+from datadog_api_client.v2.model.llm_obs_prompt_version_type import LLMObsPromptVersionType
+from datadog_api_client.v2.model.llm_obs_prompt_versions_response import LLMObsPromptVersionsResponse
+from datadog_api_client.v2.model.llm_obs_prompts_response import LLMObsPromptsResponse
 from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
 from datadog_api_client.v2.model.llm_obs_search_spans_request import LLMObsSearchSpansRequest
 from datadog_api_client.v2.model.llm_obs_search_spans_request_attributes import LLMObsSearchSpansRequestAttributes
@@ -4379,6 +4412,14 @@ from datadog_api_client.v2.model.llm_obs_trace_annotated_interaction_item import
 from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_response_item import LLMObsTraceInteractionResponseItem
 from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTraceInteractionType
+from datadog_api_client.v2.model.llm_obs_update_prompt_data import LLMObsUpdatePromptData
+from datadog_api_client.v2.model.llm_obs_update_prompt_data_attributes import LLMObsUpdatePromptDataAttributes
+from datadog_api_client.v2.model.llm_obs_update_prompt_request import LLMObsUpdatePromptRequest
+from datadog_api_client.v2.model.llm_obs_update_prompt_version_data import LLMObsUpdatePromptVersionData
+from datadog_api_client.v2.model.llm_obs_update_prompt_version_data_attributes import (
+    LLMObsUpdatePromptVersionDataAttributes,
+)
+from datadog_api_client.v2.model.llm_obs_update_prompt_version_request import LLMObsUpdatePromptVersionRequest
 from datadog_api_client.v2.model.llm_obs_upsert_annotation_item import LLMObsUpsertAnnotationItem
 from datadog_api_client.v2.model.llm_obs_vertex_ai_metadata import LLMObsVertexAIMetadata
 from datadog_api_client.v2.model.language import Language
@@ -12933,6 +12974,12 @@ __all__ = [
     "LLMObsContentBlockLLMObsTraceInteractionType",
     "LLMObsContentBlockTimeFrame",
     "LLMObsContentBlockType",
+    "LLMObsCreatePromptData",
+    "LLMObsCreatePromptDataAttributes",
+    "LLMObsCreatePromptRequest",
+    "LLMObsCreatePromptVersionData",
+    "LLMObsCreatePromptVersionDataAttributes",
+    "LLMObsCreatePromptVersionRequest",
     "LLMObsCursorMeta",
     "LLMObsCustomEvalConfigAssessmentCriteria",
     "LLMObsCustomEvalConfigAttributes",
@@ -13033,6 +13080,9 @@ __all__ = [
     "LLMObsDeleteProjectsDataAttributesRequest",
     "LLMObsDeleteProjectsDataRequest",
     "LLMObsDeleteProjectsRequest",
+    "LLMObsDeletedPromptData",
+    "LLMObsDeletedPromptDataAttributes",
+    "LLMObsDeletedPromptResponse",
     "LLMObsDisplayBlockAnnotatedInteractionItem",
     "LLMObsDisplayBlockInteractionItem",
     "LLMObsDisplayBlockInteractionResponseItem",
@@ -13186,6 +13236,26 @@ __all__ = [
     "LLMObsProjectUpdateDataRequest",
     "LLMObsProjectUpdateRequest",
     "LLMObsProjectsResponse",
+    "LLMObsPromptChatMessage",
+    "LLMObsPromptData",
+    "LLMObsPromptDataAttributes",
+    "LLMObsPromptDataset",
+    "LLMObsPromptResponse",
+    "LLMObsPromptResponseSource",
+    "LLMObsPromptSDKData",
+    "LLMObsPromptSDKDataAttributes",
+    "LLMObsPromptSDKResponse",
+    "LLMObsPromptTemplate",
+    "LLMObsPromptType",
+    "LLMObsPromptVersionData",
+    "LLMObsPromptVersionDataAttributes",
+    "LLMObsPromptVersionLabel",
+    "LLMObsPromptVersionListData",
+    "LLMObsPromptVersionListDataAttributes",
+    "LLMObsPromptVersionResponse",
+    "LLMObsPromptVersionType",
+    "LLMObsPromptVersionsResponse",
+    "LLMObsPromptsResponse",
     "LLMObsRecordType",
     "LLMObsSearchSpansRequest",
     "LLMObsSearchSpansRequestAttributes",
@@ -13211,6 +13281,12 @@ __all__ = [
     "LLMObsTraceInteractionItem",
     "LLMObsTraceInteractionResponseItem",
     "LLMObsTraceInteractionType",
+    "LLMObsUpdatePromptData",
+    "LLMObsUpdatePromptDataAttributes",
+    "LLMObsUpdatePromptRequest",
+    "LLMObsUpdatePromptVersionData",
+    "LLMObsUpdatePromptVersionDataAttributes",
+    "LLMObsUpdatePromptVersionRequest",
     "LLMObsUpsertAnnotationItem",
     "LLMObsVertexAIMetadata",
     "Language",
