@@ -1367,6 +1367,8 @@ from datadog_api_client.v1.model.webhooks_integration_update_request import Webh
 from datadog_api_client.v1.model.widget import Widget
 from datadog_api_client.v1.model.widget_aggregator import WidgetAggregator
 from datadog_api_client.v1.model.widget_axis import WidgetAxis
+from datadog_api_client.v1.model.widget_calendar_aligned_span import WidgetCalendarAlignedSpan
+from datadog_api_client.v1.model.widget_calendar_aligned_span_type import WidgetCalendarAlignedSpanType
 from datadog_api_client.v1.model.widget_change_type import WidgetChangeType
 from datadog_api_client.v1.model.widget_color_preference import WidgetColorPreference
 from datadog_api_client.v1.model.widget_comparator import WidgetComparator
@@ -2548,6 +2550,8 @@ __all__ = [
     "Widget",
     "WidgetAggregator",
     "WidgetAxis",
+    "WidgetCalendarAlignedSpan",
+    "WidgetCalendarAlignedSpanType",
     "WidgetChangeType",
     "WidgetColorPreference",
     "WidgetComparator",

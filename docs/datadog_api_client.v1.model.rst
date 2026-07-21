@@ -7760,6 +7760,20 @@ datadog\_api\_client.v1.model.widget\_axis module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.widget\_calendar\_aligned\_span module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_calendar_aligned_span
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.widget\_calendar\_aligned\_span\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.widget_calendar_aligned_span_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.widget\_change\_type module
 ---------------------------------------------------------
 
