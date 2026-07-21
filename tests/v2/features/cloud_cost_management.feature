@@ -69,24 +69,21 @@ Feature: Cloud Cost Management
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or replace a budget's custom forecast returns "Bad Request" response
-    Given operation "UpsertCustomForecast" enabled
-    And new "UpsertCustomForecast" request
+    Given new "UpsertCustomForecast" request
     And body with value {"data": {"attributes": {"budget_uid": "00000000-0000-0000-0000-000000000001", "entries": [{"amount": 400, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}]}, "id": "", "type": "custom_forecast"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or replace a budget's custom forecast returns "Not Found" response
-    Given operation "UpsertCustomForecast" enabled
-    And new "UpsertCustomForecast" request
+    Given new "UpsertCustomForecast" request
     And body with value {"data": {"attributes": {"budget_uid": "00000000-0000-0000-0000-000000000001", "entries": [{"amount": 400, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}]}, "id": "", "type": "custom_forecast"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or replace a budget's custom forecast returns "OK" response
-    Given operation "UpsertCustomForecast" enabled
-    And new "UpsertCustomForecast" request
+    Given new "UpsertCustomForecast" request
     And body with value {"data": {"attributes": {"budget_uid": "00000000-0000-0000-0000-000000000001", "entries": [{"amount": 400, "month": 202501, "tag_filters": [{"tag_key": "service", "tag_value": "ec2"}]}]}, "id": "", "type": "custom_forecast"}}
     When the request is sent
     Then the response status is 200 OK
@@ -237,24 +234,21 @@ Feature: Cloud Cost Management
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Delete a budget's custom forecast returns "Bad Request" response
-    Given operation "DeleteCustomForecast" enabled
-    And new "DeleteCustomForecast" request
+    Given new "DeleteCustomForecast" request
     And request contains "budget_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Delete a budget's custom forecast returns "No Content" response
-    Given operation "DeleteCustomForecast" enabled
-    And new "DeleteCustomForecast" request
+    Given new "DeleteCustomForecast" request
     And request contains "budget_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Delete a budget's custom forecast returns "Not Found" response
-    Given operation "DeleteCustomForecast" enabled
-    And new "DeleteCustomForecast" request
+    Given new "DeleteCustomForecast" request
     And request contains "budget_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
@@ -377,24 +371,21 @@ Feature: Cloud Cost Management
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Get a budget's custom forecast returns "Bad Request" response
-    Given operation "GetCustomForecast" enabled
-    And new "GetCustomForecast" request
+    Given new "GetCustomForecast" request
     And request contains "budget_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Get a budget's custom forecast returns "Not Found" response
-    Given operation "GetCustomForecast" enabled
-    And new "GetCustomForecast" request
+    Given new "GetCustomForecast" request
     And request contains "budget_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Get a budget's custom forecast returns "OK" response
-    Given operation "GetCustomForecast" enabled
-    And new "GetCustomForecast" request
+    Given new "GetCustomForecast" request
     And request contains "budget_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
