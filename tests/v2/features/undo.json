@@ -3273,6 +3273,12 @@
       "type": "idempotent"
     }
   },
+  "PatchIncidentImpact": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIncidentIntegrations": {
     "tag": "Incidents",
     "undo": {

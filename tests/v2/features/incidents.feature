@@ -1310,6 +1310,36 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident impact returns "Bad Request" response
+    Given operation "PatchIncidentImpact" enabled
+    And new "PatchIncidentImpact" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "impact_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Service was unavailable for external users", "end_at": "2025-08-29T13:17:00Z", "fields": {"customers_impacted": "all", "products_impacted": ["shopping", "marketing"]}, "start_at": "2025-08-28T13:17:00Z"}, "type": "incident_impacts"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident impact returns "Not Found" response
+    Given operation "PatchIncidentImpact" enabled
+    And new "PatchIncidentImpact" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "impact_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Service was unavailable for external users", "end_at": "2025-08-29T13:17:00Z", "fields": {"customers_impacted": "all", "products_impacted": ["shopping", "marketing"]}, "start_at": "2025-08-28T13:17:00Z"}, "type": "incident_impacts"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Update an incident impact returns "OK" response
+    Given operation "PatchIncidentImpact" enabled
+    And new "PatchIncidentImpact" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "impact_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Service was unavailable for external users", "end_at": "2025-08-29T13:17:00Z", "fields": {"customers_impacted": "all", "products_impacted": ["shopping", "marketing"]}, "start_at": "2025-08-28T13:17:00Z"}, "type": "incident_impacts"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:Datadog/incident-app
   Scenario: Update an incident notification rule returns "Bad Request" response
     Given operation "UpdateIncidentNotificationRule" enabled

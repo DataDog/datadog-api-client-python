@@ -25,6 +25,27 @@ from datadog_api_client.v2.model.incident_handle_response import IncidentHandleR
 from datadog_api_client.v2.model.incident_handle_request import IncidentHandleRequest
 from datadog_api_client.v2.model.global_incident_settings_response import GlobalIncidentSettingsResponse
 from datadog_api_client.v2.model.global_incident_settings_request import GlobalIncidentSettingsRequest
+from datadog_api_client.v2.model.incident_google_chat_configuration_response import (
+    IncidentGoogleChatConfigurationResponse,
+)
+from datadog_api_client.v2.model.incident_google_chat_configuration_request import (
+    IncidentGoogleChatConfigurationRequest,
+)
+from datadog_api_client.v2.model.incident_google_chat_configuration_patch_request import (
+    IncidentGoogleChatConfigurationPatchRequest,
+)
+from datadog_api_client.v2.model.incident_google_meet_configuration_response import (
+    IncidentGoogleMeetConfigurationResponse,
+)
+from datadog_api_client.v2.model.incident_google_meet_configuration_request import (
+    IncidentGoogleMeetConfigurationRequest,
+)
+from datadog_api_client.v2.model.incident_google_meet_configuration_patch_request import (
+    IncidentGoogleMeetConfigurationPatchRequest,
+)
+from datadog_api_client.v2.model.incident_impact_fields_response import IncidentImpactFieldsResponse
+from datadog_api_client.v2.model.incident_impact_field_response import IncidentImpactFieldResponse
+from datadog_api_client.v2.model.incident_impact_field_request import IncidentImpactFieldRequest
 from datadog_api_client.v2.model.incident_notification_rule_array import IncidentNotificationRuleArray
 from datadog_api_client.v2.model.incident_notification_rule import IncidentNotificationRule
 from datadog_api_client.v2.model.create_incident_notification_rule_request import CreateIncidentNotificationRuleRequest
@@ -40,10 +61,16 @@ from datadog_api_client.v2.model.patch_incident_notification_template_request im
 from datadog_api_client.v2.model.postmortem_templates_response import PostmortemTemplatesResponse
 from datadog_api_client.v2.model.postmortem_template_response import PostmortemTemplateResponse
 from datadog_api_client.v2.model.postmortem_template_request import PostmortemTemplateRequest
+from datadog_api_client.v2.model.incident_rules_response import IncidentRulesResponse
+from datadog_api_client.v2.model.incident_rule_response import IncidentRuleResponse
+from datadog_api_client.v2.model.incident_rule_request import IncidentRuleRequest
+from datadog_api_client.v2.model.incident_rule_patch_request import IncidentRulePatchRequest
 from datadog_api_client.v2.model.incident_type_list_response import IncidentTypeListResponse
 from datadog_api_client.v2.model.incident_type_response import IncidentTypeResponse
 from datadog_api_client.v2.model.incident_type_create_request import IncidentTypeCreateRequest
+from datadog_api_client.v2.model.incident_org_settings_list_response import IncidentOrgSettingsListResponse
 from datadog_api_client.v2.model.incident_type_patch_request import IncidentTypePatchRequest
+from datadog_api_client.v2.model.incident_org_settings_response import IncidentOrgSettingsResponse
 from datadog_api_client.v2.model.incident_user_defined_field_list_response import IncidentUserDefinedFieldListResponse
 from datadog_api_client.v2.model.incident_user_defined_field_response import IncidentUserDefinedFieldResponse
 from datadog_api_client.v2.model.incident_user_defined_field_create_request import IncidentUserDefinedFieldCreateRequest
@@ -59,19 +86,28 @@ from datadog_api_client.v2.model.incident_search_response import IncidentSearchR
 from datadog_api_client.v2.model.incident_search_sort_order import IncidentSearchSortOrder
 from datadog_api_client.v2.model.incident_search_response_incidents_data import IncidentSearchResponseIncidentsData
 from datadog_api_client.v2.model.incident_update_request import IncidentUpdateRequest
+from datadog_api_client.v2.model.incident_ai_postmortem_response import IncidentAIPostmortemResponse
 from datadog_api_client.v2.model.attachment_array import AttachmentArray
 from datadog_api_client.v2.model.attachment import Attachment
 from datadog_api_client.v2.model.create_attachment_request import CreateAttachmentRequest
 from datadog_api_client.v2.model.postmortem_attachment_request import PostmortemAttachmentRequest
 from datadog_api_client.v2.model.patch_attachment_request import PatchAttachmentRequest
+from datadog_api_client.v2.model.incident_page_uuid_response import IncidentPageUUIDResponse
+from datadog_api_client.v2.model.incident_create_page_from_incident_request import IncidentCreatePageFromIncidentRequest
+from datadog_api_client.v2.model.incident_configuration_response import IncidentConfigurationResponse
+from datadog_api_client.v2.model.incident_configuration_patch_request import IncidentConfigurationPatchRequest
+from datadog_api_client.v2.model.incident_configuration_request import IncidentConfigurationRequest
 from datadog_api_client.v2.model.incident_impacts_response import IncidentImpactsResponse
 from datadog_api_client.v2.model.incident_impact_related_object import IncidentImpactRelatedObject
 from datadog_api_client.v2.model.incident_impact_response import IncidentImpactResponse
 from datadog_api_client.v2.model.incident_impact_create_request import IncidentImpactCreateRequest
+from datadog_api_client.v2.model.incident_impact_patch_request import IncidentImpactPatchRequest
+from datadog_api_client.v2.model.incident_create_on_call_page_request import IncidentCreateOnCallPageRequest
+from datadog_api_client.v2.model.incident_integration_metadata_response import IncidentIntegrationMetadataResponse
+from datadog_api_client.v2.model.incident_on_call_page_link_request import IncidentOnCallPageLinkRequest
 from datadog_api_client.v2.model.incident_integration_metadata_list_response import (
     IncidentIntegrationMetadataListResponse,
 )
-from datadog_api_client.v2.model.incident_integration_metadata_response import IncidentIntegrationMetadataResponse
 from datadog_api_client.v2.model.incident_integration_metadata_create_request import (
     IncidentIntegrationMetadataCreateRequest,
 )
@@ -82,6 +118,14 @@ from datadog_api_client.v2.model.incident_todo_list_response import IncidentTodo
 from datadog_api_client.v2.model.incident_todo_response import IncidentTodoResponse
 from datadog_api_client.v2.model.incident_todo_create_request import IncidentTodoCreateRequest
 from datadog_api_client.v2.model.incident_todo_patch_request import IncidentTodoPatchRequest
+from datadog_api_client.v2.model.incident_responders_response import IncidentRespondersResponse
+from datadog_api_client.v2.model.incident_responder_response import IncidentResponderResponse
+from datadog_api_client.v2.model.incident_responder_request import IncidentResponderRequest
+from datadog_api_client.v2.model.incident_service_now_record_request import IncidentServiceNowRecordRequest
+from datadog_api_client.v2.model.incident_timestamp_overrides_response import IncidentTimestampOverridesResponse
+from datadog_api_client.v2.model.incident_timestamp_override_response import IncidentTimestampOverrideResponse
+from datadog_api_client.v2.model.incident_timestamp_override_request import IncidentTimestampOverrideRequest
+from datadog_api_client.v2.model.incident_timestamp_override_patch_request import IncidentTimestampOverridePatchRequest
 
 
 class IncidentsApi:
@@ -170,6 +214,72 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._create_incident_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/configurations",
+                "operation_id": "create_incident_configuration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentConfigurationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_google_chat_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentGoogleChatConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/google-chat-configurations",
+                "operation_id": "create_incident_google_chat_configuration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentGoogleChatConfigurationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_google_meet_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentGoogleMeetConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/google-meet-configurations",
+                "operation_id": "create_incident_google_meet_configuration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentGoogleMeetConfigurationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_incident_impact_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentImpactResponse,),
@@ -195,6 +305,26 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (IncidentImpactCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_impact_field_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentImpactFieldResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/impact-fields",
+                "operation_id": "create_incident_impact_field",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentImpactFieldRequest,),
                     "location": "body",
                 },
             },
@@ -314,6 +444,78 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._create_incident_responder_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentResponderResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/responders",
+                "operation_id": "create_incident_responder",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentResponderRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/rules",
+                "operation_id": "create_incident_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentRuleRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_incident_service_now_record_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentIntegrationMetadataResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/servicenow-records",
+                "operation_id": "create_incident_service_now_record",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentServiceNowRecordRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_incident_todo_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentTodoResponse,),
@@ -410,6 +612,84 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._create_on_call_page_from_incident_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentPageUUIDResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/page",
+                "operation_id": "create_on_call_page_from_incident",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentCreateOnCallPageRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_page_from_incident_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentPageUUIDResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/cases/page",
+                "operation_id": "create_page_from_incident",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentCreatePageFromIncidentRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_timestamp_override_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTimestampOverrideResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides",
+                "operation_id": "create_timestamp_override",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTimestampOverrideRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_global_incident_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -498,6 +778,29 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "impact_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_incident_impact_field_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/impact-fields/{field_id}",
+                "operation_id": "delete_incident_impact_field",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "field_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "field_id",
                     "location": "path",
                 },
             },
@@ -615,6 +918,58 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_incident_responder_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/responders/{responder_id}",
+                "operation_id": "delete_incident_responder",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "responder_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "responder_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_incident_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/rules/{rule_id}",
+                "operation_id": "delete_incident_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_incident_todo_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -713,6 +1068,35 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._delete_timestamp_override_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides/{id}",
+                "operation_id": "delete_timestamp_override",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_global_incident_settings_endpoint = _Endpoint(
             settings={
                 "response_type": (GlobalIncidentSettingsResponse,),
@@ -750,6 +1134,29 @@ class IncidentsApi:
                     "attribute": "include",
                     "location": "query",
                     "collection_format": "csv",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_ai_postmortem_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentAIPostmortemResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/ai/postmortem",
+                "operation_id": "get_incident_ai_postmortem",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -857,6 +1264,58 @@ class IncidentsApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "template_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_responder_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentResponderResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/responders/{responder_id}",
+                "operation_id": "get_incident_responder",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "responder_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "responder_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_incident_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/rules/{rule_id}",
+                "operation_id": "get_incident_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
                     "location": "path",
                 },
             },
@@ -974,6 +1433,34 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._get_org_settings_by_incident_type_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentOrgSettingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/types/{incident_type_id}/org-settings",
+                "operation_id": "get_org_settings_by_incident_type",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_type_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "incident_type_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._import_incident_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentImportResponse,),
@@ -993,6 +1480,32 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (IncidentImportRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._link_page_to_incident_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentIntegrationMetadataResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/pages/link",
+                "operation_id": "link_page_to_incident",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentOnCallPageLinkRequest,),
                     "location": "body",
                 },
             },
@@ -1049,6 +1562,22 @@ class IncidentsApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_impact_fields_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentImpactFieldsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/impact-fields",
+                "operation_id": "list_incident_impact_fields",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1166,6 +1695,61 @@ class IncidentsApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_responders_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRespondersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/responders",
+                "operation_id": "list_incident_responders",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_incident_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/rules",
+                "operation_id": "list_incident_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_task_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[task_id]",
+                    "location": "query",
+                },
+                "filter_trigger": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[trigger]",
+                    "location": "query",
+                },
+                "incident_type_uuid": {
+                    "openapi_types": (UUID,),
+                    "attribute": "incidentTypeUUID",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1326,6 +1910,104 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._list_org_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentOrgSettingsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/types/org-settings",
+                "operation_id": "list_org_settings",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "include_deleted": {
+                    "openapi_types": (bool,),
+                    "attribute": "include-deleted",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_timestamp_overrides_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTimestampOverridesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides",
+                "operation_id": "list_timestamp_overrides",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._patch_incident_impact_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentImpactResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/impacts/{impact_id}",
+                "operation_id": "patch_incident_impact",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "impact_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "impact_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": ([IncidentImpactRelatedObject],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentImpactPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._search_incidents_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentSearchResponse,),
@@ -1483,6 +2165,110 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_incident_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/configurations",
+                "operation_id": "update_incident_configuration",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentConfigurationPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_incident_google_chat_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentGoogleChatConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/google-chat-configurations/{id}",
+                "operation_id": "update_incident_google_chat_configuration",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentGoogleChatConfigurationPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_incident_google_meet_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentGoogleMeetConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/google-meet-configurations/{id}",
+                "operation_id": "update_incident_google_meet_configuration",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentGoogleMeetConfigurationPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_incident_impact_field_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentImpactFieldResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/impact-fields/{field_id}",
+                "operation_id": "update_incident_impact_field",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "field_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "field_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentImpactFieldRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_incident_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (IncidentIntegrationMetadataResponse,),
@@ -1596,6 +2382,32 @@ class IncidentsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (PostmortemTemplateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_incident_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/config/rules/{rule_id}",
+                "operation_id": "update_incident_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentRulePatchRequest,),
                     "location": "body",
                 },
             },
@@ -1723,6 +2535,38 @@ class IncidentsApi:
             api_client=api_client,
         )
 
+        self._update_timestamp_override_endpoint = _Endpoint(
+            settings={
+                "response_type": (IncidentTimestampOverrideResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/incidents/{incident_id}/timestamp-overrides/{id}",
+                "operation_id": "update_timestamp_override",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "incident_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "incident_id",
+                    "location": "path",
+                },
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IncidentTimestampOverridePatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_global_incident_handle(
         self,
         body: IncidentHandleRequest,
@@ -1791,6 +2635,62 @@ class IncidentsApi:
 
         return self._create_incident_attachment_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_configuration(
+        self,
+        incident_id: str,
+        body: IncidentConfigurationRequest,
+    ) -> IncidentConfigurationResponse:
+        """Create an incident configuration.
+
+        Create a configuration for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Incident configuration payload.
+        :type body: IncidentConfigurationRequest
+        :rtype: IncidentConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_incident_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def create_incident_google_chat_configuration(
+        self,
+        body: IncidentGoogleChatConfigurationRequest,
+    ) -> IncidentGoogleChatConfigurationResponse:
+        """Create an incident Google Chat configuration.
+
+        Create a Google Chat configuration for incidents.
+
+        :param body: Google Chat configuration payload.
+        :type body: IncidentGoogleChatConfigurationRequest
+        :rtype: IncidentGoogleChatConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_incident_google_chat_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def create_incident_google_meet_configuration(
+        self,
+        body: IncidentGoogleMeetConfigurationRequest,
+    ) -> IncidentGoogleMeetConfigurationResponse:
+        """Create an incident Google Meet configuration.
+
+        Create a Google Meet configuration for incidents.
+
+        :param body: Google Meet configuration payload.
+        :type body: IncidentGoogleMeetConfigurationRequest
+        :rtype: IncidentGoogleMeetConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_incident_google_meet_configuration_endpoint.call_with_http_info(**kwargs)
+
     def create_incident_impact(
         self,
         incident_id: str,
@@ -1819,6 +2719,23 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._create_incident_impact_endpoint.call_with_http_info(**kwargs)
+
+    def create_incident_impact_field(
+        self,
+        body: IncidentImpactFieldRequest,
+    ) -> IncidentImpactFieldResponse:
+        """Create an incident impact field.
+
+        Create an impact field for incidents.
+
+        :param body: Impact field payload.
+        :type body: IncidentImpactFieldRequest
+        :rtype: IncidentImpactFieldResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_incident_impact_field_endpoint.call_with_http_info(**kwargs)
 
     def create_incident_integration(
         self,
@@ -1915,6 +2832,67 @@ class IncidentsApi:
 
         return self._create_incident_postmortem_template_endpoint.call_with_http_info(**kwargs)
 
+    def create_incident_responder(
+        self,
+        incident_id: str,
+        body: IncidentResponderRequest,
+    ) -> IncidentResponderResponse:
+        """Create an incident responder.
+
+        Add a responder to an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Incident responder payload.
+        :type body: IncidentResponderRequest
+        :rtype: IncidentResponderResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_incident_responder_endpoint.call_with_http_info(**kwargs)
+
+    def create_incident_rule(
+        self,
+        body: IncidentRuleRequest,
+    ) -> IncidentRuleResponse:
+        """Create an incident rule.
+
+        Create an incident rule.
+
+        :param body: Incident rule payload.
+        :type body: IncidentRuleRequest
+        :rtype: IncidentRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_incident_rule_endpoint.call_with_http_info(**kwargs)
+
+    def create_incident_service_now_record(
+        self,
+        incident_id: str,
+        body: IncidentServiceNowRecordRequest,
+    ) -> IncidentIntegrationMetadataResponse:
+        """Create an incident ServiceNow record.
+
+        Create a ServiceNow record for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: ServiceNow record payload.
+        :type body: IncidentServiceNowRecordRequest
+        :rtype: IncidentIntegrationMetadataResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_incident_service_now_record_endpoint.call_with_http_info(**kwargs)
+
     def create_incident_todo(
         self,
         incident_id: str,
@@ -2001,6 +2979,72 @@ class IncidentsApi:
 
         return self._create_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)
 
+    def create_on_call_page_from_incident(
+        self,
+        incident_id: str,
+        body: IncidentCreateOnCallPageRequest,
+    ) -> IncidentPageUUIDResponse:
+        """Create an on-call page from an incident.
+
+        Create an on-call page directly from an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: On-call page creation payload.
+        :type body: IncidentCreateOnCallPageRequest
+        :rtype: IncidentPageUUIDResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_on_call_page_from_incident_endpoint.call_with_http_info(**kwargs)
+
+    def create_page_from_incident(
+        self,
+        incident_id: str,
+        body: IncidentCreatePageFromIncidentRequest,
+    ) -> IncidentPageUUIDResponse:
+        """Create a page from an incident.
+
+        Create a page from an incident using the Cases service.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Page creation payload.
+        :type body: IncidentCreatePageFromIncidentRequest
+        :rtype: IncidentPageUUIDResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_page_from_incident_endpoint.call_with_http_info(**kwargs)
+
+    def create_timestamp_override(
+        self,
+        incident_id: str,
+        body: IncidentTimestampOverrideRequest,
+    ) -> IncidentTimestampOverrideResponse:
+        """Create an incident timestamp override.
+
+        Create a timestamp override for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Timestamp override payload.
+        :type body: IncidentTimestampOverrideRequest
+        :rtype: IncidentTimestampOverrideResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._create_timestamp_override_endpoint.call_with_http_info(**kwargs)
+
     def delete_global_incident_handle(
         self,
     ) -> None:
@@ -2071,6 +3115,23 @@ class IncidentsApi:
         kwargs["impact_id"] = impact_id
 
         return self._delete_incident_impact_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_impact_field(
+        self,
+        field_id: UUID,
+    ) -> None:
+        """Delete an incident impact field.
+
+        Delete an impact field for incidents.
+
+        :param field_id: The UUID of the impact field.
+        :type field_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["field_id"] = field_id
+
+        return self._delete_incident_impact_field_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_integration(
         self,
@@ -2159,6 +3220,45 @@ class IncidentsApi:
 
         return self._delete_incident_postmortem_template_endpoint.call_with_http_info(**kwargs)
 
+    def delete_incident_responder(
+        self,
+        incident_id: str,
+        responder_id: UUID,
+    ) -> None:
+        """Delete an incident responder.
+
+        Remove a responder from an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param responder_id: The UUID of the incident responder.
+        :type responder_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["responder_id"] = responder_id
+
+        return self._delete_incident_responder_endpoint.call_with_http_info(**kwargs)
+
+    def delete_incident_rule(
+        self,
+        rule_id: UUID,
+    ) -> None:
+        """Delete an incident rule.
+
+        Delete an incident rule.
+
+        :param rule_id: The UUID of the incident rule.
+        :type rule_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._delete_incident_rule_endpoint.call_with_http_info(**kwargs)
+
     def delete_incident_todo(
         self,
         incident_id: str,
@@ -2232,6 +3332,28 @@ class IncidentsApi:
 
         return self._delete_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)
 
+    def delete_timestamp_override(
+        self,
+        incident_id: str,
+        id: UUID,
+    ) -> None:
+        """Delete an incident timestamp override.
+
+        Delete a timestamp override for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param id: The UUID of the timestamp override.
+        :type id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["id"] = id
+
+        return self._delete_timestamp_override_endpoint.call_with_http_info(**kwargs)
+
     def get_global_incident_settings(
         self,
     ) -> GlobalIncidentSettingsResponse:
@@ -2267,6 +3389,23 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._get_incident_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_ai_postmortem(
+        self,
+        incident_id: str,
+    ) -> IncidentAIPostmortemResponse:
+        """Get an AI-generated incident postmortem.
+
+        Generate an AI postmortem for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :rtype: IncidentAIPostmortemResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        return self._get_incident_ai_postmortem_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_integration(
         self,
@@ -2355,6 +3494,45 @@ class IncidentsApi:
 
         return self._get_incident_postmortem_template_endpoint.call_with_http_info(**kwargs)
 
+    def get_incident_responder(
+        self,
+        incident_id: str,
+        responder_id: UUID,
+    ) -> IncidentResponderResponse:
+        """Get an incident responder.
+
+        Get a single responder for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param responder_id: The UUID of the incident responder.
+        :type responder_id: UUID
+        :rtype: IncidentResponderResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["responder_id"] = responder_id
+
+        return self._get_incident_responder_endpoint.call_with_http_info(**kwargs)
+
+    def get_incident_rule(
+        self,
+        rule_id: UUID,
+    ) -> IncidentRuleResponse:
+        """Get an incident rule.
+
+        Get a single incident rule by ID.
+
+        :param rule_id: The UUID of the incident rule.
+        :type rule_id: UUID
+        :rtype: IncidentRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._get_incident_rule_endpoint.call_with_http_info(**kwargs)
+
     def get_incident_todo(
         self,
         incident_id: str,
@@ -2442,6 +3620,30 @@ class IncidentsApi:
 
         return self._get_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)
 
+    def get_org_settings_by_incident_type(
+        self,
+        incident_type_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentOrgSettingsResponse:
+        """Get org settings by incident type.
+
+        Get the org settings for a specific incident type.
+
+        :param incident_type_id: The UUID of the incident type.
+        :type incident_type_id: UUID
+        :param include: Comma-separated list of related resources to include in the response.
+        :type include: str, optional
+        :rtype: IncidentOrgSettingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_type_id"] = incident_type_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_org_settings_by_incident_type_endpoint.call_with_http_info(**kwargs)
+
     def import_incident(
         self,
         body: IncidentImportRequest,
@@ -2467,6 +3669,28 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._import_incident_endpoint.call_with_http_info(**kwargs)
+
+    def link_page_to_incident(
+        self,
+        incident_id: str,
+        body: IncidentOnCallPageLinkRequest,
+    ) -> IncidentIntegrationMetadataResponse:
+        """Link a page to an incident.
+
+        Link an existing on-call page to an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: On-call page link payload.
+        :type body: IncidentOnCallPageLinkRequest
+        :rtype: IncidentIntegrationMetadataResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._link_page_to_incident_endpoint.call_with_http_info(**kwargs)
 
     def list_global_incident_handles(
         self,
@@ -2516,6 +3740,18 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._list_incident_attachments_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_impact_fields(
+        self,
+    ) -> IncidentImpactFieldsResponse:
+        """List incident impact fields.
+
+        List all impact fields for incidents.
+
+        :rtype: IncidentImpactFieldsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_incident_impact_fields_endpoint.call_with_http_info(**kwargs)
 
     def list_incident_impacts(
         self,
@@ -2613,6 +3849,54 @@ class IncidentsApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_incident_postmortem_templates_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_responders(
+        self,
+        incident_id: str,
+    ) -> IncidentRespondersResponse:
+        """List incident responders.
+
+        List all responders for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :rtype: IncidentRespondersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        return self._list_incident_responders_endpoint.call_with_http_info(**kwargs)
+
+    def list_incident_rules(
+        self,
+        *,
+        filter_task_id: Union[str, UnsetType] = unset,
+        filter_trigger: Union[str, UnsetType] = unset,
+        incident_type_uuid: Union[UUID, UnsetType] = unset,
+    ) -> IncidentRulesResponse:
+        """List incident rules.
+
+        List all incident rules.
+
+        :param filter_task_id: Filter rules by task ID.
+        :type filter_task_id: str, optional
+        :param filter_trigger: Filter rules by trigger.
+        :type filter_trigger: str, optional
+        :param incident_type_uuid: Filter rules by incident type UUID.
+        :type incident_type_uuid: UUID, optional
+        :rtype: IncidentRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_task_id is not unset:
+            kwargs["filter_task_id"] = filter_task_id
+
+        if filter_trigger is not unset:
+            kwargs["filter_trigger"] = filter_trigger
+
+        if incident_type_uuid is not unset:
+            kwargs["incident_type_uuid"] = incident_type_uuid
+
+        return self._list_incident_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_incidents(
         self,
@@ -2791,6 +4075,94 @@ class IncidentsApi:
             kwargs["include"] = include
 
         return self._list_incident_user_defined_roles_endpoint.call_with_http_info(**kwargs)
+
+    def list_org_settings(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        include_deleted: Union[bool, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> IncidentOrgSettingsListResponse:
+        """List incident type org settings.
+
+        List org settings for all incident types.
+
+        :param page_size: Maximum number of results to return.
+        :type page_size: int, optional
+        :param page_offset: The offset for pagination.
+        :type page_offset: int, optional
+        :param include_deleted: Whether to include deleted records.
+        :type include_deleted: bool, optional
+        :param include: Comma-separated list of related resources to include in the response.
+        :type include: str, optional
+        :rtype: IncidentOrgSettingsListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if include_deleted is not unset:
+            kwargs["include_deleted"] = include_deleted
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_org_settings_endpoint.call_with_http_info(**kwargs)
+
+    def list_timestamp_overrides(
+        self,
+        incident_id: str,
+    ) -> IncidentTimestampOverridesResponse:
+        """List incident timestamp overrides.
+
+        List all timestamp overrides for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :rtype: IncidentTimestampOverridesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        return self._list_timestamp_overrides_endpoint.call_with_http_info(**kwargs)
+
+    def patch_incident_impact(
+        self,
+        incident_id: str,
+        impact_id: str,
+        body: IncidentImpactPatchRequest,
+        *,
+        include: Union[List[IncidentImpactRelatedObject], UnsetType] = unset,
+    ) -> IncidentImpactResponse:
+        """Update an incident impact.
+
+        Update an incident impact.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param impact_id: The UUID of the incident impact.
+        :type impact_id: str
+        :param body: Incident impact patch payload.
+        :type body: IncidentImpactPatchRequest
+        :param include: Specifies which related resources should be included in the response.
+        :type include: [IncidentImpactRelatedObject], optional
+        :rtype: IncidentImpactResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["impact_id"] = impact_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._patch_incident_impact_endpoint.call_with_http_info(**kwargs)
 
     def search_incidents(
         self,
@@ -2991,6 +4363,94 @@ class IncidentsApi:
 
         return self._update_incident_attachment_endpoint.call_with_http_info(**kwargs)
 
+    def update_incident_configuration(
+        self,
+        incident_id: str,
+        body: IncidentConfigurationPatchRequest,
+    ) -> IncidentConfigurationResponse:
+        """Update an incident configuration.
+
+        Update a configuration for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param body: Incident configuration patch payload.
+        :type body: IncidentConfigurationPatchRequest
+        :rtype: IncidentConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["body"] = body
+
+        return self._update_incident_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_google_chat_configuration(
+        self,
+        id: UUID,
+        body: IncidentGoogleChatConfigurationPatchRequest,
+    ) -> IncidentGoogleChatConfigurationResponse:
+        """Update an incident Google Chat configuration.
+
+        Update a Google Chat configuration for incidents.
+
+        :param id: The UUID of the Google Chat configuration.
+        :type id: UUID
+        :param body: Google Chat configuration patch payload.
+        :type body: IncidentGoogleChatConfigurationPatchRequest
+        :rtype: IncidentGoogleChatConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._update_incident_google_chat_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_google_meet_configuration(
+        self,
+        id: UUID,
+        body: IncidentGoogleMeetConfigurationPatchRequest,
+    ) -> IncidentGoogleMeetConfigurationResponse:
+        """Update an incident Google Meet configuration.
+
+        Update a Google Meet configuration for incidents.
+
+        :param id: The UUID of the Google Meet configuration.
+        :type id: UUID
+        :param body: Google Meet configuration patch payload.
+        :type body: IncidentGoogleMeetConfigurationPatchRequest
+        :rtype: IncidentGoogleMeetConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._update_incident_google_meet_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_impact_field(
+        self,
+        field_id: UUID,
+        body: IncidentImpactFieldRequest,
+    ) -> IncidentImpactFieldResponse:
+        """Update an incident impact field.
+
+        Update an impact field for incidents.
+
+        :param field_id: The UUID of the impact field.
+        :type field_id: UUID
+        :param body: Impact field update payload.
+        :type body: IncidentImpactFieldRequest
+        :rtype: IncidentImpactFieldResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["field_id"] = field_id
+
+        kwargs["body"] = body
+
+        return self._update_incident_impact_field_endpoint.call_with_http_info(**kwargs)
+
     def update_incident_integration(
         self,
         incident_id: str,
@@ -3094,6 +4554,28 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_postmortem_template_endpoint.call_with_http_info(**kwargs)
+
+    def update_incident_rule(
+        self,
+        rule_id: UUID,
+        body: IncidentRulePatchRequest,
+    ) -> IncidentRuleResponse:
+        """Update an incident rule.
+
+        Update an incident rule.
+
+        :param rule_id: The UUID of the incident rule.
+        :type rule_id: UUID
+        :param body: Incident rule patch payload.
+        :type body: IncidentRulePatchRequest
+        :rtype: IncidentRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._update_incident_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_todo(
         self,
@@ -3200,3 +4682,30 @@ class IncidentsApi:
         kwargs["body"] = body
 
         return self._update_incident_user_defined_role_endpoint.call_with_http_info(**kwargs)
+
+    def update_timestamp_override(
+        self,
+        incident_id: str,
+        id: UUID,
+        body: IncidentTimestampOverridePatchRequest,
+    ) -> IncidentTimestampOverrideResponse:
+        """Update an incident timestamp override.
+
+        Update a timestamp override for an incident.
+
+        :param incident_id: The UUID of the incident.
+        :type incident_id: str
+        :param id: The UUID of the timestamp override.
+        :type id: UUID
+        :param body: Timestamp override patch payload.
+        :type body: IncidentTimestampOverridePatchRequest
+        :rtype: IncidentTimestampOverrideResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["incident_id"] = incident_id
+
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._update_timestamp_override_endpoint.call_with_http_info(**kwargs)
