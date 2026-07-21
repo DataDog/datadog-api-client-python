@@ -16,13 +16,14 @@ class ApplicationSecurityWafCustomRuleConditionInputAddress(ModelSimple):
     """
     Input from the request on which the condition should apply.
 
-    :param value: Must be one of ["server.db.statement", "server.io.fs.file", "server.io.net.url", "server.sys.shell.cmd", "server.request.method", "server.request.uri.raw", "server.request.path_params", "server.request.query", "server.request.headers", "server.request.headers.no_cookies", "server.request.custom-auth", "server.request.cookies", "server.request.trailers", "server.request.body", "server.request.body.filenames", "server.response.status", "server.response.headers.no_cookies", "server.response.trailers", "server.response.body", "grpc.server.request.metadata", "grpc.server.request.message", "grpc.server.method", "graphql.server.all_resolvers", "usr.id", "http.client_ip", "server.llm.event", "server.llm.guard.verdict", "_dd.appsec.fp.http.header", "_dd.appsec.fp.http.network", "_dd.appsec.fp.session", "_dd.appsec.fp.http.endpoint"].
+    :param value: Must be one of ["server.db.statement", "server.io.fs.file", "server.io.fs.file_write", "server.io.net.url", "server.sys.shell.cmd", "server.request.method", "server.request.uri.raw", "server.request.path_params", "server.request.query", "server.request.headers", "server.request.headers.no_cookies", "server.request.custom-auth", "server.request.cookies", "server.request.trailers", "server.request.body", "server.request.body.filenames", "server.request.body.files_content", "server.response.status", "server.response.headers.no_cookies", "server.response.trailers", "server.response.body", "grpc.server.request.metadata", "grpc.server.request.message", "grpc.server.method", "graphql.server.all_resolvers", "usr.id", "http.client_ip", "server.llm.event", "server.llm.guard.verdict", "_dd.appsec.fp.http.header", "_dd.appsec.fp.http.network", "_dd.appsec.fp.session", "_dd.appsec.fp.http.endpoint"].
     :type value: str
     """
 
     allowed_values = {
         "server.db.statement",
         "server.io.fs.file",
+        "server.io.fs.file_write",
         "server.io.net.url",
         "server.sys.shell.cmd",
         "server.request.method",
@@ -36,6 +37,7 @@ class ApplicationSecurityWafCustomRuleConditionInputAddress(ModelSimple):
         "server.request.trailers",
         "server.request.body",
         "server.request.body.filenames",
+        "server.request.body.files_content",
         "server.response.status",
         "server.response.headers.no_cookies",
         "server.response.trailers",
@@ -55,6 +57,7 @@ class ApplicationSecurityWafCustomRuleConditionInputAddress(ModelSimple):
     }
     SERVER_DB_STATEMENT: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_IO_FS_FILE: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
+    SERVER_IO_FS_FILE_WRITE: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_IO_NET_URL: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_SYS_SHELL_CMD: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_REQUEST_METHOD: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
@@ -68,6 +71,7 @@ class ApplicationSecurityWafCustomRuleConditionInputAddress(ModelSimple):
     SERVER_REQUEST_TRAILERS: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_REQUEST_BODY: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_REQUEST_BODY_FILENAMES: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
+    SERVER_REQUEST_BODY_FILES_CONTENT: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_RESPONSE_STATUS: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_RESPONSE_HEADERS_NO_COOKIES: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_RESPONSE_TRAILERS: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
@@ -97,6 +101,9 @@ ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_DB_STATEMENT = (
 )
 ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_IO_FS_FILE = (
     ApplicationSecurityWafCustomRuleConditionInputAddress("server.io.fs.file")
+)
+ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_IO_FS_FILE_WRITE = (
+    ApplicationSecurityWafCustomRuleConditionInputAddress("server.io.fs.file_write")
 )
 ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_IO_NET_URL = (
     ApplicationSecurityWafCustomRuleConditionInputAddress("server.io.net.url")
@@ -136,6 +143,9 @@ ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_REQUEST_BODY = (
 )
 ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_REQUEST_BODY_FILENAMES = (
     ApplicationSecurityWafCustomRuleConditionInputAddress("server.request.body.filenames")
+)
+ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_REQUEST_BODY_FILES_CONTENT = (
+    ApplicationSecurityWafCustomRuleConditionInputAddress("server.request.body.files_content")
 )
 ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_RESPONSE_STATUS = (
     ApplicationSecurityWafCustomRuleConditionInputAddress("server.response.status")
