@@ -6934,6 +6934,20 @@ datadog\_api\_client.v1.model.topology\_map\_widget\_definition module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.topology\_map\_widget\_definition\_data\_streams module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_map_widget_definition_data_streams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.topology\_map\_widget\_definition\_service\_map module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_map_widget_definition_service_map
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.topology\_map\_widget\_definition\_type module
 ----------------------------------------------------------------------------
 
@@ -6941,24 +6955,45 @@ datadog\_api\_client.v1.model.topology\_map\_widget\_definition\_type module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_query module
-----------------------------------------------------
+datadog\_api\_client.v1.model.topology\_query\_data\_streams module
+-------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v1.model.topology_query
+.. automodule:: datadog_api_client.v1.model.topology_query_data_streams
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_query\_data\_source module
+datadog\_api\_client.v1.model.topology\_query\_data\_streams\_data\_source module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_query_data_streams_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.topology\_query\_service\_map module
 ------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v1.model.topology_query_data_source
+.. automodule:: datadog_api_client.v1.model.topology_query_service_map
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v1.model.topology\_request module
-------------------------------------------------------
+datadog\_api\_client.v1.model.topology\_query\_service\_map\_data\_source module
+--------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v1.model.topology_request
+.. automodule:: datadog_api_client.v1.model.topology_query_service_map_data_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.topology\_request\_data\_streams module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_request_data_streams
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.topology\_request\_service\_map module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.topology_request_service_map
    :members:
    :show-inheritance:
 

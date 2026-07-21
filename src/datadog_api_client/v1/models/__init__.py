@@ -1241,10 +1241,17 @@ from datadog_api_client.v1.model.toplist_widget_stacked import ToplistWidgetStac
 from datadog_api_client.v1.model.toplist_widget_stacked_type import ToplistWidgetStackedType
 from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
 from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
+from datadog_api_client.v1.model.topology_map_widget_definition_data_streams import (
+    TopologyMapWidgetDefinitionDataStreams,
+)
+from datadog_api_client.v1.model.topology_map_widget_definition_service_map import TopologyMapWidgetDefinitionServiceMap
 from datadog_api_client.v1.model.topology_map_widget_definition_type import TopologyMapWidgetDefinitionType
-from datadog_api_client.v1.model.topology_query import TopologyQuery
-from datadog_api_client.v1.model.topology_query_data_source import TopologyQueryDataSource
-from datadog_api_client.v1.model.topology_request import TopologyRequest
+from datadog_api_client.v1.model.topology_query_data_streams import TopologyQueryDataStreams
+from datadog_api_client.v1.model.topology_query_data_streams_data_source import TopologyQueryDataStreamsDataSource
+from datadog_api_client.v1.model.topology_query_service_map import TopologyQueryServiceMap
+from datadog_api_client.v1.model.topology_query_service_map_data_source import TopologyQueryServiceMapDataSource
+from datadog_api_client.v1.model.topology_request_data_streams import TopologyRequestDataStreams
+from datadog_api_client.v1.model.topology_request_service_map import TopologyRequestServiceMap
 from datadog_api_client.v1.model.topology_request_type import TopologyRequestType
 from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
 from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
@@ -2430,10 +2437,15 @@ __all__ = [
     "ToplistWidgetStackedType",
     "ToplistWidgetStyle",
     "TopologyMapWidgetDefinition",
+    "TopologyMapWidgetDefinitionDataStreams",
+    "TopologyMapWidgetDefinitionServiceMap",
     "TopologyMapWidgetDefinitionType",
-    "TopologyQuery",
-    "TopologyQueryDataSource",
-    "TopologyRequest",
+    "TopologyQueryDataStreams",
+    "TopologyQueryDataStreamsDataSource",
+    "TopologyQueryServiceMap",
+    "TopologyQueryServiceMapDataSource",
+    "TopologyRequestDataStreams",
+    "TopologyRequestServiceMap",
     "TopologyRequestType",
     "TreeMapColorBy",
     "TreeMapGroupBy",
