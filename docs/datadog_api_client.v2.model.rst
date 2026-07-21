@@ -22068,6 +22068,48 @@ datadog\_api\_client.v2.model.llm\_obs\_content\_block\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_create\_prompt\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_create_prompt_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_create\_prompt\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_create_prompt_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_create\_prompt\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_create_prompt_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_create\_prompt\_version\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_create_prompt_version_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_create\_prompt\_version\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_create_prompt_version_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_create\_prompt\_version\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_create_prompt_version_request
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_cursor\_meta module
 -----------------------------------------------------------
 
@@ -22765,6 +22807,27 @@ datadog\_api\_client.v2.model.llm\_obs\_delete\_projects\_request module
 ------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_delete_projects_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_deleted\_prompt\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_deleted_prompt_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_deleted\_prompt\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_deleted_prompt_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_deleted\_prompt\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_deleted_prompt_response
    :members:
    :show-inheritance:
 
@@ -23839,6 +23902,146 @@ datadog\_api\_client.v2.model.llm\_obs\_projects\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_chat\_message module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_chat_message
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_data module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_data\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_dataset module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_dataset
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_response module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_response\_source module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_response_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_sdk\_data module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_sdk_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_sdk\_data\_attributes module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_sdk_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_sdk\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_sdk_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_template module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_template
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_type module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_version\_data module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_version_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_version\_data\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_version_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_version\_label module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_version_label
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_version\_list\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_version_list_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_version\_list\_data\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_version_list_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_version\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_version_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_version\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_version_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompt\_versions\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompt_versions_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_prompts\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_prompts_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_record\_type module
 -----------------------------------------------------------
 
@@ -24011,6 +24214,48 @@ datadog\_api\_client.v2.model.llm\_obs\_trace\_interaction\_type module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.llm_obs_trace_interaction_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_update\_prompt\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_update_prompt_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_update\_prompt\_data\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_update_prompt_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_update\_prompt\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_update_prompt_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_update\_prompt\_version\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_update_prompt_version_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_update\_prompt\_version\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_update_prompt_version_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_update\_prompt\_version\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_update_prompt_version_request
    :members:
    :show-inheritance:
 

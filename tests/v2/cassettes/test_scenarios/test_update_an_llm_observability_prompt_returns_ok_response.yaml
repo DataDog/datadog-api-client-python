@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"prompt_id":"Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194","template":[{"content":"Hello","role":"user"}]},"type":"prompt-templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts
+  response:
+    body:
+      string: '{"data":{"id":"a36505e7-3c2f-5482-b8ac-ac51250a0116","type":"prompt-templates","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T15:43:14.698626703Z","created_from":"sdk-registry","in_registry":true,"last_version_created_at":"2026-07-20T15:43:14.698626703Z","num_versions":1,"prompt_id":"Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194","source":"registry"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"title":"Customer Support Assistant"},"type":"prompt-templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194
+  response:
+    body:
+      string: '{"data":{"id":"a36505e7-3c2f-5482-b8ac-ac51250a0116","type":"prompt-templates","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T15:43:14.698626Z","created_from":"sdk-registry","in_registry":true,"num_versions":0,"prompt_id":"Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194","source":"registry","title":"Customer
+        Support Assistant"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194
+  response:
+    body:
+      string: '{"data":{"id":"a36505e7-3c2f-5482-b8ac-ac51250a0116","type":"prompt-templates","attributes":{"deleted_at":"2026-07-20T15:43:16.39072Z","prompt_id":"Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

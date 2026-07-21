@@ -1,0 +1,21 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"env_ids":[],"labels":[],"template":[{"content":"Hello
+      v2","role":"user"}]},"type":"prompt-template-versions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/nonexistent-prompt/versions
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"prompt template not found"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

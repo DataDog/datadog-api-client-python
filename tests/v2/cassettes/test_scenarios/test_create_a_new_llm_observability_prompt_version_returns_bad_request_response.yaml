@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283","template":[{"content":"Hello","role":"user"}]},"type":"prompt-templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts
+  response:
+    body:
+      string: '{"data":{"id":"9c67c0e2-0806-589b-8e8c-83ab2e6f76e3","type":"prompt-templates","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T10:28:04.139526235Z","created_from":"sdk-registry","in_registry":true,"last_version_created_at":"2026-07-20T10:28:04.139526235Z","num_versions":1,"prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283","source":"registry"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"template":" "},"type":"prompt-template-versions"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283/versions
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"invalid prompt template"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283
+  response:
+    body:
+      string: '{"data":{"id":"9c67c0e2-0806-589b-8e8c-83ab2e6f76e3","type":"prompt-templates","attributes":{"deleted_at":"2026-07-20T10:28:05.328346Z","prompt_id":"Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

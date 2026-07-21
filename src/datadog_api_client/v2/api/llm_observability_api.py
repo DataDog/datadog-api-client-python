@@ -73,6 +73,16 @@ from datadog_api_client.v2.model.llm_obs_project_response import LLMObsProjectRe
 from datadog_api_client.v2.model.llm_obs_project_request import LLMObsProjectRequest
 from datadog_api_client.v2.model.llm_obs_delete_projects_request import LLMObsDeleteProjectsRequest
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
+from datadog_api_client.v2.model.llm_obs_prompts_response import LLMObsPromptsResponse
+from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
+from datadog_api_client.v2.model.llm_obs_create_prompt_request import LLMObsCreatePromptRequest
+from datadog_api_client.v2.model.llm_obs_deleted_prompt_response import LLMObsDeletedPromptResponse
+from datadog_api_client.v2.model.llm_obs_prompt_sdk_response import LLMObsPromptSDKResponse
+from datadog_api_client.v2.model.llm_obs_update_prompt_request import LLMObsUpdatePromptRequest
+from datadog_api_client.v2.model.llm_obs_prompt_versions_response import LLMObsPromptVersionsResponse
+from datadog_api_client.v2.model.llm_obs_prompt_version_response import LLMObsPromptVersionResponse
+from datadog_api_client.v2.model.llm_obs_create_prompt_version_request import LLMObsCreatePromptVersionRequest
+from datadog_api_client.v2.model.llm_obs_update_prompt_version_request import LLMObsUpdatePromptVersionRequest
 from datadog_api_client.v2.model.llm_obs_spans_response import LLMObsSpansResponse
 from datadog_api_client.v2.model.llm_obs_search_spans_request import LLMObsSearchSpansRequest
 from datadog_api_client.v2.model.llm_obs_patterns_clustered_points_response import LLMObsPatternsClusteredPointsResponse
@@ -108,7 +118,7 @@ from datadog_api_client.v2.model.llm_obs_experiment_events_v2_response import LL
 
 class LLMObservabilityApi:
     """
-    Manage LLM Observability spans, data, projects, datasets, dataset records, experiments, and annotations.
+    Manage LLM Observability spans, data, projects, datasets, dataset records, experiments, prompts, and annotations.
     """
 
     def __init__(self, api_client=None):
@@ -402,6 +412,52 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._create_llm_obs_prompt_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts",
+                "operation_id": "create_llm_obs_prompt",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsCreatePromptRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_llm_obs_prompt_version_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptVersionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions",
+                "operation_id": "create_llm_obs_prompt_version",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "prompt_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "prompt_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsCreatePromptVersionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._delete_llm_obs_annotation_queue_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -641,6 +697,29 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._delete_llm_obs_prompt_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsDeletedPromptResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}",
+                "operation_id": "delete_llm_obs_prompt",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "prompt_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "prompt_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._export_llm_obs_dataset_endpoint = _Endpoint(
             settings={
                 "response_type": (str,),
@@ -854,6 +933,66 @@ class LLMObservabilityApi:
                     "openapi_types": (str,),
                     "attribute": "config_id",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_prompt_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptSDKResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}",
+                "operation_id": "get_llm_obs_prompt",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "prompt_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "prompt_id",
+                    "location": "path",
+                },
+                "label": {
+                    "openapi_types": (str,),
+                    "attribute": "label",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_prompt_version_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptVersionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions/{version}",
+                "operation_id": "get_llm_obs_prompt_version",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "prompt_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "prompt_id",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "version",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -1387,6 +1526,51 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._list_llm_obs_prompts_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts",
+                "operation_id": "list_llm_obs_prompts",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_prompt_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[prompt_id]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_prompt_versions_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptVersionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions",
+                "operation_id": "list_llm_obs_prompt_versions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "prompt_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "prompt_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_llm_obs_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsSpansResponse,),
@@ -1828,6 +2012,67 @@ class LLMObservabilityApi:
             api_client=api_client,
         )
 
+        self._update_llm_obs_prompt_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}",
+                "operation_id": "update_llm_obs_prompt",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "prompt_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "prompt_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsUpdatePromptRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_llm_obs_prompt_version_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPromptVersionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions/{version}",
+                "operation_id": "update_llm_obs_prompt_version",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "prompt_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "prompt_id",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "version",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (LLMObsUpdatePromptVersionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._upload_llm_obs_dataset_records_file_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -2184,6 +2429,45 @@ class LLMObservabilityApi:
 
         return self._create_llm_obs_project_endpoint.call_with_http_info(**kwargs)
 
+    def create_llm_obs_prompt(
+        self,
+        body: LLMObsCreatePromptRequest,
+    ) -> LLMObsPromptResponse:
+        """Create an LLM Observability prompt.
+
+        Create a new prompt (and its first version) in the LLM Observability prompt registry.
+
+        :param body: Create prompt payload.
+        :type body: LLMObsCreatePromptRequest
+        :rtype: LLMObsPromptResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_llm_obs_prompt_endpoint.call_with_http_info(**kwargs)
+
+    def create_llm_obs_prompt_version(
+        self,
+        prompt_id: str,
+        body: LLMObsCreatePromptVersionRequest,
+    ) -> LLMObsPromptVersionResponse:
+        """Create a new LLM Observability prompt version.
+
+        Create a new version of an existing LLM Observability prompt.
+
+        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :type prompt_id: str
+        :param body: Create prompt version payload.
+        :type body: LLMObsCreatePromptVersionRequest
+        :rtype: LLMObsPromptVersionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["prompt_id"] = prompt_id
+
+        kwargs["body"] = body
+
+        return self._create_llm_obs_prompt_version_endpoint.call_with_http_info(**kwargs)
+
     def delete_llm_obs_annotation_queue(
         self,
         queue_id: str,
@@ -2379,6 +2663,23 @@ class LLMObservabilityApi:
 
         return self._delete_llm_obs_projects_endpoint.call_with_http_info(**kwargs)
 
+    def delete_llm_obs_prompt(
+        self,
+        prompt_id: str,
+    ) -> LLMObsDeletedPromptResponse:
+        """Delete an LLM Observability prompt.
+
+        Soft-delete an LLM Observability prompt. The prompt's version rows are retained, but they are no longer accessible through the public prompt registry endpoints.
+
+        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :type prompt_id: str
+        :rtype: LLMObsDeletedPromptResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["prompt_id"] = prompt_id
+
+        return self._delete_llm_obs_prompt_endpoint.call_with_http_info(**kwargs)
+
     def export_llm_obs_dataset(
         self,
         project_id: str,
@@ -2547,6 +2848,52 @@ class LLMObservabilityApi:
         kwargs["config_id"] = config_id
 
         return self._get_llm_obs_patterns_run_status_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_prompt(
+        self,
+        prompt_id: str,
+        *,
+        label: Union[str, UnsetType] = unset,
+    ) -> LLMObsPromptSDKResponse:
+        """Get an LLM Observability prompt.
+
+        Get the latest version of an LLM Observability prompt by prompt ID.
+
+        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :type prompt_id: str
+        :param label: **Deprecated.** Optional label of the prompt version to return. Do not use this parameter for new integrations. If omitted, the latest version is returned. If the prompt has no labels, the latest version is returned even when a label is requested. If the prompt has labels but none match the requested label, a 404 response is returned.
+        :type label: str, optional
+        :rtype: LLMObsPromptSDKResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["prompt_id"] = prompt_id
+
+        if label is not unset:
+            kwargs["label"] = label
+
+        return self._get_llm_obs_prompt_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_prompt_version(
+        self,
+        prompt_id: str,
+        version: int,
+    ) -> LLMObsPromptVersionResponse:
+        """Get a specific LLM Observability prompt version.
+
+        Get the full template of a single, specific version of an LLM Observability prompt.
+
+        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :type prompt_id: str
+        :param version: The version number of the LLM Observability prompt.
+        :type version: int
+        :rtype: LLMObsPromptVersionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["prompt_id"] = prompt_id
+
+        kwargs["version"] = version
+
+        return self._get_llm_obs_prompt_version_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_annotation_queues(
         self,
@@ -3027,6 +3374,42 @@ class LLMObservabilityApi:
 
         return self._list_llm_obs_projects_endpoint.call_with_http_info(**kwargs)
 
+    def list_llm_obs_prompts(
+        self,
+        *,
+        filter_prompt_id: Union[str, UnsetType] = unset,
+    ) -> LLMObsPromptsResponse:
+        """List LLM Observability prompts.
+
+        List all LLM Observability prompts in the prompt registry for the organization.
+
+        :param filter_prompt_id: Optional filter for prompts by prompt ID.
+        :type filter_prompt_id: str, optional
+        :rtype: LLMObsPromptsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_prompt_id is not unset:
+            kwargs["filter_prompt_id"] = filter_prompt_id
+
+        return self._list_llm_obs_prompts_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_prompt_versions(
+        self,
+        prompt_id: str,
+    ) -> LLMObsPromptVersionsResponse:
+        """List versions of an LLM Observability prompt.
+
+        List all versions of an LLM Observability prompt, ordered newest to oldest. If the prompt does not exist, is not registered, or is archived, the response contains an empty list.
+
+        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :type prompt_id: str
+        :rtype: LLMObsPromptVersionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["prompt_id"] = prompt_id
+
+        return self._list_llm_obs_prompt_versions_endpoint.call_with_http_info(**kwargs)
+
     def list_llm_obs_spans(
         self,
         *,
@@ -3424,6 +3807,55 @@ class LLMObservabilityApi:
         kwargs["body"] = body
 
         return self._update_llm_obs_project_endpoint.call_with_http_info(**kwargs)
+
+    def update_llm_obs_prompt(
+        self,
+        prompt_id: str,
+        body: LLMObsUpdatePromptRequest,
+    ) -> LLMObsPromptResponse:
+        """Update an LLM Observability prompt.
+
+        Update the title, the description, or both, for an LLM Observability prompt.
+
+        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :type prompt_id: str
+        :param body: Update prompt payload.
+        :type body: LLMObsUpdatePromptRequest
+        :rtype: LLMObsPromptResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["prompt_id"] = prompt_id
+
+        kwargs["body"] = body
+
+        return self._update_llm_obs_prompt_endpoint.call_with_http_info(**kwargs)
+
+    def update_llm_obs_prompt_version(
+        self,
+        prompt_id: str,
+        version: int,
+        body: LLMObsUpdatePromptVersionRequest,
+    ) -> LLMObsPromptVersionResponse:
+        """Update a specific LLM Observability prompt version.
+
+        Update the description, the feature-flag environments, or both, for a specific version of an LLM Observability prompt.
+
+        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :type prompt_id: str
+        :param version: The version number of the LLM Observability prompt.
+        :type version: int
+        :param body: Update prompt version payload.
+        :type body: LLMObsUpdatePromptVersionRequest
+        :rtype: LLMObsPromptVersionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["prompt_id"] = prompt_id
+
+        kwargs["version"] = version
+
+        kwargs["body"] = body
+
+        return self._update_llm_obs_prompt_version_endpoint.call_with_http_info(**kwargs)
 
     def upload_llm_obs_dataset_records_file(
         self,

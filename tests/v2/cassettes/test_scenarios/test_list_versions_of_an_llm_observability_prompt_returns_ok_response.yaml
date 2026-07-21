@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"prompt_id":"Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212","template":[{"content":"Hello","role":"user"}]},"type":"prompt-templates"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts
+  response:
+    body:
+      string: '{"data":{"id":"31fdf246-89b8-5a48-9544-ff84c4504939","type":"prompt-templates","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T09:20:13.145132213Z","created_from":"sdk-registry","in_registry":true,"last_version_created_at":"2026-07-20T09:20:13.145132213Z","num_versions":1,"prompt_id":"Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212","source":"registry"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212/versions
+  response:
+    body:
+      string: '{"data":[{"id":"e0cc7c1d-cbb6-589c-bcd9-d9c1b35aec60","type":"prompt-template-versions","attributes":{"author":"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9","created_at":"2026-07-20T09:20:13.145132Z","prompt_id":"Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212","prompt_uuid":"31fdf246-89b8-5a48-9544-ff84c4504939","version":1,"version_created_at":"2026-07-20T09:20:13.145132Z"}}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/llm-obs/v1/prompts/Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212
+  response:
+    body:
+      string: '{"data":{"id":"31fdf246-89b8-5a48-9544-ff84c4504939","type":"prompt-templates","attributes":{"deleted_at":"2026-07-20T09:20:15.144489Z","prompt_id":"Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212"}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+version: 1

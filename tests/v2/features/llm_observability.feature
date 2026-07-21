@@ -1,12 +1,12 @@
 @endpoint(llm-observability) @endpoint(llm-observability-v2)
 Feature: LLM Observability
   Manage LLM Observability spans, data, projects, datasets, dataset records,
-  experiments, and annotations.
+  experiments, prompts, and annotations.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
-    And a valid "appKeyAuth" key in the system
     And an instance of "LLMObservability" API
+    And a valid "appKeyAuth" key in the system
 
   @skip @team:DataDog/ml-observability
   Scenario: Add a display_block interaction returns "Created" response
@@ -179,6 +179,35 @@ Feature: LLM Observability
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/ml-observability
+  Scenario: Create a new LLM Observability prompt version returns "Bad Request" response
+    Given there is a valid "prompt" in the system
+    And operation "CreateLLMObsPromptVersion" enabled
+    And new "CreateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    And body with value {"data": {"attributes": {"template": " "}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/ml-observability
+  Scenario: Create a new LLM Observability prompt version returns "Not Found" response
+    Given operation "CreateLLMObsPromptVersion" enabled
+    And new "CreateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter with value "nonexistent-prompt"
+    And body with value {"data": {"attributes": {"env_ids": [], "labels": [], "template": [{"content": "Hello v2", "role": "user"}]}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/ml-observability
+  Scenario: Create a new LLM Observability prompt version returns "OK" response
+    Given there is a valid "prompt" in the system
+    And operation "CreateLLMObsPromptVersion" enabled
+    And new "CreateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    And body with value {"data": {"attributes": {"template": [{"content": "You are a concise customer support assistant for {{ '{{company_name}}' }}.", "role": "system"}, {"content": "Answer {{ '{{customer_name}}' }}'s question: {{ '{{question}}' }}", "role": "user"}]}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/ml-observability
   Scenario: Create an LLM Observability annotation queue returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
@@ -276,6 +305,31 @@ Feature: LLM Observability
     Given operation "CreateLLMObsProject" enabled
     And new "CreateLLMObsProject" request
     And body with value {"data": {"attributes": {"name": "My LLM Project"}, "type": "projects"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/ml-observability
+  Scenario: Create an LLM Observability prompt returns "Bad Request" response
+    Given operation "CreateLLMObsPrompt" enabled
+    And new "CreateLLMObsPrompt" request
+    And body with value {"data": {"attributes": {"prompt_id": "{{ unique }}", "template": " "}, "type": "prompt-templates"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/ml-observability
+  Scenario: Create an LLM Observability prompt returns "Conflict" response
+    Given there is a valid "prompt" in the system
+    And operation "CreateLLMObsPrompt" enabled
+    And new "CreateLLMObsPrompt" request
+    And body with value {"data": {"attributes": {"env_ids": [], "labels": [], "prompt_id": "{{ prompt.data.attributes.prompt_id }}", "template": [{"content": "Hello", "role": "user"}]}, "type": "prompt-templates"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:DataDog/ml-observability
+  Scenario: Create an LLM Observability prompt returns "OK" response
+    Given operation "CreateLLMObsPrompt" enabled
+    And new "CreateLLMObsPrompt" request
+    And body with value {"data": {"attributes": {"prompt_id": "{{ unique }}", "title": "Customer Support Assistant", "template": [{"content": "You are a helpful customer support assistant for {{ '{{company_name}}' }}.", "role": "system"}, {"content": "Help {{ '{{customer_name}}' }} with this question: {{ '{{question}}' }}", "role": "user"}]}, "type": "prompt-templates"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -535,6 +589,23 @@ Feature: LLM Observability
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:DataDog/ml-observability
+  Scenario: Delete an LLM Observability prompt returns "Not Found" response
+    Given operation "DeleteLLMObsPrompt" enabled
+    And new "DeleteLLMObsPrompt" request
+    And request contains "prompt_id" parameter with value "nonexistent-prompt"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/ml-observability
+  Scenario: Delete an LLM Observability prompt returns "OK" response
+    Given there is a valid "prompt" in the system
+    And operation "DeleteLLMObsPrompt" enabled
+    And new "DeleteLLMObsPrompt" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/ml-observability
   Scenario: Delete annotation queue interactions returns "Bad Request" response
     Given operation "DeleteLLMObsAnnotationQueueInteractions" enabled
@@ -685,6 +756,52 @@ Feature: LLM Observability
   Scenario: Get a patterns configuration returns "OK" response
     Given operation "GetLLMObsPatternsConfig" enabled
     And new "GetLLMObsPatternsConfig" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get a specific LLM Observability prompt version returns "Bad Request" response
+    Given operation "GetLLMObsPromptVersion" enabled
+    And new "GetLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/ml-observability
+  Scenario: Get a specific LLM Observability prompt version returns "Not Found" response
+    Given operation "GetLLMObsPromptVersion" enabled
+    And new "GetLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter with value "nonexistent-prompt"
+    And request contains "version" parameter with value 1
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/ml-observability
+  Scenario: Get a specific LLM Observability prompt version returns "OK" response
+    Given there is a valid "prompt" in the system
+    And there is a valid "prompt_version" in the system
+    And operation "GetLLMObsPromptVersion" enabled
+    And new "GetLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    And request contains "version" parameter from "prompt_version.data.attributes.version"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/ml-observability
+  Scenario: Get an LLM Observability prompt returns "Not Found" response
+    Given operation "GetLLMObsPrompt" enabled
+    And new "GetLLMObsPrompt" request
+    And request contains "prompt_id" parameter with value "nonexistent-prompt"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/ml-observability
+  Scenario: Get an LLM Observability prompt returns "OK" response
+    Given there is a valid "prompt" in the system
+    And operation "GetLLMObsPrompt" enabled
+    And new "GetLLMObsPrompt" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -936,6 +1053,15 @@ Feature: LLM Observability
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/ml-observability
+  Scenario: List LLM Observability prompts returns "OK" response
+    Given there is a valid "prompt" in the system
+    And operation "ListLLMObsPrompts" enabled
+    And new "ListLLMObsPrompts" request
+    And request contains "filter[prompt_id]" parameter from "prompt.data.attributes.prompt_id"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/ml-observability
   Scenario: List LLM Observability spans returns "Bad Request" response
     Given operation "ListLLMObsSpans" enabled
@@ -1115,6 +1241,15 @@ Feature: LLM Observability
     Given operation "ListLLMObsPatternsTopicsWithClusteredPoints" enabled
     And new "ListLLMObsPatternsTopicsWithClusteredPoints" request
     And request contains "config_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/ml-observability
+  Scenario: List versions of an LLM Observability prompt returns "OK" response
+    Given there is a valid "prompt" in the system
+    And operation "ListLLMObsPromptVersions" enabled
+    And new "ListLLMObsPromptVersions" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1360,6 +1495,38 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Update a specific LLM Observability prompt version returns "Bad Request" response
+    Given operation "UpdateLLMObsPromptVersion" enabled
+    And new "UpdateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"]}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/ml-observability
+  Scenario: Update a specific LLM Observability prompt version returns "Not Found" response
+    Given operation "UpdateLLMObsPromptVersion" enabled
+    And new "UpdateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter with value "nonexistent-prompt"
+    And request contains "version" parameter with value 1
+    And body with value {"data": {"attributes": {"env_ids": [], "labels": []}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/ml-observability
+  Scenario: Update a specific LLM Observability prompt version returns "OK" response
+    Given there is a valid "prompt" in the system
+    And there is a valid "prompt_version" in the system
+    And operation "UpdateLLMObsPromptVersion" enabled
+    And new "UpdateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    And request contains "version" parameter from "prompt_version.data.attributes.version"
+    And body with value {"data": {"attributes": {"description": "Give concise answers and cite relevant help-center articles."}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Update an LLM Observability annotation queue returns "Bad Request" response
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
@@ -1467,6 +1634,35 @@ Feature: LLM Observability
     And new "UpdateLLMObsProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {}, "type": "projects"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/ml-observability
+  Scenario: Update an LLM Observability prompt returns "Bad Request" response
+    Given there is a valid "prompt" in the system
+    And operation "UpdateLLMObsPrompt" enabled
+    And new "UpdateLLMObsPrompt" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    And body with value {"data": {"attributes": {}, "type": "prompt-templates"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/ml-observability
+  Scenario: Update an LLM Observability prompt returns "Not Found" response
+    Given operation "UpdateLLMObsPrompt" enabled
+    And new "UpdateLLMObsPrompt" request
+    And request contains "prompt_id" parameter with value "nonexistent-prompt"
+    And body with value {"data": {"attributes": {"title": "New title"}, "type": "prompt-templates"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/ml-observability
+  Scenario: Update an LLM Observability prompt returns "OK" response
+    Given there is a valid "prompt" in the system
+    And operation "UpdateLLMObsPrompt" enabled
+    And new "UpdateLLMObsPrompt" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    And body with value {"data": {"attributes": {"title": "Customer Support Assistant"}, "type": "prompt-templates"}}
     When the request is sent
     Then the response status is 200 OK
 

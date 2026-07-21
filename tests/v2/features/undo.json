@@ -4555,6 +4555,74 @@
       "type": "idempotent"
     }
   },
+  "ListLLMObsPrompts": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsPrompt": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "DeleteLLMObsPrompt",
+      "parameters": [
+        {
+          "name": "prompt_id",
+          "source": "data.attributes.prompt_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteLLMObsPrompt": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetLLMObsPrompt": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLLMObsPrompt": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListLLMObsPromptVersions": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateLLMObsPromptVersion": {
+    "tag": "LLM Observability",
+    "undo": {
+      "operationId": "DeleteLLMObsPrompt",
+      "parameters": [
+        {
+          "name": "prompt_id",
+          "source": "data.attributes.prompt_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetLLMObsPromptVersion": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateLLMObsPromptVersion": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListLLMObsSpans": {
     "tag": "LLM Observability",
     "undo": {
