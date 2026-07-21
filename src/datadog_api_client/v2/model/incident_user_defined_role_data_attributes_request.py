@@ -38,8 +38,8 @@ class IncidentUserDefinedRoleDataAttributesRequest(ModelNormal):
     def __init__(
         self_,
         name: str,
-        policy: IncidentUserDefinedRolePolicy,
         description: Union[str, none_type, UnsetType] = unset,
+        policy: Union[IncidentUserDefinedRolePolicy, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -52,11 +52,12 @@ class IncidentUserDefinedRoleDataAttributesRequest(ModelNormal):
         :type name: str
 
         :param policy: Policy configuration for a user-defined role.
-        :type policy: IncidentUserDefinedRolePolicy
+        :type policy: IncidentUserDefinedRolePolicy, optional
         """
         if description is not unset:
             kwargs["description"] = description
+        if policy is not unset:
+            kwargs["policy"] = policy
         super().__init__(kwargs)
 
         self_.name = name
-        self_.policy = policy
