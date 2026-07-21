@@ -27,7 +27,6 @@ body = CaseBulkUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["bulk_update_cases"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.bulk_update_cases(body=body)

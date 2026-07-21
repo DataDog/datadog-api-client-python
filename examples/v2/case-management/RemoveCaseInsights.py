@@ -27,7 +27,6 @@ body = CaseInsightsRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["remove_case_insights"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.remove_case_insights(case_id="case_id", body=body)

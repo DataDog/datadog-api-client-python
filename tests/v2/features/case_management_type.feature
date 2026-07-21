@@ -47,8 +47,7 @@ Feature: Case Management Type
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a case type returns "Bad Request" response
-    Given operation "UpdateCaseType" enabled
-    And new "UpdateCaseType" request
+    Given new "UpdateCaseType" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Investigations done in case management", "emoji": "\ud83d\udd75\ud83c\udffb\u200d\u2642\ufe0f", "name": "Investigation"}, "type": "case_type"}}
     When the request is sent
@@ -56,8 +55,7 @@ Feature: Case Management Type
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a case type returns "Not Found" response
-    Given operation "UpdateCaseType" enabled
-    And new "UpdateCaseType" request
+    Given new "UpdateCaseType" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Investigations done in case management", "emoji": "\ud83d\udd75\ud83c\udffb\u200d\u2642\ufe0f", "name": "Investigation"}, "type": "case_type"}}
     When the request is sent
@@ -65,8 +63,7 @@ Feature: Case Management Type
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a case type returns "OK" response
-    Given operation "UpdateCaseType" enabled
-    And new "UpdateCaseType" request
+    Given new "UpdateCaseType" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Investigations done in case management", "emoji": "\ud83d\udd75\ud83c\udffb\u200d\u2642\ufe0f", "name": "Investigation"}, "type": "case_type"}}
     When the request is sent

@@ -16,7 +16,6 @@ body = ProjectRelationship(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["move_case_to_project"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.move_case_to_project(case_id="case_id", body=body)

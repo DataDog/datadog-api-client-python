@@ -37,7 +37,6 @@ body = AutomationRuleCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_case_automation_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.create_case_automation_rule(project_id="project_id", body=body)

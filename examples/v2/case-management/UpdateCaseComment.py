@@ -19,7 +19,6 @@ body = CaseUpdateCommentRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_case_comment"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.update_case_comment(case_id="case_id", cell_id="cell_id", body=body)

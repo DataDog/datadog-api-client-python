@@ -22,7 +22,6 @@ body = JiraIssueCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_case_jira_issue"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.create_case_jira_issue(case_id="case_id", body=body)

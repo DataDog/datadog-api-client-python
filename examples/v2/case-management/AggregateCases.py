@@ -26,7 +26,6 @@ body = CaseAggregateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["aggregate_cases"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.aggregate_cases(body=body)

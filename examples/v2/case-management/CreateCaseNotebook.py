@@ -15,7 +15,6 @@ body = NotebookCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_case_notebook"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.create_case_notebook(case_id="case_id", body=body)

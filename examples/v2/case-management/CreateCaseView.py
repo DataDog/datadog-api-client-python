@@ -21,7 +21,6 @@ body = CaseViewCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_case_view"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.create_case_view(body=body)
