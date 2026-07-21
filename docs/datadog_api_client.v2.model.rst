@@ -725,6 +725,97 @@ datadog\_api\_client.v2.model.ai\_custom\_rulesets\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ai\_guard\_action module
+------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_content\_part module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_content_part
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_evaluate\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_evaluate_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_evaluate\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_evaluate_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_image\_url module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_image_url
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_message module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_message
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_message\_content module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_message_content
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_message\_role module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_message_role
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_meta module
+----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_sds\_finding module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_sds_finding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_sds\_finding\_location module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_sds_finding_location
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_tool\_call module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_tool_call
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ai\_guard\_tool\_call\_function module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ai_guard_tool_call_function
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ai\_memory\_violation\_result\_data\_type module
 ------------------------------------------------------------------------------
 
