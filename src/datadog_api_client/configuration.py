@@ -525,6 +525,8 @@ class Configuration:
                 "v2.get_all_datasets": False,
                 "v2.get_dataset": False,
                 "v2.update_dataset": False,
+                "v2.execute_ddsql_tabular_query": False,
+                "v2.fetch_ddsql_tabular_query": False,
                 "v2.cancel_data_deletion_request": False,
                 "v2.create_data_deletion_request": False,
                 "v2.get_data_deletion_requests": False,

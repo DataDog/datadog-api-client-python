@@ -2259,6 +2259,24 @@ from datadog_api_client.v2.model.datastore_items_data_type import DatastoreItems
 from datadog_api_client.v2.model.datastore_primary_key_generation_strategy import DatastorePrimaryKeyGenerationStrategy
 from datadog_api_client.v2.model.datastore_trigger import DatastoreTrigger
 from datadog_api_client.v2.model.datastore_trigger_wrapper import DatastoreTriggerWrapper
+from datadog_api_client.v2.model.ddsql_tabular_query_column import DdsqlTabularQueryColumn
+from datadog_api_client.v2.model.ddsql_tabular_query_fetch_request import DdsqlTabularQueryFetchRequest
+from datadog_api_client.v2.model.ddsql_tabular_query_fetch_request_attributes import (
+    DdsqlTabularQueryFetchRequestAttributes,
+)
+from datadog_api_client.v2.model.ddsql_tabular_query_fetch_request_data import DdsqlTabularQueryFetchRequestData
+from datadog_api_client.v2.model.ddsql_tabular_query_fetch_request_type import DdsqlTabularQueryFetchRequestType
+from datadog_api_client.v2.model.ddsql_tabular_query_request import DdsqlTabularQueryRequest
+from datadog_api_client.v2.model.ddsql_tabular_query_request_attributes import DdsqlTabularQueryRequestAttributes
+from datadog_api_client.v2.model.ddsql_tabular_query_request_data import DdsqlTabularQueryRequestData
+from datadog_api_client.v2.model.ddsql_tabular_query_request_type import DdsqlTabularQueryRequestType
+from datadog_api_client.v2.model.ddsql_tabular_query_response import DdsqlTabularQueryResponse
+from datadog_api_client.v2.model.ddsql_tabular_query_response_attributes import DdsqlTabularQueryResponseAttributes
+from datadog_api_client.v2.model.ddsql_tabular_query_response_data import DdsqlTabularQueryResponseData
+from datadog_api_client.v2.model.ddsql_tabular_query_response_meta import DdsqlTabularQueryResponseMeta
+from datadog_api_client.v2.model.ddsql_tabular_query_response_type import DdsqlTabularQueryResponseType
+from datadog_api_client.v2.model.ddsql_tabular_query_state import DdsqlTabularQueryState
+from datadog_api_client.v2.model.ddsql_tabular_query_time_window import DdsqlTabularQueryTimeWindow
 from datadog_api_client.v2.model.default_rulesets_per_language_data import DefaultRulesetsPerLanguageData
 from datadog_api_client.v2.model.default_rulesets_per_language_data_attributes import (
     DefaultRulesetsPerLanguageDataAttributes,
@@ -11593,6 +11611,22 @@ __all__ = [
     "DatastorePrimaryKeyGenerationStrategy",
     "DatastoreTrigger",
     "DatastoreTriggerWrapper",
+    "DdsqlTabularQueryColumn",
+    "DdsqlTabularQueryFetchRequest",
+    "DdsqlTabularQueryFetchRequestAttributes",
+    "DdsqlTabularQueryFetchRequestData",
+    "DdsqlTabularQueryFetchRequestType",
+    "DdsqlTabularQueryRequest",
+    "DdsqlTabularQueryRequestAttributes",
+    "DdsqlTabularQueryRequestData",
+    "DdsqlTabularQueryRequestType",
+    "DdsqlTabularQueryResponse",
+    "DdsqlTabularQueryResponseAttributes",
+    "DdsqlTabularQueryResponseData",
+    "DdsqlTabularQueryResponseMeta",
+    "DdsqlTabularQueryResponseType",
+    "DdsqlTabularQueryState",
+    "DdsqlTabularQueryTimeWindow",
     "DefaultRulesetsPerLanguageData",
     "DefaultRulesetsPerLanguageDataAttributes",
     "DefaultRulesetsPerLanguageDataType",
