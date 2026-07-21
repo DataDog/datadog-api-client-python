@@ -4696,6 +4696,14 @@ from datadog_api_client.v2.model.max_session_duration_type import MaxSessionDura
 from datadog_api_client.v2.model.max_session_duration_update_attributes import MaxSessionDurationUpdateAttributes
 from datadog_api_client.v2.model.max_session_duration_update_data import MaxSessionDurationUpdateData
 from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
+from datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_type import McpCrossAppAccessIssuerUrlType
+from datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_update_attributes import (
+    McpCrossAppAccessIssuerUrlUpdateAttributes,
+)
+from datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_update_data import McpCrossAppAccessIssuerUrlUpdateData
+from datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_update_request import (
+    McpCrossAppAccessIssuerUrlUpdateRequest,
+)
 from datadog_api_client.v2.model.mcp_scan_request import McpScanRequest
 from datadog_api_client.v2.model.mcp_scan_request_data import McpScanRequestData
 from datadog_api_client.v2.model.mcp_scan_request_data_attributes import McpScanRequestDataAttributes
@@ -13527,6 +13535,10 @@ __all__ = [
     "MaxSessionDurationUpdateAttributes",
     "MaxSessionDurationUpdateData",
     "MaxSessionDurationUpdateRequest",
+    "McpCrossAppAccessIssuerUrlType",
+    "McpCrossAppAccessIssuerUrlUpdateAttributes",
+    "McpCrossAppAccessIssuerUrlUpdateData",
+    "McpCrossAppAccessIssuerUrlUpdateRequest",
     "McpScanRequest",
     "McpScanRequestData",
     "McpScanRequestDataAttributes",

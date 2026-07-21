@@ -169,6 +169,22 @@ Feature: Organizations
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: Update the MCP Cross-App Access issuer URL returns "Bad Request" response
+    Given operation "UpdateLoginOrgConfigsMcpCrossAppAccessIssuerUrl" enabled
+    And new "UpdateLoginOrgConfigsMcpCrossAppAccessIssuerUrl" request
+    And body with value {"data": {"attributes": {"issuer_url": "https://your-subdomain.okta.com"}, "type": "org_config"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/delegated-auth-login
+  Scenario: Update the MCP Cross-App Access issuer URL returns "No Content" response
+    Given operation "UpdateLoginOrgConfigsMcpCrossAppAccessIssuerUrl" enabled
+    And new "UpdateLoginOrgConfigsMcpCrossAppAccessIssuerUrl" request
+    And body with value {"data": {"attributes": {"issuer_url": "https://your-subdomain.okta.com"}, "type": "org_config"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/delegated-auth-login
   Scenario: Update the maximum session duration returns "Bad Request" response
     Given new "UpdateLoginOrgConfigsMaxSessionDuration" request
     And body with value {"data": {"attributes": {"max_session_duration": 604800}, "type": "max_session_duration"}}
