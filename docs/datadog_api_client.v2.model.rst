@@ -11771,6 +11771,118 @@ datadog\_api\_client.v2.model.datastore\_trigger\_wrapper module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_column module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_column
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_fetch\_request module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_fetch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_fetch\_request\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_fetch_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_fetch\_request\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_fetch_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_fetch\_request\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_fetch_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_request\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_request\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_response\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_response\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_response\_meta module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_response\_type module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_state module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ddsql\_tabular\_query\_time\_window module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ddsql_tabular_query_time_window
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.default\_rulesets\_per\_language\_data module
 ---------------------------------------------------------------------------
 
