@@ -2672,6 +2672,10 @@ from datadog_api_client.v2.model.entity_v3_queue import EntityV3Queue
 from datadog_api_client.v2.model.entity_v3_queue_datadog import EntityV3QueueDatadog
 from datadog_api_client.v2.model.entity_v3_queue_kind import EntityV3QueueKind
 from datadog_api_client.v2.model.entity_v3_queue_spec import EntityV3QueueSpec
+from datadog_api_client.v2.model.entity_v3_repository import EntityV3Repository
+from datadog_api_client.v2.model.entity_v3_repository_datadog import EntityV3RepositoryDatadog
+from datadog_api_client.v2.model.entity_v3_repository_kind import EntityV3RepositoryKind
+from datadog_api_client.v2.model.entity_v3_repository_spec import EntityV3RepositorySpec
 from datadog_api_client.v2.model.entity_v3_service import EntityV3Service
 from datadog_api_client.v2.model.entity_v3_service_datadog import EntityV3ServiceDatadog
 from datadog_api_client.v2.model.entity_v3_service_kind import EntityV3ServiceKind
@@ -11943,6 +11947,10 @@ __all__ = [
     "EntityV3QueueDatadog",
     "EntityV3QueueKind",
     "EntityV3QueueSpec",
+    "EntityV3Repository",
+    "EntityV3RepositoryDatadog",
+    "EntityV3RepositoryKind",
+    "EntityV3RepositorySpec",
     "EntityV3Service",
     "EntityV3ServiceDatadog",
     "EntityV3ServiceKind",
