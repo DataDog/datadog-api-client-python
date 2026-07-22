@@ -21,6 +21,22 @@ For example to run the tests for Python 3.9:
 tox -epy39
 ```
 
+Generated BDD artifacts
+-----------------------
+
+The OpenAPI transformer can generate a shared request-plan database, recording
+server, and copy of the feature corpus. After generating those artifacts into
+`tests/generated`, run them through the Python SDK's native pytest-bdd adapter:
+
+```shell
+./run-bdd-tests.sh
+```
+
+Set `BDD_TEST_ARTIFACTS` when the generated artifact directory is elsewhere.
+The adapter builds requests from the generated plans and points every SDK client,
+including setup and undo calls, at the generated recording server. The SDK does
+not need access to the spec repository or the transformer at test runtime.
+
 To pass extra arguments to run the tests, you need to close `tox` arguments with `--`.
 You can get more verbose information with the `-v` flag to `pytest`, filter the tests using the `-k` or
 specifying the test full path. For example:

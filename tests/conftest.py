@@ -44,6 +44,8 @@ import logging
 import pathlib
 import re
 import time
+import urllib.error
+import urllib.request
 import warnings
 from datetime import datetime
 
@@ -68,6 +70,78 @@ PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
 PATTERN_FOLLOWING_ALPHA = re.compile(r"([a-z0-9])([A-Z])")
 PATTERN_WHITESPACE = re.compile(r"\W")
 PATTERN_INDEX = re.compile(r"\[([0-9]*)\]")
+TEST_RUNNER_TEMPLATE_KEY = "$openapi_transformer_template"
+
+
+def test_runner_enabled():
+    """Return whether generated BDD request plans should drive the test."""
+    return "DD_TEST_RUNNER_DATA" in os.environ
+
+
+def test_server_enabled():
+    """Return whether generated recordings should be served over HTTP."""
+    return "DD_TEST_SERVER_URL" in os.environ
+
+
+def _test_server_request(method, path, payload=None):
+    url = os.environ["DD_TEST_SERVER_URL"].rstrip("/") + "/" + path.lstrip("/")
+    body = json.dumps(payload).encode("utf-8") if payload is not None else None
+    headers = {"content-type": "application/json"} if body is not None else {}
+    request = urllib.request.Request(url, data=body, headers=headers, method=method)
+    try:
+        with urllib.request.urlopen(request) as response:
+            response_body = response.read()
+    except urllib.error.HTTPError as error:
+        detail = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(f"Test server {method} {path} failed ({error.code}): {detail}") from error
+    return json.loads(response_body) if response_body else {}
+
+
+@functools.lru_cache
+def _test_runner_manifest(root):
+    with (pathlib.Path(root) / "manifest.json").open() as file:
+        return json.load(file)
+
+
+def _test_runner_plan(request, api_version):
+    root = pathlib.Path(os.environ["DD_TEST_RUNNER_DATA"]).resolve()
+    feature_name = request.node._openapi_test_feature
+    scenario_name = request.node._openapi_test_scenario
+    item = next(
+        (
+            candidate
+            for candidate in _test_runner_manifest(str(root))["scenarios"]
+            if candidate["version"] == api_version
+            and candidate["feature"] == feature_name
+            and candidate["scenario"] == scenario_name
+        ),
+        None,
+    )
+    if item is None:
+        raise RuntimeError(f"Generated request plan not found for {api_version}/{feature_name}/{scenario_name}")
+    with (root / item["file"]).open() as file:
+        return json.load(file)
+
+
+def _materialize_test_value(value, context):
+    if isinstance(value, dict) and set(value) == {TEST_RUNNER_TEMPLATE_KEY}:
+        rendered = (
+            Environment(keep_trailing_newline=True).from_string(value[TEST_RUNNER_TEMPLATE_KEY]).render(**context)
+        )
+        return json.loads(rendered)
+    if isinstance(value, dict):
+        return {key: _materialize_test_value(item, context) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_materialize_test_value(item, context) for item in value]
+    if isinstance(value, str):
+        return Environment(keep_trailing_newline=True).from_string(value).render(**context)
+    return value
+
+
+def _add_test_server_session(client, session):
+    if session:
+        client.default_headers["x-openapi-test-session"] = session["session"]
+    return client
 
 
 def sleep_after_request(f):
@@ -94,6 +168,11 @@ def escape_reserved_keyword(word):
     if word in reserved_keywords:
         return f"_{word}"
     return word
+
+
+def pytest_bdd_before_scenario(request, feature, scenario):
+    request.node._openapi_test_feature = feature.name
+    request.node._openapi_test_scenario = scenario.name
 
 
 def pytest_bdd_after_scenario(request, feature, scenario):
@@ -153,6 +232,32 @@ def _get_prefix(request):
         main = PATTERN_ALPHANUM.sub("_", base_name)[:100]
     prefix = "Test-Python" if _disable_recording() else "Test"
     return f"{prefix}-{main}"
+
+
+@pytest.fixture
+def test_server_session(request, api_version):
+    """Open one generated test-server session for the current BDD scenario."""
+    if not test_server_enabled():
+        yield None
+        return
+
+    session = _test_server_request(
+        "POST",
+        "/__openapi_transformer__/sessions",
+        {
+            "version": api_version,
+            "feature": request.node._openapi_test_feature,
+            "scenario": request.node._openapi_test_scenario,
+        },
+    )
+    try:
+        yield session
+    finally:
+        result = _test_server_request("POST", f"/__openapi_transformer__/sessions/{session['session']}/stop")
+        if result.get("complete") is False:
+            raise RuntimeError(
+                f"Test server session consumed {result['interactions']} of {result['total_interactions']} interactions"
+            )
 
 
 @pytest.fixture
@@ -282,10 +387,12 @@ def default_cassette_name(default_cassette_name):
 
 
 @pytest.fixture
-def freezed_time(default_cassette_name, record_mode, vcr):
+def freezed_time(default_cassette_name, record_mode, vcr, test_server_session):
     from dateutil import parser
 
-    if record_mode in {"new_episodes", "rewrite"}:
+    if test_server_session:
+        freeze_at = test_server_session["frozen_at"]
+    elif record_mode in {"new_episodes", "rewrite"}:
         tzinfo = datetime.now().astimezone().tzinfo
         freeze_at = datetime.now().replace(tzinfo=tzinfo).isoformat()
         if record_mode == "rewrite":
@@ -379,7 +486,7 @@ def undo_operations():
     return result
 
 
-def build_configuration():
+def build_configuration(test_server_session=None):
     c = Configuration(return_http_data_only=False, spec_property_naming=True)
     c.connection_pool_maxsize = 0
     c.debug = debug = os.getenv("DEBUG") in {"true", "1", "yes", "on"}
@@ -387,21 +494,23 @@ def build_configuration():
     if debug:  # enable vcr logs for DEBUG=true
         vcr_log = logging.getLogger("vcr")
         vcr_log.setLevel(logging.INFO)
-    if "DD_TEST_SITE" in os.environ:
+    if test_server_enabled():
+        c.host = os.environ["DD_TEST_SERVER_URL"]
+    elif "DD_TEST_SITE" in os.environ:
         c.server_index = 2
         c.server_variables["site"] = os.environ["DD_TEST_SITE"]
     return c
 
 
 @pytest.fixture
-def configuration():
-    return build_configuration()
+def configuration(test_server_session):
+    return build_configuration(test_server_session)
 
 
 @pytest.fixture
-def client(configuration):
+def client(configuration, test_server_session):
     with ApiClient(configuration) as api_client:
-        yield api_client
+        yield _add_test_server_session(api_client, test_server_session)
 
 
 def _api_name(value):
@@ -430,6 +539,8 @@ def operation_enabled(client, name):
 @given(parsers.parse('new "{name}" request'))
 def api_request(configuration, context, name):
     """Call an endpoint."""
+    if test_runner_enabled():
+        return
     api = context["api"]
     context["api_request"] = {
         "api": api["api"],
@@ -443,6 +554,8 @@ def api_request(configuration, context, name):
 @given(parsers.parse("body with value {data}"))
 def request_body(context, data):
     """Set request body."""
+    if test_runner_enabled():
+        return
     tpl = Template(data).render(**context)
     context["api_request"]["kwargs"]["body"] = tpl
 
@@ -450,6 +563,8 @@ def request_body(context, data):
 @given(parsers.parse('body from file "{path}"'))
 def request_body_from_file(context, path, package_name):
     """Set request body."""
+    if test_runner_enabled():
+        return
     version = package_name.split(".")[-1]
     with open(os.path.join(os.path.dirname(__file__), version, "features", path)) as f:
         data = f.read()
@@ -460,6 +575,8 @@ def request_body_from_file(context, path, package_name):
 @given(parsers.parse('request contains "{name}" parameter from "{path}"'))
 def request_parameter(context, name, path, path_parameters):
     """Set request parameter."""
+    if test_runner_enabled():
+        return
     value = glom(context, path)
     param_name = escape_reserved_keyword(snake_case(name))
     context["api_request"]["kwargs"][param_name] = json.dumps(value)
@@ -471,6 +588,8 @@ def request_parameter(context, name, path, path_parameters):
 @given(parsers.parse('request contains "{name}" parameter with value {value}'))
 def request_parameter_with_value(context, name, value, path_parameters):
     """Set request parameter."""
+    if test_runner_enabled():
+        return
     tpl = Template(value).render(**context)
     param_name = escape_reserved_keyword(snake_case(name))
     context["api_request"]["kwargs"][param_name] = tpl
@@ -492,16 +611,47 @@ def assert_no_unparsed(data):
             assert_no_unparsed(attr)
 
 
+def prepare_test_runner_request(context, client, api_version, request, path_parameters):
+    """Build the SDK invocation from a generated, language-neutral plan."""
+    plan = _test_runner_plan(request, api_version)
+    api = context["api"]
+    operation_name = snake_case(plan["operation_id"])
+    api_request = {
+        "api": api["api"],
+        "request": getattr(api["api"], operation_name),
+        "args": [],
+        "kwargs": {},
+        "response": (None, None, None),
+    }
+    request_plan = plan["request"]
+    if request_plan["body"] is not None:
+        body = _materialize_test_value(request_plan["body"]["value"], context)
+        api_request["kwargs"]["body"] = json.dumps(body)
+
+    for parameter in request_plan["parameters"]:
+        source = parameter["source"]
+        if source["type"] == "fixture":
+            value = glom(context, source["path"])
+        else:
+            value = _materialize_test_value(source["value"], context)
+        param_name = escape_reserved_keyword(snake_case(parameter["name"]))
+        api_request["kwargs"][param_name] = json.dumps(value)
+        path_parameters[parameter["name"]] = value
+        path_parameters[param_name] = value
+
+    context["api_request"] = api_request
+
+
 def build_given(version, operation):
     @sleep_after_request
-    def wrapper(context, undo):
+    def wrapper(context, undo, test_server_session):
         name = operation["tag"].replace(" ", "")
         module_name = snake_case(operation["tag"])
         operation_name = snake_case(operation["operationId"])
         package_name = f"datadog_api_client.{version}"
 
         # make sure we have a fresh instance of API client and configuration
-        configuration = build_configuration()
+        configuration = build_configuration(test_server_session)
         configuration.api_key["apiKeyAuth"] = os.getenv("DD_TEST_CLIENT_API_KEY", "fake")
         configuration.api_key["appKeyAuth"] = os.getenv("DD_TEST_CLIENT_APP_KEY", "fake")
         configuration.check_input_type = False
@@ -513,6 +663,7 @@ def build_given(version, operation):
 
         package = importlib.import_module(f"{package_name}.api.{module_name}_api")
         with ApiClient(configuration) as client:
+            _add_test_server_session(client, test_server_session)
             api = getattr(package, _api_name(name))(client)
             operation_method = getattr(api, operation_name)
             params_map = getattr(api, f"_{operation_name}_endpoint").params_map
@@ -639,8 +790,10 @@ def undo(package_name, undo_operations, client, path_parameters):
 
 
 @when("the request is sent")
-def execute_request(undo, context, client, api_version, request):
+def execute_request(undo, context, client, api_version, request, path_parameters):
     """Execute the prepared request."""
+    if test_runner_enabled():
+        prepare_test_runner_request(context, client, api_version, request, path_parameters)
     api_request = context["api_request"]
 
     params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
@@ -659,6 +812,8 @@ def execute_request(undo, context, client, api_version, request):
         response_body_json = data_to_dict(response[0])
         api_request["response"] = [response_body_json, response[1], response[2]]
     except exceptions.ApiException as e:
+        if e.headers and any(key.lower() == "x-openapi-test-error" for key in e.headers):
+            raise
         # If we have an exception, make a stub response object to use for assertions
         # Instead of finding the response class of the method, we use the fact that all
         # responses returned have an ordered response of body|status|headers
@@ -683,8 +838,10 @@ def execute_request(undo, context, client, api_version, request):
 
 
 @when("the request with pagination is sent")
-def execute_request_with_pagination(undo, context, client, api_version):
+def execute_request_with_pagination(undo, context, client, api_version, request, path_parameters):
     """Execute the prepared paginated request."""
+    if test_runner_enabled():
+        prepare_test_runner_request(context, client, api_version, request, path_parameters)
     api_request = context["api_request"]
 
     params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
@@ -700,6 +857,8 @@ def execute_request_with_pagination(undo, context, client, api_version):
         response_body_json = data_to_dict(response)
         api_request["response"] = [response_body_json, 200, None]
     except exceptions.ApiException as e:
+        if e.headers and any(key.lower() == "x-openapi-test-error" for key in e.headers):
+            raise
         # If we have an exception, make a stub response object to use for assertions
         # Instead of finding the response class of the method, we use the fact that all
         # responses returned have an ordered response of body|status|headers
