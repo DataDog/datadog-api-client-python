@@ -33198,6 +33198,34 @@ datadog\_api\_client.v2.model.publish\_request\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.pup\_bump\_test\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pup_bump_test_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pup\_bump\_test\_data\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pup_bump_test_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pup\_bump\_test\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pup_bump_test_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pup\_bump\_test\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pup_bump_test_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.put\_apps\_datastore\_item\_response\_array module
 --------------------------------------------------------------------------------
 

@@ -6642,6 +6642,10 @@ from datadog_api_client.v2.model.publish_form_data import PublishFormData
 from datadog_api_client.v2.model.publish_form_data_attributes import PublishFormDataAttributes
 from datadog_api_client.v2.model.publish_form_request import PublishFormRequest
 from datadog_api_client.v2.model.publish_request_type import PublishRequestType
+from datadog_api_client.v2.model.pup_bump_test_data import PupBumpTestData
+from datadog_api_client.v2.model.pup_bump_test_data_attributes import PupBumpTestDataAttributes
+from datadog_api_client.v2.model.pup_bump_test_response import PupBumpTestResponse
+from datadog_api_client.v2.model.pup_bump_test_type import PupBumpTestType
 from datadog_api_client.v2.model.put_apps_datastore_item_response_array import PutAppsDatastoreItemResponseArray
 from datadog_api_client.v2.model.put_apps_datastore_item_response_data import PutAppsDatastoreItemResponseData
 from datadog_api_client.v2.model.put_incident_notification_rule_request import PutIncidentNotificationRuleRequest
@@ -14681,6 +14685,10 @@ __all__ = [
     "PublishFormDataAttributes",
     "PublishFormRequest",
     "PublishRequestType",
+    "PupBumpTestData",
+    "PupBumpTestDataAttributes",
+    "PupBumpTestResponse",
+    "PupBumpTestType",
     "PutAppsDatastoreItemResponseArray",
     "PutAppsDatastoreItemResponseData",
     "PutIncidentNotificationRuleRequest",

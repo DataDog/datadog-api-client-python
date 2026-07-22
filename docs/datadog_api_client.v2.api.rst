@@ -655,6 +655,13 @@ datadog\_api\_client.v2.api.product\_analytics\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.pup\_bump\_test\_api module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.pup_bump_test_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.reference\_tables\_api module
 ---------------------------------------------------------
 

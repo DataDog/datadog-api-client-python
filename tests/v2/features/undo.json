@@ -6284,6 +6284,12 @@
       "type": "safe"
     }
   },
+  "GetPupBumpTest": {
+    "tag": "Pup Bump Test",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "QueryScalarData": {
     "tag": "Metrics",
     "undo": {

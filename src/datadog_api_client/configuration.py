@@ -684,6 +684,7 @@ class Configuration:
                 "v2.update_connection": False,
                 "v2.get_pruned_trace_by_id": False,
                 "v2.get_trace_by_id": False,
+                "v2.get_pup_bump_test": False,
                 "v2.get_asm_service_by_name": False,
                 "v2.get_rum_sdk_config": False,
                 "v2.update_rum_sdk_config": False,
