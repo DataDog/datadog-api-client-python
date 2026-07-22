@@ -19,7 +19,6 @@ body = CaseUpdateDueDateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_case_due_date"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.update_case_due_date(case_id="case_id", body=body)

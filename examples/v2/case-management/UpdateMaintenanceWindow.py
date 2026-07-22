@@ -17,7 +17,6 @@ body = MaintenanceWindowUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_maintenance_window"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.update_maintenance_window(maintenance_window_id="maintenance_window_id", body=body)

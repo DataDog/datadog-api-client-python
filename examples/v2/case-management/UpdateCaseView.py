@@ -17,7 +17,6 @@ body = CaseViewUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_case_view"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.update_case_view(view_id="view_id", body=body)

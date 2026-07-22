@@ -78,8 +78,7 @@ Feature: Case Management Attribute
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update custom attribute config returns "Bad Request" response
-    Given operation "UpdateCustomAttributeConfig" enabled
-    And new "UpdateCustomAttributeConfig" request
+    Given new "UpdateCustomAttributeConfig" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
     And request contains "custom_attribute_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Updated description.", "display_name": "AWS Region", "type": "NUMBER", "type_data": {"options": [{"value": "us-east-1"}]}}, "type": "custom_attribute"}}
@@ -88,8 +87,7 @@ Feature: Case Management Attribute
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update custom attribute config returns "Not Found" response
-    Given operation "UpdateCustomAttributeConfig" enabled
-    And new "UpdateCustomAttributeConfig" request
+    Given new "UpdateCustomAttributeConfig" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
     And request contains "custom_attribute_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Updated description.", "display_name": "AWS Region", "type": "NUMBER", "type_data": {"options": [{"value": "us-east-1"}]}}, "type": "custom_attribute"}}
@@ -98,8 +96,7 @@ Feature: Case Management Attribute
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update custom attribute config returns "OK" response
-    Given operation "UpdateCustomAttributeConfig" enabled
-    And new "UpdateCustomAttributeConfig" request
+    Given new "UpdateCustomAttributeConfig" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
     And request contains "custom_attribute_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"description": "Updated description.", "display_name": "AWS Region", "type": "NUMBER", "type_data": {"options": [{"value": "us-east-1"}]}}, "type": "custom_attribute"}}

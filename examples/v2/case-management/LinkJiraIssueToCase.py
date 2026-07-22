@@ -19,7 +19,6 @@ body = JiraIssueLinkRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["link_jira_issue_to_case"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.link_jira_issue_to_case(case_id="case_id", body=body)

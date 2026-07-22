@@ -31,7 +31,6 @@ body = CustomAttributeConfigUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_custom_attribute_config"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementAttributeApi(api_client)
     response = api_instance.update_custom_attribute_config(

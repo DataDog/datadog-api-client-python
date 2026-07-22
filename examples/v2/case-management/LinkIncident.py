@@ -16,7 +16,6 @@ body = RelationshipToIncidentRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["link_incident"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.link_incident(case_id="case_id", body=body)

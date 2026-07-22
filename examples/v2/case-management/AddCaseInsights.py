@@ -27,7 +27,6 @@ body = CaseInsightsRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["add_case_insights"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.add_case_insights(case_id="case_id", body=body)

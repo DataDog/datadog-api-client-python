@@ -20,7 +20,6 @@ body = ServiceNowTicketCreateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_case_service_now_ticket"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.create_case_service_now_ticket(case_id="case_id", body=body)

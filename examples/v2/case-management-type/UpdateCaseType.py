@@ -21,7 +21,6 @@ body = CaseTypeUpdateRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["update_case_type"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementTypeApi(api_client)
     response = api_instance.update_case_type(case_type_id="case_type_id", body=body)

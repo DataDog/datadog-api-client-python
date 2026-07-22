@@ -12,8 +12,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Add insights to a case returns "Bad Request" response
-    Given operation "AddCaseInsights" enabled
-    And new "AddCaseInsights" request
+    Given new "AddCaseInsights" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"insights": [{"ref": "/monitors/12345?q=total", "resource_id": "12345", "type": "SECURITY_SIGNAL"}]}, "type": "case"}}
     When the request is sent
@@ -21,8 +20,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Add insights to a case returns "Not Found" response
-    Given operation "AddCaseInsights" enabled
-    And new "AddCaseInsights" request
+    Given new "AddCaseInsights" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"insights": [{"ref": "/monitors/12345?q=total", "resource_id": "12345", "type": "SECURITY_SIGNAL"}]}, "type": "case"}}
     When the request is sent
@@ -30,8 +28,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Add insights to a case returns "OK" response
-    Given operation "AddCaseInsights" enabled
-    And new "AddCaseInsights" request
+    Given new "AddCaseInsights" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"insights": [{"ref": "/monitors/12345?q=total", "resource_id": "12345", "type": "SECURITY_SIGNAL"}]}, "type": "case"}}
     When the request is sent
@@ -39,24 +36,21 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Aggregate cases returns "Bad Request" response
-    Given operation "AggregateCases" enabled
-    And new "AggregateCases" request
+    Given new "AggregateCases" request
     And body with value {"data": {"attributes": {"group_by": {"groups": ["status"], "limit": 14}, "query_filter": "service:case-api"}, "type": "aggregate"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Aggregate cases returns "Not Found" response
-    Given operation "AggregateCases" enabled
-    And new "AggregateCases" request
+    Given new "AggregateCases" request
     And body with value {"data": {"attributes": {"group_by": {"groups": ["status"], "limit": 14}, "query_filter": "service:case-api"}, "type": "aggregate"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Aggregate cases returns "OK" response
-    Given operation "AggregateCases" enabled
-    And new "AggregateCases" request
+    Given new "AggregateCases" request
     And body with value {"data": {"attributes": {"group_by": {"groups": ["status"], "limit": 14}, "query_filter": "service:case-api"}, "type": "aggregate"}}
     When the request is sent
     Then the response status is 200 OK
@@ -117,24 +111,21 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Bulk update cases returns "Bad Request" response
-    Given operation "BulkUpdateCases" enabled
-    And new "BulkUpdateCases" request
+    Given new "BulkUpdateCases" request
     And body with value {"data": {"attributes": {"case_ids": ["case-id-1", "case-id-2"], "payload": {"priority": "P1"}, "type": "priority"}, "type": "bulk"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Bulk update cases returns "Not Found" response
-    Given operation "BulkUpdateCases" enabled
-    And new "BulkUpdateCases" request
+    Given new "BulkUpdateCases" request
     And body with value {"data": {"attributes": {"case_ids": ["case-id-1", "case-id-2"], "payload": {"priority": "P1"}, "type": "priority"}, "type": "bulk"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Bulk update cases returns "OK" response
-    Given operation "BulkUpdateCases" enabled
-    And new "BulkUpdateCases" request
+    Given new "BulkUpdateCases" request
     And body with value {"data": {"attributes": {"case_ids": ["case-id-1", "case-id-2"], "payload": {"priority": "P1"}, "type": "priority"}, "type": "bulk"}}
     When the request is sent
     Then the response status is 200 OK
@@ -167,29 +158,25 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Count cases returns "Bad Request" response
-    Given operation "CountCases" enabled
-    And new "CountCases" request
+    Given new "CountCases" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Count cases returns "Not Found" response
-    Given operation "CountCases" enabled
-    And new "CountCases" request
+    Given new "CountCases" request
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Count cases returns "OK" response
-    Given operation "CountCases" enabled
-    And new "CountCases" request
+    Given new "CountCases" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create Jira issue for case returns "Accepted" response
-    Given operation "CreateCaseJiraIssue" enabled
-    And new "CreateCaseJiraIssue" request
+    Given new "CreateCaseJiraIssue" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
     When the request is sent
@@ -197,8 +184,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create Jira issue for case returns "Bad Request" response
-    Given operation "CreateCaseJiraIssue" enabled
-    And new "CreateCaseJiraIssue" request
+    Given new "CreateCaseJiraIssue" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
     When the request is sent
@@ -206,8 +192,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create Jira issue for case returns "Not Found" response
-    Given operation "CreateCaseJiraIssue" enabled
-    And new "CreateCaseJiraIssue" request
+    Given new "CreateCaseJiraIssue" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
     When the request is sent
@@ -215,8 +200,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create ServiceNow ticket for case returns "Accepted" response
-    Given operation "CreateCaseServiceNowTicket" enabled
-    And new "CreateCaseServiceNowTicket" request
+    Given new "CreateCaseServiceNowTicket" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
     When the request is sent
@@ -224,8 +208,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create ServiceNow ticket for case returns "Bad Request" response
-    Given operation "CreateCaseServiceNowTicket" enabled
-    And new "CreateCaseServiceNowTicket" request
+    Given new "CreateCaseServiceNowTicket" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
     When the request is sent
@@ -233,8 +216,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create ServiceNow ticket for case returns "Not Found" response
-    Given operation "CreateCaseServiceNowTicket" enabled
-    And new "CreateCaseServiceNowTicket" request
+    Given new "CreateCaseServiceNowTicket" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
     When the request is sent
@@ -242,24 +224,21 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a case link returns "Bad Request" response
-    Given operation "CreateCaseLink" enabled
-    And new "CreateCaseLink" request
+    Given new "CreateCaseLink" request
     And body with value {"data": {"attributes": {"child_entity_id": "4417921d-0866-4a38-822c-6f2a0f65f77d", "child_entity_type": "CASE", "parent_entity_id": "bf0cbac6-4c16-4cfb-b6bf-ca5e0ec37a4f", "parent_entity_type": "CASE", "relationship": "BLOCKS"}, "type": "link"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a case link returns "Created" response
-    Given operation "CreateCaseLink" enabled
-    And new "CreateCaseLink" request
+    Given new "CreateCaseLink" request
     And body with value {"data": {"attributes": {"child_entity_id": "4417921d-0866-4a38-822c-6f2a0f65f77d", "child_entity_type": "CASE", "parent_entity_id": "bf0cbac6-4c16-4cfb-b6bf-ca5e0ec37a4f", "parent_entity_type": "CASE", "relationship": "BLOCKS"}, "type": "link"}}
     When the request is sent
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a case link returns "Not Found" response
-    Given operation "CreateCaseLink" enabled
-    And new "CreateCaseLink" request
+    Given new "CreateCaseLink" request
     And body with value {"data": {"attributes": {"child_entity_id": "4417921d-0866-4a38-822c-6f2a0f65f77d", "child_entity_type": "CASE", "parent_entity_id": "bf0cbac6-4c16-4cfb-b6bf-ca5e0ec37a4f", "parent_entity_type": "CASE", "relationship": "BLOCKS"}, "type": "link"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -292,48 +271,42 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a case view returns "Bad Request" response
-    Given operation "CreateCaseView" enabled
-    And new "CreateCaseView" request
+    Given new "CreateCaseView" request
     And body with value {"data": {"attributes": {"name": "Open bugs", "project_id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "query": "status:open type:bug"}, "type": "view"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a case view returns "Created" response
-    Given operation "CreateCaseView" enabled
-    And new "CreateCaseView" request
+    Given new "CreateCaseView" request
     And body with value {"data": {"attributes": {"name": "Open bugs", "project_id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "query": "status:open type:bug"}, "type": "view"}}
     When the request is sent
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a case view returns "Not Found" response
-    Given operation "CreateCaseView" enabled
-    And new "CreateCaseView" request
+    Given new "CreateCaseView" request
     And body with value {"data": {"attributes": {"name": "Open bugs", "project_id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "query": "status:open type:bug"}, "type": "view"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a maintenance window returns "Bad Request" response
-    Given operation "CreateMaintenanceWindow" enabled
-    And new "CreateMaintenanceWindow" request
+    Given new "CreateMaintenanceWindow" request
     And body with value {"data": {"attributes": {"end_at": "2026-06-01T06:00:00Z", "name": "Weekly maintenance", "query": "project:SEC", "start_at": "2026-06-01T00:00:00Z"}, "type": "maintenance_window"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a maintenance window returns "Created" response
-    Given operation "CreateMaintenanceWindow" enabled
-    And new "CreateMaintenanceWindow" request
+    Given new "CreateMaintenanceWindow" request
     And body with value {"data": {"attributes": {"end_at": "2026-06-01T06:00:00Z", "name": "Weekly maintenance", "query": "project:SEC", "start_at": "2026-06-01T00:00:00Z"}, "type": "maintenance_window"}}
     When the request is sent
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create a maintenance window returns "Not Found" response
-    Given operation "CreateMaintenanceWindow" enabled
-    And new "CreateMaintenanceWindow" request
+    Given new "CreateMaintenanceWindow" request
     And body with value {"data": {"attributes": {"end_at": "2026-06-01T06:00:00Z", "name": "Weekly maintenance", "query": "project:SEC", "start_at": "2026-06-01T00:00:00Z"}, "type": "maintenance_window"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -385,8 +358,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create an automation rule returns "Bad Request" response
-    Given operation "CreateCaseAutomationRule" enabled
-    And new "CreateCaseAutomationRule" request
+    Given new "CreateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
     When the request is sent
@@ -394,8 +366,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create an automation rule returns "Created" response
-    Given operation "CreateCaseAutomationRule" enabled
-    And new "CreateCaseAutomationRule" request
+    Given new "CreateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
     When the request is sent
@@ -403,8 +374,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create an automation rule returns "Not Found" response
-    Given operation "CreateCaseAutomationRule" enabled
-    And new "CreateCaseAutomationRule" request
+    Given new "CreateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
     When the request is sent
@@ -412,8 +382,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create investigation notebook for case returns "Bad Request" response
-    Given operation "CreateCaseNotebook" enabled
-    And new "CreateCaseNotebook" request
+    Given new "CreateCaseNotebook" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"type": "notebook"}}
     When the request is sent
@@ -421,8 +390,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create investigation notebook for case returns "No Content" response
-    Given operation "CreateCaseNotebook" enabled
-    And new "CreateCaseNotebook" request
+    Given new "CreateCaseNotebook" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"type": "notebook"}}
     When the request is sent
@@ -430,8 +398,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Create investigation notebook for case returns "Not Found" response
-    Given operation "CreateCaseNotebook" enabled
-    And new "CreateCaseNotebook" request
+    Given new "CreateCaseNotebook" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"type": "notebook"}}
     When the request is sent
@@ -439,72 +406,63 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a case link returns "Bad Request" response
-    Given operation "DeleteCaseLink" enabled
-    And new "DeleteCaseLink" request
+    Given new "DeleteCaseLink" request
     And request contains "link_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a case link returns "No Content" response
-    Given operation "DeleteCaseLink" enabled
-    And new "DeleteCaseLink" request
+    Given new "DeleteCaseLink" request
     And request contains "link_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a case link returns "Not Found" response
-    Given operation "DeleteCaseLink" enabled
-    And new "DeleteCaseLink" request
+    Given new "DeleteCaseLink" request
     And request contains "link_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a case view returns "Bad Request" response
-    Given operation "DeleteCaseView" enabled
-    And new "DeleteCaseView" request
+    Given new "DeleteCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a case view returns "No Content" response
-    Given operation "DeleteCaseView" enabled
-    And new "DeleteCaseView" request
+    Given new "DeleteCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a case view returns "Not Found" response
-    Given operation "DeleteCaseView" enabled
-    And new "DeleteCaseView" request
+    Given new "DeleteCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a maintenance window returns "Bad Request" response
-    Given operation "DeleteMaintenanceWindow" enabled
-    And new "DeleteMaintenanceWindow" request
+    Given new "DeleteMaintenanceWindow" request
     And request contains "maintenance_window_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a maintenance window returns "No Content" response
-    Given operation "DeleteMaintenanceWindow" enabled
-    And new "DeleteMaintenanceWindow" request
+    Given new "DeleteMaintenanceWindow" request
     And request contains "maintenance_window_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete a maintenance window returns "Not Found" response
-    Given operation "DeleteMaintenanceWindow" enabled
-    And new "DeleteMaintenanceWindow" request
+    Given new "DeleteMaintenanceWindow" request
     And request contains "maintenance_window_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
@@ -527,8 +485,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete an automation rule returns "No Content" response
-    Given operation "DeleteCaseAutomationRule" enabled
-    And new "DeleteCaseAutomationRule" request
+    Given new "DeleteCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -536,8 +493,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Delete an automation rule returns "Not Found" response
-    Given operation "DeleteCaseAutomationRule" enabled
-    And new "DeleteCaseAutomationRule" request
+    Given new "DeleteCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -593,8 +549,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Disable an automation rule returns "Bad Request" response
-    Given operation "DisableCaseAutomationRule" enabled
-    And new "DisableCaseAutomationRule" request
+    Given new "DisableCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -602,8 +557,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Disable an automation rule returns "Not Found" response
-    Given operation "DisableCaseAutomationRule" enabled
-    And new "DisableCaseAutomationRule" request
+    Given new "DisableCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -611,8 +565,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Disable an automation rule returns "OK" response
-    Given operation "DisableCaseAutomationRule" enabled
-    And new "DisableCaseAutomationRule" request
+    Given new "DisableCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -620,8 +573,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Enable an automation rule returns "Bad Request" response
-    Given operation "EnableCaseAutomationRule" enabled
-    And new "EnableCaseAutomationRule" request
+    Given new "EnableCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -629,8 +581,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Enable an automation rule returns "Not Found" response
-    Given operation "EnableCaseAutomationRule" enabled
-    And new "EnableCaseAutomationRule" request
+    Given new "EnableCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -638,8 +589,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Enable an automation rule returns "OK" response
-    Given operation "EnableCaseAutomationRule" enabled
-    And new "EnableCaseAutomationRule" request
+    Given new "EnableCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -647,48 +597,42 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Favorite a project returns "Bad Request" response
-    Given operation "FavoriteCaseProject" enabled
-    And new "FavoriteCaseProject" request
+    Given new "FavoriteCaseProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Favorite a project returns "No Content" response
-    Given operation "FavoriteCaseProject" enabled
-    And new "FavoriteCaseProject" request
+    Given new "FavoriteCaseProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/case-management
   Scenario: Favorite a project returns "Not Found" response
-    Given operation "FavoriteCaseProject" enabled
-    And new "FavoriteCaseProject" request
+    Given new "FavoriteCaseProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get a case view returns "Bad Request" response
-    Given operation "GetCaseView" enabled
-    And new "GetCaseView" request
+    Given new "GetCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get a case view returns "Not Found" response
-    Given operation "GetCaseView" enabled
-    And new "GetCaseView" request
+    Given new "GetCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get a case view returns "OK" response
-    Given operation "GetCaseView" enabled
-    And new "GetCaseView" request
+    Given new "GetCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
@@ -713,8 +657,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get an automation rule returns "Bad Request" response
-    Given operation "GetCaseAutomationRule" enabled
-    And new "GetCaseAutomationRule" request
+    Given new "GetCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -722,8 +665,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get an automation rule returns "Not Found" response
-    Given operation "GetCaseAutomationRule" enabled
-    And new "GetCaseAutomationRule" request
+    Given new "GetCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -731,8 +673,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get an automation rule returns "OK" response
-    Given operation "GetCaseAutomationRule" enabled
-    And new "GetCaseAutomationRule" request
+    Given new "GetCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -740,24 +681,21 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get case timeline returns "Bad Request" response
-    Given operation "ListCaseTimeline" enabled
-    And new "ListCaseTimeline" request
+    Given new "ListCaseTimeline" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get case timeline returns "Not Found" response
-    Given operation "ListCaseTimeline" enabled
-    And new "ListCaseTimeline" request
+    Given new "ListCaseTimeline" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Get case timeline returns "OK" response
-    Given operation "ListCaseTimeline" enabled
-    And new "ListCaseTimeline" request
+    Given new "ListCaseTimeline" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
@@ -829,8 +767,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Link existing Jira issue to case returns "Bad Request" response
-    Given operation "LinkJiraIssueToCase" enabled
-    And new "LinkJiraIssueToCase" request
+    Given new "LinkJiraIssueToCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
     When the request is sent
@@ -838,8 +775,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Link existing Jira issue to case returns "Conflict" response
-    Given operation "LinkJiraIssueToCase" enabled
-    And new "LinkJiraIssueToCase" request
+    Given new "LinkJiraIssueToCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
     When the request is sent
@@ -847,8 +783,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Link existing Jira issue to case returns "No Content" response
-    Given operation "LinkJiraIssueToCase" enabled
-    And new "LinkJiraIssueToCase" request
+    Given new "LinkJiraIssueToCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
     When the request is sent
@@ -856,8 +791,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Link existing Jira issue to case returns "Not Found" response
-    Given operation "LinkJiraIssueToCase" enabled
-    And new "LinkJiraIssueToCase" request
+    Given new "LinkJiraIssueToCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
     When the request is sent
@@ -865,8 +799,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Link incident to case returns "Bad Request" response
-    Given operation "LinkIncident" enabled
-    And new "LinkIncident" request
+    Given new "LinkIncident" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
     When the request is sent
@@ -874,8 +807,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Link incident to case returns "Created" response
-    Given operation "LinkIncident" enabled
-    And new "LinkIncident" request
+    Given new "LinkIncident" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
     When the request is sent
@@ -883,8 +815,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Link incident to case returns "Not Found" response
-    Given operation "LinkIncident" enabled
-    And new "LinkIncident" request
+    Given new "LinkIncident" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
     When the request is sent
@@ -892,32 +823,28 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: List automation rules returns "Bad Request" response
-    Given operation "ListCaseAutomationRules" enabled
-    And new "ListCaseAutomationRules" request
+    Given new "ListCaseAutomationRules" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: List automation rules returns "Not Found" response
-    Given operation "ListCaseAutomationRules" enabled
-    And new "ListCaseAutomationRules" request
+    Given new "ListCaseAutomationRules" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: List automation rules returns "OK" response
-    Given operation "ListCaseAutomationRules" enabled
-    And new "ListCaseAutomationRules" request
+    Given new "ListCaseAutomationRules" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case links returns "Bad Request" response
-    Given operation "ListCaseLinks" enabled
-    And new "ListCaseLinks" request
+    Given new "ListCaseLinks" request
     And request contains "entity_type" parameter from "REPLACE.ME"
     And request contains "entity_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -925,8 +852,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case links returns "Not Found" response
-    Given operation "ListCaseLinks" enabled
-    And new "ListCaseLinks" request
+    Given new "ListCaseLinks" request
     And request contains "entity_type" parameter from "REPLACE.ME"
     And request contains "entity_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -934,8 +860,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case links returns "OK" response
-    Given operation "ListCaseLinks" enabled
-    And new "ListCaseLinks" request
+    Given new "ListCaseLinks" request
     And request contains "entity_type" parameter from "REPLACE.ME"
     And request contains "entity_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -943,114 +868,99 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case views returns "Bad Request" response
-    Given operation "ListCaseViews" enabled
-    And new "ListCaseViews" request
+    Given new "ListCaseViews" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case views returns "Not Found" response
-    Given operation "ListCaseViews" enabled
-    And new "ListCaseViews" request
+    Given new "ListCaseViews" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case views returns "OK" response
-    Given operation "ListCaseViews" enabled
-    And new "ListCaseViews" request
+    Given new "ListCaseViews" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case watchers returns "Bad Request" response
-    Given operation "ListCaseWatchers" enabled
-    And new "ListCaseWatchers" request
+    Given new "ListCaseWatchers" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case watchers returns "Not Found" response
-    Given operation "ListCaseWatchers" enabled
-    And new "ListCaseWatchers" request
+    Given new "ListCaseWatchers" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: List case watchers returns "OK" response
-    Given operation "ListCaseWatchers" enabled
-    And new "ListCaseWatchers" request
+    Given new "ListCaseWatchers" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/case-management
   Scenario: List maintenance windows returns "Bad Request" response
-    Given operation "ListMaintenanceWindows" enabled
-    And new "ListMaintenanceWindows" request
+    Given new "ListMaintenanceWindows" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: List maintenance windows returns "Not Found" response
-    Given operation "ListMaintenanceWindows" enabled
-    And new "ListMaintenanceWindows" request
+    Given new "ListMaintenanceWindows" request
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: List maintenance windows returns "OK" response
-    Given operation "ListMaintenanceWindows" enabled
-    And new "ListMaintenanceWindows" request
+    Given new "ListMaintenanceWindows" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/case-management
   Scenario: List project favorites returns "Bad Request" response
-    Given operation "ListUserCaseProjectFavorites" enabled
-    And new "ListUserCaseProjectFavorites" request
+    Given new "ListUserCaseProjectFavorites" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: List project favorites returns "Not Found" response
-    Given operation "ListUserCaseProjectFavorites" enabled
-    And new "ListUserCaseProjectFavorites" request
+    Given new "ListUserCaseProjectFavorites" request
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: List project favorites returns "OK" response
-    Given operation "ListUserCaseProjectFavorites" enabled
-    And new "ListUserCaseProjectFavorites" request
+    Given new "ListUserCaseProjectFavorites" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/case-management
   Scenario: Remove Jira issue link from case returns "Bad Request" response
-    Given operation "UnlinkJiraIssue" enabled
-    And new "UnlinkJiraIssue" request
+    Given new "UnlinkJiraIssue" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Remove Jira issue link from case returns "No Content" response
-    Given operation "UnlinkJiraIssue" enabled
-    And new "UnlinkJiraIssue" request
+    Given new "UnlinkJiraIssue" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/case-management
   Scenario: Remove Jira issue link from case returns "Not Found" response
-    Given operation "UnlinkJiraIssue" enabled
-    And new "UnlinkJiraIssue" request
+    Given new "UnlinkJiraIssue" request
     And request contains "case_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
@@ -1071,8 +981,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Remove insights from a case returns "Bad Request" response
-    Given operation "RemoveCaseInsights" enabled
-    And new "RemoveCaseInsights" request
+    Given new "RemoveCaseInsights" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"insights": [{"ref": "/monitors/12345?q=total", "resource_id": "12345", "type": "SECURITY_SIGNAL"}]}, "type": "case"}}
     When the request is sent
@@ -1080,8 +989,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Remove insights from a case returns "Not Found" response
-    Given operation "RemoveCaseInsights" enabled
-    And new "RemoveCaseInsights" request
+    Given new "RemoveCaseInsights" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"insights": [{"ref": "/monitors/12345?q=total", "resource_id": "12345", "type": "SECURITY_SIGNAL"}]}, "type": "case"}}
     When the request is sent
@@ -1089,8 +997,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Remove insights from a case returns "OK" response
-    Given operation "RemoveCaseInsights" enabled
-    And new "RemoveCaseInsights" request
+    Given new "RemoveCaseInsights" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"insights": [{"ref": "/monitors/12345?q=total", "resource_id": "12345", "type": "SECURITY_SIGNAL"}]}, "type": "case"}}
     When the request is sent
@@ -1177,32 +1084,28 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Unfavorite a project returns "Bad Request" response
-    Given operation "UnfavoriteCaseProject" enabled
-    And new "UnfavoriteCaseProject" request
+    Given new "UnfavoriteCaseProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/case-management
   Scenario: Unfavorite a project returns "No Content" response
-    Given operation "UnfavoriteCaseProject" enabled
-    And new "UnfavoriteCaseProject" request
+    Given new "UnfavoriteCaseProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/case-management
   Scenario: Unfavorite a project returns "Not Found" response
-    Given operation "UnfavoriteCaseProject" enabled
-    And new "UnfavoriteCaseProject" request
+    Given new "UnfavoriteCaseProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/case-management
   Scenario: Unwatch a case returns "Bad Request" response
-    Given operation "UnwatchCase" enabled
-    And new "UnwatchCase" request
+    Given new "UnwatchCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
@@ -1210,8 +1113,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Unwatch a case returns "No Content" response
-    Given operation "UnwatchCase" enabled
-    And new "UnwatchCase" request
+    Given new "UnwatchCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
@@ -1219,8 +1121,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Unwatch a case returns "Not Found" response
-    Given operation "UnwatchCase" enabled
-    And new "UnwatchCase" request
+    Given new "UnwatchCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
@@ -1228,8 +1129,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a case view returns "Bad Request" response
-    Given operation "UpdateCaseView" enabled
-    And new "UpdateCaseView" request
+    Given new "UpdateCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {}, "type": "view"}}
     When the request is sent
@@ -1237,8 +1137,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a case view returns "Not Found" response
-    Given operation "UpdateCaseView" enabled
-    And new "UpdateCaseView" request
+    Given new "UpdateCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {}, "type": "view"}}
     When the request is sent
@@ -1246,8 +1145,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a case view returns "OK" response
-    Given operation "UpdateCaseView" enabled
-    And new "UpdateCaseView" request
+    Given new "UpdateCaseView" request
     And request contains "view_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {}, "type": "view"}}
     When the request is sent
@@ -1255,8 +1153,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a maintenance window returns "Bad Request" response
-    Given operation "UpdateMaintenanceWindow" enabled
-    And new "UpdateMaintenanceWindow" request
+    Given new "UpdateMaintenanceWindow" request
     And request contains "maintenance_window_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {}, "type": "maintenance_window"}}
     When the request is sent
@@ -1264,8 +1161,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a maintenance window returns "Not Found" response
-    Given operation "UpdateMaintenanceWindow" enabled
-    And new "UpdateMaintenanceWindow" request
+    Given new "UpdateMaintenanceWindow" request
     And request contains "maintenance_window_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {}, "type": "maintenance_window"}}
     When the request is sent
@@ -1273,8 +1169,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update a maintenance window returns "OK" response
-    Given operation "UpdateMaintenanceWindow" enabled
-    And new "UpdateMaintenanceWindow" request
+    Given new "UpdateMaintenanceWindow" request
     And request contains "maintenance_window_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {}, "type": "maintenance_window"}}
     When the request is sent
@@ -1335,8 +1230,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update an automation rule returns "Bad Request" response
-    Given operation "UpdateCaseAutomationRule" enabled
-    And new "UpdateCaseAutomationRule" request
+    Given new "UpdateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
@@ -1345,8 +1239,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update an automation rule returns "Not Found" response
-    Given operation "UpdateCaseAutomationRule" enabled
-    And new "UpdateCaseAutomationRule" request
+    Given new "UpdateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
@@ -1355,8 +1248,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update an automation rule returns "OK" response
-    Given operation "UpdateCaseAutomationRule" enabled
-    And new "UpdateCaseAutomationRule" request
+    Given new "UpdateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
@@ -1391,8 +1283,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case comment returns "Bad Request" response
-    Given operation "UpdateCaseComment" enabled
-    And new "UpdateCaseComment" request
+    Given new "UpdateCaseComment" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "cell_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"comment": "Updated comment text"}, "type": "case"}}
@@ -1401,8 +1292,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case comment returns "Not Found" response
-    Given operation "UpdateCaseComment" enabled
-    And new "UpdateCaseComment" request
+    Given new "UpdateCaseComment" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "cell_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"comment": "Updated comment text"}, "type": "case"}}
@@ -1411,8 +1301,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case comment returns "OK" response
-    Given operation "UpdateCaseComment" enabled
-    And new "UpdateCaseComment" request
+    Given new "UpdateCaseComment" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "cell_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"comment": "Updated comment text"}, "type": "case"}}
@@ -1481,8 +1370,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case due date returns "Bad Request" response
-    Given operation "UpdateCaseDueDate" enabled
-    And new "UpdateCaseDueDate" request
+    Given new "UpdateCaseDueDate" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"due_date": "2026-12-31"}, "type": "case"}}
     When the request is sent
@@ -1490,8 +1378,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case due date returns "Not Found" response
-    Given operation "UpdateCaseDueDate" enabled
-    And new "UpdateCaseDueDate" request
+    Given new "UpdateCaseDueDate" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"due_date": "2026-12-31"}, "type": "case"}}
     When the request is sent
@@ -1499,8 +1386,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case due date returns "OK" response
-    Given operation "UpdateCaseDueDate" enabled
-    And new "UpdateCaseDueDate" request
+    Given new "UpdateCaseDueDate" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"due_date": "2026-12-31"}, "type": "case"}}
     When the request is sent
@@ -1535,8 +1421,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case project returns "Bad Request" response
-    Given operation "MoveCaseToProject" enabled
-    And new "MoveCaseToProject" request
+    Given new "MoveCaseToProject" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}
     When the request is sent
@@ -1544,8 +1429,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case project returns "Not Found" response
-    Given operation "MoveCaseToProject" enabled
-    And new "MoveCaseToProject" request
+    Given new "MoveCaseToProject" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}
     When the request is sent
@@ -1553,8 +1437,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case project returns "OK" response
-    Given operation "MoveCaseToProject" enabled
-    And new "MoveCaseToProject" request
+    Given new "MoveCaseToProject" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"id": "e555e290-ed65-49bd-ae18-8acbfcf18db7", "type": "project"}}
     When the request is sent
@@ -1562,8 +1445,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case resolved reason returns "Bad Request" response
-    Given operation "UpdateCaseResolvedReason" enabled
-    And new "UpdateCaseResolvedReason" request
+    Given new "UpdateCaseResolvedReason" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"security_resolved_reason": "FALSE_POSITIVE"}, "type": "case"}}
     When the request is sent
@@ -1571,8 +1453,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case resolved reason returns "Not Found" response
-    Given operation "UpdateCaseResolvedReason" enabled
-    And new "UpdateCaseResolvedReason" request
+    Given new "UpdateCaseResolvedReason" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"security_resolved_reason": "FALSE_POSITIVE"}, "type": "case"}}
     When the request is sent
@@ -1580,8 +1461,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Update case resolved reason returns "OK" response
-    Given operation "UpdateCaseResolvedReason" enabled
-    And new "UpdateCaseResolvedReason" request
+    Given new "UpdateCaseResolvedReason" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"security_resolved_reason": "FALSE_POSITIVE"}, "type": "case"}}
     When the request is sent
@@ -1642,8 +1522,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Watch a case returns "Bad Request" response
-    Given operation "WatchCase" enabled
-    And new "WatchCase" request
+    Given new "WatchCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
@@ -1651,8 +1530,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Watch a case returns "Created" response
-    Given operation "WatchCase" enabled
-    And new "WatchCase" request
+    Given new "WatchCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
@@ -1660,8 +1538,7 @@ Feature: Case Management
 
   @generated @skip @team:DataDog/case-management
   Scenario: Watch a case returns "Not Found" response
-    Given operation "WatchCase" enabled
-    And new "WatchCase" request
+    Given new "WatchCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
