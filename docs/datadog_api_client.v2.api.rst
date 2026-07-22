@@ -424,6 +424,13 @@ datadog\_api\_client.v2.api.governance\_insights\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.governance\_settings\_api module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.governance_settings_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.high\_availability\_multi\_region\_api module
 -------------------------------------------------------------------------
 

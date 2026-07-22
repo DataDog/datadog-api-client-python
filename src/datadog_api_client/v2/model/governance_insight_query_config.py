@@ -47,7 +47,7 @@ class GovernanceInsightQueryConfig(ModelNormal):
         :param chart_type: The chart type the frontend should use to render the insight.
         :type chart_type: str, optional
 
-        :param comparison_shift: The window used for the previous value comparison, for example ``week`` or ``month``.
+        :param comparison_shift: The window used for the previous value comparison; for example, ``week`` or ``month``.
         :type comparison_shift: str
 
         :param default_value: The default value to display when no data is available.
