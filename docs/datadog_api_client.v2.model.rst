@@ -5170,6 +5170,27 @@ datadog\_api\_client.v2.model.case\_insights\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.case\_investigation\_notebook\_create\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_investigation_notebook_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_investigation\_notebook\_create\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_investigation_notebook_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.case\_investigation\_notebook\_resource\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.case_investigation_notebook_resource_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.case\_link module
 -----------------------------------------------
 
@@ -27084,27 +27105,6 @@ datadog\_api\_client.v2.model.node\_types\_response\_data\_type module
 ----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.node_types_response_data_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notebook\_create\_data module
------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notebook_create_data
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notebook\_create\_request module
---------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notebook_create_request
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.notebook\_resource\_type module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.notebook_resource_type
    :members:
    :show-inheritance:
 

@@ -1046,6 +1046,11 @@ from datadog_api_client.v2.model.case_insights_attributes import CaseInsightsAtt
 from datadog_api_client.v2.model.case_insights_data import CaseInsightsData
 from datadog_api_client.v2.model.case_insights_items import CaseInsightsItems
 from datadog_api_client.v2.model.case_insights_request import CaseInsightsRequest
+from datadog_api_client.v2.model.case_investigation_notebook_create_data import CaseInvestigationNotebookCreateData
+from datadog_api_client.v2.model.case_investigation_notebook_create_request import (
+    CaseInvestigationNotebookCreateRequest,
+)
+from datadog_api_client.v2.model.case_investigation_notebook_resource_type import CaseInvestigationNotebookResourceType
 from datadog_api_client.v2.model.case_link import CaseLink
 from datadog_api_client.v2.model.case_link_attributes import CaseLinkAttributes
 from datadog_api_client.v2.model.case_link_create import CaseLinkCreate
@@ -5067,9 +5072,6 @@ from datadog_api_client.v2.model.node_types_response import NodeTypesResponse
 from datadog_api_client.v2.model.node_types_response_data import NodeTypesResponseData
 from datadog_api_client.v2.model.node_types_response_data_attributes import NodeTypesResponseDataAttributes
 from datadog_api_client.v2.model.node_types_response_data_type import NodeTypesResponseDataType
-from datadog_api_client.v2.model.notebook_create_data import NotebookCreateData
-from datadog_api_client.v2.model.notebook_create_request import NotebookCreateRequest
-from datadog_api_client.v2.model.notebook_resource_type import NotebookResourceType
 from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
 from datadog_api_client.v2.model.notification_channel import NotificationChannel
 from datadog_api_client.v2.model.notification_channel_attributes import NotificationChannelAttributes
@@ -10765,6 +10767,9 @@ __all__ = [
     "CaseInsightsData",
     "CaseInsightsItems",
     "CaseInsightsRequest",
+    "CaseInvestigationNotebookCreateData",
+    "CaseInvestigationNotebookCreateRequest",
+    "CaseInvestigationNotebookResourceType",
     "CaseLink",
     "CaseLinkAttributes",
     "CaseLinkCreate",
@@ -13820,9 +13825,6 @@ __all__ = [
     "NodeTypesResponseData",
     "NodeTypesResponseDataAttributes",
     "NodeTypesResponseDataType",
-    "NotebookCreateData",
-    "NotebookCreateRequest",
-    "NotebookResourceType",
     "NotebookTriggerWrapper",
     "NotificationChannel",
     "NotificationChannelAttributes",

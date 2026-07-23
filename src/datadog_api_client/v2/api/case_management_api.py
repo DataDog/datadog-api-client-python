@@ -57,7 +57,9 @@ from datadog_api_client.v2.model.case_update_priority_request import CaseUpdateP
 from datadog_api_client.v2.model.relationship_to_incident_request import RelationshipToIncidentRequest
 from datadog_api_client.v2.model.jira_issue_link_request import JiraIssueLinkRequest
 from datadog_api_client.v2.model.jira_issue_create_request import JiraIssueCreateRequest
-from datadog_api_client.v2.model.notebook_create_request import NotebookCreateRequest
+from datadog_api_client.v2.model.case_investigation_notebook_create_request import (
+    CaseInvestigationNotebookCreateRequest,
+)
 from datadog_api_client.v2.model.project_relationship import ProjectRelationship
 from datadog_api_client.v2.model.service_now_ticket_create_request import ServiceNowTicketCreateRequest
 from datadog_api_client.v2.model.case_update_resolved_reason_request import CaseUpdateResolvedReasonRequest
@@ -366,7 +368,7 @@ class CaseManagementApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (NotebookCreateRequest,),
+                    "openapi_types": (CaseInvestigationNotebookCreateRequest,),
                     "location": "body",
                 },
             },
@@ -2009,16 +2011,16 @@ class CaseManagementApi:
     def create_case_notebook(
         self,
         case_id: str,
-        body: NotebookCreateRequest,
+        body: CaseInvestigationNotebookCreateRequest,
     ) -> None:
         """Create investigation notebook for case.
 
-        Create a new investigation notebook and link it to a case
+        Create a new investigation notebook and link it to a case.
 
         :param case_id: Case's UUID or key
         :type case_id: str
-        :param body: Notebook creation request
-        :type body: NotebookCreateRequest
+        :param body: Case investigation notebook creation request.
+        :type body: CaseInvestigationNotebookCreateRequest
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
