@@ -14046,6 +14046,34 @@ datadog\_api\_client.v2.model.entity\_v3\_queue\_spec module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.entity\_v3\_repository module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_repository
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_repository\_datadog module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_repository_datadog
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_repository\_kind module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_repository_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.entity\_v3\_repository\_spec module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.entity_v3_repository_spec
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.entity\_v3\_service module
 --------------------------------------------------------
 
