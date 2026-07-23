@@ -15971,6 +15971,13 @@ datadog\_api\_client.v2.model.form\_version\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.form\_version\_list\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.form_version_list_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.form\_version\_response module
 ------------------------------------------------------------
 
@@ -21323,6 +21330,27 @@ datadog\_api\_client.v2.model.list\_findings\_response module
 -------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.list_findings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_form\_versions\_data module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_form_versions_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_form\_versions\_data\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_form_versions_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.list\_form\_versions\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.list_form_versions_response
    :members:
    :show-inheritance:
 
