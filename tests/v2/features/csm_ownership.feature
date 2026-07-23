@@ -13,6 +13,13 @@ Feature: CSM Ownership
     And an instance of "CSMOwnership" API
 
   @generated @skip @team:DataDog/k9-misconfigs
+  Scenario: Count untagged findings by ownership confidence returns "OK" response
+    Given operation "GetOwnershipUntaggedFindings" enabled
+    And new "GetOwnershipUntaggedFindings" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-misconfigs
   Scenario: Get an ownership inference by owner type returns "Bad Request" response
     Given operation "GetOwnershipInference" enabled
     And new "GetOwnershipInference" request
@@ -36,6 +43,13 @@ Feature: CSM Ownership
     And new "GetOwnershipInference" request
     And request contains "resource_id" parameter from "REPLACE.ME"
     And request contains "owner_type" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-misconfigs
+  Scenario: Get ownership settings for the org returns "OK" response
+    Given operation "GetOwnershipSettings" enabled
+    And new "GetOwnershipSettings" request
     When the request is sent
     Then the response status is 200 OK
 
@@ -163,3 +177,19 @@ Feature: CSM Ownership
     And body with value {"data": {"attributes": {"action": "confirm", "actor_handle": "user@example.com", "actor_type": "user", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-misconfigs
+  Scenario: Update ownership settings for the org returns "Bad Request" response
+    Given operation "PostOwnershipSettings" enabled
+    And new "PostOwnershipSettings" request
+    And body with value {"data": {"attributes": {"auto_tag": true, "confidence_level": "high"}, "type": "ownership_settings"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-misconfigs
+  Scenario: Update ownership settings for the org returns "OK" response
+    Given operation "PostOwnershipSettings" enabled
+    And new "PostOwnershipSettings" request
+    And body with value {"data": {"attributes": {"auto_tag": true, "confidence_level": "high"}, "type": "ownership_settings"}}
+    When the request is sent
+    Then the response status is 200 OK
