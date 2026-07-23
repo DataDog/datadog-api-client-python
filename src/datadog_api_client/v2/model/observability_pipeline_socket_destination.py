@@ -24,7 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_socket_destination_mode import (
         ObservabilityPipelineSocketDestinationMode,
     )
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
     from datadog_api_client.v2.model.observability_pipeline_socket_destination_type import (
         ObservabilityPipelineSocketDestinationType,
     )
@@ -61,7 +61,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_socket_destination_mode import (
             ObservabilityPipelineSocketDestinationMode,
         )
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
         from datadog_api_client.v2.model.observability_pipeline_socket_destination_type import (
             ObservabilityPipelineSocketDestinationType,
         )
@@ -74,7 +74,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
             "id": (str,),
             "inputs": ([str],),
             "mode": (ObservabilityPipelineSocketDestinationMode,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineClientTls,),
             "type": (ObservabilityPipelineSocketDestinationType,),
         }
 
@@ -111,7 +111,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineClientTls, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -141,7 +141,7 @@ class ObservabilityPipelineSocketDestination(ModelNormal):
         :type mode: ObservabilityPipelineSocketDestinationMode
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :type tls: ObservabilityPipelineClientTls, optional
 
         :param type: The destination type. The value should always be ``socket``.
         :type type: ObservabilityPipelineSocketDestinationType

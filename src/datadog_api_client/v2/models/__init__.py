@@ -5302,6 +5302,7 @@ from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_f
 from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_type import (
     ObservabilityPipelineClickhouseDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
 from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
     ObservabilityPipelineCloudPremDestination,
 )
@@ -13937,6 +13938,7 @@ __all__ = [
     "ObservabilityPipelineClickhouseDestinationCompressionObject",
     "ObservabilityPipelineClickhouseDestinationFormat",
     "ObservabilityPipelineClickhouseDestinationType",
+    "ObservabilityPipelineClientTls",
     "ObservabilityPipelineCloudPremDestination",
     "ObservabilityPipelineCloudPremDestinationType",
     "ObservabilityPipelineConfig",

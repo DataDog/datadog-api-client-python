@@ -27892,6 +27892,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_clickhouse\_destination\_
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_client\_tls module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_client_tls
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_cloud\_prem\_destination module
 --------------------------------------------------------------------------------------
 

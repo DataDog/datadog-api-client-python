@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
     from datadog_api_client.v2.model.observability_pipeline_syslog_ng_destination_type import (
         ObservabilityPipelineSyslogNgDestinationType,
     )
@@ -40,7 +40,7 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
         from datadog_api_client.v2.model.observability_pipeline_syslog_ng_destination_type import (
             ObservabilityPipelineSyslogNgDestinationType,
         )
@@ -51,7 +51,7 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
             "id": (str,),
             "inputs": ([str],),
             "keepalive": (int,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineClientTls,),
             "type": (ObservabilityPipelineSyslogNgDestinationType,),
         }
 
@@ -79,7 +79,7 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
         ] = unset,
         endpoint_url_key: Union[str, UnsetType] = unset,
         keepalive: Union[int, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineClientTls, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -103,7 +103,7 @@ class ObservabilityPipelineSyslogNgDestination(ModelNormal):
         :type keepalive: int, optional
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :type tls: ObservabilityPipelineClientTls, optional
 
         :param type: The destination type. The value should always be ``syslog_ng``.
         :type type: ObservabilityPipelineSyslogNgDestinationType
