@@ -32,6 +32,12 @@ class LogsArrayProcessorOperation(ModelComposed):
 
         :param value_to_extract: Key of the value to extract from the matching element.
         :type value_to_extract: str
+
+        :param key_to_extract: Key of the attribute in each array element that holds the name to use for the extracted attribute.
+        :type key_to_extract: str
+
+        :param override_on_conflict: Whether to override the target element if it's already set.
+        :type override_on_conflict: bool, optional
         """
         super().__init__(kwargs)
 
@@ -47,11 +53,15 @@ class LogsArrayProcessorOperation(ModelComposed):
         from datadog_api_client.v1.model.logs_array_processor_operation_append import LogsArrayProcessorOperationAppend
         from datadog_api_client.v1.model.logs_array_processor_operation_length import LogsArrayProcessorOperationLength
         from datadog_api_client.v1.model.logs_array_processor_operation_select import LogsArrayProcessorOperationSelect
+        from datadog_api_client.v1.model.logs_array_processor_operation_extract_key_value import (
+            LogsArrayProcessorOperationExtractKeyValue,
+        )
 
         return {
             "oneOf": [
                 LogsArrayProcessorOperationAppend,
                 LogsArrayProcessorOperationLength,
                 LogsArrayProcessorOperationSelect,
+                LogsArrayProcessorOperationExtractKeyValue,
             ],
         }

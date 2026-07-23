@@ -2125,6 +2125,20 @@ datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_append\_type mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_extract\_key\_value module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_extract_key_value
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_extract\_key\_value\_type module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.logs_array_processor_operation_extract_key_value_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.logs\_array\_processor\_operation\_length module
 ------------------------------------------------------------------------------
 
