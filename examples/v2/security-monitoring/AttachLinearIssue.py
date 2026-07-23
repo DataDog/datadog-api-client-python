@@ -46,7 +46,6 @@ body = AttachLinearIssueRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["attach_linear_issue"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.attach_linear_issue(body=body)

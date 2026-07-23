@@ -56,7 +56,6 @@ body = CreateLinearIssueRequestArray(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_linear_issues"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.create_linear_issues(body=body)
