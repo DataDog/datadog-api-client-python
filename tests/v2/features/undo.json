@@ -8846,6 +8846,47 @@
       "type": "idempotent"
     }
   },
+  "ListDegradationTemplates": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDegradationTemplate": {
+    "tag": "Status Pages",
+    "undo": {
+      "operationId": "DeleteDegradationTemplate",
+      "parameters": [
+        {
+          "name": "page_id",
+          "source": "<RESPONSE_PATH>"
+        },
+        {
+          "name": "template_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDegradationTemplate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDegradationTemplate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDegradationTemplate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateDegradation": {
     "tag": "Status Pages",
     "undo": {
@@ -8905,6 +8946,47 @@
     }
   },
   "EditDegradationUpdate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListMaintenanceTemplates": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMaintenanceTemplate": {
+    "tag": "Status Pages",
+    "undo": {
+      "operationId": "DeleteMaintenanceTemplate",
+      "parameters": [
+        {
+          "name": "page_id",
+          "source": "<RESPONSE_PATH>"
+        },
+        {
+          "name": "template_id",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteMaintenanceTemplate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetMaintenanceTemplate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMaintenanceTemplate": {
     "tag": "Status Pages",
     "undo": {
       "type": "idempotent"

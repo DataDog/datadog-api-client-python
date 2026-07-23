@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_attributes import (
         CreateBackfilledMaintenanceRequestDataAttributes,
     )
+    from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_relationships import (
+        CreateBackfilledMaintenanceRequestDataRelationships,
+    )
     from datadog_api_client.v2.model.patch_maintenance_request_data_type import PatchMaintenanceRequestDataType
 
 
@@ -26,15 +29,20 @@ class CreateBackfilledMaintenanceRequestData(ModelNormal):
         from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_attributes import (
             CreateBackfilledMaintenanceRequestDataAttributes,
         )
+        from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_relationships import (
+            CreateBackfilledMaintenanceRequestDataRelationships,
+        )
         from datadog_api_client.v2.model.patch_maintenance_request_data_type import PatchMaintenanceRequestDataType
 
         return {
             "attributes": (CreateBackfilledMaintenanceRequestDataAttributes,),
+            "relationships": (CreateBackfilledMaintenanceRequestDataRelationships,),
             "type": (PatchMaintenanceRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "relationships": "relationships",
         "type": "type",
     }
 
@@ -42,6 +50,7 @@ class CreateBackfilledMaintenanceRequestData(ModelNormal):
         self_,
         type: PatchMaintenanceRequestDataType,
         attributes: Union[CreateBackfilledMaintenanceRequestDataAttributes, UnsetType] = unset,
+        relationships: Union[CreateBackfilledMaintenanceRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -50,11 +59,16 @@ class CreateBackfilledMaintenanceRequestData(ModelNormal):
         :param attributes: The supported attributes for creating a backfilled maintenance.
         :type attributes: CreateBackfilledMaintenanceRequestDataAttributes, optional
 
+        :param relationships: The supported relationships for creating a backfilled maintenance.
+        :type relationships: CreateBackfilledMaintenanceRequestDataRelationships, optional
+
         :param type: Maintenances resource type.
         :type type: PatchMaintenanceRequestDataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
         self_.type = type
