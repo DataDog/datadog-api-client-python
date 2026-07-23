@@ -38126,10 +38126,73 @@ datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_activation mo
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_app\_sec\_details module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_app_sec_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_app\_sec\_details\_type module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_app_sec_details_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_audit\_details module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_audit_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_audit\_details\_type module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_audit_details_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_entity\_details module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_entity_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_entity\_details\_type module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_entity_details_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_integration\_status module
 ---------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_integration_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_logs\_details module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_logs_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_onboarding\_details module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_onboarding_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_onboarding\_details\_type module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_onboarding_details_type
    :members:
    :show-inheritance:
 
@@ -38144,6 +38207,13 @@ datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_state\_data m
 -------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_state_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_state\_details module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_state_details
    :members:
    :show-inheritance:
 
@@ -38175,10 +38245,38 @@ datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_status module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_threat\_intel\_details module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_threat_intel_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_threat\_intel\_details\_type module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_threat_intel_details_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_timestamp\_bucket module
 -------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_timestamp_bucket
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_vulnerability\_details module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_vulnerability_details
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_content\_pack\_vulnerability\_details\_type module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_content_pack_vulnerability_details_type
    :members:
    :show-inheritance:
 

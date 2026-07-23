@@ -52,7 +52,7 @@ class SecurityMonitoringContentPackStatesResponse(ModelNormal):
         :param data: Array of content pack states.
         :type data: [SecurityMonitoringContentPackStateData]
 
-        :param meta: Metadata for content pack states
+        :param meta: Metadata for content pack states.
         :type meta: SecurityMonitoringContentPackStateMeta
         """
         super().__init__(kwargs)

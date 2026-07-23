@@ -52,7 +52,7 @@ class SecurityMonitoringContentPackStateData(ModelNormal):
         """
         Content pack state data.
 
-        :param attributes: Attributes of a content pack state
+        :param attributes: Attributes of a content pack state.
         :type attributes: SecurityMonitoringContentPackStateAttributes
 
         :param id: The content pack identifier.
