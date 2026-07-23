@@ -381,6 +381,11 @@ class FeatureFlagsApi:
                     "attribute": "key",
                     "location": "query",
                 },
+                "dd_env": {
+                    "openapi_types": (str,),
+                    "attribute": "dd_env",
+                    "location": "query",
+                },
                 "limit": {
                     "validation": {
                         "inclusive_maximum": 1000,
@@ -902,18 +907,21 @@ class FeatureFlagsApi:
         *,
         name: Union[str, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
+        dd_env: Union[str, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         offset: Union[int, UnsetType] = unset,
     ) -> ListEnvironmentsResponse:
         """List environments.
 
         Returns a list of environments for the organization.
-        Supports filtering by name and key.
+        Supports filtering by name, key, and DD_ENV.
 
         :param name: Filter environments by name (partial matching).
         :type name: str, optional
         :param key: Filter environments by key (partial matching).
         :type key: str, optional
+        :param dd_env: Filter environments by queries that contain the provided DD_ENV value.
+        :type dd_env: str, optional
         :param limit: Maximum number of results to return.
         :type limit: int, optional
         :param offset: Number of results to skip.
@@ -926,6 +934,9 @@ class FeatureFlagsApi:
 
         if key is not unset:
             kwargs["key"] = key
+
+        if dd_env is not unset:
+            kwargs["dd_env"] = dd_env
 
         if limit is not unset:
             kwargs["limit"] = limit
