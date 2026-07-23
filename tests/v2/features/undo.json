@@ -6960,6 +6960,66 @@
       "type": "safe"
     }
   },
+  "CreateRUMOperation": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetRUMOperationByName": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRUMOperations": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRUMOperationStrongLinks": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRUMOperationStrongLink": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteRUMOperationStrongLink": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateRUMOperationStrongLink": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteRUMOperation": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRUMOperation": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRUMOperation": {
+    "tag": "RUM Operations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "QueryAggregatedLongTasks": {
     "tag": "RUM Insights",
     "undo": {

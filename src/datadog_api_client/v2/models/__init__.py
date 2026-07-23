@@ -6728,6 +6728,52 @@ from datadog_api_client.v2.model.rum_group_by import RUMGroupBy
 from datadog_api_client.v2.model.rum_group_by_histogram import RUMGroupByHistogram
 from datadog_api_client.v2.model.rum_group_by_missing import RUMGroupByMissing
 from datadog_api_client.v2.model.rum_group_by_total import RUMGroupByTotal
+from datadog_api_client.v2.model.rum_operation_create_request import RUMOperationCreateRequest
+from datadog_api_client.v2.model.rum_operation_create_request_data import RUMOperationCreateRequestData
+from datadog_api_client.v2.model.rum_operation_journey_composite_rule import RUMOperationJourneyCompositeRule
+from datadog_api_client.v2.model.rum_operation_journey_composite_rule_kind import RUMOperationJourneyCompositeRuleKind
+from datadog_api_client.v2.model.rum_operation_journey_node import RUMOperationJourneyNode
+from datadog_api_client.v2.model.rum_operation_journey_predicate import RUMOperationJourneyPredicate
+from datadog_api_client.v2.model.rum_operation_journey_rum import RUMOperationJourneyRum
+from datadog_api_client.v2.model.rum_operation_journey_step import RUMOperationJourneyStep
+from datadog_api_client.v2.model.rum_operation_journey_step_type import RUMOperationJourneyStepType
+from datadog_api_client.v2.model.rum_operation_request_attributes import RUMOperationRequestAttributes
+from datadog_api_client.v2.model.rum_operation_response import RUMOperationResponse
+from datadog_api_client.v2.model.rum_operation_response_attributes import RUMOperationResponseAttributes
+from datadog_api_client.v2.model.rum_operation_response_data import RUMOperationResponseData
+from datadog_api_client.v2.model.rum_operation_strong_link_create_request import RUMOperationStrongLinkCreateRequest
+from datadog_api_client.v2.model.rum_operation_strong_link_create_request_attributes import (
+    RUMOperationStrongLinkCreateRequestAttributes,
+)
+from datadog_api_client.v2.model.rum_operation_strong_link_create_request_data import (
+    RUMOperationStrongLinkCreateRequestData,
+)
+from datadog_api_client.v2.model.rum_operation_strong_link_response import RUMOperationStrongLinkResponse
+from datadog_api_client.v2.model.rum_operation_strong_link_response_attributes import (
+    RUMOperationStrongLinkResponseAttributes,
+)
+from datadog_api_client.v2.model.rum_operation_strong_link_response_data import RUMOperationStrongLinkResponseData
+from datadog_api_client.v2.model.rum_operation_strong_link_status import RUMOperationStrongLinkStatus
+from datadog_api_client.v2.model.rum_operation_strong_link_type import RUMOperationStrongLinkType
+from datadog_api_client.v2.model.rum_operation_strong_link_update_request import RUMOperationStrongLinkUpdateRequest
+from datadog_api_client.v2.model.rum_operation_strong_link_update_request_attributes import (
+    RUMOperationStrongLinkUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.rum_operation_strong_link_update_request_data import (
+    RUMOperationStrongLinkUpdateRequestData,
+)
+from datadog_api_client.v2.model.rum_operation_strong_link_update_status import RUMOperationStrongLinkUpdateStatus
+from datadog_api_client.v2.model.rum_operation_strong_links_list_response import RUMOperationStrongLinksListResponse
+from datadog_api_client.v2.model.rum_operation_strong_links_list_response_meta import (
+    RUMOperationStrongLinksListResponseMeta,
+)
+from datadog_api_client.v2.model.rum_operation_type import RUMOperationType
+from datadog_api_client.v2.model.rum_operation_update_request import RUMOperationUpdateRequest
+from datadog_api_client.v2.model.rum_operation_update_request_data import RUMOperationUpdateRequestData
+from datadog_api_client.v2.model.rum_operation_user import RUMOperationUser
+from datadog_api_client.v2.model.rum_operations_list_response import RUMOperationsListResponse
+from datadog_api_client.v2.model.rum_operations_list_response_meta import RUMOperationsListResponseMeta
+from datadog_api_client.v2.model.rum_operations_list_response_meta_page import RUMOperationsListResponseMetaPage
 from datadog_api_client.v2.model.rum_product_analytics_retention_scale import RUMProductAnalyticsRetentionScale
 from datadog_api_client.v2.model.rum_product_analytics_retention_state import RUMProductAnalyticsRetentionState
 from datadog_api_client.v2.model.rum_product_scales import RUMProductScales
@@ -14769,6 +14815,40 @@ __all__ = [
     "RUMGroupByHistogram",
     "RUMGroupByMissing",
     "RUMGroupByTotal",
+    "RUMOperationCreateRequest",
+    "RUMOperationCreateRequestData",
+    "RUMOperationJourneyCompositeRule",
+    "RUMOperationJourneyCompositeRuleKind",
+    "RUMOperationJourneyNode",
+    "RUMOperationJourneyPredicate",
+    "RUMOperationJourneyRum",
+    "RUMOperationJourneyStep",
+    "RUMOperationJourneyStepType",
+    "RUMOperationRequestAttributes",
+    "RUMOperationResponse",
+    "RUMOperationResponseAttributes",
+    "RUMOperationResponseData",
+    "RUMOperationStrongLinkCreateRequest",
+    "RUMOperationStrongLinkCreateRequestAttributes",
+    "RUMOperationStrongLinkCreateRequestData",
+    "RUMOperationStrongLinkResponse",
+    "RUMOperationStrongLinkResponseAttributes",
+    "RUMOperationStrongLinkResponseData",
+    "RUMOperationStrongLinkStatus",
+    "RUMOperationStrongLinkType",
+    "RUMOperationStrongLinkUpdateRequest",
+    "RUMOperationStrongLinkUpdateRequestAttributes",
+    "RUMOperationStrongLinkUpdateRequestData",
+    "RUMOperationStrongLinkUpdateStatus",
+    "RUMOperationStrongLinksListResponse",
+    "RUMOperationStrongLinksListResponseMeta",
+    "RUMOperationType",
+    "RUMOperationUpdateRequest",
+    "RUMOperationUpdateRequestData",
+    "RUMOperationUser",
+    "RUMOperationsListResponse",
+    "RUMOperationsListResponseMeta",
+    "RUMOperationsListResponseMetaPage",
     "RUMProductAnalyticsRetentionScale",
     "RUMProductAnalyticsRetentionState",
     "RUMProductScales",

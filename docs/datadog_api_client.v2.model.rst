@@ -35788,6 +35788,244 @@ datadog\_api\_client.v2.model.rum\_metrics\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_operation\_create\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_create\_request\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_journey\_composite\_rule module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_journey_composite_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_journey\_composite\_rule\_kind module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_journey_composite_rule_kind
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_journey\_node module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_journey_node
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_journey\_predicate module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_journey_predicate
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_journey\_rum module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_journey_rum
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_journey\_step module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_journey_step
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_journey\_step\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_journey_step_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_request\_attributes module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_response module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_response\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_response\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_create\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_create\_request\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_create_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_create\_request\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_response\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_response\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_status module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_update\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_update\_request\_attributes module
+----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_update\_request\_data module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_link\_update\_status module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_link_update_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_links\_list\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_links_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_strong\_links\_list\_response\_meta module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_strong_links_list_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_type module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_update\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_update\_request\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operation\_user module
+---------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operation_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operations\_list\_response module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operations_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operations\_list\_response\_meta module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operations_list_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_operations\_list\_response\_meta\_page module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_operations_list_response_meta_page
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_permanent\_retention\_filter\_attributes module
 ----------------------------------------------------------------------------------
 
