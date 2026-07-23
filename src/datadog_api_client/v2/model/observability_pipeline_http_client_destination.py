@@ -24,7 +24,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_http_client_destination_encoding import (
         ObservabilityPipelineHttpClientDestinationEncoding,
     )
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
     from datadog_api_client.v2.model.observability_pipeline_http_client_destination_type import (
         ObservabilityPipelineHttpClientDestinationType,
     )
@@ -52,7 +52,7 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_http_client_destination_encoding import (
             ObservabilityPipelineHttpClientDestinationEncoding,
         )
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
         from datadog_api_client.v2.model.observability_pipeline_http_client_destination_type import (
             ObservabilityPipelineHttpClientDestinationType,
         )
@@ -66,7 +66,7 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
             "id": (str,),
             "inputs": ([str],),
             "password_key": (str,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineClientTls,),
             "token_key": (str,),
             "type": (ObservabilityPipelineHttpClientDestinationType,),
             "uri_key": (str,),
@@ -106,7 +106,7 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
         compression: Union[ObservabilityPipelineHttpClientDestinationCompression, UnsetType] = unset,
         custom_key: Union[str, UnsetType] = unset,
         password_key: Union[str, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineClientTls, UnsetType] = unset,
         token_key: Union[str, UnsetType] = unset,
         uri_key: Union[str, UnsetType] = unset,
         username_key: Union[str, UnsetType] = unset,
@@ -142,7 +142,7 @@ class ObservabilityPipelineHttpClientDestination(ModelNormal):
         :type password_key: str, optional
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :type tls: ObservabilityPipelineClientTls, optional
 
         :param token_key: Name of the environment variable or secret that holds the bearer token (used when ``auth_strategy`` is ``bearer`` ).
         :type token_key: str, optional

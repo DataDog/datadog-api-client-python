@@ -18,7 +18,7 @@ if TYPE_CHECKING:
         ObservabilityPipelineHttpClientSourceAuthStrategy,
     )
     from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
-    from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+    from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
     from datadog_api_client.v2.model.observability_pipeline_http_client_source_type import (
         ObservabilityPipelineHttpClientSourceType,
     )
@@ -31,7 +31,7 @@ class ObservabilityPipelineHttpClientSource(ModelNormal):
             ObservabilityPipelineHttpClientSourceAuthStrategy,
         )
         from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
-        from datadog_api_client.v2.model.observability_pipeline_tls import ObservabilityPipelineTls
+        from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
         from datadog_api_client.v2.model.observability_pipeline_http_client_source_type import (
             ObservabilityPipelineHttpClientSourceType,
         )
@@ -45,7 +45,7 @@ class ObservabilityPipelineHttpClientSource(ModelNormal):
             "password_key": (str,),
             "scrape_interval_secs": (int,),
             "scrape_timeout_secs": (int,),
-            "tls": (ObservabilityPipelineTls,),
+            "tls": (ObservabilityPipelineClientTls,),
             "token_key": (str,),
             "type": (ObservabilityPipelineHttpClientSourceType,),
             "username_key": (str,),
@@ -77,7 +77,7 @@ class ObservabilityPipelineHttpClientSource(ModelNormal):
         password_key: Union[str, UnsetType] = unset,
         scrape_interval_secs: Union[int, UnsetType] = unset,
         scrape_timeout_secs: Union[int, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineClientTls, UnsetType] = unset,
         token_key: Union[str, UnsetType] = unset,
         username_key: Union[str, UnsetType] = unset,
         **kwargs,
@@ -112,7 +112,7 @@ class ObservabilityPipelineHttpClientSource(ModelNormal):
         :type scrape_timeout_secs: int, optional
 
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external services.
-        :type tls: ObservabilityPipelineTls, optional
+        :type tls: ObservabilityPipelineClientTls, optional
 
         :param token_key: Name of the environment variable or secret that holds the bearer token (used when ``auth_strategy`` is ``bearer`` ).
         :type token_key: str, optional
