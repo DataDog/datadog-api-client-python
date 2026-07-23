@@ -14,16 +14,16 @@ from typing import ClassVar
 
 class PostmortemTemplateType(ModelSimple):
     """
-    Postmortem template resource type
+    Postmortem template resource type.
 
-    :param value: If omitted defaults to "postmortem_template". Must be one of ["postmortem_template"].
+    :param value: If omitted defaults to "postmortem_templates". Must be one of ["postmortem_templates"].
     :type value: str
     """
 
     allowed_values = {
-        "postmortem_template",
+        "postmortem_templates",
     }
-    POSTMORTEM_TEMPLATE: ClassVar["PostmortemTemplateType"]
+    POSTMORTEM_TEMPLATES: ClassVar["PostmortemTemplateType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class PostmortemTemplateType(ModelSimple):
         }
 
 
-PostmortemTemplateType.POSTMORTEM_TEMPLATE = PostmortemTemplateType("postmortem_template")
+PostmortemTemplateType.POSTMORTEM_TEMPLATES = PostmortemTemplateType("postmortem_templates")
