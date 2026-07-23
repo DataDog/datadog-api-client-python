@@ -7434,6 +7434,7 @@ from datadog_api_client.v2.model.schedule_target import ScheduleTarget
 from datadog_api_client.v2.model.schedule_target_position import ScheduleTargetPosition
 from datadog_api_client.v2.model.schedule_target_type import ScheduleTargetType
 from datadog_api_client.v2.model.schedule_trigger import ScheduleTrigger
+from datadog_api_client.v2.model.schedule_trigger_overlap_behavior import ScheduleTriggerOverlapBehavior
 from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
 from datadog_api_client.v2.model.schedule_update_request_data import ScheduleUpdateRequestData
@@ -15298,6 +15299,7 @@ __all__ = [
     "ScheduleTargetPosition",
     "ScheduleTargetType",
     "ScheduleTrigger",
+    "ScheduleTriggerOverlapBehavior",
     "ScheduleTriggerWrapper",
     "ScheduleUpdateRequest",
     "ScheduleUpdateRequestData",

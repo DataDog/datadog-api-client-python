@@ -37377,6 +37377,13 @@ datadog\_api\_client.v2.model.schedule\_trigger module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.schedule\_trigger\_overlap\_behavior module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.schedule_trigger_overlap_behavior
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.schedule\_trigger\_wrapper module
 ---------------------------------------------------------------
 
