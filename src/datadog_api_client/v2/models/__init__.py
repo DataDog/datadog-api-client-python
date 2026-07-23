@@ -7560,14 +7560,44 @@ from datadog_api_client.v2.model.security_monitoring_azure_app_registration impo
 from datadog_api_client.v2.model.security_monitoring_content_pack_activation import (
     SecurityMonitoringContentPackActivation,
 )
+from datadog_api_client.v2.model.security_monitoring_content_pack_app_sec_details import (
+    SecurityMonitoringContentPackAppSecDetails,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_app_sec_details_type import (
+    SecurityMonitoringContentPackAppSecDetailsType,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_audit_details import (
+    SecurityMonitoringContentPackAuditDetails,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_audit_details_type import (
+    SecurityMonitoringContentPackAuditDetailsType,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_entity_details import (
+    SecurityMonitoringContentPackEntityDetails,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_entity_details_type import (
+    SecurityMonitoringContentPackEntityDetailsType,
+)
 from datadog_api_client.v2.model.security_monitoring_content_pack_integration_status import (
     SecurityMonitoringContentPackIntegrationStatus,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_logs_details import (
+    SecurityMonitoringContentPackLogsDetails,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_onboarding_details import (
+    SecurityMonitoringContentPackOnboardingDetails,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_onboarding_details_type import (
+    SecurityMonitoringContentPackOnboardingDetailsType,
 )
 from datadog_api_client.v2.model.security_monitoring_content_pack_state_attributes import (
     SecurityMonitoringContentPackStateAttributes,
 )
 from datadog_api_client.v2.model.security_monitoring_content_pack_state_data import (
     SecurityMonitoringContentPackStateData,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_state_details import (
+    SecurityMonitoringContentPackStateDetails,
 )
 from datadog_api_client.v2.model.security_monitoring_content_pack_state_meta import (
     SecurityMonitoringContentPackStateMeta,
@@ -7579,8 +7609,20 @@ from datadog_api_client.v2.model.security_monitoring_content_pack_states_respons
     SecurityMonitoringContentPackStatesResponse,
 )
 from datadog_api_client.v2.model.security_monitoring_content_pack_status import SecurityMonitoringContentPackStatus
+from datadog_api_client.v2.model.security_monitoring_content_pack_threat_intel_details import (
+    SecurityMonitoringContentPackThreatIntelDetails,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_threat_intel_details_type import (
+    SecurityMonitoringContentPackThreatIntelDetailsType,
+)
 from datadog_api_client.v2.model.security_monitoring_content_pack_timestamp_bucket import (
     SecurityMonitoringContentPackTimestampBucket,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_vulnerability_details import (
+    SecurityMonitoringContentPackVulnerabilityDetails,
+)
+from datadog_api_client.v2.model.security_monitoring_content_pack_vulnerability_details_type import (
+    SecurityMonitoringContentPackVulnerabilityDetailsType,
 )
 from datadog_api_client.v2.model.security_monitoring_critical_asset import SecurityMonitoringCriticalAsset
 from datadog_api_client.v2.model.security_monitoring_critical_asset_attributes import (
@@ -15405,14 +15447,28 @@ __all__ = [
     "SecurityFindingsStatus",
     "SecurityMonitoringAzureAppRegistration",
     "SecurityMonitoringContentPackActivation",
+    "SecurityMonitoringContentPackAppSecDetails",
+    "SecurityMonitoringContentPackAppSecDetailsType",
+    "SecurityMonitoringContentPackAuditDetails",
+    "SecurityMonitoringContentPackAuditDetailsType",
+    "SecurityMonitoringContentPackEntityDetails",
+    "SecurityMonitoringContentPackEntityDetailsType",
     "SecurityMonitoringContentPackIntegrationStatus",
+    "SecurityMonitoringContentPackLogsDetails",
+    "SecurityMonitoringContentPackOnboardingDetails",
+    "SecurityMonitoringContentPackOnboardingDetailsType",
     "SecurityMonitoringContentPackStateAttributes",
     "SecurityMonitoringContentPackStateData",
+    "SecurityMonitoringContentPackStateDetails",
     "SecurityMonitoringContentPackStateMeta",
     "SecurityMonitoringContentPackStateType",
     "SecurityMonitoringContentPackStatesResponse",
     "SecurityMonitoringContentPackStatus",
+    "SecurityMonitoringContentPackThreatIntelDetails",
+    "SecurityMonitoringContentPackThreatIntelDetailsType",
     "SecurityMonitoringContentPackTimestampBucket",
+    "SecurityMonitoringContentPackVulnerabilityDetails",
+    "SecurityMonitoringContentPackVulnerabilityDetailsType",
     "SecurityMonitoringCriticalAsset",
     "SecurityMonitoringCriticalAssetAttributes",
     "SecurityMonitoringCriticalAssetCreateAttributes",
