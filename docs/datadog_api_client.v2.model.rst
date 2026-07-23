@@ -31469,6 +31469,13 @@ datadog\_api\_client.v2.model.overwrite\_allocations\_request module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ownership\_confidence\_level module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_confidence_level
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ownership\_evidence\_attributes module
 --------------------------------------------------------------------
 
@@ -31683,6 +31690,83 @@ datadog\_api\_client.v2.model.ownership\_owner\_type module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.ownership_owner_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_settings\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_settings_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_settings\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_settings_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_settings\_request module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_settings_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_settings\_request\_attributes module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_settings_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_settings\_request\_data module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_settings_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_settings\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_settings\_type module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_settings_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_untagged\_findings\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_untagged_findings_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_untagged\_findings\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_untagged_findings_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_untagged\_findings\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_untagged_findings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ownership\_untagged\_findings\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ownership_untagged_findings_type
    :members:
    :show-inheritance:
 

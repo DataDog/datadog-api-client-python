@@ -11,6 +11,9 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.ownership_settings_response import OwnershipSettingsResponse
+from datadog_api_client.v2.model.ownership_settings_request import OwnershipSettingsRequest
+from datadog_api_client.v2.model.ownership_untagged_findings_response import OwnershipUntaggedFindingsResponse
 from datadog_api_client.v2.model.ownership_inference_list_response import OwnershipInferenceListResponse
 from datadog_api_client.v2.model.ownership_history_response import OwnershipHistoryResponse
 from datadog_api_client.v2.model.ownership_inference_response import OwnershipInferenceResponse
@@ -134,6 +137,38 @@ class CSMOwnershipApi:
             api_client=api_client,
         )
 
+        self._get_ownership_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": (OwnershipSettingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/csm/ownership/settings",
+                "operation_id": "get_ownership_settings",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_ownership_untagged_findings_endpoint = _Endpoint(
+            settings={
+                "response_type": (OwnershipUntaggedFindingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/csm/ownership/settings/untagged",
+                "operation_id": "get_ownership_untagged_findings",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_ownership_history_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipHistoryResponse,),
@@ -237,6 +272,26 @@ class CSMOwnershipApi:
             api_client=api_client,
         )
 
+        self._post_ownership_settings_endpoint = _Endpoint(
+            settings={
+                "response_type": (OwnershipSettingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/csm/ownership/settings",
+                "operation_id": "post_ownership_settings",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (OwnershipSettingsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_ownership_feedback(
         self,
         resource_id: str,
@@ -329,6 +384,30 @@ class CSMOwnershipApi:
 
         return self._get_ownership_inference_endpoint.call_with_http_info(**kwargs)
 
+    def get_ownership_settings(
+        self,
+    ) -> OwnershipSettingsResponse:
+        """Get ownership settings for the org.
+
+        Get ownership settings for the org. When settings are unset, the API returns the default opt-out configuration with ``auto_tag`` set to ``true`` and ``confidence_level`` set to ``high``.
+
+        :rtype: OwnershipSettingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_ownership_settings_endpoint.call_with_http_info(**kwargs)
+
+    def get_ownership_untagged_findings(
+        self,
+    ) -> OwnershipUntaggedFindingsResponse:
+        """Count untagged findings by ownership confidence.
+
+        Count findings with no team tag, grouped by ownership confidence level.
+
+        :rtype: OwnershipUntaggedFindingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_ownership_untagged_findings_endpoint.call_with_http_info(**kwargs)
+
     def list_ownership_history(
         self,
         resource_id: str,
@@ -410,3 +489,19 @@ class CSMOwnershipApi:
         kwargs["resource_id"] = resource_id
 
         return self._list_ownership_inferences_endpoint.call_with_http_info(**kwargs)
+
+    def post_ownership_settings(
+        self,
+        body: OwnershipSettingsRequest,
+    ) -> OwnershipSettingsResponse:
+        """Update ownership settings for the org.
+
+        Update ownership settings for the org.
+
+        :type body: OwnershipSettingsRequest
+        :rtype: OwnershipSettingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._post_ownership_settings_endpoint.call_with_http_info(**kwargs)

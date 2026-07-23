@@ -2049,6 +2049,24 @@
       "type": "safe"
     }
   },
+  "GetOwnershipSettings": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PostOwnershipSettings": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOwnershipUntaggedFindings": {
+    "tag": "CSM Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListOwnershipInferences": {
     "tag": "CSM Ownership",
     "undo": {

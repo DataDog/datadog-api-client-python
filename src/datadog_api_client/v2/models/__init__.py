@@ -6332,6 +6332,7 @@ from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
+from datadog_api_client.v2.model.ownership_confidence_level import OwnershipConfidenceLevel
 from datadog_api_client.v2.model.ownership_evidence_attributes import OwnershipEvidenceAttributes
 from datadog_api_client.v2.model.ownership_evidence_data import OwnershipEvidenceData
 from datadog_api_client.v2.model.ownership_evidence_response import OwnershipEvidenceResponse
@@ -6364,6 +6365,17 @@ from datadog_api_client.v2.model.ownership_inference_status import OwnershipInfe
 from datadog_api_client.v2.model.ownership_inference_type import OwnershipInferenceType
 from datadog_api_client.v2.model.ownership_inferences_type import OwnershipInferencesType
 from datadog_api_client.v2.model.ownership_owner_type import OwnershipOwnerType
+from datadog_api_client.v2.model.ownership_settings_attributes import OwnershipSettingsAttributes
+from datadog_api_client.v2.model.ownership_settings_data import OwnershipSettingsData
+from datadog_api_client.v2.model.ownership_settings_request import OwnershipSettingsRequest
+from datadog_api_client.v2.model.ownership_settings_request_attributes import OwnershipSettingsRequestAttributes
+from datadog_api_client.v2.model.ownership_settings_request_data import OwnershipSettingsRequestData
+from datadog_api_client.v2.model.ownership_settings_response import OwnershipSettingsResponse
+from datadog_api_client.v2.model.ownership_settings_type import OwnershipSettingsType
+from datadog_api_client.v2.model.ownership_untagged_findings_attributes import OwnershipUntaggedFindingsAttributes
+from datadog_api_client.v2.model.ownership_untagged_findings_data import OwnershipUntaggedFindingsData
+from datadog_api_client.v2.model.ownership_untagged_findings_response import OwnershipUntaggedFindingsResponse
+from datadog_api_client.v2.model.ownership_untagged_findings_type import OwnershipUntaggedFindingsType
 from datadog_api_client.v2.model.page_annotations_attributes import PageAnnotationsAttributes
 from datadog_api_client.v2.model.page_annotations_data import PageAnnotationsData
 from datadog_api_client.v2.model.page_annotations_response import PageAnnotationsResponse
@@ -14433,6 +14445,7 @@ __all__ = [
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
     "OverwriteAllocationsRequest",
+    "OwnershipConfidenceLevel",
     "OwnershipEvidenceAttributes",
     "OwnershipEvidenceData",
     "OwnershipEvidenceResponse",
@@ -14465,6 +14478,17 @@ __all__ = [
     "OwnershipInferenceType",
     "OwnershipInferencesType",
     "OwnershipOwnerType",
+    "OwnershipSettingsAttributes",
+    "OwnershipSettingsData",
+    "OwnershipSettingsRequest",
+    "OwnershipSettingsRequestAttributes",
+    "OwnershipSettingsRequestData",
+    "OwnershipSettingsResponse",
+    "OwnershipSettingsType",
+    "OwnershipUntaggedFindingsAttributes",
+    "OwnershipUntaggedFindingsData",
+    "OwnershipUntaggedFindingsResponse",
+    "OwnershipUntaggedFindingsType",
     "PageAnnotationsAttributes",
     "PageAnnotationsData",
     "PageAnnotationsResponse",
