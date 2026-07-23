@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.maintenance_data_relationships_status_page import (
         MaintenanceDataRelationshipsStatusPage,
     )
+    from datadog_api_client.v2.model.maintenance_data_relationships_template import MaintenanceDataRelationshipsTemplate
 
 
 class MaintenanceDataRelationships(ModelNormal):
@@ -37,17 +38,22 @@ class MaintenanceDataRelationships(ModelNormal):
         from datadog_api_client.v2.model.maintenance_data_relationships_status_page import (
             MaintenanceDataRelationshipsStatusPage,
         )
+        from datadog_api_client.v2.model.maintenance_data_relationships_template import (
+            MaintenanceDataRelationshipsTemplate,
+        )
 
         return {
             "created_by_user": (MaintenanceDataRelationshipsCreatedByUser,),
             "last_modified_by_user": (MaintenanceDataRelationshipsLastModifiedByUser,),
             "status_page": (MaintenanceDataRelationshipsStatusPage,),
+            "template": (MaintenanceDataRelationshipsTemplate,),
         }
 
     attribute_map = {
         "created_by_user": "created_by_user",
         "last_modified_by_user": "last_modified_by_user",
         "status_page": "status_page",
+        "template": "template",
     }
 
     def __init__(
@@ -55,6 +61,7 @@ class MaintenanceDataRelationships(ModelNormal):
         created_by_user: Union[MaintenanceDataRelationshipsCreatedByUser, UnsetType] = unset,
         last_modified_by_user: Union[MaintenanceDataRelationshipsLastModifiedByUser, UnsetType] = unset,
         status_page: Union[MaintenanceDataRelationshipsStatusPage, UnsetType] = unset,
+        template: Union[MaintenanceDataRelationshipsTemplate, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -68,6 +75,9 @@ class MaintenanceDataRelationships(ModelNormal):
 
         :param status_page: The status page the maintenance belongs to.
         :type status_page: MaintenanceDataRelationshipsStatusPage, optional
+
+        :param template: The template the maintenance was created from.
+        :type template: MaintenanceDataRelationshipsTemplate, optional
         """
         if created_by_user is not unset:
             kwargs["created_by_user"] = created_by_user
@@ -75,4 +85,6 @@ class MaintenanceDataRelationships(ModelNormal):
             kwargs["last_modified_by_user"] = last_modified_by_user
         if status_page is not unset:
             kwargs["status_page"] = status_page
+        if template is not unset:
+            kwargs["template"] = template
         super().__init__(kwargs)

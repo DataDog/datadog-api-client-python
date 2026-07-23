@@ -1629,6 +1629,15 @@ from datadog_api_client.v2.model.create_backfilled_degradation_request_data_attr
 from datadog_api_client.v2.model.create_backfilled_degradation_request_data_attributes_updates_items import (
     CreateBackfilledDegradationRequestDataAttributesUpdatesItems,
 )
+from datadog_api_client.v2.model.create_backfilled_degradation_request_data_relationships import (
+    CreateBackfilledDegradationRequestDataRelationships,
+)
+from datadog_api_client.v2.model.create_backfilled_degradation_request_data_relationships_template import (
+    CreateBackfilledDegradationRequestDataRelationshipsTemplate,
+)
+from datadog_api_client.v2.model.create_backfilled_degradation_request_data_relationships_template_data import (
+    CreateBackfilledDegradationRequestDataRelationshipsTemplateData,
+)
 from datadog_api_client.v2.model.create_backfilled_maintenance_request import CreateBackfilledMaintenanceRequest
 from datadog_api_client.v2.model.create_backfilled_maintenance_request_data import (
     CreateBackfilledMaintenanceRequestData,
@@ -1638,6 +1647,15 @@ from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_attr
 )
 from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_attributes_updates_items import (
     CreateBackfilledMaintenanceRequestDataAttributesUpdatesItems,
+)
+from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_relationships import (
+    CreateBackfilledMaintenanceRequestDataRelationships,
+)
+from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_relationships_template import (
+    CreateBackfilledMaintenanceRequestDataRelationshipsTemplate,
+)
+from datadog_api_client.v2.model.create_backfilled_maintenance_request_data_relationships_template_data import (
+    CreateBackfilledMaintenanceRequestDataRelationshipsTemplateData,
 )
 from datadog_api_client.v2.model.create_campaign_request import CreateCampaignRequest
 from datadog_api_client.v2.model.create_campaign_request_attributes import CreateCampaignRequestAttributes
@@ -1692,6 +1710,26 @@ from datadog_api_client.v2.model.create_degradation_request_data_attributes_comp
 from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
     CreateDegradationRequestDataAttributesStatus,
 )
+from datadog_api_client.v2.model.create_degradation_request_data_relationships import (
+    CreateDegradationRequestDataRelationships,
+)
+from datadog_api_client.v2.model.create_degradation_request_data_relationships_template import (
+    CreateDegradationRequestDataRelationshipsTemplate,
+)
+from datadog_api_client.v2.model.create_degradation_request_data_relationships_template_data import (
+    CreateDegradationRequestDataRelationshipsTemplateData,
+)
+from datadog_api_client.v2.model.create_degradation_template_request import CreateDegradationTemplateRequest
+from datadog_api_client.v2.model.create_degradation_template_request_data import CreateDegradationTemplateRequestData
+from datadog_api_client.v2.model.create_degradation_template_request_data_attributes import (
+    CreateDegradationTemplateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.create_degradation_template_request_data_attributes_components_affected_items import (
+    CreateDegradationTemplateRequestDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.create_degradation_template_request_data_attributes_updates_items import (
+    CreateDegradationTemplateRequestDataAttributesUpdatesItems,
+)
 from datadog_api_client.v2.model.create_deployment_gate_params import CreateDeploymentGateParams
 from datadog_api_client.v2.model.create_deployment_gate_params_data import CreateDeploymentGateParamsData
 from datadog_api_client.v2.model.create_deployment_gate_params_data_attributes import (
@@ -1742,6 +1780,20 @@ from datadog_api_client.v2.model.create_maintenance_request_data_attributes_comp
 )
 from datadog_api_client.v2.model.create_maintenance_request_data_attributes_updates_items_status import (
     CreateMaintenanceRequestDataAttributesUpdatesItemsStatus,
+)
+from datadog_api_client.v2.model.create_maintenance_request_data_relationships import (
+    CreateMaintenanceRequestDataRelationships,
+)
+from datadog_api_client.v2.model.create_maintenance_request_data_relationships_template import (
+    CreateMaintenanceRequestDataRelationshipsTemplate,
+)
+from datadog_api_client.v2.model.create_maintenance_request_data_relationships_template_data import (
+    CreateMaintenanceRequestDataRelationshipsTemplateData,
+)
+from datadog_api_client.v2.model.create_maintenance_template_request import CreateMaintenanceTemplateRequest
+from datadog_api_client.v2.model.create_maintenance_template_request_data import CreateMaintenanceTemplateRequestData
+from datadog_api_client.v2.model.create_maintenance_template_request_data_attributes import (
+    CreateMaintenanceTemplateRequestDataAttributes,
 )
 from datadog_api_client.v2.model.create_notification_channel_attributes import CreateNotificationChannelAttributes
 from datadog_api_client.v2.model.create_notification_channel_config import CreateNotificationChannelConfig
@@ -2315,7 +2367,40 @@ from datadog_api_client.v2.model.degradation_data_relationships_status_page impo
 from datadog_api_client.v2.model.degradation_data_relationships_status_page_data import (
     DegradationDataRelationshipsStatusPageData,
 )
+from datadog_api_client.v2.model.degradation_data_relationships_template import DegradationDataRelationshipsTemplate
+from datadog_api_client.v2.model.degradation_data_relationships_template_data import (
+    DegradationDataRelationshipsTemplateData,
+)
 from datadog_api_client.v2.model.degradation_included import DegradationIncluded
+from datadog_api_client.v2.model.degradation_template import DegradationTemplate
+from datadog_api_client.v2.model.degradation_template_array import DegradationTemplateArray
+from datadog_api_client.v2.model.degradation_template_data import DegradationTemplateData
+from datadog_api_client.v2.model.degradation_template_data_attributes import DegradationTemplateDataAttributes
+from datadog_api_client.v2.model.degradation_template_data_attributes_components_affected_items import (
+    DegradationTemplateDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.degradation_template_data_attributes_updates_items import (
+    DegradationTemplateDataAttributesUpdatesItems,
+)
+from datadog_api_client.v2.model.degradation_template_data_relationships import DegradationTemplateDataRelationships
+from datadog_api_client.v2.model.degradation_template_data_relationships_created_by_user import (
+    DegradationTemplateDataRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.degradation_template_data_relationships_created_by_user_data import (
+    DegradationTemplateDataRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.degradation_template_data_relationships_last_modified_by_user import (
+    DegradationTemplateDataRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.degradation_template_data_relationships_last_modified_by_user_data import (
+    DegradationTemplateDataRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.degradation_template_data_relationships_status_page import (
+    DegradationTemplateDataRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.degradation_template_data_relationships_status_page_data import (
+    DegradationTemplateDataRelationshipsStatusPageData,
+)
 from datadog_api_client.v2.model.degradation_update import DegradationUpdate
 from datadog_api_client.v2.model.degradation_update_data import DegradationUpdateData
 from datadog_api_client.v2.model.degradation_update_data_attributes import DegradationUpdateDataAttributes
@@ -4675,6 +4760,33 @@ from datadog_api_client.v2.model.maintenance_data_relationships_status_page impo
 from datadog_api_client.v2.model.maintenance_data_relationships_status_page_data import (
     MaintenanceDataRelationshipsStatusPageData,
 )
+from datadog_api_client.v2.model.maintenance_data_relationships_template import MaintenanceDataRelationshipsTemplate
+from datadog_api_client.v2.model.maintenance_data_relationships_template_data import (
+    MaintenanceDataRelationshipsTemplateData,
+)
+from datadog_api_client.v2.model.maintenance_template import MaintenanceTemplate
+from datadog_api_client.v2.model.maintenance_template_array import MaintenanceTemplateArray
+from datadog_api_client.v2.model.maintenance_template_data import MaintenanceTemplateData
+from datadog_api_client.v2.model.maintenance_template_data_attributes import MaintenanceTemplateDataAttributes
+from datadog_api_client.v2.model.maintenance_template_data_relationships import MaintenanceTemplateDataRelationships
+from datadog_api_client.v2.model.maintenance_template_data_relationships_created_by_user import (
+    MaintenanceTemplateDataRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.maintenance_template_data_relationships_created_by_user_data import (
+    MaintenanceTemplateDataRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.maintenance_template_data_relationships_last_modified_by_user import (
+    MaintenanceTemplateDataRelationshipsLastModifiedByUser,
+)
+from datadog_api_client.v2.model.maintenance_template_data_relationships_last_modified_by_user_data import (
+    MaintenanceTemplateDataRelationshipsLastModifiedByUserData,
+)
+from datadog_api_client.v2.model.maintenance_template_data_relationships_status_page import (
+    MaintenanceTemplateDataRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.maintenance_template_data_relationships_status_page_data import (
+    MaintenanceTemplateDataRelationshipsStatusPageData,
+)
 from datadog_api_client.v2.model.maintenance_window import MaintenanceWindow
 from datadog_api_client.v2.model.maintenance_window_attributes import MaintenanceWindowAttributes
 from datadog_api_client.v2.model.maintenance_window_create import MaintenanceWindowCreate
@@ -6411,7 +6523,33 @@ from datadog_api_client.v2.model.patch_degradation_request_data_attributes_compo
 from datadog_api_client.v2.model.patch_degradation_request_data_attributes_status import (
     PatchDegradationRequestDataAttributesStatus,
 )
+from datadog_api_client.v2.model.patch_degradation_request_data_relationships import (
+    PatchDegradationRequestDataRelationships,
+)
+from datadog_api_client.v2.model.patch_degradation_request_data_relationships_template import (
+    PatchDegradationRequestDataRelationshipsTemplate,
+)
+from datadog_api_client.v2.model.patch_degradation_request_data_relationships_template_data import (
+    PatchDegradationRequestDataRelationshipsTemplateData,
+)
 from datadog_api_client.v2.model.patch_degradation_request_data_type import PatchDegradationRequestDataType
+from datadog_api_client.v2.model.patch_degradation_template_request import PatchDegradationTemplateRequest
+from datadog_api_client.v2.model.patch_degradation_template_request_data import PatchDegradationTemplateRequestData
+from datadog_api_client.v2.model.patch_degradation_template_request_data_attributes import (
+    PatchDegradationTemplateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.patch_degradation_template_request_data_attributes_components_affected_items import (
+    PatchDegradationTemplateRequestDataAttributesComponentsAffectedItems,
+)
+from datadog_api_client.v2.model.patch_degradation_template_request_data_attributes_components_affected_items_status import (
+    PatchDegradationTemplateRequestDataAttributesComponentsAffectedItemsStatus,
+)
+from datadog_api_client.v2.model.patch_degradation_template_request_data_attributes_updates_items import (
+    PatchDegradationTemplateRequestDataAttributesUpdatesItems,
+)
+from datadog_api_client.v2.model.patch_degradation_template_request_data_type import (
+    PatchDegradationTemplateRequestDataType,
+)
 from datadog_api_client.v2.model.patch_degradation_update_request import PatchDegradationUpdateRequest
 from datadog_api_client.v2.model.patch_degradation_update_request_data import PatchDegradationUpdateRequestData
 from datadog_api_client.v2.model.patch_degradation_update_request_data_attributes import (
@@ -6433,7 +6571,24 @@ from datadog_api_client.v2.model.patch_maintenance_request_data_attributes_compo
 from datadog_api_client.v2.model.patch_maintenance_request_data_attributes_components_affected_items_status import (
     PatchMaintenanceRequestDataAttributesComponentsAffectedItemsStatus,
 )
+from datadog_api_client.v2.model.patch_maintenance_request_data_relationships import (
+    PatchMaintenanceRequestDataRelationships,
+)
+from datadog_api_client.v2.model.patch_maintenance_request_data_relationships_template import (
+    PatchMaintenanceRequestDataRelationshipsTemplate,
+)
+from datadog_api_client.v2.model.patch_maintenance_request_data_relationships_template_data import (
+    PatchMaintenanceRequestDataRelationshipsTemplateData,
+)
 from datadog_api_client.v2.model.patch_maintenance_request_data_type import PatchMaintenanceRequestDataType
+from datadog_api_client.v2.model.patch_maintenance_template_request import PatchMaintenanceTemplateRequest
+from datadog_api_client.v2.model.patch_maintenance_template_request_data import PatchMaintenanceTemplateRequestData
+from datadog_api_client.v2.model.patch_maintenance_template_request_data_attributes import (
+    PatchMaintenanceTemplateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.patch_maintenance_template_request_data_type import (
+    PatchMaintenanceTemplateRequestDataType,
+)
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data import PatchNotificationRuleParametersData
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
@@ -11223,10 +11378,16 @@ __all__ = [
     "CreateBackfilledDegradationRequestData",
     "CreateBackfilledDegradationRequestDataAttributes",
     "CreateBackfilledDegradationRequestDataAttributesUpdatesItems",
+    "CreateBackfilledDegradationRequestDataRelationships",
+    "CreateBackfilledDegradationRequestDataRelationshipsTemplate",
+    "CreateBackfilledDegradationRequestDataRelationshipsTemplateData",
     "CreateBackfilledMaintenanceRequest",
     "CreateBackfilledMaintenanceRequestData",
     "CreateBackfilledMaintenanceRequestDataAttributes",
     "CreateBackfilledMaintenanceRequestDataAttributesUpdatesItems",
+    "CreateBackfilledMaintenanceRequestDataRelationships",
+    "CreateBackfilledMaintenanceRequestDataRelationshipsTemplate",
+    "CreateBackfilledMaintenanceRequestDataRelationshipsTemplateData",
     "CreateCampaignRequest",
     "CreateCampaignRequestAttributes",
     "CreateCampaignRequestData",
@@ -11258,6 +11419,14 @@ __all__ = [
     "CreateDegradationRequestDataAttributes",
     "CreateDegradationRequestDataAttributesComponentsAffectedItems",
     "CreateDegradationRequestDataAttributesStatus",
+    "CreateDegradationRequestDataRelationships",
+    "CreateDegradationRequestDataRelationshipsTemplate",
+    "CreateDegradationRequestDataRelationshipsTemplateData",
+    "CreateDegradationTemplateRequest",
+    "CreateDegradationTemplateRequestData",
+    "CreateDegradationTemplateRequestDataAttributes",
+    "CreateDegradationTemplateRequestDataAttributesComponentsAffectedItems",
+    "CreateDegradationTemplateRequestDataAttributesUpdatesItems",
     "CreateDeploymentGateParams",
     "CreateDeploymentGateParamsData",
     "CreateDeploymentGateParamsDataAttributes",
@@ -11291,6 +11460,12 @@ __all__ = [
     "CreateMaintenanceRequestDataAttributes",
     "CreateMaintenanceRequestDataAttributesComponentsAffectedItems",
     "CreateMaintenanceRequestDataAttributesUpdatesItemsStatus",
+    "CreateMaintenanceRequestDataRelationships",
+    "CreateMaintenanceRequestDataRelationshipsTemplate",
+    "CreateMaintenanceRequestDataRelationshipsTemplateData",
+    "CreateMaintenanceTemplateRequest",
+    "CreateMaintenanceTemplateRequestData",
+    "CreateMaintenanceTemplateRequestDataAttributes",
     "CreateNotificationChannelAttributes",
     "CreateNotificationChannelConfig",
     "CreateNotificationChannelData",
@@ -11701,7 +11876,22 @@ __all__ = [
     "DegradationDataRelationshipsLastModifiedByUserData",
     "DegradationDataRelationshipsStatusPage",
     "DegradationDataRelationshipsStatusPageData",
+    "DegradationDataRelationshipsTemplate",
+    "DegradationDataRelationshipsTemplateData",
     "DegradationIncluded",
+    "DegradationTemplate",
+    "DegradationTemplateArray",
+    "DegradationTemplateData",
+    "DegradationTemplateDataAttributes",
+    "DegradationTemplateDataAttributesComponentsAffectedItems",
+    "DegradationTemplateDataAttributesUpdatesItems",
+    "DegradationTemplateDataRelationships",
+    "DegradationTemplateDataRelationshipsCreatedByUser",
+    "DegradationTemplateDataRelationshipsCreatedByUserData",
+    "DegradationTemplateDataRelationshipsLastModifiedByUser",
+    "DegradationTemplateDataRelationshipsLastModifiedByUserData",
+    "DegradationTemplateDataRelationshipsStatusPage",
+    "DegradationTemplateDataRelationshipsStatusPageData",
     "DegradationUpdate",
     "DegradationUpdateData",
     "DegradationUpdateDataAttributes",
@@ -13519,6 +13709,19 @@ __all__ = [
     "MaintenanceDataRelationshipsLastModifiedByUserData",
     "MaintenanceDataRelationshipsStatusPage",
     "MaintenanceDataRelationshipsStatusPageData",
+    "MaintenanceDataRelationshipsTemplate",
+    "MaintenanceDataRelationshipsTemplateData",
+    "MaintenanceTemplate",
+    "MaintenanceTemplateArray",
+    "MaintenanceTemplateData",
+    "MaintenanceTemplateDataAttributes",
+    "MaintenanceTemplateDataRelationships",
+    "MaintenanceTemplateDataRelationshipsCreatedByUser",
+    "MaintenanceTemplateDataRelationshipsCreatedByUserData",
+    "MaintenanceTemplateDataRelationshipsLastModifiedByUser",
+    "MaintenanceTemplateDataRelationshipsLastModifiedByUserData",
+    "MaintenanceTemplateDataRelationshipsStatusPage",
+    "MaintenanceTemplateDataRelationshipsStatusPageData",
     "MaintenanceWindow",
     "MaintenanceWindowAttributes",
     "MaintenanceWindowCreate",
@@ -14519,7 +14722,17 @@ __all__ = [
     "PatchDegradationRequestDataAttributes",
     "PatchDegradationRequestDataAttributesComponentsAffectedItems",
     "PatchDegradationRequestDataAttributesStatus",
+    "PatchDegradationRequestDataRelationships",
+    "PatchDegradationRequestDataRelationshipsTemplate",
+    "PatchDegradationRequestDataRelationshipsTemplateData",
     "PatchDegradationRequestDataType",
+    "PatchDegradationTemplateRequest",
+    "PatchDegradationTemplateRequestData",
+    "PatchDegradationTemplateRequestDataAttributes",
+    "PatchDegradationTemplateRequestDataAttributesComponentsAffectedItems",
+    "PatchDegradationTemplateRequestDataAttributesComponentsAffectedItemsStatus",
+    "PatchDegradationTemplateRequestDataAttributesUpdatesItems",
+    "PatchDegradationTemplateRequestDataType",
     "PatchDegradationUpdateRequest",
     "PatchDegradationUpdateRequestData",
     "PatchDegradationUpdateRequestDataAttributes",
@@ -14531,7 +14744,14 @@ __all__ = [
     "PatchMaintenanceRequestDataAttributes",
     "PatchMaintenanceRequestDataAttributesComponentsAffectedItems",
     "PatchMaintenanceRequestDataAttributesComponentsAffectedItemsStatus",
+    "PatchMaintenanceRequestDataRelationships",
+    "PatchMaintenanceRequestDataRelationshipsTemplate",
+    "PatchMaintenanceRequestDataRelationshipsTemplateData",
     "PatchMaintenanceRequestDataType",
+    "PatchMaintenanceTemplateRequest",
+    "PatchMaintenanceTemplateRequestData",
+    "PatchMaintenanceTemplateRequestDataAttributes",
+    "PatchMaintenanceTemplateRequestDataType",
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
