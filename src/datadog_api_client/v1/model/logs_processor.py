@@ -36,7 +36,7 @@ class LogsProcessor(ModelComposed):
         :param sources: Array of source attributes.
         :type sources: [str]
 
-        :param override_on_conflict: Override or not the target element if already set,
+        :param override_on_conflict: Whether to override the target element if it's already set.
         :type override_on_conflict: bool, optional
 
         :param preserve_source: Remove or preserve the remapped source element.

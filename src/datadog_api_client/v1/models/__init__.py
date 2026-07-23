@@ -362,6 +362,12 @@ from datadog_api_client.v1.model.logs_array_processor import LogsArrayProcessor
 from datadog_api_client.v1.model.logs_array_processor_operation import LogsArrayProcessorOperation
 from datadog_api_client.v1.model.logs_array_processor_operation_append import LogsArrayProcessorOperationAppend
 from datadog_api_client.v1.model.logs_array_processor_operation_append_type import LogsArrayProcessorOperationAppendType
+from datadog_api_client.v1.model.logs_array_processor_operation_extract_key_value import (
+    LogsArrayProcessorOperationExtractKeyValue,
+)
+from datadog_api_client.v1.model.logs_array_processor_operation_extract_key_value_type import (
+    LogsArrayProcessorOperationExtractKeyValueType,
+)
 from datadog_api_client.v1.model.logs_array_processor_operation_length import LogsArrayProcessorOperationLength
 from datadog_api_client.v1.model.logs_array_processor_operation_length_type import LogsArrayProcessorOperationLengthType
 from datadog_api_client.v1.model.logs_array_processor_operation_select import LogsArrayProcessorOperationSelect
@@ -1741,6 +1747,8 @@ __all__ = [
     "LogsArrayProcessorOperation",
     "LogsArrayProcessorOperationAppend",
     "LogsArrayProcessorOperationAppendType",
+    "LogsArrayProcessorOperationExtractKeyValue",
+    "LogsArrayProcessorOperationExtractKeyValueType",
     "LogsArrayProcessorOperationLength",
     "LogsArrayProcessorOperationLengthType",
     "LogsArrayProcessorOperationSelect",
