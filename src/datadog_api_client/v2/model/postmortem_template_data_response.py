@@ -3,16 +3,21 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.postmortem_template_attributes_response import PostmortemTemplateAttributesResponse
+    from datadog_api_client.v2.model.postmortem_template_response_relationships import (
+        PostmortemTemplateResponseRelationships,
+    )
     from datadog_api_client.v2.model.postmortem_template_type import PostmortemTemplateType
 
 
@@ -22,22 +27,32 @@ class PostmortemTemplateDataResponse(ModelNormal):
         from datadog_api_client.v2.model.postmortem_template_attributes_response import (
             PostmortemTemplateAttributesResponse,
         )
+        from datadog_api_client.v2.model.postmortem_template_response_relationships import (
+            PostmortemTemplateResponseRelationships,
+        )
         from datadog_api_client.v2.model.postmortem_template_type import PostmortemTemplateType
 
         return {
             "attributes": (PostmortemTemplateAttributesResponse,),
             "id": (str,),
+            "relationships": (PostmortemTemplateResponseRelationships,),
             "type": (PostmortemTemplateType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
+        "relationships": "relationships",
         "type": "type",
     }
 
     def __init__(
-        self_, attributes: PostmortemTemplateAttributesResponse, id: str, type: PostmortemTemplateType, **kwargs
+        self_,
+        attributes: PostmortemTemplateAttributesResponse,
+        id: str,
+        type: PostmortemTemplateType,
+        relationships: Union[PostmortemTemplateResponseRelationships, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Data object for a postmortem template returned in a response.
@@ -45,12 +60,17 @@ class PostmortemTemplateDataResponse(ModelNormal):
         :param attributes: Attributes of a postmortem template returned in a response.
         :type attributes: PostmortemTemplateAttributesResponse
 
-        :param id: The ID of the template
+        :param id: The ID of the template.
         :type id: str
 
-        :param type: Postmortem template resource type
+        :param relationships: Relationships of a postmortem template returned in a response.
+        :type relationships: PostmortemTemplateResponseRelationships, optional
+
+        :param type: Postmortem template resource type.
         :type type: PostmortemTemplateType
         """
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
         self_.attributes = attributes

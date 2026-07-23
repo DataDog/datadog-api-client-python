@@ -3047,7 +3047,7 @@
       "parameters": [
         {
           "name": "template_id",
-          "source": "<RESPONSE_PATH>"
+          "source": "data.id"
         }
       ],
       "type": "unsafe"

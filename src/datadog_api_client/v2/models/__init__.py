@@ -1442,6 +1442,7 @@ from datadog_api_client.v2.model.configured_schedule_target_relationships_schedu
     ConfiguredScheduleTargetRelationshipsSchedule,
 )
 from datadog_api_client.v2.model.configured_schedule_target_type import ConfiguredScheduleTargetType
+from datadog_api_client.v2.model.confluence_postmortem_settings import ConfluencePostmortemSettings
 from datadog_api_client.v2.model.confluent_account_create_request import ConfluentAccountCreateRequest
 from datadog_api_client.v2.model.confluent_account_create_request_attributes import (
     ConfluentAccountCreateRequestAttributes,
@@ -3287,6 +3288,7 @@ from datadog_api_client.v2.model.google_chat_update_organization_handle_request_
 from datadog_api_client.v2.model.google_chat_update_organization_handle_request_data import (
     GoogleChatUpdateOrganizationHandleRequestData,
 )
+from datadog_api_client.v2.model.google_docs_postmortem_settings import GoogleDocsPostmortemSettings
 from datadog_api_client.v2.model.google_meet_configuration_reference import GoogleMeetConfigurationReference
 from datadog_api_client.v2.model.google_meet_configuration_reference_data import GoogleMeetConfigurationReferenceData
 from datadog_api_client.v2.model.governance_best_practice_definition import GovernanceBestPracticeDefinition
@@ -6509,11 +6511,26 @@ from datadog_api_client.v2.model.postmortem_cell_definition import PostmortemCel
 from datadog_api_client.v2.model.postmortem_cell_type import PostmortemCellType
 from datadog_api_client.v2.model.postmortem_template_attributes_request import PostmortemTemplateAttributesRequest
 from datadog_api_client.v2.model.postmortem_template_attributes_response import PostmortemTemplateAttributesResponse
+from datadog_api_client.v2.model.postmortem_template_create_relationships import PostmortemTemplateCreateRelationships
 from datadog_api_client.v2.model.postmortem_template_data_request import PostmortemTemplateDataRequest
 from datadog_api_client.v2.model.postmortem_template_data_response import PostmortemTemplateDataResponse
+from datadog_api_client.v2.model.postmortem_template_incident_type_relationship import (
+    PostmortemTemplateIncidentTypeRelationship,
+)
+from datadog_api_client.v2.model.postmortem_template_incident_type_relationship_data import (
+    PostmortemTemplateIncidentTypeRelationshipData,
+)
+from datadog_api_client.v2.model.postmortem_template_location import PostmortemTemplateLocation
 from datadog_api_client.v2.model.postmortem_template_request import PostmortemTemplateRequest
 from datadog_api_client.v2.model.postmortem_template_response import PostmortemTemplateResponse
+from datadog_api_client.v2.model.postmortem_template_response_relationships import (
+    PostmortemTemplateResponseRelationships,
+)
 from datadog_api_client.v2.model.postmortem_template_type import PostmortemTemplateType
+from datadog_api_client.v2.model.postmortem_template_user_relationship import PostmortemTemplateUserRelationship
+from datadog_api_client.v2.model.postmortem_template_user_relationship_data import (
+    PostmortemTemplateUserRelationshipData,
+)
 from datadog_api_client.v2.model.postmortem_templates_response import PostmortemTemplatesResponse
 from datadog_api_client.v2.model.powerpack import Powerpack
 from datadog_api_client.v2.model.powerpack_attributes import PowerpackAttributes
@@ -11061,6 +11078,7 @@ __all__ = [
     "ConfiguredScheduleTargetRelationships",
     "ConfiguredScheduleTargetRelationshipsSchedule",
     "ConfiguredScheduleTargetType",
+    "ConfluencePostmortemSettings",
     "ConfluentAccountCreateRequest",
     "ConfluentAccountCreateRequestAttributes",
     "ConfluentAccountCreateRequestData",
@@ -12458,6 +12476,7 @@ __all__ = [
     "GoogleChatUpdateOrganizationHandleRequest",
     "GoogleChatUpdateOrganizationHandleRequestAttributes",
     "GoogleChatUpdateOrganizationHandleRequestData",
+    "GoogleDocsPostmortemSettings",
     "GoogleMeetConfigurationReference",
     "GoogleMeetConfigurationReferenceData",
     "GovernanceBestPracticeDefinition",
@@ -14590,11 +14609,18 @@ __all__ = [
     "PostmortemCellType",
     "PostmortemTemplateAttributesRequest",
     "PostmortemTemplateAttributesResponse",
+    "PostmortemTemplateCreateRelationships",
     "PostmortemTemplateDataRequest",
     "PostmortemTemplateDataResponse",
+    "PostmortemTemplateIncidentTypeRelationship",
+    "PostmortemTemplateIncidentTypeRelationshipData",
+    "PostmortemTemplateLocation",
     "PostmortemTemplateRequest",
     "PostmortemTemplateResponse",
+    "PostmortemTemplateResponseRelationships",
     "PostmortemTemplateType",
+    "PostmortemTemplateUserRelationship",
+    "PostmortemTemplateUserRelationshipData",
     "PostmortemTemplatesResponse",
     "Powerpack",
     "PowerpackAttributes",

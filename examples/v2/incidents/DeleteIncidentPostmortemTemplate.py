@@ -10,5 +10,5 @@ configuration.unstable_operations["delete_incident_postmortem_template"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)
     api_instance.delete_incident_postmortem_template(
-        template_id="template-456",
+        template_id="template_id",
     )
