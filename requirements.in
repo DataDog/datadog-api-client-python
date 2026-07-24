@@ -1,0 +1,16 @@
+aiosonic>=0.24.0
+certifi
+ddtrace>=1.15.0
+glom
+jinja2
+mypy
+pytest-asyncio
+pytest-bdd==6.0.1
+pytest-randomly
+pytest-recording
+pytest<8.0.0
+python-dateutil
+types-python-dateutil
+typing-extensions>=4.0.0
+urllib3>=1.15
+zstandard
