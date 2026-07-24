@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -142,7 +143,7 @@ class ServiceLevelObjectivesApi:
         self,
         body: SloReportCreateRequest,
     ) -> SLOReportPostResponse:
-        """Create a new SLO report.
+        """Create a new SLO report. **Deprecated**.
 
         Create a job to generate an SLO report. The report job is processed asynchronously and eventually results in a CSV report being available for download.
 
@@ -155,13 +156,14 @@ class ServiceLevelObjectivesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_slo_report_job is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_slo_report_job_endpoint.call_with_http_info(**kwargs)
 
     def get_slo_report(
         self,
         report_id: str,
     ) -> str:
-        """Get SLO report.
+        """Get SLO report. **Deprecated**.
 
         Download an SLO report. This can only be performed after the report job has completed.
 
@@ -174,13 +176,14 @@ class ServiceLevelObjectivesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
+        warnings.warn("get_slo_report is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_slo_report_endpoint.call_with_http_info(**kwargs)
 
     def get_slo_report_job_status(
         self,
         report_id: str,
     ) -> SLOReportStatusGetResponse:
-        """Get SLO report status.
+        """Get SLO report status. **Deprecated**.
 
         Get the status of the SLO report job.
 
@@ -191,6 +194,7 @@ class ServiceLevelObjectivesApi:
         kwargs: Dict[str, Any] = {}
         kwargs["report_id"] = report_id
 
+        warnings.warn("get_slo_report_job_status is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_slo_report_job_status_endpoint.call_with_http_info(**kwargs)
 
     def get_slo_status(
