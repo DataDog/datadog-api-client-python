@@ -1165,7 +1165,18 @@ class IncidentsApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "filter_incident_type": {
+                    "openapi_types": (UUID,),
+                    "attribute": "filter[incident-type]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -2150,7 +2161,7 @@ class IncidentsApi:
 
         Delete a postmortem template.
 
-        :param template_id: The ID of the postmortem template
+        :param template_id: The ID of the postmortem template.
         :type template_id: str
         :rtype: None
         """
@@ -2346,7 +2357,7 @@ class IncidentsApi:
 
         Retrieve details of a specific postmortem template.
 
-        :param template_id: The ID of the postmortem template
+        :param template_id: The ID of the postmortem template.
         :type template_id: str
         :rtype: PostmortemTemplateResponse
         """
@@ -2604,14 +2615,27 @@ class IncidentsApi:
 
     def list_incident_postmortem_templates(
         self,
+        *,
+        filter_incident_type: Union[UUID, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
     ) -> PostmortemTemplatesResponse:
         """List postmortem templates.
 
         Retrieve a list of all postmortem templates for incidents.
 
+        :param filter_incident_type: Filter postmortem templates by the associated incident type ID.
+        :type filter_incident_type: UUID, optional
+        :param sort: The attribute to sort results by. Prefix with ``-`` for descending order.
+        :type sort: str, optional
         :rtype: PostmortemTemplatesResponse
         """
         kwargs: Dict[str, Any] = {}
+        if filter_incident_type is not unset:
+            kwargs["filter_incident_type"] = filter_incident_type
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
         return self._list_incident_postmortem_templates_endpoint.call_with_http_info(**kwargs)
 
     def list_incidents(
@@ -3083,7 +3107,7 @@ class IncidentsApi:
 
         Update an existing postmortem template.
 
-        :param template_id: The ID of the postmortem template
+        :param template_id: The ID of the postmortem template.
         :type template_id: str
         :type body: PostmortemTemplateRequest
         :rtype: PostmortemTemplateResponse
