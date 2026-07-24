@@ -85,6 +85,20 @@ Feature: Logs Pipelines
     Then the response status is 200 OK
 
   @team:DataDog/logs-onboarding
+  Scenario: Create a pipeline with Array Processor Key Value Operation returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayKeyValue", "processors": [{"type": "array-processor", "is_enabled": true, "name": "extract_kv", "operation": {"type": "key-value", "source": "tags", "key_to_extract": "name", "value_to_extract": "value"}}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/logs-onboarding
+  Scenario: Create a pipeline with Array Processor Key Value Operation with target and override_on_conflict returns "OK" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayKeyValueTarget", "processors": [{"type": "array-processor", "is_enabled": true, "name": "extract_kv_to_target", "operation": {"type": "key-value", "source": "tags", "key_to_extract": "name", "value_to_extract": "value", "target": "extracted", "override_on_conflict": true}}], "tags": []}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:DataDog/logs-onboarding
   Scenario: Create a pipeline with Array Processor Length Operation returns "OK" response
     Given new "CreateLogsPipeline" request
     And body with value {"filter": {"query": "source:python"}, "name": "testPipelineArrayLength", "processors": [{"type": "array-processor", "is_enabled": true, "name": "count_tags", "operation": {"type": "length", "source": "tags", "target": "tagCount"}}], "tags": []}
