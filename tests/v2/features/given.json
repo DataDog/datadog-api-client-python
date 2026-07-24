@@ -610,6 +610,22 @@
       },
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"incident_postmortems\",\n    \"attributes\": {\n      \"title\": \"Postmortem for {{ unique }}\",\n      \"document_url\": \"https://docs.example.com/postmortem-{{ unique_lower }}\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"postmortem\" in the system",
+    "key": "postmortem",
+    "tag": "Incidents",
+    "operationId": "CreateIncidentPostmortem"
+  },
+  {
+    "parameters": [
+      {
+        "name": "incident_id",
+        "source": "incident.data.id"
+      },
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"integration_type\": 1,\n      \"incident_id\": \"{{ incident.data.id }}\",\n      \"status\": 2,\n      \"metadata\": {\n        \"channels\": [\n          {\n            \"channel_id\": \"C0123456789\",\n            \"team_id\": \"T01234567\",\n            \"channel_name\": \"#example-channel-name\",\n            \"redirect_url\": \"https://slack.com/app_redirect?channel=C0123456789&team=T01234567\"\n          }\n        ]\n      }\n    },\n    \"type\": \"incident_integrations\"\n  }\n}"
       }
     ],
