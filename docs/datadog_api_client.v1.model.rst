@@ -6808,6 +6808,20 @@ datadog\_api\_client.v1.model.timeseries\_request\_style module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v1.model.timeseries\_widget\_anomaly\_detection module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.timeseries_widget_anomaly_detection
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v1.model.timeseries\_widget\_anomaly\_detection\_sensitivity module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v1.model.timeseries_widget_anomaly_detection_sensitivity
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v1.model.timeseries\_widget\_definition module
 -------------------------------------------------------------------
 
