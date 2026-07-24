@@ -18,6 +18,11 @@ Feature: Customer Org
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/org-management
+  Scenario: Disable the authenticated customer organization returns "Conflict" response
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/org-management
   Scenario: Disable the authenticated customer organization returns "OK" response
     When the request is sent
     Then the response status is 200 OK
