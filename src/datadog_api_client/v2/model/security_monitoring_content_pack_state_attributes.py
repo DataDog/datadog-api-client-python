@@ -8,103 +8,83 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.security_monitoring_content_pack_activation import (
-        SecurityMonitoringContentPackActivation,
-    )
-    from datadog_api_client.v2.model.security_monitoring_content_pack_integration_status import (
-        SecurityMonitoringContentPackIntegrationStatus,
-    )
-    from datadog_api_client.v2.model.security_monitoring_content_pack_timestamp_bucket import (
-        SecurityMonitoringContentPackTimestampBucket,
+    from datadog_api_client.v2.model.security_monitoring_content_pack_state_details import (
+        SecurityMonitoringContentPackStateDetails,
     )
     from datadog_api_client.v2.model.security_monitoring_content_pack_status import SecurityMonitoringContentPackStatus
+    from datadog_api_client.v2.model.security_monitoring_content_pack_logs_details import (
+        SecurityMonitoringContentPackLogsDetails,
+    )
+    from datadog_api_client.v2.model.security_monitoring_content_pack_threat_intel_details import (
+        SecurityMonitoringContentPackThreatIntelDetails,
+    )
+    from datadog_api_client.v2.model.security_monitoring_content_pack_entity_details import (
+        SecurityMonitoringContentPackEntityDetails,
+    )
+    from datadog_api_client.v2.model.security_monitoring_content_pack_audit_details import (
+        SecurityMonitoringContentPackAuditDetails,
+    )
+    from datadog_api_client.v2.model.security_monitoring_content_pack_app_sec_details import (
+        SecurityMonitoringContentPackAppSecDetails,
+    )
+    from datadog_api_client.v2.model.security_monitoring_content_pack_vulnerability_details import (
+        SecurityMonitoringContentPackVulnerabilityDetails,
+    )
+    from datadog_api_client.v2.model.security_monitoring_content_pack_onboarding_details import (
+        SecurityMonitoringContentPackOnboardingDetails,
+    )
 
 
 class SecurityMonitoringContentPackStateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.security_monitoring_content_pack_activation import (
-            SecurityMonitoringContentPackActivation,
-        )
-        from datadog_api_client.v2.model.security_monitoring_content_pack_integration_status import (
-            SecurityMonitoringContentPackIntegrationStatus,
-        )
-        from datadog_api_client.v2.model.security_monitoring_content_pack_timestamp_bucket import (
-            SecurityMonitoringContentPackTimestampBucket,
+        from datadog_api_client.v2.model.security_monitoring_content_pack_state_details import (
+            SecurityMonitoringContentPackStateDetails,
         )
         from datadog_api_client.v2.model.security_monitoring_content_pack_status import (
             SecurityMonitoringContentPackStatus,
         )
 
         return {
-            "cloud_siem_index_incorrect": (bool,),
-            "cp_activation": (SecurityMonitoringContentPackActivation,),
-            "filters_configured_for_logs": (bool,),
-            "integration_installed_status": (SecurityMonitoringContentPackIntegrationStatus,),
-            "logs_last_collected": (SecurityMonitoringContentPackTimestampBucket,),
-            "logs_seen_from_any_index": (bool,),
-            "state": (SecurityMonitoringContentPackStatus,),
+            "details": (SecurityMonitoringContentPackStateDetails,),
+            "status": (SecurityMonitoringContentPackStatus,),
         }
 
     attribute_map = {
-        "cloud_siem_index_incorrect": "cloud_siem_index_incorrect",
-        "cp_activation": "cp_activation",
-        "filters_configured_for_logs": "filters_configured_for_logs",
-        "integration_installed_status": "integration_installed_status",
-        "logs_last_collected": "logs_last_collected",
-        "logs_seen_from_any_index": "logs_seen_from_any_index",
-        "state": "state",
+        "details": "details",
+        "status": "status",
     }
 
     def __init__(
         self_,
-        cloud_siem_index_incorrect: bool,
-        cp_activation: SecurityMonitoringContentPackActivation,
-        filters_configured_for_logs: bool,
-        logs_last_collected: SecurityMonitoringContentPackTimestampBucket,
-        logs_seen_from_any_index: bool,
-        state: SecurityMonitoringContentPackStatus,
-        integration_installed_status: Union[SecurityMonitoringContentPackIntegrationStatus, UnsetType] = unset,
+        details: Union[
+            SecurityMonitoringContentPackStateDetails,
+            SecurityMonitoringContentPackLogsDetails,
+            SecurityMonitoringContentPackThreatIntelDetails,
+            SecurityMonitoringContentPackEntityDetails,
+            SecurityMonitoringContentPackAuditDetails,
+            SecurityMonitoringContentPackAppSecDetails,
+            SecurityMonitoringContentPackVulnerabilityDetails,
+            SecurityMonitoringContentPackOnboardingDetails,
+        ],
+        status: SecurityMonitoringContentPackStatus,
         **kwargs,
     ):
         """
-        Attributes of a content pack state
+        Attributes of a content pack state.
 
-        :param cloud_siem_index_incorrect: Whether the cloud SIEM index configuration is incorrect (only applies to certain pricing models)
-        :type cloud_siem_index_incorrect: bool
+        :param details: Type-specific details for a content pack state. The set of fields present depends
+            on the content pack's ``type``. When Cloud SIEM is inactive for the requesting organization, ``onboarding`` is returned instead of the content pack's usual type, such as ``logs`` or ``vulnerability``.`
+        :type details: SecurityMonitoringContentPackStateDetails
 
-        :param cp_activation: The activation status of a content pack.
-        :type cp_activation: SecurityMonitoringContentPackActivation
-
-        :param filters_configured_for_logs: Whether filters (Security Filters or Index Query depending on the pricing model) are
-            present and correctly configured to route logs into Cloud SIEM.
-        :type filters_configured_for_logs: bool
-
-        :param integration_installed_status: The installation status of the related integration.
-        :type integration_installed_status: SecurityMonitoringContentPackIntegrationStatus, optional
-
-        :param logs_last_collected: Timestamp bucket indicating when logs were last collected.
-        :type logs_last_collected: SecurityMonitoringContentPackTimestampBucket
-
-        :param logs_seen_from_any_index: Whether logs for this content pack have been seen in any Datadog index within the last 72 hours.
-        :type logs_seen_from_any_index: bool
-
-        :param state: The current operational status of a content pack.
-        :type state: SecurityMonitoringContentPackStatus
+        :param status: The current operational status of a content pack.
+        :type status: SecurityMonitoringContentPackStatus
         """
-        if integration_installed_status is not unset:
-            kwargs["integration_installed_status"] = integration_installed_status
         super().__init__(kwargs)
 
-        self_.cloud_siem_index_incorrect = cloud_siem_index_incorrect
-        self_.cp_activation = cp_activation
-        self_.filters_configured_for_logs = filters_configured_for_logs
-        self_.logs_last_collected = logs_last_collected
-        self_.logs_seen_from_any_index = logs_seen_from_any_index
-        self_.state = state
+        self_.details = details
+        self_.status = status
