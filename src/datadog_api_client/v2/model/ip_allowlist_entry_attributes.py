@@ -20,6 +20,7 @@ class IPAllowlistEntryAttributes(ModelNormal):
         return {
             "cidr_block": (str,),
             "created_at": (datetime,),
+            "label": (str,),
             "modified_at": (datetime,),
             "note": (str,),
         }
@@ -27,6 +28,7 @@ class IPAllowlistEntryAttributes(ModelNormal):
     attribute_map = {
         "cidr_block": "cidr_block",
         "created_at": "created_at",
+        "label": "label",
         "modified_at": "modified_at",
         "note": "note",
     }
@@ -39,6 +41,7 @@ class IPAllowlistEntryAttributes(ModelNormal):
         self_,
         cidr_block: Union[str, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
+        label: Union[str, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         note: Union[str, UnsetType] = unset,
         **kwargs,
@@ -52,6 +55,9 @@ class IPAllowlistEntryAttributes(ModelNormal):
         :param created_at: Creation time of the entry.
         :type created_at: datetime, optional
 
+        :param label: A label for the IP allowlist entry.
+        :type label: str, optional
+
         :param modified_at: Time of last entry modification.
         :type modified_at: datetime, optional
 
@@ -62,6 +68,8 @@ class IPAllowlistEntryAttributes(ModelNormal):
             kwargs["cidr_block"] = cidr_block
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if label is not unset:
+            kwargs["label"] = label
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if note is not unset:
