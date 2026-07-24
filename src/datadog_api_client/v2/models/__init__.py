@@ -7900,6 +7900,15 @@ from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_request_da
 from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response import (
     SecurityMonitoringRuleBulkDeleteResponse,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_attributes import (
+    SecurityMonitoringRuleBulkDeleteResponseAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_data import (
+    SecurityMonitoringRuleBulkDeleteResponseData,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_data_type import (
+    SecurityMonitoringRuleBulkDeleteResponseDataType,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_bulk_export_attributes import (
     SecurityMonitoringRuleBulkExportAttributes,
 )
@@ -15579,6 +15588,9 @@ __all__ = [
     "SecurityMonitoringRuleBulkDeletePayload",
     "SecurityMonitoringRuleBulkDeleteRequestDataType",
     "SecurityMonitoringRuleBulkDeleteResponse",
+    "SecurityMonitoringRuleBulkDeleteResponseAttributes",
+    "SecurityMonitoringRuleBulkDeleteResponseData",
+    "SecurityMonitoringRuleBulkDeleteResponseDataType",
     "SecurityMonitoringRuleBulkExportAttributes",
     "SecurityMonitoringRuleBulkExportData",
     "SecurityMonitoringRuleBulkExportDataType",
