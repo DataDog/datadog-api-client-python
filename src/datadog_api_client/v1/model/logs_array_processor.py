@@ -19,6 +19,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.logs_array_processor_operation_append import LogsArrayProcessorOperationAppend
     from datadog_api_client.v1.model.logs_array_processor_operation_length import LogsArrayProcessorOperationLength
     from datadog_api_client.v1.model.logs_array_processor_operation_select import LogsArrayProcessorOperationSelect
+    from datadog_api_client.v1.model.logs_array_processor_operation_extract_key_value import (
+        LogsArrayProcessorOperationExtractKeyValue,
+    )
 
 
 class LogsArrayProcessor(ModelNormal):
@@ -48,6 +51,7 @@ class LogsArrayProcessor(ModelNormal):
             LogsArrayProcessorOperationAppend,
             LogsArrayProcessorOperationLength,
             LogsArrayProcessorOperationSelect,
+            LogsArrayProcessorOperationExtractKeyValue,
         ],
         type: LogsArrayProcessorType,
         is_enabled: Union[bool, UnsetType] = unset,
@@ -61,6 +65,7 @@ class LogsArrayProcessor(ModelNormal):
         * Select value from matching element
         * Compute array length
         * Append a value to an array
+        * Extract key-value pairs from an array
 
         :param is_enabled: Whether or not the processor is enabled.
         :type is_enabled: bool, optional

@@ -1,0 +1,40 @@
+interactions:
+- request:
+    body: '{"filter":{"query":"source:python"},"name":"testPipelineArrayKeyValueTarget","processors":[{"is_enabled":true,"name":"extract_kv_to_target","operation":{"key_to_extract":"name","override_on_conflict":true,"source":"tags","target":"extracted","type":"key-value","value_to_extract":"value"},"type":"array-processor"}],"tags":[]}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines
+  response:
+    body:
+      string: '{"id":"LsxyDpcbTL6KztluS2oBYA","type":"pipeline","name":"testPipelineArrayKeyValueTarget","is_enabled":false,"is_read_only":false,"filter":{"query":"source:python"},"processors":[{"name":"extract_kv_to_target","is_enabled":true,"operation":{"source":"tags","target":"extracted","key_to_extract":"name","value_to_extract":"value","override_on_conflict":true,"type":"key-value"},"type":"array-processor"}],"tags":[]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/logs/config/pipelines/LsxyDpcbTL6KztluS2oBYA
+  response:
+    body:
+      string: '{}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
