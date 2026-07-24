@@ -203,3 +203,5 @@ configuration.api_key["appKeyAuth"] = "YOUR_APPLICATION_KEY"
 ## Author
 
 support@datadoghq.com
+
+Merge-all compatibility test `compatibility-test-30083575156-1`.
