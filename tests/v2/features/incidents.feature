@@ -334,7 +334,7 @@ Feature: Incidents
   Scenario: Create postmortem template returns "Bad Request" response
     Given operation "CreateIncidentPostmortemTemplate" enabled
     And new "CreateIncidentPostmortemTemplate" request
-    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    And body with value {"data": {"attributes": {"confluence_postmortem_settings": {"account_id": "123456", "parent_id": "345678", "space_id": "789012"}, "content": "# Overview\n\n# What Happened\n\n# Timeline\n\n# Action Items", "google_docs_postmortem_settings": {"account_id": "123456", "parent_folder_id": "789012"}, "is_default": "2024-01-01T00:00:00+00:00", "location": "datadog_notebooks", "name": "Standard Postmortem Template"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000009", "type": "incident_types"}}}, "type": "postmortem_templates"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -342,7 +342,7 @@ Feature: Incidents
   Scenario: Create postmortem template returns "Created" response
     Given operation "CreateIncidentPostmortemTemplate" enabled
     And new "CreateIncidentPostmortemTemplate" request
-    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    And body with value {"data": {"attributes": {"confluence_postmortem_settings": {"account_id": "123456", "parent_id": "345678", "space_id": "789012"}, "content": "# Overview\n\n# What Happened\n\n# Timeline\n\n# Action Items", "google_docs_postmortem_settings": {"account_id": "123456", "parent_folder_id": "789012"}, "is_default": "2024-01-01T00:00:00+00:00", "location": "datadog_notebooks", "name": "Standard Postmortem Template"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000009", "type": "incident_types"}}}, "type": "postmortem_templates"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -1590,7 +1590,7 @@ Feature: Incidents
     Given operation "UpdateIncidentPostmortemTemplate" enabled
     And new "UpdateIncidentPostmortemTemplate" request
     And request contains "template_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    And body with value {"data": {"attributes": {"confluence_postmortem_settings": {"account_id": "123456", "parent_id": "345678", "space_id": "789012"}, "content": "# Overview\n\n# What Happened\n\n# Timeline\n\n# Action Items", "google_docs_postmortem_settings": {"account_id": "123456", "parent_folder_id": "789012"}, "is_default": "2024-01-01T00:00:00+00:00", "location": "datadog_notebooks", "name": "Standard Postmortem Template"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000009", "type": "incident_types"}}}, "type": "postmortem_templates"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1599,7 +1599,7 @@ Feature: Incidents
     Given operation "UpdateIncidentPostmortemTemplate" enabled
     And new "UpdateIncidentPostmortemTemplate" request
     And request contains "template_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    And body with value {"data": {"attributes": {"confluence_postmortem_settings": {"account_id": "123456", "parent_id": "345678", "space_id": "789012"}, "content": "# Overview\n\n# What Happened\n\n# Timeline\n\n# Action Items", "google_docs_postmortem_settings": {"account_id": "123456", "parent_folder_id": "789012"}, "is_default": "2024-01-01T00:00:00+00:00", "location": "datadog_notebooks", "name": "Standard Postmortem Template"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000009", "type": "incident_types"}}}, "type": "postmortem_templates"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1608,6 +1608,6 @@ Feature: Incidents
     Given operation "UpdateIncidentPostmortemTemplate" enabled
     And new "UpdateIncidentPostmortemTemplate" request
     And request contains "template_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "Standard Postmortem Template"}, "type": "postmortem_template"}}
+    And body with value {"data": {"attributes": {"confluence_postmortem_settings": {"account_id": "123456", "parent_id": "345678", "space_id": "789012"}, "content": "# Overview\n\n# What Happened\n\n# Timeline\n\n# Action Items", "google_docs_postmortem_settings": {"account_id": "123456", "parent_folder_id": "789012"}, "is_default": "2024-01-01T00:00:00+00:00", "location": "datadog_notebooks", "name": "Standard Postmortem Template"}, "id": "00000000-0000-0000-0000-000000000000", "relationships": {"incident_type": {"data": {"id": "00000000-0000-0000-0000-000000000009", "type": "incident_types"}}}, "type": "postmortem_templates"}}
     When the request is sent
     Then the response status is 200 OK

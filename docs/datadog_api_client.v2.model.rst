@@ -7774,6 +7774,13 @@ datadog\_api\_client.v2.model.configured\_schedule\_target\_type module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.confluence\_postmortem\_settings module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.confluence_postmortem_settings
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.confluent\_account\_create\_request module
 ------------------------------------------------------------------------
 
@@ -17550,6 +17557,13 @@ datadog\_api\_client.v2.model.google\_chat\_update\_organization\_handle\_reques
 ----------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.google_chat_update_organization_handle_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.google\_docs\_postmortem\_settings module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.google_docs_postmortem_settings
    :members:
    :show-inheritance:
 
@@ -32463,6 +32477,13 @@ datadog\_api\_client.v2.model.postmortem\_template\_attributes\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.postmortem\_template\_create\_relationships module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_create_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.postmortem\_template\_data\_request module
 ------------------------------------------------------------------------
 
@@ -32474,6 +32495,27 @@ datadog\_api\_client.v2.model.postmortem\_template\_data\_response module
 -------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.postmortem_template_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_incident\_type\_relationship module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_incident_type_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_incident\_type\_relationship\_data module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_incident_type_relationship_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_location module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_location
    :members:
    :show-inheritance:
 
@@ -32491,10 +32533,31 @@ datadog\_api\_client.v2.model.postmortem\_template\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.postmortem\_template\_response\_relationships module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_response_relationships
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.postmortem\_template\_type module
 ---------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.postmortem_template_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_user\_relationship module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_user_relationship
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.postmortem\_template\_user\_relationship\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.postmortem_template_user_relationship_data
    :members:
    :show-inheritance:
 
