@@ -16,7 +16,7 @@ class SecurityMonitoringContentPackStatus(ModelSimple):
     """
     The current operational status of a content pack.
 
-    :param value: Must be one of ["install", "activate", "initializing", "active", "warning", "broken"].
+    :param value: Must be one of ["install", "activate", "initializing", "active", "warning", "broken", "not_configured"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class SecurityMonitoringContentPackStatus(ModelSimple):
         "active",
         "warning",
         "broken",
+        "not_configured",
     }
     INSTALL: ClassVar["SecurityMonitoringContentPackStatus"]
     ACTIVATE: ClassVar["SecurityMonitoringContentPackStatus"]
@@ -34,6 +35,7 @@ class SecurityMonitoringContentPackStatus(ModelSimple):
     ACTIVE: ClassVar["SecurityMonitoringContentPackStatus"]
     WARNING: ClassVar["SecurityMonitoringContentPackStatus"]
     BROKEN: ClassVar["SecurityMonitoringContentPackStatus"]
+    NOT_CONFIGURED: ClassVar["SecurityMonitoringContentPackStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -48,3 +50,4 @@ SecurityMonitoringContentPackStatus.INITIALIZING = SecurityMonitoringContentPack
 SecurityMonitoringContentPackStatus.ACTIVE = SecurityMonitoringContentPackStatus("active")
 SecurityMonitoringContentPackStatus.WARNING = SecurityMonitoringContentPackStatus("warning")
 SecurityMonitoringContentPackStatus.BROKEN = SecurityMonitoringContentPackStatus("broken")
+SecurityMonitoringContentPackStatus.NOT_CONFIGURED = SecurityMonitoringContentPackStatus("not_configured")

@@ -16,7 +16,7 @@ class SecurityMonitoringSKU(ModelSimple):
     """
     The Cloud SIEM pricing model (SKU) for the organization.
 
-    :param value: Must be one of ["per_gb_analyzed", "per_event_in_siem_index_2023", "add_on_2024"].
+    :param value: Must be one of ["per_gb_analyzed", "per_event_in_siem_index_2023", "add_on_2024", "standalone_indexed", "unknown"].
     :type value: str
     """
 
@@ -24,10 +24,14 @@ class SecurityMonitoringSKU(ModelSimple):
         "per_gb_analyzed",
         "per_event_in_siem_index_2023",
         "add_on_2024",
+        "standalone_indexed",
+        "unknown",
     }
     PER_GB_ANALYZED: ClassVar["SecurityMonitoringSKU"]
     PER_EVENT_IN_SIEM_INDEX_2023: ClassVar["SecurityMonitoringSKU"]
     ADD_ON_2024: ClassVar["SecurityMonitoringSKU"]
+    STANDALONE_INDEXED: ClassVar["SecurityMonitoringSKU"]
+    UNKNOWN: ClassVar["SecurityMonitoringSKU"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +43,5 @@ class SecurityMonitoringSKU(ModelSimple):
 SecurityMonitoringSKU.PER_GB_ANALYZED = SecurityMonitoringSKU("per_gb_analyzed")
 SecurityMonitoringSKU.PER_EVENT_IN_SIEM_INDEX_2023 = SecurityMonitoringSKU("per_event_in_siem_index_2023")
 SecurityMonitoringSKU.ADD_ON_2024 = SecurityMonitoringSKU("add_on_2024")
+SecurityMonitoringSKU.STANDALONE_INDEXED = SecurityMonitoringSKU("standalone_indexed")
+SecurityMonitoringSKU.UNKNOWN = SecurityMonitoringSKU("unknown")
