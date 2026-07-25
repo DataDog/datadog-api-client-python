@@ -30,7 +30,7 @@ class CloudNetworkMonitoringApi:
         self._get_aggregated_connections_endpoint = _Endpoint(
             settings={
                 "response_type": (SingleAggregatedConnectionResponseArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/network/connections/aggregate",
                 "operation_id": "get_aggregated_connections",
                 "http_method": "GET",
@@ -81,7 +81,7 @@ class CloudNetworkMonitoringApi:
         self._get_aggregated_dns_endpoint = _Endpoint(
             settings={
                 "response_type": (SingleAggregatedDnsResponseArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/network/dns/aggregate",
                 "operation_id": "get_aggregated_dns",
                 "http_method": "GET",
