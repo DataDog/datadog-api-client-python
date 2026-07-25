@@ -25,6 +25,13 @@ datadog\_api\_client.v2.api.agentless\_scanning\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.ai\_guard\_api module
+-------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.ai_guard_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.annotations\_api module
 ---------------------------------------------------
 

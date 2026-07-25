@@ -1,3 +1,4 @@
+from datadog_api_client.v2.api.ai_guard_api import AIGuardApi
 from datadog_api_client.v2.api.api_management_api import APIManagementApi
 from datadog_api_client.v2.api.apm_api import APMApi
 from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFiltersApi
@@ -140,6 +141,7 @@ from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomation
 
 
 __all__ = [
+    "AIGuardApi",
     "APIManagementApi",
     "APMApi",
     "APMRetentionFiltersApi",
