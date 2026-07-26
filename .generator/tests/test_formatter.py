@@ -1,6 +1,11 @@
 import pytest
 from collections import defaultdict
-from generator.formatter import _is_valid_identifier, format_data_with_schema
+from generator.formatter import _is_valid_identifier, docstring, format_data_with_schema
+
+
+class TestDocstring:
+    def test_escapes_backslashes_for_python_string_literals(self):
+        assert "``\\\\s``" in docstring(r"regex pattern like ``\s`` for spaces")
 
 
 class TestIsValidIdentifier:
