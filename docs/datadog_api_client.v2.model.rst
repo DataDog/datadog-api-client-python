@@ -39099,6 +39099,27 @@ datadog\_api\_client.v2.model.security\_monitoring\_rule\_bulk\_delete\_response
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_bulk\_delete\_response\_attributes module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_bulk\_delete\_response\_data module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.security\_monitoring\_rule\_bulk\_delete\_response\_data\_type module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_data_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.security\_monitoring\_rule\_bulk\_export\_attributes module
 -----------------------------------------------------------------------------------------
 

@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -32,11 +34,13 @@ class SecurityMonitoringRuleBulkDeleteData(ModelNormal):
 
         return {
             "attributes": (SecurityMonitoringRuleBulkDeleteAttributes,),
+            "id": (str,),
             "type": (SecurityMonitoringRuleBulkDeleteRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
@@ -44,6 +48,7 @@ class SecurityMonitoringRuleBulkDeleteData(ModelNormal):
         self_,
         attributes: SecurityMonitoringRuleBulkDeleteAttributes,
         type: SecurityMonitoringRuleBulkDeleteRequestDataType,
+        id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -52,9 +57,14 @@ class SecurityMonitoringRuleBulkDeleteData(ModelNormal):
         :param attributes: Attributes for bulk deleting security monitoring rules.
         :type attributes: SecurityMonitoringRuleBulkDeleteAttributes
 
+        :param id: Request ID. This value is echoed back as the response's resource ID.
+        :type id: str, optional
+
         :param type: The resource type for a bulk delete request.
         :type type: SecurityMonitoringRuleBulkDeleteRequestDataType
         """
+        if id is not unset:
+            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.attributes = attributes

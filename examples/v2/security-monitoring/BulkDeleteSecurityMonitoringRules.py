@@ -23,6 +23,7 @@ body = SecurityMonitoringRuleBulkDeletePayload(
                 "abc-000-7dd",
             ],
         ),
+        id="bulk_delete",
         type=SecurityMonitoringRuleBulkDeleteRequestDataType.BULK_DELETE_RULES,
     ),
 )

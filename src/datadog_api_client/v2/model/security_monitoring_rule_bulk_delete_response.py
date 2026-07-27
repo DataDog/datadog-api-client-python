@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,36 +13,34 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_data import (
+        SecurityMonitoringRuleBulkDeleteResponseData,
+    )
+
+
 class SecurityMonitoringRuleBulkDeleteResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_response_data import (
+            SecurityMonitoringRuleBulkDeleteResponseData,
+        )
+
         return {
-            "deleted_rules": ([str],),
-            "failed_rules": ([str],),
+            "data": (SecurityMonitoringRuleBulkDeleteResponseData,),
         }
 
     attribute_map = {
-        "deleted_rules": "deletedRules",
-        "failed_rules": "failedRules",
+        "data": "data",
     }
 
-    def __init__(
-        self_,
-        deleted_rules: Union[List[str], UnsetType] = unset,
-        failed_rules: Union[List[str], UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, data: Union[SecurityMonitoringRuleBulkDeleteResponseData, UnsetType] = unset, **kwargs):
         """
         Response for bulk deleting security monitoring rules.
 
-        :param deleted_rules: List of successfully deleted rule IDs.
-        :type deleted_rules: [str], optional
-
-        :param failed_rules: List of rule IDs that could not be deleted.
-        :type failed_rules: [str], optional
+        :param data: Data for the bulk delete response.
+        :type data: SecurityMonitoringRuleBulkDeleteResponseData, optional
         """
-        if deleted_rules is not unset:
-            kwargs["deleted_rules"] = deleted_rules
-        if failed_rules is not unset:
-            kwargs["failed_rules"] = failed_rules
+        if data is not unset:
+            kwargs["data"] = data
         super().__init__(kwargs)

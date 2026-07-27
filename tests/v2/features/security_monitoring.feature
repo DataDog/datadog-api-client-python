@@ -232,21 +232,21 @@ Feature: Security Monitoring
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Bulk delete security monitoring rules returns "Bad Request" response
     Given new "BulkDeleteSecurityMonitoringRules" request
-    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "type": "bulk_delete_rules"}}
+    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "id": "bulk_delete", "type": "bulk_delete_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Bulk delete security monitoring rules returns "Not Found" response
     Given new "BulkDeleteSecurityMonitoringRules" request
-    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "type": "bulk_delete_rules"}}
+    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "id": "bulk_delete", "type": "bulk_delete_rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Bulk delete security monitoring rules returns "OK" response
     Given new "BulkDeleteSecurityMonitoringRules" request
-    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "type": "bulk_delete_rules"}}
+    And body with value {"data": {"attributes": {"ruleIds": ["abc-000-u7q", "abc-000-7dd"]}, "id": "bulk_delete", "type": "bulk_delete_rules"}}
     When the request is sent
     Then the response status is 200 OK
 
