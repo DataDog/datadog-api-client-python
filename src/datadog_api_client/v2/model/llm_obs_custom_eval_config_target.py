@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -11,6 +11,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -27,6 +28,7 @@ class LLMObsCustomEvalConfigTarget(ModelNormal):
             "application_name": (str,),
             "enabled": (bool,),
             "eval_scope": (LLMObsCustomEvalConfigEvalScope,),
+            "experiment_project_ids": ([UUID],),
             "filter": (str, none_type),
             "root_spans_only": (bool, none_type),
             "sampling_percentage": (float, none_type),
@@ -36,6 +38,7 @@ class LLMObsCustomEvalConfigTarget(ModelNormal):
         "application_name": "application_name",
         "enabled": "enabled",
         "eval_scope": "eval_scope",
+        "experiment_project_ids": "experiment_project_ids",
         "filter": "filter",
         "root_spans_only": "root_spans_only",
         "sampling_percentage": "sampling_percentage",
@@ -46,6 +49,7 @@ class LLMObsCustomEvalConfigTarget(ModelNormal):
         application_name: str,
         enabled: bool,
         eval_scope: Union[LLMObsCustomEvalConfigEvalScope, UnsetType] = unset,
+        experiment_project_ids: Union[List[UUID], UnsetType] = unset,
         filter: Union[str, none_type, UnsetType] = unset,
         root_spans_only: Union[bool, none_type, UnsetType] = unset,
         sampling_percentage: Union[float, none_type, UnsetType] = unset,
@@ -63,6 +67,9 @@ class LLMObsCustomEvalConfigTarget(ModelNormal):
         :param eval_scope: Scope at which to evaluate spans.
         :type eval_scope: LLMObsCustomEvalConfigEvalScope, optional
 
+        :param experiment_project_ids: Experiment project IDs this evaluator is scoped to.
+        :type experiment_project_ids: [UUID], optional
+
         :param filter: Filter expression to select which spans to evaluate.
         :type filter: str, none_type, optional
 
@@ -74,6 +81,8 @@ class LLMObsCustomEvalConfigTarget(ModelNormal):
         """
         if eval_scope is not unset:
             kwargs["eval_scope"] = eval_scope
+        if experiment_project_ids is not unset:
+            kwargs["experiment_project_ids"] = experiment_project_ids
         if filter is not unset:
             kwargs["filter"] = filter
         if root_spans_only is not unset:
