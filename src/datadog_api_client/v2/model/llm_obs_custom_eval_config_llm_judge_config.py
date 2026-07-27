@@ -48,6 +48,7 @@ class LLMObsCustomEvalConfigLLMJudgeConfig(ModelNormal):
 
         return {
             "assessment_criteria": (LLMObsCustomEvalConfigAssessmentCriteria,),
+            "context_query": (str, none_type),
             "inference_params": (LLMObsCustomEvalConfigInferenceParams,),
             "last_used_library_prompt_template_name": (str, none_type),
             "modified_library_prompt_template": (bool, none_type),
@@ -70,27 +71,35 @@ class LLMObsCustomEvalConfigLLMJudgeConfig(ModelNormal):
             ),
             "parsing_type": (LLMObsCustomEvalConfigParsingType,),
             "prompt_template": ([LLMObsCustomEvalConfigPromptMessage],),
+            "target_query": (str, none_type),
+            "user_specified_json_post_processing_function": (str, none_type),
         }
 
     attribute_map = {
         "assessment_criteria": "assessment_criteria",
+        "context_query": "context_query",
         "inference_params": "inference_params",
         "last_used_library_prompt_template_name": "last_used_library_prompt_template_name",
         "modified_library_prompt_template": "modified_library_prompt_template",
         "output_schema": "output_schema",
         "parsing_type": "parsing_type",
         "prompt_template": "prompt_template",
+        "target_query": "target_query",
+        "user_specified_json_post_processing_function": "user_specified_json_post_processing_function",
     }
 
     def __init__(
         self_,
         inference_params: LLMObsCustomEvalConfigInferenceParams,
         assessment_criteria: Union[LLMObsCustomEvalConfigAssessmentCriteria, UnsetType] = unset,
+        context_query: Union[str, none_type, UnsetType] = unset,
         last_used_library_prompt_template_name: Union[str, none_type, UnsetType] = unset,
         modified_library_prompt_template: Union[bool, none_type, UnsetType] = unset,
         output_schema: Union[Dict[str, Any], none_type, UnsetType] = unset,
         parsing_type: Union[LLMObsCustomEvalConfigParsingType, UnsetType] = unset,
         prompt_template: Union[List[LLMObsCustomEvalConfigPromptMessage], UnsetType] = unset,
+        target_query: Union[str, none_type, UnsetType] = unset,
+        user_specified_json_post_processing_function: Union[str, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -98,6 +107,9 @@ class LLMObsCustomEvalConfigLLMJudgeConfig(ModelNormal):
 
         :param assessment_criteria: Criteria used to assess the pass/fail result of a custom evaluator.
         :type assessment_criteria: LLMObsCustomEvalConfigAssessmentCriteria, optional
+
+        :param context_query: Query used to extract additional context for the evaluation.
+        :type context_query: str, none_type, optional
 
         :param inference_params: LLM inference parameters for a custom evaluator.
         :type inference_params: LLMObsCustomEvalConfigInferenceParams
@@ -116,9 +128,17 @@ class LLMObsCustomEvalConfigLLMJudgeConfig(ModelNormal):
 
         :param prompt_template: List of messages forming the LLM judge prompt template.
         :type prompt_template: [LLMObsCustomEvalConfigPromptMessage], optional
+
+        :param target_query: Query used to extract the target value to evaluate.
+        :type target_query: str, none_type, optional
+
+        :param user_specified_json_post_processing_function: User-provided function applied to post-process the JSON output of the LLM judge.
+        :type user_specified_json_post_processing_function: str, none_type, optional
         """
         if assessment_criteria is not unset:
             kwargs["assessment_criteria"] = assessment_criteria
+        if context_query is not unset:
+            kwargs["context_query"] = context_query
         if last_used_library_prompt_template_name is not unset:
             kwargs["last_used_library_prompt_template_name"] = last_used_library_prompt_template_name
         if modified_library_prompt_template is not unset:
@@ -129,6 +149,10 @@ class LLMObsCustomEvalConfigLLMJudgeConfig(ModelNormal):
             kwargs["parsing_type"] = parsing_type
         if prompt_template is not unset:
             kwargs["prompt_template"] = prompt_template
+        if target_query is not unset:
+            kwargs["target_query"] = target_query
+        if user_specified_json_post_processing_function is not unset:
+            kwargs["user_specified_json_post_processing_function"] = user_specified_json_post_processing_function
         super().__init__(kwargs)
 
         self_.inference_params = inference_params

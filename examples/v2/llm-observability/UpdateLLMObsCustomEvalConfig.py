@@ -53,6 +53,7 @@ body = LLMObsCustomEvalConfigUpdateRequest(
                     ],
                     pass_when=True,
                 ),
+                context_query="@input.context",
                 inference_params=LLMObsCustomEvalConfigInferenceParams(
                     frequency_penalty=0.0,
                     max_tokens=1024,
@@ -91,9 +92,12 @@ body = LLMObsCustomEvalConfigUpdateRequest(
                         role="user",
                     ),
                 ],
+                target_query="@output.value",
+                user_specified_json_post_processing_function=None,
             ),
             llm_provider=LLMObsCustomEvalConfigLLMProvider(
                 bedrock=LLMObsCustomEvalConfigBedrockOptions(
+                    inference_profile="arn:aws:bedrock:us-east-1:123456789012:application-inference-profile/abc123",
                     region="us-east-1",
                 ),
                 integration_account_id="my-account-id",
@@ -108,6 +112,7 @@ body = LLMObsCustomEvalConfigUpdateRequest(
                 application_name="my-llm-app",
                 enabled=True,
                 eval_scope=LLMObsCustomEvalConfigEvalScope.SPAN,
+                experiment_project_ids=[],
                 filter="@service:my-service",
                 root_spans_only=True,
                 sampling_percentage=50.0,

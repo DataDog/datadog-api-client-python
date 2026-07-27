@@ -123,6 +123,12 @@
       "type": "safe"
     }
   },
+  "ListLLMObsCustomEvalConfigs": {
+    "tag": "LLM Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "DeleteLLMObsCustomEvalConfig": {
     "tag": "LLM Observability",
     "undo": {

@@ -298,6 +298,7 @@ class Configuration:
                 "v2.get_llm_obs_prompt": False,
                 "v2.get_llm_obs_prompt_version": False,
                 "v2.list_llm_obs_annotation_queues": False,
+                "v2.list_llm_obs_custom_eval_configs": False,
                 "v2.list_llm_obs_dataset_records": False,
                 "v2.list_llm_obs_datasets": False,
                 "v2.list_llm_obs_dataset_versions": False,

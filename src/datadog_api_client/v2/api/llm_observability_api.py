@@ -13,6 +13,7 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.llm_obs_custom_eval_config_list_response import LLMObsCustomEvalConfigListResponse
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_response import LLMObsCustomEvalConfigResponse
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_request import LLMObsCustomEvalConfigUpdateRequest
 from datadog_api_client.v2.model.llm_obs_data_deletion_response import LLMObsDataDeletionResponse
@@ -1023,6 +1024,22 @@ class LLMObservabilityApi:
                     "collection_format": "multi",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_custom_eval_configs_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsCustomEvalConfigListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom",
+                "operation_id": "list_llm_obs_custom_eval_configs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -2920,6 +2937,18 @@ class LLMObservabilityApi:
             kwargs["queue_ids"] = queue_ids
 
         return self._list_llm_obs_annotation_queues_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_custom_eval_configs(
+        self,
+    ) -> LLMObsCustomEvalConfigListResponse:
+        """List custom evaluator configurations.
+
+        List all custom LLM Observability evaluator configurations for the organization.
+
+        :rtype: LLMObsCustomEvalConfigListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_llm_obs_custom_eval_configs_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_dataset_records(
         self,
