@@ -3,68 +3,15 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
-    ModelNormal,
+    ModelComposed,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-    from datadog_api_client.v1.model.topology_request import TopologyRequest
-    from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-    from datadog_api_client.v1.model.topology_map_widget_definition_type import TopologyMapWidgetDefinitionType
-
-
-class TopologyMapWidgetDefinition(ModelNormal):
-    validations = {
-        "requests": {
-            "min_items": 1,
-        },
-    }
-
-    @cached_property
-    def openapi_types(_):
-        from datadog_api_client.v1.model.widget_custom_link import WidgetCustomLink
-        from datadog_api_client.v1.model.topology_request import TopologyRequest
-        from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
-        from datadog_api_client.v1.model.topology_map_widget_definition_type import TopologyMapWidgetDefinitionType
-
-        return {
-            "custom_links": ([WidgetCustomLink],),
-            "description": (str,),
-            "requests": ([TopologyRequest],),
-            "title": (str,),
-            "title_align": (WidgetTextAlign,),
-            "title_size": (str,),
-            "type": (TopologyMapWidgetDefinitionType,),
-        }
-
-    attribute_map = {
-        "custom_links": "custom_links",
-        "description": "description",
-        "requests": "requests",
-        "title": "title",
-        "title_align": "title_align",
-        "title_size": "title_size",
-        "type": "type",
-    }
-
-    def __init__(
-        self_,
-        requests: List[TopologyRequest],
-        type: TopologyMapWidgetDefinitionType,
-        custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
-        description: Union[str, UnsetType] = unset,
-        title: Union[str, UnsetType] = unset,
-        title_align: Union[WidgetTextAlign, UnsetType] = unset,
-        title_size: Union[str, UnsetType] = unset,
-        **kwargs,
-    ):
+class TopologyMapWidgetDefinition(ModelComposed):
+    def __init__(self, **kwargs):
         """
         This widget displays a topology of nodes and edges for different data sources. It replaces the service map widget.
 
@@ -74,8 +21,11 @@ class TopologyMapWidgetDefinition(ModelNormal):
         :param description: The description of the widget.
         :type description: str, optional
 
-        :param requests: One or more Topology requests.
-        :type requests: [TopologyRequest]
+        :param requests: One Topology request.
+        :type requests: [TopologyRequestDataStreams]
+
+        :param time: Time setting for the widget.
+        :type time: WidgetTime, optional
 
         :param title: Title of your widget.
         :type title: str, optional
@@ -89,17 +39,27 @@ class TopologyMapWidgetDefinition(ModelNormal):
         :param type: Type of the topology map widget.
         :type type: TopologyMapWidgetDefinitionType
         """
-        if custom_links is not unset:
-            kwargs["custom_links"] = custom_links
-        if description is not unset:
-            kwargs["description"] = description
-        if title is not unset:
-            kwargs["title"] = title
-        if title_align is not unset:
-            kwargs["title_align"] = title_align
-        if title_size is not unset:
-            kwargs["title_size"] = title_size
         super().__init__(kwargs)
 
-        self_.requests = requests
-        self_.type = type
+    @cached_property
+    def _composed_schemas(_):
+        # we need this here to make our import statements work
+        # we must store _composed_schemas in here so the code is only run
+        # when we invoke this method. If we kept this at the class
+        # level we would get an error because the class level
+        # code would be run when this module is imported, and these composed
+        # classes don't exist yet because their module has not finished
+        # loading
+        from datadog_api_client.v1.model.topology_map_widget_definition_data_streams import (
+            TopologyMapWidgetDefinitionDataStreams,
+        )
+        from datadog_api_client.v1.model.topology_map_widget_definition_service_map import (
+            TopologyMapWidgetDefinitionServiceMap,
+        )
+
+        return {
+            "oneOf": [
+                TopologyMapWidgetDefinitionDataStreams,
+                TopologyMapWidgetDefinitionServiceMap,
+            ],
+        }
