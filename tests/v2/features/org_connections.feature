@@ -32,7 +32,7 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/access-enforcement
+  @synthetics-setup(org_connections_cleanup) @team:DataDog/access-enforcement
   Scenario: Create Org Connection returns "OK" response
     Given new "CreateOrgConnections" request
     And body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85"}}}, "attributes": {"connection_types": ["logs"]}}}
@@ -53,7 +53,7 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/access-enforcement
+  @synthetics-setup(org_connections_cleanup) @team:DataDog/access-enforcement
   Scenario: Delete Org Connection returns "OK" response
     Given there is a valid "org_connection" in the system
     And new "DeleteOrgConnections" request
@@ -85,7 +85,7 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/access-enforcement
+  @synthetics-setup(org_connections_cleanup) @team:DataDog/access-enforcement
   Scenario: Update Org Connection returns "OK" response
     Given there is a valid "org_connection" in the system
     And new "UpdateOrgConnections" request

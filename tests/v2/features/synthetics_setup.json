@@ -1,0 +1,24 @@
+{
+  "org_connections_cleanup": [
+    {
+      "name": "remove an existing org connection for the test sink org",
+      "method": "GET",
+      "url": "https://api.{{ DD_TEST_SITE_2 }}/api/v2/org_connections",
+      "no_saving_response_body": false,
+      "headers": {
+        "Accept": "application/json"
+      },
+      "extracted_values": [
+        {
+          "name": "EXISTING_ORG_CONNECTION_DATA_ID",
+          "value": "$.data[?(@.relationships.source_org.data.id == '4dee724d-00cc-11ea-a77b-570c9d03c6c5' && @.relationships.sink_org.data.id == '83999dcd-7f97-11f0-8de1-1ecf66f1aa85')].id"
+        }
+      ]
+    },
+    {
+      "name": "delete an existing org connection for the test sink org",
+      "method": "DELETE",
+      "url": "https://api.{{ DD_TEST_SITE_2 }}/api/v2/org_connections/{{ EXISTING_ORG_CONNECTION_DATA_ID }}"
+    }
+  ]
+}
