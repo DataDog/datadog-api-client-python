@@ -6899,6 +6899,24 @@
       "type": "idempotent"
     }
   },
+  "GetRumConfig": {
+    "tag": "RUM Config",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRumConfig": {
+    "tag": "RUM Config",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateRumConfig": {
+    "tag": "RUM Config",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListRumMetrics": {
     "tag": "Rum Metrics",
     "undo": {
