@@ -38,7 +38,7 @@ class TagPoliciesApi:
             settings={
                 "response_type": (TagPolicyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag-policies",
+                "endpoint_path": "/api/v2/tag_policies",
                 "operation_id": "create_tag_policy",
                 "http_method": "POST",
                 "version": "v2",
@@ -58,7 +58,7 @@ class TagPoliciesApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag-policies/{policy_id}",
+                "endpoint_path": "/api/v2/tag_policies/{policy_id}",
                 "operation_id": "delete_tag_policy",
                 "http_method": "DELETE",
                 "version": "v2",
@@ -86,7 +86,7 @@ class TagPoliciesApi:
             settings={
                 "response_type": (TagPolicyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag-policies/{policy_id}",
+                "endpoint_path": "/api/v2/tag_policies/{policy_id}",
                 "operation_id": "get_tag_policy",
                 "http_method": "GET",
                 "version": "v2",
@@ -124,7 +124,7 @@ class TagPoliciesApi:
             settings={
                 "response_type": (TagPolicyScoreResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag-policies/{policy_id}/score",
+                "endpoint_path": "/api/v2/tag_policies/{policy_id}/score",
                 "operation_id": "get_tag_policy_score",
                 "http_method": "GET",
                 "version": "v2",
@@ -157,7 +157,7 @@ class TagPoliciesApi:
             settings={
                 "response_type": (TagPoliciesListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag-policies",
+                "endpoint_path": "/api/v2/tag_policies",
                 "operation_id": "list_tag_policies",
                 "http_method": "GET",
                 "version": "v2",
@@ -204,7 +204,7 @@ class TagPoliciesApi:
             settings={
                 "response_type": (TagPolicyResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag-policies/{policy_id}",
+                "endpoint_path": "/api/v2/tag_policies/{policy_id}",
                 "operation_id": "update_tag_policy",
                 "http_method": "PATCH",
                 "version": "v2",
