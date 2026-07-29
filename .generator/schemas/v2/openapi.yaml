@@ -44866,6 +44866,66 @@ components:
         type:
           $ref: "#/components/schemas/HistoricalJobDataType"
       type: object
+    HistoricalMetricsConfigurationAttributes:
+      description: Attributes of a historical metrics configuration.
+      properties:
+        created_at:
+          description: Timestamp when historical metrics ingestion was enabled for the metric.
+          example: "2024-01-15T12:00:00.000Z"
+          format: date-time
+          readOnly: true
+          type: string
+      type: object
+    HistoricalMetricsConfigurationCreateData:
+      description: Data object for enabling historical metrics ingestion for a metric.
+      properties:
+        id:
+          description: The metric name, used as the resource ID.
+          example: dd.test.metric
+          type: string
+        type:
+          $ref: "#/components/schemas/HistoricalMetricsConfigurationType"
+      required:
+        - id
+        - type
+      type: object
+    HistoricalMetricsConfigurationCreateRequest:
+      description: Request body for enabling historical metrics ingestion for a metric.
+      properties:
+        data:
+          $ref: "#/components/schemas/HistoricalMetricsConfigurationCreateData"
+      required:
+        - data
+      type: object
+    HistoricalMetricsConfigurationData:
+      description: >-
+        A historical metrics configuration resource object. Existence of this resource means historical metrics ingestion is enabled for the metric; there is no separate enabled attribute.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/HistoricalMetricsConfigurationAttributes"
+        id:
+          description: The metric name, used as the resource ID.
+          example: dd.test.metric
+          type: string
+        type:
+          $ref: "#/components/schemas/HistoricalMetricsConfigurationType"
+      type: object
+    HistoricalMetricsConfigurationResponse:
+      description: Response containing a historical metrics configuration.
+      properties:
+        data:
+          $ref: "#/components/schemas/HistoricalMetricsConfigurationData"
+      readOnly: true
+      type: object
+    HistoricalMetricsConfigurationType:
+      default: historical_metrics_configurations
+      description: The historical metrics configuration resource type.
+      enum:
+        - historical_metrics_configurations
+      example: historical_metrics_configurations
+      type: string
+      x-enum-varnames:
+        - HISTORICAL_METRICS_CONFIGURATIONS
     HourlyUsage:
       description: Hourly usage for a product family for an org.
       properties:
@@ -159552,6 +159612,178 @@ paths:
         permissions:
           - metric_tags_write
       x-sunset: "2027-01-01"
+  /api/v2/metrics/historical-metrics-configurations:
+    post:
+      description: |-
+        Enable historical metrics ingestion (late data ingestion) for a metric. Idempotent:
+        enabling an already-enabled metric returns 200 instead of 201. Not supported for
+        distribution metrics, metrics with an existing tag configuration, or most standard
+        (non-custom) metrics.
+      operationId: CreateHistoricalMetricsConfiguration
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    id: dd.test.metric
+                    type: historical_metrics_configurations
+            schema:
+              $ref: "#/components/schemas/HistoricalMetricsConfigurationCreateRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T12:00:00.000Z"
+                      id: dd.test.metric
+                      type: historical_metrics_configurations
+              schema:
+                $ref: "#/components/schemas/HistoricalMetricsConfigurationResponse"
+          description: OK
+        "201":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T12:00:00.000Z"
+                      id: dd.test.metric
+                      type: historical_metrics_configurations
+              schema:
+                $ref: "#/components/schemas/HistoricalMetricsConfigurationResponse"
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unprocessable Entity
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - late_metrics_config_write
+      summary: Enable historical metrics ingestion
+      tags:
+        - Metrics
+      x-codegen-request-body-name: body
+      "x-permission":
+        operator: OR
+        permissions:
+          - late_metrics_config_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+  /api/v2/metrics/historical-metrics-configurations/{metric_name}:
+    delete:
+      description: |-
+        Disable historical metrics ingestion for a metric. Idempotent: always returns 204,
+        whether or not the configuration existed or the metric itself still exists, so that
+        Terraform destroy succeeds for a metric removed out-of-band.
+      operationId: DeleteHistoricalMetricsConfiguration
+      parameters:
+        - $ref: "#/components/parameters/MetricName"
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - late_metrics_config_write
+      summary: Delete a historical metrics configuration
+      tags:
+        - Metrics
+      "x-permission":
+        operator: OR
+        permissions:
+          - late_metrics_config_write
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
+    get:
+      description: |-
+        Get the historical metrics ingestion configuration for a metric. Existence of the
+        resource means historical metrics ingestion is enabled; returns 404 when it is not
+        enabled for the metric.
+      operationId: GetHistoricalMetricsConfiguration
+      parameters:
+        - $ref: "#/components/parameters/MetricName"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T12:00:00.000Z"
+                      id: dd.test.metric
+                      type: historical_metrics_configurations
+              schema:
+                $ref: "#/components/schemas/HistoricalMetricsConfigurationResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - metrics_read
+      summary: Get a historical metrics configuration
+      tags:
+        - Metrics
+      "x-permission":
+        operator: OR
+        permissions:
+          - metrics_read
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/metrics/tag-indexing-rules:
     get:
       description: List tag indexing rules for an org, sorted by `rule_order`, with offset/limit pagination.

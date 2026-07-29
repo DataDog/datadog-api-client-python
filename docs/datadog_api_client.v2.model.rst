@@ -17952,6 +17952,48 @@ datadog\_api\_client.v2.model.historical\_job\_response\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.historical\_metrics\_configuration\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_metrics_configuration_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_metrics\_configuration\_create\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_metrics_configuration_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_metrics\_configuration\_create\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_metrics_configuration_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_metrics\_configuration\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_metrics_configuration_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_metrics\_configuration\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_metrics_configuration_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.historical\_metrics\_configuration\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.historical_metrics_configuration_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.hourly\_usage module
 --------------------------------------------------
 

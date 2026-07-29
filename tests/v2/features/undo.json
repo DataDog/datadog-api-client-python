@@ -5154,6 +5154,31 @@
       "type": "unsafe"
     }
   },
+  "CreateHistoricalMetricsConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteHistoricalMetricsConfiguration",
+      "parameters": [
+        {
+          "name": "metric_name",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteHistoricalMetricsConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetHistoricalMetricsConfiguration": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListTagIndexingRules": {
     "tag": "Metrics",
     "undo": {

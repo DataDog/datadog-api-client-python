@@ -142,6 +142,24 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Delete a historical metrics configuration returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteHistoricalMetricsConfiguration" enabled
+    And new "DeleteHistoricalMetricsConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Delete a historical metrics configuration returns "No Content" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteHistoricalMetricsConfiguration" enabled
+    And new "DeleteHistoricalMetricsConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
   @replay-only @skip-validation @team:DataDog/metrics-experience
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric" in the system
@@ -220,6 +238,78 @@ Feature: Metrics
     And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Enable historical metrics ingestion returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateHistoricalMetricsConfiguration" enabled
+    And new "CreateHistoricalMetricsConfiguration" request
+    And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Enable historical metrics ingestion returns "Created" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateHistoricalMetricsConfiguration" enabled
+    And new "CreateHistoricalMetricsConfiguration" request
+    And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Enable historical metrics ingestion returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateHistoricalMetricsConfiguration" enabled
+    And new "CreateHistoricalMetricsConfiguration" request
+    And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Enable historical metrics ingestion returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateHistoricalMetricsConfiguration" enabled
+    And new "CreateHistoricalMetricsConfiguration" request
+    And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Enable historical metrics ingestion returns "Unprocessable Entity" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateHistoricalMetricsConfiguration" enabled
+    And new "CreateHistoricalMetricsConfiguration" request
+    And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get a historical metrics configuration returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetHistoricalMetricsConfiguration" enabled
+    And new "GetHistoricalMetricsConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get a historical metrics configuration returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetHistoricalMetricsConfiguration" enabled
+    And new "GetHistoricalMetricsConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/metrics-experience
+  Scenario: Get a historical metrics configuration returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetHistoricalMetricsConfiguration" enabled
+    And new "GetHistoricalMetricsConfiguration" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/metrics-experience
   Scenario: Get a list of metrics returns "Bad Request" response

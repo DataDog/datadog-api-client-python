@@ -3366,6 +3366,18 @@ from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
 from datadog_api_client.v2.model.historical_job_response import HistoricalJobResponse
 from datadog_api_client.v2.model.historical_job_response_attributes import HistoricalJobResponseAttributes
 from datadog_api_client.v2.model.historical_job_response_data import HistoricalJobResponseData
+from datadog_api_client.v2.model.historical_metrics_configuration_attributes import (
+    HistoricalMetricsConfigurationAttributes,
+)
+from datadog_api_client.v2.model.historical_metrics_configuration_create_data import (
+    HistoricalMetricsConfigurationCreateData,
+)
+from datadog_api_client.v2.model.historical_metrics_configuration_create_request import (
+    HistoricalMetricsConfigurationCreateRequest,
+)
+from datadog_api_client.v2.model.historical_metrics_configuration_data import HistoricalMetricsConfigurationData
+from datadog_api_client.v2.model.historical_metrics_configuration_response import HistoricalMetricsConfigurationResponse
+from datadog_api_client.v2.model.historical_metrics_configuration_type import HistoricalMetricsConfigurationType
 from datadog_api_client.v2.model.hourly_usage import HourlyUsage
 from datadog_api_client.v2.model.hourly_usage_attributes import HourlyUsageAttributes
 from datadog_api_client.v2.model.hourly_usage_measurement import HourlyUsageMeasurement
@@ -12606,6 +12618,12 @@ __all__ = [
     "HistoricalJobResponse",
     "HistoricalJobResponseAttributes",
     "HistoricalJobResponseData",
+    "HistoricalMetricsConfigurationAttributes",
+    "HistoricalMetricsConfigurationCreateData",
+    "HistoricalMetricsConfigurationCreateRequest",
+    "HistoricalMetricsConfigurationData",
+    "HistoricalMetricsConfigurationResponse",
+    "HistoricalMetricsConfigurationType",
     "HourlyUsage",
     "HourlyUsageAttributes",
     "HourlyUsageMeasurement",
