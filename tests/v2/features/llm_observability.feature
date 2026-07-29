@@ -373,15 +373,23 @@ Feature: LLM Observability
   Scenario: Create or update a patterns configuration returns "Bad Request" response
     Given operation "UpsertLLMObsPatternsConfig" enabled
     And new "UpsertLLMObsPatternsConfig" request
-    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
+    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "curation_enabled": true, "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Create or update a patterns configuration returns "Conflict" response
+    Given operation "UpsertLLMObsPatternsConfig" enabled
+    And new "UpsertLLMObsPatternsConfig" request
+    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "curation_enabled": true, "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
+    When the request is sent
+    Then the response status is 409 Conflict
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Create or update a patterns configuration returns "Not Found" response
     Given operation "UpsertLLMObsPatternsConfig" enabled
     And new "UpsertLLMObsPatternsConfig" request
-    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
+    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "curation_enabled": true, "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -389,7 +397,7 @@ Feature: LLM Observability
   Scenario: Create or update a patterns configuration returns "OK" response
     Given operation "UpsertLLMObsPatternsConfig" enabled
     And new "UpsertLLMObsPatternsConfig" request
-    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
+    And body with value {"data": {"attributes": {"account_id": "1000000001", "config_id": "a7c8d9e0-1234-5678-9abc-def012345678", "curation_enabled": true, "evp_query": "@ml_app:support-bot", "hierarchy_depth": 2, "integration_provider": "openai", "model_name": "gpt-4o", "name": "Support chatbot topics", "num_records": 1000, "sampling_ratio": 0.1, "scope": "", "template": ""}, "type": "topic_discovery_configs"}}
     When the request is sent
     Then the response status is 200 OK
 
