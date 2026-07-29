@@ -4349,6 +4349,51 @@
       "type": "idempotent"
     }
   },
+  "ListIntegrationAccounts": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "operationId": "DeleteIntegrationAccount",
+      "parameters": [
+        {
+          "name": "integration_id",
+          "source": "integration_id"
+        },
+        {
+          "name": "interface_id",
+          "source": "interface_id"
+        },
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateIntegrationAccount": {
+    "tag": "Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetIPAllowlist": {
     "tag": "IP Allowlist",
     "undo": {
