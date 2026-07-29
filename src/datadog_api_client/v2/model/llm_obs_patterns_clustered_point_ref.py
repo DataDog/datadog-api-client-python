@@ -43,6 +43,7 @@ class LLMObsPatternsClusteredPointRef(ModelNormal):
             "output_tokens": (float,),
             "span_id": (str,),
             "status": (str,),
+            "timestamp": (int,),
             "total_tokens": (float,),
         }
 
@@ -54,6 +55,7 @@ class LLMObsPatternsClusteredPointRef(ModelNormal):
         "output_tokens": "output_tokens",
         "span_id": "span_id",
         "status": "status",
+        "timestamp": "timestamp",
         "total_tokens": "total_tokens",
     }
 
@@ -66,6 +68,7 @@ class LLMObsPatternsClusteredPointRef(ModelNormal):
         input_tokens: Union[float, UnsetType] = unset,
         output_tokens: Union[float, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
+        timestamp: Union[int, UnsetType] = unset,
         total_tokens: Union[float, UnsetType] = unset,
         **kwargs,
     ):
@@ -95,6 +98,9 @@ class LLMObsPatternsClusteredPointRef(ModelNormal):
         :param status: Status of the source span. Included only when metrics are requested.
         :type status: str, optional
 
+        :param timestamp: Unix timestamp of the source span in milliseconds. Included only when metrics are requested.
+        :type timestamp: int, optional
+
         :param total_tokens: Total number of tokens of the source span. Included only when metrics are requested.
         :type total_tokens: float, optional
         """
@@ -110,6 +116,8 @@ class LLMObsPatternsClusteredPointRef(ModelNormal):
             kwargs["output_tokens"] = output_tokens
         if status is not unset:
             kwargs["status"] = status
+        if timestamp is not unset:
+            kwargs["timestamp"] = timestamp
         if total_tokens is not unset:
             kwargs["total_tokens"] = total_tokens
         super().__init__(kwargs)
