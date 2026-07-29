@@ -25,6 +25,10 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import Me
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
+from datadog_api_client.v2.model.historical_metrics_configuration_response import HistoricalMetricsConfigurationResponse
+from datadog_api_client.v2.model.historical_metrics_configuration_create_request import (
+    HistoricalMetricsConfigurationCreateRequest,
+)
 from datadog_api_client.v2.model.tag_indexing_rules_response import TagIndexingRulesResponse
 from datadog_api_client.v2.model.tag_indexing_rule_response import TagIndexingRuleResponse
 from datadog_api_client.v2.model.tag_indexing_rule_create_request import TagIndexingRuleCreateRequest
@@ -89,6 +93,26 @@ class MetricsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (MetricBulkTagConfigCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_historical_metrics_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (HistoricalMetricsConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/historical-metrics-configurations",
+                "operation_id": "create_historical_metrics_configuration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (HistoricalMetricsConfigurationCreateRequest,),
                     "location": "body",
                 },
             },
@@ -185,6 +209,29 @@ class MetricsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_historical_metrics_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/historical-metrics-configurations/{metric_name}",
+                "operation_id": "delete_historical_metrics_configuration",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -307,6 +354,29 @@ class MetricsApi:
                     "openapi_types": (int,),
                     "attribute": "filter[timespan_h]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_historical_metrics_configuration_endpoint = _Endpoint(
+            settings={
+                "response_type": (HistoricalMetricsConfigurationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/historical-metrics-configurations/{metric_name}",
+                "operation_id": "get_historical_metrics_configuration",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -859,6 +929,25 @@ class MetricsApi:
         warnings.warn("create_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
+    def create_historical_metrics_configuration(
+        self,
+        body: HistoricalMetricsConfigurationCreateRequest,
+    ) -> HistoricalMetricsConfigurationResponse:
+        """Enable historical metrics ingestion.
+
+        Enable historical metrics ingestion (late data ingestion) for a metric. Idempotent:
+        enabling an already-enabled metric returns 200 instead of 201. Not supported for
+        distribution metrics, metrics with an existing tag configuration, or most standard
+        (non-custom) metrics.
+
+        :type body: HistoricalMetricsConfigurationCreateRequest
+        :rtype: HistoricalMetricsConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_historical_metrics_configuration_endpoint.call_with_http_info(**kwargs)
+
     def create_tag_configuration(
         self,
         metric_name: str,
@@ -945,6 +1034,25 @@ class MetricsApi:
 
         warnings.warn("delete_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_historical_metrics_configuration(
+        self,
+        metric_name: str,
+    ) -> None:
+        """Delete a historical metrics configuration.
+
+        Disable historical metrics ingestion for a metric. Idempotent: always returns 204,
+        whether or not the configuration existed or the metric itself still exists, so that
+        Terraform destroy succeeds for a metric removed out-of-band.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._delete_historical_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
     def delete_tag_configuration(
         self,
@@ -1050,6 +1158,25 @@ class MetricsApi:
             kwargs["filter_timespan_h"] = filter_timespan_h
 
         return self._estimate_metrics_output_series_endpoint.call_with_http_info(**kwargs)
+
+    def get_historical_metrics_configuration(
+        self,
+        metric_name: str,
+    ) -> HistoricalMetricsConfigurationResponse:
+        """Get a historical metrics configuration.
+
+        Get the historical metrics ingestion configuration for a metric. Existence of the
+        resource means historical metrics ingestion is enabled; returns 404 when it is not
+        enabled for the metric.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: HistoricalMetricsConfigurationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._get_historical_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
     def get_metric_tag_cardinality_details(
         self,
