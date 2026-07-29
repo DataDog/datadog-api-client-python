@@ -54,7 +54,7 @@ class IncidentImpactAttributes(ModelNormal):
         start_at: datetime,
         created: Union[datetime, UnsetType] = unset,
         end_at: Union[datetime, none_type, UnsetType] = unset,
-        fields: Union[IncidentImpactFieldsObject, none_type, UnsetType] = unset,
+        fields: Union[IncidentImpactFieldsObject, UnsetType] = unset,
         impact_type: Union[str, UnsetType] = unset,
         modified: Union[datetime, UnsetType] = unset,
         **kwargs,
@@ -72,7 +72,7 @@ class IncidentImpactAttributes(ModelNormal):
         :type end_at: datetime, none_type, optional
 
         :param fields: An object mapping impact field names to field values.
-        :type fields: IncidentImpactFieldsObject, none_type, optional
+        :type fields: IncidentImpactFieldsObject, optional
 
         :param impact_type: The type of impact.
         :type impact_type: str, optional
