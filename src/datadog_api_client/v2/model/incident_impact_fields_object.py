@@ -10,8 +10,6 @@ from datadog_api_client.model_utils import (
 
 
 class IncidentImpactFieldsObject(ModelNormal):
-    _nullable = True
-
     def __init__(self_, **kwargs):
         """
         An object mapping impact field names to field values.
