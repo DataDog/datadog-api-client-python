@@ -7658,6 +7658,12 @@
       "type": "idempotent"
     }
   },
+  "IngestStixThreatIntel": {
+    "tag": "Threat Intelligence",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListVulnerabilities": {
     "tag": "Security Monitoring",
     "undo": {

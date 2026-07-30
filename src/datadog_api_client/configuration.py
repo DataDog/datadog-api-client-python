@@ -718,6 +718,7 @@ class Configuration:
                 "v2.create_scorecard_outcomes_batch": False,
                 "v2.get_entity_risk_score": False,
                 "v2.list_entity_risk_scores": False,
+                "v2.ingest_stix_threat_intel": False,
                 "v2.create_slo_report_job": False,
                 "v2.get_slo_report": False,
                 "v2.get_slo_report_job_status": False,
