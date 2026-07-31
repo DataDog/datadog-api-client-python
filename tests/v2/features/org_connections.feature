@@ -10,14 +10,14 @@ Feature: Org Connections
     And a valid "appKeyAuth" key in the system
     And an instance of "OrgConnections" API
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Create Org Connection returns "Bad Request" response
     Given new "CreateOrgConnections" request
     And body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85"}}}, "attributes": {"connection_types": ["logs", "logs"]}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Create Org Connection returns "Conflict" response
     Given there is a valid "org_connection" in the system
     And new "CreateOrgConnections" request
@@ -25,14 +25,14 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Create Org Connection returns "Not Found" response
     Given new "CreateOrgConnections" request
     And body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "nonexistent-org-id"}}}, "attributes": {"connection_types": ["logs"]}}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Create Org Connection returns "OK" response
     Given new "CreateOrgConnections" request
     And body with value {"data": {"type": "org_connection", "relationships": {"sink_org": {"data": {"type": "orgs", "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85"}}}, "attributes": {"connection_types": ["logs"]}}}
@@ -46,14 +46,14 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Delete Org Connection returns "Not Found" response
     Given new "DeleteOrgConnections" request
     And request contains "connection_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Delete Org Connection returns "OK" response
     Given there is a valid "org_connection" in the system
     And new "DeleteOrgConnections" request
@@ -61,13 +61,13 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: List Org Connections returns "OK" response
     Given new "ListOrgConnections" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Update Org Connection returns "Bad Request" response
     Given there is a valid "org_connection" in the system
     And new "UpdateOrgConnections" request
@@ -76,7 +76,7 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Update Org Connection returns "Not Found" response
     Given there is a valid "org_connection" in the system
     And new "UpdateOrgConnections" request
@@ -85,7 +85,7 @@ Feature: Org Connections
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/access-enforcement
+  @skip-terraform-config @team:DataDog/access-enforcement
   Scenario: Update Org Connection returns "OK" response
     Given there is a valid "org_connection" in the system
     And new "UpdateOrgConnections" request
