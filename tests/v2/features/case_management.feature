@@ -360,7 +360,7 @@ Feature: Case Management
   Scenario: Create an automation rule returns "Bad Request" response
     Given new "CreateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "EXECUTE_WORKFLOW"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "CASE_CREATED"}}, "type": "rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -368,7 +368,7 @@ Feature: Case Management
   Scenario: Create an automation rule returns "Created" response
     Given new "CreateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "EXECUTE_WORKFLOW"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "CASE_CREATED"}}, "type": "rule"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -376,7 +376,7 @@ Feature: Case Management
   Scenario: Create an automation rule returns "Not Found" response
     Given new "CreateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "EXECUTE_WORKFLOW"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "CASE_CREATED"}}, "type": "rule"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1233,7 +1233,7 @@ Feature: Case Management
     Given new "UpdateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "EXECUTE_WORKFLOW"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "CASE_CREATED"}}, "type": "rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1242,7 +1242,7 @@ Feature: Case Management
     Given new "UpdateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "EXECUTE_WORKFLOW"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "CASE_CREATED"}}, "type": "rule"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1251,7 +1251,7 @@ Feature: Case Management
     Given new "UpdateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "execute_workflow"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "case_created"}}, "type": "rule"}}
+    And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "EXECUTE_WORKFLOW"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "CASE_CREATED"}}, "type": "rule"}}
     When the request is sent
     Then the response status is 200 OK
 
