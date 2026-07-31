@@ -4244,6 +4244,80 @@
       "type": "idempotent"
     }
   },
+  "ListElasticCloudCcmAccounts": {
+    "tag": "Elastic Cloud Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateElasticCloudCcmAccount": {
+    "tag": "Elastic Cloud Cloud Cost Management",
+    "undo": {
+      "operationId": "DeleteElasticCloudCcmAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteElasticCloudCcmAccount": {
+    "tag": "Elastic Cloud Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetElasticCloudCcmAccount": {
+    "tag": "Elastic Cloud Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateElasticCloudCcmAccount": {
+    "tag": "Elastic Cloud Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListElasticCloudMonitoringAccounts": {
+    "tag": "Elastic Cloud Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateElasticCloudMonitoringAccount": {
+    "tag": "Elastic Cloud Monitoring",
+    "undo": {
+      "operationId": "DeleteElasticCloudMonitoringAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteElasticCloudMonitoringAccount": {
+    "tag": "Elastic Cloud Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetElasticCloudMonitoringAccount": {
+    "tag": "Elastic Cloud Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateElasticCloudMonitoringAccount": {
+    "tag": "Elastic Cloud Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListFastlyAccounts": {
     "tag": "Fastly Integration",
     "undo": {
@@ -4351,6 +4425,43 @@
   },
   "UpdateOktaAccount": {
     "tag": "Okta Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListTwilioAccounts": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTwilioAccount": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "operationId": "DeleteTwilioAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTwilioAccount": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTwilioAccount": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTwilioAccount": {
+    "tag": "Twilio Integration Accounts",
     "undo": {
       "type": "idempotent"
     }
