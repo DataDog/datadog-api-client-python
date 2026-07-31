@@ -1,0 +1,52 @@
+"""
+Create a Twilio integration account returns "Created" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.twilio_integration_accounts_api import TwilioIntegrationAccountsApi
+from datadog_api_client.v2.model.integration_account_type import IntegrationAccountType
+from datadog_api_client.v2.model.twilio_basic_auth import TwilioBasicAuth
+from datadog_api_client.v2.model.twilio_basic_auth_type import TwilioBasicAuthType
+from datadog_api_client.v2.model.twilio_dataflow import TwilioDataflow
+from datadog_api_client.v2.model.twilio_dataflow_id import TwilioDataflowId
+from datadog_api_client.v2.model.twilio_integration_account_attributes import TwilioIntegrationAccountAttributes
+from datadog_api_client.v2.model.twilio_integration_account_create_data import TwilioIntegrationAccountCreateData
+from datadog_api_client.v2.model.twilio_integration_account_request import TwilioIntegrationAccountRequest
+from datadog_api_client.v2.model.twilio_interface import TwilioInterface
+from datadog_api_client.v2.model.twilio_interface_type import TwilioInterfaceType
+from datadog_api_client.v2.model.twilio_settings import TwilioSettings
+
+body = TwilioIntegrationAccountRequest(
+    data=TwilioIntegrationAccountCreateData(
+        attributes=TwilioIntegrationAccountAttributes(
+            interface=TwilioInterface(
+                authentication=TwilioBasicAuth(
+                    api_key="SKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    api_key_token="your-api-key-secret",
+                    type=TwilioBasicAuthType.BASIC,
+                ),
+                dataflows=[
+                    TwilioDataflow(
+                        enabled=True,
+                        id=TwilioDataflowId.MESSAGES_LOGS,
+                    ),
+                ],
+                settings=TwilioSettings(
+                    account_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+                    censor_logs=True,
+                ),
+                type=TwilioInterfaceType.TWILIO,
+            ),
+            name="twilio-prod",
+        ),
+        type=IntegrationAccountType.INTEGRATION_ACCOUNT,
+    ),
+)
+
+configuration = Configuration()
+configuration.unstable_operations["create_twilio_integration_account"] = True
+with ApiClient(configuration) as api_client:
+    api_instance = TwilioIntegrationAccountsApi(api_client)
+    response = api_instance.create_twilio_integration_account(interface_id=TwilioInterfaceType.TWILIO, body=body)
+
+    print(response)

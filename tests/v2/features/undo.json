@@ -4244,6 +4244,47 @@
       "type": "idempotent"
     }
   },
+  "ListElasticCloudIntegrationAccounts": {
+    "tag": "Elastic Cloud Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateElasticCloudIntegrationAccount": {
+    "tag": "Elastic Cloud Integration Accounts",
+    "undo": {
+      "operationId": "DeleteElasticCloudIntegrationAccount",
+      "parameters": [
+        {
+          "name": "interface_id",
+          "source": "interface_id"
+        },
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteElasticCloudIntegrationAccount": {
+    "tag": "Elastic Cloud Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetElasticCloudIntegrationAccount": {
+    "tag": "Elastic Cloud Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateElasticCloudIntegrationAccount": {
+    "tag": "Elastic Cloud Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListFastlyAccounts": {
     "tag": "Fastly Integration",
     "undo": {
@@ -4351,6 +4392,47 @@
   },
   "UpdateOktaAccount": {
     "tag": "Okta Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListTwilioIntegrationAccounts": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTwilioIntegrationAccount": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "operationId": "DeleteTwilioIntegrationAccount",
+      "parameters": [
+        {
+          "name": "interface_id",
+          "source": "interface_id"
+        },
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTwilioIntegrationAccount": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTwilioIntegrationAccount": {
+    "tag": "Twilio Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTwilioIntegrationAccount": {
+    "tag": "Twilio Integration Accounts",
     "undo": {
       "type": "idempotent"
     }
