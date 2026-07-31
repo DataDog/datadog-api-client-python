@@ -14,15 +14,15 @@ from typing import ClassVar
 
 class AutomationRuleActionType(ModelSimple):
     """
-    The type of automated action to perform when the rule triggers. `execute_workflow` runs a Datadog workflow; `assign_agent` assigns an AI agent to the case.
+    The type of automated action to perform when the rule triggers. `EXECUTE_WORKFLOW` runs a Datadog workflow; `ASSIGN_AGENT` assigns an AI agent to the case.
 
-    :param value: Must be one of ["execute_workflow", "assign_agent"].
+    :param value: Must be one of ["EXECUTE_WORKFLOW", "ASSIGN_AGENT"].
     :type value: str
     """
 
     allowed_values = {
-        "execute_workflow",
-        "assign_agent",
+        "EXECUTE_WORKFLOW",
+        "ASSIGN_AGENT",
     }
     EXECUTE_WORKFLOW: ClassVar["AutomationRuleActionType"]
     ASSIGN_AGENT: ClassVar["AutomationRuleActionType"]
@@ -34,5 +34,5 @@ class AutomationRuleActionType(ModelSimple):
         }
 
 
-AutomationRuleActionType.EXECUTE_WORKFLOW = AutomationRuleActionType("execute_workflow")
-AutomationRuleActionType.ASSIGN_AGENT = AutomationRuleActionType("assign_agent")
+AutomationRuleActionType.EXECUTE_WORKFLOW = AutomationRuleActionType("EXECUTE_WORKFLOW")
+AutomationRuleActionType.ASSIGN_AGENT = AutomationRuleActionType("ASSIGN_AGENT")

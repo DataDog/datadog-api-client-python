@@ -16,17 +16,17 @@ class AutomationRuleTriggerType(ModelSimple):
     """
     The case event that activates the automation rule.
 
-    :param value: Must be one of ["case_created", "status_transitioned", "attribute_value_changed", "event_correlation_signal_correlated", "case_review_approved", "comment_added"].
+    :param value: Must be one of ["CASE_CREATED", "STATUS_TRANSITIONED", "ATTRIBUTE_VALUE_CHANGED", "EVENT_CORRELATION_SIGNAL_CORRELATED", "CASE_REVIEW_APPROVED", "COMMENT_ADDED"].
     :type value: str
     """
 
     allowed_values = {
-        "case_created",
-        "status_transitioned",
-        "attribute_value_changed",
-        "event_correlation_signal_correlated",
-        "case_review_approved",
-        "comment_added",
+        "CASE_CREATED",
+        "STATUS_TRANSITIONED",
+        "ATTRIBUTE_VALUE_CHANGED",
+        "EVENT_CORRELATION_SIGNAL_CORRELATED",
+        "CASE_REVIEW_APPROVED",
+        "COMMENT_ADDED",
     }
     CASE_CREATED: ClassVar["AutomationRuleTriggerType"]
     STATUS_TRANSITIONED: ClassVar["AutomationRuleTriggerType"]
@@ -42,11 +42,11 @@ class AutomationRuleTriggerType(ModelSimple):
         }
 
 
-AutomationRuleTriggerType.CASE_CREATED = AutomationRuleTriggerType("case_created")
-AutomationRuleTriggerType.STATUS_TRANSITIONED = AutomationRuleTriggerType("status_transitioned")
-AutomationRuleTriggerType.ATTRIBUTE_VALUE_CHANGED = AutomationRuleTriggerType("attribute_value_changed")
+AutomationRuleTriggerType.CASE_CREATED = AutomationRuleTriggerType("CASE_CREATED")
+AutomationRuleTriggerType.STATUS_TRANSITIONED = AutomationRuleTriggerType("STATUS_TRANSITIONED")
+AutomationRuleTriggerType.ATTRIBUTE_VALUE_CHANGED = AutomationRuleTriggerType("ATTRIBUTE_VALUE_CHANGED")
 AutomationRuleTriggerType.EVENT_CORRELATION_SIGNAL_CORRELATED = AutomationRuleTriggerType(
-    "event_correlation_signal_correlated"
+    "EVENT_CORRELATION_SIGNAL_CORRELATED"
 )
-AutomationRuleTriggerType.CASE_REVIEW_APPROVED = AutomationRuleTriggerType("case_review_approved")
-AutomationRuleTriggerType.COMMENT_ADDED = AutomationRuleTriggerType("comment_added")
+AutomationRuleTriggerType.CASE_REVIEW_APPROVED = AutomationRuleTriggerType("CASE_REVIEW_APPROVED")
+AutomationRuleTriggerType.COMMENT_ADDED = AutomationRuleTriggerType("COMMENT_ADDED")

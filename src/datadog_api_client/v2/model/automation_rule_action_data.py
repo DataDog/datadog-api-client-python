@@ -38,13 +38,13 @@ class AutomationRuleActionData(ModelNormal):
         """
         Configuration for the action to execute, dependent on the action type.
 
-        :param agent_type: The type of AI agent to assign. Required when the action type is ``assign_agent``.
+        :param agent_type: The type of AI agent to assign. Required when the action type is ``ASSIGN_AGENT``.
         :type agent_type: str, optional
 
-        :param assigned_agent_id: The identifier of the AI agent to assign to the case. Required when the action type is ``assign_agent``.
+        :param assigned_agent_id: The identifier of the AI agent to assign to the case. Required when the action type is ``ASSIGN_AGENT``.
         :type assigned_agent_id: str, optional
 
-        :param handle: The handle of the Datadog workflow to execute. Required when the action type is ``execute_workflow``.
+        :param handle: The handle of the Datadog workflow to execute. Required when the action type is ``EXECUTE_WORKFLOW``.
         :type handle: str, optional
         """
         if agent_type is not unset:

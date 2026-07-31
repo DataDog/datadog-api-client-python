@@ -42,21 +42,21 @@ class AutomationRuleTriggerData(ModelNormal):
         **kwargs,
     ):
         """
-        Additional configuration for the trigger, dependent on the trigger type. For ``status_transitioned`` triggers, specify ``from_status_name`` and ``to_status_name``. For ``attribute_value_changed`` triggers, specify ``field`` and ``change_type``.
+        Additional configuration for the trigger, dependent on the trigger type. For ``STATUS_TRANSITIONED`` triggers, specify ``from_status_name`` and ``to_status_name``. For ``ATTRIBUTE_VALUE_CHANGED`` triggers, specify ``field`` and ``change_type``.
 
-        :param approval_type: The approval outcome to match. Used with ``case_review_approved`` triggers.
+        :param approval_type: The approval outcome to match. Used with ``CASE_REVIEW_APPROVED`` triggers.
         :type approval_type: str, optional
 
-        :param change_type: The kind of attribute change to match. Allowed values: ``VALUE_ADDED`` , ``VALUE_DELETED`` , ``ANY_CHANGES``. Used with ``attribute_value_changed`` triggers.
+        :param change_type: The kind of attribute change to match. Allowed values: ``VALUE_ADDED`` , ``VALUE_DELETED`` , ``ANY_CHANGES``. Used with ``ATTRIBUTE_VALUE_CHANGED`` triggers.
         :type change_type: str, optional
 
-        :param field: The case attribute field name to monitor for changes. Used with ``attribute_value_changed`` triggers.
+        :param field: The case attribute field name to monitor for changes. Used with ``ATTRIBUTE_VALUE_CHANGED`` triggers.
         :type field: str, optional
 
-        :param from_status_name: The originating status name. Used with ``status_transitioned`` triggers to match transitions from this status.
+        :param from_status_name: The originating status name. Used with ``STATUS_TRANSITIONED`` triggers to match transitions from this status.
         :type from_status_name: str, optional
 
-        :param to_status_name: The destination status name. Used with ``status_transitioned`` triggers to match transitions to this status.
+        :param to_status_name: The destination status name. Used with ``STATUS_TRANSITIONED`` triggers to match transitions to this status.
         :type to_status_name: str, optional
         """
         if approval_type is not unset:
