@@ -44531,6 +44531,83 @@ datadog\_api\_client.v2.model.step\_display\_bounds module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.stix\_bundle\_request module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_bundle_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_bundle\_type module
+-------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_bundle_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_content\_encoding module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_content_encoding
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_indicator\_object module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_indicator_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_indicator\_type module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_indicator_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_ingest\_response module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_ingest_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_ingest\_response\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_ingest_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_ingest\_response\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_ingest_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_ingest\_response\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_ingest_response_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_metadata\_object module
+-----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_metadata_object
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.stix\_pattern\_type module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.stix_pattern_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.suite\_create\_edit module
 --------------------------------------------------------
 
