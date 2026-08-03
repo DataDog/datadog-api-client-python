@@ -38219,6 +38219,10 @@ components:
             Test runs are tagged with @test.test_management.attempt_to_fix_passed and @test.test_management.is_attempt_to_fix when the attempt to fix workflow is triggered.
           example: I42TEO
           type: string
+        broken_test:
+          description: Whether every non-skipped run of the test failed over the last 7 days.
+          example: false
+          type: boolean
         codeowners:
           description: The name of the test's code owners as inferred from the repository configuration.
           example: ["@foo", "@bar"]
