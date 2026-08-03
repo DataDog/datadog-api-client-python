@@ -32,6 +32,7 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
             "custom_where": (str,),
             "group_by_columns": ([str],),
             "model_type_override": (MonitorFormulaAndFunctionDataQualityModelTypeOverride,),
+            "sensitivity": (float,),
         }
 
     attribute_map = {
@@ -40,6 +41,7 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
         "custom_where": "custom_where",
         "group_by_columns": "group_by_columns",
         "model_type_override": "model_type_override",
+        "sensitivity": "sensitivity",
     }
 
     def __init__(
@@ -49,6 +51,7 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
         custom_where: Union[str, UnsetType] = unset,
         group_by_columns: Union[List[str], UnsetType] = unset,
         model_type_override: Union[MonitorFormulaAndFunctionDataQualityModelTypeOverride, UnsetType] = unset,
+        sensitivity: Union[float, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -68,6 +71,11 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
 
         :param model_type_override: Override for the model type used in anomaly detection.
         :type model_type_override: MonitorFormulaAndFunctionDataQualityModelTypeOverride, optional
+
+        :param sensitivity: Sensitivity of the anomaly detection model, expressed as a multiplier on the width
+            of the predicted bounds. Higher values widen the bounds and produce fewer alerts;
+            lower values tighten them and produce more alerts. Defaults to ``3.0``.
+        :type sensitivity: float, optional
         """
         if crontab_override is not unset:
             kwargs["crontab_override"] = crontab_override
@@ -79,4 +87,6 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
             kwargs["group_by_columns"] = group_by_columns
         if model_type_override is not unset:
             kwargs["model_type_override"] = model_type_override
+        if sensitivity is not unset:
+            kwargs["sensitivity"] = sensitivity
         super().__init__(kwargs)
