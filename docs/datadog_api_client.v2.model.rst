@@ -15327,6 +15327,13 @@ datadog\_api\_client.v2.model.flaky\_test\_history\_policy\_meta\_config module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.flaky\_test\_impact\_level module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.flaky_test_impact_level
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.flaky\_test\_pipeline\_stats module
 -----------------------------------------------------------------
 
