@@ -2905,51 +2905,81 @@ from datadog_api_client.v2.model.flaky_tests_search_request_data_type import Fla
 from datadog_api_client.v2.model.flaky_tests_search_response import FlakyTestsSearchResponse
 from datadog_api_client.v2.model.flaky_tests_search_response_meta import FlakyTestsSearchResponseMeta
 from datadog_api_client.v2.model.flaky_tests_search_sort import FlakyTestsSearchSort
-from datadog_api_client.v2.model.fleet_agent_attributes import FleetAgentAttributes
 from datadog_api_client.v2.model.fleet_agent_attributes_tags_items import FleetAgentAttributesTagsItems
-from datadog_api_client.v2.model.fleet_agent_info import FleetAgentInfo
-from datadog_api_client.v2.model.fleet_agent_info_attributes import FleetAgentInfoAttributes
-from datadog_api_client.v2.model.fleet_agent_info_details import FleetAgentInfoDetails
-from datadog_api_client.v2.model.fleet_agent_info_resource_type import FleetAgentInfoResourceType
-from datadog_api_client.v2.model.fleet_agent_info_response import FleetAgentInfoResponse
-from datadog_api_client.v2.model.fleet_agent_version import FleetAgentVersion
-from datadog_api_client.v2.model.fleet_agent_version_attributes import FleetAgentVersionAttributes
-from datadog_api_client.v2.model.fleet_agent_version_resource_type import FleetAgentVersionResourceType
-from datadog_api_client.v2.model.fleet_agent_versions_response import FleetAgentVersionsResponse
-from datadog_api_client.v2.model.fleet_agents_response import FleetAgentsResponse
-from datadog_api_client.v2.model.fleet_agents_response_data import FleetAgentsResponseData
-from datadog_api_client.v2.model.fleet_agents_response_data_attributes import FleetAgentsResponseDataAttributes
-from datadog_api_client.v2.model.fleet_agents_response_meta import FleetAgentsResponseMeta
-from datadog_api_client.v2.model.fleet_configuration_file import FleetConfigurationFile
+from datadog_api_client.v2.model.fleet_agent_configuration_files_v2 import FleetAgentConfigurationFilesV2
+from datadog_api_client.v2.model.fleet_agent_detail_v2 import FleetAgentDetailV2
+from datadog_api_client.v2.model.fleet_agent_detail_v2_attributes import FleetAgentDetailV2Attributes
+from datadog_api_client.v2.model.fleet_agent_detail_v2_response import FleetAgentDetailV2Response
+from datadog_api_client.v2.model.fleet_agent_info_details_v2 import FleetAgentInfoDetailsV2
+from datadog_api_client.v2.model.fleet_agent_v2 import FleetAgentV2
+from datadog_api_client.v2.model.fleet_agent_v2_attributes import FleetAgentV2Attributes
+from datadog_api_client.v2.model.fleet_agent_v2_attributes_instrumentation_status import (
+    FleetAgentV2AttributesInstrumentationStatus,
+)
+from datadog_api_client.v2.model.fleet_agent_v2_resource_type import FleetAgentV2ResourceType
+from datadog_api_client.v2.model.fleet_agent_version_v2 import FleetAgentVersionV2
+from datadog_api_client.v2.model.fleet_agent_version_v2_attributes import FleetAgentVersionV2Attributes
+from datadog_api_client.v2.model.fleet_agent_version_v2_resource_type import FleetAgentVersionV2ResourceType
+from datadog_api_client.v2.model.fleet_agent_versions_v2_page import FleetAgentVersionsV2Page
+from datadog_api_client.v2.model.fleet_agent_versions_v2_response import FleetAgentVersionsV2Response
+from datadog_api_client.v2.model.fleet_agent_versions_v2_response_meta import FleetAgentVersionsV2ResponseMeta
+from datadog_api_client.v2.model.fleet_agents_v2_page import FleetAgentsV2Page
+from datadog_api_client.v2.model.fleet_agents_v2_response import FleetAgentsV2Response
+from datadog_api_client.v2.model.fleet_agents_v2_response_meta import FleetAgentsV2ResponseMeta
+from datadog_api_client.v2.model.fleet_configuration_file_v2 import FleetConfigurationFileV2
 from datadog_api_client.v2.model.fleet_configuration_layer import FleetConfigurationLayer
 from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
 from datadog_api_client.v2.model.fleet_deployment_attributes import FleetDeploymentAttributes
-from datadog_api_client.v2.model.fleet_deployment_configure_attributes import FleetDeploymentConfigureAttributes
-from datadog_api_client.v2.model.fleet_deployment_configure_create import FleetDeploymentConfigureCreate
-from datadog_api_client.v2.model.fleet_deployment_configure_create_request import FleetDeploymentConfigureCreateRequest
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_attributes import FleetDeploymentConfigureV2Attributes
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_create import FleetDeploymentConfigureV2Create
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_create_request import (
+    FleetDeploymentConfigureV2CreateRequest,
+)
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run import FleetDeploymentConfigureV2DryRun
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run_attributes import (
+    FleetDeploymentConfigureV2DryRunAttributes,
+)
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run_response import (
+    FleetDeploymentConfigureV2DryRunResponse,
+)
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run_result import (
+    FleetDeploymentConfigureV2DryRunResult,
+)
+from datadog_api_client.v2.model.fleet_deployment_configure_v2_package import FleetDeploymentConfigureV2Package
 from datadog_api_client.v2.model.fleet_deployment_file_op import FleetDeploymentFileOp
 from datadog_api_client.v2.model.fleet_deployment_host import FleetDeploymentHost
 from datadog_api_client.v2.model.fleet_deployment_host_package import FleetDeploymentHostPackage
 from datadog_api_client.v2.model.fleet_deployment_hosts_page import FleetDeploymentHostsPage
 from datadog_api_client.v2.model.fleet_deployment_operation import FleetDeploymentOperation
 from datadog_api_client.v2.model.fleet_deployment_package import FleetDeploymentPackage
-from datadog_api_client.v2.model.fleet_deployment_package_upgrade_attributes import (
-    FleetDeploymentPackageUpgradeAttributes,
+from datadog_api_client.v2.model.fleet_deployment_package_upgrade_v2_attributes import (
+    FleetDeploymentPackageUpgradeV2Attributes,
 )
-from datadog_api_client.v2.model.fleet_deployment_package_upgrade_create import FleetDeploymentPackageUpgradeCreate
-from datadog_api_client.v2.model.fleet_deployment_package_upgrade_create_request import (
-    FleetDeploymentPackageUpgradeCreateRequest,
+from datadog_api_client.v2.model.fleet_deployment_package_upgrade_v2_create import FleetDeploymentPackageUpgradeV2Create
+from datadog_api_client.v2.model.fleet_deployment_package_upgrade_v2_create_request import (
+    FleetDeploymentPackageUpgradeV2CreateRequest,
 )
 from datadog_api_client.v2.model.fleet_deployment_resource_type import FleetDeploymentResourceType
 from datadog_api_client.v2.model.fleet_deployment_response import FleetDeploymentResponse
 from datadog_api_client.v2.model.fleet_deployment_response_meta import FleetDeploymentResponseMeta
-from datadog_api_client.v2.model.fleet_deployments_page import FleetDeploymentsPage
-from datadog_api_client.v2.model.fleet_deployments_response import FleetDeploymentsResponse
-from datadog_api_client.v2.model.fleet_deployments_response_meta import FleetDeploymentsResponseMeta
+from datadog_api_client.v2.model.fleet_deployment_v2 import FleetDeploymentV2
+from datadog_api_client.v2.model.fleet_deployment_v2_attributes import FleetDeploymentV2Attributes
+from datadog_api_client.v2.model.fleet_deployment_v2_cancel import FleetDeploymentV2Cancel
+from datadog_api_client.v2.model.fleet_deployment_v2_cancel_attributes import FleetDeploymentV2CancelAttributes
+from datadog_api_client.v2.model.fleet_deployment_v2_cancel_response import FleetDeploymentV2CancelResponse
+from datadog_api_client.v2.model.fleet_deployment_v2_create_response import FleetDeploymentV2CreateResponse
+from datadog_api_client.v2.model.fleet_deployment_v2_detail import FleetDeploymentV2Detail
+from datadog_api_client.v2.model.fleet_deployment_v2_detail_agent import FleetDeploymentV2DetailAgent
+from datadog_api_client.v2.model.fleet_deployment_v2_detail_attributes import FleetDeploymentV2DetailAttributes
+from datadog_api_client.v2.model.fleet_deployment_v2_detail_response import FleetDeploymentV2DetailResponse
+from datadog_api_client.v2.model.fleet_deployments_v2_page import FleetDeploymentsV2Page
+from datadog_api_client.v2.model.fleet_deployments_v2_response import FleetDeploymentsV2Response
+from datadog_api_client.v2.model.fleet_deployments_v2_response_meta import FleetDeploymentsV2ResponseMeta
 from datadog_api_client.v2.model.fleet_detected_integration import FleetDetectedIntegration
-from datadog_api_client.v2.model.fleet_integration_details import FleetIntegrationDetails
-from datadog_api_client.v2.model.fleet_integrations_by_status import FleetIntegrationsByStatus
+from datadog_api_client.v2.model.fleet_integration_details_v2 import FleetIntegrationDetailsV2
+from datadog_api_client.v2.model.fleet_integrations_by_status_v2 import FleetIntegrationsByStatusV2
 from datadog_api_client.v2.model.fleet_otel_collector import FleetOtelCollector
+from datadog_api_client.v2.model.fleet_otel_collector_configuration_v2 import FleetOtelCollectorConfigurationV2
 from datadog_api_client.v2.model.fleet_schedule import FleetSchedule
 from datadog_api_client.v2.model.fleet_schedule_attributes import FleetScheduleAttributes
 from datadog_api_client.v2.model.fleet_schedule_create import FleetScheduleCreate
@@ -2962,7 +2992,14 @@ from datadog_api_client.v2.model.fleet_schedule_recurrence_rule import FleetSche
 from datadog_api_client.v2.model.fleet_schedule_resource_type import FleetScheduleResourceType
 from datadog_api_client.v2.model.fleet_schedule_response import FleetScheduleResponse
 from datadog_api_client.v2.model.fleet_schedule_status import FleetScheduleStatus
-from datadog_api_client.v2.model.fleet_schedules_response import FleetSchedulesResponse
+from datadog_api_client.v2.model.fleet_schedule_v2 import FleetScheduleV2
+from datadog_api_client.v2.model.fleet_schedule_v2_attributes import FleetScheduleV2Attributes
+from datadog_api_client.v2.model.fleet_schedule_v2_notification_rule import FleetScheduleV2NotificationRule
+from datadog_api_client.v2.model.fleet_schedule_v2_recurrence_rule import FleetScheduleV2RecurrenceRule
+from datadog_api_client.v2.model.fleet_schedule_v2_response import FleetScheduleV2Response
+from datadog_api_client.v2.model.fleet_schedules_v2_page import FleetSchedulesV2Page
+from datadog_api_client.v2.model.fleet_schedules_v2_response import FleetSchedulesV2Response
+from datadog_api_client.v2.model.fleet_schedules_v2_response_meta import FleetSchedulesV2ResponseMeta
 from datadog_api_client.v2.model.fleet_tracer_attributes import FleetTracerAttributes
 from datadog_api_client.v2.model.fleet_tracers_response import FleetTracersResponse
 from datadog_api_client.v2.model.fleet_tracers_response_data import FleetTracersResponseData
@@ -12505,47 +12542,67 @@ __all__ = [
     "FlakyTestsSearchResponse",
     "FlakyTestsSearchResponseMeta",
     "FlakyTestsSearchSort",
-    "FleetAgentAttributes",
     "FleetAgentAttributesTagsItems",
-    "FleetAgentInfo",
-    "FleetAgentInfoAttributes",
-    "FleetAgentInfoDetails",
-    "FleetAgentInfoResourceType",
-    "FleetAgentInfoResponse",
-    "FleetAgentVersion",
-    "FleetAgentVersionAttributes",
-    "FleetAgentVersionResourceType",
-    "FleetAgentVersionsResponse",
-    "FleetAgentsResponse",
-    "FleetAgentsResponseData",
-    "FleetAgentsResponseDataAttributes",
-    "FleetAgentsResponseMeta",
-    "FleetConfigurationFile",
+    "FleetAgentConfigurationFilesV2",
+    "FleetAgentDetailV2",
+    "FleetAgentDetailV2Attributes",
+    "FleetAgentDetailV2Response",
+    "FleetAgentInfoDetailsV2",
+    "FleetAgentV2",
+    "FleetAgentV2Attributes",
+    "FleetAgentV2AttributesInstrumentationStatus",
+    "FleetAgentV2ResourceType",
+    "FleetAgentVersionV2",
+    "FleetAgentVersionV2Attributes",
+    "FleetAgentVersionV2ResourceType",
+    "FleetAgentVersionsV2Page",
+    "FleetAgentVersionsV2Response",
+    "FleetAgentVersionsV2ResponseMeta",
+    "FleetAgentsV2Page",
+    "FleetAgentsV2Response",
+    "FleetAgentsV2ResponseMeta",
+    "FleetConfigurationFileV2",
     "FleetConfigurationLayer",
     "FleetDeployment",
     "FleetDeploymentAttributes",
-    "FleetDeploymentConfigureAttributes",
-    "FleetDeploymentConfigureCreate",
-    "FleetDeploymentConfigureCreateRequest",
+    "FleetDeploymentConfigureV2Attributes",
+    "FleetDeploymentConfigureV2Create",
+    "FleetDeploymentConfigureV2CreateRequest",
+    "FleetDeploymentConfigureV2DryRun",
+    "FleetDeploymentConfigureV2DryRunAttributes",
+    "FleetDeploymentConfigureV2DryRunResponse",
+    "FleetDeploymentConfigureV2DryRunResult",
+    "FleetDeploymentConfigureV2Package",
     "FleetDeploymentFileOp",
     "FleetDeploymentHost",
     "FleetDeploymentHostPackage",
     "FleetDeploymentHostsPage",
     "FleetDeploymentOperation",
     "FleetDeploymentPackage",
-    "FleetDeploymentPackageUpgradeAttributes",
-    "FleetDeploymentPackageUpgradeCreate",
-    "FleetDeploymentPackageUpgradeCreateRequest",
+    "FleetDeploymentPackageUpgradeV2Attributes",
+    "FleetDeploymentPackageUpgradeV2Create",
+    "FleetDeploymentPackageUpgradeV2CreateRequest",
     "FleetDeploymentResourceType",
     "FleetDeploymentResponse",
     "FleetDeploymentResponseMeta",
-    "FleetDeploymentsPage",
-    "FleetDeploymentsResponse",
-    "FleetDeploymentsResponseMeta",
+    "FleetDeploymentV2",
+    "FleetDeploymentV2Attributes",
+    "FleetDeploymentV2Cancel",
+    "FleetDeploymentV2CancelAttributes",
+    "FleetDeploymentV2CancelResponse",
+    "FleetDeploymentV2CreateResponse",
+    "FleetDeploymentV2Detail",
+    "FleetDeploymentV2DetailAgent",
+    "FleetDeploymentV2DetailAttributes",
+    "FleetDeploymentV2DetailResponse",
+    "FleetDeploymentsV2Page",
+    "FleetDeploymentsV2Response",
+    "FleetDeploymentsV2ResponseMeta",
     "FleetDetectedIntegration",
-    "FleetIntegrationDetails",
-    "FleetIntegrationsByStatus",
+    "FleetIntegrationDetailsV2",
+    "FleetIntegrationsByStatusV2",
     "FleetOtelCollector",
+    "FleetOtelCollectorConfigurationV2",
     "FleetSchedule",
     "FleetScheduleAttributes",
     "FleetScheduleCreate",
@@ -12558,7 +12615,14 @@ __all__ = [
     "FleetScheduleResourceType",
     "FleetScheduleResponse",
     "FleetScheduleStatus",
-    "FleetSchedulesResponse",
+    "FleetScheduleV2",
+    "FleetScheduleV2Attributes",
+    "FleetScheduleV2NotificationRule",
+    "FleetScheduleV2RecurrenceRule",
+    "FleetScheduleV2Response",
+    "FleetSchedulesV2Page",
+    "FleetSchedulesV2Response",
+    "FleetSchedulesV2ResponseMeta",
     "FleetTracerAttributes",
     "FleetTracersResponse",
     "FleetTracersResponseData",

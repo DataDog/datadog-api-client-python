@@ -15432,13 +15432,6 @@ datadog\_api\_client.v2.model.flaky\_tests\_search\_sort module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_attributes module
--------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.fleet_agent_attributes
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.fleet\_agent\_attributes\_tags\_items module
 --------------------------------------------------------------------------
 
@@ -15446,94 +15439,136 @@ datadog\_api\_client.v2.model.fleet\_agent\_attributes\_tags\_items module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_info module
--------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_configuration\_files\_v2 module
+---------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agent_info
+.. automodule:: datadog_api_client.v2.model.fleet_agent_configuration_files_v2
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_info\_attributes module
--------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_detail\_v2 module
+-------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agent_info_attributes
+.. automodule:: datadog_api_client.v2.model.fleet_agent_detail_v2
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_info\_details module
-----------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_detail\_v2\_attributes module
+-------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agent_info_details
+.. automodule:: datadog_api_client.v2.model.fleet_agent_detail_v2_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_info\_resource\_type module
+datadog\_api\_client.v2.model.fleet\_agent\_detail\_v2\_response module
 -----------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agent_info_resource_type
+.. automodule:: datadog_api_client.v2.model.fleet_agent_detail_v2_response
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_info\_response module
+datadog\_api\_client.v2.model.fleet\_agent\_info\_details\_v2 module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_agent_info_details_v2
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_agent\_v2 module
+-----------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_agent_v2
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_agent\_v2\_attributes module
 -----------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agent_info_response
+.. automodule:: datadog_api_client.v2.model.fleet_agent_v2_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_version\_attributes module
-----------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_v2\_attributes\_instrumentation\_status module
+------------------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agent_version_attributes
+.. automodule:: datadog_api_client.v2.model.fleet_agent_v2_attributes_instrumentation_status
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agent\_version\_resource\_type module
---------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.fleet_agent_version_resource_type
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.fleet\_agent\_versions\_response module
+datadog\_api\_client.v2.model.fleet\_agent\_v2\_resource\_type module
 ---------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agent_versions_response
+.. automodule:: datadog_api_client.v2.model.fleet_agent_v2_resource_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agents\_response module
-------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_version\_v2 module
+--------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agents_response
+.. automodule:: datadog_api_client.v2.model.fleet_agent_version_v2
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agents\_response\_data module
-------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_version\_v2\_attributes module
+--------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agents_response_data
+.. automodule:: datadog_api_client.v2.model.fleet_agent_version_v2_attributes
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agents\_response\_data\_attributes module
+datadog\_api\_client.v2.model.fleet\_agent\_version\_v2\_resource\_type module
 ------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agents_response_data_attributes
+.. automodule:: datadog_api_client.v2.model.fleet_agent_version_v2_resource_type
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_agents\_response\_meta module
-------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_versions\_v2\_page module
+---------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_agents_response_meta
+.. automodule:: datadog_api_client.v2.model.fleet_agent_versions_v2_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_configuration\_file module
----------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_agent\_versions\_v2\_response module
+-------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_configuration_file
+.. automodule:: datadog_api_client.v2.model.fleet_agent_versions_v2_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_agent\_versions\_v2\_response\_meta module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_agent_versions_v2_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_agents\_v2\_page module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_agents_v2_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_agents\_v2\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_agents_v2_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_agents\_v2\_response\_meta module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_agents_v2_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_configuration\_file\_v2 module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_configuration_file_v2
    :members:
    :show-inheritance:
 
@@ -15558,24 +15593,59 @@ datadog\_api\_client.v2.model.fleet\_deployment\_attributes module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployment\_configure\_attributes module
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_create module
 -----------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_attributes
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_create
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployment\_configure\_create module
--------------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_create\_request module
+--------------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_create
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_create_request
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployment\_configure\_create\_request module
-----------------------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_dry\_run module
+-------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_create_request
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_dry\_run\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_dry\_run\_response module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_dry\_run\_result module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_dry_run_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_configure\_v2\_package module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_configure_v2_package
    :members:
    :show-inheritance:
 
@@ -15621,24 +15691,24 @@ datadog\_api\_client.v2.model.fleet\_deployment\_package module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployment\_package\_upgrade\_attributes module
+datadog\_api\_client.v2.model.fleet\_deployment\_package\_upgrade\_v2\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_package_upgrade_v2_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_package\_upgrade\_v2\_create module
 ------------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployment_package_upgrade_attributes
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_package_upgrade_v2_create
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployment\_package\_upgrade\_create module
---------------------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_deployment\_package\_upgrade\_v2\_create\_request module
+---------------------------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployment_package_upgrade_create
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.model.fleet\_deployment\_package\_upgrade\_create\_request module
------------------------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.fleet_deployment_package_upgrade_create_request
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_package_upgrade_v2_create_request
    :members:
    :show-inheritance:
 
@@ -15663,24 +15733,94 @@ datadog\_api\_client.v2.model.fleet\_deployment\_response\_meta module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployments\_page module
--------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_deployment\_v2 module
+----------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployments_page
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployments\_response module
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_attributes module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_cancel module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_cancel
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_cancel\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_cancel_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_cancel\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_cancel_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_create\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_create_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_detail module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_detail
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_detail\_agent module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_detail_agent
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_detail\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_detail_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployment\_v2\_detail\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployment_v2_detail_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployments\_v2\_page module
 -----------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployments_response
+.. automodule:: datadog_api_client.v2.model.fleet_deployments_v2_page
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_deployments\_response\_meta module
------------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_deployments\_v2\_response module
+---------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_deployments_response_meta
+.. automodule:: datadog_api_client.v2.model.fleet_deployments_v2_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_deployments\_v2\_response\_meta module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_deployments_v2_response_meta
    :members:
    :show-inheritance:
 
@@ -15691,17 +15831,17 @@ datadog\_api\_client.v2.model.fleet\_detected\_integration module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_integration\_details module
-----------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_integration\_details\_v2 module
+--------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_integration_details
+.. automodule:: datadog_api_client.v2.model.fleet_integration_details_v2
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_integrations\_by\_status module
---------------------------------------------------------------------
+datadog\_api\_client.v2.model.fleet\_integrations\_by\_status\_v2 module
+------------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_integrations_by_status
+.. automodule:: datadog_api_client.v2.model.fleet_integrations_by_status_v2
    :members:
    :show-inheritance:
 
@@ -15709,6 +15849,13 @@ datadog\_api\_client.v2.model.fleet\_otel\_collector module
 -----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.fleet_otel_collector
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_otel\_collector\_configuration\_v2 module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_otel_collector_configuration_v2
    :members:
    :show-inheritance:
 
@@ -15796,10 +15943,59 @@ datadog\_api\_client.v2.model.fleet\_schedule\_status module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.fleet\_schedules\_response module
+datadog\_api\_client.v2.model.fleet\_schedule\_v2 module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_schedule_v2
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_schedule\_v2\_attributes module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_schedule_v2_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_schedule\_v2\_notification\_rule module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_schedule_v2_notification_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_schedule\_v2\_recurrence\_rule module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_schedule_v2_recurrence_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_schedule\_v2\_response module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_schedule_v2_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_schedules\_v2\_page module
 ---------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.fleet_schedules_response
+.. automodule:: datadog_api_client.v2.model.fleet_schedules_v2_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_schedules\_v2\_response module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_schedules_v2_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.fleet\_schedules\_v2\_response\_meta module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.fleet_schedules_v2_response_meta
    :members:
    :show-inheritance:
 

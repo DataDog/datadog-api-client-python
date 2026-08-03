@@ -247,19 +247,9 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
-                "v2.cancel_fleet_deployment": False,
-                "v2.create_fleet_deployment_configure": False,
-                "v2.create_fleet_deployment_upgrade": False,
                 "v2.create_fleet_schedule": False,
                 "v2.delete_fleet_schedule": False,
-                "v2.get_fleet_agent_info": False,
-                "v2.get_fleet_deployment": False,
-                "v2.get_fleet_schedule": False,
-                "v2.list_fleet_agents": False,
                 "v2.list_fleet_agent_tracers": False,
-                "v2.list_fleet_agent_versions": False,
-                "v2.list_fleet_deployments": False,
-                "v2.list_fleet_schedules": False,
                 "v2.list_fleet_tracers": False,
                 "v2.trigger_fleet_schedule": False,
                 "v2.update_fleet_schedule": False,
