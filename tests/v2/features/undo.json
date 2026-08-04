@@ -7454,6 +7454,31 @@
       "type": "idempotent"
     }
   },
+  "CreateSecurityFindingsAutomationSeverityModifierRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityFindingsAutomationSeverityModifierRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSecurityFindingsAutomationSeverityModifierRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityFindingsAutomationSeverityModifierRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityFindingsAutomationTicketCreationRules": {
     "tag": "Security Monitoring",
     "undo": {
