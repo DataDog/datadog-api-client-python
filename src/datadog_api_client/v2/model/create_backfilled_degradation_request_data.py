@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_backfilled_degradation_request_data_attributes import (
         CreateBackfilledDegradationRequestDataAttributes,
     )
+    from datadog_api_client.v2.model.create_backfilled_degradation_request_data_relationships import (
+        CreateBackfilledDegradationRequestDataRelationships,
+    )
     from datadog_api_client.v2.model.patch_degradation_request_data_type import PatchDegradationRequestDataType
 
 
@@ -26,15 +29,20 @@ class CreateBackfilledDegradationRequestData(ModelNormal):
         from datadog_api_client.v2.model.create_backfilled_degradation_request_data_attributes import (
             CreateBackfilledDegradationRequestDataAttributes,
         )
+        from datadog_api_client.v2.model.create_backfilled_degradation_request_data_relationships import (
+            CreateBackfilledDegradationRequestDataRelationships,
+        )
         from datadog_api_client.v2.model.patch_degradation_request_data_type import PatchDegradationRequestDataType
 
         return {
             "attributes": (CreateBackfilledDegradationRequestDataAttributes,),
+            "relationships": (CreateBackfilledDegradationRequestDataRelationships,),
             "type": (PatchDegradationRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "relationships": "relationships",
         "type": "type",
     }
 
@@ -42,6 +50,7 @@ class CreateBackfilledDegradationRequestData(ModelNormal):
         self_,
         type: PatchDegradationRequestDataType,
         attributes: Union[CreateBackfilledDegradationRequestDataAttributes, UnsetType] = unset,
+        relationships: Union[CreateBackfilledDegradationRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -50,11 +59,16 @@ class CreateBackfilledDegradationRequestData(ModelNormal):
         :param attributes: The supported attributes for creating a backfilled degradation.
         :type attributes: CreateBackfilledDegradationRequestDataAttributes, optional
 
+        :param relationships: The supported relationships for creating a backfilled degradation.
+        :type relationships: CreateBackfilledDegradationRequestDataRelationships, optional
+
         :param type: Degradations resource type.
         :type type: PatchDegradationRequestDataType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
         self_.type = type
