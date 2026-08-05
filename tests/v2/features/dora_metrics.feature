@@ -149,6 +149,24 @@ Feature: DORA Metrics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Patch a deployment event by version returns "Accepted" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "PatchDORADeploymentByVersion" enabled
+    And new "PatchDORADeploymentByVersion" request
+    And body with value {"data": {"attributes": {"change_failure": true, "env": "production", "remediation": {"type": "rollback"}, "service": "my-service", "version": "v1.2.3"}, "type": "dora_deployment_patch_request"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Patch a deployment event by version returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "PatchDORADeploymentByVersion" enabled
+    And new "PatchDORADeploymentByVersion" request
+    And body with value {"data": {"attributes": {"change_failure": true, "env": "production", "remediation": {"type": "rollback"}, "service": "my-service", "version": "v1.2.3"}, "type": "dora_deployment_patch_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ci-app-backend
   Scenario: Patch a deployment event returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And new "PatchDORADeployment" request
