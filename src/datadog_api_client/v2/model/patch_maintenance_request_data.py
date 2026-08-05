@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
     UUID,
 )
 
@@ -15,6 +17,9 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.patch_maintenance_request_data_attributes import (
         PatchMaintenanceRequestDataAttributes,
+    )
+    from datadog_api_client.v2.model.patch_maintenance_request_data_relationships import (
+        PatchMaintenanceRequestDataRelationships,
     )
     from datadog_api_client.v2.model.patch_maintenance_request_data_type import PatchMaintenanceRequestDataType
 
@@ -25,17 +30,22 @@ class PatchMaintenanceRequestData(ModelNormal):
         from datadog_api_client.v2.model.patch_maintenance_request_data_attributes import (
             PatchMaintenanceRequestDataAttributes,
         )
+        from datadog_api_client.v2.model.patch_maintenance_request_data_relationships import (
+            PatchMaintenanceRequestDataRelationships,
+        )
         from datadog_api_client.v2.model.patch_maintenance_request_data_type import PatchMaintenanceRequestDataType
 
         return {
             "attributes": (PatchMaintenanceRequestDataAttributes,),
             "id": (UUID,),
+            "relationships": (PatchMaintenanceRequestDataRelationships,),
             "type": (PatchMaintenanceRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
+        "relationships": "relationships",
         "type": "type",
     }
 
@@ -44,6 +54,7 @@ class PatchMaintenanceRequestData(ModelNormal):
         attributes: PatchMaintenanceRequestDataAttributes,
         id: UUID,
         type: PatchMaintenanceRequestDataType,
+        relationships: Union[PatchMaintenanceRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,9 +66,14 @@ class PatchMaintenanceRequestData(ModelNormal):
         :param id: The ID of the maintenance.
         :type id: UUID
 
+        :param relationships: The supported relationships for updating a maintenance.
+        :type relationships: PatchMaintenanceRequestDataRelationships, optional
+
         :param type: Maintenances resource type.
         :type type: PatchMaintenanceRequestDataType
         """
+        if relationships is not unset:
+            kwargs["relationships"] = relationships
         super().__init__(kwargs)
 
         self_.attributes = attributes

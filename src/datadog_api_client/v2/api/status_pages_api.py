@@ -22,12 +22,20 @@ from datadog_api_client.v2.model.status_pages_component_array import StatusPages
 from datadog_api_client.v2.model.status_pages_component import StatusPagesComponent
 from datadog_api_client.v2.model.create_component_request import CreateComponentRequest
 from datadog_api_client.v2.model.patch_component_request import PatchComponentRequest
+from datadog_api_client.v2.model.degradation_template_array import DegradationTemplateArray
+from datadog_api_client.v2.model.degradation_template import DegradationTemplate
+from datadog_api_client.v2.model.create_degradation_template_request import CreateDegradationTemplateRequest
+from datadog_api_client.v2.model.patch_degradation_template_request import PatchDegradationTemplateRequest
 from datadog_api_client.v2.model.degradation import Degradation
 from datadog_api_client.v2.model.create_degradation_request import CreateDegradationRequest
 from datadog_api_client.v2.model.create_backfilled_degradation_request import CreateBackfilledDegradationRequest
 from datadog_api_client.v2.model.patch_degradation_request import PatchDegradationRequest
 from datadog_api_client.v2.model.degradation_update import DegradationUpdate
 from datadog_api_client.v2.model.patch_degradation_update_request import PatchDegradationUpdateRequest
+from datadog_api_client.v2.model.maintenance_template_array import MaintenanceTemplateArray
+from datadog_api_client.v2.model.maintenance_template import MaintenanceTemplate
+from datadog_api_client.v2.model.create_maintenance_template_request import CreateMaintenanceTemplateRequest
+from datadog_api_client.v2.model.patch_maintenance_template_request import PatchMaintenanceTemplateRequest
 from datadog_api_client.v2.model.maintenance import Maintenance
 from datadog_api_client.v2.model.create_maintenance_request import CreateMaintenanceRequest
 from datadog_api_client.v2.model.create_backfilled_maintenance_request import CreateBackfilledMaintenanceRequest
@@ -173,6 +181,37 @@ class StatusPagesApi:
             api_client=api_client,
         )
 
+        self._create_degradation_template_endpoint = _Endpoint(
+            settings={
+                "response_type": (DegradationTemplate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradation_templates",
+                "operation_id": "create_degradation_template",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateDegradationTemplateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_maintenance_endpoint = _Endpoint(
             settings={
                 "response_type": (Maintenance,),
@@ -202,6 +241,37 @@ class StatusPagesApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateMaintenanceRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_maintenance_template_endpoint = _Endpoint(
+            settings={
+                "response_type": (MaintenanceTemplate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenance_templates",
+                "operation_id": "create_maintenance_template",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateMaintenanceTemplateRequest,),
                     "location": "body",
                 },
             },
@@ -283,6 +353,64 @@ class StatusPagesApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "degradation_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_degradation_template_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradation_templates/{template_id}",
+                "operation_id": "delete_degradation_template",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "template_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "template_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_maintenance_template_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenance_templates/{template_id}",
+                "operation_id": "delete_maintenance_template",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "template_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "template_id",
                     "location": "path",
                 },
             },
@@ -426,6 +554,40 @@ class StatusPagesApi:
             api_client=api_client,
         )
 
+        self._get_degradation_template_endpoint = _Endpoint(
+            settings={
+                "response_type": (DegradationTemplate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradation_templates/{template_id}",
+                "operation_id": "get_degradation_template",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "template_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "template_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_maintenance_endpoint = _Endpoint(
             settings={
                 "response_type": (Maintenance,),
@@ -446,6 +608,40 @@ class StatusPagesApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "maintenance_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_maintenance_template_endpoint = _Endpoint(
+            settings={
+                "response_type": (MaintenanceTemplate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenance_templates/{template_id}",
+                "operation_id": "get_maintenance_template",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "template_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "template_id",
                     "location": "path",
                 },
                 "include": {
@@ -556,6 +752,39 @@ class StatusPagesApi:
                     "attribute": "sort",
                     "location": "query",
                 },
+                "filter_source_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[source_id]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_degradation_templates_endpoint = _Endpoint(
+            settings={
+                "response_type": (DegradationTemplateArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradation_templates",
+                "operation_id": "list_degradation_templates",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -601,6 +830,34 @@ class StatusPagesApi:
                 "sort": {
                     "openapi_types": (str,),
                     "attribute": "sort",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_maintenance_templates_endpoint = _Endpoint(
+            settings={
+                "response_type": (MaintenanceTemplateArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenance_templates",
+                "operation_id": "list_maintenance_templates",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
                     "location": "query",
                 },
             },
@@ -807,6 +1064,43 @@ class StatusPagesApi:
             api_client=api_client,
         )
 
+        self._update_degradation_template_endpoint = _Endpoint(
+            settings={
+                "response_type": (DegradationTemplate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/degradation_templates/{template_id}",
+                "operation_id": "update_degradation_template",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "template_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "template_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchDegradationTemplateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_maintenance_endpoint = _Endpoint(
             settings={
                 "response_type": (Maintenance,),
@@ -842,6 +1136,43 @@ class StatusPagesApi:
                 "body": {
                     "required": True,
                     "openapi_types": (PatchMaintenanceRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_maintenance_template_endpoint = _Endpoint(
+            settings={
+                "response_type": (MaintenanceTemplate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenance_templates/{template_id}",
+                "operation_id": "update_maintenance_template",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "template_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "template_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchMaintenanceTemplateRequest,),
                     "location": "body",
                 },
             },
@@ -1003,6 +1334,34 @@ class StatusPagesApi:
 
         return self._create_degradation_endpoint.call_with_http_info(**kwargs)
 
+    def create_degradation_template(
+        self,
+        page_id: UUID,
+        body: CreateDegradationTemplateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> DegradationTemplate:
+        """Create degradation template.
+
+        Creates a new degradation template.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :type body: CreateDegradationTemplateRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: DegradationTemplate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_degradation_template_endpoint.call_with_http_info(**kwargs)
+
     def create_maintenance(
         self,
         page_id: UUID,
@@ -1036,6 +1395,34 @@ class StatusPagesApi:
         kwargs["body"] = body
 
         return self._create_maintenance_endpoint.call_with_http_info(**kwargs)
+
+    def create_maintenance_template(
+        self,
+        page_id: UUID,
+        body: CreateMaintenanceTemplateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> MaintenanceTemplate:
+        """Create maintenance template.
+
+        Creates a new maintenance template.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :type body: CreateMaintenanceTemplateRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: MaintenanceTemplate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_maintenance_template_endpoint.call_with_http_info(**kwargs)
 
     def create_status_page(
         self,
@@ -1103,6 +1490,50 @@ class StatusPagesApi:
         kwargs["degradation_id"] = degradation_id
 
         return self._delete_degradation_endpoint.call_with_http_info(**kwargs)
+
+    def delete_degradation_template(
+        self,
+        page_id: UUID,
+        template_id: UUID,
+    ) -> None:
+        """Delete degradation template.
+
+        Deletes a degradation template by its ID (soft delete).
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param template_id: The ID of the degradation or maintenance template.
+        :type template_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["template_id"] = template_id
+
+        return self._delete_degradation_template_endpoint.call_with_http_info(**kwargs)
+
+    def delete_maintenance_template(
+        self,
+        page_id: UUID,
+        template_id: UUID,
+    ) -> None:
+        """Delete maintenance template.
+
+        Deletes a maintenance template by its ID (soft delete).
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param template_id: The ID of the degradation or maintenance template.
+        :type template_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["template_id"] = template_id
+
+        return self._delete_maintenance_template_endpoint.call_with_http_info(**kwargs)
 
     def delete_status_page(
         self,
@@ -1217,6 +1648,35 @@ class StatusPagesApi:
 
         return self._get_degradation_endpoint.call_with_http_info(**kwargs)
 
+    def get_degradation_template(
+        self,
+        page_id: UUID,
+        template_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> DegradationTemplate:
+        """Get degradation template.
+
+        Retrieves a specific degradation template by its ID.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param template_id: The ID of the degradation or maintenance template.
+        :type template_id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: DegradationTemplate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["template_id"] = template_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_degradation_template_endpoint.call_with_http_info(**kwargs)
+
     def get_maintenance(
         self,
         page_id: UUID,
@@ -1245,6 +1705,35 @@ class StatusPagesApi:
             kwargs["include"] = include
 
         return self._get_maintenance_endpoint.call_with_http_info(**kwargs)
+
+    def get_maintenance_template(
+        self,
+        page_id: UUID,
+        template_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> MaintenanceTemplate:
+        """Get maintenance template.
+
+        Retrieves a specific maintenance template by its ID.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param template_id: The ID of the degradation or maintenance template.
+        :type template_id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: MaintenanceTemplate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["template_id"] = template_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._get_maintenance_template_endpoint.call_with_http_info(**kwargs)
 
     def get_status_page(
         self,
@@ -1303,6 +1792,7 @@ class StatusPagesApi:
         include: Union[str, UnsetType] = unset,
         filter_status: Union[str, UnsetType] = unset,
         sort: Union[str, UnsetType] = unset,
+        filter_source_id: Union[str, UnsetType] = unset,
     ) -> DegradationArray:
         """List degradations.
 
@@ -1320,6 +1810,8 @@ class StatusPagesApi:
         :type filter_status: str, optional
         :param sort: Sort order. Prefix with '-' for descending. Supported values: created_at, -created_at, modified_at, -modified_at.
         :type sort: str, optional
+        :param filter_source_id: Optional source ID filter. Returns only degradations whose source matches this ID (for example, an incident ID).
+        :type filter_source_id: str, optional
         :rtype: DegradationArray
         """
         kwargs: Dict[str, Any] = {}
@@ -1341,7 +1833,34 @@ class StatusPagesApi:
         if sort is not unset:
             kwargs["sort"] = sort
 
+        if filter_source_id is not unset:
+            kwargs["filter_source_id"] = filter_source_id
+
         return self._list_degradations_endpoint.call_with_http_info(**kwargs)
+
+    def list_degradation_templates(
+        self,
+        page_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> DegradationTemplateArray:
+        """List degradation templates.
+
+        Lists all degradation templates for a status page.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: DegradationTemplateArray
+        """
+        kwargs: Dict[str, Any] = {}
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["page_id"] = page_id
+
+        return self._list_degradation_templates_endpoint.call_with_http_info(**kwargs)
 
     def list_maintenances(
         self,
@@ -1391,6 +1910,30 @@ class StatusPagesApi:
             kwargs["sort"] = sort
 
         return self._list_maintenances_endpoint.call_with_http_info(**kwargs)
+
+    def list_maintenance_templates(
+        self,
+        page_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> MaintenanceTemplateArray:
+        """List maintenance templates.
+
+        Lists all maintenance templates for a status page.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: MaintenanceTemplateArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_maintenance_templates_endpoint.call_with_http_info(**kwargs)
 
     def list_status_pages(
         self,
@@ -1562,6 +2105,39 @@ class StatusPagesApi:
 
         return self._update_degradation_endpoint.call_with_http_info(**kwargs)
 
+    def update_degradation_template(
+        self,
+        template_id: UUID,
+        page_id: UUID,
+        body: PatchDegradationTemplateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> DegradationTemplate:
+        """Update degradation template.
+
+        Updates an existing degradation template's attributes.
+
+        :param template_id: The ID of the degradation or maintenance template.
+        :type template_id: UUID
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :type body: PatchDegradationTemplateRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: DegradationTemplate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["template_id"] = template_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["page_id"] = page_id
+
+        kwargs["body"] = body
+
+        return self._update_degradation_template_endpoint.call_with_http_info(**kwargs)
+
     def update_maintenance(
         self,
         page_id: UUID,
@@ -1600,6 +2176,39 @@ class StatusPagesApi:
         kwargs["body"] = body
 
         return self._update_maintenance_endpoint.call_with_http_info(**kwargs)
+
+    def update_maintenance_template(
+        self,
+        page_id: UUID,
+        template_id: UUID,
+        body: PatchMaintenanceTemplateRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> MaintenanceTemplate:
+        """Update maintenance template.
+
+        Updates an existing maintenance template's attributes.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param template_id: The ID of the degradation or maintenance template.
+        :type template_id: UUID
+        :type body: PatchMaintenanceTemplateRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user, status_page.
+        :type include: str, optional
+        :rtype: MaintenanceTemplate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["template_id"] = template_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._update_maintenance_template_endpoint.call_with_http_info(**kwargs)
 
     def update_status_page(
         self,

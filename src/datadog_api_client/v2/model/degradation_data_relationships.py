@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.degradation_data_relationships_status_page import (
         DegradationDataRelationshipsStatusPage,
     )
+    from datadog_api_client.v2.model.degradation_data_relationships_template import DegradationDataRelationshipsTemplate
 
 
 class DegradationDataRelationships(ModelNormal):
@@ -37,17 +38,22 @@ class DegradationDataRelationships(ModelNormal):
         from datadog_api_client.v2.model.degradation_data_relationships_status_page import (
             DegradationDataRelationshipsStatusPage,
         )
+        from datadog_api_client.v2.model.degradation_data_relationships_template import (
+            DegradationDataRelationshipsTemplate,
+        )
 
         return {
             "created_by_user": (DegradationDataRelationshipsCreatedByUser,),
             "last_modified_by_user": (DegradationDataRelationshipsLastModifiedByUser,),
             "status_page": (DegradationDataRelationshipsStatusPage,),
+            "template": (DegradationDataRelationshipsTemplate,),
         }
 
     attribute_map = {
         "created_by_user": "created_by_user",
         "last_modified_by_user": "last_modified_by_user",
         "status_page": "status_page",
+        "template": "template",
     }
 
     def __init__(
@@ -55,6 +61,7 @@ class DegradationDataRelationships(ModelNormal):
         created_by_user: Union[DegradationDataRelationshipsCreatedByUser, UnsetType] = unset,
         last_modified_by_user: Union[DegradationDataRelationshipsLastModifiedByUser, UnsetType] = unset,
         status_page: Union[DegradationDataRelationshipsStatusPage, UnsetType] = unset,
+        template: Union[DegradationDataRelationshipsTemplate, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -68,6 +75,9 @@ class DegradationDataRelationships(ModelNormal):
 
         :param status_page: The status page the degradation belongs to.
         :type status_page: DegradationDataRelationshipsStatusPage, optional
+
+        :param template: The template the degradation was created from.
+        :type template: DegradationDataRelationshipsTemplate, optional
         """
         if created_by_user is not unset:
             kwargs["created_by_user"] = created_by_user
@@ -75,4 +85,6 @@ class DegradationDataRelationships(ModelNormal):
             kwargs["last_modified_by_user"] = last_modified_by_user
         if status_page is not unset:
             kwargs["status_page"] = status_page
+        if template is not unset:
+            kwargs["template"] = template
         super().__init__(kwargs)
