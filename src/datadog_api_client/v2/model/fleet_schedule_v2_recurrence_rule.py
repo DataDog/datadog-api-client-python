@@ -55,7 +55,7 @@ class FleetScheduleV2RecurrenceRule(ModelNormal):
         :param maintenance_window_duration: Duration of the maintenance window in minutes.
         :type maintenance_window_duration: int, optional
 
-        :param start_maintenance_window: Start time of the maintenance window in 24-hour clock format (HH:MM).
+        :param start_maintenance_window: Start time of the maintenance window in 24-hour clock format (HHMM).
             Deployments are triggered at this time on the specified days.
         :type start_maintenance_window: str, optional
 

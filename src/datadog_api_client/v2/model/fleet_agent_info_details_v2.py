@@ -50,7 +50,6 @@ class FleetAgentInfoDetailsV2(ModelNormal):
             "os_version": (str,),
             "otel_collector_deployment_types": ([str],),
             "otel_collector_distributions": ([str],),
-            "otel_collector_version": (str,),
             "otel_collector_versions": ([str],),
             "otel_collectors": ([FleetOtelCollector],),
             "otel_resource_attributes": ([str],),
@@ -94,7 +93,6 @@ class FleetAgentInfoDetailsV2(ModelNormal):
         "os_version": "os_version",
         "otel_collector_deployment_types": "otel_collector_deployment_types",
         "otel_collector_distributions": "otel_collector_distributions",
-        "otel_collector_version": "otel_collector_version",
         "otel_collector_versions": "otel_collector_versions",
         "otel_collectors": "otel_collectors",
         "otel_resource_attributes": "otel_resource_attributes",
@@ -139,7 +137,6 @@ class FleetAgentInfoDetailsV2(ModelNormal):
         os_version: Union[str, UnsetType] = unset,
         otel_collector_deployment_types: Union[List[str], UnsetType] = unset,
         otel_collector_distributions: Union[List[str], UnsetType] = unset,
-        otel_collector_version: Union[str, UnsetType] = unset,
         otel_collector_versions: Union[List[str], UnsetType] = unset,
         otel_collectors: Union[List[FleetOtelCollector], UnsetType] = unset,
         otel_resource_attributes: Union[List[str], UnsetType] = unset,
@@ -239,9 +236,6 @@ class FleetAgentInfoDetailsV2(ModelNormal):
         :param otel_collector_distributions: OpenTelemetry collector distributions associated with the agent.
         :type otel_collector_distributions: [str], optional
 
-        :param otel_collector_version: OpenTelemetry collector version (if applicable).
-        :type otel_collector_version: str, optional
-
         :param otel_collector_versions: List of OpenTelemetry collector versions (if applicable).
         :type otel_collector_versions: [str], optional
 
@@ -335,8 +329,6 @@ class FleetAgentInfoDetailsV2(ModelNormal):
             kwargs["otel_collector_deployment_types"] = otel_collector_deployment_types
         if otel_collector_distributions is not unset:
             kwargs["otel_collector_distributions"] = otel_collector_distributions
-        if otel_collector_version is not unset:
-            kwargs["otel_collector_version"] = otel_collector_version
         if otel_collector_versions is not unset:
             kwargs["otel_collector_versions"] = otel_collector_versions
         if otel_collectors is not unset:

@@ -20,7 +20,6 @@ class FleetConfigurationLayer(ModelNormal):
             "compiled_configuration": (str,),
             "env_configuration": (str,),
             "file_configuration": (str,),
-            "parsed_configuration": (str,),
             "remote_configuration": (str,),
             "runtime_configuration": (str,),
         }
@@ -29,7 +28,6 @@ class FleetConfigurationLayer(ModelNormal):
         "compiled_configuration": "compiled_configuration",
         "env_configuration": "env_configuration",
         "file_configuration": "file_configuration",
-        "parsed_configuration": "parsed_configuration",
         "remote_configuration": "remote_configuration",
         "runtime_configuration": "runtime_configuration",
     }
@@ -39,7 +37,6 @@ class FleetConfigurationLayer(ModelNormal):
         compiled_configuration: Union[str, UnsetType] = unset,
         env_configuration: Union[str, UnsetType] = unset,
         file_configuration: Union[str, UnsetType] = unset,
-        parsed_configuration: Union[str, UnsetType] = unset,
         remote_configuration: Union[str, UnsetType] = unset,
         runtime_configuration: Union[str, UnsetType] = unset,
         **kwargs,
@@ -56,9 +53,6 @@ class FleetConfigurationLayer(ModelNormal):
         :param file_configuration: Configuration from files.
         :type file_configuration: str, optional
 
-        :param parsed_configuration: Parsed configuration output.
-        :type parsed_configuration: str, optional
-
         :param remote_configuration: Remote configuration settings.
         :type remote_configuration: str, optional
 
@@ -71,8 +65,6 @@ class FleetConfigurationLayer(ModelNormal):
             kwargs["env_configuration"] = env_configuration
         if file_configuration is not unset:
             kwargs["file_configuration"] = file_configuration
-        if parsed_configuration is not unset:
-            kwargs["parsed_configuration"] = parsed_configuration
         if remote_configuration is not unset:
             kwargs["remote_configuration"] = remote_configuration
         if runtime_configuration is not unset:

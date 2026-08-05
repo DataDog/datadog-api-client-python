@@ -51,7 +51,6 @@ class FleetAgentV2Attributes(ModelNormal):
             "os": (str,),
             "otel_collector_deployment_types": ([str],),
             "otel_collector_distributions": ([str],),
-            "otel_collector_version": (str,),
             "otel_collector_versions": ([str],),
             "otel_resource_attributes": ([str],),
             "pod_name": (str,),
@@ -85,7 +84,6 @@ class FleetAgentV2Attributes(ModelNormal):
         "os": "os",
         "otel_collector_deployment_types": "otel_collector_deployment_types",
         "otel_collector_distributions": "otel_collector_distributions",
-        "otel_collector_version": "otel_collector_version",
         "otel_collector_versions": "otel_collector_versions",
         "otel_resource_attributes": "otel_resource_attributes",
         "pod_name": "pod_name",
@@ -120,7 +118,6 @@ class FleetAgentV2Attributes(ModelNormal):
         os: Union[str, UnsetType] = unset,
         otel_collector_deployment_types: Union[List[str], UnsetType] = unset,
         otel_collector_distributions: Union[List[str], UnsetType] = unset,
-        otel_collector_version: Union[str, UnsetType] = unset,
         otel_collector_versions: Union[List[str], UnsetType] = unset,
         otel_resource_attributes: Union[List[str], UnsetType] = unset,
         pod_name: Union[str, UnsetType] = unset,
@@ -200,9 +197,6 @@ class FleetAgentV2Attributes(ModelNormal):
         :param otel_collector_distributions: OpenTelemetry collector distributions associated with the agent.
         :type otel_collector_distributions: [str], optional
 
-        :param otel_collector_version: The primary OpenTelemetry collector version, if applicable.
-        :type otel_collector_version: str, optional
-
         :param otel_collector_versions: All OpenTelemetry collector versions associated with the agent.
         :type otel_collector_versions: [str], optional
 
@@ -271,8 +265,6 @@ class FleetAgentV2Attributes(ModelNormal):
             kwargs["otel_collector_deployment_types"] = otel_collector_deployment_types
         if otel_collector_distributions is not unset:
             kwargs["otel_collector_distributions"] = otel_collector_distributions
-        if otel_collector_version is not unset:
-            kwargs["otel_collector_version"] = otel_collector_version
         if otel_collector_versions is not unset:
             kwargs["otel_collector_versions"] = otel_collector_versions
         if otel_resource_attributes is not unset:
