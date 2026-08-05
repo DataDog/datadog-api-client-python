@@ -43362,6 +43362,132 @@ datadog\_api\_client.v2.model.session\_id\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_action module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_attributes\_create module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_attributes_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_attributes\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_attributes_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_create\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_data\_create module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_data_create
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_data\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_data_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_reorder\_item module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_reorder_item
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_reorder\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_reorder_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_set\_action module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_set_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_set\_action\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_set_action_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_shift\_action module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_shift_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_shift\_action\_type module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_shift_action_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rule\_update\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rule_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_rules\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_rules_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_severity module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_severity
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.severity\_modifier\_severity\_delta module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.severity_modifier_severity_delta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.shared\_dashboard\_global\_time module
 --------------------------------------------------------------------
 

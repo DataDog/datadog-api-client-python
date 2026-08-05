@@ -52,6 +52,11 @@ from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
 from datadog_api_client.v2.model.mute_rule_create_request import MuteRuleCreateRequest
 from datadog_api_client.v2.model.mute_rule_reorder_request import MuteRuleReorderRequest
 from datadog_api_client.v2.model.mute_rule_update_request import MuteRuleUpdateRequest
+from datadog_api_client.v2.model.severity_modifier_rules_response import SeverityModifierRulesResponse
+from datadog_api_client.v2.model.severity_modifier_rule_response import SeverityModifierRuleResponse
+from datadog_api_client.v2.model.severity_modifier_rule_create_request import SeverityModifierRuleCreateRequest
+from datadog_api_client.v2.model.severity_modifier_rule_reorder_request import SeverityModifierRuleReorderRequest
+from datadog_api_client.v2.model.severity_modifier_rule_update_request import SeverityModifierRuleUpdateRequest
 from datadog_api_client.v2.model.ticket_creation_rules_response import TicketCreationRulesResponse
 from datadog_api_client.v2.model.ticket_creation_rule_response import TicketCreationRuleResponse
 from datadog_api_client.v2.model.ticket_creation_rule_create_request import TicketCreationRuleCreateRequest
@@ -912,6 +917,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SeverityModifierRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules",
+                "operation_id": "create_security_findings_automation_severity_modifier_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SeverityModifierRuleCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_security_findings_automation_ticket_creation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRuleResponse,),
@@ -1305,6 +1330,29 @@ class SecurityMonitoringApi:
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules/{rule_id}",
                 "operation_id": "delete_security_findings_automation_mute_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}",
+                "operation_id": "delete_security_findings_automation_severity_modifier_rule",
                 "http_method": "DELETE",
                 "version": "v2",
             },
@@ -2089,6 +2137,29 @@ class SecurityMonitoringApi:
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_mute_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SeverityModifierRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}",
+                "operation_id": "get_security_findings_automation_severity_modifier_rule",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -3279,6 +3350,40 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_security_findings_automation_severity_modifier_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (SeverityModifierRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules",
+                "operation_id": "list_security_findings_automation_severity_modifier_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_security_findings_automation_ticket_creation_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRulesResponse,),
@@ -4042,6 +4147,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._reorder_security_findings_automation_severity_modifier_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (SeverityModifierRuleReorderRequest,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/reorder",
+                "operation_id": "reorder_security_findings_automation_severity_modifier_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SeverityModifierRuleReorderRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._reorder_security_findings_automation_ticket_creation_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRuleReorderRequest,),
@@ -4378,6 +4503,32 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (MuteRuleUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (SeverityModifierRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}",
+                "operation_id": "update_security_findings_automation_severity_modifier_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SeverityModifierRuleUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -5186,6 +5337,22 @@ class SecurityMonitoringApi:
 
         return self._create_security_findings_automation_mute_rule_endpoint.call_with_http_info(**kwargs)
 
+    def create_security_findings_automation_severity_modifier_rule(
+        self,
+        body: SeverityModifierRuleCreateRequest,
+    ) -> SeverityModifierRuleResponse:
+        """Create a severity modifier rule.
+
+        Create a new severity modifier rule for the current organization.
+
+        :type body: SeverityModifierRuleCreateRequest
+        :rtype: SeverityModifierRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_security_findings_automation_severity_modifier_rule_endpoint.call_with_http_info(**kwargs)
+
     def create_security_findings_automation_ticket_creation_rule(
         self,
         body: TicketCreationRuleCreateRequest,
@@ -5524,6 +5691,23 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._delete_security_findings_automation_mute_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_security_findings_automation_severity_modifier_rule(
+        self,
+        rule_id: UUID,
+    ) -> None:
+        """Delete a severity modifier rule.
+
+        Delete an existing severity modifier rule by ID.
+
+        :param rule_id: The ID of the severity modifier rule.
+        :type rule_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._delete_security_findings_automation_severity_modifier_rule_endpoint.call_with_http_info(**kwargs)
 
     def delete_security_findings_automation_ticket_creation_rule(
         self,
@@ -6175,6 +6359,23 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._get_security_findings_automation_mute_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_findings_automation_severity_modifier_rule(
+        self,
+        rule_id: UUID,
+    ) -> SeverityModifierRuleResponse:
+        """Get a severity modifier rule.
+
+        Get the details of a severity modifier rule by ID.
+
+        :param rule_id: The ID of the severity modifier rule.
+        :type rule_id: UUID
+        :rtype: SeverityModifierRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._get_security_findings_automation_severity_modifier_rule_endpoint.call_with_http_info(**kwargs)
 
     def get_security_findings_automation_ticket_creation_rule(
         self,
@@ -7523,6 +7724,31 @@ class SecurityMonitoringApi:
 
         return self._list_security_findings_automation_mute_rules_endpoint.call_with_http_info(**kwargs)
 
+    def list_security_findings_automation_severity_modifier_rules(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> SeverityModifierRulesResponse:
+        """Get all severity modifier rules.
+
+        Get all severity modifier rules for the current organization.
+
+        :param page_size: The number of rules per page. Maximum is 1000.
+        :type page_size: int, optional
+        :param page_number: The page number to return.
+        :type page_number: int, optional
+        :rtype: SeverityModifierRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._list_security_findings_automation_severity_modifier_rules_endpoint.call_with_http_info(**kwargs)
+
     def list_security_findings_automation_ticket_creation_rules(
         self,
         *,
@@ -8448,6 +8674,22 @@ class SecurityMonitoringApi:
 
         return self._reorder_security_findings_automation_mute_rules_endpoint.call_with_http_info(**kwargs)
 
+    def reorder_security_findings_automation_severity_modifier_rules(
+        self,
+        body: SeverityModifierRuleReorderRequest,
+    ) -> SeverityModifierRuleReorderRequest:
+        """Reorder severity modifier rules.
+
+        Reorder the list of severity modifier rules for the current organization.
+
+        :type body: SeverityModifierRuleReorderRequest
+        :rtype: SeverityModifierRuleReorderRequest
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._reorder_security_findings_automation_severity_modifier_rules_endpoint.call_with_http_info(**kwargs)
+
     def reorder_security_findings_automation_ticket_creation_rules(
         self,
         body: TicketCreationRuleReorderRequest,
@@ -8800,6 +9042,27 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_security_findings_automation_mute_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_findings_automation_severity_modifier_rule(
+        self,
+        rule_id: UUID,
+        body: SeverityModifierRuleUpdateRequest,
+    ) -> SeverityModifierRuleResponse:
+        """Update a severity modifier rule.
+
+        Update an existing severity modifier rule by ID.
+
+        :param rule_id: The ID of the severity modifier rule.
+        :type rule_id: UUID
+        :type body: SeverityModifierRuleUpdateRequest
+        :rtype: SeverityModifierRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._update_security_findings_automation_severity_modifier_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_security_findings_automation_ticket_creation_rule(
         self,

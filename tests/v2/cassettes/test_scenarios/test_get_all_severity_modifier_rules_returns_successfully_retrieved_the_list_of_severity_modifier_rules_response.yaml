@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"severity":"low","type":"set"},"enabled":true,"name":"Test-Get_all_severity_modifier_rules_returns_Successfully_retrieved_the_list_of_severity_modifier_rules_r-1785748649","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}},"type":"severity_modifier_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/severity_modifier_rules
+  response:
+    body:
+      string: '{"data":{"id":"4c9856fe-1150-45de-813c-3d4d3375bea1","type":"severity_modifier_rules","attributes":{"action":{"type":"set","severity":"low"},"created_at":1785748649918,"created_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"modified_at":1785748649918,"modified_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"name":"Test-Get_all_severity_modifier_rules_returns_Successfully_retrieved_the_list_of_severity_modifier_rules_r-1785748649","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/severity_modifier_rules
+  response:
+    body:
+      string: '{"data":[{"id":"4c9856fe-1150-45de-813c-3d4d3375bea1","type":"severity_modifier_rules","attributes":{"action":{"type":"set","severity":"low"},"created_at":1785748649918,"created_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"modified_at":1785748649918,"modified_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"name":"Test-Get_all_severity_modifier_rules_returns_Successfully_retrieved_the_list_of_severity_modifier_rules_r-1785748649","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}}}],"meta":{"page":{"total_filtered_count":1}},"links":{"first":"/api/v2/security/findings/automation/severity_modifier_rules?page[size]=1000\u0026page[number]=0","last":"/api/v2/security/findings/automation/severity_modifier_rules?page[size]=1000\u0026page[number]=0"}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/severity_modifier_rules/4c9856fe-1150-45de-813c-3d4d3375bea1
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
