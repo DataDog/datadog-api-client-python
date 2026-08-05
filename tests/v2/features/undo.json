@@ -2374,6 +2374,12 @@
       "type": "idempotent"
     }
   },
+  "PatchDORADeploymentByVersion": {
+    "tag": "DORA Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDORADeployments": {
     "tag": "DORA Metrics",
     "undo": {
