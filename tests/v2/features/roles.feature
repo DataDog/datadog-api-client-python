@@ -203,6 +203,14 @@ Feature: Roles
     And the response "data[0].type" is equal to "{{ permission.type }}"
     And the response "data" has item with field "id" with value "{{ permission.id }}"
 
+  @team:DataDog/aaa-core-access @team:DataDog/access-policies-lifecycle
+  Scenario: List permissions including scopes returns "OK" response
+    Given new "ListPermissions" request
+    And request contains "include_scopes" parameter with value true
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has item with field "attributes.name" with value "admin"
+
   @generated @skip @team:DataDog/aaa-core-access @team:DataDog/access-policies-lifecycle
   Scenario: List permissions returns "Bad Request" response
     Given new "ListPermissions" request
