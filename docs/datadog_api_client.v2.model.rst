@@ -8236,6 +8236,76 @@ datadog\_api\_client.v2.model.content\_encoding module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.control\_notification\_event\_setting module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_event_setting
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_settings\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_settings_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_settings\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_settings_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_settings\_resource\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_settings_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_settings\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_settings\_update\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_settings_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_settings\_update\_data module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_settings_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_settings\_update\_request module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_settings_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_target module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.control\_notification\_target\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.control_notification_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.convert\_job\_results\_to\_signals\_attributes module
 -----------------------------------------------------------------------------------
 
@@ -17784,10 +17854,31 @@ datadog\_api\_client.v2.model.google\_meet\_configuration\_reference\_data modul
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.governance\_best\_practice\_definition module
----------------------------------------------------------------------------
+datadog\_api\_client.v2.model.governance\_config\_attributes module
+-------------------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.model.governance_best_practice_definition
+.. automodule:: datadog_api_client.v2.model.governance_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_config\_data module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_config\_response module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_console\_config\_resource\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_console_config_resource_type
    :members:
    :show-inheritance:
 
@@ -17802,6 +17893,83 @@ datadog\_api\_client.v2.model.governance\_control\_data module
 --------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.governance_control_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_assignment\_source module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_assignment_source
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_resource\_type module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_state module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_update\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_update\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_update\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detection\_update\_state module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detection_update_state
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_control\_detections\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_control_detections_response
    :members:
    :show-inheritance:
 
@@ -17903,6 +18071,13 @@ datadog\_api\_client.v2.model.governance\_insight\_data module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.governance\_insight\_directionality module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_insight_directionality
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.governance\_insight\_event\_compute module
 ------------------------------------------------------------------------
 
@@ -17956,6 +18131,76 @@ datadog\_api\_client.v2.model.governance\_insights\_response module
 -------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.governance_insights_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_mitigation\_request module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_mitigation_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_mitigation\_request\_attributes module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_mitigation_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_mitigation\_request\_data module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_mitigation_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_notification\_settings\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_notification_settings_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_notification\_settings\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_notification_settings_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_notification\_settings\_resource\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_notification_settings_resource_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_notification\_settings\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_notification_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_notification\_settings\_update\_attributes module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_notification_settings_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_notification\_settings\_update\_data module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_notification_settings_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.governance\_notification\_settings\_update\_request module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.governance_notification_settings_update_request
    :members:
    :show-inheritance:
 

@@ -43,7 +43,7 @@ class GovernanceControlData(ModelNormal):
         :param attributes: The attributes of a governance control.
         :type attributes: GovernanceControlAttributes
 
-        :param id: The unique identifier of the control.
+        :param id: The detection type that uniquely identifies the control.
         :type id: str
 
         :param type: JSON:API resource type for a governance control.

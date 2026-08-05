@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,14 +13,20 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.governance_insight_directionality import GovernanceInsightDirectionality
+
+
 class GovernanceInsightQueryConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.governance_insight_directionality import GovernanceInsightDirectionality
+
         return {
             "chart_type": (str,),
             "comparison_shift": (str,),
             "default_value": (int,),
-            "directionality": (str,),
+            "directionality": (GovernanceInsightDirectionality,),
             "effective_time_window_days": (int,),
         }
 
@@ -38,24 +44,23 @@ class GovernanceInsightQueryConfig(ModelNormal):
         effective_time_window_days: int,
         chart_type: Union[str, UnsetType] = unset,
         default_value: Union[int, UnsetType] = unset,
-        directionality: Union[str, UnsetType] = unset,
+        directionality: Union[GovernanceInsightDirectionality, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Query execution context that allows the frontend to execute insight queries directly.
+        Query execution context for running insight queries directly.
 
-        :param chart_type: The chart type the frontend should use to render the insight.
+        :param chart_type: The chart type used to render the insight.
         :type chart_type: str, optional
 
-        :param comparison_shift: The window used for the previous value comparison, for example ``week`` or ``month``.
+        :param comparison_shift: The window used for the previous value comparison; for example, ``week`` or ``month``.
         :type comparison_shift: str
 
         :param default_value: The default value to display when no data is available.
         :type default_value: int, optional
 
-        :param directionality: Whether an increase in the value is good, bad, or neutral. One of ``neutral`` ,
-            ``increase_better`` , or ``decrease_better``.
-        :type directionality: str, optional
+        :param directionality: Whether an increase in the insight's value is good, bad, or neutral.
+        :type directionality: GovernanceInsightDirectionality, optional
 
         :param effective_time_window_days: The number of days the insight value is computed over.
         :type effective_time_window_days: int
