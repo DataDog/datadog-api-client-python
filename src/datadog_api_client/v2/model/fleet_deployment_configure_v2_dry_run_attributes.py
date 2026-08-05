@@ -54,7 +54,7 @@ class FleetDeploymentConfigureV2DryRunAttributes(ModelNormal):
         :param query: Query used to filter and select target hosts for the deployment.
         :type query: str, optional
 
-        :param total_hosts: Total number of hosts targeted by the dry run.
+        :param total_hosts: Total number of hosts targeted by this deployment.
         :type total_hosts: int, optional
         """
         if dry_run is not unset:

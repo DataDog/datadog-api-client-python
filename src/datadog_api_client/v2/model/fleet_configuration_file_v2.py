@@ -21,7 +21,6 @@ class FleetConfigurationFileV2(ModelNormal):
             "file_content": (str,),
             "file_path": (str,),
             "filename": (str,),
-            "fleet_hash": (str,),
         }
 
     attribute_map = {
@@ -29,7 +28,6 @@ class FleetConfigurationFileV2(ModelNormal):
         "file_content": "file_content",
         "file_path": "file_path",
         "filename": "filename",
-        "fleet_hash": "fleet_hash",
     }
 
     def __init__(
@@ -38,7 +36,6 @@ class FleetConfigurationFileV2(ModelNormal):
         file_content: Union[str, UnsetType] = unset,
         file_path: Union[str, UnsetType] = unset,
         filename: Union[str, UnsetType] = unset,
-        fleet_hash: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -55,9 +52,6 @@ class FleetConfigurationFileV2(ModelNormal):
 
         :param filename: Name of the configuration file.
         :type filename: str, optional
-
-        :param fleet_hash: Hash of the configuration file as applied by fleet management.
-        :type fleet_hash: str, optional
         """
         if agent_hash is not unset:
             kwargs["agent_hash"] = agent_hash
@@ -67,6 +61,4 @@ class FleetConfigurationFileV2(ModelNormal):
             kwargs["file_path"] = file_path
         if filename is not unset:
             kwargs["filename"] = filename
-        if fleet_hash is not unset:
-            kwargs["fleet_hash"] = fleet_hash
         super().__init__(kwargs)
