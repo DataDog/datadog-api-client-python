@@ -23,6 +23,15 @@ if TYPE_CHECKING:
 
 
 class Step(ModelNormal):
+    validations = {
+        "action_id": {
+            "min_length": 1,
+        },
+        "name": {
+            "min_length": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.completion_gate import CompletionGate
@@ -81,7 +90,8 @@ class Step(ModelNormal):
         :param connection_label: The unique identifier of a connection defined in the spec.
         :type connection_label: str, optional
 
-        :param display: The definition of ``StepDisplay`` object.
+        :param display: The position of a step on the workflow canvas. Omit ``display`` from every step to use
+            automatic layout, or provide it for every step to preserve a manual layout.
         :type display: StepDisplay, optional
 
         :param error_handlers: The ``Step`` ``errorHandlers``.
@@ -90,7 +100,7 @@ class Step(ModelNormal):
         :param name: Name of the step.
         :type name: str
 
-        :param outbound_edges: A list of subsequent actions to run.
+        :param outbound_edges: A list of subsequent actions to run. This list is empty for a terminal step.
         :type outbound_edges: [OutboundEdge], optional
 
         :param parameters: A list of inputs for an action.

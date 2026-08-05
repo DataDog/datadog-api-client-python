@@ -41,7 +41,7 @@ class ScheduleTriggerWrapper(ModelNormal):
         :param schedule_trigger: Trigger a workflow from a Schedule. The workflow must be published.
         :type schedule_trigger: ScheduleTrigger
 
-        :param start_step_names: A list of steps that run first after a trigger fires.
+        :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional
         """
         if start_step_names is not unset:

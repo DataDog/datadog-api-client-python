@@ -39,7 +39,7 @@ class APITriggerWrapper(ModelNormal):
         :param api_trigger: Trigger a workflow from an API request. The workflow must be published.
         :type api_trigger: APITrigger
 
-        :param start_step_names: A list of steps that run first after a trigger fires.
+        :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional
         """
         if start_step_names is not unset:
