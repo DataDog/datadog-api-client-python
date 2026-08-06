@@ -5535,6 +5535,12 @@ from datadog_api_client.v2.model.notification_rule_preview_result import Notific
 from datadog_api_client.v2.model.notification_rule_response import NotificationRuleResponse
 from datadog_api_client.v2.model.notification_rule_routing import NotificationRuleRouting
 from datadog_api_client.v2.model.notification_rule_routing_mode import NotificationRuleRoutingMode
+from datadog_api_client.v2.model.notification_rule_target import NotificationRuleTarget
+from datadog_api_client.v2.model.notification_rule_target_configuration import NotificationRuleTargetConfiguration
+from datadog_api_client.v2.model.notification_rule_target_configuration_recipient import (
+    NotificationRuleTargetConfigurationRecipient,
+)
+from datadog_api_client.v2.model.notification_rule_target_type import NotificationRuleTargetType
 from datadog_api_client.v2.model.notification_rules_list_response import NotificationRulesListResponse
 from datadog_api_client.v2.model.notification_rules_type import NotificationRulesType
 from datadog_api_client.v2.model.notion_api_key import NotionAPIKey
@@ -14696,6 +14702,10 @@ __all__ = [
     "NotificationRuleResponse",
     "NotificationRuleRouting",
     "NotificationRuleRoutingMode",
+    "NotificationRuleTarget",
+    "NotificationRuleTargetConfiguration",
+    "NotificationRuleTargetConfigurationRecipient",
+    "NotificationRuleTargetType",
     "NotificationRulesListResponse",
     "NotificationRulesType",
     "NotionAPIKey",
