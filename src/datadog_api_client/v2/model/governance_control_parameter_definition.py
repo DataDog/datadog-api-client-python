@@ -39,7 +39,6 @@ class GovernanceControlParameterDefinition(ModelNormal):
             ),
             "description": (str,),
             "display_name": (str,),
-            "hidden": (bool,),
             "name": (str,),
             "required": (bool,),
             "supported_values": ([GovernanceControlSupportedValue],),
@@ -50,7 +49,6 @@ class GovernanceControlParameterDefinition(ModelNormal):
         "default_value": "default_value",
         "description": "description",
         "display_name": "display_name",
-        "hidden": "hidden",
         "name": "name",
         "required": "required",
         "supported_values": "supported_values",
@@ -62,7 +60,6 @@ class GovernanceControlParameterDefinition(ModelNormal):
         default_value: Any,
         description: str,
         display_name: str,
-        hidden: bool,
         name: str,
         required: bool,
         supported_values: List[GovernanceControlSupportedValue],
@@ -81,9 +78,6 @@ class GovernanceControlParameterDefinition(ModelNormal):
         :param display_name: The human-readable name of the parameter.
         :type display_name: str
 
-        :param hidden: Whether the parameter is hidden from the UI.
-        :type hidden: bool
-
         :param name: The machine-readable name of the parameter.
         :type name: str
 
@@ -101,7 +95,6 @@ class GovernanceControlParameterDefinition(ModelNormal):
         self_.default_value = default_value
         self_.description = description
         self_.display_name = display_name
-        self_.hidden = hidden
         self_.name = name
         self_.required = required
         self_.supported_values = supported_values

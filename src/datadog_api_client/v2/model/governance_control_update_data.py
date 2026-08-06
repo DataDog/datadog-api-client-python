@@ -26,13 +26,11 @@ class GovernanceControlUpdateData(ModelNormal):
 
         return {
             "attributes": (GovernanceControlUpdateAttributes,),
-            "id": (str,),
             "type": (GovernanceControlResourceType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
-        "id": "id",
         "type": "type",
     }
 
@@ -40,7 +38,6 @@ class GovernanceControlUpdateData(ModelNormal):
         self_,
         type: GovernanceControlResourceType,
         attributes: Union[GovernanceControlUpdateAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -49,16 +46,11 @@ class GovernanceControlUpdateData(ModelNormal):
         :param attributes: The attributes of a governance control that can be updated. Only the attributes present in the request are modified.
         :type attributes: GovernanceControlUpdateAttributes, optional
 
-        :param id: The unique identifier of the control.
-        :type id: str, optional
-
         :param type: JSON:API resource type for a governance control.
         :type type: GovernanceControlResourceType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
         self_.type = type

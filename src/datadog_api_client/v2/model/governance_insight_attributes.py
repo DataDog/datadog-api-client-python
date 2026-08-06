@@ -8,7 +8,6 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    none_type,
     unset,
     UnsetType,
 )
@@ -16,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.governance_insight_audit_query import GovernanceInsightAuditQuery
-    from datadog_api_client.v2.model.governance_best_practice_definition import GovernanceBestPracticeDefinition
     from datadog_api_client.v2.model.governance_insight_event_query import GovernanceInsightEventQuery
     from datadog_api_client.v2.model.governance_insight_metric_query import GovernanceInsightMetricQuery
     from datadog_api_client.v2.model.governance_insight_percentage_query import GovernanceInsightPercentageQuery
@@ -28,7 +26,6 @@ class GovernanceInsightAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.governance_insight_audit_query import GovernanceInsightAuditQuery
-        from datadog_api_client.v2.model.governance_best_practice_definition import GovernanceBestPracticeDefinition
         from datadog_api_client.v2.model.governance_insight_event_query import GovernanceInsightEventQuery
         from datadog_api_client.v2.model.governance_insight_metric_query import GovernanceInsightMetricQuery
         from datadog_api_client.v2.model.governance_insight_percentage_query import GovernanceInsightPercentageQuery
@@ -37,80 +34,57 @@ class GovernanceInsightAttributes(ModelNormal):
 
         return {
             "audit_query": (GovernanceInsightAuditQuery,),
-            "best_practice": (GovernanceBestPracticeDefinition,),
-            "deep_link": (str,),
             "description": (str,),
             "display_name": (str,),
             "event_query": (GovernanceInsightEventQuery,),
             "metric_query": (GovernanceInsightMetricQuery,),
-            "old_value": (float, none_type),
             "percentage_query": (GovernanceInsightPercentageQuery,),
             "product": (str,),
             "query_config": (GovernanceInsightQueryConfig,),
-            "sort_order": (int,),
-            "state": (str,),
             "sub_product": (str,),
             "time_range": (str,),
             "unit_name": (str,),
             "usage_query": (GovernanceInsightUsageQuery,),
-            "value": (float, none_type),
         }
 
     attribute_map = {
         "audit_query": "audit_query",
-        "best_practice": "best_practice",
-        "deep_link": "deep_link",
         "description": "description",
         "display_name": "display_name",
         "event_query": "event_query",
         "metric_query": "metric_query",
-        "old_value": "old_value",
         "percentage_query": "percentage_query",
         "product": "product",
         "query_config": "query_config",
-        "sort_order": "sort_order",
-        "state": "state",
         "sub_product": "sub_product",
         "time_range": "time_range",
         "unit_name": "unit_name",
         "usage_query": "usage_query",
-        "value": "value",
     }
 
     def __init__(
         self_,
-        audit_query: GovernanceInsightAuditQuery,
-        best_practice: GovernanceBestPracticeDefinition,
-        deep_link: str,
         description: str,
         display_name: str,
-        event_query: GovernanceInsightEventQuery,
-        metric_query: GovernanceInsightMetricQuery,
-        old_value: Union[float, none_type],
-        percentage_query: GovernanceInsightPercentageQuery,
         product: str,
-        state: str,
         sub_product: str,
         time_range: str,
         unit_name: str,
-        usage_query: GovernanceInsightUsageQuery,
-        value: Union[float, none_type],
+        audit_query: Union[GovernanceInsightAuditQuery, UnsetType] = unset,
+        event_query: Union[GovernanceInsightEventQuery, UnsetType] = unset,
+        metric_query: Union[GovernanceInsightMetricQuery, UnsetType] = unset,
+        percentage_query: Union[GovernanceInsightPercentageQuery, UnsetType] = unset,
         query_config: Union[GovernanceInsightQueryConfig, UnsetType] = unset,
-        sort_order: Union[int, UnsetType] = unset,
+        usage_query: Union[GovernanceInsightUsageQuery, UnsetType] = unset,
         **kwargs,
     ):
         """
-        The attributes of a governance insight.
+        The attributes of a governance insight. Exactly one of ``metric_query`` , ``event_query`` ,
+        ``usage_query`` , ``audit_query`` , or ``percentage_query`` is populated, depending on the data
+        source the insight is computed from; the rest are ``null``.
 
         :param audit_query: An audit log query used to compute an insight value.
-        :type audit_query: GovernanceInsightAuditQuery
-
-        :param best_practice: The best practice associated with an insight. Populated with the first active best practice
-            matched to the insight; ``null`` when no best practice is attached.
-        :type best_practice: GovernanceBestPracticeDefinition
-
-        :param deep_link: A relative link to the product surface where the insight can be acted upon.
-        :type deep_link: str
+        :type audit_query: GovernanceInsightAuditQuery, optional
 
         :param description: A human-readable description of what the insight measures.
         :type description: str
@@ -119,30 +93,19 @@ class GovernanceInsightAttributes(ModelNormal):
         :type display_name: str
 
         :param event_query: An event query used to compute an insight value.
-        :type event_query: GovernanceInsightEventQuery
+        :type event_query: GovernanceInsightEventQuery, optional
 
         :param metric_query: A metric query used to compute an insight value.
-        :type metric_query: GovernanceInsightMetricQuery
-
-        :param old_value: The value of the insight over the previous comparison window. ``null`` when values were
-            not requested or could not be computed.
-        :type old_value: float, none_type
+        :type metric_query: GovernanceInsightMetricQuery, optional
 
         :param percentage_query: A percentage query that computes an insight value as a ratio of two metric queries.
-        :type percentage_query: GovernanceInsightPercentageQuery
+        :type percentage_query: GovernanceInsightPercentageQuery, optional
 
         :param product: The product the insight belongs to.
         :type product: str
 
-        :param query_config: Query execution context that allows the frontend to execute insight queries directly.
+        :param query_config: Query execution context for running insight queries directly.
         :type query_config: GovernanceInsightQueryConfig, optional
-
-        :param sort_order: The relative order in which the insight should be displayed.
-        :type sort_order: int, optional
-
-        :param state: The state of the insight. A ``critical`` insight receives extra UI treatment to draw
-            attention to it.
-        :type state: str
 
         :param sub_product: The sub-product the insight belongs to, if any.
         :type sub_product: str
@@ -154,30 +117,25 @@ class GovernanceInsightAttributes(ModelNormal):
         :type unit_name: str
 
         :param usage_query: A usage query used to compute an insight value.
-        :type usage_query: GovernanceInsightUsageQuery
-
-        :param value: The current value of the insight. ``null`` when values were not requested or could not be computed.
-        :type value: float, none_type
+        :type usage_query: GovernanceInsightUsageQuery, optional
         """
+        if audit_query is not unset:
+            kwargs["audit_query"] = audit_query
+        if event_query is not unset:
+            kwargs["event_query"] = event_query
+        if metric_query is not unset:
+            kwargs["metric_query"] = metric_query
+        if percentage_query is not unset:
+            kwargs["percentage_query"] = percentage_query
         if query_config is not unset:
             kwargs["query_config"] = query_config
-        if sort_order is not unset:
-            kwargs["sort_order"] = sort_order
+        if usage_query is not unset:
+            kwargs["usage_query"] = usage_query
         super().__init__(kwargs)
 
-        self_.audit_query = audit_query
-        self_.best_practice = best_practice
-        self_.deep_link = deep_link
         self_.description = description
         self_.display_name = display_name
-        self_.event_query = event_query
-        self_.metric_query = metric_query
-        self_.old_value = old_value
-        self_.percentage_query = percentage_query
         self_.product = product
-        self_.state = state
         self_.sub_product = sub_product
         self_.time_range = time_range
         self_.unit_name = unit_name
-        self_.usage_query = usage_query
-        self_.value = value

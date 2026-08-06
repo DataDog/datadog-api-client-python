@@ -2834,28 +2834,82 @@
       "type": "safe"
     }
   },
+  "GetGovernanceConfig": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListGovernanceControls": {
-    "tag": "Governance Controls",
+    "tag": "Governance Console",
     "undo": {
       "type": "safe"
     }
   },
   "GetGovernanceControl": {
-    "tag": "Governance Controls",
+    "tag": "Governance Console",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateGovernanceControl": {
-    "tag": "Governance Controls",
+    "tag": "Governance Console",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListGovernanceControlDetections": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetGovernanceControlNotificationSettings": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGovernanceControlNotificationSettings": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "MitigateGovernanceDetections": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetGovernanceDetection": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGovernanceDetection": {
+    "tag": "Governance Console",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListGovernanceInsights": {
-    "tag": "Governance Insights",
+    "tag": "Governance Console",
     "undo": {
       "type": "safe"
+    }
+  },
+  "GetGovernanceNotificationSettings": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGovernanceNotificationSettings": {
+    "tag": "Governance Console",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "GetHamrOrgConnection": {

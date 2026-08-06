@@ -410,17 +410,10 @@ datadog\_api\_client.v2.api.google\_chat\_integration\_api module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.governance\_controls\_api module
-------------------------------------------------------------
+datadog\_api\_client.v2.api.governance\_console\_api module
+-----------------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.api.governance_controls_api
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.api.governance\_insights\_api module
-------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.governance_insights_api
+.. automodule:: datadog_api_client.v2.api.governance_console_api
    :members:
    :show-inheritance:
 

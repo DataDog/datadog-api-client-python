@@ -40,8 +40,6 @@ class GovernanceControlAttributes(ModelNormal):
             "description": (str,),
             "detection_frequency": (str,),
             "detection_parameters": (GovernanceControlParametersMap,),
-            "detection_type": (str,),
-            "feature_flags": ([str],),
             "insights": ([str],),
             "last_detection_at": (datetime, none_type),
             "mitigated_detections_count": (int,),
@@ -49,20 +47,12 @@ class GovernanceControlAttributes(ModelNormal):
             "mitigation_type": (str,),
             "mitigations": ([GovernanceControlMitigationDefinition],),
             "name": (str,),
-            "next_steps": (str,),
-            "notification_frequency": (str,),
-            "notification_parameters": (GovernanceControlParametersMap,),
-            "notification_type": (str,),
             "priority": (str,),
             "product": (str,),
-            "release_status": (str,),
             "resource_type": (str,),
             "resource_type_display_name": (str,),
             "supported_detection_parameters": ([GovernanceControlParameterDefinition],),
-            "supported_notification_parameters": ([GovernanceControlParameterDefinition],),
-            "task": (str,),
             "type": (str,),
-            "usage_concern": (str,),
         }
 
     attribute_map = {
@@ -73,8 +63,6 @@ class GovernanceControlAttributes(ModelNormal):
         "description": "description",
         "detection_frequency": "detection_frequency",
         "detection_parameters": "detection_parameters",
-        "detection_type": "detection_type",
-        "feature_flags": "feature_flags",
         "insights": "insights",
         "last_detection_at": "last_detection_at",
         "mitigated_detections_count": "mitigated_detections_count",
@@ -82,20 +70,12 @@ class GovernanceControlAttributes(ModelNormal):
         "mitigation_type": "mitigation_type",
         "mitigations": "mitigations",
         "name": "name",
-        "next_steps": "next_steps",
-        "notification_frequency": "notification_frequency",
-        "notification_parameters": "notification_parameters",
-        "notification_type": "notification_type",
         "priority": "priority",
         "product": "product",
-        "release_status": "release_status",
         "resource_type": "resource_type",
         "resource_type_display_name": "resource_type_display_name",
         "supported_detection_parameters": "supported_detection_parameters",
-        "supported_notification_parameters": "supported_notification_parameters",
-        "task": "task",
         "type": "type",
-        "usage_concern": "usage_concern",
     }
 
     def __init__(
@@ -107,8 +87,6 @@ class GovernanceControlAttributes(ModelNormal):
         description: str,
         detection_frequency: str,
         detection_parameters: GovernanceControlParametersMap,
-        detection_type: str,
-        feature_flags: List[str],
         insights: List[str],
         last_detection_at: Union[datetime, none_type],
         mitigated_detections_count: int,
@@ -116,20 +94,12 @@ class GovernanceControlAttributes(ModelNormal):
         mitigation_type: str,
         mitigations: List[GovernanceControlMitigationDefinition],
         name: str,
-        next_steps: str,
-        notification_frequency: str,
-        notification_parameters: GovernanceControlParametersMap,
-        notification_type: str,
         priority: str,
         product: str,
-        release_status: str,
         resource_type: str,
         resource_type_display_name: str,
         supported_detection_parameters: List[GovernanceControlParameterDefinition],
-        supported_notification_parameters: List[GovernanceControlParameterDefinition],
-        task: str,
         type: str,
-        usage_concern: str,
         **kwargs,
     ):
         """
@@ -156,12 +126,6 @@ class GovernanceControlAttributes(ModelNormal):
         :param detection_parameters: A free-form map of parameter names to their configured values.
         :type detection_parameters: GovernanceControlParametersMap
 
-        :param detection_type: The detection type that uniquely identifies the control.
-        :type detection_type: str
-
-        :param feature_flags: The feature flags that gate the control.
-        :type feature_flags: [str]
-
         :param insights: The insight slugs associated with the control.
         :type insights: [str]
 
@@ -183,26 +147,11 @@ class GovernanceControlAttributes(ModelNormal):
         :param name: Human-readable name of the control.
         :type name: str
 
-        :param next_steps: Guidance on the next steps to remediate detections for the control.
-        :type next_steps: str
-
-        :param notification_frequency: The configured notification frequency for the control. Empty when not configured.
-        :type notification_frequency: str
-
-        :param notification_parameters: A free-form map of parameter names to their configured values.
-        :type notification_parameters: GovernanceControlParametersMap
-
-        :param notification_type: The configured notification type for the control. Empty when not configured.
-        :type notification_type: str
-
         :param priority: The priority of the control, such as ``High``.
         :type priority: str
 
         :param product: The product the control belongs to.
         :type product: str
-
-        :param release_status: The release status of the control, such as ``prod`` or ``beta``.
-        :type release_status: str
 
         :param resource_type: The type of resource the control evaluates.
         :type resource_type: str
@@ -213,17 +162,8 @@ class GovernanceControlAttributes(ModelNormal):
         :param supported_detection_parameters: An array of parameter definitions.
         :type supported_detection_parameters: [GovernanceControlParameterDefinition]
 
-        :param supported_notification_parameters: An array of parameter definitions.
-        :type supported_notification_parameters: [GovernanceControlParameterDefinition]
-
-        :param task: A short description of the remediation task for the control.
-        :type task: str
-
         :param type: The control type, such as ``Proactive`` or ``Detection``.
         :type type: str
-
-        :param usage_concern: The usage concern the control addresses, such as ``Security`` or ``Cost Optimization``.
-        :type usage_concern: str
         """
         super().__init__(kwargs)
 
@@ -234,8 +174,6 @@ class GovernanceControlAttributes(ModelNormal):
         self_.description = description
         self_.detection_frequency = detection_frequency
         self_.detection_parameters = detection_parameters
-        self_.detection_type = detection_type
-        self_.feature_flags = feature_flags
         self_.insights = insights
         self_.last_detection_at = last_detection_at
         self_.mitigated_detections_count = mitigated_detections_count
@@ -243,17 +181,9 @@ class GovernanceControlAttributes(ModelNormal):
         self_.mitigation_type = mitigation_type
         self_.mitigations = mitigations
         self_.name = name
-        self_.next_steps = next_steps
-        self_.notification_frequency = notification_frequency
-        self_.notification_parameters = notification_parameters
-        self_.notification_type = notification_type
         self_.priority = priority
         self_.product = product
-        self_.release_status = release_status
         self_.resource_type = resource_type
         self_.resource_type_display_name = resource_type_display_name
         self_.supported_detection_parameters = supported_detection_parameters
-        self_.supported_notification_parameters = supported_notification_parameters
-        self_.task = task
         self_.type = type
-        self_.usage_concern = usage_concern

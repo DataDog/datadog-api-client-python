@@ -40,7 +40,9 @@ class GovernanceInsightData(ModelNormal):
         """
         A governance insight resource.
 
-        :param attributes: The attributes of a governance insight.
+        :param attributes: The attributes of a governance insight. Exactly one of ``metric_query`` , ``event_query`` ,
+            ``usage_query`` , ``audit_query`` , or ``percentage_query`` is populated, depending on the data
+            source the insight is computed from; the rest are ``null``.
         :type attributes: GovernanceInsightAttributes
 
         :param id: The unique identifier of the insight.
