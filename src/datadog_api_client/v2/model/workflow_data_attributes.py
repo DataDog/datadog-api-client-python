@@ -76,7 +76,7 @@ class WorkflowDataAttributes(ModelNormal):
         :param published: Set the workflow to published or unpublished. Workflows in an unpublished state will only be executable via manual runs. Automatic triggers such as Schedule will not execute the workflow until it is published.
         :type published: bool, optional
 
-        :param spec: The spec defines what the workflow does.
+        :param spec: A complete Workflow Automation definition, including its triggers, steps, and connections.
         :type spec: Spec
 
         :param tags: Tags of the workflow.

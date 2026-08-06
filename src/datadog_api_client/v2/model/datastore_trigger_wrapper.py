@@ -41,7 +41,7 @@ class DatastoreTriggerWrapper(ModelNormal):
         :param datastore_trigger: Trigger a workflow from a Datastore. For automatic triggering a handle must be configured and the workflow must be published.
         :type datastore_trigger: DatastoreTrigger
 
-        :param start_step_names: A list of steps that run first after a trigger fires.
+        :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional
         """
         if start_step_names is not unset:

@@ -11,11 +11,23 @@ from datadog_api_client.model_utils import (
 
 
 class RetryStrategyLinear(ModelNormal):
+    validations = {
+        "interval": {},
+        "max_retries": {
+            "inclusive_maximum": 2147483647,
+            "inclusive_minimum": 0,
+        },
+    }
+
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
     @cached_property
     def openapi_types(_):
         return {
             "interval": (str,),
-            "max_retries": (float,),
+            "max_retries": (int,),
         }
 
     attribute_map = {
@@ -23,7 +35,7 @@ class RetryStrategyLinear(ModelNormal):
         "max_retries": "maxRetries",
     }
 
-    def __init__(self_, interval: str, max_retries: float, **kwargs):
+    def __init__(self_, interval: str, max_retries: int, **kwargs):
         """
         The definition of ``RetryStrategyLinear`` object.
 
@@ -31,7 +43,7 @@ class RetryStrategyLinear(ModelNormal):
         :type interval: str
 
         :param max_retries: The ``RetryStrategyLinear`` ``maxRetries``.
-        :type max_retries: float
+        :type max_retries: int
         """
         super().__init__(kwargs)
 
