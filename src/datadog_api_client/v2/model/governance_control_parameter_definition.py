@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, List, TYPE_CHECKING
+from typing import Any, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -62,7 +62,7 @@ class GovernanceControlParameterDefinition(ModelNormal):
         display_name: str,
         name: str,
         required: bool,
-        supported_values: List[GovernanceControlSupportedValue],
+        supported_values: Union[List[GovernanceControlSupportedValue], none_type],
         type: str,
         **kwargs,
     ):
@@ -84,8 +84,8 @@ class GovernanceControlParameterDefinition(ModelNormal):
         :param required: Whether the parameter must be provided.
         :type required: bool
 
-        :param supported_values: The supported values for an enumerated parameter.
-        :type supported_values: [GovernanceControlSupportedValue]
+        :param supported_values: The supported values for an enumerated parameter. ``null`` when the parameter is not an enumerated type.
+        :type supported_values: [GovernanceControlSupportedValue], none_type
 
         :param type: The type of the parameter, such as ``integer`` , ``string`` , ``boolean`` , ``enum`` , or ``pattern_list``.
         :type type: str

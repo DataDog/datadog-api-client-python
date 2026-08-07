@@ -23,14 +23,12 @@ class GovernanceControlUpdateAttributes(ModelNormal):
         from datadog_api_client.v2.model.governance_control_parameters_map import GovernanceControlParametersMap
 
         return {
-            "detection_frequency": (str,),
             "detection_parameters": (GovernanceControlParametersMap,),
             "mitigation_parameters": (GovernanceControlParametersMap,),
             "mitigation_type": (str,),
         }
 
     attribute_map = {
-        "detection_frequency": "detection_frequency",
         "detection_parameters": "detection_parameters",
         "mitigation_parameters": "mitigation_parameters",
         "mitigation_type": "mitigation_type",
@@ -38,7 +36,6 @@ class GovernanceControlUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        detection_frequency: Union[str, UnsetType] = unset,
         detection_parameters: Union[GovernanceControlParametersMap, UnsetType] = unset,
         mitigation_parameters: Union[GovernanceControlParametersMap, UnsetType] = unset,
         mitigation_type: Union[str, UnsetType] = unset,
@@ -46,9 +43,6 @@ class GovernanceControlUpdateAttributes(ModelNormal):
     ):
         """
         The attributes of a governance control that can be updated. Only the attributes present in the request are modified.
-
-        :param detection_frequency: How often detections should be evaluated for the control.
-        :type detection_frequency: str, optional
 
         :param detection_parameters: A free-form map of parameter names to their configured values.
         :type detection_parameters: GovernanceControlParametersMap, optional
@@ -59,8 +53,6 @@ class GovernanceControlUpdateAttributes(ModelNormal):
         :param mitigation_type: The mitigation type to configure for the control.
         :type mitigation_type: str, optional
         """
-        if detection_frequency is not unset:
-            kwargs["detection_frequency"] = detection_frequency
         if detection_parameters is not unset:
             kwargs["detection_parameters"] = detection_parameters
         if mitigation_parameters is not unset:
