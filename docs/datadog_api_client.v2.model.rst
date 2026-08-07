@@ -26709,6 +26709,69 @@ datadog\_api\_client.v2.model.maintenance\_template\_data\_relationships\_status
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.maintenance\_update module
+--------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data\_attributes module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data\_attributes\_status module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data_attributes_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data\_relationships module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data_relationships
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data\_relationships\_maintenance module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data_relationships_maintenance
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data\_relationships\_maintenance\_data module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data_relationships_maintenance_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data\_relationships\_user module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data_relationships_user
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.maintenance\_update\_data\_relationships\_user\_data module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.maintenance_update_data_relationships_user_data
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.maintenance\_window module
 --------------------------------------------------------
 
@@ -33916,6 +33979,34 @@ datadog\_api\_client.v2.model.patch\_maintenance\_template\_request\_data\_type 
 --------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.patch_maintenance_template_request_data_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_maintenance\_update\_request module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_maintenance_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_maintenance\_update\_request\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_maintenance_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_maintenance\_update\_request\_data\_attributes module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_maintenance_update_request_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.patch\_maintenance\_update\_request\_data\_type module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.patch_maintenance_update_request_data_type
    :members:
    :show-inheritance:
 

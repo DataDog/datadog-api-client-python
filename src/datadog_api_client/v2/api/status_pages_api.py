@@ -40,6 +40,8 @@ from datadog_api_client.v2.model.maintenance import Maintenance
 from datadog_api_client.v2.model.create_maintenance_request import CreateMaintenanceRequest
 from datadog_api_client.v2.model.create_backfilled_maintenance_request import CreateBackfilledMaintenanceRequest
 from datadog_api_client.v2.model.patch_maintenance_request import PatchMaintenanceRequest
+from datadog_api_client.v2.model.maintenance_update import MaintenanceUpdate
+from datadog_api_client.v2.model.patch_maintenance_update_request import PatchMaintenanceUpdateRequest
 
 
 class StatusPagesApi:
@@ -901,6 +903,44 @@ class StatusPagesApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._patch_maintenance_update_endpoint = _Endpoint(
+            settings={
+                "response_type": (MaintenanceUpdate,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/maintenances/{maintenance_id}/updates/{update_id}",
+                "operation_id": "patch_maintenance_update",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "maintenance_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "maintenance_id",
+                    "location": "path",
+                },
+                "update_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "update_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchMaintenanceUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1971,6 +2011,37 @@ class StatusPagesApi:
             kwargs["include"] = include
 
         return self._list_status_pages_endpoint.call_with_http_info(**kwargs)
+
+    def patch_maintenance_update(
+        self,
+        page_id: UUID,
+        maintenance_id: UUID,
+        update_id: UUID,
+        body: PatchMaintenanceUpdateRequest,
+    ) -> MaintenanceUpdate:
+        """Edit maintenance update.
+
+        Edits the message of a specific maintenance update. Editing is allowed regardless of the parent maintenance's status, including completed and canceled maintenances.
+
+        :param page_id: The ID of the status page.
+        :type page_id: UUID
+        :param maintenance_id: The ID of the maintenance.
+        :type maintenance_id: UUID
+        :param update_id: The ID of the maintenance update.
+        :type update_id: UUID
+        :type body: PatchMaintenanceUpdateRequest
+        :rtype: MaintenanceUpdate
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["maintenance_id"] = maintenance_id
+
+        kwargs["update_id"] = update_id
+
+        kwargs["body"] = body
+
+        return self._patch_maintenance_update_endpoint.call_with_http_info(**kwargs)
 
     def publish_status_page(
         self,

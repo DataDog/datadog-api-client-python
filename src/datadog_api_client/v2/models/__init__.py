@@ -5112,6 +5112,23 @@ from datadog_api_client.v2.model.maintenance_template_data_relationships_status_
 from datadog_api_client.v2.model.maintenance_template_data_relationships_status_page_data import (
     MaintenanceTemplateDataRelationshipsStatusPageData,
 )
+from datadog_api_client.v2.model.maintenance_update import MaintenanceUpdate
+from datadog_api_client.v2.model.maintenance_update_data import MaintenanceUpdateData
+from datadog_api_client.v2.model.maintenance_update_data_attributes import MaintenanceUpdateDataAttributes
+from datadog_api_client.v2.model.maintenance_update_data_attributes_status import MaintenanceUpdateDataAttributesStatus
+from datadog_api_client.v2.model.maintenance_update_data_relationships import MaintenanceUpdateDataRelationships
+from datadog_api_client.v2.model.maintenance_update_data_relationships_maintenance import (
+    MaintenanceUpdateDataRelationshipsMaintenance,
+)
+from datadog_api_client.v2.model.maintenance_update_data_relationships_maintenance_data import (
+    MaintenanceUpdateDataRelationshipsMaintenanceData,
+)
+from datadog_api_client.v2.model.maintenance_update_data_relationships_user import (
+    MaintenanceUpdateDataRelationshipsUser,
+)
+from datadog_api_client.v2.model.maintenance_update_data_relationships_user_data import (
+    MaintenanceUpdateDataRelationshipsUserData,
+)
 from datadog_api_client.v2.model.maintenance_window import MaintenanceWindow
 from datadog_api_client.v2.model.maintenance_window_attributes import MaintenanceWindowAttributes
 from datadog_api_client.v2.model.maintenance_window_create import MaintenanceWindowCreate
@@ -6914,6 +6931,12 @@ from datadog_api_client.v2.model.patch_maintenance_template_request_data_attribu
 from datadog_api_client.v2.model.patch_maintenance_template_request_data_type import (
     PatchMaintenanceTemplateRequestDataType,
 )
+from datadog_api_client.v2.model.patch_maintenance_update_request import PatchMaintenanceUpdateRequest
+from datadog_api_client.v2.model.patch_maintenance_update_request_data import PatchMaintenanceUpdateRequestData
+from datadog_api_client.v2.model.patch_maintenance_update_request_data_attributes import (
+    PatchMaintenanceUpdateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.patch_maintenance_update_request_data_type import PatchMaintenanceUpdateRequestDataType
 from datadog_api_client.v2.model.patch_notification_rule_parameters import PatchNotificationRuleParameters
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data import PatchNotificationRuleParametersData
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
@@ -14369,6 +14392,15 @@ __all__ = [
     "MaintenanceTemplateDataRelationshipsLastModifiedByUserData",
     "MaintenanceTemplateDataRelationshipsStatusPage",
     "MaintenanceTemplateDataRelationshipsStatusPageData",
+    "MaintenanceUpdate",
+    "MaintenanceUpdateData",
+    "MaintenanceUpdateDataAttributes",
+    "MaintenanceUpdateDataAttributesStatus",
+    "MaintenanceUpdateDataRelationships",
+    "MaintenanceUpdateDataRelationshipsMaintenance",
+    "MaintenanceUpdateDataRelationshipsMaintenanceData",
+    "MaintenanceUpdateDataRelationshipsUser",
+    "MaintenanceUpdateDataRelationshipsUserData",
     "MaintenanceWindow",
     "MaintenanceWindowAttributes",
     "MaintenanceWindowCreate",
@@ -15399,6 +15431,10 @@ __all__ = [
     "PatchMaintenanceTemplateRequestData",
     "PatchMaintenanceTemplateRequestDataAttributes",
     "PatchMaintenanceTemplateRequestDataType",
+    "PatchMaintenanceUpdateRequest",
+    "PatchMaintenanceUpdateRequestData",
+    "PatchMaintenanceUpdateRequestDataAttributes",
+    "PatchMaintenanceUpdateRequestDataType",
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
