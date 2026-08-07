@@ -136,6 +136,16 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/incident-app
+  Scenario: Edit maintenance update returns "OK" response
+    Given new "PatchMaintenanceUpdate" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And request contains "maintenance_id" parameter from "REPLACE.ME"
+    And request contains "update_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "We have completed maintenance on the API to improve performance."}, "id": "00000000-0000-0000-0000-000000000000", "type": "maintenance_updates"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:DataDog/incident-app
   Scenario: Get component returns "OK" response
     Given new "GetComponent" request
