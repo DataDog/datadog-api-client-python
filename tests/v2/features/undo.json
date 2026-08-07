@@ -9448,16 +9448,16 @@
       "type": "safe"
     }
   },
-  "ListTagPolicies": {
-    "tag": "Tag Policies",
+  "ListTagRules": {
+    "tag": "Tag Rules",
     "undo": {
       "type": "safe"
     }
   },
-  "CreateTagPolicy": {
-    "tag": "Tag Policies",
+  "CreateTagRule": {
+    "tag": "Tag Rules",
     "undo": {
-      "operationId": "DeleteTagPolicy",
+      "operationId": "DeleteTagRule",
       "parameters": [
         {
           "name": "policy_id",
@@ -9467,26 +9467,26 @@
       "type": "unsafe"
     }
   },
-  "DeleteTagPolicy": {
-    "tag": "Tag Policies",
+  "DeleteTagRule": {
+    "tag": "Tag Rules",
     "undo": {
       "type": "idempotent"
     }
   },
-  "GetTagPolicy": {
-    "tag": "Tag Policies",
+  "GetTagRule": {
+    "tag": "Tag Rules",
     "undo": {
       "type": "safe"
     }
   },
-  "UpdateTagPolicy": {
-    "tag": "Tag Policies",
+  "UpdateTagRule": {
+    "tag": "Tag Rules",
     "undo": {
       "type": "idempotent"
     }
   },
-  "GetTagPolicyScore": {
-    "tag": "Tag Policies",
+  "GetTagRuleScore": {
+    "tag": "Tag Rules",
     "undo": {
       "type": "safe"
     }

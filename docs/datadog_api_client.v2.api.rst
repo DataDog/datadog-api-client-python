@@ -914,10 +914,10 @@ datadog\_api\_client.v2.api.synthetics\_api module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.tag\_policies\_api module
------------------------------------------------------
+datadog\_api\_client.v2.api.tag\_rules\_api module
+--------------------------------------------------
 
-.. automodule:: datadog_api_client.v2.api.tag_policies_api
+.. automodule:: datadog_api_client.v2.api.tag_rules_api
    :members:
    :show-inheritance:
 
