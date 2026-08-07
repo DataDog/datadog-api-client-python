@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>datadog-api-client-python &#8212; Datadog API Client for Python  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=75810a84" />
+    <link rel="stylesheet" type="text/css" href="_static/material.css?v=79c92029" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="datadog_api_client package" href="datadog_api_client.html" />
+    <link rel="stylesheet" href="_static/basic.css"/>
+    <style>
+    dt:target {
+      background-color: white;
+    }
+    </style>
+
+  
+  
+   
+
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=deep-purple data-md-color-accent=deep-purple>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#index" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="#" title="Datadog API Client for Python  documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">Datadog API Client for Python</span>
+          <span class="md-header-nav__topic"> datadog-api-client-python </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder=""Search""
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            <a href="https://github.com/DataDog/datadog-api-client-python/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    datadog-api-client-python
+  </div>
+</a>
+          </div>
+        </div>
+      
+      
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="#" class="md-tabs__link">Datadog API Client for Python  documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="#" title="Datadog API Client for Python documentation" class="md-nav__button md-logo">
+      
+        <img src="_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="#"
+       title="Datadog API Client for Python documentation">Datadog API Client for Python</a>
+  </label>
+    <div class="md-nav__source">
+      <a href="https://github.com/DataDog/datadog-api-client-python/" title="Go to repository" class="md-source" data-md-source="github">
+
+    <div class="md-source__icon">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" width="28" height="28">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    datadog-api-client-python
+  </div>
+</a>
+    </div>
+  
+  
+
+  
+  <ul class="md-nav__list">
+    <li class="md-nav__item">
+    
+      <span class="md-nav__link caption"><span class="caption-text">Contents:</span></span>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html" class="md-nav__link">datadog_api_client package</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#subpackages" class="md-nav__link">Subpackages</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.v1.html" class="md-nav__link">datadog_api_client.v1 package</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.v2.html" class="md-nav__link">datadog_api_client.v2 package</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#submodules" class="md-nav__link">Submodules</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.api_client" class="md-nav__link">datadog_api_client.api_client module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.api_client.ApiClient" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.api_client.AsyncApiClient" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AsyncApiClient</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.api_client.ThreadedApiClient" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ThreadedApiClient</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.api_client.user_agent" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">user_agent()</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.aws" class="md-nav__link">datadog_api_client.aws module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.aws.AWSAuth" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSAuth</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.aws.AWSCredentials" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AWSCredentials</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.aws.SigningData" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">SigningData</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.configuration" class="md-nav__link">datadog_api_client.configuration module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.configuration.Configuration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Configuration</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.delegated_auth" class="md-nav__link">datadog_api_client.delegated_auth module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.DelegatedTokenConfig" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DelegatedTokenConfig</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.DelegatedTokenCredentials" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DelegatedTokenCredentials</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.DelegatedTokenProvider" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">DelegatedTokenProvider</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.get_delegated_token" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_delegated_token()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.get_delegated_token_url" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_delegated_token_url()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.delegated_auth.parse_delegated_token_response" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">parse_delegated_token_response()</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.exceptions" class="md-nav__link">datadog_api_client.exceptions module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.ApiAttributeError" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiAttributeError</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.ApiException" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiException</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.ApiKeyError" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiKeyError</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.ApiTypeError" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiTypeError</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.ApiValueError" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiValueError</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.ForbiddenException" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ForbiddenException</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.NotFoundException" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">NotFoundException</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.OpenApiException" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OpenApiException</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.ServiceException" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ServiceException</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.UnauthorizedException" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">UnauthorizedException</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.exceptions.render_path" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">render_path()</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.model_utils" class="md-nav__link">datadog_api_client.model_utils module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.ModelComposed" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ModelComposed</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.ModelNormal" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ModelNormal</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.ModelSimple" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ModelSimple</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.OpenApiModel" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">OpenApiModel</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.UnparsedObject" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">UnparsedObject</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.UnsetType" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">UnsetType</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.allows_single_value_input" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">allows_single_value_input()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.attempt_convert_item" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">attempt_convert_item()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.change_keys_js_to_python" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">change_keys_js_to_python()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.check_allowed_values" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">check_allowed_values()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.check_validations" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">check_validations()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.composed_model_input_classes" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">composed_model_input_classes()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.data_to_dict" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">data_to_dict()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.deserialize_file" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">deserialize_file()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.deserialize_model" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">deserialize_model()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.deserialize_primitive" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">deserialize_primitive()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.get_attribute_from_path" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_attribute_from_path()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.get_discarded_args" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_discarded_args()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.get_oneof_instance" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_oneof_instance()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.get_required_type_classes" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_required_type_classes()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.get_simple_class" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_simple_class()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.get_valid_classes_phrase" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">get_valid_classes_phrase()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.is_json_validation_enabled" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">is_json_validation_enabled()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.is_type_nullable" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">is_type_nullable()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.is_valid_type" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">is_valid_type()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.model_to_dict" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">model_to_dict()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.order_response_types" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">order_response_types()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.remove_uncoercible" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">remove_uncoercible()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.set_attribute_from_path" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">set_attribute_from_path()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.type_error_message" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">type_error_message()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.validate_and_convert_types" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">validate_and_convert_types()</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.model_utils.validate_get_composed_info" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">validate_get_composed_info()</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client.rest" class="md-nav__link">datadog_api_client.rest module</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.rest.ClientRetry" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ClientRetry</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#module-datadog_api_client" class="md-nav__link">Module contents</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.ApiClient" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ApiClient</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.AsyncApiClient" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">AsyncApiClient</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.Configuration" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">Configuration</span></code></a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="datadog_api_client.html#datadog_api_client.ThreadedApiClient" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">ThreadedApiClient</span></code></a>
+      
+    
+    </li></ul>
+    
+    </li></ul>
+    
+    </li>
+  </ul>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">"Contents"</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#index--page-root" class="md-nav__link">datadog-api-client-python</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#requirements" class="md-nav__link">Requirements</a>
+        </li>
+        <li class="md-nav__item"><a href="#installation" class="md-nav__link">Installation</a>
+        </li>
+        <li class="md-nav__item"><a href="#getting-started" class="md-nav__link">Getting Started</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#authentication" class="md-nav__link">Authentication</a>
+        </li>
+        <li class="md-nav__item"><a href="#unstable-endpoints" class="md-nav__link">Unstable Endpoints</a>
+        </li>
+        <li class="md-nav__item"><a href="#changing-server" class="md-nav__link">Changing Server</a>
+        </li>
+        <li class="md-nav__item"><a href="#disable-compressed-payloads" class="md-nav__link">Disable compressed payloads</a>
+        </li>
+        <li class="md-nav__item"><a href="#enable-requests-logging" class="md-nav__link">Enable requests logging</a>
+        </li>
+        <li class="md-nav__item"><a href="#enable-retry" class="md-nav__link">Enable retry</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#custom-retry-policy" class="md-nav__link">Custom retry policy</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#configure-proxy" class="md-nav__link">Configure proxy</a>
+        </li>
+        <li class="md-nav__item"><a href="#threads-support" class="md-nav__link">Threads support</a>
+        </li>
+        <li class="md-nav__item"><a href="#asyncio-support" class="md-nav__link">Asyncio support</a>
+        </li>
+        <li class="md-nav__item"><a href="#pagination" class="md-nav__link">Pagination</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#documentation-for-api-endpoints-and-models" class="md-nav__link">Documentation for API Endpoints and Models</a>
+        </li>
+        <li class="md-nav__item"><a href="#documentation-for-authorization" class="md-nav__link">Documentation for Authorization</a>
+        </li>
+        <li class="md-nav__item"><a href="#author" class="md-nav__link">Author</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#indices-and-tables" class="md-nav__link">Indices and tables</a>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="_sources/index.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  <section id="datadog-api-client-python">
+<h1 id="index--page-root">datadog-api-client-python<a class="headerlink" href="#index--page-root" title="Link to this heading">¶</a></h1>
+<p>This repository contains a Python API client for the <a class="reference external" href="https://docs.datadoghq.com/api/">Datadog API</a>.</p>
+<section id="requirements">
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Link to this heading">¶</a></h2>
+<p>Building and using the API client library requires <a class="reference external" href="https://www.python.org/downloads/">Python 3.8+</a>.</p>
+</section>
+<section id="installation">
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
+<p>To install the API client library, simply execute:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>datadog-api-client
+</pre></div>
+</div>
+</section>
+<section id="getting-started">
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h2>
+<p>Please follow the <a class="reference external" href="#installation">installation</a> instruction and execute the following Python code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiClient</span><span class="p">,</span> <span class="n">Configuration</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.api.monitors_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitorsApi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.model.monitor</span><span class="w"> </span><span class="kn">import</span> <span class="n">Monitor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.model.monitor_type</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitorType</span>
+
+<span class="n">body</span> <span class="o">=</span> <span class="n">Monitor</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"example"</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">MonitorType</span><span class="p">(</span><span class="s2">"log alert"</span><span class="p">),</span>
+    <span class="n">query</span><span class="o">=</span><span class="s1">'logs("service:foo AND type:error").index("main").rollup("count").by("source").last("5m") &gt; 2'</span><span class="p">,</span>
+    <span class="n">message</span><span class="o">=</span><span class="s2">"some message Notify: @hipchat-channel"</span><span class="p">,</span>
+    <span class="n">tags</span><span class="o">=</span><span class="p">[</span><span class="s2">"test:example"</span><span class="p">,</span> <span class="s2">"env:ci"</span><span class="p">],</span>
+    <span class="n">priority</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">MonitorsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">create_monitor</span><span class="p">(</span><span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="authentication">
+<h3 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Link to this heading">¶</a></h3>
+<p>By default the library will use the <code class="docutils literal notranslate"><span class="pre">DD_API_KEY</span></code> and <code class="docutils literal notranslate"><span class="pre">DD_APP_KEY</span></code> environment variables to authenticate against the Datadog API.
+To provide your own set of credentials, you need to set some keys on the configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">api_key</span><span class="p">[</span><span class="s2">"apiKeyAuth"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"&lt;API KEY&gt;"</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">api_key</span><span class="p">[</span><span class="s2">"appKeyAuth"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"&lt;APPLICATION KEY&gt;"</span>
+</pre></div>
+</div>
+</section>
+<section id="unstable-endpoints">
+<h3 id="unstable-endpoints">Unstable Endpoints<a class="headerlink" href="#unstable-endpoints" title="Link to this heading">¶</a></h3>
+<p>This client includes access to Datadog API endpoints while they are in an unstable state and may undergo breaking changes. An extra configuration step is required to enable these endpoints:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">unstable_operations</span><span class="p">[</span><span class="s2">"&lt;OperationName&gt;"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">&lt;OperationName&gt;</span></code> is the name of the method used to interact with that endpoint. For example: <code class="docutils literal notranslate"><span class="pre">list_log_indexes</span></code>, or <code class="docutils literal notranslate"><span class="pre">get_logs_index</span></code></p>
+</section>
+<section id="changing-server">
+<h3 id="changing-server">Changing Server<a class="headerlink" href="#changing-server" title="Link to this heading">¶</a></h3>
+<p>When talking to a different server, like the <code class="docutils literal notranslate"><span class="pre">eu</span></code> instance, change the <code class="docutils literal notranslate"><span class="pre">server_variables</span></code> on your configuration object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">server_variables</span><span class="p">[</span><span class="s2">"site"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"datadoghq.eu"</span>
+</pre></div>
+</div>
+</section>
+<section id="disable-compressed-payloads">
+<h3 id="disable-compressed-payloads">Disable compressed payloads<a class="headerlink" href="#disable-compressed-payloads" title="Link to this heading">¶</a></h3>
+<p>If you want to disable GZIP compressed responses, set the <code class="docutils literal notranslate"><span class="pre">compress</span></code> flag
+on your configuration object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">compress</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</section>
+<section id="enable-requests-logging">
+<h3 id="enable-requests-logging">Enable requests logging<a class="headerlink" href="#enable-requests-logging" title="Link to this heading">¶</a></h3>
+<p>If you want to enable requests logging, set the <code class="docutils literal notranslate"><span class="pre">debug</span></code> flag on your configuration object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="enable-retry">
+<h3 id="enable-retry">Enable retry<a class="headerlink" href="#enable-retry" title="Link to this heading">¶</a></h3>
+<p>If you want to enable retry when getting status code <code class="docutils literal notranslate"><span class="pre">429</span></code> rate-limited, set <code class="docutils literal notranslate"><span class="pre">enable_retry</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">enable_retry</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>The default max retry is <code class="docutils literal notranslate"><span class="pre">3</span></code>, you can change it with <code class="docutils literal notranslate"><span class="pre">max_retries</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">max_retries</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+<section id="custom-retry-policy">
+<h4 id="custom-retry-policy">Custom retry policy<a class="headerlink" href="#custom-retry-policy" title="Link to this heading">¶</a></h4>
+<p>You can provide a custom retry policy by passing a <code class="docutils literal notranslate"><span class="pre">urllib3.util.Retry</span></code> instance to the configuration.
+When a custom retry policy is provided, it takes precedence over the <code class="docutils literal notranslate"><span class="pre">enable_retry</span></code>, <code class="docutils literal notranslate"><span class="pre">retry_backoff_factor</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">max_retries</span></code> settings.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">urllib3</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configuration</span>
+
+<span class="c1"># Create a custom retry policy</span>
+<span class="n">custom_retry</span> <span class="o">=</span> <span class="n">urllib3</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">Retry</span><span class="p">(</span>
+    <span class="n">total</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">backoff_factor</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">status_forcelist</span><span class="o">=</span><span class="p">[</span><span class="mi">429</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">502</span><span class="p">,</span> <span class="mi">503</span><span class="p">,</span> <span class="mi">504</span><span class="p">],</span>
+    <span class="n">allowed_methods</span><span class="o">=</span><span class="p">[</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"PUT"</span><span class="p">,</span> <span class="s2">"DELETE"</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">(</span><span class="n">retry_policy</span><span class="o">=</span><span class="n">custom_retry</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://urllib3.readthedocs.io/en/stable/reference/urllib3.util.html#urllib3.util.Retry">urllib3.util.Retry documentation</a> for more details.</p>
+</section>
+</section>
+<section id="configure-proxy">
+<h3 id="configure-proxy">Configure proxy<a class="headerlink" href="#configure-proxy" title="Link to this heading">¶</a></h3>
+<p>You can configure the client to use proxy by setting the <code class="docutils literal notranslate"><span class="pre">proxy</span></code> key on configuration object:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">proxy</span> <span class="o">=</span> <span class="s2">"http://127.0.0.1:80"</span>
+</pre></div>
+</div>
+</section>
+<section id="threads-support">
+<h3 id="threads-support">Threads support<a class="headerlink" href="#threads-support" title="Link to this heading">¶</a></h3>
+<p>You can run API calls in a thread by using <code class="docutils literal notranslate"><span class="pre">ThreadedApiClient</span></code> in place of <code class="docutils literal notranslate"><span class="pre">ApiClient</span></code>. API calls will then
+return a <code class="docutils literal notranslate"><span class="pre">AsyncResult</span></code> instance on which you can call get to retrieve the result:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">ThreadedApiClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.api.dashboards_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">DashboardsApi</span>
+
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">ThreadedApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">DashboardsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">list_dashboards</span><span class="p">()</span>
+    <span class="n">dashboards</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dashboards</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="asyncio-support">
+<h3 id="asyncio-support">Asyncio support<a class="headerlink" href="#asyncio-support" title="Link to this heading">¶</a></h3>
+<p>The library supports asynchronous operations when using <code class="docutils literal notranslate"><span class="pre">AsyncApiClient</span></code> for the transport. When that client is used,
+the API methods will then return coroutines that you can wait for.</p>
+<p>To make async support available, you need to install the extra <code class="docutils literal notranslate"><span class="pre">async</span></code> qualifiers during installation: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">datadog-api-client[async]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Configuration</span><span class="p">,</span> <span class="n">AsyncApiClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v1.api.dashboards_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">DashboardsApi</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">AsyncApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+        <span class="n">api_instance</span> <span class="o">=</span> <span class="n">DashboardsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+        <span class="n">dashboards</span> <span class="o">=</span> <span class="k">await</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">list_dashboards</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">dashboards</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+<section id="pagination">
+<h3 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Link to this heading">¶</a></h3>
+<p>Several listing operations have a pagination method to help consume all the items available.
+For example, to retrieve all your incidents:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client</span><span class="w"> </span><span class="kn">import</span> <span class="n">ApiClient</span><span class="p">,</span> <span class="n">Configuration</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datadog_api_client.v2.api.incidents_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">IncidentsApi</span>
+
+<span class="n">configuration</span> <span class="o">=</span> <span class="n">Configuration</span><span class="p">()</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">unstable_operations</span><span class="p">[</span><span class="s2">"list_incidents"</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">with</span> <span class="n">ApiClient</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span> <span class="k">as</span> <span class="n">api_client</span><span class="p">:</span>
+    <span class="n">api_instance</span> <span class="o">=</span> <span class="n">IncidentsApi</span><span class="p">(</span><span class="n">api_client</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">incident</span> <span class="ow">in</span> <span class="n">api_instance</span><span class="o">.</span><span class="n">list_incidents_with_pagination</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">incident</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="documentation-for-api-endpoints-and-models">
+<h2 id="documentation-for-api-endpoints-and-models">Documentation for API Endpoints and Models<a class="headerlink" href="#documentation-for-api-endpoints-and-models" title="Link to this heading">¶</a></h2>
+<p>Documentation for API endpoints and models is available in the <a class="reference external" href="https://datadoghq.dev/datadog-api-client-python/">API Client docs</a>.</p>
+</section>
+<section id="documentation-for-authorization">
+<h2 id="documentation-for-authorization">Documentation for Authorization<a class="headerlink" href="#documentation-for-authorization" title="Link to this heading">¶</a></h2>
+<p>Authenticate with the API by providing your API and Application keys in the configuration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span><span class="o">.</span><span class="n">api_key</span><span class="p">[</span><span class="s2">"apiKeyAuth"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"YOUR_API_KEY"</span>
+<span class="n">configuration</span><span class="o">.</span><span class="n">api_key</span><span class="p">[</span><span class="s2">"appKeyAuth"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"YOUR_APPLICATION_KEY"</span>
+</pre></div>
+</div>
+</section>
+<section id="author">
+<h2 id="author">Author<a class="headerlink" href="#author" title="Link to this heading">¶</a></h2>
+<p><a class="reference external" href="mailto:support%40datadoghq.com">support<span>@</span>datadoghq<span>.</span>com</a></p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datadog_api_client.html">datadog_api_client package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#subpackages">Subpackages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client.api_client">datadog_api_client.api_client module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client.aws">datadog_api_client.aws module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client.configuration">datadog_api_client.configuration module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client.delegated_auth">datadog_api_client.delegated_auth module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client.exceptions">datadog_api_client.exceptions module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client.model_utils">datadog_api_client.model_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client.rest">datadog_api_client.rest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datadog_api_client.html#module-datadog_api_client">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1 id="indices-and-tables">Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+          
+            <a href="datadog_api_client.html" title="datadog_api_client package"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> "Next" </span> datadog_api_client package </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2022, Datadog.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
