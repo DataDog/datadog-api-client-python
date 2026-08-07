@@ -725,13 +725,6 @@ datadog\_api\_client.v2.api.rum\_operations\_api module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.api.rum\_rate\_limit\_api module
---------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.rum_rate_limit_api
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.api.rum\_remote\_config\_api module
 -----------------------------------------------------------
 
