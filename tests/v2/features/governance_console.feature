@@ -175,7 +175,7 @@ Feature: Governance Console
     Given operation "UpdateGovernanceControl" enabled
     And new "UpdateGovernanceControl" request
     And request contains "detection_type" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"detection_frequency": "daily", "mitigation_type": "revoke_api_key"}, "type": "governance_control"}}
+    And body with value {"data": {"attributes": {"mitigation_type": "revoke_api_key"}, "type": "governance_control"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -184,7 +184,7 @@ Feature: Governance Console
     Given operation "UpdateGovernanceControl" enabled
     And new "UpdateGovernanceControl" request
     And request contains "detection_type" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"detection_frequency": "daily", "mitigation_type": "revoke_api_key"}, "type": "governance_control"}}
+    And body with value {"data": {"attributes": {"mitigation_type": "revoke_api_key"}, "type": "governance_control"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -193,7 +193,7 @@ Feature: Governance Console
     Given operation "UpdateGovernanceControl" enabled
     And new "UpdateGovernanceControl" request
     And request contains "detection_type" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"detection_frequency": "daily", "mitigation_type": "revoke_api_key"}, "type": "governance_control"}}
+    And body with value {"data": {"attributes": {"mitigation_type": "revoke_api_key"}, "type": "governance_control"}}
     When the request is sent
     Then the response status is 200 OK
 

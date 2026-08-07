@@ -12,7 +12,6 @@ from datadog_api_client.v2.model.governance_control_update_request import Govern
 body = GovernanceControlUpdateRequest(
     data=GovernanceControlUpdateData(
         attributes=GovernanceControlUpdateAttributes(
-            detection_frequency="daily",
             mitigation_type="revoke_api_key",
         ),
         type=GovernanceControlResourceType.GOVERNANCE_CONTROL,

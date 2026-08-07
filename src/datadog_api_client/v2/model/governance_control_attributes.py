@@ -38,7 +38,6 @@ class GovernanceControlAttributes(ModelNormal):
             "created_at": (datetime,),
             "created_by": (str,),
             "description": (str,),
-            "detection_frequency": (str,),
             "detection_parameters": (GovernanceControlParametersMap,),
             "insights": ([str],),
             "last_detection_at": (datetime, none_type),
@@ -61,7 +60,6 @@ class GovernanceControlAttributes(ModelNormal):
         "created_at": "created_at",
         "created_by": "created_by",
         "description": "description",
-        "detection_frequency": "detection_frequency",
         "detection_parameters": "detection_parameters",
         "insights": "insights",
         "last_detection_at": "last_detection_at",
@@ -85,7 +83,6 @@ class GovernanceControlAttributes(ModelNormal):
         created_at: datetime,
         created_by: str,
         description: str,
-        detection_frequency: str,
         detection_parameters: GovernanceControlParametersMap,
         insights: List[str],
         last_detection_at: Union[datetime, none_type],
@@ -119,9 +116,6 @@ class GovernanceControlAttributes(ModelNormal):
 
         :param description: A human-readable description of what the control detects.
         :type description: str
-
-        :param detection_frequency: How often detections are evaluated for the control.
-        :type detection_frequency: str
 
         :param detection_parameters: A free-form map of parameter names to their configured values.
         :type detection_parameters: GovernanceControlParametersMap
@@ -172,7 +166,6 @@ class GovernanceControlAttributes(ModelNormal):
         self_.created_at = created_at
         self_.created_by = created_by
         self_.description = description
-        self_.detection_frequency = detection_frequency
         self_.detection_parameters = detection_parameters
         self_.insights = insights
         self_.last_detection_at = last_detection_at
