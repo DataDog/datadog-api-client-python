@@ -48,11 +48,7 @@ class FleetAgentInfoDetailsV2(ModelNormal):
             "last_restart_at": (int,),
             "os": (str,),
             "os_version": (str,),
-            "otel_collector_deployment_types": ([str],),
-            "otel_collector_distributions": ([str],),
-            "otel_collector_versions": ([str],),
             "otel_collectors": ([FleetOtelCollector],),
-            "otel_resource_attributes": ([str],),
             "pod_name": (str,),
             "preferred_ha_active_agent": (str,),
             "python_version": (str,),
@@ -91,11 +87,7 @@ class FleetAgentInfoDetailsV2(ModelNormal):
         "last_restart_at": "last_restart_at",
         "os": "os",
         "os_version": "os_version",
-        "otel_collector_deployment_types": "otel_collector_deployment_types",
-        "otel_collector_distributions": "otel_collector_distributions",
-        "otel_collector_versions": "otel_collector_versions",
         "otel_collectors": "otel_collectors",
-        "otel_resource_attributes": "otel_resource_attributes",
         "pod_name": "pod_name",
         "preferred_ha_active_agent": "preferred_ha_active_agent",
         "python_version": "python_version",
@@ -135,11 +127,7 @@ class FleetAgentInfoDetailsV2(ModelNormal):
         last_restart_at: Union[int, UnsetType] = unset,
         os: Union[str, UnsetType] = unset,
         os_version: Union[str, UnsetType] = unset,
-        otel_collector_deployment_types: Union[List[str], UnsetType] = unset,
-        otel_collector_distributions: Union[List[str], UnsetType] = unset,
-        otel_collector_versions: Union[List[str], UnsetType] = unset,
         otel_collectors: Union[List[FleetOtelCollector], UnsetType] = unset,
-        otel_resource_attributes: Union[List[str], UnsetType] = unset,
         pod_name: Union[str, UnsetType] = unset,
         preferred_ha_active_agent: Union[str, UnsetType] = unset,
         python_version: Union[str, UnsetType] = unset,
@@ -230,20 +218,8 @@ class FleetAgentInfoDetailsV2(ModelNormal):
         :param os_version: The operating system version.
         :type os_version: str, optional
 
-        :param otel_collector_deployment_types: OpenTelemetry collector deployment types associated with the agent.
-        :type otel_collector_deployment_types: [str], optional
-
-        :param otel_collector_distributions: OpenTelemetry collector distributions associated with the agent.
-        :type otel_collector_distributions: [str], optional
-
-        :param otel_collector_versions: List of OpenTelemetry collector versions (if applicable).
-        :type otel_collector_versions: [str], optional
-
         :param otel_collectors: OpenTelemetry collectors associated with the agent (if applicable).
         :type otel_collectors: [FleetOtelCollector], optional
-
-        :param otel_resource_attributes: OpenTelemetry resource attributes reported by the agent.
-        :type otel_resource_attributes: [str], optional
 
         :param pod_name: Kubernetes pod name (if applicable).
         :type pod_name: str, optional
@@ -325,16 +301,8 @@ class FleetAgentInfoDetailsV2(ModelNormal):
             kwargs["os"] = os
         if os_version is not unset:
             kwargs["os_version"] = os_version
-        if otel_collector_deployment_types is not unset:
-            kwargs["otel_collector_deployment_types"] = otel_collector_deployment_types
-        if otel_collector_distributions is not unset:
-            kwargs["otel_collector_distributions"] = otel_collector_distributions
-        if otel_collector_versions is not unset:
-            kwargs["otel_collector_versions"] = otel_collector_versions
         if otel_collectors is not unset:
             kwargs["otel_collectors"] = otel_collectors
-        if otel_resource_attributes is not unset:
-            kwargs["otel_resource_attributes"] = otel_resource_attributes
         if pod_name is not unset:
             kwargs["pod_name"] = pod_name
         if preferred_ha_active_agent is not unset:
