@@ -30,6 +30,7 @@ class LLMObsPatternsConfigAttributes(ModelNormal):
         return {
             "account_id": (str, none_type),
             "created_at": (datetime,),
+            "curation_enabled": (bool,),
             "evp_query": (str,),
             "hierarchy_depth": (int,),
             "integration_provider": (str, none_type),
@@ -45,6 +46,7 @@ class LLMObsPatternsConfigAttributes(ModelNormal):
     attribute_map = {
         "account_id": "account_id",
         "created_at": "created_at",
+        "curation_enabled": "curation_enabled",
         "evp_query": "evp_query",
         "hierarchy_depth": "hierarchy_depth",
         "integration_provider": "integration_provider",
@@ -68,6 +70,7 @@ class LLMObsPatternsConfigAttributes(ModelNormal):
         scope: str,
         updated_at: datetime,
         account_id: Union[str, none_type, UnsetType] = unset,
+        curation_enabled: Union[bool, UnsetType] = unset,
         integration_provider: Union[str, none_type, UnsetType] = unset,
         model_name: Union[str, none_type, UnsetType] = unset,
         template: Union[str, none_type, UnsetType] = unset,
@@ -81,6 +84,9 @@ class LLMObsPatternsConfigAttributes(ModelNormal):
 
         :param created_at: Timestamp when the configuration was created.
         :type created_at: datetime
+
+        :param curation_enabled: Whether automatic dataset curation is enabled for this configuration.
+        :type curation_enabled: bool, optional
 
         :param evp_query: Query that selects the spans the patterns run analyzes.
         :type evp_query: str
@@ -114,6 +120,8 @@ class LLMObsPatternsConfigAttributes(ModelNormal):
         """
         if account_id is not unset:
             kwargs["account_id"] = account_id
+        if curation_enabled is not unset:
+            kwargs["curation_enabled"] = curation_enabled
         if integration_provider is not unset:
             kwargs["integration_provider"] = integration_provider
         if model_name is not unset:
