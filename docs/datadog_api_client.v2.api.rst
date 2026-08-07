@@ -137,6 +137,13 @@ datadog\_api\_client.v2.api.change\_management\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.ci\_visibility\_git\_hub\_accounts\_api module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.ci_visibility_git_hub_accounts_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.ci\_visibility\_pipelines\_api module
 -----------------------------------------------------------------
 
