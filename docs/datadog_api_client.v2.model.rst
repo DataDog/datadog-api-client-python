@@ -6304,6 +6304,76 @@ datadog\_api\_client.v2.model.ci\_app\_event\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_attributes module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_data module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_repository module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_repository
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_update\_request module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_update\_request\_attributes module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_update_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_update\_request\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_account\_update\_request\_repository module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_account_update_request_repository
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.ci\_app\_git\_hub\_accounts\_response module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.ci_app_git_hub_accounts_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.ci\_app\_git\_info module
 -------------------------------------------------------
 
