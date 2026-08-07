@@ -335,6 +335,9 @@ class WidgetDefinition(ModelComposed):
         :param has_search_bar: Controls the display of the search bar.
         :type has_search_bar: TableWidgetHasSearchBar, optional
 
+        :param anomaly_detection: Anomaly detection configuration for a timeseries widget.
+        :type anomaly_detection: TimeseriesWidgetAnomalyDetection, optional
+
         :param legend_columns: Columns displayed in the legend.
         :type legend_columns: [TimeseriesWidgetLegendColumn], optional
 
