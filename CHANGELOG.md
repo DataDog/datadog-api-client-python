@@ -1,5 +1,83 @@
 # CHANGELOG
 
+## 2.58.0/2026-08-06
+
+### Fixed
+* Fleet Automation v2 remove deprecated or redundant agent detail fields [#3839](https://github.com/DataDog/datadog-api-client-python/pull/3839)
+* Uppercase automation rule trigger and action type enum values [#3833](https://github.com/DataDog/datadog-api-client-python/pull/3833)
+* Fix broken JSON API shape for security monitoring rules bulk delete [#3808](https://github.com/DataDog/datadog-api-client-python/pull/3808)
+* Document CNM API authorization requirements [#3805](https://github.com/DataDog/datadog-api-client-python/pull/3805)
+* Fix incident user-defined role policy not required on create [#3791](https://github.com/DataDog/datadog-api-client-python/pull/3791)
+* Document 409 and 412 error codes for UpsertRows/DeleteRows [#3775](https://github.com/DataDog/datadog-api-client-python/pull/3775)
+* FormulaAndFunctionQueryDefinition group_by is list of objects, not dicts [#3768](https://github.com/DataDog/datadog-api-client-python/pull/3768)
+* Add `template_variables` to Notebooks v1 API spec [#3745](https://github.com/DataDog/datadog-api-client-python/pull/3745)
+
+### Added
+* data quality monitor sensitivity definition [#3835](https://github.com/DataDog/datadog-api-client-python/pull/3835)
+* Add SSE-KMS encryption fields to ObservabilityPipelineAmazonS3Destination for datadog_archives [#3824](https://github.com/DataDog/datadog-api-client-python/pull/3824)
+* Adds documentation for historical metrics endpoints [#3822](https://github.com/DataDog/datadog-api-client-python/pull/3822)
+* Remove unit conversion notes from usage metering descriptions [#3817](https://github.com/DataDog/datadog-api-client-python/pull/3817)
+* Add impact_score and impact_level to Flaky Test Management API spec [#3813](https://github.com/DataDog/datadog-api-client-python/pull/3813)
+* Add list custom LLM Obs evaluator configs endpoint [#3811](https://github.com/DataDog/datadog-api-client-python/pull/3811)
+* Promote RUM Operations endpoints from private to public [#3804](https://github.com/DataDog/datadog-api-client-python/pull/3804)
+* Add TLS support and server_name SNI option to Observability Pipelines client components [#3803](https://github.com/DataDog/datadog-api-client-python/pull/3803)
+* Add workflow schedule overlap behavior [#3802](https://github.com/DataDog/datadog-api-client-python/pull/3802)
+* Add notice templates to the Status Pages API spec [#3801](https://github.com/DataDog/datadog-api-client-python/pull/3801)
+* Add `key-value` type in Logs Array processor [#3800](https://github.com/DataDog/datadog-api-client-python/pull/3800)
+* Expand incidents postmortem-templates spec to full CRUD contract [#3793](https://github.com/DataDog/datadog-api-client-python/pull/3793)
+* Remove unstable tags from Case Management APIs [#3792](https://github.com/DataDog/datadog-api-client-python/pull/3792)
+* Add CSM Ownership settings endpoints [#3789](https://github.com/DataDog/datadog-api-client-python/pull/3789)
+* Add DD_ENV filter to Feature Flags environments API [#3788](https://github.com/DataDog/datadog-api-client-python/pull/3788)
+* Add Exclude-mode tag usage fields to tag indexing rules [#3783](https://github.com/DataDog/datadog-api-client-python/pull/3783)
+* Add feature-flag type to restriction policies [#3782](https://github.com/DataDog/datadog-api-client-python/pull/3782)
+* Add public API spec for LLM Observability prompt registry CRUD endpoints [#3781](https://github.com/DataDog/datadog-api-client-python/pull/3781)
+* Add public DDSQL tabular query endpoints [#3780](https://github.com/DataDog/datadog-api-client-python/pull/3780)
+* Add function and cloud_function fields to Azure and GCP scan options [#3778](https://github.com/DataDog/datadog-api-client-python/pull/3778)
+* Add WAF custom rule file addresses [#3777](https://github.com/DataDog/datadog-api-client-python/pull/3777)
+* Make incident user-defined-roles API public but keep it unstable [#3774](https://github.com/DataDog/datadog-api-client-python/pull/3774)
+* Add OpenAPI spec for GET /api/v2/org_group_policy_suggestions [#3773](https://github.com/DataDog/datadog-api-client-python/pull/3773)
+* Add cloud-agnostic account filters endpoints to Cloud Cost Management [#3772](https://github.com/DataDog/datadog-api-client-python/pull/3772)
+* Add GET endpoint for custom forecast [#3767](https://github.com/DataDog/datadog-api-client-python/pull/3767)
+* Add OpenAPI specs for ListDatasetReportSchedules and PrintReport [#3765](https://github.com/DataDog/datadog-api-client-python/pull/3765)
+* Add editable field to critical assets attributes [#3764](https://github.com/DataDog/datadog-api-client-python/pull/3764)
+* Add GET /api/v2/on-call/schedules/schedule_id/responders spec [#3762](https://github.com/DataDog/datadog-api-client-python/pull/3762)
+* Add OpenAPI spec for hostmap widgwet DDSQL request shape, deprecate legacy metric shape [#3754](https://github.com/DataDog/datadog-api-client-python/pull/3754)
+* Document secmon-public-api Entra ID integration endpoints [#3752](https://github.com/DataDog/datadog-api-client-python/pull/3752)
+* Add AWS integration metric name filters and preview endpoints [#3749](https://github.com/DataDog/datadog-api-client-python/pull/3749)
+* Add public unstable spec for Security Findings Linear endpoints [#3744](https://github.com/DataDog/datadog-api-client-python/pull/3744)
+* Add workload activity rule type to notification rules [#3743](https://github.com/DataDog/datadog-api-client-python/pull/3743)
+* Add configuration attribute to incident type schema [#3742](https://github.com/DataDog/datadog-api-client-python/pull/3742)
+* Add OpenAPI spec for POST /api/v2/snapshot [#3741](https://github.com/DataDog/datadog-api-client-python/pull/3741)
+* Add SSE-KMS encryption fields to ObservabilityPipelineAmazonS3GenericDestination [#3740](https://github.com/DataDog/datadog-api-client-python/pull/3740)
+* Add included rows to batchrowsquery and pagination meta to listrows for reference tables responses [#3737](https://github.com/DataDog/datadog-api-client-python/pull/3737)
+* security-monitoring - add description field to critical assets API spec [#3736](https://github.com/DataDog/datadog-api-client-python/pull/3736)
+* Mark ServiceNow triage endpoints as stable [#3734](https://github.com/DataDog/datadog-api-client-python/pull/3734)
+* Add OpenAPI spec `version` attribute for Logs Transactions V2 Preview [#3732](https://github.com/DataDog/datadog-api-client-python/pull/3732)
+* Page related updates to synthetics  [#3731](https://github.com/DataDog/datadog-api-client-python/pull/3731)
+* Add Obs Pipeline Grok processor updates to OpenAPI Spec [#3729](https://github.com/DataDog/datadog-api-client-python/pull/3729)
+* Add public v2 OpenAPI operations for governance console [#3722](https://github.com/DataDog/datadog-api-client-python/pull/3722)
+* Add UK1 [#3716](https://github.com/DataDog/datadog-api-client-python/pull/3716)
+* Add OpenAPI spec for identity providers and Authorized client apis [#3679](https://github.com/DataDog/datadog-api-client-python/pull/3679)
+* Add DashboardDefaultTimeframe schema and default_timeframe to Dashboard [#3633](https://github.com/DataDog/datadog-api-client-python/pull/3633)
+* Add OpenAPI spec for api v2 rum config [#3632](https://github.com/DataDog/datadog-api-client-python/pull/3632)
+* Add OpenAPI specifications for incidents-rapid-api endpoints [#3608](https://github.com/DataDog/datadog-api-client-python/pull/3608)
+
+### Changed
+* Fleet Automation promote ready v2 endpoints to public [#3828](https://github.com/DataDog/datadog-api-client-python/pull/3828)
+* Migrate tag-policies routes to snake_case [#3812](https://github.com/DataDog/datadog-api-client-python/pull/3812)
+* Deprecate report-related endpoints from SLO documentation [#3809](https://github.com/DataDog/datadog-api-client-python/pull/3809)
+* Update documentation according to new content pack states endpoint response shape [#3790](https://github.com/DataDog/datadog-api-client-python/pull/3790)
+* Mark Linear security findings endpoints as stable [#3785](https://github.com/DataDog/datadog-api-client-python/pull/3785)
+* Mark custom forecast endpoints as generally available [#3784](https://github.com/DataDog/datadog-api-client-python/pull/3784)
+* Change TopologyMapWidgetDefinition to oneOf with TopologyMapServiceMapDefinitionServiceMap [#3755](https://github.com/DataDog/datadog-api-client-python/pull/3755)
+* Update ListAssetsSBOMs spec - require asset_type on first page, add ServerlessFunction asset type [#3747](https://github.com/DataDog/datadog-api-client-python/pull/3747)
+* Fix DORA deployment and incident read responses to use date-time timestamps [#3746](https://github.com/DataDog/datadog-api-client-python/pull/3746)
+* Allow using access key to specify AWS s3 integration in create / update logs archives [#3686](https://github.com/DataDog/datadog-api-client-python/pull/3686)
+* Add saved filters endpoints to the Feature Flags API [#3667](https://github.com/DataDog/datadog-api-client-python/pull/3667)
+
+### Removed
+* Remove prerequisite, table_id, and attached_to fields from incident user-defined field API [#3751](https://github.com/DataDog/datadog-api-client-python/pull/3751)
+
 ## 2.57.0/2026-06-30
 
 ### Added
