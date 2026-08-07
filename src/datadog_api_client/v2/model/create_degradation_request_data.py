@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_degradation_request_data_attributes import (
         CreateDegradationRequestDataAttributes,
     )
+    from datadog_api_client.v2.model.degradation_request_data_meta import DegradationRequestDataMeta
     from datadog_api_client.v2.model.create_degradation_request_data_relationships import (
         CreateDegradationRequestDataRelationships,
     )
@@ -29,6 +30,7 @@ class CreateDegradationRequestData(ModelNormal):
         from datadog_api_client.v2.model.create_degradation_request_data_attributes import (
             CreateDegradationRequestDataAttributes,
         )
+        from datadog_api_client.v2.model.degradation_request_data_meta import DegradationRequestDataMeta
         from datadog_api_client.v2.model.create_degradation_request_data_relationships import (
             CreateDegradationRequestDataRelationships,
         )
@@ -36,12 +38,14 @@ class CreateDegradationRequestData(ModelNormal):
 
         return {
             "attributes": (CreateDegradationRequestDataAttributes,),
+            "meta": (DegradationRequestDataMeta,),
             "relationships": (CreateDegradationRequestDataRelationships,),
             "type": (PatchDegradationRequestDataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "meta": "meta",
         "relationships": "relationships",
         "type": "type",
     }
@@ -50,6 +54,7 @@ class CreateDegradationRequestData(ModelNormal):
         self_,
         attributes: CreateDegradationRequestDataAttributes,
         type: PatchDegradationRequestDataType,
+        meta: Union[DegradationRequestDataMeta, UnsetType] = unset,
         relationships: Union[CreateDegradationRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -59,12 +64,17 @@ class CreateDegradationRequestData(ModelNormal):
         :param attributes: The supported attributes for creating a degradation.
         :type attributes: CreateDegradationRequestDataAttributes
 
+        :param meta: The supported metadata for a degradation request.
+        :type meta: DegradationRequestDataMeta, optional
+
         :param relationships: The supported relationships for creating a degradation.
         :type relationships: CreateDegradationRequestDataRelationships, optional
 
         :param type: Degradations resource type.
         :type type: PatchDegradationRequestDataType
         """
+        if meta is not unset:
+            kwargs["meta"] = meta
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)

@@ -12261,6 +12261,13 @@ datadog\_api\_client.v2.model.degradation\_included module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.degradation\_request\_data\_meta module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.degradation_request_data_meta
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.degradation\_template module
 ----------------------------------------------------------
 

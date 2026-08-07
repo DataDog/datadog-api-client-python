@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.patch_degradation_request_data_attributes import (
         PatchDegradationRequestDataAttributes,
     )
+    from datadog_api_client.v2.model.degradation_request_data_meta import DegradationRequestDataMeta
     from datadog_api_client.v2.model.patch_degradation_request_data_relationships import (
         PatchDegradationRequestDataRelationships,
     )
@@ -30,6 +31,7 @@ class PatchDegradationRequestData(ModelNormal):
         from datadog_api_client.v2.model.patch_degradation_request_data_attributes import (
             PatchDegradationRequestDataAttributes,
         )
+        from datadog_api_client.v2.model.degradation_request_data_meta import DegradationRequestDataMeta
         from datadog_api_client.v2.model.patch_degradation_request_data_relationships import (
             PatchDegradationRequestDataRelationships,
         )
@@ -38,6 +40,7 @@ class PatchDegradationRequestData(ModelNormal):
         return {
             "attributes": (PatchDegradationRequestDataAttributes,),
             "id": (UUID,),
+            "meta": (DegradationRequestDataMeta,),
             "relationships": (PatchDegradationRequestDataRelationships,),
             "type": (PatchDegradationRequestDataType,),
         }
@@ -45,6 +48,7 @@ class PatchDegradationRequestData(ModelNormal):
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
+        "meta": "meta",
         "relationships": "relationships",
         "type": "type",
     }
@@ -54,6 +58,7 @@ class PatchDegradationRequestData(ModelNormal):
         attributes: PatchDegradationRequestDataAttributes,
         id: UUID,
         type: PatchDegradationRequestDataType,
+        meta: Union[DegradationRequestDataMeta, UnsetType] = unset,
         relationships: Union[PatchDegradationRequestDataRelationships, UnsetType] = unset,
         **kwargs,
     ):
@@ -66,12 +71,17 @@ class PatchDegradationRequestData(ModelNormal):
         :param id: The ID of the degradation.
         :type id: UUID
 
+        :param meta: The supported metadata for a degradation request.
+        :type meta: DegradationRequestDataMeta, optional
+
         :param relationships: The supported relationships for updating a degradation.
         :type relationships: PatchDegradationRequestDataRelationships, optional
 
         :param type: Degradations resource type.
         :type type: PatchDegradationRequestDataType
         """
+        if meta is not unset:
+            kwargs["meta"] = meta
         if relationships is not unset:
             kwargs["relationships"] = relationships
         super().__init__(kwargs)

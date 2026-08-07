@@ -2389,6 +2389,7 @@ from datadog_api_client.v2.model.degradation_data_relationships_template_data im
     DegradationDataRelationshipsTemplateData,
 )
 from datadog_api_client.v2.model.degradation_included import DegradationIncluded
+from datadog_api_client.v2.model.degradation_request_data_meta import DegradationRequestDataMeta
 from datadog_api_client.v2.model.degradation_template import DegradationTemplate
 from datadog_api_client.v2.model.degradation_template_array import DegradationTemplateArray
 from datadog_api_client.v2.model.degradation_template_data import DegradationTemplateData
@@ -12325,6 +12326,7 @@ __all__ = [
     "DegradationDataRelationshipsTemplate",
     "DegradationDataRelationshipsTemplateData",
     "DegradationIncluded",
+    "DegradationRequestDataMeta",
     "DegradationTemplate",
     "DegradationTemplateArray",
     "DegradationTemplateData",
