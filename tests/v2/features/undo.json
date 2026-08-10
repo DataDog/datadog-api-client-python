@@ -9167,6 +9167,12 @@
       "type": "idempotent"
     }
   },
+  "PatchMaintenanceUpdate": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "PublishStatusPage": {
     "tag": "Status Pages",
     "undo": {
