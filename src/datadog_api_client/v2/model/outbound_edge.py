@@ -11,6 +11,15 @@ from datadog_api_client.model_utils import (
 
 
 class OutboundEdge(ModelNormal):
+    validations = {
+        "branch_name": {
+            "min_length": 1,
+        },
+        "next_step_name": {
+            "min_length": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {

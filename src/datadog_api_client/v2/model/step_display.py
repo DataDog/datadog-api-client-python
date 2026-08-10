@@ -32,7 +32,8 @@ class StepDisplay(ModelNormal):
 
     def __init__(self_, bounds: Union[StepDisplayBounds, UnsetType] = unset, **kwargs):
         """
-        The definition of ``StepDisplay`` object.
+        The position of a step on the workflow canvas. Omit ``display`` from every step to use
+        automatic layout, or provide it for every step to preserve a manual layout.
 
         :param bounds: The definition of ``StepDisplayBounds`` object.
         :type bounds: StepDisplayBounds, optional

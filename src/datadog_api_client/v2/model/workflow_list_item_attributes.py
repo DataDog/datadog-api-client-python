@@ -73,7 +73,7 @@ class WorkflowListItemAttributes(ModelNormal):
         :param published: Whether the workflow is published. Unpublished workflows can only be run manually. Automatic triggers such as Schedule do not fire until the workflow is published.
         :type published: bool, optional
 
-        :param spec: The spec defines what the workflow does.
+        :param spec: A complete Workflow Automation definition, including its triggers, steps, and connections.
         :type spec: Spec, optional
 
         :param tags: Tags of the workflow.

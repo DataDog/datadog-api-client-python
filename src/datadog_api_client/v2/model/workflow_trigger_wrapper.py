@@ -30,10 +30,10 @@ class WorkflowTriggerWrapper(ModelNormal):
         """
         Schema for a Workflow-based trigger.
 
-        :param start_step_names: A list of steps that run first after a trigger fires.
+        :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional
 
-        :param workflow_trigger: Trigger a workflow from the Datadog UI. Only required if no other trigger exists.
+        :param workflow_trigger: Trigger a workflow from the Datadog UI. When present, this must be the workflow's only trigger.
         :type workflow_trigger: dict
         """
         if start_step_names is not unset:

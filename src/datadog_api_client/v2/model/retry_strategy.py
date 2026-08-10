@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -19,6 +17,10 @@ if TYPE_CHECKING:
 
 
 class RetryStrategy(ModelNormal):
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.retry_strategy_kind import RetryStrategyKind
@@ -34,7 +36,7 @@ class RetryStrategy(ModelNormal):
         "linear": "linear",
     }
 
-    def __init__(self_, kind: RetryStrategyKind, linear: Union[RetryStrategyLinear, UnsetType] = unset, **kwargs):
+    def __init__(self_, kind: RetryStrategyKind, linear: RetryStrategyLinear, **kwargs):
         """
         The definition of ``RetryStrategy`` object.
 
@@ -42,10 +44,9 @@ class RetryStrategy(ModelNormal):
         :type kind: RetryStrategyKind
 
         :param linear: The definition of ``RetryStrategyLinear`` object.
-        :type linear: RetryStrategyLinear, optional
+        :type linear: RetryStrategyLinear
         """
-        if linear is not unset:
-            kwargs["linear"] = linear
         super().__init__(kwargs)
 
         self_.kind = kind
+        self_.linear = linear

@@ -22,6 +22,12 @@ if TYPE_CHECKING:
 
 
 class InputSchemaParameters(ModelNormal):
+    validations = {
+        "name": {
+            "min_length": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType

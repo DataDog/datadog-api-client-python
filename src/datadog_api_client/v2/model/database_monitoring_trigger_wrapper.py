@@ -35,7 +35,7 @@ class DatabaseMonitoringTriggerWrapper(ModelNormal):
         :param database_monitoring_trigger: Trigger a workflow from Database Monitoring.
         :type database_monitoring_trigger: dict
 
-        :param start_step_names: A list of steps that run first after a trigger fires.
+        :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional
         """
         if start_step_names is not unset:

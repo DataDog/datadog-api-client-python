@@ -16,6 +16,12 @@ from datadog_api_client.model_utils import (
 
 
 class Parameter(ModelNormal):
+    validations = {
+        "name": {
+            "min_length": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
