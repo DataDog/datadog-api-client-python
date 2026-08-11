@@ -62,12 +62,12 @@ class ApmResourceStatsQuery(ModelNormal):
         self_,
         data_source: ApmResourceStatsDataSource,
         env: str,
+        group_by: List[str],
         name: str,
+        operation_name: str,
         service: str,
         stat: ApmResourceStatName,
         cross_org_uuids: Union[List[str], UnsetType] = unset,
-        group_by: Union[List[str], UnsetType] = unset,
-        operation_name: Union[str, UnsetType] = unset,
         primary_tag_name: Union[str, UnsetType] = unset,
         primary_tag_value: Union[str, UnsetType] = unset,
         resource_name: Union[str, UnsetType] = unset,
@@ -86,13 +86,13 @@ class ApmResourceStatsQuery(ModelNormal):
         :type env: str
 
         :param group_by: Tag keys to group results by.
-        :type group_by: [str], optional
+        :type group_by: [str]
 
         :param name: The variable name for use in formulas.
         :type name: str
 
         :param operation_name: The APM operation name.
-        :type operation_name: str, optional
+        :type operation_name: str
 
         :param primary_tag_name: Name of the second primary tag used within APM. Required when ``primary_tag_value`` is specified. See https://docs.datadoghq.com/tracing/guide/setting_primary_tags_to_scope/#add-a-second-primary-tag-in-datadog
         :type primary_tag_name: str, optional
@@ -111,10 +111,6 @@ class ApmResourceStatsQuery(ModelNormal):
         """
         if cross_org_uuids is not unset:
             kwargs["cross_org_uuids"] = cross_org_uuids
-        if group_by is not unset:
-            kwargs["group_by"] = group_by
-        if operation_name is not unset:
-            kwargs["operation_name"] = operation_name
         if primary_tag_name is not unset:
             kwargs["primary_tag_name"] = primary_tag_name
         if primary_tag_value is not unset:
@@ -125,6 +121,8 @@ class ApmResourceStatsQuery(ModelNormal):
 
         self_.data_source = data_source
         self_.env = env
+        self_.group_by = group_by
         self_.name = name
+        self_.operation_name = operation_name
         self_.service = service
         self_.stat = stat
