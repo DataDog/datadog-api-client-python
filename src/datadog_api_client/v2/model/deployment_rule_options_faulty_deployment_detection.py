@@ -21,17 +21,20 @@ class DeploymentRuleOptionsFaultyDeploymentDetection(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "allowed_resources": ([str],),
             "duration": (int,),
             "excluded_resources": ([str],),
         }
 
     attribute_map = {
+        "allowed_resources": "allowed_resources",
         "duration": "duration",
         "excluded_resources": "excluded_resources",
     }
 
     def __init__(
         self_,
+        allowed_resources: Union[List[str], UnsetType] = unset,
         duration: Union[int, UnsetType] = unset,
         excluded_resources: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -39,12 +42,17 @@ class DeploymentRuleOptionsFaultyDeploymentDetection(ModelNormal):
         """
         Faulty deployment detection options for deployment rules.
 
+        :param allowed_resources: Resources to include in faulty deployment detection. Mutually exclusive with ``excluded_resources``.
+        :type allowed_resources: [str], optional
+
         :param duration: The duration for faulty deployment detection.
         :type duration: int, optional
 
         :param excluded_resources: Resources to exclude from faulty deployment detection.
         :type excluded_resources: [str], optional
         """
+        if allowed_resources is not unset:
+            kwargs["allowed_resources"] = allowed_resources
         if duration is not unset:
             kwargs["duration"] = duration
         if excluded_resources is not unset:

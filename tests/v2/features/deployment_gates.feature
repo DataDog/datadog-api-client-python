@@ -49,7 +49,7 @@ Feature: Deployment Gates
     Given operation "CreateDeploymentRule" enabled
     And new "CreateDeploymentRule" request
     And request contains "gate_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"dry_run": false, "name": "My deployment rule", "options": {"duration": 3600, "excluded_resources": ["resource1", "resource2"]}, "type": "faulty_deployment_detection"}, "type": "deployment_rule"}}
+    And body with value {"data": {"attributes": {"dry_run": false, "name": "My deployment rule", "options": {"allowed_resources": ["resource1", "resource2"], "duration": 3600, "excluded_resources": ["resource1", "resource2"]}, "type": "faulty_deployment_detection"}, "type": "deployment_rule"}}
     When the request is sent
     Then the response status is 400 Bad request.
 
@@ -388,7 +388,7 @@ Feature: Deployment Gates
     And new "UpdateDeploymentRule" request
     And request contains "gate_id" parameter from "REPLACE.ME"
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"dry_run": false, "name": "Updated deployment rule", "options": {"duration": 3600, "excluded_resources": ["resource1", "resource2"]}}, "type": "deployment_rule"}}
+    And body with value {"data": {"attributes": {"dry_run": false, "name": "Updated deployment rule", "options": {"allowed_resources": ["resource1", "resource2"], "duration": 3600, "excluded_resources": ["resource1", "resource2"]}}, "type": "deployment_rule"}}
     When the request is sent
     Then the response status is 400 Bad request.
 
