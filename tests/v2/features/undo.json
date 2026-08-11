@@ -1362,6 +1362,18 @@
       "type": "idempotent"
     }
   },
+  "ListCIAppGitHubAccounts": {
+    "tag": "CI Visibility GitHub Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCIAppGitHubAccount": {
+    "tag": "CI Visibility GitHub Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateCIAppPipelineEvent": {
     "tag": "CI Visibility Pipelines",
     "undo": {
