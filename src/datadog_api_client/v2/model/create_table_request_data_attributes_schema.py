@@ -18,6 +18,13 @@ if TYPE_CHECKING:
 
 
 class CreateTableRequestDataAttributesSchema(ModelNormal):
+    validations = {
+        "fields": {
+            "max_items": 200,
+            "min_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.create_table_request_data_attributes_schema_fields_items import (
@@ -40,7 +47,7 @@ class CreateTableRequestDataAttributesSchema(ModelNormal):
         """
         Schema defining the structure and columns of the reference table.
 
-        :param fields: The schema fields.
+        :param fields: The schema fields. Maximum of 200 columns.
         :type fields: [CreateTableRequestDataAttributesSchemaFieldsItems]
 
         :param primary_keys: List of field names that serve as primary keys for the table. Only one primary key is supported, and it is used as an ID to retrieve rows.

@@ -13,6 +13,9 @@ from datadog_api_client.model_utils import (
 
 class CreateUploadRequestDataAttributes(ModelNormal):
     validations = {
+        "headers": {
+            "max_items": 200,
+        },
         "part_count": {
             "inclusive_maximum": 20,
         },
@@ -38,7 +41,7 @@ class CreateUploadRequestDataAttributes(ModelNormal):
         """
         Upload configuration specifying how data is uploaded by the user, and properties of the table to associate the upload with.
 
-        :param headers: The CSV file headers that define the schema fields, provided in the same order as the columns in the uploaded file.
+        :param headers: The CSV file headers that define the schema fields, provided in the same order as the columns in the uploaded file. Maximum of 200 columns.
         :type headers: [str]
 
         :param part_count: Number of parts to split the file into for multipart upload.
