@@ -41,7 +41,7 @@ class OnCallTriggerWrapper(ModelNormal):
         :param on_call_trigger: Trigger a workflow from an On-Call Page or On-Call Handover. For automatic triggering a handle must be configured and the workflow must be published.
         :type on_call_trigger: OnCallTrigger
 
-        :param start_step_names: A list of steps that run first after a trigger fires.
+        :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional
         """
         if start_step_names is not unset:

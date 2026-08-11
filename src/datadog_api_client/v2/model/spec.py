@@ -109,7 +109,7 @@ class Spec(ModelNormal):
         **kwargs,
     ):
         """
-        The spec defines what the workflow does.
+        A complete Workflow Automation definition, including its triggers, steps, and connections.
 
         :param annotations: A list of annotations used in the workflow. These are like sticky notes for your workflow!
         :type annotations: [Annotation], optional
