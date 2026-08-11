@@ -28,6 +28,7 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
         return {
             "account_id": (str,),
             "config_id": (str,),
+            "curation_enabled": (bool,),
             "evp_query": (str,),
             "hierarchy_depth": (int,),
             "integration_provider": (str,),
@@ -42,6 +43,7 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
     attribute_map = {
         "account_id": "account_id",
         "config_id": "config_id",
+        "curation_enabled": "curation_enabled",
         "evp_query": "evp_query",
         "hierarchy_depth": "hierarchy_depth",
         "integration_provider": "integration_provider",
@@ -62,6 +64,7 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
         sampling_ratio: float,
         account_id: Union[str, UnsetType] = unset,
         config_id: Union[str, UnsetType] = unset,
+        curation_enabled: Union[bool, UnsetType] = unset,
         integration_provider: Union[str, UnsetType] = unset,
         model_name: Union[str, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
@@ -76,6 +79,11 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
 
         :param config_id: The ID of an existing configuration to update. If omitted, a new configuration is created.
         :type config_id: str, optional
+
+        :param curation_enabled: When true, Datadog automatically provisions a managed project and dataset
+            ( ``{pattern-name}-pattern-curated`` ) to receive suggested interactions after
+            each run. Defaults to true for new patterns.
+        :type curation_enabled: bool, optional
 
         :param evp_query: Query that selects the spans the patterns run analyzes.
         :type evp_query: str
@@ -108,6 +116,8 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
             kwargs["account_id"] = account_id
         if config_id is not unset:
             kwargs["config_id"] = config_id
+        if curation_enabled is not unset:
+            kwargs["curation_enabled"] = curation_enabled
         if integration_provider is not unset:
             kwargs["integration_provider"] = integration_provider
         if model_name is not unset:
