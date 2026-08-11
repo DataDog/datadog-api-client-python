@@ -104163,6 +104163,55 @@ components:
             $ref: "#/components/schemas/Trigger"
           type: array
       type: object
+    SpecAttributes:
+      description: Attributes of an API spec.
+      properties:
+        name:
+          description: The name of the spec.
+          example: pets-api
+          type: string
+        status:
+          $ref: "#/components/schemas/SpecAttributesStatus"
+        version:
+          description: The version of the spec.
+          example: "2.1.0"
+          type: string
+      type: object
+    SpecAttributesStatus:
+      description: The publication status of the spec.
+      enum:
+        - published
+        - draft
+        - deprecated
+      example: published
+      type: string
+      x-enum-varnames:
+        - PUBLISHED
+        - DRAFT
+        - DEPRECATED
+    SpecData:
+      description: A single API spec resource.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SpecAttributes"
+        id:
+          description: The unique identifier of the spec.
+          example: d5e5d5a0-1234-5678-9abc-def012345678
+          type: string
+        type:
+          $ref: "#/components/schemas/SpecType"
+      required:
+        - type
+      type: object
+    SpecType:
+      default: spec
+      description: Type of the spec resource.
+      enum:
+        - spec
+      example: spec
+      type: string
+      x-enum-varnames:
+        - SPEC
     SpecVersion:
       description: The version of the CycloneDX specification a BOM conforms to.
       enum:
@@ -104181,6 +104230,15 @@ components:
         - ONE_THREE
         - ONE_FOUR
         - ONE_FIVE
+    SpecsListResponse:
+      description: Response containing a list of specs.
+      properties:
+        data:
+          description: List of specs.
+          items:
+            $ref: "#/components/schemas/SpecData"
+          type: array
+      type: object
     SplitAPIKey:
       description: The definition of the `SplitAPIKey` object.
       properties:
@@ -199335,6 +199393,43 @@ paths:
         cursorPath: meta.page.after
         limitParam: body.data.attributes.page.limit
         resultsPath: data
+  /api/v2/specs:
+    get:
+      description: Returns a list of API specs stored in the system.
+      operationId: ListSpecs
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          name: pets-api
+                          status: published
+                          version: "2.1.0"
+                        id: d5e5d5a0-1234-5678-9abc-def012345678
+                        type: spec
+                      - attributes:
+                          name: users-api
+                          status: draft
+                          version: "1.0.0"
+                        id: a1b2c3d4-5678-9abc-def0-123456789abc
+                        type: spec
+              schema:
+                $ref: "#/components/schemas/SpecsListResponse"
+          description: OK
+        "403":
+          $ref: "#/components/responses/ForbiddenResponse"
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+      summary: List API specs
+      tags:
+        - Specs
   /api/v2/static-analysis-sca/dependencies:
     post:
       operationId: CreateSCAResult
@@ -213517,6 +213612,9 @@ tags:
       description: Find out more at
       url: https://docs.datadoghq.com/tracing/metrics/metrics_namespace/
     name: Spans Metrics
+  - description: |-
+      View API specs stored in the system.
+    name: Specs
   - description: API for static analysis
     name: Static Analysis
   - description: Manage your status pages and communicate service disruptions to stakeholders via Datadog's API. See the [Status Pages documentation](https://docs.datadoghq.com/incident_response/status_pages/) for more information.
