@@ -43,7 +43,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
             "components": ([CreateStatusPageRequestDataAttributesComponentsItems],),
             "domain_prefix": (str,),
             "email_header_image": (str,),
-            "enabled": (bool,),
             "favicon": (str,),
             "name": (str,),
             "slack_app_icon": (str,),
@@ -58,7 +57,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         "components": "components",
         "domain_prefix": "domain_prefix",
         "email_header_image": "email_header_image",
-        "enabled": "enabled",
         "favicon": "favicon",
         "name": "name",
         "slack_app_icon": "slack_app_icon",
@@ -77,7 +75,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         company_logo: Union[str, UnsetType] = unset,
         components: Union[List[CreateStatusPageRequestDataAttributesComponentsItems], UnsetType] = unset,
         email_header_image: Union[str, UnsetType] = unset,
-        enabled: Union[bool, UnsetType] = unset,
         favicon: Union[str, UnsetType] = unset,
         slack_app_icon: Union[str, UnsetType] = unset,
         slack_subscriptions_enabled: Union[bool, UnsetType] = unset,
@@ -98,9 +95,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
 
         :param email_header_image: Base64-encoded image data included in email notifications sent to status page subscribers.
         :type email_header_image: str, optional
-
-        :param enabled: Whether the status page is enabled.
-        :type enabled: bool, optional
 
         :param favicon: Base64-encoded image data displayed in the browser tab.
         :type favicon: str, optional
@@ -129,8 +123,6 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
             kwargs["components"] = components
         if email_header_image is not unset:
             kwargs["email_header_image"] = email_header_image
-        if enabled is not unset:
-            kwargs["enabled"] = enabled
         if favicon is not unset:
             kwargs["favicon"] = favicon
         if slack_app_icon is not unset:
