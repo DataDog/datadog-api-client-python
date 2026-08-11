@@ -928,6 +928,13 @@ datadog\_api\_client.v2.api.test\_optimization\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.threat\_intelligence\_api module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.threat_intelligence_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.usage\_metering\_api module
 -------------------------------------------------------
 
