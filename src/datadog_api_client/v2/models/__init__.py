@@ -926,6 +926,20 @@ from datadog_api_client.v2.model.ci_app_create_pipeline_event_request_data_type 
     CIAppCreatePipelineEventRequestDataType,
 )
 from datadog_api_client.v2.model.ci_app_event_attributes import CIAppEventAttributes
+from datadog_api_client.v2.model.ci_app_git_hub_account_attributes import CIAppGitHubAccountAttributes
+from datadog_api_client.v2.model.ci_app_git_hub_account_data import CIAppGitHubAccountData
+from datadog_api_client.v2.model.ci_app_git_hub_account_repository import CIAppGitHubAccountRepository
+from datadog_api_client.v2.model.ci_app_git_hub_account_response import CIAppGitHubAccountResponse
+from datadog_api_client.v2.model.ci_app_git_hub_account_type import CIAppGitHubAccountType
+from datadog_api_client.v2.model.ci_app_git_hub_account_update_request import CIAppGitHubAccountUpdateRequest
+from datadog_api_client.v2.model.ci_app_git_hub_account_update_request_attributes import (
+    CIAppGitHubAccountUpdateRequestAttributes,
+)
+from datadog_api_client.v2.model.ci_app_git_hub_account_update_request_data import CIAppGitHubAccountUpdateRequestData
+from datadog_api_client.v2.model.ci_app_git_hub_account_update_request_repository import (
+    CIAppGitHubAccountUpdateRequestRepository,
+)
+from datadog_api_client.v2.model.ci_app_git_hub_accounts_response import CIAppGitHubAccountsResponse
 from datadog_api_client.v2.model.ci_app_git_info import CIAppGitInfo
 from datadog_api_client.v2.model.ci_app_group_by_histogram import CIAppGroupByHistogram
 from datadog_api_client.v2.model.ci_app_group_by_missing import CIAppGroupByMissing
@@ -11265,6 +11279,16 @@ __all__ = [
     "CIAppCreatePipelineEventRequestDataSingleOrArray",
     "CIAppCreatePipelineEventRequestDataType",
     "CIAppEventAttributes",
+    "CIAppGitHubAccountAttributes",
+    "CIAppGitHubAccountData",
+    "CIAppGitHubAccountRepository",
+    "CIAppGitHubAccountResponse",
+    "CIAppGitHubAccountType",
+    "CIAppGitHubAccountUpdateRequest",
+    "CIAppGitHubAccountUpdateRequestAttributes",
+    "CIAppGitHubAccountUpdateRequestData",
+    "CIAppGitHubAccountUpdateRequestRepository",
+    "CIAppGitHubAccountsResponse",
     "CIAppGitInfo",
     "CIAppGroupByHistogram",
     "CIAppGroupByMissing",
