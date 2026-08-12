@@ -202,6 +202,15 @@ Feature: Monitors
     And the response "query" is equal to "error-tracking-rum(\"service:foo AND @error.source:source\").rollup(\"count\").by(\"@issue.id\").last(\"1h\") >= 1"
     And the response "draft_status" is equal to "draft"
 
+  @team:DataDog/monitor-app
+  Scenario: Create an LLM Observability monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}", "type": "llm-observability alert", "query": "llm-observability(\"*\").rollup(\"count\").last(\"2h\") > 0", "message": "LLM observability alert triggered", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "options": {"thresholds": {"critical": 0}, "include_tags": true, "notify_audit": false}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "llm-observability alert"
+
   @generated @skip @team:DataDog/monitor-app
   Scenario: Delete a monitor returns "Bad Request" response
     Given new "DeleteMonitor" request

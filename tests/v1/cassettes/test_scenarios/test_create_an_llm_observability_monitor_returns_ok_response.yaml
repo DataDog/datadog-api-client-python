@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: '{"message":"LLM observability alert triggered","name":"Test-Create_an_LLM_Observability_monitor_returns_OK_response-1786460472","options":{"include_tags":true,"notify_audit":false,"thresholds":{"critical":0}},"query":"llm-observability(\"*\").rollup(\"count\").last(\"2h\")
+      > 0","tags":["test:testcreateanllmobservabilitymonitorreturnsokresponse1786460472","env:ci"],"type":"llm-observability
+      alert"}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v1/monitor
+  response:
+    body:
+      string: '{"id":312833678,"org_id":321813,"type":"llm-observability alert","name":"Test-Create_an_LLM_Observability_monitor_returns_OK_response-1786460472","message":"LLM
+        observability alert triggered","tags":["test:testcreateanllmobservabilitymonitorreturnsokresponse1786460472","env:ci"],"query":"llm-observability(\"*\").rollup(\"count\").last(\"2h\")
+        > 0","options":{"include_tags":true,"notify_audit":false,"thresholds":{"critical":0.0},"notify_no_data":false,"new_host_delay":300,"groupby_simple_monitor":false,"silenced":{}},"multi":false,"created_at":1786460473000,"created":"2026-08-11T15:01:13.078330+00:00","modified":"2026-08-11T15:01:13.078330+00:00","deleted":null,"priority":null,"restricted_roles":null,"restriction_policy":null,"draft_status":"published","assets":[],"overall_state_modified":null,"overall_state":"No
+        Data","creator":{"name":"Francesco Pighi","handle":"francesco.pighi@datadoghq.com","email":"francesco.pighi@datadoghq.com","id":21235577}}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v1/monitor/312833678
+  response:
+    body:
+      string: '{"deleted_monitor_id":312833678}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+version: 1
