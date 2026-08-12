@@ -10,6 +10,7 @@ from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
+from datadog_api_client.v2.model.dora_deployment_patch_by_version_request import DORADeploymentPatchByVersionRequest
 from datadog_api_client.v2.model.dora_deployments_list_response import DORADeploymentsListResponse
 from datadog_api_client.v2.model.dora_list_deployments_request import DORAListDeploymentsRequest
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
@@ -251,6 +252,26 @@ class DORAMetricsApi:
             api_client=api_client,
         )
 
+        self._patch_dora_deployment_by_version_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/dora/deployments",
+                "operation_id": "patch_dora_deployment_by_version",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DORADeploymentPatchByVersionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def create_dora_deployment(
         self,
         body: DORADeploymentRequest,
@@ -432,3 +453,19 @@ class DORAMetricsApi:
         kwargs["body"] = body
 
         return self._patch_dora_deployment_endpoint.call_with_http_info(**kwargs)
+
+    def patch_dora_deployment_by_version(
+        self,
+        body: DORADeploymentPatchByVersionRequest,
+    ) -> None:
+        """Patch a deployment event by version.
+
+        Update a deployment's change failure status, identifying the deployment by its service, environment, and version instead of its ID. Use this to mark a deployment as a change failure or back to stable. You can optionally include remediation details to enable failed deployment recovery time calculation. If multiple deployments match the given service, environment, and version, the most recently finished one is updated.
+
+        :type body: DORADeploymentPatchByVersionRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._patch_dora_deployment_by_version_endpoint.call_with_http_info(**kwargs)
