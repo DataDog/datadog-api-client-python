@@ -206,6 +206,8 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
+from datadog_api_client.v2.model.agent_trigger import AgentTrigger
+from datadog_api_client.v2.model.agent_trigger_wrapper import AgentTriggerWrapper
 from datadog_api_client.v2.model.aggregated_high_frozen_frame_rate import AggregatedHighFrozenFrameRate
 from datadog_api_client.v2.model.aggregated_high_script_eval import AggregatedHighScriptEval
 from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
@@ -10762,6 +10764,8 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "AddMemberTeamRequest",
     "Advisory",
+    "AgentTrigger",
+    "AgentTriggerWrapper",
     "AggregatedHighFrozenFrameRate",
     "AggregatedHighScriptEval",
     "AggregatedLongTasksByInvokerType",

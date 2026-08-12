@@ -305,6 +305,20 @@ datadog\_api\_client.v2.model.advisory module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.agent\_trigger module
+---------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.agent_trigger
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.agent\_trigger\_wrapper module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.agent_trigger_wrapper
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.aggregated\_high\_frozen\_frame\_rate module
 --------------------------------------------------------------------------
 
