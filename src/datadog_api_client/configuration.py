@@ -495,6 +495,7 @@ class Configuration:
                 "v2.trigger_deployment_gates_evaluation": False,
                 "v2.update_deployment_gate": False,
                 "v2.update_deployment_rule": False,
+                "v2.patch_dora_deployment_by_version": False,
                 "v2.clone_form": False,
                 "v2.create_and_publish_form": False,
                 "v2.create_form": False,

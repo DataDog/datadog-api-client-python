@@ -2243,6 +2243,22 @@ from datadog_api_client.v2.model.cyclone_dx_vulnerability_reference_source impor
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
 from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
 from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
+from datadog_api_client.v2.model.dora_deployment_patch_by_version_remediation import (
+    DORADeploymentPatchByVersionRemediation,
+)
+from datadog_api_client.v2.model.dora_deployment_patch_by_version_remediation_by_id import (
+    DORADeploymentPatchByVersionRemediationByID,
+)
+from datadog_api_client.v2.model.dora_deployment_patch_by_version_remediation_by_version import (
+    DORADeploymentPatchByVersionRemediationByVersion,
+)
+from datadog_api_client.v2.model.dora_deployment_patch_by_version_request import DORADeploymentPatchByVersionRequest
+from datadog_api_client.v2.model.dora_deployment_patch_by_version_request_attributes import (
+    DORADeploymentPatchByVersionRequestAttributes,
+)
+from datadog_api_client.v2.model.dora_deployment_patch_by_version_request_data import (
+    DORADeploymentPatchByVersionRequestData,
+)
 from datadog_api_client.v2.model.dora_deployment_patch_remediation import DORADeploymentPatchRemediation
 from datadog_api_client.v2.model.dora_deployment_patch_remediation_type import DORADeploymentPatchRemediationType
 from datadog_api_client.v2.model.dora_deployment_patch_request import DORADeploymentPatchRequest
@@ -12237,6 +12253,12 @@ __all__ = [
     "DORADeploymentFetchResponse",
     "DORADeploymentObject",
     "DORADeploymentObjectAttributes",
+    "DORADeploymentPatchByVersionRemediation",
+    "DORADeploymentPatchByVersionRemediationByID",
+    "DORADeploymentPatchByVersionRemediationByVersion",
+    "DORADeploymentPatchByVersionRequest",
+    "DORADeploymentPatchByVersionRequestAttributes",
+    "DORADeploymentPatchByVersionRequestData",
     "DORADeploymentPatchRemediation",
     "DORADeploymentPatchRemediationType",
     "DORADeploymentPatchRequest",
