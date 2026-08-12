@@ -23,17 +23,20 @@ class DeploymentGatesFDDRuleOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "allowed_resources": ([str],),
             "duration": (int,),
             "excluded_resources": ([str],),
         }
 
     attribute_map = {
+        "allowed_resources": "allowed_resources",
         "duration": "duration",
         "excluded_resources": "excluded_resources",
     }
 
     def __init__(
         self_,
+        allowed_resources: Union[List[str], UnsetType] = unset,
         duration: Union[int, UnsetType] = unset,
         excluded_resources: Union[List[str], UnsetType] = unset,
         **kwargs,
@@ -41,12 +44,17 @@ class DeploymentGatesFDDRuleOptions(ModelNormal):
         """
         Options for a ``faulty_deployment_detection`` rule.
 
+        :param allowed_resources: APM resource names to include in analysis. Mutually exclusive with ``excluded_resources``.
+        :type allowed_resources: [str], optional
+
         :param duration: Evaluation window in seconds. Maximum 7200 (2 hours).
         :type duration: int, optional
 
         :param excluded_resources: APM resource names to exclude from analysis.
         :type excluded_resources: [str], optional
         """
+        if allowed_resources is not unset:
+            kwargs["allowed_resources"] = allowed_resources
         if duration is not unset:
             kwargs["duration"] = duration
         if excluded_resources is not unset:

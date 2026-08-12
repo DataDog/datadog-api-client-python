@@ -15,6 +15,9 @@ class DeploymentRulesOptions(ModelComposed):
         """
         Options for deployment rule response representing either faulty deployment detection or monitor options.
 
+        :param allowed_resources: Resources to include in faulty deployment detection. Mutually exclusive with `excluded_resources`.
+        :type allowed_resources: [str], optional
+
         :param duration: The duration for faulty deployment detection.
         :type duration: int, optional
 
