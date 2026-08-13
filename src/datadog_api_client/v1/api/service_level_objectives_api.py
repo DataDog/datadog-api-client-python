@@ -273,11 +273,6 @@ class ServiceLevelObjectivesApi:
                     "attribute": "offset",
                     "location": "query",
                 },
-                "is_deleted": {
-                    "openapi_types": (bool,),
-                    "attribute": "is_deleted",
-                    "location": "query",
-                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -529,7 +524,6 @@ class ServiceLevelObjectivesApi:
         metrics_query: Union[str, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         offset: Union[int, UnsetType] = unset,
-        is_deleted: Union[bool, UnsetType] = unset,
     ) -> SLOListResponse:
         """Get all SLOs.
 
@@ -547,8 +541,6 @@ class ServiceLevelObjectivesApi:
         :type limit: int, optional
         :param offset: The specific offset to use as the beginning of the returned response.
         :type offset: int, optional
-        :param is_deleted: Whether to return only deleted service level objective objects.
-        :type is_deleted: bool, optional
         :rtype: SLOListResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -570,9 +562,6 @@ class ServiceLevelObjectivesApi:
         if offset is not unset:
             kwargs["offset"] = offset
 
-        if is_deleted is not unset:
-            kwargs["is_deleted"] = is_deleted
-
         return self._list_slos_endpoint.call_with_http_info(**kwargs)
 
     def list_slos_with_pagination(
@@ -584,7 +573,6 @@ class ServiceLevelObjectivesApi:
         metrics_query: Union[str, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         offset: Union[int, UnsetType] = unset,
-        is_deleted: Union[bool, UnsetType] = unset,
     ) -> collections.abc.Iterable[ServiceLevelObjective]:
         """Get all SLOs.
 
@@ -602,8 +590,6 @@ class ServiceLevelObjectivesApi:
         :type limit: int, optional
         :param offset: The specific offset to use as the beginning of the returned response.
         :type offset: int, optional
-        :param is_deleted: Whether to return only deleted service level objective objects.
-        :type is_deleted: bool, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[ServiceLevelObjective]
@@ -626,9 +612,6 @@ class ServiceLevelObjectivesApi:
 
         if offset is not unset:
             kwargs["offset"] = offset
-
-        if is_deleted is not unset:
-            kwargs["is_deleted"] = is_deleted
 
         local_page_size = get_attribute_from_path(kwargs, "limit", 1000)
         endpoint = self._list_slos_endpoint

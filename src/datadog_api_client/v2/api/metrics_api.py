@@ -1282,6 +1282,10 @@ class MetricsApi:
 
         Returns the tag configuration for the given metric name.
 
+        A metric may exist and submit data without having a tag configuration. If no tag configuration exists
+        for the metric, this endpoint returns ``404 Not Found``. This response does not indicate that the metric
+        itself is missing.
+
         :param metric_name: The name of the metric.
         :type metric_name: str
         :rtype: MetricTagConfigurationResponse
