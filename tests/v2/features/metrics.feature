@@ -487,12 +487,12 @@ Feature: Metrics
     And the response "data.id" is equal to "static_test_metric_donotdelete"
 
   @generated @skip @team:DataDog/metrics-experience
-  Scenario: List tag configuration by name returns "Not Found" response
+  Scenario: List tag configuration by name returns "No tag configuration exists for the metric" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurationByName" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 404 Not Found
+    Then the response status is 404 No tag configuration exists for the metric
 
   @replay-only @skip-validation @team:DataDog/metrics-experience
   Scenario: List tag configuration by name returns "Success" response
