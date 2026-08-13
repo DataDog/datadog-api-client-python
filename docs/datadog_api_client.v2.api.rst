@@ -347,6 +347,13 @@ datadog\_api\_client.v2.api.downtimes\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.elastic\_cloud\_integration\_accounts\_api module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.elastic_cloud_integration_accounts_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.entity\_integration\_configs\_api module
 --------------------------------------------------------------------
 
@@ -932,6 +939,13 @@ datadog\_api\_client.v2.api.test\_optimization\_api module
 ----------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.test_optimization_api
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.api.twilio\_integration\_accounts\_api module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.twilio_integration_accounts_api
    :members:
    :show-inheritance:
 
