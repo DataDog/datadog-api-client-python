@@ -86,6 +86,15 @@ Feature: Feature Flags
     And the response "data.attributes.value_type" is equal to "BOOLEAN"
 
   @team:DataDog/feature-flags
+  Scenario: Create a feature flag with notification rule targets returns "Created" response
+    Given new "CreateFeatureFlag" request
+    And body with value {"data": {"type": "feature-flags", "attributes": {"default_variant_key": "variant-{{ unique }}-1", "description": "Test feature flag with notification rule targets for BDD scenarios", "key": "test-feature-flag-notify-{{ unique }}", "name": "Test Feature Flag Notify {{ unique }}", "value_type": "BOOLEAN", "variants": [{"key": "variant-{{ unique }}-1", "name": "Variant {{ unique }} A", "value": "true"}, {"key": "variant-{{ unique }}-2", "name": "Variant {{ unique }} B", "value": "false"}], "notification_rule_query": "notification_type:rollout_started", "rule_targets": [{"type": "SLACK_CHANNEL", "version": 1, "configuration": {"channel": "#feature-flags-test", "workspace": "datadoghq"}}]}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.key" is equal to "test-feature-flag-notify-{{ unique }}"
+    And the response "data.attributes.name" is equal to "Test Feature Flag Notify {{ unique }}"
+
+  @team:DataDog/feature-flags
   Scenario: Create allocation for a flag in an environment returns "Created" response
     Given there is a valid "feature_flag" in the system
     And there is a valid "environment" in the system
