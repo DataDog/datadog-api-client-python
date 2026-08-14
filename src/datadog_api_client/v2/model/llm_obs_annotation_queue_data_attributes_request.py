@@ -39,9 +39,9 @@ class LLMObsAnnotationQueueDataAttributesRequest(ModelNormal):
     def __init__(
         self_,
         name: str,
-        project_id: str,
         annotation_schema: Union[LLMObsAnnotationSchema, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        project_id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -57,13 +57,14 @@ class LLMObsAnnotationQueueDataAttributesRequest(ModelNormal):
         :type name: str
 
         :param project_id: Identifier of the project this queue belongs to.
-        :type project_id: str
+        :type project_id: str, optional
         """
         if annotation_schema is not unset:
             kwargs["annotation_schema"] = annotation_schema
         if description is not unset:
             kwargs["description"] = description
+        if project_id is not unset:
+            kwargs["project_id"] = project_id
         super().__init__(kwargs)
 
         self_.name = name
-        self_.project_id = project_id
