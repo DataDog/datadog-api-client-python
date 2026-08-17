@@ -27,6 +27,7 @@ class LLMObsPatternsConfigSnapshot(ModelNormal):
     def openapi_types(_):
         return {
             "account_id": (str,),
+            "curation_enabled": (bool,),
             "evp_query": (str,),
             "hierarchy_depth": (int,),
             "integration_provider": (str,),
@@ -37,6 +38,7 @@ class LLMObsPatternsConfigSnapshot(ModelNormal):
 
     attribute_map = {
         "account_id": "account_id",
+        "curation_enabled": "curation_enabled",
         "evp_query": "evp_query",
         "hierarchy_depth": "hierarchy_depth",
         "integration_provider": "integration_provider",
@@ -48,6 +50,7 @@ class LLMObsPatternsConfigSnapshot(ModelNormal):
     def __init__(
         self_,
         account_id: Union[str, UnsetType] = unset,
+        curation_enabled: Union[bool, UnsetType] = unset,
         evp_query: Union[str, UnsetType] = unset,
         hierarchy_depth: Union[int, UnsetType] = unset,
         integration_provider: Union[str, UnsetType] = unset,
@@ -61,6 +64,9 @@ class LLMObsPatternsConfigSnapshot(ModelNormal):
 
         :param account_id: Integration account ID used for a bring-your-own-model run.
         :type account_id: str, optional
+
+        :param curation_enabled: Whether automatic dataset curation was enabled for the run.
+        :type curation_enabled: bool, optional
 
         :param evp_query: Query that selected the spans for the run.
         :type evp_query: str, optional
@@ -82,6 +88,8 @@ class LLMObsPatternsConfigSnapshot(ModelNormal):
         """
         if account_id is not unset:
             kwargs["account_id"] = account_id
+        if curation_enabled is not unset:
+            kwargs["curation_enabled"] = curation_enabled
         if evp_query is not unset:
             kwargs["evp_query"] = evp_query
         if hierarchy_depth is not unset:
