@@ -223,7 +223,11 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
 
         :param auto_extract_timestamp: If `true`, Splunk tries to extract timestamps from incoming log events.
             If `false`, Splunk assigns the time the event was received.
+            Only applies when `endpoint_target` is `event`; cannot be `true` when `endpoint_target` is `raw`.
         :type auto_extract_timestamp: bool, optional
+
+        :param endpoint_target: The Splunk HEC endpoint to send events to. Use `event` to send structured events to the `/event` endpoint, or `raw` to send the raw message to the `/raw` endpoint.
+        :type endpoint_target: ObservabilityPipelineSplunkHecDestinationEndpointTarget, optional
 
         :param index: Optional name of the Splunk index where logs are written.
         :type index: str, optional
