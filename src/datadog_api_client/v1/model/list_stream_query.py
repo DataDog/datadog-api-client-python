@@ -51,16 +51,21 @@ class ListStreamQuery(ModelNormal):
             "clustering_pattern_field_path": (str,),
             "compute": ([ListStreamComputeItems],),
             "data_source": (ListStreamSource,),
+            "env": (str,),
             "event_size": (WidgetEventSize,),
             "group_by": ([ListStreamGroupByItems],),
             "indexes": ([str],),
             "persona": (ListStreamIssuePersona,),
             "query_string": (str,),
+            "recommendation_types": ([str],),
+            "services": ([str],),
             "sort": (WidgetFieldSort,),
             "states": ([ListStreamIssueState],),
+            "statuses": ([str],),
             "storage": (str,),
             "suspected_causes": ([str],),
             "team_handles": ([str],),
+            "teams": ([str],),
             "version": (ListStreamQueryVersion,),
         }
 
@@ -69,16 +74,21 @@ class ListStreamQuery(ModelNormal):
         "clustering_pattern_field_path": "clustering_pattern_field_path",
         "compute": "compute",
         "data_source": "data_source",
+        "env": "env",
         "event_size": "event_size",
         "group_by": "group_by",
         "indexes": "indexes",
         "persona": "persona",
         "query_string": "query_string",
+        "recommendation_types": "recommendation_types",
+        "services": "services",
         "sort": "sort",
         "states": "states",
+        "statuses": "statuses",
         "storage": "storage",
         "suspected_causes": "suspected_causes",
         "team_handles": "team_handles",
+        "teams": "teams",
         "version": "version",
     }
 
@@ -89,15 +99,20 @@ class ListStreamQuery(ModelNormal):
         assignee_uuids: Union[List[str], UnsetType] = unset,
         clustering_pattern_field_path: Union[str, UnsetType] = unset,
         compute: Union[List[ListStreamComputeItems], UnsetType] = unset,
+        env: Union[str, UnsetType] = unset,
         event_size: Union[WidgetEventSize, UnsetType] = unset,
         group_by: Union[List[ListStreamGroupByItems], UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         persona: Union[ListStreamIssuePersona, UnsetType] = unset,
+        recommendation_types: Union[List[str], UnsetType] = unset,
+        services: Union[List[str], UnsetType] = unset,
         sort: Union[WidgetFieldSort, UnsetType] = unset,
         states: Union[List[ListStreamIssueState], UnsetType] = unset,
+        statuses: Union[List[str], UnsetType] = unset,
         storage: Union[str, UnsetType] = unset,
         suspected_causes: Union[List[str], UnsetType] = unset,
         team_handles: Union[List[str], UnsetType] = unset,
+        teams: Union[List[str], UnsetType] = unset,
         version: Union[ListStreamQueryVersion, UnsetType] = unset,
         **kwargs,
     ):
@@ -113,8 +128,11 @@ class ListStreamQuery(ModelNormal):
         :param compute: Compute configuration for the List Stream Widget. Compute can be used only with the logs_transaction_stream (from 1 to 5 items) list stream source.
         :type compute: [ListStreamComputeItems], optional
 
-        :param data_source: Source from which to query items to display in the stream. apm_issue_stream, rum_issue_stream, and logs_issue_stream are deprecated. Use issue_stream instead.
+        :param data_source: Source from which to query items to display in the stream. apm_issue_stream, rum_issue_stream, and logs_issue_stream are deprecated. Use issue_stream instead. apm_recommendations_stream is used to query APM recommendations, and supports filtering by environment, services, teams, recommendation types, and status.
         :type data_source: ListStreamSource
+
+        :param env: Filter by APM environment. Usable only with ``apm_recommendations_stream``.
+        :type env: str, optional
 
         :param event_size: Size to use to display an event.
         :type event_size: WidgetEventSize, optional
@@ -131,11 +149,20 @@ class ListStreamQuery(ModelNormal):
         :param query_string: Widget query.
         :type query_string: str
 
+        :param recommendation_types: Filter by recommendation types. Usable only with ``apm_recommendations_stream``.
+        :type recommendation_types: [str], optional
+
+        :param services: Filter by service names. Usable only with ``apm_recommendations_stream``.
+        :type services: [str], optional
+
         :param sort: Which column and order to sort by
         :type sort: WidgetFieldSort, optional
 
         :param states: Filter by issue states. Usable only with ``issue_stream``.
         :type states: [ListStreamIssueState], optional
+
+        :param statuses: Filter by recommendation statuses. Usable only with ``apm_recommendations_stream``.
+        :type statuses: [str], optional
 
         :param storage: Option for storage location. Feature in Private Beta.
         :type storage: str, optional
@@ -145,6 +172,9 @@ class ListStreamQuery(ModelNormal):
 
         :param team_handles: Filter by team handles. Usable only with ``issue_stream``.
         :type team_handles: [str], optional
+
+        :param teams: Filter by team handles. Usable only with ``apm_recommendations_stream``.
+        :type teams: [str], optional
 
         :param version: Version of the query for the logs transaction stream widget. When omitted, v1 query behavior is
             preserved. Set to ``sequential_query`` to use v2 behavior. **This feature is in Preview.**
@@ -156,6 +186,8 @@ class ListStreamQuery(ModelNormal):
             kwargs["clustering_pattern_field_path"] = clustering_pattern_field_path
         if compute is not unset:
             kwargs["compute"] = compute
+        if env is not unset:
+            kwargs["env"] = env
         if event_size is not unset:
             kwargs["event_size"] = event_size
         if group_by is not unset:
@@ -164,16 +196,24 @@ class ListStreamQuery(ModelNormal):
             kwargs["indexes"] = indexes
         if persona is not unset:
             kwargs["persona"] = persona
+        if recommendation_types is not unset:
+            kwargs["recommendation_types"] = recommendation_types
+        if services is not unset:
+            kwargs["services"] = services
         if sort is not unset:
             kwargs["sort"] = sort
         if states is not unset:
             kwargs["states"] = states
+        if statuses is not unset:
+            kwargs["statuses"] = statuses
         if storage is not unset:
             kwargs["storage"] = storage
         if suspected_causes is not unset:
             kwargs["suspected_causes"] = suspected_causes
         if team_handles is not unset:
             kwargs["team_handles"] = team_handles
+        if teams is not unset:
+            kwargs["teams"] = teams
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
