@@ -15551,6 +15551,69 @@ datadog\_api\_client.v2.model.feature\_flags\_pagination\_meta\_page module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.file\_coverage\_lines module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.file_coverage_lines
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_attributes module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_data module
+----------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_request module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_request\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_request\_data module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_request\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_response module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.files\_coverage\_response\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.files_coverage_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.filters\_per\_product module
 ----------------------------------------------------------
 
@@ -34721,6 +34784,34 @@ datadog\_api\_client.v2.model.powerpacks\_response\_meta\_pagination module
 ---------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.powerpacks_response_meta_pagination
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pr\_coverage\_summary\_request module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pr_coverage_summary_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pr\_coverage\_summary\_request\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pr_coverage_summary_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pr\_coverage\_summary\_request\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pr_coverage_summary_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.pr\_coverage\_summary\_request\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.pr_coverage_summary_request_type
    :members:
    :show-inheritance:
 
