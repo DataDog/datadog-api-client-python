@@ -37797,6 +37797,97 @@ datadog\_api\_client.v2.model.rum\_events\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_attributes module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_create\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_create\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_create\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_data module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_event\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_event_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_meta module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_response module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_update\_attributes module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_update\_data module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filter\_update\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filter_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_exclusion\_filters\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_exclusion_filters_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_group\_by module
 ---------------------------------------------------
 
