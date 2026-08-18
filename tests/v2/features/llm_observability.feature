@@ -421,6 +421,22 @@ Feature: LLM Observability
     Then the response status is 200 OK — annotations created or updated. Per-item errors are listed in `errors`.
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete LLM Observability data returns "Accepted" response
+    Given operation "DeleteLLMObsData" enabled
+    And new "DeleteLLMObsData" request
+    And body with value {"data": {"attributes": {"delay": 0, "from": 1705314600000, "query": {"query": "@trace_id:abc123def456"}, "to": 1705315200000}, "type": "create_deletion_req"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Delete LLM Observability data returns "Bad Request" response
+    Given operation "DeleteLLMObsData" enabled
+    And new "DeleteLLMObsData" request
+    And body with value {"data": {"attributes": {"delay": 0, "from": 1705314600000, "query": {"query": "@trace_id:abc123def456"}, "to": 1705315200000}, "type": "create_deletion_req"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Delete LLM Observability dataset records returns "Bad Request" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request

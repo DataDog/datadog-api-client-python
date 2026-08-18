@@ -24049,6 +24049,62 @@ datadog\_api\_client.v2.model.llm\_obs\_custom\_eval\_config\_vertex\_ai\_option
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request\_attributes module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_request\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_request_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response\_attributes module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.llm\_obs\_data\_deletion\_response\_type module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_data_deletion_response_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_dataset\_batch\_update\_data\_attributes\_request module
 ------------------------------------------------------------------------------------------------
 

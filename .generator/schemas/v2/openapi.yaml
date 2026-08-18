@@ -56412,6 +56412,139 @@ components:
           example: "my-gcp-project"
           type: string
       type: object
+    LLMObsDataDeletionRequest:
+      description: Request to delete LLM Observability data.
+      properties:
+        data:
+          $ref: "#/components/schemas/LLMObsDataDeletionRequestData"
+      required:
+        - data
+      type: object
+    LLMObsDataDeletionRequestAttributes:
+      description: Attributes for an LLM Observability data deletion request.
+      properties:
+        delay:
+          description: Optional delay in seconds before the deletion is executed.
+          example: 0
+          format: int64
+          type: integer
+        from:
+          description: Start of the deletion time range in milliseconds since Unix epoch.
+          example: 1705314600000
+          format: int64
+          type: integer
+        query:
+          additionalProperties:
+            type: string
+          description: Query filters selecting the data to delete. Must include a `query` key with an `@trace_id` filter.
+          example:
+            query: "@trace_id:abc123def456"
+          type: object
+        to:
+          description: End of the deletion time range in milliseconds since Unix epoch.
+          example: 1705315200000
+          format: int64
+          type: integer
+      required:
+        - query
+        - from
+        - to
+      type: object
+    LLMObsDataDeletionRequestData:
+      description: Data object for an LLM Observability data deletion request.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/LLMObsDataDeletionRequestAttributes"
+        type:
+          $ref: "#/components/schemas/LLMObsDataDeletionRequestType"
+      required:
+        - type
+        - attributes
+      type: object
+    LLMObsDataDeletionRequestType:
+      description: Resource type for an LLM Observability data deletion request.
+      enum:
+        - create_deletion_req
+      example: create_deletion_req
+      type: string
+      x-enum-varnames:
+        - CREATE_DELETION_REQ
+    LLMObsDataDeletionResponse:
+      description: Response containing details of a submitted LLM Observability data deletion request.
+      properties:
+        data:
+          $ref: "#/components/schemas/LLMObsDataDeletionResponseData"
+      required:
+        - data
+      type: object
+    LLMObsDataDeletionResponseAttributes:
+      description: Attributes of a submitted LLM Observability data deletion request.
+      properties:
+        created_at:
+          description: Timestamp when the deletion request was created.
+          example: "2024-01-15T10:30:00Z"
+          format: date-time
+          type: string
+        created_by:
+          description: UUID of the user who created the deletion request.
+          example: "user-uuid-1234"
+          type: string
+        from_time:
+          description: Start of the deletion time range in milliseconds since Unix epoch.
+          example: 1705314600000
+          format: int64
+          type: integer
+        org_id:
+          description: ID of the organization that submitted the deletion request.
+          example: 12345
+          format: int64
+          type: integer
+        product:
+          description: Product name for the deletion request.
+          example: "llmobs"
+          type: string
+        query:
+          description: The query string used to select data for deletion.
+          example: "@trace_id:abc123def456"
+          type: string
+        to_time:
+          description: End of the deletion time range in milliseconds since Unix epoch.
+          example: 1705315200000
+          format: int64
+          type: integer
+      required:
+        - org_id
+        - product
+        - created_at
+        - created_by
+        - from_time
+        - to_time
+        - query
+      type: object
+    LLMObsDataDeletionResponseData:
+      description: Data object for an LLM Observability data deletion response.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/LLMObsDataDeletionResponseAttributes"
+        id:
+          description: Unique identifier of the deletion request.
+          example: "msg-abc123"
+          type: string
+        type:
+          $ref: "#/components/schemas/LLMObsDataDeletionResponseType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    LLMObsDataDeletionResponseType:
+      description: Resource type for an LLM Observability data deletion response.
+      enum:
+        - deletion_request
+      example: deletion_request
+      type: string
+      x-enum-varnames:
+        - DELETION_REQUEST
     LLMObsDatasetBatchUpdateDataAttributesRequest:
       description: Attributes for batch-updating records in an LLM Observability dataset.
       properties:
@@ -158460,6 +158593,77 @@ paths:
         operator: OR
         permissions:
           - org_management
+  /api/v2/llm-obs/deletion/data/llmobs:
+    post:
+      description: Submit a request to delete LLM Observability span data matching a trace ID filter within a specified time range.
+      operationId: DeleteLLMObsData
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      from: 1705314600000
+                      query:
+                        query: "@trace_id:abc123def456"
+                      to: 1705315200000
+                    type: create_deletion_req
+            schema:
+              $ref: "#/components/schemas/LLMObsDataDeletionRequest"
+        description: Data deletion request payload.
+        required: true
+      responses:
+        "202":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2024-01-15T10:30:00Z"
+                        created_by: "user-uuid-1234"
+                        from_time: 1705314600000
+                        org_id: 12345
+                        product: llmobs
+                        query: "@trace_id:abc123def456"
+                        to_time: 1705315200000
+                      id: msg-abc123
+                      type: deletion_request
+              schema:
+                $ref: "#/components/schemas/LLMObsDataDeletionResponse"
+          description: Accepted
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Unauthorized
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+      summary: Delete LLM Observability data
+      tags:
+        - LLM Observability
+      x-unstable: |-
+        **Note**: This endpoint is in preview and is subject to change.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/llm-obs/v1/annotated-interactions:
     get:
       description: |-
