@@ -16,8 +16,6 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_list_response import LLMObsCustomEvalConfigListResponse
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_response import LLMObsCustomEvalConfigResponse
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_update_request import LLMObsCustomEvalConfigUpdateRequest
-from datadog_api_client.v2.model.llm_obs_data_deletion_response import LLMObsDataDeletionResponse
-from datadog_api_client.v2.model.llm_obs_data_deletion_request import LLMObsDataDeletionRequest
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_response import (
     LLMObsAnnotatedInteractionsByTraceResponse,
 )
@@ -554,26 +552,6 @@ class LLMObservabilityApi:
             headers_map={
                 "accept": ["*/*"],
             },
-            api_client=api_client,
-        )
-
-        self._delete_llm_obs_data_endpoint = _Endpoint(
-            settings={
-                "response_type": (LLMObsDataDeletionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/llm-obs/deletion/data/llmobs",
-                "operation_id": "delete_llm_obs_data",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (LLMObsDataDeletionRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -2562,23 +2540,6 @@ class LLMObservabilityApi:
         kwargs["eval_name"] = eval_name
 
         return self._delete_llm_obs_custom_eval_config_endpoint.call_with_http_info(**kwargs)
-
-    def delete_llm_obs_data(
-        self,
-        body: LLMObsDataDeletionRequest,
-    ) -> LLMObsDataDeletionResponse:
-        """Delete LLM Observability data.
-
-        Submit a request to delete LLM Observability span data matching a trace ID filter within a specified time range.
-
-        :param body: Data deletion request payload.
-        :type body: LLMObsDataDeletionRequest
-        :rtype: LLMObsDataDeletionResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._delete_llm_obs_data_endpoint.call_with_http_info(**kwargs)
 
     def delete_llm_obs_dataset_records(
         self,

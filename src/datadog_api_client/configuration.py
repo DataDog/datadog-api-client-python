@@ -270,7 +270,6 @@ class Configuration:
                 "v2.delete_llm_obs_annotation_queue_interactions": False,
                 "v2.delete_llm_obs_annotations": False,
                 "v2.delete_llm_obs_custom_eval_config": False,
-                "v2.delete_llm_obs_data": False,
                 "v2.delete_llm_obs_dataset_records": False,
                 "v2.delete_llm_obs_datasets": False,
                 "v2.delete_llm_obs_experiments": False,

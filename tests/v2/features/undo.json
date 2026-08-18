@@ -4439,14 +4439,6 @@
       "type": "idempotent"
     }
   },
-  "DeleteLLMObsData": {
-    "tag": "LLM Observability",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
   "GetLLMObsAnnotatedInteractionsByTraceIDs": {
     "tag": "LLM Observability",
     "undo": {

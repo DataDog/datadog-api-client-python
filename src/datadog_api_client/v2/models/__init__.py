@@ -4460,14 +4460,6 @@ from datadog_api_client.v2.model.llm_obs_custom_eval_config_user import LLMObsCu
 from datadog_api_client.v2.model.llm_obs_custom_eval_config_vertex_ai_options import (
     LLMObsCustomEvalConfigVertexAIOptions,
 )
-from datadog_api_client.v2.model.llm_obs_data_deletion_request import LLMObsDataDeletionRequest
-from datadog_api_client.v2.model.llm_obs_data_deletion_request_attributes import LLMObsDataDeletionRequestAttributes
-from datadog_api_client.v2.model.llm_obs_data_deletion_request_data import LLMObsDataDeletionRequestData
-from datadog_api_client.v2.model.llm_obs_data_deletion_request_type import LLMObsDataDeletionRequestType
-from datadog_api_client.v2.model.llm_obs_data_deletion_response import LLMObsDataDeletionResponse
-from datadog_api_client.v2.model.llm_obs_data_deletion_response_attributes import LLMObsDataDeletionResponseAttributes
-from datadog_api_client.v2.model.llm_obs_data_deletion_response_data import LLMObsDataDeletionResponseData
-from datadog_api_client.v2.model.llm_obs_data_deletion_response_type import LLMObsDataDeletionResponseType
 from datadog_api_client.v2.model.llm_obs_dataset_batch_update_data_attributes_request import (
     LLMObsDatasetBatchUpdateDataAttributesRequest,
 )
@@ -13916,14 +13908,6 @@ __all__ = [
     "LLMObsCustomEvalConfigUpdateRequest",
     "LLMObsCustomEvalConfigUser",
     "LLMObsCustomEvalConfigVertexAIOptions",
-    "LLMObsDataDeletionRequest",
-    "LLMObsDataDeletionRequestAttributes",
-    "LLMObsDataDeletionRequestData",
-    "LLMObsDataDeletionRequestType",
-    "LLMObsDataDeletionResponse",
-    "LLMObsDataDeletionResponseAttributes",
-    "LLMObsDataDeletionResponseData",
-    "LLMObsDataDeletionResponseType",
     "LLMObsDatasetBatchUpdateDataAttributesRequest",
     "LLMObsDatasetBatchUpdateDataRequest",
     "LLMObsDatasetBatchUpdateInsertRecord",
