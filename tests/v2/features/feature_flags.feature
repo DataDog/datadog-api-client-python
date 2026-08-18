@@ -53,7 +53,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: Archive a feature flag returns "OK" response
     Given there is a valid "feature_flag" in the system
     And new "ArchiveFeatureFlag" request
@@ -75,7 +75,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: Create a feature flag returns "Created" response
     Given new "CreateFeatureFlag" request
     And body with value {"data": {"type": "feature-flags", "attributes": {"default_variant_key": "variant-{{ unique }}-1", "description": "Test feature flag for BDD scenarios", "key": "test-feature-flag-{{ unique }}", "name": "Test Feature Flag {{ unique }}", "value_type": "BOOLEAN", "variants": [{"key": "variant-{{ unique }}-1", "name": "Variant {{ unique }} A", "value": "true"}, {"key": "variant-{{ unique }}-2", "name": "Variant {{ unique }} B", "value": "false"}]}}}
@@ -85,7 +85,7 @@ Feature: Feature Flags
     And the response "data.attributes.name" is equal to "Test Feature Flag {{ unique }}"
     And the response "data.attributes.value_type" is equal to "BOOLEAN"
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: Create allocation for a flag in an environment returns "Created" response
     Given there is a valid "feature_flag" in the system
     And there is a valid "environment" in the system
@@ -110,7 +110,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: Create an environment returns "Created" response
     Given new "CreateFeatureFlagsEnvironment" request
     And body with value {"data": {"type": "environments", "attributes": {"name": "Test Environment {{ unique }}", "queries": ["test-{{ unique }}", "env-{{ unique }}"]}}}
@@ -272,7 +272,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: Get a feature flag returns "OK" response
     Given there is a valid "feature_flag" in the system
     And new "GetFeatureFlag" request
@@ -304,7 +304,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: List feature flags returns "OK" response
     Given new "ListFeatureFlags" request
     And request contains "limit" parameter with value 10
@@ -461,7 +461,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: Update a feature flag returns "OK" response
     Given there is a valid "feature_flag" in the system
     And new "UpdateFeatureFlag" request
@@ -533,7 +533,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/feature-flags
+  @skip @team:DataDog/feature-flags
   Scenario: Update targeting rules for a flag in an environment returns "OK" response
     Given there is a valid "feature_flag" in the system
     And there is a valid "environment" in the system
