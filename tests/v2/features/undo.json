@@ -2157,6 +2157,12 @@
       "type": "safe"
     }
   },
+  "ValidateDashboardWidgets": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSharedDashboardsByDashboardId": {
     "tag": "Dashboard Sharing",
     "undo": {

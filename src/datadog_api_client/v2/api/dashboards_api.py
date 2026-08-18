@@ -14,6 +14,8 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.dashboard_widget_validation_response import DashboardWidgetValidationResponse
+from datadog_api_client.v2.model.dashboard_widget_validation_request import DashboardWidgetValidationRequest
 from datadog_api_client.v2.model.list_dashboards_usage_response import ListDashboardsUsageResponse
 from datadog_api_client.v2.model.dashboard_usage import DashboardUsage
 from datadog_api_client.v2.model.dashboard_usage_response import DashboardUsageResponse
@@ -92,6 +94,26 @@ class DashboardsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._validate_dashboard_widgets_endpoint = _Endpoint(
+            settings={
+                "response_type": (DashboardWidgetValidationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/dashboard/widgets/validate",
+                "operation_id": "validate_dashboard_widgets",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DashboardWidgetValidationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -197,3 +219,19 @@ class DashboardsApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def validate_dashboard_widgets(
+        self,
+        body: DashboardWidgetValidationRequest,
+    ) -> DashboardWidgetValidationResponse:
+        """Validate dashboard widgets.
+
+        Validate dashboard widgets without creating or updating a dashboard.
+
+        :type body: DashboardWidgetValidationRequest
+        :rtype: DashboardWidgetValidationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._validate_dashboard_widgets_endpoint.call_with_http_info(**kwargs)

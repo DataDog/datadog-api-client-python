@@ -2311,6 +2311,12 @@ from datadog_api_client.v2.model.dashboard_usage_attributes import DashboardUsag
 from datadog_api_client.v2.model.dashboard_usage_response import DashboardUsageResponse
 from datadog_api_client.v2.model.dashboard_usage_type import DashboardUsageType
 from datadog_api_client.v2.model.dashboard_usage_user import DashboardUsageUser
+from datadog_api_client.v2.model.dashboard_widget_validation_layout_type import DashboardWidgetValidationLayoutType
+from datadog_api_client.v2.model.dashboard_widget_validation_reflow_type import DashboardWidgetValidationReflowType
+from datadog_api_client.v2.model.dashboard_widget_validation_request import DashboardWidgetValidationRequest
+from datadog_api_client.v2.model.dashboard_widget_validation_response import DashboardWidgetValidationResponse
+from datadog_api_client.v2.model.dashboard_widget_validation_result import DashboardWidgetValidationResult
+from datadog_api_client.v2.model.dashboard_widget_validation_widget import DashboardWidgetValidationWidget
 from datadog_api_client.v2.model.data_attributes_rules_items_if_tag_exists import DataAttributesRulesItemsIfTagExists
 from datadog_api_client.v2.model.data_attributes_rules_items_mapping import DataAttributesRulesItemsMapping
 from datadog_api_client.v2.model.data_deletion_response_item import DataDeletionResponseItem
@@ -12313,6 +12319,12 @@ __all__ = [
     "DashboardUsageResponse",
     "DashboardUsageType",
     "DashboardUsageUser",
+    "DashboardWidgetValidationLayoutType",
+    "DashboardWidgetValidationReflowType",
+    "DashboardWidgetValidationRequest",
+    "DashboardWidgetValidationResponse",
+    "DashboardWidgetValidationResult",
+    "DashboardWidgetValidationWidget",
     "DataAttributesRulesItemsIfTagExists",
     "DataAttributesRulesItemsMapping",
     "DataDeletionResponseItem",
