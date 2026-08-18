@@ -883,7 +883,7 @@ Feature: Security Monitoring
   @team:DataDog/cloud-security-posture-management
   Scenario: Create a new signal-based notification rule returns "Successfully created the notification rule." response
     Given new "CreateSignalNotificationRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule {{ uuid }}", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 201 Successfully created the notification rule.
 
@@ -897,7 +897,7 @@ Feature: Security Monitoring
   @team:DataDog/cloud-security-posture-management
   Scenario: Create a new vulnerability-based notification rule returns "Successfully created the notification rule." response
     Given new "CreateVulnerabilityNotificationRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule {{ uuid }}", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400}, "type": "notification_rules"}}
     When the request is sent
     Then the response status is 201 Successfully created the notification rule.
 
@@ -2810,7 +2810,7 @@ Feature: Security Monitoring
     Given new "PatchSignalNotificationRule" request
     And there is a valid "valid_signal_notification_rule" in the system
     And request contains "id" parameter from "valid_signal_notification_rule.data.id"
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule {{ uuid }}", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 200 Notification rule successfully patched.
 
@@ -2844,7 +2844,7 @@ Feature: Security Monitoring
     Given new "PatchVulnerabilityNotificationRule" request
     And there is a valid "valid_vulnerability_notification_rule" in the system
     And request contains "id" parameter from "valid_vulnerability_notification_rule.data.id"
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule 1", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Rule {{ uuid }}", "selectors": {"query": "(source:production_service OR env:prod)", "rule_types": ["misconfiguration", "attack_path"], "severities": ["critical"], "trigger_source": "security_findings"}, "targets": ["@john.doe@email.com"], "time_aggregation": 86400, "version": 1}, "id": "aaa-bbb-ccc", "type": "notification_rules"}}
     When the request is sent
     Then the response status is 200 Notification rule successfully patched.
 

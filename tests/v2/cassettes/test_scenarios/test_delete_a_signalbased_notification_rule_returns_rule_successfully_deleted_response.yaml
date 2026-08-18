@@ -1,6 +1,6 @@
 interactions:
 - request:
-    body: '{"data":{"attributes":{"enabled":true,"name":"Test-Delete_a_signal_based_notification_rule_returns_Rule_successfully_deleted_response-1738763144","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
+    body: '{"data":{"attributes":{"enabled":true,"name":"Rule 17870415-0000-0000-0000-178704155100","selectors":{"query":"env:test","rule_types":["signal_correlation"],"severities":["critical"],"trigger_source":"security_signals"},"targets":["@email@email.com"]},"type":"notification_rules"}}'
     headers:
       accept:
       - application/json
@@ -10,7 +10,9 @@ interactions:
     uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules
   response:
     body:
-      string: '{"data":{"id":"x4n-qps-p3w","type":"notification_rules","attributes":{"created_at":1738763144838,"created_by":{"name":"","handle":""},"enabled":true,"modified_at":1738763144838,"modified_by":{"name":"","handle":""},"name":"Test-Delete_a_signal_based_notification_rule_returns_Rule_successfully_deleted_response-1738763144","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
+      string: '{"data":{"id":"faz-jrz-vdw","type":"notification_rules","attributes":{"created_at":1787041551643,"created_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"enabled":true,"modified_at":1787041551643,"modified_by":{"name":"CI
+        Account","handle":"9919ec9b-ebc7-49ee-8dc8-03626e717cca"},"name":"Rule 17870415-0000-0000-0000-178704155100","selectors":{"severities":["critical"],"rule_types":["signal_correlation"],"query":"env:test","trigger_source":"security_signals"},"targets":["@email@email.com"],"time_aggregation":0,"version":1}}}'
     headers:
       content-type:
       - application/vnd.api+json
@@ -23,7 +25,7 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/x4n-qps-p3w
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/faz-jrz-vdw
   response:
     body:
       string: ''
@@ -37,10 +39,10 @@ interactions:
       accept:
       - '*/*'
     method: DELETE
-    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/x4n-qps-p3w
+    uri: https://api.datadoghq.com/api/v2/security/signals/notification_rules/faz-jrz-vdw
   response:
     body:
-      string: '{"errors":["not_found(Notification rule with id ''x4n-qps-p3w'' not
+      string: '{"errors":["not_found(Notification rule with id ''faz-jrz-vdw'' not
         found)"]}'
     headers:
       content-type:
