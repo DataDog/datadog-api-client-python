@@ -42,6 +42,7 @@ class FlakyTestAttributes(ModelNormal):
 
         return {
             "attempt_to_fix_id": (str,),
+            "broken_test": (bool,),
             "codeowners": ([str],),
             "envs": ([str],),
             "first_flaked_branch": (str,),
@@ -66,6 +67,7 @@ class FlakyTestAttributes(ModelNormal):
 
     attribute_map = {
         "attempt_to_fix_id": "attempt_to_fix_id",
+        "broken_test": "broken_test",
         "codeowners": "codeowners",
         "envs": "envs",
         "first_flaked_branch": "first_flaked_branch",
@@ -91,6 +93,7 @@ class FlakyTestAttributes(ModelNormal):
     def __init__(
         self_,
         attempt_to_fix_id: Union[str, UnsetType] = unset,
+        broken_test: Union[bool, UnsetType] = unset,
         codeowners: Union[List[str], UnsetType] = unset,
         envs: Union[List[str], UnsetType] = unset,
         first_flaked_branch: Union[str, UnsetType] = unset,
@@ -121,6 +124,9 @@ class FlakyTestAttributes(ModelNormal):
             When the workflow is triggered the test is automatically retried by the tracer a certain number of configurable times. When all retries pass, the test is automatically marked as fixed in Flaky Test Management.
             Test runs are tagged with @test.test_management.attempt_to_fix_passed and @test.test_management.is_attempt_to_fix when the attempt to fix workflow is triggered.
         :type attempt_to_fix_id: str, optional
+
+        :param broken_test: Whether every non-skipped run of the test failed over the last 7 days.
+        :type broken_test: bool, optional
 
         :param codeowners: The name of the test's code owners as inferred from the repository configuration.
         :type codeowners: [str], optional
@@ -194,6 +200,8 @@ class FlakyTestAttributes(ModelNormal):
         """
         if attempt_to_fix_id is not unset:
             kwargs["attempt_to_fix_id"] = attempt_to_fix_id
+        if broken_test is not unset:
+            kwargs["broken_test"] = broken_test
         if codeowners is not unset:
             kwargs["codeowners"] = codeowners
         if envs is not unset:
