@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -47,11 +49,13 @@ class ActionConnectionAttributes(ModelNormal):
         return {
             "integration": (ActionConnectionIntegration,),
             "name": (str,),
+            "tags": ([str],),
         }
 
     attribute_map = {
         "integration": "integration",
         "name": "name",
+        "tags": "tags",
     }
 
     def __init__(
@@ -84,6 +88,7 @@ class ActionConnectionAttributes(ModelNormal):
             VirusTotalIntegration,
         ],
         name: str,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -94,7 +99,13 @@ class ActionConnectionAttributes(ModelNormal):
 
         :param name: Name of the connection
         :type name: str
+
+        :param tags: Tags associated with the connection. Each tag must follow the ``key:value`` format.
+            The ``default`` tag key is reserved.
+        :type tags: [str], optional
         """
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.integration = integration
