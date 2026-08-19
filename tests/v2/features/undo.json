@@ -202,6 +202,43 @@
       "type": "idempotent"
     }
   },
+  "ListExecutionPolicies": {
+    "tag": "Execution Policy",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateExecutionPolicy": {
+    "tag": "Execution Policy",
+    "undo": {
+      "operationId": "DeleteExecutionPolicy",
+      "parameters": [
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteExecutionPolicy": {
+    "tag": "Execution Policy",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetExecutionPolicy": {
+    "tag": "Execution Policy",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateExecutionPolicy": {
+    "tag": "Execution Policy",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAwsScanOptions": {
     "tag": "Agentless Scanning",
     "undo": {

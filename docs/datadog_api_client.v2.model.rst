@@ -15194,6 +15194,174 @@ datadog\_api\_client.v2.model.events\_warning module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.execution\_policy\_action\_pattern module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_action_pattern
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_attributes module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_create\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_create\_request\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_create_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_effect module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_effect
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_integration module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_integration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_kubernetes\_scope module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_kubernetes_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_kubernetes\_scope\_rule module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_kubernetes_scope_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_list\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_list_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_list\_response\_meta module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_list_response_meta
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_list\_response\_page module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_list_response_page
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_remote\_action\_rshell\_access module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_remote_action_rshell_access
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_remote\_action\_rshell\_scope module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_remote_action_rshell_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_remote\_action\_rshell\_scope\_rule module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_remote_action_rshell_scope_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_response module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_response\_data module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_scope module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_script\_scope module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_script_scope
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_script\_scope\_rule module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_script_scope_rule
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_target module
+--------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_type module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_update\_request module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_update\_request\_data module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_update_request_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.execution\_policy\_write\_attributes module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.execution_policy_write_attributes
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.exposure\_rollout\_step\_request module
 ---------------------------------------------------------------------
 

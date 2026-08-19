@@ -1,0 +1,22 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action_pattern":{"action_fqns":["com.datadoghq.script.*"],"integration":"INTEGRATION_SCRIPT"},"effect":"invalid_effect","name":"Cassette
+      Execution Policy"},"type":"execution_policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"error creating execution
+        policy"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

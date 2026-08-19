@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action_pattern":{"action_fqns":["com.datadoghq.script.*"],"integration":"INTEGRATION_SCRIPT"},"effect":"allow","name":"Cassette
+      Execution Policy testcreateanexecutionpolicyreturnscreatedresponse1786698818"},"type":"execution_policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies
+  response:
+    body:
+      string: '{"data":{"id":"78061915-3922-4868-93c5-12a631d74ed1","type":"execution_policy","attributes":{"action_pattern":{"integration":"INTEGRATION_SCRIPT","action_fqns":["com.datadoghq.script.*"]},"created_at":"2026-08-14T09:13:39Z","created_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","effect":"allow","name":"Cassette
+        Execution Policy testcreateanexecutionpolicyreturnscreatedresponse1786698818","targets":[],"updated_at":"2026-08-14T09:13:39Z","updated_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies/78061915-3922-4868-93c5-12a631d74ed1
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1

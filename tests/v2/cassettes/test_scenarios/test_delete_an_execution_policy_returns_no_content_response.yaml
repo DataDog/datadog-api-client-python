@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action_pattern":{"action_fqns":["com.datadoghq.script.*"],"integration":"INTEGRATION_SCRIPT"},"effect":"allow","name":"Cassette
+      Execution Policy testdeleteanexecutionpolicyreturnsnocontentresponse1786698820"},"type":"execution_policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies
+  response:
+    body:
+      string: '{"data":{"id":"a8e55d88-0769-4cb9-b7d9-10f55fc6ecc2","type":"execution_policy","attributes":{"action_pattern":{"integration":"INTEGRATION_SCRIPT","action_fqns":["com.datadoghq.script.*"]},"created_at":"2026-08-14T09:13:41Z","created_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","effect":"allow","name":"Cassette
+        Execution Policy testdeleteanexecutionpolicyreturnsnocontentresponse1786698820","targets":[],"updated_at":"2026-08-14T09:13:41Z","updated_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies/a8e55d88-0769-4cb9-b7d9-10f55fc6ecc2
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies/a8e55d88-0769-4cb9-b7d9-10f55fc6ecc2
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"error deleting execution
+        policy"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

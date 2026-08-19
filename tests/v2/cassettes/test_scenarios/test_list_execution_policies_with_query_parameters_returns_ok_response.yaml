@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action_pattern":{"action_fqns":["com.datadoghq.script.*"],"integration":"INTEGRATION_SCRIPT"},"effect":"allow","name":"Cassette
+      Execution Policy testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824"},"type":"execution_policy"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies
+  response:
+    body:
+      string: '{"data":{"id":"6f0fbc08-9666-44fd-93da-cf1bfcff5e8f","type":"execution_policy","attributes":{"action_pattern":{"integration":"INTEGRATION_SCRIPT","action_fqns":["com.datadoghq.script.*"]},"created_at":"2026-08-14T09:13:45Z","created_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","effect":"allow","name":"Cassette
+        Execution Policy testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824","targets":[],"updated_at":"2026-08-14T09:13:45Z","updated_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","version":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies?page%5Bsize%5D=10&page%5Bnumber%5D=0&filter%5Bname%5D=Cassette%20Execution%20Policy%20testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824&filter%5Bids%5D=6f0fbc08-9666-44fd-93da-cf1bfcff5e8f&filter%5Bintegration%5D=INTEGRATION_SCRIPT&filter%5Beffects%5D=allow&filter%5Bcreator_ids%5D=262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b&sort=-created_at
+  response:
+    body:
+      string: '{"data":[{"id":"6f0fbc08-9666-44fd-93da-cf1bfcff5e8f","type":"execution_policy","attributes":{"action_pattern":{"integration":"INTEGRATION_SCRIPT","action_fqns":["com.datadoghq.script.*"]},"created_at":"2026-08-14T09:13:45Z","created_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","effect":"allow","name":"Cassette
+        Execution Policy testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824","scope":{},"targets":[],"updated_at":"2026-08-14T09:13:45Z","updated_by":"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b","version":1}}],"meta":{"page":{"total":1}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies/6f0fbc08-9666-44fd-93da-cf1bfcff5e8f
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+version: 1
