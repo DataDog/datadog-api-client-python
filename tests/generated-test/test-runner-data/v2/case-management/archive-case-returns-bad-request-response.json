@@ -1,0 +1,47 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 400,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Archive case returns \"Bad Request\" response",
+  "operation_id": "ArchiveCase",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CaseEmptyRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "type": "project"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}/archive"
+  },
+  "scenario": "Archive case returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

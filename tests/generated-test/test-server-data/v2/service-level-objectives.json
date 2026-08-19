@@ -1,0 +1,306 @@
+{
+  "feature": "Service Level Objectives",
+  "recordings": [
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-08-29T19:53:50.818Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from_ts": 1721505230,
+                    "interval": "bad-interval",
+                    "query": "slo_type:metric \"SLO Reporting Test\"",
+                    "to_ts": 1724961230
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/slo/report",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Invalid Argument\",\"detail\":\"bad-interval is not a valid interval\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a new SLO report returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-08-29T19:53:50.962Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from_ts": 1721505230,
+                    "interval": "monthly",
+                    "query": "slo_type:metric \"SLO Reporting Test\"",
+                    "timezone": "America/New_York",
+                    "to_ts": 1724961230
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/slo/report",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"69cfaa02-6640-11ef-8501-33b2b403f044\",\"type\":\"report_id\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a new SLO report returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-08-29T19:53:51.070Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/slo/report/invalid-report-id/download",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Invalid Argument\",\"detail\":\"invalid report ID: invalid-report-id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get SLO report returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-08-29T19:53:51.158Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/slo/report/2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43/download",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Not Found\",\"detail\":\"report ID not found: 2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get SLO report returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-04-04T17:38:45.610Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/slo/report/9fb2dc2a-ead0-11ee-a174-9fe3a9d7627f/download",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "id,slo_type,name,target,export_error,2023-08-01,2023-09-01,2023-10-01,2023-11-01,2023-12-01,2024-01-01\n"
+            },
+            "headers": {
+              "content-type": "text/csv"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get SLO report returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-08-29T19:53:51.260Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/slo/report/invalid-report-id/status",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Invalid Argument\",\"detail\":\"invalid report ID: invalid-report-id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get SLO report status returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-08-29T19:53:51.364Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/slo/report/2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43/status",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Not Found\",\"detail\":\"report ID not found: 2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get SLO report status returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-08-29T19:53:51.486Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from_ts": 1723146831,
+                    "interval": "monthly",
+                    "query": "slo_type:metric \"SLO Reporting Test\"",
+                    "to_ts": 1724961231
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/slo/report",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6a25239c-6640-11ef-943f-83644ac57ee3\",\"type\":\"report_id\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/slo/report/6a25239c-6640-11ef-943f-83644ac57ee3/status",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6a25239c-6640-11ef-943f-83644ac57ee3\",\"type\":\"report_id\",\"attributes\":{\"status\":\"in_progress\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get SLO report status returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

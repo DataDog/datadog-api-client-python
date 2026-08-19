@@ -1,0 +1,59 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with powerpack widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/powerpack_widget.json",
+      "value": {
+        "description": "description",
+        "layout_type": "ordered",
+        "title": "{{ unique }} with powerpack widget",
+        "widgets": [
+          {
+            "definition": {
+              "powerpack_id": "{{ powerpack.data.id }}",
+              "template_variables": {
+                "controlled_by_powerpack": [
+                  {
+                    "name": "foo",
+                    "prefix": "bar",
+                    "values": [
+                      "baz",
+                      "qux",
+                      "quuz"
+                    ]
+                  }
+                ],
+                "controlled_externally": []
+              },
+              "type": "powerpack"
+            },
+            "layout": {
+              "height": 2,
+              "is_column_break": false,
+              "width": 2,
+              "x": 1,
+              "y": 1
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with powerpack widget",
+  "schema_version": 1,
+  "version": "v1"
+}

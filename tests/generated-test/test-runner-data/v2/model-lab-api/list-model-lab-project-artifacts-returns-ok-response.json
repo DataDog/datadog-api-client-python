@@ -1,0 +1,35 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 200,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/List Model Lab project artifacts returns \"OK\" response",
+  "operation_id": "ListModelLabProjectArtifacts",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "project_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2387
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/projects/{project_id}/artifacts"
+  },
+  "scenario": "List Model Lab project artifacts returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

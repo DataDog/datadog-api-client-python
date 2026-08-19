@@ -1,0 +1,51 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 404,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Delete case comment returns \"Not Found\" response",
+  "operation_id": "DeleteCaseComment",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "cell_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "23fca2aa-4967-4936-bdd7-9157d9e456d7"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}/comment/{cell_id}"
+  },
+  "scenario": "Delete case comment returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

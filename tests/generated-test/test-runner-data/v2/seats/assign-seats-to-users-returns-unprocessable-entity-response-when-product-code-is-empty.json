@@ -1,0 +1,36 @@
+{
+  "api": "Seats",
+  "expected_status": 422,
+  "feature": "Seats",
+  "id": "v2/Seats/Assign seats to users returns \"Unprocessable Entity\" response when product_code is empty",
+  "operation_id": "AssignSeatsUser",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AssignSeatsUserRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "product_code": "",
+            "user_uuids": [
+              "{{ user.data.id }}"
+            ]
+          },
+          "type": "seat-assignments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/seats/users"
+  },
+  "scenario": "Assign seats to users returns \"Unprocessable Entity\" response when product_code is empty",
+  "schema_version": 1,
+  "version": "v2"
+}

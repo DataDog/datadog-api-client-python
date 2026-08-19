@@ -1,0 +1,59 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update an existing rule returns \"Bad Request\" response",
+  "operation_id": "UpdateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleUpdatePayload",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "status": "info"
+          }
+        ],
+        "isEnabled": true,
+        "message": "Test rule Bad",
+        "name": "{{ unique }}",
+        "options": {},
+        "queries": [
+          {
+            "query": ""
+          }
+        ],
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "security_rule.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/rules/{rule_id}"
+  },
+  "scenario": "Update an existing rule returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

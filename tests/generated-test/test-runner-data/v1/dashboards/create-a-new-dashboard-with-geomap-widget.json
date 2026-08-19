@@ -1,0 +1,101 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with geomap widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/geomap_widget.json",
+      "value": {
+        "description": null,
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique  }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "rum",
+                      "group_by": [
+                        {
+                          "facet": "@geo.country_iso_code",
+                          "limit": 250,
+                          "sort": {
+                            "aggregation": "count",
+                            "order": "desc"
+                          }
+                        }
+                      ],
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": ""
+                      }
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 250,
+                    "order_by": [
+                      {
+                        "index": 0,
+                        "order": "desc",
+                        "type": "formula"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "style": {
+                "palette": "hostmap_blues",
+                "palette_flip": false
+              },
+              "time": {},
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "geomap",
+              "view": {
+                "focus": "WORLD"
+              }
+            },
+            "layout": {
+              "height": 30,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with geomap widget",
+  "schema_version": 1,
+  "version": "v1"
+}

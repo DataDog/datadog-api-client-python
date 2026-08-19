@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Get a tag indexing rule returns \"OK\" response",
+  "operation_id": "GetTagIndexingRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "tag_indexing_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/tag-indexing-rules/{id}"
+  },
+  "scenario": "Get a tag indexing rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

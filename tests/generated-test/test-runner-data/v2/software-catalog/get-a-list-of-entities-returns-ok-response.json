@@ -1,0 +1,18 @@
+{
+  "api": "SoftwareCatalog",
+  "expected_status": 200,
+  "feature": "Software Catalog",
+  "id": "v2/Software Catalog/Get a list of entities returns \"OK\" response",
+  "operation_id": "ListCatalogEntity",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/catalog/entity"
+  },
+  "scenario": "Get a list of entities returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

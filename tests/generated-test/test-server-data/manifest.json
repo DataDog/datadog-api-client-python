@@ -1,0 +1,550 @@
+{
+  "features": [
+    {
+      "feature": "AWS Integration",
+      "file": "v1/aws-integration.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Authentication",
+      "file": "v1/authentication.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Azure Integration",
+      "file": "v1/azure-integration.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "file": "v1/dashboard-lists.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "file": "v1/dashboards.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Downtimes",
+      "file": "v1/downtimes.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Events",
+      "file": "v1/events.json",
+      "version": "v1"
+    },
+    {
+      "feature": "GCP Integration",
+      "file": "v1/gcp-integration.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Hosts",
+      "file": "v1/hosts.json",
+      "version": "v1"
+    },
+    {
+      "feature": "IP Ranges",
+      "file": "v1/ip-ranges.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Logs",
+      "file": "v1/logs.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Logs Pipelines",
+      "file": "v1/logs-pipelines.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Metrics",
+      "file": "v1/metrics.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "file": "v1/monitors.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Notebooks",
+      "file": "v1/notebooks.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Security Monitoring",
+      "file": "v1/security-monitoring.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Checks",
+      "file": "v1/service-checks.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "file": "v1/service-level-objective-corrections.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "file": "v1/service-level-objectives.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Synthetics",
+      "file": "v1/synthetics.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Usage Metering",
+      "file": "v1/usage-metering.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Users",
+      "file": "v1/users.json",
+      "version": "v1"
+    },
+    {
+      "feature": "Webhooks Integration",
+      "file": "v1/webhooks-integration.json",
+      "version": "v1"
+    },
+    {
+      "feature": "APM Retention Filters",
+      "file": "v2/apm-retention-filters.json",
+      "version": "v2"
+    },
+    {
+      "feature": "AWS Integration",
+      "file": "v2/aws-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "AWS Logs Integration",
+      "file": "v2/aws-logs-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "file": "v2/action-connection.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Actions Datastores",
+      "file": "v2/actions-datastores.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Agentless Scanning",
+      "file": "v2/agentless-scanning.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Annotations",
+      "file": "v2/annotations.json",
+      "version": "v2"
+    },
+    {
+      "feature": "App Builder",
+      "file": "v2/app-builder.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Application Security",
+      "file": "v2/application-security.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Audit",
+      "file": "v2/audit.json",
+      "version": "v2"
+    },
+    {
+      "feature": "AuthN Mappings",
+      "file": "v2/authn-mappings.json",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Pipelines",
+      "file": "v2/ci-visibility-pipelines.json",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Tests",
+      "file": "v2/ci-visibility-tests.json",
+      "version": "v2"
+    },
+    {
+      "feature": "CSM Agents",
+      "file": "v2/csm-agents.json",
+      "version": "v2"
+    },
+    {
+      "feature": "CSM Coverage Analysis",
+      "file": "v2/csm-coverage-analysis.json",
+      "version": "v2"
+    },
+    {
+      "feature": "CSM Threats",
+      "file": "v2/csm-threats.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "file": "v2/case-management.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management Attribute",
+      "file": "v2/case-management-attribute.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management Type",
+      "file": "v2/case-management-type.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "file": "v2/cloud-cost-management.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Network Monitoring",
+      "file": "v2/cloud-network-monitoring.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "file": "v2/cloudflare-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Confluent Cloud",
+      "file": "v2/confluent-cloud.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Container Images",
+      "file": "v2/container-images.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Containers",
+      "file": "v2/containers.json",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "file": "v2/dora-metrics.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "file": "v2/dashboard-lists.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Dashboards",
+      "file": "v2/dashboards.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Data Deletion",
+      "file": "v2/data-deletion.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "file": "v2/datasets.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "file": "v2/deployment-gates.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Domain Allowlist",
+      "file": "v2/domain-allowlist.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Downtimes",
+      "file": "v2/downtimes.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "file": "v2/error-tracking.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Events",
+      "file": "v2/events.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Fastly Integration",
+      "file": "v2/fastly-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "file": "v2/feature-flags.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "file": "v2/forms.json",
+      "version": "v2"
+    },
+    {
+      "feature": "GCP Integration",
+      "file": "v2/gcp-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Google Chat Integration",
+      "file": "v2/google-chat-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "IP Allowlist",
+      "file": "v2/ip-allowlist.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Incidents",
+      "file": "v2/incidents.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Integrations",
+      "file": "v2/integrations.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "file": "v2/key-management.json",
+      "version": "v2"
+    },
+    {
+      "feature": "LLM Observability",
+      "file": "v2/llm-observability.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "file": "v2/logs.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "file": "v2/logs-custom-destinations.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Metrics",
+      "file": "v2/logs-metrics.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Restriction Queries",
+      "file": "v2/logs-restriction-queries.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "file": "v2/metrics.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Microsoft Teams Integration",
+      "file": "v2/microsoft-teams-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Model Lab API",
+      "file": "v2/model-lab-api.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "file": "v2/monitors.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Network Device Monitoring",
+      "file": "v2/network-device-monitoring.json",
+      "version": "v2"
+    },
+    {
+      "feature": "OAuth2 Client Public",
+      "file": "v2/oauth2-client-public.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "file": "v2/observability-pipelines.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Okta Integration",
+      "file": "v2/okta-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "file": "v2/on-call.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Opsgenie Integration",
+      "file": "v2/opsgenie-integration.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "file": "v2/org-connections.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Organizations",
+      "file": "v2/organizations.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "file": "v2/powerpack.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Processes",
+      "file": "v2/processes.json",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "file": "v2/rum.json",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Remote Config",
+      "file": "v2/rum-remote-config.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Reference Tables",
+      "file": "v2/reference-tables.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Restriction Policies",
+      "file": "v2/restriction-policies.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Roles",
+      "file": "v2/roles.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Metrics",
+      "file": "v2/rum-metrics.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "file": "v2/rum-retention-filters.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Scorecards",
+      "file": "v2/scorecards.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "file": "v2/seats.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "file": "v2/security-monitoring.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Sensitive Data Scanner",
+      "file": "v2/sensitive-data-scanner.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Accounts",
+      "file": "v2/service-accounts.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Definition",
+      "file": "v2/service-definition.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "file": "v2/service-level-objectives.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Software Catalog",
+      "file": "v2/software-catalog.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Spans",
+      "file": "v2/spans.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Spans Metrics",
+      "file": "v2/spans-metrics.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Status Pages",
+      "file": "v2/status-pages.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Synthetics",
+      "file": "v2/synthetics.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "file": "v2/teams.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "file": "v2/usage-metering.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Users",
+      "file": "v2/users.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Workflow Automation",
+      "file": "v2/workflow-automation.json",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1
+}

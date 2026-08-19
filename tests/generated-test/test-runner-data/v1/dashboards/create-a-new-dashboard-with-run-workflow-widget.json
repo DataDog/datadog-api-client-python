@@ -1,0 +1,56 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with run-workflow widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/run_workflow_widget.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "inputs": [
+                {
+                  "name": "environment",
+                  "value": "$env.value"
+                }
+              ],
+              "time": {},
+              "title": "Run workflow title",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "run_workflow",
+              "workflow_id": "2e055f16-8b6a-4cdd-b452-17a34c44b160"
+            },
+            "layout": {
+              "height": 15,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with run-workflow widget",
+  "schema_version": 1,
+  "version": "v1"
+}

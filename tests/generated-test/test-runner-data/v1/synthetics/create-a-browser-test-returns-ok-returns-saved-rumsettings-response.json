@@ -1,0 +1,92 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a browser test returns \"OK - Returns saved rumSettings.\" response",
+  "operation_id": "CreateSyntheticsBrowserTest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsBrowserTest",
+        "type": "object"
+      },
+      "source": "synthetics_browser_test_payload_with_rum_settings.json",
+      "value": {
+        "config": {
+          "assertions": [],
+          "configVariables": [
+            {
+              "example": "content-type",
+              "name": "PROPERTY",
+              "pattern": "content-type",
+              "type": "text"
+            }
+          ],
+          "request": {
+            "certificateDomains": [
+              "https://datadoghq.com"
+            ],
+            "method": "GET",
+            "url": "https://datadoghq.com"
+          },
+          "setCookie": "name:test"
+        },
+        "locations": [
+          "aws:us-east-2"
+        ],
+        "message": "Test message",
+        "name": "{{ unique }}",
+        "options": {
+          "accept_self_signed": false,
+          "allow_insecure": true,
+          "ci": {
+            "executionRule": "skipped"
+          },
+          "device_ids": [
+            "tablet"
+          ],
+          "disableCors": true,
+          "disableCsp": true,
+          "follow_redirects": true,
+          "ignoreServerCertificateError": true,
+          "initialNavigationTimeout": 200,
+          "min_failure_duration": 10,
+          "min_location_failed": 1,
+          "noScreenshot": true,
+          "retry": {
+            "count": 2,
+            "interval": 10
+          },
+          "rumSettings": {
+            "applicationId": "mockApplicationId",
+            "clientTokenId": 12345,
+            "isEnabled": true
+          },
+          "tick_every": 300
+        },
+        "steps": [
+          {
+            "allowFailure": false,
+            "isCritical": true,
+            "name": "Refresh page",
+            "params": {},
+            "type": "refresh"
+          }
+        ],
+        "tags": [
+          "testing:browser"
+        ],
+        "type": "browser"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/browser"
+  },
+  "scenario": "Create a browser test returns \"OK - Returns saved rumSettings.\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

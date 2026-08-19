@@ -1,0 +1,35 @@
+{
+  "api": "FastlyIntegration",
+  "expected_status": 201,
+  "feature": "Fastly Integration",
+  "id": "v2/Fastly Integration/Add Fastly account returns \"CREATED\" response",
+  "operation_id": "CreateFastlyAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "FastlyAccountCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "api_key": "{{ unique_alnum }}",
+            "name": "{{ unique }}",
+            "services": []
+          },
+          "type": "fastly-accounts"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integrations/fastly/accounts"
+  },
+  "scenario": "Add Fastly account returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

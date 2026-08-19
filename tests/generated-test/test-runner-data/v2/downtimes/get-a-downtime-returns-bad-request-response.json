@@ -1,0 +1,35 @@
+{
+  "api": "Downtimes",
+  "expected_status": 400,
+  "feature": "Downtimes",
+  "id": "v2/Downtimes/Get a downtime returns \"Bad Request\" response",
+  "operation_id": "GetDowntime",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "downtime_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "INVALID_UUID_LENGTH"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/downtime/{downtime_id}"
+  },
+  "scenario": "Get a downtime returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

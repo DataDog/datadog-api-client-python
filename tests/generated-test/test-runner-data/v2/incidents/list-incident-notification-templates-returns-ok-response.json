@@ -1,0 +1,18 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/List incident notification templates returns \"OK\" response",
+  "operation_id": "ListIncidentNotificationTemplates",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/config/notification-templates"
+  },
+  "scenario": "List incident notification templates returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

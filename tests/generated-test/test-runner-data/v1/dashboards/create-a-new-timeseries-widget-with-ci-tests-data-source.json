@@ -1,0 +1,79 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new timeseries widget with ci_tests data source",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "reflow_type": "auto",
+        "title": "{{ unique }} with ci_tests datasource",
+        "widgets": [
+          {
+            "definition": {
+              "legend_columns": [
+                "avg",
+                "min",
+                "max",
+                "value",
+                "sum"
+              ],
+              "legend_layout": "auto",
+              "requests": [
+                {
+                  "display_type": "line",
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "ci_tests",
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": "test_level:test"
+                      }
+                    }
+                  ],
+                  "response_format": "timeseries",
+                  "style": {
+                    "line_type": "solid",
+                    "line_width": "normal",
+                    "palette": "dog_classic"
+                  }
+                }
+              ],
+              "show_legend": true,
+              "time": {},
+              "title": "",
+              "type": "timeseries"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new timeseries widget with ci_tests data source",
+  "schema_version": 1,
+  "version": "v1"
+}

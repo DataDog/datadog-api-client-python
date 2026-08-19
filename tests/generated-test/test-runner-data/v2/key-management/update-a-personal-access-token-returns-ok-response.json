@@ -1,0 +1,51 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Update a personal access token returns \"OK\" response",
+  "operation_id": "UpdatePersonalAccessToken",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PersonalAccessTokenUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }}-updated"
+          },
+          "id": "{{ personal_access_token.data.id }}",
+          "type": "personal_access_tokens"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "token_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "personal_access_token.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/personal_access_tokens/{token_id}"
+  },
+  "scenario": "Update a personal access token returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

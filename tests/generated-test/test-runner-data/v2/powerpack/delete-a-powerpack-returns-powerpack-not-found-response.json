@@ -1,0 +1,35 @@
+{
+  "api": "Powerpack",
+  "expected_status": 404,
+  "feature": "Powerpack",
+  "id": "v2/Powerpack/Delete a powerpack returns \"Powerpack Not Found\" response",
+  "operation_id": "DeletePowerpack",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "powerpack_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "made-up-id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/powerpacks/{powerpack_id}"
+  },
+  "scenario": "Delete a powerpack returns \"Powerpack Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

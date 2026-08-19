@@ -1,0 +1,56 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create Jira issue for security findings returns \"Created\" response",
+  "operation_id": "CreateJiraIssues",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateJiraIssueRequestArray",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {
+              "description": "A description",
+              "title": "A title"
+            },
+            "relationships": {
+              "findings": {
+                "data": [
+                  {
+                    "id": "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA==",
+                    "type": "findings"
+                  },
+                  {
+                    "id": "eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ==",
+                    "type": "findings"
+                  }
+                ]
+              },
+              "project": {
+                "data": {
+                  "id": "959a6f71-bac8-4027-b1d3-2264f569296f",
+                  "type": "projects"
+                }
+              }
+            },
+            "type": "jira_issues"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/jira_issues"
+  },
+  "scenario": "Create Jira issue for security findings returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

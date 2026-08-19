@@ -1,0 +1,93 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a geomap widget using an event_list request",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": "{{ unique }}",
+        "layout_type": "ordered",
+        "notify_list": [],
+        "reflow_type": "fixed",
+        "tags": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "columns": [
+                    {
+                      "field": "@network.client.geoip.location.latitude",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@network.client.geoip.location.longitude",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@network.client.geoip.country.iso_code",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@network.client.geoip.subdivision.name",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "classic",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "",
+                      "width": "auto"
+                    }
+                  ],
+                  "query": {
+                    "data_source": "logs_stream",
+                    "indexes": [],
+                    "query_string": ""
+                  },
+                  "response_format": "event_list"
+                }
+              ],
+              "style": {
+                "palette": "hostmap_blues",
+                "palette_flip": false
+              },
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "geomap",
+              "view": {
+                "focus": "WORLD"
+              }
+            },
+            "layout": {
+              "height": 6,
+              "width": 12,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a geomap widget using an event_list request",
+  "schema_version": 1,
+  "version": "v1"
+}

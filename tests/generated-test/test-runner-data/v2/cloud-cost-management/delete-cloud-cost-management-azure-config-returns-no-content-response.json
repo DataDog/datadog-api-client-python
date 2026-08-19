@@ -1,0 +1,35 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 204,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Delete Cloud Cost Management Azure config returns \"No Content\" response",
+  "operation_id": "DeleteCostAzureUCConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "cloud_account_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 100
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/azure_uc_config/{cloud_account_id}"
+  },
+  "scenario": "Delete Cloud Cost Management Azure config returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,63 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 201,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Create Scanning Rule returns \"OK\" response",
+  "operation_id": "CreateScanningRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "excluded_namespaces": [
+              "admin.name"
+            ],
+            "included_keyword_configuration": {
+              "character_count": 35,
+              "keywords": [
+                "credit card"
+              ]
+            },
+            "is_enabled": true,
+            "name": "{{ unique }}",
+            "namespaces": [
+              "admin"
+            ],
+            "pattern": "pattern",
+            "priority": 1,
+            "tags": [
+              "sensitive_data:true"
+            ],
+            "text_replacement": {
+              "type": "none"
+            }
+          },
+          "relationships": {
+            "group": {
+              "data": {
+                "id": "{{ group.data.id }}",
+                "type": "{{ group.data.type }}"
+              }
+            }
+          },
+          "type": "sensitive_data_scanner_rule"
+        },
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/sensitive-data-scanner/config/rules"
+  },
+  "scenario": "Create Scanning Rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

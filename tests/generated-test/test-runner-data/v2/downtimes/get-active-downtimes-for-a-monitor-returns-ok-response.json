@@ -1,0 +1,35 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v2/Downtimes/Get active downtimes for a monitor returns \"OK\" response",
+  "operation_id": "ListMonitorDowntimes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "monitor_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 35534610
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/{monitor_id}/downtime_matches"
+  },
+  "scenario": "Get active downtimes for a monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

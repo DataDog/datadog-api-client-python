@@ -1,0 +1,424 @@
+{
+  "feature": "Seats",
+  "recordings": [
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T20:26:19.395Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "product_code": "",
+                    "user_uuids": [
+                      ""
+                    ]
+                  },
+                  "type": "seat-assignments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/seats/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"product_code is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        }
+      ],
+      "scenario": "Assign seats to users returns \"Unprocessable Entity\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T18:39:37.303Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Assign_seats_to_users_returns_Unprocessable_Entity_response_when_product_code_is_empty-1770835177@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"f9900642-4311-4d6a-836b-2f367a92c511\",\"attributes\":{\"name\":null,\"handle\":\"test-assign_seats_to_users_returns_unprocessable_entity_response_when_product_code_is_empty-1770835177@datadoghq.com\",\"created_at\":\"2026-02-11T18:39:38.645306+00:00\",\"modified_at\":\"2026-02-11T18:39:38.645306+00:00\",\"email\":\"test-assign_seats_to_users_returns_unprocessable_entity_response_when_product_code_is_empty-1770835177@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b2c717bae3bae3a185ff567efda79a5a?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "product_code": "",
+                    "user_uuids": [
+                      "f9900642-4311-4d6a-836b-2f367a92c511"
+                    ]
+                  },
+                  "type": "seat-assignments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/seats/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"product_code is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/f9900642-4311-4d6a-836b-2f367a92c511",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Assign seats to users returns \"Unprocessable Entity\" response when product_code is empty",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T18:39:39.382Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "product_code": "incident_response",
+                    "user_uuids": []
+                  },
+                  "type": "seat-assignments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/seats/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"user_uuids is required and must not be empty\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        }
+      ],
+      "scenario": "Assign seats to users returns \"Unprocessable Entity\" response when user_uuids is empty",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T18:39:39.654Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/seats/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"product_code query parameter is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get users with seats returns \"Bad Request\" response when product_code is missing",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T18:39:39.917Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/seats/users",
+            "query": [
+              [
+                "page[limit]",
+                "100"
+              ],
+              [
+                "product_code",
+                "incident_response"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get users with seats returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T20:26:20.422Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "product_code": "",
+                    "user_uuids": [
+                      ""
+                    ]
+                  },
+                  "type": "seat-assignments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v2/seats/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"product_code is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        }
+      ],
+      "scenario": "Unassign seats from users returns \"Unprocessable Entity\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T18:39:40.198Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Unassign_seats_from_users_returns_Unprocessable_Entity_response_when_product_code_is_empty-1770835180@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"626a4e8e-64bd-409d-b80e-428f08ac0b62\",\"attributes\":{\"name\":null,\"handle\":\"test-unassign_seats_from_users_returns_unprocessable_entity_response_when_product_code_is_empty-1770835180@datadoghq.com\",\"created_at\":\"2026-02-11T18:39:40.455244+00:00\",\"modified_at\":\"2026-02-11T18:39:40.455244+00:00\",\"email\":\"test-unassign_seats_from_users_returns_unprocessable_entity_response_when_product_code_is_empty-1770835180@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/17f8bf4cb2d8600dc8ada5cdd71b7d77?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "product_code": "",
+                    "user_uuids": [
+                      "626a4e8e-64bd-409d-b80e-428f08ac0b62"
+                    ]
+                  },
+                  "type": "seat-assignments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v2/seats/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"product_code is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/626a4e8e-64bd-409d-b80e-428f08ac0b62",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Unassign seats from users returns \"Unprocessable Entity\" response when product_code is empty",
+      "version": "v2"
+    },
+    {
+      "feature": "Seats",
+      "frozen_at": "2026-02-11T18:39:41.207Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "product_code": "incident_response",
+                    "user_uuids": []
+                  },
+                  "type": "seat-assignments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v2/seats/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"user_uuids is required and must not be empty\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        }
+      ],
+      "scenario": "Unassign seats from users returns \"Unprocessable Entity\" response when user_uuids is empty",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

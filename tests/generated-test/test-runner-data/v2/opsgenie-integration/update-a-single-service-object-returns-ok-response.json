@@ -1,0 +1,53 @@
+{
+  "api": "OpsgenieIntegration",
+  "expected_status": 200,
+  "feature": "Opsgenie Integration",
+  "id": "v2/Opsgenie Integration/Update a single service object returns \"OK\" response",
+  "operation_id": "UpdateOpsgenieService",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OpsgenieServiceUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ opsgenie_service.data.attributes.name }}--updated",
+            "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+            "region": "eu"
+          },
+          "id": "{{opsgenie_service.data.id}}",
+          "type": "opsgenie-service"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "integration_service_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "opsgenie_service.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/opsgenie/services/{integration_service_id}"
+  },
+  "scenario": "Update a single service object returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

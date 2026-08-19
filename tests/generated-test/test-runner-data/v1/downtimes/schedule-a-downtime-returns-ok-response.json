@@ -1,0 +1,28 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v1/Downtimes/Schedule a downtime returns \"OK\" response",
+  "operation_id": "CreateDowntime",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Downtime",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"message\": \"{{ unique }}\", \"start\": {{ timestamp(\"now\") }}, \"end\": {{ timestamp(\"now + 1h\") }}, \"timezone\": \"Etc/UTC\", \"scope\": [\"test:{{ unique_lower_alnum }}\"], \"recurrence\": {\"type\": \"weeks\", \"period\": 1, \"week_days\": [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"], \"until_date\": {{ timestamp(\"now + 21d\")}} }, \"notify_end_states\": [\"alert\", \"no data\", \"warn\"], \"notify_end_types\": [\"canceled\", \"expired\"]}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/downtime"
+  },
+  "scenario": "Schedule a downtime returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

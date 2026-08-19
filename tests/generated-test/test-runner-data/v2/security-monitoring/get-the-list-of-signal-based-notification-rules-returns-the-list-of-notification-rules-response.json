@@ -1,0 +1,18 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get the list of signal-based notification rules returns \"The list of notification rules.\" response",
+  "operation_id": "GetSignalNotificationRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/signals/notification_rules"
+  },
+  "scenario": "Get the list of signal-based notification rules returns \"The list of notification rules.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

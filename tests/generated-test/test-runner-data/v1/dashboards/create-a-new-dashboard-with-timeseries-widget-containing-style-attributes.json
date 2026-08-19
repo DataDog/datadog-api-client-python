@@ -1,0 +1,48 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with timeseries widget containing style attributes",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with timeseries widget",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "display_type": "bars",
+                  "on_right_yaxis": false,
+                  "q": "sum:trace.test.errors{env:prod,service:datadog-api-spec} by {resource_name}.as_count()",
+                  "style": {
+                    "line_type": "solid",
+                    "line_width": "normal",
+                    "palette": "warm"
+                  }
+                }
+              ],
+              "type": "timeseries"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with timeseries widget containing style attributes",
+  "schema_version": 1,
+  "version": "v1"
+}

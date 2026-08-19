@@ -1,0 +1,38 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 400,
+  "feature": "Service Level Objectives",
+  "id": "v1/Service Level Objectives/Create an SLO object returns \"Bad Request\" response",
+  "operation_id": "CreateSLO",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ServiceLevelObjectiveRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "name": "{{ unique }}",
+        "thresholds": [
+          {
+            "target": 95.0,
+            "target_display": "95.0",
+            "timeframe": "7d",
+            "warning": 98,
+            "warning_display": "98.0"
+          }
+        ],
+        "type": "monitor"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/slo"
+  },
+  "scenario": "Create an SLO object returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

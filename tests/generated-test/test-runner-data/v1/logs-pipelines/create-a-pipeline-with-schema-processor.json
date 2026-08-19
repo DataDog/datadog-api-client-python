@@ -1,0 +1,256 @@
+{
+  "api": "LogsPipelines",
+  "expected_status": 200,
+  "feature": "Logs Pipelines",
+  "id": "v1/Logs Pipelines/Create a pipeline with schema processor",
+  "operation_id": "CreateLogsPipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "query": "source:python"
+        },
+        "name": "testSchemaProcessor",
+        "processors": [
+          {
+            "is_enabled": true,
+            "mappers": [
+              {
+                "categories": [
+                  {
+                    "filter": {
+                      "query": "@eventName:(*Create*)"
+                    },
+                    "id": 1,
+                    "name": "Create"
+                  },
+                  {
+                    "filter": {
+                      "query": "@eventName:(ChangePassword OR PasswordUpdated)"
+                    },
+                    "id": 3,
+                    "name": "Password Change"
+                  },
+                  {
+                    "filter": {
+                      "query": "@eventName:(*Attach*)"
+                    },
+                    "id": 7,
+                    "name": "Attach Policy"
+                  },
+                  {
+                    "filter": {
+                      "query": "@eventName:(*Detach* OR *Remove*)"
+                    },
+                    "id": 8,
+                    "name": "Detach Policy"
+                  },
+                  {
+                    "filter": {
+                      "query": "@eventName:(*Delete*)"
+                    },
+                    "id": 6,
+                    "name": "Delete"
+                  },
+                  {
+                    "filter": {
+                      "query": "@eventName:*"
+                    },
+                    "id": 99,
+                    "name": "Other"
+                  }
+                ],
+                "fallback": {
+                  "sources": {
+                    "ocsf.activity_name": [
+                      "eventName"
+                    ]
+                  },
+                  "values": {
+                    "ocsf.activity_id": "99",
+                    "ocsf.activity_name": "Other"
+                  }
+                },
+                "name": "activity_id and activity_name",
+                "targets": {
+                  "id": "ocsf.activity_id",
+                  "name": "ocsf.activity_name"
+                },
+                "type": "schema-category-mapper"
+              },
+              {
+                "categories": [
+                  {
+                    "filter": {
+                      "query": "-@errorCode:*"
+                    },
+                    "id": 1,
+                    "name": "Success"
+                  },
+                  {
+                    "filter": {
+                      "query": "@errorCode:*"
+                    },
+                    "id": 2,
+                    "name": "Failure"
+                  }
+                ],
+                "name": "status",
+                "targets": {
+                  "id": "ocsf.status_id",
+                  "name": "ocsf.status"
+                },
+                "type": "schema-category-mapper"
+              },
+              {
+                "categories": [
+                  {
+                    "filter": {
+                      "query": "@eventName:*"
+                    },
+                    "id": 1,
+                    "name": "Informational"
+                  }
+                ],
+                "name": "Set default severity",
+                "targets": {
+                  "id": "ocsf.severity_id",
+                  "name": "ocsf.severity"
+                },
+                "type": "schema-category-mapper"
+              },
+              {
+                "name": "Map userIdentity to ocsf.user.uid",
+                "sources": [
+                  "userIdentity.principalId",
+                  "responseElements.role.roleId",
+                  "responseElements.user.userId"
+                ],
+                "target": "ocsf.user.uid",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map userName to ocsf.user.name",
+                "sources": [
+                  "requestParameters.userName",
+                  "responseElements.role.roleName",
+                  "requestParameters.roleName",
+                  "responseElements.user.userName"
+                ],
+                "target": "ocsf.user.name",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map api to ocsf.api",
+                "sources": [
+                  "api"
+                ],
+                "target": "ocsf.api",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map user to ocsf.user",
+                "sources": [
+                  "user"
+                ],
+                "target": "ocsf.user",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map actor to ocsf.actor",
+                "sources": [
+                  "actor"
+                ],
+                "target": "ocsf.actor",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map cloud to ocsf.cloud",
+                "sources": [
+                  "cloud"
+                ],
+                "target": "ocsf.cloud",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map http_request to ocsf.http_request",
+                "sources": [
+                  "http_request"
+                ],
+                "target": "ocsf.http_request",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map metadata to ocsf.metadata",
+                "sources": [
+                  "metadata"
+                ],
+                "target": "ocsf.metadata",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map time to ocsf.time",
+                "sources": [
+                  "time"
+                ],
+                "target": "ocsf.time",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map src_endpoint to ocsf.src_endpoint",
+                "sources": [
+                  "src_endpoint"
+                ],
+                "target": "ocsf.src_endpoint",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map severity to ocsf.severity",
+                "sources": [
+                  "severity"
+                ],
+                "target": "ocsf.severity",
+                "type": "schema-remapper"
+              },
+              {
+                "name": "Map severity_id to ocsf.severity_id",
+                "sources": [
+                  "severity_id"
+                ],
+                "target": "ocsf.severity_id",
+                "type": "schema-remapper"
+              }
+            ],
+            "name": "Apply OCSF schema for 3001",
+            "schema": {
+              "class_name": "Account Change",
+              "class_uid": 3001,
+              "profiles": [
+                "cloud",
+                "datetime"
+              ],
+              "schema_type": "ocsf",
+              "version": "1.5.0"
+            },
+            "type": "schema-processor"
+          }
+        ],
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs/config/pipelines"
+  },
+  "scenario": "Create a pipeline with schema processor",
+  "schema_version": 1,
+  "version": "v1"
+}

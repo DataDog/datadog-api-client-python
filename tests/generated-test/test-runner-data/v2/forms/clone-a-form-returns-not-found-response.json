@@ -1,0 +1,50 @@
+{
+  "api": "Forms",
+  "expected_status": 404,
+  "feature": "Forms",
+  "id": "v2/Forms/Clone a form returns \"Not Found\" response",
+  "operation_id": "CloneForm",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CloneFormRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Copy of My Form"
+          },
+          "type": "forms"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "form_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000001"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/forms/{form_id}/clone"
+  },
+  "scenario": "Clone a form returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

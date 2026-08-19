@@ -1,0 +1,35 @@
+{
+  "api": "DashboardLists",
+  "expected_status": 200,
+  "feature": "Dashboard Lists",
+  "id": "v1/Dashboard Lists/Get a dashboard list returns \"OK\" response",
+  "operation_id": "GetDashboardList",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "list_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "dashboard_list.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard/lists/manual/{list_id}"
+  },
+  "scenario": "Get a dashboard list returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

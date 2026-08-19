@@ -1,0 +1,48 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Mute security findings returns \"Not Found\" response",
+  "operation_id": "MuteSecurityFindings",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MuteFindingsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "mute": {
+              "description": "To be resolved later.",
+              "expire_at": 1778721573794,
+              "is_muted": true,
+              "reason": "RISK_ACCEPTED"
+            }
+          },
+          "relationships": {
+            "findings": {
+              "data": [
+                {
+                  "id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==",
+                  "type": "findings"
+                }
+              ]
+            }
+          },
+          "type": "mute"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/mute"
+  },
+  "scenario": "Mute security findings returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

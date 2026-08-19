@@ -1,0 +1,73 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Validate an existing monitor returns \"OK\" response",
+  "operation_id": "ValidateExistingMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "monitor_payload.json",
+      "value": {
+        "message": "some message Notify: @hipchat-channel",
+        "name": "{{ unique }}",
+        "options": {
+          "enable_logs_sample": true,
+          "escalation_message": "the situation has escalated",
+          "evaluation_delay": 700,
+          "include_tags": true,
+          "locked": false,
+          "new_host_delay": 600,
+          "no_data_timeframe": null,
+          "notification_preset_name": "hide_handles",
+          "notify_audit": false,
+          "notify_no_data": false,
+          "on_missing_data": "show_and_notify_no_data",
+          "renotify_interval": 60,
+          "require_full_window": true,
+          "thresholds": {
+            "critical": 2,
+            "warning": 1
+          },
+          "timeout_h": 24
+        },
+        "priority": 3,
+        "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "log alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "monitor_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "monitor.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/monitor/{monitor_id}/validate"
+  },
+  "scenario": "Validate an existing monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

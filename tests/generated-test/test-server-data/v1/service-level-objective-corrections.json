@@ -1,0 +1,954 @@
+{
+  "feature": "Service Level Objective Corrections",
+  "recordings": [
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2022-05-12T09:50:11.949Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Create_an_SLO_correction_returns_OK_response-1652349011",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"description\":\"\",\"monitor_tags\":[],\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"thresholds\":[{\"warning\":98.0,\"warning_display\":\"98.\",\"target\":95.0,\"target_display\":\"95.\",\"timeframe\":\"7d\"}],\"type_id\":1,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"id\":\"26d1f492d25b598fb6ef1a0405faa153\",\"name\":\"Test-Create_an_SLO_correction_returns_OK_response-1652349011\",\"created_at\":1652349012,\"tags\":[],\"modified_at\":1652349012,\"type\":\"metric\"}],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Scheduled Maintenance",
+                    "description": "Test-Create_an_SLO_correction_returns_OK_response-1652349011",
+                    "end": 1652352611,
+                    "slo_id": "26d1f492d25b598fb6ef1a0405faa153",
+                    "start": 1652349011,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"eb223538-d1d8-11ec-8dd2-da7ad0902002\",\"attributes\":{\"slo_id\":\"26d1f492d25b598fb6ef1a0405faa153\",\"start\":1652349011,\"end\":1652352611,\"description\":\"Test-Create_an_SLO_correction_returns_OK_response-1652349011\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/eb223538-d1d8-11ec-8dd2-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/26d1f492d25b598fb6ef1a0405faa153",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"26d1f492d25b598fb6ef1a0405faa153\"],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create an SLO correction returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2022-05-12T09:50:14.117Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"description\":\"\",\"monitor_tags\":[],\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"thresholds\":[{\"warning\":98.0,\"warning_display\":\"98.\",\"target\":95.0,\"target_display\":\"95.\",\"timeframe\":\"7d\"}],\"type_id\":1,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"id\":\"24892d3875ee57e7a9e1320ebffa3916\",\"name\":\"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014\",\"created_at\":1652349014,\"tags\":[],\"modified_at\":1652349014,\"type\":\"metric\"}],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Scheduled Maintenance",
+                    "description": "Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014",
+                    "duration": 3600,
+                    "rrule": "FREQ=DAILY;INTERVAL=10;COUNT=5",
+                    "slo_id": "24892d3875ee57e7a9e1320ebffa3916",
+                    "start": 1652349014,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"ec8f9488-d1d8-11ec-bc64-da7ad0902002\",\"attributes\":{\"slo_id\":\"24892d3875ee57e7a9e1320ebffa3916\",\"start\":1652349014,\"end\":null,\"description\":\"Test-Create_an_SLO_correction_with_rrule_returns_OK_response-1652349014\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":\"FREQ=DAILY;INTERVAL=10;COUNT=5\",\"duration\":3600,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/ec8f9488-d1d8-11ec-bc64-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/24892d3875ee57e7a9e1320ebffa3916",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"24892d3875ee57e7a9e1320ebffa3916\"],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create an SLO correction with rrule returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2026-05-27T20:45:22.423Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Scheduled Maintenance",
+                    "description": "Test-Create_an_SLO_correction_with_slo_query_returns_OK_response-1779914722",
+                    "end": 1779918322,
+                    "slo_query": "env:prod service:checkout",
+                    "start": 1779914722,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"fb3a5c0a-5a0c-11f1-8207-da7ad0902002\",\"attributes\":{\"slo_id\":null,\"start\":1779914722,\"end\":1779918322,\"description\":\"Test-Create_an_SLO_correction_with_slo_query_returns_OK_response-1779914722\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"slo_query\":\"env:prod service:checkout\",\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"attributes\":{\"uuid\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"handle\":\"blaise.vonohlen@datadoghq.com\",\"email\":\"blaise.vonohlen@datadoghq.com\",\"name\":\"Blaise von Ohlen\",\"icon\":\"https://secure.gravatar.com/avatar/c78d8282d57321884e8f77172229634f?s=48&d=retro\"}}},\"modifier\":null}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/fb3a5c0a-5a0c-11f1-8207-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an SLO correction with slo_query returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2022-11-17T16:38:19.644Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_all_SLO_corrections_returns_OK_response-1668703099",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"60569193a09054f6bc6fa6e87fb43031\",\"name\":\"Test-Get_all_SLO_corrections_returns_OK_response-1668703099\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1668703100,\"modified_at\":1668703100}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Other",
+                    "description": "Test Correction",
+                    "end": 1668706699,
+                    "slo_id": "60569193a09054f6bc6fa6e87fb43031",
+                    "start": 1668703099,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"3ecd96c6-6696-11ed-9c21-da7ad0902002\",\"attributes\":{\"slo_id\":\"60569193a09054f6bc6fa6e87fb43031\",\"start\":1668703099,\"end\":1668706699,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/correction",
+            "query": [
+              [
+                "limit",
+                "1"
+              ],
+              [
+                "offset",
+                "1"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"correction\",\"id\":\"3ecd96c6-6696-11ed-9c21-da7ad0902002\",\"attributes\":{\"slo_id\":\"60569193a09054f6bc6fa6e87fb43031\",\"start\":1668703099,\"end\":1668706699,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":1668703100,\"modified_at\":1668703100,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}],\"meta\":{\"page\":{\"total_count\":2,\"total_filtered_count\":1}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/3ecd96c6-6696-11ed-9c21-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/60569193a09054f6bc6fa6e87fb43031",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"60569193a09054f6bc6fa6e87fb43031\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all SLO corrections returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2023-08-25T11:50:34.970Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/correction",
+            "query": [
+              [
+                "limit",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"correction\",\"id\":\"fb76e0fa-bf7b-11ed-ba7e-da7ad0902002\",\"attributes\":{\"slo_id\":\"a17acfd48b7c55d19192e3a697cc1d01\",\"start\":1678255200,\"end\":1678355280,\"description\":\"\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":1678477473,\"modified_at\":1678477473,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"35c75d43-eba0-11e9-a77a-2b3585ff5dfb\",\"attributes\":{\"uuid\":\"35c75d43-eba0-11e9-a77a-2b3585ff5dfb\",\"handle\":\"support-nickautotestingorg\",\"email\":\"support-user-prod@datadoghq.com\",\"name\":\"Datadog Support\",\"icon\":\"https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro\"}}},\"modifier\":null}},{\"type\":\"correction\",\"id\":\"2d16c2ee-bf70-11ed-895f-da7ad0902002\",\"attributes\":{\"slo_id\":\"70e82706f4ae56ff8bdd7f02e767f97c\",\"start\":1678255200,\"end\":1678339140,\"description\":\"\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":1678472403,\"modified_at\":1678472403,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"35c75d43-eba0-11e9-a77a-2b3585ff5dfb\",\"attributes\":{\"uuid\":\"35c75d43-eba0-11e9-a77a-2b3585ff5dfb\",\"handle\":\"support-nickautotestingorg\",\"email\":\"support-user-prod@datadoghq.com\",\"name\":\"Datadog Support\",\"icon\":\"https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro\"}}},\"modifier\":null}}],\"meta\":{\"page\":{\"total_count\":3,\"total_filtered_count\":2}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/correction",
+            "query": [
+              [
+                "limit",
+                "2"
+              ],
+              [
+                "offset",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"correction\",\"id\":\"cc2316d2-bf6e-11ed-82f2-da7ad0902002\",\"attributes\":{\"slo_id\":\"955ab6301fa656e7b061de4a05ad4774\",\"start\":1678255200,\"end\":1678339140,\"description\":\"\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":1678471811,\"modified_at\":1678471811,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"35c75d43-eba0-11e9-a77a-2b3585ff5dfb\",\"attributes\":{\"uuid\":\"35c75d43-eba0-11e9-a77a-2b3585ff5dfb\",\"handle\":\"support-nickautotestingorg\",\"email\":\"support-user-prod@datadoghq.com\",\"name\":\"Datadog Support\",\"icon\":\"https://secure.gravatar.com/avatar/e6952b5f29fe2d996cf4e63f40db9e71?s=48&d=retro\"}}},\"modifier\":null}}],\"meta\":{\"page\":{\"total_count\":3,\"total_filtered_count\":1}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all SLO corrections returns \"OK\" response with pagination",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2022-05-12T09:50:19.508Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_an_SLO_correction_for_an_SLO_returns_OK_response-1652349019",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"description\":\"\",\"monitor_tags\":[],\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"thresholds\":[{\"warning\":98.0,\"warning_display\":\"98.\",\"target\":95.0,\"target_display\":\"95.\",\"timeframe\":\"7d\"}],\"type_id\":1,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"id\":\"b7e8543aac97516ebb61e8743d1a10a1\",\"name\":\"Test-Get_an_SLO_correction_for_an_SLO_returns_OK_response-1652349019\",\"created_at\":1652349019,\"tags\":[],\"modified_at\":1652349019,\"type\":\"metric\"}],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Other",
+                    "description": "Test Correction",
+                    "end": 1652352619,
+                    "slo_id": "b7e8543aac97516ebb61e8743d1a10a1",
+                    "start": 1652349019,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"efa6f9ea-d1d8-11ec-9495-da7ad0902002\",\"attributes\":{\"slo_id\":\"b7e8543aac97516ebb61e8743d1a10a1\",\"start\":1652349019,\"end\":1652352619,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/correction/efa6f9ea-d1d8-11ec-9495-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"efa6f9ea-d1d8-11ec-9495-da7ad0902002\",\"attributes\":{\"slo_id\":\"b7e8543aac97516ebb61e8743d1a10a1\",\"start\":1652349019,\"end\":1652352619,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":1652349020,\"modified_at\":1652349020,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/efa6f9ea-d1d8-11ec-9495-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/b7e8543aac97516ebb61e8743d1a10a1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"b7e8543aac97516ebb61e8743d1a10a1\"],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get an SLO correction for an SLO returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2022-05-12T09:50:22.032Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Update_an_SLO_correction_returns_OK_response-1652349022",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"description\":\"\",\"monitor_tags\":[],\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"thresholds\":[{\"warning\":98.0,\"warning_display\":\"98.\",\"target\":95.0,\"target_display\":\"95.\",\"timeframe\":\"7d\"}],\"type_id\":1,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"id\":\"c20f6845962c5776b1440ed8d324d6fe\",\"name\":\"Test-Update_an_SLO_correction_returns_OK_response-1652349022\",\"created_at\":1652349022,\"tags\":[],\"modified_at\":1652349022,\"type\":\"metric\"}],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Other",
+                    "description": "Test Correction",
+                    "end": 1652352622,
+                    "slo_id": "c20f6845962c5776b1440ed8d324d6fe",
+                    "start": 1652349022,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"f12e44e4-d1d8-11ec-9dc0-da7ad0902002\",\"attributes\":{\"slo_id\":\"c20f6845962c5776b1440ed8d324d6fe\",\"start\":1652349022,\"end\":1652352622,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Deployment",
+                    "description": "Test-Update_an_SLO_correction_returns_OK_response-1652349022",
+                    "end": 1652352622,
+                    "start": 1652349022,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v1/slo/correction/f12e44e4-d1d8-11ec-9dc0-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"f12e44e4-d1d8-11ec-9dc0-da7ad0902002\",\"attributes\":{\"slo_id\":\"c20f6845962c5776b1440ed8d324d6fe\",\"start\":1652349022,\"end\":1652352622,\"description\":\"Test-Update_an_SLO_correction_returns_OK_response-1652349022\",\"category\":\"Deployment\",\"timezone\":\"UTC\",\"created_at\":1652349023,\"modified_at\":1652349023,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/f12e44e4-d1d8-11ec-9dc0-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/c20f6845962c5776b1440ed8d324d6fe",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"c20f6845962c5776b1440ed8d324d6fe\"],\"error\":null}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update an SLO correction returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objective Corrections",
+      "frozen_at": "2026-06-03T15:43:01.600Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Other",
+                    "description": "Test Correction",
+                    "end": 1780504981,
+                    "slo_query": "env:prod service:checkout",
+                    "start": 1780501381,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"e74cc4de-5f62-11f1-a69d-da7ad0902002\",\"attributes\":{\"slo_id\":null,\"start\":1780501381,\"end\":1780504981,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"slo_query\":\"env:prod service:checkout\",\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"attributes\":{\"uuid\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"handle\":\"blaise.vonohlen@datadoghq.com\",\"email\":\"blaise.vonohlen@datadoghq.com\",\"name\":\"Blaise von Ohlen\",\"icon\":\"https://secure.gravatar.com/avatar/c78d8282d57321884e8f77172229634f?s=48&d=retro\"}}},\"modifier\":null}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Scheduled Maintenance",
+                    "description": "Test-Update_an_SLO_correction_with_slo_query_returns_OK_response-1780501381",
+                    "end": 1780504981,
+                    "slo_query": "env:staging service:checkout",
+                    "start": 1780501381,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v1/slo/correction/e74cc4de-5f62-11f1-a69d-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"e74cc4de-5f62-11f1-a69d-da7ad0902002\",\"attributes\":{\"slo_id\":null,\"start\":1780501381,\"end\":1780504981,\"description\":\"Test-Update_an_SLO_correction_with_slo_query_returns_OK_response-1780501381\",\"category\":\"Scheduled Maintenance\",\"timezone\":\"UTC\",\"created_at\":1780501381,\"modified_at\":1780501381,\"rrule\":null,\"duration\":null,\"slo_query\":\"env:staging service:checkout\",\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"attributes\":{\"uuid\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"handle\":\"blaise.vonohlen@datadoghq.com\",\"email\":\"blaise.vonohlen@datadoghq.com\",\"name\":\"Blaise von Ohlen\",\"icon\":\"https://secure.gravatar.com/avatar/c78d8282d57321884e8f77172229634f?s=48&d=retro\"}}},\"modifier\":{\"data\":{\"type\":\"users\",\"id\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"attributes\":{\"uuid\":\"780cfef8-1736-4a4e-a826-b875b1cadcec\",\"handle\":\"blaise.vonohlen@datadoghq.com\",\"email\":\"blaise.vonohlen@datadoghq.com\",\"name\":\"Blaise von Ohlen\",\"icon\":\"https://secure.gravatar.com/avatar/c78d8282d57321884e8f77172229634f?s=48&d=retro\"}}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/e74cc4de-5f62-11f1-a69d-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an SLO correction with slo_query returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

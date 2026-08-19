@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get a signal's details returns \"Not Found\" response",
+  "operation_id": "GetSecurityMonitoringSignal",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "signal_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "AQAAAYNqUBVU4-rffwAAAABBWU5xVUJWVUFBQjJBd3ptCL3QUEm3nt2"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/signals/{signal_id}"
+  },
+  "scenario": "Get a signal's details returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

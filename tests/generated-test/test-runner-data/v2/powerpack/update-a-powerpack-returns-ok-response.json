@@ -1,0 +1,85 @@
+{
+  "api": "Powerpack",
+  "expected_status": 200,
+  "feature": "Powerpack",
+  "id": "v2/Powerpack/Update a powerpack returns \"OK\" response",
+  "operation_id": "UpdatePowerpack",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Powerpack",
+        "type": "object"
+      },
+      "source": "powerpack_payload.json",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Sample powerpack",
+            "group_widget": {
+              "definition": {
+                "layout_type": "ordered",
+                "show_title": true,
+                "title": "Sample Powerpack",
+                "type": "group",
+                "widgets": [
+                  {
+                    "definition": {
+                      "content": "test",
+                      "type": "note"
+                    }
+                  }
+                ]
+              },
+              "layout": {
+                "height": 3,
+                "width": 12,
+                "x": 0,
+                "y": 0
+              },
+              "live_span": "1h"
+            },
+            "name": "{{ unique }}",
+            "tags": [
+              "tag:sample"
+            ],
+            "template_variables": [
+              {
+                "defaults": [
+                  "*"
+                ],
+                "name": "sample"
+              }
+            ]
+          },
+          "type": "powerpack"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "powerpack_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "powerpack.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/powerpacks/{powerpack_id}"
+  },
+  "scenario": "Update a powerpack returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

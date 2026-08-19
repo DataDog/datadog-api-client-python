@@ -1,0 +1,35 @@
+{
+  "api": "Scorecards",
+  "expected_status": 404,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/Delete a rule returns \"Not Found\" response",
+  "operation_id": "DeleteScorecardRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "2a4f524e-168a-429d-bb75-7b1ffeab0cbb"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/scorecard/rules/{rule_id}"
+  },
+  "scenario": "Delete a rule returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

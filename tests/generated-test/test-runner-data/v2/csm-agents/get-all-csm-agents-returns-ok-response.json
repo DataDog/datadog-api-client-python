@@ -1,0 +1,18 @@
+{
+  "api": "CSMAgents",
+  "expected_status": 200,
+  "feature": "CSM Agents",
+  "id": "v2/CSM Agents/Get all CSM Agents returns \"OK\" response",
+  "operation_id": "ListAllCSMAgents",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/csm/onboarding/agents"
+  },
+  "scenario": "Get all CSM Agents returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 200,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/List AWS on demand tasks returns \"OK\" response",
+  "operation_id": "ListAwsOnDemandTasks",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/agentless_scanning/ondemand/aws"
+  },
+  "scenario": "List AWS on demand tasks returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

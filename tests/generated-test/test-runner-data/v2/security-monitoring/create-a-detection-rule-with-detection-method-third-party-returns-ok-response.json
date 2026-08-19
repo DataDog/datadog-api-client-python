@@ -1,0 +1,65 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a detection rule with detection method 'third_party' returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [],
+        "isEnabled": true,
+        "message": "This is a third party rule",
+        "name": "{{ unique }}",
+        "options": {
+          "detectionMethod": "third_party",
+          "keepAlive": 0,
+          "maxSignalDuration": 600,
+          "thirdPartyRuleOptions": {
+            "defaultStatus": "info",
+            "rootQueries": [
+              {
+                "groupByFields": [
+                  "instance-id"
+                ],
+                "query": "source:guardduty @details.alertType:*EC2*"
+              },
+              {
+                "groupByFields": [],
+                "query": "source:guardduty"
+              }
+            ]
+          }
+        },
+        "queries": [],
+        "thirdPartyCases": [
+          {
+            "name": "high",
+            "query": "status:error",
+            "status": "high"
+          },
+          {
+            "name": "low",
+            "query": "status:info",
+            "status": "low"
+          }
+        ],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules"
+  },
+  "scenario": "Create a detection rule with detection method 'third_party' returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

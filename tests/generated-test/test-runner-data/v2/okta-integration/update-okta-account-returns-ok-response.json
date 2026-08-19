@@ -1,0 +1,53 @@
+{
+  "api": "OktaIntegration",
+  "expected_status": 200,
+  "feature": "Okta Integration",
+  "id": "v2/Okta Integration/Update Okta account returns \"OK\" response",
+  "operation_id": "UpdateOktaAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OktaAccountUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "auth_method": "oauth",
+            "client_id": "client_id",
+            "client_secret": "client_secret",
+            "domain": "https://example.okta.com/"
+          },
+          "type": "okta-accounts"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "okta_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/okta/accounts/{account_id}"
+  },
+  "scenario": "Update Okta account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

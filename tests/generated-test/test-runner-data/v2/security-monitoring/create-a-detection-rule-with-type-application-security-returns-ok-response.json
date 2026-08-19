@@ -1,0 +1,81 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a detection rule with type 'application_security 'returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "actions": [
+              {
+                "options": {
+                  "duration": 900
+                },
+                "type": "block_ip"
+              },
+              {
+                "options": {
+                  "userBehaviorName": "behavior"
+                },
+                "type": "user_behavior"
+              },
+              {
+                "options": {
+                  "flaggedIPType": "FLAGGED"
+                },
+                "type": "flag_ip"
+              }
+            ],
+            "condition": "a > 100000",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "filters": [],
+        "groupSignalsBy": [
+          "service"
+        ],
+        "isEnabled": true,
+        "message": "Test rule",
+        "name": "{{unique}}_appsec_rule",
+        "options": {
+          "detectionMethod": "threshold",
+          "evaluationWindow": 900,
+          "keepAlive": 3600,
+          "maxSignalDuration": 86400
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "distinctFields": [],
+            "groupByFields": [
+              "service",
+              "@http.client_ip"
+            ],
+            "query": "@appsec.security_activity:business_logic.users.login.failure"
+          }
+        ],
+        "tags": [],
+        "type": "application_security"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules"
+  },
+  "scenario": "Create a detection rule with type 'application_security 'returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Get all monitor user templates returns \"OK\" response",
+  "operation_id": "ListMonitorUserTemplates",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/template"
+  },
+  "scenario": "Get all monitor user templates returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

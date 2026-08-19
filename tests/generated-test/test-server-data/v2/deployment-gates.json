@@ -1,0 +1,2585 @@
+{
+  "feature": "Deployment Gates",
+  "recordings": [
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-10-28T14:03:25.410Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "env": "",
+                    "identifier": "my-gate",
+                    "service": "test-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"env\\\" is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create deployment gate returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:13.804Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatedeploymentgatereturnsbadrequestresponse1773742993",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2ddfb377-44de-47fe-b53c-58cf800cca1b\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-03-17T10:23:14.339908Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatedeploymentgatereturnsbadrequestresponse1773742993\",\"service\":\"my-service\",\"updated_at\":\"2026-03-17T10:23:14.339908Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatedeploymentgatereturnsbadrequestresponse1773742993",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"Gate already exists with the given env, service and identifier\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/2ddfb377-44de-47fe-b53c-58cf800cca1b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create deployment gate returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-10-28T14:03:26.103Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-1",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0cc075c2-fec1-4ed3-9e43-0882646fac07\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-10-28T14:03:26.337009Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-1\",\"service\":\"my-service\",\"updated_at\":\"2025-10-28T14:03:26.337009Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/0cc075c2-fec1-4ed3-9e43-0882646fac07",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create deployment gate returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:49.955Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatedeploymentrulereturnsbadrequestresponse1765358629",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"39b27cfd-44c1-4ec0-900b-3b46ca2ab8c1\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:50.404151Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatedeploymentrulereturnsbadrequestresponse1765358629\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:50.404151Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "test",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "fdd"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/39b27cfd-44c1-4ec0-900b-3b46ca2ab8c1/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"type\\\" must be one of \\\"monitor faulty_deployment_detection\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/39b27cfd-44c1-4ec0-900b-3b46ca2ab8c1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create deployment rule returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:14.811Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "duration": 3600,
+                      "excluded_resources": [
+                        "resource1",
+                        "resource2"
+                      ]
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/not-a-valid-id/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create deployment rule returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:50.780Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatedeploymentrulereturnsokresponse1765358630",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"24d967fe-1dec-4957-bf77-7eda18a65d47\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:50.813397Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatedeploymentrulereturnsokresponse1765358630\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:50.813397Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/24d967fe-1dec-4957-bf77-7eda18a65d47/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ebe85a93-a82d-49ec-8925-6d3d569012bb\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:50.871951Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"24d967fe-1dec-4957-bf77-7eda18a65d47\",\"name\":\"My deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:50.871951Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/24d967fe-1dec-4957-bf77-7eda18a65d47/rules/ebe85a93-a82d-49ec-8925-6d3d569012bb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/24d967fe-1dec-4957-bf77-7eda18a65d47",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create deployment rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-10-28T14:03:29.170Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/invalid-gate-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete deployment gate returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:14.936Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/not-a-valid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete deployment gate returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:15.078Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Gate does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete deployment gate returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:51.011Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testdeletedeploymentgatereturnsnocontentresponse1765358631",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"03a2ecd3-87ad-45aa-9dbb-fda1215a4087\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:51.052668Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testdeletedeploymentgatereturnsnocontentresponse1765358631\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:51.052668Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/03a2ecd3-87ad-45aa-9dbb-fda1215a4087",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/03a2ecd3-87ad-45aa-9dbb-fda1215a4087",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Gate does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete deployment gate returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-10-28T14:03:30.230Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/invalid-gate-id/rules/invalid-rule-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete deployment rule returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:15.199Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/not-a-valid-id/rules/not-a-valid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete deployment rule returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:15.316Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/00000000-0000-0000-0000-000000000000/rules/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Rule does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete deployment rule returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:51.205Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testdeletedeploymentrulereturnsnocontentresponse1765358631",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b30401bf-4220-4d42-82ef-68d1a7916f21\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:51.250082Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testdeletedeploymentrulereturnsnocontentresponse1765358631\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:51.250082Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/b30401bf-4220-4d42-82ef-68d1a7916f21/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3e9bb31e-27be-43d0-9ef8-571a7f221f59\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:51.336139Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"b30401bf-4220-4d42-82ef-68d1a7916f21\",\"name\":\"My deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:51.336139Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/b30401bf-4220-4d42-82ef-68d1a7916f21/rules/3e9bb31e-27be-43d0-9ef8-571a7f221f59",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/b30401bf-4220-4d42-82ef-68d1a7916f21/rules/3e9bb31e-27be-43d0-9ef8-571a7f221f59",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Rule does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/b30401bf-4220-4d42-82ef-68d1a7916f21",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete deployment rule returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:15.458Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployments/gates/evaluation/not-a-valid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get a deployment gates evaluation result returns \"Bad request.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:15.592Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployments/gates/evaluation/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"gate evaluation with id 00000000-0000-0000-0000-000000000000 not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a deployment gates evaluation result returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:15.715Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testgetadeploymentgatesevaluationresultreturnsokresponse1773742995",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7b930550-63b0-4002-8b74-4c827bd070d3\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-03-17T10:23:15.799742Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testgetadeploymentgatesevaluationresultreturnsokresponse1773742995\",\"service\":\"my-service\",\"updated_at\":\"2026-03-17T10:23:15.799742Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/7b930550-63b0-4002-8b74-4c827bd070d3/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c2058cfd-aa63-4efc-a8fe-a37d622e7cc3\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2026-03-17T10:23:15.934037Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"7b930550-63b0-4002-8b74-4c827bd070d3\",\"name\":\"My deployment rule\",\"options\":{\"excluded_resources\":[]},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2026-03-17T10:23:15.934037Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "env": "production",
+                    "identifier": "my-gate-testgetadeploymentgatesevaluationresultreturnsokresponse1773742995",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gates_evaluation_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployments/gates/evaluation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fb1d7aef-236f-433d-ab3e-11648edb64c0\",\"type\":\"deployment_gates_evaluation_response\",\"attributes\":{\"evaluation_id\":\"fb1d7aef-236f-433d-ab3e-11648edb64c0\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployments/gates/evaluation/fb1d7aef-236f-433d-ab3e-11648edb64c0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fb1d7aef-236f-433d-ab3e-11648edb64c0\",\"type\":\"deployment_gates_evaluation_result_response\",\"attributes\":{\"dry_run\":false,\"evaluation_id\":\"fb1d7aef-236f-433d-ab3e-11648edb64c0\",\"evaluation_url\":\"https://frog.datadoghq.com/ci/deployment-gates/evaluations?deployment_gates_source=evaluation_result_url\\u0026end=1773743896343\\u0026index=cdgates\\u0026paused=true\\u0026query=level%3Agate+%40evaluation_id%3Afb1d7aef-236f-433d-ab3e-11648edb64c0\\u0026recent_gate_id=fb1d7aef-236f-433d-ab3e-11648edb64c0\\u0026start=1773742096343\",\"gate_id\":\"7b930550-63b0-4002-8b74-4c827bd070d3\",\"gate_status\":\"in_progress\",\"rules\":[{\"name\":\"My deployment rule\",\"status\":\"in_progress\",\"dry_run\":false}]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/7b930550-63b0-4002-8b74-4c827bd070d3/rules/c2058cfd-aa63-4efc-a8fe-a37d622e7cc3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/7b930550-63b0-4002-8b74-4c827bd070d3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a deployment gates evaluation result returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-10-28T14:03:31.887Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/invalid-gate-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get deployment gate returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:16.714Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/not-a-valid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get deployment gate returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:16.827Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Gate does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get deployment gate returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:51.545Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testgetdeploymentgatereturnsokresponse1765358631",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"da8c8c14-6bb2-4fc6-8dac-4027468738e4\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:51.581308Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testgetdeploymentgatereturnsokresponse1765358631\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:51.581308Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/da8c8c14-6bb2-4fc6-8dac-4027468738e4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"da8c8c14-6bb2-4fc6-8dac-4027468738e4\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:51.581308Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testgetdeploymentgatereturnsokresponse1765358631\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:51.581308Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/da8c8c14-6bb2-4fc6-8dac-4027468738e4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get deployment gate returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:51.725Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testgetdeploymentrulereturnsbadrequestresponse1765358631",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5815296a-7bd8-4a27-86c1-9bb266c19078\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:51.766765Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testgetdeploymentrulereturnsbadrequestresponse1765358631\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:51.766765Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/5815296a-7bd8-4a27-86c1-9bb266c19078/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1b2fb3ea-a7aa-4d17-92ac-53e625de862e\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:51.829441Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"5815296a-7bd8-4a27-86c1-9bb266c19078\",\"name\":\"My deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:51.829441Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/invalid-gate-id/rules/invalid-rule-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/5815296a-7bd8-4a27-86c1-9bb266c19078/rules/1b2fb3ea-a7aa-4d17-92ac-53e625de862e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/5815296a-7bd8-4a27-86c1-9bb266c19078",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get deployment rule returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:16.977Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/not-a-valid-id/rules/not-a-valid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get deployment rule returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:17.101Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/00000000-0000-0000-0000-000000000000/rules/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Rule does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get deployment rule returns \"Deployment rule not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:51.998Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testgetdeploymentrulereturnsokresponse1765358631",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6177e46c-44dc-453d-8af8-8af86aa93c29\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.029575Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testgetdeploymentrulereturnsokresponse1765358631\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:52.029575Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/6177e46c-44dc-453d-8af8-8af86aa93c29/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"38e32cd3-d245-49c1-85c5-b039ef868a18\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.079318Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"6177e46c-44dc-453d-8af8-8af86aa93c29\",\"name\":\"My deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:52.079318Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/6177e46c-44dc-453d-8af8-8af86aa93c29/rules/38e32cd3-d245-49c1-85c5-b039ef868a18",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"38e32cd3-d245-49c1-85c5-b039ef868a18\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.079318Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"6177e46c-44dc-453d-8af8-8af86aa93c29\",\"name\":\"My deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:52.079318Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/6177e46c-44dc-453d-8af8-8af86aa93c29/rules/38e32cd3-d245-49c1-85c5-b039ef868a18",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/6177e46c-44dc-453d-8af8-8af86aa93c29",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get deployment rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:17.224Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/not-a-valid-id/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get rules for a deployment gate returns \"Bad request.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T19:27:22.958Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testgetrulesforadeploymentgatereturnsokresponse1765394842",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"718d7fb4-bbc4-4b69-8a1b-98dda014726d\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T19:27:24.004043Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testgetrulesforadeploymentgatereturnsokresponse1765394842\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T19:27:24.004043Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deployment_gates/718d7fb4-bbc4-4b69-8a1b-98dda014726d/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"718d7fb4-bbc4-4b69-8a1b-98dda014726d\",\"type\":\"list_deployment_rules\",\"attributes\":{\"rules\":[]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/718d7fb4-bbc4-4b69-8a1b-98dda014726d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get rules for a deployment gate returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:17.356Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testtriggeradeploymentgatesevaluationreturnsacceptedresponse1773742997",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9d4fad94-29e3-452d-817d-5bc3f0ddbcb4\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-03-17T10:23:17.458814Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testtriggeradeploymentgatesevaluationreturnsacceptedresponse1773742997\",\"service\":\"my-service\",\"updated_at\":\"2026-03-17T10:23:17.458814Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/9d4fad94-29e3-452d-817d-5bc3f0ddbcb4/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"891bdcc9-ae8f-4fbc-87ad-5dfb83fc447f\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2026-03-17T10:23:17.620863Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"9d4fad94-29e3-452d-817d-5bc3f0ddbcb4\",\"name\":\"My deployment rule\",\"options\":{\"excluded_resources\":[]},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2026-03-17T10:23:17.620863Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "env": "production",
+                    "identifier": "my-gate-testtriggeradeploymentgatesevaluationreturnsacceptedresponse1773742997",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gates_evaluation_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployments/gates/evaluation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a3d2923c-ee20-490c-bd12-7139a805c949\",\"type\":\"deployment_gates_evaluation_response\",\"attributes\":{\"evaluation_id\":\"a3d2923c-ee20-490c-bd12-7139a805c949\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/9d4fad94-29e3-452d-817d-5bc3f0ddbcb4/rules/891bdcc9-ae8f-4fbc-87ad-5dfb83fc447f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/9d4fad94-29e3-452d-817d-5bc3f0ddbcb4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Trigger a deployment gates evaluation returns \"Accepted\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-20T09:57:05.683Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "env": "",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gates_evaluation_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployments/gates/evaluation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"required env field is missing\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Trigger a deployment gates evaluation returns \"Bad request.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:18.627Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "env": "staging",
+                    "service": "non-existent-service-xyz"
+                  },
+                  "type": "deployment_gates_evaluation_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployments/gates/evaluation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"no gate found for service non-existent-service-xyz, env staging, and identifier default\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Trigger a deployment gates evaluation returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-10-28T14:03:35.734Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": true
+                  },
+                  "id": "invalid-gate-id",
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/invalid-gate-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update deployment gate returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:18.738Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false
+                  },
+                  "id": "12345678-1234-1234-1234-123456789012",
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/not-a-valid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update deployment gate returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:18.854Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false
+                  },
+                  "id": "12345678-1234-1234-1234-123456789012",
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Gate does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update deployment gate returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:52.262Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testupdatedeploymentgatereturnsokresponse1765358632",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c718bd5b-86d4-43a5-9aff-b4e7757074ba\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.299803Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testupdatedeploymentgatereturnsokresponse1765358632\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:52.299803Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false
+                  },
+                  "id": "12345678-1234-1234-1234-123456789012",
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/c718bd5b-86d4-43a5-9aff-b4e7757074ba",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c718bd5b-86d4-43a5-9aff-b4e7757074ba\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.299803Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testupdatedeploymentgatereturnsokresponse1765358632\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:52.363356Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/c718bd5b-86d4-43a5-9aff-b4e7757074ba",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update deployment gate returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:52.426Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testupdatedeploymentrulereturnsbadrequestresponse1765358632",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"edb4daf3-86d3-43d0-9a18-0390d53c4a52\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.462721Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testupdatedeploymentrulereturnsbadrequestresponse1765358632\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:52.462721Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/edb4daf3-86d3-43d0-9a18-0390d53c4a52/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f66b2121-b794-4926-8d65-c1f2dcb7870b\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.5225Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"edb4daf3-86d3-43d0-9a18-0390d53c4a52\",\"name\":\"My deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:52.5225Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Updated deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    }
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/invalid-gate-id/rules/invalid-rule-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/edb4daf3-86d3-43d0-9a18-0390d53c4a52/rules/f66b2121-b794-4926-8d65-c1f2dcb7870b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/edb4daf3-86d3-43d0-9a18-0390d53c4a52",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update deployment rule returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:18.972Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Updated deployment rule",
+                    "options": {
+                      "duration": 3600,
+                      "excluded_resources": [
+                        "resource1",
+                        "resource2"
+                      ]
+                    }
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/not-a-valid-id/rules/not-a-valid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update deployment rule returns \"Bad request (invalid).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-03-17T10:23:19.084Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Updated deployment rule",
+                    "options": {
+                      "duration": 3600,
+                      "excluded_resources": [
+                        "resource1",
+                        "resource2"
+                      ]
+                    }
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/00000000-0000-0000-0000-000000000000/rules/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"Rule does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update deployment rule returns \"Deployment rule not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2025-12-10T09:23:52.700Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testupdatedeploymentrulereturnsokresponse1765358632",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3acb9ac2-abba-4579-8697-79493b221d41\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.735765Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testupdatedeploymentrulereturnsokresponse1765358632\",\"service\":\"my-service\",\"updated_at\":\"2025-12-10T09:23:52.735765Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "My deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    },
+                    "type": "faulty_deployment_detection"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/3acb9ac2-abba-4579-8697-79493b221d41/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ee04f24f-a980-4a28-a839-29911a632978\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.782282Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"3acb9ac2-abba-4579-8697-79493b221d41\",\"name\":\"My deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:52.782282Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Updated deployment rule",
+                    "options": {
+                      "excluded_resources": []
+                    }
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/deployment_gates/3acb9ac2-abba-4579-8697-79493b221d41/rules/ee04f24f-a980-4a28-a839-29911a632978",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ee04f24f-a980-4a28-a839-29911a632978\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2025-12-10T09:23:52.782282Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"3acb9ac2-abba-4579-8697-79493b221d41\",\"name\":\"Updated deployment rule\",\"options\":{},\"type\":\"faulty_deployment_detection\",\"updated_at\":\"2025-12-10T09:23:52.843771Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/3acb9ac2-abba-4579-8697-79493b221d41/rules/ee04f24f-a980-4a28-a839-29911a632978",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/3acb9ac2-abba-4579-8697-79493b221d41",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update deployment rule returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

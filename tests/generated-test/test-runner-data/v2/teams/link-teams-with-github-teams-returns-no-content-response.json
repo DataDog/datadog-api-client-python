@@ -1,0 +1,42 @@
+{
+  "api": "Teams",
+  "expected_status": 204,
+  "feature": "Teams",
+  "id": "v2/Teams/Link Teams with GitHub Teams returns \"No Content\" response",
+  "operation_id": "SyncTeams",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamSyncRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "selection_state": [
+              {
+                "external_id": {
+                  "type": "organization",
+                  "value": "1"
+                }
+              }
+            ],
+            "source": "github",
+            "type": "link"
+          },
+          "type": "team_sync_bulk"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/team/sync"
+  },
+  "scenario": "Link Teams with GitHub Teams returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

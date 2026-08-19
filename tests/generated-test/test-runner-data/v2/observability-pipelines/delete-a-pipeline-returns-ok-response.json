@@ -1,0 +1,35 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 204,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Delete a pipeline returns \"OK\" response",
+  "operation_id": "DeletePipeline",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "pipeline_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "pipeline.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}"
+  },
+  "scenario": "Delete a pipeline returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

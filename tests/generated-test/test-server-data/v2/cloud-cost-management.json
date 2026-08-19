@@ -1,0 +1,2076 @@
+{
+  "feature": "Cloud Cost Management",
+  "recordings": [
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-12T14:24:29.702Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_id": "123456789123",
+                    "bucket_name": "dd-cost-bucket",
+                    "bucket_region": "us-east-1",
+                    "report_name": "dd-report-name",
+                    "report_prefix": "dd-report-prefix"
+                  },
+                  "type": "aws_cur_config_post_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cost/aws_cur_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"aws_cur_config\",\"id\":\"177\",\"attributes\":{\"account_id\":\"123456789123\",\"bucket_name\":\"dd-cost-bucket\",\"bucket_region\":\"us-east-1\",\"report_prefix\":\"dd-report-prefix\",\"report_name\":\"dd-report-name\",\"months\":15,\"updated_at\":\"2023-12-12T14:24:30.907264\",\"created_at\":\"2023-12-12T14:24:30.907264\",\"status\":\"active\",\"status_updated_at\":\"2023-12-12T14:24:30.904602\",\"error_messages\":[]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create Cloud Cost Management AWS CUR config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-13T21:37:53.830Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_id": "1234abcd-1234-abcd-1234-1234abcd1234",
+                    "actual_bill_config": {
+                      "export_name": "dd-actual-export",
+                      "export_path": "dd-export-path",
+                      "storage_account": "dd-storage-account",
+                      "storage_container": "dd-storage-container"
+                    },
+                    "amortized_bill_config": {
+                      "export_name": "dd-actual-export",
+                      "export_path": "dd-export-path",
+                      "storage_account": "dd-storage-account",
+                      "storage_container": "dd-storage-container"
+                    },
+                    "client_id": "1234abcd-1234-abcd-1234-1234abcd1234",
+                    "scope": "this_is_an_invalid_scope"
+                  },
+                  "type": "azure_uc_config_post_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cost/azure_uc_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"scope\\\" does not match the required format\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create Cloud Cost Management Azure configs returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-12T17:11:52.024Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_id": "1234abcd-1234-abcd-1234-1234abcd1234",
+                    "actual_bill_config": {
+                      "export_name": "dd-actual-export",
+                      "export_path": "dd-export-path",
+                      "storage_account": "dd-storage-account",
+                      "storage_container": "dd-storage-container"
+                    },
+                    "amortized_bill_config": {
+                      "export_name": "dd-actual-export",
+                      "export_path": "dd-export-path",
+                      "storage_account": "dd-storage-account",
+                      "storage_container": "dd-storage-container"
+                    },
+                    "client_id": "1234abcd-1234-abcd-1234-1234abcd1234",
+                    "scope": "subscriptions/1234abcd-1234-abcd-1234-1234abcd1234"
+                  },
+                  "type": "azure_uc_config_post_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cost/azure_uc_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\": {\"type\": \"azure_uc_configs\", \"id\": \"1\", \"attributes\": {\"configs\": [{\"id\": \"1\", \"storage_container\": \"test_storage_container\", \"scope\": \"test_scope\", \"status\": \"active\", \"account_id\": \"1234abcd-1234-abcd-1234-1234abcd1234\", \"client_id\": \"test_client_id\", \"storage_account\": \"test_storage_account\", \"months\": 15, \"error_messages\": [], \"dataset_type\": \"actual\", \"status_updated_at\": \"2023-12-12T17:11:56.855669\", \"created_at\": \"2023-12-12T17:11:56.860554\", \"updated_at\": \"2023-12-12T17:11:56.860554\", \"export_name\": \"test_export_name\", \"export_path\": \"test_export_path\"}, {\"id\": \"1\", \"storage_container\": \"test_storage_container\", \"scope\": \"test_scope\", \"status\": \"active\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"storage_account\": \"test_storage_account\", \"months\": 15, \"error_messages\": [], \"dataset_type\": \"amortized\", \"status_updated_at\": \"2023-12-12T17:11:56.855669\", \"created_at\": \"2023-12-12T17:11:56.861623\", \"updated_at\": \"2023-12-12T17:11:56.861623\", \"export_name\": \"test_export_name\", \"export_path\": \"test_export_path\"}]}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create Cloud Cost Management Azure configs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-23T13:03:22.482Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "billing_account_id": "123456_A123BC_12AB34",
+                    "bucket_name": "dd-cost-bucket",
+                    "export_dataset_name": "billing",
+                    "export_prefix": "datadog_cloud_cost_usage_export",
+                    "export_project_name": "dd-cloud-cost-report",
+                    "service_account": "InvalidServiceAccount"
+                  },
+                  "type": "gcp_uc_config_post_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cost/gcp_uc_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"not a valid service_account\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create Google Cloud Usage Cost config returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-16T17:46:53.205Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "billing_account_id": "123456_A123BC_12AB34",
+                    "bucket_name": "dd-cost-bucket",
+                    "export_dataset_name": "billing",
+                    "export_prefix": "datadog_cloud_cost_usage_export",
+                    "export_project_name": "dd-cloud-cost-report",
+                    "service_account": "dd-ccm-gcp-integration@my-environment.iam.gserviceaccount.com"
+                  },
+                  "type": "gcp_uc_config_post_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cost/gcp_uc_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0\",\"type\":\"gcp_uc_config\",\"attributes\":{\"account_id\":\"123456_A123BC_12AB34\",\"bucket_name\":\"dd-cost-bucket\",\"created_at\":\"2025-03-24T21:00:03.851717\",\"dataset\":\"billing\",\"error_messages\":null,\"export_prefix\":\"datadog_cloud_cost_usage_export\",\"export_project_name\":\"dd-cloud-cost-report\",\"months\":15,\"project_id\":\"\",\"service_account\":\"dd-ccm-gcp-integration@my-environment.iam.gserviceaccount.com\",\"status\":\"active\",\"status_updated_at\":\"2025-05-09T21:01:48.748281\",\"updated_at\":\"2025-03-24T21:00:03.851717\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create Google Cloud Usage Cost config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:31:23.072Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "costs_to_allocate": [
+                      {
+                        "condition": "is",
+                        "tag": "account_id",
+                        "value": "123456789"
+                      },
+                      {
+                        "condition": "in",
+                        "tag": "environment",
+                        "value": "",
+                        "values": [
+                          "production",
+                          "staging"
+                        ]
+                      }
+                    ],
+                    "enabled": true,
+                    "order_id": 1,
+                    "provider": [
+                      "aws",
+                      "gcp"
+                    ],
+                    "rule_name": "example-arbitrary-cost-rule",
+                    "strategy": {
+                      "allocated_by_tag_keys": [
+                        "team",
+                        "environment"
+                      ],
+                      "based_on_costs": [
+                        {
+                          "condition": "is",
+                          "tag": "service",
+                          "value": "web-api"
+                        },
+                        {
+                          "condition": "not in",
+                          "tag": "team",
+                          "value": "",
+                          "values": [
+                            "legacy",
+                            "deprecated"
+                          ]
+                        }
+                      ],
+                      "granularity": "daily",
+                      "method": "proportional"
+                    },
+                    "type": "shared"
+                  },
+                  "type": "upsert_arbitrary_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cost/arbitrary_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"683\",\"type\":\"arbitrary_rule\",\"attributes\":{\"costs_to_allocate\":[{\"tag\":\"account_id\",\"condition\":\"is\",\"value\":\"123456789\",\"values\":null},{\"tag\":\"environment\",\"condition\":\"in\",\"value\":\"\",\"values\":[\"production\",\"staging\"]}],\"created\":\"2025-10-08T19:31:23.246204745Z\",\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"order_id\":1,\"provider\":[\"aws\",\"gcp\"],\"rule_name\":\"example-arbitrary-cost-rule\",\"strategy\":{\"method\":\"proportional\",\"granularity\":\"daily\",\"based_on_costs\":[{\"tag\":\"service\",\"condition\":\"is\",\"value\":\"web-api\",\"values\":null},{\"tag\":\"team\",\"condition\":\"not in\",\"value\":\"\",\"values\":[\"legacy\",\"deprecated\"]}],\"allocated_by_tag_keys\":[\"team\",\"environment\"]},\"type\":\"shared\",\"updated\":\"2025-10-08T19:31:23.246204745Z\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create custom allocation rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T18:26:06.563Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "rules": [
+                      {
+                        "enabled": true,
+                        "mapping": null,
+                        "name": "Add Cost Center Tag",
+                        "query": {
+                          "addition": {
+                            "key": "cost_center",
+                            "value": "engineering"
+                          },
+                          "case_insensitivity": false,
+                          "if_not_exists": true,
+                          "query": "account_id:\"123456789\" AND service:\"web-api\""
+                        },
+                        "reference_table": null
+                      }
+                    ]
+                  },
+                  "id": "New Ruleset",
+                  "type": "create_ruleset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/tags/enrichment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ee10c3ff-312f-464c-b4f6-46adaa6d00a1\",\"type\":\"ruleset\",\"attributes\":{\"created\":{\"seconds\":1759947966,\"nanos\":679638000},\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":{\"seconds\":1759947966,\"nanos\":679638000},\"name\":\"New Ruleset\",\"position\":1,\"rules\":[{\"name\":\"Add Cost Center Tag\",\"enabled\":true,\"query\":{\"query\":\"account_id:\\\"123456789\\\" AND service:\\\"web-api\\\"\",\"addition\":{\"key\":\"cost_center\",\"value\":\"engineering\"},\"if_not_exists\":true,\"case_insensitivity\":false},\"mapping\":null,\"reference_table\":null,\"metadata\":null}],\"version\":3611102}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create tag pipeline ruleset returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2026-02-04T16:26:04.110Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "rules": [
+                      {
+                        "enabled": true,
+                        "mapping": null,
+                        "name": "Add Cost Center Tag",
+                        "query": {
+                          "addition": {
+                            "key": "cost_center",
+                            "value": "engineering"
+                          },
+                          "case_insensitivity": false,
+                          "if_tag_exists": "replace",
+                          "query": "account_id:\"123456789\" AND service:\"web-api\""
+                        },
+                        "reference_table": null
+                      }
+                    ]
+                  },
+                  "id": "New Ruleset",
+                  "type": "create_ruleset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/tags/enrichment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ee10c3ff-312f-464c-b4f6-46adaa6d00a1\",\"type\":\"ruleset\",\"attributes\":{\"created\":{\"seconds\":1759947966,\"nanos\":679638000},\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":{\"seconds\":1759947966,\"nanos\":679638000},\"name\":\"New Ruleset\",\"position\":1,\"rules\":[{\"name\":\"Add Cost Center Tag\",\"enabled\":true,\"query\":{\"query\":\"account_id:\\\"123456789\\\" AND service:\\\"web-api\\\"\",\"addition\":{\"key\":\"cost_center\",\"value\":\"engineering\"},\"if_tag_exists\":\"replace\",\"case_insensitivity\":false},\"mapping\":null,\"reference_table\":null,\"metadata\":null}],\"version\":3611102}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create tag pipeline ruleset with if_tag_exists returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-12T14:24:02.091Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/aws_cur_config/100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete Cloud Cost Management AWS CUR config returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-13T21:24:23.921Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/aws_cur_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete Cloud Cost Management AWS CUR config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-12T16:00:55.255Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/azure_uc_config/100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete Cloud Cost Management Azure config returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-13T21:21:25.379Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/azure_uc_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete Cloud Cost Management Azure config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2024-07-22T12:40:43.508Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/custom_costs/9d055d22-a838-4e9f-bc34-a4f9ab66280c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete Custom Costs File returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-13T21:13:51.484Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/custom_costs/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete Custom Costs file returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-13T20:58:16.900Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/gcp_uc_config/100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"204\",\"title\":\"No Content\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete Google Cloud Usage Cost config returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-23T13:06:22.086Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/gcp_uc_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete Google Cloud Usage Cost config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-04-28T11:45:34.874Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/budget/1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid budgetId\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete a budget returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:35:19.003Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/arbitrary_rule/683",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete custom allocation rule returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:17:11.635Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/tags/enrichment/ee10c3ff-312f-464c-b4f6-46adaa6d00a1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete tag pipeline ruleset returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2024-07-22T12:06:05.860Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/custom_costs/9d055d22-a838-4e9f-bc34-a4f9ab66280c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9d055d22-a838-4e9f-bc34-a4f9ab66280c\",\"type\":\"cost_metadata\",\"attributes\":{\"billed_cost\":250,\"billing_currency\":\"USD\",\"charge_period\":{\"start\":1683331200000,\"end\":1686009600000},\"content\":[{\"BilledCost\":250,\"BillingCurrency\":\"USD\",\"ChargeDescription\":\"my_description\",\"Tags\":{\"key\":\"value\"},\"ProviderName\":\"my_provider\",\"ChargePeriodStart\":\"2023-05-06\",\"ChargePeriodEnd\":\"2023-06-06\"}],\"name\":\"data.json\",\"provider_names\":[\"my_provider\"],\"status\":\"ACTIVE\",\"uploaded_at\":1721322924169,\"uploaded_by\":{\"name\":\"Julien Hemery\",\"icon\":\"https://secure.gravatar.com/avatar/f12684c6ebe1bdd70c36789c5270aac0?d=retro\\u0026s=48\",\"email\":\"julien.hemery@datadoghq.com\"}}},\"meta\":{\"version\":\"1.0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get Custom Costs File returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-13T20:50:39.857Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/custom_costs/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"metadata not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get Custom Costs file returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-09-11T20:19:23.847Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/gcp_uc_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"123456\",\"type\":\"gcp_uc_config\",\"attributes\":{\"account_id\":\"123456_ABCDEF_123ABC\",\"bucket_name\":\"test-bucket-name\",\"created_at\":\"2024-04-29T13:10:37.516579\",\"dataset\":\"test-dataset\",\"error_messages\":null,\"export_prefix\":\"datadog_cloud_cost_detailed_usage_export\",\"export_project_name\":\"test-export-project-name\",\"months\":15,\"project_id\":\"\",\"service_account\":\"dd-ccm-gcp-test-integration@some-test-project.iam.gserviceaccount.com\",\"status\":\"active\",\"status_updated_at\":\"2025-08-02T14:23:19.542138\",\"updated_at\":\"2024-04-29T13:10:37.516579\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get Google Cloud Usage Cost config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-04-28T11:45:35.263Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/budget/9d055d22-0a0a-0a0a-aaa0-00000000000a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a budget returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-14T20:06:56.512Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/tags/enrichment/a1e9de9b-b88e-41c6-a0cd-cc0ebd7092de",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a1e9de9b-b88e-41c6-a0cd-cc0ebd7092de\",\"type\":\"ruleset\",\"attributes\":{\"created\":{\"seconds\":1753803214,\"nanos\":75009000},\"enabled\":false,\"last_modified_user_uuid\":\"4acae75b-78ac-11ef-9c0d-e6936f49688e\",\"modified\":{\"seconds\":1753803214,\"nanos\":75009000},\"name\":\"EVP Cost Tags\",\"position\":1,\"processing_status\":\"done\",\"rules\":[{\"name\":\"EVP Cost Tags\",\"enabled\":true,\"query\":null,\"mapping\":null,\"reference_table\":{\"table_name\":\"evp_cost_tags\",\"source_keys\":[\"pod_name\"],\"field_pairs\":[{\"input_column\":\"cost_service\",\"output_key\":\"cost_service\"},{\"input_column\":\"cogs\",\"output_key\":\"cogs\"},{\"input_column\":\"cost_team\",\"output_key\":\"cost_team\"},{\"input_column\":\"cost_product\",\"output_key\":\"cost_product\"},{\"input_column\":\"subscription\",\"output_key\":\"subscription\"},{\"input_column\":\"cost_group\",\"output_key\":\"cost_group\"},{\"input_column\":\"cost_subservice\",\"output_key\":\"cost_subservice\"},{\"input_column\":\"cost_customer\",\"output_key\":\"cost_customer\"},{\"input_column\":\"cost_isolation_id\",\"output_key\":\"cost_isolation_id\"}],\"case_insensitivity\":false,\"if_not_exists\":false},\"metadata\":null},{\"name\":\"Load balancer runtimecosts-team\",\"enabled\":true,\"query\":{\"query\":\"dd-frontend-service:evp_* OR dd-frontend-service:logs_*\",\"addition\":{\"key\":\"runtimecosts-team\",\"value\":\"event-platform\"},\"if_not_exists\":true,\"case_insensitivity\":false},\"mapping\":null,\"reference_table\":null,\"metadata\":null}],\"version\":3588223}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a tag pipeline ruleset returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-09-11T19:58:54.699Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/aws_cur_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"123456\",\"type\":\"aws_cur_config\",\"attributes\":{\"account_filters\":{\"include_new_accounts\":null},\"account_id\":\"123456123456\",\"bucket_name\":\"dd-bucket-name\",\"bucket_region\":\"us-east-1\",\"created_at\":\"2023-05-01T20:05:41.849823\",\"error_messages\":null,\"months\":15,\"report_name\":\"report-name-test\",\"report_prefix\":\"report-prefix-test\",\"status\":\"active\",\"status_updated_at\":\"2025-01-15T14:57:27.799558\",\"updated_at\":\"2023-05-01T20:05:41.849823\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get cost AWS CUR config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-09-11T20:06:45.013Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/azure_uc_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"123456\",\"type\":\"azure_uc_configs\",\"attributes\":{\"configs\":[{\"account_id\":\"1234abcd-1234-abcd-1234-abcd1234abcd\",\"client_id\":\"12345678-1234-5678-1234-567812345678\",\"status\":\"active\",\"status_updated_at\":\"2024-09-06T11:49:10.544706\",\"error_messages\":null,\"id\":\"123\",\"dataset_type\":\"amortized\",\"storage_account\":\"teststorageaccount\",\"storage_container\":\"teststoragecontainer\",\"export_name\":\"test-export-name\",\"export_path\":\"/test-export-path-amortized\",\"scope\":\"/subscriptions/abcdefgh-abcd-efgh-abcd-efghabcdefgh\",\"months\":15,\"created_at\":\"2023-06-14T20:42:08.792050\",\"updated_at\":\"2023-06-14T20:42:08.792050\"},{\"account_id\":\"87654321-8765-4321-8765-432187654321\",\"client_id\":\"aaaabbbb-cccc-dddd-eeee-ffffgggghhhh\",\"status\":\"active\",\"status_updated_at\":\"2024-09-06T11:49:10.544706\",\"error_messages\":null,\"id\":\"456\",\"dataset_type\":\"actual\",\"storage_account\":\"teststorageaccount\",\"storage_container\":\"teststoragecontainer\",\"export_name\":\"test-export-name\",\"export_path\":\"/test-export-path-actual\",\"scope\":\"/subscriptions/abcdefgh-abcd-efgh-abcd-efghabcdefgh\",\"months\":15,\"created_at\":\"2023-06-14T20:42:08.792050\",\"updated_at\":\"2023-06-14T20:42:08.792050\"}]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get cost Azure UC config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:33:08.375Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/arbitrary_rule/683",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"683\",\"type\":\"arbitrary_rule\",\"attributes\":{\"costs_to_allocate\":[{\"tag\":\"account_id\",\"condition\":\"is\",\"value\":\"123456789\",\"values\":null},{\"tag\":\"environment\",\"condition\":\"in\",\"value\":\"\",\"values\":[\"production\",\"staging\"]}],\"created\":\"2025-10-08T19:31:23.246204Z\",\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"order_id\":1,\"processing_status\":\"error\",\"provider\":[\"aws\",\"gcp\"],\"rule_name\":\"example-arbitrary-cost-rule\",\"strategy\":{\"method\":\"proportional\",\"granularity\":\"daily\",\"based_on_costs\":[{\"tag\":\"service\",\"condition\":\"is\",\"value\":\"web-api\",\"values\":null},{\"tag\":\"team\",\"condition\":\"not in\",\"value\":\"\",\"values\":[\"legacy\",\"deprecated\"]}],\"allocated_by_tag_keys\":[\"team\",\"environment\"]},\"type\":\"shared\",\"updated\":\"2025-10-08T19:31:23.246204Z\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get custom allocation rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T18:38:56.657Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/tags/enrichment/ee10c3ff-312f-464c-b4f6-46adaa6d00a1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ee10c3ff-312f-464c-b4f6-46adaa6d00a1\",\"type\":\"ruleset\",\"attributes\":{\"created\":{\"seconds\":1759947966,\"nanos\":679638000},\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":{\"seconds\":1759947966,\"nanos\":679638000},\"name\":\"New Ruleset\",\"position\":1,\"processing_status\":\"error\",\"rules\":[{\"name\":\"Add Cost Center Tag\",\"enabled\":true,\"query\":{\"query\":\"account_id:\\\"123456789\\\" AND service:\\\"web-api\\\"\",\"addition\":{\"key\":\"cost_center\",\"value\":\"engineering\"},\"if_not_exists\":true,\"case_insensitivity\":false},\"mapping\":null,\"reference_table\":null,\"metadata\":null}],\"version\":3611102}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get tag pipeline ruleset returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-12T13:33:48.031Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/aws_cur_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\": [{\"type\": \"aws_cur_config\", \"id\": \"100\", \"attributes\": {\"account_id\": \"000000000000\", \"bucket_name\": \"test_bucket_name\", \"bucket_region\": \"us-east-1\", \"report_prefix\": \"cur-hourly\", \"report_name\": \"billing-conductor-cur\", \"months\": 15, \"updated_at\": \"2023-10-27T12:38:39.585408\", \"created_at\": \"2023-10-10T13:53:28.774143\", \"status\": \"active\", \"status_updated_at\": \"2023-11-21T17:07:24.778386\", \"error_messages\": []}}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List Cloud Cost Management AWS CUR configs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-12T15:29:02.625Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/azure_uc_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\": [{\"type\": \"azure_uc_configs\", \"id\": \"1\", \"attributes\": {\"configs\": [{\"id\": \"1\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"created_at\": \"2023-06-29T12:43:36.569819\", \"storage_container\": \"test_storage_container\", \"status\": \"active\", \"updated_at\": \"2023-06-29T12:43:36.569819\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"actual\", \"status_updated_at\": \"2023-11-03T13:48:16.827724\", \"error_messages\": [], \"storage_account\": \"test_storage_account\", \"months\": 15, \"export_path\": \"test_export_path\"}, {\"id\": \"1\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"created_at\": \"2023-06-29T12:43:36.569819\", \"storage_container\": \"test_storage_container\", \"status\": \"active\", \"updated_at\": \"2023-06-29T12:43:36.569819\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"amortized\", \"status_updated_at\": \"2023-11-03T13:48:16.827724\", \"error_messages\": [], \"storage_account\": \"test_storage_account\", \"months\": 15, \"export_path\": \"test_export_path\"}]}}, {\"type\": \"azure_uc_configs\", \"id\": \"1\", \"attributes\": {\"configs\": [{\"id\": \"1\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"created_at\": \"2023-11-09T16:26:33.859447\", \"storage_container\": \"test_storage_container\", \"status\": \"active\", \"updated_at\": \"2023-11-09T16:26:33.859447\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"actual\", \"status_updated_at\": \"2023-11-09T16:26:33.849153\", \"storage_account\": \"test_storage_account\", \"months\": 15, \"export_path\": \"test_export_path\"}, {\"id\": \"1\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"created_at\": \"2023-11-09T16:26:33.862026\", \"storage_container\": \"test_storage_container\", \"status\": \"active\", \"updated_at\": \"2023-11-09T16:26:33.862026\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"amortized\", \"status_updated_at\": \"2023-11-09T16:26:33.849153\", \"storage_account\": \"test_storage_account\", \"months\": 15, \"export_path\": \"test_export_path\"}]}}, {\"type\": \"azure_uc_configs\", \"id\": \"1\", \"attributes\": {\"configs\": [{\"id\": \"1\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"created_at\": \"2023-11-09T20:20:35.959808\", \"storage_container\": \"test_storage_container\", \"status\": \"active\", \"updated_at\": \"2023-11-09T20:20:35.959808\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"actual\", \"status_updated_at\": \"2023-11-09T20:20:35.956202\", \"storage_account\": \"test_storage_account\", \"months\": 15, \"export_path\": \"test_export_path\"}, {\"id\": \"1\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"created_at\": \"2023-11-09T20:20:35.960815\", \"storage_container\": \"test_storage_container\", \"status\": \"active\", \"updated_at\": \"2023-11-09T20:20:35.960815\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"amortized\", \"status_updated_at\": \"2023-11-09T20:20:35.956202\", \"storage_account\": \"test_storage_account\", \"months\": 15, \"export_path\": \"test_export_path\"}]}}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List Cloud Cost Management Azure configs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2024-07-22T12:06:38.368Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/custom_costs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"9d055d22-a838-4e9f-bc34-a4f9ab66280c\",\"type\":\"cost_metadata\",\"attributes\":{\"billed_cost\":250,\"billing_currency\":\"USD\",\"charge_period\":{\"start\":1683331200000,\"end\":1686009600000},\"name\":\"data.json\",\"provider_names\":[\"my_provider\"],\"status\":\"ACTIVE\",\"uploaded_at\":1721322924169,\"uploaded_by\":{\"name\":\"Julien Hemery\",\"icon\":\"https://secure.gravatar.com/avatar/f12684c6ebe1bdd70c36789c5270aac0?d=retro\\u0026s=48\",\"email\":\"julien.hemery@datadoghq.com\"}}}],\"meta\":{\"version\":\"1.0\",\"total_filtered_count\":766}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List Custom Costs Files returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-13T20:12:25.668Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/custom_costs",
+            "query": [
+              [
+                "filter[status]",
+                "invalid_file_status"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"unknown status, got invalid_file_status\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List Custom Costs files returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-23T13:07:11.537Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/gcp_uc_config",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List Google Cloud Usage Cost configs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-04-28T11:45:35.577Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/budgets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"3fba18e7-0067-491a-9308-3f73c8e2c575\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745571497036,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745571497036,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"57238082-4cc2-45a6-9064-22043737ed7c\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745583730189,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745583730189,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"f916baf2-02a4-4160-82b6-db389e4b43be\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745574561009,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745574561009,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"851ed069-23ab-441a-b8f3-8a5773403b3e\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745577123330,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745577123330,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"59073cc2-2478-421a-82a1-d79a5da28dda\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745577169183,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745577169183,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"5f349d8d-d387-4e15-afff-4782431e15d7\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745577608689,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745577608689,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"15ab22ba-5518-4e0c-9e06-a7f7bf2678bd\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745577943069,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745577943069,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"b18dc99d-1a12-469d-bd32-6bd98a6e5acb\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745577421488,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745577421488,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"8f569dc8-aea1-485d-a1c3-abc157c99a93\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745579211960,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745579211960,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"f3994f9b-dd15-43ea-a841-728d531eb11b\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745579361284,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745579361284,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"cb9fb4a9-c0df-4e4d-9835-3d210363d0bb\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745577992084,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745577992084,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"ff79e81b-1e6f-4a98-9500-91700fec0c2b\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745579291324,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745579291324,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"891f1139-fd93-499e-bad9-00409f61c565\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745586407929,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745586407929,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"85731223-6603-4639-9e01-b973f1ec9a24\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745579613007,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745579613007,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"affbf979-ed21-422f-a2eb-f8edcab237ff\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745579759927,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745579759927,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"651e9d4a-87aa-43c2-83ce-ec256e5cfea4\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745579644284,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745579644284,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"4abf19e6-9e97-4a76-bc33-3fc3a12c802c\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745580084222,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745580084222,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"fdf6d71d-30b3-4e5e-a644-2045be260b56\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745580326048,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745580326048,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"1c232ea0-94a4-442f-b618-5340a066f629\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745581289211,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745581289211,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"fc600e23-ebd1-454c-b863-d4be67481c65\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745580744852,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745580744852,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List budgets returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:33:51.784Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/arbitrary_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"683\",\"type\":\"arbitrary_rule\",\"attributes\":{\"costs_to_allocate\":[{\"tag\":\"account_id\",\"condition\":\"is\",\"value\":\"123456789\",\"values\":null},{\"tag\":\"environment\",\"condition\":\"in\",\"value\":\"\",\"values\":[\"production\",\"staging\"]}],\"created\":\"2025-10-08T19:31:23.246204Z\",\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"order_id\":1,\"processing_status\":\"error\",\"provider\":[\"aws\",\"gcp\"],\"rule_name\":\"example-arbitrary-cost-rule\",\"strategy\":{\"method\":\"proportional\",\"granularity\":\"daily\",\"based_on_costs\":[{\"tag\":\"service\",\"condition\":\"is\",\"value\":\"web-api\",\"values\":null},{\"tag\":\"team\",\"condition\":\"not in\",\"value\":\"\",\"values\":[\"legacy\",\"deprecated\"]}],\"allocated_by_tag_keys\":[\"team\",\"environment\"]},\"type\":\"shared\",\"updated\":\"2025-10-08T19:31:23.246204Z\",\"version\":1}}],\"meta\":{\"total_count\":1}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List custom allocation rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T18:35:31.385Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/tags/enrichment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"ee10c3ff-312f-464c-b4f6-46adaa6d00a1\",\"type\":\"ruleset\",\"attributes\":{\"created\":{\"seconds\":1759947966,\"nanos\":679638000},\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":{\"seconds\":1759947966,\"nanos\":679638000},\"name\":\"New Ruleset\",\"position\":1,\"processing_status\":\"error\",\"rules\":[{\"name\":\"Add Cost Center Tag\",\"enabled\":true,\"query\":{\"query\":\"account_id:\\\"123456789\\\" AND service:\\\"web-api\\\"\",\"addition\":{\"key\":\"cost_center\",\"value\":\"engineering\"},\"if_not_exists\":true,\"case_insensitivity\":false},\"mapping\":null,\"reference_table\":null,\"metadata\":null}],\"version\":3611102}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List tag pipeline rulesets returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-25T15:10:14.494Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_enabled": true
+                  },
+                  "type": "aws_cur_config_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/aws_cur_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Cloud account not found\",\"detail\":\"Cloud account with ID 123456 was not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update Cloud Cost Management AWS CUR config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-12T13:23:19.108Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_enabled": true
+                  },
+                  "type": "aws_cur_config_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/aws_cur_config/100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\": [{\"type\": \"aws_cur_config\", \"id\": \"100\", \"attributes\": {\"account_id\": \"000000000000\", \"bucket_name\": \"test_bucket_name\", \"bucket_region\": \"us-east-1\", \"report_prefix\": \"cur-report-hourly\", \"report_name\": \"cur-hourly\", \"months\": 15, \"updated_at\": \"2023-10-18T08:15:45.265597\", \"created_at\": \"2022-07-25T17:19:47.190482\", \"status\": \"active\", \"status_updated_at\": \"2023-11-08T22:47:55.372330\", \"error_messages\": []}}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update Cloud Cost Management AWS CUR config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-25T15:10:28.926Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_enabled": true
+                  },
+                  "type": "azure_uc_config_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/azure_uc_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Cloud account not found\",\"detail\":\"Cloud account with ID 123456 was not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update Cloud Cost Management Azure config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2023-12-13T13:29:24.025Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_enabled": true
+                  },
+                  "type": "azure_uc_config_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/azure_uc_config/100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\": {\"type\": \"azure_uc_configs\", \"id\": \"100\", \"attributes\": {\"configs\": [{\"updated_at\": \"2023-06-29T12:43:36.569819\", \"export_path\": \"/amortized-cost\", \"status\": \"active\", \"id\": \"56\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"amortized\", \"created_at\": \"2023-06-29T12:43:36.569819\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"storage_account\": \"test_storage_account\", \"storage_container\": \"test_storage_container\", \"status_updated_at\": \"2023-12-13T13:29:24.462039\", \"months\": 15}, {\"updated_at\": \"2023-06-29T12:43:36.569819\", \"export_path\": \"/actual-cost\", \"status\": \"active\", \"id\": \"55\", \"account_id\": \"test_account_id\", \"client_id\": \"test_client_id\", \"dataset_type\": \"actual\", \"created_at\": \"2023-06-29T12:43:36.569819\", \"export_name\": \"test_export_name\", \"scope\": \"test_scope\", \"storage_account\": \"test_storage_account\", \"storage_container\": \"test_storage_container\", \"status_updated_at\": \"2023-12-13T13:29:24.462039\", \"months\": 15}]}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update Cloud Cost Management Azure config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-23T12:09:03.300Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_enabled": true
+                  },
+                  "type": "gcp_uc_config_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/gcp_uc_config/InvalidValue",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Invalid Parameter\",\"detail\":\"invalid parameter \\\"cloudAccountId\\\" in \\\"path\\\"; expected type \\\"int64\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update Cloud Cost Management GCP Usage Cost config returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-23T12:09:42.232Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_enabled": true
+                  },
+                  "type": "gcp_uc_config_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/gcp_uc_config/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"rpc error: code = NotFound desc = cloud account '\ufffd' not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update Google Cloud Usage Cost config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-06-16T19:07:00.082Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_enabled": true
+                  },
+                  "type": "gcp_uc_config_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/gcp_uc_config/100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"100\",\"type\":\"gcp_uc_config\",\"attributes\":{\"account_id\":\"123456_A123BC_12AB34\",\"bucket_name\":\"dd-cloud-cost-management\",\"created_at\":\"2024-04-29T13:10:37.514046\",\"dataset\":\"billing\",\"error_messages\":null,\"export_prefix\":\"datadog_cloud_cost\",\"export_project_name\":\"datadog-cloud-cost\",\"months\":15,\"project_id\":\"\",\"service_account\":\"test@datadoghq.com\",\"status\":\"active\",\"status_updated_at\":\"2025-06-14T00:50:28.556876\",\"updated_at\":\"2025-06-14T00:50:28.556873\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update Google Cloud Usage Cost config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:34:38.940Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "costs_to_allocate": [
+                      {
+                        "condition": "is",
+                        "tag": "account_id",
+                        "value": "123456789",
+                        "values": []
+                      },
+                      {
+                        "condition": "in",
+                        "tag": "environment",
+                        "value": "",
+                        "values": [
+                          "production",
+                          "staging"
+                        ]
+                      }
+                    ],
+                    "enabled": true,
+                    "order_id": 1,
+                    "provider": [
+                      "aws",
+                      "gcp"
+                    ],
+                    "rule_name": "example-arbitrary-cost-rule",
+                    "strategy": {
+                      "allocated_by_tag_keys": [
+                        "team",
+                        "environment"
+                      ],
+                      "based_on_costs": [
+                        {
+                          "condition": "is",
+                          "tag": "service",
+                          "value": "web-api",
+                          "values": []
+                        },
+                        {
+                          "condition": "not in",
+                          "tag": "team",
+                          "value": "",
+                          "values": [
+                            "legacy",
+                            "deprecated"
+                          ]
+                        }
+                      ],
+                      "granularity": "daily",
+                      "method": "proportional"
+                    },
+                    "type": "shared"
+                  },
+                  "type": "upsert_arbitrary_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/arbitrary_rule/683",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"683\",\"type\":\"arbitrary_rule\",\"attributes\":{\"costs_to_allocate\":[{\"tag\":\"account_id\",\"condition\":\"is\",\"value\":\"123456789\",\"values\":null},{\"tag\":\"environment\",\"condition\":\"in\",\"value\":\"\",\"values\":[\"production\",\"staging\"]}],\"created\":\"2025-10-08T19:31:23.246204Z\",\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"order_id\":1,\"provider\":[\"aws\",\"gcp\"],\"rule_name\":\"example-arbitrary-cost-rule\",\"strategy\":{\"method\":\"proportional\",\"granularity\":\"daily\",\"based_on_costs\":[{\"tag\":\"service\",\"condition\":\"is\",\"value\":\"web-api\",\"values\":null},{\"tag\":\"team\",\"condition\":\"not in\",\"value\":\"\",\"values\":[\"legacy\",\"deprecated\"]}],\"allocated_by_tag_keys\":[\"team\",\"environment\"]},\"type\":\"shared\",\"updated\":\"2025-10-08T19:34:39.054605Z\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update custom allocation rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-04-28T11:19:55.670Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {}
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/cost/budget",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"\\\" expected one of \\\"budget\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update if exists, or create a new budget returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-04-28T11:19:55.806Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "end_month": 202502,
+                    "entries": [
+                      {
+                        "amount": 500,
+                        "month": 202501,
+                        "tag_filters": [
+                          {
+                            "tag_key": "service",
+                            "tag_value": "ec2"
+                          }
+                        ]
+                      },
+                      {
+                        "amount": 500,
+                        "month": 202502,
+                        "tag_filters": [
+                          {
+                            "tag_key": "service",
+                            "tag_value": "ec2"
+                          }
+                        ]
+                      }
+                    ],
+                    "metrics_query": "aws.cost.amortized{service:ec2} by {service}",
+                    "name": "my budget",
+                    "start_month": 202501,
+                    "tags": [
+                      "service"
+                    ]
+                  },
+                  "id": "00000000-0a0a-0a0a-aaa0-00000000000a",
+                  "type": "budget"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/cost/budget",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"failed to upsert budget: budget not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update if exists, or create a new budget returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-04-28T11:19:56.204Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "end_month": 202502,
+                    "entries": [
+                      {
+                        "amount": 500,
+                        "month": 202501,
+                        "tag_filters": [
+                          {
+                            "tag_key": "service",
+                            "tag_value": "ec2"
+                          }
+                        ]
+                      },
+                      {
+                        "amount": 500,
+                        "month": 202502,
+                        "tag_filters": [
+                          {
+                            "tag_key": "service",
+                            "tag_value": "ec2"
+                          }
+                        ]
+                      }
+                    ],
+                    "metrics_query": "aws.cost.amortized{service:ec2} by {service}",
+                    "name": "my budget",
+                    "start_month": 202501
+                  },
+                  "type": "budget"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/cost/budget",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"041ec283-154d-4427-987b-113f806e73f0\",\"type\":\"budget\",\"attributes\":{\"created_at\":1745839196458,\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"end_month\":202502,\"entries\":[{\"month\":202501,\"amount\":500,\"tag_filters\":[{\"tag_key\":\"service\",\"tag_value\":\"ec2\"}]},{\"month\":202502,\"amount\":500,\"tag_filters\":[{\"tag_key\":\"service\",\"tag_value\":\"ec2\"}]}],\"metrics_query\":\"aws.cost.amortized{service:ec2} by {service}\",\"name\":\"my budget\",\"org_id\":321813,\"start_month\":202501,\"total_amount\":1000,\"updated_at\":1745839196458,\"updated_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cost/budget/041ec283-154d-4427-987b-113f806e73f0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update if exists, or create a new budget returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:15:10.916Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "last_version": 3611102,
+                    "rules": [
+                      {
+                        "enabled": true,
+                        "mapping": {
+                          "destination_key": "team_owner",
+                          "if_not_exists": true,
+                          "source_keys": [
+                            "account_name",
+                            "account_id"
+                          ]
+                        },
+                        "name": "Account Name Mapping",
+                        "query": null,
+                        "reference_table": null
+                      }
+                    ]
+                  },
+                  "id": "New Ruleset",
+                  "type": "update_ruleset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/tags/enrichment/ee10c3ff-312f-464c-b4f6-46adaa6d00a1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ee10c3ff-312f-464c-b4f6-46adaa6d00a1\",\"type\":\"ruleset\",\"attributes\":{\"created\":{\"seconds\":1759950911,\"nanos\":31873000},\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":{\"seconds\":1759950911,\"nanos\":31873000},\"name\":\"New Ruleset\",\"position\":1,\"rules\":[{\"name\":\"Account Name Mapping\",\"enabled\":true,\"query\":null,\"mapping\":{\"source_keys\":[\"account_name\",\"account_id\"],\"destination_key\":\"team_owner\",\"if_not_exists\":true},\"reference_table\":null,\"metadata\":null}],\"version\":3611113}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update tag pipeline ruleset returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-10-08T19:15:10.916Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "last_version": 3611102,
+                    "rules": [
+                      {
+                        "enabled": true,
+                        "mapping": {
+                          "destination_key": "team_owner",
+                          "if_tag_exists": "replace",
+                          "source_keys": [
+                            "account_name",
+                            "account_id"
+                          ]
+                        },
+                        "name": "Account Name Mapping",
+                        "query": null,
+                        "reference_table": null
+                      }
+                    ]
+                  },
+                  "id": "New Ruleset",
+                  "type": "update_ruleset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/tags/enrichment/ee10c3ff-312f-464c-b4f6-46adaa6d00a1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ee10c3ff-312f-464c-b4f6-46adaa6d00a1\",\"type\":\"ruleset\",\"attributes\":{\"created\":{\"seconds\":1759950911,\"nanos\":31873000},\"enabled\":true,\"last_modified_user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":{\"seconds\":1759950911,\"nanos\":31873000},\"name\":\"New Ruleset\",\"position\":1,\"rules\":[{\"name\":\"Account Name Mapping\",\"enabled\":true,\"query\":null,\"mapping\":{\"source_keys\":[\"account_name\",\"account_id\"],\"destination_key\":\"team_owner\",\"if_tag_exists\":\"replace\"},\"reference_table\":null,\"metadata\":null}],\"version\":3611113}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update tag pipeline ruleset with if_tag_exists returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2024-07-18T17:15:23.344Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "BilledCost": 250,
+                  "BillingCurrency": "USD",
+                  "ChargeDescription": "my_description",
+                  "ChargePeriodEnd": "2023-06-06",
+                  "ChargePeriodStart": "2023-05-06",
+                  "ProviderName": "my_provider",
+                  "Tags": {
+                    "key": "value"
+                  }
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/cost/custom_costs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9d055d22-a838-4e9f-bc34-a4f9ab66280c\",\"type\":\"cost_metadata\",\"attributes\":{\"billed_cost\":250,\"billing_currency\":\"USD\",\"charge_period\":{\"start\":1683331200000,\"end\":1686009600000},\"name\":\"data.json\",\"provider_names\":[\"my_provider\"],\"status\":\"UPLOADING\",\"uploaded_at\":1721322923888,\"uploaded_by\":{\"name\":\"Julien Hemery\",\"icon\":\"https://secure.gravatar.com/avatar/f12684c6ebe1bdd70c36789c5270aac0?d=retro\\u0026s=48\",\"email\":\"julien.hemery@datadoghq.com\"}}},\"meta\":{\"version\":\"1.0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Upload Custom Costs File returns \"Accepted\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-08-13T18:09:22.298Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "BilledCost": 100.5,
+                  "BillingCurrency": "USD",
+                  "ChargeDescription": "Monthly usage charge for my service",
+                  "ChargePeriodEnd": "2023-02-28",
+                  "ChargePeriodStart": "2023-02-01"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/cost/custom_costs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"errors in object 0:\\nTags is a required field\\nProviderName is a required field\",\"meta\":{\"end\":167,\"obj\":0,\"start\":1}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Upload Custom Costs file returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2025-09-11T19:06:38.613Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "Query": "example:query AND test:true"
+                  },
+                  "type": "validate_query"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/tags/enrichment/validate-query",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6a2cddcf-8498-469f-8da1-7b8fb597868d\",\"type\":\"validate_response\",\"attributes\":{\"Canonical\":\"example:query AND test:true\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate query returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

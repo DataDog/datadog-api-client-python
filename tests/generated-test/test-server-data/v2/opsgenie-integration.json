@@ -1,0 +1,424 @@
+{
+  "feature": "Opsgenie Integration",
+  "recordings": [
+    {
+      "feature": "Opsgenie Integration",
+      "frozen_at": "2022-05-26T18:48:58.998Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_a_new_service_object_returns_CREATED_response-1653590938",
+                    "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+                    "region": "us"
+                  },
+                  "type": "opsgenie-service"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/opsgenie/services",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"custom_url\":null,\"region\":\"us\",\"name\":\"Test-Create_a_new_service_object_returns_CREATED_response-1653590938\"},\"type\":\"opsgenie-service\",\"id\":\"0dcb43af-f233-4cda-b260-37e97e12f66f\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/opsgenie/services/0dcb43af-f233-4cda-b260-37e97e12f66f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a new service object returns \"CREATED\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Opsgenie Integration",
+      "frozen_at": "2022-06-13T14:58:47.066Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_a_single_service_object_returns_OK_response-1655132327",
+                    "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+                    "region": "us"
+                  },
+                  "type": "opsgenie-service"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/opsgenie/services",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"region\":\"us\",\"name\":\"Test-Delete_a_single_service_object_returns_OK_response-1655132327\",\"custom_url\":null},\"type\":\"opsgenie-service\",\"id\":\"78050750-0312-400d-ad80-161ea7900931\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/opsgenie/services/78050750-0312-400d-ad80-161ea7900931",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/opsgenie/services/78050750-0312-400d-ad80-161ea7900931",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Service not found.\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a single service object returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Opsgenie Integration",
+      "frozen_at": "2022-06-13T14:58:47.782Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_a_single_service_object_returns_OK_response-1655132327",
+                    "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+                    "region": "us"
+                  },
+                  "type": "opsgenie-service"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/opsgenie/services",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"region\":\"us\",\"name\":\"Test-Get_a_single_service_object_returns_OK_response-1655132327\",\"custom_url\":null},\"type\":\"opsgenie-service\",\"id\":\"3ca2db9d-e088-47d1-9bfe-b88463c23f2d\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/opsgenie/services/3ca2db9d-e088-47d1-9bfe-b88463c23f2d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"region\":\"us\",\"name\":\"Test-Get_a_single_service_object_returns_OK_response-1655132327\",\"custom_url\":null},\"type\":\"opsgenie-service\",\"id\":\"3ca2db9d-e088-47d1-9bfe-b88463c23f2d\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/opsgenie/services/3ca2db9d-e088-47d1-9bfe-b88463c23f2d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a single service object returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Opsgenie Integration",
+      "frozen_at": "2022-06-13T14:58:48.657Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_all_service_objects_returns_OK_response-1655132328",
+                    "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+                    "region": "us"
+                  },
+                  "type": "opsgenie-service"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/opsgenie/services",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"region\":\"us\",\"name\":\"Test-Get_all_service_objects_returns_OK_response-1655132328\",\"custom_url\":null},\"type\":\"opsgenie-service\",\"id\":\"337861b6-ed46-4c66-b4a0-32d7a4ba94b9\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/opsgenie/services",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"attributes\":{\"region\":\"us\",\"name\":\"Test-Get_all_service_objects_returns_OK_response-1655132328\",\"custom_url\":null},\"type\":\"opsgenie-service\",\"id\":\"337861b6-ed46-4c66-b4a0-32d7a4ba94b9\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/opsgenie/services/337861b6-ed46-4c66-b4a0-32d7a4ba94b9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all service objects returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Opsgenie Integration",
+      "frozen_at": "2022-06-09T19:57:06.404Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_a_single_service_object_returns_OK_response-1654804626",
+                    "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+                    "region": "us"
+                  },
+                  "type": "opsgenie-service"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/opsgenie/services",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"region\":\"us\",\"name\":\"Test-Update_a_single_service_object_returns_OK_response-1654804626\",\"custom_url\":null},\"type\":\"opsgenie-service\",\"id\":\"0b04ddfb-b00a-4243-baed-33ff1bff0909\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_a_single_service_object_returns_OK_response-1654804626--updated",
+                    "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+                    "region": "eu"
+                  },
+                  "id": "0b04ddfb-b00a-4243-baed-33ff1bff0909",
+                  "type": "opsgenie-service"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integration/opsgenie/services/0b04ddfb-b00a-4243-baed-33ff1bff0909",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"region\":\"eu\",\"name\":\"Test-Update_a_single_service_object_returns_OK_response-1654804626--updated\",\"custom_url\":null},\"type\":\"opsgenie-service\",\"id\":\"0b04ddfb-b00a-4243-baed-33ff1bff0909\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/opsgenie/services/0b04ddfb-b00a-4243-baed-33ff1bff0909",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a single service object returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

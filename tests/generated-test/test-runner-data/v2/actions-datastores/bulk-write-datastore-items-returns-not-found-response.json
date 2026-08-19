@@ -1,0 +1,59 @@
+{
+  "api": "ActionsDatastores",
+  "expected_status": 404,
+  "feature": "Actions Datastores",
+  "id": "v2/Actions Datastores/Bulk write datastore items returns \"Not Found\" response",
+  "operation_id": "BulkWriteDatastoreItems",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "BulkPutAppsDatastoreItemsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "values": [
+              {
+                "id": "cust_3141",
+                "name": "Johnathan"
+              },
+              {
+                "id": "cust_3142",
+                "name": "Mary"
+              }
+            ]
+          },
+          "type": "items"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "datastore_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "70b87c26-886f-497a-bd9d-09f53bc9b40c"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions-datastores/{datastore_id}/items/bulk"
+  },
+  "scenario": "Bulk write datastore items returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

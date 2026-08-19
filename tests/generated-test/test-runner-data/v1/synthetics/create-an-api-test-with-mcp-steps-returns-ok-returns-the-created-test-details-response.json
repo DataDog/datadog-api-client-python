@@ -1,0 +1,166 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create an API test with MCP steps returns \"OK - Returns the created test details.\" response",
+  "operation_id": "CreateSyntheticsAPITest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsAPITest",
+        "type": "object"
+      },
+      "source": "synthetics_api_test_mcp_payload.json",
+      "value": {
+        "config": {
+          "steps": [
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                },
+                {
+                  "type": "mcpRespectsSpecification"
+                },
+                {
+                  "operator": "contains",
+                  "target": [
+                    "tools"
+                  ],
+                  "type": "mcpServerCapabilities"
+                }
+              ],
+              "isCritical": true,
+              "name": "Initialize MCP session",
+              "request": {
+                "callType": "init",
+                "headers": {
+                  "DD-API-KEY": "<YOUR-API-KEY>",
+                  "DD-APPLICATION-KEY": "<YOUR-APP-KEY>"
+                },
+                "mcpProtocolVersion": "2025-06-18",
+                "url": "https://example.org/mcp"
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "mcp"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                },
+                {
+                  "operator": "moreThan",
+                  "target": 0,
+                  "type": "mcpToolCount"
+                },
+                {
+                  "operator": "lessThan",
+                  "target": 64,
+                  "type": "mcpToolNameLength"
+                },
+                {
+                  "type": "mcpRespectsSpecification"
+                }
+              ],
+              "isCritical": true,
+              "name": "List MCP tools",
+              "request": {
+                "callType": "tool_list",
+                "headers": {
+                  "DD-API-KEY": "<YOUR-API-KEY>",
+                  "DD-APPLICATION-KEY": "<YOUR-APP-KEY>"
+                },
+                "mcpProtocolVersion": "2025-06-18",
+                "url": "https://example.org/mcp"
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "mcp"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                },
+                {
+                  "operator": "lessThan",
+                  "target": 5000,
+                  "type": "responseTime"
+                },
+                {
+                  "type": "mcpRespectsSpecification"
+                }
+              ],
+              "isCritical": true,
+              "name": "Call MCP search tool",
+              "request": {
+                "callType": "tool_call",
+                "headers": {
+                  "DD-API-KEY": "<YOUR-API-KEY>",
+                  "DD-APPLICATION-KEY": "<YOUR-APP-KEY>"
+                },
+                "mcpProtocolVersion": "2025-06-18",
+                "toolArgs": {
+                  "limit": 5,
+                  "query": "datadog synthetics"
+                },
+                "toolName": "search",
+                "url": "https://example.org/mcp"
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "mcp"
+            }
+          ]
+        },
+        "locations": [
+          "aws:us-east-2"
+        ],
+        "message": "BDD test payload: synthetics_api_test_mcp_payload.json",
+        "name": "{{ unique }}",
+        "options": {
+          "min_failure_duration": 10,
+          "min_location_failed": 1,
+          "monitor_name": "{{ unique }}",
+          "monitor_priority": 5,
+          "retry": {
+            "count": 3,
+            "interval": 1000
+          },
+          "tick_every": 900
+        },
+        "subtype": "multi",
+        "tags": [
+          "testing:api"
+        ],
+        "type": "api"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/api"
+  },
+  "scenario": "Create an API test with MCP steps returns \"OK - Returns the created test details.\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

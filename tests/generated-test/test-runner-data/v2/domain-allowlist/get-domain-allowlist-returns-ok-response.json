@@ -1,0 +1,18 @@
+{
+  "api": "DomainAllowlist",
+  "expected_status": 200,
+  "feature": "Domain Allowlist",
+  "id": "v2/Domain Allowlist/Get Domain Allowlist returns \"OK\" response",
+  "operation_id": "GetDomainAllowlist",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/domain_allowlist"
+  },
+  "scenario": "Get Domain Allowlist returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

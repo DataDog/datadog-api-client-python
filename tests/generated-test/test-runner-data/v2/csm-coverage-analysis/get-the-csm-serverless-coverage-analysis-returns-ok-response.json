@@ -1,0 +1,18 @@
+{
+  "api": "CSMCoverageAnalysis",
+  "expected_status": 200,
+  "feature": "CSM Coverage Analysis",
+  "id": "v2/CSM Coverage Analysis/Get the CSM Serverless Coverage Analysis returns \"OK\" response",
+  "operation_id": "GetCSMServerlessCoverageAnalysis",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/csm/onboarding/coverage_analysis/serverless"
+  },
+  "scenario": "Get the CSM Serverless Coverage Analysis returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,49 @@
+{
+  "api": "ActionsDatastores",
+  "expected_status": 400,
+  "feature": "Actions Datastores",
+  "id": "v2/Actions Datastores/Update datastore returns \"Bad Request\" response",
+  "operation_id": "UpdateDatastore",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppsDatastoreRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {},
+          "id": "invalid-uuid",
+          "type": "datastores"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "datastore_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid-uuid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions-datastores/{datastore_id}"
+  },
+  "scenario": "Update datastore returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

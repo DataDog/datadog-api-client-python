@@ -1,0 +1,4567 @@
+{
+  "feature": "On-Call",
+  "recordings": [
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-28T12:58:56.434Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_On_Call_escalation_policy_returns_Created_response-1764334736@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"005f5c53-cc5a-11f0-84fc-d6e063989c3f\",\"attributes\":{\"name\":null,\"handle\":\"test-create_on_call_escalation_policy_returns_created_response-1764334736@datadoghq.com\",\"created_at\":\"2025-11-28T12:58:57.385841+00:00\",\"modified_at\":\"2025-11-28T12:58:57.385841+00:00\",\"email\":\"test-create_on_call_escalation_policy_returns_created_response-1764334736@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/990f6066d8c3647475a637255f95cc7f?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-18T12:58:56.434Z",
+                        "end_date": "2025-12-08T12:58:56.434Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "005f5c53-cc5a-11f0-84fc-d6e063989c3f"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-23T12:58:56.434Z"
+                      }
+                    ],
+                    "name": "Test-Create_On_Call_escalation_policy_returns_Created_response-1764334736",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c6a8f167-908f-4ca5-ba30-a33a00adfe11\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Create_On_Call_escalation_policy_returns_Created_response-1764334736\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"928407db-da13-4516-bd6a-3b92e3095b56\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-24ceda96b794cbdd",
+                    "name": "test-name-24ceda96b794cbdd"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e5057194-b5fd-4ff5-b9d3-6977d8bbd774\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":1,\"created_at\":\"2025-11-28T12:58:58.058854+00:00\",\"description\":null,\"handle\":\"test-handle-24ceda96b794cbdd\",\"hidden_modules\":[],\"link_count\":0,\"modified_at\":\"2025-11-28T12:58:58.058854+00:00\",\"name\":\"test-name-24ceda96b794cbdd\",\"summary\":null,\"user_count\":0,\"visible_modules\":[]},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/e5057194-b5fd-4ff5-b9d3-6977d8bbd774/links\"}},\"user_team_permissions\":{\"links\":{\"related\":\"/api/v2/team/e5057194-b5fd-4ff5-b9d3-6977d8bbd774/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_On_Call_escalation_policy_returns_Created_response-1764334736",
+                    "resolve_page_on_policy_end": true,
+                    "retries": 2,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "005f5c53-cc5a-11f0-84fc-d6e063989c3f",
+                            "type": "users"
+                          },
+                          {
+                            "id": "c6a8f167-908f-4ca5-ba30-a33a00adfe11",
+                            "type": "schedules"
+                          },
+                          {
+                            "config": {
+                              "schedule": {
+                                "position": "previous"
+                              }
+                            },
+                            "id": "c6a8f167-908f-4ca5-ba30-a33a00adfe11",
+                            "type": "schedules"
+                          },
+                          {
+                            "id": "e5057194-b5fd-4ff5-b9d3-6977d8bbd774",
+                            "type": "teams"
+                          }
+                        ]
+                      },
+                      {
+                        "assignment": "round-robin",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "e5057194-b5fd-4ff5-b9d3-6977d8bbd774",
+                            "type": "teams"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "e5057194-b5fd-4ff5-b9d3-6977d8bbd774",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": [
+              [
+                "include",
+                "steps.targets"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"84f3ac2b-77da-42f2-a2bb-cb9a5ea9cf55\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Create_On_Call_escalation_policy_returns_Created_response-1764334736\",\"resolve_page_on_policy_end\":true,\"retries\":2},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"055817d0-41cb-402f-bb93-0d5989083cd1\",\"type\":\"steps\"},{\"id\":\"ddab41bb-c15d-4ad8-bf29-8d0ddcbb2df1\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"e5057194-b5fd-4ff5-b9d3-6977d8bbd774\",\"type\":\"teams\"}]}}},\"included\":[{\"id\":\"055817d0-41cb-402f-bb93-0d5989083cd1\",\"type\":\"steps\",\"attributes\":{\"assignment\":\"default\",\"escalate_after_seconds\":3600},\"relationships\":{\"targets\":{\"data\":[{\"id\":\"005f5c53-cc5a-11f0-84fc-d6e063989c3f\",\"type\":\"users\"},{\"id\":\"c6a8f167-908f-4ca5-ba30-a33a00adfe11\",\"type\":\"schedules\"},{\"id\":\"c6a8f167-908f-4ca5-ba30-a33a00adfe11_previous\",\"type\":\"schedule_target\"},{\"id\":\"e5057194-b5fd-4ff5-b9d3-6977d8bbd774\",\"type\":\"teams\"}]}}},{\"id\":\"c6a8f167-908f-4ca5-ba30-a33a00adfe11_previous\",\"type\":\"schedule_target\",\"attributes\":{\"position\":\"previous\"},\"relationships\":{\"schedule\":{\"data\":{\"id\":\"c6a8f167-908f-4ca5-ba30-a33a00adfe11\",\"type\":\"schedules\"}}}},{\"id\":\"ddab41bb-c15d-4ad8-bf29-8d0ddcbb2df1\",\"type\":\"steps\",\"attributes\":{\"assignment\":\"round-robin\",\"escalate_after_seconds\":3600},\"relationships\":{\"targets\":{\"data\":[{\"id\":\"e5057194-b5fd-4ff5-b9d3-6977d8bbd774\",\"type\":\"teams\"}]}}},{\"id\":\"005f5c53-cc5a-11f0-84fc-d6e063989c3f\",\"type\":\"users\",\"attributes\":{\"email\":\"test-create_on_call_escalation_policy_returns_created_response-1764334736@datadoghq.com\",\"name\":\"\",\"status\":\"pending\"}},{\"id\":\"c6a8f167-908f-4ca5-ba30-a33a00adfe11\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Create_On_Call_escalation_policy_returns_Created_response-1764334736\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"928407db-da13-4516-bd6a-3b92e3095b56\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"e5057194-b5fd-4ff5-b9d3-6977d8bbd774\",\"type\":\"teams\",\"attributes\":{\"avatar\":\"\",\"description\":\"\",\"handle\":\"test-handle-24ceda96b794cbdd\",\"name\":\"test-name-24ceda96b794cbdd\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/84f3ac2b-77da-42f2-a2bb-cb9a5ea9cf55",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/e5057194-b5fd-4ff5-b9d3-6977d8bbd774",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/c6a8f167-908f-4ca5-ba30-a33a00adfe11",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/005f5c53-cc5a-11f0-84fc-d6e063989c3f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create On-Call escalation policy returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:22.484Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_On_Call_schedule_returns_Created_response-1764252682@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"f4106d12-cb9a-11f0-a56e-4e680b759023\",\"attributes\":{\"name\":null,\"handle\":\"test-create_on_call_schedule_returns_created_response-1764252682@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:22.860522+00:00\",\"modified_at\":\"2025-11-27T14:11:22.860522+00:00\",\"email\":\"test-create_on_call_schedule_returns_created_response-1764252682@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/97f54253d0353bf6811320274d5cf8eb?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-a115b862e893678b",
+                    "name": "test-name-a115b862e893678b"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8802359f-5663-4ed4-b3c8-06d5618def25\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":2,\"created_at\":\"2025-11-27T14:11:23.389409+00:00\",\"description\":null,\"handle\":\"test-handle-a115b862e893678b\",\"hidden_modules\":[],\"link_count\":0,\"modified_at\":\"2025-11-27T14:11:23.389409+00:00\",\"name\":\"test-name-a115b862e893678b\",\"summary\":null,\"user_count\":0,\"visible_modules\":[]},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/8802359f-5663-4ed4-b3c8-06d5618def25/links\"}},\"user_team_permissions\":{\"links\":{\"related\":\"/api/v2/team/8802359f-5663-4ed4-b3c8-06d5618def25/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:22.484Z",
+                        "end_date": "2025-12-07T14:11:22.484Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "f4106d12-cb9a-11f0-a56e-4e680b759023"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:22.484Z"
+                      }
+                    ],
+                    "name": "Test-Create_On_Call_schedule_returns_Created_response-1764252682",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "8802359f-5663-4ed4-b3c8-06d5618def25",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f56173aa-b72e-4a29-a9dd-e8a4fe57f47a\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Create_On_Call_schedule_returns_Created_response-1764252682\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"886b9854-9487-4b13-a4a1-955922ced1cf\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"8802359f-5663-4ed4-b3c8-06d5618def25\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/f56173aa-b72e-4a29-a9dd-e8a4fe57f47a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/8802359f-5663-4ed4-b3c8-06d5618def25",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/f4106d12-cb9a-11f0-a56e-4e680b759023",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create On-Call schedule returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-12T14:05:32.425Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_an_On_Call_notification_channel_for_a_user_returns_Created_response-1765548332@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"5ba8ee87-4d71-458c-883d-a6016738f7ce\",\"attributes\":{\"name\":null,\"handle\":\"test-create_an_on_call_notification_channel_for_a_user_returns_created_response-1765548332@datadoghq.com\",\"created_at\":\"2025-12-12T14:05:32.704821+00:00\",\"modified_at\":\"2025-12-12T14:05:32.704821+00:00\",\"email\":\"test-create_an_on_call_notification_channel_for_a_user_returns_created_response-1765548332@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/01791216e0fc8e5e005271e285ad9760?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "foo@bar.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/5ba8ee87-4d71-458c-883d-a6016738f7ce/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f944f63a-2606-43c0-9c0b-10a34b9b214a\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"foo@bar.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/5ba8ee87-4d71-458c-883d-a6016738f7ce",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an On-Call notification channel for a user returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-16T19:30:04.834Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_an_On_Call_notification_rule_for_a_user_returns_Created_response-1765913404@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"2ab53f07-289f-4060-b21a-3d704096aadf\",\"attributes\":{\"name\":null,\"handle\":\"test-create_an_on_call_notification_rule_for_a_user_returns_created_response-1765913404@datadoghq.com\",\"created_at\":\"2025-12-16T19:30:05.014723+00:00\",\"modified_at\":\"2025-12-16T19:30:05.014723+00:00\",\"email\":\"test-create_an_on_call_notification_rule_for_a_user_returns_created_response-1765913404@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/c5ddb15c50d998db06711e0a31591216?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-create_an_on_call_notification_rule_for_a_user_returns_created_response-1765913404@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/2ab53f07-289f-4060-b21a-3d704096aadf/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ca8520ce-27e0-4bba-997f-004047cda45d\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-create_an_on_call_notification_rule_for_a_user_returns_created_response-1765913404@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "high_urgency",
+                    "delay_minutes": 0
+                  },
+                  "relationships": {
+                    "channel": {
+                      "data": {
+                        "id": "ca8520ce-27e0-4bba-997f-004047cda45d",
+                        "type": "notification_channels"
+                      }
+                    }
+                  },
+                  "type": "notification_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/2ab53f07-289f-4060-b21a-3d704096aadf/notification-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4e551e4f-d1aa-4fce-8cc7-c6bf98925efe\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":0},\"relationships\":{\"channel\":{\"data\":{\"id\":\"ca8520ce-27e0-4bba-997f-004047cda45d\",\"type\":\"notification_channels\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/2ab53f07-289f-4060-b21a-3d704096aadf",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an On-Call notification rule for a user returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:25.538Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Delete_On_Call_escalation_policy_returns_No_Content_response-1764252685@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"f5e7c666-cb9a-11f0-ae87-2a5e5028fcef\",\"attributes\":{\"name\":null,\"handle\":\"test-delete_on_call_escalation_policy_returns_no_content_response-1764252685@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:25.949558+00:00\",\"modified_at\":\"2025-11-27T14:11:25.949558+00:00\",\"email\":\"test-delete_on_call_escalation_policy_returns_no_content_response-1764252685@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/92ce6e94a63e99ed9306c4b09eb69918?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-5d85b5aacd02cab9",
+                    "name": "test-name-5d85b5aacd02cab9"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a42481db-6918-45ef-a923-5548004f044a\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":9,\"created_at\":\"2025-11-27T14:11:26.456007+00:00\",\"description\":null,\"handle\":\"test-handle-5d85b5aacd02cab9\",\"hidden_modules\":[],\"link_count\":0,\"modified_at\":\"2025-11-27T14:11:26.456008+00:00\",\"name\":\"test-name-5d85b5aacd02cab9\",\"summary\":null,\"user_count\":0,\"visible_modules\":[]},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/a42481db-6918-45ef-a923-5548004f044a/links\"}},\"user_team_permissions\":{\"links\":{\"related\":\"/api/v2/team/a42481db-6918-45ef-a923-5548004f044a/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:25.538Z",
+                        "end_date": "2025-12-07T14:11:25.538Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "f5e7c666-cb9a-11f0-ae87-2a5e5028fcef"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:25.538Z"
+                      }
+                    ],
+                    "name": "Test-Delete_On_Call_escalation_policy_returns_No_Content_response-1764252685",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"cf196f34-3ce0-4cff-a27e-ed5035db9442\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Delete_On_Call_escalation_policy_returns_No_Content_response-1764252685\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"2f2ea0a9-a33e-4d2f-9a0b-5cbfb0bed071\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_On_Call_escalation_policy_returns_No_Content_response-1764252685",
+                    "resolve_page_on_policy_end": true,
+                    "retries": 2,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "a42481db-6918-45ef-a923-5548004f044a",
+                            "type": "teams"
+                          },
+                          {
+                            "id": "cf196f34-3ce0-4cff-a27e-ed5035db9442",
+                            "type": "schedules"
+                          },
+                          {
+                            "config": {
+                              "schedule": {
+                                "position": "previous"
+                              }
+                            },
+                            "id": "cf196f34-3ce0-4cff-a27e-ed5035db9442",
+                            "type": "schedules"
+                          },
+                          {
+                            "id": "f5e7c666-cb9a-11f0-ae87-2a5e5028fcef",
+                            "type": "users"
+                          }
+                        ]
+                      },
+                      {
+                        "assignment": "round-robin",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "a42481db-6918-45ef-a923-5548004f044a",
+                            "type": "teams"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "a42481db-6918-45ef-a923-5548004f044a",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c25d7cd6-d2bc-4d84-801b-3a09d62e29bc\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Delete_On_Call_escalation_policy_returns_No_Content_response-1764252685\",\"resolve_page_on_policy_end\":true,\"retries\":2},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"b445f325-7fca-44d5-a7e2-2a16e8bc2837\",\"type\":\"steps\"},{\"id\":\"b9c6527e-9c8d-4c93-92cf-100b5c180a1e\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"a42481db-6918-45ef-a923-5548004f044a\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/c25d7cd6-d2bc-4d84-801b-3a09d62e29bc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/c25d7cd6-d2bc-4d84-801b-3a09d62e29bc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"escalation_policy[c25d7cd6-d2bc-4d84-801b-3a09d62e29bc] not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/cf196f34-3ce0-4cff-a27e-ed5035db9442",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/a42481db-6918-45ef-a923-5548004f044a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/f5e7c666-cb9a-11f0-ae87-2a5e5028fcef",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete On-Call escalation policy returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:30.983Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Delete_On_Call_schedule_returns_No_Content_response-1764252690@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"f9249a49-cb9a-11f0-a56e-4e680b759023\",\"attributes\":{\"name\":null,\"handle\":\"test-delete_on_call_schedule_returns_no_content_response-1764252690@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:31.381378+00:00\",\"modified_at\":\"2025-11-27T14:11:31.381378+00:00\",\"email\":\"test-delete_on_call_schedule_returns_no_content_response-1764252690@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/4d40d1e80a1a87fede5c7a11db2bf7f2?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:30.983Z",
+                        "end_date": "2025-12-07T14:11:30.983Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "f9249a49-cb9a-11f0-a56e-4e680b759023"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:30.983Z"
+                      }
+                    ],
+                    "name": "Test-Delete_On_Call_schedule_returns_No_Content_response-1764252690",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"10acf747-60a0-4bdf-a0df-196e9f9291e2\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Delete_On_Call_schedule_returns_No_Content_response-1764252690\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"806b7079-20af-41d1-9f50-badf49b324f5\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/10acf747-60a0-4bdf-a0df-196e9f9291e2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/10acf747-60a0-4bdf-a0df-196e9f9291e2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"schedule[10acf747-60a0-4bdf-a0df-196e9f9291e2] not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/f9249a49-cb9a-11f0-a56e-4e680b759023",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete On-Call schedule returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-11T18:27:50.679Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Delete_an_On_Call_notification_channel_for_a_user_returns_No_Content_response-1765477670@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"1df33be3-5397-4aaf-95c0-00dd63819c80\",\"attributes\":{\"name\":null,\"handle\":\"test-delete_an_on_call_notification_channel_for_a_user_returns_no_content_response-1765477670@datadoghq.com\",\"created_at\":\"2025-12-11T18:27:50.837055+00:00\",\"modified_at\":\"2025-12-11T18:27:50.837055+00:00\",\"email\":\"test-delete_an_on_call_notification_channel_for_a_user_returns_no_content_response-1765477670@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/f0ef01f65aae0d49a442ade4a44a5a53?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-delete_an_on_call_notification_channel_for_a_user_returns_no_content_response-1765477670@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/1df33be3-5397-4aaf-95c0-00dd63819c80/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dd22cf57-a576-4c7e-92f8-36c2171f5f99\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-delete_an_on_call_notification_channel_for_a_user_returns_no_content_response-1765477670@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/users/1df33be3-5397-4aaf-95c0-00dd63819c80/notification-channels/dd22cf57-a576-4c7e-92f8-36c2171f5f99",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/1df33be3-5397-4aaf-95c0-00dd63819c80",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete an On-Call notification channel for a user returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-16T19:29:36.256Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Delete_an_On_Call_notification_rule_for_a_user_returns_No_Content_response-1765913376@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"5ebbe76d-c072-4909-ba24-ffa71f4597a0\",\"attributes\":{\"name\":null,\"handle\":\"test-delete_an_on_call_notification_rule_for_a_user_returns_no_content_response-1765913376@datadoghq.com\",\"created_at\":\"2025-12-16T19:29:36.461504+00:00\",\"modified_at\":\"2025-12-16T19:29:36.461504+00:00\",\"email\":\"test-delete_an_on_call_notification_rule_for_a_user_returns_no_content_response-1765913376@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/dad7a8a5508730e67ad8dea90bcc189c?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-delete_an_on_call_notification_rule_for_a_user_returns_no_content_response-1765913376@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/5ebbe76d-c072-4909-ba24-ffa71f4597a0/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a557eb68-8b0a-48cf-ac65-73aede790994\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-delete_an_on_call_notification_rule_for_a_user_returns_no_content_response-1765913376@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "high_urgency",
+                    "delay_minutes": 0
+                  },
+                  "relationships": {
+                    "channel": {
+                      "data": {
+                        "id": "a557eb68-8b0a-48cf-ac65-73aede790994",
+                        "type": "notification_channels"
+                      }
+                    }
+                  },
+                  "type": "notification_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/5ebbe76d-c072-4909-ba24-ffa71f4597a0/notification-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"71e9f009-5a69-4946-992e-d76b05d1ae61\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":0},\"relationships\":{\"channel\":{\"data\":{\"id\":\"a557eb68-8b0a-48cf-ac65-73aede790994\",\"type\":\"notification_channels\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/users/5ebbe76d-c072-4909-ba24-ffa71f4597a0/notification-rules/71e9f009-5a69-4946-992e-d76b05d1ae61",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/5ebbe76d-c072-4909-ba24-ffa71f4597a0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete an On-Call notification rule for a user returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:33.368Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_On_Call_escalation_policy_returns_OK_response-1764252693@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"fa8dbd27-cb9a-11f0-84fc-d6e063989c3f\",\"attributes\":{\"name\":null,\"handle\":\"test-get_on_call_escalation_policy_returns_ok_response-1764252693@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:33.748105+00:00\",\"modified_at\":\"2025-11-27T14:11:33.748105+00:00\",\"email\":\"test-get_on_call_escalation_policy_returns_ok_response-1764252693@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/3b312cc1a86be5f85aab5fada68c24c4?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-9b417dea223136e8",
+                    "name": "test-name-9b417dea223136e8"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"bf2fad34-c495-4de0-b1ec-c5727a2ae216\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":8,\"created_at\":\"2025-11-27T14:11:34.252521+00:00\",\"description\":null,\"handle\":\"test-handle-9b417dea223136e8\",\"hidden_modules\":[],\"link_count\":0,\"modified_at\":\"2025-11-27T14:11:34.252521+00:00\",\"name\":\"test-name-9b417dea223136e8\",\"summary\":null,\"user_count\":0,\"visible_modules\":[]},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/bf2fad34-c495-4de0-b1ec-c5727a2ae216/links\"}},\"user_team_permissions\":{\"links\":{\"related\":\"/api/v2/team/bf2fad34-c495-4de0-b1ec-c5727a2ae216/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:33.368Z",
+                        "end_date": "2025-12-07T14:11:33.368Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "fa8dbd27-cb9a-11f0-84fc-d6e063989c3f"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:33.368Z"
+                      }
+                    ],
+                    "name": "Test-Get_On_Call_escalation_policy_returns_OK_response-1764252693",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d8834350-ae3c-45eb-ad84-9f9a3cef46f3\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Get_On_Call_escalation_policy_returns_OK_response-1764252693\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"8d44f496-4fe0-4cc9-b3d7-81bbc3e68464\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_On_Call_escalation_policy_returns_OK_response-1764252693",
+                    "resolve_page_on_policy_end": true,
+                    "retries": 2,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "bf2fad34-c495-4de0-b1ec-c5727a2ae216",
+                            "type": "teams"
+                          },
+                          {
+                            "id": "d8834350-ae3c-45eb-ad84-9f9a3cef46f3",
+                            "type": "schedules"
+                          },
+                          {
+                            "config": {
+                              "schedule": {
+                                "position": "previous"
+                              }
+                            },
+                            "id": "d8834350-ae3c-45eb-ad84-9f9a3cef46f3",
+                            "type": "schedules"
+                          },
+                          {
+                            "id": "fa8dbd27-cb9a-11f0-84fc-d6e063989c3f",
+                            "type": "users"
+                          }
+                        ]
+                      },
+                      {
+                        "assignment": "round-robin",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "bf2fad34-c495-4de0-b1ec-c5727a2ae216",
+                            "type": "teams"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "bf2fad34-c495-4de0-b1ec-c5727a2ae216",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7e36daf1-25ef-46af-ba33-23aac9271dc5\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Get_On_Call_escalation_policy_returns_OK_response-1764252693\",\"resolve_page_on_policy_end\":true,\"retries\":2},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"e4f3f753-15bd-4649-bdeb-70011094d294\",\"type\":\"steps\"},{\"id\":\"984250f3-e780-4aae-80c1-143859d0f14b\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"bf2fad34-c495-4de0-b1ec-c5727a2ae216\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/escalation-policies/7e36daf1-25ef-46af-ba33-23aac9271dc5",
+            "query": [
+              [
+                "include",
+                "steps.targets"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7e36daf1-25ef-46af-ba33-23aac9271dc5\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Get_On_Call_escalation_policy_returns_OK_response-1764252693\",\"resolve_page_on_policy_end\":true,\"retries\":2},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"e4f3f753-15bd-4649-bdeb-70011094d294\",\"type\":\"steps\"},{\"id\":\"984250f3-e780-4aae-80c1-143859d0f14b\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"bf2fad34-c495-4de0-b1ec-c5727a2ae216\",\"type\":\"teams\"}]}}},\"included\":[{\"id\":\"e4f3f753-15bd-4649-bdeb-70011094d294\",\"type\":\"steps\",\"attributes\":{\"assignment\":\"default\",\"escalate_after_seconds\":3600},\"relationships\":{\"targets\":{\"data\":[{\"id\":\"bf2fad34-c495-4de0-b1ec-c5727a2ae216\",\"type\":\"teams\"},{\"id\":\"d8834350-ae3c-45eb-ad84-9f9a3cef46f3\",\"type\":\"schedules\"},{\"id\":\"d8834350-ae3c-45eb-ad84-9f9a3cef46f3_previous\",\"type\":\"schedule_target\"},{\"id\":\"fa8dbd27-cb9a-11f0-84fc-d6e063989c3f\",\"type\":\"users\"}]}}},{\"id\":\"d8834350-ae3c-45eb-ad84-9f9a3cef46f3_previous\",\"type\":\"schedule_target\",\"attributes\":{\"position\":\"previous\"},\"relationships\":{\"schedule\":{\"data\":{\"id\":\"d8834350-ae3c-45eb-ad84-9f9a3cef46f3\",\"type\":\"schedules\"}}}},{\"id\":\"984250f3-e780-4aae-80c1-143859d0f14b\",\"type\":\"steps\",\"attributes\":{\"assignment\":\"round-robin\",\"escalate_after_seconds\":3600},\"relationships\":{\"targets\":{\"data\":[{\"id\":\"bf2fad34-c495-4de0-b1ec-c5727a2ae216\",\"type\":\"teams\"}]}}},{\"id\":\"bf2fad34-c495-4de0-b1ec-c5727a2ae216\",\"type\":\"teams\",\"attributes\":{\"avatar\":\"\",\"description\":\"\",\"handle\":\"test-handle-9b417dea223136e8\",\"name\":\"test-name-9b417dea223136e8\"}},{\"id\":\"d8834350-ae3c-45eb-ad84-9f9a3cef46f3\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Get_On_Call_escalation_policy_returns_OK_response-1764252693\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"8d44f496-4fe0-4cc9-b3d7-81bbc3e68464\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"fa8dbd27-cb9a-11f0-84fc-d6e063989c3f\",\"type\":\"users\",\"attributes\":{\"email\":\"test-get_on_call_escalation_policy_returns_ok_response-1764252693@datadoghq.com\",\"name\":\"\",\"status\":\"pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/7e36daf1-25ef-46af-ba33-23aac9271dc5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/d8834350-ae3c-45eb-ad84-9f9a3cef46f3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/bf2fad34-c495-4de0-b1ec-c5727a2ae216",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/fa8dbd27-cb9a-11f0-84fc-d6e063989c3f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get On-Call escalation policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:37.612Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_On_Call_schedule_returns_OK_response-1764252697@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"fd12eb55-cb9a-11f0-8fcd-5ac0b02adf59\",\"attributes\":{\"name\":null,\"handle\":\"test-get_on_call_schedule_returns_ok_response-1764252697@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:37.976362+00:00\",\"modified_at\":\"2025-11-27T14:11:37.976362+00:00\",\"email\":\"test-get_on_call_schedule_returns_ok_response-1764252697@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/56aea300d0912ed694b8ff04cfcc86aa?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:37.612Z",
+                        "end_date": "2025-12-07T14:11:37.612Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "fd12eb55-cb9a-11f0-8fcd-5ac0b02adf59"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:37.612Z"
+                      }
+                    ],
+                    "name": "Test-Get_On_Call_schedule_returns_OK_response-1764252697",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ba513209-ef94-4826-8511-1c5ccb912070\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Get_On_Call_schedule_returns_OK_response-1764252697\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"9bb587a7-8302-49f3-8130-cb417de4ecd5\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/schedules/ba513209-ef94-4826-8511-1c5ccb912070",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ba513209-ef94-4826-8511-1c5ccb912070\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Get_On_Call_schedule_returns_OK_response-1764252697\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"9bb587a7-8302-49f3-8130-cb417de4ecd5\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/ba513209-ef94-4826-8511-1c5ccb912070",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/fd12eb55-cb9a-11f0-8fcd-5ac0b02adf59",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get On-Call schedule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-12T14:04:17.257Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_an_On_Call_notification_channel_for_a_user_returns_OK_response-1765548257@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"0131b53c-5aec-4c8a-a14f-9ef487448833\",\"attributes\":{\"name\":null,\"handle\":\"test-get_an_on_call_notification_channel_for_a_user_returns_ok_response-1765548257@datadoghq.com\",\"created_at\":\"2025-12-12T14:04:17.531988+00:00\",\"modified_at\":\"2025-12-12T14:04:17.531988+00:00\",\"email\":\"test-get_an_on_call_notification_channel_for_a_user_returns_ok_response-1765548257@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/cedb283c90667a7da02c585159b4eda3?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-get_an_on_call_notification_channel_for_a_user_returns_ok_response-1765548257@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/0131b53c-5aec-4c8a-a14f-9ef487448833/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d5fc3f5a-a4b9-4972-80bb-cb4db7ec958b\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-get_an_on_call_notification_channel_for_a_user_returns_ok_response-1765548257@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/users/0131b53c-5aec-4c8a-a14f-9ef487448833/notification-channels/d5fc3f5a-a4b9-4972-80bb-cb4db7ec958b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d5fc3f5a-a4b9-4972-80bb-cb4db7ec958b\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-get_an_on_call_notification_channel_for_a_user_returns_ok_response-1765548257@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/0131b53c-5aec-4c8a-a14f-9ef487448833",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an On-Call notification channel for a user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-16T21:16:24.271Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_an_On_Call_notification_rule_for_a_user_returns_OK_response-1765919784@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"b2a555c9-ac2d-430d-b321-10e4c0201ce3\",\"attributes\":{\"name\":null,\"handle\":\"test-get_an_on_call_notification_rule_for_a_user_returns_ok_response-1765919784@datadoghq.com\",\"created_at\":\"2025-12-16T21:16:24.480454+00:00\",\"modified_at\":\"2025-12-16T21:16:24.480454+00:00\",\"email\":\"test-get_an_on_call_notification_rule_for_a_user_returns_ok_response-1765919784@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/8e38ab440c2cdd2808a61dfa83f734d7?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-get_an_on_call_notification_rule_for_a_user_returns_ok_response-1765919784@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/b2a555c9-ac2d-430d-b321-10e4c0201ce3/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"767234b0-0c79-4092-9b44-a8963021795b\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-get_an_on_call_notification_rule_for_a_user_returns_ok_response-1765919784@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "high_urgency",
+                    "delay_minutes": 0
+                  },
+                  "relationships": {
+                    "channel": {
+                      "data": {
+                        "id": "767234b0-0c79-4092-9b44-a8963021795b",
+                        "type": "notification_channels"
+                      }
+                    }
+                  },
+                  "type": "notification_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/b2a555c9-ac2d-430d-b321-10e4c0201ce3/notification-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d07cc90b-4fc5-455f-8f57-45d48a658bc6\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":0},\"relationships\":{\"channel\":{\"data\":{\"id\":\"767234b0-0c79-4092-9b44-a8963021795b\",\"type\":\"notification_channels\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/users/b2a555c9-ac2d-430d-b321-10e4c0201ce3/notification-rules/d07cc90b-4fc5-455f-8f57-45d48a658bc6",
+            "query": [
+              [
+                "include",
+                "channel"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d07cc90b-4fc5-455f-8f57-45d48a658bc6\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":0},\"relationships\":{\"channel\":{\"data\":{\"id\":\"767234b0-0c79-4092-9b44-a8963021795b\",\"type\":\"notification_channels\"}}}},\"included\":[{\"id\":\"767234b0-0c79-4092-9b44-a8963021795b\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-get_an_on_call_notification_rule_for_a_user_returns_ok_response-1765919784@datadoghq.com\",\"formats\":[\"html\"]}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/b2a555c9-ac2d-430d-b321-10e4c0201ce3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an On-Call notification rule for a user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2026-07-10T09:31:37.503Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_on_call_responders_for_a_schedule_returns_OK_response-1783675897@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"7f1b523e-fe13-4917-8519-6dd314ef17c0\",\"attributes\":{\"uuid\":\"7f1b523e-fe13-4917-8519-6dd314ef17c0\",\"name\":null,\"handle\":\"test-get_on_call_responders_for_a_schedule_returns_ok_response-1783675897@datadoghq.com\",\"created_at\":\"2026-07-10T09:31:38.042683+00:00\",\"modified_at\":\"2026-07-10T09:31:38.042683+00:00\",\"email\":\"test-get_on_call_responders_for_a_schedule_returns_ok_response-1783675897@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/22b76633087bc3ee4427cc67e8466d5e?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2026-06-30T09:31:37.503Z",
+                        "end_date": "2026-07-20T09:31:37.503Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "7f1b523e-fe13-4917-8519-6dd314ef17c0"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2026-07-05T09:31:37.503Z"
+                      }
+                    ],
+                    "name": "Test-Get_on_call_responders_for_a_schedule_returns_OK_response-1783675897",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"23545b48-fa23-4ea9-a331-3a38f81195cd\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Get_on_call_responders_for_a_schedule_returns_OK_response-1783675897\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"03edf431-b1a6-418a-965e-9df50275dc7e\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/schedules/23545b48-fa23-4ea9-a331-3a38f81195cd/responders",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"23545b48-fa23-4ea9-a331-3a38f81195cd-1783675898\",\"type\":\"schedule_oncall_responders\",\"attributes\":{\"scheduled_at\":\"2026-07-10T09:31:38.803561233Z\"},\"relationships\":{\"responders\":{\"data\":[{\"id\":\"23545b48-fa23-4ea9-a331-3a38f81195cd-1783675898-current\",\"type\":\"schedule_oncall_responder\"}]},\"schedule\":{\"data\":{\"id\":\"23545b48-fa23-4ea9-a331-3a38f81195cd\",\"type\":\"schedules\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/23545b48-fa23-4ea9-a331-3a38f81195cd",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/7f1b523e-fe13-4917-8519-6dd314ef17c0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get on-call responders for a schedule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-04T08:50:18.341Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_scheduled_on_call_user_returns_OK_response-1764838218@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"42e2447f-d0ee-11f0-b246-f6a778e5e220\",\"attributes\":{\"name\":null,\"handle\":\"test-get_scheduled_on_call_user_returns_ok_response-1764838218@datadoghq.com\",\"created_at\":\"2025-12-04T08:50:19.140471+00:00\",\"modified_at\":\"2025-12-04T08:50:19.140471+00:00\",\"email\":\"test-get_scheduled_on_call_user_returns_ok_response-1764838218@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/6a6c3614a2758d626d4fcde0e9727205?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-24T08:50:18.341Z",
+                        "end_date": "2025-12-14T08:50:18.341Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "42e2447f-d0ee-11f0-b246-f6a778e5e220"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-29T08:50:18.341Z"
+                      }
+                    ],
+                    "name": "Test-Get_scheduled_on_call_user_returns_OK_response-1764838218",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7f4eb086-4141-4f2a-ae4a-c0a06816672b\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Get_scheduled_on_call_user_returns_OK_response-1764838218\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"ad5985ec-b9e0-4dc7-aff9-a7bb75fc334f\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/schedules/7f4eb086-4141-4f2a-ae4a-c0a06816672b/on-call",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"42e2447f-d0ee-11f0-b246-f6a778e5e220-2025-12-04T03:50:19-05:00-2025-12-05T03:50:18-05:00\",\"type\":\"shifts\",\"attributes\":{\"end\":\"2025-12-05T03:50:18-05:00\",\"start\":\"2025-12-04T03:50:19.261184-05:00\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"42e2447f-d0ee-11f0-b246-f6a778e5e220\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/7f4eb086-4141-4f2a-ae4a-c0a06816672b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/42e2447f-d0ee-11f0-b246-f6a778e5e220",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get scheduled on-call user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:42.299Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_team_on_call_users_returns_OK_response-1764252702@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"ffde914a-cb9a-11f0-ae87-2a5e5028fcef\",\"attributes\":{\"name\":null,\"handle\":\"test-get_team_on_call_users_returns_ok_response-1764252702@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:42.666467+00:00\",\"modified_at\":\"2025-11-27T14:11:42.666467+00:00\",\"email\":\"test-get_team_on_call_users_returns_ok_response-1764252702@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/0bc277f36ed2ab487375205fafaaebc7?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-ecfc4ff61997ed40",
+                    "name": "test-name-ecfc4ff61997ed40"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fc8f8844-54c3-4898-aabc-68d6fccbe20e\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":11,\"created_at\":\"2025-11-27T14:11:43.090563+00:00\",\"description\":null,\"handle\":\"test-handle-ecfc4ff61997ed40\",\"hidden_modules\":[],\"link_count\":0,\"modified_at\":\"2025-11-27T14:11:43.090563+00:00\",\"name\":\"test-name-ecfc4ff61997ed40\",\"summary\":null,\"user_count\":0,\"visible_modules\":[]},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/fc8f8844-54c3-4898-aabc-68d6fccbe20e/links\"}},\"user_team_permissions\":{\"links\":{\"related\":\"/api/v2/team/fc8f8844-54c3-4898-aabc-68d6fccbe20e/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:42.299Z",
+                        "end_date": "2025-12-07T14:11:42.299Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "ffde914a-cb9a-11f0-ae87-2a5e5028fcef"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:42.299Z"
+                      }
+                    ],
+                    "name": "Test-Get_team_on_call_users_returns_OK_response-1764252702",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4325ddef-dc72-4609-90c2-01167759f277\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Get_team_on_call_users_returns_OK_response-1764252702\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"86d3719a-7516-46f0-bfc4-2bd40ad1b855\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_team_on_call_users_returns_OK_response-1764252702",
+                    "resolve_page_on_policy_end": true,
+                    "retries": 2,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "fc8f8844-54c3-4898-aabc-68d6fccbe20e",
+                            "type": "teams"
+                          },
+                          {
+                            "id": "4325ddef-dc72-4609-90c2-01167759f277",
+                            "type": "schedules"
+                          },
+                          {
+                            "config": {
+                              "schedule": {
+                                "position": "previous"
+                              }
+                            },
+                            "id": "4325ddef-dc72-4609-90c2-01167759f277",
+                            "type": "schedules"
+                          },
+                          {
+                            "id": "ffde914a-cb9a-11f0-ae87-2a5e5028fcef",
+                            "type": "users"
+                          }
+                        ]
+                      },
+                      {
+                        "assignment": "round-robin",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "fc8f8844-54c3-4898-aabc-68d6fccbe20e",
+                            "type": "teams"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "fc8f8844-54c3-4898-aabc-68d6fccbe20e",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5a7ecb26-4ebe-4496-bcfb-ff30c655a1a9\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Get_team_on_call_users_returns_OK_response-1764252702\",\"resolve_page_on_policy_end\":true,\"retries\":2},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"2694ac87-8900-4b0f-a108-fb8961c7ef89\",\"type\":\"steps\"},{\"id\":\"e41057da-895e-4a23-81f2-617f61c53a84\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"fc8f8844-54c3-4898-aabc-68d6fccbe20e\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "rules": [
+                      {
+                        "actions": [],
+                        "policy_id": "5a7ecb26-4ebe-4496-bcfb-ff30c655a1a9",
+                        "query": "",
+                        "urgency": "low"
+                      }
+                    ]
+                  },
+                  "id": "fc8f8844-54c3-4898-aabc-68d6fccbe20e",
+                  "type": "team_routing_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/on-call/teams/fc8f8844-54c3-4898-aabc-68d6fccbe20e/routing-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fc8f8844-54c3-4898-aabc-68d6fccbe20e\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[{\"id\":\"virtual-fc8f8844-54c3-4898-aabc-68d6fccbe20e-rule-0\",\"type\":\"team_routing_rules\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/teams/fc8f8844-54c3-4898-aabc-68d6fccbe20e/on-call",
+            "query": [
+              [
+                "include",
+                "responders,escalations.responders"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fc8f8844-54c3-4898-aabc-68d6fccbe20e-1764252704\",\"type\":\"team_oncall_responders\",\"relationships\":{\"escalations\":{\"data\":[]},\"responders\":{\"data\":[{\"id\":\"ffde914a-cb9a-11f0-ae87-2a5e5028fcef\",\"type\":\"users\"}]}}},\"included\":[{\"id\":\"ffde914a-cb9a-11f0-ae87-2a5e5028fcef\",\"type\":\"users\",\"attributes\":{\"email\":\"test-get_team_on_call_users_returns_ok_response-1764252702@datadoghq.com\",\"name\":\"\",\"status\":\"pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "rules": []
+                  },
+                  "id": "fc8f8844-54c3-4898-aabc-68d6fccbe20e",
+                  "type": "team_routing_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/on-call/teams/fc8f8844-54c3-4898-aabc-68d6fccbe20e/routing-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fc8f8844-54c3-4898-aabc-68d6fccbe20e\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/5a7ecb26-4ebe-4496-bcfb-ff30c655a1a9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/4325ddef-dc72-4609-90c2-01167759f277",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/fc8f8844-54c3-4898-aabc-68d6fccbe20e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/ffde914a-cb9a-11f0-ae87-2a5e5028fcef",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team on-call users returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-12T14:40:40.219Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-List_On_Call_notification_channels_for_a_user_returns_OK_response-1765550440@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"c7fe3658-67dd-4a91-bf86-3709728fd8a5\",\"attributes\":{\"name\":null,\"handle\":\"test-list_on_call_notification_channels_for_a_user_returns_ok_response-1765550440@datadoghq.com\",\"created_at\":\"2025-12-12T14:40:40.467657+00:00\",\"modified_at\":\"2025-12-12T14:40:40.467657+00:00\",\"email\":\"test-list_on_call_notification_channels_for_a_user_returns_ok_response-1765550440@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/c74061cf101e1fea18813bda82103b47?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-list_on_call_notification_channels_for_a_user_returns_ok_response-1765550440@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/c7fe3658-67dd-4a91-bf86-3709728fd8a5/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8e9a9ded-ff10-4661-8d56-b4b789f54bf1\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-list_on_call_notification_channels_for_a_user_returns_ok_response-1765550440@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/users/c7fe3658-67dd-4a91-bf86-3709728fd8a5/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"8e9a9ded-ff10-4661-8d56-b4b789f54bf1\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-list_on_call_notification_channels_for_a_user_returns_ok_response-1765550440@datadoghq.com\",\"formats\":[\"html\"]}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/c7fe3658-67dd-4a91-bf86-3709728fd8a5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List On-Call notification channels for a user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-16T21:16:48.356Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-List_On_Call_notification_rules_for_a_user_returns_OK_response-1765919808@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"0730802a-ee45-404b-a21d-5908d4c6b3c4\",\"attributes\":{\"name\":null,\"handle\":\"test-list_on_call_notification_rules_for_a_user_returns_ok_response-1765919808@datadoghq.com\",\"created_at\":\"2025-12-16T21:16:48.579239+00:00\",\"modified_at\":\"2025-12-16T21:16:48.579239+00:00\",\"email\":\"test-list_on_call_notification_rules_for_a_user_returns_ok_response-1765919808@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/c2f584fb6a42fbc0f0aad204ea40c0fc?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-list_on_call_notification_rules_for_a_user_returns_ok_response-1765919808@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/0730802a-ee45-404b-a21d-5908d4c6b3c4/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3073e724-15e8-4aec-897a-478e31cca3a8\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-list_on_call_notification_rules_for_a_user_returns_ok_response-1765919808@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "high_urgency",
+                    "delay_minutes": 0
+                  },
+                  "relationships": {
+                    "channel": {
+                      "data": {
+                        "id": "3073e724-15e8-4aec-897a-478e31cca3a8",
+                        "type": "notification_channels"
+                      }
+                    }
+                  },
+                  "type": "notification_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/0730802a-ee45-404b-a21d-5908d4c6b3c4/notification-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d93215d1-85c1-4528-a92f-1b604c1f4b2a\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":0},\"relationships\":{\"channel\":{\"data\":{\"id\":\"3073e724-15e8-4aec-897a-478e31cca3a8\",\"type\":\"notification_channels\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/users/0730802a-ee45-404b-a21d-5908d4c6b3c4/notification-rules",
+            "query": [
+              [
+                "include",
+                "channel"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"d93215d1-85c1-4528-a92f-1b604c1f4b2a\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":0},\"relationships\":{\"channel\":{\"data\":{\"id\":\"3073e724-15e8-4aec-897a-478e31cca3a8\",\"type\":\"notification_channels\"}}}}],\"included\":[{\"id\":\"3073e724-15e8-4aec-897a-478e31cca3a8\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-list_on_call_notification_rules_for_a_user_returns_ok_response-1765919808@datadoghq.com\",\"formats\":[\"html\"]}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/0730802a-ee45-404b-a21d-5908d4c6b3c4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List On-Call notification rules for a user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2026-05-15T14:39:18.459Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Set_On_Call_team_routing_rules_returns_OK_response-1778855958@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"af4cfd73-8162-49c3-899a-101d0617d500\",\"attributes\":{\"uuid\":\"af4cfd73-8162-49c3-899a-101d0617d500\",\"name\":null,\"handle\":\"test-set_on_call_team_routing_rules_returns_ok_response-1778855958@datadoghq.com\",\"created_at\":\"2026-05-15T14:39:20.154059+00:00\",\"modified_at\":\"2026-05-15T14:39:20.154059+00:00\",\"email\":\"test-set_on_call_team_routing_rules_returns_ok_response-1778855958@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/c530c1e2f9d5cddf9d34bed00a5e760b?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-fc62c73422bed141",
+                    "name": "test-name-fc62c73422bed141"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5f48616e-52b1-4126-a255-0bd9f4820dc1\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":11,\"created_at\":\"2026-05-15T14:39:20.573129+00:00\",\"description\":null,\"handle\":\"test-handle-fc62c73422bed141\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-05-15T14:39:20.573129+00:00\",\"name\":\"test-name-fc62c73422bed141\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/5f48616e-52b1-4126-a255-0bd9f4820dc1/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/5f48616e-52b1-4126-a255-0bd9f4820dc1/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2026-05-05T14:39:18.459Z",
+                        "end_date": "2026-05-25T14:39:18.459Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "af4cfd73-8162-49c3-899a-101d0617d500"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2026-05-10T14:39:18.459Z"
+                      }
+                    ],
+                    "name": "Test-Set_On_Call_team_routing_rules_returns_OK_response-1778855958",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6417bbaa-a75e-474d-a45a-9af8e1a3907a\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Set_On_Call_team_routing_rules_returns_OK_response-1778855958\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"d2139431-973b-42cc-a932-941aeff81783\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Set_On_Call_team_routing_rules_returns_OK_response-1778855958",
+                    "resolve_page_on_policy_end": true,
+                    "retries": 2,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "5f48616e-52b1-4126-a255-0bd9f4820dc1",
+                            "type": "teams"
+                          },
+                          {
+                            "id": "6417bbaa-a75e-474d-a45a-9af8e1a3907a",
+                            "type": "schedules"
+                          },
+                          {
+                            "config": {
+                              "schedule": {
+                                "position": "previous"
+                              }
+                            },
+                            "id": "6417bbaa-a75e-474d-a45a-9af8e1a3907a",
+                            "type": "schedules"
+                          },
+                          {
+                            "id": "af4cfd73-8162-49c3-899a-101d0617d500",
+                            "type": "users"
+                          }
+                        ]
+                      },
+                      {
+                        "assignment": "round-robin",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "5f48616e-52b1-4126-a255-0bd9f4820dc1",
+                            "type": "teams"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "5f48616e-52b1-4126-a255-0bd9f4820dc1",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Set_On_Call_team_routing_rules_returns_OK_response-1778855958\",\"resolve_page_on_policy_end\":true,\"retries\":2,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"cd41c9ed-3d97-469c-aa8a-9a36c0f45a82\",\"type\":\"steps\"},{\"id\":\"102b0afe-da23-48ca-be15-699891fcbff7\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"5f48616e-52b1-4126-a255-0bd9f4820dc1\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "rules": [
+                      {
+                        "actions": [
+                          {
+                            "policy_id": "3321cfa1-8420-4655-ac38-f51ea522834e",
+                            "type": "escalation_policy",
+                            "urgency": "low"
+                          }
+                        ],
+                        "query": "tags.service:time_restrictions",
+                        "time_restriction": {
+                          "restrictions": [
+                            {
+                              "end_day": "monday",
+                              "end_time": "17:00:00",
+                              "start_day": "monday",
+                              "start_time": "09:00:00"
+                            },
+                            {
+                              "end_day": "tuesday",
+                              "end_time": "17:00:00",
+                              "start_day": "tuesday",
+                              "start_time": "09:00:00"
+                            }
+                          ],
+                          "time_zone": "Europe/Paris"
+                        }
+                      },
+                      {
+                        "actions": [
+                          {
+                            "ack_timeout_minutes": 30,
+                            "policy_id": "3321cfa1-8420-4655-ac38-f51ea522834e",
+                            "support_hours": {
+                              "restrictions": [
+                                {
+                                  "end_day": "wednesday",
+                                  "end_time": "17:00:00",
+                                  "start_day": "wednesday",
+                                  "start_time": "09:00:00"
+                                },
+                                {
+                                  "end_day": "thursday",
+                                  "end_time": "17:00:00",
+                                  "start_day": "thursday",
+                                  "start_time": "09:00:00"
+                                }
+                              ],
+                              "time_zone": "Europe/Paris"
+                            },
+                            "type": "escalation_policy",
+                            "urgency": "low"
+                          }
+                        ],
+                        "query": "tags.service:support_hours_and_acknowledgment_timeout"
+                      },
+                      {
+                        "policy_id": "3321cfa1-8420-4655-ac38-f51ea522834e",
+                        "query": "tags.service:legacy_policy_definition",
+                        "urgency": "low"
+                      },
+                      {
+                        "actions": [
+                          {
+                            "policy_id": "3321cfa1-8420-4655-ac38-f51ea522834e",
+                            "type": "escalation_policy",
+                            "urgency": "low"
+                          }
+                        ],
+                        "query": ""
+                      }
+                    ]
+                  },
+                  "id": "5f48616e-52b1-4126-a255-0bd9f4820dc1",
+                  "type": "team_routing_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/on-call/teams/5f48616e-52b1-4126-a255-0bd9f4820dc1/routing-rules",
+            "query": [
+              [
+                "include",
+                "rules"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5f48616e-52b1-4126-a255-0bd9f4820dc1\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[{\"id\":\"d4a7d064-0b02-4510-9412-24c95fdbef89\",\"type\":\"team_routing_rules\"},{\"id\":\"a1a5fdd6-dd2b-4571-a86c-909a89a21490\",\"type\":\"team_routing_rules\"},{\"id\":\"fdbe9494-e88c-4927-bb7e-407c0df33258\",\"type\":\"team_routing_rules\"},{\"id\":\"8e059ecb-b492-4db6-accd-6eb69b4099b1\",\"type\":\"team_routing_rules\"}]}}},\"included\":[{\"id\":\"d4a7d064-0b02-4510-9412-24c95fdbef89\",\"type\":\"team_routing_rules\",\"attributes\":{\"actions\":[{\"type\":\"escalation_policy\",\"policy_id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"urgency\":\"low\"}],\"query\":\"tags.service:time_restrictions\",\"time_restriction\":{\"time_zone\":\"Europe/Paris\",\"restrictions\":[{\"start_time\":\"09:00:00\",\"start_day\":\"monday\",\"end_time\":\"17:00:00\",\"end_day\":\"monday\"},{\"start_time\":\"09:00:00\",\"start_day\":\"tuesday\",\"end_time\":\"17:00:00\",\"end_day\":\"tuesday\"}]},\"urgency\":\"low\"},\"relationships\":{\"policy\":{\"data\":{\"id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"type\":\"policies\"}}}},{\"id\":\"a1a5fdd6-dd2b-4571-a86c-909a89a21490\",\"type\":\"team_routing_rules\",\"attributes\":{\"actions\":[{\"type\":\"escalation_policy\",\"policy_id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"support_hours\":{\"time_zone\":\"Europe/Paris\",\"restrictions\":[{\"start_time\":\"09:00:00\",\"start_day\":\"wednesday\",\"end_time\":\"17:00:00\",\"end_day\":\"wednesday\"},{\"start_time\":\"09:00:00\",\"start_day\":\"thursday\",\"end_time\":\"17:00:00\",\"end_day\":\"thursday\"}]},\"ack_timeout_minutes\":30,\"urgency\":\"low\"}],\"query\":\"tags.service:support_hours_and_acknowledgment_timeout\",\"urgency\":\"low\"},\"relationships\":{\"policy\":{\"data\":{\"id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"type\":\"policies\"}}}},{\"id\":\"fdbe9494-e88c-4927-bb7e-407c0df33258\",\"type\":\"team_routing_rules\",\"attributes\":{\"actions\":[{\"type\":\"escalation_policy\",\"policy_id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"urgency\":\"low\"}],\"query\":\"tags.service:legacy_policy_definition\",\"urgency\":\"low\"},\"relationships\":{\"policy\":{\"data\":{\"id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"type\":\"policies\"}}}},{\"id\":\"8e059ecb-b492-4db6-accd-6eb69b4099b1\",\"type\":\"team_routing_rules\",\"attributes\":{\"actions\":[{\"type\":\"escalation_policy\",\"policy_id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"urgency\":\"low\"}],\"query\":\"\",\"urgency\":\"low\"},\"relationships\":{\"policy\":{\"data\":{\"id\":\"3321cfa1-8420-4655-ac38-f51ea522834e\",\"type\":\"policies\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "rules": []
+                  },
+                  "id": "5f48616e-52b1-4126-a255-0bd9f4820dc1",
+                  "type": "team_routing_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/on-call/teams/5f48616e-52b1-4126-a255-0bd9f4820dc1/routing-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5f48616e-52b1-4126-a255-0bd9f4820dc1\",\"type\":\"team_routing_rules\",\"relationships\":{\"rules\":{\"data\":[]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/3321cfa1-8420-4655-ac38-f51ea522834e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/6417bbaa-a75e-474d-a45a-9af8e1a3907a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/5f48616e-52b1-4126-a255-0bd9f4820dc1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/af4cfd73-8162-49c3-899a-101d0617d500",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Set On-Call team routing rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:54.763Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Update_On_Call_escalation_policy_returns_OK_response-1764252714@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"074d412b-cb9b-11f0-85f9-9a82ffe01443\",\"attributes\":{\"name\":null,\"handle\":\"test-update_on_call_escalation_policy_returns_ok_response-1764252714@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:55.135880+00:00\",\"modified_at\":\"2025-11-27T14:11:55.135880+00:00\",\"email\":\"test-update_on_call_escalation_policy_returns_ok_response-1764252714@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/56710b9d4c6476f7e9cb32cf32f2d8fa?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-87ae65b051bd37ef",
+                    "name": "test-name-87ae65b051bd37ef"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f38d82f9-3de9-4a4a-8a48-650c0b19151f\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":11,\"created_at\":\"2025-11-27T14:11:55.632151+00:00\",\"description\":null,\"handle\":\"test-handle-87ae65b051bd37ef\",\"hidden_modules\":[],\"link_count\":0,\"modified_at\":\"2025-11-27T14:11:55.632152+00:00\",\"name\":\"test-name-87ae65b051bd37ef\",\"summary\":null,\"user_count\":0,\"visible_modules\":[]},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/f38d82f9-3de9-4a4a-8a48-650c0b19151f/links\"}},\"user_team_permissions\":{\"links\":{\"related\":\"/api/v2/team/f38d82f9-3de9-4a4a-8a48-650c0b19151f/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:54.763Z",
+                        "end_date": "2025-12-07T14:11:54.763Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "074d412b-cb9b-11f0-85f9-9a82ffe01443"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:54.763Z"
+                      }
+                    ],
+                    "name": "Test-Update_On_Call_escalation_policy_returns_OK_response-1764252714",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1ab20921-4556-4f30-80df-e1ce748c3fc1\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Update_On_Call_escalation_policy_returns_OK_response-1764252714\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"94644551-c1bd-4b16-8774-ddbf0b6ce12c\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_On_Call_escalation_policy_returns_OK_response-1764252714",
+                    "resolve_page_on_policy_end": true,
+                    "retries": 2,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "f38d82f9-3de9-4a4a-8a48-650c0b19151f",
+                            "type": "teams"
+                          },
+                          {
+                            "id": "1ab20921-4556-4f30-80df-e1ce748c3fc1",
+                            "type": "schedules"
+                          },
+                          {
+                            "config": {
+                              "schedule": {
+                                "position": "previous"
+                              }
+                            },
+                            "id": "1ab20921-4556-4f30-80df-e1ce748c3fc1",
+                            "type": "schedules"
+                          },
+                          {
+                            "id": "074d412b-cb9b-11f0-85f9-9a82ffe01443",
+                            "type": "users"
+                          }
+                        ]
+                      },
+                      {
+                        "assignment": "round-robin",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "f38d82f9-3de9-4a4a-8a48-650c0b19151f",
+                            "type": "teams"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "f38d82f9-3de9-4a4a-8a48-650c0b19151f",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b20fdf89-f87f-4237-8f19-ed8c9c57cf5c\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Update_On_Call_escalation_policy_returns_OK_response-1764252714\",\"resolve_page_on_policy_end\":true,\"retries\":2},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"6d4b5398-50bf-425d-93b8-3eae379ff8a0\",\"type\":\"steps\"},{\"id\":\"b3f4a0dd-337f-42b7-9fda-b2f4486e700f\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"f38d82f9-3de9-4a4a-8a48-650c0b19151f\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_On_Call_escalation_policy_returns_OK_response-1764252714-updated",
+                    "resolve_page_on_policy_end": false,
+                    "retries": 0,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "id": "6d4b5398-50bf-425d-93b8-3eae379ff8a0",
+                        "targets": [
+                          {
+                            "id": "074d412b-cb9b-11f0-85f9-9a82ffe01443",
+                            "type": "users"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "id": "b20fdf89-f87f-4237-8f19-ed8c9c57cf5c",
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "f38d82f9-3de9-4a4a-8a48-650c0b19151f",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/on-call/escalation-policies/b20fdf89-f87f-4237-8f19-ed8c9c57cf5c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b20fdf89-f87f-4237-8f19-ed8c9c57cf5c\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-Update_On_Call_escalation_policy_returns_OK_response-1764252714-updated\",\"resolve_page_on_policy_end\":false,\"retries\":0},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"6d4b5398-50bf-425d-93b8-3eae379ff8a0\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"f38d82f9-3de9-4a4a-8a48-650c0b19151f\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/b20fdf89-f87f-4237-8f19-ed8c9c57cf5c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/1ab20921-4556-4f30-80df-e1ce748c3fc1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/f38d82f9-3de9-4a4a-8a48-650c0b19151f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/074d412b-cb9b-11f0-85f9-9a82ffe01443",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update On-Call escalation policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-11-27T14:11:59.069Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Update_On_Call_schedule_returns_OK_response-1764252719@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"09e2b0f4-cb9b-11f0-a56e-4e680b759023\",\"attributes\":{\"name\":null,\"handle\":\"test-update_on_call_schedule_returns_ok_response-1764252719@datadoghq.com\",\"created_at\":\"2025-11-27T14:11:59.470672+00:00\",\"modified_at\":\"2025-11-27T14:11:59.470672+00:00\",\"email\":\"test-update_on_call_schedule_returns_ok_response-1764252719@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/62638e49f4a83e63caabec2a6ab50bba?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:59.069Z",
+                        "end_date": "2025-12-07T14:11:59.069Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "09e2b0f4-cb9b-11f0-a56e-4e680b759023"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:59.069Z"
+                      }
+                    ],
+                    "name": "Test-Update_On_Call_schedule_returns_OK_response-1764252719",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0e2c2b38-3f21-4216-aeb7-49eb8b371c09\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Update_On_Call_schedule_returns_OK_response-1764252719\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"140f452a-0ecf-48ab-b7e9-e358a2cf925b\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-0db1ad1d49052f19",
+                    "name": "test-name-0db1ad1d49052f19"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"500acba0-bf4f-4f5c-83be-d0de24c5739c\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":8,\"created_at\":\"2025-11-27T14:12:00.429799+00:00\",\"description\":null,\"handle\":\"test-handle-0db1ad1d49052f19\",\"hidden_modules\":[],\"link_count\":0,\"modified_at\":\"2025-11-27T14:12:00.429799+00:00\",\"name\":\"test-name-0db1ad1d49052f19\",\"summary\":null,\"user_count\":0,\"visible_modules\":[]},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/500acba0-bf4f-4f5c-83be-d0de24c5739c/links\"}},\"user_team_permissions\":{\"links\":{\"related\":\"/api/v2/team/500acba0-bf4f-4f5c-83be-d0de24c5739c/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2025-11-17T14:11:59.069Z",
+                        "end_date": "2025-12-07T14:11:59.069Z",
+                        "id": "140f452a-0ecf-48ab-b7e9-e358a2cf925b",
+                        "interval": {
+                          "seconds": 3600
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "09e2b0f4-cb9b-11f0-a56e-4e680b759023"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2025-11-22T14:11:59.069Z"
+                      }
+                    ],
+                    "name": "Test-Update_On_Call_schedule_returns_OK_response-1764252719",
+                    "time_zone": "America/New_York"
+                  },
+                  "id": "0e2c2b38-3f21-4216-aeb7-49eb8b371c09",
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "500acba0-bf4f-4f5c-83be-d0de24c5739c",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/on-call/schedules/0e2c2b38-3f21-4216-aeb7-49eb8b371c09",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0e2c2b38-3f21-4216-aeb7-49eb8b371c09\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Update_On_Call_schedule_returns_OK_response-1764252719\",\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"140f452a-0ecf-48ab-b7e9-e358a2cf925b\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"500acba0-bf4f-4f5c-83be-d0de24c5739c\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/500acba0-bf4f-4f5c-83be-d0de24c5739c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/0e2c2b38-3f21-4216-aeb7-49eb8b371c09",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/09e2b0f4-cb9b-11f0-a56e-4e680b759023",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update On-Call schedule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2025-12-17T01:04:35.713Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Update_an_On_Call_notification_rule_for_a_user_returns_OK_response-1765933475@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"4ef9cf45-30a8-4117-9b56-adba96671dff\",\"attributes\":{\"name\":null,\"handle\":\"test-update_an_on_call_notification_rule_for_a_user_returns_ok_response-1765933475@datadoghq.com\",\"created_at\":\"2025-12-17T01:04:36.246950+00:00\",\"modified_at\":\"2025-12-17T01:04:36.246950+00:00\",\"email\":\"test-update_an_on_call_notification_rule_for_a_user_returns_ok_response-1765933475@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/53cbcba1803f4569f759fcc6b3f90bb6?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "address": "test-update_an_on_call_notification_rule_for_a_user_returns_ok_response-1765933475@datadoghq.com",
+                      "formats": [
+                        "html"
+                      ],
+                      "type": "email"
+                    }
+                  },
+                  "type": "notification_channels"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/4ef9cf45-30a8-4117-9b56-adba96671dff/notification-channels",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7fc326c9-f3dc-4858-80c2-d88c24dcf54b\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-update_an_on_call_notification_rule_for_a_user_returns_ok_response-1765933475@datadoghq.com\",\"formats\":[\"html\"]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "high_urgency",
+                    "delay_minutes": 0
+                  },
+                  "relationships": {
+                    "channel": {
+                      "data": {
+                        "id": "7fc326c9-f3dc-4858-80c2-d88c24dcf54b",
+                        "type": "notification_channels"
+                      }
+                    }
+                  },
+                  "type": "notification_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/users/4ef9cf45-30a8-4117-9b56-adba96671dff/notification-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c7b724f1-eb73-43d4-889f-d8f3e6fbe664\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":0},\"relationships\":{\"channel\":{\"data\":{\"id\":\"7fc326c9-f3dc-4858-80c2-d88c24dcf54b\",\"type\":\"notification_channels\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "high_urgency",
+                    "delay_minutes": 1
+                  },
+                  "id": "c7b724f1-eb73-43d4-889f-d8f3e6fbe664",
+                  "relationships": {
+                    "channel": {
+                      "data": {
+                        "id": "7fc326c9-f3dc-4858-80c2-d88c24dcf54b",
+                        "type": "notification_channels"
+                      }
+                    }
+                  },
+                  "type": "notification_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/on-call/users/4ef9cf45-30a8-4117-9b56-adba96671dff/notification-rules/c7b724f1-eb73-43d4-889f-d8f3e6fbe664",
+            "query": [
+              [
+                "include",
+                "channel"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c7b724f1-eb73-43d4-889f-d8f3e6fbe664\",\"type\":\"notification_rules\",\"attributes\":{\"category\":\"high_urgency\",\"delay_minutes\":1},\"relationships\":{\"channel\":{\"data\":{\"id\":\"7fc326c9-f3dc-4858-80c2-d88c24dcf54b\",\"type\":\"notification_channels\"}}}},\"included\":[{\"id\":\"7fc326c9-f3dc-4858-80c2-d88c24dcf54b\",\"type\":\"notification_channels\",\"attributes\":{\"active\":true,\"config\":{\"type\":\"email\",\"address\":\"test-update_an_on_call_notification_rule_for_a_user_returns_ok_response-1765933475@datadoghq.com\",\"formats\":[\"html\"]}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/4ef9cf45-30a8-4117-9b56-adba96671dff",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an On-Call notification rule for a user returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

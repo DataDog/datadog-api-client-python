@@ -1,0 +1,43 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/List findings with detection_type query param returns \"OK\" response",
+  "operation_id": "ListFindings",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[vulnerability_type]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "FindingVulnerabilityType",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "misconfiguration",
+            "attack_path"
+          ]
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/posture_management/findings"
+  },
+  "scenario": "List findings with detection_type query param returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

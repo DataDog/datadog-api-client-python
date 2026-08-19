@@ -1,0 +1,40 @@
+{
+  "api": "Logs",
+  "expected_status": 202,
+  "feature": "Logs",
+  "id": "v2/Logs/Send logs returns \"Request accepted for processing (always 202 empty JSON).\" response",
+  "operation_id": "SubmitLog",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "items": {
+          "format": null,
+          "ref": "HTTPLogItem",
+          "type": "object"
+        },
+        "ref": "HTTPLog",
+        "type": "array"
+      },
+      "source": "inline",
+      "value": [
+        {
+          "ddsource": "nginx",
+          "ddtags": "env:staging,version:5.1",
+          "hostname": "i-012345678",
+          "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World",
+          "service": "payment",
+          "status": "info"
+        }
+      ]
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/logs"
+  },
+  "scenario": "Send logs returns \"Request accepted for processing (always 202 empty JSON).\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

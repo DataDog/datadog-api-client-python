@@ -1,0 +1,40 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Convert a job result to a signal returns \"Bad Request\" response",
+  "operation_id": "ConvertJobResultToSignal",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ConvertJobResultsToSignalsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "jobResultIds": [
+              ""
+            ],
+            "notifications": [
+              ""
+            ],
+            "signalMessage": "A large number of failed login attempts.",
+            "signalSeverity": "critical"
+          },
+          "type": "historicalDetectionsJobResultSignalConversion"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/siem-historical-detections/jobs/signal_convert"
+  },
+  "scenario": "Convert a job result to a signal returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

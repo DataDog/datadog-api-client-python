@@ -1,0 +1,51 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 400,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Update App returns \"Bad Request\" response",
+  "operation_id": "UpdateApp",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "rootInstanceName": ""
+          },
+          "id": "{{ app.data.id }}",
+          "type": "appDefinitions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "app.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}"
+  },
+  "scenario": "Update App returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

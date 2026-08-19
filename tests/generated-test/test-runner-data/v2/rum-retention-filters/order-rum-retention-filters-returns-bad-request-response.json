@@ -1,0 +1,50 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 400,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Order RUM retention filters returns \"Bad Request\" response",
+  "operation_id": "OrderRetentionFilters",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumRetentionFiltersOrderRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "325631eb-94c9-49c0-93f9-ab7e4fd24529",
+            "type": "retention_filters"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "1d4b9c34-7ac4-423a-91cf-9902d926e9b3"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/relationships/retention_filters"
+  },
+  "scenario": "Order RUM retention filters returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

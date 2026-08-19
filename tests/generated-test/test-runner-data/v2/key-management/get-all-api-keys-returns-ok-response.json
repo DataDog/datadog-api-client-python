@@ -1,0 +1,35 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Get all API keys returns \"OK\" response",
+  "operation_id": "ListAPIKeys",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "api_key.data.attributes.name",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/api_keys"
+  },
+  "scenario": "Get all API keys returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

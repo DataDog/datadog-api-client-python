@@ -1,0 +1,44 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create cases for security findings returns \"Bad Request\" response",
+  "operation_id": "CreateCases",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateCaseRequestArray",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {},
+            "relationships": {
+              "findings": {
+                "data": []
+              },
+              "project": {
+                "data": {
+                  "id": "7f198869-c7ef-4afc-97cf-da5cdc13b5c3",
+                  "type": "projects"
+                }
+              }
+            },
+            "type": "cases"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/cases"
+  },
+  "scenario": "Create cases for security findings returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

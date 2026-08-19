@@ -1,0 +1,55 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a security filter returns \"OK\" response",
+  "operation_id": "UpdateSecurityFilter",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityFilterUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "exclusion_filters": [],
+            "filtered_data_type": "logs",
+            "is_enabled": true,
+            "name": "{{ unique }}",
+            "query": "service:{{ unique_alnum }}",
+            "version": 1
+          },
+          "type": "security_filters"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "security_filter_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "security_filter.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/configuration/security_filters/{security_filter_id}"
+  },
+  "scenario": "Update a security filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "Incidents",
+  "expected_status": 404,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Get incident notification rule returns \"Not Found\" response",
+  "operation_id": "GetIncidentNotificationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000001"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/notification-rules/{id}"
+  },
+  "scenario": "Get incident notification rule returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,49 @@
+{
+  "api": "CIVisibilityPipelines",
+  "expected_status": 200,
+  "feature": "CI Visibility Pipelines",
+  "id": "v2/CI Visibility Pipelines/Aggregate pipelines events returns \"OK\" response",
+  "operation_id": "AggregateCIAppPipelineEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CIAppPipelinesAggregateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "compute": [
+          {
+            "aggregation": "pc90",
+            "metric": "@duration",
+            "type": "total"
+          }
+        ],
+        "filter": {
+          "from": "now-15m",
+          "query": "@ci.provider.name:(gitlab OR github)",
+          "to": "now"
+        },
+        "group_by": [
+          {
+            "facet": "@ci.status",
+            "limit": 10,
+            "total": false
+          }
+        ],
+        "options": {
+          "timezone": "GMT"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ci/pipelines/analytics/aggregate"
+  },
+  "scenario": "Aggregate pipelines events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

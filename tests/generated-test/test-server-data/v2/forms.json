@@ -1,0 +1,1100 @@
+{
+  "feature": "Forms",
+  "recordings": [
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-10T18:49:58.475Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Copy of My Form"
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/00000000-0000-0000-0000-000000000001/clone",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"id\":\"32db2695-29bd-4280-b547-3737365608c3\",\"title\":\"form not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Clone a form returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-04T18:34:02.931Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A form to collect user feedback.",
+                    "idp_survey": false,
+                    "name": "User Feedback Form",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"edb7d6d5-e21c-4fd0-845d-679317b5c2c9\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:34:04.103183Z\",\"datastore_config\":{\"datastore_id\":\"7cc8dadd-3529-4d0f-b8cb-f8c11c165867\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A form to collect user feedback.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:34:04.103183Z\",\"name\":\"User Feedback Form\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"354653\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1780598044,\\\\\\\"proof\\\\\\\":\\\\\\\"MGQCMHsaS9oy6ZDzhUZuJQAYiivxgo9XKx5NjTW/0wafPecXBQ3lr27bKejXr4ihAuwxsgIwPfgedZacZ4t3Qg8p0+jrXH5MBdZx9hrat8mijVibYuLUd2n+bxaY0xcghHKwbtu4\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-04T18:34:04.103183Z\",\"modified_at\":\"2026-06-04T18:34:04.103183Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/edb7d6d5-e21c-4fd0-845d-679317b5c2c9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"edb7d6d5-e21c-4fd0-845d-679317b5c2c9\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a form returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-04T18:34:04.703Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A form to collect user feedback.",
+                    "idp_survey": false,
+                    "name": "User Feedback Form",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/create_and_publish",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"65318f43-ac0f-4990-add8-9847eee98fd8\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:34:05.178222Z\",\"datastore_config\":{\"datastore_id\":\"c89fc16a-53fb-4439-a007-1ebec095b1b7\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A form to collect user feedback.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:34:05.178222Z\",\"name\":\"User Feedback Form\",\"org_id\":321813,\"publication\":{\"id\":\"357922\",\"org_id\":321813,\"form_id\":\"65318f43-ac0f-4990-add8-9847eee98fd8\",\"publish_seq\":1,\"form_version\":1,\"created_at\":\"2026-06-04T18:34:05.178222Z\",\"modified_at\":\"2026-06-04T18:34:05.178222Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"354654\",\"state\":\"frozen\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1780598045,\\\\\\\"proof\\\\\\\":\\\\\\\"MGYCMQCPPczYtNvj1RLjrQkIrQNHHVgB3nxFIjn5jgwUE0tweuTV1kZnaYYUg+gl1Eh5+tMCMQCajq1cy1MaWEbzHA0EcDC6LjyQ5ajqqngb3RMQwzP8ewvsh+uzkPD2v6AHjnW115o=\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-04T18:34:05.178222Z\",\"modified_at\":\"2026-06-04T18:34:05.178222Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/65318f43-ac0f-4990-add8-9847eee98fd8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"65318f43-ac0f-4990-add8-9847eee98fd8\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create and publish a form returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-10T18:49:59.498Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "data_definition": {
+                      "description": "Welcome to the Engineering Experience Survey.",
+                      "required": [],
+                      "title": "Developer Experience Survey",
+                      "type": "object"
+                    },
+                    "state": "frozen",
+                    "ui_definition": {
+                      "ui:order": [],
+                      "ui:theme": {
+                        "primaryColor": "gray"
+                      }
+                    },
+                    "upsert_params": {
+                      "etag": "b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d",
+                      "insert_only": false,
+                      "match_policy": "none"
+                    }
+                  },
+                  "type": "form_versions"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/00000000-0000-0000-0000-000000000001/versions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"id\":\"f24e2ab1-4ba1-48cf-a4a2-86a32cc2e702\",\"title\":\"form not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Create or update a form version returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-10T18:49:59.826Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A simple test form.",
+                    "idp_survey": false,
+                    "name": "Test-Create_or_update_a_form_version_returns_OK_response-1781117399",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"49ccfa97-825c-46f8-872b-5368fd1b56a4\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-10T18:50:00.188982Z\",\"datastore_config\":{\"datastore_id\":\"be7e7cf5-6a73-4d07-9654-a40997bee800\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-10T18:50:00.188982Z\",\"name\":\"Test-Create_or_update_a_form_version_returns_OK_response-1781117399\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"376765\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"S2KAuCoip8JbyZNOT2gYbpUouidttEGvYWyvqeoMQjE=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1781117400,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMQDyae03EWzAe3gENsZt4WVLiPP8TGQg7UO7I28dcEK5w70MRYRf9x18lDXfOEDoPrgCMCHlQeXp/K5AKKmyVYwtJd9VI1SsJoOBOXbj26BhPKZBF386oH7LxK45J12htxj9hw==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-10T18:50:00.188982Z\",\"modified_at\":\"2026-06-10T18:50:00.188982Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "data_definition": {
+                      "description": "Welcome to the Engineering Experience Survey.",
+                      "required": [],
+                      "title": "Developer Experience Survey",
+                      "type": "object"
+                    },
+                    "state": "frozen",
+                    "ui_definition": {
+                      "ui:order": [],
+                      "ui:theme": {
+                        "primaryColor": "gray"
+                      }
+                    },
+                    "upsert_params": {
+                      "etag": "b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d",
+                      "insert_only": false,
+                      "match_policy": "none"
+                    }
+                  },
+                  "type": "form_versions"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/49ccfa97-825c-46f8-872b-5368fd1b56a4/versions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"376765\",\"type\":\"form_versions\",\"attributes\":{\"created_at\":\"2026-06-10T18:50:00.188982Z\",\"data_definition\":{\"description\":\"Welcome to the Engineering Experience Survey.\",\"required\":[],\"title\":\"Developer Experience Survey\",\"type\":\"object\"},\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1781117400,\\\\\\\"proof\\\\\\\":\\\\\\\"MGQCMGbAihRvSVO+KjM9uttjprG+2ZR6D5kKoXwIS4em5mjg9StXgu/pi08NfU4WMdTD8wIwcxxGWh+MzG6awNnii2Cjl46YNhPBV39JpU03mlQsb+9cGVgqL2JYVsDaAJ0G+YzN\\\\\\\"}\\\",\\\"version\\\":1}\",\"etag\":\"30586851d6ab0b26080d3f34629e5e2cfb9f2f57457eec927b72eafefae81e48\",\"modified_at\":\"2026-06-10T18:50:00.568923Z\",\"state\":\"frozen\",\"ui_definition\":{\"ui:order\":[],\"ui:theme\":{\"primaryColor\":\"gray\"}},\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/49ccfa97-825c-46f8-872b-5368fd1b56a4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"49ccfa97-825c-46f8-872b-5368fd1b56a4\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create or update a form version returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-04T18:34:05.786Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A simple test form.",
+                    "idp_survey": false,
+                    "name": "Test-Delete_a_form_returns_OK_response-1780598045",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"257a9d32-6ed0-429b-9745-75366363caf3\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:34:06.128238Z\",\"datastore_config\":{\"datastore_id\":\"1e33b83f-0733-454e-9404-c032a479548e\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:34:06.128238Z\",\"name\":\"Test-Delete_a_form_returns_OK_response-1780598045\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"354655\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1780598046,\\\\\\\"proof\\\\\\\":\\\\\\\"MGQCMDR3p4Wc6qLinT0JK9tT2I3NBvYMx43pPcUuCOyMapne99sS2RJe0woOU68I0GbQvwIwQMw7OQruNsIuTNJxK0zthVCFnXaxLASIvl2NsyomT9s/p2cgEzOY4T+XyRl6i27c\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-04T18:34:06.128238Z\",\"modified_at\":\"2026-06-04T18:34:06.128238Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/257a9d32-6ed0-429b-9745-75366363caf3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"257a9d32-6ed0-429b-9745-75366363caf3\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/257a9d32-6ed0-429b-9745-75366363caf3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Delete a form returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-04T18:34:06.925Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/forms/00000000-0000-0000-0000-000000000001",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"id\":\"bccf11bd-13c7-4911-9c00-58c00b6f8f52\",\"title\":\"form not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a form returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-04T18:34:07.294Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A simple test form.",
+                    "idp_survey": false,
+                    "name": "Test-Get_a_form_returns_OK_response-1780598047",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b42493d4-fbd0-4139-b4b9-4815f414621d\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:34:07.632566Z\",\"datastore_config\":{\"datastore_id\":\"9aace6ce-ee9d-4c81-b176-22bed53ff080\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:34:07.632566Z\",\"name\":\"Test-Get_a_form_returns_OK_response-1780598047\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"354656\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1780598047,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMQCkP+Usa2zK0v4SsSDBHsE4p88u025oyaRrAnNTiTXLwGr3K0W4/MAFeeosBwZonE0CMGYsqH/GAJUKeY0ZZGl8GZp2QeY1l3byimzWXRLf36CHhuB1Pshv/7bi0WoYYCOQIg==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-04T18:34:07.632566Z\",\"modified_at\":\"2026-06-04T18:34:07.632566Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/forms/b42493d4-fbd0-4139-b4b9-4815f414621d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b42493d4-fbd0-4139-b4b9-4815f414621d\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:34:07.632566Z\",\"datastore_config\":{\"datastore_id\":\"9aace6ce-ee9d-4c81-b176-22bed53ff080\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:34:07.632566Z\",\"name\":\"Test-Get_a_form_returns_OK_response-1780598047\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"354656\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1780598047,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMQCkP+Usa2zK0v4SsSDBHsE4p88u025oyaRrAnNTiTXLwGr3K0W4/MAFeeosBwZonE0CMGYsqH/GAJUKeY0ZZGl8GZp2QeY1l3byimzWXRLf36CHhuB1Pshv/7bi0WoYYCOQIg==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-04T18:34:07.632566Z\",\"modified_at\":\"2026-06-04T18:34:07.632566Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/b42493d4-fbd0-4139-b4b9-4815f414621d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b42493d4-fbd0-4139-b4b9-4815f414621d\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a form returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-04T18:34:08.479Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A simple test form.",
+                    "idp_survey": false,
+                    "name": "Test-List_forms_returns_OK_response-1780598048",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d71d1aef-539d-4951-b98e-ff4c0c4f97bb\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:34:08.937305Z\",\"datastore_config\":{\"datastore_id\":\"76b9f7b4-99d8-4a55-b95c-260cac22820d\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:34:08.937305Z\",\"name\":\"Test-List_forms_returns_OK_response-1780598048\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"354657\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1780598048,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMBSAXvYX++PAyywDBLlJsqgHq1ug3WLtMqKQRwx50qdAdj1UP1W58NnN9/DP70HavAIxANwA4guivHrOqlL36ETzde//0mI55MJ8Yv0ynU2p+QhqCSuJEHHgUUWjk0wYKJuZog==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-04T18:34:08.937305Z\",\"modified_at\":\"2026-06-04T18:34:08.937305Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"7af864d6-8c2f-41e5-b80d-1be56ea33d23\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:05:41.512876Z\",\"datastore_config\":{\"datastore_id\":\"543a7e0e-0f0f-4b14-8911-2f20df5f1b07\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A form to collect user feedback.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:05:41.512876Z\",\"name\":\"User Feedback Form\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":1445416,\"user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"b2953c07-9385-4de2-9cd3-af3f5d6c7d09\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:15:44.116619Z\",\"datastore_config\":{\"datastore_id\":\"77b4b384-27d6-4619-bb55-1b2158d0080b\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A form to collect user feedback.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:15:44.116619Z\",\"name\":\"User Feedback Form\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":1445416,\"user_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},{\"id\":\"d71d1aef-539d-4951-b98e-ff4c0c4f97bb\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-04T18:34:08.937305Z\",\"datastore_config\":{\"datastore_id\":\"76b9f7b4-99d8-4a55-b95c-260cac22820d\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-04T18:34:08.937305Z\",\"name\":\"Test-List_forms_returns_OK_response-1780598048\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/d71d1aef-539d-4951-b98e-ff4c0c4f97bb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d71d1aef-539d-4951-b98e-ff4c0c4f97bb\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List forms returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-10T18:50:01.064Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "version": 1
+                  },
+                  "type": "form_publications"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/00000000-0000-0000-0000-000000000001/publish",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"id\":\"890f7bea-c0e2-45f9-a06a-e3214a19be57\",\"title\":\"form not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Publish a form version returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-10T18:50:01.393Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A simple test form.",
+                    "idp_survey": false,
+                    "name": "Test-Publish_a_form_version_returns_OK_response-1781117401",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c73796e4-0dd3-4da4-8a9a-9297ba412b3e\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-10T18:50:01.747408Z\",\"datastore_config\":{\"datastore_id\":\"23249c30-b740-4a4b-8c23-34fb653dfdea\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-10T18:50:01.747408Z\",\"name\":\"Test-Publish_a_form_version_returns_OK_response-1781117401\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"376767\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1781117401,\\\\\\\"proof\\\\\\\":\\\\\\\"MGYCMQCE98ZIPD8JYrsEi1xXxe+8SVCjLroQbr+RRxKDmhfT++nN4tdcUXYYNtpNJDundgwCMQDG5TdraksHELR6ovN9xQtacfKq3wr2rKAIejh6Ut7m+jO5dmLml90pBOQMnAFXed4=\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-10T18:50:01.747408Z\",\"modified_at\":\"2026-06-10T18:50:01.747408Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "version": 1
+                  },
+                  "type": "form_publications"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/c73796e4-0dd3-4da4-8a9a-9297ba412b3e/publish",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"380020\",\"type\":\"form_publications\",\"attributes\":{\"created_at\":\"2026-06-10T18:50:02.131227Z\",\"form_id\":\"c73796e4-0dd3-4da4-8a9a-9297ba412b3e\",\"form_version\":1,\"modified_at\":\"2026-06-10T18:50:02.131227Z\",\"org_id\":321813,\"publish_seq\":1,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/c73796e4-0dd3-4da4-8a9a-9297ba412b3e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c73796e4-0dd3-4da4-8a9a-9297ba412b3e\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Publish a form version returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-10T18:50:02.747Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "form_update": {
+                      "datastore_config": {
+                        "datastore_id": "5108ea24-dd83-4696-9caa-f069f73d0fad",
+                        "primary_column_name": "id",
+                        "primary_key_generation_strategy": "none"
+                      },
+                      "description": "An updated description.",
+                      "name": "Updated Form Name"
+                    }
+                  },
+                  "id": "22f6006a-2302-4926-9396-d2dfcf7b0b34",
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/forms/00000000-0000-0000-0000-000000000001",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"id\":\"c5564241-69a8-4a9e-af78-20c7913fbf5b\",\"title\":\"form not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a form returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-10T18:50:03.118Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A simple test form.",
+                    "idp_survey": false,
+                    "name": "Test-Update_a_form_returns_OK_response-1781117403",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a365c4e1-5c1f-476f-9330-091fe52a6483\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-10T18:50:03.541399Z\",\"datastore_config\":{\"datastore_id\":\"ec62b00b-6683-4943-8bd0-28d56f5dca64\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-10T18:50:03.541399Z\",\"name\":\"Test-Update_a_form_returns_OK_response-1781117403\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"376768\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1781117403,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMFvO8GziqWVPfIg06kFsX3mHcT5e/Ub8cJ/9H1oJXqCp56oL/IRLCI351BB2xHXTFAIxALOhp9M+jw87Xn+Qvl//9uiS011jgg6a8e0UftJ1NY+G/ycp/aLzZrFKaBCt6RG8sA==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-10T18:50:03.541399Z\",\"modified_at\":\"2026-06-10T18:50:03.541399Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "form_update": {
+                      "datastore_config": {
+                        "datastore_id": "5108ea24-dd83-4696-9caa-f069f73d0fad",
+                        "primary_column_name": "id",
+                        "primary_key_generation_strategy": "none"
+                      },
+                      "description": "An updated description.",
+                      "name": "Updated Form Name"
+                    }
+                  },
+                  "id": "22f6006a-2302-4926-9396-d2dfcf7b0b34",
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/forms/a365c4e1-5c1f-476f-9330-091fe52a6483",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a365c4e1-5c1f-476f-9330-091fe52a6483\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-10T18:50:03.541399Z\",\"datastore_config\":{\"datastore_id\":\"5108ea24-dd83-4696-9caa-f069f73d0fad\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"An updated description.\",\"idp_survey\":false,\"modified_at\":\"2026-06-10T18:50:03.926234Z\",\"name\":\"Updated Form Name\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"376768\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1781117403,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMFvO8GziqWVPfIg06kFsX3mHcT5e/Ub8cJ/9H1oJXqCp56oL/IRLCI351BB2xHXTFAIxALOhp9M+jw87Xn+Qvl//9uiS011jgg6a8e0UftJ1NY+G/ycp/aLzZrFKaBCt6RG8sA==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-10T18:50:03.541399Z\",\"modified_at\":\"2026-06-10T18:50:03.541399Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/a365c4e1-5c1f-476f-9330-091fe52a6483",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a365c4e1-5c1f-476f-9330-091fe52a6483\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update a form returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-11T15:57:52.090Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "data_definition": {
+                      "description": "Welcome to the Engineering Experience Survey.",
+                      "required": [],
+                      "title": "Developer Experience Survey",
+                      "type": "object"
+                    },
+                    "ui_definition": {
+                      "ui:order": [],
+                      "ui:theme": {
+                        "primaryColor": "gray"
+                      }
+                    },
+                    "upsert_params": {
+                      "etag": "b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d"
+                    }
+                  },
+                  "type": "form_versions"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/00000000-0000-0000-0000-000000000001/versions/upsert_and_publish",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"id\":\"08399bf1-1d71-4160-bc73-e858e01fde0f\",\"title\":\"form not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Upsert and publish a form version returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Forms",
+      "frozen_at": "2026-06-11T15:57:52.936Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "anonymous": false,
+                    "data_definition": {},
+                    "description": "A simple test form.",
+                    "idp_survey": false,
+                    "name": "Test-Upsert_and_publish_a_form_version_returns_OK_response-1781193472",
+                    "single_response": false,
+                    "ui_definition": {}
+                  },
+                  "type": "forms"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-11T15:57:53.185492Z\",\"datastore_config\":{\"datastore_id\":\"37899277-a526-4668-966b-e26a258347a4\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-11T15:57:53.185492Z\",\"name\":\"Test-Upsert_and_publish_a_form_version_returns_OK_response-1781193472\",\"org_id\":321813,\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"380435\",\"state\":\"draft\",\"version\":1,\"etag\":\"b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"S2KAuCoip8JbyZNOT2gYbpUouidttEGvYWyvqeoMQjE=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1781193473,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMQD5kghzucjG+znH/JVQhgs9+82KuT/veBwvMPxHafCX3toxbVfSadP16IDWljuo2SYCMFjmS1y3rcGEBUCajP/BE82sUdc9L8jxA57Jz6lvCsuDKC7BfFYVq2FjSrj19aS9Pg==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{},\"ui_definition\":{},\"created_at\":\"2026-06-11T15:57:53.185492Z\",\"modified_at\":\"2026-06-11T15:57:53.185492Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "data_definition": {
+                      "description": "Welcome to the Engineering Experience Survey.",
+                      "required": [],
+                      "title": "Developer Experience Survey",
+                      "type": "object"
+                    },
+                    "ui_definition": {
+                      "ui:order": [],
+                      "ui:theme": {
+                        "primaryColor": "gray"
+                      }
+                    },
+                    "upsert_params": {
+                      "etag": "b51f08b698d88d8027a935d9db649774949f5fb41a0c559bfee6a9a13225c72d"
+                    }
+                  },
+                  "type": "form_versions"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/forms/25824ea9-3c52-4f43-8539-a2d4cd7f9a3b/versions/upsert_and_publish",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b\",\"type\":\"forms\",\"attributes\":{\"active\":true,\"anonymous\":false,\"created_at\":\"2026-06-11T15:57:53.185492Z\",\"datastore_config\":{\"datastore_id\":\"37899277-a526-4668-966b-e26a258347a4\",\"primary_column_name\":\"id\",\"primary_key_generation_strategy\":\"none\"},\"description\":\"A simple test form.\",\"idp_survey\":false,\"modified_at\":\"2026-06-11T15:57:53.185492Z\",\"name\":\"Test-Upsert_and_publish_a_form_version_returns_OK_response-1781193472\",\"org_id\":321813,\"publication\":{\"id\":\"383651\",\"org_id\":321813,\"form_id\":\"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b\",\"publish_seq\":1,\"form_version\":1,\"created_at\":\"2026-06-11T15:57:53.39063Z\",\"modified_at\":\"2026-06-11T15:57:53.39063Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"self_service\":false,\"single_response\":false,\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"version\":{\"id\":\"380435\",\"state\":\"frozen\",\"version\":1,\"etag\":\"30586851d6ab0b26080d3f34629e5e2cfb9f2f57457eec927b72eafefae81e48\",\"definition_signature\":\"{\\\"signature\\\":\\\"{\\\\\\\"version\\\\\\\":2,\\\\\\\"algorithm\\\\\\\":\\\\\\\"ecdsa-p384\\\\\\\",\\\\\\\"pubkey\\\\\\\":\\\\\\\"XOOWpRG1rFvaLHaG9qLf+GG78llET0BKnZtokyAtLfg=\\\\\\\",\\\\\\\"timestamp\\\\\\\":1781193473,\\\\\\\"proof\\\\\\\":\\\\\\\"MGUCMQCtGifKZr+EjEtnFk2ZKxy0DThB02mQ5wMJ3vB5L7zgTpHR+6k38mxLM1CqP2YFeQgCMHL7aBH2pJzR7yrv2YvaWNnv2puOld4laoRAWzCcuHgxHVWnp7wEcrvebyDbNej+2g==\\\\\\\"}\\\",\\\"version\\\":1}\",\"data_definition\":{\"description\":\"Welcome to the Engineering Experience Survey.\",\"required\":[],\"title\":\"Developer Experience Survey\",\"type\":\"object\"},\"ui_definition\":{\"ui:order\":[],\"ui:theme\":{\"primaryColor\":\"gray\"}},\"created_at\":\"2026-06-11T15:57:53.185492Z\",\"modified_at\":\"2026-06-11T15:57:53.39063Z\",\"user_id\":2320499,\"user_uuid\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/forms/25824ea9-3c52-4f43-8539-a2d4cd7f9a3b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"25824ea9-3c52-4f43-8539-a2d4cd7f9a3b\",\"type\":\"forms\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Upsert and publish a form version returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

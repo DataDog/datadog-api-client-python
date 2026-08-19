@@ -1,0 +1,48 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with timeseries widget using has_value_labels",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with has_value_labels",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "display_type": "line",
+                  "q": "avg:system.cpu.user{*} by {host}",
+                  "style": {
+                    "has_value_labels": true,
+                    "line_type": "solid",
+                    "line_width": "normal",
+                    "palette": "dog_classic"
+                  }
+                }
+              ],
+              "type": "timeseries"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with timeseries widget using has_value_labels",
+  "schema_version": 1,
+  "version": "v1"
+}

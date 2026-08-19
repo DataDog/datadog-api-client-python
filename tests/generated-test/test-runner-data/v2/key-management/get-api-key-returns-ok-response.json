@@ -1,0 +1,35 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Get API key returns \"OK\" response",
+  "operation_id": "GetAPIKey",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "api_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "api_key.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/api_keys/{api_key_id}"
+  },
+  "scenario": "Get API key returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

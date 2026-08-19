@@ -1,0 +1,320 @@
+{
+  "feature": "Azure Integration",
+  "recordings": [
+    {
+      "feature": "Azure Integration",
+      "frozen_at": "2024-07-25T18:47:35.049Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "app_service_plan_filters": "key:value,filter:example",
+                "automute": true,
+                "client_id": "17219332-0000-0000-0000-172193325500",
+                "client_secret": "TestingRh2nx664kUy5dIApvM54T4AtO",
+                "container_app_filters": "key:value,filter:example",
+                "cspm_enabled": true,
+                "custom_metrics_enabled": true,
+                "errors": [
+                  "*"
+                ],
+                "host_filters": "key:value,filter:example",
+                "new_client_id": "17219332-0000-0000-0000-172193325500",
+                "new_tenant_name": "17219332-0000-0000-0000-172193325500",
+                "resource_collection_enabled": true,
+                "tenant_name": "17219332-0000-0000-0000-172193325500"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "client_id": "17219332-0000-0000-0000-172193325500",
+                "tenant_name": "17219332-0000-0000-0000-172193325500"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create an Azure integration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Azure Integration",
+      "frozen_at": "2026-05-04T13:56:51.846Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "app_service_plan_filters": "key:value,filter:example",
+                "automute": true,
+                "client_id": "17779030-0000-0000-0000-177790301100",
+                "client_secret": "TestingRh2nx664kUy5dIApvM54T4AtO",
+                "container_app_filters": "key:value,filter:example",
+                "cspm_enabled": true,
+                "custom_metrics_enabled": true,
+                "errors": [
+                  "*"
+                ],
+                "host_filters": "key:value,filter:example",
+                "metrics_enabled": true,
+                "metrics_enabled_default": true,
+                "new_client_id": "17779030-0000-0000-0000-177790301100",
+                "new_tenant_name": "17779030-0000-0000-0000-177790301100",
+                "resource_collection_enabled": true,
+                "resource_provider_configs": [
+                  {
+                    "metrics_enabled": false,
+                    "namespace": "Microsoft.Compute"
+                  },
+                  {
+                    "metrics_enabled": false,
+                    "namespace": "Microsoft.Web"
+                  }
+                ],
+                "secretless_auth_enabled": false,
+                "tenant_name": "17779030-0000-0000-0000-177790301100",
+                "usage_metrics_enabled": true
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "client_id": "17779030-0000-0000-0000-177790301100",
+                "tenant_name": "17779030-0000-0000-0000-177790301100"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "client_id": "17779030-0000-0000-0000-177790301100",
+                "tenant_name": "17779030-0000-0000-0000-177790301100"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Delete an Azure integration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Azure Integration",
+      "frozen_at": "2026-05-04T13:56:52.686Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "app_service_plan_filters": "key:value,filter:example",
+                "automute": true,
+                "client_id": "17779030-0000-0000-0000-177790301200",
+                "client_secret": "TestingRh2nx664kUy5dIApvM54T4AtO",
+                "container_app_filters": "key:value,filter:example",
+                "cspm_enabled": true,
+                "custom_metrics_enabled": true,
+                "errors": [
+                  "*"
+                ],
+                "host_filters": "key:value,filter:example",
+                "metrics_enabled": true,
+                "metrics_enabled_default": true,
+                "new_client_id": "17779030-0000-0000-0000-177790301200",
+                "new_tenant_name": "17779030-0000-0000-0000-177790301200",
+                "resource_collection_enabled": true,
+                "resource_provider_configs": [
+                  {
+                    "metrics_enabled": false,
+                    "namespace": "Microsoft.Compute"
+                  },
+                  {
+                    "metrics_enabled": false,
+                    "namespace": "Microsoft.Web"
+                  }
+                ],
+                "secretless_auth_enabled": false,
+                "tenant_name": "17779030-0000-0000-0000-177790301200",
+                "usage_metrics_enabled": true
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "app_service_plan_filters": "key:value,filter:example",
+                "automute": true,
+                "client_id": "17779030-0000-0000-0000-177790301200",
+                "client_secret": "TestingRh2nx664kUy5dIApvM54T4AtO",
+                "container_app_filters": "key:value,filter:example",
+                "cspm_enabled": true,
+                "custom_metrics_enabled": true,
+                "errors": [
+                  "*"
+                ],
+                "host_filters": "key:value,filter:example",
+                "new_client_id": "17779030-0000-0000-0000-177790301200",
+                "new_tenant_name": "17779030-0000-0000-0000-177790301200",
+                "resource_collection_enabled": true,
+                "secretless_auth_enabled": true,
+                "tenant_name": "17779030-0000-0000-0000-177790301200"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "client_id": "17779030-0000-0000-0000-177790301200",
+                "tenant_name": "17779030-0000-0000-0000-177790301200"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/azure",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update an Azure integration returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

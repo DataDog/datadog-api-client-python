@@ -1,0 +1,18 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 200,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/List Azure scan options returns \"OK\" response",
+  "operation_id": "ListAzureScanOptions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/agentless_scanning/accounts/azure"
+  },
+  "scenario": "List Azure scan options returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

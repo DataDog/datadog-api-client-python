@@ -1,0 +1,51 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 404,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Update deployment gate returns \"Deployment gate not found.\" response",
+  "operation_id": "UpdateDeploymentGate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateDeploymentGateParams",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "dry_run": false
+          },
+          "id": "12345678-1234-1234-1234-123456789012",
+          "type": "deployment_gate"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deployment_gates/{id}"
+  },
+  "scenario": "Update deployment gate returns \"Deployment gate not found.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,70 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 200,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Validate an observability pipeline with amazon S3 source compression returns \"OK\" response",
+  "operation_id": "ValidatePipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ObservabilityPipelineSpec",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "config": {
+              "destinations": [
+                {
+                  "id": "datadog-logs-destination",
+                  "inputs": [
+                    "my-processor-group"
+                  ],
+                  "type": "datadog_logs"
+                }
+              ],
+              "processor_groups": [
+                {
+                  "enabled": true,
+                  "id": "my-processor-group",
+                  "include": "service:my-service",
+                  "inputs": [
+                    "amazon-s3-source"
+                  ],
+                  "processors": [
+                    {
+                      "enabled": true,
+                      "id": "filter-processor",
+                      "include": "service:my-service",
+                      "type": "filter"
+                    }
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "compression": "gzip",
+                  "id": "amazon-s3-source",
+                  "region": "us-east-1",
+                  "type": "amazon_s3"
+                }
+              ]
+            },
+            "name": "Pipeline with S3 Source Compression"
+          },
+          "type": "pipelines"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/obs-pipelines/pipelines/validate"
+  },
+  "scenario": "Validate an observability pipeline with amazon S3 source compression returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

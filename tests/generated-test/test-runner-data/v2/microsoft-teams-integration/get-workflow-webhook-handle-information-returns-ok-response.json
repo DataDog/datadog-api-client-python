@@ -1,0 +1,35 @@
+{
+  "api": "MicrosoftTeamsIntegration",
+  "expected_status": 200,
+  "feature": "Microsoft Teams Integration",
+  "id": "v2/Microsoft Teams Integration/Get workflow webhook handle information returns \"OK\" response",
+  "operation_id": "GetWorkflowsWebhookHandle",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "handle_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "workflows_webhook_handle.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}"
+  },
+  "scenario": "Get workflow webhook handle information returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

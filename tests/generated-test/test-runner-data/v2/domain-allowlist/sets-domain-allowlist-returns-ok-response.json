@@ -1,0 +1,36 @@
+{
+  "api": "DomainAllowlist",
+  "expected_status": 200,
+  "feature": "Domain Allowlist",
+  "id": "v2/Domain Allowlist/Sets Domain Allowlist returns \"OK\" response",
+  "operation_id": "PatchDomainAllowlist",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DomainAllowlistRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "domains": [
+              "@static-test-domain.test"
+            ],
+            "enabled": false
+          },
+          "type": "domain_allowlist"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/domain_allowlist"
+  },
+  "scenario": "Sets Domain Allowlist returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

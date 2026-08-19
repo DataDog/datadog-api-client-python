@@ -1,0 +1,28 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v1/Downtimes/Schedule a downtime with until occurrences",
+  "operation_id": "CreateDowntime",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Downtime",
+        "type": "object"
+      },
+      "source": "downtime_recurrence_payload_until_occurrences.json",
+      "value": {
+        "$openapi_transformer_template": "{\n  \"message\": \"{{ unique }}\",\n  \"recurrence\": {\n    \"period\": 1,\n    \"type\": \"weeks\",\n    \"until_occurrences\": 3,\n    \"week_days\": [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"]\n  },\n  \"scope\": [\"*\"],\n  \"start\": {{ timestamp(\"now\") }},\n  \"end\": {{ timestamp(\"now + 1h\") }},\n  \"timezone\": \"Etc/UTC\",\n  \"monitor_tags\": [\n    \"tag0\"\n  ]\n}\n"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/downtime"
+  },
+  "scenario": "Schedule a downtime with until occurrences",
+  "schema_version": 1,
+  "version": "v1"
+}

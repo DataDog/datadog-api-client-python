@@ -1,0 +1,18 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/List tag indexing rules returns \"OK\" response",
+  "operation_id": "ListTagIndexingRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/metrics/tag-indexing-rules"
+  },
+  "scenario": "List tag indexing rules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

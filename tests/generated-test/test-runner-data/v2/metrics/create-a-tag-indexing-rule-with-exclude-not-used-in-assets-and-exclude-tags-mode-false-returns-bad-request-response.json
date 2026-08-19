@@ -1,0 +1,52 @@
+{
+  "api": "Metrics",
+  "expected_status": 400,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Create a tag indexing rule with exclude_not_used_in_assets and exclude_tags_mode false returns \"Bad Request\" response",
+  "operation_id": "CreateTagIndexingRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TagIndexingRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "exclude_tags_mode": false,
+            "ignored_metric_name_matches": [],
+            "metric_name_matches": [
+              "dd.test.*"
+            ],
+            "name": "my-indexing-rule",
+            "options": {
+              "data": {
+                "dynamic_tags": {
+                  "exclude_not_used_in_assets": true
+                },
+                "manage_preexisting_metrics": true,
+                "override_previous_rules": false
+              },
+              "version": 1
+            },
+            "tags": [
+              "env",
+              "service"
+            ]
+          },
+          "type": "tag_indexing_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/metrics/tag-indexing-rules"
+  },
+  "scenario": "Create a tag indexing rule with exclude_not_used_in_assets and exclude_tags_mode false returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

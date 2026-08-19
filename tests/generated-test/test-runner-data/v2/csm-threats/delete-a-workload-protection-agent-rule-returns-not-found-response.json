@@ -1,0 +1,35 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 404,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Delete a Workload Protection agent rule returns \"Not Found\" response",
+  "operation_id": "DeleteCSMThreatsAgentRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "agent_rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "non-existent-rule-id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}"
+  },
+  "scenario": "Delete a Workload Protection agent rule returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

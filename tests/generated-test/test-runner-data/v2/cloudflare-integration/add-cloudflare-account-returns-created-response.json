@@ -1,0 +1,35 @@
+{
+  "api": "CloudflareIntegration",
+  "expected_status": 201,
+  "feature": "Cloudflare Integration",
+  "id": "v2/Cloudflare Integration/Add Cloudflare account returns \"CREATED\" response",
+  "operation_id": "CreateCloudflareAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CloudflareAccountCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "api_key": "fakekey",
+            "email": "dev@datadoghq.com",
+            "name": "{{ unique_lower_alnum }}"
+          },
+          "type": "cloudflare-accounts"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integrations/cloudflare/accounts"
+  },
+  "scenario": "Add Cloudflare account returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

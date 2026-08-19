@@ -1,0 +1,35 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 200,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Get Blueprints by Slugs returns \"OK\" response",
+  "operation_id": "GetBlueprintsBySlugs",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "slugs",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aws-service-manager"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/blueprints/slugs/{slugs}"
+  },
+  "scenario": "Get Blueprints by Slugs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

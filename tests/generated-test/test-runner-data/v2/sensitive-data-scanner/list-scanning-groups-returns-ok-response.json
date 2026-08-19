@@ -1,0 +1,18 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 200,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/List Scanning Groups returns \"OK\" response",
+  "operation_id": "ListScanningGroups",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/sensitive-data-scanner/config"
+  },
+  "scenario": "List Scanning Groups returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

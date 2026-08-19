@@ -1,0 +1,18 @@
+{
+  "api": "ContainerImages",
+  "expected_status": 200,
+  "feature": "Container Images",
+  "id": "v2/Container Images/Get all Container Images returns \"OK\" response",
+  "operation_id": "ListContainerImages",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/container_images"
+  },
+  "scenario": "Get all Container Images returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

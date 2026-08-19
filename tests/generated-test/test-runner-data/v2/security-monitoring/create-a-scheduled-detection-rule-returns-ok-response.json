@@ -1,0 +1,62 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a scheduled detection rule returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "condition": "a > 0",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "filters": [],
+        "isEnabled": true,
+        "message": "Test rule",
+        "name": "{{ unique }}",
+        "options": {
+          "evaluationWindow": 900,
+          "keepAlive": 3600,
+          "maxSignalDuration": 86400
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "distinctFields": [],
+            "groupByFields": [],
+            "indexes": [
+              "main"
+            ],
+            "query": "@test:true"
+          }
+        ],
+        "schedulingOptions": {
+          "rrule": "FREQ=HOURLY;INTERVAL=2;",
+          "start": "2025-06-18T12:00:00",
+          "timezone": "Europe/Paris"
+        },
+        "tags": [],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules"
+  },
+  "scenario": "Create a scheduled detection rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,44 @@
+{
+  "api": "Spans",
+  "expected_status": 200,
+  "feature": "Spans",
+  "id": "v2/Spans/Search spans returns \"OK\" response with pagination",
+  "operation_id": "ListSpans",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SpansListRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "filter": {
+              "from": "now-15m",
+              "query": "service:python*",
+              "to": "now"
+            },
+            "options": {
+              "timezone": "GMT"
+            },
+            "page": {
+              "limit": 2
+            },
+            "sort": "timestamp"
+          },
+          "type": "search_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": true,
+    "parameters": [],
+    "path": "/api/v2/spans/events/search"
+  },
+  "scenario": "Search spans returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

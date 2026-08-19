@@ -1,0 +1,35 @@
+{
+  "api": "Notebooks",
+  "expected_status": 204,
+  "feature": "Notebooks",
+  "id": "v1/Notebooks/Delete a notebook returns \"OK\" response",
+  "operation_id": "DeleteNotebook",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "notebook_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "notebook.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/notebooks/{notebook_id}"
+  },
+  "scenario": "Delete a notebook returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

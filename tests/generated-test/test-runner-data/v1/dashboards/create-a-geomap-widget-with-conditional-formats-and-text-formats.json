@@ -1,0 +1,136 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a geomap widget with conditional formats and text formats",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": "{{ unique }}",
+        "layout_type": "ordered",
+        "notify_list": [],
+        "reflow_type": "fixed",
+        "tags": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "conditional_formats": [
+                    {
+                      "comparator": ">",
+                      "palette": "white_on_green",
+                      "value": 1000
+                    }
+                  ],
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "rum",
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": "@type:session"
+                      }
+                    }
+                  ],
+                  "response_format": "scalar",
+                  "sort": {
+                    "count": 250,
+                    "order_by": [
+                      {
+                        "index": 0,
+                        "order": "desc",
+                        "type": "formula"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "columns": [
+                    {
+                      "field": "@network.client.geoip.location.latitude",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@network.client.geoip.location.longitude",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@network.client.geoip.country.iso_code",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@network.client.geoip.subdivision.name",
+                      "width": "auto"
+                    }
+                  ],
+                  "query": {
+                    "data_source": "logs_stream",
+                    "indexes": [],
+                    "query_string": "",
+                    "storage": "hot"
+                  },
+                  "response_format": "event_list",
+                  "style": {
+                    "color_by": "status"
+                  },
+                  "text_formats": [
+                    {
+                      "match": {
+                        "type": "is",
+                        "value": "error"
+                      },
+                      "palette": "white_on_red"
+                    }
+                  ]
+                }
+              ],
+              "style": {
+                "palette": "hostmap_blues",
+                "palette_flip": false
+              },
+              "title": "Log Count by Service and Source",
+              "type": "geomap",
+              "view": {
+                "focus": "NORTH_AMERICA"
+              }
+            },
+            "layout": {
+              "height": 6,
+              "width": 12,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a geomap widget with conditional formats and text formats",
+  "schema_version": 1,
+  "version": "v1"
+}

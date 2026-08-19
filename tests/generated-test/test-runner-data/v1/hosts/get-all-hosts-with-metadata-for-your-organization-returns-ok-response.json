@@ -1,0 +1,35 @@
+{
+  "api": "Hosts",
+  "expected_status": 200,
+  "feature": "Hosts",
+  "id": "v1/Hosts/Get all hosts with metadata for your organization returns \"OK\" response",
+  "operation_id": "ListHosts",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include_hosts_metadata",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/hosts"
+  },
+  "scenario": "Get all hosts with metadata for your organization returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

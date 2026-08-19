@@ -1,0 +1,85 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new timeseries widget with new fixed span time format",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "reflow_type": "auto",
+        "title": "{{ unique }} with new fixed span time",
+        "widgets": [
+          {
+            "definition": {
+              "legend_columns": [
+                "avg",
+                "min",
+                "max",
+                "value",
+                "sum"
+              ],
+              "legend_layout": "auto",
+              "requests": [
+                {
+                  "display_type": "line",
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count",
+                        "metric": "@ci.queue_time"
+                      },
+                      "data_source": "ci_pipelines",
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": "ci_level:job"
+                      }
+                    }
+                  ],
+                  "response_format": "timeseries",
+                  "style": {
+                    "line_type": "solid",
+                    "line_width": "normal",
+                    "palette": "dog_classic"
+                  }
+                }
+              ],
+              "show_legend": true,
+              "time": {
+                "from": 1712080128,
+                "hide_incomplete_cost_data": true,
+                "to": 1712083128,
+                "type": "fixed"
+              },
+              "title": "",
+              "type": "timeseries"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new timeseries widget with new fixed span time format",
+  "schema_version": 1,
+  "version": "v1"
+}

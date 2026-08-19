@@ -1,0 +1,67 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/List vulnerable assets returns \"OK\" response",
+  "operation_id": "ListVulnerableAssets",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[type]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "AssetType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "Host"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[repository_url]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "github.com/datadog/dd-go"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[risks.in_production]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/vulnerable-assets"
+  },
+  "scenario": "List vulnerable assets returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

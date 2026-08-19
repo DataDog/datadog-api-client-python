@@ -1,0 +1,47 @@
+{
+  "api": "LogsPipelines",
+  "expected_status": 200,
+  "feature": "Logs Pipelines",
+  "id": "v1/Logs Pipelines/Create a pipeline with Array Processor Key Value Operation with target and override_on_conflict returns \"OK\" response",
+  "operation_id": "CreateLogsPipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "query": "source:python"
+        },
+        "name": "testPipelineArrayKeyValueTarget",
+        "processors": [
+          {
+            "is_enabled": true,
+            "name": "extract_kv_to_target",
+            "operation": {
+              "key_to_extract": "name",
+              "override_on_conflict": true,
+              "source": "tags",
+              "target": "extracted",
+              "type": "key-value",
+              "value_to_extract": "value"
+            },
+            "type": "array-processor"
+          }
+        ],
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs/config/pipelines"
+  },
+  "scenario": "Create a pipeline with Array Processor Key Value Operation with target and override_on_conflict returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,42 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create an LLM Observability monitor returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "LLM observability alert triggered",
+        "name": "{{ unique }}",
+        "options": {
+          "include_tags": true,
+          "notify_audit": false,
+          "thresholds": {
+            "critical": 0
+          }
+        },
+        "query": "llm-observability(\"*\").rollup(\"count\").last(\"2h\") > 0",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "llm-observability alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create an LLM Observability monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

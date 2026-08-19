@@ -1,0 +1,66 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with a timeseries widget and an overlay request",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "display_type": "line",
+                  "on_right_yaxis": false,
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "mymetric",
+                      "query": "avg:system.cpu.user{*}"
+                    }
+                  ],
+                  "response_format": "timeseries"
+                },
+                {
+                  "display_type": "overlay",
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "mymetricoverlay",
+                      "query": "avg:system.cpu.user{*}"
+                    }
+                  ],
+                  "response_format": "timeseries",
+                  "style": {
+                    "line_type": "solid",
+                    "line_width": "normal",
+                    "palette": "purple"
+                  }
+                }
+              ],
+              "type": "timeseries"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with a timeseries widget and an overlay request",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,51 @@
+{
+  "api": "LLMObservability",
+  "expected_status": 404,
+  "feature": "LLM Observability",
+  "id": "v2/LLM Observability/Get a specific LLM Observability prompt version returns \"Not Found\" response",
+  "operation_id": "GetLLMObsPromptVersion",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "prompt_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "nonexistent-prompt"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "version",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions/{version}"
+  },
+  "scenario": "Get a specific LLM Observability prompt version returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

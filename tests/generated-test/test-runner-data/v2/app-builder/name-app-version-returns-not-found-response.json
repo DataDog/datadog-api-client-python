@@ -1,0 +1,66 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 404,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Name App Version returns \"Not Found\" response",
+  "operation_id": "UpdateAppVersionName",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppVersionNameRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "v1.2.0 - bug fix release"
+          },
+          "type": "versionNames"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "7addb29b-f935-472c-ae79-d1963979a23e"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "version",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "latest"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}/version-name"
+  },
+  "scenario": "Name App Version returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,51 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a monitor with assets returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "assets": [
+          {
+            "category": "runbook",
+            "name": "Monitor Runbook",
+            "resource_key": "12345",
+            "resource_type": "notebook",
+            "url": "/notebooks/12345"
+          }
+        ],
+        "message": "some message Notify: @hipchat-channel",
+        "name": "{{ unique }}",
+        "options": {
+          "scheduling_options": {
+            "evaluation_window": {
+              "day_starts": "04:00",
+              "month_starts": 1
+            }
+          },
+          "thresholds": {
+            "critical": 0.5
+          }
+        },
+        "query": "avg(current_1mo):avg:system.load.5{*} > 0.5",
+        "type": "metric alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a monitor with assets returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

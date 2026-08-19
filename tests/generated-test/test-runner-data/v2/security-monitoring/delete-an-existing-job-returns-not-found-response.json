@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Delete an existing job returns \"Not Found\" response",
+  "operation_id": "DeleteHistoricalJob",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "job_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "8e2a37fb-b0c8-4761-a7f0-0a8d6a98ba93"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/siem-historical-detections/jobs/{job_id}"
+  },
+  "scenario": "Delete an existing job returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

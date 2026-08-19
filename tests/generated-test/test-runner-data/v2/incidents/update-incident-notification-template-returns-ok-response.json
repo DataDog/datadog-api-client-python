@@ -1,0 +1,54 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Update incident notification template returns \"OK\" response",
+  "operation_id": "UpdateIncidentNotificationTemplate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchIncidentNotificationTemplateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "category": "update",
+            "content": "Incident Status Update:\n\nTitle: Sample Incident Title\nNew Status: resolved\nSeverity: SEV-2\nServices: web-service, database-service\nCommander: John Doe\n\nFor more details, visit the incident page.",
+            "name": "{{ unique }}",
+            "subject": "Incident Update: Sample Incident Title - resolved"
+          },
+          "id": "{{ notification_template.data.id }}",
+          "type": "notification_templates"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "notification_template.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/notification-templates/{id}"
+  },
+  "scenario": "Update incident notification template returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

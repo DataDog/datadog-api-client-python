@@ -1,0 +1,38 @@
+{
+  "api": "CIVisibilityPipelines",
+  "expected_status": 200,
+  "feature": "CI Visibility Pipelines",
+  "id": "v2/CI Visibility Pipelines/Search pipelines events returns \"OK\" response with pagination",
+  "operation_id": "SearchCIAppPipelineEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CIAppPipelineEventsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "from": "now-30s",
+          "to": "now"
+        },
+        "options": {
+          "timezone": "GMT"
+        },
+        "page": {
+          "limit": 2
+        },
+        "sort": "timestamp"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": true,
+    "parameters": [],
+    "path": "/api/v2/ci/pipelines/events/search"
+  },
+  "scenario": "Search pipelines events returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

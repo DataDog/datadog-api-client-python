@@ -1,0 +1,457 @@
+{
+  "feature": "Rum Retention Filters",
+  "recordings": [
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-03T21:21:22.678Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "session",
+                    "name": "Test creating retention filter",
+                    "query": "",
+                    "sample_rate": 25
+                  },
+                  "type": "invalid_type"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"invalid_type\\\" expected one of \\\"retention_filters\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a RUM retention filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-05T20:01:25.330Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "session",
+                    "name": "Test creating retention filter",
+                    "query": "custom_query",
+                    "sample_rate": 50
+                  },
+                  "type": "retention_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4b95d361-f65d-4515-9824-c9aaeba5ac2a\",\"type\":\"retention_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"session\",\"name\":\"Test creating retention filter\",\"query\":\"custom_query\",\"sample_rate\":50}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        }
+      ],
+      "scenario": "Create a RUM retention filter returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-05T20:03:40.119Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/fe34ee09-14cf-4976-9362-08044c0dea80",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete a RUM retention filter returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-03T21:21:23.296Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/Test-Delete_a_RUM_retention_filter_returns_Not_Found_response-1741036883",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rpc error: code = NotFound desc = NotFound: This retention filter does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-03T21:21:23.382Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/Test-Get_a_RUM_retention_filter_returns_Not_Found_response-1741036883",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rpc error: code = NotFound desc = NotFound: This retention filter does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-05T20:05:06.468Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/4b95d361-f65d-4515-9824-c9aaeba5ac2a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4b95d361-f65d-4515-9824-c9aaeba5ac2a\",\"type\":\"retention_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"session\",\"name\":\"Test retention filter for session\",\"query\":\"custom_query\",\"sample_rate\":25}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a RUM retention filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-03T21:21:23.741Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/1d4b9c34-7ac4-423a-91cf-9902d926e9b3/retention_filters",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"325631eb-94c9-49c0-93f9-ab7e4fd24529\",\"type\":\"retention_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"session\",\"name\":\"Default session with replay\",\"query\":\"@session.has_replay:true\",\"sample_rate\":100}},{\"id\":\"42d89430-5b80-426e-a44b-ba3b417ece25\",\"type\":\"retention_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"session\",\"name\":\"Session filter\",\"query\":\"\",\"sample_rate\":25}},{\"id\":\"bff0bc34-99e9-4c16-adce-f47e71948c23\",\"type\":\"retention_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"view\",\"name\":\"Custom filter\",\"query\":\"noquery\",\"sample_rate\":50}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all RUM retention filters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-03T21:21:23.865Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": [
+                  {
+                    "id": "325631eb-94c9-49c0-93f9-ab7e4fd24529",
+                    "type": "retention_filters"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/1d4b9c34-7ac4-423a-91cf-9902d926e9b3/relationships/retention_filters",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Order RUM retention filters returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-03T21:21:23.931Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": [
+                  {
+                    "id": "325631eb-94c9-49c0-93f9-ab7e4fd24529",
+                    "type": "retention_filters"
+                  },
+                  {
+                    "id": "42d89430-5b80-426e-a44b-ba3b417ece25",
+                    "type": "retention_filters"
+                  },
+                  {
+                    "id": "bff0bc34-99e9-4c16-adce-f47e71948c23",
+                    "type": "retention_filters"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/1d4b9c34-7ac4-423a-91cf-9902d926e9b3/relationships/retention_filters",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"325631eb-94c9-49c0-93f9-ab7e4fd24529\",\"type\":\"retention_filters\"},{\"id\":\"42d89430-5b80-426e-a44b-ba3b417ece25\",\"type\":\"retention_filters\"},{\"id\":\"bff0bc34-99e9-4c16-adce-f47e71948c23\",\"type\":\"retention_filters\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Order RUM retention filters returns \"Ordered\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-05T20:23:29.589Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "view",
+                    "name": "Test updating retention filter",
+                    "query": "",
+                    "sample_rate": 100
+                  },
+                  "id": "Test-Update_a_RUM_retention_filter_returns_Bad_Request_response-1741206209",
+                  "type": "invalid_type"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/Test-Update_a_RUM_retention_filter_returns_Bad_Request_response-1741206209",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"invalid_type\\\" expected one of \\\"retention_filters\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update a RUM retention filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-03T21:21:24.104Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "view",
+                    "name": "Test updating retention filter",
+                    "query": "",
+                    "sample_rate": 100
+                  },
+                  "id": "Test-Update_a_RUM_retention_filter_returns_Not_Found_response-1741036884",
+                  "type": "retention_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/Test-Update_a_RUM_retention_filter_returns_Not_Found_response-1741036884",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rpc error: code = NotFound desc = NotFound: This retention filter does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2025-03-05T20:09:00.396Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "view",
+                    "name": "Test updating retention filter",
+                    "query": "view_query",
+                    "sample_rate": 100
+                  },
+                  "id": "4b95d361-f65d-4515-9824-c9aaeba5ac2a",
+                  "type": "retention_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/4b95d361-f65d-4515-9824-c9aaeba5ac2a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4b95d361-f65d-4515-9824-c9aaeba5ac2a\",\"type\":\"retention_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"view\",\"name\":\"Test updating retention filter\",\"query\":\"view_query\",\"sample_rate\":100}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update a RUM retention filter returns \"Updated\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

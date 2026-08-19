@@ -1,0 +1,53 @@
+{
+  "api": "Scorecards",
+  "expected_status": 200,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/Update an existing rule returns \"Rule updated successfully\" response",
+  "operation_id": "UpdateScorecardRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Updated description via test",
+            "enabled": true,
+            "name": "{{create_scorecard_rule.data.attributes.name}}",
+            "scorecard_name": "{{create_scorecard_rule.data.attributes.scorecard_name}}"
+          },
+          "type": "rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "create_scorecard_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/scorecard/rules/{rule_id}"
+  },
+  "scenario": "Update an existing rule returns \"Rule updated successfully\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

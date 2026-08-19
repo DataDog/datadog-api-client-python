@@ -1,0 +1,68 @@
+{
+  "api": "StatusPages",
+  "expected_status": 200,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Update maintenance returns \"OK\" response",
+  "operation_id": "UpdateMaintenance",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchMaintenanceRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "in_progress_description": "We are currently performing maintenance on the API to improve performance for 40 minutes.",
+            "scheduled_description": "We will be performing maintenance on the API to improve performance for 40 minutes."
+          },
+          "id": "{{ maintenance.data.id }}",
+          "type": "maintenances"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "maintenance_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "maintenance.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/maintenances/{maintenance_id}"
+  },
+  "scenario": "Update maintenance returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

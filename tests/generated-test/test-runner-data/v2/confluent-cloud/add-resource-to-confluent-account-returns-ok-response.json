@@ -1,0 +1,56 @@
+{
+  "api": "ConfluentCloud",
+  "expected_status": 201,
+  "feature": "Confluent Cloud",
+  "id": "v2/Confluent Cloud/Add resource to Confluent account returns \"OK\" response",
+  "operation_id": "CreateConfluentResource",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ConfluentResourceRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enable_custom_metrics": false,
+            "resource_type": "kafka",
+            "tags": [
+              "myTag",
+              "myTag2:myValue"
+            ]
+          },
+          "id": "{{ unique_lower_alnum }}",
+          "type": "confluent-cloud-resources"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "confluent_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}/resources"
+  },
+  "scenario": "Add resource to Confluent account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

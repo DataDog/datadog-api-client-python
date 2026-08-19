@@ -1,0 +1,35 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 200,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/Get an existing Workflow returns \"Successfully got a workflow.\" response",
+  "operation_id": "GetWorkflow",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "workflow_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "workflow.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows/{workflow_id}"
+  },
+  "scenario": "Get an existing Workflow returns \"Successfully got a workflow.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

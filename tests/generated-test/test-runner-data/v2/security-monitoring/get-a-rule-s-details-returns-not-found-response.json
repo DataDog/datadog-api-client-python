@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get a rule's details returns \"Not Found\" response",
+  "operation_id": "GetSecurityMonitoringRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "abcde-12345"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/rules/{rule_id}"
+  },
+  "scenario": "Get a rule's details returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

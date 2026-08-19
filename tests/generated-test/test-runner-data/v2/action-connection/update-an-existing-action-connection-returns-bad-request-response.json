@@ -1,0 +1,58 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 400,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Update an existing Action Connection returns \"Bad Request\" response",
+  "operation_id": "UpdateActionConnection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateActionConnectionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "integration": {
+              "credentials": {
+                "account_id": "1",
+                "role": "MyRoleUpdated",
+                "type": "AWSAssumeRole"
+              },
+              "type": "AWS"
+            },
+            "name": "Cassette Connection"
+          },
+          "type": "action_connection"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "connection_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "cb460d51-3c88-4e87-adac-d47131d0423d"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/connections/{connection_id}"
+  },
+  "scenario": "Update an existing Action Connection returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

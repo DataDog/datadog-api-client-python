@@ -1,0 +1,40 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Detach security findings from their case returns \"Not Found\" response",
+  "operation_id": "DetachCase",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DetachCaseRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "relationships": {
+            "findings": {
+              "data": [
+                {
+                  "id": "wrong-finding-id",
+                  "type": "findings"
+                }
+              ]
+            }
+          },
+          "type": "cases"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/cases"
+  },
+  "scenario": "Detach security findings from their case returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

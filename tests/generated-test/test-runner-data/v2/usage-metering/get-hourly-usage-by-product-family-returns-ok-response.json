@@ -1,0 +1,51 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 200,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/Get hourly usage by product family returns \"OK\" response",
+  "operation_id": "GetHourlyUsage",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[timestamp][start]",
+        "required": true,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now - 3d') }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[product_families]",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "infra_hosts"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/usage/hourly_usage"
+  },
+  "scenario": "Get hourly usage by product family returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

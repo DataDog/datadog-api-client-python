@@ -1,0 +1,18 @@
+{
+  "api": "Scorecards",
+  "expected_status": 200,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/List all rule outcomes returns \"OK\" response",
+  "operation_id": "ListScorecardOutcomes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/scorecard/outcomes"
+  },
+  "scenario": "List all rule outcomes returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

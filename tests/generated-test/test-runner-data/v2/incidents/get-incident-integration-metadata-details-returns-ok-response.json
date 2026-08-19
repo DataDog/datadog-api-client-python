@@ -1,0 +1,51 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Get incident integration metadata details returns \"OK\" response",
+  "operation_id": "GetIncidentIntegration",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "integration_metadata_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident_integration_metadata.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/relationships/integrations/{integration_metadata_id}"
+  },
+  "scenario": "Get incident integration metadata details returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

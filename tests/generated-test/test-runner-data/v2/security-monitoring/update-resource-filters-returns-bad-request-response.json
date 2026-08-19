@@ -1,0 +1,40 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update resource filters returns \"Bad Request\" response",
+  "operation_id": "UpdateResourceEvaluationFilters",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateResourceEvaluationFiltersRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "cloud_provider": {
+              "invalid": {
+                "aws_account_id": [
+                  "tag1:v1"
+                ]
+              }
+            }
+          },
+          "id": "csm_resource_filter",
+          "type": "csm_resource_filter"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cloud_security_management/resource_filters"
+  },
+  "scenario": "Update resource filters returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

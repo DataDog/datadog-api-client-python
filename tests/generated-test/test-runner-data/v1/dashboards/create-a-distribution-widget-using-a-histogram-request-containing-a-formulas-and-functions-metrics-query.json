@@ -1,0 +1,77 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a distribution widget using a histogram request containing a formulas and functions metrics query",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "custom_links": [
+                {
+                  "label": "Example",
+                  "link": "https://example.org/"
+                }
+              ],
+              "requests": [
+                {
+                  "query": {
+                    "data_source": "metrics",
+                    "name": "query1",
+                    "query": "histogram:trace.Load{*}"
+                  },
+                  "request_type": "histogram",
+                  "style": {
+                    "palette": "dog_classic"
+                  }
+                }
+              ],
+              "show_legend": false,
+              "title": "Metrics HOP",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "distribution",
+              "xaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "scale": "linear"
+              },
+              "yaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "scale": "linear"
+              }
+            },
+            "layout": {
+              "height": 2,
+              "width": 4,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a distribution widget using a histogram request containing a formulas and functions metrics query",
+  "schema_version": 1,
+  "version": "v1"
+}

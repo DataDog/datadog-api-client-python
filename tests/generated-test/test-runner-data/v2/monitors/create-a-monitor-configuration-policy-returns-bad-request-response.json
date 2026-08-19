@@ -1,0 +1,41 @@
+{
+  "api": "Monitors",
+  "expected_status": 400,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Create a monitor configuration policy returns \"Bad Request\" response",
+  "operation_id": "CreateMonitorConfigPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorConfigPolicyCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "policy": {
+              "tag_key": "datacenter",
+              "tag_key_required": true,
+              "valid_tag_values": [
+                "prod",
+                "staging"
+              ]
+            },
+            "policy_type": "INVALID"
+          },
+          "type": "monitor-config-policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/policy"
+  },
+  "scenario": "Create a monitor configuration policy returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

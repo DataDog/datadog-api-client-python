@@ -1,0 +1,35 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Get a personal access token returns \"OK\" response",
+  "operation_id": "GetPersonalAccessToken",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "token_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "personal_access_token.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/personal_access_tokens/{token_id}"
+  },
+  "scenario": "Get a personal access token returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

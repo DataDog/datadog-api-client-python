@@ -1,0 +1,35 @@
+{
+  "api": "Roles",
+  "expected_status": 200,
+  "feature": "Roles",
+  "id": "v2/Roles/Get all users of a role returns \"OK\" response",
+  "operation_id": "ListRoleUsers",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "role_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "role.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/roles/{role_id}/users"
+  },
+  "scenario": "Get all users of a role returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "Events",
+  "expected_status": 200,
+  "feature": "Events",
+  "id": "v2/Events/Get a list of events returns \"OK\" response",
+  "operation_id": "ListEvents",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/events"
+  },
+  "scenario": "Get a list of events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,51 @@
+{
+  "api": "LogsCustomDestinations",
+  "expected_status": 200,
+  "feature": "Logs Custom Destinations",
+  "id": "v2/Logs Custom Destinations/Create an Elasticsearch custom destination returns \"OK\" response",
+  "operation_id": "CreateLogsCustomDestination",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomDestinationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": false,
+            "forward_tags": false,
+            "forward_tags_restriction_list": [
+              "datacenter",
+              "host"
+            ],
+            "forward_tags_restriction_list_type": "ALLOW_LIST",
+            "forwarder_destination": {
+              "auth": {
+                "password": "my-password",
+                "username": "my-username"
+              },
+              "endpoint": "https://example.com",
+              "index_name": "nginx-logs",
+              "index_rotation": "yyyy-MM-dd",
+              "type": "elasticsearch"
+            },
+            "name": "Nginx logs",
+            "query": "source:nginx"
+          },
+          "type": "custom_destination"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/logs/config/custom-destinations"
+  },
+  "scenario": "Create an Elasticsearch custom destination returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

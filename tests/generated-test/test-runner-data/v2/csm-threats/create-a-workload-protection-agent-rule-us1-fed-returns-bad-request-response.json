@@ -1,0 +1,37 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 400,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Create a Workload Protection agent rule (US1-FED) returns \"Bad Request\" response",
+  "operation_id": "CreateCloudWorkloadSecurityAgentRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CloudWorkloadSecurityAgentRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "My Agent rule",
+            "enabled": true,
+            "expression": "exec.file.name",
+            "filters": [],
+            "name": "my_agent_rule"
+          },
+          "type": "agent_rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules"
+  },
+  "scenario": "Create a Workload Protection agent rule (US1-FED) returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

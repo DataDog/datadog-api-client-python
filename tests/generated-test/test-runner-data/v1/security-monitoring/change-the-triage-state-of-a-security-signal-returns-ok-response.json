@@ -1,0 +1,46 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v1/Security Monitoring/Change the triage state of a security signal returns \"OK\" response",
+  "operation_id": "EditSecurityMonitoringSignalState",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SignalStateUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "archiveReason": "none",
+        "state": "open"
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "signal_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "AQAAAYDiB_Ol8PbzFAAAAABBWURpQl9PbEFBQU0yeXhGTG9ZV2JnQUE"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/security_analytics/signals/{signal_id}/state"
+  },
+  "scenario": "Change the triage state of a security signal returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

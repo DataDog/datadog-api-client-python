@@ -1,0 +1,35 @@
+{
+  "api": "Teams",
+  "expected_status": 404,
+  "feature": "Teams",
+  "id": "v2/Teams/Get team memberships returns \"API error response.\" response",
+  "operation_id": "GetTeamMemberships",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "REPLACE.ME"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/memberships"
+  },
+  "scenario": "Get team memberships returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

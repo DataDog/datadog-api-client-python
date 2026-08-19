@@ -1,0 +1,34 @@
+{
+  "api": "ActionsDatastores",
+  "expected_status": 400,
+  "feature": "Actions Datastores",
+  "id": "v2/Actions Datastores/Create datastore returns \"Bad Request\" response",
+  "operation_id": "CreateDatastore",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateAppsDatastoreRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "datastore-name",
+            "primary_column_name": "0invalid_key"
+          },
+          "type": "datastores"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/actions-datastores"
+  },
+  "scenario": "Create datastore returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

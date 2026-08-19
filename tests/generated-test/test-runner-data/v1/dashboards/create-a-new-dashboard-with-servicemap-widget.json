@@ -1,0 +1,53 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with servicemap widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/servicemap_widget.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "filters": [
+                "env:none",
+                "environment:*"
+              ],
+              "service": "",
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "servicemap"
+            },
+            "layout": {
+              "height": 15,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with servicemap widget",
+  "schema_version": 1,
+  "version": "v1"
+}

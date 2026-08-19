@@ -1,0 +1,36 @@
+{
+  "api": "ErrorTracking",
+  "expected_status": 400,
+  "feature": "Error Tracking",
+  "id": "v2/Error Tracking/Search error tracking issues returns \"Bad Request\" response",
+  "operation_id": "SearchIssues",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IssuesSearchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "from": 1671612804000,
+            "query": "service:orders-* AND @language:go",
+            "to": 1671620004000,
+            "track": "invalid-track"
+          },
+          "type": "search_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/error-tracking/issues/search"
+  },
+  "scenario": "Search error tracking issues returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

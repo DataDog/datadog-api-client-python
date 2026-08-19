@@ -1,0 +1,35 @@
+{
+  "api": "Dashboards",
+  "expected_status": 404,
+  "feature": "Dashboards",
+  "id": "v2/Dashboards/Get usage stats for a dashboard returns \"Not Found\" response",
+  "operation_id": "GetDashboardUsage",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "dashboard_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "xxx-xxx-xxx"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/dashboards/{dashboard_id}/usage"
+  },
+  "scenario": "Get usage stats for a dashboard returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,34 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Import an incident returns \"CREATED\" response",
+  "operation_id": "ImportIncident",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentImportRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "title": "{{unique}}",
+            "visibility": "organization"
+          },
+          "type": "incidents"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/import"
+  },
+  "scenario": "Import an incident returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

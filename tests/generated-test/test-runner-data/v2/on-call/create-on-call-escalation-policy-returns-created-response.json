@@ -1,0 +1,101 @@
+{
+  "api": "On-Call",
+  "expected_status": 201,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Create On-Call escalation policy returns \"Created\" response",
+  "operation_id": "CreateOnCallEscalationPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "EscalationPolicyCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }}",
+            "resolve_page_on_policy_end": true,
+            "retries": 2,
+            "steps": [
+              {
+                "assignment": "default",
+                "escalate_after_seconds": 3600,
+                "targets": [
+                  {
+                    "id": "{{ user.data.id }}",
+                    "type": "users"
+                  },
+                  {
+                    "id": "{{ schedule.data.id }}",
+                    "type": "schedules"
+                  },
+                  {
+                    "config": {
+                      "schedule": {
+                        "position": "previous"
+                      }
+                    },
+                    "id": "{{ schedule.data.id }}",
+                    "type": "schedules"
+                  },
+                  {
+                    "id": "{{ dd_team.data.id }}",
+                    "type": "teams"
+                  }
+                ]
+              },
+              {
+                "assignment": "round-robin",
+                "escalate_after_seconds": 3600,
+                "targets": [
+                  {
+                    "id": "{{ dd_team.data.id }}",
+                    "type": "teams"
+                  }
+                ]
+              }
+            ]
+          },
+          "relationships": {
+            "teams": {
+              "data": [
+                {
+                  "id": "{{ dd_team.data.id }}",
+                  "type": "teams"
+                }
+              ]
+            }
+          },
+          "type": "policies"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "steps.targets"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/escalation-policies"
+  },
+  "scenario": "Create On-Call escalation policy returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

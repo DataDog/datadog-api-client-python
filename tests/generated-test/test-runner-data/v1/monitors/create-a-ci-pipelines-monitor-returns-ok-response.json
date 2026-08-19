@@ -1,0 +1,41 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a ci-pipelines monitor returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "some message Notify: @hipchat-channel",
+        "name": "{{ unique }}",
+        "options": {
+          "thresholds": {
+            "critical": 1
+          }
+        },
+        "priority": 3,
+        "query": "ci-pipelines(\"ci_level:pipeline @git.branch:staging* @ci.status:error\").rollup(\"count\").by(\"@git.branch,@ci.pipeline.name\").last(\"5m\") >= 1",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "ci-pipelines alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a ci-pipelines monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

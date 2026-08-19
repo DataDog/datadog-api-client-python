@@ -1,0 +1,32 @@
+{
+  "api": "DORAMetrics",
+  "expected_status": 400,
+  "feature": "DORA Metrics",
+  "id": "v2/DORA Metrics/Get a list of failure events returns \"Bad Request\" response",
+  "operation_id": "ListDORAFailures",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DORAListFailuresRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "limit": 10
+          }
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/dora/failures"
+  },
+  "scenario": "Get a list of failure events returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

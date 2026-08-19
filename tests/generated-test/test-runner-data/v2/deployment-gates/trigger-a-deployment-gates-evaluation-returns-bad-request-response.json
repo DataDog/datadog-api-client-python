@@ -1,0 +1,34 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 400,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Trigger a deployment gates evaluation returns \"Bad request.\" response",
+  "operation_id": "TriggerDeploymentGatesEvaluation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DeploymentGatesEvaluationRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "env": "",
+            "service": "my-service"
+          },
+          "type": "deployment_gates_evaluation_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/deployments/gates/evaluation"
+  },
+  "scenario": "Trigger a deployment gates evaluation returns \"Bad request.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

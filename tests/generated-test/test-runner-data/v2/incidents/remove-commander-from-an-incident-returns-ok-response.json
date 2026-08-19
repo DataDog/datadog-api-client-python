@@ -1,0 +1,53 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Remove commander from an incident returns \"OK\" response",
+  "operation_id": "UpdateIncident",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "id": "{{incident.data.id}}",
+          "relationships": {
+            "commander_user": {
+              "data": null
+            }
+          },
+          "type": "incidents"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}"
+  },
+  "scenario": "Remove commander from an incident returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

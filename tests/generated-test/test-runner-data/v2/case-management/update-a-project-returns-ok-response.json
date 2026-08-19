@@ -1,0 +1,50 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 200,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Update a project returns \"OK\" response",
+  "operation_id": "UpdateProject",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ProjectUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Updated Project Name {{ unique }}"
+          },
+          "type": "project"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "project_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "d4bbe1af-f36e-42f1-87c1-493ca35c320e"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/projects/{project_id}"
+  },
+  "scenario": "Update a project returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

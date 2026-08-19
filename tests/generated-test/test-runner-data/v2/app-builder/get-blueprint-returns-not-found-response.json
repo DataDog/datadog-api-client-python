@@ -1,0 +1,35 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 404,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Get Blueprint returns \"Not Found\" response",
+  "operation_id": "GetBlueprint",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "blueprint_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000001"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/blueprint/{blueprint_id}"
+  },
+  "scenario": "Get Blueprint returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

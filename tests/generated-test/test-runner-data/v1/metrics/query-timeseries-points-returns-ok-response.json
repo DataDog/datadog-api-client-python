@@ -1,0 +1,71 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v1/Metrics/Query timeseries points returns \"OK\" response",
+  "operation_id": "QueryMetrics",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "from",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": {
+            "$openapi_transformer_template": "{{ timestamp(\"now - 1d\") }}"
+          }
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "to",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": {
+            "$openapi_transformer_template": "{{ timestamp(\"now\") }}"
+          }
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "system.cpu.idle{*}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/query"
+  },
+  "scenario": "Query timeseries points returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

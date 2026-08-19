@@ -1,0 +1,49 @@
+{
+  "api": "ReferenceTables",
+  "expected_status": 400,
+  "feature": "Reference Tables",
+  "id": "v2/Reference Tables/Create reference table without upload or access details returns \"Bad Request\" response",
+  "operation_id": "CreateReferenceTable",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateTableRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Test reference table without upload or access details",
+            "schema": {
+              "fields": [
+                {
+                  "name": "id",
+                  "type": "STRING"
+                }
+              ],
+              "primary_keys": [
+                "id"
+              ]
+            },
+            "source": "LOCAL_FILE",
+            "table_name": "test_invalid_table_{{ unique }}",
+            "tags": [
+              "test_tag"
+            ]
+          },
+          "type": "reference_table"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/reference-tables/tables"
+  },
+  "scenario": "Create reference table without upload or access details returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

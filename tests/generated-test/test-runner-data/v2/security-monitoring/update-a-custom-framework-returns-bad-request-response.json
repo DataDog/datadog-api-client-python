@@ -1,0 +1,81 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a custom framework returns \"Bad Request\" response",
+  "operation_id": "UpdateCustomFramework",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateCustomFrameworkRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "handle": "",
+            "name": "",
+            "requirements": [
+              {
+                "controls": [
+                  {
+                    "name": "",
+                    "rules_id": [
+                      ""
+                    ]
+                  }
+                ],
+                "name": ""
+              }
+            ],
+            "version": ""
+          },
+          "type": "custom_framework"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "handle",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "create-framework-new"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "version",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "10"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cloud_security_management/custom_frameworks/{handle}/{version}"
+  },
+  "scenario": "Update a custom framework returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

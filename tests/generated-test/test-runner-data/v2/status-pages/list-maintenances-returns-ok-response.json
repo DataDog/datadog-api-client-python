@@ -1,0 +1,18 @@
+{
+  "api": "StatusPages",
+  "expected_status": 200,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/List maintenances returns \"OK\" response",
+  "operation_id": "ListMaintenances",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/statuspages/maintenances"
+  },
+  "scenario": "List maintenances returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 404,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Delete App returns \"Not Found\" response",
+  "operation_id": "DeleteApp",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "7addb29b-f935-472c-ae79-d1963979a23e"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}"
+  },
+  "scenario": "Delete App returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

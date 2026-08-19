@@ -1,0 +1,33 @@
+{
+  "api": "Metrics",
+  "expected_status": 400,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Reorder tag indexing rules returns \"Bad Request\" response",
+  "operation_id": "ReorderTagIndexingRules",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TagIndexingRuleOrderRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "rule_ids": []
+          },
+          "type": "tag_indexing_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/metrics/tag-indexing-rules/order"
+  },
+  "scenario": "Reorder tag indexing rules returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

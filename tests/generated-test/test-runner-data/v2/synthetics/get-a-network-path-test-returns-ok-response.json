@@ -1,0 +1,35 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v2/Synthetics/Get a Network Path test returns \"OK\" response",
+  "operation_id": "GetSyntheticsNetworkTest",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "public_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "c7a-uwa-wn2"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/synthetics/tests/network/{public_id}"
+  },
+  "scenario": "Get a Network Path test returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

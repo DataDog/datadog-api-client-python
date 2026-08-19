@@ -1,0 +1,45 @@
+{
+  "api": "ServiceLevelObjectiveCorrections",
+  "expected_status": 200,
+  "feature": "Service Level Objective Corrections",
+  "id": "v1/Service Level Objective Corrections/Update an SLO correction returns \"OK\" response",
+  "operation_id": "UpdateSLOCorrection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SLOCorrectionUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\": {\"attributes\": {\"category\": \"Deployment\", \"description\": \"{{ unique }}\", \"end\": {{ timestamp(\"now + 1h\") }}, \"start\": {{ timestamp(\"now\") }}, \"timezone\": \"UTC\"}, \"type\": \"correction\"}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "slo_correction_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "correction.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/slo/correction/{slo_correction_id}"
+  },
+  "scenario": "Update an SLO correction returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

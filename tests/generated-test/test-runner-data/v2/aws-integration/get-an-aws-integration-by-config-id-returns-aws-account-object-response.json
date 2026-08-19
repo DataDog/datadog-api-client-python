@@ -1,0 +1,35 @@
+{
+  "api": "AWSIntegration",
+  "expected_status": 200,
+  "feature": "AWS Integration",
+  "id": "v2/AWS Integration/Get an AWS integration by config ID returns \"AWS Account object\" response",
+  "operation_id": "GetAWSAccount",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "aws_account_config_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "aws_account_v2.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/aws/accounts/{aws_account_config_id}"
+  },
+  "scenario": "Get an AWS integration by config ID returns \"AWS Account object\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

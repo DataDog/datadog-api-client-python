@@ -1,0 +1,60 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Update a shared dashboard with selectable_template_vars returns \"OK\" response",
+  "operation_id": "UpdatePublicDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SharedDashboardUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "global_time": {
+          "live_span": "15m"
+        },
+        "selectable_template_vars": [
+          {
+            "default_value": "*",
+            "name": "group_by_var",
+            "type": "group",
+            "visible_tags": [
+              "selectableValue1",
+              "selectableValue2"
+            ]
+          }
+        ],
+        "share_list": [],
+        "share_type": "open"
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "token",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "shared_dashboard.token",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard/public/{token}"
+  },
+  "scenario": "Update a shared dashboard with selectable_template_vars returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

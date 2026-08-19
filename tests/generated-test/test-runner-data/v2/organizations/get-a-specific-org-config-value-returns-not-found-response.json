@@ -1,0 +1,35 @@
+{
+  "api": "Organizations",
+  "expected_status": 404,
+  "feature": "Organizations",
+  "id": "v2/Organizations/Get a specific Org Config value returns \"Not Found\" response",
+  "operation_id": "GetOrgConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "org_config_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "i_dont_exist"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/org_configs/{org_config_name}"
+  },
+  "scenario": "Get a specific Org Config value returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

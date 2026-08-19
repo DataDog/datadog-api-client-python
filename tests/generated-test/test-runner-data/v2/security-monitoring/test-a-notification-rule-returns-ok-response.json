@@ -1,0 +1,47 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Test a notification rule returns \"OK\" response",
+  "operation_id": "SendSecurityMonitoringNotificationPreview",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateNotificationRuleParameters",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "name": "Rule 1",
+            "selectors": {
+              "query": "env:prod",
+              "rule_types": [
+                "log_detection"
+              ],
+              "severities": [
+                "critical"
+              ],
+              "trigger_source": "security_signals"
+            },
+            "targets": [
+              "@john.doe@email.com"
+            ]
+          },
+          "type": "notification_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/configuration/notification_rules/send_notification_preview"
+  },
+  "scenario": "Test a notification rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

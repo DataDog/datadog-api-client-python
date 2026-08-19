@@ -1,0 +1,37 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Create Cloud Cost Management AWS CUR config returns \"OK\" response",
+  "operation_id": "CreateCostAWSCURConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AwsCURConfigPostRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "account_id": "123456789123",
+            "bucket_name": "dd-cost-bucket",
+            "bucket_region": "us-east-1",
+            "report_name": "dd-report-name",
+            "report_prefix": "dd-report-prefix"
+          },
+          "type": "aws_cur_config_post_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cost/aws_cur_config"
+  },
+  "scenario": "Create Cloud Cost Management AWS CUR config returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

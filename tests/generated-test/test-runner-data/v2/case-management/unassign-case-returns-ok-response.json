@@ -1,0 +1,47 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 200,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Unassign case returns \"OK\" response",
+  "operation_id": "UnassignCase",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CaseEmptyRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "type": "case"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}/unassign"
+  },
+  "scenario": "Unassign case returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

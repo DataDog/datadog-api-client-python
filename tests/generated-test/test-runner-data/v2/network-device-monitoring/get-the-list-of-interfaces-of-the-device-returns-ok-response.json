@@ -1,0 +1,51 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 200,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/Get the list of interfaces of the device returns \"OK\" response",
+  "operation_id": "GetInterfaces",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "device_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "default:1.2.3.4"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "get_ip_addresses",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ndm/interfaces"
+  },
+  "scenario": "Get the list of interfaces of the device returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

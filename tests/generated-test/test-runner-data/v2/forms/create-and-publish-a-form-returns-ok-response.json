@@ -1,0 +1,39 @@
+{
+  "api": "Forms",
+  "expected_status": 200,
+  "feature": "Forms",
+  "id": "v2/Forms/Create and publish a form returns \"OK\" response",
+  "operation_id": "CreateAndPublishForm",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateFormRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "anonymous": false,
+            "data_definition": {},
+            "description": "A form to collect user feedback.",
+            "idp_survey": false,
+            "name": "User Feedback Form",
+            "single_response": false,
+            "ui_definition": {}
+          },
+          "type": "forms"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/forms/create_and_publish"
+  },
+  "scenario": "Create and publish a form returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

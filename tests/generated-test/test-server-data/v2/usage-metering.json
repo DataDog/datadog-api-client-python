@@ -1,0 +1,828 @@
+{
+  "feature": "Usage Metering",
+  "recordings": [
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2023-11-16T19:41:02.013Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost_by_tag/monthly_cost_attribution",
+            "query": [
+              [
+                "end_month",
+                "2023-11-13T19:41:02.013Z"
+              ],
+              [
+                "fields",
+                "not_a_product"
+              ],
+              [
+                "start_month",
+                "2023-11-11T19:41:02.013Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"API called with non-parent org keys. Data is only available at the root level org\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get Monthly Cost Attribution returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2023-11-16T19:43:19.607Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost_by_tag/monthly_cost_attribution",
+            "query": [
+              [
+                "end_month",
+                "2023-11-13T19:43:19.607Z"
+              ],
+              [
+                "fields",
+                "infra_host_total_cost"
+              ],
+              [
+                "start_month",
+                "2023-11-11T19:43:19.607Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get Monthly Cost Attribution returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2023-11-16T16:03:39.691Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost_by_tag/active_billing_dimensions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"billing_dimensions\",\"id\":\"f145e21e840c6db03f75c179877629eb08531aa6f314f97658261680e49ab1f1\",\"attributes\":{\"values\":[\"apm_fargate\",\"apm_host\",\"apm_host_enterprise\",\"apm_host_no_usm\",\"apm_host_pro\",\"apm_profiler_host\",\"apm_trace_search\",\"application_security_fargate\",\"application_security_host\",\"application_vulnerability_management_oss_host\",\"audit_trail\",\"ci_pipeline\",\"ci_pipeline_indexed_spans\",\"ci_test_indexed_spans\",\"ci_testing\",\"cloud_cost_management\",\"csm_container_enterprise\",\"csm_host_enterprise\",\"csm_host_pro\",\"cspm_container\",\"cspm_host\",\"custom_event\",\"cws_container\",\"cws_host\",\"data_stream_monitoring\",\"dbm_host\",\"dbm_normalized_queries\",\"fargate_container\",\"fargate_container_apm_and_profiler\",\"fargate_container_profiler\",\"incident_management\",\"infra_and_apm_host\",\"infra_container\",\"infra_container_excl_agent\",\"infra_host\",\"ingested_spans\",\"ingested_timeseries\",\"iot\",\"lambda_function\",\"logs_forwarding\",\"logs_indexed_15day\",\"logs_indexed_180day\",\"logs_indexed_30day\",\"logs_indexed_360day\",\"logs_indexed_3day\",\"logs_indexed_45day\",\"logs_indexed_60day\",\"logs_indexed_7day\",\"logs_indexed_90day\",\"logs_indexed_custom_retention\",\"logs_ingested\",\"network_device\",\"npm_host\",\"observability_pipeline\",\"online_archive\",\"premier_support\",\"prof_container\",\"prof_host\",\"rum\",\"rum_lite\",\"rum_replay\",\"sensitive_data_scanner\",\"serverless_apm\",\"serverless_infra\",\"serverless_invocation\",\"siem\",\"standard_timeseries\",\"synthetics_api_tests\",\"synthetics_app_testing\",\"synthetics_browser_checks\",\"timeseries\",\"usm_standalone\",\"usm_within_infra_host\",\"workflow_execution\"],\"month\":\"2023-10-01T00:00:00Z\"}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get active billing dimensions for cost attribution returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2026-06-02T19:26:31.725Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/summary/available_fields",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"id\":null,\"links\":null,\"status\":\"400\",\"code\":null,\"title\":\"Bad Request\",\"detail\":\"API called with non-parent org keys. Data is only available at the root level org\",\"source\":null,\"meta\":null}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get available fields for usage summary returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2024-10-28T16:04:40.774Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/billing_dimension_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"id\":null,\"links\":null,\"status\":\"400\",\"code\":null,\"title\":\"Bad Request\",\"detail\":\"API called with non-parent org keys. Data is only available at the root level org\",\"source\":null,\"meta\":null}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get billing dimension mapping for usage endpoints returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-04-25T17:07:01.561Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/cost_by_org",
+            "query": [
+              [
+                "start_month",
+                "2022-04-22T17:07:01.561Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"attributes\":{\"org_name\":\"RQ Dummy Tests\",\"public_id\":\"fasjyydbcgwwc2uc\",\"total_cost\":73.17,\"charges\":[{\"charge_type\":\"committed\",\"cost\":0,\"product_name\":\"infra_host\"},{\"charge_type\":\"on_demand\",\"cost\":72,\"product_name\":\"synthetics_api_tests\"},{\"charge_type\":\"committed\",\"cost\":1.17,\"product_name\":\"infra_host\"}],\"date\":\"2022-04-25T17:00:00+00:00\"},\"type\":\"cost_by_org\",\"id\":\"5d1702ab10f060719ae5aa1fd7ba09e3d7e0fb371b8319051c616a1fcad254e9\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get cost across multi-org account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-04-25T17:07:01.561Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/estimated_cost_by_org",
+            "query": [
+              [
+                "end_date",
+                "2022-04-22T17:07:01.561Z"
+              ],
+              [
+                "start_date",
+                "2022-04-20T17:07:01.561Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"attributes\":{\"org_name\":\"RQ Dummy Tests\",\"public_id\":\"fasjyydbcgwwc2uc\",\"total_cost\":73.17,\"charges\":[{\"charge_type\":\"committed\",\"cost\":0,\"product_name\":\"infra_host\"},{\"charge_type\":\"on_demand\",\"cost\":72,\"product_name\":\"synthetics_api_tests\"},{\"charge_type\":\"committed\",\"cost\":1.17,\"product_name\":\"infra_host\"}],\"date\":\"2022-04-25T17:00:00+00:00\"},\"type\":\"cost_by_org\",\"id\":\"5d1702ab10f060719ae5aa1fd7ba09e3d7e0fb371b8319051c616a1fcad254e9\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get estimated cost across multi-org account with date returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-04-25T17:07:01.561Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/estimated_cost_by_org",
+            "query": [
+              [
+                "end_month",
+                "2022-04-22T17:07:01.561Z"
+              ],
+              [
+                "start_month",
+                "2022-04-20T17:07:01.561Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"attributes\":{\"org_name\":\"RQ Dummy Tests\",\"public_id\":\"fasjyydbcgwwc2uc\",\"total_cost\":73.17,\"charges\":[{\"charge_type\":\"committed\",\"cost\":0,\"product_name\":\"infra_host\"},{\"charge_type\":\"on_demand\",\"cost\":72,\"product_name\":\"synthetics_api_tests\"},{\"charge_type\":\"committed\",\"cost\":1.17,\"product_name\":\"infra_host\"}],\"date\":\"2022-04-25T17:00:00+00:00\"},\"type\":\"cost_by_org\",\"id\":\"5d1702ab10f060719ae5aa1fd7ba09e3d7e0fb371b8319051c616a1fcad254e9\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get estimated cost across multi-org account with month returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-11-21T21:58:43.871Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/historical_cost",
+            "query": [
+              [
+                "start_month",
+                "2022-09-21T21:58:43.871Z"
+              ],
+              [
+                "view",
+                "sub-org"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get historical cost across your account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-07-19T14:57:41.335Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/hourly_usage",
+            "query": [
+              [
+                "filter[product_families]",
+                "infra_hosts"
+              ],
+              [
+                "filter[timestamp][end]",
+                "2022-07-14T14:57:41.335Z"
+              ],
+              [
+                "filter[timestamp][start]",
+                "2022-07-16T14:57:41.335Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get hourly usage by product family returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-07-19T14:57:41.821Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/hourly_usage",
+            "query": [
+              [
+                "filter[product_families]",
+                "infra_hosts"
+              ],
+              [
+                "filter[timestamp][start]",
+                "2022-07-16T14:57:41.821Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T14:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"c2d81d3ab0e2330402ba194f525ac02b0e561dbaf1e30fdc9d900551ca104e6c\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T15:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"aab388e6fa569317272aec7a7b8769bf6400c8b3e3163e34c5ba8fc8b1ea962c\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T16:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"a7480a9641c6bb5609a623c24f9be58f6bd0e0f8b39c23813be2e5e9f37465df\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T17:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"3ece398146b5e6863932aaabb340a35dc3f678a10b8731dd1aa6cefb01a05a50\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T18:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"db5610645e040ceb1e34726488331e256688b629700b0fab78c62ed4e681232e\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T19:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"317972994b0ef9e9c7b003ab0f1a28db970c738229bc8eb99b5f40863bd31ae7\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T20:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"7b4af48ad0743367a787bff94d6fb23dc4f6bd1721846b656aefcaa0c97094af\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T21:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"a26d4f98ebefc52c3e3ff41947df05bf792c12fff32a450c208b8a5579ea636c\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T22:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"284445d0d64b997e3a799f9a9c0b37a75979f17da92d3b87c102b334ff2e8c55\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-16T23:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"27cd01fcc3390288a50d1e9bd56fdf2e65db299ff59fd167eae5dcc6afefacbe\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T00:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"31c2b4d1ad3e227ee84c29aca58c3a82fa29d334434d9192c7c488ab125a831c\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T01:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"773dd70bab3e291c460d1263d4b8f2fed2f649b5c31227acd34819b6b8fa93cf\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T02:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"adda5d505c6d83890ca97ecdfd9d0dab915da014b4b87abd43a909c3453cb60d\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T03:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"d7b5724fb49109e31700bf34aa6527e0a097359f3917288c351617d5042e6930\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T04:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"826bc80a5789a931a674eecf3491b3aea9cf11a01749f57ae45496c7bede96a7\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T05:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"b8f4c50da05e3413a2618ec30ae193482b28ef2eb318541de68751ad32f267d0\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T06:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"bc403917f58538e7cc57934de186bb0975e1667780030e77464c46bcc07a108e\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T07:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"15aff389986ebee357e66194ba015afcf4ce87f262e0cbe635fda457abf36bbb\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T08:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"a92fa8990a961de5fbc1813a004587fc01eba595bd382d75b85fe88e63bafea6\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T09:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"a8c6b8633bb710eb4eff1bdb6046354635b9bb1e99c3de3fd2f4efab6a5c177f\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T10:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"6623ba9e88fb7491794d262f121dec195afb88ac8a85653805c8dff1b604da1c\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T11:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"b690150b84610dbc7a4fd2c37da96e69bc43ce8ce7ee51af7d47c32054c6df44\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T12:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"a03a5f4b9967b962f1de6cc80b696e3a1562ff733834b8cec6540f9cb884236b\"},{\"attributes\":{\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"timestamp\":\"2022-07-17T13:00:00+00:00\",\"region\":\"us\",\"measurements\":[{\"usage_type\":\"agent_host_count\",\"value\":14},{\"usage_type\":\"alibaba_host_count\",\"value\":0},{\"usage_type\":\"apm_azure_app_service_host_count\",\"value\":0},{\"usage_type\":\"apm_host_count\",\"value\":4},{\"usage_type\":\"aws_host_count\",\"value\":0},{\"usage_type\":\"azure_host_count\",\"value\":0},{\"usage_type\":\"container_count\",\"value\":null},{\"usage_type\":\"gcp_host_count\",\"value\":0},{\"usage_type\":\"heroku_host_count\",\"value\":0},{\"usage_type\":\"host_count\",\"value\":14},{\"usage_type\":\"infra_azure_app_service\",\"value\":0},{\"usage_type\":\"opentelemetry_host_count\",\"value\":0},{\"usage_type\":\"vsphere_host_count\",\"value\":0}],\"product_family\":\"infra_hosts\"},\"type\":\"usage_timeseries\",\"id\":\"07e22e70cfb7efe81ffdd0265cdea8417b0fbf4d9e8cb9f862bbff581fe7e5ac\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get hourly usage by product family returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-05-02T16:40:49.302Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/application_security",
+            "query": [
+              [
+                "end_hr",
+                "2022-04-27T16:40:49.302Z"
+              ],
+              [
+                "start_hr",
+                "2022-04-29T16:40:49.302Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get hourly usage for Application Security returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2024-01-24T20:56:23.911Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/lambda_traced_invocations",
+            "query": [
+              [
+                "end_hr",
+                "2024-01-19T20:56:23.911Z"
+              ],
+              [
+                "start_hr",
+                "2024-01-21T20:56:23.911Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get hourly usage for Lambda traced invocations returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2024-01-24T20:54:39.781Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/lambda_traced_invocations",
+            "query": [
+              [
+                "end_hr",
+                "2024-01-21T20:54:39.781Z"
+              ],
+              [
+                "start_hr",
+                "2024-01-19T20:54:39.781Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"41945ceef2349387d82c498d0d83cb88b2c57e90d273d9cfa0826d3cac2ecc45\",\"type\":\"usage_timeseries\",\"attributes\":{\"product_family\":\"lambda-traced-invocations\",\"usage_type\":\"lambda_traced_invocations_count\",\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"region\":\"us\",\"timeseries\":[{\"timestamp\":\"2024-01-19T20:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-19T21:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-19T22:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-19T23:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T00:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T01:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T02:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T03:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T04:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T05:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T06:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T07:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T08:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T09:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T10:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T11:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T12:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T13:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T14:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T15:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T16:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T17:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T18:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T19:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T20:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T21:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T22:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-20T23:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T00:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T01:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T02:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T03:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T04:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T05:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T06:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T07:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T08:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T09:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T10:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T11:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T12:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T13:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T14:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T15:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T16:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T17:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T18:00:00+00:00\",\"value\":null},{\"timestamp\":\"2024-01-21T19:00:00+00:00\",\"value\":null}]}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get hourly usage for Lambda traced invocations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-04-20T18:23:39.831Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/observability_pipelines",
+            "query": [
+              [
+                "end_hr",
+                "2022-04-15T18:23:39.831Z"
+              ],
+              [
+                "start_hr",
+                "2022-04-17T18:23:39.831Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"start_hr [YYYY-MM-DDThh] must be before end_hr [YYYY-MM-DDThh]\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get hourly usage for Observability Pipelines returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2023-10-16T15:16:50.772Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/application_security",
+            "query": [
+              [
+                "end_hr",
+                "2023-10-13T15:16:50.772Z"
+              ],
+              [
+                "start_hr",
+                "2023-10-11T15:16:50.772Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"f9835e00af7d43da5fa029132bb2227473df0f5dc80bf2cc1eb51ddb372f47d5\",\"type\":\"usage_timeseries\",\"attributes\":{\"product_family\":\"app-sec\",\"usage_type\":\"app_sec_host_count\",\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"region\":\"us\",\"timeseries\":[{\"timestamp\":\"2023-10-11T15:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T16:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T17:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T18:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T19:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T20:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T21:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T22:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T23:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T00:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T01:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T02:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T03:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T04:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T05:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T06:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T07:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T08:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T09:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T10:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T11:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T12:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T13:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T14:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T15:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T16:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T17:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T18:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T19:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T20:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T21:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T22:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T23:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T00:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T01:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T02:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T03:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T04:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T05:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T06:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T07:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T08:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T09:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T10:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T11:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T12:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T13:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T14:00:00+00:00\",\"value\":null}]}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get hourly usage for application security returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2023-10-16T15:14:35.114Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/observability_pipelines",
+            "query": [
+              [
+                "end_hr",
+                "2023-10-13T15:14:35.114Z"
+              ],
+              [
+                "start_hr",
+                "2023-10-11T15:14:35.114Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"b2fd311762e6a3cf23ce2e3dbd80e786a13193c6b28f01b296042c0e2f1264f9\",\"type\":\"usage_timeseries\",\"attributes\":{\"product_family\":\"observability-pipelines\",\"usage_type\":\"observability_pipelines_bytes_processed\",\"org_name\":\"DD Integration Tests (321813)\",\"public_id\":\"fasjyydbcgwwc2uc\",\"region\":\"us\",\"timeseries\":[{\"timestamp\":\"2023-10-11T15:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T16:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T17:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T18:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T19:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T20:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T21:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T22:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-11T23:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T00:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T01:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T02:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T03:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T04:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T05:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T06:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T07:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T08:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T09:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T10:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T11:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T12:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T13:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T14:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T15:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T16:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T17:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T18:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T19:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T20:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T21:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T22:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-12T23:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T00:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T01:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T02:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T03:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T04:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T05:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T06:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T07:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T08:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T09:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T10:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T11:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T12:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T13:00:00+00:00\",\"value\":null},{\"timestamp\":\"2023-10-13T14:00:00+00:00\",\"value\":null}]}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get hourly usage for observability pipelines returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2023-11-16T09:28:12.658Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/projected_cost",
+            "query": [
+              [
+                "view",
+                "sub-org"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"projected_cost\",\"id\":\"0e394fce15395fc02ab31e9968df0271e4b290e5647f44a56a47c91a03220f2d\",\"attributes\":{\"org_name\":\"Datadog \\u308c\\u304a \\ud83c\\udf7b\\u2600\\ufe0f\\ud83d\\ude0e\\ud83c\\udfd6\\ufe0f \\u30c7\\u30fc\\u30bf\\u30c9\\u30c3\\u30b0\",\"public_id\":\"yB5yjZ\",\"region\":\"us\",\"projected_total_cost\":270247170,\"date\":\"2023-11-30T00:00:00Z\",\"charges\":[{\"product_name\":\"apm_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"apm_host\",\"charge_type\":\"projected_on_demand\",\"cost\":3621671.999987},{\"product_name\":\"apm_host\",\"charge_type\":\"total\",\"cost\":3621671.999987},{\"product_name\":\"apm_trace_search\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"apm_trace_search\",\"charge_type\":\"projected_on_demand\",\"cost\":3478141.42732},{\"product_name\":\"apm_trace_search\",\"charge_type\":\"total\",\"cost\":3478141.42732},{\"product_name\":\"application_security_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"application_security_host\",\"charge_type\":\"projected_on_demand\",\"cost\":80748},{\"product_name\":\"application_security_host\",\"charge_type\":\"total\",\"cost\":80748},{\"product_name\":\"application_vulnerability_management_oss_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"application_vulnerability_management_oss_host\",\"charge_type\":\"projected_on_demand\",\"cost\":261075.000001},{\"product_name\":\"application_vulnerability_management_oss_host\",\"charge_type\":\"total\",\"cost\":261075.000001},{\"product_name\":\"audit_trail\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"audit_trail\",\"charge_type\":\"projected_on_demand\",\"cost\":7871276.838406},{\"product_name\":\"audit_trail\",\"charge_type\":\"total\",\"cost\":7871276.838406},{\"product_name\":\"ci_pipeline\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"ci_pipeline\",\"charge_type\":\"projected_on_demand\",\"cost\":30348},{\"product_name\":\"ci_pipeline\",\"charge_type\":\"total\",\"cost\":30348},{\"product_name\":\"ci_pipeline_indexed_spans\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"ci_pipeline_indexed_spans\",\"charge_type\":\"projected_on_demand\",\"cost\":0},{\"product_name\":\"ci_pipeline_indexed_spans\",\"charge_type\":\"total\",\"cost\":0},{\"product_name\":\"ci_test_indexed_spans\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"ci_test_indexed_spans\",\"charge_type\":\"projected_on_demand\",\"cost\":11280.06966},{\"product_name\":\"ci_test_indexed_spans\",\"charge_type\":\"total\",\"cost\":11280.06966},{\"product_name\":\"ci_testing\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"ci_testing\",\"charge_type\":\"projected_on_demand\",\"cost\":46458},{\"product_name\":\"ci_testing\",\"charge_type\":\"total\",\"cost\":46458},{\"product_name\":\"cloud_cost_management\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"cloud_cost_management\",\"charge_type\":\"projected_on_demand\",\"cost\":911206.8},{\"product_name\":\"cloud_cost_management\",\"charge_type\":\"total\",\"cost\":911206.8},{\"product_name\":\"cspm_container\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"cspm_container\",\"charge_type\":\"projected_on_demand\",\"cost\":975491.947438},{\"product_name\":\"cspm_container\",\"charge_type\":\"total\",\"cost\":975491.947438},{\"product_name\":\"cspm_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"cspm_host\",\"charge_type\":\"projected_on_demand\",\"cost\":939042.000004},{\"product_name\":\"cspm_host\",\"charge_type\":\"total\",\"cost\":939042.000004},{\"product_name\":\"custom_event\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"custom_event\",\"charge_type\":\"projected_on_demand\",\"cost\":0},{\"product_name\":\"custom_event\",\"charge_type\":\"total\",\"cost\":0},{\"product_name\":\"cws_container\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"cws_container\",\"charge_type\":\"projected_on_demand\",\"cost\":2046666.667701},{\"product_name\":\"cws_container\",\"charge_type\":\"total\",\"cost\":2046666.667701},{\"product_name\":\"cws_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"cws_host\",\"charge_type\":\"projected_on_demand\",\"cost\":1650114.000002},{\"product_name\":\"cws_host\",\"charge_type\":\"total\",\"cost\":1650114.000002},{\"product_name\":\"data_stream_monitoring\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"data_stream_monitoring\",\"charge_type\":\"projected_on_demand\",\"cost\":127476},{\"product_name\":\"data_stream_monitoring\",\"charge_type\":\"total\",\"cost\":127476},{\"product_name\":\"dbm_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"dbm_host\",\"charge_type\":\"projected_on_demand\",\"cost\":85680},{\"product_name\":\"dbm_host\",\"charge_type\":\"total\",\"cost\":85680},{\"product_name\":\"dbm_normalized_queries\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"dbm_normalized_queries\",\"charge_type\":\"projected_on_demand\",\"cost\":17961.482743},{\"product_name\":\"dbm_normalized_queries\",\"charge_type\":\"total\",\"cost\":17961.482743},{\"product_name\":\"fargate_container\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"fargate_container\",\"charge_type\":\"projected_on_demand\",\"cost\":12.6},{\"product_name\":\"fargate_container\",\"charge_type\":\"total\",\"cost\":12.6},{\"product_name\":\"infra_container_excl_agent\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"infra_container_excl_agent\",\"charge_type\":\"projected_on_demand\",\"cost\":983432.229551},{\"product_name\":\"infra_container_excl_agent\",\"charge_type\":\"total\",\"cost\":983432.229551},{\"product_name\":\"infra_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"infra_host\",\"charge_type\":\"projected_on_demand\",\"cost\":1948589.999991},{\"product_name\":\"infra_host\",\"charge_type\":\"total\",\"cost\":1948589.999991},{\"product_name\":\"ingested_spans\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"ingested_spans\",\"charge_type\":\"projected_on_demand\",\"cost\":763395.896172},{\"product_name\":\"ingested_spans\",\"charge_type\":\"total\",\"cost\":763395.896172},{\"product_name\":\"ingested_timeseries\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"ingested_timeseries\",\"charge_type\":\"projected_on_demand\",\"cost\":256290.95456},{\"product_name\":\"ingested_timeseries\",\"charge_type\":\"total\",\"cost\":256290.95456},{\"product_name\":\"iot\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"iot\",\"charge_type\":\"projected_on_demand\",\"cost\":86.4},{\"product_name\":\"iot\",\"charge_type\":\"total\",\"cost\":86.4},{\"product_name\":\"logs_forwarding\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_forwarding\",\"charge_type\":\"projected_on_demand\",\"cost\":34.75},{\"product_name\":\"logs_forwarding\",\"charge_type\":\"total\",\"cost\":34.75},{\"product_name\":\"logs_indexed_15day\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_15day\",\"charge_type\":\"projected_on_demand\",\"cost\":7970506.190932},{\"product_name\":\"logs_indexed_15day\",\"charge_type\":\"total\",\"cost\":7970506.190932},{\"product_name\":\"logs_indexed_180day\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_180day\",\"charge_type\":\"projected_on_demand\",\"cost\":2237.11},{\"product_name\":\"logs_indexed_180day\",\"charge_type\":\"total\",\"cost\":2237.11},{\"product_name\":\"logs_indexed_30day\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_30day\",\"charge_type\":\"projected_on_demand\",\"cost\":379727.51},{\"product_name\":\"logs_indexed_30day\",\"charge_type\":\"total\",\"cost\":379727.51},{\"product_name\":\"logs_indexed_3day\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_3day\",\"charge_type\":\"projected_on_demand\",\"cost\":1212.144311},{\"product_name\":\"logs_indexed_3day\",\"charge_type\":\"total\",\"cost\":1212.144311},{\"product_name\":\"logs_indexed_60day\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_60day\",\"charge_type\":\"projected_on_demand\",\"cost\":134101.664192},{\"product_name\":\"logs_indexed_60day\",\"charge_type\":\"total\",\"cost\":134101.664192},{\"product_name\":\"logs_indexed_7day\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_7day\",\"charge_type\":\"projected_on_demand\",\"cost\":278030.21},{\"product_name\":\"logs_indexed_7day\",\"charge_type\":\"total\",\"cost\":278030.21},{\"product_name\":\"logs_indexed_90day\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_90day\",\"charge_type\":\"projected_on_demand\",\"cost\":5078.064104},{\"product_name\":\"logs_indexed_90day\",\"charge_type\":\"total\",\"cost\":5078.064104},{\"product_name\":\"logs_indexed_custom_retention\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_indexed_custom_retention\",\"charge_type\":\"projected_on_demand\",\"cost\":1665269.902158},{\"product_name\":\"logs_indexed_custom_retention\",\"charge_type\":\"total\",\"cost\":1665269.902158},{\"product_name\":\"logs_ingested\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"logs_ingested\",\"charge_type\":\"projected_on_demand\",\"cost\":2023915.700005},{\"product_name\":\"logs_ingested\",\"charge_type\":\"total\",\"cost\":2023915.700005},{\"product_name\":\"network_device\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"network_device\",\"charge_type\":\"projected_on_demand\",\"cost\":153},{\"product_name\":\"network_device\",\"charge_type\":\"total\",\"cost\":153},{\"product_name\":\"npm_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"npm_host\",\"charge_type\":\"projected_on_demand\",\"cost\":668642.399999},{\"product_name\":\"npm_host\",\"charge_type\":\"total\",\"cost\":668642.399999},{\"product_name\":\"observability_pipeline\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"observability_pipeline\",\"charge_type\":\"projected_on_demand\",\"cost\":1.68},{\"product_name\":\"observability_pipeline\",\"charge_type\":\"total\",\"cost\":1.68},{\"product_name\":\"online_archive\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"online_archive\",\"charge_type\":\"projected_on_demand\",\"cost\":11650663.48518},{\"product_name\":\"online_archive\",\"charge_type\":\"total\",\"cost\":11650663.48518},{\"product_name\":\"prof_container\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"prof_container\",\"charge_type\":\"projected_on_demand\",\"cost\":0},{\"product_name\":\"prof_container\",\"charge_type\":\"total\",\"cost\":0},{\"product_name\":\"prof_host\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"prof_host\",\"charge_type\":\"projected_on_demand\",\"cost\":2064365.000008},{\"product_name\":\"prof_host\",\"charge_type\":\"total\",\"cost\":2064365.000008},{\"product_name\":\"rum_lite\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"rum_lite\",\"charge_type\":\"projected_on_demand\",\"cost\":1945.666125},{\"product_name\":\"rum_lite\",\"charge_type\":\"total\",\"cost\":1945.666125},{\"product_name\":\"rum_replay\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"rum_replay\",\"charge_type\":\"projected_on_demand\",\"cost\":47975.876199},{\"product_name\":\"rum_replay\",\"charge_type\":\"total\",\"cost\":47975.876199},{\"product_name\":\"sensitive_data_scanner\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"sensitive_data_scanner\",\"charge_type\":\"projected_on_demand\",\"cost\":19394406.000091},{\"product_name\":\"sensitive_data_scanner\",\"charge_type\":\"total\",\"cost\":19394406.000091},{\"product_name\":\"serverless_apm\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"serverless_apm\",\"charge_type\":\"projected_on_demand\",\"cost\":565.638894},{\"product_name\":\"serverless_apm\",\"charge_type\":\"total\",\"cost\":565.638894},{\"product_name\":\"serverless_infra\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"serverless_infra\",\"charge_type\":\"projected_on_demand\",\"cost\":1656},{\"product_name\":\"serverless_infra\",\"charge_type\":\"total\",\"cost\":1656},{\"product_name\":\"siem\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"siem\",\"charge_type\":\"projected_on_demand\",\"cost\":6063219.000025},{\"product_name\":\"siem\",\"charge_type\":\"total\",\"cost\":6063219.000025},{\"product_name\":\"synthetics_api_tests\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"synthetics_api_tests\",\"charge_type\":\"projected_on_demand\",\"cost\":2165315.836614},{\"product_name\":\"synthetics_api_tests\",\"charge_type\":\"total\",\"cost\":2165315.836614},{\"product_name\":\"synthetics_browser_checks\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"synthetics_browser_checks\",\"charge_type\":\"projected_on_demand\",\"cost\":700419.437998},{\"product_name\":\"synthetics_browser_checks\",\"charge_type\":\"total\",\"cost\":700419.437998},{\"product_name\":\"timeseries\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"timeseries\",\"charge_type\":\"projected_on_demand\",\"cost\":188889904.951552},{\"product_name\":\"timeseries\",\"charge_type\":\"total\",\"cost\":188889904.951552},{\"product_name\":\"usm_only_no_charge\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"usm_only_no_charge\",\"charge_type\":\"projected_on_demand\",\"cost\":0},{\"product_name\":\"usm_only_no_charge\",\"charge_type\":\"total\",\"cost\":0},{\"product_name\":\"workflow_execution\",\"charge_type\":\"projected_committed\",\"cost\":0},{\"product_name\":\"workflow_execution\",\"charge_type\":\"projected_on_demand\",\"cost\":31377.92},{\"product_name\":\"workflow_execution\",\"charge_type\":\"total\",\"cost\":31377.92}]}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get projected cost across your account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-11-03T21:08:41.229Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/estimated_cost",
+            "query": [
+              [
+                "start_date",
+                "2022-10-31T21:08:41.229Z"
+              ],
+              [
+                "start_month",
+                "2022-11-03T21:08:41.229Z"
+              ],
+              [
+                "view",
+                "sub-org"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"API called with non-parent org keys. Data is only available at the root level org\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "GetEstimatedCostByOrg with both start_month and start_date returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-07-29T14:22:55.359Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/estimated_cost",
+            "query": [
+              [
+                "start_date",
+                "2022-07-24T14:22:55.359Z"
+              ],
+              [
+                "view",
+                "sub-org"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "GetEstimatedCostByOrg with start_date returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2022-11-04T18:40:14.021Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/estimated_cost",
+            "query": [
+              [
+                "start_month",
+                "2022-11-04T18:40:14.021Z"
+              ],
+              [
+                "view",
+                "sub-org"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "GetEstimatedCostByOrg with start_month returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

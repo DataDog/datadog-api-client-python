@@ -1,0 +1,52 @@
+{
+  "api": "LogsMetrics",
+  "expected_status": 200,
+  "feature": "Logs Metrics",
+  "id": "v2/Logs Metrics/Update a log-based metric returns \"OK\" response",
+  "operation_id": "UpdateLogsMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsMetricUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "filter": {
+              "query": "{{ logs_metric.data.attributes.filter.query }}-updated"
+            }
+          },
+          "type": "logs_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "logs_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/metrics/{metric_id}"
+  },
+  "scenario": "Update a log-based metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "AWSIntegration",
+  "expected_status": 200,
+  "feature": "AWS Integration",
+  "id": "v2/AWS Integration/Get AWS integration standard IAM permissions returns \"AWS IAM Permissions object\" response",
+  "operation_id": "GetAWSIntegrationIAMPermissionsStandard",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/aws/iam_permissions/standard"
+  },
+  "scenario": "Get AWS integration standard IAM permissions returns \"AWS IAM Permissions object\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

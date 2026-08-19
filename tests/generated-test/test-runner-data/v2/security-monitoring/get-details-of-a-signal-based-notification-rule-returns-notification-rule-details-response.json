@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get details of a signal-based notification rule returns \"Notification rule details.\" response",
+  "operation_id": "GetSignalNotificationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_signal_notification_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/signals/notification_rules/{id}"
+  },
+  "scenario": "Get details of a signal-based notification rule returns \"Notification rule details.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 200,
+  "feature": "Service Level Objectives",
+  "id": "v1/Service Level Objectives/Get all SLOs returns \"OK\" response with pagination",
+  "operation_id": "ListSLOs",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "limit",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/slo"
+  },
+  "scenario": "Get all SLOs returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v1"
+}

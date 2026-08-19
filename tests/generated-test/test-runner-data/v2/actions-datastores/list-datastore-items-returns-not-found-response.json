@@ -1,0 +1,35 @@
+{
+  "api": "ActionsDatastores",
+  "expected_status": 404,
+  "feature": "Actions Datastores",
+  "id": "v2/Actions Datastores/List datastore items returns \"Not Found\" response",
+  "operation_id": "ListDatastoreItems",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "datastore_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "3cfdd0b8-c490-4969-8d51-69add64a70ea"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions-datastores/{datastore_id}/items"
+  },
+  "scenario": "List datastore items returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

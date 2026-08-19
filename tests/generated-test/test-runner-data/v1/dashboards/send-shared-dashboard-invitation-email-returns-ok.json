@@ -1,0 +1,50 @@
+{
+  "api": "Dashboards",
+  "expected_status": 201,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Send shared dashboard invitation email returns OK",
+  "operation_id": "SendPublicDashboardInvitation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SharedDashboardInvites",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "email": "{{unique_lower_alnum}}@datadoghq.com"
+          },
+          "type": "public_dashboard_invitation"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "token",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "shared_dashboard.token",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard/public/{token}/invitation"
+  },
+  "scenario": "Send shared dashboard invitation email returns OK",
+  "schema_version": 1,
+  "version": "v1"
+}

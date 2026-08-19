@@ -1,0 +1,35 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 404,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Get a budget returns \"Not Found\" response",
+  "operation_id": "GetBudget",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "budget_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "9d055d22-0a0a-0a0a-aaa0-00000000000a"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/budget/{budget_id}"
+  },
+  "scenario": "Get a budget returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

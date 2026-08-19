@@ -1,0 +1,49 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Create a monitor notification rule with conditional recipients returns \"OK\" response",
+  "operation_id": "CreateMonitorNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorNotificationRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "conditional_recipients": {
+              "conditions": [
+                {
+                  "recipients": [
+                    "slack-test-channel",
+                    "jira-test"
+                  ],
+                  "scope": "transition_type:is_alert"
+                }
+              ]
+            },
+            "filter": {
+              "tags": [
+                "test:{{ unique_lower }}"
+              ]
+            },
+            "name": "test rule"
+          },
+          "type": "monitor-notification-rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/notification_rule"
+  },
+  "scenario": "Create a monitor notification rule with conditional recipients returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

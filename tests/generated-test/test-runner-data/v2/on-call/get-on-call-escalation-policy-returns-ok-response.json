@@ -1,0 +1,51 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Get On-Call escalation policy returns \"OK\" response",
+  "operation_id": "GetOnCallEscalationPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "escalation_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "steps.targets"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/escalation-policies/{policy_id}"
+  },
+  "scenario": "Get On-Call escalation policy returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

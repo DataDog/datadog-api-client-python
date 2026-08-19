@@ -1,0 +1,18 @@
+{
+  "api": "CaseManagementType",
+  "expected_status": 200,
+  "feature": "Case Management Type",
+  "id": "v2/Case Management Type/Get all case types returns \"OK\" response",
+  "operation_id": "GetAllCaseTypes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cases/types"
+  },
+  "scenario": "Get all case types returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

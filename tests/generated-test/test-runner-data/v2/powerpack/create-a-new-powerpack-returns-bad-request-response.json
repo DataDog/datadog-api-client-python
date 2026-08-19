@@ -1,0 +1,52 @@
+{
+  "api": "Powerpack",
+  "expected_status": 400,
+  "feature": "Powerpack",
+  "id": "v2/Powerpack/Create a new powerpack returns \"Bad Request\" response",
+  "operation_id": "CreatePowerpack",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Powerpack",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Powerpack for ABC",
+            "group_widget": {
+              "definition": {
+                "layout_type": "ordered",
+                "type": "group1",
+                "widgets": []
+              }
+            },
+            "name": "Sample Powerpack",
+            "tags": [
+              "tag:foo1"
+            ],
+            "template_variables": [
+              {
+                "defaults": [
+                  "*"
+                ],
+                "name": "test"
+              }
+            ]
+          },
+          "type": "powerpack"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/powerpacks"
+  },
+  "scenario": "Create a new powerpack returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

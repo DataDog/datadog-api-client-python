@@ -1,0 +1,35 @@
+{
+  "api": "Users",
+  "expected_status": 200,
+  "feature": "Users",
+  "id": "v2/Users/List all users returns \"OK\" response with pagination",
+  "operation_id": "ListUsers",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/users"
+  },
+  "scenario": "List all users returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

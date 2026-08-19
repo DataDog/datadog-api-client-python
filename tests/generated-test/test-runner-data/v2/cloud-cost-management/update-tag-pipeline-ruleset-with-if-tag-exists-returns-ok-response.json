@@ -1,0 +1,68 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Update tag pipeline ruleset with if_tag_exists returns \"OK\" response",
+  "operation_id": "UpdateTagPipelinesRuleset",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateRulesetRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "last_version": 3611102,
+            "rules": [
+              {
+                "enabled": true,
+                "mapping": {
+                  "destination_key": "team_owner",
+                  "if_tag_exists": "replace",
+                  "source_keys": [
+                    "account_name",
+                    "account_id"
+                  ]
+                },
+                "name": "Account Name Mapping",
+                "query": null,
+                "reference_table": null
+              }
+            ]
+          },
+          "id": "New Ruleset",
+          "type": "update_ruleset"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "ruleset_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "ee10c3ff-312f-464c-b4f6-46adaa6d00a1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/tags/enrichment/{ruleset_id}"
+  },
+  "scenario": "Update tag pipeline ruleset with if_tag_exists returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

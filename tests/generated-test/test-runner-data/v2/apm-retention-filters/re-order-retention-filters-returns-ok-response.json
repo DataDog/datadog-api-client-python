@@ -1,0 +1,37 @@
+{
+  "api": "APMRetentionFilters",
+  "expected_status": 200,
+  "feature": "APM Retention Filters",
+  "id": "v2/APM Retention Filters/Re-order retention filters returns \"OK\" response",
+  "operation_id": "ReorderApmRetentionFilters",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ReorderRetentionFiltersRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "jdZrilSJQLqzb6Cu7aub9Q",
+            "type": "apm_retention_filter"
+          },
+          {
+            "id": "7RBOb7dLSYWI01yc3pIH8w",
+            "type": "apm_retention_filter"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/apm/config/retention-filters-execution-order"
+  },
+  "scenario": "Re-order retention filters returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

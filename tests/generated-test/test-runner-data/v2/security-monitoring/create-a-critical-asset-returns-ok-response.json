@@ -1,0 +1,39 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a critical asset returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringCriticalAsset",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringCriticalAssetCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "query": "host:{{ unique_lower_alnum }}",
+            "rule_query": "type:(log_detection OR signal_correlation OR workload_security OR application_security) source:cloudtrail",
+            "severity": "decrease",
+            "tags": [
+              "team:security",
+              "env:test"
+            ]
+          },
+          "type": "critical_assets"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/configuration/critical_assets"
+  },
+  "scenario": "Create a critical asset returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

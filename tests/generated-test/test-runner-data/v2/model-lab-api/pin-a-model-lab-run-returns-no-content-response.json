@@ -1,0 +1,35 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 204,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/Pin a Model Lab run returns \"No Content\" response",
+  "operation_id": "PinModelLabRun",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "run_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 70158
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/runs/{run_id}/pin"
+  },
+  "scenario": "Pin a Model Lab run returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

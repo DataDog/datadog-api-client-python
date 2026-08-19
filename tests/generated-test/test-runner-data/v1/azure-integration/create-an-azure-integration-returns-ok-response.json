@@ -1,0 +1,42 @@
+{
+  "api": "AzureIntegration",
+  "expected_status": 200,
+  "feature": "Azure Integration",
+  "id": "v1/Azure Integration/Create an Azure integration returns \"OK\" response",
+  "operation_id": "CreateAzureIntegration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AzureAccount",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "app_service_plan_filters": "key:value,filter:example",
+        "automute": true,
+        "client_id": "{{ uuid }}",
+        "client_secret": "TestingRh2nx664kUy5dIApvM54T4AtO",
+        "container_app_filters": "key:value,filter:example",
+        "cspm_enabled": true,
+        "custom_metrics_enabled": true,
+        "errors": [
+          "*"
+        ],
+        "host_filters": "key:value,filter:example",
+        "new_client_id": "{{ uuid }}",
+        "new_tenant_name": "{{ uuid }}",
+        "resource_collection_enabled": true,
+        "tenant_name": "{{ uuid }}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/azure"
+  },
+  "scenario": "Create an Azure integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

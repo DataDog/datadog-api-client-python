@@ -1,0 +1,55 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a Data Quality monitor with sensitivity returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "Data quality alert triggered",
+        "name": "{{ unique }}",
+        "options": {
+          "thresholds": {
+            "critical": 100
+          },
+          "variables": [
+            {
+              "data_source": "data_quality_metrics",
+              "filter": "search for column where `database:production AND table:users`",
+              "group_by": [
+                "entity_id"
+              ],
+              "measure": "row_count",
+              "monitor_options": {
+                "sensitivity": 2.5
+              },
+              "name": "query1"
+            }
+          ]
+        },
+        "priority": 3,
+        "query": "formula(\"query1\").last(\"5m\") > 100",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "data-quality alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a Data Quality monitor with sensitivity returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

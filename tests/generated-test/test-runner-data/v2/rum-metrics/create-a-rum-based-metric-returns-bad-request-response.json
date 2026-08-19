@@ -1,0 +1,40 @@
+{
+  "api": "RumMetrics",
+  "expected_status": 400,
+  "feature": "Rum Metrics",
+  "id": "v2/Rum Metrics/Create a RUM-based metric returns \"Bad Request\" response",
+  "operation_id": "CreateRumMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumMetricCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "compute": {
+              "aggregation_type": "count"
+            },
+            "event_type": "action",
+            "uniqueness": {
+              "when": "match"
+            }
+          },
+          "id": "rum.actions.invalid",
+          "type": "rum_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config/metrics"
+  },
+  "scenario": "Create a RUM-based metric returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

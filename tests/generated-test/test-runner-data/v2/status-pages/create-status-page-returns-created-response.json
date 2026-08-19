@@ -1,0 +1,48 @@
+{
+  "api": "StatusPages",
+  "expected_status": 201,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Create status page returns \"Created\" response",
+  "operation_id": "CreateStatusPage",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateStatusPageRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "components": [
+              {
+                "name": "Login",
+                "position": 0,
+                "type": "component"
+              },
+              {
+                "name": "Settings",
+                "position": 1,
+                "type": "component"
+              }
+            ],
+            "domain_prefix": "{{ unique_hash }}",
+            "name": "A Status Page",
+            "type": "internal",
+            "visualization_type": "bars_and_uptime_percentage"
+          },
+          "type": "status_pages"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/statuspages"
+  },
+  "scenario": "Create status page returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,45 @@
+{
+  "api": "DashboardLists",
+  "expected_status": 200,
+  "feature": "Dashboard Lists",
+  "id": "v1/Dashboard Lists/Update a dashboard list returns \"OK\" response",
+  "operation_id": "UpdateDashboardList",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DashboardList",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "name": "updated {{unique}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "list_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "dashboard_list.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard/lists/manual/{list_id}"
+  },
+  "scenario": "Update a dashboard list returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

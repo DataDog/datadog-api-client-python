@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get an indicator of compromise returns \"OK\" response",
+  "operation_id": "GetIndicatorOfCompromise",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "indicator",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "192.0.2.1"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include_triage_history",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/siem/ioc-explorer/indicator"
+  },
+  "scenario": "Get an indicator of compromise returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

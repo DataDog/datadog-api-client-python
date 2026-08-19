@@ -1,0 +1,53 @@
+{
+  "api": "RumMetrics",
+  "expected_status": 409,
+  "feature": "Rum Metrics",
+  "id": "v2/Rum Metrics/Update a RUM-based metric returns \"Conflict\" response",
+  "operation_id": "UpdateRumMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumMetricUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "compute": {
+              "include_percentiles": true
+            }
+          },
+          "id": "conflicting.id",
+          "type": "rum_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/metrics/{metric_id}"
+  },
+  "scenario": "Update a RUM-based metric returns \"Conflict\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

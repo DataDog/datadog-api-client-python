@@ -1,0 +1,28 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v1/Downtimes/Cancel downtimes by scope returns \"OK\" response",
+  "operation_id": "CancelDowntimesByScope",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CancelDowntimesByScopeRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "scope": "{{ downtime.scope[0] }}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/downtime/cancel/by_scope"
+  },
+  "scenario": "Cancel downtimes by scope returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

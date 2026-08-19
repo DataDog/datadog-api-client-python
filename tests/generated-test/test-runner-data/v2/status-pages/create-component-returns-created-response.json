@@ -1,0 +1,52 @@
+{
+  "api": "StatusPages",
+  "expected_status": 201,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Create component returns \"Created\" response",
+  "operation_id": "CreateComponent",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateComponentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Logs",
+            "position": 0,
+            "type": "component"
+          },
+          "type": "components"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/components"
+  },
+  "scenario": "Create component returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

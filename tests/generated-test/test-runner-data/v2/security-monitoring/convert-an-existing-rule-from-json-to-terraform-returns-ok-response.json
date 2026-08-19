@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Convert an existing rule from JSON to Terraform returns \"OK\" response",
+  "operation_id": "ConvertExistingSecurityMonitoringRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "security_rule_hash.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/rules/{rule_id}/convert"
+  },
+  "scenario": "Convert an existing rule from JSON to Terraform returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

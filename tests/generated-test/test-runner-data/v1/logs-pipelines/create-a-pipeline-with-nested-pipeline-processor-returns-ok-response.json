@@ -1,0 +1,50 @@
+{
+  "api": "LogsPipelines",
+  "expected_status": 200,
+  "feature": "Logs Pipelines",
+  "id": "v1/Logs Pipelines/Create a pipeline with nested pipeline processor returns \"OK\" response",
+  "operation_id": "CreateLogsPipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": "Pipeline containing nested processor with tags and description",
+        "filter": {
+          "query": "source:python"
+        },
+        "name": "testPipelineWithNested",
+        "processors": [
+          {
+            "description": "This is a nested pipeline for production logs",
+            "filter": {
+              "query": "env:production"
+            },
+            "is_enabled": true,
+            "name": "nested_pipeline_with_metadata",
+            "tags": [
+              "env:prod",
+              "type:nested"
+            ],
+            "type": "pipeline"
+          }
+        ],
+        "tags": [
+          "team:test"
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs/config/pipelines"
+  },
+  "scenario": "Create a pipeline with nested pipeline processor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

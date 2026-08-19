@@ -1,0 +1,35 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v2/Dashboards/Get usage stats for all dashboards with edited_before filter returns \"OK\" response",
+  "operation_id": "ListDashboardsUsage",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[edited_before]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "2025-04-26T00:00:00Z"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/dashboards/usage"
+  },
+  "scenario": "Get usage stats for all dashboards with edited_before filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

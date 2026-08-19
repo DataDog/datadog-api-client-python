@@ -1,0 +1,18 @@
+{
+  "api": "StatusPages",
+  "expected_status": 200,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/List status pages returns \"OK\" response",
+  "operation_id": "ListStatusPages",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/statuspages"
+  },
+  "scenario": "List status pages returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

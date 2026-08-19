@@ -1,0 +1,63 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with apm dependency stats widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "data_source": "apm_dependency_stats",
+                      "env": "ci",
+                      "name": "query1",
+                      "operation_name": "cassandra.query",
+                      "primary_tag_name": "datacenter",
+                      "primary_tag_value": "edge-eu1.prod.dog",
+                      "resource_name": "DELETE FROM monitor_history.monitor_state_change_history WHERE org_id = ? AND monitor_id IN ? AND group = ?",
+                      "service": "cassandra",
+                      "stat": "avg_duration"
+                    }
+                  ],
+                  "response_format": "scalar"
+                }
+              ],
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "query_table"
+            },
+            "layout": {
+              "height": 4,
+              "width": 4,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with apm dependency stats widget",
+  "schema_version": 1,
+  "version": "v1"
+}

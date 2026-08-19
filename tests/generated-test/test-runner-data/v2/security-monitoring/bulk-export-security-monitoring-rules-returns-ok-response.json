@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Bulk export security monitoring rules returns \"OK\" response",
+  "operation_id": "BulkExportSecurityMonitoringRules",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleBulkExportPayload",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "ruleIds": [
+              "{{ security_rule.id }}"
+            ]
+          },
+          "type": "security_monitoring_rules_bulk_export"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules/bulk_export"
+  },
+  "scenario": "Bulk export security monitoring rules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

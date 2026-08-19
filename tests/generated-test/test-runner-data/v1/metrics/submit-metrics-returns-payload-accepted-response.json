@@ -1,0 +1,28 @@
+{
+  "api": "Metrics",
+  "expected_status": 202,
+  "feature": "Metrics",
+  "id": "v1/Metrics/Submit metrics returns \"Payload accepted\" response",
+  "operation_id": "SubmitMetrics",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MetricsPayload",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"series\": [{\"metric\": \"system.load.1\", \"type\": \"gauge\", \"points\": [[{{ timestamp(\"now\") }}, 1.1]], \"tags\": [\"test:{{ unique_alnum }}\"]}]}"
+      }
+    },
+    "content_type": "text/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/series"
+  },
+  "scenario": "Submit metrics returns \"Payload accepted\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

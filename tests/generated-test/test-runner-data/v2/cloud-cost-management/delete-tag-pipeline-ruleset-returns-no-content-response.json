@@ -1,0 +1,35 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 204,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Delete tag pipeline ruleset returns \"No Content\" response",
+  "operation_id": "DeleteTagPipelinesRuleset",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "ruleset_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "ee10c3ff-312f-464c-b4f6-46adaa6d00a1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/tags/enrichment/{ruleset_id}"
+  },
+  "scenario": "Delete tag pipeline ruleset returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,53 @@
+{
+  "api": "CaseManagementAttribute",
+  "expected_status": 400,
+  "feature": "Case Management Attribute",
+  "id": "v2/Case Management Attribute/Create custom attribute config for a case type returns \"Bad Request\" response",
+  "operation_id": "CreateCustomAttributeConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomAttributeConfigCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "display_name": "AWS Region {{uuid}}",
+            "is_multi": true,
+            "key": "region_{{unique_hash}}",
+            "type": "FLOAT"
+          },
+          "type": "custom_attribute"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_type_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case_type.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/types/{case_type_id}/custom_attributes"
+  },
+  "scenario": "Create custom attribute config for a case type returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

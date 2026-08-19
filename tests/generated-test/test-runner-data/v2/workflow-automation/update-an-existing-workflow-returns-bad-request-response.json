@@ -1,0 +1,53 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 400,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/Update an existing Workflow returns \"Bad request\" response",
+  "operation_id": "UpdateWorkflow",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateWorkflowRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "name": "Too many characters in description",
+            "spec": {}
+          },
+          "id": "22222222-2222-2222-2222-222222222222",
+          "type": "workflows"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "workflow_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "workflow.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows/{workflow_id}"
+  },
+  "scenario": "Update an existing Workflow returns \"Bad request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

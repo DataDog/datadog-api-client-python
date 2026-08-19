@@ -1,0 +1,34 @@
+{
+  "api": "Users",
+  "expected_status": 201,
+  "feature": "Users",
+  "id": "v2/Users/Create a user returns \"OK\" response",
+  "operation_id": "CreateUser",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UserCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "email": "{{ unique }}@datadoghq.com",
+            "name": "Datadog API Client Python"
+          },
+          "type": "users"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/users"
+  },
+  "scenario": "Create a user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

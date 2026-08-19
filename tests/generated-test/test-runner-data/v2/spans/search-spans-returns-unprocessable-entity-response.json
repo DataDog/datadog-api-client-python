@@ -1,0 +1,44 @@
+{
+  "api": "Spans",
+  "expected_status": 422,
+  "feature": "Spans",
+  "id": "v2/Spans/Search spans returns \"Unprocessable Entity.\" response",
+  "operation_id": "ListSpans",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SpansListRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "filter": {
+              "from": "now",
+              "query": "service:web* AND @http.status_code:[200 TO 299]",
+              "to": "now-15m"
+            },
+            "options": {
+              "timezone": "GMT"
+            },
+            "page": {
+              "limit": 10
+            },
+            "sort": "timestamp"
+          },
+          "type": "search_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/spans/events/search"
+  },
+  "scenario": "Search spans returns \"Unprocessable Entity.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

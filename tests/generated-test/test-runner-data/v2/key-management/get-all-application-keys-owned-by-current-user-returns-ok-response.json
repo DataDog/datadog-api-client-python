@@ -1,0 +1,18 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Get all application keys owned by current user returns \"OK\" response",
+  "operation_id": "ListCurrentUserApplicationKeys",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/current_user/application_keys"
+  },
+  "scenario": "Get all application keys owned by current user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

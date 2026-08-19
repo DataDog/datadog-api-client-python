@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Get a list of metrics with a tag filter returns \"Success\" response",
+  "operation_id": "ListTagConfigurations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[tags]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ unique_alnum }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics"
+  },
+  "scenario": "Get a list of metrics with a tag filter returns \"Success\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

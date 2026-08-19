@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get a custom framework returns \"Bad Request\" response",
+  "operation_id": "GetCustomFramework",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "handle",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "frame-does-not-exist"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "version",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "frame-does-not-exist"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cloud_security_management/custom_frameworks/{handle}/{version}"
+  },
+  "scenario": "Get a custom framework returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

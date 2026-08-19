@@ -1,0 +1,35 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Get a list of incidents returns \"OK\" response with pagination",
+  "operation_id": "ListIncidents",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents"
+  },
+  "scenario": "Get a list of incidents returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

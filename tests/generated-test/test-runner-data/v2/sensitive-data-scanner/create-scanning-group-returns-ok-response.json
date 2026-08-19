@@ -1,0 +1,52 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 201,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Create Scanning Group returns \"OK\" response",
+  "operation_id": "CreateScanningGroup",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerGroupCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "filter": {
+              "query": "*"
+            },
+            "is_enabled": false,
+            "name": "{{ unique }}",
+            "product_list": [
+              "logs"
+            ]
+          },
+          "relationships": {
+            "configuration": {
+              "data": {
+                "id": "{{ configuration.data.id }}",
+                "type": "sensitive_data_scanner_configuration"
+              }
+            },
+            "rules": {
+              "data": []
+            }
+          },
+          "type": "sensitive_data_scanner_group"
+        },
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/sensitive-data-scanner/config/groups"
+  },
+  "scenario": "Create Scanning Group returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,69 @@
+{
+  "feature": "Authentication",
+  "recordings": [
+    {
+      "feature": "Authentication",
+      "frozen_at": "2022-01-06T00:50:20.672Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"API key required\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Forbidden",
+            "status": 403
+          }
+        }
+      ],
+      "scenario": "Validate API key returns \"Forbidden\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Authentication",
+      "frozen_at": "2022-01-06T00:50:20.920Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"valid\":true}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate API key returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

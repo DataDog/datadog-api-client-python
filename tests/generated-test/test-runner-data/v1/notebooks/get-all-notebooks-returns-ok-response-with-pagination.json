@@ -1,0 +1,35 @@
+{
+  "api": "Notebooks",
+  "expected_status": 200,
+  "feature": "Notebooks",
+  "id": "v1/Notebooks/Get all notebooks returns \"OK\" response with pagination",
+  "operation_id": "ListNotebooks",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "count",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v1/notebooks"
+  },
+  "scenario": "Get all notebooks returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v1"
+}

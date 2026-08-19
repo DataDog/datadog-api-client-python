@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get all suppression rules returns \"OK\" response with sort ascending",
+  "operation_id": "ListSecurityMonitoringSuppressions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "sort",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "SecurityMonitoringSuppressionSort",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "name"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "query",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "id:{{ suppression.data.id }} OR id:{{ suppression2.data.id }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/configuration/suppressions"
+  },
+  "scenario": "Get all suppression rules returns \"OK\" response with sort ascending",
+  "schema_version": 1,
+  "version": "v2"
+}

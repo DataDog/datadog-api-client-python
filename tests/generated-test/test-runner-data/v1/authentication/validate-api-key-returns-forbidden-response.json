@@ -1,0 +1,18 @@
+{
+  "api": "Authentication",
+  "expected_status": 403,
+  "feature": "Authentication",
+  "id": "v1/Authentication/Validate API key returns \"Forbidden\" response",
+  "operation_id": "Validate",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/validate"
+  },
+  "scenario": "Validate API key returns \"Forbidden\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

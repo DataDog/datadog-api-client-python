@@ -1,0 +1,35 @@
+{
+  "api": "ServiceDefinition",
+  "expected_status": 200,
+  "feature": "Service Definition",
+  "id": "v2/Service Definition/Get all service definitions returns \"OK\" response",
+  "operation_id": "ListServiceDefinitions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "schema_version",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "ServiceDefinitionSchemaVersions",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "v2.1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/services/definitions"
+  },
+  "scenario": "Get all service definitions returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

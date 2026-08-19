@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 400,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Get all monitors returns \"Bad Request\" response",
+  "operation_id": "ListMonitors",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "group_states",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "notagroupstate"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Get all monitors returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

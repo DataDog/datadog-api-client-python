@@ -1,0 +1,71 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 200,
+  "feature": "Service Level Objectives",
+  "id": "v1/Service Level Objectives/Get an SLO's history returns \"OK\" response",
+  "operation_id": "GetSLOHistory",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "slo_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "slo.data[0].id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "from_ts",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": {
+            "$openapi_transformer_template": "{{ timestamp(\"now - 1d\") }}"
+          }
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "to_ts",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": {
+            "$openapi_transformer_template": "{{ timestamp(\"now\") }}"
+          }
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/slo/{slo_id}/history"
+  },
+  "scenario": "Get an SLO's history returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

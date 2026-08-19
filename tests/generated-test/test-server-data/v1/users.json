@@ -1,0 +1,127 @@
+{
+  "feature": "Users",
+  "recordings": [
+    {
+      "feature": "Users",
+      "frozen_at": "2023-07-10T18:57:28.744Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "access_role": "st",
+                "disabled": false,
+                "email": "test@datadoghq.com",
+                "handle": "test@datadoghq.com",
+                "name": "test user"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/user",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"user\":{\"handle\":\"test@datadoghq.com\",\"name\":\"test user\",\"role\":null,\"title\":null,\"email\":\"test@datadoghq.com\",\"disabled\":false,\"access_role\":null,\"is_admin\":false,\"icon\":\"https://secure.gravatar.com/avatar/f979f58720feb88e09cc3d11ce3d15da?s=48&d=retro\",\"verified\":false}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/user/test%40datadoghq.com",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"message\":\"User test@datadoghq.com disabled\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a user returns \"User created\" response test",
+      "version": "v1"
+    },
+    {
+      "feature": "Users",
+      "frozen_at": "2023-07-10T18:58:47.628Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "access_role": null,
+                "disabled": false,
+                "email": "test@datadoghq.com",
+                "handle": "test@datadoghq.com",
+                "name": "test user"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/user",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"user\":{\"handle\":\"test@datadoghq.com\",\"name\":\"test user\",\"role\":null,\"title\":null,\"email\":\"test@datadoghq.com\",\"disabled\":true,\"access_role\":null,\"is_admin\":false,\"icon\":\"https://secure.gravatar.com/avatar/f979f58720feb88e09cc3d11ce3d15da?s=48&d=retro\",\"verified\":false}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/user/test%40datadoghq.com",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"User is already disabled\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a user returns null access role",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

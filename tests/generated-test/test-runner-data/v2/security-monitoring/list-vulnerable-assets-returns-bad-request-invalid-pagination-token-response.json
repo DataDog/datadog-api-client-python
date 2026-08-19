@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/List vulnerable assets returns \"Bad request: Invalid Pagination Token\" response",
+  "operation_id": "ListVulnerableAssets",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[token]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "unknown"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[number]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/vulnerable-assets"
+  },
+  "scenario": "List vulnerable assets returns \"Bad request: Invalid Pagination Token\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

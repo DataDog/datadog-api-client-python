@@ -1,0 +1,60 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a mute rule returns \"Successfully updated the mute rule\" response",
+  "operation_id": "UpdateSecurityFindingsAutomationMuteRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MuteRuleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "reason": "false_positive"
+            },
+            "enabled": false,
+            "name": "{{ unique }}",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:staging"
+            }
+          },
+          "type": "mute_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_mute_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/mute_rules/{rule_id}"
+  },
+  "scenario": "Update a mute rule returns \"Successfully updated the mute rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

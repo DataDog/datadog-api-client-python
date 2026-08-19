@@ -1,0 +1,35 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 200,
+  "feature": "Service Level Objectives",
+  "id": "v1/Service Level Objectives/Get Corrections For an SLO returns \"OK\" response",
+  "operation_id": "GetSLOCorrections",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "slo_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "slo.data[0].id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/slo/{slo_id}/corrections"
+  },
+  "scenario": "Get Corrections For an SLO returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

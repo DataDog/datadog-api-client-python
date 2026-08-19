@@ -1,0 +1,61 @@
+{
+  "api": "Roles",
+  "expected_status": 400,
+  "feature": "Roles",
+  "id": "v2/Roles/Update a role returns \"Bad Request\" response",
+  "operation_id": "UpdateRole",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RoleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ role.data.attributes.name }}-updated"
+          },
+          "id": "{{ role.data.id }}",
+          "relationships": {
+            "permissions": {
+              "data": [
+                {
+                  "id": "11111111-dead-beef-dead-ffffffffffff",
+                  "type": "{{ permission.type }}"
+                }
+              ]
+            }
+          },
+          "type": "roles"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "role_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "role.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/roles/{role_id}"
+  },
+  "scenario": "Update a role returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

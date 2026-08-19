@@ -1,0 +1,70 @@
+{
+  "api": "Incidents",
+  "expected_status": 404,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Update incident attachment returns \"Not Found\" response",
+  "operation_id": "UpdateIncidentAttachment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchAttachmentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "attachment": {
+              "documentUrl": "https://app.datadoghq.com/notebook/124/Postmortem-IR-124",
+              "title": "Postmortem-IR-124"
+            }
+          },
+          "id": "00000000-abcd-0002-0000-000000000000",
+          "type": "incident_attachments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000001"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "attachment_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000001"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/attachments/{attachment_id}"
+  },
+  "scenario": "Update incident attachment returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,51 @@
+{
+  "api": "Spans",
+  "expected_status": 422,
+  "feature": "Spans",
+  "id": "v2/Spans/Get a list of spans returns \"Unprocessable Entity.\" response",
+  "operation_id": "ListSpansGet",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[from]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "now"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[to]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "now-1m"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/spans/events"
+  },
+  "scenario": "Get a list of spans returns \"Unprocessable Entity.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

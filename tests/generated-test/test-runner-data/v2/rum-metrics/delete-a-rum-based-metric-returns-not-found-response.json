@@ -1,0 +1,35 @@
+{
+  "api": "RumMetrics",
+  "expected_status": 404,
+  "feature": "Rum Metrics",
+  "id": "v2/Rum Metrics/Delete a RUM-based metric returns \"Not Found\" response",
+  "operation_id": "DeleteRumMetric",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ unique }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/metrics/{metric_id}"
+  },
+  "scenario": "Delete a RUM-based metric returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

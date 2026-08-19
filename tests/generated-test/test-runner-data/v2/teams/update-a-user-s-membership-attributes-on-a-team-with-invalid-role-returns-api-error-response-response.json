@@ -1,0 +1,66 @@
+{
+  "api": "Teams",
+  "expected_status": 400,
+  "feature": "Teams",
+  "id": "v2/Teams/Update a user's membership attributes on a team with invalid role returns \"API error response.\" response",
+  "operation_id": "UpdateTeamMembership",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UserTeamUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "role": "member"
+          },
+          "type": "team_memberships"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/memberships/{user_id}"
+  },
+  "scenario": "Update a user's membership attributes on a team with invalid role returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

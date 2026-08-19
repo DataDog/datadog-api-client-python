@@ -1,0 +1,51 @@
+{
+  "api": "GoogleChatIntegration",
+  "expected_status": 204,
+  "feature": "Google Chat Integration",
+  "id": "v2/Google Chat Integration/Delete organization handle returns \"OK\" response",
+  "operation_id": "DeleteOrganizationHandle",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "organization_binding_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "e54cb570-c674-529c-769d-84b312288ed7"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "handle_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "organization_handle.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/organization-handles/{handle_id}"
+  },
+  "scenario": "Delete organization handle returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

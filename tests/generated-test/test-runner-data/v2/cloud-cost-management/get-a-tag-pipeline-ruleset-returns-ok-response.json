@@ -1,0 +1,35 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Get a tag pipeline ruleset returns \"OK\" response",
+  "operation_id": "GetTagPipelinesRuleset",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "ruleset_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a1e9de9b-b88e-41c6-a0cd-cc0ebd7092de"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/tags/enrichment/{ruleset_id}"
+  },
+  "scenario": "Get a tag pipeline ruleset returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

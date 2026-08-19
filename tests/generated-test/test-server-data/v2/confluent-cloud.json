@@ -1,0 +1,526 @@
+{
+  "feature": "Confluent Cloud",
+  "recordings": [
+    {
+      "feature": "Confluent Cloud",
+      "frozen_at": "2023-07-03T14:38:40.799Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestAddresourcetoConfluentaccountreturnsOKresponse1688395120",
+                    "api_secret": "test-api-secret",
+                    "resources": [
+                      {
+                        "id": "test-resource-id",
+                        "resource_type": "kafka",
+                        "tags": [
+                          "tag1",
+                          "tag2:val2"
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      "tag1",
+                      "tag2:val2"
+                    ]
+                  },
+                  "type": "confluent-cloud-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/confluent-cloud/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"attributes\":{\"tags\":[\"tag1\",\"tag2:val2\"],\"resources\":[{\"id\":\"test-resource-id\",\"enable_custom_metrics\":false,\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"api_key\":\"TestAddresourcetoConfluentaccountreturnsOKresponse1688395120\"},\"id\":\"ca66091df9181d4c62d17f0484461a0d\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enable_custom_metrics": false,
+                    "resource_type": "kafka",
+                    "tags": [
+                      "myTag",
+                      "myTag2:myValue"
+                    ]
+                  },
+                  "id": "testaddresourcetoconfluentaccountreturnsokresponse1688395120",
+                  "type": "confluent-cloud-resources"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/ca66091df9181d4c62d17f0484461a0d/resources",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"confluent-cloud-resources\",\"attributes\":{\"enable_custom_metrics\":false,\"tags\":[\"mytag\",\"mytag2:myvalue\"],\"resource_type\":\"kafka\"},\"id\":\"testaddresourcetoconfluentaccountreturnsokresponse1688395120\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/ca66091df9181d4c62d17f0484461a0d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Add resource to Confluent account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Confluent Cloud",
+      "frozen_at": "2023-10-16T13:02:15.749Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestDeleteConfluentaccountreturnsOKresponse1697461335",
+                    "api_secret": "test-api-secret",
+                    "resources": [
+                      {
+                        "id": "test-resource-id",
+                        "resource_type": "kafka",
+                        "tags": [
+                          "tag1",
+                          "tag2:val2"
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      "tag1",
+                      "tag2:val2"
+                    ]
+                  },
+                  "type": "confluent-cloud-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/confluent-cloud/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"attributes\":{\"resources\":[{\"tags\":[\"tag1\",\"tag2:val2\"],\"id\":\"test-resource-id\",\"enable_custom_metrics\":false,\"resource_type\":\"kafka\"}],\"tags\":[\"tag1\",\"tag2:val2\"],\"api_key\":\"TestDeleteConfluentaccountreturnsOKresponse1697461335\"},\"id\":\"ed3f03aa36fdd7ba6b48381d54280e45\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/ed3f03aa36fdd7ba6b48381d54280e45",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/ed3f03aa36fdd7ba6b48381d54280e45",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Account not found not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete Confluent account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Confluent Cloud",
+      "frozen_at": "2023-07-03T14:38:41.593Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestGetConfluentaccountreturnsOKresponse1688395121",
+                    "api_secret": "test-api-secret",
+                    "resources": [
+                      {
+                        "id": "test-resource-id",
+                        "resource_type": "kafka",
+                        "tags": [
+                          "tag1",
+                          "tag2:val2"
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      "tag1",
+                      "tag2:val2"
+                    ]
+                  },
+                  "type": "confluent-cloud-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/confluent-cloud/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"id\":\"8a03a240e4d322d42edf6d4f4654a624\",\"attributes\":{\"resources\":[{\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"],\"enable_custom_metrics\":false,\"id\":\"test-resource-id\"}],\"api_key\":\"TestGetConfluentaccountreturnsOKresponse1688395121\",\"tags\":[\"tag1\",\"tag2:val2\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/8a03a240e4d322d42edf6d4f4654a624",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"confluent-cloud-accounts\",\"attributes\":{\"resources\":[{\"enable_custom_metrics\":false,\"id\":\"test-resource-id\",\"tags\":[\"tag1\",\"tag2:val2\"],\"resource_type\":\"kafka\"}],\"api_key\":\"TestGetConfluentaccountreturnsOKresponse1688395121\",\"tags\":[\"tag1\",\"tag2:val2\"]},\"id\":\"8a03a240e4d322d42edf6d4f4654a624\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/8a03a240e4d322d42edf6d4f4654a624",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get Confluent account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Confluent Cloud",
+      "frozen_at": "2022-10-06T21:02:46.272Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestListConfluentaccountsreturnsOKresponse1665090166",
+                    "api_secret": "test-api-secret",
+                    "resources": [
+                      {
+                        "id": "test-resource-id",
+                        "resource_type": "kafka",
+                        "tags": [
+                          "tag1",
+                          "tag2:val2"
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      "tag1",
+                      "tag2:val2"
+                    ]
+                  },
+                  "type": "confluent-cloud-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/confluent-cloud/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1665090166\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"45iw6lb8j5\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/confluent-cloud/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"attributes\":{\"api_key\":\"test-api-key3\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"iubtgfayp5\"},{\"attributes\":{\"api_key\":\"Test-List_Confluent_accounts_returns_OK_response-1663015727\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"83wqs4ztwc\"},{\"attributes\":{\"api_key\":\"update-key\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[]},\"type\":\"confluent-cloud-accounts\",\"id\":\"mrwhlq9oyn\"},{\"attributes\":{\"api_key\":\"Test-List_Confluent_accounts_returns_OK_response-1663017017\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"tuwcfwqe3a\"},{\"attributes\":{\"api_key\":\"Test-Update_Confluent_account_returns_OK_response-1663017018\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"bt2li4wmv5\"},{\"attributes\":{\"api_key\":\"Test-List_Confluent_accounts_returns_OK_response-1663017074\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"snrx0cusau\"},{\"attributes\":{\"api_key\":\"Test-Update_Confluent_account_returns_OK_response-1663017075\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"3r136fz38z\"},{\"attributes\":{\"api_key\":\"Test-List_Confluent_accounts_returns_OK_response-1663035571\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"olnygn7t1v\"},{\"attributes\":{\"api_key\":\"Test-Update_Confluent_account_returns_OK_response-1663035572\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"u61jn2zm67\"},{\"attributes\":{\"api_key\":\"testlistconfluentaccountsreturnsokresponse1663035633\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"u0mnbkhpyg\"},{\"attributes\":{\"api_key\":\"testupdateconfluentaccountreturnsokresponse1663035635\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"1qt90nner9\"},{\"attributes\":{\"api_key\":\"testlistconfluentaccountsreturnsokresponse1663040179\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"rn6627go3o\"},{\"attributes\":{\"api_key\":\"testupdateconfluentaccountreturnsokresponse1663040180\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"hkkcrwodz3\"},{\"attributes\":{\"api_key\":\"api-key-test-123\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"m17r8n1brn\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663081412\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"0ubcaq4ack\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663081413\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"csu3ol6ewv\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663091740\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"e8ql5yb6d0\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663091741\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"frgdwzdkc8\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663091761\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"hpv6ewnuew\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663091762\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"19b6yov7hd\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663092165\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"97agj11bf0\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663092166\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[]},\"type\":\"confluent-cloud-accounts\",\"id\":\"kn6kq1i4si\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663092330\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"a8fzei9e85\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663092331\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"5wmpn2sx51\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663092374\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"fb3gmtwadj\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663092374\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"qul0ce8yrg\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663092403\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"9neye26b1h\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663092404\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"xaab9w4b72\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663092495\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"x7en9ipq51\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663092496\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"gl1y005ff1\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663093490\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"4j43efxc7f\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663093491\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"nl8es35l6i\"},{\"attributes\":{\"api_key\":\"TestDeleteresourcefromConfluentaccountreturnsOKresponse1663093498\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"9ccf1xtqtr\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663093499\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"ep3q1okrbl\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663093500\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"rqdlsa4bzf\"},{\"attributes\":{\"api_key\":\"TestDeleteresourcefromConfluentaccountreturnsOKresponse1663093577\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"b27wqbnkq3\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663093578\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"5t6xj8u5i5\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663093579\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"8vogxaeno1\"},{\"attributes\":{\"api_key\":\"TestDeleteresourcefromConfluentaccountreturnsOKresponse1663093596\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"krs4zg884i\"},{\"attributes\":{\"api_key\":\"TestDeleteresourcefromConfluentaccountreturnsOKresponse1663093745\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"9f503olewx\"},{\"attributes\":{\"api_key\":\"TestGetConfluentaccountreturnsOKresponse1663094037\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"be2ywpqpmq\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663094038\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"3uh8kipdh6\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663094039\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"z7rgwzsjgb\"},{\"attributes\":{\"api_key\":\"TestGetConfluentaccountreturnsOKresponse1663094133\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"mqq2s2dphs\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663094134\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"t3rjzkgkog\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663094135\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"6dbd2ohnq1\"},{\"attributes\":{\"api_key\":\"TestGetConfluentaccountreturnsOKresponse1663094313\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"r3z2a4u9r0\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663094314\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"rc2ezuf80r\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663094315\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"xttgp0v4l1\"},{\"attributes\":{\"api_key\":\"TestGetConfluentaccountreturnsOKresponse1663094436\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"6w0y04l7pj\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663094437\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"feibu0b5f3\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663094438\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"nb7swpr8g8\"},{\"attributes\":{\"api_key\":\"TestGetConfluentaccountreturnsOKresponse1663180425\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"by22udueep\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1663180426\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"h1s9rgj73z\"},{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1663180426\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"izxxm263fi\"},{\"attributes\":{\"api_key\":\"TestListConfluentaccountsreturnsOKresponse1665090166\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"45iw6lb8j5\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/45iw6lb8j5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List Confluent accounts returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Confluent Cloud",
+      "frozen_at": "2022-10-06T21:02:46.928Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestUpdateConfluentaccountreturnsOKresponse1665090166",
+                    "api_secret": "test-api-secret",
+                    "resources": [
+                      {
+                        "id": "test-resource-id",
+                        "resource_type": "kafka",
+                        "tags": [
+                          "tag1",
+                          "tag2:val2"
+                        ]
+                      }
+                    ],
+                    "tags": [
+                      "tag1",
+                      "tag2:val2"
+                    ]
+                  },
+                  "type": "confluent-cloud-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/confluent-cloud/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1665090166\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"tag1\",\"tag2:val2\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"ytthkwvtde\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestUpdateConfluentaccountreturnsOKresponse1665090166",
+                    "api_secret": "update-secret",
+                    "tags": [
+                      "updated_tag:val"
+                    ]
+                  },
+                  "type": "confluent-cloud-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/ytthkwvtde",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"api_key\":\"TestUpdateConfluentaccountreturnsOKresponse1665090166\",\"resources\":[{\"id\":\"test-resource-id\",\"resource_type\":\"kafka\",\"tags\":[\"tag1\",\"tag2:val2\"]}],\"tags\":[\"updated_tag:val\"]},\"type\":\"confluent-cloud-accounts\",\"id\":\"ytthkwvtde\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/confluent-cloud/accounts/ytthkwvtde",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update Confluent account returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 200,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Download the Workload Protection policy (US1-FED) returns \"OK\" response",
+  "operation_id": "DownloadCloudWorkloadPolicyFile",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/cloud_workload/policy/download"
+  },
+  "scenario": "Download the Workload Protection policy (US1-FED) returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

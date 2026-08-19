@@ -1,0 +1,76 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Update On-Call escalation policy returns \"OK\" response",
+  "operation_id": "UpdateOnCallEscalationPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "EscalationPolicyUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }}-updated",
+            "resolve_page_on_policy_end": false,
+            "retries": 0,
+            "steps": [
+              {
+                "assignment": "default",
+                "escalate_after_seconds": 3600,
+                "id": "{{ escalation_policy.data.relationships.steps.data[0].id }}",
+                "targets": [
+                  {
+                    "id": "{{ user.data.id }}",
+                    "type": "users"
+                  }
+                ]
+              }
+            ]
+          },
+          "id": "{{ escalation_policy.data.id }}",
+          "relationships": {
+            "teams": {
+              "data": [
+                {
+                  "id": "{{ dd_team.data.id }}",
+                  "type": "teams"
+                }
+              ]
+            }
+          },
+          "type": "policies"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "escalation_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/escalation-policies/{policy_id}"
+  },
+  "scenario": "Update On-Call escalation policy returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

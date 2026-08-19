@@ -1,0 +1,67 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 200,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/Get Monthly Cost Attribution returns \"OK\" response",
+  "operation_id": "GetMonthlyCostAttribution",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "start_month",
+        "required": true,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now - 5d') }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "fields",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "infra_host_total_cost"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "end_month",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now - 3d') }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost_by_tag/monthly_cost_attribution"
+  },
+  "scenario": "Get Monthly Cost Attribution returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

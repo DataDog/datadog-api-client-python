@@ -1,0 +1,35 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 200,
+  "feature": "App Builder",
+  "id": "v2/App Builder/List App Versions returns \"OK\" response",
+  "operation_id": "ListAppVersions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "app.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}/versions"
+  },
+  "scenario": "List App Versions returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

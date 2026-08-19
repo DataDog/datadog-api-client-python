@@ -1,0 +1,40 @@
+{
+  "api": "Scorecards",
+  "expected_status": 400,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/Create outcomes batch returns \"Bad Request\" response",
+  "operation_id": "CreateScorecardOutcomesBatch",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OutcomesBatchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "results": [
+              {
+                "remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>",
+                "rule_id": "{{ create_scorecard_rule.data.id }}",
+                "service_name": "",
+                "state": "pass"
+              }
+            ]
+          },
+          "type": "batched-outcome"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/scorecard/outcomes/batch"
+  },
+  "scenario": "Create outcomes batch returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

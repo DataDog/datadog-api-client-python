@@ -1,0 +1,35 @@
+{
+  "api": "Users",
+  "expected_status": 204,
+  "feature": "Users",
+  "id": "v2/Users/Disable a user returns \"OK\" response",
+  "operation_id": "DisableUser",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/users/{user_id}"
+  },
+  "scenario": "Disable a user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

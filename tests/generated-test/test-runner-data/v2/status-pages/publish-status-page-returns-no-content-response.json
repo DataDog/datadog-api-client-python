@@ -1,0 +1,35 @@
+{
+  "api": "StatusPages",
+  "expected_status": 204,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Publish status page returns \"No Content\" response",
+  "operation_id": "PublishStatusPage",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/publish"
+  },
+  "scenario": "Publish status page returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

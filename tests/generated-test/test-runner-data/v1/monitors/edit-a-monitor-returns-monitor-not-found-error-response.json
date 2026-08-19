@@ -1,0 +1,56 @@
+{
+  "api": "Monitors",
+  "expected_status": 404,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Edit a monitor returns \"Monitor Not Found error\" response",
+  "operation_id": "UpdateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "name": "updated",
+        "options": {
+          "evaluation_delay": null,
+          "new_group_delay": 600,
+          "new_host_delay": null,
+          "renotify_interval": null,
+          "thresholds": {
+            "critical": 2,
+            "warning": null
+          },
+          "timeout_h": null
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "monitor_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 0
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/monitor/{monitor_id}"
+  },
+  "scenario": "Edit a monitor returns \"Monitor Not Found error\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

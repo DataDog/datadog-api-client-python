@@ -1,0 +1,30 @@
+{
+  "api": "WebhooksIntegration",
+  "expected_status": 201,
+  "feature": "Webhooks Integration",
+  "id": "v1/Webhooks Integration/Create a custom variable returns \"OK\" response",
+  "operation_id": "CreateWebhooksIntegrationCustomVariable",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "WebhooksIntegrationCustomVariable",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "is_secret": true,
+        "name": "{{ unique_upper_alnum }}",
+        "value": "CUSTOM_VARIABLE_VALUE"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/webhooks/configuration/custom-variables"
+  },
+  "scenario": "Create a custom variable returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

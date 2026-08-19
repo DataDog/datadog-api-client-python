@@ -1,0 +1,51 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 200,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/List workflows returns \"OK\" response with pagination",
+  "operation_id": "ListWorkflows",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[query]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ unique }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "limit",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows"
+  },
+  "scenario": "List workflows returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

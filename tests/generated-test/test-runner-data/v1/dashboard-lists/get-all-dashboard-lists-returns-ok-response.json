@@ -1,0 +1,18 @@
+{
+  "api": "DashboardLists",
+  "expected_status": 200,
+  "feature": "Dashboard Lists",
+  "id": "v1/Dashboard Lists/Get all dashboard lists returns \"OK\" response",
+  "operation_id": "ListDashboardLists",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard/lists/manual"
+  },
+  "scenario": "Get all dashboard lists returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

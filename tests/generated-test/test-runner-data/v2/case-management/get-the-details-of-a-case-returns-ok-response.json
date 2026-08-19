@@ -1,0 +1,35 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 200,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Get the details of a case returns \"OK\" response",
+  "operation_id": "GetCase",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}"
+  },
+  "scenario": "Get the details of a case returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

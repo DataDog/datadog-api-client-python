@@ -1,0 +1,55 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Convert a rule from JSON to Terraform returns \"OK\" response",
+  "operation_id": "ConvertSecurityMonitoringRuleFromJSONToTerraform",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleConvertPayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "condition": "a > 0",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "filters": [],
+        "isEnabled": true,
+        "message": "Test rule",
+        "name": "_{{ unique_hash }}",
+        "options": {
+          "evaluationWindow": 900,
+          "keepAlive": 3600,
+          "maxSignalDuration": 86400
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "distinctFields": [],
+            "groupByFields": [],
+            "metric": "",
+            "query": "@test:true"
+          }
+        ],
+        "tags": [],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules/convert"
+  },
+  "scenario": "Convert a rule from JSON to Terraform returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

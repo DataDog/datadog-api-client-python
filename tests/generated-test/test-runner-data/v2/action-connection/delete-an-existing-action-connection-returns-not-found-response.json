@@ -1,0 +1,35 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 404,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Delete an existing Action Connection returns \"Not Found\" response",
+  "operation_id": "DeleteActionConnection",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "connection_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/connections/{connection_id}"
+  },
+  "scenario": "Delete an existing Action Connection returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

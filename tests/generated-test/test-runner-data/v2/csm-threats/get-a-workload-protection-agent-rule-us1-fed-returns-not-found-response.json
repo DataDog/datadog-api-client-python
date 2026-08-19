@@ -1,0 +1,35 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 404,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Get a Workload Protection agent rule (US1-FED) returns \"Not Found\" response",
+  "operation_id": "GetCloudWorkloadSecurityAgentRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "agent_rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "abc-def-ghi"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}"
+  },
+  "scenario": "Get a Workload Protection agent rule (US1-FED) returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

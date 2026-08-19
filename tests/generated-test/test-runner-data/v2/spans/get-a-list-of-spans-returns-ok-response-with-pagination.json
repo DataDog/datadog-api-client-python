@@ -1,0 +1,35 @@
+{
+  "api": "Spans",
+  "expected_status": 200,
+  "feature": "Spans",
+  "id": "v2/Spans/Get a list of spans returns \"OK\" response with pagination",
+  "operation_id": "ListSpansGet",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/spans/events"
+  },
+  "scenario": "Get a list of spans returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

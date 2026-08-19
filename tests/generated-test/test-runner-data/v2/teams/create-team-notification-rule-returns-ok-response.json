@@ -1,0 +1,56 @@
+{
+  "api": "Teams",
+  "expected_status": 201,
+  "feature": "Teams",
+  "id": "v2/Teams/Create team notification rule returns \"OK\" response",
+  "operation_id": "CreateTeamNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamNotificationRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "email": {
+              "enabled": true
+            },
+            "slack": {
+              "channel": "aaa-omg-ops",
+              "workspace": "Datadog"
+            }
+          },
+          "type": "team_notification_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/notification-rules"
+  },
+  "scenario": "Create team notification rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

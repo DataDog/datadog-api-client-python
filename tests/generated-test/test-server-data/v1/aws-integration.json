@@ -1,0 +1,312 @@
+{
+  "feature": "AWS Integration",
+  "recordings": [
+    {
+      "feature": "AWS Integration",
+      "frozen_at": "2024-04-05T18:30:30.891Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183000",
+                "account_specific_namespace_rules": {
+                  "auto_scaling": false
+                },
+                "cspm_resource_collection_enabled": true,
+                "excluded_regions": [
+                  "us-east-1",
+                  "us-west-2"
+                ],
+                "extended_resource_collection_enabled": true,
+                "filter_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "host_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "metrics_collection_enabled": false,
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/aws",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"external_id\":\"acb8f6b8a844443dbb726d07dcb1a870\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183000",
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/aws",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create an AWS integration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "AWS Integration",
+      "frozen_at": "2024-04-05T18:30:32.594Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183200",
+                "account_specific_namespace_rules": {
+                  "auto_scaling": false
+                },
+                "cspm_resource_collection_enabled": true,
+                "excluded_regions": [
+                  "us-east-1",
+                  "us-west-2"
+                ],
+                "extended_resource_collection_enabled": true,
+                "filter_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "host_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "metrics_collection_enabled": false,
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/aws",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"external_id\":\"6aa1bf95e5dc4c9985593e94169bd2f6\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183200",
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/aws",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183200",
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/aws",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"AWS account 171234183200 does not exist in integration\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete an AWS integration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "AWS Integration",
+      "frozen_at": "2024-04-05T18:30:34.377Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183400",
+                "account_specific_namespace_rules": {
+                  "auto_scaling": false
+                },
+                "cspm_resource_collection_enabled": true,
+                "excluded_regions": [
+                  "us-east-1",
+                  "us-west-2"
+                ],
+                "extended_resource_collection_enabled": true,
+                "filter_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "host_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "metrics_collection_enabled": false,
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/aws",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"external_id\":\"c8ceedec95fc472fb6156f3104d425c9\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183400",
+                "account_specific_namespace_rules": {
+                  "auto_scaling": false
+                },
+                "cspm_resource_collection_enabled": false,
+                "excluded_regions": [
+                  "us-east-1",
+                  "us-west-2"
+                ],
+                "extended_resource_collection_enabled": true,
+                "filter_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "host_tags": [
+                  "$KEY:$VALUE"
+                ],
+                "metrics_collection_enabled": true,
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/integration/aws",
+            "query": [
+              [
+                "account_id",
+                "171234183400"
+              ],
+              [
+                "role_name",
+                "DatadogAWSIntegrationRole"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "account_id": "171234183400",
+                "role_name": "DatadogAWSIntegrationRole"
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v1/integration/aws",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update an AWS integration returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

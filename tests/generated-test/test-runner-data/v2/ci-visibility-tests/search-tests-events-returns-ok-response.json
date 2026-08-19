@@ -1,0 +1,39 @@
+{
+  "api": "CIVisibilityTests",
+  "expected_status": 200,
+  "feature": "CI Visibility Tests",
+  "id": "v2/CI Visibility Tests/Search tests events returns \"OK\" response",
+  "operation_id": "SearchCIAppTestEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CIAppTestEventsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "from": "now-15m",
+          "query": "@test.service:web-ui-tests AND @test.status:skip",
+          "to": "now"
+        },
+        "options": {
+          "timezone": "GMT"
+        },
+        "page": {
+          "limit": 25
+        },
+        "sort": "timestamp"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ci/tests/events/search"
+  },
+  "scenario": "Search tests events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

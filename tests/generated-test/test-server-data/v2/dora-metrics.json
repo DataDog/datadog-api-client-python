@@ -1,0 +1,453 @@
+{
+  "feature": "DORA Metrics",
+  "recordings": [
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2025-05-22T10:44:58.608Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "limit": 10
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/deployments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"\\\" expected one of \\\"dora_deployments_list_request\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get a list of deployment events returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2025-05-22T10:44:58.897Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": "2025-03-23T00:00:00Z",
+                    "limit": 1,
+                    "to": "2025-03-24T00:00:00Z"
+                  },
+                  "type": "dora_deployments_list_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/deployments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of deployment events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2023-08-31T14:26:14.000Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": "2023-08-31T00:00:00Z",
+                    "to": "2023-09-01T00:00:00Z"
+                  },
+                  "type": "dora_deployments_list_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/deployments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"abc-123\",\"type\":\"dora_deployment\",\"attributes\":{\"service\":\"shopist\",\"started_at\":\"2023-08-31T14:26:14Z\",\"finished_at\":\"2023-08-31T14:26:24Z\",\"env\":\"production\",\"team\":\"backend\",\"version\":\"v1.12.07\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of deployment events returns deployments with date-time timestamps",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2025-05-22T10:44:59.446Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "limit": 10
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/failures",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"\\\" expected one of \\\"dora_failures_list_request\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get a list of failure events returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2025-05-22T10:44:59.522Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": "2025-03-23T00:00:00Z",
+                    "limit": 1,
+                    "to": "2025-03-24T00:00:00Z"
+                  },
+                  "type": "dora_failures_list_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/failures",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of failure events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2026-01-29T09:25:52.032Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "finished_at": 1769678752000000000,
+                    "git": {
+                      "commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588",
+                      "repository_url": "https://github.com/organization/example-repository"
+                    },
+                    "id": "08a3dbc57bb781a5",
+                    "service": "shopist",
+                    "started_at": 1769675152000000000,
+                    "version": "v1.12.07"
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/deployment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"08a3dbc57bb781a5\",\"type\":\"dora_deployment\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "change_failure": true,
+                    "remediation": {
+                      "id": "eG42zNIkVjM",
+                      "type": "rollback"
+                    }
+                  },
+                  "id": "08a3dbc57bb781a5",
+                  "type": "dora_deployment_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/dora/deployments/08a3dbc57bb781a5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":null}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Patch a deployment event returns \"Accepted\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2026-01-29T09:25:52.758Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "finished_at": 1769678752000000000,
+                    "git": {
+                      "commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588",
+                      "repository_url": "https://github.com/organization/example-repository"
+                    },
+                    "id": "bf100f167795c925",
+                    "service": "shopist",
+                    "started_at": 1769675152000000000,
+                    "version": "v1.12.07"
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/deployment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"bf100f167795c925\",\"type\":\"dora_deployment\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "change_failure": true,
+                    "remediation": {
+                      "id": "eG42zNIkVjM",
+                      "type": "wrong_type"
+                    }
+                  },
+                  "id": "bf100f167795c925",
+                  "type": "dora_deployment_patch_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/dora/deployments/bf100f167795c925",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"type\\\" must be one of \\\"rollback rollforward\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a deployment event returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2023-11-16T16:58:35.007Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "finished_at": 1693491984000000000,
+                    "git": {
+                      "commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588",
+                      "repository_url": "https://github.com/organization/example-repository"
+                    },
+                    "service": "shopist",
+                    "started_at": 1693491974000000000,
+                    "version": "v1.12.07"
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/deployment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2a47b5f25b160b8a\",\"type\":\"dora_deployment\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Send a deployment event returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "DORA Metrics",
+      "frozen_at": "2024-02-13T16:54:07.556Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "finished_at": 1707842944600000000,
+                    "git": {
+                      "commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588",
+                      "repository_url": "https://github.com/organization/example-repository"
+                    },
+                    "name": "Webserver is down failing all requests",
+                    "services": [
+                      "shopist"
+                    ],
+                    "severity": "High",
+                    "started_at": 1707842944500000000,
+                    "team": "backend",
+                    "version": "v1.12.07"
+                  }
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dora/incident",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2775a2d3-6c28-4934-ae60-0ef9ce3720ee\",\"type\":\"dora_failure\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Send a failure event returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 200,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/List Model Lab projects returns \"OK\" response",
+  "operation_id": "ListModelLabProjects",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/model-lab-api/projects"
+  },
+  "scenario": "List Model Lab projects returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

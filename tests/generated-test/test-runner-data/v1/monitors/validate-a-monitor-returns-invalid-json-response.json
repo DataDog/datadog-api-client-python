@@ -1,0 +1,29 @@
+{
+  "api": "Monitors",
+  "expected_status": 400,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Validate a monitor returns \"Invalid JSON\" response",
+  "operation_id": "ValidateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "query": "query",
+        "type": "log alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor/validate"
+  },
+  "scenario": "Validate a monitor returns \"Invalid JSON\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

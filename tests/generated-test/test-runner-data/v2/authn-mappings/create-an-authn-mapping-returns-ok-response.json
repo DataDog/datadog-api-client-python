@@ -1,0 +1,42 @@
+{
+  "api": "AuthNMappings",
+  "expected_status": 200,
+  "feature": "AuthN Mappings",
+  "id": "v2/AuthN Mappings/Create an AuthN Mapping returns \"OK\" response",
+  "operation_id": "CreateAuthNMapping",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AuthNMappingCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "attribute_key": "{{ unique_lower_alnum }}",
+            "attribute_value": "{{ unique }}"
+          },
+          "relationships": {
+            "role": {
+              "data": {
+                "id": "{{ role.data.id }}",
+                "type": "roles"
+              }
+            }
+          },
+          "type": "authn_mappings"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/authn_mappings"
+  },
+  "scenario": "Create an AuthN Mapping returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

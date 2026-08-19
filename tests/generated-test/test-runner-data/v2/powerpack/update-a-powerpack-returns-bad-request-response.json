@@ -1,0 +1,69 @@
+{
+  "api": "Powerpack",
+  "expected_status": 400,
+  "feature": "Powerpack",
+  "id": "v2/Powerpack/Update a powerpack returns \"Bad Request\" response",
+  "operation_id": "UpdatePowerpack",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Powerpack",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Sample powerpack",
+            "group_widget": {
+              "definition": {
+                "layout_type": "ordered",
+                "type": "group1",
+                "widgets": []
+              }
+            },
+            "name": "Sample Powerpack",
+            "tags": [
+              "tag:sample"
+            ],
+            "template_variables": [
+              {
+                "defaults": [
+                  "*"
+                ],
+                "name": "sample"
+              }
+            ]
+          },
+          "type": "powerpack"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "powerpack_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "powerpack.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/powerpacks/{powerpack_id}"
+  },
+  "scenario": "Update a powerpack returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,1081 @@
+{
+  "feature": "Powerpack",
+  "recordings": [
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-05T15:56:23.491Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Powerpack for ABC",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "type": "group1",
+                        "widgets": []
+                      }
+                    },
+                    "name": "Sample Powerpack",
+                    "tags": [
+                      "tag:foo1"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "test"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid group widget for powerpack. Error: 'group1' is not one of ['group']\\n\\nFailed validating 'enum' in schema['properties']['type']:\\n    {'enum': ['group']}\\n\\nOn instance['type']:\\n    'group1'.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a new powerpack returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-24T18:32:10.926Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Create_a_new_powerpack_returns_OK_response-1698172330",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a5892a4e-729b-11ee-8449-da7ad0900002\",\"attributes\":{\"name\":\"Test-Create_a_new_powerpack_returns_OK_response-1698172330\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":2803120731030485}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/a5892a4e-729b-11ee-8449-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a new powerpack returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-04T19:18:49.142Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "name": "Sample Powerpack",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"API input validation failed: {'group_widget': ['Missing data for required field.']}\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a new powerpack with missing group_widget returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-24T18:32:12.418Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Delete_a_powerpack_returns_OK_response-1698172332",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a5f45260-729b-11ee-a369-da7ad0900002\",\"attributes\":{\"name\":\"Test-Delete_a_powerpack_returns_OK_response-1698172332\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":6498721107839400}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/a5f45260-729b-11ee-a369-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/a5f45260-729b-11ee-a369-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Powerpack with ID a5f45260-729b-11ee-a369-da7ad0900002 not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a powerpack returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-09-19T20:34:20.756Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/made-up-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Powerpack has invalid UUID made-up-id not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a powerpack returns \"Powerpack Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-24T18:32:12.762Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Get_a_Powerpack_returns_OK_response-1698172332",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a62886de-729b-11ee-b0c9-da7ad0900002\",\"attributes\":{\"name\":\"Test-Get_a_Powerpack_returns_OK_response-1698172332\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":1686767504601483}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/powerpacks/a62886de-729b-11ee-b0c9-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a62886de-729b-11ee-b0c9-da7ad0900002\",\"attributes\":{\"name\":\"Test-Get_a_Powerpack_returns_OK_response-1698172332\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":1686767504601483}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/a62886de-729b-11ee-b0c9-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a Powerpack returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-11T15:48:56.601Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/powerpacks/made-up-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Powerpack has invalid UUID made-up-id not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a Powerpack returns \"Powerpack Not Found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-24T18:32:13.096Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Get_all_powerpacks_returns_OK_response-1698172333",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a65cae1e-729b-11ee-9a94-da7ad0900002\",\"attributes\":{\"name\":\"Test-Get_all_powerpacks_returns_OK_response-1698172333\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":8966066562910324}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/powerpacks",
+            "query": [
+              [
+                "page[limit]",
+                "1000"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"powerpack\",\"id\":\"cabb74fa-686b-11ee-8326-da7ad0900002\",\"attributes\":{\"name\":\"another powerpack\",\"description\":\"\",\"group_widget\":{\"layout\":{\"x\":0,\"y\":0,\"width\":4,\"height\":3},\"definition\":{\"title\":\"another powerpack\",\"type\":\"group\",\"layout_type\":\"ordered\",\"widgets\":[{\"layout\":{\"x\":0,\"y\":0,\"width\":2,\"height\":2},\"definition\":{\"type\":\"note\",\"content\":\"its just a ***test***\",\"background_color\":\"white\",\"font_size\":\"36\",\"text_align\":\"center\",\"vertical_align\":\"center\",\"show_tick\":false,\"tick_pos\":\"50%\",\"tick_edge\":\"left\",\"has_padding\":true},\"id\":2265811261450092}]}},\"template_variables\":[],\"tags\":[\"tag:display\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"d5bf7f0a-19b0-11ed-b0df-da7ad0900002\"}}}},{\"type\":\"powerpack\",\"id\":\"a65cae1e-729b-11ee-9a94-da7ad0900002\",\"attributes\":{\"name\":\"Test-Get_all_powerpacks_returns_OK_response-1698172333\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":8966066562910324}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},{\"type\":\"powerpack\",\"id\":\"66a92bf4-7209-11ee-af46-da7ad0900002\",\"attributes\":{\"name\":\"Sample Powerpack\",\"description\":\"Test Powerpack 2\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"event_size\":\"l\",\"query\":\"*\",\"title\":\"Widget Title\",\"title_align\":\"right\",\"title_size\":\"16\",\"type\":\"event_stream\"},\"id\":5277269296927835}]}},\"template_variables\":[{\"defaults\":[\"defaults\"],\"name\":\"datacenter\"}],\"tags\":[\"tag:foo1\",\"tag:foo2\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}}],\"included\":[{\"type\":\"users\",\"id\":\"d5bf7f0a-19b0-11ed-b0df-da7ad0900002\",\"attributes\":{\"name\":\"Kevin Zou\",\"email\":\"kevin.zou@datadoghq.com\"}},{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}},{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":null,\"email\":\"frog@datadoghq.com\"}}],\"meta\":{\"pagination\":{\"offset\":0,\"first_offset\":0,\"prev_offset\":0,\"next_offset\":1000,\"last_offset\":null,\"limit\":1000,\"type\":\"offset_limit\"}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=1000\",\"last\":null,\"next\":\"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=1000&page[limit]=1000\",\"prev\":null,\"first\":\"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=1000\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/a65cae1e-729b-11ee-9a94-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all powerpacks returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-11T19:24:38.025Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/powerpacks",
+            "query": [
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"powerpack\",\"id\":\"d1938042-686b-11ee-9d56-da7ad0900002\",\"attributes\":{\"name\":\"Test-Get_all_powerpacks_returns_OK_response_with_pagination-1697052278\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":4216761608837044}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0}},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}},{\"type\":\"powerpack\",\"id\":\"cabb74fa-686b-11ee-8326-da7ad0900002\",\"attributes\":{\"name\":\"another powerpack\",\"description\":\"\",\"group_widget\":{\"layout\":{\"x\":0,\"y\":0,\"width\":4,\"height\":3},\"definition\":{\"title\":\"another powerpack\",\"type\":\"group\",\"layout_type\":\"ordered\",\"widgets\":[{\"layout\":{\"x\":0,\"y\":0,\"width\":2,\"height\":2},\"definition\":{\"type\":\"note\",\"content\":\"its just a ***test***\",\"background_color\":\"white\",\"font_size\":\"36\",\"text_align\":\"center\",\"vertical_align\":\"center\",\"show_tick\":false,\"tick_pos\":\"50%\",\"tick_edge\":\"left\",\"has_padding\":true},\"id\":2265811261450092}]}},\"template_variables\":[],\"tags\":[\"tag:display\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"d5bf7f0a-19b0-11ed-b0df-da7ad0900002\"}}}}],\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":null,\"email\":\"frog@datadoghq.com\"}},{\"type\":\"users\",\"id\":\"d5bf7f0a-19b0-11ed-b0df-da7ad0900002\",\"attributes\":{\"name\":\"Kevin Zou\",\"email\":\"kevin.zou@datadoghq.com\"}}],\"meta\":{\"pagination\":{\"offset\":0,\"first_offset\":0,\"prev_offset\":0,\"next_offset\":2,\"last_offset\":null,\"limit\":2,\"type\":\"offset_limit\"}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=2\",\"last\":null,\"next\":\"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=2&page[limit]=2\",\"prev\":null,\"first\":\"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=2\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/powerpacks",
+            "query": [
+              [
+                "page[limit]",
+                "2"
+              ],
+              [
+                "page[offset]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"powerpack\",\"id\":\"7d77332e-6865-11ee-a8bf-da7ad0900002\",\"attributes\":{\"name\":\"\",\"description\":\"Test Powerpack 2\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Powerpack Test\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test test test\",\"type\":\"note\"},\"id\":887637664261479}]}},\"template_variables\":null,\"tags\":[]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}}],\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":null,\"email\":\"frog@datadoghq.com\"}}],\"meta\":{\"pagination\":{\"offset\":2,\"first_offset\":0,\"prev_offset\":0,\"next_offset\":4,\"last_offset\":null,\"limit\":2,\"type\":\"offset_limit\"}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/powerpacks?page%5Blimit%5D=2&page%5Boffset%5D=2\",\"last\":null,\"next\":\"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=4&page[limit]=2\",\"prev\":\"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=2\",\"first\":\"https://api.datadoghq.com/api/v2/powerpacks?page[offset]=0&page[limit]=2\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all powerpacks returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-24T18:32:13.426Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Update_a_powerpack_returns_Bad_Request_response-1698172333",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a68dc724-729b-11ee-aa5b-da7ad0900002\",\"attributes\":{\"name\":\"Test-Update_a_powerpack_returns_Bad_Request_response-1698172333\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":3206637304594094}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "type": "group1",
+                        "widgets": []
+                      }
+                    },
+                    "name": "Sample Powerpack",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/powerpacks/a68dc724-729b-11ee-aa5b-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid group widget for powerpack. Error: 'group1' is not one of ['group']\\n\\nFailed validating 'enum' in schema['properties']['type']:\\n    {'enum': ['group']}\\n\\nOn instance['type']:\\n    'group1'.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/a68dc724-729b-11ee-aa5b-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a powerpack returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-24T18:32:13.775Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Update_a_powerpack_returns_OK_response-1698172333",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/powerpacks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a6d282b0-729b-11ee-a89e-da7ad0900002\",\"attributes\":{\"name\":\"Test-Update_a_powerpack_returns_OK_response-1698172333\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":4388958017557503}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Update_a_powerpack_returns_OK_response-1698172333",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/powerpacks/a6d282b0-729b-11ee-a89e-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"powerpack\",\"id\":\"a6d282b0-729b-11ee-a89e-da7ad0900002\",\"attributes\":{\"name\":\"Test-Update_a_powerpack_returns_OK_response-1698172333\",\"description\":\"Sample powerpack\",\"group_widget\":{\"definition\":{\"layout_type\":\"ordered\",\"show_title\":true,\"title\":\"Sample Powerpack\",\"type\":\"group\",\"widgets\":[{\"definition\":{\"content\":\"test\",\"type\":\"note\"},\"id\":3224344873217279}]},\"layout\":{\"height\":3,\"width\":12,\"x\":0,\"y\":0},\"live_span\":\"1h\"},\"template_variables\":[{\"defaults\":[\"*\"],\"name\":\"sample\"}],\"tags\":[\"tag:sample\"]},\"relationships\":{\"author\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/powerpacks/a6d282b0-729b-11ee-a89e-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a powerpack returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Powerpack",
+      "frozen_at": "2023-10-24T18:32:14.282Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Sample powerpack",
+                    "group_widget": {
+                      "definition": {
+                        "layout_type": "ordered",
+                        "show_title": true,
+                        "title": "Sample Powerpack",
+                        "type": "group",
+                        "widgets": [
+                          {
+                            "definition": {
+                              "content": "test",
+                              "type": "note"
+                            }
+                          }
+                        ]
+                      },
+                      "layout": {
+                        "height": 3,
+                        "width": 12,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "live_span": "1h"
+                    },
+                    "name": "Test-Update_a_powerpack_returns_Powerpack_Not_Found_response-1698172334",
+                    "tags": [
+                      "tag:sample"
+                    ],
+                    "template_variables": [
+                      {
+                        "defaults": [
+                          "*"
+                        ],
+                        "name": "sample"
+                      }
+                    ]
+                  },
+                  "type": "powerpack"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/powerpacks/made-up-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Powerpack has invalid UUID made-up-id not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a powerpack returns \"Powerpack Not Found\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

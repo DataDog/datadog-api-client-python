@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 400,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Delete a monitor configuration policy returns \"Bad Request\" response",
+  "operation_id": "DeleteMonitorConfigPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "INVALID_UUID"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/policy/{policy_id}"
+  },
+  "scenario": "Delete a monitor configuration policy returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

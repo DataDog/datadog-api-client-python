@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 400,
+  "feature": "Metrics",
+  "id": "v2/Metrics/List tag indexing rules for a metric returns \"Bad Request\" response",
+  "operation_id": "ListTagIndexingRulesForMetric",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "1invalid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/{metric_name}/tag-indexing-rules"
+  },
+  "scenario": "List tag indexing rules for a metric returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

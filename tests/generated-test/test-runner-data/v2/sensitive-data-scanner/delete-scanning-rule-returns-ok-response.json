@@ -1,0 +1,45 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 200,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Delete Scanning Rule returns \"OK\" response",
+  "operation_id": "DeleteScanningRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerRuleDeleteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/sensitive-data-scanner/config/rules/{rule_id}"
+  },
+  "scenario": "Delete Scanning Rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

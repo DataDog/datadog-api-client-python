@@ -1,0 +1,138 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Set On-Call team routing rules returns \"OK\" response",
+  "operation_id": "SetOnCallTeamRoutingRules",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamRoutingRulesRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "rules": [
+              {
+                "actions": [
+                  {
+                    "policy_id": "{{ escalation_policy.data.id }}",
+                    "type": "escalation_policy",
+                    "urgency": "low"
+                  }
+                ],
+                "query": "tags.service:time_restrictions",
+                "time_restriction": {
+                  "restrictions": [
+                    {
+                      "end_day": "monday",
+                      "end_time": "17:00:00",
+                      "start_day": "monday",
+                      "start_time": "09:00:00"
+                    },
+                    {
+                      "end_day": "tuesday",
+                      "end_time": "17:00:00",
+                      "start_day": "tuesday",
+                      "start_time": "09:00:00"
+                    }
+                  ],
+                  "time_zone": "Europe/Paris"
+                }
+              },
+              {
+                "actions": [
+                  {
+                    "ack_timeout_minutes": 30,
+                    "policy_id": "{{ escalation_policy.data.id }}",
+                    "support_hours": {
+                      "restrictions": [
+                        {
+                          "end_day": "wednesday",
+                          "end_time": "17:00:00",
+                          "start_day": "wednesday",
+                          "start_time": "09:00:00"
+                        },
+                        {
+                          "end_day": "thursday",
+                          "end_time": "17:00:00",
+                          "start_day": "thursday",
+                          "start_time": "09:00:00"
+                        }
+                      ],
+                      "time_zone": "Europe/Paris"
+                    },
+                    "type": "escalation_policy",
+                    "urgency": "low"
+                  }
+                ],
+                "query": "tags.service:support_hours_and_acknowledgment_timeout"
+              },
+              {
+                "policy_id": "{{ escalation_policy.data.id }}",
+                "query": "tags.service:legacy_policy_definition",
+                "urgency": "low"
+              },
+              {
+                "actions": [
+                  {
+                    "policy_id": "{{ escalation_policy.data.id }}",
+                    "type": "escalation_policy",
+                    "urgency": "low"
+                  }
+                ],
+                "query": ""
+              }
+            ]
+          },
+          "id": "{{ dd_team.data.id }}",
+          "type": "team_routing_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "rules"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/teams/{team_id}/routing-rules"
+  },
+  "scenario": "Set On-Call team routing rules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/List tag pipeline rulesets returns \"OK\" response",
+  "operation_id": "ListTagPipelinesRulesets",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/tags/enrichment"
+  },
+  "scenario": "List tag pipeline rulesets returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "FastlyIntegration",
+  "expected_status": 200,
+  "feature": "Fastly Integration",
+  "id": "v2/Fastly Integration/List Fastly accounts returns \"OK\" response",
+  "operation_id": "ListFastlyAccounts",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integrations/fastly/accounts"
+  },
+  "scenario": "List Fastly accounts returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

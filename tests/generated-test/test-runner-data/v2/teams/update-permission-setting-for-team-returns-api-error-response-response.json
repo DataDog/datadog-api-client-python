@@ -1,0 +1,66 @@
+{
+  "api": "Teams",
+  "expected_status": 404,
+  "feature": "Teams",
+  "id": "v2/Teams/Update permission setting for team returns \"API error response.\" response",
+  "operation_id": "UpdateTeamPermissionSetting",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamPermissionSettingUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "value": "admins"
+          },
+          "type": "team_permission_settings"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "action",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "REPLACE.ME"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/permission-settings/{action}"
+  },
+  "scenario": "Update permission setting for team returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

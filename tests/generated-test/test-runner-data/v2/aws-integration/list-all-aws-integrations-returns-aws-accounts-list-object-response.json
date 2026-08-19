@@ -1,0 +1,18 @@
+{
+  "api": "AWSIntegration",
+  "expected_status": 200,
+  "feature": "AWS Integration",
+  "id": "v2/AWS Integration/List all AWS integrations returns \"AWS Accounts List object\" response",
+  "operation_id": "ListAWSAccounts",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/aws/accounts"
+  },
+  "scenario": "List all AWS integrations returns \"AWS Accounts List object\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

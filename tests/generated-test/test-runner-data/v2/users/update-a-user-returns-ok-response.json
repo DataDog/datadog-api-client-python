@@ -1,0 +1,52 @@
+{
+  "api": "Users",
+  "expected_status": 200,
+  "feature": "Users",
+  "id": "v2/Users/Update a user returns \"OK\" response",
+  "operation_id": "UpdateUser",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UserUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "disabled": true,
+            "name": "updated"
+          },
+          "id": "{{ user.data.id }}",
+          "type": "users"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/users/{user_id}"
+  },
+  "scenario": "Update a user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

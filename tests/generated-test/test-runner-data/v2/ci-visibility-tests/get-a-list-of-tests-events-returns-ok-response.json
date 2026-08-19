@@ -1,0 +1,83 @@
+{
+  "api": "CIVisibilityTests",
+  "expected_status": 200,
+  "feature": "CI Visibility Tests",
+  "id": "v2/CI Visibility Tests/Get a list of tests events returns \"OK\" response",
+  "operation_id": "ListCIAppTestEvents",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[query]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "@test.service:web-ui-tests"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[from]",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now - 30s') }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[to]",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now') }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 5
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ci/tests/events"
+  },
+  "scenario": "Get a list of tests events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

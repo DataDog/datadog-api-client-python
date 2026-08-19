@@ -1,0 +1,51 @@
+{
+  "api": "GoogleChatIntegration",
+  "expected_status": 201,
+  "feature": "Google Chat Integration",
+  "id": "v2/Google Chat Integration/Create organization handle returns \"CREATED\" response",
+  "operation_id": "CreateOrganizationHandle",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "GoogleChatCreateOrganizationHandleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{unique}}",
+            "space_resource_name": "spaces/AAQA-zFIks8"
+          }
+        },
+        "type": "google-chat-organization-handle"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "organization_binding_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "e54cb570-c674-529c-769d-84b312288ed7"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/organization-handles"
+  },
+  "scenario": "Create organization handle returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

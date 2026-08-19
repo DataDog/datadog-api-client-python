@@ -1,0 +1,18 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v2/Synthetics/Search Synthetics suites returns \"OK\" response",
+  "operation_id": "SearchSuites",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/synthetics/suites/search"
+  },
+  "scenario": "Search Synthetics suites returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

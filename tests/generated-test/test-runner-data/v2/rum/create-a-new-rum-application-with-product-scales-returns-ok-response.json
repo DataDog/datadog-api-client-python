@@ -1,0 +1,36 @@
+{
+  "api": "RUM",
+  "expected_status": 200,
+  "feature": "RUM",
+  "id": "v2/RUM/Create a new RUM application with Product Scales returns \"OK\" response",
+  "operation_id": "CreateRUMApplication",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMApplicationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "test-rum-with-product-scales-{{ unique_hash }}",
+            "product_analytics_retention_state": "NONE",
+            "rum_event_processing_state": "ERROR_FOCUSED_MODE",
+            "type": "browser"
+          },
+          "type": "rum_application_create"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/applications"
+  },
+  "scenario": "Create a new RUM application with Product Scales returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

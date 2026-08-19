@@ -1,0 +1,35 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 404,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/Star a Model Lab project returns \"Not Found\" response",
+  "operation_id": "StarModelLabProject",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "project_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 999999
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/projects/{project_id}/star"
+  },
+  "scenario": "Star a Model Lab project returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

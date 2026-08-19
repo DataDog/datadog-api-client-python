@@ -1,0 +1,44 @@
+{
+  "api": "Spans",
+  "expected_status": 200,
+  "feature": "Spans",
+  "id": "v2/Spans/Aggregate spans returns \"OK\" response",
+  "operation_id": "AggregateSpans",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SpansAggregateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "compute": [
+              {
+                "aggregation": "count",
+                "interval": "5m",
+                "type": "timeseries"
+              }
+            ],
+            "filter": {
+              "from": "now-15m",
+              "query": "*",
+              "to": "now"
+            }
+          },
+          "type": "aggregate_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/spans/analytics/aggregate"
+  },
+  "scenario": "Aggregate spans returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

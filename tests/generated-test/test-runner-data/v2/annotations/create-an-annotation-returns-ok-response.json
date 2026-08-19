@@ -1,0 +1,40 @@
+{
+  "api": "Annotations",
+  "expected_status": 200,
+  "feature": "Annotations",
+  "id": "v2/Annotations/Create an annotation returns \"OK\" response",
+  "operation_id": "CreateAnnotation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AnnotationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "color": "blue",
+            "description": "Deployed v2.3.1 to production.",
+            "page_id": "dashboard:abc-def-xyz",
+            "start_time": 1704067200000,
+            "type": "pointInTime",
+            "widget_ids": [
+              "1234567890"
+            ]
+          },
+          "type": "annotation"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/annotation"
+  },
+  "scenario": "Create an annotation returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

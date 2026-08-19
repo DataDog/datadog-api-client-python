@@ -1,0 +1,60 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with template variable type field returns \"OK\" response",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": null,
+        "layout_type": "ordered",
+        "notify_list": [],
+        "reflow_type": "auto",
+        "restricted_roles": [],
+        "template_variables": [
+          {
+            "available_values": [
+              "service",
+              "datacenter",
+              "env"
+            ],
+            "defaults": [
+              "service",
+              "datacenter"
+            ],
+            "name": "group_by_var",
+            "type": "group"
+          }
+        ],
+        "title": "",
+        "widgets": [
+          {
+            "definition": {
+              "requests": {
+                "fill": {
+                  "q": "avg:system.cpu.user{*}"
+                }
+              },
+              "type": "hostmap"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with template variable type field returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "GCPIntegration",
+  "expected_status": 200,
+  "feature": "GCP Integration",
+  "id": "v1/GCP Integration/List all GCP integrations returns \"OK\" response",
+  "operation_id": "ListGCPIntegration",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/gcp"
+  },
+  "scenario": "List all GCP integrations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

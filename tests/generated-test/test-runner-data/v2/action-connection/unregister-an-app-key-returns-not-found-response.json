@@ -1,0 +1,35 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 404,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Unregister an App Key returns \"Not found\" response",
+  "operation_id": "UnregisterAppKey",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "57cc69ae-9214-4ecc-8df8-43ecc1d92d99"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/app_key_registrations/{app_key_id}"
+  },
+  "scenario": "Unregister an App Key returns \"Not found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

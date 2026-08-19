@@ -1,0 +1,18 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v2/Synthetics/Get the on-demand concurrency cap returns \"OK\" response",
+  "operation_id": "GetOnDemandConcurrencyCap",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/synthetics/settings/on_demand_concurrency_cap"
+  },
+  "scenario": "Get the on-demand concurrency cap returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

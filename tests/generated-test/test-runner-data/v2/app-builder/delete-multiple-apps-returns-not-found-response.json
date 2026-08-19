@@ -1,0 +1,41 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 404,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Delete Multiple Apps returns \"Not Found\" response",
+  "operation_id": "DeleteApps",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DeleteAppsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "aea2ed17-b45f-40d0-ba59-c86b7972c901",
+            "type": "appDefinitions"
+          },
+          {
+            "id": "f69bb8be-6168-4fe7-a30d-370256b6504a",
+            "type": "appDefinitions"
+          },
+          {
+            "id": "ab1ed73e-13ad-4426-b0df-a0ff8876a088",
+            "type": "appDefinitions"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/app-builder/apps"
+  },
+  "scenario": "Delete Multiple Apps returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

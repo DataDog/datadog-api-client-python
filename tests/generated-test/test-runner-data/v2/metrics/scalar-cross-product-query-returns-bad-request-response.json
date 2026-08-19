@@ -1,0 +1,51 @@
+{
+  "api": "Metrics",
+  "expected_status": 400,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Scalar cross product query returns \"Bad Request\" response",
+  "operation_id": "QueryScalarData",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ScalarFormulaQueryRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "formulas": [
+              {
+                "formula": "a+b",
+                "limit": {
+                  "count": 10,
+                  "order": "desc"
+                }
+              }
+            ],
+            "from": 1568899800000,
+            "queries": [
+              {
+                "aggregator": "avg",
+                "data_source": "metrics",
+                "name": "a",
+                "query": "avg:system.cpu.user{*}"
+              }
+            ],
+            "to": 1568923200000
+          },
+          "type": "scalar_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/query/scalar"
+  },
+  "scenario": "Scalar cross product query returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 204,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Delete an application key returns \"No Content\" response",
+  "operation_id": "DeleteApplicationKey",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "application_key.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/application_keys/{app_key_id}"
+  },
+  "scenario": "Delete an application key returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

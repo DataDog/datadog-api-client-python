@@ -1,0 +1,35 @@
+{
+  "api": "APMRetentionFilters",
+  "expected_status": 200,
+  "feature": "APM Retention Filters",
+  "id": "v2/APM Retention Filters/Get a given APM retention filter returns \"OK\" response",
+  "operation_id": "GetApmRetentionFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "filter_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "retention_filter.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/apm/config/retention-filters/{filter_id}"
+  },
+  "scenario": "Get a given APM retention filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

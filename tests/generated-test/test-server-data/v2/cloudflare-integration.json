@@ -1,0 +1,691 @@
+{
+  "feature": "Cloudflare Integration",
+  "recordings": [
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:40.939Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "name": "testaddcloudflareaccountreturnsbadrequestresponseduetomissingemail1704393640"
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"{'_schema': ['Email address is required if providing an api key and not an api token.']}\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Add Cloudflare account returns \"Bad Request\" response due to missing email",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:41.099Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                    "name": "testaddcloudflareaccountreturnsbadrequestresponseusinginvalidauthkey1704393641"
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid account. Your Cloudflare configuration is invalid. Impossible to get zones for the account testaddcloudflareaccountreturnsbadrequestresponseusinginvalidauthkey1704393641: API key or email is unknown.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Add Cloudflare account returns \"Bad Request\" response using invalid auth key",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:41.520Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "dev@datadoghq.com",
+                    "name": "testaddcloudflareaccountreturnscreatedresponse1704393641"
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"attributes\":{\"email\":\"dev@datadoghq.com\",\"name\":\"testaddcloudflareaccountreturnscreatedresponse1704393641\",\"resources\":[],\"zones\":[]},\"id\":\"baa2079200095466b080d75adfdb32fa\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/cloudflare/accounts/baa2079200095466b080d75adfdb32fa",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Add Cloudflare account returns \"CREATED\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-03T19:17:37.850Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "new@email",
+                    "name": "testaddcloudflareaccountreturnscreatedresponsewithoptionalfilters1704309457",
+                    "resources": [
+                      "lb",
+                      "dns"
+                    ],
+                    "zones": [
+                      "zone-id-1",
+                      "zone-id-2"
+                    ]
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid account. Your Cloudflare configuration is invalid. Impossible to get zones for the account testaddcloudflareaccountreturnscreatedresponsewithoptionalfilters1704309457: API key or email is not in the correct format.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Add Cloudflare account returns \"CREATED\" response with optional filters",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:42.323Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "dev@datadog.com",
+                    "name": "testgetcloudflareaccountreturnsokresponse1704393642",
+                    "resources": [
+                      "web",
+                      "dns"
+                    ],
+                    "zones": [
+                      "zone-id-1",
+                      "zone-id-2"
+                    ]
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"attributes\":{\"name\":\"testgetcloudflareaccountreturnsokresponse1704393642\",\"email\":\"dev@datadog.com\",\"zones\":[\"zone-id-1\",\"zone-id-2\"],\"resources\":[\"web\",\"dns\"]},\"id\":\"88d65a60026254bfaf976a427606c061\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/cloudflare/accounts/88d65a60026254bfaf976a427606c061",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"attributes\":{\"zones\":[\"zone-id-1\",\"zone-id-2\"],\"email\":\"dev@datadog.com\",\"name\":\"testgetcloudflareaccountreturnsokresponse1704393642\",\"resources\":[\"web\",\"dns\"]},\"id\":\"88d65a60026254bfaf976a427606c061\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/cloudflare/accounts/88d65a60026254bfaf976a427606c061",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get Cloudflare account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:43.242Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "dev@datadog.com",
+                    "name": "testlistcloudflareaccountsreturnsokresponse1704393643",
+                    "resources": [
+                      "web",
+                      "dns"
+                    ],
+                    "zones": [
+                      "zone-id-1",
+                      "zone-id-2"
+                    ]
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"id\":\"032c2a7bec2890a18b9ff810ffbaf789\",\"attributes\":{\"resources\":[\"web\",\"dns\"],\"name\":\"testlistcloudflareaccountsreturnsokresponse1704393643\",\"email\":\"dev@datadog.com\",\"zones\":[\"zone-id-1\",\"zone-id-2\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"cloudflare-accounts\",\"attributes\":{\"resources\":[\"dns\",\"worker\"],\"email\":\"dev@datadoghq.com\",\"zones\":[\"57d151866f1b1d5e4e0057aed6b9f4cb\"],\"name\":\"testing\"},\"id\":\"ae2b1fca515949e5d54fb22b8ed95575\"},{\"type\":\"cloudflare-accounts\",\"attributes\":{\"resources\":[\"web\",\"dns\"],\"email\":\"dev@datadog.com\",\"zones\":[\"zone-id-1\",\"zone-id-2\"],\"name\":\"testlistcloudflareaccountsreturnsokresponse1704393643\"},\"id\":\"032c2a7bec2890a18b9ff810ffbaf789\"},{\"type\":\"cloudflare-accounts\",\"attributes\":{\"resources\":[],\"email\":\"\",\"zones\":[],\"name\":\"testing_2\"},\"id\":\"8222b3d5b803354416362560a64a1725\"},{\"type\":\"cloudflare-accounts\",\"attributes\":{\"resources\":[],\"email\":\"\",\"zones\":[],\"name\":\"cloudflare-test\"},\"id\":\"fe0a70a58b246c3836c665e956f56bab\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/cloudflare/accounts/032c2a7bec2890a18b9ff810ffbaf789",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List Cloudflare accounts returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:44.099Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "dev@datadog.com",
+                    "name": "testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1704393644",
+                    "resources": [
+                      "web",
+                      "dns"
+                    ],
+                    "zones": [
+                      "zone-id-1",
+                      "zone-id-2"
+                    ]
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"attributes\":{\"email\":\"dev@datadog.com\",\"name\":\"testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1704393644\",\"resources\":[\"web\",\"dns\"],\"zones\":[\"zone-id-1\",\"zone-id-2\"]},\"id\":\"25336f9851edaf58647eec09ce3b636f\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integrations/cloudflare/accounts/25336f9851edaf58647eec09ce3b636f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid account. Your Cloudflare configuration is invalid. Impossible to get zones for the account testupdatecloudflareaccountreturnsbadrequestresponseduetoinvalidapikey1704393644: API key or email is unknown.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/cloudflare/accounts/25336f9851edaf58647eec09ce3b636f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update Cloudflare account returns \"Bad Request\" response due to invalid api key",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:46.262Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "dev@datadog.com",
+                    "name": "testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1704393646",
+                    "resources": [
+                      "web",
+                      "dns"
+                    ],
+                    "zones": [
+                      "zone-id-1",
+                      "zone-id-2"
+                    ]
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"attributes\":{\"zones\":[\"zone-id-1\",\"zone-id-2\"],\"resources\":[\"web\",\"dns\"],\"name\":\"testupdatecloudflareaccountreturnsbadrequestresponseduetomissingrequiredemail1704393646\",\"email\":\"dev@datadog.com\"},\"id\":\"f1d4f10fbad4add4962f2bc1fcb18c36\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey"
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integrations/cloudflare/accounts/f1d4f10fbad4add4962f2bc1fcb18c36",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"{'_schema': ['Email address is required if providing an api key and not an api token.']}\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/cloudflare/accounts/f1d4f10fbad4add4962f2bc1fcb18c36",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update Cloudflare account returns \"Bad Request\" response due to missing required email",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloudflare Integration",
+      "frozen_at": "2024-01-04T18:40:47.476Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "dev@datadog.com",
+                    "name": "testupdatecloudflareaccountreturnsokresponse1704393647",
+                    "resources": [
+                      "web",
+                      "dns"
+                    ],
+                    "zones": [
+                      "zone-id-1",
+                      "zone-id-2"
+                    ]
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/cloudflare/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"attributes\":{\"zones\":[\"zone-id-1\",\"zone-id-2\"],\"resources\":[\"web\",\"dns\"],\"name\":\"testupdatecloudflareaccountreturnsokresponse1704393647\",\"email\":\"dev@datadog.com\"},\"id\":\"6956534375b31b062c809696f3c34ee8\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "fakekey",
+                    "email": "dev@datadoghq.com",
+                    "zones": [
+                      "zone-id-3"
+                    ]
+                  },
+                  "type": "cloudflare-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integrations/cloudflare/accounts/6956534375b31b062c809696f3c34ee8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"cloudflare-accounts\",\"attributes\":{\"resources\":[],\"email\":\"dev@datadoghq.com\",\"zones\":[\"zone-id-3\"],\"name\":\"testupdatecloudflareaccountreturnsokresponse1704393647\"},\"id\":\"6956534375b31b062c809696f3c34ee8\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/cloudflare/accounts/6956534375b31b062c809696f3c34ee8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update Cloudflare account returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

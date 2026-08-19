@@ -1,0 +1,87 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a detection rule with detection method 'sequence_detection' returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "condition": "step_b > 0",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "isEnabled": true,
+        "message": "Logs and signals asdf",
+        "name": "{{ unique }}",
+        "options": {
+          "detectionMethod": "sequence_detection",
+          "evaluationWindow": 0,
+          "keepAlive": 300,
+          "maxSignalDuration": 600,
+          "sequenceDetectionOptions": {
+            "stepTransitions": [
+              {
+                "child": "step_b",
+                "evaluationWindow": 900,
+                "parent": "step_a"
+              }
+            ],
+            "steps": [
+              {
+                "condition": "a > 0",
+                "evaluationWindow": 60,
+                "name": "step_a"
+              },
+              {
+                "condition": "b > 0",
+                "evaluationWindow": 60,
+                "name": "step_b"
+              }
+            ]
+          }
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "dataSource": "logs",
+            "distinctFields": [],
+            "groupByFields": [],
+            "hasOptionalGroupByFields": false,
+            "name": "",
+            "query": "service:logs-rule-reducer source:paul test2"
+          },
+          {
+            "aggregation": "count",
+            "dataSource": "logs",
+            "distinctFields": [],
+            "groupByFields": [],
+            "hasOptionalGroupByFields": false,
+            "name": "",
+            "query": "service:logs-rule-reducer source:paul test1"
+          }
+        ],
+        "tags": [],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules"
+  },
+  "scenario": "Create a detection rule with detection method 'sequence_detection' returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v1/Downtimes/Get all downtimes returns \"OK\" response",
+  "operation_id": "ListDowntimes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "with_creator",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/downtime"
+  },
+  "scenario": "Get all downtimes returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,41 @@
+{
+  "api": "Logs",
+  "expected_status": 200,
+  "feature": "Logs",
+  "id": "v2/Logs/Search logs returns \"OK\" response with pagination",
+  "operation_id": "ListLogs",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsListRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "from": "now-15m",
+          "indexes": [
+            "main"
+          ],
+          "to": "now"
+        },
+        "options": {
+          "timezone": "GMT"
+        },
+        "page": {
+          "limit": 2
+        },
+        "sort": "timestamp"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": true,
+    "parameters": [],
+    "path": "/api/v2/logs/events/search"
+  },
+  "scenario": "Search logs returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,28 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get a list of security signals returns \"OK\" response with pagination",
+  "operation_id": "SearchSecurityMonitoringSignals",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringSignalListRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"filter\": {\"from\": \"{{ timeISO(\"now-15m\") }}\", \"query\": \"security:attack status:high\", \"to\": \"{{ timeISO(\"now\") }}\"}, \"page\": {\"limit\": 2}, \"sort\": \"timestamp\"}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": true,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/signals/search"
+  },
+  "scenario": "Get a list of security signals returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

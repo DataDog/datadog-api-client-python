@@ -1,0 +1,60 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard returns \"OK\" response",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboard_payload.json",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with Profile Metrics Query",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "profile_metrics_query": {
+                    "compute": {
+                      "aggregation": "sum",
+                      "facet": "@prof_core_cpu_cores"
+                    },
+                    "group_by": [
+                      {
+                        "facet": "service",
+                        "limit": 10,
+                        "sort": {
+                          "aggregation": "sum",
+                          "facet": "@prof_core_cpu_cores",
+                          "order": "desc"
+                        }
+                      }
+                    ],
+                    "search": {
+                      "query": "runtime:jvm"
+                    }
+                  }
+                }
+              ],
+              "type": "timeseries"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

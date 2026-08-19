@@ -1,0 +1,36 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Validate a suppression rule returns \"Bad Request\" response",
+  "operation_id": "ValidateSecurityMonitoringSuppression",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringSuppressionCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "data_exclusion_query": "not enough attributes",
+            "enabled": false,
+            "name": "cold_harbour",
+            "rule_query": "rule:[A-Invalid"
+          },
+          "type": "suppressions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/configuration/suppressions/validation"
+  },
+  "scenario": "Validate a suppression rule returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "Containers",
+  "expected_status": 200,
+  "feature": "Containers",
+  "id": "v2/Containers/Get All Containers returns \"OK\" response with pagination",
+  "operation_id": "ListContainers",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/containers"
+  },
+  "scenario": "Get All Containers returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

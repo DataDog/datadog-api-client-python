@@ -1,0 +1,80 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Test a rule returns \"OK\" response",
+  "operation_id": "TestSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleTestRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "rule": {
+          "cases": [
+            {
+              "condition": "a > 0",
+              "name": "",
+              "notifications": [],
+              "status": "info"
+            }
+          ],
+          "hasExtendedTitle": true,
+          "isEnabled": true,
+          "message": "My security monitoring rule message.",
+          "name": "My security monitoring rule.",
+          "options": {
+            "decreaseCriticalityBasedOnEnv": false,
+            "detectionMethod": "threshold",
+            "evaluationWindow": 0,
+            "keepAlive": 0,
+            "maxSignalDuration": 0
+          },
+          "queries": [
+            {
+              "aggregation": "count",
+              "distinctFields": [],
+              "groupByFields": [
+                "@userIdentity.assumed_role"
+              ],
+              "name": "",
+              "query": "source:source_here"
+            }
+          ],
+          "tags": [
+            "env:prod",
+            "team:security"
+          ],
+          "type": "log_detection"
+        },
+        "ruleQueryPayloads": [
+          {
+            "expectedResult": true,
+            "index": 0,
+            "payload": {
+              "ddsource": "source_here",
+              "ddtags": "env:staging,version:5.1",
+              "hostname": "i-012345678",
+              "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World",
+              "service": "payment",
+              "userIdentity": {
+                "assumed_role": "fake assumed_role"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules/test"
+  },
+  "scenario": "Test a rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

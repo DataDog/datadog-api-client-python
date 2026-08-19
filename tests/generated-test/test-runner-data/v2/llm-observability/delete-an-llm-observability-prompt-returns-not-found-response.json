@@ -1,0 +1,35 @@
+{
+  "api": "LLMObservability",
+  "expected_status": 404,
+  "feature": "LLM Observability",
+  "id": "v2/LLM Observability/Delete an LLM Observability prompt returns \"Not Found\" response",
+  "operation_id": "DeleteLLMObsPrompt",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "prompt_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "nonexistent-prompt"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/llm-obs/v1/prompts/{prompt_id}"
+  },
+  "scenario": "Delete an LLM Observability prompt returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

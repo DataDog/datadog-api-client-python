@@ -1,0 +1,747 @@
+{
+  "feature": "Datasets",
+  "recordings": [
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:57.144Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "test": "bad_request"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid request: Request body contains invalid json\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a dataset returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:57.324Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:ABCD"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"7cbada94-7d01-4e73-8c74-ea70fb3b3088\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:ABCD"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid request: [DatasetNameConflict] dataset with name \\\"Security Audit Dataset\\\" already exists\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/7cbada94-7d01-4e73-8c74-ea70fb3b3088",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a dataset returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:57.839Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:ABCD"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"86f67664-8b7b-49ae-b671-919ebe11886c\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/86f67664-8b7b-49ae-b671-919ebe11886c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a dataset returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:58.251Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/malformed_id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid request: [UUIDInvalidValue] \\\"malformed_id\\\" is not a valid UUID: invalid UUID length: 12\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete a dataset returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:58.429Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:ABCD"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"60ee6562-48f5-455f-bdb4-fd3f5f899978\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/60ee6562-48f5-455f-bdb4-fd3f5f899978",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/60ee6562-48f5-455f-bdb4-fd3f5f899978",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid request: [DatasetNotFound] dataset \\\"60ee6562-48f5-455f-bdb4-fd3f5f899978\\\" not found\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a dataset returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:58.996Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid request: [DatasetNotFound] dataset \\\"00000000-0000-0000-0000-000000000000\\\" not found\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a dataset returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:59.180Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/datasets/malformed_id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid request: Request body contains invalid json\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Edit a dataset returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:35:59.399Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:ABCD"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"2bf848a1-b18a-4602-8348-814a53862c52\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:1234"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/datasets/2bf848a1-b18a-4602-8348-814a53862c52",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"2bf848a1-b18a-4602-8348-814a53862c52\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:1234\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/2bf848a1-b18a-4602-8348-814a53862c52",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Edit a dataset returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:36:00.009Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/datasets/malformed_id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid request: [UUIDInvalidValue] \\\"malformed_id\\\" is not a valid UUID: invalid UUID length: 12\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get a single dataset by ID returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:36:00.186Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:ABCD"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"9e576299-3cc1-4145-8aad-67a1ab914829\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/datasets/9e576299-3cc1-4145-8aad-67a1ab914829",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"9e576299-3cc1-4145-8aad-67a1ab914829\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/9e576299-3cc1-4145-8aad-67a1ab914829",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a single dataset by ID returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Datasets",
+      "frozen_at": "2025-07-29T20:36:00.713Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Security Audit Dataset",
+                    "principals": [
+                      "role:94172442-be03-11e9-a77a-3b7612558ac1"
+                    ],
+                    "product_filters": [
+                      {
+                        "filters": [
+                          "@application.id:ABCD"
+                        ],
+                        "product": "metrics"
+                      }
+                    ]
+                  },
+                  "type": "dataset"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"dataset\",\"id\":\"b0f617b4-affb-4411-970a-2c157933514c\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/datasets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"dataset\",\"id\":\"b0f617b4-affb-4411-970a-2c157933514c\",\"attributes\":{\"name\":\"Security Audit Dataset\",\"product_filters\":[{\"product\":\"metrics\",\"filters\":[\"@application.id:ABCD\"]}],\"principals\":[\"role:94172442-be03-11e9-a77a-3b7612558ac1\"],\"created_by\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"created_at\":\"2025-07-29T20:36:00.94442Z\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/datasets/b0f617b4-affb-4411-970a-2c157933514c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all datasets returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

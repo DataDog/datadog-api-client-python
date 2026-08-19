@@ -1,0 +1,18 @@
+{
+  "api": "Integrations",
+  "expected_status": 200,
+  "feature": "Integrations",
+  "id": "v2/Integrations/List Integrations returns \"Successful Response.\" response",
+  "operation_id": "ListIntegrations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integrations"
+  },
+  "scenario": "List Integrations returns \"Successful Response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

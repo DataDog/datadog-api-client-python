@@ -1,0 +1,51 @@
+{
+  "api": "ActionsDatastores",
+  "expected_status": 404,
+  "feature": "Actions Datastores",
+  "id": "v2/Actions Datastores/Update datastore returns \"Not Found\" response",
+  "operation_id": "UpdateDatastore",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppsDatastoreRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "updated name"
+          },
+          "id": "c1eb5bb8-726a-4e59-9a61-ccbb26f95329",
+          "type": "datastores"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "datastore_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "c1eb5bb8-726a-4e59-9a61-ccbb26f95329"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions-datastores/{datastore_id}"
+  },
+  "scenario": "Update datastore returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

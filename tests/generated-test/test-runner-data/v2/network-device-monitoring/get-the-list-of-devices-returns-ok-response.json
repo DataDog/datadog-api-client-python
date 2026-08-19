@@ -1,0 +1,67 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 200,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/Get the list of devices returns \"OK\" response",
+  "operation_id": "ListDevices",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[number]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 0
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[tag]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "device_namespace:default"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ndm/devices"
+  },
+  "scenario": "Get the list of devices returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

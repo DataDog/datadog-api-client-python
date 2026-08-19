@@ -1,0 +1,18 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 200,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/List Model Lab project facet keys returns \"OK\" response",
+  "operation_id": "ListModelLabProjectFacetKeys",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/model-lab-api/project-facet-keys"
+  },
+  "scenario": "List Model Lab project facet keys returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

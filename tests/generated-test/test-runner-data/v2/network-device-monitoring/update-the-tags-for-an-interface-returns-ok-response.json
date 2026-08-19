@@ -1,0 +1,54 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 200,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/Update the tags for an interface returns \"OK\" response",
+  "operation_id": "UpdateInterfaceUserTags",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ListInterfaceTagsResponse",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "tags": [
+              "tag:test",
+              "tag:testbis"
+            ]
+          },
+          "id": "example:1.2.3.4:1",
+          "type": "tags"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "interface_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "example:1.2.3.4:1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ndm/tags/interfaces/{interface_id}"
+  },
+  "scenario": "Update the tags for an interface returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

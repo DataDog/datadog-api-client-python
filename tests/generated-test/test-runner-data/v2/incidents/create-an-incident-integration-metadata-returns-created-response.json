@@ -1,0 +1,61 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create an incident integration metadata returns \"CREATED\" response",
+  "operation_id": "CreateIncidentIntegration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentIntegrationMetadataCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "incident_id": "{{ incident.data.id }}",
+            "integration_type": 1,
+            "metadata": {
+              "channels": [
+                {
+                  "channel_id": "C0123456789",
+                  "channel_name": "#new-channel",
+                  "redirect_url": "https://slack.com/app_redirect?channel=C0123456789&team=T01234567",
+                  "team_id": "T01234567"
+                }
+              ]
+            }
+          },
+          "type": "incident_integrations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/relationships/integrations"
+  },
+  "scenario": "Create an incident integration metadata returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "LogsMetrics",
+  "expected_status": 200,
+  "feature": "Logs Metrics",
+  "id": "v2/Logs Metrics/Get a log-based metric returns \"OK\" response",
+  "operation_id": "GetLogsMetric",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "logs_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/metrics/{metric_id}"
+  },
+  "scenario": "Get a log-based metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

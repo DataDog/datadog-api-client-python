@@ -1,0 +1,45 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 200,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Delete Scanning Group returns \"OK\" response",
+  "operation_id": "DeleteScanningGroup",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerGroupDeleteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "group_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "group.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/sensitive-data-scanner/config/groups/{group_id}"
+  },
+  "scenario": "Delete Scanning Group returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "AWSLogsIntegration",
+  "expected_status": 200,
+  "feature": "AWS Logs Integration",
+  "id": "v2/AWS Logs Integration/Get list of AWS log ready services returns \"AWS Logs Services List object\" response",
+  "operation_id": "ListAWSLogsServices",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/aws/logs/services"
+  },
+  "scenario": "Get list of AWS log ready services returns \"AWS Logs Services List object\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

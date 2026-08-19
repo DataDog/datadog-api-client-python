@@ -1,0 +1,51 @@
+{
+  "api": "RumMetrics",
+  "expected_status": 201,
+  "feature": "Rum Metrics",
+  "id": "v2/Rum Metrics/Create a RUM-based metric returns \"Created\" response",
+  "operation_id": "CreateRumMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumMetricCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "compute": {
+              "aggregation_type": "distribution",
+              "include_percentiles": true,
+              "path": "@duration"
+            },
+            "event_type": "session",
+            "filter": {
+              "query": "@service:web-ui"
+            },
+            "group_by": [
+              {
+                "path": "@browser.name",
+                "tag_name": "browser_name"
+              }
+            ],
+            "uniqueness": {
+              "when": "match"
+            }
+          },
+          "id": "{{ unique_lower_alnum }}",
+          "type": "rum_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config/metrics"
+  },
+  "scenario": "Create a RUM-based metric returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 400,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/List pipelines returns \"Bad Request\" response",
+  "operation_id": "ListPipelines",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 0
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/obs-pipelines/pipelines"
+  },
+  "scenario": "List pipelines returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

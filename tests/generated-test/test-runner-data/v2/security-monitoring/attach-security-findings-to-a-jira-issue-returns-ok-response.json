@@ -1,0 +1,53 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Attach security findings to a Jira issue returns \"OK\" response",
+  "operation_id": "AttachJiraIssue",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AttachJiraIssueRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "jira_issue_url": "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"
+          },
+          "relationships": {
+            "findings": {
+              "data": [
+                {
+                  "id": "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI=",
+                  "type": "findings"
+                },
+                {
+                  "id": "MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM=",
+                  "type": "findings"
+                }
+              ]
+            },
+            "project": {
+              "data": {
+                "id": "959a6f71-bac8-4027-b1d3-2264f569296f",
+                "type": "projects"
+              }
+            }
+          },
+          "type": "jira_issues"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/jira_issues"
+  },
+  "scenario": "Attach security findings to a Jira issue returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

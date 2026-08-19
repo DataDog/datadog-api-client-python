@@ -1,0 +1,81 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with timeseries widget with custom_unit",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/timeseries_widget_with_custom_unit.json",
+      "value": {
+        "description": "",
+        "layout_type": "ordered",
+        "notify_list": [],
+        "reflow_type": "fixed",
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "description": "Example widget description",
+              "legend_layout": "auto",
+              "requests": [
+                {
+                  "display_type": "line",
+                  "formulas": [
+                    {
+                      "formula": "query1",
+                      "number_format": {
+                        "unit": {
+                          "type": "canonical_unit",
+                          "unit_name": "fraction"
+                        },
+                        "unit_scale": {
+                          "type": "canonical_unit",
+                          "unit_name": "apdex"
+                        }
+                      }
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*}"
+                    }
+                  ],
+                  "response_format": "timeseries"
+                }
+              ],
+              "show_legend": true,
+              "time": {},
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "timeseries"
+            },
+            "layout": {
+              "height": 5,
+              "width": 12,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with timeseries widget with custom_unit",
+  "schema_version": 1,
+  "version": "v1"
+}

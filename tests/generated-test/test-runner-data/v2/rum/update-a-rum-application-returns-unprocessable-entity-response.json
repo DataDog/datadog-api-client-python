@@ -1,0 +1,48 @@
+{
+  "api": "RUM",
+  "expected_status": 422,
+  "feature": "RUM",
+  "id": "v2/RUM/Update a RUM application returns \"Unprocessable Entity.\" response",
+  "operation_id": "UpdateRUMApplication",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMApplicationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "id": "this_id_will_not_match",
+          "type": "rum_application_update"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_application.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{id}"
+  },
+  "scenario": "Update a RUM application returns \"Unprocessable Entity.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

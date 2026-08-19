@@ -1,0 +1,58 @@
+{
+  "api": "StatusPages",
+  "expected_status": 201,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Create degradation returns \"Created\" response",
+  "operation_id": "CreateDegradation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateDegradationRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "components_affected": [
+              {
+                "id": "{{ status_page.data.attributes.components[0].components[0].id }}",
+                "status": "major_outage"
+              }
+            ],
+            "description": "Our API is experiencing elevated latency. We are investigating the issue.",
+            "status": "investigating",
+            "title": "Elevated API Latency"
+          },
+          "type": "degradations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/degradations"
+  },
+  "scenario": "Create degradation returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

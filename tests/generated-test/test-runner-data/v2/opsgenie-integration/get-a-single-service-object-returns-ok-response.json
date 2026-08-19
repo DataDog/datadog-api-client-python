@@ -1,0 +1,35 @@
+{
+  "api": "OpsgenieIntegration",
+  "expected_status": 200,
+  "feature": "Opsgenie Integration",
+  "id": "v2/Opsgenie Integration/Get a single service object returns \"OK\" response",
+  "operation_id": "GetOpsgenieService",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "integration_service_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "opsgenie_service.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/opsgenie/services/{integration_service_id}"
+  },
+  "scenario": "Get a single service object returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

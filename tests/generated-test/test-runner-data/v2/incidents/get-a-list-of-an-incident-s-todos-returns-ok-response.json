@@ -1,0 +1,35 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Get a list of an incident's todos returns \"OK\" response",
+  "operation_id": "ListIncidentTodos",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/relationships/todos"
+  },
+  "scenario": "Get a list of an incident's todos returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

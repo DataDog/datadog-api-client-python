@@ -1,0 +1,35 @@
+{
+  "api": "ErrorTracking",
+  "expected_status": 404,
+  "feature": "Error Tracking",
+  "id": "v2/Error Tracking/Get the details of an error tracking issue returns \"Not Found\" response",
+  "operation_id": "GetIssue",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "issue_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "67d80aa3-36ff-44b9-a694-c501a7591737"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/error-tracking/issues/{issue_id}"
+  },
+  "scenario": "Get the details of an error tracking issue returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

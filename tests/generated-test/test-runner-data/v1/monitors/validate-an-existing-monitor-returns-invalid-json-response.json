@@ -1,0 +1,46 @@
+{
+  "api": "Monitors",
+  "expected_status": 400,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Validate an existing monitor returns \"Invalid JSON\" response",
+  "operation_id": "ValidateExistingMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "query": "query",
+        "type": "log alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "monitor_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "monitor.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/monitor/{monitor_id}/validate"
+  },
+  "scenario": "Validate an existing monitor returns \"Invalid JSON\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

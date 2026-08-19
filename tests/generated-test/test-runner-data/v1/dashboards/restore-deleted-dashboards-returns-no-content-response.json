@@ -1,0 +1,33 @@
+{
+  "api": "Dashboards",
+  "expected_status": 204,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Restore deleted dashboards returns \"No Content\" response",
+  "operation_id": "RestoreDashboards",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DashboardRestoreRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "{{ dashboard.id }}",
+            "type": "dashboard"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Restore deleted dashboards returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

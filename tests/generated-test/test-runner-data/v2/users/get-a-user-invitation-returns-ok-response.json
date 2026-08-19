@@ -1,0 +1,35 @@
+{
+  "api": "Users",
+  "expected_status": 200,
+  "feature": "Users",
+  "id": "v2/Users/Get a user invitation returns \"OK\" response",
+  "operation_id": "GetInvitation",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_invitation_uuid",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user_invitation.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/user_invitations/{user_invitation_uuid}"
+  },
+  "scenario": "Get a user invitation returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

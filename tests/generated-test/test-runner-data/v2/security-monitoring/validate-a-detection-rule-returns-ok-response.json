@@ -1,0 +1,61 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 204,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Validate a detection rule returns \"OK\" response",
+  "operation_id": "ValidateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleValidatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "condition": "a > 0",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "hasExtendedTitle": true,
+        "isEnabled": true,
+        "message": "My security monitoring rule",
+        "name": "My security monitoring rule",
+        "options": {
+          "detectionMethod": "threshold",
+          "evaluationWindow": 1800,
+          "keepAlive": 1800,
+          "maxSignalDuration": 1800
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "distinctFields": [],
+            "groupByFields": [
+              "@userIdentity.assumed_role"
+            ],
+            "name": "",
+            "query": "source:source_here"
+          }
+        ],
+        "tags": [
+          "env:prod",
+          "team:security"
+        ],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules/validation"
+  },
+  "scenario": "Validate a detection rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

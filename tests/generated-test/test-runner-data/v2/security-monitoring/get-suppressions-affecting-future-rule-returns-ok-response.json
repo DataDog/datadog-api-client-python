@@ -1,0 +1,55 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get suppressions affecting future rule returns \"OK\" response",
+  "operation_id": "GetSuppressionsAffectingFutureRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "security_monitoring_future_rule_suppression_payload.json",
+      "value": {
+        "cases": [
+          {
+            "condition": "a > 0",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "filters": [],
+        "isEnabled": true,
+        "message": "Test rule",
+        "name": "{{ unique }}",
+        "options": {
+          "evaluationWindow": 900,
+          "keepAlive": 3600,
+          "maxSignalDuration": 86400
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "distinctFields": [],
+            "groupByFields": [],
+            "metrics": [],
+            "query": "@test:true"
+          }
+        ],
+        "tags": [],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/configuration/suppressions/rules"
+  },
+  "scenario": "Get suppressions affecting future rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,51 @@
+{
+  "api": "Downtimes",
+  "expected_status": 404,
+  "feature": "Downtimes",
+  "id": "v2/Downtimes/Update a downtime returns \"Downtime not found\" response",
+  "operation_id": "UpdateDowntime",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DowntimeUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "message": "test msg"
+          },
+          "id": "00000000-0000-1234-0000-000000000000",
+          "type": "downtime"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "downtime_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-1234-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/downtime/{downtime_id}"
+  },
+  "scenario": "Update a downtime returns \"Downtime not found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "SpansMetrics",
+  "expected_status": 200,
+  "feature": "Spans Metrics",
+  "id": "v2/Spans Metrics/Get all span-based metrics returns \"OK\" response",
+  "operation_id": "ListSpansMetrics",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/apm/config/metrics"
+  },
+  "scenario": "Get all span-based metrics returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "Datasets",
+  "expected_status": 200,
+  "feature": "Datasets",
+  "id": "v2/Datasets/Get a single dataset by ID returns \"OK\" response",
+  "operation_id": "GetDataset",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "dataset_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dataset.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/datasets/{dataset_id}"
+  },
+  "scenario": "Get a single dataset by ID returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

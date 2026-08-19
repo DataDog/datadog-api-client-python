@@ -1,0 +1,71 @@
+{
+  "api": "CIVisibilityPipelines",
+  "expected_status": 202,
+  "feature": "CI Visibility Pipelines",
+  "id": "v2/CI Visibility Pipelines/Send several pipeline events returns \"Request accepted for processing\" response",
+  "operation_id": "CreateCIAppPipelineEvent",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CIAppCreatePipelineEventRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {
+              "provider_name": "example-provider",
+              "resource": {
+                "end": "{{ timeISO('now - 30s') }}",
+                "git": {
+                  "author_email": "john.doe@email.com",
+                  "repository_url": "https://github.com/DataDog/datadog-agent",
+                  "sha": "7f263865994b76066c4612fd1965215e7dcb4cd2"
+                },
+                "level": "pipeline",
+                "name": "Deploy to AWS",
+                "partial_retry": false,
+                "start": "{{ timeISO('now - 120s') }}",
+                "status": "success",
+                "unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
+                "url": "https://my-ci-provider.example/pipelines/my-pipeline/run/1"
+              }
+            },
+            "type": "cipipeline_resource_request"
+          },
+          {
+            "attributes": {
+              "provider_name": "example-provider",
+              "resource": {
+                "end": "{{ timeISO('now - 45s') }}",
+                "git": {
+                  "author_email": "jane.smith@email.com",
+                  "repository_url": "https://github.com/DataDog/datadog-agent",
+                  "sha": "9a4f7c28b3e5d12f8e6c9b2a5d8f3e1c7b4a6d9e"
+                },
+                "level": "pipeline",
+                "name": "Deploy to Production",
+                "partial_retry": false,
+                "start": "{{ timeISO('now - 180s') }}",
+                "status": "success",
+                "unique_id": "7b2c8f9e-aa15-4d22-9c7d-83f4e065138b",
+                "url": "https://my-ci-provider.example/pipelines/prod-pipeline/run/2"
+              }
+            },
+            "type": "cipipeline_resource_request"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ci/pipeline"
+  },
+  "scenario": "Send several pipeline events returns \"Request accepted for processing\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

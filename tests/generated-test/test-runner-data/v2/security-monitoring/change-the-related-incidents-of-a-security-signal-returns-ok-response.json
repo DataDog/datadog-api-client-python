@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Change the related incidents of a security signal returns \"OK\" response",
+  "operation_id": "EditSecurityMonitoringSignalIncidents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringSignalIncidentsUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "incident_ids": [
+              2066
+            ]
+          }
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "signal_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "AQAAAYG1bl5K4HuUewAAAABBWUcxYmw1S0FBQmt2RmhRN0V4ZUVnQUE"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/signals/{signal_id}/incidents"
+  },
+  "scenario": "Change the related incidents of a security signal returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

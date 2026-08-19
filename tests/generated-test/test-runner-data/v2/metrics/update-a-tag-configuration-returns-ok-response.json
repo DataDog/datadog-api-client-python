@@ -1,0 +1,53 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Update a tag configuration returns \"OK\" response",
+  "operation_id": "UpdateTagConfiguration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MetricTagConfigurationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "tags": [
+              "app"
+            ]
+          },
+          "id": "{{ metric_tag_configuration.data.id }}",
+          "type": "manage_tags"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "metric_tag_configuration.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/{metric_name}/tags"
+  },
+  "scenario": "Update a tag configuration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

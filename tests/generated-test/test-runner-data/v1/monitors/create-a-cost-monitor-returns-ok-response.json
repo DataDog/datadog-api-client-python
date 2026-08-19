@@ -1,0 +1,51 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a Cost Monitor returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "some message Notify: @hipchat-channel",
+        "name": "Example Monitor",
+        "options": {
+          "include_tags": true,
+          "thresholds": {
+            "critical": 5,
+            "warning": 3
+          },
+          "variables": [
+            {
+              "aggregator": "sum",
+              "data_source": "cloud_cost",
+              "name": "query1",
+              "query": "sum:aws.cost.net.amortized.shared.resources.allocated{aws_product IN (amplify ,athena, backup, bedrock ) } by {aws_product}.rollup(sum, 86400)"
+            }
+          ]
+        },
+        "priority": 3,
+        "query": "formula(\"exclude_null(query1)\").last(\"7d\").anomaly(direction=\"above\", threshold=10) >= 5",
+        "tags": [
+          "test:examplemonitor",
+          "env:ci"
+        ],
+        "type": "cost alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a Cost Monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

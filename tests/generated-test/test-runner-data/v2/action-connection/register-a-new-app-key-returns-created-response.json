@@ -1,0 +1,35 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 201,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Register a new App Key returns \"Created\" response",
+  "operation_id": "RegisterAppKey",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "b7feea52-994e-4714-a100-1bd9eff5aee1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/app_key_registrations/{app_key_id}"
+  },
+  "scenario": "Register a new App Key returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

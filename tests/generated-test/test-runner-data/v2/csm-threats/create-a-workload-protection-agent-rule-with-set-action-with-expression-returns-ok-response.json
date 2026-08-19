@@ -1,0 +1,49 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 200,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Create a Workload Protection agent rule with set action with expression returns \"OK\" response",
+  "operation_id": "CreateCSMThreatsAgentRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CloudWorkloadSecurityAgentRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "actions": [
+              {
+                "set": {
+                  "default_value": "/dev/null",
+                  "expression": "exec.file.path",
+                  "name": "test_set",
+                  "scope": "process"
+                }
+              }
+            ],
+            "description": "My Agent rule with set action with expression",
+            "enabled": true,
+            "expression": "exec.file.name == \"sh\"",
+            "filters": [],
+            "name": "{{ unique_lower_alnum }}",
+            "policy_id": "{{ policy.data.id }}",
+            "product_tags": []
+          },
+          "type": "agent_rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/remote_config/products/cws/agent_rules"
+  },
+  "scenario": "Create a Workload Protection agent rule with set action with expression returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,69 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Update a dashboard returns \"OK\" response",
+  "operation_id": "UpdateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": "Updated description",
+        "layout_type": "ordered",
+        "title": "{{ unique }} with list_stream widget",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "columns": [
+                    {
+                      "field": "timestamp",
+                      "width": "auto"
+                    }
+                  ],
+                  "query": {
+                    "data_source": "apm_issue_stream",
+                    "query_string": ""
+                  },
+                  "response_format": "event_list"
+                }
+              ],
+              "type": "list_stream"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "dashboard_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dashboard.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard/{dashboard_id}"
+  },
+  "scenario": "Update a dashboard returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

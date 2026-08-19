@@ -1,0 +1,35 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/Get team sync configurations returns \"OK\" response",
+  "operation_id": "GetTeamSync",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[source]",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "TeamSyncAttributesSource",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "github"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/sync"
+  },
+  "scenario": "Get team sync configurations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

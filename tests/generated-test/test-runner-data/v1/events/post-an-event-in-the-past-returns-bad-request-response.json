@@ -1,0 +1,33 @@
+{
+  "api": "Events",
+  "expected_status": 400,
+  "feature": "Events",
+  "id": "v1/Events/Post an event in the past returns \"Bad Request\" response",
+  "operation_id": "CreateEvent",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "EventCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "date_happened": 1,
+        "tags": [
+          "test:{{ unique_alnum }}"
+        ],
+        "text": "A text message.",
+        "title": "{{ unique }}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/events"
+  },
+  "scenario": "Post an event in the past returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

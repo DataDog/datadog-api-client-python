@@ -1,0 +1,35 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 404,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Get an application key returns \"Not Found\" response",
+  "operation_id": "GetApplicationKey",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalidId"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/application_keys/{app_key_id}"
+  },
+  "scenario": "Get an application key returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

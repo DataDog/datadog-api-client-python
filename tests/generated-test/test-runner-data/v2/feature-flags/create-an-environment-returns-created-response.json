@@ -1,0 +1,37 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 201,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Create an environment returns \"Created\" response",
+  "operation_id": "CreateFeatureFlagsEnvironment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateEnvironmentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Test Environment {{ unique }}",
+            "queries": [
+              "test-{{ unique }}",
+              "env-{{ unique }}"
+            ]
+          },
+          "type": "environments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/feature-flags/environments"
+  },
+  "scenario": "Create an environment returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "ConfluentCloud",
+  "expected_status": 200,
+  "feature": "Confluent Cloud",
+  "id": "v2/Confluent Cloud/Get Confluent account returns \"OK\" response",
+  "operation_id": "GetConfluentAccount",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "confluent_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}"
+  },
+  "scenario": "Get Confluent account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

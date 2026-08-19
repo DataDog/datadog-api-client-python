@@ -1,0 +1,37 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 201,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Create a personal access token returns \"Created\" response",
+  "operation_id": "CreatePersonalAccessToken",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PersonalAccessTokenCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "expires_at": "{{ timeISO('now+365d') }}",
+            "name": "{{ unique }}",
+            "scopes": [
+              "dashboards_read"
+            ]
+          },
+          "type": "personal_access_tokens"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/personal_access_tokens"
+  },
+  "scenario": "Create a personal access token returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

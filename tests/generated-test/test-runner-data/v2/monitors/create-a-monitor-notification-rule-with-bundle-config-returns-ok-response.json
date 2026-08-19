@@ -1,0 +1,44 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Create a monitor notification rule with bundle config returns \"OK\" response",
+  "operation_id": "CreateMonitorNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorNotificationRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "bundle_config": {
+              "duration": 3600
+            },
+            "filter": {
+              "tags": [
+                "test:{{ unique_lower }}"
+              ]
+            },
+            "name": "test rule",
+            "recipients": [
+              "slack-test-channel"
+            ]
+          },
+          "type": "monitor-notification-rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/notification_rule"
+  },
+  "scenario": "Create a monitor notification rule with bundle config returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

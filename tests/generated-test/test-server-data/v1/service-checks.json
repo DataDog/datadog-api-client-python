@@ -1,0 +1,47 @@
+{
+  "feature": "Service Checks",
+  "recordings": [
+    {
+      "feature": "Service Checks",
+      "frozen_at": "2022-05-12T09:50:11.594Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "check": "app.ok",
+                  "host_name": "host",
+                  "status": 0,
+                  "tags": [
+                    "test:TestSubmitaServiceCheckreturnsPayloadacceptedresponse1652349011"
+                  ]
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/check_run",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"status\": \"ok\"}"
+            },
+            "headers": {
+              "content-type": "text/json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Submit a Service Check returns \"Payload accepted\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

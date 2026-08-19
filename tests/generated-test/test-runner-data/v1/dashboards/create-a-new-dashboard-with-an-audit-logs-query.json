@@ -1,0 +1,62 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with an audit logs query",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with Audit Logs Query",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "audit",
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": ""
+                      }
+                    }
+                  ],
+                  "response_format": "timeseries"
+                }
+              ],
+              "type": "timeseries"
+            },
+            "layout": {
+              "height": 2,
+              "width": 4,
+              "x": 2,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with an audit logs query",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,39 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a monitor returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "some message Notify: @hipchat-channel",
+        "name": "{{ unique }}",
+        "priority": 3,
+        "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+        "restricted_roles": [
+          "{{ role.data.id }}"
+        ],
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "log alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

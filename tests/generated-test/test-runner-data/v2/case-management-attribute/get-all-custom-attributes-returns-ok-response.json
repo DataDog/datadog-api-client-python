@@ -1,0 +1,18 @@
+{
+  "api": "CaseManagementAttribute",
+  "expected_status": 200,
+  "feature": "Case Management Attribute",
+  "id": "v2/Case Management Attribute/Get all custom attributes returns \"OK\" response",
+  "operation_id": "GetAllCustomAttributes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cases/types/custom_attributes"
+  },
+  "scenario": "Get all custom attributes returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

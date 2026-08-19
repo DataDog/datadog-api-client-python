@@ -1,0 +1,46 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a mobile test returns \"OK - Returns the created test details.\" response",
+  "operation_id": "CreateSyntheticsMobileTest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsMobileTest",
+        "type": "object"
+      },
+      "source": "synthetics_mobile_test_payload.json",
+      "value": {
+        "config": {
+          "variables": []
+        },
+        "message": "",
+        "name": "{{ unique }}",
+        "options": {
+          "device_ids": [
+            "synthetics:mobile:device:iphone_15_ios_17"
+          ],
+          "mobileApplication": {
+            "applicationId": "ab0e0aed-536d-411a-9a99-5428c27d8f8e",
+            "referenceId": "6115922a-5f5d-455e-bc7e-7955a57f3815",
+            "referenceType": "version"
+          },
+          "tick_every": 3600
+        },
+        "status": "paused",
+        "steps": [],
+        "type": "mobile"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/mobile"
+  },
+  "scenario": "Create a mobile test returns \"OK - Returns the created test details.\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

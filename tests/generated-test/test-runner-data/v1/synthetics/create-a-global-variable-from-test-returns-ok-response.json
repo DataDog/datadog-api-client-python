@@ -1,0 +1,39 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a global variable from test returns \"OK\" response",
+  "operation_id": "CreateGlobalVariable",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsGlobalVariableRequest",
+        "type": "object"
+      },
+      "source": "synthetics_global_variable_from_test_payload.json",
+      "value": {
+        "description": "",
+        "name": "GLOBAL_VARIABLE_FROM_TEST_PAYLOAD_{{ unique_upper_alnum }}",
+        "parse_test_options": {
+          "localVariableName": "EXTRACTED_VALUE",
+          "type": "local_variable"
+        },
+        "parse_test_public_id": "{{ synthetics_api_test_multi_step.public_id }}",
+        "tags": [],
+        "value": {
+          "secure": false,
+          "value": ""
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/variables"
+  },
+  "scenario": "Create a global variable from test returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

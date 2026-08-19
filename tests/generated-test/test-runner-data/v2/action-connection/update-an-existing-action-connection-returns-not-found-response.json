@@ -1,0 +1,58 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 404,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Update an existing Action Connection returns \"Not Found\" response",
+  "operation_id": "UpdateActionConnection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateActionConnectionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "integration": {
+              "credentials": {
+                "account_id": "123456789123",
+                "role": "MyRoleUpdated",
+                "type": "AWSAssumeRole"
+              },
+              "type": "AWS"
+            },
+            "name": "Cassette Connection"
+          },
+          "type": "action_connection"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "connection_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/connections/{connection_id}"
+  },
+  "scenario": "Update an existing Action Connection returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

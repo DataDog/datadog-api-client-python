@@ -1,0 +1,44 @@
+{
+  "api": "IPAllowlist",
+  "expected_status": 200,
+  "feature": "IP Allowlist",
+  "id": "v2/IP Allowlist/Update IP Allowlist returns \"OK\" response",
+  "operation_id": "UpdateIPAllowlist",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IPAllowlistUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": false,
+            "entries": [
+              {
+                "data": {
+                  "attributes": {
+                    "cidr_block": "127.0.0.1",
+                    "note": "{{ unique }}"
+                  },
+                  "type": "ip_allowlist_entry"
+                }
+              }
+            ]
+          },
+          "type": "ip_allowlist"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ip_allowlist"
+  },
+  "scenario": "Update IP Allowlist returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

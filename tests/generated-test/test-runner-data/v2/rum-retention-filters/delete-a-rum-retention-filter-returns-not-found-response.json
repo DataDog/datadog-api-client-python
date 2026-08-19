@@ -1,0 +1,51 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 404,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Delete a RUM retention filter returns \"Not Found\" response",
+  "operation_id": "DeleteRetentionFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rf_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ unique }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/retention_filters/{rf_id}"
+  },
+  "scenario": "Delete a RUM retention filter returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,28 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v1/Downtimes/Schedule a downtime until date",
+  "operation_id": "CreateDowntime",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Downtime",
+        "type": "object"
+      },
+      "source": "downtime_recurrence_payload_until_date.json",
+      "value": {
+        "$openapi_transformer_template": "{\n  \"message\": \"{{ unique }}\",\n  \"recurrence\": {\n    \"period\": 1,\n    \"type\": \"weeks\",\n    \"until_date\": {{ timestamp(\"now + 21d\") }},\n    \"week_days\": [\"Mon\", \"Tue\", \"Wed\", \"Thu\", \"Fri\"]\n  },\n  \"scope\": [\"*\"],\n  \"start\": {{ timestamp(\"now\") }},\n  \"end\": {{ timestamp(\"now + 1h\") }},\n  \"timezone\": \"Etc/UTC\",\n  \"mute_first_recovery_notification\": true,\n  \"monitor_tags\": [\n    \"tag0\"\n  ],\n  \"notify_end_states\": [\n    \"alert\"\n  ],\n  \"notify_end_types\": [\n    \"canceled\"\n  ]\n}\n"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/downtime"
+  },
+  "scenario": "Schedule a downtime until date",
+  "schema_version": 1,
+  "version": "v1"
+}

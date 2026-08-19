@@ -1,0 +1,18 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 400,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/Get available fields for usage summary returns \"Bad Request\" response",
+  "operation_id": "GetUsageSummaryAvailableFields",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/usage/summary/available_fields"
+  },
+  "scenario": "Get available fields for usage summary returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

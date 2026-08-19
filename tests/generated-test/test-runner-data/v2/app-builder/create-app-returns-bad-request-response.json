@@ -1,0 +1,35 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 400,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Create App returns \"Bad Request\" response",
+  "operation_id": "CreateApp",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateAppRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "This is a bad example app",
+            "queries": [],
+            "rootInstanceName": "grid0"
+          },
+          "type": "appDefinitions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/app-builder/apps"
+  },
+  "scenario": "Create App returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

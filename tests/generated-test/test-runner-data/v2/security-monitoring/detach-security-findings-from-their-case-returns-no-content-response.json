@@ -1,0 +1,40 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 204,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Detach security findings from their case returns \"No Content\" response",
+  "operation_id": "DetachCase",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DetachCaseRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "relationships": {
+            "findings": {
+              "data": [
+                {
+                  "id": "YzM2MTFjYzcyNmY0Zjg4MTAxZmRlNjQ1MWU1ZGQwYzR-YzI5NzE5Y2Y4MzU4ZjliNzhkNjYxNTY0ODIzZDQ2YTM=",
+                  "type": "findings"
+                }
+              ]
+            }
+          },
+          "type": "cases"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/cases"
+  },
+  "scenario": "Detach security findings from their case returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

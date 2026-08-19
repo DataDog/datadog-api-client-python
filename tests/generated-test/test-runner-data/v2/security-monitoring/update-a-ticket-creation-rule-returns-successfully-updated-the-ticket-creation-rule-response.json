@@ -1,0 +1,62 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a ticket creation rule returns \"Successfully updated the ticket creation rule\" response",
+  "operation_id": "UpdateSecurityFindingsAutomationTicketCreationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TicketCreationRuleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "max_tickets_per_day": 5,
+              "project_id": "11111111-1111-1111-1111-111111111111",
+              "target": "jira"
+            },
+            "enabled": false,
+            "name": "{{ unique }}",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:staging"
+            }
+          },
+          "type": "ticket_creation_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_ticket_creation_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/ticket_creation_rules/{rule_id}"
+  },
+  "scenario": "Update a ticket creation rule returns \"Successfully updated the ticket creation rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

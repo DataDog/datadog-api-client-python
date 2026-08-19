@@ -1,0 +1,50 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 200,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Update case status returns \"OK\" response",
+  "operation_id": "UpdateStatus",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CaseUpdateStatusRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "status": "IN_PROGRESS"
+          },
+          "type": "case"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}/status"
+  },
+  "scenario": "Update case status returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "DashboardLists",
+  "expected_status": 200,
+  "feature": "Dashboard Lists",
+  "id": "v2/Dashboard Lists/Add custom timeboard dashboard to an existing dashboard list returns \"OK\" response",
+  "operation_id": "CreateDashboardListItems",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DashboardListAddItemsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "dashboards": [
+          {
+            "id": "{{ dashboard.id }}",
+            "type": "custom_timeboard"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "dashboard_list_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "dashboard_list.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards"
+  },
+  "scenario": "Add custom timeboard dashboard to an existing dashboard list returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

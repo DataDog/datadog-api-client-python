@@ -1,0 +1,437 @@
+#!/usr/bin/env python3
+# ruff: noqa: A002, BLE001, EM101, EM102, S310, T201, TRY003
+"""Standalone OpenAPI BDD recording replay and capture server.
+
+This file is copied verbatim by ``openapi-transformer generate test-server``.
+It deliberately uses only the Python standard library.
+"""
+
+from __future__ import annotations
+
+import argparse
+import base64
+import json
+import os
+import re
+import tempfile
+import threading
+import uuid
+from datetime import datetime, timezone
+from http import HTTPStatus
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from pathlib import Path
+from typing import Any
+from urllib.error import HTTPError
+from urllib.parse import parse_qsl, urlsplit
+from urllib.request import Request, urlopen
+
+CONTROL_ROOT = "/__openapi_transformer__"
+SESSION_HEADER = "x-openapi-test-session"
+SCHEMA_VERSION = 1
+HOP_BY_HOP_HEADERS = {
+    "connection",
+    "keep-alive",
+    "proxy-authenticate",
+    "proxy-authorization",
+    "te",
+    "trailers",
+    "transfer-encoding",
+    "upgrade",
+}
+SAFE_BROWSER_HEADERS = {
+    "content-security-policy": "default-src 'none'; sandbox",
+    "x-content-type-options": "nosniff",
+}
+
+
+class RecordingDatabase:
+    def __init__(self, root: Path) -> None:
+        self.root = root
+        self.lock = threading.RLock()
+        self.shards: dict[tuple[str, str], dict[str, Any]] = {}
+        self.shard_paths: dict[tuple[str, str], Path] = {}
+        self.sessions: dict[str, dict[str, Any]] = {}
+        self.fallback_consumed: set[tuple[str, str, str, int]] = set()
+        self._load()
+
+    def _load(self) -> None:
+        manifest_path = self.root / "manifest.json"
+        if not manifest_path.exists():
+            raise RuntimeError(f"Database manifest not found: {manifest_path}")
+        manifest = _read_json(manifest_path)
+        if manifest.get("schema_version") != SCHEMA_VERSION:
+            raise RuntimeError(f"Unsupported database schema: {manifest.get('schema_version')}")
+        for item in manifest.get("features", []):
+            path = self.root / item["file"]
+            shard = _read_json(path)
+            key = (shard["version"], shard["feature"])
+            self.shards[key] = shard
+            self.shard_paths[key] = path
+
+    def start(self, version: str, feature: str, scenario: str, mode: str) -> dict[str, Any]:
+        with self.lock:
+            key = (version, feature)
+            shard = self.shards.get(key)
+            recording = None
+            if shard is not None:
+                recording = next(
+                    (item for item in shard["recordings"] if item["scenario"] == scenario),
+                    None,
+                )
+            if mode == "replay" and recording is None:
+                raise LookupError(f"Recording not found: {version}/{feature}/{scenario}")
+
+            frozen_at = recording["frozen_at"] if recording is not None else _now_iso()
+            session_id = uuid.uuid4().hex
+            self.sessions[session_id] = {
+                "id": session_id,
+                "mode": mode,
+                "key": key,
+                "scenario": scenario,
+                "recording": recording,
+                "cursor": 0,
+                "captures": [],
+                "frozen_at": frozen_at,
+            }
+            return {"session": session_id, "frozen_at": frozen_at}
+
+    def replay(self, session_id: str | None, actual: dict[str, Any]) -> dict[str, Any]:
+        with self.lock:
+            if session_id:
+                session = self.sessions.get(session_id)
+                if session is None:
+                    raise LookupError(f"Unknown session: {session_id}")
+                recording = session["recording"]
+                cursor = session["cursor"]
+                interactions = recording["interactions"]
+                if cursor >= len(interactions):
+                    raise LookupError(f"Recording has no interaction #{cursor + 1}")
+                expected = interactions[cursor]
+                if expected["request"] != actual:
+                    raise RequestMismatchError(expected["request"], actual, cursor)
+                session["cursor"] += 1
+                return expected["response"]
+
+            for (version, feature), shard in sorted(self.shards.items()):
+                for recording in shard["recordings"]:
+                    for index, interaction in enumerate(recording["interactions"]):
+                        consumed_key = (version, feature, recording["scenario"], index)
+                        if consumed_key not in self.fallback_consumed and interaction["request"] == actual:
+                            self.fallback_consumed.add(consumed_key)
+                            return interaction["response"]
+            raise LookupError("No unconsumed interaction matches this request")
+
+    def capture(
+        self,
+        session_id: str | None,
+        request: dict[str, Any],
+        response: dict[str, Any],
+    ) -> None:
+        if not session_id:
+            raise LookupError("Capture requests require the x-openapi-test-session header")
+        with self.lock:
+            session = self.sessions.get(session_id)
+            if session is None:
+                raise LookupError(f"Unknown session: {session_id}")
+            session["captures"].append({"request": request, "response": response})
+
+    def stop(self, session_id: str) -> dict[str, Any]:
+        with self.lock:
+            session = self.sessions.pop(session_id, None)
+            if session is None:
+                raise LookupError(f"Unknown session: {session_id}")
+            if session["mode"] == "replay":
+                expected = len(session["recording"]["interactions"])
+                consumed = session["cursor"]
+                return {
+                    "interactions": consumed,
+                    "total_interactions": expected,
+                    "complete": consumed == expected,
+                }
+
+            key = session["key"]
+            shard = self.shards.get(key)
+            if shard is None:
+                shard = {
+                    "schema_version": SCHEMA_VERSION,
+                    "version": key[0],
+                    "feature": key[1],
+                    "recordings": [],
+                }
+                self.shards[key] = shard
+                version_dir = self.root / key[0]
+                version_dir.mkdir(parents=True, exist_ok=True)
+                self.shard_paths[key] = version_dir / f"{_slug(key[1])}.json"
+                self._add_manifest_entry(key, self.shard_paths[key])
+
+            recording = {
+                "feature": key[1],
+                "scenario": session["scenario"],
+                "version": key[0],
+                "frozen_at": session["frozen_at"],
+                "interactions": session["captures"],
+            }
+            shard["recordings"] = [item for item in shard["recordings"] if item["scenario"] != session["scenario"]]
+            shard["recordings"].append(recording)
+            shard["recordings"].sort(key=lambda item: item["scenario"])
+            _write_json_atomic(self.shard_paths[key], shard)
+            return {"interactions": len(session["captures"]), "file": str(self.shard_paths[key])}
+
+    def _add_manifest_entry(self, key: tuple[str, str], shard_path: Path) -> None:
+        manifest_path = self.root / "manifest.json"
+        manifest = _read_json(manifest_path)
+        relative = str(shard_path.relative_to(self.root))
+        manifest["features"] = [item for item in manifest["features"] if (item["version"], item["feature"]) != key]
+        manifest["features"].append({"version": key[0], "feature": key[1], "file": relative})
+        manifest["features"].sort(key=lambda item: (item["version"], item["feature"]))
+        _write_json_atomic(manifest_path, manifest)
+
+
+class RequestMismatchError(Exception):
+    def __init__(self, expected: dict[str, Any], actual: dict[str, Any], index: int) -> None:
+        super().__init__(f"Request does not match interaction #{index + 1}")
+        self.expected = expected
+        self.actual = actual
+        self.index = index
+
+
+class TestServer(ThreadingHTTPServer):
+    daemon_threads = True
+
+    def __init__(self, address: tuple[str, int], database: RecordingDatabase, mode: str, upstream: str | None):
+        super().__init__(address, TestRequestHandler)
+        self.database = database
+        self.mode = mode
+        self.upstream = upstream.rstrip("/") if upstream else None
+
+
+class TestRequestHandler(BaseHTTPRequestHandler):
+    server: TestServer
+    protocol_version = "HTTP/1.1"
+
+    def do_GET(self) -> None:
+        self._handle()
+
+    def do_POST(self) -> None:
+        self._handle()
+
+    def do_PUT(self) -> None:
+        self._handle()
+
+    def do_PATCH(self) -> None:
+        self._handle()
+
+    def do_DELETE(self) -> None:
+        self._handle()
+
+    def do_HEAD(self) -> None:
+        self._handle()
+
+    def do_OPTIONS(self) -> None:
+        self._handle()
+
+    def log_message(self, format: str, *args: Any) -> None:
+        print(f"{self.address_string()} - {format % args}", flush=True)
+
+    def _handle(self) -> None:
+        try:
+            if self.path == f"{CONTROL_ROOT}/health":
+                self._send_json(HTTPStatus.OK, {"status": "ok", "mode": self.server.mode})
+                return
+            if self.path == f"{CONTROL_ROOT}/sessions" and self.command == "POST":
+                self._start_session()
+                return
+            stop_match = re.fullmatch(rf"{re.escape(CONTROL_ROOT)}/sessions/([a-f0-9]+)/stop", self.path)
+            if stop_match and self.command == "POST":
+                result = self.server.database.stop(stop_match.group(1))
+                self._send_json(HTTPStatus.OK, result)
+                return
+            self._handle_api_request()
+        except RequestMismatchError as error:
+            self._send_json(
+                HTTPStatus.CONFLICT,
+                {
+                    "error": str(error),
+                    "interaction": error.index + 1,
+                    "expected": error.expected,
+                    "actual": error.actual,
+                },
+                error="request-mismatch",
+            )
+        except (LookupError, ValueError) as error:
+            self._send_json(HTTPStatus.NOT_FOUND, {"error": str(error)}, error="recording-not-found")
+        except Exception as error:
+            self._send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(error)}, error="internal-error")
+
+    def _start_session(self) -> None:
+        payload = json.loads(self._read_body().decode("utf-8"))
+        result = self.server.database.start(
+            version=payload["version"],
+            feature=payload["feature"],
+            scenario=payload["scenario"],
+            mode=self.server.mode,
+        )
+        self._send_json(HTTPStatus.CREATED, result)
+
+    def _handle_api_request(self) -> None:
+        body = self._read_body()
+        actual = _normalise_request(self.command, self.path, self.headers.get("content-type", ""), body)
+        session_id = self.headers.get(SESSION_HEADER)
+        if self.server.mode == "replay":
+            response = self.server.database.replay(session_id, actual)
+        else:
+            response = self._forward(body)
+            self.server.database.capture(session_id, actual, response)
+        self._send_recorded_response(response)
+
+    def _forward(self, body: bytes) -> dict[str, Any]:
+        if not self.server.upstream:
+            raise ValueError("Capture mode requires --upstream")
+        target = self.server.upstream + self.path
+        headers = {
+            key: value
+            for key, value in self.headers.items()
+            if key.lower() not in HOP_BY_HOP_HEADERS | {"host", "content-length", SESSION_HEADER}
+        }
+        request = Request(target, data=body or None, headers=headers, method=self.command)
+        try:
+            remote = urlopen(request)
+        except HTTPError as error:
+            remote = error
+        try:
+            response_body = remote.read()
+            response_headers = {
+                key.lower(): value
+                for key, value in remote.headers.items()
+                if key.lower() not in HOP_BY_HOP_HEADERS | {"content-length"}
+            }
+            return {
+                "status": remote.status,
+                "reason": remote.reason,
+                "headers": response_headers,
+                "body": {"encoding": "base64", "value": base64.b64encode(response_body).decode("ascii")},
+            }
+        finally:
+            remote.close()
+
+    def _read_body(self) -> bytes:
+        length = int(self.headers.get("content-length", "0"))
+        return self.rfile.read(length) if length else b""
+
+    def _send_recorded_response(self, response: dict[str, Any]) -> None:
+        body_data = response.get("body", {})
+        if body_data.get("encoding") == "base64":
+            body = base64.b64decode(body_data.get("value", ""))
+        else:
+            body = body_data.get("value", "").encode("utf-8")
+        self.send_response(response["status"], response.get("reason"))
+        for key, value in response.get("headers", {}).items():
+            if key.lower() not in HOP_BY_HOP_HEADERS | {"content-length"} | SAFE_BROWSER_HEADERS.keys():
+                self.send_header(key, value)
+        for key, value in SAFE_BROWSER_HEADERS.items():
+            self.send_header(key, value)
+        self.send_header("content-length", str(len(body)))
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
+    def _send_json(self, status: HTTPStatus, value: dict[str, Any], *, error: str | None = None) -> None:
+        body = (json.dumps(value, indent=2, sort_keys=True) + "\n").encode("utf-8")
+        self.send_response(status)
+        self.send_header("content-type", "application/json")
+        if error:
+            self.send_header("x-openapi-test-error", error)
+        self.send_header("content-length", str(len(body)))
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
+
+def _normalise_request(method: str, raw_path: str, content_type: str, body: bytes) -> dict[str, Any]:
+    parsed = urlsplit(raw_path)
+    return {
+        "method": method.upper(),
+        "path": parsed.path or "/",
+        "query": sorted([list(pair) for pair in parse_qsl(parsed.query, keep_blank_values=True)]),
+        "content_type": _media_type(content_type),
+        "body": _normalise_body(body, content_type),
+    }
+
+
+def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
+    if not body:
+        return {"type": "empty", "value": None}
+    media_type = _media_type(content_type)
+    text = body.decode("utf-8", errors="surrogateescape")
+    if media_type.endswith("json"):
+        try:
+            return {"type": "json", "value": json.loads(text)}
+        except json.JSONDecodeError:
+            pass
+    if media_type == "multipart/form-data":
+        boundary_match = re.search(r"boundary=([^;]+)", content_type, re.IGNORECASE)
+        if boundary_match:
+            text = text.replace(boundary_match.group(1).strip('"'), "x" * 70)
+    return {"type": "text", "value": text}
+
+
+def _media_type(value: str) -> str:
+    return value.partition(";")[0].strip().lower()
+
+
+def _slug(value: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-") or "feature"
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+def _read_json(path: Path) -> dict[str, Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _write_json_atomic(path: Path, value: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, temporary = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8") as file:
+            json.dump(value, file, indent=2, sort_keys=True)
+            file.write("\n")
+        os.replace(temporary, path)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--database",
+        type=Path,
+        default=Path(__file__).resolve().with_name("test-server-data"),
+        help="Generated recording database directory (default: beside this executable).",
+    )
+    parser.add_argument("--host", default="127.0.0.1")
+    parser.add_argument("--port", type=int, default=8080)
+    parser.add_argument("--mode", choices=("replay", "capture"), default="replay")
+    parser.add_argument("--upstream", help="Real API base URL; required in capture mode.")
+    args = parser.parse_args()
+    if args.mode == "capture" and not args.upstream:
+        parser.error("--upstream is required in capture mode")
+
+    database = RecordingDatabase(args.database)
+    server = TestServer((args.host, args.port), database, args.mode, args.upstream)
+    host = str(server.server_address[0])
+    port = int(server.server_address[1])
+    print(f"Listening on http://{host}:{port} ({args.mode})", flush=True)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        server.server_close()
+
+
+if __name__ == "__main__":
+    main()

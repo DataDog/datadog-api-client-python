@@ -1,0 +1,77 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with formulas and functions scatterplot widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": {
+                "table": {
+                  "formulas": [
+                    {
+                      "alias": "my-query1",
+                      "dimension": "x",
+                      "formula": "query1"
+                    },
+                    {
+                      "alias": "my-query2",
+                      "dimension": "y",
+                      "formula": "query2"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "aggregator": "avg",
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*} by {service}"
+                    },
+                    {
+                      "aggregator": "avg",
+                      "data_source": "metrics",
+                      "name": "query2",
+                      "query": "avg:system.mem.used{*} by {service}"
+                    }
+                  ],
+                  "response_format": "scalar"
+                }
+              },
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "scatterplot"
+            },
+            "id": 5346764334358972,
+            "layout": {
+              "height": 2,
+              "width": 4,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with formulas and functions scatterplot widget",
+  "schema_version": 1,
+  "version": "v1"
+}

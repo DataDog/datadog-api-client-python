@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Get a monitor user template returns \"OK\" response",
+  "operation_id": "GetMonitorUserTemplate",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "template_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "monitor_user_template.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/template/{template_id}"
+  },
+  "scenario": "Get a monitor user template returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

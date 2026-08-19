@@ -1,0 +1,62 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with sankey widget and network data source",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/sankey_network_widget.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "query": {
+                    "data_source": "network",
+                    "group_by": [
+                      "source",
+                      "destination"
+                    ],
+                    "limit": 100,
+                    "query_string": "*"
+                  },
+                  "request_type": "netflow_sankey"
+                }
+              ],
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "sankey"
+            },
+            "layout": {
+              "height": 15,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with sankey widget and network data source",
+  "schema_version": 1,
+  "version": "v1"
+}

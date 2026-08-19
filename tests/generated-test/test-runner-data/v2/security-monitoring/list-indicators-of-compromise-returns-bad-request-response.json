@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/List indicators of compromise returns \"Bad Request\" response",
+  "operation_id": "ListIndicatorsOfCompromise",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "query",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid:::query"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/siem/ioc-explorer"
+  },
+  "scenario": "List indicators of compromise returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

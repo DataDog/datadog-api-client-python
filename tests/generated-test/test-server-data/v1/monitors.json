@@ -1,0 +1,3075 @@
+{
+  "feature": "Monitors",
+  "recordings": [
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-11-21T18:03:25.715Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Check_if_a_monitor_can_be_deleted_returns_OK_response-1763748205",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testcheckifamonitorcanbedeletedreturnsokresponse1763748205",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":238669218,\"org_id\":197728,\"type\":\"log alert\",\"name\":\"Test-Check_if_a_monitor_can_be_deleted_returns_OK_response-1763748205\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testcheckifamonitorcanbedeletedreturnsokresponse1763748205\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1763748206000,\"created\":\"2025-11-21T18:03:26.123200+00:00\",\"modified\":\"2025-11-21T18:03:26.123200+00:00\",\"deleted\":null,\"priority\":3,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Kevin Pombo\",\"handle\":\"kevin.pombo@datadoghq.com\",\"email\":\"kevin.pombo@datadoghq.com\",\"id\":25712273}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/can_delete",
+            "query": [
+              [
+                "monitor_ids",
+                "238669218"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"ok\":[238669218]},\"errors\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/238669218",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":238669218}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Check if a monitor can be deleted returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-01-17T11:21:26.452Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Example Monitor",
+                "options": {
+                  "include_tags": true,
+                  "thresholds": {
+                    "critical": 5,
+                    "warning": 3
+                  },
+                  "variables": [
+                    {
+                      "aggregator": "sum",
+                      "data_source": "cloud_cost",
+                      "name": "query1",
+                      "query": "sum:aws.cost.net.amortized.shared.resources.allocated{aws_product IN (amplify ,athena, backup, bedrock ) } by {aws_product}.rollup(sum, 86400)"
+                    }
+                  ]
+                },
+                "priority": 3,
+                "query": "formula(\"exclude_null(query1)\").last(\"7d\").anomaly(direction=\"above\", threshold=10) >= 5",
+                "tags": [
+                  "test:examplemonitor",
+                  "env:ci"
+                ],
+                "type": "cost alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":162921056,\"org_id\":321813,\"type\":\"cost alert\",\"name\":\"Example Monitor\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:examplemonitor\",\"env:ci\"],\"query\":\"formula(\\\"exclude_null(query1)\\\").last(\\\"7d\\\").anomaly(direction=\\\"above\\\", threshold=10) >= 5\",\"options\":{\"include_tags\":true,\"thresholds\":{\"critical\":5.0,\"warning\":3.0},\"variables\":[{\"aggregator\":\"sum\",\"data_source\":\"cloud_cost\",\"name\":\"query1\",\"query\":\"sum:aws.cost.net.amortized.shared.resources.allocated{aws_product IN (amplify ,athena, backup, bedrock ) } by {aws_product}.rollup(sum, 86400)\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"silenced\":{}},\"multi\":false,\"created_at\":1737112886000,\"created\":\"2025-01-17T11:21:26.560275+00:00\",\"modified\":\"2025-01-17T11:21:26.560275+00:00\",\"deleted\":null,\"priority\":3,\"restricted_roles\":null,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"id\":2320499}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/162921056",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":162921056}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a Cost Monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-05-14T10:58:54.153Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "Data jobs alert triggered",
+                "name": "Test-Create_a_Data_Jobs_monitor_returns_OK_response-1778756334",
+                "options": {
+                  "thresholds": {
+                    "critical": 0
+                  },
+                  "variables": [
+                    {
+                      "job_type": "databricks.job",
+                      "jobs_query": "job_name:*",
+                      "name": "run_query",
+                      "query_dialect": "metric"
+                    }
+                  ]
+                },
+                "query": "formula(\"failed_runs(run_query)\").by(job_name,workspace_name).last(10d) > 0",
+                "tags": [
+                  "test:testcreateadatajobsmonitorreturnsokresponse1778756334",
+                  "env:ci"
+                ],
+                "type": "data-jobs alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":283063470,\"org_id\":321813,\"type\":\"data-jobs alert\",\"name\":\"Test-Create_a_Data_Jobs_monitor_returns_OK_response-1778756334\",\"message\":\"Data jobs alert triggered\",\"tags\":[\"test:testcreateadatajobsmonitorreturnsokresponse1778756334\",\"env:ci\"],\"query\":\"formula(\\\"failed_runs(run_query)\\\").by(job_name,workspace_name).last(10d) > 0\",\"options\":{\"thresholds\":{\"critical\":0.0},\"variables\":[{\"job_type\":\"databricks.job\",\"jobs_query\":\"job_name:*\",\"name\":\"run_query\",\"query_dialect\":\"metric\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":true,\"created_at\":1778756334000,\"created\":\"2026-05-14T10:58:54.236230+00:00\",\"modified\":\"2026-05-14T10:58:54.236230+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"id\":2320499}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/283063470",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":283063470}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a Data Jobs monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-01-12T17:23:49.629Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "Data quality alert triggered",
+                "name": "Test-Create_a_Data_Quality_monitor_returns_OK_response-1768238629",
+                "options": {
+                  "thresholds": {
+                    "critical": 100
+                  },
+                  "variables": [
+                    {
+                      "data_source": "data_quality_metrics",
+                      "filter": "search for column where `database:production AND table:users`",
+                      "group_by": [
+                        "entity_id"
+                      ],
+                      "measure": "row_count",
+                      "name": "query1"
+                    }
+                  ]
+                },
+                "priority": 3,
+                "query": "formula(\"query1\").last(\"5m\") > 100",
+                "tags": [
+                  "test:testcreateadataqualitymonitorreturnsokresponse1768238629",
+                  "env:ci"
+                ],
+                "type": "data-quality alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":250323411,\"org_id\":321813,\"type\":\"data-quality alert\",\"name\":\"Test-Create_a_Data_Quality_monitor_returns_OK_response-1768238629\",\"message\":\"Data quality alert triggered\",\"tags\":[\"test:testcreateadataqualitymonitorreturnsokresponse1768238629\",\"env:ci\"],\"query\":\"formula(\\\"query1\\\").last(\\\"5m\\\") > 100\",\"options\":{\"thresholds\":{\"critical\":100.0},\"variables\":[{\"data_source\":\"data_quality_metrics\",\"filter\":\"search for column where `database:production AND table:users`\",\"group_by\":[\"entity_id\"],\"measure\":\"row_count\",\"name\":\"query1\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":false,\"created_at\":1768238629000,\"created\":\"2026-01-12T17:23:49.782143+00:00\",\"modified\":\"2026-01-12T17:23:49.782143+00:00\",\"deleted\":null,\"priority\":3,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"id\":2320499}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/250323411",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":250323411}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a Data Quality monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-07-31T16:36:50.561Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "Data quality alert triggered",
+                "name": "Test-Create_a_Data_Quality_monitor_with_sensitivity_returns_OK_response-1785515810",
+                "options": {
+                  "thresholds": {
+                    "critical": 100
+                  },
+                  "variables": [
+                    {
+                      "data_source": "data_quality_metrics",
+                      "filter": "search for column where `database:production AND table:users`",
+                      "group_by": [
+                        "entity_id"
+                      ],
+                      "measure": "row_count",
+                      "monitor_options": {
+                        "sensitivity": 2.5
+                      },
+                      "name": "query1"
+                    }
+                  ]
+                },
+                "priority": 3,
+                "query": "formula(\"query1\").last(\"5m\") > 100",
+                "tags": [
+                  "test:testcreateadataqualitymonitorwithsensitivityreturnsokresponse1785515810",
+                  "env:ci"
+                ],
+                "type": "data-quality alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":310055951,\"org_id\":321813,\"type\":\"data-quality alert\",\"name\":\"Test-Create_a_Data_Quality_monitor_with_sensitivity_returns_OK_response-1785515810\",\"message\":\"Data quality alert triggered\",\"tags\":[\"test:testcreateadataqualitymonitorwithsensitivityreturnsokresponse1785515810\",\"env:ci\"],\"query\":\"formula(\\\"query1\\\").last(\\\"5m\\\") > 100\",\"options\":{\"thresholds\":{\"critical\":100.0},\"variables\":[{\"data_source\":\"data_quality_metrics\",\"filter\":\"search for column where `database:production AND table:users`\",\"group_by\":[\"entity_id\"],\"measure\":\"row_count\",\"monitor_options\":{\"sensitivity\":2.5},\"name\":\"query1\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":false,\"created_at\":1785515810000,\"created\":\"2026-07-31T16:36:50.914551+00:00\",\"modified\":\"2026-07-31T16:36:50.914551+00:00\",\"deleted\":null,\"priority\":3,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"id\":2320499}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/310055951",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":310055951}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a Data Quality monitor with sensitivity returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-14T22:27:13.829Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_RUM_formula_and_functions_monitor_returns_OK_response-1747261633",
+                "options": {
+                  "thresholds": {
+                    "critical": 0.8
+                  },
+                  "variables": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "rum",
+                      "group_by": [],
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query2",
+                      "search": {
+                        "query": ""
+                      }
+                    },
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "rum",
+                      "group_by": [],
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": "status:error"
+                      }
+                    }
+                  ]
+                },
+                "priority": 3,
+                "query": "formula(\"query2 / query1 * 100\").last(\"15m\") >= 0.8",
+                "tags": [
+                  "test:testcreatearumformulaandfunctionsmonitorreturnsokresponse1747261633",
+                  "env:ci"
+                ],
+                "type": "rum alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":172140181,\"org_id\":2,\"type\":\"rum alert\",\"name\":\"Test-Create_a_RUM_formula_and_functions_monitor_returns_OK_response-1747261633\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testcreatearumformulaandfunctionsmonitorreturnsokresponse1747261633\",\"env:ci\"],\"query\":\"formula(\\\"query2 / query1 * 100\\\").last(\\\"15m\\\") >= 0.8\",\"options\":{\"thresholds\":{\"critical\":0.8},\"variables\":[{\"compute\":{\"aggregation\":\"count\"},\"data_source\":\"rum\",\"group_by\":[],\"indexes\":[\"*\"],\"name\":\"query2\",\"search\":{\"query\":\"\"}},{\"compute\":{\"aggregation\":\"count\"},\"data_source\":\"rum\",\"group_by\":[],\"indexes\":[\"*\"],\"name\":\"query1\",\"search\":{\"query\":\"status:error\"}}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"groupby_simple_monitor\":false,\"silenced\":{},\"avalanche_window\":20},\"multi\":false,\"created_at\":1747261634000,\"created\":\"2025-05-14T22:27:14.329045+00:00\",\"modified\":\"2025-05-14T22:27:14.329045+00:00\",\"deleted\":null,\"priority\":3,\"draft_status\":\"published\",\"restricted_roles\":null,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Carl Martensen\",\"handle\":\"carl.martensen@datadoghq.com\",\"email\":\"carl.martensen@datadoghq.com\",\"id\":638339},\"run_as\":null,\"restricted\":true}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/172140181",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":172140181}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a RUM formula and functions monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-03-22T14:54:22.903Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_ci_pipelines_formula_and_functions_monitor_returns_OK_response-1647960862",
+                "options": {
+                  "thresholds": {
+                    "critical": 0.8
+                  },
+                  "variables": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "ci_pipelines",
+                      "group_by": [],
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": "@ci.status:error"
+                      }
+                    },
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "ci_pipelines",
+                      "group_by": [],
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query2",
+                      "search": {
+                        "query": ""
+                      }
+                    }
+                  ]
+                },
+                "priority": 3,
+                "query": "formula(\"query1 / query2 * 100\").last(\"15m\") >= 0.8",
+                "tags": [
+                  "test:testcreateacipipelinesformulaandfunctionsmonitorreturnsokresponse1647960862",
+                  "env:ci"
+                ],
+                "type": "ci-pipelines alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"restricted_roles\":null,\"tags\":[\"test:testcreateacipipelinesformulaandfunctionsmonitorreturnsokresponse1647960862\",\"env:ci\"],\"deleted\":null,\"query\":\"formula(\\\"query1 / query2 * 100\\\").last(\\\"15m\\\") >= 0.8\",\"message\":\"some message Notify: @hipchat-channel\",\"id\":66627974,\"multi\":false,\"name\":\"Test-Create_a_ci_pipelines_formula_and_functions_monitor_returns_OK_response-1647960862\",\"created\":\"2022-03-22T14:54:23.352659+00:00\",\"created_at\":1647960863000,\"creator\":{\"id\":1445416,\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"org_id\":321813,\"modified\":\"2022-03-22T14:54:23.352659+00:00\",\"priority\":3,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"type\":\"ci-pipelines alert\",\"options\":{\"notify_audit\":false,\"silenced\":{},\"include_tags\":true,\"thresholds\":{\"critical\":0.8},\"new_host_delay\":300,\"notify_no_data\":false,\"groupby_simple_monitor\":false,\"variables\":[{\"search\":{\"query\":\"@ci.status:error\"},\"data_source\":\"ci_pipelines\",\"compute\":{\"aggregation\":\"count\"},\"name\":\"query1\",\"indexes\":[\"*\"],\"group_by\":[]},{\"search\":{\"query\":\"\"},\"data_source\":\"ci_pipelines\",\"compute\":{\"aggregation\":\"count\"},\"name\":\"query2\",\"indexes\":[\"*\"],\"group_by\":[]}]}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/66627974",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":66627974}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a ci-pipelines formula and functions monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:50:53.849Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_ci_pipelines_monitor_returns_OK_response-1641430253",
+                "options": {
+                  "thresholds": {
+                    "critical": 1
+                  }
+                },
+                "priority": 3,
+                "query": "ci-pipelines(\"ci_level:pipeline @git.branch:staging* @ci.status:error\").rollup(\"count\").by(\"@git.branch,@ci.pipeline.name\").last(\"5m\") >= 1",
+                "tags": [
+                  "test:testcreateacipipelinesmonitorreturnsokresponse1641430253",
+                  "env:ci"
+                ],
+                "type": "ci-pipelines alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"restricted_roles\":null,\"tags\":[\"test:testcreateacipipelinesmonitorreturnsokresponse1641430253\",\"env:ci\"],\"deleted\":null,\"query\":\"ci-pipelines(\\\"ci_level:pipeline @git.branch:staging* @ci.status:error\\\").rollup(\\\"count\\\").by(\\\"@git.branch,@ci.pipeline.name\\\").last(\\\"5m\\\") >= 1\",\"message\":\"some message Notify: @hipchat-channel\",\"id\":59800609,\"multi\":true,\"name\":\"Test-Create_a_ci_pipelines_monitor_returns_OK_response-1641430253\",\"created\":\"2022-01-06T00:50:54.050585+00:00\",\"created_at\":1641430254000,\"creator\":{\"id\":1445416,\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"org_id\":321813,\"modified\":\"2022-01-06T00:50:54.050585+00:00\",\"priority\":3,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"type\":\"ci-pipelines alert\",\"options\":{\"notify_audit\":false,\"locked\":false,\"silenced\":{},\"include_tags\":true,\"thresholds\":{\"critical\":1},\"new_host_delay\":300,\"notify_no_data\":false,\"groupby_simple_monitor\":false}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/59800609",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":59800609}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a ci-pipelines monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-05-13T10:40:35.052Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_ci_tests_formula_and_functions_monitor_returns_OK_response-1652438435",
+                "options": {
+                  "thresholds": {
+                    "critical": 0.8
+                  },
+                  "variables": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "ci_tests",
+                      "group_by": [],
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": "@test.status:fail"
+                      }
+                    },
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "ci_tests",
+                      "group_by": [],
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query2",
+                      "search": {
+                        "query": ""
+                      }
+                    }
+                  ]
+                },
+                "priority": 3,
+                "query": "formula(\"query1 / query2 * 100\").last(\"15m\") >= 0.8",
+                "tags": [
+                  "test:testcreateacitestsformulaandfunctionsmonitorreturnsokresponse1652438435",
+                  "env:ci"
+                ],
+                "type": "ci-tests alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"restricted_roles\":null,\"tags\":[\"test:testcreateacitestsformulaandfunctionsmonitorreturnsokresponse1652438435\",\"env:ci\"],\"deleted\":null,\"query\":\"formula(\\\"query1 / query2 * 100\\\").last(\\\"15m\\\") >= 0.8\",\"message\":\"some message Notify: @hipchat-channel\",\"id\":71427772,\"multi\":false,\"name\":\"Test-Create_a_ci_tests_formula_and_functions_monitor_returns_OK_response-1652438435\",\"created\":\"2022-05-13T10:40:35.341131+00:00\",\"created_at\":1652438435000,\"creator\":{\"id\":1445416,\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"org_id\":321813,\"modified\":\"2022-05-13T10:40:35.341131+00:00\",\"priority\":3,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"type\":\"ci-tests alert\",\"options\":{\"notify_audit\":false,\"silenced\":{},\"include_tags\":true,\"thresholds\":{\"critical\":0.8},\"new_host_delay\":300,\"notify_no_data\":false,\"groupby_simple_monitor\":false,\"variables\":[{\"search\":{\"query\":\"@test.status:fail\"},\"data_source\":\"ci_tests\",\"compute\":{\"aggregation\":\"count\"},\"name\":\"query1\",\"indexes\":[\"*\"],\"group_by\":[]},{\"search\":{\"query\":\"\"},\"data_source\":\"ci_tests\",\"compute\":{\"aggregation\":\"count\"},\"name\":\"query2\",\"indexes\":[\"*\"],\"group_by\":[]}]}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/71427772",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":71427772}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a ci-tests formula and functions monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-05-17T15:10:28.775Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_ci_tests_monitor_returns_OK_response-1652800228",
+                "options": {
+                  "thresholds": {
+                    "critical": 1
+                  }
+                },
+                "priority": 3,
+                "query": "ci-tests(\"type:test @git.branch:staging* @test.status:fail\").rollup(\"count\").by(\"@test.name\").last(\"5m\") >= 1",
+                "tags": [
+                  "test:testcreateacitestsmonitorreturnsokresponse1652800228",
+                  "env:ci"
+                ],
+                "type": "ci-tests alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"restricted_roles\":null,\"tags\":[\"test:testcreateacitestsmonitorreturnsokresponse1652800228\",\"env:ci\"],\"deleted\":null,\"query\":\"ci-tests(\\\"type:test @git.branch:staging* @test.status:fail\\\").rollup(\\\"count\\\").by(\\\"@test.name\\\").last(\\\"5m\\\") >= 1\",\"message\":\"some message Notify: @hipchat-channel\",\"id\":71774917,\"multi\":true,\"name\":\"Test-Create_a_ci_tests_monitor_returns_OK_response-1652800228\",\"created\":\"2022-05-17T15:10:29.357369+00:00\",\"created_at\":1652800229000,\"creator\":{\"id\":1445416,\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"org_id\":321813,\"modified\":\"2022-05-17T15:10:29.357369+00:00\",\"priority\":3,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"type\":\"ci-tests alert\",\"options\":{\"notify_audit\":false,\"silenced\":{},\"include_tags\":true,\"thresholds\":{\"critical\":1.0},\"new_host_delay\":300,\"notify_no_data\":false,\"groupby_simple_monitor\":false}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/71774917",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":71774917}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a ci-tests monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2023-01-09T10:07:16.112Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_metric_monitor_returns_OK_response-1673258836",
+                "options": {
+                  "scheduling_options": {
+                    "evaluation_window": {
+                      "day_starts": "04:00",
+                      "month_starts": 1
+                    }
+                  },
+                  "thresholds": {
+                    "critical": 0.5
+                  }
+                },
+                "query": "avg(current_1mo):avg:system.load.5{*} > 0.5",
+                "type": "metric alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":107235710,\"org_id\":321813,\"type\":\"query alert\",\"name\":\"Test-Create_a_metric_monitor_returns_OK_response-1673258836\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[],\"query\":\"avg(current_1mo):avg:system.load.5{*} > 0.5\",\"options\":{\"scheduling_options\":{\"evaluation_window\":{\"day_starts\":\"04:00\",\"month_starts\":1}},\"thresholds\":{\"critical\":0.5},\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":false,\"created_at\":1673258836000,\"created\":\"2023-01-09T10:07:16.513455+00:00\",\"modified\":\"2023-01-09T10:07:16.513455+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/107235710",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":107235710}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a metric monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-14T22:28:29.992Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "draft_status": "published",
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_metric_monitor_with_a_custom_schedule_returns_OK_response-1747261709",
+                "options": {
+                  "include_tags": false,
+                  "notify_audit": false,
+                  "on_missing_data": "default",
+                  "scheduling_options": {
+                    "custom_schedule": {
+                      "recurrences": [
+                        {
+                          "rrule": "FREQ=DAILY;INTERVAL=1",
+                          "start": "2024-10-26T09:13:00",
+                          "timezone": "America/Los_Angeles"
+                        }
+                      ]
+                    },
+                    "evaluation_window": {
+                      "day_starts": "04:00",
+                      "month_starts": 1
+                    }
+                  },
+                  "thresholds": {
+                    "critical": 0.5
+                  }
+                },
+                "query": "avg(current_1mo):avg:system.load.5{*} > 0.5",
+                "tags": [],
+                "type": "query alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":172140210,\"org_id\":2,\"type\":\"query alert\",\"name\":\"Test-Create_a_metric_monitor_with_a_custom_schedule_returns_OK_response-1747261709\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[],\"query\":\"avg(current_1mo):avg:system.load.5{*} > 0.5\",\"options\":{\"include_tags\":false,\"notify_audit\":false,\"scheduling_options\":{\"custom_schedule\":{\"recurrences\":[{\"rrule\":\"FREQ=DAILY;INTERVAL=1\",\"start\":\"2024-10-26T09:13:00\",\"timezone\":\"America/Los_Angeles\"}]},\"evaluation_window\":{\"day_starts\":\"04:00\",\"month_starts\":1}},\"thresholds\":{\"critical\":0.5},\"new_host_delay\":300,\"silenced\":{},\"avalanche_window\":20},\"multi\":false,\"created_at\":1747261710000,\"created\":\"2025-05-14T22:28:30.512529+00:00\",\"modified\":\"2025-05-14T22:28:30.512529+00:00\",\"deleted\":null,\"priority\":null,\"draft_status\":\"published\",\"restricted_roles\":null,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Carl Martensen\",\"handle\":\"carl.martensen@datadoghq.com\",\"email\":\"carl.martensen@datadoghq.com\",\"id\":638339},\"run_as\":null,\"restricted\":true}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/172140210",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":172140210}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a metric monitor with a custom schedule returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:50:54.336Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "query": "query",
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"The value provided for parameter 'query' is invalid: invalid operator specified: \"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a monitor returns \"Bad Request\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-05-12T09:46:20.878Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_a_monitor_returns_OK_response-1652348780"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"roles\",\"id\":\"61162af2-d1d8-11ec-ad3d-da7ad0900002\",\"attributes\":{\"name\":\"Test-Create_a_monitor_returns_OK_response-1652348780\",\"created_at\":\"2022-05-12T09:46:21.361812+00:00\",\"modified_at\":\"2022-05-12T09:46:21.408035+00:00\"},\"relationships\":{\"permissions\":{\"data\":[{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\"},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\"},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\"},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"97971c1c-e895-11eb-b13c-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_monitor_returns_OK_response-1652348780",
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "restricted_roles": [
+                  "61162af2-d1d8-11ec-ad3d-da7ad0900002"
+                ],
+                "tags": [
+                  "test:testcreateamonitorreturnsokresponse1652348780",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"restricted_roles\":[\"61162af2-d1d8-11ec-ad3d-da7ad0900002\"],\"tags\":[\"test:testcreateamonitorreturnsokresponse1652348780\",\"env:ci\"],\"deleted\":null,\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"message\":\"some message Notify: @hipchat-channel\",\"id\":71310040,\"multi\":true,\"name\":\"Test-Create_a_monitor_returns_OK_response-1652348780\",\"created\":\"2022-05-12T09:46:21.924878+00:00\",\"created_at\":1652348781000,\"creator\":{\"id\":1445416,\"handle\":\"frog@datadoghq.com\",\"name\":null,\"email\":\"frog@datadoghq.com\"},\"org_id\":321813,\"modified\":\"2022-05-12T09:46:21.924878+00:00\",\"priority\":3,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"type\":\"log alert\",\"options\":{\"notify_audit\":false,\"silenced\":{},\"include_tags\":true,\"new_host_delay\":300,\"notify_no_data\":false,\"groupby_simple_monitor\":false}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/71310040",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":71310040}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/61162af2-d1d8-11ec-ad3d-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-03-04T20:59:52.837Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "test message",
+                "name": "Test-Create_a_monitor_with_aggregate_augmented_query_variables_returns_OK_response-1772657992",
+                "options": {
+                  "thresholds": {
+                    "critical": 124
+                  },
+                  "variables": [
+                    {
+                      "augment_query": {
+                        "columns": [
+                          {
+                            "name": "org_id"
+                          },
+                          {
+                            "name": "name"
+                          }
+                        ],
+                        "data_source": "reference_table",
+                        "name": "filter_query",
+                        "table_name": "test_table"
+                      },
+                      "base_query": {
+                        "data_source": "metrics",
+                        "name": "query1",
+                        "query": "avg:dd{*} by {org_id}.as_count()"
+                      },
+                      "compute": [
+                        {
+                          "aggregation": "max",
+                          "name": "compute_result"
+                        }
+                      ],
+                      "data_source": "aggregate_augmented_query",
+                      "group_by": [
+                        {
+                          "facet": "org_id"
+                        },
+                        {
+                          "facet": "name"
+                        }
+                      ],
+                      "join_condition": {
+                        "augment_attribute": "org_id",
+                        "base_attribute": "org_id",
+                        "join_type": "inner"
+                      },
+                      "name": "query1"
+                    }
+                  ]
+                },
+                "query": "formula(\"query1\").rollup(\"sum\").last(\"5m\") > 124",
+                "type": "query alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":263469923,\"org_id\":321813,\"type\":\"metric alert\",\"name\":\"Test-Create_a_monitor_with_aggregate_augmented_query_variables_returns_OK_response-1772657992\",\"message\":\"test message\",\"tags\":[],\"query\":\"formula(\\\"query1\\\").rollup(\\\"sum\\\").last(\\\"5m\\\") > 124\",\"options\":{\"thresholds\":{\"critical\":124.0},\"variables\":[{\"augment_query\":{\"columns\":[{\"name\":\"org_id\"},{\"name\":\"name\"}],\"data_source\":\"reference_table\",\"name\":\"filter_query\",\"table_name\":\"test_table\"},\"base_query\":{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"avg:dd{*} by {org_id}.as_count()\"},\"compute\":[{\"aggregation\":\"max\",\"name\":\"compute_result\"}],\"data_source\":\"aggregate_augmented_query\",\"group_by\":[{\"facet\":\"org_id\"},{\"facet\":\"name\"}],\"join_condition\":{\"augment_attribute\":\"org_id\",\"base_attribute\":\"org_id\",\"join_type\":\"inner\"},\"name\":\"query1\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":false,\"created_at\":1772657993000,\"created\":\"2026-03-04T20:59:53.048028+00:00\",\"modified\":\"2026-03-04T20:59:53.048028+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/263469923",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":263469923}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a monitor with aggregate augmented query variables returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-03-03T19:33:24.886Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "test message",
+                "name": "Test-Create_a_monitor_with_aggregate_filtered_query_variables_returns_OK_response-1772566404",
+                "options": {
+                  "thresholds": {
+                    "critical": 100
+                  },
+                  "variables": [
+                    {
+                      "base_query": {
+                        "data_source": "metrics",
+                        "name": "query1",
+                        "query": "max:container.cpu.usage{*} by {kube_cluster_name}.rollup(max)"
+                      },
+                      "data_source": "aggregate_filtered_query",
+                      "filter_query": {
+                        "columns": [
+                          {
+                            "name": "cluster_name"
+                          }
+                        ],
+                        "data_source": "reference_table",
+                        "name": "filter_query",
+                        "table_name": "test_table"
+                      },
+                      "filters": [
+                        {
+                          "base_attribute": "kube_cluster_name",
+                          "filter_attribute": "cluster_name"
+                        }
+                      ],
+                      "name": "query1"
+                    }
+                  ]
+                },
+                "query": "formula(\"query1\").rollup(\"sum\").last(\"5m\") > 100",
+                "type": "query alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":263171329,\"org_id\":321813,\"type\":\"metric alert\",\"name\":\"Test-Create_a_monitor_with_aggregate_filtered_query_variables_returns_OK_response-1772566404\",\"message\":\"test message\",\"tags\":[],\"query\":\"formula(\\\"query1\\\").rollup(\\\"sum\\\").last(\\\"5m\\\") > 100\",\"options\":{\"thresholds\":{\"critical\":100.0},\"variables\":[{\"base_query\":{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"max:container.cpu.usage{*} by {kube_cluster_name}.rollup(max)\"},\"data_source\":\"aggregate_filtered_query\",\"filter_query\":{\"columns\":[{\"name\":\"cluster_name\"}],\"data_source\":\"reference_table\",\"name\":\"filter_query\",\"table_name\":\"test_table\"},\"filters\":[{\"base_attribute\":\"kube_cluster_name\",\"filter_attribute\":\"cluster_name\"}],\"name\":\"query1\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":false,\"created_at\":1772566405000,\"created\":\"2026-03-03T19:33:25.076678+00:00\",\"modified\":\"2026-03-03T19:33:25.076678+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/263171329",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":263171329}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a monitor with aggregate filtered query variables returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-11-21T19:04:55.769Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "assets": [
+                  {
+                    "category": "runbook",
+                    "name": "Monitor Runbook",
+                    "resource_key": "12345",
+                    "resource_type": "notebook",
+                    "url": "/notebooks/12345"
+                  }
+                ],
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_monitor_with_assets_returns_OK_response-1763751895",
+                "options": {
+                  "scheduling_options": {
+                    "evaluation_window": {
+                      "day_starts": "04:00",
+                      "month_starts": 1
+                    }
+                  },
+                  "thresholds": {
+                    "critical": 0.5
+                  }
+                },
+                "query": "avg(current_1mo):avg:system.load.5{*} > 0.5",
+                "type": "metric alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":238681257,\"org_id\":321813,\"type\":\"query alert\",\"name\":\"Test-Create_a_monitor_with_assets_returns_OK_response-1763751895\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[],\"query\":\"avg(current_1mo):avg:system.load.5{*} > 0.5\",\"options\":{\"scheduling_options\":{\"evaluation_window\":{\"day_starts\":\"04:00\",\"month_starts\":1}},\"thresholds\":{\"critical\":0.5},\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":false,\"created_at\":1763751896000,\"created\":\"2025-11-21T19:04:56.060346+00:00\",\"modified\":\"2025-11-21T19:04:56.060346+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[{\"monitor_id\":238681257,\"name\":\"Monitor Runbook\",\"category\":\"runbook\",\"url\":\"/notebooks/12345\",\"template_variables\":{},\"options\":{},\"resource_key\":\"12345\",\"resource_type\":\"notebook\"}],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"id\":2320499}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/238681257",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":238681257}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a monitor with assets returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-14T22:17:22.560Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "draft_status": "draft",
+                "message": "some message",
+                "name": "Test-Create_an_Error_Tracking_monitor_returns_OK_response-1747261042",
+                "options": {
+                  "thresholds": {
+                    "critical": 1
+                  }
+                },
+                "priority": 3,
+                "query": "error-tracking-rum(\"service:foo AND @error.source:source\").rollup(\"count\").by(\"@issue.id\").last(\"1h\") >= 1",
+                "tags": [
+                  "test:testcreateanerrortrackingmonitorreturnsokresponse1747261042",
+                  "env:ci"
+                ],
+                "type": "error-tracking alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":172139812,\"org_id\":2,\"type\":\"error-tracking alert\",\"name\":\"Test-Create_an_Error_Tracking_monitor_returns_OK_response-1747261042\",\"message\":\"some message\",\"tags\":[\"test:testcreateanerrortrackingmonitorreturnsokresponse1747261042\",\"env:ci\"],\"query\":\"error-tracking-rum(\\\"service:foo AND @error.source:source\\\").rollup(\\\"count\\\").by(\\\"@issue.id\\\").last(\\\"1h\\\") >= 1\",\"options\":{\"thresholds\":{\"critical\":1.0},\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"groupby_simple_monitor\":false,\"silenced\":{},\"avalanche_window\":20},\"multi\":true,\"created_at\":1747261042000,\"created\":\"2025-05-14T22:17:22.989000+00:00\",\"modified\":\"2025-05-14T22:17:22.989000+00:00\",\"deleted\":null,\"priority\":3,\"draft_status\":\"draft\",\"restricted_roles\":null,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Carl Martensen\",\"handle\":\"carl.martensen@datadoghq.com\",\"email\":\"carl.martensen@datadoghq.com\",\"id\":638339},\"run_as\":null,\"restricted\":true}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/172139812",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":172139812}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create an Error Tracking monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-08-11T15:01:12.326Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "LLM observability alert triggered",
+                "name": "Test-Create_an_LLM_Observability_monitor_returns_OK_response-1786460472",
+                "options": {
+                  "include_tags": true,
+                  "notify_audit": false,
+                  "thresholds": {
+                    "critical": 0
+                  }
+                },
+                "query": "llm-observability(\"*\").rollup(\"count\").last(\"2h\") > 0",
+                "tags": [
+                  "test:testcreateanllmobservabilitymonitorreturnsokresponse1786460472",
+                  "env:ci"
+                ],
+                "type": "llm-observability alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":312833678,\"org_id\":321813,\"type\":\"llm-observability alert\",\"name\":\"Test-Create_an_LLM_Observability_monitor_returns_OK_response-1786460472\",\"message\":\"LLM observability alert triggered\",\"tags\":[\"test:testcreateanllmobservabilitymonitorreturnsokresponse1786460472\",\"env:ci\"],\"query\":\"llm-observability(\\\"*\\\").rollup(\\\"count\\\").last(\\\"2h\\\") > 0\",\"options\":{\"include_tags\":true,\"notify_audit\":false,\"thresholds\":{\"critical\":0.0},\"notify_no_data\":false,\"new_host_delay\":300,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":false,\"created_at\":1786460473000,\"created\":\"2026-08-11T15:01:13.078330+00:00\",\"modified\":\"2026-08-11T15:01:13.078330+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Francesco Pighi\",\"handle\":\"francesco.pighi@datadoghq.com\",\"email\":\"francesco.pighi@datadoghq.com\",\"id\":21235577}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/312833678",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":312833678}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create an LLM Observability monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:50:55.834Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a monitor returns \"Item not found error\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-10-10T16:40:30.250Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Delete_a_monitor_returns_OK_response-1728578430",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testdeleteamonitorreturnsokresponse1728578430",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":155845206,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Delete_a_monitor_returns_OK_response-1728578430\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testdeleteamonitorreturnsokresponse1728578430\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1728578430000,\"created\":\"2024-10-10T16:40:30.574547+00:00\",\"modified\":\"2024-10-10T16:40:30.574547+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/155845206",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":155845206}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/155845206",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:50:56.710Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "updated",
+                "options": {
+                  "evaluation_delay": null,
+                  "new_group_delay": 600,
+                  "new_host_delay": null,
+                  "renotify_interval": null,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": null
+                  },
+                  "timeout_h": null
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/monitor/0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Edit a monitor returns \"Monitor Not Found error\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-10-10T16:40:19.400Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Edit_a_monitor_returns_OK_response-1728578419",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testeditamonitorreturnsokresponse1728578419",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":155845150,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Edit_a_monitor_returns_OK_response-1728578419\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testeditamonitorreturnsokresponse1728578419\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1728578419000,\"created\":\"2024-10-10T16:40:19.663079+00:00\",\"modified\":\"2024-10-10T16:40:19.663079+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Edit_a_monitor_returns_OK_response-1728578419-updated",
+                "options": {
+                  "evaluation_delay": null,
+                  "new_group_delay": 600,
+                  "new_host_delay": null,
+                  "renotify_interval": null,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": null
+                  },
+                  "timeout_h": null
+                },
+                "priority": null
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/monitor/155845150",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":155845150,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Edit_a_monitor_returns_OK_response-1728578419-updated\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testeditamonitorreturnsokresponse1728578419\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"evaluation_delay\":null,\"new_group_delay\":600,\"new_host_delay\":null,\"renotify_interval\":null,\"thresholds\":{\"critical\":2.0},\"timeout_h\":null,\"notify_no_data\":false,\"notify_audit\":false,\"include_tags\":true,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1728578419000,\"created\":\"2024-10-10T16:40:19.663079+00:00\",\"modified\":\"2024-10-10T16:40:20.001481+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":null,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/155845150",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":155845150}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Edit a monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:50:57.741Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/12345",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a monitor's details returns \"Monitor Not Found error\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-10-10T16:38:59.821Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Get_a_monitor_s_details_returns_OK_response-1728578339",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testgetamonitorsdetailsreturnsokresponse1728578339",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":155844758,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Get_a_monitor_s_details_returns_OK_response-1728578339\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testgetamonitorsdetailsreturnsokresponse1728578339\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1728578340000,\"created\":\"2024-10-10T16:39:00.138359+00:00\",\"modified\":\"2024-10-10T16:39:00.138359+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/155844758",
+            "query": [
+              [
+                "with_downtimes",
+                "true"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":155844758,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Get_a_monitor_s_details_returns_OK_response-1728578339\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testgetamonitorsdetailsreturnsokresponse1728578339\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1728578340000,\"created\":\"2024-10-10T16:39:00.138359+00:00\",\"modified\":\"2024-10-10T16:39:00.138359+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"id\":1445416},\"matching_downtimes\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/155844758",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":155844758}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a monitor's details returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2023-05-22T21:15:19.763Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testgetamonitorsdetailswithdowntimereturnsokresponse1684790119",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":119766008,\"org_id\":717122,\"type\":\"log alert\",\"name\":\"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testgetamonitorsdetailswithdowntimereturnsokresponse1684790119\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"silenced\":{}},\"multi\":true,\"created_at\":1684790119000,\"created\":\"2023-05-22T21:15:19.942502+00:00\",\"modified\":\"2023-05-22T21:15:19.942502+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Kevin Zou\",\"handle\":\"kevin.zou@datadoghq.com\",\"email\":\"kevin.zou@datadoghq.com\",\"id\":4351227}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "end": 1685394919,
+                "message": "Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119",
+                "monitor_id": 119766008,
+                "mute_first_recovery_notification": true,
+                "notify_end_states": [
+                  "alert"
+                ],
+                "notify_end_types": [
+                  "canceled"
+                ],
+                "scope": [
+                  "*"
+                ],
+                "start": 1684790119,
+                "timezone": "Etc/UTC"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/downtime",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":2942947856,\"monitor_id\":119766008,\"org_id\":717122,\"start\":1684790119,\"end\":1685394919,\"canceled\":null,\"created\":1684790120,\"modified\":1684790120,\"message\":\"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119\",\"active\":true,\"disabled\":false,\"recurrence\":null,\"timezone\":\"Etc/UTC\",\"parent_id\":null,\"child_id\":null,\"creator_id\":4351227,\"updater_id\":null,\"downtime_type\":0,\"status\":\"active\",\"monitor_tags\":[\"*\"],\"mute_first_recovery_notification\":true,\"notify_end_types\":[\"canceled\"],\"notify_end_states\":[\"alert\"],\"uuid\":\"c1ddf27c-f8e5-11ed-8c5a-da7ad0900002\",\"scope\":[\"*\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/119766008",
+            "query": [
+              [
+                "with_downtimes",
+                "true"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":119766008,\"org_id\":717122,\"type\":\"log alert\",\"name\":\"Test-Get_a_monitor_s_details_with_downtime_returns_OK_response-1684790119\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testgetamonitorsdetailswithdowntimereturnsokresponse1684790119\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"silenced\":{\"*\":1685394919}},\"multi\":true,\"created_at\":1684790119000,\"created\":\"2023-05-22T21:15:19.942502+00:00\",\"modified\":\"2023-05-22T21:15:19.942502+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"overall_state_modified\":\"2023-05-22T21:15:22+00:00\",\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Kevin Zou\",\"handle\":\"kevin.zou@datadoghq.com\",\"email\":\"kevin.zou@datadoghq.com\",\"id\":4351227},\"matching_downtimes\":[{\"id\":2942947856,\"active\":true,\"monitor_id\":119766008,\"start\":1684790119,\"end\":1685394919,\"scope\":[\"*\"],\"groups\":[\"total\"]}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/downtime/2942947856",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/119766008",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":119766008}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a monitor's details with downtime returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-08-06T12:03:16.833Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "config": {
+                  "assertions": [
+                    {
+                      "operator": "is",
+                      "property": "{{ PROPERTY }}",
+                      "target": "text/html",
+                      "type": "header"
+                    },
+                    {
+                      "operator": "lessThan",
+                      "target": 2000,
+                      "timingsScope": "withoutDNS",
+                      "type": "responseTime"
+                    },
+                    {
+                      "operator": "validatesJSONPath",
+                      "target": {
+                        "jsonPath": "topKey",
+                        "operator": "isNot",
+                        "targetValue": "0"
+                      },
+                      "type": "body"
+                    },
+                    {
+                      "operator": "validatesJSONPath",
+                      "target": {
+                        "elementsOperator": "atLeastOneElementMatches",
+                        "jsonPath": "topKey",
+                        "operator": "isNot",
+                        "targetValue": "0"
+                      },
+                      "type": "body"
+                    },
+                    {
+                      "operator": "validatesJSONSchema",
+                      "target": {
+                        "jsonSchema": "{\"type\": \"object\", \"properties\":{\"slideshow\":{\"type\":\"object\"}}}",
+                        "metaSchema": "draft-07"
+                      },
+                      "type": "body"
+                    },
+                    {
+                      "operator": "validatesXPath",
+                      "target": {
+                        "operator": "contains",
+                        "targetValue": "0",
+                        "xPath": "target-xpath"
+                      },
+                      "type": "body"
+                    },
+                    {
+                      "operator": "md5",
+                      "target": "a",
+                      "type": "bodyHash"
+                    },
+                    {
+                      "code": "const hello = 'world';",
+                      "type": "javascript"
+                    }
+                  ],
+                  "configVariables": [
+                    {
+                      "example": "content-type",
+                      "name": "PROPERTY",
+                      "pattern": "content-type",
+                      "type": "text"
+                    }
+                  ],
+                  "request": {
+                    "basicAuth": {
+                      "accessTokenUrl": "https://datadog-token.com",
+                      "audience": "audience",
+                      "clientId": "client-id",
+                      "clientSecret": "client-secret",
+                      "resource": "resource",
+                      "scope": "yoyo",
+                      "tokenApiAuthentication": "header",
+                      "type": "oauth-client"
+                    },
+                    "certificate": {
+                      "cert": {
+                        "content": "cert-content",
+                        "filename": "cert-filename",
+                        "updatedAt": "2020-10-16T09:23:24.857Z"
+                      },
+                      "key": {
+                        "content": "key-content",
+                        "filename": "key-filename",
+                        "updatedAt": "2020-10-16T09:23:24.857Z"
+                      }
+                    },
+                    "headers": {
+                      "unique": "testgetasyntheticsmonitorsdetails1722945796"
+                    },
+                    "method": "GET",
+                    "persistCookies": true,
+                    "proxy": {
+                      "headers": {},
+                      "url": "https://datadoghq.com"
+                    },
+                    "timeout": 10,
+                    "url": "https://datadoghq.com"
+                  },
+                  "variablesFromScript": "dd.variable.set(\"FOO\", \"foo\")"
+                },
+                "locations": [
+                  "aws:us-east-2"
+                ],
+                "message": "BDD test payload: synthetics_api_http_test_payload.json",
+                "name": "Test-Get_a_synthetics_monitor_s_details-1722945796",
+                "options": {
+                  "accept_self_signed": false,
+                  "allow_insecure": true,
+                  "follow_redirects": true,
+                  "httpVersion": "http2",
+                  "min_failure_duration": 10,
+                  "min_location_failed": 1,
+                  "monitor_name": "Test-Get_a_synthetics_monitor_s_details-1722945796",
+                  "monitor_priority": 5,
+                  "retry": {
+                    "count": 3,
+                    "interval": 10
+                  },
+                  "tick_every": 60
+                },
+                "subtype": "http",
+                "tags": [
+                  "testing:api"
+                ],
+                "type": "api"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/synthetics/tests/api",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"public_id\":\"4c7-n7j-xbv\",\"name\":\"Test-Get_a_synthetics_monitor_s_details-1722945796\",\"status\":\"live\",\"type\":\"api\",\"tags\":[\"testing:api\"],\"created_at\":\"2024-08-06T12:03:17.509325+00:00\",\"modified_at\":\"2024-08-06T12:03:17.509325+00:00\",\"config\":{\"assertions\":[{\"operator\":\"is\",\"property\":\"{{ PROPERTY }}\",\"target\":\"text/html\",\"type\":\"header\"},{\"operator\":\"lessThan\",\"target\":2000,\"timingsScope\":\"withoutDNS\",\"type\":\"responseTime\"},{\"operator\":\"validatesJSONPath\",\"target\":{\"jsonPath\":\"topKey\",\"operator\":\"isNot\",\"targetValue\":\"0\"},\"type\":\"body\"},{\"operator\":\"validatesJSONPath\",\"target\":{\"elementsOperator\":\"atLeastOneElementMatches\",\"jsonPath\":\"topKey\",\"operator\":\"isNot\",\"targetValue\":\"0\"},\"type\":\"body\"},{\"operator\":\"validatesJSONSchema\",\"target\":{\"jsonSchema\":\"{\\\"type\\\": \\\"object\\\", \\\"properties\\\":{\\\"slideshow\\\":{\\\"type\\\":\\\"object\\\"}}}\",\"metaSchema\":\"draft-07\"},\"type\":\"body\"},{\"operator\":\"validatesXPath\",\"target\":{\"operator\":\"contains\",\"targetValue\":\"0\",\"xPath\":\"target-xpath\"},\"type\":\"body\"},{\"operator\":\"md5\",\"target\":\"a\",\"type\":\"bodyHash\"},{\"code\":\"const hello = 'world';\",\"type\":\"javascript\"}],\"configVariables\":[{\"example\":\"content-type\",\"name\":\"PROPERTY\",\"pattern\":\"content-type\",\"type\":\"text\"}],\"request\":{\"basicAuth\":{\"accessTokenUrl\":\"https://datadog-token.com\",\"audience\":\"audience\",\"clientId\":\"client-id\",\"clientSecret\":\"client-secret\",\"resource\":\"resource\",\"scope\":\"yoyo\",\"tokenApiAuthentication\":\"header\",\"type\":\"oauth-client\"},\"certificate\":{\"cert\":{\"filename\":\"cert-filename\",\"updatedAt\":\"2020-10-16T09:23:24.857Z\"},\"key\":{\"filename\":\"key-filename\",\"updatedAt\":\"2020-10-16T09:23:24.857Z\"}},\"headers\":{\"unique\":\"testgetasyntheticsmonitorsdetails1722945796\"},\"method\":\"GET\",\"persistCookies\":true,\"proxy\":{\"headers\":{},\"url\":\"https://datadoghq.com\"},\"timeout\":10,\"url\":\"https://datadoghq.com\"},\"variablesFromScript\":\"dd.variable.set(\\\"FOO\\\", \\\"foo\\\")\"},\"message\":\"BDD test payload: synthetics_api_http_test_payload.json\",\"options\":{\"accept_self_signed\":false,\"allow_insecure\":true,\"follow_redirects\":true,\"httpVersion\":\"http2\",\"min_failure_duration\":10,\"min_location_failed\":1,\"monitor_name\":\"Test-Get_a_synthetics_monitor_s_details-1722945796\",\"monitor_priority\":5,\"retry\":{\"count\":3,\"interval\":10},\"tick_every\":60},\"locations\":[\"aws:us-east-2\"],\"subtype\":\"http\",\"created_by\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"deleted_at\":null,\"monitor_id\":150677868,\"org_id\":321813,\"modified_by\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/150677868",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":150677868,\"org_id\":321813,\"type\":\"synthetics alert\",\"name\":\"Test-Get_a_synthetics_monitor_s_details-1722945796\",\"message\":\"BDD test payload: synthetics_api_http_test_payload.json\",\"tags\":[\"testing:api\",\"probe_dc:aws:us-east-2\",\"check_type:api\",\"check_status:live\",\"ci_execution_rule:blocking\"],\"query\":\"no_query\",\"options\":{\"on_missing_data\":\"show_no_data\",\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"synthetics_check_id\":\"4c7-n7j-xbv\",\"silenced\":{}},\"multi\":false,\"created_at\":1722945797000,\"created\":\"2024-08-06T12:03:17.451148+00:00\",\"modified\":\"2024-08-06T12:03:17.451148+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":5,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "public_ids": [
+                  "4c7-n7j-xbv"
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/synthetics/tests/delete",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_tests\":[{\"public_id\":\"4c7-n7j-xbv\",\"deleted_at\":\"2024-08-06T12:03:18.946796+00:00\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a synthetics monitor's details",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:50:59.690Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor",
+            "query": [
+              [
+                "group_states",
+                "notagroupstate"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid group_state filters.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get all monitors returns \"Bad Request\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2023-08-28T07:51:42.436Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor",
+            "query": [
+              [
+                "page",
+                "0"
+              ],
+              [
+                "page_size",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "[{\"id\":34822915,\"org_id\":321813,\"type\":\"query alert\",\"name\":\"SLO Monitor: aws_alb_latency_p95 for splunk\",\"message\":\"Latency SLO violation for splunk load balancer(s)\",\"tags\":[\"environment:test\",\"generator:slops\",\"release:e6a2686\",\"sli:latency\",\"slotype:alb\",\"systemid:splunk\",\"team:developer_insights\"],\"query\":\"avg(last_1m):avg:aws.applicationelb.target_response_time.p95{systemid:splunk,aws_account_type:production} by {region} > 0.2\",\"options\":{\"notify_audit\":false,\"locked\":false,\"include_tags\":true,\"thresholds\":{\"critical\":0.2},\"new_host_delay\":300,\"require_full_window\":true,\"notify_no_data\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1620047024000,\"created\":\"2021-05-03T13:03:44.905085+00:00\",\"modified\":\"2021-05-03T13:03:44.905085+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":null,\"overall_state_modified\":\"2021-05-03T13:06:23+00:00\",\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416},\"matching_downtimes\":[]},{\"id\":34822916,\"org_id\":321813,\"type\":\"query alert\",\"name\":\"SLO Monitor: aws_classic_elb_latency_p99 for splunk\",\"message\":\"Latency SLO violation for splunk load balancer(s)\",\"tags\":[\"environment:test\",\"generator:slops\",\"release:e6a2686\",\"sli:latency\",\"slotype:elb\",\"systemid:splunk\",\"team:developer_insights\"],\"query\":\"avg(last_1m):avg:aws.elb.latency.p99{systemid:splunk,aws_account_type:production} by {region} > 0.2\",\"options\":{\"notify_audit\":false,\"locked\":false,\"include_tags\":true,\"thresholds\":{\"critical\":0.2},\"new_host_delay\":300,\"require_full_window\":true,\"notify_no_data\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1620047024000,\"created\":\"2021-05-03T13:03:44.909928+00:00\",\"modified\":\"2021-05-03T13:03:44.909928+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":null,\"overall_state_modified\":\"2021-05-03T13:06:18+00:00\",\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416},\"matching_downtimes\":[]}]\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor",
+            "query": [
+              [
+                "page",
+                "1"
+              ],
+              [
+                "page_size",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "[{\"id\":34822917,\"org_id\":321813,\"type\":\"query alert\",\"name\":\"SLO Monitor: aws_alb_latency_p50 for splunk\",\"message\":\"Latency SLO violation for splunk load balancer(s)\",\"tags\":[\"environment:test\",\"generator:slops\",\"release:e6a2686\",\"sli:latency\",\"slotype:alb\",\"systemid:splunk\",\"team:developer_insights\"],\"query\":\"avg(last_1m):avg:aws.applicationelb.target_response_time.p50{systemid:splunk,aws_account_type:production} by {region} > 0.2\",\"options\":{\"notify_audit\":false,\"locked\":false,\"include_tags\":true,\"thresholds\":{\"critical\":0.2},\"new_host_delay\":300,\"require_full_window\":true,\"notify_no_data\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1620047024000,\"created\":\"2021-05-03T13:03:44.920644+00:00\",\"modified\":\"2021-05-03T13:03:44.920644+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":null,\"overall_state_modified\":\"2021-05-03T13:06:37+00:00\",\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416},\"matching_downtimes\":[]}]\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all monitors returns \"OK\" response with pagination",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:50:59.989Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/groups/search",
+            "query": [
+              [
+                "query",
+                "status:notastatus"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Query parsing error: 'notastatus' is not a valid monitor status\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Monitors group search returns \"Bad Request\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:51:00.195Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/groups/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"counts\":{\"status\":[{\"count\":196,\"name\":\"Alert\"},{\"count\":123,\"name\":\"OK\"}],\"muted\":[{\"count\":319,\"name\":false}],\"tag\":[{\"count\":195,\"name\":\"check_status:live\"},{\"count\":192,\"name\":\"probe_dc:aws:us-east-2\"},{\"count\":192,\"name\":\"testing:api\"},{\"count\":114,\"name\":\"check_type:api\"},{\"count\":27,\"name\":\"check_type:api-udp\"},{\"count\":27,\"name\":\"check_type:api-websocket\"},{\"count\":24,\"name\":\"check_type:api-multi\"},{\"count\":22,\"name\":\"env:ci\"},{\"count\":3,\"name\":\"check_type:api-icmp\"},{\"count\":3,\"name\":\"client:go\"},{\"count\":3,\"name\":\"probe_dc:aws:ap-northeast-1\"},{\"count\":3,\"name\":\"test\"},{\"count\":1,\"name\":\"log\"},{\"count\":1,\"name\":\"terraform\"},{\"count\":1,\"name\":\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578686\"},{\"count\":1,\"name\":\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578811\"},{\"count\":1,\"name\":\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578841\"},{\"count\":1,\"name\":\"test:examplegetamonitorsdetailsreturnsokresponse1640441498\"},{\"count\":1,\"name\":\"test:examplescheduleamonitordowntimereturnsokresponse1640441496\"},{\"count\":1,\"name\":\"test:testcreateanewdashboardwithalertvaluewidget1641382634\"},{\"count\":1,\"name\":\"test:testgocheckifamonitorcanbedeletedreturnsokresponse1639045979\"},{\"count\":1,\"name\":\"test:testgoeditamonitorreturnsokresponse1639046265\"},{\"count\":1,\"name\":\"test:testgogetamonitorsdetailsreturnsokresponse1639046265\"},{\"count\":1,\"name\":\"test:testgoscheduleamonitordowntimereturnsokresponse1639045977\"},{\"count\":1,\"name\":\"test:testpythoncheckifamonitorcanbedeletedreturnsokresponse1638987034\"},{\"count\":1,\"name\":\"test:testpythoncheckifamonitorcanbedeletedreturnsokresponse1639137875\"},{\"count\":1,\"name\":\"test:testpythondeleteamonitorreturnsokresponse1638987038\"},{\"count\":1,\"name\":\"test:testpythoneditamonitorreturnsokresponse1638926914\"},{\"count\":1,\"name\":\"test:testpythoneditamonitorreturnsokresponse1638987036\"},{\"count\":1,\"name\":\"test:testpythongetamonitorsdetailsreturnsokresponse1638987027\"},{\"count\":1,\"name\":\"test:testpythonscheduleamonitordowntimereturnsokresponse1638987043\"},{\"count\":1,\"name\":\"test:testscheduleamonitordowntimereturnsokresponse1640112907\"},{\"count\":1,\"name\":\"test:testtypescripteditamonitorreturnsokresponse1639138007\"},{\"count\":1,\"name\":\"test:testtypescriptgetamonitorsdetailsreturnsokresponse1639138007\"},{\"count\":1,\"name\":\"test:testtypescriptscheduleamonitordowntimereturnsokresponse1640111492\"},{\"count\":1,\"name\":\"test:testtypescriptscheduleamonitordowntimereturnsokresponse1640112725\"}],\"type\":[{\"count\":195,\"name\":\"synthetics\"},{\"count\":54,\"name\":\"custom\"},{\"count\":39,\"name\":\"metric\"},{\"count\":31,\"name\":\"log\"}]},\"groups\":[{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641339729\",\"team_tags\":[],\"last_triggered_ts\":1641339795,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":59586255,\"priority\":5,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641339729\",\"team_tags\":[],\"last_triggered_ts\":1641339795,\"group\":\"aws:us-east-2\",\"downtimes\":[],\"monitor_id\":59586255,\"priority\":5,\"muted\":false,\"group_tags\":[\"aws:us-east-2\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641339729\",\"team_tags\":[],\"last_triggered_ts\":1641339795,\"group\":\"@SYNTHETICS_OVERALL@\",\"downtimes\":[],\"monitor_id\":59586255,\"priority\":5,\"muted\":false,\"group_tags\":[\"@SYNTHETICS_OVERALL@\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Trigger_Synthetics_tests_returns_OK_response_1641339731\",\"team_tags\":[],\"last_triggered_ts\":1641339824,\"group\":\"aws:us-east-2\",\"downtimes\":[],\"monitor_id\":59586284,\"priority\":5,\"muted\":false,\"group_tags\":[\"aws:us-east-2\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Trigger_Synthetics_tests_returns_OK_response_1641339731\",\"team_tags\":[],\"last_triggered_ts\":1641339824,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":59586284,\"priority\":5,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[\"ci\"],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"test:testpythoneditamonitorreturnsokresponse1638926914\",\"env:ci\"],\"monitor_name\":\"Test-Python-Edit_a_monitor_returns_OK_response-1638926914\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":56889922,\"priority\":3,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[],\"monitor_name\":\"[Synthetic Private Locations] {{location_id.name}} is underprovisioned\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"location_id:pl:gcp-integrations-lab-527d63de5764c9fdad65fd1a5ac64a8e\",\"downtimes\":[],\"monitor_id\":52529358,\"priority\":null,\"muted\":false,\"group_tags\":[\"location_id:pl:gcp-integrations-lab-527d63de5764c9fdad65fd1a5ac64a8e\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Trigger_Synthetics_tests_returns_OK_response_1641339731\",\"team_tags\":[],\"last_triggered_ts\":1641339824,\"group\":\"@SYNTHETICS_OVERALL@\",\"downtimes\":[],\"monitor_id\":59586284,\"priority\":5,\"muted\":false,\"group_tags\":[\"@SYNTHETICS_OVERALL@\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641411729\",\"team_tags\":[],\"last_triggered_ts\":1641411818,\"group\":\"aws:us-east-2\",\"downtimes\":[],\"monitor_id\":59701958,\"priority\":5,\"muted\":false,\"group_tags\":[\"aws:us-east-2\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641411729\",\"team_tags\":[],\"last_triggered_ts\":1641411818,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":59701958,\"priority\":5,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641411729\",\"team_tags\":[],\"last_triggered_ts\":1641411818,\"group\":\"@SYNTHETICS_OVERALL@\",\"downtimes\":[],\"monitor_id\":59701958,\"priority\":5,\"muted\":false,\"group_tags\":[\"@SYNTHETICS_OVERALL@\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[\"ci\"],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"test:testtypescripteditamonitorreturnsokresponse1639138007\",\"env:ci\"],\"monitor_name\":\"Test-Typescript-Edit_a_monitor_returns_OK_response-1639138007\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":57134512,\"priority\":3,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[\"ci\"],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"test:testpythonscheduleamonitordowntimereturnsokresponse1638987043\",\"env:ci\"],\"monitor_name\":\"Test-Python-Schedule_a_monitor_downtime_returns_OK_response-1638987043\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":56957481,\"priority\":3,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[\"ci\"],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"env:ci\",\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578811\"],\"monitor_name\":\"Example-Check_if_a_monitor_can_be_deleted_returns_OK_response_1637578811\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":55356159,\"priority\":3,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Get_a_synthetics_monitor_s_details_1641339731\",\"team_tags\":[],\"last_triggered_ts\":1641339820,\"group\":\"aws:us-east-2\",\"downtimes\":[],\"monitor_id\":59586280,\"priority\":5,\"muted\":false,\"group_tags\":[\"aws:us-east-2\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Get_a_synthetics_monitor_s_details_1641339731\",\"team_tags\":[],\"last_triggered_ts\":1641339820,\"group\":\"@SYNTHETICS_OVERALL@\",\"downtimes\":[],\"monitor_id\":59586280,\"priority\":5,\"muted\":false,\"group_tags\":[\"@SYNTHETICS_OVERALL@\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Get_a_synthetics_monitor_s_details_1641339731\",\"team_tags\":[],\"last_triggered_ts\":1641339820,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":59586280,\"priority\":5,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Get_a_synthetics_monitor_s_details_1641426133\",\"team_tags\":[],\"last_triggered_ts\":1641426225,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":59771265,\"priority\":5,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Get_a_synthetics_monitor_s_details_1641426133\",\"team_tags\":[],\"last_triggered_ts\":1641426225,\"group\":\"@SYNTHETICS_OVERALL@\",\"downtimes\":[],\"monitor_id\":59771265,\"priority\":5,\"muted\":false,\"group_tags\":[\"@SYNTHETICS_OVERALL@\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Get_a_synthetics_monitor_s_details_1641426133\",\"team_tags\":[],\"last_triggered_ts\":1641426225,\"group\":\"aws:us-east-2\",\"downtimes\":[],\"monitor_id\":59771265,\"priority\":5,\"muted\":false,\"group_tags\":[\"aws:us-east-2\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api-websocket\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response_1641310927\",\"team_tags\":[],\"last_triggered_ts\":1641311003,\"group\":\"@SYNTHETICS_OVERALL@\",\"downtimes\":[],\"monitor_id\":59417123,\"priority\":5,\"muted\":false,\"group_tags\":[\"@SYNTHETICS_OVERALL@\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api-websocket\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response_1641310927\",\"team_tags\":[],\"last_triggered_ts\":1641311003,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":59417123,\"priority\":5,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api-websocket\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Example-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response_1641310927\",\"team_tags\":[],\"last_triggered_ts\":1641311003,\"group\":\"aws:us-east-2\",\"downtimes\":[],\"monitor_id\":59417123,\"priority\":5,\"muted\":false,\"group_tags\":[\"aws:us-east-2\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Test-Edit_an_API_test_returns_OK_response-1641382542\",\"team_tags\":[],\"last_triggered_ts\":1641382576,\"group\":\"total\",\"downtimes\":[],\"monitor_id\":59653156,\"priority\":5,\"muted\":false,\"group_tags\":[\"total\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Test-Edit_an_API_test_returns_OK_response-1641382542\",\"team_tags\":[],\"last_triggered_ts\":1641382576,\"group\":\"@SYNTHETICS_OVERALL@\",\"downtimes\":[],\"monitor_id\":59653156,\"priority\":5,\"muted\":false,\"group_tags\":[\"@SYNTHETICS_OVERALL@\"]},{\"status\":\"Alert\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"monitor_name\":\"Test-Edit_an_API_test_returns_OK_response-1641382542\",\"team_tags\":[],\"last_triggered_ts\":1641382576,\"group\":\"aws:us-east-2\",\"downtimes\":[],\"monitor_id\":59653156,\"priority\":5,\"muted\":false,\"group_tags\":[\"aws:us-east-2\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[],\"monitor_name\":\"tf-TestAccDatadogMonitorJSONBasic-83207-1638923106\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"host:compute-0\",\"downtimes\":[],\"monitor_id\":56886190,\"priority\":null,\"muted\":false,\"group_tags\":[\"host:compute-0\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[],\"monitor_name\":\"tf-TestAccDatadogMonitorJSONBasic-83207-1638923106\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"host:master-0\",\"downtimes\":[],\"monitor_id\":56886190,\"priority\":null,\"muted\":false,\"group_tags\":[\"host:master-0\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[],\"monitor_name\":\"tf-TestAccDatadogMonitorJSONBasic-83207-1638923106\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"host:backup-restore-0\",\"downtimes\":[],\"monitor_id\":56886190,\"priority\":null,\"muted\":false,\"group_tags\":[\"host:backup-restore-0\"]},{\"status\":\"OK\",\"last_nodata_ts\":0,\"env_tags\":[],\"muted_remaining\":null,\"muted_until_ts\":null,\"all_tags\":[],\"monitor_name\":\"tf-TestAccDatadogMonitorJSONBasic-83207-1638923106\",\"team_tags\":[],\"last_triggered_ts\":0,\"group\":\"host:pks-db-0\",\"downtimes\":[],\"monitor_id\":56886190,\"priority\":null,\"muted\":false,\"group_tags\":[\"host:pks-db-0\"]}],\"metadata\":{\"total_count\":319,\"page_count\":11,\"page\":0,\"per_page\":30}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Monitors group search returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:51:00.486Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/search",
+            "query": [
+              [
+                "query",
+                "status:notastatus"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Query parsing error: 'notastatus' is not a valid monitor status\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Monitors search returns \"Bad Request\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:51:00.670Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/monitor/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"counts\":{\"status\":[{\"count\":96,\"name\":\"No Data\"},{\"count\":65,\"name\":\"Alert\"},{\"count\":38,\"name\":\"OK\"}],\"muted\":[{\"count\":182,\"name\":false},{\"count\":17,\"name\":true}],\"tag\":[{\"count\":88,\"name\":\"probe_dc:aws:us-east-2\"},{\"count\":77,\"name\":\"check_status:live\"},{\"count\":73,\"name\":\"testing:api\"},{\"count\":50,\"name\":\"check_type:api\"},{\"count\":46,\"name\":\"env:ci\"},{\"count\":17,\"name\":\"check_status:paused\"},{\"count\":13,\"name\":\"check_type:browser\"},{\"count\":13,\"name\":\"testing:browser\"},{\"count\":11,\"name\":\"foo:bar\"},{\"count\":9,\"name\":\"check_type:api-multi\"},{\"count\":9,\"name\":\"check_type:api-udp\"},{\"count\":9,\"name\":\"check_type:api-websocket\"},{\"count\":6,\"name\":\"app:webserver\"},{\"count\":6,\"name\":\"baz\"},{\"count\":6,\"name\":\"frontend\"},{\"count\":6,\"name\":\"probe_dc:aws:eu-central-1\"},{\"count\":4,\"name\":\"environment:test\"},{\"count\":4,\"name\":\"generator:slops\"},{\"count\":4,\"name\":\"release:e6a2686\"},{\"count\":4,\"name\":\"sli:latency\"},{\"count\":4,\"name\":\"systemid:splunk\"},{\"count\":4,\"name\":\"team:developer_insights\"},{\"count\":3,\"name\":\"client:go\"},{\"count\":3,\"name\":\"env:test\"},{\"count\":3,\"name\":\"foo\"},{\"count\":3,\"name\":\"slotype:alb\"},{\"count\":3,\"name\":\"test\"},{\"count\":3,\"name\":\"test:examplecreateacipipelinesmonitorreturnsokresponse\"},{\"count\":2,\"name\":\"bar:baz\"},{\"count\":2,\"name\":\"check_type:api-tcp\"},{\"count\":2,\"name\":\"testing:api-tcp\"},{\"count\":1,\"name\":\"check_type:api-dns\"},{\"count\":1,\"name\":\"check_type:api-ssl\"},{\"count\":1,\"name\":\"log\"},{\"count\":1,\"name\":\"multistep\"},{\"count\":1,\"name\":\"slotype:elb\"},{\"count\":1,\"name\":\"terraform\"},{\"count\":1,\"name\":\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578686\"},{\"count\":1,\"name\":\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578811\"},{\"count\":1,\"name\":\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578841\"},{\"count\":1,\"name\":\"test:examplecreateamonitorreturnsokresponse\"},{\"count\":1,\"name\":\"test:examplegetamonitorsdetailsreturnsokresponse1640441498\"},{\"count\":1,\"name\":\"test:examplescheduleamonitordowntimereturnsokresponse1640441496\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640105320\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114122\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114223\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114238\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114278\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114289\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114357\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114432\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114509\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114535\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640114567\"},{\"count\":1,\"name\":\"test:testcreateacipipelinesmonitorreturnsokresponse1640115169\"},{\"count\":1,\"name\":\"test:testcreateamonitorreturnsokresponse1639067826\"},{\"count\":1,\"name\":\"test:testcreateamonitorreturnsokresponse1639072243\"},{\"count\":1,\"name\":\"test:testcreateamonitorreturnsokresponse1640112911\"},{\"count\":1,\"name\":\"test:testcreateanewdashboardwithalertvaluewidget1641382634\"},{\"count\":1,\"name\":\"test:testgocheckifamonitorcanbedeletedreturnsokresponse1639045979\"},{\"count\":1,\"name\":\"test:testgocreateamonitorreturnsokresponse1639045979\"},{\"count\":1,\"name\":\"test:testgoeditamonitorreturnsokresponse1639046265\"},{\"count\":1,\"name\":\"test:testgogetamonitorsdetailsreturnsokresponse1639046265\"},{\"count\":1,\"name\":\"test:testgoscheduleamonitordowntimereturnsokresponse1639045977\"},{\"count\":1,\"name\":\"test:testpythoncheckifamonitorcanbedeletedreturnsokresponse1638987034\"},{\"count\":1,\"name\":\"test:testpythoncheckifamonitorcanbedeletedreturnsokresponse1639137875\"},{\"count\":1,\"name\":\"test:testpythoncreateamonitorreturnsokresponse1639137882\"},{\"count\":1,\"name\":\"test:testpythondeleteamonitorreturnsokresponse1638987038\"},{\"count\":1,\"name\":\"test:testpythoneditamonitorreturnsokresponse1638926914\"},{\"count\":1,\"name\":\"test:testpythoneditamonitorreturnsokresponse1638987036\"},{\"count\":1,\"name\":\"test:testpythongetamonitorsdetailsreturnsokresponse1638987027\"},{\"count\":1,\"name\":\"test:testpythonscheduleamonitordowntimereturnsokresponse1638987043\"},{\"count\":1,\"name\":\"test:testscheduleamonitordowntimereturnsokresponse1640112907\"},{\"count\":1,\"name\":\"test:testtypescriptcreateamonitorreturnsokresponse1638875400\"},{\"count\":1,\"name\":\"test:testtypescriptcreateamonitorreturnsokresponse1640111495\"},{\"count\":1,\"name\":\"test:testtypescriptcreateamonitorreturnsokresponse1640112727\"},{\"count\":1,\"name\":\"test:testtypescripteditamonitorreturnsokresponse1639138007\"},{\"count\":1,\"name\":\"test:testtypescriptgetamonitorsdetailsreturnsokresponse1639138007\"},{\"count\":1,\"name\":\"test:testtypescriptscheduleamonitordowntimereturnsokresponse1640111492\"},{\"count\":1,\"name\":\"test:testtypescriptscheduleamonitordowntimereturnsokresponse1640112725\"}],\"type\":[{\"count\":94,\"name\":\"synthetics\"},{\"count\":40,\"name\":\"log\"},{\"count\":28,\"name\":\"metric\"},{\"count\":16,\"name\":\"integration\"},{\"count\":15,\"name\":\"ci-pipelines\"},{\"count\":4,\"name\":\"custom\"},{\"count\":1,\"name\":\"anomaly\"},{\"count\":1,\"name\":\"composite\"}]},\"monitors\":[{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"slavek.kabrda@datadoghq.com\",\"id\":1379826,\"name\":\"Slavek Kabrda\"},\"metrics\":[],\"notifications\":[{\"handle\":\"pagerduty\",\"name\":\"Pagerduty\"}],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":25641098,\"last_triggered_ts\":null,\"name\":\"[Synthetics] tf-TestAccDatadogSyntheticsSSLTest_Updated-31891-1605197692-updated\",\"tags\":[\"foo:bar\",\"env:test\",\"check_type:api-ssl\",\"check_status:live\",\"probe_dc:aws:eu-central-1\",\"foo\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":null,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"No Data\",\"scopes\":[\"host:host0\"],\"classification\":\"metric\",\"creator\":{\"handle\":\"nicholas.muesch@datadoghq.com\",\"id\":1379811,\"name\":\"Nicholas Muesch\"},\"metrics\":[\"system.net.bytes_rcvd\"],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"id\":20332095,\"last_triggered_ts\":null,\"name\":\"java-listMonitorsTest-20205-1595411987-2\",\"tags\":[],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":null,\"restricted_roles\":[],\"type\":\"metric alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"nicholas.muesch@datadoghq.com\",\"id\":1379811,\"name\":\"Nicholas Muesch\"},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":20314950,\"last_triggered_ts\":null,\"name\":\"[Synthetics] java-testSyntheticsMultipleTestsOperations-20175-1595364791-api\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":null,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59701958,\"last_triggered_ts\":1641411818,\"name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641411729\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641411819,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59586255,\"last_triggered_ts\":1641339795,\"name\":\"Example-Create_an_API_test_returns_OK_Returns_the_created_test_details_response_1641339729\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641383895,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"OK\",\"scopes\":[],\"classification\":\"log\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"id\":56889922,\"last_triggered_ts\":null,\"name\":\"Test-Python-Edit_a_monitor_returns_OK_response-1638926914\",\"tags\":[\"test:testpythoneditamonitorreturnsokresponse1638926914\",\"env:ci\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1638927063,\"restricted_roles\":[],\"type\":\"log alert\"},{\"status\":\"OK\",\"scopes\":[\"*\"],\"classification\":\"metric\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[\"synthetics.pl.worker.remaining_slots\"],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"avg(last_30m):avg:synthetics.pl.worker.remaining_slots{*} by {location_id} < 1.5\",\"id\":52529358,\"last_triggered_ts\":null,\"name\":\"[Synthetic Private Locations] {{location_id.name}} is underprovisioned\",\"tags\":[],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1635848008,\"restricted_roles\":[],\"type\":\"metric alert\"},{\"status\":\"No Data\",\"scopes\":[\"host:foo\",\"environment:foo\"],\"classification\":\"integration\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[\"aws.ec2.cpu\"],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"avg(last_1h):avg:aws.ec2.cpu{environment:foo,host:foo} by {host} > 4\",\"id\":35679537,\"last_triggered_ts\":null,\"name\":\"Name for monitor foo\",\"tags\":[\"foo:bar\",\"baz\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1621426290,\"restricted_roles\":[],\"type\":\"query alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[],\"notifications\":[{\"handle\":\"datadog.user\",\"name\":\"datadog.user\"}],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59417761,\"last_triggered_ts\":null,\"name\":\"[Synthetics] tf-TestAccDatadogSyntheticsDNSTest_Basic-85865-1641311522\",\"tags\":[\"check_status:paused\",\"check_type:api-dns\",\"foo:bar\",\"baz\",\"probe_dc:aws:eu-central-1\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1641311582,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"No Data\",\"scopes\":[\"host:host0\"],\"classification\":\"metric\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[\"system.net.bytes_rcvd\"],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"id\":35686767,\"last_triggered_ts\":null,\"name\":\"`avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100`\",\"tags\":[],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1621436815,\"restricted_roles\":[],\"type\":\"query alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"ci-pipelines\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"ci-pipelines(\\\"ci_level:pipeline @git.branch:staging* @ci.status:error\\\").rollup(\\\"count\\\").by(\\\"@git.branch,@ci.pipeline.name\\\").last(\\\"5m\\\") >= 1\",\"id\":59136642,\"last_triggered_ts\":null,\"name\":\"Example-Create_a_ci_pipelines_monitor_returns_OK_response\",\"tags\":[\"env:ci\",\"test:examplecreateacipipelinesmonitorreturnsokresponse\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1641203402,\"restricted_roles\":[],\"type\":\"ci-pipelines alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"log\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"id\":57056222,\"last_triggered_ts\":null,\"name\":\"Test-Create_a_monitor_returns_OK_response-1639067826\",\"tags\":[\"env:ci\",\"test:testcreateamonitorreturnsokresponse1639067826\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1639067987,\"restricted_roles\":[],\"type\":\"log alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59586284,\"last_triggered_ts\":1641339824,\"name\":\"Example-Trigger_Synthetics_tests_returns_OK_response_1641339731\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641383924,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59702023,\"last_triggered_ts\":null,\"name\":\"[Synthetics] Example-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response_1641411734\",\"tags\":[\"check_status:paused\",\"probe_dc:aws:us-east-2\",\"testing:browser\",\"check_type:browser\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1641411825,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"OK\",\"scopes\":[],\"classification\":\"log\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"id\":56957481,\"last_triggered_ts\":null,\"name\":\"Test-Python-Schedule_a_monitor_downtime_returns_OK_response-1638987043\",\"tags\":[\"test:testpythonscheduleamonitordowntimereturnsokresponse1638987043\",\"env:ci\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1638987188,\"restricted_roles\":[],\"type\":\"log alert\"},{\"status\":\"OK\",\"scopes\":[],\"classification\":\"log\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"id\":57134512,\"last_triggered_ts\":null,\"name\":\"Test-Typescript-Edit_a_monitor_returns_OK_response-1639138007\",\"tags\":[\"test:testtypescripteditamonitorreturnsokresponse1639138007\",\"env:ci\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1639138183,\"restricted_roles\":[],\"type\":\"log alert\"},{\"status\":\"OK\",\"scopes\":[],\"classification\":\"log\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"id\":55356159,\"last_triggered_ts\":null,\"name\":\"Example-Check_if_a_monitor_can_be_deleted_returns_OK_response_1637578811\",\"tags\":[\"env:ci\",\"test:examplecheckifamonitorcanbedeletedreturnsokresponse1637578811\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1637579006,\"restricted_roles\":[],\"type\":\"log alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"ci-pipelines\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"ci-pipelines(\\\"ci_level:pipeline @git.branch:staging* @ci.status:error\\\").rollup(\\\"count\\\").by(\\\"@git.branch,@ci.pipeline.name\\\").last(\\\"5m\\\") >= 1\",\"id\":58631108,\"last_triggered_ts\":null,\"name\":\"Test-Create_a_ci_pipelines_monitor_returns_OK_response-1640114238\",\"tags\":[\"test:testcreateacipipelinesmonitorreturnsokresponse1640114238\",\"env:ci\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1640114311,\"restricted_roles\":[],\"type\":\"ci-pipelines alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59586280,\"last_triggered_ts\":1641339820,\"name\":\"Example-Get_a_synthetics_monitor_s_details_1641339731\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641383921,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59771265,\"last_triggered_ts\":1641426225,\"name\":\"Example-Get_a_synthetics_monitor_s_details_1641426133\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641426226,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"nicholas.muesch@datadoghq.com\",\"id\":1379811,\"name\":\"Nicholas Muesch\"},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":25721938,\"last_triggered_ts\":null,\"name\":\"[Synthetics] java-testSyntheticsMultipleTestsOperations-32166-1605317563-browser\",\"tags\":[\"check_status:paused\",\"probe_dc:aws:us-east-2\",\"testing:browser\",\"check_type:browser\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":null,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59640593,\"last_triggered_ts\":1641368633,\"name\":\"Test-TestSyntheticsAPITestLifecycle-1623076664\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641383933,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59417123,\"last_triggered_ts\":1641311003,\"name\":\"Example-Create_an_API_test_with_WEBSOCKET_subtype_returns_OK_Returns_the_created_test_details_response_1641310927\",\"tags\":[\"testing:api\",\"check_type:api-websocket\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641383903,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"Alert\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59653156,\"last_triggered_ts\":1641382576,\"name\":\"Test-Edit_an_API_test_returns_OK_response-1641382542\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":5,\"overall_state_modified\":1641383896,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"OK\",\"scopes\":[\"*\"],\"classification\":\"custom\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[\"ntp.in_sync\"],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"\\\"ntp.in_sync\\\".over(\\\"*\\\").last(2).count_by_status()\",\"id\":56886190,\"last_triggered_ts\":null,\"name\":\"tf-TestAccDatadogMonitorJSONBasic-83207-1638923106\",\"tags\":[],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1641318730,\"restricted_roles\":[],\"type\":\"service check\"},{\"status\":\"OK\",\"scopes\":[],\"classification\":\"log\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[],\"notifications\":[{\"handle\":\"hipchat-channel\",\"name\":\"hipchat-channel\"}],\"muted_until_ts\":null,\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"id\":57134518,\"last_triggered_ts\":null,\"name\":\"Test-Typescript-Get_a_monitor_s_details_returns_OK_response-1639138007\",\"tags\":[\"env:ci\",\"test:testtypescriptgetamonitorsdetailsreturnsokresponse1639138007\"],\"org_id\":321813,\"priority\":3,\"overall_state_modified\":1639138176,\"restricted_roles\":[],\"type\":\"log alert\"},{\"status\":\"No Data\",\"scopes\":[\"host:host0\"],\"classification\":\"metric\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[\"system.net.bytes_rcvd\"],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"id\":35325185,\"last_triggered_ts\":null,\"name\":\"java-monitorGetErrorsTest-local-1620843966\",\"tags\":[\"frontend\",\"app:webserver\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1620844096,\"restricted_roles\":[],\"type\":\"metric alert\"},{\"status\":\"No Data\",\"scopes\":[\"host:host0\"],\"classification\":\"metric\",\"creator\":{\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"id\":2320499,\"name\":\"CI Account\"},\"metrics\":[\"system.net.bytes_rcvd\"],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"id\":35676553,\"last_triggered_ts\":null,\"name\":\"java-historyGetSLOErrorsTest-64695-1621420747\",\"tags\":[],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1621420773,\"restricted_roles\":[],\"type\":\"metric alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"nicholas.muesch@datadoghq.com\",\"id\":1379811,\"name\":\"Nicholas Muesch\"},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":25720412,\"last_triggered_ts\":null,\"name\":\"[Synthetics] go-TestMonitorSyntheticsGet-32164-1605312658\",\"tags\":[\"testing:api\",\"check_type:api\",\"probe_dc:aws:us-east-2\",\"check_status:live\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":null,\"restricted_roles\":[],\"type\":\"synthetics alert\"},{\"status\":\"No Data\",\"scopes\":[],\"classification\":\"synthetics\",\"creator\":{\"handle\":\"frog@datadoghq.com\",\"name\":\"frog@datadoghq.com\",\"id\":{\"handle\":\"frog@datadoghq.com\",\"id\":1445416,\"name\":null}},\"metrics\":[],\"notifications\":[],\"muted_until_ts\":null,\"query\":\"no_query\",\"id\":59653374,\"last_triggered_ts\":null,\"name\":\"[Synthetics] Example-Create_a_browser_test_returns_OK_Returns_the_created_test_details_response_1641382929\",\"tags\":[\"check_status:paused\",\"probe_dc:aws:us-east-2\",\"testing:browser\",\"check_type:browser\"],\"org_id\":321813,\"priority\":null,\"overall_state_modified\":1641383035,\"restricted_roles\":[],\"type\":\"synthetics alert\"}],\"metadata\":{\"total_count\":199,\"page_count\":7,\"page\":0,\"per_page\":30}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Monitors search returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2022-01-06T00:51:01.006Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "query": "query",
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"The value provided for parameter 'query' is invalid: invalid operator specified: \"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Validate a monitor returns \"Invalid JSON\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-10-09T14:54:54.858Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Validate_a_monitor_returns_OK_response-1728485694",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testvalidateamonitorreturnsokresponse1728485694",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate a monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-10-09T14:54:55.290Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Validate_a_multi_alert_monitor_returns_OK_response-1728485695",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "group_retention_duration": "2d",
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notify_audit": false,
+                  "notify_by": [
+                    "status"
+                  ],
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source,status\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testvalidateamultialertmonitorreturnsokresponse1728485695",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate a multi-alert monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-10-10T16:38:33.273Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Validate_an_existing_monitor_returns_Invalid_JSON_response-1728578313",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testvalidateanexistingmonitorreturnsinvalidjsonresponse1728578313",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":155844640,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Validate_an_existing_monitor_returns_Invalid_JSON_response-1728578313\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testvalidateanexistingmonitorreturnsinvalidjsonresponse1728578313\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1728578313000,\"created\":\"2024-10-10T16:38:33.508239+00:00\",\"modified\":\"2024-10-10T16:38:33.508239+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "query": "query",
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor/155844640/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"The value provided for parameter 'query' is invalid: invalid operator specified: \"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/155844640",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":155844640}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an existing monitor returns \"Invalid JSON\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2024-10-10T16:37:50.222Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Validate_an_existing_monitor_returns_OK_response-1728578270",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testvalidateanexistingmonitorreturnsokresponse1728578270",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":155844413,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Validate_an_existing_monitor_returns_OK_response-1728578270\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testvalidateanexistingmonitorreturnsokresponse1728578270\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1728578270000,\"created\":\"2024-10-10T16:37:50.488360+00:00\",\"modified\":\"2024-10-10T16:37:50.488360+00:00\",\"deleted\":null,\"restricted_roles\":null,\"priority\":3,\"restriction_policy\":null,\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"id\":1445416}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Validate_an_existing_monitor_returns_OK_response-1728578270",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testvalidateanexistingmonitorreturnsokresponse1728578270",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor/155844413/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/155844413",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":155844413}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an existing monitor returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

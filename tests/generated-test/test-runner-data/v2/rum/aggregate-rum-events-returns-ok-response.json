@@ -1,0 +1,52 @@
+{
+  "api": "RUM",
+  "expected_status": 200,
+  "feature": "RUM",
+  "id": "v2/RUM/Aggregate RUM events returns \"OK\" response",
+  "operation_id": "AggregateRUMEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMAggregateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "compute": [
+          {
+            "aggregation": "pc90",
+            "metric": "@view.time_spent",
+            "type": "total"
+          }
+        ],
+        "filter": {
+          "from": "now-15m",
+          "query": "@type:view AND @session.type:user",
+          "to": "now"
+        },
+        "group_by": [
+          {
+            "facet": "@view.time_spent",
+            "limit": 10,
+            "total": false
+          }
+        ],
+        "options": {
+          "timezone": "GMT"
+        },
+        "page": {
+          "limit": 25
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/analytics/aggregate"
+  },
+  "scenario": "Aggregate RUM events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

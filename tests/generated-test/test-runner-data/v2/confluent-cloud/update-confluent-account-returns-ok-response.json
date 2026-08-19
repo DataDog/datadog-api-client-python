@@ -1,0 +1,54 @@
+{
+  "api": "ConfluentCloud",
+  "expected_status": 200,
+  "feature": "Confluent Cloud",
+  "id": "v2/Confluent Cloud/Update Confluent account returns \"OK\" response",
+  "operation_id": "UpdateConfluentAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ConfluentAccountUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "api_key": "{{confluent_account.data.attributes.api_key}}",
+            "api_secret": "update-secret",
+            "tags": [
+              "updated_tag:val"
+            ]
+          },
+          "type": "confluent-cloud-accounts"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "confluent_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}"
+  },
+  "scenario": "Update Confluent account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

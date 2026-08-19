@@ -1,0 +1,48 @@
+{
+  "api": "ErrorTracking",
+  "expected_status": 400,
+  "feature": "Error Tracking",
+  "id": "v2/Error Tracking/Update the assignee of an issue returns \"Bad Request\" response",
+  "operation_id": "UpdateIssueAssignee",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IssueUpdateAssigneeRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "id": "invalid-id",
+          "type": "assignee"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "issue_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "issue.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/error-tracking/issues/{issue_id}/assignee"
+  },
+  "scenario": "Update the assignee of an issue returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

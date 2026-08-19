@@ -1,0 +1,35 @@
+{
+  "api": "RestrictionPolicies",
+  "expected_status": 400,
+  "feature": "Restriction Policies",
+  "id": "v2/Restriction Policies/Get a restriction policy returns \"Bad Request\" response",
+  "operation_id": "GetRestrictionPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "resource_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "malformed"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/restriction_policy/{resource_id}"
+  },
+  "scenario": "Get a restriction policy returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

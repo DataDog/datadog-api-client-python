@@ -1,0 +1,51 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 200,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/GetEstimatedCostByOrg with start_month returns \"OK\" response",
+  "operation_id": "GetEstimatedCostByOrg",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "view",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "sub-org"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "start_month",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now') }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/usage/estimated_cost"
+  },
+  "scenario": "GetEstimatedCostByOrg with start_month returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

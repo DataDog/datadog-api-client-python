@@ -1,0 +1,33 @@
+{
+  "api": "LogsCustomDestinations",
+  "expected_status": 400,
+  "feature": "Logs Custom Destinations",
+  "id": "v2/Logs Custom Destinations/Create a custom destination returns \"Bad Request\" response",
+  "operation_id": "CreateLogsCustomDestination",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomDestinationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Nginx logs"
+          },
+          "type": "custom_destination"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/logs/config/custom-destinations"
+  },
+  "scenario": "Create a custom destination returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

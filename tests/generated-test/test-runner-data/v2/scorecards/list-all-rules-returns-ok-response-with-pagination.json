@@ -1,0 +1,67 @@
+{
+  "api": "Scorecards",
+  "expected_status": 200,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/List all rules returns \"OK\" response with pagination",
+  "operation_id": "ListScorecardRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "fields[rule]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "name"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[rule][custom]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/scorecard/rules"
+  },
+  "scenario": "List all rules returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

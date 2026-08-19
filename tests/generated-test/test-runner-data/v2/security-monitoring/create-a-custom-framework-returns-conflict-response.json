@@ -1,0 +1,49 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 409,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a custom framework returns \"Conflict\" response",
+  "operation_id": "CreateCustomFramework",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateCustomFrameworkRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "handle": "create-framework-new",
+            "icon_url": "test-url",
+            "name": "name",
+            "requirements": [
+              {
+                "controls": [
+                  {
+                    "name": "control",
+                    "rules_id": [
+                      "def-000-be9"
+                    ]
+                  }
+                ],
+                "name": "requirement"
+              }
+            ],
+            "version": "10"
+          },
+          "type": "custom_framework"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cloud_security_management/custom_frameworks"
+  },
+  "scenario": "Create a custom framework returns \"Conflict\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,67 @@
+{
+  "api": "Teams",
+  "expected_status": 404,
+  "feature": "Teams",
+  "id": "v2/Teams/Update a team link returns \"API error response.\" response",
+  "operation_id": "UpdateTeamLink",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamLinkCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "label": "Link label",
+            "url": "https://example.com"
+          },
+          "type": "team_links"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "link_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "REPLACE.ME"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/links/{link_id}"
+  },
+  "scenario": "Update a team link returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

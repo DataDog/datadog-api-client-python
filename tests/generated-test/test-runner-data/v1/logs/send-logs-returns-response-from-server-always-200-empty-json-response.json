@@ -1,0 +1,36 @@
+{
+  "api": "Logs",
+  "expected_status": 200,
+  "feature": "Logs",
+  "id": "v1/Logs/Send logs returns \"Response from server (always 200 empty JSON).\" response",
+  "operation_id": "SubmitLog",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "items": {
+          "format": null,
+          "ref": "HTTPLogItem",
+          "type": "object"
+        },
+        "ref": "HTTPLog",
+        "type": "array"
+      },
+      "source": "inline",
+      "value": [
+        {
+          "ddtags": "host:{{ unique_alnum }}",
+          "message": "{{ unique }}"
+        }
+      ]
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/v1/input"
+  },
+  "scenario": "Send logs returns \"Response from server (always 200 empty JSON).\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

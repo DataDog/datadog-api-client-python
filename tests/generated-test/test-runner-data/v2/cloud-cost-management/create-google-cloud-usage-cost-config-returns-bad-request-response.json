@@ -1,0 +1,38 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 400,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Create Google Cloud Usage Cost config returns \"Bad Request\" response",
+  "operation_id": "CreateCostGCPUsageCostConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "GCPUsageCostConfigPostRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "billing_account_id": "123456_A123BC_12AB34",
+            "bucket_name": "dd-cost-bucket",
+            "export_dataset_name": "billing",
+            "export_prefix": "datadog_cloud_cost_usage_export",
+            "export_project_name": "dd-cloud-cost-report",
+            "service_account": "InvalidServiceAccount"
+          },
+          "type": "gcp_uc_config_post_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cost/gcp_uc_config"
+  },
+  "scenario": "Create Google Cloud Usage Cost config returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

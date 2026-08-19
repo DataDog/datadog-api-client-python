@@ -1,0 +1,35 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 200,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/Get a Model Lab run returns \"OK\" response",
+  "operation_id": "GetModelLabRun",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "run_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 70158
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/runs/{run_id}"
+  },
+  "scenario": "Get a Model Lab run returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

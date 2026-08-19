@@ -1,0 +1,38 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 201,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Create an Application key with scopes for current user returns \"Created\" response",
+  "operation_id": "CreateCurrentUserApplicationKey",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ApplicationKeyCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }}",
+            "scopes": [
+              "dashboards_read",
+              "dashboards_write",
+              "dashboards_public_share"
+            ]
+          },
+          "type": "application_keys"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/current_user/application_keys"
+  },
+  "scenario": "Create an Application key with scopes for current user returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

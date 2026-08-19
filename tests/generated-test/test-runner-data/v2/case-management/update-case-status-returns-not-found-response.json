@@ -1,0 +1,50 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 404,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Update case status returns \"Not Found\" response",
+  "operation_id": "UpdateStatus",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CaseUpdateStatusRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "status": "OPEN"
+          },
+          "type": "case"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "67d80aa3-36ff-44b9-a694-c501a7591737"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}/status"
+  },
+  "scenario": "Update case status returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

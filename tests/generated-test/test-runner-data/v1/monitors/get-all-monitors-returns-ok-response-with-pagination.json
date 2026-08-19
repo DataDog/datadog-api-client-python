@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Get all monitors returns \"OK\" response with pagination",
+  "operation_id": "ListMonitors",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page_size",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Get all monitors returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 200,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/List workflows returns \"OK\" response",
+  "operation_id": "ListWorkflows",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/workflows"
+  },
+  "scenario": "List workflows returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

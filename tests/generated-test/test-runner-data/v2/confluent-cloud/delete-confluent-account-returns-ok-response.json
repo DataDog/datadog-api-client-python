@@ -1,0 +1,35 @@
+{
+  "api": "ConfluentCloud",
+  "expected_status": 204,
+  "feature": "Confluent Cloud",
+  "id": "v2/Confluent Cloud/Delete Confluent account returns \"OK\" response",
+  "operation_id": "DeleteConfluentAccount",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "confluent_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}"
+  },
+  "scenario": "Delete Confluent account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

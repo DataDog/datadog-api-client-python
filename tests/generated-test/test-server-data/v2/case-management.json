@@ -1,0 +1,3460 @@
+{
+  "feature": "Case Management",
+  "recordings": [
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:44.747Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e3f011bc-8ae6-4ec2-b80d-3069e73bc6a1\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:45.033566Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"e3f011bc-8ae6-4ec2-b80d-3069e73bc6a1\",\"key\":\"DDFC-98805\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99261\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "project"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/e3f011bc-8ae6-4ec2-b80d-3069e73bc6a1/archive",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"project\\\" expected one of \\\"case\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Archive case returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:30.876Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/archive",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Archive case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:45.212Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"926e6b8a-4af6-43b2-8a29-33813af68594\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:45.269528Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"926e6b8a-4af6-43b2-8a29-33813af68594\",\"key\":\"DDFC-98806\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99262\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/926e6b8a-4af6-43b2-8a29-33813af68594/archive",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"926e6b8a-4af6-43b2-8a29-33813af68594\",\"type\":\"case\",\"attributes\":{\"archived_at\":\"2025-12-30T13:49:45.40368576Z\",\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:45.269528Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"926e6b8a-4af6-43b2-8a29-33813af68594\",\"key\":\"DDFC-98806\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-12-30T13:49:45.403686Z\",\"priority\":\"P4\",\"public_id\":\"99262\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Archive case returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:45.450Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b3cef7a0-9637-43fb-88cf-d9ac56310a7b\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:45.508531Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"b3cef7a0-9637-43fb-88cf-d9ac56310a7b\",\"key\":\"DDFC-98807\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99263\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "assignee_id": "invalid-uuid"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/b3cef7a0-9637-43fb-88cf-d9ac56310a7b/assign",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Assign case returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:32.968Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Assign_case_returns_Not_Found_response-1759322792@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"a906fadf-9ec4-11f0-8e55-4666095c4509\",\"attributes\":{\"name\":null,\"handle\":\"test-assign_case_returns_not_found_response-1759322792@datadoghq.com\",\"created_at\":\"2025-10-01T12:46:33.507125+00:00\",\"modified_at\":\"2025-10-01T12:46:33.507125+00:00\",\"email\":\"test-assign_case_returns_not_found_response-1759322792@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/4d05db0354c1408750042bd62d0f0663?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\"},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "assignee_id": "a906fadf-9ec4-11f0-8e55-4666095c4509"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/assign",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/a906fadf-9ec4-11f0-8e55-4666095c4509",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Assign case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:45.709Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0bb969fd-0864-46a1-8e6d-35434e677004\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:45.922467Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"0bb969fd-0864-46a1-8e6d-35434e677004\",\"key\":\"DDFC-98808\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99264\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Assign_case_returns_OK_response-1767102585@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"06fe1d45-8040-47eb-b161-837f416635e7\",\"attributes\":{\"name\":null,\"handle\":\"test-assign_case_returns_ok_response-1767102585@datadoghq.com\",\"created_at\":\"2025-12-30T13:49:46.123532+00:00\",\"modified_at\":\"2025-12-30T13:49:46.123532+00:00\",\"email\":\"test-assign_case_returns_ok_response-1767102585@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/7ef6584479871df45cdfa7868fcc1849?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "assignee_id": "06fe1d45-8040-47eb-b161-837f416635e7"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/0bb969fd-0864-46a1-8e6d-35434e677004/assign",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0bb969fd-0864-46a1-8e6d-35434e677004\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:45.922467Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"0bb969fd-0864-46a1-8e6d-35434e677004\",\"key\":\"DDFC-98808\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-12-30T13:49:46.211933Z\",\"priority\":\"P4\",\"public_id\":\"99264\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"06fe1d45-8040-47eb-b161-837f416635e7\",\"type\":\"user\"}},\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}},{\"id\":\"06fe1d45-8040-47eb-b161-837f416635e7\",\"type\":\"user\",\"attributes\":{\"active\":false,\"email\":\"test-assign_case_returns_ok_response-1767102585@datadoghq.com\",\"handle\":\"test-assign_case_returns_ok_response-1767102585@datadoghq.com\",\"name\":\"\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/06fe1d45-8040-47eb-b161-837f416635e7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Assign case returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:46.568Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dabff9f7-18d4-40ac-acd5-50b2d311ff53\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:46.622659Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"dabff9f7-18d4-40ac-acd5-50b2d311ff53\",\"key\":\"DDFC-98809\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99265\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "comment": ""
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/dabff9f7-18d4-40ac-acd5-50b2d311ff53/comment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Comment case returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:37.749Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "comment": "Hello world !"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/comment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Comment case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:46.777Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"84a0af3b-6609-442a-b4de-b082652354cf\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:46.840801Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"84a0af3b-6609-442a-b4de-b082652354cf\",\"key\":\"DDFC-98810\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99266\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "comment": "Hello World !"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/84a0af3b-6609-442a-b4de-b082652354cf/comment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"2df6429f-8148-440c-a959-e6503f42709b\",\"type\":\"timeline_cell\",\"attributes\":{\"author\":{\"type\":\"USER\",\"content\":{\"ID\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"active\":true}},\"cell_content\":{\"message\":\"Hello World !\"},\"content\":\"{\\\"message\\\":\\\"Hello World !\\\"}\",\"created_at\":\"2025-12-30T13:49:46.968106806Z\",\"type\":\"COMMENT\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Comment case returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:39.097Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "NOT_DEFINED",
+                    "title": "Security breach investigation",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "assignee": {
+                      "data": {
+                        "id": "e555e290-ed65-49bd-ae18-8acbfcf18db7",
+                        "type": "userx"
+                      }
+                    },
+                    "project": {
+                      "data": {
+                        "id": "e555e290-ed65-49bd-ae18-8acbfcf18db7",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"userx\\\" expected one of \\\"user\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a case returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:39.524Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_a_case_returns_CREATED_response-1759322799@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"ace4fe48-9ec4-11f0-988b-7627cf2efb1e\",\"attributes\":{\"name\":null,\"handle\":\"test-create_a_case_returns_created_response-1759322799@datadoghq.com\",\"created_at\":\"2025-10-01T12:46:39.995279+00:00\",\"modified_at\":\"2025-10-01T12:46:39.995279+00:00\",\"email\":\"test-create_a_case_returns_created_response-1759322799@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/a3dcdca0c5122ad399c31e6815d86aef?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\"},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "NOT_DEFINED",
+                    "title": "Security breach investigation in 6667abc22c9b9dc7",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "assignee": {
+                      "data": {
+                        "id": "ace4fe48-9ec4-11f0-988b-7627cf2efb1e",
+                        "type": "user"
+                      }
+                    },
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"58b1c40f-26af-4aed-84bf-6008b6f16d91\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-10-01T12:46:40.526592Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"58b1c40f-26af-4aed-84bf-6008b6f16d91\",\"key\":\"DDFC-82974\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"NOT_DEFINED\",\"public_id\":\"83062\",\"status\":\"OPEN\",\"status_name\":\"Open\",\"title\":\"Security breach investigation in 6667abc22c9b9dc7\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"ace4fe48-9ec4-11f0-988b-7627cf2efb1e\",\"type\":\"user\"}},\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}},{\"id\":\"ace4fe48-9ec4-11f0-988b-7627cf2efb1e\",\"type\":\"user\",\"attributes\":{\"active\":false,\"email\":\"test-create_a_case_returns_created_response-1759322799@datadoghq.com\",\"handle\":\"test-create_a_case_returns_created_response-1759322799@datadoghq.com\",\"name\":\"\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/ace4fe48-9ec4-11f0-988b-7627cf2efb1e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a case returns \"CREATED\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:41.174Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "NOT_DEFINED",
+                    "title": "Security breach investigation",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "assignee": {
+                      "data": {
+                        "id": "721074c8-63df-4d8f-a43d-ab41dd24ec35",
+                        "type": "user"
+                      }
+                    },
+                    "project": {
+                      "data": {
+                        "id": "721074c8-63df-4d8f-a43d-ab41dd24ec35",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"project not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Create a case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-08-21T12:21:38.654Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b17ef97a-c38f-4b67-91a6-546a0a3da4d3\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-21T12:21:39.002325Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"b17ef97a-c38f-4b67-91a6-546a0a3da4d3\",\"key\":\"DDFC-77682\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"77765\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/b17ef97a-c38f-4b67-91a6-546a0a3da4d3/comment/not-an-uuid",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Invalid Parameter\",\"detail\":\"invalid parameter \\\"CommentID\\\" in \\\"path\\\"; expected type \\\"uuid\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete case comment returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-08-21T12:21:39.426Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ba3da7da-9df1-4b1d-82be-e7d3d8ee865f\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-21T12:21:39.790273Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"ba3da7da-9df1-4b1d-82be-e7d3d8ee865f\",\"key\":\"DDFC-77683\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"77766\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "comment": "This is my new comment !"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/ba3da7da-9df1-4b1d-82be-e7d3d8ee865f/comment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"bd8ee088-15bc-43a1-bc95-92e365b71459\",\"type\":\"timeline_cell\",\"attributes\":{\"author\":{\"type\":\"USER\",\"content\":{\"ID\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"name\":\"frog\",\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"active\":true}},\"cell_content\":{\"message\":\"This is my new comment !\"},\"content\":\"{\\\"message\\\":\\\"This is my new comment !\\\"}\",\"created_at\":\"2025-08-21T12:21:40.169700502Z\",\"type\":\"COMMENT\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/ba3da7da-9df1-4b1d-82be-e7d3d8ee865f/comment/bd8ee088-15bc-43a1-bc95-92e365b71459",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/ba3da7da-9df1-4b1d-82be-e7d3d8ee865f/comment/bd8ee088-15bc-43a1-bc95-92e365b71459",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"timeline cell not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete case comment returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:47.018Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e48aba34-ea79-45c7-a425-56d5b09c9fc4\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:47.073795Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"e48aba34-ea79-45c7-a425-56d5b09c9fc4\",\"key\":\"DDFC-98811\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99267\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/e48aba34-ea79-45c7-a425-56d5b09c9fc4/comment/23fca2aa-4967-4936-bdd7-9157d9e456d7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"failed to get timeline cell: timeline cell not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete case comment returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:47.272Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"83a5e059-3fde-48b5-b4d4-8bcc5227db32\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:47.318549Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"83a5e059-3fde-48b5-b4d4-8bcc5227db32\",\"key\":\"DDFC-98812\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99268\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/83a5e059-3fde-48b5-b4d4-8bcc5227db32/custom_attributes/invalid_key",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"failed to update batch: failed to apply command: failed to apply domain.RemoveCustomAttribute command: custom attribute configuration not found\",\"meta\":{\"key\":\"invalid_key\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete custom attribute from case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-08-21T12:21:42.721Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Worldwide case type",
+                    "emoji": "\ud83c\udf0d",
+                    "name": "World"
+                  },
+                  "type": "case_type"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/types",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3dd78296-b989-466d-97ef-428517d851ee\",\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\":\"\ud83c\udf0d\",\"name\":\"World\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "And its brand new description",
+                    "display_name": "Attribute 17557789-0000-0000-0000-175577890200",
+                    "is_multi": true,
+                    "key": "attribute_08d279361f9bcdbb",
+                    "type": "TEXT"
+                  },
+                  "type": "custom_attribute"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/types/3dd78296-b989-466d-97ef-428517d851ee/custom_attributes",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c18c3669-9507-4293-ac56-08711b1e16a6\",\"type\":\"custom_attribute\",\"attributes\":{\"case_type\":\"TUNKNOWN\",\"case_type_id\":\"3dd78296-b989-466d-97ef-428517d851ee\",\"description\":\"And its brand new description\",\"display_name\":\"Attribute 17557789-0000-0000-0000-175577890200\",\"is_multi\":true,\"key\":\"attribute_08d279361f9bcdbb\",\"type\":\"TEXT\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "3dd78296-b989-466d-97ef-428517d851ee"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"15f17d2e-4972-44d9-9f31-684f2d19a16c\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-21T12:21:43.791404Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"15f17d2e-4972-44d9-9f31-684f2d19a16c\",\"key\":\"DDFC-77686\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"77769\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"TUNKNOWN\",\"type_id\":\"3dd78296-b989-466d-97ef-428517d851ee\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/15f17d2e-4972-44d9-9f31-684f2d19a16c/custom_attributes/attribute_08d279361f9bcdbb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"15f17d2e-4972-44d9-9f31-684f2d19a16c\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-21T12:21:43.791404Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"15f17d2e-4972-44d9-9f31-684f2d19a16c\",\"key\":\"DDFC-77686\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"77769\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"TUNKNOWN\",\"type_id\":\"3dd78296-b989-466d-97ef-428517d851ee\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/types/3dd78296-b989-466d-97ef-428517d851ee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete custom attribute from case returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:43.569Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get the details of a case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:47.488Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9daaa414-8843-46e2-8360-c36d3713285f\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:47.542749Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"9daaa414-8843-46e2-8360-c36d3713285f\",\"key\":\"DDFC-98813\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99269\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cases/9daaa414-8843-46e2-8360-c36d3713285f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9daaa414-8843-46e2-8360-c36d3713285f\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:47.542749Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"9daaa414-8843-46e2-8360-c36d3713285f\",\"key\":\"DDFC-98813\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99269\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get the details of a case returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2026-03-25T10:29:24.893Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cases",
+            "query": [
+              [
+                "filter",
+                "status:closed"
+              ],
+              [
+                "page[number]",
+                "1"
+              ],
+              [
+                "page[size]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"cd4abeaa-0a5b-4b83-b99c-5b6d1f912938\",\"type\":\"case\",\"attributes\":{\"attributes\":{\"service\":[\"synthetics-browser\"]},\"closed_at\":\"2026-01-24T00:47:45.477244496Z\",\"comment_count\":0,\"created_at\":\"2025-11-12T00:42:59.178125Z\",\"created_by_author\":{\"type\":\"USER\",\"content\":{\"ID\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"active\":true}},\"creation_source\":\"ERROR_TRACKING\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[{\"type\":\"ERROR_TRACKING\",\"ref\":\"/error-tracking?issueId=a5bb2896-a4d0-11f0-bd76-da7ad0900002\",\"resource_id\":\"a5bb2896-a4d0-11f0-bd76-da7ad0900002\"}],\"internal_id\":\"cd4abeaa-0a5b-4b83-b99c-5b6d1f912938\",\"key\":\"ET-3\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2026-02-05T03:58:14.876711989Z\",\"priority\":\"NOT_DEFINED\",\"public_id\":\"89979\",\"status\":\"CLOSED\",\"status_group\":\"SG_CLOSED\",\"status_name\":\"Closed\",\"title\":\"require-trusted-types-for: csp_violation: 'trusted-types-sink' blocked by 'require-trusted-types-for' directive\",\"type\":\"ERROR_TRACKING_ISSUE\",\"type_id\":\"00000000-0000-0000-0000-000000000005\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\"}},\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"384521ba-dc5f-481f-942d-15bd48428029\",\"type\":\"project\"}}}},{\"id\":\"7afc10c8-4096-4af1-9ccf-ec0df3a2f63b\",\"type\":\"case\",\"attributes\":{\"attributes\":{\"service\":[\"synthetics-browser\"]},\"comment_count\":0,\"created_at\":\"2025-09-02T13:56:48.031226Z\",\"created_by_author\":{\"type\":\"USER\",\"content\":{\"ID\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"name\":\"frog\",\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"active\":true}},\"creation_source\":\"ERROR_TRACKING\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[{\"type\":\"ERROR_TRACKING\",\"ref\":\"/error-tracking?issueId=d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"resource_id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\"}],\"internal_id\":\"7afc10c8-4096-4af1-9ccf-ec0df3a2f63b\",\"key\":\"ET-2\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2026-03-25T09:56:47.052997427Z\",\"priority\":\"NOT_DEFINED\",\"public_id\":\"79361\",\"status\":\"CLOSED\",\"status_group\":\"SG_CLOSED\",\"status_name\":\"Closed\",\"title\":\"Error: Expected unhandled error\",\"type\":\"ERROR_TRACKING_ISSUE\",\"type_id\":\"00000000-0000-0000-0000-000000000005\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\"}},\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"384521ba-dc5f-481f-942d-15bd48428029\",\"type\":\"project\"}}}}],\"meta\":{\"total_cases\":3,\"page\":{\"current\":1,\"size\":2,\"total\":2}},\"included\":[{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\",\"attributes\":{\"active\":false,\"email\":\"\",\"handle\":\"\",\"name\":\"\"}},{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}},{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cases",
+            "query": [
+              [
+                "filter",
+                "status:closed"
+              ],
+              [
+                "page[number]",
+                "2"
+              ],
+              [
+                "page[size]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"f1b32a47-621d-4c57-9642-045aeb83891e\",\"type\":\"case\",\"attributes\":{\"attributes\":{\"service\":[\"synthetics-browser\"]},\"closed_at\":\"2025-08-21T17:21:13.882830862Z\",\"comment_count\":0,\"created_at\":\"2025-08-21T17:20:22.807979Z\",\"created_by_author\":{\"type\":\"USER\",\"content\":{\"ID\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"name\":\"frog\",\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"active\":true}},\"creation_source\":\"ERROR_TRACKING\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[{\"type\":\"ERROR_TRACKING\",\"ref\":\"/error-tracking?issueId=5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"resource_id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\"}],\"internal_id\":\"f1b32a47-621d-4c57-9642-045aeb83891e\",\"key\":\"ET-1\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-08-21T17:21:13.882830862Z\",\"priority\":\"NOT_DEFINED\",\"public_id\":\"77795\",\"status\":\"CLOSED\",\"status_group\":\"SG_CLOSED\",\"status_name\":\"Closed\",\"title\":\"Error: HTTP error\",\"type\":\"ERROR_TRACKING_ISSUE\",\"type_id\":\"00000000-0000-0000-0000-000000000005\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\"}},\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"384521ba-dc5f-481f-942d-15bd48428029\",\"type\":\"project\"}}}}],\"meta\":{\"total_cases\":3,\"page\":{\"current\":2,\"size\":1,\"total\":2}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}},{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\",\"attributes\":{\"active\":false,\"email\":\"\",\"handle\":\"\",\"name\":\"\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search cases returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:47.735Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"21c1b181-cee4-4b72-bf96-38859d367da4\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:47.783537Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"21c1b181-cee4-4b72-bf96-38859d367da4\",\"key\":\"DDFC-98814\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99270\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "project"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/21c1b181-cee4-4b72-bf96-38859d367da4/unarchive",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"project\\\" expected one of \\\"case\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Unarchive case returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:45.896Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/unarchive",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Unarchive case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:47.992Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a02bcfe0-5678-49bb-a696-86544bde2bee\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:48.042966Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"a02bcfe0-5678-49bb-a696-86544bde2bee\",\"key\":\"DDFC-98815\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99271\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/a02bcfe0-5678-49bb-a696-86544bde2bee/unarchive",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a02bcfe0-5678-49bb-a696-86544bde2bee\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:48.042966Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"a02bcfe0-5678-49bb-a696-86544bde2bee\",\"key\":\"DDFC-98815\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99271\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Unarchive case returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:48.267Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5fa6cf48-aa31-40bc-9d17-f8f78eea95be\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:48.323172Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"5fa6cf48-aa31-40bc-9d17-f8f78eea95be\",\"key\":\"DDFC-98816\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99272\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "project"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/5fa6cf48-aa31-40bc-9d17-f8f78eea95be/unassign",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"project\\\" expected one of \\\"case\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Unassign case returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:49.773Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/unassign",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Unassign case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:48.487Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6491a991-9117-46dc-9762-ea2cc244e5b3\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:48.538223Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"6491a991-9117-46dc-9762-ea2cc244e5b3\",\"key\":\"DDFC-98817\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99273\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/6491a991-9117-46dc-9762-ea2cc244e5b3/unassign",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6491a991-9117-46dc-9762-ea2cc244e5b3\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:48.538223Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"6491a991-9117-46dc-9762-ea2cc244e5b3\",\"key\":\"DDFC-98817\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99273\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Unassign case returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2026-01-28T12:51:16.724Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "type": "invalid_type"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cases/projects/d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"invalid_type\\\" expected one of \\\"project\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update a project returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2026-01-28T12:51:17.270Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Updated Project Name"
+                  },
+                  "type": "project"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cases/projects/67d80aa3-36ff-44b9-a694-c501a7591737",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"failed to get project: project not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a project returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2026-01-28T12:51:17.621Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Updated Project Name Test-Update_a_project_returns_OK_response-1769604677"
+                  },
+                  "type": "project"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cases/projects/d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\",\"attributes\":{\"key\":\"DDFC\",\"name\":\"Updated Project Name Test-Update_a_project_returns_OK_response-1769604677\",\"restricted\":false,\"settings\":{\"notification\":{\"enabled\":true,\"destinations\":[1],\"notify_on_case_assignment\":true,\"notify_on_case_unassignment\":true,\"notify_on_case_closed\":true,\"notify_on_case_priority_change\":true,\"notify_on_case_comment\":true,\"notify_on_case_comment_mention\":true,\"notify_on_case_status_change\":true}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update a project returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-07-21T08:23:41.749Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type": "STANDARD"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0fac8699-2b39-4acb-b290-05a0fd19eb95\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-07-21T08:23:42.090561Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"0fac8699-2b39-4acb-b290-05a0fd19eb95\",\"key\":\"DDFC-72247\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"72307\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "attributes": {
+                      "service": "web-store"
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/0fac8699-2b39-4acb-b290-05a0fd19eb95/attributes",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"error decoding attribute \\\"attributes\\\": invalid type string\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update case attributes returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:52.080Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "attributes": {}
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/attributes",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update case attributes returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:48.699Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8c6346d6-448d-43a0-b957-b38773438c4f\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:48.757052Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"8c6346d6-448d-43a0-b957-b38773438c4f\",\"key\":\"DDFC-98818\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99274\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "attributes": {
+                      "env": [
+                        "test"
+                      ],
+                      "service": [
+                        "web-store",
+                        "web-api"
+                      ],
+                      "team": [
+                        "engineer"
+                      ]
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/8c6346d6-448d-43a0-b957-b38773438c4f/attributes",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8c6346d6-448d-43a0-b957-b38773438c4f\",\"type\":\"case\",\"attributes\":{\"attributes\":{\"env\":[\"test\"],\"service\":[\"web-store\",\"web-api\"],\"team\":[\"engineer\"]},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:48.757052Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"8c6346d6-448d-43a0-b957-b38773438c4f\",\"key\":\"DDFC-98818\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-12-30T13:49:48.927381Z\",\"priority\":\"P4\",\"public_id\":\"99274\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update case attributes returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-08-21T12:21:50.857Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Worldwide case type",
+                    "emoji": "\ud83c\udf0d",
+                    "name": "World"
+                  },
+                  "type": "case_type"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/types",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b36e8af6-a952-43bb-b54b-d7b80fc1344e\",\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\":\"\ud83c\udf0d\",\"name\":\"World\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "And its brand new description",
+                    "display_name": "Attribute 17557789-0000-0000-0000-175577891000",
+                    "is_multi": true,
+                    "key": "attribute_1d2a4f8f9b39a284",
+                    "type": "TEXT"
+                  },
+                  "type": "custom_attribute"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/types/b36e8af6-a952-43bb-b54b-d7b80fc1344e/custom_attributes",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"49cb8cff-1ff0-4476-b0c9-042e08935cb9\",\"type\":\"custom_attribute\",\"attributes\":{\"case_type\":\"TUNKNOWN\",\"case_type_id\":\"b36e8af6-a952-43bb-b54b-d7b80fc1344e\",\"description\":\"And its brand new description\",\"display_name\":\"Attribute 17557789-0000-0000-0000-175577891000\",\"is_multi\":true,\"key\":\"attribute_1d2a4f8f9b39a284\",\"type\":\"TEXT\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "b36e8af6-a952-43bb-b54b-d7b80fc1344e"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5ed64f4d-a8d0-4dc6-879c-9b5f10a25cdb\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-21T12:21:51.92835Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"5ed64f4d-a8d0-4dc6-879c-9b5f10a25cdb\",\"key\":\"DDFC-77693\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"77776\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"TUNKNOWN\",\"type_id\":\"b36e8af6-a952-43bb-b54b-d7b80fc1344e\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_multi": true,
+                    "type": "FLOAT",
+                    "value": [
+                      1,
+                      2.4
+                    ]
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/5ed64f4d-a8d0-4dc6-879c-9b5f10a25cdb/custom_attributes/attribute_1d2a4f8f9b39a284",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/types/b36e8af6-a952-43bb-b54b-d7b80fc1344e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update case custom attribute returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:48.998Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6ace1538-7ef1-4a00-a0bd-67c8ed9a3cd3\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:49.048411Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"6ace1538-7ef1-4a00-a0bd-67c8ed9a3cd3\",\"key\":\"DDFC-98819\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99275\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_multi": true,
+                    "type": "TEXT",
+                    "value": [
+                      "Abba",
+                      "The Cure"
+                    ]
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/6ace1538-7ef1-4a00-a0bd-67c8ed9a3cd3/custom_attributes/invalid_key",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"failed to update batch: failed to apply command: failed to apply domain.UpdateCustomAttribute command: custom attribute configuration not found\",\"meta\":{\"key\":\"invalid_key\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update case custom attribute returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-08-21T12:21:53.550Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Worldwide case type",
+                    "emoji": "\ud83c\udf0d",
+                    "name": "World"
+                  },
+                  "type": "case_type"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/types",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"bf109065-175f-4d2f-848d-8f5232dfce1a\",\"type\":\"case_type\",\"attributes\":{\"description\":\"Worldwide case type\",\"emoji\":\"\ud83c\udf0d\",\"name\":\"World\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "And its brand new description",
+                    "display_name": "Attribute 17557789-0000-0000-0000-175577891300",
+                    "is_multi": true,
+                    "key": "attribute_661efcf8a00203e4",
+                    "type": "TEXT"
+                  },
+                  "type": "custom_attribute"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/types/bf109065-175f-4d2f-848d-8f5232dfce1a/custom_attributes",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"df10a213-93aa-4406-98a7-f9a7c5dccefd\",\"type\":\"custom_attribute\",\"attributes\":{\"case_type\":\"TUNKNOWN\",\"case_type_id\":\"bf109065-175f-4d2f-848d-8f5232dfce1a\",\"description\":\"And its brand new description\",\"display_name\":\"Attribute 17557789-0000-0000-0000-175577891300\",\"is_multi\":true,\"key\":\"attribute_661efcf8a00203e4\",\"type\":\"TEXT\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "bf109065-175f-4d2f-848d-8f5232dfce1a"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4e88fd93-7a35-46a1-881e-3ee48185afe4\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-21T12:21:54.635083Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"4e88fd93-7a35-46a1-881e-3ee48185afe4\",\"key\":\"DDFC-77695\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"77778\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"TUNKNOWN\",\"type_id\":\"bf109065-175f-4d2f-848d-8f5232dfce1a\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_multi": true,
+                    "type": "TEXT",
+                    "value": [
+                      "Abba",
+                      "The Cure"
+                    ]
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/4e88fd93-7a35-46a1-881e-3ee48185afe4/custom_attributes/attribute_661efcf8a00203e4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4e88fd93-7a35-46a1-881e-3ee48185afe4\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-21T12:21:54.635083Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{\"attribute_661efcf8a00203e4\":{\"type\":\"TEXT\",\"is_multi\":true,\"value\":[\"Abba\",\"The Cure\"]}},\"description\":\"\",\"insights\":[],\"internal_id\":\"4e88fd93-7a35-46a1-881e-3ee48185afe4\",\"key\":\"DDFC-77695\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-08-21T12:21:55.036815Z\",\"priority\":\"P4\",\"public_id\":\"77778\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"TUNKNOWN\",\"type_id\":\"bf109065-175f-4d2f-848d-8f5232dfce1a\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/cases/types/bf109065-175f-4d2f-848d-8f5232dfce1a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update case custom attribute returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-08-20T11:23:00.312Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type": "STANDARD"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"efb715f8-47e6-4035-a8aa-2562ac8d46b1\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-20T11:23:00.725437Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"efb715f8-47e6-4035-a8aa-2562ac8d46b1\",\"key\":\"DDFC-77120\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"77187\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Seeing some weird memory increase... We shouldn't ignore this"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/efb715f8-47e6-4035-a8aa-2562ac8d46b1/description",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"efb715f8-47e6-4035-a8aa-2562ac8d46b1\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-08-20T11:23:00.725437Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"Seeing some weird memory increase... We shouldn't ignore this\",\"insights\":[],\"internal_id\":\"efb715f8-47e6-4035-a8aa-2562ac8d46b1\",\"key\":\"DDFC-77120\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-08-20T11:23:01.102685Z\",\"priority\":\"P4\",\"public_id\":\"77187\",\"status\":\"OPEN\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"frog@datadoghq.com\",\"handle\":\"frog@datadoghq.com\",\"name\":\"frog\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update case description returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:46:55.741Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Seeing some weird memory increase... We shouldn't ignore this"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/0198c6b0-2a0a-7bea-87ff-3876f119aebb/description",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update case description returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:49.217Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a4887f3f-c7a8-47d7-ae65-a1f7ce9687c5\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:49.259766Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"a4887f3f-c7a8-47d7-ae65-a1f7ce9687c5\",\"key\":\"DDFC-98820\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99276\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Seeing some weird memory increase... Updating the description"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/a4887f3f-c7a8-47d7-ae65-a1f7ce9687c5/description",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a4887f3f-c7a8-47d7-ae65-a1f7ce9687c5\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:49.259766Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"Seeing some weird memory increase... Updating the description\",\"insights\":[],\"internal_id\":\"a4887f3f-c7a8-47d7-ae65-a1f7ce9687c5\",\"key\":\"DDFC-98820\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-12-30T13:49:49.395812Z\",\"priority\":\"P4\",\"public_id\":\"99276\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update case description returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:49.426Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4ef03b27-6d40-455b-8dd8-3f3224a34a7a\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:49.483012Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"4ef03b27-6d40-455b-8dd8-3f3224a34a7a\",\"key\":\"DDFC-98821\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99277\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P1234"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/4ef03b27-6d40-455b-8dd8-3f3224a34a7a/priority",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"invalid priority P1234. Must be one of P1, P2, P3, P4, P5, NOT_DEFINED\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update case priority returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:47:00.978Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P3"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/priority",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update case priority returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:49.632Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"511f7667-3d80-4498-8118-416211a1a131\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:49.67893Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"511f7667-3d80-4498-8118-416211a1a131\",\"key\":\"DDFC-98822\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99278\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P3"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/511f7667-3d80-4498-8118-416211a1a131/priority",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"511f7667-3d80-4498-8118-416211a1a131\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:49.67893Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"511f7667-3d80-4498-8118-416211a1a131\",\"key\":\"DDFC-98822\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-12-30T13:49:49.835308Z\",\"priority\":\"P3\",\"public_id\":\"99278\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update case priority returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:49.865Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ae30545d-e705-493d-a672-7210315ccec2\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:49.916511Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"ae30545d-e705-493d-a672-7210315ccec2\",\"key\":\"DDFC-98823\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99279\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "status": "OPENED"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/ae30545d-e705-493d-a672-7210315ccec2/status",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"invalid status OPENED. Must be one of NOT_STARTED, IN_PROGRESS, CLOSED, ACKNOWLEDGED, TRIGGERED, PENDING_APPROVAL, COMPLETED, CANCELLED, DECLINED, SUNKNOWN, OPEN, RESOLVED, APPROVED, IMPLEMENTING\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update case status returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:47:04.727Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "status": "OPEN"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/67d80aa3-36ff-44b9-a694-c501a7591737/status",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update case status returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:50.079Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d417f9be-d247-4ce8-b3e4-ae7a9283f3d6\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:50.123131Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"d417f9be-d247-4ce8-b3e4-ae7a9283f3d6\",\"key\":\"DDFC-98824\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99280\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "status": "IN_PROGRESS"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/d417f9be-d247-4ce8-b3e4-ae7a9283f3d6/status",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d417f9be-d247-4ce8-b3e4-ae7a9283f3d6\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:50.123131Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"d417f9be-d247-4ce8-b3e4-ae7a9283f3d6\",\"key\":\"DDFC-98824\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-12-30T13:49:50.289934Z\",\"priority\":\"P4\",\"public_id\":\"99280\",\"status\":\"IN_PROGRESS\",\"status_group\":\"SG_IN_PROGRESS\",\"status_name\":\"In Progress\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update case status returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:50.328Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"00a64fed-4338-458b-9af5-77ba6e6c9d7b\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:50.377668Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"00a64fed-4338-458b-9af5-77ba6e6c9d7b\",\"key\":\"DDFC-98825\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99281\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "title": ""
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/00a64fed-4338-458b-9af5-77ba6e6c9d7b/title",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update case title returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-10-01T12:47:06.918Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "title": "Memory leak investigation on API"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/0198c6b8-b08f-7c08-978a-d95217f2eeac/title",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"code\":\"resource_not_found\",\"title\":\"case not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update case title returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Case Management",
+      "frozen_at": "2025-12-30T13:49:50.596Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "priority": "P4",
+                    "title": "My new case",
+                    "type_id": "00000000-0000-0000-0000-000000000001"
+                  },
+                  "relationships": {
+                    "project": {
+                      "data": {
+                        "id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e",
+                        "type": "project"
+                      }
+                    }
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"03ec656b-5d21-41c4-a655-ccb18b0aa990\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:50.642707Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"03ec656b-5d21-41c4-a655-ccb18b0aa990\",\"key\":\"DDFC-98826\",\"merge_status\":\"NOT_MERGED\",\"priority\":\"P4\",\"public_id\":\"99282\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"My new case\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "title": "[UPDATED] Memory leak investigation on API"
+                  },
+                  "type": "case"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cases/03ec656b-5d21-41c4-a655-ccb18b0aa990/title",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"03ec656b-5d21-41c4-a655-ccb18b0aa990\",\"type\":\"case\",\"attributes\":{\"attributes\":{},\"comment_count\":0,\"created_at\":\"2025-12-30T13:49:50.642707Z\",\"creation_source\":\"MANUAL\",\"custom_attributes\":{},\"description\":\"\",\"insights\":[],\"internal_id\":\"03ec656b-5d21-41c4-a655-ccb18b0aa990\",\"key\":\"DDFC-98826\",\"merge_status\":\"NOT_MERGED\",\"modified_at\":\"2025-12-30T13:49:50.769335Z\",\"priority\":\"P4\",\"public_id\":\"99282\",\"status\":\"OPEN\",\"status_group\":\"SG_OPEN\",\"status_name\":\"Open\",\"title\":\"[UPDATED] Memory leak investigation on API\",\"type\":\"STANDARD\",\"type_id\":\"00000000-0000-0000-0000-000000000001\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"d4bbe1af-f36e-42f1-87c1-493ca35c320e\",\"type\":\"project\"}}}},\"included\":[{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"user\",\"attributes\":{\"active\":true,\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update case title returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

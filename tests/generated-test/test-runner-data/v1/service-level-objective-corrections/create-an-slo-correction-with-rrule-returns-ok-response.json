@@ -1,0 +1,28 @@
+{
+  "api": "ServiceLevelObjectiveCorrections",
+  "expected_status": 200,
+  "feature": "Service Level Objective Corrections",
+  "id": "v1/Service Level Objective Corrections/Create an SLO correction with rrule returns \"OK\" response",
+  "operation_id": "CreateSLOCorrection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SLOCorrectionCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\": {\"attributes\": {\"category\": \"Scheduled Maintenance\", \"description\": \"{{ unique }}\", \"slo_id\": \"{{ slo.data[0].id }}\", \"start\": {{ timestamp(\"now\") }}, \"duration\": 3600, \"rrule\": \"FREQ=DAILY;INTERVAL=10;COUNT=5\", \"timezone\": \"UTC\"}, \"type\": \"correction\"}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/slo/correction"
+  },
+  "scenario": "Create an SLO correction with rrule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

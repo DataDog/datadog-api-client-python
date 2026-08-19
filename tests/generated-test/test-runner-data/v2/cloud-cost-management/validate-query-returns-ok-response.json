@@ -1,0 +1,33 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Validate query returns \"OK\" response",
+  "operation_id": "ValidateQuery",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RulesValidateQueryRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "Query": "example:query AND test:true"
+          },
+          "type": "validate_query"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/tags/enrichment/validate-query"
+  },
+  "scenario": "Validate query returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

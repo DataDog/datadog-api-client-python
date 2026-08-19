@@ -1,0 +1,369 @@
+{
+  "feature": "Data Deletion",
+  "recordings": [
+    {
+      "feature": "Data Deletion",
+      "frozen_at": "2025-01-15T14:25:54.929Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "PUT",
+            "path": "/api/v2/deletion/requests/id-1/cancel",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Invalid Parameter\",\"detail\":\"invalid parameter \\\"id\\\" in \\\"path\\\"; expected type \\\"int\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Cancels a data deletion request returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Data Deletion",
+      "frozen_at": "2025-01-15T14:26:08.930Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1672527600000,
+                    "indexes": [
+                      "test-index",
+                      "test-index-2"
+                    ],
+                    "query": {
+                      "host": "abc",
+                      "service": "xyz"
+                    },
+                    "to": 1704063600000
+                  },
+                  "type": "create_deletion_req"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deletion/data/logs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"753\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:26:09.447960191Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"pending\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:26:09.447960191Z\"}},\"meta\":{\"product\":\"logs\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "PUT",
+            "path": "/api/v2/deletion/requests/753/cancel",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"753\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:26:09.44796Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:26:10.016496Z\"}},\"meta\":{\"product\":\"logs\",\"request_status\":\"canceled\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "PUT",
+            "path": "/api/v2/deletion/requests/753/cancel",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"753\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:26:09.44796Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:26:10.016496Z\"}},\"meta\":{\"product\":\"logs\",\"request_status\":\"canceled\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Cancels a data deletion request returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Data Deletion",
+      "frozen_at": "2025-01-15T14:26:26.195Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "PUT",
+            "path": "/api/v2/deletion/requests/-1/cancel",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"412\",\"code\":\"INVALID_ID\",\"title\":\"INVALID_ID\",\"detail\":\"INVALID_ID\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Precondition Failed",
+            "status": 412
+          }
+        }
+      ],
+      "scenario": "Cancels a data deletion request returns \"Precondition failed error\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Data Deletion",
+      "frozen_at": "2025-01-15T14:27:27.929Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1672527600000,
+                    "indexes": [
+                      "test-index",
+                      "test-index-2"
+                    ],
+                    "query": {
+                      "host": "abc",
+                      "service": "xyz"
+                    },
+                    "to": 1704063600000
+                  },
+                  "type": "create_deletion_req"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deletion/data/logs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"754\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:27:28.457837225Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"pending\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:27:28.457837225Z\"}},\"meta\":{\"product\":\"logs\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "PUT",
+            "path": "/api/v2/deletion/requests/754/cancel",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"754\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:27:28.457837Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:27:28.841156Z\"}},\"meta\":{\"product\":\"logs\",\"request_status\":\"canceled\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Creates a data deletion request returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Data Deletion",
+      "frozen_at": "2025-01-15T14:27:45.329Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1672527600000,
+                    "indexes": [
+                      "test-index",
+                      "test-index-2"
+                    ],
+                    "query": {},
+                    "to": 1704063600000
+                  },
+                  "type": "create_deletion_req"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deletion/data/logs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"412\",\"code\":\"INVALID_BODY\",\"title\":\"INVALID_BODY\",\"detail\":\"INVALID_BODY\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Precondition Failed",
+            "status": 412
+          }
+        }
+      ],
+      "scenario": "Creates a data deletion request returns \"Precondition failed error\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Data Deletion",
+      "frozen_at": "2025-01-15T14:28:03.053Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1672527600000,
+                    "indexes": [
+                      "test-index",
+                      "test-index-2"
+                    ],
+                    "query": {
+                      "host": "abc",
+                      "service": "xyz"
+                    },
+                    "to": 1704063600000
+                  },
+                  "type": "create_deletion_req"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deletion/data/logs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"755\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:28:03.561191422Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"pending\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:28:03.561191422Z\"}},\"meta\":{\"product\":\"logs\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/deletion/requests",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"755\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:28:03.561191Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"pending\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:28:03.561191Z\"}},{\"id\":\"754\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:27:28.457837Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:27:29.845912Z\"}},{\"id\":\"753\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:26:09.44796Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:26:40.778007Z\"}},{\"id\":\"752\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:25:29.051089Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:25:29.487794Z\"}},{\"id\":\"714\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T11:10:11.283679Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T11:10:12.030383Z\"}},{\"id\":\"713\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T11:10:10.997244Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T11:10:11.762718Z\"}},{\"id\":\"712\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T11:10:10.589382Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T11:10:11.996616Z\"}},{\"id\":\"711\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T05:12:36.867077Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T05:12:37.582675Z\"}},{\"id\":\"710\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T05:12:36.409111Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T05:12:37.523535Z\"}},{\"id\":\"709\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T05:12:35.772827Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T05:12:37.358453Z\"}},{\"id\":\"708\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T04:20:49.519001Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T04:21:21.590926Z\"}},{\"id\":\"707\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T04:20:48.85652Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T04:20:50.409776Z\"}},{\"id\":\"706\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T04:20:46.836697Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T04:20:49.900177Z\"}},{\"id\":\"705\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T03:29:33.148865Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T03:30:05.402385Z\"}},{\"id\":\"704\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T03:29:32.873575Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T03:29:34.480198Z\"}},{\"id\":\"703\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T03:29:31.474974Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T03:29:34.575551Z\"}},{\"id\":\"702\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T02:35:46.220064Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T02:36:16.89516Z\"}},{\"id\":\"701\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T02:35:46.023077Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T02:35:48.234014Z\"}},{\"id\":\"700\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T02:35:44.731426Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T02:36:15.503554Z\"}},{\"id\":\"699\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T01:48:30.752051Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T01:48:31.279909Z\"}},{\"id\":\"698\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T01:48:05.417998Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T01:48:36.25558Z\"}},{\"id\":\"697\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T01:45:32.382234Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T01:45:36.312471Z\"}},{\"id\":\"696\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T00:10:48.46036Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T00:10:49.886692Z\"}},{\"id\":\"695\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T00:10:48.327767Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T00:10:48.780992Z\"}},{\"id\":\"694\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-13T00:10:47.122825Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-13T00:10:48.487494Z\"}},{\"id\":\"685\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T11:12:38.870862Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T11:12:39.89965Z\"}},{\"id\":\"684\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T11:12:38.199983Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T11:12:39.049625Z\"}},{\"id\":\"683\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T11:12:36.807002Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T11:13:07.805293Z\"}},{\"id\":\"682\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T05:12:52.684546Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T05:12:53.685522Z\"}},{\"id\":\"681\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T05:12:52.16783Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T05:12:53.950165Z\"}},{\"id\":\"680\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T05:12:51.544717Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T05:12:53.828301Z\"}},{\"id\":\"679\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T04:17:01.83844Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T04:17:03.845361Z\"}},{\"id\":\"678\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T04:17:01.663259Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T04:17:03.964271Z\"}},{\"id\":\"677\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T04:17:00.420697Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T04:17:03.326956Z\"}},{\"id\":\"676\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T03:33:57.914898Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T03:34:00.243844Z\"}},{\"id\":\"675\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T03:33:57.247608Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T03:33:57.967989Z\"}},{\"id\":\"674\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T03:33:55.222307Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T03:34:27.685207Z\"}},{\"id\":\"673\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T02:35:45.009347Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T02:36:16.117622Z\"}},{\"id\":\"672\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T02:35:44.703999Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T02:35:45.087818Z\"}},{\"id\":\"671\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T02:35:43.243266Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T02:35:44.412883Z\"}},{\"id\":\"670\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T01:37:54.871601Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T01:37:56.816539Z\"}},{\"id\":\"669\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T01:35:59.187862Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T01:36:00.746255Z\"}},{\"id\":\"668\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T01:33:43.354197Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T01:33:48.502764Z\"}},{\"id\":\"667\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T00:10:04.772518Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T00:10:07.559594Z\"}},{\"id\":\"666\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T00:10:04.623831Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T00:10:05.077168Z\"}},{\"id\":\"665\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-12T00:10:03.407238Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-12T00:10:07.423403Z\"}},{\"id\":\"663\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-11T13:24:23.783684Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-11T13:24:55.748311Z\"}},{\"id\":\"662\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-11T13:24:23.268323Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-11T13:24:23.989092Z\"}},{\"id\":\"661\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-11T13:24:21.411605Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-11T13:24:24.416787Z\"}},{\"id\":\"660\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2024-12-11T11:10:35.376536Z\",\"created_by\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2024-12-11T11:10:35.80173Z\"}}],\"meta\":{\"next_page\":\"eyJQcm9kdWN0cyI6bnVsbCwiUXVlcnkiOiIiLCJTdGF0dXMiOiIiLCJQYWdlU2l6ZSI6NTAsIkxhc3RJdGVtSWQiOjY1OX0K\",\"count_status\":{\"canceled\":303,\"pending\":1},\"count_product\":{\"logs\":304}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "PUT",
+            "path": "/api/v2/deletion/requests/755/cancel",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"755\",\"type\":\"deletion_request\",\"attributes\":{\"created_at\":\"2025-01-15T14:28:03.561191Z\",\"created_by\":\"frog@datadoghq.com\",\"from_time\":1672527600000,\"indexes\":[\"test-index\",\"test-index-2\"],\"is_created\":false,\"org_id\":321813,\"product\":\"logs\",\"query\":\"host:abc service:xyz\",\"starting_at\":\"0001-01-01T00:00:00Z\",\"status\":\"canceled\",\"to_time\":1704063600000,\"total_unrestricted\":0,\"updated_at\":\"2025-01-15T14:28:04.405914Z\"}},\"meta\":{\"product\":\"logs\",\"request_status\":\"canceled\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Gets a list of data deletion requests returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

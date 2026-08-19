@@ -1,0 +1,35 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 204,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/Unstar a Model Lab project returns \"No Content\" response",
+  "operation_id": "UnstarModelLabProject",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "project_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2387
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/projects/{project_id}/star"
+  },
+  "scenario": "Unstar a Model Lab project returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

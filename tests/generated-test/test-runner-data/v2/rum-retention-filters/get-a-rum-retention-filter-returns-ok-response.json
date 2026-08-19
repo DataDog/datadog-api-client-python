@@ -1,0 +1,51 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 200,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Get a RUM retention filter returns \"OK\" response",
+  "operation_id": "GetRetentionFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rf_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "4b95d361-f65d-4515-9824-c9aaeba5ac2a"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/retention_filters/{rf_id}"
+  },
+  "scenario": "Get a RUM retention filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

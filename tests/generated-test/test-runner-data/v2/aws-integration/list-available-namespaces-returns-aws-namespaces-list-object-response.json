@@ -1,0 +1,18 @@
+{
+  "api": "AWSIntegration",
+  "expected_status": 200,
+  "feature": "AWS Integration",
+  "id": "v2/AWS Integration/List available namespaces returns \"AWS Namespaces List object\" response",
+  "operation_id": "ListAWSNamespaces",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/aws/available_namespaces"
+  },
+  "scenario": "List available namespaces returns \"AWS Namespaces List object\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

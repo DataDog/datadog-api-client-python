@@ -1,0 +1,57 @@
+{
+  "api": "APMRetentionFilters",
+  "expected_status": 200,
+  "feature": "APM Retention Filters",
+  "id": "v2/APM Retention Filters/Update a retention filter returns \"OK\" response",
+  "operation_id": "UpdateApmRetentionFilter",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RetentionFilterUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "filter": {
+              "query": "@_top_level:1 test:service-demo"
+            },
+            "filter_type": "spans-sampling-processor",
+            "name": "test",
+            "rate": 0.9
+          },
+          "id": "test-id",
+          "type": "apm_retention_filter"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "filter_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "retention_filter.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/apm/config/retention-filters/{filter_id}"
+  },
+  "scenario": "Update a retention filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,36 @@
+{
+  "api": "Metrics",
+  "expected_status": 404,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Reorder tag indexing rules returns \"Not Found\" response",
+  "operation_id": "ReorderTagIndexingRules",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TagIndexingRuleOrderRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "rule_ids": [
+              "00000000-0000-0000-0000-000000000001",
+              "00000000-0000-0000-0000-000000000002"
+            ]
+          },
+          "type": "tag_indexing_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/metrics/tag-indexing-rules/order"
+  },
+  "scenario": "Reorder tag indexing rules returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

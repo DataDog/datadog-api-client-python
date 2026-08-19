@@ -1,0 +1,88 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 200,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Validate an observability pipeline with HTTP server source valid_tokens returns \"OK\" response",
+  "operation_id": "ValidatePipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ObservabilityPipelineSpec",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "config": {
+              "destinations": [
+                {
+                  "id": "datadog-logs-destination",
+                  "inputs": [
+                    "my-processor-group"
+                  ],
+                  "type": "datadog_logs"
+                }
+              ],
+              "processor_groups": [
+                {
+                  "enabled": true,
+                  "id": "my-processor-group",
+                  "include": "service:my-service",
+                  "inputs": [
+                    "http-server-source"
+                  ],
+                  "processors": [
+                    {
+                      "enabled": true,
+                      "id": "filter-processor",
+                      "include": "status:error",
+                      "type": "filter"
+                    }
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "auth_strategy": "none",
+                  "decoding": "json",
+                  "id": "http-server-source",
+                  "type": "http_server",
+                  "valid_tokens": [
+                    {
+                      "enabled": true,
+                      "field_to_add": {
+                        "key": "token_name",
+                        "value": "primary_token"
+                      },
+                      "path_to_token": {
+                        "header": "X-Token"
+                      },
+                      "token_key": "HTTP_SERVER_TOKEN"
+                    },
+                    {
+                      "enabled": true,
+                      "path_to_token": "path",
+                      "token_key": "HTTP_SERVER_TOKEN_BACKUP"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "Pipeline with HTTP server valid_tokens"
+          },
+          "type": "pipelines"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/obs-pipelines/pipelines/validate"
+  },
+  "scenario": "Validate an observability pipeline with HTTP server source valid_tokens returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

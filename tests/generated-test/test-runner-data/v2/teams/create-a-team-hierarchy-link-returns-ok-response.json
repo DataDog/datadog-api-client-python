@@ -1,0 +1,44 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/Create a team hierarchy link returns \"OK\" response",
+  "operation_id": "AddTeamHierarchyLink",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamHierarchyLinkCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "relationships": {
+            "parent_team": {
+              "data": {
+                "id": "{{dd_team.data.id}}",
+                "type": "team"
+              }
+            },
+            "sub_team": {
+              "data": {
+                "id": "{{dd_team_2.data.id}}",
+                "type": "team"
+              }
+            }
+          },
+          "type": "team_hierarchy_links"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/team-hierarchy-links"
+  },
+  "scenario": "Create a team hierarchy link returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

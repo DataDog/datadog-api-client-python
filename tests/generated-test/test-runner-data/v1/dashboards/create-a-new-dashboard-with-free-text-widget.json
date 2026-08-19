@@ -1,0 +1,49 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with free_text widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/free_text_widget.json",
+      "value": {
+        "description": null,
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "color": "#4d4d4d",
+              "font_size": "auto",
+              "text": "Example free text",
+              "text_align": "left",
+              "type": "free_text"
+            },
+            "layout": {
+              "height": 6,
+              "width": 24,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with free_text widget",
+  "schema_version": 1,
+  "version": "v1"
+}

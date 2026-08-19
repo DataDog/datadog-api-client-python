@@ -1,0 +1,51 @@
+{
+  "api": "On-Call",
+  "expected_status": 204,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Delete an On-Call notification rule for a user returns \"No Content\" response",
+  "operation_id": "DeleteUserNotificationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "oncall_email_notification_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/users/{user_id}/notification-rules/{rule_id}"
+  },
+  "scenario": "Delete an On-Call notification rule for a user returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

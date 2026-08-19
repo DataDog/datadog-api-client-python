@@ -1,0 +1,66 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a due date rule returns \"Successfully updated the due date rule\" response",
+  "operation_id": "UpdateSecurityFindingsAutomationDueDateRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DueDateRuleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "due_days_per_severity": [
+                {
+                  "due_in_days": 14,
+                  "severity": "critical"
+                }
+              ],
+              "due_from": "first_seen"
+            },
+            "enabled": false,
+            "name": "{{ unique }}",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:staging"
+            }
+          },
+          "type": "due_date_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_due_date_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/due_date_rules/{rule_id}"
+  },
+  "scenario": "Update a due date rule returns \"Successfully updated the due date rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

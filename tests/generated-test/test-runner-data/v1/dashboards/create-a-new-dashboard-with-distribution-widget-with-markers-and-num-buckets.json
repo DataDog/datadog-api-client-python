@@ -1,0 +1,85 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with distribution widget with markers and num_buckets",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "markers": [
+                {
+                  "display_type": "percentile",
+                  "value": "50"
+                },
+                {
+                  "display_type": "percentile",
+                  "value": "99"
+                },
+                {
+                  "display_type": "percentile",
+                  "value": "90"
+                }
+              ],
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "aggregator": "avg",
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*} by {service}"
+                    }
+                  ],
+                  "response_format": "scalar"
+                }
+              ],
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "distribution",
+              "xaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "num_buckets": 55,
+                "scale": "linear"
+              },
+              "yaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "scale": "linear"
+              }
+            },
+            "layout": {
+              "height": 4,
+              "width": 4,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with distribution widget with markers and num_buckets",
+  "schema_version": 1,
+  "version": "v1"
+}

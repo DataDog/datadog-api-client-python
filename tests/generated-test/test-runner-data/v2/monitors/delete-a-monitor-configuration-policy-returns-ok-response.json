@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 204,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Delete a monitor configuration policy returns \"OK\" response",
+  "operation_id": "DeleteMonitorConfigPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "monitor_configuration_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/policy/{policy_id}"
+  },
+  "scenario": "Delete a monitor configuration policy returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

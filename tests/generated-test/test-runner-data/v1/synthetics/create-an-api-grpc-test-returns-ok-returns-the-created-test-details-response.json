@@ -1,0 +1,74 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create an API GRPC test returns \"OK - Returns the created test details.\" response",
+  "operation_id": "CreateSyntheticsAPITest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsAPITest",
+        "type": "object"
+      },
+      "source": "synthetics_api_grpc_test_payload.json",
+      "value": {
+        "config": {
+          "assertions": [
+            {
+              "operator": "is",
+              "target": 1,
+              "type": "grpcHealthcheckStatus"
+            },
+            {
+              "operator": "is",
+              "target": "proto target",
+              "type": "grpcProto"
+            },
+            {
+              "operator": "is",
+              "property": "property",
+              "target": "123",
+              "type": "grpcMetadata"
+            }
+          ],
+          "request": {
+            "host": "localhost",
+            "message": "",
+            "metadata": {},
+            "method": "GET",
+            "port": 50051,
+            "service": "Hello"
+          }
+        },
+        "locations": [
+          "aws:us-east-2"
+        ],
+        "message": "BDD test payload: synthetics_api_grpc_test_payload.json",
+        "name": "{{ unique }}",
+        "options": {
+          "min_failure_duration": 0,
+          "min_location_failed": 1,
+          "monitor_name": "{{ unique }}",
+          "monitor_options": {
+            "renotify_interval": 0
+          },
+          "tick_every": 60
+        },
+        "subtype": "grpc",
+        "tags": [
+          "testing:api"
+        ],
+        "type": "api"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/api"
+  },
+  "scenario": "Create an API GRPC test returns \"OK - Returns the created test details.\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

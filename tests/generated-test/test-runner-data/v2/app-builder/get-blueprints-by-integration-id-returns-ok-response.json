@@ -1,0 +1,35 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 200,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Get Blueprints by Integration ID returns \"OK\" response",
+  "operation_id": "GetBlueprintsByIntegrationId",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "integration_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aws"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/blueprints/integration-id/{integration_id}"
+  },
+  "scenario": "Get Blueprints by Integration ID returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

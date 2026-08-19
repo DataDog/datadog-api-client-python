@@ -1,0 +1,56 @@
+{
+  "api": "RUMRemoteConfig",
+  "expected_status": 403,
+  "feature": "RUM Remote Config",
+  "id": "v2/RUM Remote Config/Update a RUM SDK configuration returns \"Forbidden\" response",
+  "operation_id": "UpdateRumSdkConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumSdkConfigUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "rum": {
+              "default_privacy_level": "mask",
+              "enable_privacy_for_action_name": true,
+              "session_replay_sample_rate": 20,
+              "session_sample_rate": 75
+            }
+          },
+          "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+          "type": "rum_sdk_config"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "config_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/rum/configs/{config_id}"
+  },
+  "scenario": "Update a RUM SDK configuration returns \"Forbidden\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

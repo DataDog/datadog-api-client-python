@@ -1,0 +1,35 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Get a Mobile test returns \"OK\" response",
+  "operation_id": "GetMobileTest",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "public_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "synthetics_mobile_test.public_id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/synthetics/tests/mobile/{public_id}"
+  },
+  "scenario": "Get a Mobile test returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

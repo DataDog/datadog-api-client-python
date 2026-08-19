@@ -1,0 +1,34 @@
+{
+  "api": "IPAllowlist",
+  "expected_status": 400,
+  "feature": "IP Allowlist",
+  "id": "v2/IP Allowlist/Update IP Allowlist returns \"Bad Request\" response",
+  "operation_id": "UpdateIPAllowlist",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IPAllowlistUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "entries": []
+          },
+          "type": "ip_allowlist"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ip_allowlist"
+  },
+  "scenario": "Update IP Allowlist returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

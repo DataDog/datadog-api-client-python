@@ -1,0 +1,18 @@
+{
+  "api": "RUM",
+  "expected_status": 200,
+  "feature": "RUM",
+  "id": "v2/RUM/List all the RUM applications returns \"OK\" response",
+  "operation_id": "GetRUMApplications",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/applications"
+  },
+  "scenario": "List all the RUM applications returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

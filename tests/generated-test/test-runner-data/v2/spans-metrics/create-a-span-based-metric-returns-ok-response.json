@@ -1,0 +1,47 @@
+{
+  "api": "SpansMetrics",
+  "expected_status": 200,
+  "feature": "Spans Metrics",
+  "id": "v2/Spans Metrics/Create a span-based metric returns \"OK\" response",
+  "operation_id": "CreateSpansMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SpansMetricCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "compute": {
+              "aggregation_type": "distribution",
+              "include_percentiles": false,
+              "path": "@duration"
+            },
+            "filter": {
+              "query": "@http.status_code:200 service:my-service"
+            },
+            "group_by": [
+              {
+                "path": "resource_name",
+                "tag_name": "resource_name"
+              }
+            ]
+          },
+          "id": "{{ unique_alnum }}",
+          "type": "spans_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/apm/config/metrics"
+  },
+  "scenario": "Create a span-based metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

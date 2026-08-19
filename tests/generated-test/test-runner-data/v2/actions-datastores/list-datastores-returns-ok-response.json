@@ -1,0 +1,18 @@
+{
+  "api": "ActionsDatastores",
+  "expected_status": 200,
+  "feature": "Actions Datastores",
+  "id": "v2/Actions Datastores/List datastores returns \"OK\" response",
+  "operation_id": "ListDatastores",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/actions-datastores"
+  },
+  "scenario": "List datastores returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

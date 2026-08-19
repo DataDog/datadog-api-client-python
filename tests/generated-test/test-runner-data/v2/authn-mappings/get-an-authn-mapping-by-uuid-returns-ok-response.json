@@ -1,0 +1,35 @@
+{
+  "api": "AuthNMappings",
+  "expected_status": 200,
+  "feature": "AuthN Mappings",
+  "id": "v2/AuthN Mappings/Get an AuthN Mapping by UUID returns \"OK\" response",
+  "operation_id": "GetAuthNMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "authn_mapping_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "authn_mapping.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/authn_mappings/{authn_mapping_id}"
+  },
+  "scenario": "Get an AuthN Mapping by UUID returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

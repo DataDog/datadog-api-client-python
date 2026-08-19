@@ -1,0 +1,54 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create incident attachment returns \"Created\" response",
+  "operation_id": "CreateIncidentAttachment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateAttachmentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "attachment": {
+              "documentUrl": "https://app.datadoghq.com/notebook/{{ unique_alnum }}/{{ unique }}",
+              "title": "{{ unique }}"
+            },
+            "attachment_type": "postmortem"
+          },
+          "type": "incident_attachments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/attachments"
+  },
+  "scenario": "Create incident attachment returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

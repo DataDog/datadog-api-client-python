@@ -1,0 +1,50 @@
+{
+  "api": "MicrosoftTeamsIntegration",
+  "expected_status": 200,
+  "feature": "Microsoft Teams Integration",
+  "id": "v2/Microsoft Teams Integration/Update workflow webhook handle returns \"OK\" response",
+  "operation_id": "UpdateWorkflowsWebhookHandle",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MicrosoftTeamsUpdateWorkflowsWebhookHandleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{workflows_webhook_handle.data.attributes.name}}--updated"
+          },
+          "type": "workflows-webhook-handle"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "handle_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "workflows_webhook_handle.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}"
+  },
+  "scenario": "Update workflow webhook handle returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
