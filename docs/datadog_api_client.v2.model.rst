@@ -31483,6 +31483,13 @@ datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_destination\
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_destination\_endpoint\_target module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_endpoint_target
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_splunk\_hec\_destination\_token\_strategy module
 -------------------------------------------------------------------------------------------------------
 
