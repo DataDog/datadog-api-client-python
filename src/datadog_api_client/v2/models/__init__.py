@@ -2936,6 +2936,36 @@ from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.events_sort_type import EventsSortType
 from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 from datadog_api_client.v2.model.events_warning import EventsWarning
+from datadog_api_client.v2.model.execution_policy_action_pattern import ExecutionPolicyActionPattern
+from datadog_api_client.v2.model.execution_policy_attributes import ExecutionPolicyAttributes
+from datadog_api_client.v2.model.execution_policy_create_request import ExecutionPolicyCreateRequest
+from datadog_api_client.v2.model.execution_policy_create_request_data import ExecutionPolicyCreateRequestData
+from datadog_api_client.v2.model.execution_policy_effect import ExecutionPolicyEffect
+from datadog_api_client.v2.model.execution_policy_integration import ExecutionPolicyIntegration
+from datadog_api_client.v2.model.execution_policy_kubernetes_scope import ExecutionPolicyKubernetesScope
+from datadog_api_client.v2.model.execution_policy_kubernetes_scope_rule import ExecutionPolicyKubernetesScopeRule
+from datadog_api_client.v2.model.execution_policy_list_response import ExecutionPolicyListResponse
+from datadog_api_client.v2.model.execution_policy_list_response_meta import ExecutionPolicyListResponseMeta
+from datadog_api_client.v2.model.execution_policy_list_response_page import ExecutionPolicyListResponsePage
+from datadog_api_client.v2.model.execution_policy_remote_action_rshell_access import (
+    ExecutionPolicyRemoteActionRshellAccess,
+)
+from datadog_api_client.v2.model.execution_policy_remote_action_rshell_scope import (
+    ExecutionPolicyRemoteActionRshellScope,
+)
+from datadog_api_client.v2.model.execution_policy_remote_action_rshell_scope_rule import (
+    ExecutionPolicyRemoteActionRshellScopeRule,
+)
+from datadog_api_client.v2.model.execution_policy_response import ExecutionPolicyResponse
+from datadog_api_client.v2.model.execution_policy_response_data import ExecutionPolicyResponseData
+from datadog_api_client.v2.model.execution_policy_scope import ExecutionPolicyScope
+from datadog_api_client.v2.model.execution_policy_script_scope import ExecutionPolicyScriptScope
+from datadog_api_client.v2.model.execution_policy_script_scope_rule import ExecutionPolicyScriptScopeRule
+from datadog_api_client.v2.model.execution_policy_target import ExecutionPolicyTarget
+from datadog_api_client.v2.model.execution_policy_type import ExecutionPolicyType
+from datadog_api_client.v2.model.execution_policy_update_request import ExecutionPolicyUpdateRequest
+from datadog_api_client.v2.model.execution_policy_update_request_data import ExecutionPolicyUpdateRequestData
+from datadog_api_client.v2.model.execution_policy_write_attributes import ExecutionPolicyWriteAttributes
 from datadog_api_client.v2.model.exposure_rollout_step_request import ExposureRolloutStepRequest
 from datadog_api_client.v2.model.exposure_schedule_request import ExposureScheduleRequest
 from datadog_api_client.v2.model.facet_info_request import FacetInfoRequest
@@ -12758,6 +12788,30 @@ __all__ = [
     "EventsSortType",
     "EventsTimeseriesQuery",
     "EventsWarning",
+    "ExecutionPolicyActionPattern",
+    "ExecutionPolicyAttributes",
+    "ExecutionPolicyCreateRequest",
+    "ExecutionPolicyCreateRequestData",
+    "ExecutionPolicyEffect",
+    "ExecutionPolicyIntegration",
+    "ExecutionPolicyKubernetesScope",
+    "ExecutionPolicyKubernetesScopeRule",
+    "ExecutionPolicyListResponse",
+    "ExecutionPolicyListResponseMeta",
+    "ExecutionPolicyListResponsePage",
+    "ExecutionPolicyRemoteActionRshellAccess",
+    "ExecutionPolicyRemoteActionRshellScope",
+    "ExecutionPolicyRemoteActionRshellScopeRule",
+    "ExecutionPolicyResponse",
+    "ExecutionPolicyResponseData",
+    "ExecutionPolicyScope",
+    "ExecutionPolicyScriptScope",
+    "ExecutionPolicyScriptScopeRule",
+    "ExecutionPolicyTarget",
+    "ExecutionPolicyType",
+    "ExecutionPolicyUpdateRequest",
+    "ExecutionPolicyUpdateRequestData",
+    "ExecutionPolicyWriteAttributes",
     "ExposureRolloutStepRequest",
     "ExposureScheduleRequest",
     "FacetInfoRequest",

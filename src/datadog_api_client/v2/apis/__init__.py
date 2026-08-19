@@ -51,6 +51,7 @@ from datadog_api_client.v2.api.entity_integration_configs_api import EntityInteg
 from datadog_api_client.v2.api.entity_risk_scores_api import EntityRiskScoresApi
 from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
 from datadog_api_client.v2.api.events_api import EventsApi
+from datadog_api_client.v2.api.execution_policy_api import ExecutionPolicyApi
 from datadog_api_client.v2.api.fastly_integration_api import FastlyIntegrationApi
 from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
@@ -194,6 +195,7 @@ __all__ = [
     "EntityRiskScoresApi",
     "ErrorTrackingApi",
     "EventsApi",
+    "ExecutionPolicyApi",
     "FastlyIntegrationApi",
     "FeatureFlagsApi",
     "FleetAutomationApi",

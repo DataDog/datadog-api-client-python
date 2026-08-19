@@ -1,0 +1,19 @@
+interactions:
+- request:
+    body: null
+    headers:
+      accept:
+      - application/json
+    method: GET
+    uri: https://api.datadoghq.com/api/v2/actions/execution-policies?page%5Bsize%5D=0
+  response:
+    body:
+      string: '{"errors":[{"title":"Generic Error","detail":"error listing execution
+        policies"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 400
+      message: Bad Request
+version: 1

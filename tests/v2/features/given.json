@@ -53,6 +53,18 @@
     "operationId": "CreateActionConnection"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"execution_policy\",\n    \"attributes\": {\n      \"name\": \"Cassette Execution Policy {{ unique_lower_alnum }}\",\n      \"effect\": \"allow\",\n      \"action_pattern\": {\n        \"integration\": \"INTEGRATION_SCRIPT\",\n        \"action_fqns\": [\"com.datadoghq.script.*\"]\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"execution_policy\" in the system",
+    "key": "execution_policy",
+    "tag": "Execution Policy",
+    "operationId": "CreateExecutionPolicy"
+  },
+  {
     "source": "data[0]",
     "step": "there is a valid \"aws_scan_options\" in the system",
     "key": "aws_scan_options",
