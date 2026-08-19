@@ -5237,6 +5237,7 @@ from datadog_api_client.v2.model.metric_asset_response_relationships import Metr
 from datadog_api_client.v2.model.metric_asset_slo_relationship import MetricAssetSLORelationship
 from datadog_api_client.v2.model.metric_asset_slo_relationships import MetricAssetSLORelationships
 from datadog_api_client.v2.model.metric_assets_response import MetricAssetsResponse
+from datadog_api_client.v2.model.metric_available_aggr_functions import MetricAvailableAggrFunctions
 from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
 from datadog_api_client.v2.model.metric_bulk_tag_config_create import MetricBulkTagConfigCreate
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes import MetricBulkTagConfigCreateAttributes
@@ -14530,6 +14531,7 @@ __all__ = [
     "MetricAssetSLORelationship",
     "MetricAssetSLORelationships",
     "MetricAssetsResponse",
+    "MetricAvailableAggrFunctions",
     "MetricBulkConfigureTagsType",
     "MetricBulkTagConfigCreate",
     "MetricBulkTagConfigCreateAttributes",
