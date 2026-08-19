@@ -38588,6 +38588,97 @@ datadog\_api\_client.v2.model.rum\_retention\_filters\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.rum\_retention\_quota\_adaptive\_config module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_adaptive_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_attributes module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_config_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_data module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_config_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_config_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_config_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_update\_attributes module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_config_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_update\_data module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_config_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_update\_request module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_config_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_custom\_config module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_custom_config
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_mode module
+----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_mode
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_reached\_action module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_reached_action
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_scope\_type module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_scope_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.rum\_retention\_quota\_window\_type module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.rum_retention_quota_window_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.rum\_sdk\_config\_attributes module
 -----------------------------------------------------------------
 

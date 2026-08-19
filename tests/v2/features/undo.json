@@ -7086,6 +7086,24 @@
       "type": "idempotent"
     }
   },
+  "DeleteRumQuotaConfig": {
+    "tag": "RUM Retention Quota",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRumQuotaConfig": {
+    "tag": "RUM Retention Quota",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertRumQuotaConfig": {
+    "tag": "RUM Retention Quota",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListRUMEvents": {
     "tag": "RUM",
     "undo": {
