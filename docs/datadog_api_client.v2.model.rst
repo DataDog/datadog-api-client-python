@@ -28410,6 +28410,13 @@ datadog\_api\_client.v2.model.monitor\_notification\_rule\_attributes module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.monitor\_notification\_rule\_bundle\_config module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.monitor_notification_rule_bundle_config
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.monitor\_notification\_rule\_condition module
 ---------------------------------------------------------------------------
 

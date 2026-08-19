@@ -5452,6 +5452,7 @@ from datadog_api_client.v2.model.monitor_downtime_match_response_attributes impo
 )
 from datadog_api_client.v2.model.monitor_downtime_match_response_data import MonitorDowntimeMatchResponseData
 from datadog_api_client.v2.model.monitor_notification_rule_attributes import MonitorNotificationRuleAttributes
+from datadog_api_client.v2.model.monitor_notification_rule_bundle_config import MonitorNotificationRuleBundleConfig
 from datadog_api_client.v2.model.monitor_notification_rule_condition import MonitorNotificationRuleCondition
 from datadog_api_client.v2.model.monitor_notification_rule_conditional_recipients import (
     MonitorNotificationRuleConditionalRecipients,
@@ -14648,6 +14649,7 @@ __all__ = [
     "MonitorDowntimeMatchResponseAttributes",
     "MonitorDowntimeMatchResponseData",
     "MonitorNotificationRuleAttributes",
+    "MonitorNotificationRuleBundleConfig",
     "MonitorNotificationRuleCondition",
     "MonitorNotificationRuleConditionalRecipients",
     "MonitorNotificationRuleCreateRequest",
