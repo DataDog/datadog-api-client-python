@@ -6977,6 +6977,36 @@
       "type": "safe"
     }
   },
+  "ListExclusionFilters": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateExclusionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteExclusionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetExclusionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateExclusionFilter": {
+    "tag": "Rum Retention Filters",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListPermanentRetentionFilters": {
     "tag": "Rum Retention Filters",
     "undo": {
