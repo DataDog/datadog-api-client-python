@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.monitor_notification_rule_bundle_config import MonitorNotificationRuleBundleConfig
     from datadog_api_client.v2.model.monitor_notification_rule_conditional_recipients import (
         MonitorNotificationRuleConditionalRecipients,
     )
@@ -40,12 +41,16 @@ class MonitorNotificationRuleAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.monitor_notification_rule_bundle_config import (
+            MonitorNotificationRuleBundleConfig,
+        )
         from datadog_api_client.v2.model.monitor_notification_rule_conditional_recipients import (
             MonitorNotificationRuleConditionalRecipients,
         )
         from datadog_api_client.v2.model.monitor_notification_rule_filter import MonitorNotificationRuleFilter
 
         return {
+            "bundle_config": (MonitorNotificationRuleBundleConfig,),
             "conditional_recipients": (MonitorNotificationRuleConditionalRecipients,),
             "filter": (MonitorNotificationRuleFilter,),
             "name": (str,),
@@ -53,6 +58,7 @@ class MonitorNotificationRuleAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "bundle_config": "bundle_config",
         "conditional_recipients": "conditional_recipients",
         "filter": "filter",
         "name": "name",
@@ -62,6 +68,7 @@ class MonitorNotificationRuleAttributes(ModelNormal):
     def __init__(
         self_,
         name: str,
+        bundle_config: Union[MonitorNotificationRuleBundleConfig, UnsetType] = unset,
         conditional_recipients: Union[MonitorNotificationRuleConditionalRecipients, UnsetType] = unset,
         filter: Union[
             MonitorNotificationRuleFilter,
@@ -75,6 +82,10 @@ class MonitorNotificationRuleAttributes(ModelNormal):
         """
         Attributes of the monitor notification rule.
 
+        :param bundle_config: Use bundle config to enable alert bundling to reduce monitor signal noises. **Note** : This feature is in preview and is subject to change.
+            If you have any feedback, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
+        :type bundle_config: MonitorNotificationRuleBundleConfig, optional
+
         :param conditional_recipients: Use conditional recipients to define different recipients for different situations. Cannot be used with ``recipients``.
         :type conditional_recipients: MonitorNotificationRuleConditionalRecipients, optional
 
@@ -87,6 +98,8 @@ class MonitorNotificationRuleAttributes(ModelNormal):
         :param recipients: A list of recipients to notify. Uses the same format as the monitor ``message`` field. Must not start with an '@'. Cannot be used with ``conditional_recipients``.
         :type recipients: [str], optional
         """
+        if bundle_config is not unset:
+            kwargs["bundle_config"] = bundle_config
         if conditional_recipients is not unset:
             kwargs["conditional_recipients"] = conditional_recipients
         if filter is not unset:

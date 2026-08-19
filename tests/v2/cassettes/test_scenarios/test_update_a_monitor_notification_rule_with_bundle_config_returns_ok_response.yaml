@@ -1,0 +1,62 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"filter":{"tags":["app:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879"]},"name":"test
+      rule","recipients":["slack-monitor-app"]},"type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule
+  response:
+    body:
+      string: '{"data":{"type":"monitor-notification-rule","id":"649f51a4-76f5-4b0d-8ec3-90929a6570bc","attributes":{"name":"test
+        rule","created_at":"2026-08-17T21:41:20.185857+00:00","modified_at":"2026-08-17T21:41:20.209762+00:00","filter":{"tags":["app:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879"]},"recipients":["slack-monitor-app"]},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"frog","handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2026-07-10T19:34:11.410571+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active","last_login_time":"2024-01-04T18:40:05+00:00"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"data":{"attributes":{"bundle_config":{"duration":3600},"filter":{"tags":["test:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879"]},"name":"updated
+      rule","recipients":["slack-test-channel"]},"id":"649f51a4-76f5-4b0d-8ec3-90929a6570bc","type":"monitor-notification-rule"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: PATCH
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/649f51a4-76f5-4b0d-8ec3-90929a6570bc
+  response:
+    body:
+      string: '{"data":{"type":"monitor-notification-rule","id":"649f51a4-76f5-4b0d-8ec3-90929a6570bc","attributes":{"name":"updated
+        rule","created_at":"2026-08-17T21:41:20.185857+00:00","modified_at":"2026-08-17T21:41:22.287888+00:00","filter":{"tags":["test:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879"]},"recipients":["slack-test-channel"],"bundle_config":{"duration":3600}},"relationships":{"created_by":{"data":{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0"}}}},"included":[{"type":"users","id":"3ad549bf-eba0-11e9-a77a-0705486660d0","attributes":{"uuid":"3ad549bf-eba0-11e9-a77a-0705486660d0","name":"frog","handle":"frog@datadoghq.com","created_at":"2019-10-02T08:15:39.795051+00:00","modified_at":"2026-07-10T19:34:11.410571+00:00","email":"frog@datadoghq.com","icon":"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro","title":null,"verified":true,"service_account":false,"disabled":false,"allowed_login_methods":[],"status":"Active","last_login_time":"2024-01-04T18:40:05+00:00"}}]}
+
+        '
+    headers:
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/monitor/notification_rule/649f51a4-76f5-4b0d-8ec3-90929a6570bc
+  response:
+    body:
+      string: ''
+    headers:
+      content-type:
+      - text/html; charset=utf-8
+    status:
+      code: 204
+      message: No Content
+version: 1
