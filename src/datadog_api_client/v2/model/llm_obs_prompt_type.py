@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsPromptType(ModelSimple):
     """
-    Resource type of an LLM Observability prompt.
+    Resource type of an Agent Observability prompt.
 
     :param value: If omitted defaults to "prompt-templates". Must be one of ["prompt-templates"].
     :type value: str

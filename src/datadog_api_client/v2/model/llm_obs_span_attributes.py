@@ -113,7 +113,7 @@ class LLMObsSpanAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability span.
+        Attributes of an Agent Observability span.
 
         :param duration: Duration of the span in nanoseconds.
         :type duration: float
@@ -121,7 +121,7 @@ class LLMObsSpanAttributes(ModelNormal):
         :param evaluation: Evaluation metrics keyed by evaluator name.
         :type evaluation: {str: (LLMObsSpanEvaluationMetric,)}, optional
 
-        :param input: Input or output content of an LLM Observability span.
+        :param input: Input or output content of an Agent Observability span.
         :type input: LLMObsSpanIO, optional
 
         :param intent: Detected intent of the span.
@@ -145,7 +145,7 @@ class LLMObsSpanAttributes(ModelNormal):
         :param name: Name of the span.
         :type name: str
 
-        :param output: Input or output content of an LLM Observability span.
+        :param output: Input or output content of an Agent Observability span.
         :type output: LLMObsSpanIO, optional
 
         :param parent_id: Identifier of the parent span, if any.

@@ -58,7 +58,7 @@ class LLMObsDatasetBatchUpdateDataAttributesRequest(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for batch-updating records in an LLM Observability dataset.
+        Attributes for batch-updating records in an Agent Observability dataset.
 
         :param create_new_version: Whether to create a new dataset version when applying the batch update. Defaults to ``true``.
         :type create_new_version: bool, optional

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsDatasetExportFormat(ModelSimple):
     """
-    Supported export format for an LLM Observability dataset.
+    Supported export format for an Agent Observability dataset.
 
     :param value: If omitted defaults to "csv". Must be one of ["csv"].
     :type value: str

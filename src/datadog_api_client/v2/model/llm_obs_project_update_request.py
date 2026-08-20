@@ -30,9 +30,9 @@ class LLMObsProjectUpdateRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsProjectUpdateDataRequest, **kwargs):
         """
-        Request to partially update an LLM Observability project.
+        Request to partially update an Agent Observability project.
 
-        :param data: Data object for updating an LLM Observability project.
+        :param data: Data object for updating an Agent Observability project.
         :type data: LLMObsProjectUpdateDataRequest
         """
         super().__init__(kwargs)

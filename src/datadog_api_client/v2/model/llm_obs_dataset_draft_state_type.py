@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsDatasetDraftStateType(ModelSimple):
     """
-    Resource type of an LLM Observability dataset draft state.
+    Resource type of an Agent Observability dataset draft state.
 
     :param value: If omitted defaults to "draft_state_data". Must be one of ["draft_state_data"].
     :type value: str

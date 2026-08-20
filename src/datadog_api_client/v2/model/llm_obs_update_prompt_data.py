@@ -34,12 +34,12 @@ class LLMObsUpdatePromptData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsUpdatePromptDataAttributes, type: LLMObsPromptType, **kwargs):
         """
-        Data object for updating an LLM Observability prompt.
+        Data object for updating an Agent Observability prompt.
 
-        :param attributes: Attributes for updating an LLM Observability prompt. At least one of ``title`` or ``description`` must be provided; both attributes are optional individually.
+        :param attributes: Attributes for updating an Agent Observability prompt. At least one of ``title`` or ``description`` must be provided; both attributes are optional individually.
         :type attributes: LLMObsUpdatePromptDataAttributes
 
-        :param type: Resource type of an LLM Observability prompt.
+        :param type: Resource type of an Agent Observability prompt.
         :type type: LLMObsPromptType
         """
         super().__init__(kwargs)

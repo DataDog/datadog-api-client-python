@@ -50,7 +50,7 @@ class LLMObsPatternsRunSummary(ModelNormal):
         **kwargs,
     ):
         """
-        Summary of an LLM Observability patterns run.
+        Summary of an Agent Observability patterns run.
 
         :param completed_at: Timestamp when the run completed. Null if the run has not completed.
         :type completed_at: datetime, none_type, optional

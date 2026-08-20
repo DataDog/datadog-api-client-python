@@ -1,5 +1,5 @@
 """
-Create an LLM Observability experiment returns "OK" response
+Create an Agent Observability experiment returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

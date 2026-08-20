@@ -1,5 +1,5 @@
 """
-Delete LLM Observability datasets returns "No Content" response
+Delete Agent Observability datasets returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration

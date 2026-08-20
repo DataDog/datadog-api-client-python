@@ -58,7 +58,7 @@ class LLMObsPatternsTopicsResponseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability patterns topics response.
+        Attributes of an Agent Observability patterns topics response.
 
         :param completed_at: Timestamp when the run completed. Null if the run has not completed.
         :type completed_at: datetime, none_type, optional

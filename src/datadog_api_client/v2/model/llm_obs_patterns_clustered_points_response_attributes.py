@@ -41,7 +41,7 @@ class LLMObsPatternsClusteredPointsResponseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability patterns clustered points response.
+        Attributes of an Agent Observability patterns clustered points response.
 
         :param next_page_token: Pagination token for the next page of points. Null if there are no more pages.
         :type next_page_token: str, none_type

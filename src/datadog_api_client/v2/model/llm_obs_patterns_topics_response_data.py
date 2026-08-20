@@ -42,15 +42,15 @@ class LLMObsPatternsTopicsResponseData(ModelNormal):
         self_, attributes: LLMObsPatternsTopicsResponseAttributes, id: str, type: LLMObsPatternsTopicsType, **kwargs
     ):
         """
-        Data object of an LLM Observability patterns topics response.
+        Data object of an Agent Observability patterns topics response.
 
-        :param attributes: Attributes of an LLM Observability patterns topics response.
+        :param attributes: Attributes of an Agent Observability patterns topics response.
         :type attributes: LLMObsPatternsTopicsResponseAttributes
 
         :param id: Identifier of the run the topics belong to.
         :type id: str
 
-        :param type: Resource type of an LLM Observability patterns topics response.
+        :param type: Resource type of an Agent Observability patterns topics response.
         :type type: LLMObsPatternsTopicsType
         """
         super().__init__(kwargs)

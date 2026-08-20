@@ -32,7 +32,7 @@ class LLMObsUpdatePromptDataAttributes(ModelNormal):
 
     def __init__(self_, description: Union[str, UnsetType] = unset, title: Union[str, UnsetType] = unset, **kwargs):
         """
-        Attributes for updating an LLM Observability prompt. At least one of ``title`` or ``description`` must be provided; both attributes are optional individually.
+        Attributes for updating an Agent Observability prompt. At least one of ``title`` or ``description`` must be provided; both attributes are optional individually.
 
         :param description: Optional new description for the prompt.
         :type description: str, optional

@@ -30,7 +30,7 @@ class LLMObsExperimentEventsRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsExperimentEventsDataRequest, **kwargs):
         """
-        Request to push spans and metrics for an LLM Observability experiment.
+        Request to push spans and metrics for an Agent Observability experiment.
 
         :param data: Data object for pushing experiment events.
         :type data: LLMObsExperimentEventsDataRequest

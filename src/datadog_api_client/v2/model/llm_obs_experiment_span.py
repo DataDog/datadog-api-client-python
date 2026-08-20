@@ -65,7 +65,7 @@ class LLMObsExperimentSpan(ModelNormal):
         **kwargs,
     ):
         """
-        A span associated with an LLM Observability experiment.
+        A span associated with an Agent Observability experiment.
 
         :param dataset_id: Dataset ID associated with this span.
         :type dataset_id: str

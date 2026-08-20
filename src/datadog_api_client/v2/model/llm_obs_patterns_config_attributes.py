@@ -74,7 +74,7 @@ class LLMObsPatternsConfigAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability patterns configuration.
+        Attributes of an Agent Observability patterns configuration.
 
         :param account_id: Integration account ID for a bring-your-own-model configuration.
         :type account_id: str, none_type, optional

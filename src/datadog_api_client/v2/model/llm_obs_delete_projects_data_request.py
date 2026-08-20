@@ -38,12 +38,12 @@ class LLMObsDeleteProjectsDataRequest(ModelNormal):
 
     def __init__(self_, attributes: LLMObsDeleteProjectsDataAttributesRequest, type: LLMObsProjectType, **kwargs):
         """
-        Data object for deleting LLM Observability projects.
+        Data object for deleting Agent Observability projects.
 
-        :param attributes: Attributes for deleting LLM Observability projects.
+        :param attributes: Attributes for deleting Agent Observability projects.
         :type attributes: LLMObsDeleteProjectsDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability project.
+        :param type: Resource type of an Agent Observability project.
         :type type: LLMObsProjectType
         """
         super().__init__(kwargs)

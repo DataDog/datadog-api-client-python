@@ -55,7 +55,7 @@ class LLMObsPatternsTopic(ModelNormal):
         **kwargs,
     ):
         """
-        A topic discovered by an LLM Observability patterns run.
+        A topic discovered by an Agent Observability patterns run.
 
         :param created_at: Timestamp when the topic was created.
         :type created_at: datetime

@@ -38,12 +38,12 @@ class LLMObsCreatePromptVersionData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsCreatePromptVersionDataAttributes, type: LLMObsPromptVersionType, **kwargs):
         """
-        Data object for creating an LLM Observability prompt version.
+        Data object for creating an Agent Observability prompt version.
 
-        :param attributes: Attributes for creating a new version of an LLM Observability prompt. ``template`` is required; all other attributes are optional.
+        :param attributes: Attributes for creating a new version of an Agent Observability prompt. ``template`` is required; all other attributes are optional.
         :type attributes: LLMObsCreatePromptVersionDataAttributes
 
-        :param type: Resource type of an LLM Observability prompt version.
+        :param type: Resource type of an Agent Observability prompt version.
         :type type: LLMObsPromptVersionType
         """
         super().__init__(kwargs)

@@ -1,5 +1,5 @@
 """
-List LLM Observability annotation queues returns "OK" response
+List Agent Observability annotation queues returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

@@ -1,5 +1,5 @@
 """
-List LLM Observability dataset versions returns "OK" response
+List Agent Observability dataset versions returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

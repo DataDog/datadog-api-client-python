@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsExperimentType(ModelSimple):
     """
-    Resource type of an LLM Observability experiment.
+    Resource type of an Agent Observability experiment.
 
     :param value: If omitted defaults to "experiments". Must be one of ["experiments"].
     :type value: str

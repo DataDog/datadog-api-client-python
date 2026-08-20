@@ -46,15 +46,15 @@ class LLMObsPatternsClusteredPointsResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        Data object of an LLM Observability patterns clustered points response.
+        Data object of an Agent Observability patterns clustered points response.
 
-        :param attributes: Attributes of an LLM Observability patterns clustered points response.
+        :param attributes: Attributes of an Agent Observability patterns clustered points response.
         :type attributes: LLMObsPatternsClusteredPointsResponseAttributes
 
         :param id: Identifier of the topic the points belong to.
         :type id: str
 
-        :param type: Resource type of an LLM Observability patterns clustered points response.
+        :param type: Resource type of an Agent Observability patterns clustered points response.
         :type type: LLMObsPatternsClusteredPointsType
         """
         super().__init__(kwargs)

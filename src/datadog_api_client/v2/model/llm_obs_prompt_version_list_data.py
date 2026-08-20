@@ -50,7 +50,7 @@ class LLMObsPromptVersionListData(ModelNormal):
         :param id: Unique identifier of the prompt version.
         :type id: str
 
-        :param type: Resource type of an LLM Observability prompt version.
+        :param type: Resource type of an Agent Observability prompt version.
         :type type: LLMObsPromptVersionType
         """
         super().__init__(kwargs)

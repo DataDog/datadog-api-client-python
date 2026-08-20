@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsMetricScoreType(ModelSimple):
     """
-    Type of metric recorded for an LLM Observability experiment.
+    Type of metric recorded for an Agent Observability experiment.
 
     :param value: Must be one of ["score", "categorical", "boolean", "json"].
     :type value: str

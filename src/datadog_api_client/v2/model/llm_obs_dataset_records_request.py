@@ -30,9 +30,9 @@ class LLMObsDatasetRecordsRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetRecordsDataRequest, **kwargs):
         """
-        Request to append records to an LLM Observability dataset.
+        Request to append records to an Agent Observability dataset.
 
-        :param data: Data object for appending records to an LLM Observability dataset.
+        :param data: Data object for appending records to an Agent Observability dataset.
         :type data: LLMObsDatasetRecordsDataRequest
         """
         super().__init__(kwargs)

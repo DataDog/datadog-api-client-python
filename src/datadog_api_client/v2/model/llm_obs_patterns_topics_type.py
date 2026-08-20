@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsPatternsTopicsType(ModelSimple):
     """
-    Resource type of an LLM Observability patterns topics response.
+    Resource type of an Agent Observability patterns topics response.
 
     :param value: If omitted defaults to "get_topics_response". Must be one of ["get_topics_response"].
     :type value: str

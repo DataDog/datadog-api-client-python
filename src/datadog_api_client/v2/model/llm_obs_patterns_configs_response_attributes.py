@@ -30,7 +30,7 @@ class LLMObsPatternsConfigsResponseAttributes(ModelNormal):
 
     def __init__(self_, configs: List[LLMObsPatternsConfigItem], **kwargs):
         """
-        Attributes of a list of LLM Observability patterns configurations.
+        Attributes of a list of Agent Observability patterns configurations.
 
         :param configs: List of patterns configurations.
         :type configs: [LLMObsPatternsConfigItem]

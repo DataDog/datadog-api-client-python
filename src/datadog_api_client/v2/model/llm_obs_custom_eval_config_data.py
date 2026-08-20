@@ -38,15 +38,15 @@ class LLMObsCustomEvalConfigData(ModelNormal):
         self_, attributes: LLMObsCustomEvalConfigAttributes, id: str, type: LLMObsCustomEvalConfigType, **kwargs
     ):
         """
-        Data object for a custom LLM Observability evaluator configuration.
+        Data object for a custom Agent Observability evaluator configuration.
 
-        :param attributes: Attributes of a custom LLM Observability evaluator configuration.
+        :param attributes: Attributes of a custom Agent Observability evaluator configuration.
         :type attributes: LLMObsCustomEvalConfigAttributes
 
         :param id: Unique name identifier of the evaluator configuration.
         :type id: str
 
-        :param type: Type of the custom LLM Observability evaluator configuration resource.
+        :param type: Type of the custom Agent Observability evaluator configuration resource.
         :type type: LLMObsCustomEvalConfigType
         """
         super().__init__(kwargs)

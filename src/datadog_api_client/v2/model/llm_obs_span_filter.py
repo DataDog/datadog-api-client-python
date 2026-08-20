@@ -54,7 +54,7 @@ class LLMObsSpanFilter(ModelNormal):
         **kwargs,
     ):
         """
-        Filter criteria for an LLM Observability span search.
+        Filter criteria for an Agent Observability span search.
 
         :param _from: Start of the time range. Accepts ISO 8601 or relative format (e.g., ``now-15m`` ). Defaults to ``now-15m``.
         :type _from: str, optional
@@ -62,7 +62,7 @@ class LLMObsSpanFilter(ModelNormal):
         :param ml_app: Filter by ML application name.
         :type ml_app: str, optional
 
-        :param query: Search query using LLM Observability query syntax. Supports attribute filters using the field:value syntax (e.g. session_id, trace_id, ml_app, meta.span.kind). When provided, structured field filters ( ``span_id`` , ``trace_id`` , etc.) are ignored.
+        :param query: Search query using Agent Observability query syntax. Supports attribute filters using the field:value syntax (e.g. session_id, trace_id, ml_app, meta.span.kind). When provided, structured field filters ( ``span_id`` , ``trace_id`` , etc.) are ignored.
         :type query: str, optional
 
         :param span_id: Filter by exact span ID.

@@ -36,15 +36,15 @@ class LLMObsDeletedPromptData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsDeletedPromptDataAttributes, id: str, type: LLMObsPromptType, **kwargs):
         """
-        Data object confirming that an LLM Observability prompt was deleted.
+        Data object confirming that an Agent Observability prompt was deleted.
 
-        :param attributes: Attributes confirming that an LLM Observability prompt was deleted.
+        :param attributes: Attributes confirming that an Agent Observability prompt was deleted.
         :type attributes: LLMObsDeletedPromptDataAttributes
 
         :param id: Unique identifier of the deleted prompt.
         :type id: str
 
-        :param type: Resource type of an LLM Observability prompt.
+        :param type: Resource type of an Agent Observability prompt.
         :type type: LLMObsPromptType
         """
         super().__init__(kwargs)

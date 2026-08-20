@@ -30,9 +30,9 @@ class LLMObsPromptVersionResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPromptVersionData, **kwargs):
         """
-        Response containing a specific version of an LLM Observability prompt.
+        Response containing a specific version of an Agent Observability prompt.
 
-        :param data: Data object for a specific version of an LLM Observability prompt.
+        :param data: Data object for a specific version of an Agent Observability prompt.
         :type data: LLMObsPromptVersionData
         """
         super().__init__(kwargs)

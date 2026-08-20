@@ -40,12 +40,12 @@ class LLMObsPatternsConfigUpsertRequestData(ModelNormal):
         self_, attributes: LLMObsPatternsConfigUpsertRequestAttributes, type: LLMObsPatternsConfigType, **kwargs
     ):
         """
-        Data object for creating or updating an LLM Observability patterns configuration.
+        Data object for creating or updating an Agent Observability patterns configuration.
 
-        :param attributes: Attributes for creating or updating an LLM Observability patterns configuration.
+        :param attributes: Attributes for creating or updating an Agent Observability patterns configuration.
         :type attributes: LLMObsPatternsConfigUpsertRequestAttributes
 
-        :param type: Resource type of an LLM Observability patterns configuration.
+        :param type: Resource type of an Agent Observability patterns configuration.
         :type type: LLMObsPatternsConfigType
         """
         super().__init__(kwargs)

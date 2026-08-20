@@ -33,7 +33,7 @@ class LLMObsDatasetDraftStateDataAttributes(ModelNormal):
 
     def __init__(self_, drafting_since: datetime, user: LLMObsDatasetDraftStateUser, **kwargs):
         """
-        Attributes of an LLM Observability dataset draft state.
+        Attributes of an Agent Observability dataset draft state.
 
         :param drafting_since: Timestamp when the dataset draft session started.
         :type drafting_since: datetime

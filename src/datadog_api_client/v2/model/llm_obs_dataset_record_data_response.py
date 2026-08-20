@@ -84,7 +84,7 @@ class LLMObsDatasetRecordDataResponse(ModelNormal):
         **kwargs,
     ):
         """
-        A single LLM Observability dataset record.
+        A single Agent Observability dataset record.
 
         :param created_at: Timestamp when the record was created.
         :type created_at: datetime

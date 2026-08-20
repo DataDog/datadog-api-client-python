@@ -45,7 +45,7 @@ class LLMObsAnnotationQueueLabelSchemaUpdateData(ModelNormal):
         :param attributes: Attributes for updating an annotation queue label schema.
         :type attributes: LLMObsAnnotationQueueLabelSchemaUpdateAttributes
 
-        :param type: Resource type of an LLM Observability annotation queue.
+        :param type: Resource type of an Agent Observability annotation queue.
         :type type: LLMObsAnnotationQueueType
         """
         super().__init__(kwargs)

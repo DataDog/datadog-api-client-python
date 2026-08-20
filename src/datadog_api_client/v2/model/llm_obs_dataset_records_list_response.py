@@ -38,7 +38,7 @@ class LLMObsDatasetRecordsListResponse(ModelNormal):
         self_, data: List[LLMObsDatasetRecordDataResponse], meta: Union[LLMObsCursorMeta, UnsetType] = unset, **kwargs
     ):
         """
-        Response containing a paginated list of LLM Observability dataset records.
+        Response containing a paginated list of Agent Observability dataset records.
 
         :param data: List of dataset records.
         :type data: [LLMObsDatasetRecordDataResponse]

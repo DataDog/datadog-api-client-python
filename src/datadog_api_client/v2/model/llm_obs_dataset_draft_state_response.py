@@ -30,9 +30,9 @@ class LLMObsDatasetDraftStateResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetDraftStateData, **kwargs):
         """
-        Response containing the draft state of an LLM Observability dataset.
+        Response containing the draft state of an Agent Observability dataset.
 
-        :param data: Data object for an LLM Observability dataset draft state.
+        :param data: Data object for an Agent Observability dataset draft state.
         :type data: LLMObsDatasetDraftStateData
         """
         super().__init__(kwargs)

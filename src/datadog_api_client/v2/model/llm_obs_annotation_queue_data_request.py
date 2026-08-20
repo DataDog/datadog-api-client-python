@@ -40,12 +40,12 @@ class LLMObsAnnotationQueueDataRequest(ModelNormal):
         self_, attributes: LLMObsAnnotationQueueDataAttributesRequest, type: LLMObsAnnotationQueueType, **kwargs
     ):
         """
-        Data object for creating an LLM Observability annotation queue.
+        Data object for creating an Agent Observability annotation queue.
 
-        :param attributes: Attributes for creating an LLM Observability annotation queue.
+        :param attributes: Attributes for creating an Agent Observability annotation queue.
         :type attributes: LLMObsAnnotationQueueDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability annotation queue.
+        :param type: Resource type of an Agent Observability annotation queue.
         :type type: LLMObsAnnotationQueueType
         """
         super().__init__(kwargs)

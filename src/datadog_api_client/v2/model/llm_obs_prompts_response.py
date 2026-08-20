@@ -30,9 +30,9 @@ class LLMObsPromptsResponse(ModelNormal):
 
     def __init__(self_, data: List[LLMObsPromptData], **kwargs):
         """
-        Response containing a list of LLM Observability prompts.
+        Response containing a list of Agent Observability prompts.
 
-        :param data: List of LLM Observability prompts.
+        :param data: List of Agent Observability prompts.
         :type data: [LLMObsPromptData]
         """
         super().__init__(kwargs)

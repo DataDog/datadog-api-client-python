@@ -42,15 +42,15 @@ class LLMObsDatasetDraftStateData(ModelNormal):
         self_, attributes: LLMObsDatasetDraftStateDataAttributes, id: str, type: LLMObsDatasetDraftStateType, **kwargs
     ):
         """
-        Data object for an LLM Observability dataset draft state.
+        Data object for an Agent Observability dataset draft state.
 
-        :param attributes: Attributes of an LLM Observability dataset draft state.
+        :param attributes: Attributes of an Agent Observability dataset draft state.
         :type attributes: LLMObsDatasetDraftStateDataAttributes
 
         :param id: Unique identifier of the dataset draft state. Matches the dataset ID.
         :type id: str
 
-        :param type: Resource type of an LLM Observability dataset draft state.
+        :param type: Resource type of an Agent Observability dataset draft state.
         :type type: LLMObsDatasetDraftStateType
         """
         super().__init__(kwargs)

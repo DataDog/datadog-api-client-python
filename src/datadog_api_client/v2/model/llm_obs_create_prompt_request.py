@@ -30,9 +30,9 @@ class LLMObsCreatePromptRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsCreatePromptData, **kwargs):
         """
-        Request to create an LLM Observability prompt.
+        Request to create an Agent Observability prompt.
 
-        :param data: Data object for creating an LLM Observability prompt.
+        :param data: Data object for creating an Agent Observability prompt.
         :type data: LLMObsCreatePromptData
         """
         super().__init__(kwargs)

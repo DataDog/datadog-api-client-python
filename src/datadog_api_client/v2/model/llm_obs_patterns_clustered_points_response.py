@@ -34,9 +34,9 @@ class LLMObsPatternsClusteredPointsResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPatternsClusteredPointsResponseData, **kwargs):
         """
-        Response containing the clustered points of an LLM Observability topic.
+        Response containing the clustered points of an Agent Observability topic.
 
-        :param data: Data object of an LLM Observability patterns clustered points response.
+        :param data: Data object of an Agent Observability patterns clustered points response.
         :type data: LLMObsPatternsClusteredPointsResponseData
         """
         super().__init__(kwargs)

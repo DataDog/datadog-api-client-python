@@ -46,15 +46,15 @@ class LLMObsPatternsRunStatusResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        Data object of an LLM Observability patterns run status response.
+        Data object of an Agent Observability patterns run status response.
 
-        :param attributes: Attributes of an LLM Observability patterns run status.
+        :param attributes: Attributes of an Agent Observability patterns run status.
         :type attributes: LLMObsPatternsRunStatusResponseAttributes
 
         :param id: The ID of the patterns run.
         :type id: str
 
-        :param type: Resource type of an LLM Observability patterns run status.
+        :param type: Resource type of an Agent Observability patterns run status.
         :type type: LLMObsPatternsRunStatusType
         """
         super().__init__(kwargs)

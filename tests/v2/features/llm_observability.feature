@@ -1,7 +1,7 @@
 @endpoint(llm-observability) @endpoint(llm-observability-v2)
 Feature: LLM Observability
-  Manage LLM Observability spans, data, projects, datasets, dataset records,
-  experiments, prompts, and annotations.
+  Manage Agent Observability spans, data, projects, datasets, dataset
+  records, experiments, prompts, and annotations.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -54,7 +54,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Aggregate LLM Observability experimentation returns "Bad Request" response
+  Scenario: Aggregate Agent Observability experimentation returns "Bad Request" response
     Given operation "AggregateLLMObsExperimentation" enabled
     And new "AggregateLLMObsExperimentation" request
     And body with value {"data": {"attributes": {"aggregate": {"compute": [{"metric": "score_value", "name": "avg_faithfulness"}], "dataset_version": null, "group_by": [{"field": "span_id"}], "indexes": ["experiment-evals"], "limit": 1000, "search": {"query": "@experiment_id:3fd6b5e0-8910-4b1c-a7d0-5b84de329012"}, "time": {"from": 1705312200000, "to": 1705315800000}}}, "type": "experimentation"}}
@@ -62,7 +62,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Aggregate LLM Observability experimentation returns "OK" response
+  Scenario: Aggregate Agent Observability experimentation returns "OK" response
     Given operation "AggregateLLMObsExperimentation" enabled
     And new "AggregateLLMObsExperimentation" request
     And body with value {"data": {"attributes": {"aggregate": {"compute": [{"metric": "score_value", "name": "avg_faithfulness"}], "dataset_version": null, "group_by": [{"field": "span_id"}], "indexes": ["experiment-evals"], "limit": 1000, "search": {"query": "@experiment_id:3fd6b5e0-8910-4b1c-a7d0-5b84de329012"}, "time": {"from": 1705312200000, "to": 1705315800000}}}, "type": "experimentation"}}
@@ -70,7 +70,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Append records to an LLM Observability dataset returns "Bad Request" response
+  Scenario: Append records to an Agent Observability dataset returns "Bad Request" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -80,7 +80,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Append records to an LLM Observability dataset returns "Created" response
+  Scenario: Append records to an Agent Observability dataset returns "Created" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -90,7 +90,7 @@ Feature: LLM Observability
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Append records to an LLM Observability dataset returns "Not Found" response
+  Scenario: Append records to an Agent Observability dataset returns "Not Found" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -100,7 +100,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Append records to an LLM Observability dataset returns "OK" response
+  Scenario: Append records to an Agent Observability dataset returns "OK" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -110,7 +110,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Batch update LLM Observability dataset records returns "Bad Request" response
+  Scenario: Batch update Agent Observability dataset records returns "Bad Request" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -120,7 +120,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Batch update LLM Observability dataset records returns "Not Found" response
+  Scenario: Batch update Agent Observability dataset records returns "Not Found" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -130,7 +130,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Batch update LLM Observability dataset records returns "OK" response
+  Scenario: Batch update Agent Observability dataset records returns "OK" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -140,7 +140,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Batch update LLM Observability dataset records returns "Payload Too Large" response
+  Scenario: Batch update Agent Observability dataset records returns "Payload Too Large" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -150,7 +150,7 @@ Feature: LLM Observability
     Then the response status is 413 Payload Too Large
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Clone an LLM Observability dataset returns "Bad Request" response
+  Scenario: Clone an Agent Observability dataset returns "Bad Request" response
     Given operation "CloneLLMObsDataset" enabled
     And new "CloneLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -160,7 +160,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Clone an LLM Observability dataset returns "Not Found" response
+  Scenario: Clone an Agent Observability dataset returns "Not Found" response
     Given operation "CloneLLMObsDataset" enabled
     And new "CloneLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -170,7 +170,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Clone an LLM Observability dataset returns "OK" response
+  Scenario: Clone an Agent Observability dataset returns "OK" response
     Given operation "CloneLLMObsDataset" enabled
     And new "CloneLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -180,7 +180,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @team:DataDog/ml-observability
-  Scenario: Create a new LLM Observability prompt version returns "Bad Request" response
+  Scenario: Create a new Agent Observability prompt version returns "Bad Request" response
     Given there is a valid "prompt" in the system
     And operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
@@ -190,7 +190,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @team:DataDog/ml-observability
-  Scenario: Create a new LLM Observability prompt version returns "Not Found" response
+  Scenario: Create a new Agent Observability prompt version returns "Not Found" response
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
     And request contains "prompt_id" parameter with value "nonexistent-prompt"
@@ -199,7 +199,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @team:DataDog/ml-observability
-  Scenario: Create a new LLM Observability prompt version returns "OK" response
+  Scenario: Create a new Agent Observability prompt version returns "OK" response
     Given there is a valid "prompt" in the system
     And operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
@@ -209,7 +209,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability annotation queue returns "Bad Request" response
+  Scenario: Create an Agent Observability annotation queue returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
     And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002"}, "type": "queues"}}
@@ -217,7 +217,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability annotation queue returns "Created" response
+  Scenario: Create an Agent Observability annotation queue returns "Created" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
     And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002"}, "type": "queues"}}
@@ -225,7 +225,7 @@ Feature: LLM Observability
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability dataset returns "Bad Request" response
+  Scenario: Create an Agent Observability dataset returns "Bad Request" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -234,7 +234,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability dataset returns "Created" response
+  Scenario: Create an Agent Observability dataset returns "Created" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -243,7 +243,7 @@ Feature: LLM Observability
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability dataset returns "Not Found" response
+  Scenario: Create an Agent Observability dataset returns "Not Found" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -252,7 +252,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability dataset returns "OK" response
+  Scenario: Create an Agent Observability dataset returns "OK" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -261,7 +261,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability experiment returns "Bad Request" response
+  Scenario: Create an Agent Observability experiment returns "Bad Request" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
     And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "parent_experiment_id": "3fd6b5e0-8910-4b1c-a7d0-5b84de329012", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
@@ -269,7 +269,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability experiment returns "Created" response
+  Scenario: Create an Agent Observability experiment returns "Created" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
     And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "parent_experiment_id": "3fd6b5e0-8910-4b1c-a7d0-5b84de329012", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
@@ -277,7 +277,7 @@ Feature: LLM Observability
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability experiment returns "OK" response
+  Scenario: Create an Agent Observability experiment returns "OK" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
     And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "parent_experiment_id": "3fd6b5e0-8910-4b1c-a7d0-5b84de329012", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
@@ -285,7 +285,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability project returns "Bad Request" response
+  Scenario: Create an Agent Observability project returns "Bad Request" response
     Given operation "CreateLLMObsProject" enabled
     And new "CreateLLMObsProject" request
     And body with value {"data": {"attributes": {"name": "My LLM Project"}, "type": "projects"}}
@@ -293,7 +293,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability project returns "Created" response
+  Scenario: Create an Agent Observability project returns "Created" response
     Given operation "CreateLLMObsProject" enabled
     And new "CreateLLMObsProject" request
     And body with value {"data": {"attributes": {"name": "My LLM Project"}, "type": "projects"}}
@@ -301,7 +301,7 @@ Feature: LLM Observability
     Then the response status is 201 Created
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability project returns "OK" response
+  Scenario: Create an Agent Observability project returns "OK" response
     Given operation "CreateLLMObsProject" enabled
     And new "CreateLLMObsProject" request
     And body with value {"data": {"attributes": {"name": "My LLM Project"}, "type": "projects"}}
@@ -309,7 +309,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability prompt returns "Bad Request" response
+  Scenario: Create an Agent Observability prompt returns "Bad Request" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
     And body with value {"data": {"attributes": {"prompt_id": "{{ unique }}", "template": " "}, "type": "prompt-templates"}}
@@ -317,7 +317,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability prompt returns "Conflict" response
+  Scenario: Create an Agent Observability prompt returns "Conflict" response
     Given there is a valid "prompt" in the system
     And operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
@@ -326,7 +326,7 @@ Feature: LLM Observability
     Then the response status is 409 Conflict
 
   @team:DataDog/ml-observability
-  Scenario: Create an LLM Observability prompt returns "OK" response
+  Scenario: Create an Agent Observability prompt returns "OK" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
     And body with value {"data": {"attributes": {"prompt_id": "{{ unique }}", "title": "Customer Support Assistant", "template": [{"content": "You are a helpful customer support assistant for {{ '{{company_name}}' }}.", "role": "system"}, {"content": "Help {{ '{{customer_name}}' }} with this question: {{ '{{question}}' }}", "role": "user"}]}, "type": "prompt-templates"}}
@@ -421,7 +421,7 @@ Feature: LLM Observability
     Then the response status is 200 OK — annotations created or updated. Per-item errors are listed in `errors`.
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability dataset records returns "Bad Request" response
+  Scenario: Delete Agent Observability dataset records returns "Bad Request" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -431,7 +431,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability dataset records returns "No Content" response
+  Scenario: Delete Agent Observability dataset records returns "No Content" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -441,7 +441,7 @@ Feature: LLM Observability
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability dataset records returns "Not Found" response
+  Scenario: Delete Agent Observability dataset records returns "Not Found" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -451,7 +451,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability datasets returns "Bad Request" response
+  Scenario: Delete Agent Observability datasets returns "Bad Request" response
     Given operation "DeleteLLMObsDatasets" enabled
     And new "DeleteLLMObsDatasets" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -460,7 +460,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability datasets returns "No Content" response
+  Scenario: Delete Agent Observability datasets returns "No Content" response
     Given operation "DeleteLLMObsDatasets" enabled
     And new "DeleteLLMObsDatasets" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -469,7 +469,7 @@ Feature: LLM Observability
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability datasets returns "Not Found" response
+  Scenario: Delete Agent Observability datasets returns "Not Found" response
     Given operation "DeleteLLMObsDatasets" enabled
     And new "DeleteLLMObsDatasets" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -478,7 +478,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability experiments returns "Bad Request" response
+  Scenario: Delete Agent Observability experiments returns "Bad Request" response
     Given operation "DeleteLLMObsExperiments" enabled
     And new "DeleteLLMObsExperiments" request
     And body with value {"data": {"attributes": {"experiment_ids": ["3fd6b5e0-8910-4b1c-a7d0-5b84de329012"]}, "type": "experiments"}}
@@ -486,7 +486,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability experiments returns "No Content" response
+  Scenario: Delete Agent Observability experiments returns "No Content" response
     Given operation "DeleteLLMObsExperiments" enabled
     And new "DeleteLLMObsExperiments" request
     And body with value {"data": {"attributes": {"experiment_ids": ["3fd6b5e0-8910-4b1c-a7d0-5b84de329012"]}, "type": "experiments"}}
@@ -494,7 +494,7 @@ Feature: LLM Observability
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability projects returns "Bad Request" response
+  Scenario: Delete Agent Observability projects returns "Bad Request" response
     Given operation "DeleteLLMObsProjects" enabled
     And new "DeleteLLMObsProjects" request
     And body with value {"data": {"attributes": {"project_ids": ["a33671aa-24fd-4dcd-9b33-a8ec7dde7751"]}, "type": "projects"}}
@@ -502,7 +502,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete LLM Observability projects returns "No Content" response
+  Scenario: Delete Agent Observability projects returns "No Content" response
     Given operation "DeleteLLMObsProjects" enabled
     And new "DeleteLLMObsProjects" request
     And body with value {"data": {"attributes": {"project_ids": ["a33671aa-24fd-4dcd-9b33-a8ec7dde7751"]}, "type": "projects"}}
@@ -558,7 +558,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete an LLM Observability annotation queue returns "No Content" response
+  Scenario: Delete an Agent Observability annotation queue returns "No Content" response
     Given operation "DeleteLLMObsAnnotationQueue" enabled
     And new "DeleteLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
@@ -566,7 +566,7 @@ Feature: LLM Observability
     Then the response status is 204 No Content
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Delete an LLM Observability annotation queue returns "Not Found" response
+  Scenario: Delete an Agent Observability annotation queue returns "Not Found" response
     Given operation "DeleteLLMObsAnnotationQueue" enabled
     And new "DeleteLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
@@ -574,7 +574,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @team:DataDog/ml-observability
-  Scenario: Delete an LLM Observability prompt returns "Not Found" response
+  Scenario: Delete an Agent Observability prompt returns "Not Found" response
     Given operation "DeleteLLMObsPrompt" enabled
     And new "DeleteLLMObsPrompt" request
     And request contains "prompt_id" parameter with value "nonexistent-prompt"
@@ -582,7 +582,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @team:DataDog/ml-observability
-  Scenario: Delete an LLM Observability prompt returns "OK" response
+  Scenario: Delete an Agent Observability prompt returns "OK" response
     Given there is a valid "prompt" in the system
     And operation "DeleteLLMObsPrompt" enabled
     And new "DeleteLLMObsPrompt" request
@@ -645,7 +645,7 @@ Feature: LLM Observability
     Then the response status is 200 OK — annotations deleted. Errors for annotations that could not be deleted are listed in `errors`.
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Export an LLM Observability dataset returns "Bad Request" response
+  Scenario: Export an Agent Observability dataset returns "Bad Request" response
     Given operation "ExportLLMObsDataset" enabled
     And new "ExportLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -654,7 +654,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Export an LLM Observability dataset returns "Not Found" response
+  Scenario: Export an Agent Observability dataset returns "Not Found" response
     Given operation "ExportLLMObsDataset" enabled
     And new "ExportLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -663,7 +663,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Export an LLM Observability dataset returns "OK" response
+  Scenario: Export an Agent Observability dataset returns "OK" response
     Given operation "ExportLLMObsDataset" enabled
     And new "ExportLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -672,7 +672,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Get LLM Observability dataset draft state returns "Bad Request" response
+  Scenario: Get Agent Observability dataset draft state returns "Bad Request" response
     Given operation "GetLLMObsDatasetDraftState" enabled
     And new "GetLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -681,7 +681,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Get LLM Observability dataset draft state returns "Not Found" response
+  Scenario: Get Agent Observability dataset draft state returns "Not Found" response
     Given operation "GetLLMObsDatasetDraftState" enabled
     And new "GetLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -690,7 +690,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Get LLM Observability dataset draft state returns "OK" response
+  Scenario: Get Agent Observability dataset draft state returns "OK" response
     Given operation "GetLLMObsDatasetDraftState" enabled
     And new "GetLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -744,7 +744,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Get a specific LLM Observability prompt version returns "Bad Request" response
+  Scenario: Get a specific Agent Observability prompt version returns "Bad Request" response
     Given operation "GetLLMObsPromptVersion" enabled
     And new "GetLLMObsPromptVersion" request
     And request contains "prompt_id" parameter from "REPLACE.ME"
@@ -753,7 +753,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @team:DataDog/ml-observability
-  Scenario: Get a specific LLM Observability prompt version returns "Not Found" response
+  Scenario: Get a specific Agent Observability prompt version returns "Not Found" response
     Given operation "GetLLMObsPromptVersion" enabled
     And new "GetLLMObsPromptVersion" request
     And request contains "prompt_id" parameter with value "nonexistent-prompt"
@@ -762,7 +762,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @team:DataDog/ml-observability
-  Scenario: Get a specific LLM Observability prompt version returns "OK" response
+  Scenario: Get a specific Agent Observability prompt version returns "OK" response
     Given there is a valid "prompt" in the system
     And there is a valid "prompt_version" in the system
     And operation "GetLLMObsPromptVersion" enabled
@@ -773,7 +773,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @team:DataDog/ml-observability
-  Scenario: Get an LLM Observability prompt returns "Not Found" response
+  Scenario: Get an Agent Observability prompt returns "Not Found" response
     Given operation "GetLLMObsPrompt" enabled
     And new "GetLLMObsPrompt" request
     And request contains "prompt_id" parameter with value "nonexistent-prompt"
@@ -781,7 +781,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @team:DataDog/ml-observability
-  Scenario: Get an LLM Observability prompt returns "OK" response
+  Scenario: Get an Agent Observability prompt returns "OK" response
     Given there is a valid "prompt" in the system
     And operation "GetLLMObsPrompt" enabled
     And new "GetLLMObsPrompt" request
@@ -870,21 +870,21 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability annotation queues returns "Bad Request" response
+  Scenario: List Agent Observability annotation queues returns "Bad Request" response
     Given operation "ListLLMObsAnnotationQueues" enabled
     And new "ListLLMObsAnnotationQueues" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability annotation queues returns "OK" response
+  Scenario: List Agent Observability annotation queues returns "OK" response
     Given operation "ListLLMObsAnnotationQueues" enabled
     And new "ListLLMObsAnnotationQueues" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability dataset records returns "Bad Request" response
+  Scenario: List Agent Observability dataset records returns "Bad Request" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -893,7 +893,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability dataset records returns "Not Found" response
+  Scenario: List Agent Observability dataset records returns "Not Found" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -902,7 +902,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability dataset records returns "OK" response
+  Scenario: List Agent Observability dataset records returns "OK" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -911,7 +911,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability dataset versions returns "Bad Request" response
+  Scenario: List Agent Observability dataset versions returns "Bad Request" response
     Given operation "ListLLMObsDatasetVersions" enabled
     And new "ListLLMObsDatasetVersions" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -920,7 +920,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability dataset versions returns "Not Found" response
+  Scenario: List Agent Observability dataset versions returns "Not Found" response
     Given operation "ListLLMObsDatasetVersions" enabled
     And new "ListLLMObsDatasetVersions" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -929,7 +929,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability dataset versions returns "OK" response
+  Scenario: List Agent Observability dataset versions returns "OK" response
     Given operation "ListLLMObsDatasetVersions" enabled
     And new "ListLLMObsDatasetVersions" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -938,7 +938,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability datasets returns "Bad Request" response
+  Scenario: List Agent Observability datasets returns "Bad Request" response
     Given operation "ListLLMObsDatasets" enabled
     And new "ListLLMObsDatasets" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -946,7 +946,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability datasets returns "Not Found" response
+  Scenario: List Agent Observability datasets returns "Not Found" response
     Given operation "ListLLMObsDatasets" enabled
     And new "ListLLMObsDatasets" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -954,7 +954,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability datasets returns "OK" response
+  Scenario: List Agent Observability datasets returns "OK" response
     Given operation "ListLLMObsDatasets" enabled
     And new "ListLLMObsDatasets" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -962,7 +962,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiment events (v2) returns "Bad Request" response
+  Scenario: List Agent Observability experiment events (v2) returns "Bad Request" response
     Given operation "ListLLMObsExperimentEventsV2" enabled
     And new "ListLLMObsExperimentEventsV2" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -970,7 +970,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiment events (v2) returns "Not Found" response
+  Scenario: List Agent Observability experiment events (v2) returns "Not Found" response
     Given operation "ListLLMObsExperimentEventsV2" enabled
     And new "ListLLMObsExperimentEventsV2" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -978,7 +978,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiment events (v2) returns "OK" response
+  Scenario: List Agent Observability experiment events (v2) returns "OK" response
     Given operation "ListLLMObsExperimentEventsV2" enabled
     And new "ListLLMObsExperimentEventsV2" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -986,7 +986,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiment spans (v1) returns "Bad Request" response
+  Scenario: List Agent Observability experiment spans (v1) returns "Bad Request" response
     Given operation "ListLLMObsExperimentEventsV1" enabled
     And new "ListLLMObsExperimentEventsV1" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -994,7 +994,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiment spans (v1) returns "Not Found" response
+  Scenario: List Agent Observability experiment spans (v1) returns "Not Found" response
     Given operation "ListLLMObsExperimentEventsV1" enabled
     And new "ListLLMObsExperimentEventsV1" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1002,7 +1002,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiment spans (v1) returns "OK" response
+  Scenario: List Agent Observability experiment spans (v1) returns "OK" response
     Given operation "ListLLMObsExperimentEventsV1" enabled
     And new "ListLLMObsExperimentEventsV1" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1010,35 +1010,35 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiments returns "Bad Request" response
+  Scenario: List Agent Observability experiments returns "Bad Request" response
     Given operation "ListLLMObsExperiments" enabled
     And new "ListLLMObsExperiments" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability experiments returns "OK" response
+  Scenario: List Agent Observability experiments returns "OK" response
     Given operation "ListLLMObsExperiments" enabled
     And new "ListLLMObsExperiments" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability projects returns "Bad Request" response
+  Scenario: List Agent Observability projects returns "Bad Request" response
     Given operation "ListLLMObsProjects" enabled
     And new "ListLLMObsProjects" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability projects returns "OK" response
+  Scenario: List Agent Observability projects returns "OK" response
     Given operation "ListLLMObsProjects" enabled
     And new "ListLLMObsProjects" request
     When the request is sent
     Then the response status is 200 OK
 
   @team:DataDog/ml-observability
-  Scenario: List LLM Observability prompts returns "OK" response
+  Scenario: List Agent Observability prompts returns "OK" response
     Given there is a valid "prompt" in the system
     And operation "ListLLMObsPrompts" enabled
     And new "ListLLMObsPrompts" request
@@ -1047,14 +1047,14 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability spans returns "Bad Request" response
+  Scenario: List Agent Observability spans returns "Bad Request" response
     Given operation "ListLLMObsSpans" enabled
     And new "ListLLMObsSpans" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List LLM Observability spans returns "OK" response
+  Scenario: List Agent Observability spans returns "OK" response
     Given operation "ListLLMObsSpans" enabled
     And new "ListLLMObsSpans" request
     When the request is sent
@@ -1102,7 +1102,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List events for an LLM Observability experiment returns "Bad Request" response
+  Scenario: List events for an Agent Observability experiment returns "Bad Request" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1110,7 +1110,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List events for an LLM Observability experiment returns "Not Found" response
+  Scenario: List events for an Agent Observability experiment returns "Not Found" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1118,7 +1118,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: List events for an LLM Observability experiment returns "OK" response
+  Scenario: List events for an Agent Observability experiment returns "OK" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1236,7 +1236,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @team:DataDog/ml-observability
-  Scenario: List versions of an LLM Observability prompt returns "OK" response
+  Scenario: List versions of an Agent Observability prompt returns "OK" response
     Given there is a valid "prompt" in the system
     And operation "ListLLMObsPromptVersions" enabled
     And new "ListLLMObsPromptVersions" request
@@ -1245,7 +1245,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Lock LLM Observability dataset draft state returns "Bad Request" response
+  Scenario: Lock Agent Observability dataset draft state returns "Bad Request" response
     Given operation "LockLLMObsDatasetDraftState" enabled
     And new "LockLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1254,7 +1254,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Lock LLM Observability dataset draft state returns "Not Found" response
+  Scenario: Lock Agent Observability dataset draft state returns "Not Found" response
     Given operation "LockLLMObsDatasetDraftState" enabled
     And new "LockLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1263,7 +1263,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Lock LLM Observability dataset draft state returns "OK" response
+  Scenario: Lock Agent Observability dataset draft state returns "OK" response
     Given operation "LockLLMObsDatasetDraftState" enabled
     And new "LockLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1272,7 +1272,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Push events for an LLM Observability experiment returns "Accepted" response
+  Scenario: Push events for an Agent Observability experiment returns "Accepted" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1281,7 +1281,7 @@ Feature: LLM Observability
     Then the response status is 202 Accepted
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Push events for an LLM Observability experiment returns "Bad Request" response
+  Scenario: Push events for an Agent Observability experiment returns "Bad Request" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1290,7 +1290,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Push events for an LLM Observability experiment returns "Not Found" response
+  Scenario: Push events for an Agent Observability experiment returns "Not Found" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1299,7 +1299,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Restore an LLM Observability dataset version returns "Bad Request" response
+  Scenario: Restore an Agent Observability dataset version returns "Bad Request" response
     Given operation "RestoreLLMObsDatasetVersion" enabled
     And new "RestoreLLMObsDatasetVersion" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1309,7 +1309,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Restore an LLM Observability dataset version returns "Not Found" response
+  Scenario: Restore an Agent Observability dataset version returns "Not Found" response
     Given operation "RestoreLLMObsDatasetVersion" enabled
     And new "RestoreLLMObsDatasetVersion" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1319,7 +1319,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Restore an LLM Observability dataset version returns "OK" response
+  Scenario: Restore an Agent Observability dataset version returns "OK" response
     Given operation "RestoreLLMObsDatasetVersion" enabled
     And new "RestoreLLMObsDatasetVersion" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1349,7 +1349,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Search LLM Observability experimentation entities returns "Bad Request" response
+  Scenario: Search Agent Observability experimentation returns "Bad Request" response
     Given operation "SearchLLMObsExperimentation" enabled
     And new "SearchLLMObsExperimentation" request
     And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 100}}, "type": "experimentation"}}
@@ -1357,7 +1357,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Search LLM Observability experimentation entities returns "OK — all results returned in a single page." response
+  Scenario: Search Agent Observability experimentation returns "OK — all results returned in a single page." response
     Given operation "SearchLLMObsExperimentation" enabled
     And new "SearchLLMObsExperimentation" request
     And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 100}}, "type": "experimentation"}}
@@ -1365,7 +1365,7 @@ Feature: LLM Observability
     Then the response status is 200 OK — all results returned in a single page.
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Search LLM Observability experimentation entities returns "Partial Content — more results are available. Use `meta.after` as the next `page.cursor`." response
+  Scenario: Search Agent Observability experimentation returns "Partial Content — more results are available. Use `meta.after` as the next `page.cursor`." response
     Given operation "SearchLLMObsExperimentation" enabled
     And new "SearchLLMObsExperimentation" request
     And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 100}}, "type": "experimentation"}}
@@ -1373,7 +1373,7 @@ Feature: LLM Observability
     Then the response status is 206 Partial Content — more results are available. Use `meta.after` as the next `page.cursor`.
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Search LLM Observability spans returns "Bad Request" response
+  Scenario: Search Agent Observability spans returns "Bad Request" response
     Given operation "SearchLLMObsSpans" enabled
     And new "SearchLLMObsSpans" request
     And body with value {"data": {"attributes": {"filter": {"from": "now-900s", "ml_app": "my-llm-app", "query": "@session_id:abc123def456", "span_id": "abc123def456", "span_kind": "llm", "span_name": "llm_call", "to": "now", "trace_id": "trace-9a8b7c6d5e4f"}, "options": {"include_attachments": true, "time_offset": 0}, "page": {"cursor": "eyJzdGFydCI6MTAwfQ==", "limit": 10}, "sort": "-start_ns"}, "type": "spans"}}
@@ -1381,7 +1381,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Search LLM Observability spans returns "OK" response
+  Scenario: Search Agent Observability spans returns "OK" response
     Given operation "SearchLLMObsSpans" enabled
     And new "SearchLLMObsSpans" request
     And body with value {"data": {"attributes": {"filter": {"from": "now-900s", "ml_app": "my-llm-app", "query": "@session_id:abc123def456", "span_id": "abc123def456", "span_kind": "llm", "span_name": "llm_call", "to": "now", "trace_id": "trace-9a8b7c6d5e4f"}, "options": {"include_attachments": true, "time_offset": 0}, "page": {"cursor": "eyJzdGFydCI6MTAwfQ==", "limit": 10}, "sort": "-start_ns"}, "type": "spans"}}
@@ -1429,7 +1429,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Unlock LLM Observability dataset draft state returns "Bad Request" response
+  Scenario: Unlock Agent Observability dataset draft state returns "Bad Request" response
     Given operation "UnlockLLMObsDatasetDraftState" enabled
     And new "UnlockLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1438,7 +1438,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Unlock LLM Observability dataset draft state returns "Not Found" response
+  Scenario: Unlock Agent Observability dataset draft state returns "Not Found" response
     Given operation "UnlockLLMObsDatasetDraftState" enabled
     And new "UnlockLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1447,7 +1447,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Unlock LLM Observability dataset draft state returns "OK" response
+  Scenario: Unlock Agent Observability dataset draft state returns "OK" response
     Given operation "UnlockLLMObsDatasetDraftState" enabled
     And new "UnlockLLMObsDatasetDraftState" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1456,7 +1456,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update LLM Observability dataset records returns "Bad Request" response
+  Scenario: Update Agent Observability dataset records returns "Bad Request" response
     Given operation "UpdateLLMObsDatasetRecords" enabled
     And new "UpdateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1466,7 +1466,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update LLM Observability dataset records returns "Not Found" response
+  Scenario: Update Agent Observability dataset records returns "Not Found" response
     Given operation "UpdateLLMObsDatasetRecords" enabled
     And new "UpdateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1476,7 +1476,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update LLM Observability dataset records returns "OK" response
+  Scenario: Update Agent Observability dataset records returns "OK" response
     Given operation "UpdateLLMObsDatasetRecords" enabled
     And new "UpdateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1486,39 +1486,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update a specific LLM Observability prompt version returns "Bad Request" response
-    Given operation "UpdateLLMObsPromptVersion" enabled
-    And new "UpdateLLMObsPromptVersion" request
-    And request contains "prompt_id" parameter from "REPLACE.ME"
-    And request contains "version" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"]}, "type": "prompt-template-versions"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @team:DataDog/ml-observability
-  Scenario: Update a specific LLM Observability prompt version returns "Not Found" response
-    Given operation "UpdateLLMObsPromptVersion" enabled
-    And new "UpdateLLMObsPromptVersion" request
-    And request contains "prompt_id" parameter with value "nonexistent-prompt"
-    And request contains "version" parameter with value 1
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": []}, "type": "prompt-template-versions"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @team:DataDog/ml-observability
-  Scenario: Update a specific LLM Observability prompt version returns "OK" response
-    Given there is a valid "prompt" in the system
-    And there is a valid "prompt_version" in the system
-    And operation "UpdateLLMObsPromptVersion" enabled
-    And new "UpdateLLMObsPromptVersion" request
-    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
-    And request contains "version" parameter from "prompt_version.data.attributes.version"
-    And body with value {"data": {"attributes": {"description": "Give concise answers and cite relevant help-center articles."}, "type": "prompt-template-versions"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability annotation queue returns "Bad Request" response
+  Scenario: Update an Agent Observability annotation queue returns "Bad Request" response
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
@@ -1527,7 +1495,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability annotation queue returns "Not Found" response
+  Scenario: Update an Agent Observability annotation queue returns "Not Found" response
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
@@ -1536,7 +1504,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability annotation queue returns "OK" response
+  Scenario: Update an Agent Observability annotation queue returns "OK" response
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
@@ -1545,7 +1513,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability dataset returns "Bad Request" response
+  Scenario: Update an Agent Observability dataset returns "Bad Request" response
     Given operation "UpdateLLMObsDataset" enabled
     And new "UpdateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1555,7 +1523,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability dataset returns "Not Found" response
+  Scenario: Update an Agent Observability dataset returns "Not Found" response
     Given operation "UpdateLLMObsDataset" enabled
     And new "UpdateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1565,7 +1533,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability dataset returns "OK" response
+  Scenario: Update an Agent Observability dataset returns "OK" response
     Given operation "UpdateLLMObsDataset" enabled
     And new "UpdateLLMObsDataset" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1575,7 +1543,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability experiment returns "Bad Request" response
+  Scenario: Update an Agent Observability experiment returns "Bad Request" response
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1584,7 +1552,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability experiment returns "Not Found" response
+  Scenario: Update an Agent Observability experiment returns "Not Found" response
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1593,7 +1561,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability experiment returns "OK" response
+  Scenario: Update an Agent Observability experiment returns "OK" response
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -1602,7 +1570,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability project returns "Bad Request" response
+  Scenario: Update an Agent Observability project returns "Bad Request" response
     Given operation "UpdateLLMObsProject" enabled
     And new "UpdateLLMObsProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1611,7 +1579,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability project returns "Not Found" response
+  Scenario: Update an Agent Observability project returns "Not Found" response
     Given operation "UpdateLLMObsProject" enabled
     And new "UpdateLLMObsProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1620,7 +1588,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability project returns "OK" response
+  Scenario: Update an Agent Observability project returns "OK" response
     Given operation "UpdateLLMObsProject" enabled
     And new "UpdateLLMObsProject" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1629,7 +1597,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability prompt returns "Bad Request" response
+  Scenario: Update an Agent Observability prompt returns "Bad Request" response
     Given there is a valid "prompt" in the system
     And operation "UpdateLLMObsPrompt" enabled
     And new "UpdateLLMObsPrompt" request
@@ -1639,7 +1607,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability prompt returns "Not Found" response
+  Scenario: Update an Agent Observability prompt returns "Not Found" response
     Given operation "UpdateLLMObsPrompt" enabled
     And new "UpdateLLMObsPrompt" request
     And request contains "prompt_id" parameter with value "nonexistent-prompt"
@@ -1648,12 +1616,44 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @team:DataDog/ml-observability
-  Scenario: Update an LLM Observability prompt returns "OK" response
+  Scenario: Update an Agent Observability prompt returns "OK" response
     Given there is a valid "prompt" in the system
     And operation "UpdateLLMObsPrompt" enabled
     And new "UpdateLLMObsPrompt" request
     And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
     And body with value {"data": {"attributes": {"title": "Customer Support Assistant"}, "type": "prompt-templates"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Update an Agent Observability prompt version returns "Bad Request" response
+    Given operation "UpdateLLMObsPromptVersion" enabled
+    And new "UpdateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"]}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/ml-observability
+  Scenario: Update an Agent Observability prompt version returns "Not Found" response
+    Given operation "UpdateLLMObsPromptVersion" enabled
+    And new "UpdateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter with value "nonexistent-prompt"
+    And request contains "version" parameter with value 1
+    And body with value {"data": {"attributes": {"env_ids": [], "labels": []}, "type": "prompt-template-versions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/ml-observability
+  Scenario: Update an Agent Observability prompt version returns "OK" response
+    Given there is a valid "prompt" in the system
+    And there is a valid "prompt_version" in the system
+    And operation "UpdateLLMObsPromptVersion" enabled
+    And new "UpdateLLMObsPromptVersion" request
+    And request contains "prompt_id" parameter from "prompt.data.attributes.prompt_id"
+    And request contains "version" parameter from "prompt_version.data.attributes.version"
+    And body with value {"data": {"attributes": {"description": "Give concise answers and cite relevant help-center articles."}, "type": "prompt-template-versions"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -1685,7 +1685,7 @@ Feature: LLM Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Upload records to an LLM Observability dataset returns "Bad Request" response
+  Scenario: Upload records to an Agent Observability dataset returns "Bad Request" response
     Given operation "UploadLLMObsDatasetRecordsFile" enabled
     And new "UploadLLMObsDatasetRecordsFile" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1694,7 +1694,7 @@ Feature: LLM Observability
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Upload records to an LLM Observability dataset returns "Not Found" response
+  Scenario: Upload records to an Agent Observability dataset returns "Not Found" response
     Given operation "UploadLLMObsDatasetRecordsFile" enabled
     And new "UploadLLMObsDatasetRecordsFile" request
     And request contains "project_id" parameter from "REPLACE.ME"
@@ -1703,7 +1703,7 @@ Feature: LLM Observability
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Upload records to an LLM Observability dataset returns "OK" response
+  Scenario: Upload records to an Agent Observability dataset returns "OK" response
     Given operation "UploadLLMObsDatasetRecordsFile" enabled
     And new "UploadLLMObsDatasetRecordsFile" request
     And request contains "project_id" parameter from "REPLACE.ME"

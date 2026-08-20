@@ -38,12 +38,12 @@ class LLMObsDatasetUpdateDataRequest(ModelNormal):
 
     def __init__(self_, attributes: LLMObsDatasetUpdateDataAttributesRequest, type: LLMObsDatasetType, **kwargs):
         """
-        Data object for updating an LLM Observability dataset.
+        Data object for updating an Agent Observability dataset.
 
-        :param attributes: Attributes for updating an LLM Observability dataset.
+        :param attributes: Attributes for updating an Agent Observability dataset.
         :type attributes: LLMObsDatasetUpdateDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability dataset.
+        :param type: Resource type of an Agent Observability dataset.
         :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)

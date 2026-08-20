@@ -38,12 +38,12 @@ class LLMObsProjectUpdateDataRequest(ModelNormal):
 
     def __init__(self_, attributes: LLMObsProjectUpdateDataAttributesRequest, type: LLMObsProjectType, **kwargs):
         """
-        Data object for updating an LLM Observability project.
+        Data object for updating an Agent Observability project.
 
-        :param attributes: Attributes for updating an LLM Observability project.
+        :param attributes: Attributes for updating an Agent Observability project.
         :type attributes: LLMObsProjectUpdateDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability project.
+        :param type: Resource type of an Agent Observability project.
         :type type: LLMObsProjectType
         """
         super().__init__(kwargs)

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsAnnotationQueueType(ModelSimple):
     """
-    Resource type of an LLM Observability annotation queue.
+    Resource type of an Agent Observability annotation queue.
 
     :param value: If omitted defaults to "queues". Must be one of ["queues"].
     :type value: str

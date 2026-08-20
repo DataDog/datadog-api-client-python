@@ -30,9 +30,9 @@ class LLMObsPatternsRunsResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPatternsRunsResponseData, **kwargs):
         """
-        Response containing the completed runs of an LLM Observability patterns configuration.
+        Response containing the completed runs of an Agent Observability patterns configuration.
 
-        :param data: Data object of an LLM Observability patterns runs response.
+        :param data: Data object of an Agent Observability patterns runs response.
         :type data: LLMObsPatternsRunsResponseData
         """
         super().__init__(kwargs)

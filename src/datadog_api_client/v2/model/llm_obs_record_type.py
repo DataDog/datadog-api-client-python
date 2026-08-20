@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsRecordType(ModelSimple):
     """
-    Resource type of LLM Observability dataset records.
+    Resource type of Agent Observability dataset records.
 
     :param value: If omitted defaults to "records". Must be one of ["records"].
     :type value: str

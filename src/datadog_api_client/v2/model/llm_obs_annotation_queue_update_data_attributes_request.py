@@ -42,7 +42,7 @@ class LLMObsAnnotationQueueUpdateDataAttributesRequest(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for updating an LLM Observability annotation queue. All fields are optional.
+        Attributes for updating an Agent Observability annotation queue. All fields are optional.
 
         :param annotation_schema: Schema defining the labels for an annotation queue.
         :type annotation_schema: LLMObsAnnotationSchema, optional

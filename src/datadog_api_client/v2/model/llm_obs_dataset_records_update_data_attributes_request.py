@@ -30,7 +30,7 @@ class LLMObsDatasetRecordsUpdateDataAttributesRequest(ModelNormal):
 
     def __init__(self_, records: List[LLMObsDatasetRecordUpdateItem], **kwargs):
         """
-        Attributes for updating records in an LLM Observability dataset.
+        Attributes for updating records in an Agent Observability dataset.
 
         :param records: List of records to update.
         :type records: [LLMObsDatasetRecordUpdateItem]

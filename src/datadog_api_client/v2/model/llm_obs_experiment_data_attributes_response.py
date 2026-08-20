@@ -147,7 +147,7 @@ class LLMObsExperimentDataAttributesResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability experiment.
+        Attributes of an Agent Observability experiment.
 
         :param aggregate_data: Pre-computed aggregate metrics for this experiment run, including eval score distributions, token costs, and error rates.
         :type aggregate_data: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, none_type, optional
@@ -198,7 +198,7 @@ class LLMObsExperimentDataAttributesResponse(ModelNormal):
         :param run_count: Expected number of runs for this experiment.
         :type run_count: int, optional
 
-        :param status: Execution status of an LLM Observability experiment.
+        :param status: Execution status of an Agent Observability experiment.
         :type status: LLMObsExperimentStatus, optional
 
         :param updated_at: Timestamp when the experiment was last updated.

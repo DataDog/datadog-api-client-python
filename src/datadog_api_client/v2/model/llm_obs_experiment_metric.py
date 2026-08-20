@@ -110,9 +110,9 @@ class LLMObsExperimentMetric(ModelNormal):
         **kwargs,
     ):
         """
-        A metric associated with an LLM Observability experiment span.
+        A metric associated with an Agent Observability experiment span.
 
-        :param assessment: Assessment result for an LLM Observability experiment metric.
+        :param assessment: Assessment result for an Agent Observability experiment metric.
         :type assessment: LLMObsMetricAssessment, optional
 
         :param boolean_value: Boolean value. Used when ``metric_type`` is ``boolean``.
@@ -133,7 +133,7 @@ class LLMObsExperimentMetric(ModelNormal):
         :param metadata: Arbitrary metadata associated with the metric.
         :type metadata: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param metric_type: Type of metric recorded for an LLM Observability experiment.
+        :param metric_type: Type of metric recorded for an Agent Observability experiment.
         :type metric_type: LLMObsMetricScoreType
 
         :param reasoning: Human-readable reasoning for the metric value.

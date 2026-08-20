@@ -42,15 +42,15 @@ class LLMObsDatasetRestoreVersionDataRequest(ModelNormal):
         self_, attributes: LLMObsDatasetRestoreVersionDataAttributesRequest, id: str, type: LLMObsDatasetType, **kwargs
     ):
         """
-        Data object for restoring an LLM Observability dataset to a previous version.
+        Data object for restoring an Agent Observability dataset to a previous version.
 
-        :param attributes: Attributes for restoring an LLM Observability dataset to a previous version.
+        :param attributes: Attributes for restoring an Agent Observability dataset to a previous version.
         :type attributes: LLMObsDatasetRestoreVersionDataAttributesRequest
 
         :param id: Unique identifier of the dataset to restore.
         :type id: str
 
-        :param type: Resource type of an LLM Observability dataset.
+        :param type: Resource type of an Agent Observability dataset.
         :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)

@@ -30,9 +30,9 @@ class LLMObsCreatePromptVersionRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsCreatePromptVersionData, **kwargs):
         """
-        Request to create a new version of an LLM Observability prompt.
+        Request to create a new version of an Agent Observability prompt.
 
-        :param data: Data object for creating an LLM Observability prompt version.
+        :param data: Data object for creating an Agent Observability prompt version.
         :type data: LLMObsCreatePromptVersionData
         """
         super().__init__(kwargs)

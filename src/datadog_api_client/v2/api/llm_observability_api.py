@@ -117,7 +117,7 @@ from datadog_api_client.v2.model.llm_obs_experiment_events_v2_response import LL
 
 class LLMObservabilityApi:
     """
-    Manage LLM Observability spans, data, projects, datasets, dataset records, experiments, prompts, and annotations.
+    Manage Agent Observability spans, data, projects, datasets, dataset records, experiments, prompts, and annotations.
     """
 
     def __init__(self, api_client=None):
@@ -2171,9 +2171,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsExperimentationAnalyticsRequest,
     ) -> LLMObsExperimentationAnalyticsResponse:
-        """Aggregate LLM Observability experimentation.
+        """Aggregate Agent Observability experimentation.
 
-        Execute an analytics aggregation over LLM Observability experimentation data.
+        Execute an analytics aggregation over Agent Observability experimentation data.
         Use this endpoint to compute metrics (for example average eval scores) grouped by fields such as ``span_id`` or ``experiment_id``.
 
         At least one ``compute`` definition and one ``index`` must be provided.
@@ -2193,13 +2193,13 @@ class LLMObservabilityApi:
         dataset_id: str,
         body: LLMObsDatasetBatchUpdateRequest,
     ) -> LLMObsDatasetRecordsMutationResponse:
-        """Batch update LLM Observability dataset records.
+        """Batch update Agent Observability dataset records.
 
         Insert, update, and delete records in a single dataset operation. By default, a new dataset version is created when the batch is applied.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param body: Batch update payload.
         :type body: LLMObsDatasetBatchUpdateRequest
@@ -2220,13 +2220,13 @@ class LLMObservabilityApi:
         dataset_id: str,
         body: LLMObsDatasetCloneRequest,
     ) -> LLMObsDatasetResponse:
-        """Clone an LLM Observability dataset.
+        """Clone an Agent Observability dataset.
 
         Clone a dataset, copying its current records into a new dataset within the same project.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the source LLM Observability dataset to clone.
+        :param dataset_id: The ID of the source Agent Observability dataset to clone.
         :type dataset_id: str
         :param body: Clone dataset payload.
         :type body: LLMObsDatasetCloneRequest
@@ -2245,7 +2245,7 @@ class LLMObservabilityApi:
         self,
         body: LLMObsAnnotationQueueRequest,
     ) -> LLMObsAnnotationQueueResponse:
-        """Create an LLM Observability annotation queue.
+        """Create an Agent Observability annotation queue.
 
         Create an annotation queue. The ``name`` and ``project_id`` fields are required.
         An optional ``annotation_schema`` can be provided to define the labels for the queue.
@@ -2279,7 +2279,7 @@ class LLMObservabilityApi:
 
         Items of different types can be mixed in a single request.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :param body: Add interactions payload.
         :type body: LLMObsAnnotationQueueInteractionsRequest
@@ -2297,11 +2297,11 @@ class LLMObservabilityApi:
         project_id: str,
         body: LLMObsDatasetRequest,
     ) -> LLMObsDatasetResponse:
-        """Create an LLM Observability dataset.
+        """Create an Agent Observability dataset.
 
-        Create a new LLM Observability dataset within the specified project.
+        Create a new Agent Observability dataset within the specified project.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
         :param body: Create dataset payload.
         :type body: LLMObsDatasetRequest
@@ -2320,13 +2320,13 @@ class LLMObservabilityApi:
         dataset_id: str,
         body: LLMObsDatasetRecordsRequest,
     ) -> LLMObsDatasetRecordsMutationResponse:
-        """Append records to an LLM Observability dataset.
+        """Append records to an Agent Observability dataset.
 
-        Append one or more records to an LLM Observability dataset.
+        Append one or more records to an Agent Observability dataset.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param body: Append records payload.
         :type body: LLMObsDatasetRecordsRequest
@@ -2345,9 +2345,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsExperimentRequest,
     ) -> LLMObsExperimentResponse:
-        """Create an LLM Observability experiment.
+        """Create an Agent Observability experiment.
 
-        Create a new LLM Observability experiment.
+        Create a new Agent Observability experiment.
 
         :param body: Create experiment payload.
         :type body: LLMObsExperimentRequest
@@ -2363,11 +2363,11 @@ class LLMObservabilityApi:
         experiment_id: str,
         body: LLMObsExperimentEventsRequest,
     ) -> None:
-        """Push events for an LLM Observability experiment.
+        """Push events for an Agent Observability experiment.
 
-        Push spans and metrics for an LLM Observability experiment.
+        Push spans and metrics for an Agent Observability experiment.
 
-        :param experiment_id: The ID of the LLM Observability experiment.
+        :param experiment_id: The ID of the Agent Observability experiment.
         :type experiment_id: str
         :param body: Experiment events payload.
         :type body: LLMObsExperimentEventsRequest
@@ -2411,9 +2411,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsProjectRequest,
     ) -> LLMObsProjectResponse:
-        """Create an LLM Observability project.
+        """Create an Agent Observability project.
 
-        Create a new LLM Observability project. Returns the existing project if a name conflict occurs.
+        Create a new Agent Observability project. Returns the existing project if a name conflict occurs.
 
         :param body: Create project payload.
         :type body: LLMObsProjectRequest
@@ -2428,9 +2428,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsCreatePromptRequest,
     ) -> LLMObsPromptResponse:
-        """Create an LLM Observability prompt.
+        """Create an Agent Observability prompt.
 
-        Create a new prompt (and its first version) in the LLM Observability prompt registry.
+        Create a new prompt (and its first version) in the Agent Observability prompt registry.
 
         :param body: Create prompt payload.
         :type body: LLMObsCreatePromptRequest
@@ -2446,11 +2446,11 @@ class LLMObservabilityApi:
         prompt_id: str,
         body: LLMObsCreatePromptVersionRequest,
     ) -> LLMObsPromptVersionResponse:
-        """Create a new LLM Observability prompt version.
+        """Create a new Agent Observability prompt version.
 
-        Create a new version of an existing LLM Observability prompt.
+        Create a new version of an existing Agent Observability prompt.
 
-        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
         :param body: Create prompt version payload.
         :type body: LLMObsCreatePromptVersionRequest
@@ -2467,11 +2467,11 @@ class LLMObservabilityApi:
         self,
         queue_id: str,
     ) -> None:
-        """Delete an LLM Observability annotation queue.
+        """Delete an Agent Observability annotation queue.
 
         Delete an annotation queue by its ID.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :rtype: None
         """
@@ -2489,7 +2489,7 @@ class LLMObservabilityApi:
 
         Delete one or more interactions from an annotation queue.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :param body: Delete interactions payload.
         :type body: LLMObsDeleteAnnotationQueueInteractionsRequest
@@ -2511,7 +2511,7 @@ class LLMObservabilityApi:
 
         Delete one or more annotations from an annotation queue.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :param body: Delete annotations payload.
         :type body: LLMObsDeleteAnnotationsRequest
@@ -2530,9 +2530,9 @@ class LLMObservabilityApi:
     ) -> None:
         """Delete a custom evaluator configuration.
 
-        Delete a custom LLM Observability evaluator configuration by its name.
+        Delete a custom Agent Observability evaluator configuration by its name.
 
-        :param eval_name: The name of the custom LLM Observability evaluator configuration.
+        :param eval_name: The name of the custom Agent Observability evaluator configuration.
         :type eval_name: str
         :rtype: None
         """
@@ -2547,13 +2547,13 @@ class LLMObservabilityApi:
         dataset_id: str,
         body: LLMObsDeleteDatasetRecordsRequest,
     ) -> None:
-        """Delete LLM Observability dataset records.
+        """Delete Agent Observability dataset records.
 
-        Delete one or more records from an LLM Observability dataset.
+        Delete one or more records from an Agent Observability dataset.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param body: Delete records payload.
         :type body: LLMObsDeleteDatasetRecordsRequest
@@ -2573,11 +2573,11 @@ class LLMObservabilityApi:
         project_id: str,
         body: LLMObsDeleteDatasetsRequest,
     ) -> None:
-        """Delete LLM Observability datasets.
+        """Delete Agent Observability datasets.
 
-        Delete one or more LLM Observability datasets within the specified project.
+        Delete one or more Agent Observability datasets within the specified project.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
         :param body: Delete datasets payload.
         :type body: LLMObsDeleteDatasetsRequest
@@ -2594,9 +2594,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsDeleteExperimentsRequest,
     ) -> None:
-        """Delete LLM Observability experiments.
+        """Delete Agent Observability experiments.
 
-        Delete one or more LLM Observability experiments.
+        Delete one or more Agent Observability experiments.
 
         :param body: Delete experiments payload.
         :type body: LLMObsDeleteExperimentsRequest
@@ -2628,9 +2628,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsDeleteProjectsRequest,
     ) -> None:
-        """Delete LLM Observability projects.
+        """Delete Agent Observability projects.
 
-        Delete one or more LLM Observability projects.
+        Delete one or more Agent Observability projects.
 
         :param body: Delete projects payload.
         :type body: LLMObsDeleteProjectsRequest
@@ -2645,11 +2645,11 @@ class LLMObservabilityApi:
         self,
         prompt_id: str,
     ) -> LLMObsDeletedPromptResponse:
-        """Delete an LLM Observability prompt.
+        """Delete an Agent Observability prompt.
 
-        Soft-delete an LLM Observability prompt. The prompt's version rows are retained, but they are no longer accessible through the public prompt registry endpoints.
+        Soft-delete an Agent Observability prompt. The prompt's version rows are retained, but they are no longer accessible through the public prompt registry endpoints.
 
-        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
         :rtype: LLMObsDeletedPromptResponse
         """
@@ -2666,13 +2666,13 @@ class LLMObservabilityApi:
         format: Union[LLMObsDatasetExportFormat, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
     ) -> str:
-        """Export an LLM Observability dataset.
+        """Export an Agent Observability dataset.
 
         Download the contents of a dataset as a CSV file. The download is streamed and includes one row per dataset record.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param format: Export format for the dataset contents. Only ``csv`` is currently supported.
         :type format: LLMObsDatasetExportFormat, optional
@@ -2701,7 +2701,7 @@ class LLMObservabilityApi:
 
         Retrieve all interactions (traces and sessions) and their annotations for a given annotation queue.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :rtype: LLMObsAnnotatedInteractionsResponse
         """
@@ -2749,7 +2749,7 @@ class LLMObservabilityApi:
 
         Retrieve the label schema for a given annotation queue.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :rtype: LLMObsAnnotationQueueLabelSchemaResponse
         """
@@ -2764,9 +2764,9 @@ class LLMObservabilityApi:
     ) -> LLMObsCustomEvalConfigResponse:
         """Get a custom evaluator configuration.
 
-        Retrieve a custom LLM Observability evaluator configuration by its name.
+        Retrieve a custom Agent Observability evaluator configuration by its name.
 
-        :param eval_name: The name of the custom LLM Observability evaluator configuration.
+        :param eval_name: The name of the custom Agent Observability evaluator configuration.
         :type eval_name: str
         :rtype: LLMObsCustomEvalConfigResponse
         """
@@ -2780,13 +2780,13 @@ class LLMObservabilityApi:
         project_id: str,
         dataset_id: str,
     ) -> LLMObsDatasetDraftStateResponse:
-        """Get LLM Observability dataset draft state.
+        """Get Agent Observability dataset draft state.
 
         Retrieve the draft state of a dataset, including whether it is currently locked for editing and which user holds the lock.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :rtype: LLMObsDatasetDraftStateResponse
         """
@@ -2833,11 +2833,11 @@ class LLMObservabilityApi:
         *,
         label: Union[str, UnsetType] = unset,
     ) -> LLMObsPromptSDKResponse:
-        """Get an LLM Observability prompt.
+        """Get an Agent Observability prompt.
 
-        Get the latest version of an LLM Observability prompt by prompt ID.
+        Get the latest version of an Agent Observability prompt by prompt ID.
 
-        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
         :param label: **Deprecated.** Optional label of the prompt version to return. Do not use this parameter for new integrations. If omitted, the latest version is returned. If the prompt has no labels, the latest version is returned even when a label is requested. If the prompt has labels but none match the requested label, a 404 response is returned.
         :type label: str, optional
@@ -2856,13 +2856,13 @@ class LLMObservabilityApi:
         prompt_id: str,
         version: int,
     ) -> LLMObsPromptVersionResponse:
-        """Get a specific LLM Observability prompt version.
+        """Get a specific Agent Observability prompt version.
 
-        Get the full template of a single, specific version of an LLM Observability prompt.
+        Get the full template of a single, specific version of an Agent Observability prompt.
 
-        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
-        :param version: The version number of the LLM Observability prompt.
+        :param version: The version number of the Agent Observability prompt.
         :type version: int
         :rtype: LLMObsPromptVersionResponse
         """
@@ -2879,7 +2879,7 @@ class LLMObservabilityApi:
         project_id: Union[str, UnsetType] = unset,
         queue_ids: Union[List[str], UnsetType] = unset,
     ) -> LLMObsAnnotationQueuesResponse:
-        """List LLM Observability annotation queues.
+        """List Agent Observability annotation queues.
 
         List annotation queues. Optionally filter by project ID or queue IDs. These parameters are mutually exclusive.
         If neither is provided, all queues in the organization are returned.
@@ -2904,7 +2904,7 @@ class LLMObservabilityApi:
     ) -> LLMObsCustomEvalConfigListResponse:
         """List custom evaluator configurations.
 
-        List all custom LLM Observability evaluator configurations for the organization.
+        List all custom Agent Observability evaluator configurations for the organization.
 
         :rtype: LLMObsCustomEvalConfigListResponse
         """
@@ -2920,13 +2920,13 @@ class LLMObservabilityApi:
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> LLMObsDatasetRecordsListResponse:
-        """List LLM Observability dataset records.
+        """List Agent Observability dataset records.
 
-        List all records in an LLM Observability dataset, sorted by creation date, newest first.
+        List all records in an Agent Observability dataset, sorted by creation date, newest first.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param filter_version: Retrieve records from a specific dataset version. Defaults to the current version.
         :type filter_version: int, optional
@@ -2961,11 +2961,11 @@ class LLMObservabilityApi:
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> LLMObsDatasetsResponse:
-        """List LLM Observability datasets.
+        """List Agent Observability datasets.
 
-        List all LLM Observability datasets for a project, sorted by creation date, newest first.
+        List all Agent Observability datasets for a project, sorted by creation date, newest first.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
         :param filter_name: Filter datasets by name.
         :type filter_name: str, optional
@@ -2999,13 +2999,13 @@ class LLMObservabilityApi:
         project_id: str,
         dataset_id: str,
     ) -> LLMObsDatasetVersionsResponse:
-        """List LLM Observability dataset versions.
+        """List Agent Observability dataset versions.
 
         List the active versions of a dataset. A version is created each time a dataset is referenced by an experiment run.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :rtype: LLMObsDatasetVersionsResponse
         """
@@ -3023,11 +3023,11 @@ class LLMObservabilityApi:
         page_limit: Union[int, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
     ) -> LLMObsExperimentEventsV2Response:
-        """List events for an LLM Observability experiment.
+        """List events for an Agent Observability experiment.
 
         Retrieve spans and experiment-level summary metrics for a given experiment with cursor-based pagination.
 
-        :param experiment_id: The ID of the LLM Observability experiment.
+        :param experiment_id: The ID of the Agent Observability experiment.
         :type experiment_id: str
         :param page_limit: Maximum number of spans to return per page. Defaults to 5000.
         :type page_limit: int, optional
@@ -3050,11 +3050,11 @@ class LLMObservabilityApi:
         self,
         experiment_id: str,
     ) -> LLMObsExperimentSpansResponse:
-        """List LLM Observability experiment spans (v1). **Deprecated**.
+        """List Agent Observability experiment spans (v1). **Deprecated**.
 
         Retrieve spans with their evaluation metrics for a given experiment. Returns spans only, with no summary metrics and no pagination. Deprecated in favor of ``ListLLMObsExperimentEventsV3``.
 
-        :param experiment_id: The ID of the LLM Observability experiment.
+        :param experiment_id: The ID of the Agent Observability experiment.
         :type experiment_id: str
         :rtype: LLMObsExperimentSpansResponse
         """
@@ -3068,11 +3068,11 @@ class LLMObservabilityApi:
         self,
         experiment_id: str,
     ) -> LLMObsExperimentEventsV2Response:
-        """List LLM Observability experiment events (v2). **Deprecated**.
+        """List Agent Observability experiment events (v2). **Deprecated**.
 
         Retrieve spans and experiment-level summary metrics for a given experiment. Returns the full events payload without pagination. Deprecated: use ``ListLLMObsExperimentEventsV3`` instead.
 
-        :param experiment_id: The ID of the LLM Observability experiment.
+        :param experiment_id: The ID of the Agent Observability experiment.
         :type experiment_id: str
         :rtype: LLMObsExperimentEventsV2Response
         """
@@ -3098,9 +3098,9 @@ class LLMObservabilityApi:
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> LLMObsExperimentsResponse:
-        """List LLM Observability experiments.
+        """List Agent Observability experiments.
 
-        List all LLM Observability experiments sorted by creation date, newest first.
+        List all Agent Observability experiments sorted by creation date, newest first.
 
         :param filter_project_id: Filter experiments by project ID. Required if ``filter[dataset_id]`` is not provided.
         :type filter_project_id: str, optional
@@ -3335,9 +3335,9 @@ class LLMObservabilityApi:
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> LLMObsProjectsResponse:
-        """List LLM Observability projects.
+        """List Agent Observability projects.
 
-        List all LLM Observability projects sorted by creation date, newest first.
+        List all Agent Observability projects sorted by creation date, newest first.
 
         :param filter_id: Filter projects by project ID.
         :type filter_id: str, optional
@@ -3369,9 +3369,9 @@ class LLMObservabilityApi:
         *,
         filter_prompt_id: Union[str, UnsetType] = unset,
     ) -> LLMObsPromptsResponse:
-        """List LLM Observability prompts.
+        """List Agent Observability prompts.
 
-        List all LLM Observability prompts in the prompt registry for the organization.
+        List all Agent Observability prompts in the prompt registry for the organization.
 
         :param filter_prompt_id: Optional filter for prompts by prompt ID.
         :type filter_prompt_id: str, optional
@@ -3387,11 +3387,11 @@ class LLMObservabilityApi:
         self,
         prompt_id: str,
     ) -> LLMObsPromptVersionsResponse:
-        """List versions of an LLM Observability prompt.
+        """List versions of an Agent Observability prompt.
 
-        List all versions of an LLM Observability prompt, ordered newest to oldest. If the prompt does not exist, is not registered, or is archived, the response contains an empty list.
+        List all versions of an Agent Observability prompt, ordered newest to oldest. If the prompt does not exist, is not registered, or is archived, the response contains an empty list.
 
-        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
         :rtype: LLMObsPromptVersionsResponse
         """
@@ -3416,15 +3416,15 @@ class LLMObservabilityApi:
         sort: Union[str, UnsetType] = unset,
         include_attachments: Union[bool, UnsetType] = unset,
     ) -> LLMObsSpansResponse:
-        """List LLM Observability spans.
+        """List Agent Observability spans.
 
-        List LLM Observability spans matching the specified filters.
+        List Agent Observability spans matching the specified filters.
 
         :param filter_from: Start of the time range. Accepts ISO 8601 or relative format (e.g., ``now-15m`` ). Defaults to ``now-15m``.
         :type filter_from: str, optional
         :param filter_to: End of the time range. Accepts ISO 8601 or relative format. Defaults to ``now``.
         :type filter_to: str, optional
-        :param filter_query: Search query using LLM Observability query syntax. Supports attribute filters using the field:value syntax (e.g. session_id, trace_id, ml_app, meta.span.kind). When provided, structured field filters ( ``filter[span_id]`` , ``filter[trace_id]`` , etc.) are ignored.
+        :param filter_query: Search query using Agent Observability query syntax. Supports attribute filters using the field:value syntax (e.g. session_id, trace_id, ml_app, meta.span.kind). When provided, structured field filters ( ``filter[span_id]`` , ``filter[trace_id]`` , etc.) are ignored.
         :type filter_query: str, optional
         :param filter_span_id: Filter by exact span ID.
         :type filter_span_id: str, optional
@@ -3490,13 +3490,13 @@ class LLMObservabilityApi:
         project_id: str,
         dataset_id: str,
     ) -> LLMObsDatasetDraftStateResponse:
-        """Lock LLM Observability dataset draft state.
+        """Lock Agent Observability dataset draft state.
 
         Acquire the draft lock on a dataset for the calling user. The lock prevents other users from concurrently editing the dataset draft.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :rtype: LLMObsDatasetDraftStateResponse
         """
@@ -3513,13 +3513,13 @@ class LLMObservabilityApi:
         dataset_id: str,
         body: LLMObsDatasetRestoreVersionRequest,
     ) -> None:
-        """Restore an LLM Observability dataset version.
+        """Restore an Agent Observability dataset version.
 
         Restore a dataset to a previous version. The dataset's current version is bumped, and its records are replaced with the records from the specified prior version.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param body: Restore dataset version payload.
         :type body: LLMObsDatasetRestoreVersionRequest
@@ -3538,9 +3538,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsExperimentationSearchRequest,
     ) -> LLMObsExperimentationSearchResponse:
-        """Search LLM Observability experimentation entities.
+        """Search Agent Observability experimentation.
 
-        Search across LLM Observability experimentation entities — projects, datasets, dataset records, experiments, and experiment runs — using cursor-based pagination.
+        Search across Agent Observability experimentation entities — projects, datasets, dataset records, experiments, and experiment runs — using cursor-based pagination.
 
         The ``filter.scope`` field controls which entity types are returned. At least one valid scope must be provided.
 
@@ -3559,9 +3559,9 @@ class LLMObservabilityApi:
         self,
         body: LLMObsSearchSpansRequest,
     ) -> LLMObsSpansResponse:
-        """Search LLM Observability spans.
+        """Search Agent Observability spans.
 
-        Search LLM Observability spans using structured filters in the request body.
+        Search Agent Observability spans using structured filters in the request body.
 
         :param body: Search spans payload.
         :type body: LLMObsSearchSpansRequest
@@ -3578,7 +3578,7 @@ class LLMObservabilityApi:
     ) -> LLMObsExperimentationSimpleSearchResponse:
         """Simple search experimentation entities.
 
-        Search across LLM Observability experimentation entities using offset-based (page-number) pagination.
+        Search across Agent Observability experimentation entities using offset-based (page-number) pagination.
         Use this endpoint when you need total page count or want to navigate to a specific page number.
 
         The ``filter.scope`` field controls which entity types are returned. At least one valid scope must be provided.
@@ -3614,13 +3614,13 @@ class LLMObservabilityApi:
         project_id: str,
         dataset_id: str,
     ) -> None:
-        """Unlock LLM Observability dataset draft state.
+        """Unlock Agent Observability dataset draft state.
 
         Release the draft lock on a dataset held by the calling user, allowing other users to edit the dataset draft.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :rtype: None
         """
@@ -3636,11 +3636,11 @@ class LLMObservabilityApi:
         queue_id: str,
         body: LLMObsAnnotationQueueUpdateRequest,
     ) -> LLMObsAnnotationQueueResponse:
-        """Update an LLM Observability annotation queue.
+        """Update an Agent Observability annotation queue.
 
         Partially update an annotation queue. The ``name`` , ``description`` , and ``annotation_schema`` fields can be updated.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :param body: Update annotation queue payload.
         :type body: LLMObsAnnotationQueueUpdateRequest
@@ -3665,7 +3665,7 @@ class LLMObservabilityApi:
         Label names must be unique within the queue and match the pattern ``^[a-zA-Z0-9_-]+$``.
         Each label must have a valid type: score, categorical, boolean, or text.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :param body: Update label schema payload.
         :type body: LLMObsAnnotationQueueLabelSchemaUpdateRequest
@@ -3685,9 +3685,9 @@ class LLMObservabilityApi:
     ) -> None:
         """Create or update a custom evaluator configuration.
 
-        Create or update a custom LLM Observability evaluator configuration by its name.
+        Create or update a custom Agent Observability evaluator configuration by its name.
 
-        :param eval_name: The name of the custom LLM Observability evaluator configuration.
+        :param eval_name: The name of the custom Agent Observability evaluator configuration.
         :type eval_name: str
         :param body: Custom evaluator configuration payload.
         :type body: LLMObsCustomEvalConfigUpdateRequest
@@ -3706,13 +3706,13 @@ class LLMObservabilityApi:
         dataset_id: str,
         body: LLMObsDatasetUpdateRequest,
     ) -> LLMObsDatasetResponse:
-        """Update an LLM Observability dataset.
+        """Update an Agent Observability dataset.
 
-        Partially update an existing LLM Observability dataset within the specified project.
+        Partially update an existing Agent Observability dataset within the specified project.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param body: Update dataset payload.
         :type body: LLMObsDatasetUpdateRequest
@@ -3733,13 +3733,13 @@ class LLMObservabilityApi:
         dataset_id: str,
         body: LLMObsDatasetRecordsUpdateRequest,
     ) -> LLMObsDatasetRecordsMutationResponse:
-        """Update LLM Observability dataset records.
+        """Update Agent Observability dataset records.
 
-        Update one or more existing records in an LLM Observability dataset.
+        Update one or more existing records in an Agent Observability dataset.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param body: Update records payload.
         :type body: LLMObsDatasetRecordsUpdateRequest
@@ -3759,11 +3759,11 @@ class LLMObservabilityApi:
         experiment_id: str,
         body: LLMObsExperimentUpdateRequest,
     ) -> LLMObsExperimentResponse:
-        """Update an LLM Observability experiment.
+        """Update an Agent Observability experiment.
 
-        Partially update an existing LLM Observability experiment.
+        Partially update an existing Agent Observability experiment.
 
-        :param experiment_id: The ID of the LLM Observability experiment.
+        :param experiment_id: The ID of the Agent Observability experiment.
         :type experiment_id: str
         :param body: Update experiment payload.
         :type body: LLMObsExperimentUpdateRequest
@@ -3781,11 +3781,11 @@ class LLMObservabilityApi:
         project_id: str,
         body: LLMObsProjectUpdateRequest,
     ) -> LLMObsProjectResponse:
-        """Update an LLM Observability project.
+        """Update an Agent Observability project.
 
-        Partially update an existing LLM Observability project.
+        Partially update an existing Agent Observability project.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
         :param body: Update project payload.
         :type body: LLMObsProjectUpdateRequest
@@ -3803,11 +3803,11 @@ class LLMObservabilityApi:
         prompt_id: str,
         body: LLMObsUpdatePromptRequest,
     ) -> LLMObsPromptResponse:
-        """Update an LLM Observability prompt.
+        """Update an Agent Observability prompt.
 
-        Update the title, the description, or both, for an LLM Observability prompt.
+        Update the title, the description, or both, for an Agent Observability prompt.
 
-        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
         :param body: Update prompt payload.
         :type body: LLMObsUpdatePromptRequest
@@ -3826,13 +3826,13 @@ class LLMObservabilityApi:
         version: int,
         body: LLMObsUpdatePromptVersionRequest,
     ) -> LLMObsPromptVersionResponse:
-        """Update a specific LLM Observability prompt version.
+        """Update an Agent Observability prompt version.
 
-        Update the description, the feature-flag environments, or both, for a specific version of an LLM Observability prompt.
+        Update the description, the feature-flag environments, or both, for a specific version of an Agent Observability prompt.
 
-        :param prompt_id: The customer-provided identifier of the LLM Observability prompt.
+        :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
-        :param version: The version number of the LLM Observability prompt.
+        :param version: The version number of the Agent Observability prompt.
         :type version: int
         :param body: Update prompt version payload.
         :type body: LLMObsUpdatePromptVersionRequest
@@ -3858,7 +3858,7 @@ class LLMObservabilityApi:
         include_user_data: Union[bool, UnsetType] = unset,
         file: Union[file_type, UnsetType] = unset,
     ) -> None:
-        """Upload records to an LLM Observability dataset.
+        """Upload records to an Agent Observability dataset.
 
         Upload records to a dataset from a file. The request is a ``multipart/form-data`` upload containing a single ``file`` part.
         Currently only CSV is supported. The CSV must include an ``input`` column. Optional columns are ``id`` , ``expected_output`` , ``metadata`` , and ``tags``.
@@ -3869,9 +3869,9 @@ class LLMObservabilityApi:
         * ``completed`` : terminal event with a JSON body containing ``records_created``.
         * ``error`` : terminal event with a JSON body containing an error ``message``.
 
-        :param project_id: The ID of the LLM Observability project.
+        :param project_id: The ID of the Agent Observability project.
         :type project_id: str
-        :param dataset_id: The ID of the LLM Observability dataset.
+        :param dataset_id: The ID of the Agent Observability dataset.
         :type dataset_id: str
         :param deduplicate: Whether to skip records whose ``input`` already exists in the dataset. Defaults to ``false``.
         :type deduplicate: bool, optional
@@ -3919,7 +3919,7 @@ class LLMObservabilityApi:
         Results and errors in the response are linked to request items by ``interaction_id``.
         Errors for individual items are returned in the ``errors`` field without blocking the rest of the batch.
 
-        :param queue_id: The ID of the LLM Observability annotation queue.
+        :param queue_id: The ID of the Agent Observability annotation queue.
         :type queue_id: str
         :param body: Payload for creating or updating annotations.
         :type body: LLMObsAnnotationsRequest

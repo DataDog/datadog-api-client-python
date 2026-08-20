@@ -69,7 +69,7 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating or updating an LLM Observability patterns configuration.
+        Attributes for creating or updating an Agent Observability patterns configuration.
 
         :param account_id: Integration account ID for a bring-your-own-model configuration.
         :type account_id: str, optional

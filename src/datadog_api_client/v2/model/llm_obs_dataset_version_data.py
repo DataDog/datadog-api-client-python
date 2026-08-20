@@ -40,15 +40,15 @@ class LLMObsDatasetVersionData(ModelNormal):
         self_, attributes: LLMObsDatasetVersionDataAttributes, id: str, type: LLMObsDatasetVersionType, **kwargs
     ):
         """
-        Data object for an LLM Observability dataset version.
+        Data object for an Agent Observability dataset version.
 
-        :param attributes: Attributes of an LLM Observability dataset version.
+        :param attributes: Attributes of an Agent Observability dataset version.
         :type attributes: LLMObsDatasetVersionDataAttributes
 
         :param id: Unique identifier of the dataset version.
         :type id: str
 
-        :param type: Resource type of an LLM Observability dataset version.
+        :param type: Resource type of an Agent Observability dataset version.
         :type type: LLMObsDatasetVersionType
         """
         super().__init__(kwargs)

@@ -46,15 +46,15 @@ class LLMObsPatternsTriggerResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        Data object of an LLM Observability patterns trigger response.
+        Data object of an Agent Observability patterns trigger response.
 
-        :param attributes: Attributes of an LLM Observability patterns trigger response.
+        :param attributes: Attributes of an Agent Observability patterns trigger response.
         :type attributes: LLMObsPatternsTriggerResponseAttributes
 
         :param id: The ID of the patterns configuration that was run.
         :type id: str
 
-        :param type: Resource type of an LLM Observability patterns trigger response.
+        :param type: Resource type of an Agent Observability patterns trigger response.
         :type type: LLMObsPatternsTriggerResponseType
         """
         super().__init__(kwargs)

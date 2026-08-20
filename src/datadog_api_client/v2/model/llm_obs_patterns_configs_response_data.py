@@ -46,15 +46,15 @@ class LLMObsPatternsConfigsResponseData(ModelNormal):
         **kwargs,
     ):
         """
-        Data object of a list of LLM Observability patterns configurations.
+        Data object of a list of Agent Observability patterns configurations.
 
-        :param attributes: Attributes of a list of LLM Observability patterns configurations.
+        :param attributes: Attributes of a list of Agent Observability patterns configurations.
         :type attributes: LLMObsPatternsConfigsResponseAttributes
 
         :param id: Identifier of the list response.
         :type id: str
 
-        :param type: Resource type of a list of LLM Observability patterns configurations.
+        :param type: Resource type of a list of Agent Observability patterns configurations.
         :type type: LLMObsPatternsConfigsListType
         """
         super().__init__(kwargs)

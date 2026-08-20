@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsDatasetVersionType(ModelSimple):
     """
-    Resource type of an LLM Observability dataset version.
+    Resource type of an Agent Observability dataset version.
 
     :param value: If omitted defaults to "dataset_version". Must be one of ["dataset_version"].
     :type value: str

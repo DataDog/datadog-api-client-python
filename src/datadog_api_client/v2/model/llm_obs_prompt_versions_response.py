@@ -30,7 +30,7 @@ class LLMObsPromptVersionsResponse(ModelNormal):
 
     def __init__(self_, data: List[LLMObsPromptVersionListData], **kwargs):
         """
-        Response containing the versions of an LLM Observability prompt.
+        Response containing the versions of an Agent Observability prompt.
 
         :param data: Prompt versions ordered from newest to oldest.
         :type data: [LLMObsPromptVersionListData]

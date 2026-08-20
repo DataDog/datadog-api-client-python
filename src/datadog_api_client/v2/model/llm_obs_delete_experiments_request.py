@@ -32,9 +32,9 @@ class LLMObsDeleteExperimentsRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDeleteExperimentsDataRequest, **kwargs):
         """
-        Request to delete one or more LLM Observability experiments.
+        Request to delete one or more Agent Observability experiments.
 
-        :param data: Data object for deleting LLM Observability experiments.
+        :param data: Data object for deleting Agent Observability experiments.
         :type data: LLMObsDeleteExperimentsDataRequest
         """
         super().__init__(kwargs)

@@ -121,7 +121,7 @@ class LLMObsExperimentEvalMetricEvent(ModelNormal):
         """
         An evaluation metric event associated with an experiment span.
 
-        :param assessment: Assessment result for an LLM Observability experiment metric.
+        :param assessment: Assessment result for an Agent Observability experiment metric.
         :type assessment: LLMObsMetricAssessment, optional
 
         :param boolean_value: Boolean value. Present when ``metric_type`` is ``boolean``.
@@ -148,7 +148,7 @@ class LLMObsExperimentEvalMetricEvent(ModelNormal):
         :param metric_source: Source of the metric. Either ``custom`` (user-submitted) or ``summary`` (experiment-level aggregate).
         :type metric_source: str, optional
 
-        :param metric_type: Type of metric recorded for an LLM Observability experiment.
+        :param metric_type: Type of metric recorded for an Agent Observability experiment.
         :type metric_type: LLMObsMetricScoreType, optional
 
         :param reasoning: Human-readable reasoning for the metric value.

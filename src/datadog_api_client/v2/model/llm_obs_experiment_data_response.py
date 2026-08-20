@@ -42,15 +42,15 @@ class LLMObsExperimentDataResponse(ModelNormal):
         self_, attributes: LLMObsExperimentDataAttributesResponse, id: str, type: LLMObsExperimentType, **kwargs
     ):
         """
-        Data object for an LLM Observability experiment.
+        Data object for an Agent Observability experiment.
 
-        :param attributes: Attributes of an LLM Observability experiment.
+        :param attributes: Attributes of an Agent Observability experiment.
         :type attributes: LLMObsExperimentDataAttributesResponse
 
         :param id: Unique identifier of the experiment.
         :type id: str
 
-        :param type: Resource type of an LLM Observability experiment.
+        :param type: Resource type of an Agent Observability experiment.
         :type type: LLMObsExperimentType
         """
         super().__init__(kwargs)

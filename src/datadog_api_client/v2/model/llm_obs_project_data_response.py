@@ -38,15 +38,15 @@ class LLMObsProjectDataResponse(ModelNormal):
 
     def __init__(self_, attributes: LLMObsProjectDataAttributesResponse, id: str, type: LLMObsProjectType, **kwargs):
         """
-        Data object for an LLM Observability project.
+        Data object for an Agent Observability project.
 
-        :param attributes: Attributes of an LLM Observability project.
+        :param attributes: Attributes of an Agent Observability project.
         :type attributes: LLMObsProjectDataAttributesResponse
 
         :param id: Unique identifier of the project.
         :type id: str
 
-        :param type: Resource type of an LLM Observability project.
+        :param type: Resource type of an Agent Observability project.
         :type type: LLMObsProjectType
         """
         super().__init__(kwargs)

@@ -30,9 +30,9 @@ class LLMObsPatternsConfigResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPatternsConfigResponseData, **kwargs):
         """
-        Response containing a single LLM Observability patterns configuration.
+        Response containing a single Agent Observability patterns configuration.
 
-        :param data: Data object of an LLM Observability patterns configuration.
+        :param data: Data object of an Agent Observability patterns configuration.
         :type data: LLMObsPatternsConfigResponseData
         """
         super().__init__(kwargs)

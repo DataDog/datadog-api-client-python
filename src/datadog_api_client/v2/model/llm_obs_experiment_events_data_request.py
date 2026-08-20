@@ -43,7 +43,7 @@ class LLMObsExperimentEventsDataRequest(ModelNormal):
         :param attributes: Attributes for pushing experiment events including spans and metrics.
         :type attributes: LLMObsExperimentEventsDataAttributesRequest
 
-        :param type: Resource type for LLM Observability experiment events.
+        :param type: Resource type for Agent Observability experiment events.
         :type type: LLMObsEventType
         """
         super().__init__(kwargs)

@@ -27,7 +27,7 @@ class LLMObsPatternsTriggerResponseAttributes(ModelNormal):
 
     def __init__(self_, config_id: str, run_id: str, status: str, **kwargs):
         """
-        Attributes of an LLM Observability patterns trigger response.
+        Attributes of an Agent Observability patterns trigger response.
 
         :param config_id: The ID of the patterns configuration that was run.
         :type config_id: str

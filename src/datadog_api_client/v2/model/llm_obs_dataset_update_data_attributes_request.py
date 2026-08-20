@@ -55,7 +55,7 @@ class LLMObsDatasetUpdateDataAttributesRequest(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for updating an LLM Observability dataset.
+        Attributes for updating an Agent Observability dataset.
 
         :param description: Updated description of the dataset.
         :type description: str, optional
