@@ -4354,6 +4354,7 @@ from datadog_api_client.v2.model.llm_obs_annotated_interactions_response import 
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_type import LLMObsAnnotatedInteractionsType
 from datadog_api_client.v2.model.llm_obs_annotation_assessment import LLMObsAnnotationAssessment
 from datadog_api_client.v2.model.llm_obs_annotation_error import LLMObsAnnotationError
+from datadog_api_client.v2.model.llm_obs_annotation_error_code import LLMObsAnnotationErrorCode
 from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
 from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
 from datadog_api_client.v2.model.llm_obs_annotation_label_value import LLMObsAnnotationLabelValue
@@ -13881,6 +13882,7 @@ __all__ = [
     "LLMObsAnnotatedInteractionsType",
     "LLMObsAnnotationAssessment",
     "LLMObsAnnotationError",
+    "LLMObsAnnotationErrorCode",
     "LLMObsAnnotationItem",
     "LLMObsAnnotationItemResponse",
     "LLMObsAnnotationLabelValue",

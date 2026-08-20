@@ -23643,6 +23643,13 @@ datadog\_api\_client.v2.model.llm\_obs\_annotation\_error module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.llm\_obs\_annotation\_error\_code module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.llm_obs_annotation_error_code
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.llm\_obs\_annotation\_item module
 ---------------------------------------------------------------
 

@@ -43,6 +43,11 @@ body = LLMObsAnnotationQueueUpdateRequest(
             ),
             description="Updated description",
             name="Updated queue name",
+            restrict_to_assignees=False,
+            restrict_to_reviewers=True,
+            reviewer_emails=[
+                "reviewer@example.com",
+            ],
         ),
         type=LLMObsAnnotationQueueType.QUEUES,
     ),
