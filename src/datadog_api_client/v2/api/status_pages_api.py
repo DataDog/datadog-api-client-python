@@ -749,6 +749,11 @@ class StatusPagesApi:
                     "attribute": "filter[status]",
                     "location": "query",
                 },
+                "filter_source_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[source_id]",
+                    "location": "query",
+                },
                 "sort": {
                     "openapi_types": (str,),
                     "attribute": "sort",
@@ -1831,12 +1836,13 @@ class StatusPagesApi:
         page_limit: Union[int, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
         filter_status: Union[str, UnsetType] = unset,
+        filter_source_id: Union[str, UnsetType] = unset,
         sort: Union[str, UnsetType] = unset,
         filter_source_id: Union[str, UnsetType] = unset,
     ) -> DegradationArray:
         """List degradations.
 
-        Lists all degradations for the organization. Optionally filter by status and page.
+        Lists all degradations for the organization. Optionally filter by status, page, and source ID.
 
         :param filter_page_id: Optional page id filter.
         :type filter_page_id: str, optional
@@ -1848,6 +1854,8 @@ class StatusPagesApi:
         :type include: str, optional
         :param filter_status: Optional degradation status filter. Supported values: investigating, identified, monitoring, resolved.
         :type filter_status: str, optional
+        :param filter_source_id: Optional source ID filter. Returns only degradations whose source matches this ID (e.g. an incident ID).
+        :type filter_source_id: str, optional
         :param sort: Sort order. Prefix with '-' for descending. Supported values: created_at, -created_at, modified_at, -modified_at.
         :type sort: str, optional
         :param filter_source_id: Optional source ID filter. Returns only degradations whose source matches this ID (for example, an incident ID).
@@ -1869,6 +1877,9 @@ class StatusPagesApi:
 
         if filter_status is not unset:
             kwargs["filter_status"] = filter_status
+
+        if filter_source_id is not unset:
+            kwargs["filter_source_id"] = filter_source_id
 
         if sort is not unset:
             kwargs["sort"] = sort
