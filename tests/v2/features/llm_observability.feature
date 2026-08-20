@@ -212,7 +212,7 @@ Feature: LLM Observability
   Scenario: Create an LLM Observability annotation queue returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002", "restrict_to_assignees": false, "restrict_to_reviewers": true, "reviewer_emails": ["reviewer@example.com"]}, "type": "queues"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -220,7 +220,7 @@ Feature: LLM Observability
   Scenario: Create an LLM Observability annotation queue returns "Created" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Queue for annotating customer support traces", "name": "My annotation queue", "project_id": "00000000-0000-0000-0000-000000000002", "restrict_to_assignees": false, "restrict_to_reviewers": true, "reviewer_emails": ["reviewer@example.com"]}, "type": "queues"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -412,13 +412,13 @@ Feature: LLM Observability
     Then the response status is 404 Not Found — the queue does not exist.
 
   @generated @skip @team:DataDog/ml-observability
-  Scenario: Create or update annotations returns "OK — annotations created or updated. Per-item errors are listed in `errors`." response
+  Scenario: Create or update annotations returns "OK — annotations created or updated. Mixed batches list denied items and other per-item errors in `errors`" response
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
     And request contains "queue_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"annotations": [{"interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
     When the request is sent
-    Then the response status is 200 OK — annotations created or updated. Per-item errors are listed in `errors`.
+    Then the response status is 200 OK — annotations created or updated. Mixed batches list denied items and other per-item errors in `errors`
 
   @generated @skip @team:DataDog/ml-observability
   Scenario: Delete LLM Observability dataset records returns "Bad Request" response
@@ -1522,7 +1522,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name", "restrict_to_assignees": false, "restrict_to_reviewers": true, "reviewer_emails": ["reviewer@example.com"]}, "type": "queues"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1531,7 +1531,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name", "restrict_to_assignees": false, "restrict_to_reviewers": true, "reviewer_emails": ["reviewer@example.com"]}, "type": "queues"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1540,7 +1540,7 @@ Feature: LLM Observability
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name"}, "type": "queues"}}
+    And body with value {"data": {"attributes": {"annotation_schema": {"label_schemas": [{"description": "Rating of the response quality.", "has_assessment": false, "has_reasoning": false, "id": "abc-123", "is_assessment": false, "is_integer": false, "is_required": true, "max": 5.0, "min": 0.0, "name": "quality", "type": "score", "values": ["good", "bad", "neutral"]}]}, "description": "Updated description", "name": "Updated queue name", "restrict_to_assignees": false, "restrict_to_reviewers": true, "reviewer_emails": ["reviewer@example.com"]}, "type": "queues"}}
     When the request is sent
     Then the response status is 200 OK
 

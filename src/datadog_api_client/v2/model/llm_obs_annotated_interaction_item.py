@@ -18,6 +18,9 @@ class LLMObsAnnotatedInteractionItem(ModelComposed):
         :param annotations: List of annotations for this interaction.
         :type annotations: [LLMObsAnnotationItem]
 
+        :param can_annotate: Whether the current caller can annotate this interaction.
+        :type can_annotate: bool
+
         :param content_id: Upstream entity identifier supplied by the caller.
         :type content_id: str
 
