@@ -197,7 +197,7 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/annotation/page/dashboard%3Aabc-def-xyz",
+            "path": "/api/v2/annotation/page/dashboard:abc-def-xyz",
             "query": [
               [
                 "end_time",

@@ -283,7 +283,7 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/ndm/tags/interfaces/example%3A1.2.3.4%3A1",
+            "path": "/api/v2/ndm/tags/interfaces/example:1.2.3.4:1",
             "query": []
           },
           "response": {
@@ -451,7 +451,7 @@
             },
             "content_type": "application/json",
             "method": "PATCH",
-            "path": "/api/v2/ndm/tags/interfaces/example%3A1.2.3.4%3A1",
+            "path": "/api/v2/ndm/tags/interfaces/example:1.2.3.4:1",
             "query": []
           },
           "response": {

@@ -291,6 +291,11 @@
       "version": "v2"
     },
     {
+      "feature": "Execution Policy",
+      "file": "v2/execution-policy.json",
+      "version": "v2"
+    },
+    {
       "feature": "Fastly Integration",
       "file": "v2/fastly-integration.json",
       "version": "v2"

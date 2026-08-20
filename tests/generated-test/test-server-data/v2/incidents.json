@@ -4726,9 +4726,9 @@
                     "assignees": [
                       "@test.user@test.com"
                     ],
-                    "completed": "2023-03-06T22:00:00.000000+00:00",
+                    "completed": "2023-03-06T22:00:00.000000Z",
                     "content": "Restore lost data.",
-                    "due_date": "2023-07-10T05:00:00.000000+00:00"
+                    "due_date": "2023-07-10T05:00:00.000000Z"
                   },
                   "type": "incident_todos"
                 }

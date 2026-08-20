@@ -1,0 +1,35 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 400,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/List execution policies returns \"Bad Request\" response",
+  "operation_id": "ListExecutionPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 0
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/execution-policies"
+  },
+  "scenario": "List execution policies returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

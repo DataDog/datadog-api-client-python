@@ -1,0 +1,35 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 404,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/Delete an execution policy returns \"Not Found\" response",
+  "operation_id": "DeleteExecutionPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/execution-policies/{policy_id}"
+  },
+  "scenario": "Delete an execution policy returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

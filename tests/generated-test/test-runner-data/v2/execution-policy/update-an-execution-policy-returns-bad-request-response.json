@@ -1,0 +1,58 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 400,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/Update an execution policy returns \"Bad Request\" response",
+  "operation_id": "UpdateExecutionPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExecutionPolicyUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action_pattern": {
+              "action_fqns": [
+                "com.datadoghq.script.*"
+              ],
+              "integration": "INTEGRATION_SCRIPT"
+            },
+            "effect": "invalid_effect",
+            "name": "Cassette Execution Policy Updated"
+          },
+          "id": "{{ execution_policy.data.id }}",
+          "type": "execution_policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "execution_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/execution-policies/{policy_id}"
+  },
+  "scenario": "Update an execution policy returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

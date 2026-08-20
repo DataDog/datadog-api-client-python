@@ -2359,7 +2359,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v1/synthetics/private-locations/pl%3Atest-create_a_private_location_returns_ok_response-1706264429-142add9a13d5e67404ac364c8b25d1dc",
+            "path": "/api/v1/synthetics/private-locations/pl:test-create_a_private_location_returns_ok_response-1706264429-142add9a13d5e67404ac364c8b25d1dc",
             "query": []
           },
           "response": {

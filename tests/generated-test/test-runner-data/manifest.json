@@ -5363,6 +5363,97 @@
       "version": "v2"
     },
     {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/create-an-execution-policy-returns-bad-request-response.json",
+      "scenario": "Create an execution policy returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/create-an-execution-policy-returns-created-response.json",
+      "scenario": "Create an execution policy returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/create-an-execution-policy-with-scope-and-targets-returns-created-response.json",
+      "scenario": "Create an execution policy with scope and targets returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/delete-an-execution-policy-returns-no-content-response.json",
+      "scenario": "Delete an execution policy returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/delete-an-execution-policy-returns-not-found-response.json",
+      "scenario": "Delete an execution policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/get-an-execution-policy-returns-not-found-response.json",
+      "scenario": "Get an execution policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/get-an-execution-policy-returns-ok-response.json",
+      "scenario": "Get an execution policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/list-execution-policies-returns-bad-request-response.json",
+      "scenario": "List execution policies returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/list-execution-policies-returns-ok-response.json",
+      "scenario": "List execution policies returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/list-execution-policies-with-query-parameters-returns-ok-response.json",
+      "scenario": "List execution policies with query parameters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/update-an-execution-policy-returns-bad-request-response.json",
+      "scenario": "Update an execution policy returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/update-an-execution-policy-returns-not-found-response.json",
+      "scenario": "Update an execution policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/update-an-execution-policy-returns-ok-response.json",
+      "scenario": "Update an execution policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Fastly Integration",
       "feature_file": "../../v2/features/fastly_integration.feature",
       "file": "v2/fastly-integration/add-fastly-account-returns-created-response.json",

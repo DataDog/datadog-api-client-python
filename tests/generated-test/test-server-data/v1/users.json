@@ -42,7 +42,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v1/user/test%40datadoghq.com",
+            "path": "/api/v1/user/test@datadoghq.com",
             "query": []
           },
           "response": {
@@ -102,7 +102,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v1/user/test%40datadoghq.com",
+            "path": "/api/v1/user/test@datadoghq.com",
             "query": []
           },
           "response": {

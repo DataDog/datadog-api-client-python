@@ -22,12 +22,14 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError
-from urllib.parse import parse_qsl, urlsplit
+from urllib.parse import parse_qsl, quote_from_bytes, unquote_to_bytes, urlsplit
 from urllib.request import Request, urlopen
 
 CONTROL_ROOT = "/__openapi_transformer__"
 SESSION_HEADER = "x-openapi-test-session"
 SCHEMA_VERSION = 1
+PATH_SEGMENT_SAFE = ":@!$&'()*+,;=-._~"
+UTC_DATE_TIME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?)(?:Z|\+00:00)$")
 HOP_BY_HOP_HEADERS = {
     "connection",
     "keep-alive",
@@ -120,6 +122,20 @@ class RecordingDatabase:
                             self.fallback_consumed.add(consumed_key)
                             return interaction["response"]
             raise LookupError("No unconsumed interaction matches this request")
+
+    def next_request(self, session_id: str) -> dict[str, Any]:
+        """Return the next recorded request without advancing the session."""
+        with self.lock:
+            session = self.sessions.get(session_id)
+            if session is None:
+                raise LookupError(f"Unknown session: {session_id}")
+            if session["mode"] != "replay":
+                raise ValueError("Next-request inspection is only available in replay mode")
+
+            interactions = session["recording"]["interactions"]
+            cursor = session["cursor"]
+            request = interactions[cursor]["request"] if cursor < len(interactions) else None
+            return {"request": request}
 
     def capture(
         self,
@@ -241,6 +257,11 @@ class TestRequestHandler(BaseHTTPRequestHandler):
             if self.path == f"{CONTROL_ROOT}/sessions" and self.command == "POST":
                 self._start_session()
                 return
+            next_match = re.fullmatch(rf"{re.escape(CONTROL_ROOT)}/sessions/([a-f0-9]+)/next-request", self.path)
+            if next_match and self.command == "GET":
+                result = self.server.database.next_request(next_match.group(1))
+                self._send_json(HTTPStatus.OK, result)
+                return
             stop_match = re.fullmatch(rf"{re.escape(CONTROL_ROOT)}/sessions/([a-f0-9]+)/stop", self.path)
             if stop_match and self.command == "POST":
                 result = self.server.database.stop(stop_match.group(1))
@@ -351,7 +372,7 @@ def _normalise_request(method: str, raw_path: str, content_type: str, body: byte
     parsed = urlsplit(raw_path)
     return {
         "method": method.upper(),
-        "path": parsed.path or "/",
+        "path": _normalise_path(parsed.path),
         "query": sorted([list(pair) for pair in parse_qsl(parsed.query, keep_blank_values=True)]),
         "content_type": _media_type(content_type),
         "body": _normalise_body(body, content_type),
@@ -365,7 +386,7 @@ def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
     text = body.decode("utf-8", errors="surrogateescape")
     if media_type.endswith("json"):
         try:
-            return {"type": "json", "value": json.loads(text)}
+            return {"type": "json", "value": _normalise_json(json.loads(text))}
         except json.JSONDecodeError:
             pass
     if media_type == "multipart/form-data":
@@ -375,8 +396,25 @@ def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
     return {"type": "text", "value": text}
 
 
+def _normalise_json(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {key: _normalise_json(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_normalise_json(item) for item in value]
+    if isinstance(value, str) and (match := UTC_DATE_TIME_RE.fullmatch(value)):
+        return f"{match.group(1)}Z"
+    return value
+
+
 def _media_type(value: str) -> str:
     return value.partition(";")[0].strip().lower()
+
+
+def _normalise_path(path: str) -> str:
+    normalised = "/".join(
+        quote_from_bytes(unquote_to_bytes(segment), safe=PATH_SEGMENT_SAFE) for segment in path.split("/")
+    )
+    return normalised or "/"
 
 
 def _slug(value: str) -> str:

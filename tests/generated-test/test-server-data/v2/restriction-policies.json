@@ -44,7 +44,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/restriction_policy/dashboard%3Atest-delete",
+            "path": "/api/v2/restriction_policy/dashboard:test-delete",
             "query": []
           },
           "response": {
@@ -106,7 +106,7 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/restriction_policy/dashboard%3Atest-get",
+            "path": "/api/v2/restriction_policy/dashboard:test-get",
             "query": []
           },
           "response": {
@@ -420,7 +420,7 @@
             },
             "content_type": "application/json",
             "method": "POST",
-            "path": "/api/v2/restriction_policy/dashboard%3Atest-update",
+            "path": "/api/v2/restriction_policy/dashboard:test-update",
             "query": []
           },
           "response": {

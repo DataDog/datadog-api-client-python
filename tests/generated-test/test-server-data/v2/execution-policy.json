@@ -1,0 +1,944 @@
+{
+  "feature": "Execution Policy",
+  "recordings": [
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:38.368Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "invalid_effect",
+                    "name": "Cassette Execution Policy"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error creating execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create an execution policy returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:38.801Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testcreateanexecutionpolicyreturnscreatedresponse1786698818"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"78061915-3922-4868-93c5-12a631d74ed1\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:39Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testcreateanexecutionpolicyreturnscreatedresponse1786698818\",\"targets\":[],\"updated_at\":\"2026-08-14T09:13:39Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/78061915-3922-4868-93c5-12a631d74ed1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an execution policy returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:39.401Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testcreateanexecutionpolicywithscopeandtargetsreturnscreatedresponse1786698819",
+                    "scope": {
+                      "scripts": {
+                        "rules": [
+                          {
+                            "target_script_names": [
+                              "restart_service.sh"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "targets": [
+                      {
+                        "agent_tags": [
+                          "env:prod"
+                        ],
+                        "name": "Production hosts"
+                      }
+                    ]
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"90a83e60-76b3-4064-a240-f65b602bbddd\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:40Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testcreateanexecutionpolicywithscopeandtargetsreturnscreatedresponse1786698819\",\"scope\":{\"scripts\":{\"rules\":[{\"target_script_names\":[\"restart_service.sh\"]}]}},\"targets\":[{\"agent_tags\":[\"env:prod\"],\"name\":\"Production hosts\"}],\"updated_at\":\"2026-08-14T09:13:40Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/90a83e60-76b3-4064-a240-f65b602bbddd",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an execution policy with scope and targets returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:40.195Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testdeleteanexecutionpolicyreturnsnocontentresponse1786698820"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a8e55d88-0769-4cb9-b7d9-10f55fc6ecc2\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:41Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testdeleteanexecutionpolicyreturnsnocontentresponse1786698820\",\"targets\":[],\"updated_at\":\"2026-08-14T09:13:41Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/a8e55d88-0769-4cb9-b7d9-10f55fc6ecc2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/a8e55d88-0769-4cb9-b7d9-10f55fc6ecc2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error deleting execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an execution policy returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:41.276Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/aaa11111-aa11-aa11-aaaa-aaaaaa111111",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error deleting execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an execution policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:41.623Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/execution-policies/aaa11111-aa11-aa11-aaaa-aaaaaa111111",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error getting execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an execution policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:41.923Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testgetanexecutionpolicyreturnsokresponse1786698821"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8856f100-43c1-4462-a96e-5ab404e695dc\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:42Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testgetanexecutionpolicyreturnsokresponse1786698821\",\"targets\":[],\"updated_at\":\"2026-08-14T09:13:42Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/execution-policies/8856f100-43c1-4462-a96e-5ab404e695dc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8856f100-43c1-4462-a96e-5ab404e695dc\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:42Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testgetanexecutionpolicyreturnsokresponse1786698821\",\"scope\":{},\"targets\":[],\"updated_at\":\"2026-08-14T09:13:42Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/8856f100-43c1-4462-a96e-5ab404e695dc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an execution policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:43.018Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/execution-policies",
+            "query": [
+              [
+                "page[size]",
+                "0"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error listing execution policies\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List execution policies returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:43.364Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testlistexecutionpoliciesreturnsokresponse1786698823"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8bb1ecd0-aed6-42cd-8a07-f9f781856f39\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:44Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testlistexecutionpoliciesreturnsokresponse1786698823\",\"targets\":[],\"updated_at\":\"2026-08-14T09:13:44Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"8bb1ecd0-aed6-42cd-8a07-f9f781856f39\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:44Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testlistexecutionpoliciesreturnsokresponse1786698823\",\"scope\":{},\"targets\":[],\"updated_at\":\"2026-08-14T09:13:44Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}],\"meta\":{\"page\":{\"total\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/8bb1ecd0-aed6-42cd-8a07-f9f781856f39",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List execution policies returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:44.371Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6f0fbc08-9666-44fd-93da-cf1bfcff5e8f\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:45Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824\",\"targets\":[],\"updated_at\":\"2026-08-14T09:13:45Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/execution-policies",
+            "query": [
+              [
+                "filter[creator_ids]",
+                "262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b"
+              ],
+              [
+                "filter[effects]",
+                "allow"
+              ],
+              [
+                "filter[ids]",
+                "6f0fbc08-9666-44fd-93da-cf1bfcff5e8f"
+              ],
+              [
+                "filter[integration]",
+                "INTEGRATION_SCRIPT"
+              ],
+              [
+                "filter[name]",
+                "Cassette Execution Policy testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824"
+              ],
+              [
+                "page[number]",
+                "0"
+              ],
+              [
+                "page[size]",
+                "10"
+              ],
+              [
+                "sort",
+                "-created_at"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"6f0fbc08-9666-44fd-93da-cf1bfcff5e8f\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:45Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testlistexecutionpolicieswithqueryparametersreturnsokresponse1786698824\",\"scope\":{},\"targets\":[],\"updated_at\":\"2026-08-14T09:13:45Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}],\"meta\":{\"page\":{\"total\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/6f0fbc08-9666-44fd-93da-cf1bfcff5e8f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List execution policies with query parameters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:45.415Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testupdateanexecutionpolicyreturnsbadrequestresponse1786698825"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0ce84810-fb1b-48ad-9012-ac49a505491a\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:46Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testupdateanexecutionpolicyreturnsbadrequestresponse1786698825\",\"targets\":[],\"updated_at\":\"2026-08-14T09:13:46Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "invalid_effect",
+                    "name": "Cassette Execution Policy Updated"
+                  },
+                  "id": "0ce84810-fb1b-48ad-9012-ac49a505491a",
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/actions/execution-policies/0ce84810-fb1b-48ad-9012-ac49a505491a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error updating execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/0ce84810-fb1b-48ad-9012-ac49a505491a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an execution policy returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:46.457Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy Updated"
+                  },
+                  "id": "aaa11111-aa11-aa11-aaaa-aaaaaa111111",
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/actions/execution-policies/aaa11111-aa11-aa11-aaaa-aaaaaa111111",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error updating execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update an execution policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-08-14T09:13:46.840Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testupdateanexecutionpolicyreturnsokresponse1786698826"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0405b41b-8865-4918-91ce-6d935b6af245\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:47Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testupdateanexecutionpolicyreturnsokresponse1786698826\",\"targets\":[],\"updated_at\":\"2026-08-14T09:13:47Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy Updated"
+                  },
+                  "id": "0405b41b-8865-4918-91ce-6d935b6af245",
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/actions/execution-policies/0405b41b-8865-4918-91ce-6d935b6af245",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0405b41b-8865-4918-91ce-6d935b6af245\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-08-14T09:13:47Z\",\"created_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy Updated\",\"scope\":{},\"targets\":[],\"updated_at\":\"2026-08-14T09:13:48Z\",\"updated_by\":\"262c2ca8-d93e-45bc-8d47-5c9ab7af8e6b\",\"version\":2}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/0405b41b-8865-4918-91ce-6d935b6af245",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an execution policy returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

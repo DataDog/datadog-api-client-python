@@ -1,0 +1,182 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 200,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/List execution policies with query parameters returns \"OK\" response",
+  "operation_id": "ListExecutionPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 10
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[number]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 0
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[name]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "execution_policy.data.attributes.name",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[ids]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "{{ execution_policy.data.id }}"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[integration]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "ExecutionPolicyIntegration",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "INTEGRATION_SCRIPT"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[effects]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "ExecutionPolicyEffect",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "allow"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[creator_ids]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "{{ execution_policy.data.attributes.created_by }}"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "sort",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "-created_at"
+          ]
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v2/actions/execution-policies"
+  },
+  "scenario": "List execution policies with query parameters returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
