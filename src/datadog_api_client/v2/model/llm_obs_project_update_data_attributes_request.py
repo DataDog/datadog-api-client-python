@@ -28,7 +28,7 @@ class LLMObsProjectUpdateDataAttributesRequest(ModelNormal):
 
     def __init__(self_, description: Union[str, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs):
         """
-        Attributes for updating an LLM Observability project.
+        Attributes for updating an Agent Observability project.
 
         :param description: Updated description of the project.
         :type description: str, optional

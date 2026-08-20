@@ -38,15 +38,15 @@ class LLMObsPromptVersionData(ModelNormal):
         self_, attributes: LLMObsPromptVersionDataAttributes, id: str, type: LLMObsPromptVersionType, **kwargs
     ):
         """
-        Data object for a specific version of an LLM Observability prompt.
+        Data object for a specific version of an Agent Observability prompt.
 
-        :param attributes: Attributes of a specific version of an LLM Observability prompt.
+        :param attributes: Attributes of a specific version of an Agent Observability prompt.
         :type attributes: LLMObsPromptVersionDataAttributes
 
         :param id: Unique identifier of the prompt version.
         :type id: str
 
-        :param type: Resource type of an LLM Observability prompt version.
+        :param type: Resource type of an Agent Observability prompt version.
         :type type: LLMObsPromptVersionType
         """
         super().__init__(kwargs)

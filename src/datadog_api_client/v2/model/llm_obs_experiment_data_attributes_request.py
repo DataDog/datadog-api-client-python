@@ -97,7 +97,7 @@ class LLMObsExperimentDataAttributesRequest(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating an LLM Observability experiment.
+        Attributes for creating an Agent Observability experiment.
 
         :param config: Configuration parameters for the experiment.
         :type config: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional

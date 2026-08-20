@@ -34,9 +34,9 @@ class LLMObsAnnotationQueueUpdateRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsAnnotationQueueUpdateDataRequest, **kwargs):
         """
-        Request to update an LLM Observability annotation queue.
+        Request to update an Agent Observability annotation queue.
 
-        :param data: Data object for updating an LLM Observability annotation queue.
+        :param data: Data object for updating an Agent Observability annotation queue.
         :type data: LLMObsAnnotationQueueUpdateDataRequest
         """
         super().__init__(kwargs)

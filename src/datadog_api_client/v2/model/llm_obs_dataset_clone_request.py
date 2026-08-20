@@ -30,9 +30,9 @@ class LLMObsDatasetCloneRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetCloneDataRequest, **kwargs):
         """
-        Request to clone an LLM Observability dataset.
+        Request to clone an Agent Observability dataset.
 
-        :param data: Data object for cloning an LLM Observability dataset.
+        :param data: Data object for cloning an Agent Observability dataset.
         :type data: LLMObsDatasetCloneDataRequest
         """
         super().__init__(kwargs)

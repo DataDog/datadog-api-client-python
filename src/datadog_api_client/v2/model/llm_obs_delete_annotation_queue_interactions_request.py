@@ -34,7 +34,7 @@ class LLMObsDeleteAnnotationQueueInteractionsRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDeleteAnnotationQueueInteractionsDataRequest, **kwargs):
         """
-        Request to delete interactions from an LLM Observability annotation queue.
+        Request to delete interactions from an Agent Observability annotation queue.
 
         :param data: Data object for deleting interactions from an annotation queue.
         :type data: LLMObsDeleteAnnotationQueueInteractionsDataRequest

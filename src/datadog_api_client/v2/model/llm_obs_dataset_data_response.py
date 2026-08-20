@@ -38,15 +38,15 @@ class LLMObsDatasetDataResponse(ModelNormal):
 
     def __init__(self_, attributes: LLMObsDatasetDataAttributesResponse, id: str, type: LLMObsDatasetType, **kwargs):
         """
-        Data object for an LLM Observability dataset.
+        Data object for an Agent Observability dataset.
 
-        :param attributes: Attributes of an LLM Observability dataset.
+        :param attributes: Attributes of an Agent Observability dataset.
         :type attributes: LLMObsDatasetDataAttributesResponse
 
         :param id: Unique identifier of the dataset.
         :type id: str
 
-        :param type: Resource type of an LLM Observability dataset.
+        :param type: Resource type of an Agent Observability dataset.
         :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)

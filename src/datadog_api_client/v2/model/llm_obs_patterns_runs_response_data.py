@@ -42,15 +42,15 @@ class LLMObsPatternsRunsResponseData(ModelNormal):
         self_, attributes: LLMObsPatternsRunsResponseAttributes, id: str, type: LLMObsPatternsRunsListType, **kwargs
     ):
         """
-        Data object of an LLM Observability patterns runs response.
+        Data object of an Agent Observability patterns runs response.
 
-        :param attributes: Attributes of an LLM Observability patterns runs response.
+        :param attributes: Attributes of an Agent Observability patterns runs response.
         :type attributes: LLMObsPatternsRunsResponseAttributes
 
         :param id: Identifier of the configuration the runs belong to.
         :type id: str
 
-        :param type: Resource type of a list of LLM Observability patterns runs.
+        :param type: Resource type of a list of Agent Observability patterns runs.
         :type type: LLMObsPatternsRunsListType
         """
         super().__init__(kwargs)

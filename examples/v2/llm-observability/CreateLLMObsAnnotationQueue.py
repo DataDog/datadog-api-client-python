@@ -1,5 +1,5 @@
 """
-Create an LLM Observability annotation queue returns "Created" response
+Create an Agent Observability annotation queue returns "Created" response
 """
 
 from datadog_api_client import ApiClient, Configuration

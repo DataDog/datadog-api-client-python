@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsEventType(ModelSimple):
     """
-    Resource type for LLM Observability experiment events.
+    Resource type for Agent Observability experiment events.
 
     :param value: If omitted defaults to "events". Must be one of ["events"].
     :type value: str

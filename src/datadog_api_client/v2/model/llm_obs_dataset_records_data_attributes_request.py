@@ -34,7 +34,7 @@ class LLMObsDatasetRecordsDataAttributesRequest(ModelNormal):
 
     def __init__(self_, records: List[LLMObsDatasetRecordItem], deduplicate: Union[bool, UnsetType] = unset, **kwargs):
         """
-        Attributes for appending records to an LLM Observability dataset.
+        Attributes for appending records to an Agent Observability dataset.
 
         :param deduplicate: Whether to deduplicate records before appending. Defaults to ``true``.
         :type deduplicate: bool, optional

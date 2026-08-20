@@ -46,7 +46,7 @@ class LLMObsSpansResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Response containing a list of LLM Observability spans.
+        Response containing a list of Agent Observability spans.
 
         :param data: List of spans matching the query.
         :type data: [LLMObsSpanData]

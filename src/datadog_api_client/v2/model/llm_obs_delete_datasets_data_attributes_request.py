@@ -24,7 +24,7 @@ class LLMObsDeleteDatasetsDataAttributesRequest(ModelNormal):
 
     def __init__(self_, dataset_ids: List[str], **kwargs):
         """
-        Attributes for deleting LLM Observability datasets.
+        Attributes for deleting Agent Observability datasets.
 
         :param dataset_ids: List of dataset IDs to delete.
         :type dataset_ids: [str]

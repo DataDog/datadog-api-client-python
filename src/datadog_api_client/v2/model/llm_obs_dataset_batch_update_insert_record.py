@@ -85,7 +85,7 @@ class LLMObsDatasetBatchUpdateInsertRecord(ModelNormal):
         **kwargs,
     ):
         """
-        A record to insert as part of a batch update on an LLM Observability dataset.
+        A record to insert as part of a batch update on an Agent Observability dataset.
 
         :param expected_output: Represents any valid JSON value.
         :type expected_output: AnyValue, none_type, optional

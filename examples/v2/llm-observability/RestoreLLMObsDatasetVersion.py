@@ -1,5 +1,5 @@
 """
-Restore an LLM Observability dataset version returns "OK" response
+Restore an Agent Observability dataset version returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

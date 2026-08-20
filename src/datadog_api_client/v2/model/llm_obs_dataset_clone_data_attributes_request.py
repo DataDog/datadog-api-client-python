@@ -28,7 +28,7 @@ class LLMObsDatasetCloneDataAttributesRequest(ModelNormal):
 
     def __init__(self_, name: str, description: Union[str, UnsetType] = unset, **kwargs):
         """
-        Attributes for cloning an LLM Observability dataset.
+        Attributes for cloning an Agent Observability dataset.
 
         :param description: Description of the cloned dataset.
         :type description: str, optional

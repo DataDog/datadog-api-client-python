@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsCustomEvalConfigType(ModelSimple):
     """
-    Type of the custom LLM Observability evaluator configuration resource.
+    Type of the custom Agent Observability evaluator configuration resource.
 
     :param value: If omitted defaults to "evaluator_config". Must be one of ["evaluator_config"].
     :type value: str

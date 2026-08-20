@@ -1,5 +1,5 @@
 """
-Clone an LLM Observability dataset returns "OK" response
+Clone an Agent Observability dataset returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

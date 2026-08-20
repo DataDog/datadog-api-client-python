@@ -77,7 +77,7 @@ class LLMObsPatternsConfigItem(ModelNormal):
         **kwargs,
     ):
         """
-        A single LLM Observability patterns configuration in a list response.
+        A single Agent Observability patterns configuration in a list response.
 
         :param account_id: Integration account ID for a bring-your-own-model configuration.
         :type account_id: str, none_type, optional

@@ -1,5 +1,5 @@
 """
-Update an LLM Observability prompt returns "OK" response
+Update an Agent Observability prompt returns "OK" response
 """
 
 from os import environ

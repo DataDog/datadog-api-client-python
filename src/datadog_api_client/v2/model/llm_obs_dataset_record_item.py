@@ -74,7 +74,7 @@ class LLMObsDatasetRecordItem(ModelNormal):
         **kwargs,
     ):
         """
-        A single record to append to an LLM Observability dataset.
+        A single record to append to an Agent Observability dataset.
 
         :param expected_output: Represents any valid JSON value.
         :type expected_output: AnyValue, none_type, optional

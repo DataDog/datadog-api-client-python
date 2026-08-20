@@ -36,15 +36,15 @@ class LLMObsPatternsConfigResponseData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsPatternsConfigAttributes, id: str, type: LLMObsPatternsConfigType, **kwargs):
         """
-        Data object of an LLM Observability patterns configuration.
+        Data object of an Agent Observability patterns configuration.
 
-        :param attributes: Attributes of an LLM Observability patterns configuration.
+        :param attributes: Attributes of an Agent Observability patterns configuration.
         :type attributes: LLMObsPatternsConfigAttributes
 
         :param id: Unique identifier of the configuration.
         :type id: str
 
-        :param type: Resource type of an LLM Observability patterns configuration.
+        :param type: Resource type of an Agent Observability patterns configuration.
         :type type: LLMObsPatternsConfigType
         """
         super().__init__(kwargs)

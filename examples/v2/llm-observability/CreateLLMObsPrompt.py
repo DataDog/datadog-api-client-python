@@ -1,5 +1,5 @@
 """
-Create an LLM Observability prompt returns "OK" response
+Create an Agent Observability prompt returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

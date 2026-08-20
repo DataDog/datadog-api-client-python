@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsMetricAssessment(ModelSimple):
     """
-    Assessment result for an LLM Observability experiment metric.
+    Assessment result for an Agent Observability experiment metric.
 
     :param value: Must be one of ["pass", "fail"].
     :type value: str

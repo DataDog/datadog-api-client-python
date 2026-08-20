@@ -34,7 +34,7 @@ class LLMObsAnnotationQueueInteractionsRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsAnnotationQueueInteractionsDataRequest, **kwargs):
         """
-        Request to add interactions to an LLM Observability annotation queue.
+        Request to add interactions to an Agent Observability annotation queue.
 
         :param data: Data object for adding interactions to an annotation queue.
         :type data: LLMObsAnnotationQueueInteractionsDataRequest

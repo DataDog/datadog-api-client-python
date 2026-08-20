@@ -24,7 +24,7 @@ class LLMObsDeleteDatasetRecordsDataAttributesRequest(ModelNormal):
 
     def __init__(self_, record_ids: List[str], **kwargs):
         """
-        Attributes for deleting records from an LLM Observability dataset.
+        Attributes for deleting records from an Agent Observability dataset.
 
         :param record_ids: List of record IDs to delete.
         :type record_ids: [str]

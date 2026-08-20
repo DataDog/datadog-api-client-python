@@ -42,15 +42,15 @@ class LLMObsDatasetCloneDataRequest(ModelNormal):
         self_, attributes: LLMObsDatasetCloneDataAttributesRequest, id: str, type: LLMObsDatasetType, **kwargs
     ):
         """
-        Data object for cloning an LLM Observability dataset.
+        Data object for cloning an Agent Observability dataset.
 
-        :param attributes: Attributes for cloning an LLM Observability dataset.
+        :param attributes: Attributes for cloning an Agent Observability dataset.
         :type attributes: LLMObsDatasetCloneDataAttributesRequest
 
         :param id: Identifier of the source dataset to clone.
         :type id: str
 
-        :param type: Resource type of an LLM Observability dataset.
+        :param type: Resource type of an Agent Observability dataset.
         :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)

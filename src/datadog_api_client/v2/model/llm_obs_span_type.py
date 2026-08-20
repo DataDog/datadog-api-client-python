@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsSpanType(ModelSimple):
     """
-    Resource type for an LLM Observability span.
+    Resource type for an Agent Observability span.
 
     :param value: If omitted defaults to "span". Must be one of ["span"].
     :type value: str

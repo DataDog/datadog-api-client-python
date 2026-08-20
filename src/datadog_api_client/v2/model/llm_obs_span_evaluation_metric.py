@@ -60,7 +60,7 @@ class LLMObsSpanEvaluationMetric(ModelNormal):
         **kwargs,
     ):
         """
-        An evaluation metric associated with an LLM Observability span.
+        An evaluation metric associated with an Agent Observability span.
 
         :param assessment: Assessment result (e.g., pass or fail).
         :type assessment: str, optional

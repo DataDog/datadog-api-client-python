@@ -30,9 +30,9 @@ class LLMObsCustomEvalConfigUpdateRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsCustomEvalConfigUpdateData, **kwargs):
         """
-        Request to create or update a custom LLM Observability evaluator configuration.
+        Request to create or update a custom Agent Observability evaluator configuration.
 
-        :param data: Data object for creating or updating a custom LLM Observability evaluator configuration.
+        :param data: Data object for creating or updating a custom Agent Observability evaluator configuration.
         :type data: LLMObsCustomEvalConfigUpdateData
         """
         super().__init__(kwargs)

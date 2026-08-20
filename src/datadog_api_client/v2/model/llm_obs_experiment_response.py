@@ -30,9 +30,9 @@ class LLMObsExperimentResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsExperimentDataResponse, **kwargs):
         """
-        Response containing a single LLM Observability experiment.
+        Response containing a single Agent Observability experiment.
 
-        :param data: Data object for an LLM Observability experiment.
+        :param data: Data object for an Agent Observability experiment.
         :type data: LLMObsExperimentDataResponse
         """
         super().__init__(kwargs)

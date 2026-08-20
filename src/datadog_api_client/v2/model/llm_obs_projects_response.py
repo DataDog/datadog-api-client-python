@@ -38,7 +38,7 @@ class LLMObsProjectsResponse(ModelNormal):
         self_, data: List[LLMObsProjectDataResponse], meta: Union[LLMObsCursorMeta, UnsetType] = unset, **kwargs
     ):
         """
-        Response containing a list of LLM Observability projects.
+        Response containing a list of Agent Observability projects.
 
         :param data: List of projects.
         :type data: [LLMObsProjectDataResponse]

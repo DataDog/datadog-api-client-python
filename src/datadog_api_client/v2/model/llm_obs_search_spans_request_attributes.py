@@ -49,9 +49,9 @@ class LLMObsSearchSpansRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability spans search request.
+        Attributes of an Agent Observability spans search request.
 
-        :param filter: Filter criteria for an LLM Observability span search.
+        :param filter: Filter criteria for an Agent Observability span search.
         :type filter: LLMObsSpanFilter, optional
 
         :param options: Additional options for a span search request.

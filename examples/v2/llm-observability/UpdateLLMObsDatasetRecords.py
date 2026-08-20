@@ -1,5 +1,5 @@
 """
-Update LLM Observability dataset records returns "OK" response
+Update Agent Observability dataset records returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

@@ -42,15 +42,15 @@ class LLMObsDatasetBatchUpdateDataRequest(ModelNormal):
         self_, attributes: LLMObsDatasetBatchUpdateDataAttributesRequest, id: str, type: LLMObsDatasetType, **kwargs
     ):
         """
-        Data object for batch-updating records in an LLM Observability dataset.
+        Data object for batch-updating records in an Agent Observability dataset.
 
-        :param attributes: Attributes for batch-updating records in an LLM Observability dataset.
+        :param attributes: Attributes for batch-updating records in an Agent Observability dataset.
         :type attributes: LLMObsDatasetBatchUpdateDataAttributesRequest
 
         :param id: Unique identifier of the dataset.
         :type id: str
 
-        :param type: Resource type of an LLM Observability dataset.
+        :param type: Resource type of an Agent Observability dataset.
         :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)

@@ -24,7 +24,7 @@ class LLMObsDeleteExperimentsDataAttributesRequest(ModelNormal):
 
     def __init__(self_, experiment_ids: List[str], **kwargs):
         """
-        Attributes for deleting LLM Observability experiments.
+        Attributes for deleting Agent Observability experiments.
 
         :param experiment_ids: List of experiment IDs to delete.
         :type experiment_ids: [str]

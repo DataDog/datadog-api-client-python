@@ -34,9 +34,9 @@ class LLMObsPatternsConfigUpsertRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsPatternsConfigUpsertRequestData, **kwargs):
         """
-        Request to create or update an LLM Observability patterns configuration.
+        Request to create or update an Agent Observability patterns configuration.
 
-        :param data: Data object for creating or updating an LLM Observability patterns configuration.
+        :param data: Data object for creating or updating an Agent Observability patterns configuration.
         :type data: LLMObsPatternsConfigUpsertRequestData
         """
         super().__init__(kwargs)

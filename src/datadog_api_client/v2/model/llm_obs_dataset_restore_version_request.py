@@ -34,9 +34,9 @@ class LLMObsDatasetRestoreVersionRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetRestoreVersionDataRequest, **kwargs):
         """
-        Request to restore an LLM Observability dataset to a previous version.
+        Request to restore an Agent Observability dataset to a previous version.
 
-        :param data: Data object for restoring an LLM Observability dataset to a previous version.
+        :param data: Data object for restoring an Agent Observability dataset to a previous version.
         :type data: LLMObsDatasetRestoreVersionDataRequest
         """
         super().__init__(kwargs)

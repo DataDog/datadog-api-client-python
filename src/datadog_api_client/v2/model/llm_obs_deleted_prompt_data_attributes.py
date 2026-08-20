@@ -26,7 +26,7 @@ class LLMObsDeletedPromptDataAttributes(ModelNormal):
 
     def __init__(self_, deleted_at: datetime, prompt_id: str, **kwargs):
         """
-        Attributes confirming that an LLM Observability prompt was deleted.
+        Attributes confirming that an Agent Observability prompt was deleted.
 
         :param deleted_at: Timestamp when the prompt was deleted.
         :type deleted_at: datetime

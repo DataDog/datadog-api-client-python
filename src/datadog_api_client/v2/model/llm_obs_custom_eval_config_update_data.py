@@ -48,15 +48,15 @@ class LLMObsCustomEvalConfigUpdateData(ModelNormal):
         **kwargs,
     ):
         """
-        Data object for creating or updating a custom LLM Observability evaluator configuration.
+        Data object for creating or updating a custom Agent Observability evaluator configuration.
 
-        :param attributes: Attributes for creating or updating a custom LLM Observability evaluator configuration.
+        :param attributes: Attributes for creating or updating a custom Agent Observability evaluator configuration.
         :type attributes: LLMObsCustomEvalConfigUpdateAttributes
 
         :param id: Name of the evaluator. If provided, must match the eval_name path parameter.
         :type id: str, optional
 
-        :param type: Type of the custom LLM Observability evaluator configuration resource.
+        :param type: Type of the custom Agent Observability evaluator configuration resource.
         :type type: LLMObsCustomEvalConfigType
         """
         if id is not unset:

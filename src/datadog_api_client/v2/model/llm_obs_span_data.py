@@ -36,15 +36,15 @@ class LLMObsSpanData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsSpanAttributes, id: str, type: LLMObsSpanType, **kwargs):
         """
-        A single LLM Observability span.
+        A single Agent Observability span.
 
-        :param attributes: Attributes of an LLM Observability span.
+        :param attributes: Attributes of an Agent Observability span.
         :type attributes: LLMObsSpanAttributes
 
         :param id: Unique identifier of the span.
         :type id: str
 
-        :param type: Resource type for an LLM Observability span.
+        :param type: Resource type for an Agent Observability span.
         :type type: LLMObsSpanType
         """
         super().__init__(kwargs)

@@ -36,7 +36,7 @@ class LLMObsDatasetVersionDataAttributes(ModelNormal):
 
     def __init__(self_, dataset_id: str, last_used: Union[datetime, none_type], version_number: int, **kwargs):
         """
-        Attributes of an LLM Observability dataset version.
+        Attributes of an Agent Observability dataset version.
 
         :param dataset_id: Unique identifier of the dataset this version belongs to.
         :type dataset_id: str

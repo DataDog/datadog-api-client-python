@@ -1,5 +1,5 @@
 """
-List LLM Observability prompts returns "OK" response
+List Agent Observability prompts returns "OK" response
 """
 
 from os import environ

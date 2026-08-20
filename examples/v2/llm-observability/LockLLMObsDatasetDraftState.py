@@ -1,5 +1,5 @@
 """
-Lock LLM Observability dataset draft state returns "OK" response
+Lock Agent Observability dataset draft state returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

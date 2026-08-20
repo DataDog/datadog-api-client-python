@@ -30,9 +30,9 @@ class LLMObsPromptSDKResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPromptSDKData, **kwargs):
         """
-        Response containing a flattened LLM Observability prompt version for SDK consumption.
+        Response containing a flattened Agent Observability prompt version for SDK consumption.
 
-        :param data: Data object for a flattened LLM Observability prompt version returned for SDK consumption.
+        :param data: Data object for a flattened Agent Observability prompt version returned for SDK consumption.
         :type data: LLMObsPromptSDKData
         """
         super().__init__(kwargs)

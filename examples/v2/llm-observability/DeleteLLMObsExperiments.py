@@ -1,5 +1,5 @@
 """
-Delete LLM Observability experiments returns "No Content" response
+Delete Agent Observability experiments returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration

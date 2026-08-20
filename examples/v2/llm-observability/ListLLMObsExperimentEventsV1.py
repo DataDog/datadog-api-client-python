@@ -1,5 +1,5 @@
 """
-List LLM Observability experiment spans (v1) returns "OK" response
+List Agent Observability experiment spans (v1) returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

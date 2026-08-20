@@ -1,5 +1,5 @@
 """
-Update an LLM Observability annotation queue returns "OK" response
+Update an Agent Observability annotation queue returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

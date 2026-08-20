@@ -30,9 +30,9 @@ class LLMObsPatternsTriggerRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsPatternsTriggerRequestData, **kwargs):
         """
-        Request to trigger an LLM Observability patterns run.
+        Request to trigger an Agent Observability patterns run.
 
-        :param data: Data object for triggering an LLM Observability patterns run.
+        :param data: Data object for triggering an Agent Observability patterns run.
         :type data: LLMObsPatternsTriggerRequestData
         """
         super().__init__(kwargs)

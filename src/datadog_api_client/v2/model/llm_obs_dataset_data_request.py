@@ -36,12 +36,12 @@ class LLMObsDatasetDataRequest(ModelNormal):
 
     def __init__(self_, attributes: LLMObsDatasetDataAttributesRequest, type: LLMObsDatasetType, **kwargs):
         """
-        Data object for creating an LLM Observability dataset.
+        Data object for creating an Agent Observability dataset.
 
-        :param attributes: Attributes for creating an LLM Observability dataset.
+        :param attributes: Attributes for creating an Agent Observability dataset.
         :type attributes: LLMObsDatasetDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability dataset.
+        :param type: Resource type of an Agent Observability dataset.
         :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)

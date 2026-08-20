@@ -45,7 +45,7 @@ class LLMObsDeleteAnnotationsDataRequest(ModelNormal):
         :param attributes: Attributes for deleting annotations.
         :type attributes: LLMObsDeleteAnnotationsDataAttributesRequest
 
-        :param type: Resource type for LLM Observability annotations.
+        :param type: Resource type for Agent Observability annotations.
         :type type: LLMObsAnnotationsType
         """
         super().__init__(kwargs)

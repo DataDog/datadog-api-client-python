@@ -29,7 +29,7 @@ class LLMObsDatasetRestoreVersionDataAttributesRequest(ModelNormal):
 
     def __init__(self_, dataset_version: int, **kwargs):
         """
-        Attributes for restoring an LLM Observability dataset to a previous version.
+        Attributes for restoring an Agent Observability dataset to a previous version.
 
         :param dataset_version: Version number of the dataset to restore. Must be between 0 and the current version of the dataset, inclusive.
         :type dataset_version: int

@@ -51,7 +51,7 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating a new version of an LLM Observability prompt. ``template`` is required; all other attributes are optional.
+        Attributes for creating a new version of an Agent Observability prompt. ``template`` is required; all other attributes are optional.
 
         :param description: Optional description of this version.
         :type description: str, optional

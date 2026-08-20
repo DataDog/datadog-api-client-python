@@ -39,7 +39,7 @@ class LLMObsSpanIO(ModelNormal):
         **kwargs,
     ):
         """
-        Input or output content of an LLM Observability span.
+        Input or output content of an Agent Observability span.
 
         :param messages: List of messages in the input or output.
         :type messages: [LLMObsSpanMessage], optional

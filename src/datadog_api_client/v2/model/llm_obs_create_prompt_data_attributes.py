@@ -63,7 +63,7 @@ class LLMObsCreatePromptDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating an LLM Observability prompt and its first version. ``prompt_id`` and ``template`` are required; all other attributes are optional.
+        Attributes for creating an Agent Observability prompt and its first version. ``prompt_id`` and ``template`` are required; all other attributes are optional.
 
         :param description: Optional description of the prompt.
         :type description: str, optional

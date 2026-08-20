@@ -1495,22 +1495,22 @@ class UsageSummaryDate(ModelNormal):
         :param iot_device_top99p: Shows the 99th percentile of all IoT devices over all hours in the current date all organizations.
         :type iot_device_top99p: int, optional
 
-        :param llm_observability_15day_retention_spans_sum: Shows the sum of all LLM Observability 15-day retention spans over all hours in the current date for all organizations.
+        :param llm_observability_15day_retention_spans_sum: Shows the sum of all Agent Observability 15-day retention spans over all hours in the current date for all organizations.
         :type llm_observability_15day_retention_spans_sum: int, optional
 
-        :param llm_observability_30day_retention_spans_sum: Shows the sum of all LLM Observability 30-day retention spans over all hours in the current date for all organizations.
+        :param llm_observability_30day_retention_spans_sum: Shows the sum of all Agent Observability 30-day retention spans over all hours in the current date for all organizations.
         :type llm_observability_30day_retention_spans_sum: int, optional
 
-        :param llm_observability_60day_retention_spans_sum: Shows the sum of all LLM Observability 60-day retention spans over all hours in the current date for all organizations.
+        :param llm_observability_60day_retention_spans_sum: Shows the sum of all Agent Observability 60-day retention spans over all hours in the current date for all organizations.
         :type llm_observability_60day_retention_spans_sum: int, optional
 
-        :param llm_observability_90day_retention_spans_sum: Shows the sum of all LLM Observability 90-day retention spans over all hours in the current date for all organizations.
+        :param llm_observability_90day_retention_spans_sum: Shows the sum of all Agent Observability 90-day retention spans over all hours in the current date for all organizations.
         :type llm_observability_90day_retention_spans_sum: int, optional
 
-        :param llm_observability_min_spend_sum: Sum of all LLM observability minimum spend over all hours in the current date for all organizations.
+        :param llm_observability_min_spend_sum: Sum of all Agent observability minimum spend over all hours in the current date for all organizations.
         :type llm_observability_min_spend_sum: int, optional
 
-        :param llm_observability_sum: Sum of all LLM observability sessions over all hours in the current date for all organizations.
+        :param llm_observability_sum: Sum of all Agent observability sessions over all hours in the current date for all organizations.
         :type llm_observability_sum: int, optional
 
         :param logs_archive_search_gb_scanned_sum: Shows the sum of all Logs Archive Search scanned data over all hours in the current date for all organizations.

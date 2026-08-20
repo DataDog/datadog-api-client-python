@@ -24,7 +24,7 @@ class LLMObsDeleteProjectsDataAttributesRequest(ModelNormal):
 
     def __init__(self_, project_ids: List[str], **kwargs):
         """
-        Attributes for deleting LLM Observability projects.
+        Attributes for deleting Agent Observability projects.
 
         :param project_ids: List of project IDs to delete.
         :type project_ids: [str]

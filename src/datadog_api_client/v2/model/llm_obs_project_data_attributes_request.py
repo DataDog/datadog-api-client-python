@@ -28,7 +28,7 @@ class LLMObsProjectDataAttributesRequest(ModelNormal):
 
     def __init__(self_, name: str, description: Union[str, UnsetType] = unset, **kwargs):
         """
-        Attributes for creating an LLM Observability project.
+        Attributes for creating an Agent Observability project.
 
         :param description: Description of the project.
         :type description: str, optional

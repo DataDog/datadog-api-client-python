@@ -78,7 +78,7 @@ class LLMObsDatasetRecordUpdateItem(ModelNormal):
         **kwargs,
     ):
         """
-        A record update payload for an LLM Observability dataset.
+        A record update payload for an Agent Observability dataset.
 
         :param expected_output: Represents any valid JSON value.
         :type expected_output: AnyValue, none_type, optional

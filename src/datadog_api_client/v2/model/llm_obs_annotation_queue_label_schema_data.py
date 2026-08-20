@@ -54,7 +54,7 @@ class LLMObsAnnotationQueueLabelSchemaData(ModelNormal):
         :param id: Unique identifier of the annotation queue.
         :type id: str
 
-        :param type: Resource type of an LLM Observability annotation queue.
+        :param type: Resource type of an Agent Observability annotation queue.
         :type type: LLMObsAnnotationQueueType
         """
         super().__init__(kwargs)

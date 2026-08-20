@@ -70,7 +70,7 @@ class LLMObsExperimentUpdateDataAttributesRequest(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for updating an LLM Observability experiment.
+        Attributes for updating an Agent Observability experiment.
 
         :param dataset_id: Updated identifier of the dataset used in this experiment.
         :type dataset_id: str, optional
@@ -87,7 +87,7 @@ class LLMObsExperimentUpdateDataAttributesRequest(ModelNormal):
         :param name: Updated name of the experiment.
         :type name: str, optional
 
-        :param status: Execution status of an LLM Observability experiment.
+        :param status: Execution status of an Agent Observability experiment.
         :type status: LLMObsExperimentStatus, optional
         """
         if dataset_id is not unset:

@@ -30,9 +30,9 @@ class LLMObsUpdatePromptVersionRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsUpdatePromptVersionData, **kwargs):
         """
-        Request to update an LLM Observability prompt version's metadata or feature-flag environments.
+        Request to update an Agent Observability prompt version's metadata or feature-flag environments.
 
-        :param data: Data object for updating an LLM Observability prompt version.
+        :param data: Data object for updating an Agent Observability prompt version.
         :type data: LLMObsUpdatePromptVersionData
         """
         super().__init__(kwargs)

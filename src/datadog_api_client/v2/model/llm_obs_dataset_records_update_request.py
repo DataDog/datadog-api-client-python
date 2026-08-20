@@ -34,9 +34,9 @@ class LLMObsDatasetRecordsUpdateRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetRecordsUpdateDataRequest, **kwargs):
         """
-        Request to update records in an LLM Observability dataset.
+        Request to update records in an Agent Observability dataset.
 
-        :param data: Data object for updating records in an LLM Observability dataset.
+        :param data: Data object for updating records in an Agent Observability dataset.
         :type data: LLMObsDatasetRecordsUpdateDataRequest
         """
         super().__init__(kwargs)

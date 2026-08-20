@@ -30,9 +30,9 @@ class LLMObsDeleteDatasetsRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDeleteDatasetsDataRequest, **kwargs):
         """
-        Request to delete one or more LLM Observability datasets.
+        Request to delete one or more Agent Observability datasets.
 
-        :param data: Data object for deleting LLM Observability datasets.
+        :param data: Data object for deleting Agent Observability datasets.
         :type data: LLMObsDeleteDatasetsDataRequest
         """
         super().__init__(kwargs)

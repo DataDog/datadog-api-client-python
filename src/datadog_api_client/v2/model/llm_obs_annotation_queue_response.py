@@ -30,9 +30,9 @@ class LLMObsAnnotationQueueResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsAnnotationQueueDataResponse, **kwargs):
         """
-        Response containing a single LLM Observability annotation queue.
+        Response containing a single Agent Observability annotation queue.
 
-        :param data: Data object for an LLM Observability annotation queue.
+        :param data: Data object for an Agent Observability annotation queue.
         :type data: LLMObsAnnotationQueueDataResponse
         """
         super().__init__(kwargs)

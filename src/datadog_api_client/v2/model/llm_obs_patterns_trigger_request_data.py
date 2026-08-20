@@ -38,12 +38,12 @@ class LLMObsPatternsTriggerRequestData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsPatternsTriggerRequestAttributes, type: LLMObsPatternsRequestType, **kwargs):
         """
-        Data object for triggering an LLM Observability patterns run.
+        Data object for triggering an Agent Observability patterns run.
 
-        :param attributes: Attributes for triggering an LLM Observability patterns run.
+        :param attributes: Attributes for triggering an Agent Observability patterns run.
         :type attributes: LLMObsPatternsTriggerRequestAttributes
 
-        :param type: Resource type for triggering an LLM Observability patterns run.
+        :param type: Resource type for triggering an Agent Observability patterns run.
         :type type: LLMObsPatternsRequestType
         """
         super().__init__(kwargs)

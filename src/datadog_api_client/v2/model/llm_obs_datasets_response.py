@@ -38,7 +38,7 @@ class LLMObsDatasetsResponse(ModelNormal):
         self_, data: List[LLMObsDatasetDataResponse], meta: Union[LLMObsCursorMeta, UnsetType] = unset, **kwargs
     ):
         """
-        Response containing a list of LLM Observability datasets.
+        Response containing a list of Agent Observability datasets.
 
         :param data: List of datasets.
         :type data: [LLMObsDatasetDataResponse]
