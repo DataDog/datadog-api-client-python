@@ -1,0 +1,35 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 400,
+  "feature": "Service Level Objectives",
+  "id": "v2/Service Level Objectives/Get SLO report status returns \"Bad Request\" response",
+  "operation_id": "GetSLOReportJobStatus",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "report_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid-report-id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/slo/report/{report_id}/status"
+  },
+  "scenario": "Get SLO report status returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

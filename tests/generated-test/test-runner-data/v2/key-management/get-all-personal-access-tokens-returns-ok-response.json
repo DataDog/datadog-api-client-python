@@ -1,0 +1,18 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Get all personal access tokens returns \"OK\" response",
+  "operation_id": "ListPersonalAccessTokens",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/personal_access_tokens"
+  },
+  "scenario": "Get all personal access tokens returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

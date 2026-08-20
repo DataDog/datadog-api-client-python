@@ -1,0 +1,56 @@
+{
+  "api": "DataDeletion",
+  "expected_status": 412,
+  "feature": "Data Deletion",
+  "id": "v2/Data Deletion/Creates a data deletion request returns \"Precondition failed error\" response",
+  "operation_id": "CreateDataDeletionRequest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateDataDeletionRequestBody",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "from": 1672527600000,
+            "indexes": [
+              "test-index",
+              "test-index-2"
+            ],
+            "query": {},
+            "to": 1704063600000
+          },
+          "type": "create_deletion_req"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "product",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "logs"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deletion/data/{product}"
+  },
+  "scenario": "Creates a data deletion request returns \"Precondition failed error\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

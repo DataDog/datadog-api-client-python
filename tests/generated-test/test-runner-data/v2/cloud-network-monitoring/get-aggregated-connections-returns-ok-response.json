@@ -1,0 +1,18 @@
+{
+  "api": "CloudNetworkMonitoring",
+  "expected_status": 200,
+  "feature": "Cloud Network Monitoring",
+  "id": "v2/Cloud Network Monitoring/Get aggregated connections returns \"OK\" response",
+  "operation_id": "GetAggregatedConnections",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/network/connections/aggregate"
+  },
+  "scenario": "Get aggregated connections returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,298 @@
+{
+  "feature": "Audit",
+  "recordings": [
+    {
+      "feature": "Audit",
+      "frozen_at": "2022-03-10T12:51:27.148Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/audit/events",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of Audit Logs events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Audit",
+      "frozen_at": "2022-04-13T09:30:15.478Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/audit/events",
+            "query": [
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNTSHVVUUFBQUFCQldVRnBVV2h4UmtGQlEwczJhSGMyTWtoNGNuUjNRVUUifQ\"}},\"data\":[{\"attributes\":{\"attributes\":{\"status\":\"info\",\"tags\":[\"agent_hostname:i-086c6dfaa6bd27468\",\"agent_version:7.35.0\",\"root_config_version:4\",\"old_snapshot_version:1419839\",\"last_snapshot_version:1419845\"],\"timestamp\":\"2022-04-13T09:29:59Z\",\"usr\":{\"id\":\"1ad9c690-ee90-4dca-80ad-034e916623ab\",\"email\":\"1ad9c690-ee90-4dca-80ad-034e916623ab\"},\"action\":\"update_config\",\"org\":{\"uuid\":\"8dee7c38-00cb-11ea-a77b-8b5a08d3b091\"},\"evt\":{\"actor\":{\"type\":\"Other\"}},\"auth_method\":\"API + App Key\"},\"message\":\"Agent configuration successfuly updated\",\"tags\":[\"source:audit\"],\"timestamp\":\"2022-04-13T09:29:59.000Z\"},\"type\":\"audit\",\"id\":\"AQAAAYAiQhnY3SfuUQAAAABBWUFpUWhxSEFBQ0s2aHc2Mkh4cnZRQUE\"},{\"attributes\":{\"attributes\":{\"status\":\"info\",\"tags\":[\"agent_hostname:i-0a31006532ef57785\",\"agent_version:7.35.0\",\"root_config_version:4\",\"old_snapshot_version:1419839\",\"last_snapshot_version:1419845\"],\"timestamp\":\"2022-04-13T09:29:59Z\",\"usr\":{\"id\":\"1ad9c690-ee90-4dca-80ad-034e916623ab\",\"email\":\"1ad9c690-ee90-4dca-80ad-034e916623ab\"},\"action\":\"update_config\",\"org\":{\"uuid\":\"8dee7c38-00cb-11ea-a77b-8b5a08d3b091\"},\"evt\":{\"actor\":{\"type\":\"Other\"}},\"auth_method\":\"API + App Key\"},\"message\":\"Agent configuration successfuly updated\",\"tags\":[\"source:audit\"],\"timestamp\":\"2022-04-13T09:29:59.000Z\"},\"type\":\"audit\",\"id\":\"AQAAAYAiQhnY3SHuUQAAAABBWUFpUWhxRkFBQ0s2aHc2Mkh4cnR3QUE\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/audit/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNTSHVVUUFBQUFCQldVRnBVV2h4UmtGQlEwczJhSGMyTWtoNGNuUjNRVUUifQ&page%5Blimit%5D=2\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/audit/events",
+            "query": [
+              [
+                "page[cursor]",
+                "eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNTSHVVUUFBQUFCQldVRnBVV2h4UmtGQlEwczJhSGMyTWtoNGNuUjNRVUUifQ"
+              ],
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNRM3VVUUFBQUFCQldVRnBVV2h3YmtGQlEwczJhSGMyTWtoNGNtOTNRVUUifQ\"}},\"data\":[{\"attributes\":{\"attributes\":{\"status\":\"info\",\"tags\":[\"agent_hostname:i-029aff430be77ea83\",\"agent_version:7.35.0\",\"root_config_version:4\",\"old_snapshot_version:1419839\",\"last_snapshot_version:1419845\"],\"timestamp\":\"2022-04-13T09:29:59Z\",\"usr\":{\"id\":\"1ad9c690-ee90-4dca-80ad-034e916623ab\",\"email\":\"1ad9c690-ee90-4dca-80ad-034e916623ab\"},\"action\":\"update_config\",\"org\":{\"uuid\":\"8dee7c38-00cb-11ea-a77b-8b5a08d3b091\"},\"evt\":{\"actor\":{\"type\":\"Other\"}},\"auth_method\":\"API + App Key\"},\"message\":\"Agent configuration successfuly updated\",\"tags\":[\"source:audit\"],\"timestamp\":\"2022-04-13T09:29:59.000Z\"},\"type\":\"audit\",\"id\":\"AQAAAYAiQhnY3RvuUQAAAABBWUFpUWhwekFBQ0s2aHc2Mkh4cnNRQUE\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/audit/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNRM3VVUUFBQUFCQldVRnBVV2h3YmtGQlEwczJhSGMyTWtoNGNtOTNRVUUifQ&page%5Blimit%5D=2\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/audit/events",
+            "query": [
+              [
+                "page[cursor]",
+                "eyJhZnRlciI6IkFRQUFBWUFpUWhuWTNRM3VVUUFBQUFCQldVRnBVV2h3YmtGQlEwczJhSGMyTWtoNGNtOTNRVUUifQ"
+              ],
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of Audit Logs events returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Audit",
+      "frozen_at": "2022-03-10T12:51:27.702Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "query": "@type:session AND @session.type:user",
+                  "to": "now"
+                },
+                "options": {
+                  "time_offset": 0,
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "limit": 25
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/audit/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search Audit Logs events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Audit",
+      "frozen_at": "2022-04-13T09:36:13.252Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "to": "now"
+                },
+                "options": {
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/audit/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFpT2hZV1JxeFgzUUFBQUFCQldVRnBUMmh2VFVGQlFrczVOa2wwVFZKVFYycEJRVUUifQ\"}},\"data\":[{\"attributes\":{\"attributes\":{\"status\":\"info\",\"http\":{\"status_code\":\"200\",\"url_details\":{\"path\":\"/api/v1/synthetics/enforced_tags\",\"host\":\"us1.prod.dog\"},\"method\":\"GET\",\"useragent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36\"},\"network\":{\"bytes_read\":0,\"client\":{\"ip\":\"84.102.253.215\"},\"bytes_written\":104},\"timestamp\":\"2022-04-13T09:21:13.750599\",\"usr\":{\"email\":\"foo@example.com\",\"id\":\"foo@example.com\",\"uuid\":\"0ed5718a-10e0-11ec-8246-da7ad0900002\"},\"action\":\"accessed\",\"org\":{\"uuid\":\"8dee7c38-00cb-11ea-a77b-8b5a08d3b091\"},\"evt\":{\"name\":\"Request\",\"actor\":{\"type\":\"USER\"}},\"auth_method\":\"SESSION\"},\"message\":\"GET request made to /api/v1/synthetics/enforced_tags by foo@example.com with response 200\",\"tags\":[\"source:audit\"],\"timestamp\":\"2022-04-13T09:21:13.750Z\"},\"type\":\"audit\",\"id\":\"AQAAAYAiOhYWi7EZ-QAAAABBWUFpT2hvT0FBRGJLTGZoSU50TEVRQUE\"},{\"attributes\":{\"attributes\":{\"status\":\"info\",\"http\":{\"status_code\":\"200\",\"url_details\":{\"path\":\"/api/v2/query/timeseries\",\"host\":\"us1.prod.dog\"},\"method\":\"POST\",\"useragent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36\"},\"network\":{\"bytes_read\":494,\"client\":{\"ip\":\"149.14.155.42\"},\"bytes_written\":108896},\"timestamp\":\"2022-04-13T09:21:13.750249\",\"usr\":{\"email\":\"foo@example.com\",\"id\":\"foo@example.com\",\"uuid\":\"32e2d7b6-52e4-11ec-a7e4-da7ad0900002\"},\"action\":\"accessed\",\"org\":{\"uuid\":\"8dee7c38-00cb-11ea-a77b-8b5a08d3b091\"},\"evt\":{\"name\":\"Request\",\"actor\":{\"type\":\"USER\"}},\"auth_method\":\"SESSION\"},\"message\":\"POST request made to /api/v2/query/timeseries by foo@example.com with response 200\",\"tags\":[\"source:audit\"],\"timestamp\":\"2022-04-13T09:21:13.750Z\"},\"type\":\"audit\",\"id\":\"AQAAAYAiOhYWRqxX3QAAAABBWUFpT2hvTUFBQks5Nkl0TVJTV2pBQUE\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/audit/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpT2hZV1JxeFgzUUFBQUFCQldVRnBUMmh2VFVGQlFrczVOa2wwVFZKVFYycEJRVUUifQ&page%5Blimit%5D=2&filter%5Bfrom%5D=now-15m\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "to": "now"
+                },
+                "options": {
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "cursor": "eyJhZnRlciI6IkFRQUFBWUFpT2hZV1JxeFgzUUFBQUFCQldVRnBUMmh2VFVGQlFrczVOa2wwVFZKVFYycEJRVUUifQ",
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/audit/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFpT2hnV2pkb1otUUFBQUFCQldVRnBUMmgzVFVGQlJHSkxUR1pvU1U1MFRrOW5RVUUifQ\"}},\"data\":[{\"attributes\":{\"attributes\":{\"status\":\"info\",\"http\":{\"status_code\":\"200\",\"url_details\":{\"path\":\"/series/batch_query\",\"host\":\"us1.prod.dog\"},\"method\":\"POST\",\"useragent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15\"},\"network\":{\"bytes_read\":818,\"client\":{\"ip\":\"185.12.36.70\"},\"bytes_written\":60804},\"timestamp\":\"2022-04-13T09:21:14.260084\",\"usr\":{\"email\":\"foo@example.com\",\"id\":\"foo@example.com\",\"uuid\":\"a9c5deae-eb9f-11e9-a77a-a386b4bf357a\"},\"action\":\"accessed\",\"org\":{\"uuid\":\"8dee7c38-00cb-11ea-a77b-8b5a08d3b091\"},\"evt\":{\"name\":\"Request\",\"actor\":{\"type\":\"USER\"}},\"auth_method\":\"SESSION\"},\"message\":\"POST request made to /series/batch_query by foo@example.com with response 200\",\"tags\":[\"source:audit\"],\"timestamp\":\"2022-04-13T09:21:14.260Z\"},\"type\":\"audit\",\"id\":\"AQAAAYAiOhgURpZX3QAAAABBWUFpT2hudkFBQks5Nkl0TVJTV2RnQUE\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/audit/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFpT2hnV2pkb1otUUFBQUFCQldVRnBUMmgzVFVGQlJHSkxUR1pvU1U1MFRrOW5RVUUifQ&page%5Blimit%5D=2&filter%5Bfrom%5D=now-15m\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "to": "now"
+                },
+                "options": {
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "cursor": "eyJhZnRlciI6IkFRQUFBWUFpT2hnV2pkb1otUUFBQUFCQldVRnBUMmgzVFVGQlJHSkxUR1pvU1U1MFRrOW5RVUUifQ",
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/audit/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search Audit Logs events returns \"OK\" response with pagination",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

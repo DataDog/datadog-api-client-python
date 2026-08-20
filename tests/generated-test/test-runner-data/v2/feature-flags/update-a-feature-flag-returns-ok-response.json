@@ -1,0 +1,51 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Update a feature flag returns \"OK\" response",
+  "operation_id": "UpdateFeatureFlag",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateFeatureFlagRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Updated description for the feature flag",
+            "name": "Updated Test Feature Flag {{ unique }}"
+          },
+          "type": "feature-flags"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "feature_flag_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "feature_flag.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/{feature_flag_id}"
+  },
+  "scenario": "Update a feature flag returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,1673 @@
+{
+  "feature": "Key Management",
+  "recordings": [
+    {
+      "feature": "Key Management",
+      "frozen_at": "2026-04-08T16:45:23.208Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "expires_at": "2027-04-08T16:45:23.208Z",
+                    "name": "Test-Create_a_personal_access_token_returns_Created_response-1775666723",
+                    "scopes": [
+                      "dashboards_read"
+                    ]
+                  },
+                  "type": "personal_access_tokens"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/personal_access_tokens",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"da1bd5f8-847b-4aec-a33d-11b04ebde244\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:45:23.302611856Z\",\"expires_at\":\"2027-04-08T16:45:23.208Z\",\"key\":\"xxxxx_xxxxxxxxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxXxxxxxxxxxx\",\"name\":\"Test-Create_a_personal_access_token_returns_Created_response-1775666723\",\"public_portion\":\"6dZ2zcpumTdlnHIgx2SlHA\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/personal_access_tokens/da1bd5f8-847b-4aec-a33d-11b04ebde244",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a personal access token returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2022-05-12T09:52:00.062Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_an_API_key_returns_Created_response-1652349120"
+                  },
+                  "type": "api_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/api_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2022-05-12T09:52:00.698721+00:00\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"last4\":\"xxxx\",\"modified_at\":\"2022-05-12T09:52:00.698721+00:00\",\"name\":\"Test-Create_an_API_key_returns_Created_response-1652349120\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}},\"id\":\"f625994a-4ee7-4967-b08c-7067d1f1cdac\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/api_keys/f625994a-4ee7-4967-b08c-7067d1f1cdac",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an API key returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2022-05-12T09:52:02.489Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_an_Application_key_with_scopes_for_current_user_returns_Created_response-1652349122",
+                    "scopes": [
+                      "dashboards_read",
+                      "dashboards_write",
+                      "dashboards_public_share"
+                    ]
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"aae6e868-4746-46f2-a457-5b39d35b0c30\",\"attributes\":{\"name\":\"Test-Create_an_Application_key_with_scopes_for_current_user_returns_Created_response-1652349122\",\"created_at\":\"2022-05-12T09:52:03.065338+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":[\"dashboards_read\",\"dashboards_write\",\"dashboards_public_share\"]},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/aae6e868-4746-46f2-a457-5b39d35b0c30",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an Application key with scopes for current user returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2023-10-16T13:55:48.764Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_an_application_key_for_current_user_returns_Created_response-1697464548"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"513684db-d430-45bd-8239-0715320c9488\",\"attributes\":{\"name\":\"Test-Create_an_application_key_for_current_user_returns_Created_response-1697464548\",\"created_at\":\"2023-10-16T13:55:49.254647+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/513684db-d430-45bd-8239-0715320c9488",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an application key for current user returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2022-05-12T09:52:03.757Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_an_API_key_returns_No_Content_response-1652349123"
+                  },
+                  "type": "api_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/api_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2022-05-12T09:52:04.306086+00:00\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"last4\":\"xxxx\",\"modified_at\":\"2022-05-12T09:52:04.306086+00:00\",\"name\":\"Test-Delete_an_API_key_returns_No_Content_response-1652349123\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}},\"id\":\"67c58c24-e02f-4d1a-9c95-1e01d2544e5a\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/api_keys/67c58c24-e02f-4d1a-9c95-1e01d2544e5a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/api_keys/67c58c24-e02f-4d1a-9c95-1e01d2544e5a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\": [\"API key not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an API key returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2023-10-16T14:23:11.543Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_an_application_key_owned_by_current_user_returns_No_Content_response-1697466191"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"be94f6b2-1704-4126-a898-94d65f6f28d8\",\"attributes\":{\"name\":\"Test-Delete_an_application_key_owned_by_current_user_returns_No_Content_response-1697466191\",\"created_at\":\"2023-10-16T14:23:12.034758+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/be94f6b2-1704-4126-a898-94d65f6f28d8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/be94f6b2-1704-4126-a898-94d65f6f28d8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Application key not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an application key owned by current user returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2023-10-16T13:18:28.907Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_an_application_key_returns_No_Content_response-1697462308"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"c7a26dee-1619-4ed0-8d1a-0ae4ed94da29\",\"attributes\":{\"name\":\"Test-Delete_an_application_key_returns_No_Content_response-1697462308\",\"created_at\":\"2023-10-16T13:18:29.388862+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/application_keys/c7a26dee-1619-4ed0-8d1a-0ae4ed94da29",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/c7a26dee-1619-4ed0-8d1a-0ae4ed94da29",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Application key not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an application key returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2022-05-12T09:52:08.471Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Edit_an_API_key_returns_OK_response-1652349128"
+                  },
+                  "type": "api_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/api_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2022-05-12T09:52:08.958834+00:00\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"last4\":\"xxxx\",\"modified_at\":\"2022-05-12T09:52:08.958834+00:00\",\"name\":\"Test-Edit_an_API_key_returns_OK_response-1652349128\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}},\"id\":\"929dfb7c-2309-46b4-bdfe-998dc339f2db\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Edit_an_API_key_returns_OK_response-1652349128"
+                  },
+                  "id": "929dfb7c-2309-46b4-bdfe-998dc339f2db",
+                  "type": "api_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/api_keys/929dfb7c-2309-46b4-bdfe-998dc339f2db",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2022-05-12T09:52:08.958834+00:00\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"last4\":\"xxxx\",\"modified_at\":\"2022-05-12T09:52:08.958834+00:00\",\"name\":\"Test-Edit_an_API_key_returns_OK_response-1652349128\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}},\"id\":\"929dfb7c-2309-46b4-bdfe-998dc339f2db\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/api_keys/929dfb7c-2309-46b4-bdfe-998dc339f2db",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Edit an API key returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2022-05-12T09:52:09.995Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1652349129"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"30170613-5282-40db-83ae-232895165192\",\"attributes\":{\"name\":\"Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1652349129\",\"created_at\":\"2022-05-12T09:52:10.475750+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1652349129-updated"
+                  },
+                  "id": "30170613-5282-40db-83ae-232895165192",
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/current_user/application_keys/30170613-5282-40db-83ae-232895165192",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"30170613-5282-40db-83ae-232895165192\",\"attributes\":{\"name\":\"Test-Edit_an_application_key_owned_by_current_user_returns_OK_response-1652349129-updated\",\"created_at\":\"2022-05-12T09:52:10.475750+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/30170613-5282-40db-83ae-232895165192",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Edit an application key owned by current user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2022-05-12T09:52:11.536Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Edit_an_application_key_returns_OK_response-1652349131"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"27b9bda2-c2e1-46ae-9dea-bfad4fcd5000\",\"attributes\":{\"name\":\"Test-Edit_an_application_key_returns_OK_response-1652349131\",\"created_at\":\"2022-05-12T09:52:12.071707+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Edit_an_application_key_returns_OK_response-1652349131-updated"
+                  },
+                  "id": "27b9bda2-c2e1-46ae-9dea-bfad4fcd5000",
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/application_keys/27b9bda2-c2e1-46ae-9dea-bfad4fcd5000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"27b9bda2-c2e1-46ae-9dea-bfad4fcd5000\",\"attributes\":{\"name\":\"Test-Edit_an_application_key_returns_OK_response-1652349131-updated\",\"created_at\":\"2022-05-12T09:52:12.071707+00:00\",\"last4\":\"xxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/27b9bda2-c2e1-46ae-9dea-bfad4fcd5000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Edit an application key returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-08T09:24:42.052Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/api_keys/invalidId",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"API key not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get API key returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-08T09:24:42.741Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_API_key_returns_OK_response-1757323482"
+                  },
+                  "type": "api_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/api_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2025-09-08T09:24:42.999350+00:00\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"last4\":\"xxxx\",\"modified_at\":\"2025-09-08T09:24:42.999350+00:00\",\"remote_config_read_enabled\":true,\"category\":\"default\",\"name\":\"Test-Get_API_key_returns_OK_response-1757323482\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}},\"id\":\"9286a10e-fe08-48ba-9884-8e26e7e67695\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/api_keys/9286a10e-fe08-48ba-9884-8e26e7e67695",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2025-09-08T09:24:42.999351+00:00\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"last4\":\"xxxx\",\"modified_at\":\"2025-09-08T09:24:42.999351+00:00\",\"remote_config_read_enabled\":true,\"category\":\"default\",\"name\":\"Test-Get_API_key_returns_OK_response-1757323482\",\"date_last_used\":null,\"used_in_last_24_hours\":false,\"last_used_date\":{\"timestamp\":null,\"description\":\"Timestamp of when this key was last used in the past ninety (90) days, null if no recent usage\"}},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}},\"id\":\"9286a10e-fe08-48ba-9884-8e26e7e67695\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/api_keys/9286a10e-fe08-48ba-9884-8e26e7e67695",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get API key returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2026-04-08T16:45:35.914Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "expires_at": "2027-04-08T16:45:35.914Z",
+                    "name": "Test-Get_a_personal_access_token_returns_OK_response-1775666735",
+                    "scopes": [
+                      "dashboards_read"
+                    ]
+                  },
+                  "type": "personal_access_tokens"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/personal_access_tokens",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6ada9c44-0b7f-4e35-826b-ccecd6d358d5\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:45:36.006189144Z\",\"expires_at\":\"2027-04-08T16:45:35.914Z\",\"key\":\"xxxxx_xxxxxxxxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxXxxxxxxxxx\",\"name\":\"Test-Get_a_personal_access_token_returns_OK_response-1775666735\",\"public_portion\":\"3Fd5hG1s1rf27qn2E4nNdF\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/personal_access_tokens/6ada9c44-0b7f-4e35-826b-ccecd6d358d5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6ada9c44-0b7f-4e35-826b-ccecd6d358d5\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:45:36.006189Z\",\"expires_at\":\"2027-04-08T16:45:35.914Z\",\"last_used_at\":null,\"name\":\"Test-Get_a_personal_access_token_returns_OK_response-1775666735\",\"public_portion\":\"3Fd5hG1s1rf27qn2E4nNdF\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/personal_access_tokens/6ada9c44-0b7f-4e35-826b-ccecd6d358d5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a personal access token returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-08T09:24:43.356Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_all_API_keys_returns_OK_response-1757323483"
+                  },
+                  "type": "api_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/api_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2025-09-08T09:24:43.558793+00:00\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"last4\":\"xxxx\",\"modified_at\":\"2025-09-08T09:24:43.558793+00:00\",\"remote_config_read_enabled\":true,\"category\":\"default\",\"name\":\"Test-Get_all_API_keys_returns_OK_response-1757323483\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}},\"id\":\"84dbd164-f3f5-4f30-ac93-e12b27adeada\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/api_keys",
+            "query": [
+              [
+                "filter",
+                "Test-Get_all_API_keys_returns_OK_response-1757323483"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"api_keys\",\"attributes\":{\"created_at\":\"2025-09-08T09:24:43.558793+00:00\",\"last4\":\"xxxx\",\"modified_at\":\"2025-09-08T09:24:43.558793+00:00\",\"remote_config_read_enabled\":true,\"category\":\"default\",\"name\":\"Test-Get_all_API_keys_returns_OK_response-1757323483\",\"date_last_used\":null,\"used_in_last_24_hours\":false,\"last_used_date\":{\"timestamp\":null,\"description\":\"Timestamp of when this key was last used in the past ninety (90) days, null if no recent usage\"}},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"modified_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}},\"id\":\"84dbd164-f3f5-4f30-ac93-e12b27adeada\"}],\"meta\":{\"page\":{\"total_filtered_count\":1},\"max_allowed\":200}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/api_keys/84dbd164-f3f5-4f30-ac93-e12b27adeada",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all API keys returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-08T09:24:46.730Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"application_keys\",\"id\":\"e177e012-5179-4275-ad0e-397d53348ee5\",\"attributes\":{\"name\":\"catdog-sync service\",\"created_at\":\"2025-08-06T14:21:34.802872+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-28T16:53:56.678679+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"50107ecc-d7af-4a88-9d95-a37bd20ce503\",\"attributes\":{\"name\":\"datadog-api-client-go DD_CLIENT_API_KEY\",\"created_at\":\"2025-04-30T22:10:30.959154+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T00:25:13.718317+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"d6ffc751-80f9-4933-ba74-ac6d23509a6f\",\"attributes\":{\"name\":\"datadog-api-client-java DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:17:07.875625+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T09:22:49.919514+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"232f3748-52e3-4361-9c3f-6f72bded74ac\",\"attributes\":{\"name\":\"datadog-api-client-python DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T12:37:32.126936+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T01:31:43.917639+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"84c30f49-92a7-43b4-a887-51ba5270ad1f\",\"attributes\":{\"name\":\"datadog-api-client-ruby DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T12:52:30.558770+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-06T02:26:31.159311+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"09af1103-53de-4b68-903a-192bc4eec199\",\"attributes\":{\"name\":\"datadog-api-client-rust DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:25:08.030358+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T05:18:42.594830+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"84b41420-c4f1-4f05-bede-629a9b2e04fc\",\"attributes\":{\"name\":\"datadog-api-client-typescript DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:11:18.380051+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T05:03:01.374951+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"85c63381-6392-57db-ab31-2e4772882785\",\"attributes\":{\"name\":\"datadog-api-spec gh\",\"created_at\":\"2021-04-16T11:21:35.770268+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c35ac549-a8b3-4093-985f-2731bbdbbcd4\",\"attributes\":{\"name\":\"datadog-api-spec Live Validation\",\"created_at\":\"2023-10-04T14:20:53.771922+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T09:24:43.663279+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c8e9bf49-dbeb-4c75-8930-725ed962c9f3\",\"attributes\":{\"name\":\"datadog-cloudformation-resources DD_TEST_CLIENT_APP_KEY\",\"created_at\":\"2025-04-30T19:13:37.837202+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"de508a6e-e038-47b4-83b3-5ff84e41e44a\",\"attributes\":{\"name\":\"datadog-cloudformation-resources secrets manager app key\",\"created_at\":\"2025-08-26T19:44:25.486264+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-26T23:53:23.269173+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"1d10bbfd-364d-4178-acf6-1580b10416d2\",\"attributes\":{\"name\":\"datadogpy DD_TEST_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:33:32.008184+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"b231bb6d-e3ee-5fa4-969d-03fea7293d15\",\"attributes\":{\"name\":\"Get app keys\",\"created_at\":\"2021-05-25T09:40:46.767264+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"d7b694b6-6b25-449c-a47a-8fbd8690a7fa\",\"attributes\":{\"name\":\"terraform-provider-datadog DD_CLIENT_APP_KEY\",\"created_at\":\"2025-04-30T18:59:48.903847+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T00:35:07.899044+00:00\"},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"33bfa2f1-822e-41e5-89e3-31321f80b50e\",\"attributes\":{\"name\":\"Test-Typescript-Create_an_Application_key_with_scopes_for_current_user_returns_Created_response-1754887332\",\"created_at\":\"2025-08-11T04:42:12.345571+00:00\",\"last4\":\"xxxx\",\"scopes\":[\"dashboards_read\",\"dashboards_write\",\"dashboards_public_share\"],\"last_used_at\":null},\"relationships\":{\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"b1311a26-9b14-4515-b1f6-1bab1f74e189\",\"attributes\":{\"name\":\"Test-Typescript-Get_an_application_key_returns_OK_response-1747739647\",\"created_at\":\"2025-05-20T11:14:07.823671+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"leak_information\":{\"data\":null}}}],\"meta\":{\"page\":{\"total_filtered_count\":16},\"max_allowed_per_user\":1000}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all application keys owned by current user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-08T09:24:46.907Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_all_application_keys_returns_OK_response-1757323486"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"d516f4ec-0722-488c-9500-2d812b93d9b9\",\"attributes\":{\"name\":\"Test-Get_all_application_keys_returns_OK_response-1757323486\",\"created_at\":\"2025-09-08T09:24:46.992326+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"application_keys\",\"id\":\"fdcdec64-ca51-4208-a259-0405192c6447\",\"attributes\":{\"name\":\"1PASSWORD_SHARED\",\"created_at\":\"2023-10-03T19:27:33.054116+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-06T19:03:18.487091+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"9b71ae71-2999-45b8-a22c-22ec0ceabae7\",\"attributes\":{\"name\":\"Action Platform Scoped\",\"created_at\":\"2024-12-11T20:38:37.215071+00:00\",\"last4\":\"xxxx\",\"scopes\":[\"connections_read\",\"connections_write\"],\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"1af44bbc-b4f7-44be-a7da-e6b01227f87b\",\"attributes\":{\"name\":\"anton\",\"created_at\":\"2023-01-13T18:28:47.292864+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"79762769-9352-11ed-a082-5215624996c0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"285d30e7-586f-4ac3-9fbe-c34f9d448161\",\"attributes\":{\"name\":\"Application Key for Anika Update 2\",\"created_at\":\"2024-07-30T20:57:12.498075+00:00\",\"last4\":\"xxxx\",\"scopes\":[\"user_access_manage\"],\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"a20c7506-3e28-11ef-8b83-5264320c310a\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c1180d01-a542-42f1-ad48-b47daeb71217\",\"attributes\":{\"name\":\"AWS Integrations - Datadog Managed - frog@datadoghq.com\",\"created_at\":\"2025-08-04T20:36:40.704123+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c563a370-e205-488b-b485-cbf9d77161dd\",\"attributes\":{\"name\":\"AWS Integrations - Datadog Managed - kevin.zou@datadoghq.com\",\"created_at\":\"2023-10-23T19:54:59.816202+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"d5bf7f0a-19b0-11ed-b0df-da7ad0900002\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"40087854-cd0d-4114-8f03-9c2598ad910e\",\"attributes\":{\"name\":\"AWS Integrations - Datadog Managed - thibault.viennot@datadoghq.com\",\"created_at\":\"2025-06-20T12:20:14.276950+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"48e5025b-e308-11ef-8171-2eb8c40554f1\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"f5aa63c8-2623-43c1-8b6b-a05276589f47\",\"attributes\":{\"name\":\"Azure Integrations - Datadog Managed - kevin.zou@datadoghq.com\",\"created_at\":\"2023-09-14T21:02:41.220686+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"d5bf7f0a-19b0-11ed-b0df-da7ad0900002\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"27637d72-e5d6-4951-ba2e-484ff3aadc59\",\"attributes\":{\"name\":\"carlos DD_TEST_CLIENT_APP_KEY\",\"created_at\":\"2025-07-07T09:30:48.082564+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-15T09:36:57.008162+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"7d7298a6-5b14-11f0-89c7-eef2b9bf88cb\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"e177e012-5179-4275-ad0e-397d53348ee5\",\"attributes\":{\"name\":\"catdog-sync service\",\"created_at\":\"2025-08-06T14:21:34.802872+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-28T16:53:56.678679+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"50107ecc-d7af-4a88-9d95-a37bd20ce503\",\"attributes\":{\"name\":\"datadog-api-client-go DD_CLIENT_API_KEY\",\"created_at\":\"2025-04-30T22:10:30.959154+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T00:25:13.718317+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"d6ffc751-80f9-4933-ba74-ac6d23509a6f\",\"attributes\":{\"name\":\"datadog-api-client-java DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:17:07.875625+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T09:22:49.919514+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"232f3748-52e3-4361-9c3f-6f72bded74ac\",\"attributes\":{\"name\":\"datadog-api-client-python DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T12:37:32.126936+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T01:31:43.917639+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"84c30f49-92a7-43b4-a887-51ba5270ad1f\",\"attributes\":{\"name\":\"datadog-api-client-ruby DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T12:52:30.558770+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-06T02:26:31.159311+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"09af1103-53de-4b68-903a-192bc4eec199\",\"attributes\":{\"name\":\"datadog-api-client-rust DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:25:08.030358+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T05:18:42.594830+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"84b41420-c4f1-4f05-bede-629a9b2e04fc\",\"attributes\":{\"name\":\"datadog-api-client-typescript DD_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:11:18.380051+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T05:03:01.374951+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"85c63381-6392-57db-ab31-2e4772882785\",\"attributes\":{\"name\":\"datadog-api-spec gh\",\"created_at\":\"2021-04-16T11:21:35.770268+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c35ac549-a8b3-4093-985f-2731bbdbbcd4\",\"attributes\":{\"name\":\"datadog-api-spec Live Validation\",\"created_at\":\"2023-10-04T14:20:53.771922+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-08T09:24:47.087459+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c8e9bf49-dbeb-4c75-8930-725ed962c9f3\",\"attributes\":{\"name\":\"datadog-cloudformation-resources DD_TEST_CLIENT_APP_KEY\",\"created_at\":\"2025-04-30T19:13:37.837202+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"de508a6e-e038-47b4-83b3-5ff84e41e44a\",\"attributes\":{\"name\":\"datadog-cloudformation-resources secrets manager app key\",\"created_at\":\"2025-08-26T19:44:25.486264+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-26T23:53:23.269173+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"1d10bbfd-364d-4178-acf6-1580b10416d2\",\"attributes\":{\"name\":\"datadogpy DD_TEST_CLIENT_APP_KEY\",\"created_at\":\"2025-05-01T13:33:32.008184+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"8e27b1f1-acce-4be6-b54e-e1ded3274f9a\",\"attributes\":{\"name\":\"dd_auth_cli-14BApD1eN6d2ogBGozyZFMtoJYX6OEsK_F9MAMiAOjY\",\"created_at\":\"2025-06-24T08:22:49.645306+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"84bdce07-8e8c-4989-b34d-f06b2325b2a4\",\"attributes\":{\"name\":\"dd_auth_cli-1GEHTD5brrIh5hHy1n3Cp5dJ7M2XTOB_2dC2b6jLgn4\",\"created_at\":\"2025-06-26T06:12:24.454411+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"05623c54-3b8f-45e1-ade0-d970b91ffcaf\",\"attributes\":{\"name\":\"dd_auth_cli-1nXv9OeNV8UI21xPe69VxM1EvRZAF3rDAOyz2s3UOZo\",\"created_at\":\"2025-05-13T06:13:34.288539+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"bc2bac8c-0b78-11f0-8b67-c24ce8498984\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"8cb405cc-9192-42f5-9855-1176309466f2\",\"attributes\":{\"name\":\"dd_auth_cli-1qpml3DJtC5vHX9V2alMkmpfuH-YacPORu1e160y92M\",\"created_at\":\"2025-05-26T17:22:53.515596+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"ebfc3d41-c9fa-41fa-aeb9-bb42def532b0\",\"attributes\":{\"name\":\"dd_auth_cli-1vZevdCmh8C_vexcjAgxX3nd4WB8lGjhgeYnh2nR02w\",\"created_at\":\"2025-08-08T14:49:17.023663+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"cc13a65b-c196-4f61-ad76-79dfe5f67517\",\"attributes\":{\"name\":\"dd_auth_cli-3l17qRITcGXPcmXmwB_4QQ1jOXOAPot0TZLnJs5lWyc\",\"created_at\":\"2025-08-25T15:07:25.998804+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-25T15:10:28.996108+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"2ae6567c-a870-49b3-89b6-32a7f1cabeca\",\"attributes\":{\"name\":\"dd_auth_cli-3ur7ra0_6tAvNYt9ReIDDeOcIoJudFjNmMlB8Z39vjw\",\"created_at\":\"2025-07-16T08:31:59.244464+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-16T12:31:57.672127+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"11f536b0-7340-43f7-8a9f-0b109bc5fef9\",\"attributes\":{\"name\":\"dd_auth_cli-677Bs7RQ0mbuqRcHCg727OyXjvXE19l5P3w0YCGrtYI\",\"created_at\":\"2025-08-06T19:59:46.341371+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"37a74f9a-4271-43b2-b2d0-03aa8cf71235\",\"attributes\":{\"name\":\"dd_auth_cli-6AjApR9sFCGQcHGiCyZE4SH5AaloTj2pNkZEnnhMd-0\",\"created_at\":\"2025-08-08T14:42:13.744288+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-08T14:42:14.806973+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"8755a109-600e-4d84-86aa-2dab70e7939b\",\"attributes\":{\"name\":\"dd_auth_cli-6ch5NS2AEv8c6ZdMEKdWzv1j5dWAu0cbTzJ3M9Kpxzg\",\"created_at\":\"2025-05-20T08:01:21.856112+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"6bb27921-df1b-11ef-94f5-1629c267ca5b\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"919d81dd-07b9-41c2-a3b3-0aca47acb9db\",\"attributes\":{\"name\":\"dd_auth_cli-6dI-6m5r81vMdoiFgjIutCnonj5ASOlwLNuOvJCMV5g\",\"created_at\":\"2025-06-13T20:23:35.865392+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"31af266d-767d-4ba7-a876-513a783553cc\",\"attributes\":{\"name\":\"dd_auth_cli-8o0polv-CeYBIiqpA7SvwSFDCsUWHyatN6WHLU-KqiI\",\"created_at\":\"2025-08-06T20:06:05.826919+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T20:06:06.946211+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"d306648b-4c25-467b-8a18-dc1c423d6878\",\"attributes\":{\"name\":\"dd_auth_cli-aCoZ-az9981vfSpnQbwi_FuQE7EtDR_wCodYPOrgGuM\",\"created_at\":\"2025-07-15T22:16:33.439179+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-16T15:55:34.820097+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"f3f4dde5-5ccc-4c5d-a234-38ea6b5e4b53\",\"attributes\":{\"name\":\"dd_auth_cli-AFVSnSWVuvck6f3IeNERel5Lj4DQPhpnZ-bEvU8ezss\",\"created_at\":\"2025-08-19T13:09:31.629038+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-19T13:09:38.488393+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"cdeaca14-15ad-4886-bbbf-a44e02866708\",\"attributes\":{\"name\":\"dd_auth_cli-AiurkPBMfWN7Kbe4hJifzsC7Zn0FzVe7jkZwkbAKDBk\",\"created_at\":\"2025-06-02T12:55:17.262071+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"38f23b5c-3d66-11f0-93c5-fa44e6b5daf3\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"a1bfc99d-ae44-4ce7-8175-14451f2155a8\",\"attributes\":{\"name\":\"dd_auth_cli-BjTRrCq8NzqZ_hzuiLfOi7PsXK_-VgwTKjFG0gEfll8\",\"created_at\":\"2025-08-04T17:12:41.578175+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-04T22:12:13.524575+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"e876c978-8430-4d4f-8ae3-c707e1204c66\",\"attributes\":{\"name\":\"dd_auth_cli-C9DReFHwxR-gONc65Z2vAxO4NSoqfgIVY__TY61KAT0\",\"created_at\":\"2025-05-13T08:00:20.023612+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"b0246a7e-6afa-436e-8d93-861aa759293c\",\"attributes\":{\"name\":\"dd_auth_cli-d053wHVio7nJZptGeuVbRoLaZRhQp4qlDDCKFs11bzM\",\"created_at\":\"2025-08-04T16:44:01.265450+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-04T16:44:02.347172+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"42a362cc-7e0c-42f0-a232-fe079ee1eb90\",\"attributes\":{\"name\":\"dd_auth_cli-D5OkpdUmScZL--KSBXXT5fyqE9gwOvXtGISSoQGnSDE\",\"created_at\":\"2025-09-01T15:29:38.665526+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-01T15:57:30.263057+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"7710bf2c-d81f-4c53-a88e-1371a22916a5\",\"attributes\":{\"name\":\"dd_auth_cli-D7nVeCjxg-a5r-HX-3_I8gwbiM7zAEv6cikKYLHPTsc\",\"created_at\":\"2025-08-28T16:01:49.071654+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-28T16:01:50.253378+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"b72434a1-b8ed-11ed-b3c2-da447d6968cb\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"525527a7-4134-41ab-a825-efd59d85ffe0\",\"attributes\":{\"name\":\"dd_auth_cli-Df5oHbucP2LvrFm5R9K2C-kA7vs0Rs3P7U1VlpljhRc\",\"created_at\":\"2025-08-08T16:36:30.246018+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-08T16:37:45.330457+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"5c680e22-b764-4af6-886e-ac7bcbc484af\",\"attributes\":{\"name\":\"dd_auth_cli-DNkLNT-qXPboaBQqVd_r-nmQ7RdZuyFnlSjjBtaUZ5s\",\"created_at\":\"2025-05-21T11:01:40.459507+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"650654de-4939-4274-a446-9b34655c3fa8\",\"attributes\":{\"name\":\"dd_auth_cli-D-WEz_8GsxjSHJcD5dCsJKHAopoVyBY2LU-TAlTisTA\",\"created_at\":\"2025-07-17T15:26:09.097215+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-17T15:26:10.176290+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"600cf73d-af11-46ec-ad4f-7c38560b78b7\",\"attributes\":{\"name\":\"dd_auth_cli-e4nMAEgnQ8S-Yb_uhlDZAd8OzJgE0jtKee2D1R-A1Aw\",\"created_at\":\"2025-08-08T14:43:32.083607+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-08T14:43:33.153383+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"30b65cec-0571-486d-933a-41d1eef8d82f\",\"attributes\":{\"name\":\"dd_auth_cli-eKpTSf1RZmBkjbEop-SVzDPSwSS8eNcEk-GShYXm_jw\",\"created_at\":\"2025-06-16T17:46:45.990350+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"b742c082-baef-4704-aeb2-88464bfb40fa\",\"attributes\":{\"name\":\"dd_auth_cli-fBcG5DIPWTJJUG73NXNrRaSb-AwbtOOV1-3QADS2aKU\",\"created_at\":\"2025-08-14T21:51:07.879448+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-15T01:08:20.647560+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"b76bdd73-4002-4f77-8db5-578cd1c54ba7\",\"attributes\":{\"name\":\"dd_auth_cli-FlJzYiNu7jXNk4gKudZY7BJdyE0kpjn5SoQZ8Xi8vpM\",\"created_at\":\"2025-05-19T13:36:13.392971+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"ff2f5fc5-b970-4f49-bcb1-43e851a3c133\",\"attributes\":{\"name\":\"dd_auth_cli-fObcQFul0q5g5fd_wqa7rKq5kW7ESEslnCdluUozUbI\",\"created_at\":\"2025-07-17T14:58:56.928692+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-17T15:03:32.129656+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"e02b86ca-2682-4e34-80a9-ef14c2236549\",\"attributes\":{\"name\":\"dd_auth_cli-gDz3RlxutQVjCL-Nqc4k0sfqM6sD6LISdpW4l-q1BQ8\",\"created_at\":\"2025-06-09T15:54:22.482948+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"9843f29f-4fc4-47c2-b40b-0db02460331f\",\"attributes\":{\"name\":\"dd_auth_cli-GOFdjGa5HypgeqeHxLqHFZNllSTVnVbfNL4JOkSScek\",\"created_at\":\"2025-08-06T20:12:20.847562+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T20:12:21.924155+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"ab170dfa-8410-4256-9007-13b32c79d364\",\"attributes\":{\"name\":\"dd_auth_cli-GwL_T2UB8UmAPZj9w4ikYLCU0_e7T8dDfIgYAxQOKQ8\",\"created_at\":\"2025-08-13T20:31:26.029416+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-13T20:31:27.127709+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"6018c832-80a7-11ea-93dd-43183212bc7a\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"719b37e5-27da-41af-b763-4e171dc8e1b4\",\"attributes\":{\"name\":\"dd_auth_cli-GxcqEWHvfRXoeG-I0WfAblP2tnzqjcB7oG5GUxFFhvw\",\"created_at\":\"2025-07-22T12:53:59.022004+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-22T15:51:20.613827+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"f0d9bb99-6ab2-4fb6-839f-28c802429283\",\"attributes\":{\"name\":\"dd_auth_cli-h8U9dJxjpzdD2kuDDEwXUlYrULhm5L5KT7vjxTtUqbk\",\"created_at\":\"2025-08-06T17:35:53.904190+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T17:54:01.144073+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"de21459a-7d5e-464e-9f65-37914fef2abf\",\"attributes\":{\"name\":\"dd_auth_cli-h8vRXFcXtCsLk6Qit9MeV_bsSpBeflzR2a-MZ75LL8o\",\"created_at\":\"2025-05-23T17:18:15.033418+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"e32b4686-ea8f-413d-9644-7c10159ae6e4\",\"attributes\":{\"name\":\"dd_auth_cli-hHge9OYHD3CibMCtofSnjdK9j7oAZFmIX6CJ09mk8GU\",\"created_at\":\"2025-05-20T19:22:49.213299+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"3917f5a8-32e4-48d4-b78d-8fe65ba43967\",\"attributes\":{\"name\":\"dd_auth_cli-HwmxaoR2v4h-m8osv5EcV0D-Qq1uSiG6yToI5f7q-fM\",\"created_at\":\"2025-04-18T12:56:06.455308+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"c0e3d30a-3f89-11ef-8991-d66079fdd770\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"e21f3701-58e2-4606-9e63-da22c70746a0\",\"attributes\":{\"name\":\"dd_auth_cli-Iqbht-sUA9p7E0ncGdQM6CiK2vGx0t7B1Q8vx_71Syk\",\"created_at\":\"2025-06-13T16:26:56.554572+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"8ac1707b-e841-4359-8cbb-3590947cf760\",\"attributes\":{\"name\":\"dd_auth_cli-joIE5ujwAc6jVTc0uSKJEDaZsBNhtCZwtcPA946Op1A\",\"created_at\":\"2025-06-25T10:41:39.819242+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c5744b35-15c5-4df5-b751-118ecbe15c6c\",\"attributes\":{\"name\":\"dd_auth_cli-kNf8JRfsHxbWj6HBN1-K4NIECiuFrvmbIgyZxMpoUvI\",\"created_at\":\"2025-05-29T01:57:58.292379+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"bc2bac8c-0b78-11f0-8b67-c24ce8498984\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"bcc86008-eef8-469f-a458-27fa1ab2ac5d\",\"attributes\":{\"name\":\"dd_auth_cli-konGbtZHuKbqCxBJF4ciDAXhfP59aVwwypix6YbBaok\",\"created_at\":\"2025-08-06T19:56:51.632593+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T19:56:52.702590+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"1ba43d01-d846-4bb5-ba81-2b3c5c6059e7\",\"attributes\":{\"name\":\"dd_auth_cli-l00nm3G_xOXbo8ngcfXcNaFaMSAH-6DhRYet_p9KMO8\",\"created_at\":\"2025-08-13T18:04:40.532723+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-13T21:37:53.966739+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"d6c7c1e3-9c76-4c0c-b349-8348306c9f67\",\"attributes\":{\"name\":\"dd_auth_cli-l0yswWyq1f82Po3U-DD6_Ev-wezdQp32NQquoZutXj4\",\"created_at\":\"2025-08-06T20:11:09.472822+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T20:11:10.596337+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"0010260b-3db4-40cd-a624-837afcc11679\",\"attributes\":{\"name\":\"dd_auth_cli-l618z5aUqAE3ZyggHYBnCeE8GJ0WldyNrGynfdxzs_0\",\"created_at\":\"2025-07-16T09:42:20.536681+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-16T09:50:21.375532+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"00647911-ffb3-4280-82b2-16236e64beff\",\"attributes\":{\"name\":\"dd_auth_cli-leLnigHKWcq5GNLkyP0YOIEnzWYMs2kRleW-e5zsGT8\",\"created_at\":\"2025-09-01T09:49:21.851699+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-01T09:49:23.053526+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"c0e3d30a-3f89-11ef-8991-d66079fdd770\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"a8114ac6-827b-4bb3-b4e9-5f8bfb6dcadc\",\"attributes\":{\"name\":\"dd_auth_cli-m_1R5Gx6OpoKc2CjWO4DoMEKUzWgur0dFDSVu8QvSRM\",\"created_at\":\"2025-08-22T17:58:39.350082+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-22T18:25:24.540147+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"a9419136-c53d-4a9d-b0da-4a8d351d610c\",\"attributes\":{\"name\":\"dd_auth_cli-mdCfsHcKy60bFLk8-n3Z4Q-JmKlQxWmbHULpgb9BVe0\",\"created_at\":\"2025-06-23T08:56:43.164696+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"ca5685ce-b968-11ef-9fbd-d61e3f92c3c7\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"f5fdf1fa-4ee8-4377-88fb-6182297e4dd7\",\"attributes\":{\"name\":\"dd_auth_cli-mtc_c8VMXI2yGzSljsLxtnb3surKiZZnytT-odoT2R4\",\"created_at\":\"2025-08-26T19:55:43.666320+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-26T21:01:43.105824+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"c5ba5258-07ab-4e8b-9dc5-a3a72e745c67\",\"attributes\":{\"name\":\"dd_auth_cli-mZ7xZW18JdOYciGI9TRNDE5vt7q79oWoneUkZqgseto\",\"created_at\":\"2025-08-07T15:28:15.537547+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-07T15:28:16.626952+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"4317780a-a5c8-4b0c-8e41-4046683ccfdd\",\"attributes\":{\"name\":\"dd_auth_cli-N7rO0NJgNxJwQPtxah_GJEL6w7qcDlNZVa8MgOJ8hOE\",\"created_at\":\"2025-08-06T19:59:18.930140+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T19:59:20.049161+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"ba7b1b59-9701-418c-939e-72cbfecc5241\",\"attributes\":{\"name\":\"dd_auth_cli-nRtr8GjGWhfAj3dsQ0W8Fon70xiUOSGdGKVFZ0egdtI\",\"created_at\":\"2025-07-15T09:32:55.092760+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-15T09:32:56.236991+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"4d76280e-1acd-11f0-81f0-8e6d360bddb8\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"f336f64b-3dc5-44eb-9f0e-ee1c720869aa\",\"attributes\":{\"name\":\"dd_auth_cli-oh3xCP3f1Qyix8aber4UJSQQBX3ERVviWuuoiW4W_BA\",\"created_at\":\"2025-07-21T09:02:40.747386+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-22T16:37:45.010358+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"0c45dcdf-db61-447a-b359-e8b3c6b87a88\",\"attributes\":{\"name\":\"dd_auth_cli-pLLZn_RvQCqs0sn6TV50jA8S2B2CqayzVhvFxzHXx-A\",\"created_at\":\"2025-07-15T09:26:42.785095+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-15T12:11:51.743162+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"7d7298a6-5b14-11f0-89c7-eef2b9bf88cb\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"75b5f7b3-45c1-4efc-a543-f38940fee779\",\"attributes\":{\"name\":\"dd_auth_cli-prQ1dXUIrZu41btEEi-WnTfbJoRx3HMF2yk7Ze2LS7U\",\"created_at\":\"2025-06-12T20:14:46.087509+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"4eb113cc-47ab-460a-bc7d-edb8c4d8b2ea\",\"attributes\":{\"name\":\"dd_auth_cli-q0EpIMzSjQbs2UjdQz2gcqbYWgMudbuHEXNDLPczqHU\",\"created_at\":\"2025-08-11T14:09:07.164487+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-11T18:38:59.781839+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"4bce02d4-3769-428e-be0b-674a5a38f2ef\",\"attributes\":{\"name\":\"dd_auth_cli-Q3-AEMhz_htWDmnzmtE8BSkSm_L97zypfPpVhGzFqVo\",\"created_at\":\"2025-08-06T19:58:21.272803+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T19:58:22.341523+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"7a71b928-96ab-4ce0-aee6-c99a0c091afa\",\"attributes\":{\"name\":\"dd_auth_cli-qhrPivStbeP1b_OwnIVwLRs0SCoA405beuGDW3muwZw\",\"created_at\":\"2025-07-17T08:14:37.336301+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-17T10:19:30.195485+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"7d7298a6-5b14-11f0-89c7-eef2b9bf88cb\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"dd941e08-d0fa-47a8-9695-e23cdf2d5e5c\",\"attributes\":{\"name\":\"dd_auth_cli-qPXXzBwTCXz8Iz1hLyUBpkHV8IemWnUihr5iZK8odwQ\",\"created_at\":\"2025-07-18T08:12:53.318244+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-22T10:13:38.124872+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"61162737-13b1-42f6-984b-9785a857c4a4\",\"attributes\":{\"name\":\"dd_auth_cli-r4iIDKGT07H5MmDCO0MkWmfDUvGydm6cMO31LvX-HHI\",\"created_at\":\"2025-07-07T09:32:08.840682+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"7d7298a6-5b14-11f0-89c7-eef2b9bf88cb\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"8036674c-925d-488a-bc15-34a55e7b23bf\",\"attributes\":{\"name\":\"dd_auth_cli-sf_aDog0P30KkAP9bt6XLp4htrnZoEnLFq74QnF0ne4\",\"created_at\":\"2025-09-02T16:51:00.268116+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-09-02T16:51:37.381998+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"6018c832-80a7-11ea-93dd-43183212bc7a\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"cea617c0-cfec-46c1-8b3c-0de8ed239685\",\"attributes\":{\"name\":\"dd_auth_cli-SrnMCQm8wxDtC5M2P_u1TumwnmlK0QzYj8kXpTAYBxo\",\"created_at\":\"2025-08-12T16:03:08.395952+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-12T22:53:21.428613+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"151e3c91-5f11-4dd4-aa5c-c7afb925d614\",\"attributes\":{\"name\":\"dd_auth_cli-SuQ0F1PDz0HPhCp4qyIfFgVrDPvrW9-owKXzKWwqwfs\",\"created_at\":\"2025-08-21T21:02:38.483921+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-21T21:06:29.408848+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"14097408-6817-447e-b402-5d24a04b4985\",\"attributes\":{\"name\":\"dd_auth_cli-_tDKWqOYVDGLveCl2ypYNOY8f4CXNmOu-cPhLflz-Sw\",\"created_at\":\"2025-08-06T20:15:58.719075+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T20:15:59.800244+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"de46aebc-7fe0-4a06-856d-9fa80095f7e4\",\"attributes\":{\"name\":\"dd_auth_cli-tUpX2JxyMlWYg7gtqKWp0utgPhJLBk_FBMDJ08fFr20\",\"created_at\":\"2025-06-09T23:19:51.156727+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"bc2bac8c-0b78-11f0-8b67-c24ce8498984\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"179ab85a-564c-4937-b422-2df10982b7c8\",\"attributes\":{\"name\":\"dd_auth_cli-UBUETzIFqy7Q5dTyxuyqy4cZAku4nVnYt7TQgS_4pPo\",\"created_at\":\"2025-08-22T14:41:54.291923+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-22T19:33:19.268650+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"83aa52ec-9ef9-4dbe-932c-a024cad037a8\",\"attributes\":{\"name\":\"dd_auth_cli-uIRg46B2GWWEnkvZetHCTJCOirtGSKvaL_gsmFNKqxo\",\"created_at\":\"2025-07-16T05:12:51.320436+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-16T05:12:52.486119+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"7d7298a6-5b14-11f0-89c7-eef2b9bf88cb\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"ca7bde67-4a15-4009-bafa-da97dc30ddf6\",\"attributes\":{\"name\":\"dd_auth_cli-uKC1WIpU1Hm83Z4uEZw5xoFdquXAQpbEQOlJbHYptYI\",\"created_at\":\"2025-08-08T14:39:59.743432+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-08T14:40:00.818164+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"eb5721b7-532b-4e65-a495-f055dd1481e8\",\"attributes\":{\"name\":\"dd_auth_cli-UMIXzLWI2hXNaEpcGO7dKJGvNwacbzPzVm7zL2EDujs\",\"created_at\":\"2025-06-18T15:01:36.825772+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"f23c5e6a-1f99-11f0-beba-3e2533bbf89d\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"ba3943f9-c539-4999-a828-b6c0ed904c9d\",\"attributes\":{\"name\":\"dd_auth_cli-uMpl8gt8U7ZXEhyp42jQLB_hd7nrCG2XvRfxMOsh8_0\",\"created_at\":\"2025-08-25T14:04:08.842996+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-25T18:23:21.045432+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"3fd6f567-de3b-4e31-9a24-88472d479a6e\",\"attributes\":{\"name\":\"dd_auth_cli-W6VZqwObNmfuKyLjJVXkHJi70HByec1_exB3ZN0J9nQ\",\"created_at\":\"2025-07-21T18:12:40.519160+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-07-21T18:12:46.178990+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"6018c832-80a7-11ea-93dd-43183212bc7a\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"0022abce-64ee-434c-8790-6407ec68afdd\",\"attributes\":{\"name\":\"dd_auth_cli-WTZiLrQySPtM1ITkkxcwE16FBn5c8BFqERDvnzLwOsQ\",\"created_at\":\"2025-05-13T23:33:17.241106+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"bc2bac8c-0b78-11f0-8b67-c24ce8498984\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"9d8858e8-4f5b-4f7a-bc58-307713d5d6b2\",\"attributes\":{\"name\":\"dd_auth_cli-WUaKCo760YG1oesaxAgjGRDzVSYcRlZ8q53aATtqAK0\",\"created_at\":\"2025-08-12T20:24:59.410295+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-13T03:28:28.654234+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"52b336b1-f44a-45f0-8447-7a3463254d96\",\"attributes\":{\"name\":\"dd_auth_cli-xAHXDKGfGq5RlVvP1I6wU00V2RnnXcW7f21nsWH4kNI\",\"created_at\":\"2025-08-08T14:36:37.710175+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-08T20:21:38.489595+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"e39f9aa1-f928-48b9-a565-1aff449fa58c\",\"attributes\":{\"name\":\"dd_auth_cli-xbc1_-qyZeYPpmfP-wOsLcdIg1XYfL1XVsuecKO70hE\",\"created_at\":\"2025-06-23T12:08:54.409669+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"27e2dc5a-fa25-4ffb-8124-6507f913aa37\",\"attributes\":{\"name\":\"dd_auth_cli-xN74v7LMTSnCMQ4wA008LvUIN82foCUdyyDydfBgxFY\",\"created_at\":\"2025-08-08T14:50:13.627386+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-08T14:50:14.696171+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"98668a07-34ae-4816-a393-c3c1ee57021a\",\"attributes\":{\"name\":\"dd_auth_cli-XuCAMIeYukstpvOgmSWD2yg4fAt6pNSV67y58RlNJCU\",\"created_at\":\"2025-08-15T19:57:32.938196+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-15T19:59:36.509032+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"ba6aefbd-2cb1-4dc7-ae70-1eeea08229e3\",\"attributes\":{\"name\":\"dd_auth_cli-XwrB33omJjuAYFwDMe5xQCyyRPiHOjFVxyS0ZmA0MBA\",\"created_at\":\"2025-08-08T14:51:55.720155+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-08T15:00:37.071434+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"2c538aa6-b5c4-4ad0-96e3-287ad143294e\",\"attributes\":{\"name\":\"dd_auth_cli-y9K9DzNCa_Fx0A72APTDnBgRHUCDyYn5Zx_KACpLwG0\",\"created_at\":\"2025-08-06T20:19:07.676965+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":\"2025-08-06T20:23:45.047197+00:00\"},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"762700e3-f608-41cd-999f-f39a109cd5ea\",\"attributes\":{\"name\":\"ddiner-test\",\"created_at\":\"2024-08-27T21:14:23.327175+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"dd8a374c-5f24-11ef-bba0-4a24e0ae025c\"}},\"leak_information\":{\"data\":null}}},{\"type\":\"application_keys\",\"id\":\"14852f74-9cc7-4a4c-94c5-0f97cb33f810\",\"attributes\":{\"name\":\"[DO NOT DELETE] App Key Registration Casette\",\"created_at\":\"2025-07-07T22:35:29.819899+00:00\",\"last4\":\"xxxx\",\"scopes\":[\"monitors_read\"],\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}},\"leak_information\":{\"data\":null}}}],\"meta\":{\"page\":{\"total_filtered_count\":146},\"max_allowed_per_user\":1000}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/d516f4ec-0722-488c-9500-2d812b93d9b9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all application keys returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2026-04-08T16:46:16.639Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "expires_at": "2027-04-08T16:46:16.639Z",
+                    "name": "Test-Get_all_personal_access_tokens_returns_OK_response-1775666776",
+                    "scopes": [
+                      "dashboards_read"
+                    ]
+                  },
+                  "type": "personal_access_tokens"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/personal_access_tokens",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"35ef7728-4761-41dd-8a7b-f1112a26f840\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:46:16.769979863Z\",\"expires_at\":\"2027-04-08T16:46:16.639Z\",\"key\":\"xxxxx_xxxxxxxxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"name\":\"Test-Get_all_personal_access_tokens_returns_OK_response-1775666776\",\"public_portion\":\"1dm1op4lL89nV8pt94Tdk8\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/personal_access_tokens",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"61c07794-df2a-4403-a6ad-caa6bb70dae2\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T08:58:54.688182Z\",\"expires_at\":\"2026-04-09T08:58:54Z\",\"last_used_at\":\"2026-04-08T08:58:55.302839705Z\",\"name\":\"dd_auth_cli-DhhOC4JHLtgPkfDr6DEXUcTL79UOCx1w2ENxgmIHh7w\",\"public_portion\":\"2ySDERb6wx1YqV1udJl61q\",\"scopes\":[\"admin\",\"standard\",\"logs_read_index_data\",\"logs_modify_indexes\",\"logs_live_tail\",\"logs_write_exclusion_filters\",\"logs_write_pipelines\",\"logs_write_processors\",\"logs_write_archives\",\"logs_generate_metrics\",\"dashboards_read\",\"dashboards_write\",\"dashboards_public_share\",\"monitors_read\",\"monitors_write\",\"monitors_downtime\",\"logs_read_data\",\"logs_read_archives\",\"security_monitoring_rules_read\",\"security_monitoring_rules_write\",\"security_monitoring_signals_read\",\"security_monitoring_signals_write\",\"user_access_invite\",\"user_access_manage\",\"user_app_keys\",\"org_app_keys_read\",\"org_app_keys_write\",\"synthetics_private_location_read\",\"synthetics_private_location_write\",\"billing_read\",\"billing_edit\",\"usage_read\",\"usage_edit\",\"metric_tags_write\",\"logs_write_historical_view\",\"audit_logs_read\",\"api_keys_read\",\"api_keys_write\",\"synthetics_global_variable_read\",\"synthetics_global_variable_write\",\"synthetics_read\",\"synthetics_write\",\"synthetics_default_settings_read\",\"synthetics_default_settings_write\",\"logs_write_facets\",\"service_account_write\",\"integrations_api\",\"apm_read\",\"apm_retention_filter_read\",\"apm_retention_filter_write\",\"apm_service_ingest_read\",\"apm_service_ingest_write\",\"apm_apdex_manage_write\",\"apm_tag_management_write\",\"apm_primary_operation_write\",\"audit_logs_write\",\"rum_apps_write\",\"debugger_write\",\"debugger_read\",\"data_scanner_read\",\"data_scanner_write\",\"org_management\",\"security_monitoring_filters_read\",\"security_monitoring_filters_write\",\"incident_read\",\"incident_write\",\"incident_settings_read\",\"incident_settings_write\",\"metrics_read\",\"timeseries_query\",\"events_read\",\"appsec_event_rule_read\",\"appsec_event_rule_write\",\"rum_apps_read\",\"rum_session_replay_read\",\"security_monitoring_notification_profiles_read\",\"security_monitoring_notification_profiles_write\",\"apm_generate_metrics\",\"security_monitoring_cws_agent_rules_read\",\"security_monitoring_cws_agent_rules_write\",\"apm_pipelines_write\",\"apm_pipelines_read\",\"observability_pipelines_read\",\"observability_pipelines_write\",\"workflows_read\",\"workflows_write\",\"workflows_run\",\"connections_read\",\"connections_write\",\"notebooks_read\",\"notebooks_write\",\"logs_delete_data\",\"rum_generate_metrics\",\"aws_configurations_manage\",\"azure_configurations_manage\",\"gcp_configurations_manage\",\"manage_integrations\",\"usage_notifications_read\",\"usage_notifications_write\",\"generate_dashboard_reports\",\"slos_read\",\"slos_write\",\"slos_corrections\",\"monitor_config_policy_write\",\"apm_service_catalog_write\",\"apm_service_catalog_read\",\"logs_write_forwarding_rules\",\"watchdog_insights_read\",\"connections_resolve\",\"user_access_read\",\"appsec_protect_read\",\"appsec_protect_write\",\"appsec_activation_read\",\"appsec_activation_write\",\"apps_run\",\"apps_write\",\"cases_read\",\"cases_write\",\"apm_remote_configuration_write\",\"apm_remote_configuration_read\",\"ci_visibility_read\",\"ci_visibility_write\",\"ci_provider_settings_write\",\"ci_visibility_settings_write\",\"continuous_profiler_read\",\"teams_read\",\"teams_manage\",\"security_monitoring_findings_read\",\"incident_notification_settings_read\",\"incident_notification_settings_write\",\"ci_ingestion_control_write\",\"error_tracking_write\",\"watchdog_alerts_write\",\"saved_views_write\",\"client_tokens_read\",\"client_tokens_write\",\"event_correlation_config_read\",\"event_correlation_config_write\",\"event_config_write\",\"security_monitoring_findings_write\",\"cloud_cost_management_read\",\"cloud_cost_management_write\",\"host_tags_write\",\"ci_visibility_pipelines_write\",\"quality_gate_rules_read\",\"quality_gate_rules_write\",\"metrics_metadata_write\",\"rum_delete_data\",\"appsec_vm_write\",\"reference_tables_write\",\"rum_playlist_write\",\"observability_pipelines_delete\",\"observability_pipelines_deploy\",\"processes_generate_metrics\",\"api_keys_delete\",\"agent_flare_collection\",\"org_connections_write\",\"org_connections_read\",\"facets_write\",\"security_monitoring_suppressions_read\",\"security_monitoring_suppressions_write\",\"static_analysis_settings_write\",\"create_webhooks\",\"cd_visibility_read\",\"ndm_netflow_port_mappings_write\",\"appsec_vm_read\",\"debugger_capture_variables\",\"error_tracking_settings_write\",\"error_tracking_exclusion_filters_write\",\"integrations_read\",\"apm_api_catalog_write\",\"apm_api_catalog_read\",\"containers_generate_image_metrics\",\"rum_extend_retention\",\"on_prem_runner_read\",\"on_prem_runner_use\",\"on_prem_runner_write\",\"dora_settings_write\",\"agent_upgrade_write\",\"continuous_profiler_pgo_read\",\"oci_configurations_manage\",\"aws_configuration_read\",\"azure_configuration_read\",\"gcp_configuration_read\",\"oci_configuration_read\",\"hosts_read\",\"aws_configuration_edit\",\"azure_configuration_edit\",\"gcp_configuration_edit\",\"oci_configuration_edit\",\"llm_observability_read\",\"flex_logs_config_write\",\"reference_tables_read\",\"fleet_policies_write\",\"orchestration_custom_resource_definitions_write\",\"code_analysis_read\",\"orchestration_workload_scaling_write\",\"llm_observability_write\",\"observability_pipelines_capture_read\",\"observability_pipelines_capture_write\",\"apps_datastore_read\",\"apps_datastore_write\",\"apps_datastore_manage\",\"security_pipelines_read\",\"security_pipelines_write\",\"connection_groups_write\",\"quality_gates_evaluations_read\",\"connection_groups_read\",\"security_monitoring_cws_agent_rules_actions\",\"rum_retention_filters_read\",\"rum_retention_filters_write\",\"ddsql_editor_read\",\"disaster_recovery_status_read\",\"disaster_recovery_status_write\",\"rum_settings_write\",\"test_optimization_read\",\"test_optimization_write\",\"test_optimization_settings_write\",\"security_comments_write\",\"security_comments_read\",\"dashboards_invite_share\",\"dashboards_embed_share\",\"embeddable_graphs_share\",\"logs_read_workspaces\",\"logs_write_workspaces\",\"audience_management_read\",\"audience_management_write\",\"logs_read_config\",\"on_call_read\",\"on_call_write\",\"on_call_page\",\"dora_metrics_read\",\"error_tracking_read\",\"on_call_respond\",\"process_tags_read\",\"process_tags_write\",\"network_connections_read\",\"serverless_aws_instrumentation_read\",\"serverless_aws_instrumentation_write\",\"coterm_write\",\"coterm_read\",\"data_streams_monitoring_capture_messages\",\"cloudcraft_read\",\"ndm_device_profiles_view\",\"ndm_device_profiles_edit\",\"generate_log_reports\",\"manage_log_reports\",\"ndm_devices_read\",\"ndm_device_tags_write\",\"bits_investigations_read\",\"sheets_read\",\"sheets_write\",\"status_pages_settings_read\",\"status_pages_settings_write\",\"status_pages_incident_write\",\"on_call_admin\",\"orchestration_autoscaling_manage\",\"code_coverage_read\",\"cases_shared_settings_write\",\"repo_info_read\",\"repo_settings_write\",\"product_analytics_apps_write\",\"actions_interface_run\",\"ai_guard_evaluate\",\"generate_ccm_report_schedules\",\"manage_ccm_report_schedules\",\"user_self_profile_read\",\"governance_console_read\",\"data_scanner_unmask\",\"apps_form_read\",\"apps_form_manage\",\"user_self_profile_write\",\"dora_metrics_write\",\"bits_investigations_write\",\"debugger_write_pre_prod\",\"network_health_insights_read\",\"security_monitoring_datasets_read\",\"security_monitoring_datasets_write\",\"feature_flag_config_write\",\"feature_flag_config_read\",\"feature_flag_environment_config_write\",\"feature_flag_environment_config_read\",\"assistant_access\",\"dbm_read\",\"ndm_geomap_locations_write\",\"ndm_device_config_read\",\"dbm_parameterized_queries_read\",\"apm_service_renaming_write\",\"deployment_gates_read\",\"deployment_gates_write\",\"deployment_gates_evaluate\",\"product_analytics_saved_widgets_read\",\"product_analytics_saved_widgets_write\",\"mcp_write\",\"mcp_read\",\"external_provider_status_notifications_read\",\"external_provider_status_notifications_write\",\"governance_console_write\",\"bits_security_analyst_write\",\"bits_security_analyst_config_write\",\"feature_flag_approvals_override\",\"infrastructure_resource_policies_read\",\"infrastructure_resource_policies_write\",\"agent_builder_read\",\"agent_builder_write\",\"agent_builder_run\",\"bits_dev_write\",\"product_analytics_settings_read\",\"product_analytics_settings_write\",\"product_analytics_experiments_read\",\"product_analytics_experiments_write\",\"product_analytics_metrics_read\",\"product_analytics_metrics_write\",\"product_analytics_certified_metrics_write\",\"product_analytics_warehouse_model_write\",\"data_streams_kafka_produce_message\",\"org_group_read\",\"org_group_write\",\"apm_recommendations_notification_rules_read\",\"apm_recommendations_notification_rules_write\",\"product_dashboards_write\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"48e5159f-e308-11ef-bcfc-2666505bfd8f\",\"type\":\"users\"}}}},{\"id\":\"717da798-83bd-4f68-8b0a-dfa98c65bddb\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-02T20:01:42.043142Z\",\"expires_at\":null,\"last_used_at\":null,\"name\":\"Test-Create_a_service_account_access_token_returns_Created_response-1775160101\",\"public_portion\":\"3S9YYEuPThXA4AbPGMcqjr\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"c465e3ca-2ece-11f1-b6f0-363c69093c72\",\"type\":\"users\"}}}},{\"id\":\"35ef7728-4761-41dd-8a7b-f1112a26f840\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:46:16.769979Z\",\"expires_at\":\"2027-04-08T16:46:16.639Z\",\"last_used_at\":null,\"name\":\"Test-Get_all_personal_access_tokens_returns_OK_response-1775666776\",\"public_portion\":\"1dm1op4lL89nV8pt94Tdk8\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"total_filtered_count\":3}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/personal_access_tokens/35ef7728-4761-41dd-8a7b-f1112a26f840",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all personal access tokens returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-09T14:58:18.357Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/application_keys/invalidId",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Application key not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an application key returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-08T09:24:48.419Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_an_application_key_returns_OK_response-1757323488"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"0292830c-dde3-4e62-a568-573e4be65dff\",\"attributes\":{\"name\":\"Test-Get_an_application_key_returns_OK_response-1757323488\",\"created_at\":\"2025-09-08T09:24:48.499395+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/application_keys/0292830c-dde3-4e62-a568-573e4be65dff",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"0292830c-dde3-4e62-a568-573e4be65dff\",\"attributes\":{\"name\":\"Test-Get_an_application_key_returns_OK_response-1757323488\",\"created_at\":\"2025-09-08T09:24:48.499395+00:00\",\"last4\":\"xxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/0292830c-dde3-4e62-a568-573e4be65dff",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an application key returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-08T09:24:48.986Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/current_user/application_keys/incorrectId",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Application key not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get one application key owned by current user returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2025-09-10T21:40:07.729Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1757540407"
+                  },
+                  "type": "application_keys"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/current_user/application_keys",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"1c6c0fa5-6608-4e3f-8ce0-2b861590fecd\",\"attributes\":{\"name\":\"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1757540407\",\"created_at\":\"2025-09-10T21:40:08.244976+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/current_user/application_keys/1c6c0fa5-6608-4e3f-8ce0-2b861590fecd",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"application_keys\",\"id\":\"1c6c0fa5-6608-4e3f-8ce0-2b861590fecd\",\"attributes\":{\"name\":\"Test-Get_one_application_key_owned_by_current_user_returns_OK_response-1757540407\",\"created_at\":\"2025-09-10T21:40:08.244977+00:00\",\"last4\":\"xxxx\",\"key\":\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"scopes\":null,\"last_used_at\":null},\"relationships\":{\"owned_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}},\"leak_information\":{\"data\":null}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"modified_at\":\"2021-04-27T13:54:01.547888+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"94172442-be03-11e9-a77a-3b7612558ac1\"}]}}},{\"type\":\"roles\",\"id\":\"94172442-be03-11e9-a77a-3b7612558ac1\",\"attributes\":{\"name\":\"Datadog Admin Role\",\"managed\":true,\"created_at\":\"2019-08-13T19:50:19.022791+00:00\",\"modified_at\":\"2019-08-13T19:50:19.022791+00:00\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/current_user/application_keys/1c6c0fa5-6608-4e3f-8ce0-2b861590fecd",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get one application key owned by current user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2026-04-08T16:45:51.557Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "expires_at": "2027-04-08T16:45:51.557Z",
+                    "name": "Test-Revoke_a_personal_access_token_returns_No_Content_response-1775666751",
+                    "scopes": [
+                      "dashboards_read"
+                    ]
+                  },
+                  "type": "personal_access_tokens"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/personal_access_tokens",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6bebbb55-0f75-4444-bec1-52de5987290f\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:45:51.638215611Z\",\"expires_at\":\"2027-04-08T16:45:51.557Z\",\"key\":\"xxxxx_xxxxxxxxxxxxxxxxxxXxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"name\":\"Test-Revoke_a_personal_access_token_returns_No_Content_response-1775666751\",\"public_portion\":\"3HduL45lLrtTDsrdaAXE6B\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/personal_access_tokens/6bebbb55-0f75-4444-bec1-52de5987290f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/personal_access_tokens/6bebbb55-0f75-4444-bec1-52de5987290f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Revoke a personal access token returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Key Management",
+      "frozen_at": "2026-04-08T16:45:59.540Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "expires_at": "2027-04-08T16:45:59.540Z",
+                    "name": "Test-Update_a_personal_access_token_returns_OK_response-1775666759",
+                    "scopes": [
+                      "dashboards_read"
+                    ]
+                  },
+                  "type": "personal_access_tokens"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/personal_access_tokens",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7d2c1007-41f2-482e-8ee8-a4dab4a5369e\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:45:59.640614886Z\",\"expires_at\":\"2027-04-08T16:45:59.54Z\",\"key\":\"xxxxx_xxxxxxxxxxxxxxxxxxxxxx_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\"name\":\"Test-Update_a_personal_access_token_returns_OK_response-1775666759\",\"public_portion\":\"3oCB0TOwLiDNpTdO6FYPq2\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_a_personal_access_token_returns_OK_response-1775666759-updated"
+                  },
+                  "id": "7d2c1007-41f2-482e-8ee8-a4dab4a5369e",
+                  "type": "personal_access_tokens"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/personal_access_tokens/7d2c1007-41f2-482e-8ee8-a4dab4a5369e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7d2c1007-41f2-482e-8ee8-a4dab4a5369e\",\"type\":\"personal_access_tokens\",\"attributes\":{\"created_at\":\"2026-04-08T16:45:59.640614Z\",\"expires_at\":\"2027-04-08T16:45:59.54Z\",\"last_used_at\":null,\"modified_at\":\"2026-04-08T16:45:59.747202Z\",\"name\":\"Test-Update_a_personal_access_token_returns_OK_response-1775666759-updated\",\"public_portion\":\"3oCB0TOwLiDNpTdO6FYPq2\",\"scopes\":[\"dashboards_read\"]},\"relationships\":{\"owned_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/personal_access_tokens/7d2c1007-41f2-482e-8ee8-a4dab4a5369e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a personal access token returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

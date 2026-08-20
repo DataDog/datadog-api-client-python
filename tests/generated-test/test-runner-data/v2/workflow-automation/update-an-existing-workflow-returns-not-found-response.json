@@ -1,0 +1,131 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 404,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/Update an existing Workflow returns \"Not found\" response",
+  "operation_id": "UpdateWorkflow",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateWorkflowRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "A sample workflow.",
+            "name": "Example Workflow",
+            "published": true,
+            "spec": {
+              "connectionEnvs": [
+                {
+                  "connections": [
+                    {
+                      "connectionId": "e1e64943-c7c5-4487-aece-25aaec7d3aad",
+                      "label": "INTEGRATION_DATADOG"
+                    }
+                  ],
+                  "env": "default"
+                }
+              ],
+              "inputSchema": {
+                "parameters": [
+                  {
+                    "defaultValue": "default",
+                    "name": "input",
+                    "type": "STRING"
+                  }
+                ]
+              },
+              "outputSchema": {
+                "parameters": [
+                  {
+                    "name": "output",
+                    "type": "ARRAY_OBJECT",
+                    "value": "outputValue"
+                  }
+                ]
+              },
+              "steps": [
+                {
+                  "actionId": "com.datadoghq.dd.monitor.listMonitors",
+                  "connectionLabel": "INTEGRATION_DATADOG",
+                  "name": "Step1",
+                  "outboundEdges": [
+                    {
+                      "branchName": "main",
+                      "nextStepName": "Step2"
+                    }
+                  ],
+                  "parameters": [
+                    {
+                      "name": "tags",
+                      "value": "service:monitoring"
+                    }
+                  ]
+                },
+                {
+                  "actionId": "com.datadoghq.core.noop",
+                  "name": "Step2"
+                }
+              ],
+              "triggers": [
+                {
+                  "monitorTrigger": {
+                    "rateLimit": {
+                      "count": 1,
+                      "interval": "3600s"
+                    }
+                  },
+                  "startStepNames": [
+                    "Step1"
+                  ]
+                },
+                {
+                  "githubWebhookTrigger": {},
+                  "startStepNames": [
+                    "Step1"
+                  ]
+                }
+              ]
+            },
+            "tags": [
+              "team:infra",
+              "service:monitoring",
+              "foo:bar"
+            ]
+          },
+          "id": "22222222-2222-2222-2222-222222222222",
+          "type": "workflows"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "workflow_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows/{workflow_id}"
+  },
+  "scenario": "Update an existing Workflow returns \"Not found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

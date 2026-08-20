@@ -1,0 +1,82 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 200,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Validate an observability pipeline with Splunk HEC source valid_tokens returns \"OK\" response",
+  "operation_id": "ValidatePipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ObservabilityPipelineSpec",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "config": {
+              "destinations": [
+                {
+                  "id": "datadog-logs-destination",
+                  "inputs": [
+                    "my-processor-group"
+                  ],
+                  "type": "datadog_logs"
+                }
+              ],
+              "processor_groups": [
+                {
+                  "enabled": true,
+                  "id": "my-processor-group",
+                  "include": "service:my-service",
+                  "inputs": [
+                    "splunk-hec-source"
+                  ],
+                  "processors": [
+                    {
+                      "enabled": true,
+                      "id": "filter-processor",
+                      "include": "status:error",
+                      "type": "filter"
+                    }
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "id": "splunk-hec-source",
+                  "type": "splunk_hec",
+                  "valid_tokens": [
+                    {
+                      "enabled": true,
+                      "field_to_add": {
+                        "key": "token_name",
+                        "value": "primary_token"
+                      },
+                      "token_key": "SPLUNK_HEC_TOKEN"
+                    },
+                    {
+                      "enabled": false,
+                      "token_key": "SPLUNK_HEC_TOKEN_BACKUP"
+                    }
+                  ]
+                }
+              ]
+            },
+            "name": "Pipeline with Splunk HEC valid_tokens"
+          },
+          "type": "pipelines"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/obs-pipelines/pipelines/validate"
+  },
+  "scenario": "Validate an observability pipeline with Splunk HEC source valid_tokens returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

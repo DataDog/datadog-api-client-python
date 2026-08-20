@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Export security monitoring resource to Terraform returns \"OK\" response",
+  "operation_id": "ExportSecurityMonitoringTerraformResource",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "resource_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "SecurityMonitoringTerraformResourceType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "suppressions"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "resource_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "suppression.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/terraform/{resource_type}/{resource_id}"
+  },
+  "scenario": "Export security monitoring resource to Terraform returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

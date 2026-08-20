@@ -1,0 +1,35 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 409,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/Create GCP scan options returns \"Conflict\" response",
+  "operation_id": "CreateGcpScanOptions",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "GcpScanOptions",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "vuln_containers_os": true,
+            "vuln_host_os": true
+          },
+          "id": "api-spec-test",
+          "type": "gcp_scan_options"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/agentless_scanning/accounts/gcp"
+  },
+  "scenario": "Create GCP scan options returns \"Conflict\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

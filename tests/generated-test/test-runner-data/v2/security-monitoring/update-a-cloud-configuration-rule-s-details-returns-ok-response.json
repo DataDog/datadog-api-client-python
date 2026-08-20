@@ -1,0 +1,69 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a cloud configuration rule's details returns \"OK\" response",
+  "operation_id": "UpdateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleUpdatePayload",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "complianceSignalOptions": {
+          "userActivationStatus": false,
+          "userGroupByFields": []
+        },
+        "isEnabled": false,
+        "message": "ddd",
+        "name": "{{ unique }}_cloud_updated",
+        "options": {
+          "complianceRuleOptions": {
+            "regoRule": {
+              "policy": "package datadog\n\nimport data.datadog.output as dd_output\n\nimport future.keywords.contains\nimport future.keywords.if\nimport future.keywords.in\n\nmilliseconds_in_a_day := ((1000 * 60) * 60) * 24\n\neval(iam_service_account_key) = \"skip\" if {\n\tiam_service_account_key.disabled\n} else = \"pass\" if {\n\t(iam_service_account_key.resource_seen_at / milliseconds_in_a_day) - (iam_service_account_key.valid_after_time / milliseconds_in_a_day) <= 90\n} else = \"fail\"\n\n# This part remains unchanged for all rules\nresults contains result if {\n\tsome resource in input.resources[input.main_resource_type]\n\tresult := dd_output.format(resource, eval(resource))\n}\n",
+              "resourceTypes": [
+                "gcp_compute_disk"
+              ]
+            },
+            "resourceType": "gcp_compute_disk"
+          }
+        },
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "cloud_configuration_rule.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/rules/{rule_id}"
+  },
+  "scenario": "Update a cloud configuration rule's details returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

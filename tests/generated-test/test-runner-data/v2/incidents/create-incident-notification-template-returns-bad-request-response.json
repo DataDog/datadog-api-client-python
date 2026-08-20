@@ -1,0 +1,36 @@
+{
+  "api": "Incidents",
+  "expected_status": 400,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create incident notification template returns \"Bad Request\" response",
+  "operation_id": "CreateIncidentNotificationTemplate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateIncidentNotificationTemplateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "category": "alert",
+            "content": "An incident has been declared. Please join the incident channel for updates.",
+            "name": "Test Template",
+            "subject": "Incident Alert"
+          },
+          "type": "invalid_type"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/config/notification-templates"
+  },
+  "scenario": "Create incident notification template returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

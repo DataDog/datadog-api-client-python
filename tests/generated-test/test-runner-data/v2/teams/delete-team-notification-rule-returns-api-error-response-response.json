@@ -1,0 +1,51 @@
+{
+  "api": "Teams",
+  "expected_status": 404,
+  "feature": "Teams",
+  "id": "v2/Teams/Delete team notification rule returns \"API error response.\" response",
+  "operation_id": "DeleteTeamNotificationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "3d031bb2-e1da-4d34-a670-1b5557b032c9"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/notification-rules/{rule_id}"
+  },
+  "scenario": "Delete team notification rule returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

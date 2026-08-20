@@ -1,0 +1,18 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Monitors group search returns \"OK\" response",
+  "operation_id": "SearchMonitorGroups",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor/groups/search"
+  },
+  "scenario": "Monitors group search returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

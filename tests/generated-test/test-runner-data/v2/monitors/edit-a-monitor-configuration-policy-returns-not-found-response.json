@@ -1,0 +1,59 @@
+{
+  "api": "Monitors",
+  "expected_status": 404,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Edit a monitor configuration policy returns \"Not Found\" response",
+  "operation_id": "UpdateMonitorConfigPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorConfigPolicyEditRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "policy": {
+              "tag_key": "datacenter",
+              "tag_key_required": false,
+              "valid_tag_values": [
+                "prod",
+                "staging"
+              ]
+            },
+            "policy_type": "tag"
+          },
+          "id": "00000000-0000-1234-0000-000000000000",
+          "type": "monitor-config-policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-1234-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/policy/{policy_id}"
+  },
+  "scenario": "Edit a monitor configuration policy returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 204,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Update App Self-Service Status returns \"No Content\" response",
+  "operation_id": "UpdateAppSelfService",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppSelfServiceRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "selfService": true
+          },
+          "type": "selfService"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "app.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}/self-service"
+  },
+  "scenario": "Update App Self-Service Status returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

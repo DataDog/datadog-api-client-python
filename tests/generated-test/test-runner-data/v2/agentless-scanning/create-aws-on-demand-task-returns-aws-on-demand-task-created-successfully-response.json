@@ -1,0 +1,33 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 201,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/Create AWS on demand task returns \"AWS on demand task created successfully.\" response",
+  "operation_id": "CreateAwsOnDemandTask",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AwsOnDemandCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "arn": "arn:aws:lambda:us-west-2:123456789012:function:my-function"
+          },
+          "type": "aws_resource"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/agentless_scanning/ondemand/aws"
+  },
+  "scenario": "Create AWS on demand task returns \"AWS on demand task created successfully.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

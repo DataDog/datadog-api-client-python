@@ -1,0 +1,513 @@
+{
+  "feature": "Logs",
+  "recordings": [
+    {
+      "feature": "Logs",
+      "frozen_at": "2024-10-01T15:36:42.516Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "compute": [
+                  {
+                    "aggregation": "count",
+                    "interval": "5m",
+                    "type": "timeseries"
+                  }
+                ],
+                "filter": {
+                  "from": "now-15m",
+                  "indexes": [
+                    "main"
+                  ],
+                  "query": "*",
+                  "to": "now"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/analytics/aggregate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"elapsed\":165,\"request_id\":\"pddv1ChY3VUd0WGZFS1IzNkpzaENGMDQ5dVlRIi0KHQwfsxs3-LlbabIdJPhP3_aSOsxZS1WRUrEaBffcEgxNrSsbB0hv7ccJCGk\",\"status\":\"done\"},\"data\":{\"buckets\":[]}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Aggregate compute events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2024-10-01T15:36:42.902Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "compute": [
+                  {
+                    "aggregation": "count",
+                    "interval": "5m",
+                    "type": "timeseries"
+                  }
+                ],
+                "filter": {
+                  "from": "now-15m",
+                  "indexes": [
+                    "main"
+                  ],
+                  "query": "*",
+                  "to": "now"
+                },
+                "group_by": [
+                  {
+                    "facet": "host",
+                    "missing": "miss",
+                    "sort": {
+                      "aggregation": "pc90",
+                      "metric": "@duration",
+                      "order": "asc",
+                      "type": "measure"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/analytics/aggregate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"elapsed\":15,\"request_id\":\"pddv1ChZJZHpESXZreVRVU04ySjMwN1ZGU3JBIi0KHTpQ7N734J4KLzWgxOSfJsxi4hmH9Zp7S5bcjVbKEgw7sLHsv3QXsmnc0-k\",\"status\":\"done\"},\"data\":{\"buckets\":[]}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Aggregate compute events with group by returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2024-10-01T15:36:43.117Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "indexes": [
+                    "main"
+                  ],
+                  "query": "*",
+                  "to": "now"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/analytics/aggregate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"elapsed\":10,\"request_id\":\"pddv1ChZNTFhDRTJTelQycXp1QXdlX1NmTlpRIi0KHe-ilFcY0rnsNmMKsu8hd-YRCNigxxg3E_n1PmI9EgxGTh_nEXTFJyr3H54\",\"status\":\"done\"},\"data\":{\"buckets\":[]}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Aggregate events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2022-04-12T09:52:05.170Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/events",
+            "query": [
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFkTDlRUW1jT2g2Z0FBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVVEifQ\"}},\"data\":[{\"attributes\":{\"status\":\"info\",\"timestamp\":\"2022-04-12T09:51:55.414Z\",\"host\":\"fe74f1c9-b3bb-45a9-6610-ea12\",\"message\":\"- -> /\",\"tags\":[\"source:sinatra\",\"env:integrations-lab\",\"source:sinatra\",\"application_id:a7bebd67-1991-4e9e-8d44-399acf2f13e8\",\"application_name:logs-backend-demo\",\"cf_instance_ip:10.0.40.5\",\"env:integrations-lab\",\"instance_index:0\",\"space_name:system\",\"uri:logs-backend-demo.apps.integrations-lab.devenv.dog\",\"datadog.pipelines:false\"]},\"type\":\"log\",\"id\":\"AQAAAYAdL9QWY-VoZwAAAABBWUFkTDlZNEFBQ3RpUllvSWd4TWlRQUQ\"},{\"attributes\":{\"status\":\"info\",\"timestamp\":\"2022-04-12T09:51:55.408Z\",\"host\":\"59fe9540-24f4-48c4-4fc4-1c34\",\"message\":\"- -> /\",\"tags\":[\"source:sinatra\",\"env:integrations-lab\",\"source:sinatra\",\"application_id:41256269-671b-4d79-91d5-3bf848376425\",\"application_name:test-space-org-cc\",\"cf_instance_ip:10.0.40.11\",\"env:integrations-lab\",\"instance_index:1\",\"space_name:datadog-application-monitoring-space\",\"uri:test-space-org-cc.apps.integrations-lab.devenv.dog\",\"datadog.pipelines:false\"]},\"type\":\"log\",\"id\":\"AQAAAYAdL9QQmcOh6gAAAABBWUFkTC1OS0FBQnpLdDJKdVNaYkN3QUQ\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/logs/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFkTDlRUW1jT2g2Z0FBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVVEifQ&page%5Blimit%5D=2\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/events",
+            "query": [
+              [
+                "page[cursor]",
+                "eyJhZnRlciI6IkFRQUFBWUFkTDlRUW1jT2g2Z0FBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVVEifQ"
+              ],
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFkTDlKNG1jT2g2QUFBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVUkifQ\"}},\"data\":[{\"attributes\":{\"status\":\"ok\",\"tags\":[\"source:sinatra\",\"env:integrations-lab\",\"source:sinatra\",\"application_id:a7bebd67-1991-4e9e-8d44-399acf2f13e8\",\"application_name:logs-backend-demo\",\"cf_instance_ip:10.0.40.5\",\"env:integrations-lab\",\"instance_index:0\",\"space_name:system\",\"uri:logs-backend-demo.apps.integrations-lab.devenv.dog\"],\"timestamp\":\"2022-04-12T09:51:55.000Z\",\"host\":\"fe74f1c9-b3bb-45a9-6610-ea12\",\"attributes\":{\"duration\":1800000.0,\"http\":{\"url_details\":{\"path\":\"/\"},\"status_category\":\"OK\",\"url\":\"/\",\"status_code\":200,\"version\":\"1.1\",\"method\":\"GET\"},\"network\":{\"client\":{\"ip\":\"169.254.0.1\"},\"bytes_written\":117},\"date_access\":1649757115000},\"message\":\"169.254.0.1 - - [12/Apr/2022:09:51:55 +0000] \\\"GET / HTTP/1.1\\\" 200 117 0.0018\"},\"type\":\"log\",\"id\":\"AQAAAYAdL9J4Y-VoZQAAAABBWUFkTDlZNEFBQ3RpUllvSWd4TWlRQUI\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/logs/events?page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFkTDlKNG1jT2g2QUFBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVUkifQ&page%5Blimit%5D=2\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/events",
+            "query": [
+              [
+                "page[cursor]",
+                "eyJhZnRlciI6IkFRQUFBWUFkTDlKNG1jT2g2QUFBQUFCQldVRmtUQzFPUzBGQlFucExkREpLZFZOYVlrTjNRVUkifQ"
+              ],
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of logs returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2024-10-01T15:36:43.285Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/events",
+            "query": [
+              [
+                "filter[from]",
+                "2020-09-17T11:48:36+01:00"
+              ],
+              [
+                "filter[indexes]",
+                "main"
+              ],
+              [
+                "filter[query]",
+                "datadog-agent"
+              ],
+              [
+                "filter[to]",
+                "2020-09-17T12:48:36+01:00"
+              ],
+              [
+                "page[limit]",
+                "5"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"elapsed\":0,\"request_id\":\"pddv1ChZnUldBVG01WlRMU2Q0d2xmaG1NWG1BIiwKHFtksVd_gLLg8oGdAfyjZkpusj-6_bbNxRpOSeoSDCx7sBKmq-5VxGtliw\",\"status\":\"done\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a quick list of logs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2024-10-01T15:36:43.434Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "2020-09-17T11:48:36+01:00",
+                  "indexes": [
+                    "main"
+                  ],
+                  "query": "datadog-agent",
+                  "to": "2020-09-17T12:48:36+01:00"
+                },
+                "page": {
+                  "limit": 5
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"elapsed\":0,\"request_id\":\"pddv1ChZDajdxSjQ4ZFJOT1VyZ2xURmRrSW5BIi0KHTBXibXkWStvRXkS72BJw44UvhZhIF-UDmT52UYhEgyW3j58vq2SlrrUWNc\",\"status\":\"done\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search logs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2022-04-11T16:44:42.962Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "indexes": [
+                    "main"
+                  ],
+                  "to": "now"
+                },
+                "options": {
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFaZGJvSjdkR3dOZ0FBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVUUifQ\"}},\"data\":[{\"attributes\":{\"status\":\"ok\",\"tags\":[\"source:sinatra\",\"env:integrations-lab\",\"source:sinatra\",\"application_id:41256269-671b-4d79-91d5-3bf848376425\",\"application_name:test-space-org-cc\",\"cf_instance_ip:10.0.40.5\",\"env:integrations-lab\",\"instance_index:0\",\"space_name:datadog-application-monitoring-space\",\"uri:test-space-org-cc.apps.integrations-lab.devenv.dog\"],\"timestamp\":\"2022-04-11T16:29:47.000Z\",\"host\":\"05f9b9df-ae45-4c8b-66bf-e24c\",\"attributes\":{\"duration\":2700000.0,\"http\":{\"url_details\":{\"path\":\"/\"},\"status_category\":\"OK\",\"url\":\"/\",\"status_code\":200,\"version\":\"1.1\",\"method\":\"GET\"},\"network\":{\"client\":{\"ip\":\"169.254.0.1\"},\"bytes_written\":117},\"date_access\":1649694587000},\"message\":\"169.254.0.1 - - [11/Apr/2022:16:29:47 +0000] \\\"GET / HTTP/1.1\\\" 200 117 0.0027\"},\"type\":\"log\",\"id\":\"AQAAAYAZdbh47dGwNwAAAABBWUFaZGJyMUFBQ0s4OEN3YmZ1UDJRQUI\"},{\"attributes\":{\"status\":\"info\",\"timestamp\":\"2022-04-11T16:29:47.401Z\",\"host\":\"05f9b9df-ae45-4c8b-66bf-e24c\",\"message\":\"I, [2022-04-11T16:29:47.400621 #14]  INFO -- : Index page hit\",\"tags\":[\"source:sinatra\",\"env:integrations-lab\",\"source:sinatra\",\"application_id:41256269-671b-4d79-91d5-3bf848376425\",\"application_name:test-space-org-cc\",\"cf_instance_ip:10.0.40.5\",\"env:integrations-lab\",\"instance_index:0\",\"space_name:datadog-application-monitoring-space\",\"uri:test-space-org-cc.apps.integrations-lab.devenv.dog\",\"datadog.pipelines:false\"]},\"type\":\"log\",\"id\":\"AQAAAYAZdboJ7dGwNgAAAABBWUFaZGJyMUFBQ0s4OEN3YmZ1UDJRQUE\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/logs/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFaZGJvSjdkR3dOZ0FBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVUUifQ&filter%5Bfrom%5D=now-15m&filter%5Bindexes%5D=main&page%5Blimit%5D=2\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "indexes": [
+                    "main"
+                  ],
+                  "to": "now"
+                },
+                "options": {
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "cursor": "eyJhZnRlciI6IkFRQUFBWUFaZGJvSjdkR3dOZ0FBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVUUifQ",
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWUFaZGJvSzdkR3dPUUFBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVVEifQ\"}},\"data\":[{\"attributes\":{\"status\":\"info\",\"timestamp\":\"2022-04-11T16:29:47.402Z\",\"host\":\"05f9b9df-ae45-4c8b-66bf-e24c\",\"message\":\"169.254.0.1 - - [11/Apr/2022:16:29:47 UTC] \\\"GET / HTTP/1.1\\\" 200 117\",\"tags\":[\"source:sinatra\",\"env:integrations-lab\",\"source:sinatra\",\"application_id:41256269-671b-4d79-91d5-3bf848376425\",\"application_name:test-space-org-cc\",\"cf_instance_ip:10.0.40.5\",\"env:integrations-lab\",\"instance_index:0\",\"space_name:datadog-application-monitoring-space\",\"uri:test-space-org-cc.apps.integrations-lab.devenv.dog\",\"datadog.pipelines:false\"]},\"type\":\"log\",\"id\":\"AQAAAYAZdboK7dGwOAAAAABBWUFaZGJyMUFBQ0s4OEN3YmZ1UDJRQUM\"}],\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/logs/events?sort=timestamp&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWUFaZGJvSzdkR3dPUUFBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVVEifQ&filter%5Bfrom%5D=now-15m&filter%5Bindexes%5D=main&page%5Blimit%5D=2\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "indexes": [
+                    "main"
+                  ],
+                  "to": "now"
+                },
+                "options": {
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "cursor": "eyJhZnRlciI6IkFRQUFBWUFaZGJvSzdkR3dPUUFBQUFCQldVRmFaR0p5TVVGQlEwczRPRU4zWW1aMVVESlJRVVEifQ",
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search logs returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2024-10-01T15:36:43.563Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "ddsource": "nginx",
+                  "ddtags": "env:staging,version:5.1",
+                  "hostname": "i-012345678",
+                  "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World",
+                  "service": "payment",
+                  "status": "info"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Send logs returns \"Request accepted for processing (always 202 empty JSON).\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

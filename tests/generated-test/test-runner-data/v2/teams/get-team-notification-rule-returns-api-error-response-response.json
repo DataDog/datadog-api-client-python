@@ -1,0 +1,51 @@
+{
+  "api": "Teams",
+  "expected_status": 404,
+  "feature": "Teams",
+  "id": "v2/Teams/Get team notification rule returns \"API error response.\" response",
+  "operation_id": "GetTeamNotificationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/notification-rules/{rule_id}"
+  },
+  "scenario": "Get team notification rule returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

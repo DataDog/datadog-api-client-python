@@ -1,0 +1,57 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a critical asset returns \"OK\" response",
+  "operation_id": "UpdateSecurityMonitoringCriticalAsset",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringCriticalAssetUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": false,
+            "query": "no:alert",
+            "rule_query": "type:(log_detection OR signal_correlation OR workload_security OR application_security) ruleId:djg-ktx-ipq",
+            "severity": "decrease",
+            "tags": [
+              "env:production"
+            ],
+            "version": 1
+          },
+          "type": "critical_assets"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "critical_asset_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "critical_asset.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/configuration/critical_assets/{critical_asset_id}"
+  },
+  "scenario": "Update a critical asset returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

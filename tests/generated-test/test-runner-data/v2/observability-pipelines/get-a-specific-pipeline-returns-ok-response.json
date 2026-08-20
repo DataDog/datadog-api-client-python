@@ -1,0 +1,35 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 200,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Get a specific pipeline returns \"OK\" response",
+  "operation_id": "GetPipeline",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "pipeline_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "pipeline.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}"
+  },
+  "scenario": "Get a specific pipeline returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

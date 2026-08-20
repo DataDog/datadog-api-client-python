@@ -1,0 +1,18 @@
+{
+  "api": "Roles",
+  "expected_status": 200,
+  "feature": "Roles",
+  "id": "v2/Roles/List permissions returns \"OK\" response",
+  "operation_id": "ListPermissions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/permissions"
+  },
+  "scenario": "List permissions returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

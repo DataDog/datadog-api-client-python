@@ -1,0 +1,18 @@
+{
+  "api": "Containers",
+  "expected_status": 200,
+  "feature": "Containers",
+  "id": "v2/Containers/Get All Containers returns \"OK\" response",
+  "operation_id": "ListContainers",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/containers"
+  },
+  "scenario": "Get All Containers returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

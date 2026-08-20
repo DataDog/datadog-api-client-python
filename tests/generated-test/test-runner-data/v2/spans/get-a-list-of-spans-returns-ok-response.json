@@ -1,0 +1,18 @@
+{
+  "api": "Spans",
+  "expected_status": 200,
+  "feature": "Spans",
+  "id": "v2/Spans/Get a list of spans returns \"OK\" response",
+  "operation_id": "ListSpansGet",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/spans/events"
+  },
+  "scenario": "Get a list of spans returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,67 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a detection rule with detection method 'anomaly_detection' with enabled feature 'instantaneousBaseline' returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "condition": "a > 0.995",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "filters": [],
+        "isEnabled": true,
+        "message": "An anomaly detection rule",
+        "name": "{{ unique }}",
+        "options": {
+          "anomalyDetectionOptions": {
+            "bucketDuration": 300,
+            "detectionTolerance": 3,
+            "instantaneousBaseline": true,
+            "learningDuration": 24
+          },
+          "detectionMethod": "anomaly_detection",
+          "evaluationWindow": 900,
+          "keepAlive": 3600,
+          "maxSignalDuration": 86400
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "dataSource": "logs",
+            "distinctFields": [],
+            "groupByFields": [
+              "@usr.email",
+              "@network.client.ip"
+            ],
+            "hasOptionalGroupByFields": false,
+            "name": "",
+            "query": "service:app status:error"
+          }
+        ],
+        "tags": [],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules"
+  },
+  "scenario": "Create a detection rule with detection method 'anomaly_detection' with enabled feature 'instantaneousBaseline' returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

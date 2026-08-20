@@ -1,0 +1,18 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Get all monitor configuration policies returns \"OK\" response",
+  "operation_id": "ListMonitorConfigPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/policy"
+  },
+  "scenario": "Get all monitor configuration policies returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

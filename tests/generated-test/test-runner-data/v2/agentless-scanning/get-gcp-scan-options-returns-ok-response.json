@@ -1,0 +1,35 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 200,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/Get GCP scan options returns \"OK\" response",
+  "operation_id": "GetGcpScanOptions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "project_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "api-spec-test"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/agentless_scanning/accounts/gcp/{project_id}"
+  },
+  "scenario": "Get GCP scan options returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

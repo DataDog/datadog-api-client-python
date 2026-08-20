@@ -1,0 +1,50 @@
+{
+  "api": "Organizations",
+  "expected_status": 200,
+  "feature": "Organizations",
+  "id": "v2/Organizations/Update a specific Org Config returns \"OK\" response",
+  "operation_id": "UpdateOrgConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OrgConfigWriteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "value": "UTC"
+          },
+          "type": "org_configs"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "org_config_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "monitor_timezone"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/org_configs/{org_config_name}"
+  },
+  "scenario": "Update a specific Org Config returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,39 @@
+{
+  "api": "CIVisibilityPipelines",
+  "expected_status": 200,
+  "feature": "CI Visibility Pipelines",
+  "id": "v2/CI Visibility Pipelines/Search pipelines events returns \"OK\" response",
+  "operation_id": "SearchCIAppPipelineEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CIAppPipelineEventsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "from": "now-15m",
+          "query": "@ci.provider.name:github AND @ci.status:error",
+          "to": "now"
+        },
+        "options": {
+          "timezone": "GMT"
+        },
+        "page": {
+          "limit": 5
+        },
+        "sort": "timestamp"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ci/pipelines/events/search"
+  },
+  "scenario": "Search pipelines events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "MicrosoftTeamsIntegration",
+  "expected_status": 204,
+  "feature": "Microsoft Teams Integration",
+  "id": "v2/Microsoft Teams Integration/Delete workflow webhook handle returns \"OK\" response",
+  "operation_id": "DeleteWorkflowsWebhookHandle",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "handle_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "workflows_webhook_handle.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}"
+  },
+  "scenario": "Delete workflow webhook handle returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

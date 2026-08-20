@@ -1,0 +1,44 @@
+{
+  "api": "Datasets",
+  "expected_status": 200,
+  "feature": "Datasets",
+  "id": "v2/Datasets/Create a dataset returns \"OK\" response",
+  "operation_id": "CreateDataset",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DatasetCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Security Audit Dataset",
+            "principals": [
+              "role:94172442-be03-11e9-a77a-3b7612558ac1"
+            ],
+            "product_filters": [
+              {
+                "filters": [
+                  "@application.id:ABCD"
+                ],
+                "product": "metrics"
+              }
+            ]
+          },
+          "type": "dataset"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/datasets"
+  },
+  "scenario": "Create a dataset returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

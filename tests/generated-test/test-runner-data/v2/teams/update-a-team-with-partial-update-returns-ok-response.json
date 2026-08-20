@@ -1,0 +1,51 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/Update a team with partial update returns \"OK\" response",
+  "operation_id": "UpdateTeam",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "handle": "{{dd_team.data.attributes.handle}}",
+            "name": "{{dd_team.data.attributes.name}} updated"
+          },
+          "type": "team"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}"
+  },
+  "scenario": "Update a team with partial update returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

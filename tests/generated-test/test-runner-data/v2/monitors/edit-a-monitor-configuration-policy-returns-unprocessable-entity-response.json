@@ -1,0 +1,59 @@
+{
+  "api": "Monitors",
+  "expected_status": 422,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Edit a monitor configuration policy returns \"Unprocessable Entity\" response",
+  "operation_id": "UpdateMonitorConfigPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorConfigPolicyEditRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "policy": {
+              "tag_key": "{{ unique_lower_alnum }}",
+              "tag_key_required": false,
+              "valid_tag_values": [
+                "prod",
+                "staging"
+              ]
+            },
+            "policy_type": "tag"
+          },
+          "id": "00000000-0000-1234-0000-000000000000",
+          "type": "monitor-config-policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "monitor_configuration_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/policy/{policy_id}"
+  },
+  "scenario": "Edit a monitor configuration policy returns \"Unprocessable Entity\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

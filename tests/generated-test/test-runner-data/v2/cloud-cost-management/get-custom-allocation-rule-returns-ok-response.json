@@ -1,0 +1,35 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Get custom allocation rule returns \"OK\" response",
+  "operation_id": "GetCustomAllocationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 683
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/arbitrary_rule/{rule_id}"
+  },
+  "scenario": "Get custom allocation rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

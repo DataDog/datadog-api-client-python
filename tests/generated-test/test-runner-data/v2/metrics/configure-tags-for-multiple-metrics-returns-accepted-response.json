@@ -1,0 +1,40 @@
+{
+  "api": "Metrics",
+  "expected_status": 202,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Configure tags for multiple metrics returns \"Accepted\" response",
+  "operation_id": "CreateBulkTagsMetricsConfiguration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MetricBulkTagConfigCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "emails": [
+              "{{ user.data.attributes.email }}"
+            ],
+            "tags": [
+              "test",
+              "{{ unique_lower_alnum }}"
+            ]
+          },
+          "id": "system.load.1",
+          "type": "metric_bulk_configure_tags"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/metrics/config/bulk-tags"
+  },
+  "scenario": "Configure tags for multiple metrics returns \"Accepted\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

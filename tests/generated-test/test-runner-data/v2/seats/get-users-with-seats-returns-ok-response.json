@@ -1,0 +1,51 @@
+{
+  "api": "Seats",
+  "expected_status": 200,
+  "feature": "Seats",
+  "id": "v2/Seats/Get users with seats returns \"OK\" response",
+  "operation_id": "GetSeatsUsers",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "product_code",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "incident_response"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 100
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/seats/users"
+  },
+  "scenario": "Get users with seats returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

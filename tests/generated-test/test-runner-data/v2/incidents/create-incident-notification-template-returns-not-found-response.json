@@ -1,0 +1,44 @@
+{
+  "api": "Incidents",
+  "expected_status": 404,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create incident notification template returns \"Not Found\" response",
+  "operation_id": "CreateIncidentNotificationTemplate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateIncidentNotificationTemplateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "category": "alert",
+            "content": "An incident has been declared. Please join the incident channel for updates.",
+            "name": "Incident Alert Template",
+            "subject": "Incident Alert"
+          },
+          "relationships": {
+            "incident_type": {
+              "data": {
+                "id": "00000000-1111-2222-3333-444444444444",
+                "type": "incident_types"
+              }
+            }
+          },
+          "type": "notification_templates"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/config/notification-templates"
+  },
+  "scenario": "Create incident notification template returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

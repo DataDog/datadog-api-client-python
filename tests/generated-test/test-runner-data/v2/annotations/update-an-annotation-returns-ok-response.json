@@ -1,0 +1,54 @@
+{
+  "api": "Annotations",
+  "expected_status": 200,
+  "feature": "Annotations",
+  "id": "v2/Annotations/Update an annotation returns \"OK\" response",
+  "operation_id": "UpdateAnnotation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AnnotationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "color": "green",
+            "description": "Updated annotation.",
+            "page_id": "dashboard:abc-def-xyz",
+            "start_time": 1704067200000,
+            "type": "pointInTime"
+          },
+          "type": "annotation"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "annotation_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "annotation.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/annotation/{annotation_id}"
+  },
+  "scenario": "Update an annotation returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

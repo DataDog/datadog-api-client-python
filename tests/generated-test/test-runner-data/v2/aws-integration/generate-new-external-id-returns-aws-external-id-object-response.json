@@ -1,0 +1,18 @@
+{
+  "api": "AWSIntegration",
+  "expected_status": 200,
+  "feature": "AWS Integration",
+  "id": "v2/AWS Integration/Generate new external ID returns \"AWS External ID object\" response",
+  "operation_id": "CreateNewAWSExternalID",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/aws/generate_new_external_id"
+  },
+  "scenario": "Generate new external ID returns \"AWS External ID object\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

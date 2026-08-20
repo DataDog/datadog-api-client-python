@@ -1,0 +1,51 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Get an API test result returns result with failure object",
+  "operation_id": "GetAPITestResult",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "public_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "synthetics_api_test_with_wrong_dns.public_id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "result_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "synthetics_api_test_with_wrong_dns_result.results[0].result_id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/synthetics/tests/{public_id}/results/{result_id}"
+  },
+  "scenario": "Get an API test result returns result with failure object",
+  "schema_version": 1,
+  "version": "v1"
+}

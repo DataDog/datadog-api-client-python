@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/List tags by metric name returns \"Success\" response",
+  "operation_id": "ListTagsByMetricName",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "metric_tag_configuration.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/{metric_name}/all-tags"
+  },
+  "scenario": "List tags by metric name returns \"Success\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

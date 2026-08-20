@@ -1,0 +1,72 @@
+{
+  "api": "ServiceDefinition",
+  "expected_status": 200,
+  "feature": "Service Definition",
+  "id": "v2/Service Definition/Create or update service definition using schema v2-2 returns \"CREATED\" response",
+  "operation_id": "CreateOrUpdateServiceDefinitions",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ServiceDefinitionsCreateRequest",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "contacts": [
+          {
+            "contact": "contact@datadoghq.com",
+            "name": "Team Email",
+            "type": "email"
+          }
+        ],
+        "dd-service": "service-{{ unique_lower_alnum }}",
+        "extensions": {
+          "myorgextension": "extensionvalue"
+        },
+        "integrations": {
+          "opsgenie": {
+            "region": "US",
+            "service-url": "https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000"
+          },
+          "pagerduty": {
+            "service-url": "https://my-org.pagerduty.com/service-directory/PMyService"
+          }
+        },
+        "links": [
+          {
+            "name": "Runbook",
+            "type": "runbook",
+            "url": "https://my-runbook"
+          },
+          {
+            "name": "Source Code",
+            "provider": "GitHub",
+            "type": "repo",
+            "url": "https://github.com/DataDog/schema"
+          },
+          {
+            "name": "Architecture",
+            "provider": "Gigoogle drivetHub",
+            "type": "doc",
+            "url": "https://my-runbook"
+          }
+        ],
+        "schema-version": "v2.2",
+        "tags": [
+          "my:tag",
+          "service:tag"
+        ],
+        "team": "my-team"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/services/definitions"
+  },
+  "scenario": "Create or update service definition using schema v2-2 returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

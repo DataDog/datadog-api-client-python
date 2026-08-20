@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 204,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Delete a ticket creation rule returns \"Rule successfully deleted.\" response",
+  "operation_id": "DeleteSecurityFindingsAutomationTicketCreationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_ticket_creation_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/ticket_creation_rules/{rule_id}"
+  },
+  "scenario": "Delete a ticket creation rule returns \"Rule successfully deleted.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "LogsCustomDestinations",
+  "expected_status": 200,
+  "feature": "Logs Custom Destinations",
+  "id": "v2/Logs Custom Destinations/Create a Custom Header HTTP custom destination returns \"OK\" response",
+  "operation_id": "CreateLogsCustomDestination",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomDestinationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": false,
+            "forward_tags": false,
+            "forward_tags_restriction_list": [
+              "datacenter",
+              "host"
+            ],
+            "forward_tags_restriction_list_type": "ALLOW_LIST",
+            "forwarder_destination": {
+              "auth": {
+                "header_name": "MY-AUTHENTICATION-HEADER",
+                "header_value": "my-secret",
+                "type": "custom_header"
+              },
+              "endpoint": "https://example.com",
+              "type": "http"
+            },
+            "name": "Nginx logs",
+            "query": "source:nginx"
+          },
+          "type": "custom_destination"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/logs/config/custom-destinations"
+  },
+  "scenario": "Create a Custom Header HTTP custom destination returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

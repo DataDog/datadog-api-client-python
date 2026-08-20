@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/List indicators of compromise returns \"OK\" response",
+  "operation_id": "ListIndicatorsOfCompromise",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "limit",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/siem/ioc-explorer"
+  },
+  "scenario": "List indicators of compromise returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

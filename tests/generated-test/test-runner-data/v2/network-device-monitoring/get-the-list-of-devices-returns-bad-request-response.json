@@ -1,0 +1,18 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 400,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/Get the list of devices returns \"Bad Request\" response",
+  "operation_id": "ListDevices",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ndm/devices"
+  },
+  "scenario": "Get the list of devices returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "DataDeletion",
+  "expected_status": 200,
+  "feature": "Data Deletion",
+  "id": "v2/Data Deletion/Cancels a data deletion request returns \"OK\" response",
+  "operation_id": "CancelDataDeletionRequest",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "deletion_request.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deletion/requests/{id}/cancel"
+  },
+  "scenario": "Cancels a data deletion request returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

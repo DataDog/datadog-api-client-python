@@ -1,0 +1,35 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 204,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/Delete an execution policy returns \"No Content\" response",
+  "operation_id": "DeleteExecutionPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "execution_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/execution-policies/{policy_id}"
+  },
+  "scenario": "Delete an execution policy returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

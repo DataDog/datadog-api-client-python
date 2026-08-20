@@ -1,0 +1,77 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Update an existing incident integration metadata returns \"OK\" response",
+  "operation_id": "UpdateIncidentIntegration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentIntegrationMetadataPatchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "incident_id": "{{ incident.data.id }}",
+            "integration_type": 1,
+            "metadata": {
+              "channels": [
+                {
+                  "channel_id": "C0123456789",
+                  "channel_name": "#updated-channel-name",
+                  "redirect_url": "https://slack.com/app_redirect?channel=C0123456789&team=T01234567",
+                  "team_id": "T01234567"
+                }
+              ]
+            }
+          },
+          "type": "incident_integrations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "integration_metadata_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident_integration_metadata.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/relationships/integrations/{integration_metadata_id}"
+  },
+  "scenario": "Update an existing incident integration metadata returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

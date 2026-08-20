@@ -1,0 +1,51 @@
+{
+  "api": "ServiceDefinition",
+  "expected_status": 200,
+  "feature": "Service Definition",
+  "id": "v2/Service Definition/Get a single service definition returns \"OK\" response",
+  "operation_id": "GetServiceDefinition",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "service_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "service-definition-test"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "schema_version",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "ServiceDefinitionSchemaVersions",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "v2.1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/services/definitions/{service_name}"
+  },
+  "scenario": "Get a single service definition returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Get cost Azure UC config returns \"OK\" response",
+  "operation_id": "GetCostAzureUCConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "cloud_account_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 123456
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/azure_uc_config/{cloud_account_id}"
+  },
+  "scenario": "Get cost Azure UC config returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

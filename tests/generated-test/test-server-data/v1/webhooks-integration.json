@@ -1,0 +1,528 @@
+{
+  "feature": "Webhooks Integration",
+  "recordings": [
+    {
+      "feature": "Webhooks Integration",
+      "frozen_at": "2022-05-12T09:50:31.084Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "is_secret": true,
+                "name": "TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1652349031",
+                "value": "CUSTOM_VARIABLE_VALUE"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_secret\":true,\"name\":\"TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1652349031\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables/TESTCREATEACUSTOMVARIABLERETURNSOKRESPONSE1652349031",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a custom variable returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Webhooks Integration",
+      "frozen_at": "2022-05-12T09:50:37.160Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Create_a_webhooks_integration_returns_OK_response-1652349037",
+                "url": "https://example.com/webhook"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"encode_as\":\"json\",\"url\":\"https://example.com/webhook\",\"custom_headers\":null,\"name\":\"Test-Create_a_webhooks_integration_returns_OK_response-1652349037\",\"payload\":\"{\\\"body\\\": \\\"$EVENT_MSG\\\", \\\"last_updated\\\": \\\"$LAST_UPDATED\\\", \\\"event_type\\\": \\\"$EVENT_TYPE\\\", \\\"title\\\": \\\"$EVENT_TITLE\\\", \\\"date\\\": \\\"$DATE\\\", \\\"org\\\": {\\\"id\\\": \\\"$ORG_ID\\\", \\\"name\\\": \\\"$ORG_NAME\\\"}, \\\"id\\\": \\\"$ID\\\"}\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks/Test-Create_a_webhooks_integration_returns_OK_response-1652349037",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a webhooks integration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Webhooks Integration",
+      "frozen_at": "2022-05-12T09:50:41.873Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "is_secret": false,
+                "name": "TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041",
+                "value": "variable-value"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_secret\":false,\"name\":\"TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041\",\"value\":\"variable-value\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables/TESTDELETEACUSTOMVARIABLERETURNSOKRESPONSE1652349041",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\": [\"Custom variable does not exist\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a custom variable returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Webhooks Integration",
+      "frozen_at": "2022-05-12T09:50:47.045Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Delete_a_webhook_returns_OK_response-1652349047",
+                "url": "http://example.com/webhook"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"encode_as\":\"json\",\"url\":\"http://example.com/webhook\",\"custom_headers\":null,\"name\":\"Test-Delete_a_webhook_returns_OK_response-1652349047\",\"payload\":\"{\\\"body\\\": \\\"$EVENT_MSG\\\", \\\"last_updated\\\": \\\"$LAST_UPDATED\\\", \\\"event_type\\\": \\\"$EVENT_TYPE\\\", \\\"title\\\": \\\"$EVENT_TITLE\\\", \\\"date\\\": \\\"$DATE\\\", \\\"org\\\": {\\\"id\\\": \\\"$ORG_ID\\\", \\\"name\\\": \\\"$ORG_NAME\\\"}, \\\"id\\\": \\\"$ID\\\"}\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1652349047",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks/Test-Delete_a_webhook_returns_OK_response-1652349047",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\": [\"Webhook does not exist\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a webhook returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Webhooks Integration",
+      "frozen_at": "2022-05-12T09:50:51.672Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_a_webhook_integration_returns_OK_response-1652349051",
+                "url": "http://example.com/webhook"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"encode_as\":\"json\",\"url\":\"http://example.com/webhook\",\"custom_headers\":null,\"name\":\"Test-Get_a_webhook_integration_returns_OK_response-1652349051\",\"payload\":\"{\\\"body\\\": \\\"$EVENT_MSG\\\", \\\"last_updated\\\": \\\"$LAST_UPDATED\\\", \\\"event_type\\\": \\\"$EVENT_TYPE\\\", \\\"title\\\": \\\"$EVENT_TITLE\\\", \\\"date\\\": \\\"$DATE\\\", \\\"org\\\": {\\\"id\\\": \\\"$ORG_ID\\\", \\\"name\\\": \\\"$ORG_NAME\\\"}, \\\"id\\\": \\\"$ID\\\"}\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks/Test-Get_a_webhook_integration_returns_OK_response-1652349051",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"encode_as\":\"json\",\"url\":\"http://example.com/webhook\",\"custom_headers\":null,\"name\":\"Test-Get_a_webhook_integration_returns_OK_response-1652349051\",\"payload\":\"{\\\"body\\\": \\\"$EVENT_MSG\\\", \\\"last_updated\\\": \\\"$LAST_UPDATED\\\", \\\"event_type\\\": \\\"$EVENT_TYPE\\\", \\\"title\\\": \\\"$EVENT_TITLE\\\", \\\"date\\\": \\\"$DATE\\\", \\\"org\\\": {\\\"id\\\": \\\"$ORG_ID\\\", \\\"name\\\": \\\"$ORG_NAME\\\"}, \\\"id\\\": \\\"$ID\\\"}\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks/Test-Get_a_webhook_integration_returns_OK_response-1652349051",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a webhook integration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Webhooks Integration",
+      "frozen_at": "2022-05-12T09:50:56.898Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "is_secret": false,
+                "name": "TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1652349056",
+                "value": "variable-value"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_secret\":false,\"name\":\"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1652349056\",\"value\":\"variable-value\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "value": "variable-updated"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1652349056",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_secret\":false,\"name\":\"TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1652349056\",\"value\":\"variable-updated\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/custom-variables/TESTUPDATEACUSTOMVARIABLERETURNSOKRESPONSE1652349056",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update a custom variable returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Webhooks Integration",
+      "frozen_at": "2022-05-12T09:51:02.011Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Update_a_webhook_returns_OK_response-1652349062",
+                "url": "http://example.com/webhook"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"encode_as\":\"json\",\"url\":\"http://example.com/webhook\",\"custom_headers\":null,\"name\":\"Test-Update_a_webhook_returns_OK_response-1652349062\",\"payload\":\"{\\\"body\\\": \\\"$EVENT_MSG\\\", \\\"last_updated\\\": \\\"$LAST_UPDATED\\\", \\\"event_type\\\": \\\"$EVENT_TYPE\\\", \\\"title\\\": \\\"$EVENT_TITLE\\\", \\\"date\\\": \\\"$DATE\\\", \\\"org\\\": {\\\"id\\\": \\\"$ORG_ID\\\", \\\"name\\\": \\\"$ORG_NAME\\\"}, \\\"id\\\": \\\"$ID\\\"}\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "url": "https://example.com/webhook-updated"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks/Test-Update_a_webhook_returns_OK_response-1652349062",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"encode_as\":\"json\",\"url\":\"https://example.com/webhook-updated\",\"custom_headers\":null,\"name\":\"Test-Update_a_webhook_returns_OK_response-1652349062\",\"payload\":\"{\\\"body\\\": \\\"$EVENT_MSG\\\", \\\"last_updated\\\": \\\"$LAST_UPDATED\\\", \\\"event_type\\\": \\\"$EVENT_TYPE\\\", \\\"title\\\": \\\"$EVENT_TITLE\\\", \\\"date\\\": \\\"$DATE\\\", \\\"org\\\": {\\\"id\\\": \\\"$ORG_ID\\\", \\\"name\\\": \\\"$ORG_NAME\\\"}, \\\"id\\\": \\\"$ID\\\"}\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/integration/webhooks/configuration/webhooks/Test-Update_a_webhook_returns_OK_response-1652349062",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update a webhook returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

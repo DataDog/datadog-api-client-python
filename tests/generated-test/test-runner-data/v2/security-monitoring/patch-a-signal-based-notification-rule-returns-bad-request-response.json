@@ -1,0 +1,67 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Patch a signal-based notification rule returns \"Bad Request\" response",
+  "operation_id": "PatchSignalNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchNotificationRuleParameters",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "name": "Rule 1",
+            "selectors": {
+              "query": "(source:production_service OR env:prod)",
+              "rule_types": [
+                "misconfiguration",
+                "attack_path"
+              ],
+              "severities": [
+                "critical"
+              ],
+              "trigger_source": "security_findings"
+            },
+            "targets": [
+              "@john.doe@email.com"
+            ],
+            "time_aggregation": 86400
+          },
+          "id": "aaa-bbb-ccc",
+          "type": "notification_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_signal_notification_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/signals/notification_rules/{id}"
+  },
+  "scenario": "Patch a signal-based notification rule returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

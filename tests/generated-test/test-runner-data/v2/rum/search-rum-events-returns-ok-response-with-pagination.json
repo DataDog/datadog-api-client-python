@@ -1,0 +1,40 @@
+{
+  "api": "RUM",
+  "expected_status": 200,
+  "feature": "RUM",
+  "id": "v2/RUM/Search RUM events returns \"OK\" response with pagination",
+  "operation_id": "SearchRUMEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMSearchEventsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "from": "now-15m",
+          "query": "@type:session AND @session.type:user",
+          "to": "now"
+        },
+        "options": {
+          "time_offset": 0,
+          "timezone": "GMT"
+        },
+        "page": {
+          "limit": 2
+        },
+        "sort": "timestamp"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": true,
+    "parameters": [],
+    "path": "/api/v2/rum/events/search"
+  },
+  "scenario": "Search RUM events returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

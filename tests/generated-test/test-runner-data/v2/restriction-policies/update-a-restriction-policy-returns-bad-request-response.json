@@ -1,0 +1,58 @@
+{
+  "api": "RestrictionPolicies",
+  "expected_status": 400,
+  "feature": "Restriction Policies",
+  "id": "v2/Restriction Policies/Update a restriction policy returns \"Bad Request\" response",
+  "operation_id": "UpdateRestrictionPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RestrictionPolicyUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "bindings": [
+              {
+                "principals": [
+                  "org:{{ user.data.relationships.org.data.id }}"
+                ],
+                "relation": "editor"
+              }
+            ]
+          },
+          "id": "dashboard:abc-def-ghi",
+          "type": "restriction_policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "resource_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "malformed"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/restriction_policy/{resource_id}"
+  },
+  "scenario": "Update a restriction policy returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

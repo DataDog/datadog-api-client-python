@@ -1,0 +1,51 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 400,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/Cancel a workflow instance returns \"Bad Request\" response",
+  "operation_id": "CancelWorkflowInstance",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "workflow_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "malformed"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "instance_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "malformed"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows/{workflow_id}/instances/{instance_id}/cancel"
+  },
+  "scenario": "Cancel a workflow instance returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

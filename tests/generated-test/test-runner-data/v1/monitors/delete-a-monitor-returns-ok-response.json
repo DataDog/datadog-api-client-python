@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Delete a monitor returns \"OK\" response",
+  "operation_id": "DeleteMonitor",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "monitor_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "monitor.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/monitor/{monitor_id}"
+  },
+  "scenario": "Delete a monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

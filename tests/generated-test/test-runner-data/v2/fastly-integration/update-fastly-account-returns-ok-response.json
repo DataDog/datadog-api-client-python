@@ -1,0 +1,50 @@
+{
+  "api": "FastlyIntegration",
+  "expected_status": 200,
+  "feature": "Fastly Integration",
+  "id": "v2/Fastly Integration/Update Fastly account returns \"OK\" response",
+  "operation_id": "UpdateFastlyAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "FastlyAccountUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "api_key": "update-secret"
+          },
+          "type": "fastly-accounts"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "fastly_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/fastly/accounts/{account_id}"
+  },
+  "scenario": "Update Fastly account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

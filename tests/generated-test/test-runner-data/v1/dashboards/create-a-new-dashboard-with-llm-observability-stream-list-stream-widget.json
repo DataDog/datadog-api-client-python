@@ -1,0 +1,84 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with llm_observability_stream list_stream widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with list_stream widget",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "columns": [
+                    {
+                      "field": "@status",
+                      "width": "compact"
+                    },
+                    {
+                      "field": "@content.prompt",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@content.response.content",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "timestamp",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@ml_app",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "service",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@meta.evaluations.quality",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@meta.evaluations.security",
+                      "width": "auto"
+                    },
+                    {
+                      "field": "@duration",
+                      "width": "auto"
+                    }
+                  ],
+                  "query": {
+                    "data_source": "llm_observability_stream",
+                    "indexes": [],
+                    "query_string": "@event_type:span @parent_id:undefined"
+                  },
+                  "response_format": "event_list"
+                }
+              ],
+              "type": "list_stream"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with llm_observability_stream list_stream widget",
+  "schema_version": 1,
+  "version": "v1"
+}

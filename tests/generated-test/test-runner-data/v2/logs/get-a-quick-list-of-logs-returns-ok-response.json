@@ -1,0 +1,106 @@
+{
+  "api": "Logs",
+  "expected_status": 200,
+  "feature": "Logs",
+  "id": "v2/Logs/Get a quick list of logs returns \"OK\" response",
+  "operation_id": "ListLogsGet",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[query]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "datadog-agent"
+        },
+        "style": null
+      },
+      {
+        "explode": false,
+        "in": "query",
+        "name": "filter[indexes]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "main"
+          ]
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[from]",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "2020-09-17T11:48:36+01:00"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[to]",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "2020-09-17T12:48:36+01:00"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 5
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/events"
+  },
+  "scenario": "Get a quick list of logs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

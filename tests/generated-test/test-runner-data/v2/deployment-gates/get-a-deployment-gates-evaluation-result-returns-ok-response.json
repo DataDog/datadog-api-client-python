@@ -1,0 +1,35 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 200,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Get a deployment gates evaluation result returns \"OK\" response",
+  "operation_id": "GetDeploymentGatesEvaluationResult",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "deployment_gates_evaluation.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deployments/gates/evaluation/{id}"
+  },
+  "scenario": "Get a deployment gates evaluation result returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

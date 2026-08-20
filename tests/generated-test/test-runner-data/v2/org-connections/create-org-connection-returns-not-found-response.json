@@ -1,0 +1,43 @@
+{
+  "api": "OrgConnections",
+  "expected_status": 404,
+  "feature": "Org Connections",
+  "id": "v2/Org Connections/Create Org Connection returns \"Not Found\" response",
+  "operation_id": "CreateOrgConnections",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OrgConnectionCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "connection_types": [
+              "logs"
+            ]
+          },
+          "relationships": {
+            "sink_org": {
+              "data": {
+                "id": "nonexistent-org-id",
+                "type": "orgs"
+              }
+            }
+          },
+          "type": "org_connection"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/org_connections"
+  },
+  "scenario": "Create Org Connection returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

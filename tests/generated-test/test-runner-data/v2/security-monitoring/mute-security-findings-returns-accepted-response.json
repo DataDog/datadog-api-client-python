@@ -1,0 +1,48 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 202,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Mute security findings returns \"Accepted\" response",
+  "operation_id": "MuteSecurityFindings",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MuteFindingsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "mute": {
+              "description": "To be resolved later.",
+              "expire_at": 1778721573794,
+              "is_muted": true,
+              "reason": "RISK_ACCEPTED"
+            }
+          },
+          "relationships": {
+            "findings": {
+              "data": [
+                {
+                  "id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=",
+                  "type": "findings"
+                }
+              ]
+            }
+          },
+          "type": "mute"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/mute"
+  },
+  "scenario": "Mute security findings returns \"Accepted\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,28 @@
+{
+  "api": "Downtimes",
+  "expected_status": 400,
+  "feature": "Downtimes",
+  "id": "v1/Downtimes/Schedule a downtime with invalid weekdays",
+  "operation_id": "CreateDowntime",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Downtime",
+        "type": "object"
+      },
+      "source": "downtime_recurrence_payload_invalid_weekdays.json",
+      "value": {
+        "$openapi_transformer_template": "{\n  \"message\": \"{{ unique }}\",\n  \"recurrence\": {\n    \"period\": 1,\n    \"type\":\"weeks\",\n    \"week_days\": [\"mon\", \"tue\"]\n  },\n  \"scope\": [\"*\"],\n  \"start\": {{ timestamp(\"now\") }},\n  \"end\": {{ timestamp(\"now + 1h\") }},\n  \"timezone\": \"Etc/UTC\",\n  \"monitor_tags\": [\n    \"tag0\"\n  ]\n}\n"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/downtime"
+  },
+  "scenario": "Schedule a downtime with invalid weekdays",
+  "schema_version": 1,
+  "version": "v1"
+}

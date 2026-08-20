@@ -1,0 +1,57 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create an API SSL test returns \"OK - Returns the created test details.\" response",
+  "operation_id": "CreateSyntheticsAPITest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsAPITest",
+        "type": "object"
+      },
+      "source": "synthetics_api_ssl_test_payload.json",
+      "value": {
+        "config": {
+          "assertions": [
+            {
+              "operator": "isInMoreThan",
+              "target": 10,
+              "type": "certificate"
+            }
+          ],
+          "request": {
+            "host": "datadoghq.com",
+            "port": "{{ '{{ DATADOG_PORT }}' }}"
+          }
+        },
+        "locations": [
+          "aws:us-east-2"
+        ],
+        "message": "BDD test payload: synthetics_api_ssl_test_payload.json",
+        "name": "{{ unique }}",
+        "options": {
+          "accept_self_signed": true,
+          "checkCertificateRevocation": true,
+          "disableAiaIntermediateFetching": true,
+          "ignore_certificate_validation": true,
+          "tick_every": 60
+        },
+        "subtype": "ssl",
+        "tags": [
+          "testing:api"
+        ],
+        "type": "api"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/api"
+  },
+  "scenario": "Create an API SSL test returns \"OK - Returns the created test details.\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

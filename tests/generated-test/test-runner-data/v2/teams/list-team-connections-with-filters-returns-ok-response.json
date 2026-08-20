@@ -1,0 +1,58 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/List team connections with filters returns \"OK\" response",
+  "operation_id": "ListTeamConnections",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": false,
+        "in": "query",
+        "name": "filter[sources]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "github"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 10
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/connections"
+  },
+  "scenario": "List team connections with filters returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

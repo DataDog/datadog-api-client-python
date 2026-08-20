@@ -1,0 +1,50 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 404,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Update App Favorite Status returns \"Not Found\" response",
+  "operation_id": "UpdateAppFavorite",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppFavoriteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "favorite": true
+          },
+          "type": "favorites"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "7addb29b-f935-472c-ae79-d1963979a23e"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}/favorite"
+  },
+  "scenario": "Update App Favorite Status returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

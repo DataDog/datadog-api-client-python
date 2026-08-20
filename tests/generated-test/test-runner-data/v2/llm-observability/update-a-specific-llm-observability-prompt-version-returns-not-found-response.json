@@ -1,0 +1,67 @@
+{
+  "api": "LLMObservability",
+  "expected_status": 404,
+  "feature": "LLM Observability",
+  "id": "v2/LLM Observability/Update a specific LLM Observability prompt version returns \"Not Found\" response",
+  "operation_id": "UpdateLLMObsPromptVersion",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LLMObsUpdatePromptVersionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "env_ids": [],
+            "labels": []
+          },
+          "type": "prompt-template-versions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "prompt_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "nonexistent-prompt"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "version",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions/{version}"
+  },
+  "scenario": "Update a specific LLM Observability prompt version returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,44 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create Jira issues for security findings returns \"Bad Request\" response",
+  "operation_id": "CreateJiraIssues",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateJiraIssueRequestArray",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {},
+            "relationships": {
+              "findings": {
+                "data": []
+              },
+              "project": {
+                "data": {
+                  "id": "7f198869-c7ef-4afc-97cf-da5cdc13b5c3",
+                  "type": "projects"
+                }
+              }
+            },
+            "type": "jira_issues"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/jira_issues"
+  },
+  "scenario": "Create Jira issues for security findings returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

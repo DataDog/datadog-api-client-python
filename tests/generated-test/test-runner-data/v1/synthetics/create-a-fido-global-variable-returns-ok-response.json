@@ -1,0 +1,31 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a FIDO global variable returns \"OK\" response",
+  "operation_id": "CreateGlobalVariable",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsGlobalVariableRequest",
+        "type": "object"
+      },
+      "source": "synthetics_global_variable_fido_payload.json",
+      "value": {
+        "description": "",
+        "is_fido": true,
+        "name": "GLOBAL_VARIABLE_FIDO_PAYLOAD_{{ unique_upper_alnum }}",
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/variables"
+  },
+  "scenario": "Create a FIDO global variable returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

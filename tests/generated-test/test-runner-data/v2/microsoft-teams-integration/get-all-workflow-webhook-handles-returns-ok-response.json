@@ -1,0 +1,18 @@
+{
+  "api": "MicrosoftTeamsIntegration",
+  "expected_status": 200,
+  "feature": "Microsoft Teams Integration",
+  "id": "v2/Microsoft Teams Integration/Get all workflow webhook handles returns \"OK\" response",
+  "operation_id": "ListWorkflowsWebhookHandles",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles"
+  },
+  "scenario": "Get all workflow webhook handles returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

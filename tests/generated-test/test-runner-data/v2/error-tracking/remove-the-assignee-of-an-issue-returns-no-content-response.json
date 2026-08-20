@@ -1,0 +1,35 @@
+{
+  "api": "ErrorTracking",
+  "expected_status": 204,
+  "feature": "Error Tracking",
+  "id": "v2/Error Tracking/Remove the assignee of an issue returns \"No Content\" response",
+  "operation_id": "DeleteIssueAssignee",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "issue_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "issue.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/error-tracking/issues/{issue_id}/assignee"
+  },
+  "scenario": "Remove the assignee of an issue returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 404,
+  "feature": "Service Level Objectives",
+  "id": "v2/Service Level Objectives/Get SLO report returns \"Not Found\" response",
+  "operation_id": "GetSLOReport",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "report_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "2b468c54-f2a7-11ee-b0b4-ffe56bb6ad43"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/slo/report/{report_id}/download"
+  },
+  "scenario": "Get SLO report returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

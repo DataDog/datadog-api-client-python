@@ -1,0 +1,89 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Update On-Call schedule returns \"OK\" response",
+  "operation_id": "UpdateOnCallSchedule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ScheduleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "layers": [
+              {
+                "effective_date": "{{ timeISO('now - 10d') }}",
+                "end_date": "{{ timeISO('now + 10d') }}",
+                "id": "{{ schedule.data.relationships.layers.data[0].id }}",
+                "interval": {
+                  "seconds": 3600
+                },
+                "members": [
+                  {
+                    "user": {
+                      "id": "{{user.data.id}}"
+                    }
+                  }
+                ],
+                "name": "Layer 1",
+                "restrictions": [
+                  {
+                    "end_day": "friday",
+                    "end_time": "17:00:00",
+                    "start_day": "monday",
+                    "start_time": "09:00:00"
+                  }
+                ],
+                "rotation_start": "{{ timeISO('now - 5d') }}"
+              }
+            ],
+            "name": "{{ unique }}",
+            "time_zone": "America/New_York"
+          },
+          "id": "{{ schedule.data.id }}",
+          "relationships": {
+            "teams": {
+              "data": [
+                {
+                  "id": "{{dd_team.data.id}}",
+                  "type": "teams"
+                }
+              ]
+            }
+          },
+          "type": "schedules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "schedule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "schedule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/schedules/{schedule_id}"
+  },
+  "scenario": "Update On-Call schedule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

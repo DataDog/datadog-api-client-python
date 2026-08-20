@@ -1,0 +1,44 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a shared dashboard with a group template variable returns \"OK\" response",
+  "operation_id": "CreatePublicDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SharedDashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "dashboard_id": "{{dashboard.id}}",
+        "dashboard_type": "custom_timeboard",
+        "global_time": {
+          "live_span": "1h"
+        },
+        "selectable_template_vars": [
+          {
+            "default_value": "*",
+            "name": "group_by_var",
+            "type": "group",
+            "visible_tags": [
+              "selectableValue1",
+              "selectableValue2"
+            ]
+          }
+        ],
+        "share_type": "open"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard/public"
+  },
+  "scenario": "Create a shared dashboard with a group template variable returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

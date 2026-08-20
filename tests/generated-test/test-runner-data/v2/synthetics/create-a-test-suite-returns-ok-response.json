@@ -1,0 +1,40 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v2/Synthetics/Create a test suite returns \"OK\" response",
+  "operation_id": "CreateSyntheticsSuite",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SuiteCreateEditRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "message": "Notification message",
+            "name": "Example suite name",
+            "options": {},
+            "tags": [
+              "env:production"
+            ],
+            "tests": [],
+            "type": "suite"
+          },
+          "type": "suites"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/synthetics/suites"
+  },
+  "scenario": "Create a test suite returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,68 @@
+{
+  "api": "LogsCustomDestinations",
+  "expected_status": 404,
+  "feature": "Logs Custom Destinations",
+  "id": "v2/Logs Custom Destinations/Update a custom destination returns \"Not Found\" response",
+  "operation_id": "UpdateLogsCustomDestination",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomDestinationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": false,
+            "forward_tags": false,
+            "forward_tags_restriction_list": [
+              "datacenter",
+              "host"
+            ],
+            "forward_tags_restriction_list_type": "ALLOW_LIST",
+            "forwarder_destination": {
+              "auth": {
+                "password": "datadog-custom-destination-password",
+                "type": "basic",
+                "username": "datadog-custom-destination-username"
+              },
+              "endpoint": "https://example.com",
+              "type": "http"
+            },
+            "name": "Nginx logs",
+            "query": "source:nginx"
+          },
+          "id": "id-from-non-existing-custom-destination",
+          "type": "custom_destination"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "custom_destination_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "id-from-non-existing-custom-destination"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/custom-destinations/{custom_destination_id}"
+  },
+  "scenario": "Update a custom destination returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

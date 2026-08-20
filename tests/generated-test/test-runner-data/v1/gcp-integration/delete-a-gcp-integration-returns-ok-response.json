@@ -1,0 +1,28 @@
+{
+  "api": "GCPIntegration",
+  "expected_status": 200,
+  "feature": "GCP Integration",
+  "id": "v1/GCP Integration/Delete a GCP integration returns \"OK\" response",
+  "operation_id": "DeleteGCPIntegration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "GCPAccount",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"client_email\": \"{{unique_hash}}@example.com\", \"client_id\": \"{{ timestamp(\"now\") }}{{ timestamp(\"now\") }}0\", \"project_id\": \"datadog-apitest\"}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/gcp"
+  },
+  "scenario": "Delete a GCP integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

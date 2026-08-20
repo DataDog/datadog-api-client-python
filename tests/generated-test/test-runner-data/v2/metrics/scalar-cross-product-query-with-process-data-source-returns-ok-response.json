@@ -1,0 +1,28 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Scalar cross product query with process data source returns \"OK\" response",
+  "operation_id": "QueryScalarData",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ScalarFormulaQueryRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\": {\"attributes\": {\"formulas\": [{\"formula\": \"a\", \"limit\": {\"count\": 10, \"order\": \"desc\"}}], \"from\": {{ timestamp('now - 1h') }}000, \"queries\": [{\"data_source\": \"process\", \"name\": \"a\", \"metric\": \"process.stat.cpu.total_pct\", \"aggregator\": \"avg\", \"text_filter\": \"\", \"tag_filters\": [], \"limit\": 10, \"sort\": \"desc\", \"is_normalized_cpu\": false}], \"to\": {{ timestamp('now') }}000}, \"type\": \"scalar_request\"}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/query/scalar"
+  },
+  "scenario": "Scalar cross product query with process data source returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

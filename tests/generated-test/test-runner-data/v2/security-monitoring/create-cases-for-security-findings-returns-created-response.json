@@ -1,0 +1,75 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create cases for security findings returns \"Created\" response",
+  "operation_id": "CreateCases",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateCaseRequestArray",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {
+              "description": "A description",
+              "title": "A title"
+            },
+            "relationships": {
+              "findings": {
+                "data": [
+                  {
+                    "id": "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE=",
+                    "type": "findings"
+                  }
+                ]
+              },
+              "project": {
+                "data": {
+                  "id": "959a6f71-bac8-4027-b1d3-2264f569296f",
+                  "type": "projects"
+                }
+              }
+            },
+            "type": "cases"
+          },
+          {
+            "attributes": {
+              "description": "A description",
+              "title": "A title"
+            },
+            "relationships": {
+              "findings": {
+                "data": [
+                  {
+                    "id": "OGRlMDIwYzk4MjFmZTZiNTQwMzk2ZjUxNzg0MDc0NjR-MTk3Yjk4MDI4ZDQ4YzI2ZGZiMWJmMTNhNDEwZGZkYWI=",
+                    "type": "findings"
+                  }
+                ]
+              },
+              "project": {
+                "data": {
+                  "id": "959a6f71-bac8-4027-b1d3-2264f569296f",
+                  "type": "projects"
+                }
+              }
+            },
+            "type": "cases"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/cases"
+  },
+  "scenario": "Create cases for security findings returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "Organizations",
+  "expected_status": 400,
+  "feature": "Organizations",
+  "id": "v2/Organizations/Update a specific Org Config returns \"Bad Request\" response",
+  "operation_id": "UpdateOrgConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OrgConfigWriteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "value": "not-a-boolean"
+          },
+          "type": "org_configs"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "org_config_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "custom_roles"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/org_configs/{org_config_name}"
+  },
+  "scenario": "Update a specific Org Config returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

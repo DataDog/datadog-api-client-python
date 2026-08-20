@@ -1,0 +1,78 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with hostmap DDSQL widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/hostmap_ddsql_widget.json",
+      "value": {
+        "description": null,
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": {
+                "limit": 1000,
+                "projection": {
+                  "dimensions": [
+                    {
+                      "column": "entity_id",
+                      "dimension": "node"
+                    },
+                    {
+                      "column": "parent_id",
+                      "dimension": "group"
+                    },
+                    {
+                      "column": "cpu_usage",
+                      "dimension": "fill"
+                    }
+                  ],
+                  "type": "hostmap"
+                },
+                "query": {
+                  "data_source": "dataset",
+                  "dataset_id": "abc-123-def",
+                  "dataset_provider": "ddsql_query"
+                },
+                "request_type": "data_projection",
+                "style": {
+                  "palette": "green_to_orange",
+                  "palette_flip": false
+                }
+              },
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "hostmap"
+            },
+            "layout": {
+              "height": 22,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with hostmap DDSQL widget",
+  "schema_version": 1,
+  "version": "v1"
+}

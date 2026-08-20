@@ -1,0 +1,66 @@
+{
+  "api": "LLMObservability",
+  "expected_status": 200,
+  "feature": "LLM Observability",
+  "id": "v2/LLM Observability/Update a specific LLM Observability prompt version returns \"OK\" response",
+  "operation_id": "UpdateLLMObsPromptVersion",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LLMObsUpdatePromptVersionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Give concise answers and cite relevant help-center articles."
+          },
+          "type": "prompt-template-versions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "prompt_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "prompt.data.attributes.prompt_id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "version",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "prompt_version.data.attributes.version",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions/{version}"
+  },
+  "scenario": "Update a specific LLM Observability prompt version returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

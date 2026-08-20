@@ -1,0 +1,33 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 201,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Create an API key returns \"Created\" response",
+  "operation_id": "CreateAPIKey",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "APIKeyCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }}"
+          },
+          "type": "api_keys"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/api_keys"
+  },
+  "scenario": "Create an API key returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

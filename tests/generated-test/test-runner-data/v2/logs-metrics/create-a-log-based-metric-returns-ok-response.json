@@ -1,0 +1,38 @@
+{
+  "api": "LogsMetrics",
+  "expected_status": 200,
+  "feature": "Logs Metrics",
+  "id": "v2/Logs Metrics/Create a log-based metric returns \"OK\" response",
+  "operation_id": "CreateLogsMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsMetricCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "compute": {
+              "aggregation_type": "distribution",
+              "include_percentiles": true,
+              "path": "@duration"
+            }
+          },
+          "id": "{{ unique_alnum }}",
+          "type": "logs_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/logs/config/metrics"
+  },
+  "scenario": "Create a log-based metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

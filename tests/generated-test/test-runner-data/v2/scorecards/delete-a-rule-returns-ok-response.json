@@ -1,0 +1,35 @@
+{
+  "api": "Scorecards",
+  "expected_status": 204,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/Delete a rule returns \"OK\" response",
+  "operation_id": "DeleteScorecardRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "create_scorecard_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/scorecard/rules/{rule_id}"
+  },
+  "scenario": "Delete a rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

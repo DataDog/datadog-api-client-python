@@ -1,0 +1,35 @@
+{
+  "api": "ErrorTracking",
+  "expected_status": 400,
+  "feature": "Error Tracking",
+  "id": "v2/Error Tracking/Get the details of an error tracking issue returns \"Bad Request\" response",
+  "operation_id": "GetIssue",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "issue_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid-issue-id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/error-tracking/issues/{issue_id}"
+  },
+  "scenario": "Get the details of an error tracking issue returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

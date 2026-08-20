@@ -1,0 +1,335 @@
+{
+  "feature": "Fastly Integration",
+  "recordings": [
+    {
+      "feature": "Fastly Integration",
+      "frozen_at": "2023-01-19T15:15:56.412Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestAddFastlyaccountreturnsCREATEDresponse1674141356",
+                    "name": "Test-Add_Fastly_account_returns_CREATED_response-1674141356",
+                    "services": []
+                  },
+                  "type": "fastly-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/fastly/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"attributes\":{\"services\":[],\"name\":\"Test-Add_Fastly_account_returns_CREATED_response-1674141356\"},\"type\":\"fastly-accounts\",\"id\":\"0427b05b6f56f454ca1477aa8df5e75d\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/fastly/accounts/0427b05b6f56f454ca1477aa8df5e75d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Add Fastly account returns \"CREATED\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Fastly Integration",
+      "frozen_at": "2023-03-13T10:11:14.475Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestGetFastlyaccountreturnsOKresponse1678702274",
+                    "name": "Test-Get_Fastly_account_returns_OK_response-1678702274",
+                    "services": []
+                  },
+                  "type": "fastly-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/fastly/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"6d8f2860f9f3e953fb46d554b9a19627\",\"attributes\":{\"services\":[],\"name\":\"Test-Get_Fastly_account_returns_OK_response-1678702274\"}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/fastly/accounts/6d8f2860f9f3e953fb46d554b9a19627",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"6d8f2860f9f3e953fb46d554b9a19627\",\"attributes\":{\"name\":\"Test-Get_Fastly_account_returns_OK_response-1678702274\",\"services\":[]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/fastly/accounts/6d8f2860f9f3e953fb46d554b9a19627",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get Fastly account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Fastly Integration",
+      "frozen_at": "2023-03-13T10:10:50.453Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestListFastlyaccountsreturnsOKresponse1678702250",
+                    "name": "Test-List_Fastly_accounts_returns_OK_response-1678702250",
+                    "services": []
+                  },
+                  "type": "fastly-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/fastly/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"fastly-accounts\",\"attributes\":{\"name\":\"Test-List_Fastly_accounts_returns_OK_response-1678702250\",\"services\":[]},\"id\":\"07ec97dd43cd794c847ecf15cb25eb1c\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/fastly/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"fastly-accounts\",\"attributes\":{\"name\":\"Test-List_Fastly_accounts_returns_OK_response-1678702250\",\"services\":[]},\"id\":\"07ec97dd43cd794c847ecf15cb25eb1c\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/fastly/accounts/07ec97dd43cd794c847ecf15cb25eb1c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List Fastly accounts returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Fastly Integration",
+      "frozen_at": "2023-03-13T10:10:17.626Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "TestUpdateFastlyaccountreturnsOKresponse1678702217",
+                    "name": "Test-Update_Fastly_account_returns_OK_response-1678702217",
+                    "services": []
+                  },
+                  "type": "fastly-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/fastly/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"e37e834ae856fa24a2924973fdc7c276\",\"attributes\":{\"services\":[],\"name\":\"Test-Update_Fastly_account_returns_OK_response-1678702217\"}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "api_key": "update-secret"
+                  },
+                  "type": "fastly-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integrations/fastly/accounts/e37e834ae856fa24a2924973fdc7c276",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"fastly-accounts\",\"id\":\"e37e834ae856fa24a2924973fdc7c276\",\"attributes\":{\"services\":[],\"name\":\"Test-Update_Fastly_account_returns_OK_response-1678702217\"}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/fastly/accounts/e37e834ae856fa24a2924973fdc7c276",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update Fastly account returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

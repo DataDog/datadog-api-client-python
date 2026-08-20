@@ -1,0 +1,67 @@
+{
+  "api": "Annotations",
+  "expected_status": 200,
+  "feature": "Annotations",
+  "id": "v2/Annotations/List annotations returns \"OK\" response",
+  "operation_id": "ListAnnotations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "annotation.data.attributes.page_id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "start_time",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1704067200000
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "end_time",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1704153600000
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/annotation"
+  },
+  "scenario": "List annotations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

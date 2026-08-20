@@ -1,0 +1,35 @@
+{
+  "api": "LLMObservability",
+  "expected_status": 200,
+  "feature": "LLM Observability",
+  "id": "v2/LLM Observability/List versions of an LLM Observability prompt returns \"OK\" response",
+  "operation_id": "ListLLMObsPromptVersions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "prompt_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "prompt.data.attributes.prompt_id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions"
+  },
+  "scenario": "List versions of an LLM Observability prompt returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,52 @@
+{
+  "api": "Teams",
+  "expected_status": 422,
+  "feature": "Teams",
+  "id": "v2/Teams/Create a team link returns \"API error response.\" response",
+  "operation_id": "CreateTeamLink",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamLinkCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "label": "",
+            "position": 0,
+            "url": "https://example.com"
+          },
+          "type": "team_links"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/links"
+  },
+  "scenario": "Create a team link returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

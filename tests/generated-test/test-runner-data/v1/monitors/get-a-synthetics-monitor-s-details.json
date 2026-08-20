@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Get a synthetics monitor's details",
+  "operation_id": "GetMonitor",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "monitor_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "synthetics_api_test.monitor_id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/monitor/{monitor_id}"
+  },
+  "scenario": "Get a synthetics monitor's details",
+  "schema_version": 1,
+  "version": "v1"
+}

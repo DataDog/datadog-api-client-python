@@ -1,0 +1,35 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Get incident notification template returns \"OK\" response",
+  "operation_id": "GetIncidentNotificationTemplate",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "notification_template.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/notification-templates/{id}"
+  },
+  "scenario": "Get incident notification template returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

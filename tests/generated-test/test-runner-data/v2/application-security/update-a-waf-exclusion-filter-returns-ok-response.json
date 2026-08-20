@@ -1,0 +1,55 @@
+{
+  "api": "ApplicationSecurity",
+  "expected_status": 200,
+  "feature": "Application Security",
+  "id": "v2/Application Security/Update a WAF exclusion filter returns \"OK\" response",
+  "operation_id": "UpdateApplicationSecurityWafExclusionFilter",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ApplicationSecurityWafExclusionFilterUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Exclude false positives on a path",
+            "enabled": false,
+            "ip_list": [
+              "198.51.100.72"
+            ],
+            "on_match": "monitor"
+          },
+          "type": "exclusion_filter"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "exclusion_filter_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "exclusion_filter.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}"
+  },
+  "scenario": "Update a WAF exclusion filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

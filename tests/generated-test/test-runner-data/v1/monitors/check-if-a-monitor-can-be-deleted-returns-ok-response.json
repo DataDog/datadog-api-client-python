@@ -1,0 +1,42 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Check if a monitor can be deleted returns \"OK\" response",
+  "operation_id": "CheckCanDeleteMonitor",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": false,
+        "in": "query",
+        "name": "monitor_ids",
+        "required": true,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": "int64",
+            "ref": null,
+            "type": "integer"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": {
+            "$openapi_transformer_template": "[{{monitor.id}}]"
+          }
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v1/monitor/can_delete"
+  },
+  "scenario": "Check if a monitor can be deleted returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

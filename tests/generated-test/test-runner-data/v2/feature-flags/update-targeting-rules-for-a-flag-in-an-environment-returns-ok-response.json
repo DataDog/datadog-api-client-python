@@ -1,0 +1,105 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Update targeting rules for a flag in an environment returns \"OK\" response",
+  "operation_id": "UpdateAllocationsForFeatureFlagInEnvironment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OverwriteAllocationsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {
+              "exposure_schedule": {
+                "rollout_options": {
+                  "autostart": false,
+                  "selection_interval_ms": 86400000,
+                  "strategy": "UNIFORM_INTERVALS"
+                },
+                "rollout_steps": [
+                  {
+                    "exposure_ratio": 0.05,
+                    "grouped_step_index": 0,
+                    "interval_ms": null,
+                    "is_pause_record": false
+                  },
+                  {
+                    "exposure_ratio": 0.25,
+                    "grouped_step_index": 1,
+                    "interval_ms": null,
+                    "is_pause_record": false
+                  },
+                  {
+                    "exposure_ratio": 1,
+                    "grouped_step_index": 2,
+                    "interval_ms": null,
+                    "is_pause_record": false
+                  }
+                ]
+              },
+              "guardrail_metrics": [],
+              "key": "overwrite-allocation-{{ unique_lower }}",
+              "name": "New targeting rule {{ unique }}",
+              "targeting_rules": [],
+              "type": "CANARY",
+              "variant_weights": [
+                {
+                  "value": 100,
+                  "variant_id": "{{ feature_flag.data.attributes.variants[0].id }}"
+                }
+              ]
+            },
+            "type": "allocations"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "feature_flag_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "feature_flag.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "environment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "environment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/allocations"
+  },
+  "scenario": "Update targeting rules for a flag in an environment returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

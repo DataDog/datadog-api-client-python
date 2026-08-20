@@ -1,0 +1,123 @@
+{
+  "feature": "Reference Tables",
+  "recordings": [
+    {
+      "feature": "Reference Tables",
+      "frozen_at": "2025-10-01T20:51:23.877Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Test reference table without upload or access details",
+                    "schema": {
+                      "fields": [
+                        {
+                          "name": "id",
+                          "type": "STRING"
+                        }
+                      ],
+                      "primary_keys": [
+                        "id"
+                      ]
+                    },
+                    "source": "LOCAL_FILE",
+                    "table_name": "test_invalid_table_Test-Create_reference_table_without_upload_or_access_details_returns_Bad_Request_response-1759351883",
+                    "tags": [
+                      "test_tag"
+                    ]
+                  },
+                  "type": "reference_table"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/reference-tables/tables",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"upload_id is required for tables with 'LOCAL_FILE' source\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create reference table without upload or access details returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Reference Tables",
+      "frozen_at": "2026-05-15T19:32:21.293Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/reference-tables/tables/not-a-valid-uuid/rows/list",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"table ID must be a valid UUID format\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List reference table rows returns \"Bad Request\" response for invalid limit",
+      "version": "v2"
+    },
+    {
+      "feature": "Reference Tables",
+      "frozen_at": "2026-05-15T19:32:23.068Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/reference-tables/tables/00000000-0000-0000-0000-000000000000/rows/list",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"table not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "List reference table rows returns \"Not Found\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

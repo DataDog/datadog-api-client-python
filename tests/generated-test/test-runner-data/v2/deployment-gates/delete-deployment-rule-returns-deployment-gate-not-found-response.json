@@ -1,0 +1,51 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 404,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Delete deployment rule returns \"Deployment gate not found.\" response",
+  "operation_id": "DeleteDeploymentRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "gate_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deployment_gates/{gate_id}/rules/{id}"
+  },
+  "scenario": "Delete deployment rule returns \"Deployment gate not found.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

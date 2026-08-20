@@ -1,0 +1,63 @@
+{
+  "api": "AWSIntegration",
+  "expected_status": 200,
+  "feature": "AWS Integration",
+  "id": "v1/AWS Integration/Update an AWS integration returns \"OK\" response",
+  "operation_id": "UpdateAWSAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AWSAccount",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"account_id\": \"{{ timestamp(\"now\") }}00\", \"account_specific_namespace_rules\": {\"auto_scaling\": false}, \"cspm_resource_collection_enabled\": false, \"excluded_regions\": [\"us-east-1\", \"us-west-2\"], \"extended_resource_collection_enabled\": true, \"filter_tags\": [\"$KEY:$VALUE\"], \"host_tags\": [\"$KEY:$VALUE\"], \"metrics_collection_enabled\": true, \"role_name\": \"DatadogAWSIntegrationRole\"}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "account_id",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": {
+            "$openapi_transformer_template": "\"{{ timestamp(\"now\") }}00\""
+          }
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "role_name",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "DatadogAWSIntegrationRole"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/integration/aws"
+  },
+  "scenario": "Update an AWS integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,38 @@
+{
+  "api": "Audit",
+  "expected_status": 200,
+  "feature": "Audit",
+  "id": "v2/Audit/Search Audit Logs events returns \"OK\" response with pagination",
+  "operation_id": "SearchAuditLogs",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AuditLogsSearchEventsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "from": "now-15m",
+          "to": "now"
+        },
+        "options": {
+          "timezone": "GMT"
+        },
+        "page": {
+          "limit": 2
+        },
+        "sort": "timestamp"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": true,
+    "parameters": [],
+    "path": "/api/v2/audit/events/search"
+  },
+  "scenario": "Search Audit Logs events returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

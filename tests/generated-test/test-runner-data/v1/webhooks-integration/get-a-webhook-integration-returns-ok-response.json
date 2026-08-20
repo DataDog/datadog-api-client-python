@@ -1,0 +1,35 @@
+{
+  "api": "WebhooksIntegration",
+  "expected_status": 200,
+  "feature": "Webhooks Integration",
+  "id": "v1/Webhooks Integration/Get a webhook integration returns \"OK\" response",
+  "operation_id": "GetWebhooksIntegration",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "webhook_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "webhook.name",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/integration/webhooks/configuration/webhooks/{webhook_name}"
+  },
+  "scenario": "Get a webhook integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

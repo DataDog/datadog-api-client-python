@@ -1,0 +1,35 @@
+{
+  "api": "LogsRestrictionQueries",
+  "expected_status": 404,
+  "feature": "Logs Restriction Queries",
+  "id": "v2/Logs Restriction Queries/List roles for a restriction query returns \"Not found\" response",
+  "operation_id": "ListRestrictionQueryRoles",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "restriction_query_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}/roles"
+  },
+  "scenario": "List roles for a restriction query returns \"Not found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

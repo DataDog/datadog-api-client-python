@@ -1,0 +1,35 @@
+{
+  "api": "Powerpack",
+  "expected_status": 200,
+  "feature": "Powerpack",
+  "id": "v2/Powerpack/Get a Powerpack returns \"OK\" response",
+  "operation_id": "GetPowerpack",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "powerpack_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "powerpack.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/powerpacks/{powerpack_id}"
+  },
+  "scenario": "Get a Powerpack returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

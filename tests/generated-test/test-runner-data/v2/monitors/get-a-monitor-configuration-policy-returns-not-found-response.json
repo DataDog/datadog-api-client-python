@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 404,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Get a monitor configuration policy returns \"Not Found\" response",
+  "operation_id": "GetMonitorConfigPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "12340000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/policy/{policy_id}"
+  },
+  "scenario": "Get a monitor configuration policy returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

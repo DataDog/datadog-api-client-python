@@ -1,0 +1,85 @@
+{
+  "api": "StatusPages",
+  "expected_status": 201,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Create backfilled degradation returns \"Created\" response",
+  "operation_id": "CreateBackfilledDegradation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateBackfilledDegradationRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "title": "Past API Outage",
+            "updates": [
+              {
+                "components_affected": [
+                  {
+                    "id": "{{ status_page.data.attributes.components[0].components[0].id }}",
+                    "status": "degraded"
+                  }
+                ],
+                "description": "We detected elevated error rates in the API.",
+                "started_at": "{{ timeISO('now - 1h') }}",
+                "status": "investigating"
+              },
+              {
+                "components_affected": [
+                  {
+                    "id": "{{ status_page.data.attributes.components[0].components[0].id }}",
+                    "status": "degraded"
+                  }
+                ],
+                "description": "Root cause identified as a misconfigured deployment.",
+                "started_at": "{{ timeISO('now - 30m') }}",
+                "status": "identified"
+              },
+              {
+                "components_affected": [
+                  {
+                    "id": "{{ status_page.data.attributes.components[0].components[0].id }}",
+                    "status": "operational"
+                  }
+                ],
+                "description": "The issue has been resolved and API is operating normally.",
+                "started_at": "{{ timeISO('now') }}",
+                "status": "resolved"
+              }
+            ]
+          },
+          "type": "degradations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/degradations/backfill"
+  },
+  "scenario": "Create backfilled degradation returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,29 @@
+{
+  "api": "WebhooksIntegration",
+  "expected_status": 201,
+  "feature": "Webhooks Integration",
+  "id": "v1/Webhooks Integration/Create a webhooks integration returns \"OK\" response",
+  "operation_id": "CreateWebhooksIntegration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "WebhooksIntegration",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "name": "{{ unique }}",
+        "url": "https://example.com/webhook"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/webhooks/configuration/webhooks"
+  },
+  "scenario": "Create a webhooks integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 200,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Get App returns \"OK\" response",
+  "operation_id": "GetApp",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "app.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}"
+  },
+  "scenario": "Get App returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

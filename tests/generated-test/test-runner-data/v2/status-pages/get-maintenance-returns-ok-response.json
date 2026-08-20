@@ -1,0 +1,51 @@
+{
+  "api": "StatusPages",
+  "expected_status": 200,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Get maintenance returns \"OK\" response",
+  "operation_id": "GetMaintenance",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "maintenance_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "maintenance.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/maintenances/{maintenance_id}"
+  },
+  "scenario": "Get maintenance returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

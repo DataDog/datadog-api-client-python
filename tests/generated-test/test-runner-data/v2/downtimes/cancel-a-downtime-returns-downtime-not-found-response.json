@@ -1,0 +1,35 @@
+{
+  "api": "Downtimes",
+  "expected_status": 404,
+  "feature": "Downtimes",
+  "id": "v2/Downtimes/Cancel a downtime returns \"Downtime not found\" response",
+  "operation_id": "CancelDowntime",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "downtime_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-1234-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/downtime/{downtime_id}"
+  },
+  "scenario": "Cancel a downtime returns \"Downtime not found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

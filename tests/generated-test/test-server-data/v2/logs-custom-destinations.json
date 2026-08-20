@@ -1,0 +1,1916 @@
+{
+  "feature": "Logs Custom Destinations",
+  "recordings": [
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:07.582Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "datacenter",
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "ALLOW_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "datadog-custom-destination-password",
+                        "type": "basic",
+                        "username": "datadog-custom-destination-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9608c7d6-8ea4-4487-88da-ab7620dd000c\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[\"datacenter\",\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/9608c7d6-8ea4-4487-88da-ab7620dd000c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Basic HTTP custom destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:08.664Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "datacenter",
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "ALLOW_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "header_name": "MY-AUTHENTICATION-HEADER",
+                        "header_value": "my-secret",
+                        "type": "custom_header"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b522ed5a-3fab-47f4-a828-d34bd5632656\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"header_name\":\"MY-AUTHENTICATION-HEADER\",\"type\":\"custom_header\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[\"datacenter\",\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/b522ed5a-3fab-47f4-a828-d34bd5632656",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Custom Header HTTP custom destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2025-06-20T08:10:33.243Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "datacenter",
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "ALLOW_LIST",
+                    "forwarder_destination": {
+                      "client_id": "9a2f4d83-2b5e-429e-a35a-2b3c4182db71",
+                      "data_collection_endpoint": "https://my-dce-5kyl.eastus-1.ingest.monitor.azure.com",
+                      "data_collection_rule_id": "dcr-000a00a000a00000a000000aa000a0aa",
+                      "stream_name": "Custom-MyTable",
+                      "tenant_id": "f3c9a8a1-4c2e-4d2e-b911-9f3c28c3c8b2",
+                      "type": "microsoft_sentinel"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"171ee4b7-e07f-43ca-85a5-23f762c161a7\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"tenant_id\":\"f3c9a8a1-4c2e-4d2e-b911-9f3c28c3c8b2\",\"client_id\":\"9a2f4d83-2b5e-429e-a35a-2b3c4182db71\",\"data_collection_endpoint\":\"https://my-dce-5kyl.eastus-1.ingest.monitor.azure.com\",\"data_collection_rule_id\":\"dcr-000a00a000a00000a000000aa000a0aa\",\"stream_name\":\"Custom-MyTable\",\"type\":\"microsoft_sentinel\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[\"datacenter\",\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/171ee4b7-e07f-43ca-85a5-23f762c161a7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Microsoft Sentinel custom destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:09.499Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "datacenter",
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "ALLOW_LIST",
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dcdf0ca2-b06a-4b75-8b07-0ba1987bd2fe\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[\"datacenter\",\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/dcdf0ca2-b06a-4b75-8b07-0ba1987bd2fe",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Splunk custom destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:47.455Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": null,
+                      "type": "splunk_hec"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d328c779-9b3b-41c7-a952-20a7446eb7d1\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":null},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/d328c779-9b3b-41c7-a952-20a7446eb7d1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Splunk custom destination with a null sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:49.008Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": "my-sourcetype",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"429e154f-5cf5-41ce-ae15-4bc41563f46f\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":\"my-sourcetype\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/429e154f-5cf5-41ce-ae15-4bc41563f46f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Splunk custom destination with a sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:50.210Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": "",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"cb6c24f4-f420-42dd-bc86-ce51e03f7968\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":\"\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/cb6c24f4-f420-42dd-bc86-ce51e03f7968",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Splunk custom destination with an empty string sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:51.766Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": 123,
+                      "type": "splunk_hec"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid custom destination configuration\",\"Sourcetype must be a string or null\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a Splunk custom destination with an invalid sourcetype returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:52.120Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c475e180-758a-4503-a2ab-3ff1779c738a\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/c475e180-758a-4503-a2ab-3ff1779c738a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Splunk custom destination without a sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:10.485Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Nginx logs"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"The parameter 'forwarder_destination' is required\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a custom destination returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:10.813Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "datacenter",
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "ALLOW_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "my-password",
+                        "username": "my-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "index_name": "nginx-logs",
+                      "index_rotation": "yyyy-MM-dd",
+                      "type": "elasticsearch"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"922dba96-00c4-49fb-969c-aabf48a3d5c3\",\"attributes\":{\"name\":\"Nginx logs\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"index_name\":\"nginx-logs\",\"index_rotation\":\"yyyy-MM-dd\",\"endpoint\":\"https://example.com\",\"auth\":{},\"type\":\"elasticsearch\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[\"datacenter\",\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/922dba96-00c4-49fb-969c-aabf48a3d5c3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an Elasticsearch custom destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:11.769Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/does-not-exist",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"NotFound\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a custom destination returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:12.109Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "BLOCK_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "my-password",
+                        "type": "basic",
+                        "username": "my-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Test-Delete_a_custom_destination_returns_OK_response-1710235212",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"596bb741-53be-49c6-939d-b5d4d9307689\",\"attributes\":{\"name\":\"Test-Delete_a_custom_destination_returns_OK_response-1710235212\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/596bb741-53be-49c6-939d-b5d4d9307689",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/596bb741-53be-49c6-939d-b5d4d9307689",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"NotFound\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a custom destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:13.398Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/config/custom-destinations/does-not-exist",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"NotFound\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a custom destination returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:13.821Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "BLOCK_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "my-password",
+                        "type": "basic",
+                        "username": "my-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Test-Get_a_custom_destination_returns_OK_response-1710235213",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"13e3f7e6-307e-4a91-a269-e016da18efc5\",\"attributes\":{\"name\":\"Test-Get_a_custom_destination_returns_OK_response-1710235213\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/config/custom-destinations/13e3f7e6-307e-4a91-a269-e016da18efc5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"13e3f7e6-307e-4a91-a269-e016da18efc5\",\"attributes\":{\"name\":\"Test-Get_a_custom_destination_returns_OK_response-1710235213\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/13e3f7e6-307e-4a91-a269-e016da18efc5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a custom destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:15.085Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "BLOCK_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "my-password",
+                        "type": "basic",
+                        "username": "my-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Test-Get_all_custom_destinations_returns_OK_response-1710235215",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"85883e0f-b010-4b8b-816d-a629600a4d0a\",\"attributes\":{\"name\":\"Test-Get_all_custom_destinations_returns_OK_response-1710235215\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"85883e0f-b010-4b8b-816d-a629600a4d0a\",\"attributes\":{\"name\":\"Test-Get_all_custom_destinations_returns_OK_response-1710235215\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/85883e0f-b010-4b8b-816d-a629600a4d0a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all custom destinations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:53.183Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": "my-sourcetype",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Test-Update_a_Splunk_custom_destination_with_a_null_sourcetype_returns_OK_response-1774455833",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f718e9ba-6676-46f9-ae62-1e63b0348dbc\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_with_a_null_sourcetype_returns_OK_response-1774455833\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":\"my-sourcetype\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": null,
+                      "type": "splunk_hec"
+                    }
+                  },
+                  "id": "f718e9ba-6676-46f9-ae62-1e63b0348dbc",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/f718e9ba-6676-46f9-ae62-1e63b0348dbc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f718e9ba-6676-46f9-ae62-1e63b0348dbc\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_with_a_null_sourcetype_returns_OK_response-1774455833\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":null},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/f718e9ba-6676-46f9-ae62-1e63b0348dbc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a Splunk custom destination with a null sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:54.709Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Test-Update_a_Splunk_custom_destination_with_a_sourcetype_returns_OK_response-1774455834",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"12f30686-f946-4eb1-8988-643d55ad0cb9\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_with_a_sourcetype_returns_OK_response-1774455834\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": "new-sourcetype",
+                      "type": "splunk_hec"
+                    }
+                  },
+                  "id": "12f30686-f946-4eb1-8988-643d55ad0cb9",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/12f30686-f946-4eb1-8988-643d55ad0cb9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"12f30686-f946-4eb1-8988-643d55ad0cb9\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_with_a_sourcetype_returns_OK_response-1774455834\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":\"new-sourcetype\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/12f30686-f946-4eb1-8988-643d55ad0cb9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a Splunk custom destination with a sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:55.981Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Test-Update_a_Splunk_custom_destination_s_attributes_preserves_the_absent_sourcetype_returns_OK_response-1774455835",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9ac57fd5-857f-4082-badc-463ecd1e990d\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_s_attributes_preserves_the_absent_sourcetype_returns_OK_response-1774455835\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Nginx logs (Updated)"
+                  },
+                  "id": "9ac57fd5-857f-4082-badc-463ecd1e990d",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/9ac57fd5-857f-4082-badc-463ecd1e990d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9ac57fd5-857f-4082-badc-463ecd1e990d\",\"attributes\":{\"name\":\"Nginx logs (Updated)\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/9ac57fd5-857f-4082-badc-463ecd1e990d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a Splunk custom destination's attributes preserves the absent sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:23:59.087Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": null,
+                      "type": "splunk_hec"
+                    },
+                    "name": "Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_null_sourcetype_returns_OK_response-1774455839",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1cf9102b-169d-4a5c-a82b-aa5b3a12d6c5\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_null_sourcetype_returns_OK_response-1774455839\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":null},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://updated-example.com",
+                      "type": "splunk_hec"
+                    }
+                  },
+                  "id": "1cf9102b-169d-4a5c-a82b-aa5b3a12d6c5",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/1cf9102b-169d-4a5c-a82b-aa5b3a12d6c5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1cf9102b-169d-4a5c-a82b-aa5b3a12d6c5\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_null_sourcetype_returns_OK_response-1774455839\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://updated-example.com\",\"type\":\"splunk_hec\",\"sourcetype\":null},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/1cf9102b-169d-4a5c-a82b-aa5b3a12d6c5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a Splunk custom destination's destination preserves the null sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2026-03-25T16:24:00.500Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://example.com",
+                      "sourcetype": "my-sourcetype",
+                      "type": "splunk_hec"
+                    },
+                    "name": "Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_sourcetype_returns_OK_response-1774455840",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fa416048-c8e1-4b5a-a3e1-b6c2538d5903\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_sourcetype_returns_OK_response-1774455840\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"type\":\"splunk_hec\",\"sourcetype\":\"my-sourcetype\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "forwarder_destination": {
+                      "access_token": "my-access-token",
+                      "endpoint": "https://updated-example.com",
+                      "type": "splunk_hec"
+                    }
+                  },
+                  "id": "fa416048-c8e1-4b5a-a3e1-b6c2538d5903",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/fa416048-c8e1-4b5a-a3e1-b6c2538d5903",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fa416048-c8e1-4b5a-a3e1-b6c2538d5903\",\"attributes\":{\"name\":\"Test-Update_a_Splunk_custom_destination_s_destination_preserves_the_sourcetype_returns_OK_response-1774455840\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://updated-example.com\",\"type\":\"splunk_hec\",\"sourcetype\":\"my-sourcetype\"},\"forward_tags_restriction_list_type\":\"ALLOW_LIST\",\"forward_tags_restriction_list\":[],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/fa416048-c8e1-4b5a-a3e1-b6c2538d5903",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a Splunk custom destination's destination preserves the sourcetype returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:16.332Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "BLOCK_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "my-password",
+                        "type": "basic",
+                        "username": "my-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Test-Update_a_custom_destination_returns_Bad_Request_response-1710235216",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0f1b60fc-4671-4bd5-834b-bc86c8a5065b\",\"attributes\":{\"name\":\"Test-Update_a_custom_destination_returns_Bad_Request_response-1710235216\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "forward_tags_restriction_list_type": "this_list_type_does_not_exist"
+                  },
+                  "id": "0f1b60fc-4671-4bd5-834b-bc86c8a5065b",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/0f1b60fc-4671-4bd5-834b-bc86c8a5065b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Internal error\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/0f1b60fc-4671-4bd5-834b-bc86c8a5065b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a custom destination returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-03-12T09:20:17.628Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "datacenter",
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "ALLOW_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "datadog-custom-destination-password",
+                        "type": "basic",
+                        "username": "datadog-custom-destination-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Nginx logs",
+                    "query": "source:nginx"
+                  },
+                  "id": "id-from-non-existing-custom-destination",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/id-from-non-existing-custom-destination",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"NotFound\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a custom destination returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs Custom Destinations",
+      "frozen_at": "2024-04-05T19:31:41.540Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list": [
+                      "host"
+                    ],
+                    "forward_tags_restriction_list_type": "BLOCK_LIST",
+                    "forwarder_destination": {
+                      "auth": {
+                        "password": "my-password",
+                        "type": "basic",
+                        "username": "my-username"
+                      },
+                      "endpoint": "https://example.com",
+                      "type": "http"
+                    },
+                    "name": "Test-Update_a_custom_destination_returns_OK_response-1712345501",
+                    "query": "source:nginx"
+                  },
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/config/custom-destinations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"60f4b01e-7853-4d48-8f6d-b98802dca889\",\"attributes\":{\"name\":\"Test-Update_a_custom_destination_returns_OK_response-1712345501\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "forward_tags": false,
+                    "forward_tags_restriction_list_type": "BLOCK_LIST",
+                    "name": "Nginx logs (Updated)",
+                    "query": "source:nginx"
+                  },
+                  "id": "60f4b01e-7853-4d48-8f6d-b98802dca889",
+                  "type": "custom_destination"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/logs/config/custom-destinations/60f4b01e-7853-4d48-8f6d-b98802dca889",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"60f4b01e-7853-4d48-8f6d-b98802dca889\",\"attributes\":{\"name\":\"Nginx logs (Updated)\",\"query\":\"source:nginx\",\"enabled\":false,\"forwarder_destination\":{\"endpoint\":\"https://example.com\",\"auth\":{\"type\":\"basic\"},\"type\":\"http\"},\"forward_tags_restriction_list_type\":\"BLOCK_LIST\",\"forward_tags_restriction_list\":[\"host\"],\"forward_tags\":false},\"type\":\"custom_destination\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/logs/config/custom-destinations/60f4b01e-7853-4d48-8f6d-b98802dca889",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a custom destination returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

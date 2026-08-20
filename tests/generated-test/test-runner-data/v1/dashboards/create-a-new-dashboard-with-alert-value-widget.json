@@ -1,0 +1,52 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with alert_value widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/alert_value_widget.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "alert_id": "{{ monitor.id }}",
+              "precision": 2,
+              "text_align": "left",
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "alert_value",
+              "unit": "auto"
+            },
+            "layout": {
+              "height": 8,
+              "width": 15,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with alert_value widget",
+  "schema_version": 1,
+  "version": "v1"
+}

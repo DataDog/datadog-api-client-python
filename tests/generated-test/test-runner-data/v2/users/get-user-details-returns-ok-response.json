@@ -1,0 +1,35 @@
+{
+  "api": "Users",
+  "expected_status": 200,
+  "feature": "Users",
+  "id": "v2/Users/Get user details returns \"OK\" response",
+  "operation_id": "GetUser",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/users/{user_id}"
+  },
+  "scenario": "Get user details returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

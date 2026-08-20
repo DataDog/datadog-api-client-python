@@ -1,0 +1,29 @@
+{
+  "api": "Organizations",
+  "expected_status": 400,
+  "feature": "Organizations",
+  "id": "v2/Organizations/Upload IdP metadata returns \"Bad Request - caused by either malformed XML or invalid SAML IdP metadata\" response",
+  "operation_id": "UploadIdPMetadata",
+  "request": {
+    "body": null,
+    "content_type": "multipart/form-data",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "in": "unknown",
+        "name": "idp_file",
+        "required": null,
+        "schema": null,
+        "source": {
+          "type": "literal",
+          "value": "fixtures/organizations/saml_configurations/invalid_idp_metadata.xml"
+        }
+      }
+    ],
+    "path": "/api/v2/saml_configurations/idp_metadata"
+  },
+  "scenario": "Upload IdP metadata returns \"Bad Request - caused by either malformed XML or invalid SAML IdP metadata\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

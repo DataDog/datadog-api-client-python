@@ -1,0 +1,40 @@
+{
+  "api": "Scorecards",
+  "expected_status": 202,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/Update Scorecard outcomes asynchronously returns \"Accepted\" response",
+  "operation_id": "UpdateScorecardOutcomes",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateOutcomesAsyncRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "results": [
+              {
+                "entity_reference": "service:my-service",
+                "remarks": "See: <a href=\"https://app.datadoghq.com/services\">Services</a>",
+                "rule_id": "{{create_scorecard_rule.data.id}}",
+                "state": "pass"
+              }
+            ]
+          },
+          "type": "batched-outcome"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/scorecard/outcomes"
+  },
+  "scenario": "Update Scorecard outcomes asynchronously returns \"Accepted\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

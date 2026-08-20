@@ -1,0 +1,61 @@
+{
+  "api": "Datasets",
+  "expected_status": 200,
+  "feature": "Datasets",
+  "id": "v2/Datasets/Edit a dataset returns \"OK\" response",
+  "operation_id": "UpdateDataset",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DatasetUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Security Audit Dataset",
+            "principals": [
+              "role:94172442-be03-11e9-a77a-3b7612558ac1"
+            ],
+            "product_filters": [
+              {
+                "filters": [
+                  "@application.id:1234"
+                ],
+                "product": "metrics"
+              }
+            ]
+          },
+          "type": "dataset"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "dataset_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dataset.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/datasets/{dataset_id}"
+  },
+  "scenario": "Edit a dataset returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

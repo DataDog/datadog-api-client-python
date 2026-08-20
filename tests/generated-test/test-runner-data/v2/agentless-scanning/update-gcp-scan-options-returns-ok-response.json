@@ -1,0 +1,52 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 200,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/Update GCP scan options returns \"OK\" response",
+  "operation_id": "UpdateGcpScanOptions",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "GcpScanOptionsInputUpdate",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "cloud_function": true,
+            "vuln_containers_os": false
+          },
+          "id": "api-spec-test",
+          "type": "gcp_scan_options"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "project_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "api-spec-test"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/agentless_scanning/accounts/gcp/{project_id}"
+  },
+  "scenario": "Update GCP scan options returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

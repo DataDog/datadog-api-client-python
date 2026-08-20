@@ -1,0 +1,35 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 400,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Delete a budget returns \"Bad Request\" response",
+  "operation_id": "DeleteBudget",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "budget_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/budget/{budget_id}"
+  },
+  "scenario": "Delete a budget returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

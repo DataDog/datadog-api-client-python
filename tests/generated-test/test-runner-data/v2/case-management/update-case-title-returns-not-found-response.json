@@ -1,0 +1,50 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 404,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Update case title returns \"Not Found\" response",
+  "operation_id": "UpdateCaseTitle",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CaseUpdateTitleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "title": "Memory leak investigation on API"
+          },
+          "type": "case"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "0198c6b8-b08f-7c08-978a-d95217f2eeac"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}/title"
+  },
+  "scenario": "Update case title returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

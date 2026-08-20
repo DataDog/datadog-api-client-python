@@ -1,0 +1,50 @@
+{
+  "api": "Teams",
+  "expected_status": 409,
+  "feature": "Teams",
+  "id": "v2/Teams/Create team connections returns \"Conflict\" response",
+  "operation_id": "CreateTeamConnections",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamConnectionCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {
+              "managed_by": "datadog",
+              "source": "github"
+            },
+            "relationships": {
+              "connected_team": {
+                "data": {
+                  "id": "{{ team_connection.relationships.connected_team.data.id }}",
+                  "type": "github_team"
+                }
+              },
+              "team": {
+                "data": {
+                  "id": "{{ dd_team.data.id }}",
+                  "type": "team"
+                }
+              }
+            },
+            "type": "team_connection"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/team/connections"
+  },
+  "scenario": "Create team connections returns \"Conflict\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

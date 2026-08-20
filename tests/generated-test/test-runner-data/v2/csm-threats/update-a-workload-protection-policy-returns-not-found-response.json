@@ -1,0 +1,54 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 404,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Update a Workload Protection policy returns \"Not Found\" response",
+  "operation_id": "UpdateCSMThreatsAgentPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CloudWorkloadSecurityAgentPolicyUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "My agent policy",
+            "enabled": true,
+            "hostTags": [],
+            "name": "my_agent_policy"
+          },
+          "id": "non-existent-policy-id",
+          "type": "policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "non-existent-policy-id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/cws/policy/{policy_id}"
+  },
+  "scenario": "Update a Workload Protection policy returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

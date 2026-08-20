@@ -1,0 +1,51 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 404,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/Get a workflow instance returns \"Not Found\" response",
+  "operation_id": "GetWorkflowInstance",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "workflow_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "0233a3b7-b7ba-425e-a8cc-375ca2020b5b"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "instance_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "e0c64dc8-f946-4ae8-8d79-54569031ce67"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows/{workflow_id}/instances/{instance_id}"
+  },
+  "scenario": "Get a workflow instance returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

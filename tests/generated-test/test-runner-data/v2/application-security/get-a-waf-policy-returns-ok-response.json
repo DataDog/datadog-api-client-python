@@ -1,0 +1,35 @@
+{
+  "api": "ApplicationSecurity",
+  "expected_status": 200,
+  "feature": "Application Security",
+  "id": "v2/Application Security/Get a WAF Policy returns \"OK\" response",
+  "operation_id": "GetApplicationSecurityWafPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/asm/waf/policies/{policy_id}"
+  },
+  "scenario": "Get a WAF Policy returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

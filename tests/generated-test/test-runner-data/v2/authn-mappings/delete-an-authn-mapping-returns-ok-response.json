@@ -1,0 +1,35 @@
+{
+  "api": "AuthNMappings",
+  "expected_status": 204,
+  "feature": "AuthN Mappings",
+  "id": "v2/AuthN Mappings/Delete an AuthN Mapping returns \"OK\" response",
+  "operation_id": "DeleteAuthNMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "authn_mapping_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "authn_mapping.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/authn_mappings/{authn_mapping_id}"
+  },
+  "scenario": "Delete an AuthN Mapping returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "Datasets",
+  "expected_status": 200,
+  "feature": "Datasets",
+  "id": "v2/Datasets/Get all datasets returns \"OK\" response",
+  "operation_id": "GetAllDatasets",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/datasets"
+  },
+  "scenario": "Get all datasets returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a suppression rule returns \"OK\" response",
+  "operation_id": "UpdateSecurityMonitoringSuppression",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringSuppressionUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "suppression_query": "env:staging status:low"
+          },
+          "type": "suppressions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "suppression_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "suppression.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/configuration/suppressions/{suppression_id}"
+  },
+  "scenario": "Update a suppression rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

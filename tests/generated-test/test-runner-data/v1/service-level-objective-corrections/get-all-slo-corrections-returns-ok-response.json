@@ -1,0 +1,51 @@
+{
+  "api": "ServiceLevelObjectiveCorrections",
+  "expected_status": 200,
+  "feature": "Service Level Objective Corrections",
+  "id": "v1/Service Level Objective Corrections/Get all SLO corrections returns \"OK\" response",
+  "operation_id": "ListSLOCorrection",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "offset",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "limit",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/slo/correction"
+  },
+  "scenario": "Get all SLO corrections returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

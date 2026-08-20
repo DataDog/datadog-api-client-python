@@ -1,0 +1,51 @@
+{
+  "api": "ErrorTracking",
+  "expected_status": 200,
+  "feature": "Error Tracking",
+  "id": "v2/Error Tracking/Update the state of an issue returns \"OK\" response",
+  "operation_id": "UpdateIssueState",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IssueUpdateStateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "state": "RESOLVED"
+          },
+          "id": "{{ issue.id }}",
+          "type": "error_tracking_issue"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "issue_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "issue.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/error-tracking/issues/{issue_id}/state"
+  },
+  "scenario": "Update the state of an issue returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

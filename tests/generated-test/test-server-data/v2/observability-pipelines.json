@@ -1,0 +1,3058 @@
+{
+  "feature": "Observability Pipelines",
+  "recordings": [
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:40.491Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "unknown-processor",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Component with ID my-processor-group is an unknown component\",\"meta\":{\"message\":\"Component with ID my-processor-group is an unknown component\"}},{\"title\":\"The following components are unused: [datadog-agent-source unknown-processor]\",\"meta\":{\"message\":\"The following components are unused: [datadog-agent-source unknown-processor]\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a new pipeline returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:40.989Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0a44c8d2-fdf8-11f0-8d8c-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"my-processor-group\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/0a44c8d2-fdf8-11f0-8d8c-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a new pipeline returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-02-09T09:53:31.840Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "cache": {
+                                "num_events": 5000
+                              },
+                              "enabled": true,
+                              "fields": [
+                                "message"
+                              ],
+                              "id": "dedupe-processor",
+                              "include": "service:my-service",
+                              "mode": "match",
+                              "type": "dedupe"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Dedupe Cache"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"31a750dc-059d-11f1-a2a8-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Pipeline with Dedupe Cache\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"my-processor-group\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"cache\":{\"num_events\":5000},\"enabled\":true,\"fields\":[\"message\"],\"id\":\"dedupe-processor\",\"include\":\"service:my-service\",\"mode\":\"match\",\"type\":\"dedupe\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"cache\":{\"num_events\":5000},\"enabled\":true,\"fields\":[\"message\"],\"id\":\"dedupe-processor\",\"include\":\"service:my-service\",\"mode\":\"match\",\"type\":\"dedupe\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/31a750dc-059d-11f1-a2a8-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a pipeline with dedupe processor with cache returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-02-09T09:53:33.945Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "fields": [
+                                "message"
+                              ],
+                              "id": "dedupe-processor",
+                              "include": "service:my-service",
+                              "mode": "match",
+                              "type": "dedupe"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Dedupe No Cache"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3280ccb8-059d-11f1-a2aa-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Pipeline with Dedupe No Cache\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"my-processor-group\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"fields\":[\"message\"],\"id\":\"dedupe-processor\",\"include\":\"service:my-service\",\"mode\":\"match\",\"type\":\"dedupe\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"fields\":[\"message\"],\"id\":\"dedupe-processor\",\"include\":\"service:my-service\",\"mode\":\"match\",\"type\":\"dedupe\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/3280ccb8-059d-11f1-a2aa-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a pipeline with dedupe processor without cache returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:42.608Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Resource Not Found\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a pipeline returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:43.204Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "processor-group-0"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "display_name": "My Processor Group",
+                          "enabled": true,
+                          "id": "processor-group-0",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "display_name": "My Filter Processor",
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0b949d84-fdf8-11f0-8d8e-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/0b949d84-fdf8-11f0-8d8e-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/0b949d84-fdf8-11f0-8d8e-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Resource Not Found\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a pipeline returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:45.333Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "processor-group-0"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "display_name": "My Processor Group",
+                          "enabled": true,
+                          "id": "processor-group-0",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "display_name": "My Filter Processor",
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0cda650c-fdf8-11f0-9e92-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/obs-pipelines/pipelines/0cda650c-fdf8-11f0-9e92-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0cda650c-fdf8-11f0-9e92-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/0cda650c-fdf8-11f0-9e92-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a specific pipeline returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:47.526Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": [
+              [
+                "page[size]",
+                "0"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"page[size] must be a number between 1 and 50\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List pipelines returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:48.015Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "processor-group-0"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "display_name": "My Processor Group",
+                          "enabled": true,
+                          "id": "processor-group-0",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "display_name": "My Filter Processor",
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0e62d45e-fdf8-11f0-9e94-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"a3b44f62-f7f2-11f0-8764-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"socket-destination-pipeline-udp\",\"config\":{\"destinations\":[{\"encoding\":\"raw_message\",\"framing\":{\"delimiter\":\"|\",\"method\":\"character_delimited\"},\"id\":\"socket-dest-2\",\"inputs\":[\"source-1\"],\"mode\":\"udp\",\"type\":\"socket\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"b9ea093e-f85b-11f0-b352-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"http client destination minimal\",\"config\":{\"destinations\":[{\"encoding\":\"json\",\"id\":\"http-client-dest-minimal-1\",\"inputs\":[\"source-1\"],\"type\":\"http_client\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"b5e6b97c-f91e-11f0-98e1-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"socket-destination-pipeline\",\"config\":{\"destinations\":[{\"encoding\":\"json\",\"framing\":{\"method\":\"newline_delimited\"},\"id\":\"socket-dest-1\",\"inputs\":[\"source-1\"],\"mode\":\"tcp\",\"tls\":{\"ca_file\":\"/etc/ssl/certs/ca.crt\",\"crt_file\":\"/etc/ssl/certs/socket.crt\",\"key_file\":\"/etc/ssl/private/socket.key\"},\"type\":\"socket\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"406ea7f0-fa4e-11f0-a305-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"crowdstrike-next-gen-siem-destination-pipeline\",\"config\":{\"destinations\":[{\"compression\":{\"algorithm\":\"gzip\",\"level\":6},\"encoding\":\"json\",\"id\":\"crowdstrike-dest-1\",\"inputs\":[\"source-1\"],\"tls\":{\"ca_file\":\"/path/to/ca.crt\",\"crt_file\":\"/path/to/cert.crt\",\"key_file\":\"/path/to/key.key\"},\"type\":\"crowdstrike_next_gen_siem\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"3bcadf4c-fad6-11f0-b282-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"agent with tls\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"source-with-tls\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-with-tls\",\"tls\":{\"ca_file\":\"/etc/certs/ca.crt\",\"crt_file\":\"/etc/certs/agent.crt\",\"key_file\":\"/etc/certs/agent.key\"},\"type\":\"datadog_agent\"}]}}},{\"id\":\"93672d7c-fad7-11f0-9953-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"fluent-pipeline\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"fluent-source-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"fluent-source-1\",\"tls\":{\"ca_file\":\"/etc/ssl/certs/ca.crt\",\"crt_file\":\"/etc/ssl/certs/fluent.crt\",\"key_file\":\"/etc/ssl/private/fluent.key\"},\"type\":\"fluent_bit\"}]}}},{\"id\":\"527d2a6e-fbe0-11f0-99e3-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"socket-destination-pipeline-udp\",\"config\":{\"destinations\":[{\"encoding\":\"raw_message\",\"framing\":{\"delimiter\":\"|\",\"method\":\"character_delimited\"},\"id\":\"socket-dest-2\",\"inputs\":[\"source-1\"],\"mode\":\"udp\",\"type\":\"socket\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"5c0f6c30-fbe1-11f0-9053-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"test pipeline\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"parser-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"display_name\":\"processor group\",\"enabled\":true,\"id\":\"parser-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"display_name\":\"json parser\",\"enabled\":true,\"field\":\"message\",\"id\":\"parser-1\",\"include\":\"service:my-service\",\"type\":\"parse_json\"}]}],\"processors\":[{\"display_name\":\"processor group\",\"enabled\":true,\"id\":\"parser-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"display_name\":\"json parser\",\"enabled\":true,\"field\":\"message\",\"id\":\"parser-1\",\"include\":\"service:my-service\",\"type\":\"parse_json\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"eccf626e-fc42-11f0-9bfe-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"test pipeline\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"parser-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"display_name\":\"processor group\",\"enabled\":true,\"id\":\"parser-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"display_name\":\"json parser\",\"enabled\":true,\"field\":\"message\",\"id\":\"parser-1\",\"include\":\"service:my-service\",\"type\":\"parse_json\"}]}],\"processors\":[{\"display_name\":\"processor group\",\"enabled\":true,\"id\":\"parser-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"display_name\":\"json parser\",\"enabled\":true,\"field\":\"message\",\"id\":\"parser-1\",\"include\":\"service:my-service\",\"type\":\"parse_json\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"005b8e58-fc56-11f0-b60b-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"521f2d08-fc56-11f0-b621-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"metric tags processor test\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"metric-tags-group-1\"],\"type\":\"datadog_metrics\"}],\"pipeline_type\":\"metrics\",\"processor_groups\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"7f4c75ce-fc56-11f0-a9f2-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"94fadafa-fc56-11f0-a9f4-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"metric tags processor test\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"metric-tags-group-1\"],\"type\":\"datadog_metrics\"}],\"pipeline_type\":\"metrics\",\"processor_groups\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"a2f910f4-fc56-11f0-bac8-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"ac2c9826-fc56-11f0-a9f6-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"metric tags processor test\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"metric-tags-group-1\"],\"type\":\"datadog_metrics\"}],\"pipeline_type\":\"metrics\",\"processor_groups\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"1a65f55a-fc5a-11f0-aa2a-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"sentinelone pipeline\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"source-1\"],\"region\":\"us\",\"type\":\"sentinel_one\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"87a396a4-fc5a-11f0-aa50-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"metric tags processor test\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"metric-tags-group-1\"],\"type\":\"datadog_metrics\"}],\"pipeline_type\":\"metrics\",\"processor_groups\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"184636c4-fc5d-11f0-a648-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"7380f2e0-fc5d-11f0-a676-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"metric tags processor test\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"metric-tags-group-1\"],\"type\":\"datadog_metrics\"}],\"pipeline_type\":\"metrics\",\"processor_groups\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"a21a421e-fc5d-11f0-8fee-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"b0fd5a96-fc5d-11f0-8ff0-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"metric tags processor test\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"metric-tags-group-1\"],\"type\":\"datadog_metrics\"}],\"pipeline_type\":\"metrics\",\"processor_groups\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"c22c19a6-fc5d-11f0-96e7-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"d2546180-fc5d-11f0-a688-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"metric tags processor test\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"metric-tags-group-1\"],\"type\":\"datadog_metrics\"}],\"pipeline_type\":\"metrics\",\"processor_groups\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"metric-tags-processor\",\"include\":\"*\",\"rules\":[{\"action\":\"include\",\"include\":\"*\",\"keys\":[\"env\",\"service\",\"version\"],\"mode\":\"filter\"},{\"action\":\"exclude\",\"include\":\"service:web-*\",\"keys\":[\"debug\",\"internal\"],\"mode\":\"filter\"}],\"type\":\"metric_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"5195b8fe-fc5e-11f0-96e9-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"6368030c-fc5e-11f0-96eb-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"71f6441a-fc5e-11f0-8ff2-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"datadog tags processor test updated\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"datadog-tags-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"datadog-tags-group-1\",\"include\":\"service:my-service\",\"inputs\":[\"source-1\"],\"processors\":[{\"action\":\"exclude\",\"enabled\":true,\"id\":\"datadog-tags-processor\",\"include\":\"service:my-service\",\"keys\":[\"env\",\"service\"],\"mode\":\"filter\",\"type\":\"datadog_tags\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"e443881a-fd2c-11f0-abe4-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"sample-pipeline\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"sample-group-2\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"sample-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"group_by\":[\"service\",\"host\"],\"id\":\"sample-1\",\"include\":\"*\",\"percentage\":10,\"type\":\"sample\"}]},{\"enabled\":false,\"id\":\"sample-group-2\",\"include\":\"*\",\"inputs\":[\"sample-group-1\"],\"processors\":[{\"enabled\":false,\"id\":\"sample-2\",\"include\":\"*\",\"percentage\":4.99,\"type\":\"sample\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"sample-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"group_by\":[\"service\",\"host\"],\"id\":\"sample-1\",\"include\":\"*\",\"percentage\":10,\"type\":\"sample\"}]},{\"enabled\":false,\"id\":\"sample-group-2\",\"include\":\"*\",\"inputs\":[\"sample-group-1\"],\"processors\":[{\"enabled\":false,\"id\":\"sample-2\",\"include\":\"*\",\"percentage\":4.99,\"type\":\"sample\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"fe2060e8-fd2f-11f0-ac94-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"splunk-hec-destination-pipeline\",\"config\":{\"destinations\":[{\"auto_extract_timestamp\":true,\"encoding\":\"json\",\"id\":\"splunk-hec-1\",\"index\":\"main\",\"inputs\":[\"source-1\"],\"sourcetype\":\"custom_sourcetype\",\"type\":\"splunk_hec\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"47277dd0-fd30-11f0-b83d-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"quota with overflow_action\",\"config\":{\"destinations\":[{\"id\":\"logs-1\",\"inputs\":[\"quota-group-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[{\"enabled\":true,\"id\":\"quota-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"quota-1\",\"include\":\"*\",\"limit\":{\"enforce\":\"events\",\"limit\":1000},\"name\":\"MyQuota\",\"overflow_action\":\"drop\",\"type\":\"quota\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"quota-group-1\",\"include\":\"*\",\"inputs\":[\"source-1\"],\"processors\":[{\"enabled\":true,\"id\":\"quota-1\",\"include\":\"*\",\"limit\":{\"enforce\":\"events\",\"limit\":1000},\"name\":\"MyQuota\",\"overflow_action\":\"drop\",\"type\":\"quota\"}]}],\"sources\":[{\"id\":\"source-1\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"f8d4a5fe-fdc0-11f0-bf42-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"http-server-pipeline\",\"config\":{\"destinations\":[{\"id\":\"destination-1\",\"inputs\":[\"http-source-1\"],\"type\":\"datadog_logs\"}],\"pipeline_type\":\"logs\",\"processor_groups\":[],\"processors\":[],\"sources\":[{\"auth_strategy\":\"plain\",\"decoding\":\"json\",\"id\":\"http-source-1\",\"tls\":{\"ca_file\":\"/etc/ssl/certs/ca.crt\",\"crt_file\":\"/etc/ssl/certs/http.crt\",\"key_file\":\"/etc/ssl/private/http.key\"},\"type\":\"http_server\"}]}}},{\"id\":\"5c58f1ac-fdcb-11f0-8ca5-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Updated Pipeline Name\",\"config\":{\"destinations\":[{\"id\":\"updated-datadog-logs-destination-id\",\"inputs\":[\"my-processor-group\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}},{\"id\":\"0e62d45e-fdf8-11f0-9e94-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}],\"meta\":{\"totalCount\":32}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/0e62d45e-fdf8-11f0-9e94-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List pipelines returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:50.545Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "processor-group-0"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "display_name": "My Processor Group",
+                          "enabled": true,
+                          "id": "processor-group-0",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "display_name": "My Filter Processor",
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0ff44776-fdf8-11f0-8d90-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "unknown-processor",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/obs-pipelines/pipelines/0ff44776-fdf8-11f0-8d90-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Component with ID my-processor-group is an unknown component\",\"meta\":{\"message\":\"Component with ID my-processor-group is an unknown component\"}},{\"title\":\"The following components are unused: [datadog-agent-source unknown-processor]\",\"meta\":{\"message\":\"The following components are unused: [datadog-agent-source unknown-processor]\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/0ff44776-fdf8-11f0-8d90-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a pipeline returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:52.776Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/obs-pipelines/pipelines/3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Not Found\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a pipeline returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:53.303Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "processor-group-0"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "display_name": "My Processor Group",
+                          "enabled": true,
+                          "id": "processor-group-0",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "display_name": "My Filter Processor",
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"119a3e5a-fdf8-11f0-8d92-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Main Observability Pipeline\",\"config\":{\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"display_name\":\"My Processor Group\",\"enabled\":true,\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"display_name\":\"My Filter Processor\",\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "updated-datadog-logs-destination-id",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Updated Pipeline Name"
+                  },
+                  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/obs-pipelines/pipelines/119a3e5a-fdf8-11f0-8d92-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"119a3e5a-fdf8-11f0-8d92-da7ad0900002\",\"type\":\"pipelines\",\"attributes\":{\"name\":\"Updated Pipeline Name\",\"config\":{\"destinations\":[{\"id\":\"updated-datadog-logs-destination-id\",\"inputs\":[\"my-processor-group\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"processors\":[{\"enabled\":true,\"id\":\"my-processor-group\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"processors\":[{\"enabled\":true,\"id\":\"filter-processor\",\"include\":\"status:error\",\"type\":\"filter\"}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/obs-pipelines/pipelines/119a3e5a-fdf8-11f0-8d92-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a pipeline returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-03-10T16:11:47.487Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-metrics-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_metrics"
+                        }
+                      ],
+                      "pipeline_type": "metrics",
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "*",
+                          "inputs": [
+                            "opentelemetry-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "env:production",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "opentelemetry-source",
+                          "type": "opentelemetry"
+                        }
+                      ]
+                    },
+                    "name": "Metrics OTel Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate a metrics pipeline with opentelemetry source returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:55.673Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Field 'include' is required\",\"meta\":{\"field\":\"include\",\"id\":\"filter-processor\",\"message\":\"Field 'include' is required\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-01-30T16:23:56.149Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Main Observability Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-06-22T20:44:30.778Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "auth": {
+                            "password_key": "CLICKHOUSE_PASSWORD",
+                            "strategy": "basic",
+                            "username_key": "CLICKHOUSE_USERNAME"
+                          },
+                          "batch": {
+                            "max_events": 1000,
+                            "timeout_secs": 1
+                          },
+                          "batch_encoding": {
+                            "allow_nullable_fields": false,
+                            "codec": "arrow_stream"
+                          },
+                          "compression": "gzip",
+                          "database": "my_database",
+                          "format": "arrow_stream",
+                          "id": "clickhouse-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "table": "application_logs",
+                          "type": "clickhouse"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with ClickHouse Destination Arrow Stream"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with ClickHouse destination arrow_stream format returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-06-22T20:44:32.514Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "auth": {
+                            "password_key": "CLICKHOUSE_PASSWORD",
+                            "strategy": "basic",
+                            "username_key": "CLICKHOUSE_USERNAME"
+                          },
+                          "batch": {
+                            "max_events": 1000,
+                            "timeout_secs": 1
+                          },
+                          "compression": "gzip",
+                          "database": "my_database",
+                          "id": "clickhouse-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "table": "application_logs",
+                          "type": "clickhouse"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with ClickHouse Destination"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with ClickHouse destination returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-06-24T16:45:05.037Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "auth": {
+                            "password_key": "CLICKHOUSE_PASSWORD",
+                            "strategy": "basic",
+                            "username_key": "CLICKHOUSE_USERNAME"
+                          },
+                          "batch": {
+                            "max_events": 1000,
+                            "timeout_secs": 1
+                          },
+                          "batch_encoding": {
+                            "allow_nullable_fields": true,
+                            "codec": "arrow_stream"
+                          },
+                          "buffer": {
+                            "max_events": 500,
+                            "type": "memory",
+                            "when_full": "block"
+                          },
+                          "compression": {
+                            "algorithm": "gzip",
+                            "level": 6
+                          },
+                          "database": "my_database",
+                          "date_time_best_effort": true,
+                          "endpoint_url_key": "CLICKHOUSE_ENDPOINT_URL",
+                          "format": "arrow_stream",
+                          "id": "clickhouse-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "skip_unknown_fields": true,
+                          "table": "application_logs",
+                          "tls": {
+                            "ca_file": "/path/to/ca.crt",
+                            "crt_file": "/path/to/cert.crt",
+                            "key_file": "/path/to/key.key",
+                            "key_pass_key": "TLS_KEY_PASSPHRASE"
+                          },
+                          "type": "clickhouse"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with ClickHouse Destination All Fields"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with ClickHouse destination with all fields set returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-05-18T16:51:43.688Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "http-server-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "auth_strategy": "none",
+                          "decoding": "json",
+                          "id": "http-server-source",
+                          "type": "http_server",
+                          "valid_tokens": [
+                            {
+                              "enabled": true,
+                              "field_to_add": {
+                                "key": "token_name",
+                                "value": "primary_token"
+                              },
+                              "path_to_token": {
+                                "header": "X-Token"
+                              },
+                              "token_key": "HTTP_SERVER_TOKEN"
+                            },
+                            {
+                              "enabled": true,
+                              "path_to_token": "path",
+                              "token_key": "HTTP_SERVER_TOKEN_BACKUP"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with HTTP server valid_tokens"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with HTTP server source valid_tokens returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-02-10T14:12:05.668Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "ocsf-mapper-processor",
+                              "include": "service:my-service",
+                              "mappings": [
+                                {
+                                  "include": "source:custom",
+                                  "mapping": {
+                                    "mapping": [
+                                      {
+                                        "default": "",
+                                        "dest": "time",
+                                        "source": "timestamp"
+                                      },
+                                      {
+                                        "default": "",
+                                        "dest": "severity",
+                                        "source": "level"
+                                      },
+                                      {
+                                        "default": "",
+                                        "dest": "device.type",
+                                        "lookup": {
+                                          "table": [
+                                            {
+                                              "contains": "Desktop",
+                                              "value": "desktop"
+                                            }
+                                          ]
+                                        },
+                                        "source": "host.type"
+                                      }
+                                    ],
+                                    "metadata": {
+                                      "class": "Device Inventory Info",
+                                      "profiles": [
+                                        "container"
+                                      ],
+                                      "version": "1.3.0"
+                                    },
+                                    "version": 1
+                                  }
+                                }
+                              ],
+                              "type": "ocsf_mapper"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "OCSF Custom Mapper Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with OCSF mapper custom mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-02-10T14:12:06.064Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "ocsf-mapper-processor",
+                              "include": "service:my-service",
+                              "mappings": [
+                                {
+                                  "include": "source:custom",
+                                  "mapping": {
+                                    "mapping": [
+                                      {
+                                        "dest": "time",
+                                        "source": "timestamp"
+                                      }
+                                    ],
+                                    "metadata": {
+                                      "class": "Invalid Class",
+                                      "profiles": [
+                                        "container"
+                                      ],
+                                      "version": "1.3.0"
+                                    },
+                                    "version": 0
+                                  }
+                                }
+                              ],
+                              "type": "ocsf_mapper"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "OCSF Invalid Mapper Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Schema version must be a positive integer\",\"meta\":{\"field\":\"mappings.0.version\",\"id\":\"ocsf-mapper-processor\",\"message\":\"Schema version must be a positive integer\"}},{\"title\":\"Invalid custom mapping class\",\"meta\":{\"field\":\"mappings.0.metadata.class\",\"id\":\"ocsf-mapper-processor\",\"message\":\"Invalid custom mapping class\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with OCSF mapper invalid custom mapping returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-03-16T13:02:49.264Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "ocsf-mapper-processor",
+                              "include": "service:my-service",
+                              "keep_unmatched": true,
+                              "mappings": [
+                                {
+                                  "include": "source:cloudtrail",
+                                  "mapping": "CloudTrail Account Change"
+                                }
+                              ],
+                              "type": "ocsf_mapper"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "OCSF Mapper Keep Unmatched Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with OCSF mapper keep_unmatched returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-02-10T14:12:05.285Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "ocsf-mapper-processor",
+                              "include": "service:my-service",
+                              "mappings": [
+                                {
+                                  "include": "source:cloudtrail",
+                                  "mapping": "CloudTrail Account Change"
+                                }
+                              ],
+                              "type": "ocsf_mapper"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "OCSF Mapper Pipeline"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with OCSF mapper library mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-04-08T15:11:59.762Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "splunk-hec-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "token_key": "SPLUNK_HEC_TOKEN",
+                          "token_strategy": "custom",
+                          "type": "splunk_hec"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Splunk HEC token_strategy"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with Splunk HEC destination token_strategy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-04-08T15:11:59.370Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "splunk-hec-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "splunk-hec-source",
+                          "store_hec_token": true,
+                          "type": "splunk_hec"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Splunk HEC store_hec_token"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with Splunk HEC source store_hec_token returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-05-18T16:51:43.307Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "splunk-hec-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "splunk-hec-source",
+                          "type": "splunk_hec",
+                          "valid_tokens": [
+                            {
+                              "enabled": true,
+                              "field_to_add": {
+                                "key": "token_name",
+                                "value": "primary_token"
+                              },
+                              "token_key": "SPLUNK_HEC_TOKEN"
+                            },
+                            {
+                              "enabled": false,
+                              "token_key": "SPLUNK_HEC_TOKEN_BACKUP"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Splunk HEC valid_tokens"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with Splunk HEC source valid_tokens returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-04-08T12:44:25.060Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "amazon-s3-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "service:my-service",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "compression": "gzip",
+                          "id": "amazon-s3-source",
+                          "region": "us-east-1",
+                          "type": "amazon_s3"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with S3 Source Compression"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with amazon S3 source compression returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-05-21T09:58:44.439Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "buffer": {
+                            "max_size": 1073741824,
+                            "type": "disk",
+                            "when_full": "block"
+                          },
+                          "id": "cloud-prem-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "cloud_prem"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with CloudPrem Buffer"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with cloud_prem destination buffer returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-02-20T14:42:05.988Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "endpoint_url_key": "SUMO_LOGIC_ENDPOINT_URL",
+                          "id": "sumo-logic-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "sumo_logic"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Secret Key"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with destination secret key returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-04-09T11:54:29.220Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "file": {
+                                "encoding": {
+                                  "delimiter": ",",
+                                  "includes_headers": true,
+                                  "type": "csv"
+                                },
+                                "key": [
+                                  {
+                                    "column": "user_id",
+                                    "comparison": "equals",
+                                    "field": {
+                                      "secret": "LOOKUP_KEY_SECRET"
+                                    }
+                                  }
+                                ],
+                                "path": "/etc/enrichment/lookup.csv",
+                                "schema": [
+                                  {
+                                    "column": "user_id",
+                                    "type": "string"
+                                  }
+                                ]
+                              },
+                              "id": "enrichment-processor",
+                              "include": "*",
+                              "target": "enriched",
+                              "type": "enrichment_table"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Enrichment Table Secret Field Lookup"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with enrichment table secret field lookup returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-06-29T20:01:05.978Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "field": "content",
+                              "id": "parse-grok-processor",
+                              "include": "*",
+                              "rules": [
+                                {
+                                  "include": "service:foo",
+                                  "match_rules": [
+                                    {
+                                      "name": "MyParsingRule",
+                                      "rule": "%{word:user}"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "type": "parse_grok"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Parse Grok Include Rules"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with parse grok processor include rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-06-29T18:24:15.839Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "parse-grok-processor",
+                              "include": "*",
+                              "rules": [
+                                {
+                                  "match_rules": [
+                                    {
+                                      "name": "MyParsingRule",
+                                      "rule": "%{word:user}"
+                                    }
+                                  ],
+                                  "source": "message"
+                                }
+                              ],
+                              "type": "parse_grok"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Parse Grok Source Rules"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with parse grok processor source rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-02-20T14:42:32.372Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "http-client-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "auth_strategy": "bearer",
+                          "decoding": "bytes",
+                          "id": "http-client-source",
+                          "scrape_interval_secs": 15,
+                          "scrape_timeout_secs": 5,
+                          "token_key": "HTTP_CLIENT_TOKEN",
+                          "type": "http_client"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Source Secret"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with source secret key returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-06-22T19:51:31.598Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "websocket-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "auth_strategy": "bearer",
+                          "decoding": "json",
+                          "id": "websocket-source",
+                          "tls": {
+                            "mode": "enabled"
+                          },
+                          "token_key": "WS_BEARER_TOKEN",
+                          "type": "websocket",
+                          "uri_key": "WS_URI"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with WebSocket Source"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with websocket source bearer auth returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

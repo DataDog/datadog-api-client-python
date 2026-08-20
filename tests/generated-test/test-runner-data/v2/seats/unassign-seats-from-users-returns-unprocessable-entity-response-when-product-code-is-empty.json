@@ -1,0 +1,36 @@
+{
+  "api": "Seats",
+  "expected_status": 422,
+  "feature": "Seats",
+  "id": "v2/Seats/Unassign seats from users returns \"Unprocessable Entity\" response when product_code is empty",
+  "operation_id": "UnassignSeatsUser",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UnassignSeatsUserRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "product_code": "",
+            "user_uuids": [
+              "{{ user.data.id }}"
+            ]
+          },
+          "type": "seat-assignments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/seats/users"
+  },
+  "scenario": "Unassign seats from users returns \"Unprocessable Entity\" response when product_code is empty",
+  "schema_version": 1,
+  "version": "v2"
+}

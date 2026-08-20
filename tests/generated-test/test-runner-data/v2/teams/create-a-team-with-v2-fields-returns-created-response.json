@@ -1,0 +1,43 @@
+{
+  "api": "Teams",
+  "expected_status": 201,
+  "feature": "Teams",
+  "id": "v2/Teams/Create a team with V2 fields returns \"CREATED\" response",
+  "operation_id": "CreateTeam",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "avatar": "\ud83e\udd51",
+            "banner": 7,
+            "handle": "test-handle-{{ unique_hash }}",
+            "hidden_modules": [
+              "m3"
+            ],
+            "name": "test-name-{{ unique_hash }}",
+            "visible_modules": [
+              "m1",
+              "m2"
+            ]
+          },
+          "type": "team"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/team"
+  },
+  "scenario": "Create a team with V2 fields returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

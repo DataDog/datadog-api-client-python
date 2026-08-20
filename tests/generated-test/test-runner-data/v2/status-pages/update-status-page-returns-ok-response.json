@@ -1,0 +1,51 @@
+{
+  "api": "StatusPages",
+  "expected_status": 200,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Update status page returns \"OK\" response",
+  "operation_id": "UpdateStatusPage",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchStatusPageRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "A Status Page in US1"
+          },
+          "id": "{{ status_page.data.id }}",
+          "type": "status_pages"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}"
+  },
+  "scenario": "Update status page returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,83 @@
+{
+  "api": "SoftwareCatalog",
+  "expected_status": 202,
+  "feature": "Software Catalog",
+  "id": "v2/Software Catalog/Create or update software catalog entity using schema v3 returns \"ACCEPTED\" response",
+  "operation_id": "UpsertCatalogEntity",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpsertCatalogEntityRequest",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "apiVersion": "v3",
+        "datadog": {
+          "codeLocations": [
+            {
+              "paths": []
+            }
+          ],
+          "events": [
+            {}
+          ],
+          "logs": [
+            {}
+          ],
+          "performanceData": {
+            "tags": []
+          },
+          "pipelines": {
+            "fingerprints": []
+          }
+        },
+        "integrations": {
+          "opsgenie": {
+            "serviceURL": "https://www.opsgenie.com/service/shopping-cart"
+          },
+          "pagerduty": {
+            "serviceURL": "https://www.pagerduty.com/service-directory/Pshopping-cart"
+          }
+        },
+        "kind": "service",
+        "metadata": {
+          "additionalOwners": [],
+          "contacts": [
+            {
+              "contact": "https://slack/",
+              "type": "slack"
+            }
+          ],
+          "id": "4b163705-23c0-4573-b2fb-f6cea2163fcb",
+          "inheritFrom": "application:default/myapp",
+          "links": [
+            {
+              "name": "mylink",
+              "type": "link",
+              "url": "https://mylink"
+            }
+          ],
+          "name": "service-{{ unique_lower_alnum }}",
+          "tags": [
+            "this:tag",
+            "that:tag"
+          ]
+        },
+        "spec": {
+          "dependsOn": [],
+          "languages": []
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/catalog/entity"
+  },
+  "scenario": "Create or update software catalog entity using schema v3 returns \"ACCEPTED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

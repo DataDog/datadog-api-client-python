@@ -1,0 +1,28 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Timeseries cross product query with apm_resource_stats data source returns \"OK\" response",
+  "operation_id": "QueryTimeseriesData",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TimeseriesFormulaQueryRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\": {\"attributes\": {\"formulas\": [{\"formula\": \"a\", \"limit\": {\"count\": 10, \"order\": \"desc\"}}], \"from\": {{ timestamp('now - 1h') }}000, \"interval\": 5000, \"queries\": [{\"data_source\": \"apm_resource_stats\", \"name\": \"a\", \"env\": \"staging\", \"service\": \"azure-bill-import\", \"stat\": \"hits\", \"operation_name\": \"cassandra.query\", \"group_by\": [\"resource_name\"], \"primary_tag_name\": \"datacenter\", \"primary_tag_value\": \"*\"}], \"to\": {{ timestamp('now') }}000}, \"type\": \"timeseries_request\"}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/query/timeseries"
+  },
+  "scenario": "Timeseries cross product query with apm_resource_stats data source returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

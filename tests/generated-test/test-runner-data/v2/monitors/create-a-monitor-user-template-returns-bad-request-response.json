@@ -1,0 +1,51 @@
+{
+  "api": "Monitors",
+  "expected_status": 400,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Create a monitor user template returns \"Bad Request\" response",
+  "operation_id": "CreateMonitorUserTemplate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorUserTemplateCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "A description.",
+            "monitor_definition": {},
+            "tags": [
+              "integration:Azure"
+            ],
+            "template_variables": [
+              {
+                "available_values": [
+                  "value1",
+                  "value2"
+                ],
+                "defaults": [
+                  "defaultValue"
+                ],
+                "name": "regionName",
+                "tag_key": "datacenter"
+              }
+            ],
+            "title": "Postgres DB {{ unique_lower }}"
+          },
+          "type": "monitor-user-template"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/template"
+  },
+  "scenario": "Create a monitor user template returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

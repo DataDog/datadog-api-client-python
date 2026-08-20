@@ -1,0 +1,43 @@
+{
+  "api": "Metrics",
+  "expected_status": 400,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Create a tag indexing rule returns \"Bad Request\" response",
+  "operation_id": "CreateTagIndexingRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TagIndexingRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "metric_name_matches": [
+              "dd.test.*"
+            ],
+            "name": "test",
+            "options": {
+              "data": {
+                "manage_preexisting_metrics": true,
+                "override_previous_rules": false
+              },
+              "version": 99
+            }
+          },
+          "type": "tag_indexing_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/metrics/tag-indexing-rules"
+  },
+  "scenario": "Create a tag indexing rule returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

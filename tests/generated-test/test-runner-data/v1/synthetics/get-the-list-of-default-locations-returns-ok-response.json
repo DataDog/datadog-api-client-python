@@ -1,0 +1,18 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Get the list of default locations returns \"OK\" response",
+  "operation_id": "GetSyntheticsDefaultLocations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/settings/default_locations"
+  },
+  "scenario": "Get the list of default locations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

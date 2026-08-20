@@ -1,0 +1,53 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Attach security findings to a case returns \"Bad Request\" response",
+  "operation_id": "AttachCase",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AttachCaseRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "id": "7d16945b-baf8-411e-ab2a-20fe43af1ea3",
+          "relationships": {
+            "findings": {
+              "data": []
+            }
+          },
+          "type": "cases"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "7d16945b-baf8-411e-ab2a-20fe43af1ea3"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/cases/{case_id}"
+  },
+  "scenario": "Attach security findings to a case returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,37 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a private location returns \"OK\" response",
+  "operation_id": "CreatePrivateLocation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsPrivateLocation",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": "Test {{ unique }} description",
+        "metadata": {
+          "restricted_roles": [
+            "{{ role.data.id }}"
+          ]
+        },
+        "name": "{{ unique }}",
+        "tags": [
+          "test:{{ unique_lower_alnum }}"
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/private-locations"
+  },
+  "scenario": "Create a private location returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get SBOM returns \"Not found: asset not found\" response",
+  "operation_id": "GetSBOM",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "asset_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "AssetType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "Host"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[asset_name]",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "unknown-host"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/sboms/{asset_type}"
+  },
+  "scenario": "Get SBOM returns \"Not found: asset not found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

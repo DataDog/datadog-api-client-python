@@ -1,0 +1,35 @@
+{
+  "api": "OrgConnections",
+  "expected_status": 400,
+  "feature": "Org Connections",
+  "id": "v2/Org Connections/Delete Org Connection returns \"Bad Request\" response",
+  "operation_id": "DeleteOrgConnections",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "connection_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "malformed_id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/org_connections/{connection_id}"
+  },
+  "scenario": "Delete Org Connection returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

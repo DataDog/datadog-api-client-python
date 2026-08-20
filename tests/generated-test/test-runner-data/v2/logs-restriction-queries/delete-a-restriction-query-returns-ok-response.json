@@ -1,0 +1,35 @@
+{
+  "api": "LogsRestrictionQueries",
+  "expected_status": 204,
+  "feature": "Logs Restriction Queries",
+  "id": "v2/Logs Restriction Queries/Delete a restriction query returns \"OK\" response",
+  "operation_id": "DeleteRestrictionQuery",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "restriction_query_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "restriction_query.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}"
+  },
+  "scenario": "Delete a restriction query returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

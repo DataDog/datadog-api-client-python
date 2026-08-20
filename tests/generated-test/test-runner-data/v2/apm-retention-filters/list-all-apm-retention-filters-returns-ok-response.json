@@ -1,0 +1,18 @@
+{
+  "api": "APMRetentionFilters",
+  "expected_status": 200,
+  "feature": "APM Retention Filters",
+  "id": "v2/APM Retention Filters/List all APM retention filters returns \"OK\" response",
+  "operation_id": "ListApmRetentionFilters",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/apm/config/retention-filters"
+  },
+  "scenario": "List all APM retention filters returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

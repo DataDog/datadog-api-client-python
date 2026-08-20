@@ -1,0 +1,36 @@
+{
+  "api": "Events",
+  "expected_status": 200,
+  "feature": "Events",
+  "id": "v2/Events/Search events returns \"OK\" response",
+  "operation_id": "SearchEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "EventsListRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "from": "2020-09-17T11:48:36+01:00",
+          "query": "datadog-agent",
+          "to": "2020-09-17T12:48:36+01:00"
+        },
+        "page": {
+          "limit": 5
+        },
+        "sort": "timestamp"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/events/search"
+  },
+  "scenario": "Search events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "CloudflareIntegration",
+  "expected_status": 200,
+  "feature": "Cloudflare Integration",
+  "id": "v2/Cloudflare Integration/Get Cloudflare account returns \"OK\" response",
+  "operation_id": "GetCloudflareAccount",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "cloudflare_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/cloudflare/accounts/{account_id}"
+  },
+  "scenario": "Get Cloudflare account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

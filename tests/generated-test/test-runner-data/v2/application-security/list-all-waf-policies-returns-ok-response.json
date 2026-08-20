@@ -1,0 +1,18 @@
+{
+  "api": "ApplicationSecurity",
+  "expected_status": 200,
+  "feature": "Application Security",
+  "id": "v2/Application Security/List all WAF policies returns \"OK\" response",
+  "operation_id": "ListApplicationSecurityWAFPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/remote_config/products/asm/waf/policies"
+  },
+  "scenario": "List all WAF policies returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

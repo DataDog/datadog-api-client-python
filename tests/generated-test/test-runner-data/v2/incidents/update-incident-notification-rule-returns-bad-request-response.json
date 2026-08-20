@@ -1,0 +1,73 @@
+{
+  "api": "Incidents",
+  "expected_status": 400,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Update incident notification rule returns \"Bad Request\" response",
+  "operation_id": "UpdateIncidentNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PutIncidentNotificationRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "conditions": [
+              {
+                "field": "severity",
+                "values": [
+                  "SEV-1",
+                  "SEV-2"
+                ]
+              }
+            ],
+            "enabled": true,
+            "handles": [
+              "@test-email@company.com"
+            ],
+            "trigger": "incident_created_trigger",
+            "visibility": "organization"
+          },
+          "id": "00000000-0000-0000-0000-000000000001",
+          "relationships": {
+            "incident_type": {
+              "data": {
+                "id": "00000000-0000-0000-0000-000000000000",
+                "type": "incident_types"
+              }
+            }
+          },
+          "type": "invalid_type"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000001"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/notification-rules/{id}"
+  },
+  "scenario": "Update incident notification rule returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

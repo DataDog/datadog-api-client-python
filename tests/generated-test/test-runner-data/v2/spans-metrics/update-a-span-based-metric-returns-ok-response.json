@@ -1,0 +1,61 @@
+{
+  "api": "SpansMetrics",
+  "expected_status": 200,
+  "feature": "Spans Metrics",
+  "id": "v2/Spans Metrics/Update a span-based metric returns \"OK\" response",
+  "operation_id": "UpdateSpansMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SpansMetricUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "compute": {
+              "include_percentiles": false
+            },
+            "filter": {
+              "query": "{{ spans_metric.data.attributes.filter.query }}-updated"
+            },
+            "group_by": [
+              {
+                "path": "resource_name",
+                "tag_name": "resource_name"
+              }
+            ]
+          },
+          "type": "spans_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "spans_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/apm/config/metrics/{metric_id}"
+  },
+  "scenario": "Update a span-based metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

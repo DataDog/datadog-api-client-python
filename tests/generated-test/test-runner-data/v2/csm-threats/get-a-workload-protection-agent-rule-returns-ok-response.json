@@ -1,0 +1,51 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 200,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Get a Workload Protection agent rule returns \"OK\" response",
+  "operation_id": "GetCSMThreatsAgentRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "agent_rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "agent_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "policy_id",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}"
+  },
+  "scenario": "Get a Workload Protection agent rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

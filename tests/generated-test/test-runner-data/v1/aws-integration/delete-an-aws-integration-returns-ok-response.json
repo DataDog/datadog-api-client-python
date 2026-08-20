@@ -1,0 +1,28 @@
+{
+  "api": "AWSIntegration",
+  "expected_status": 200,
+  "feature": "AWS Integration",
+  "id": "v1/AWS Integration/Delete an AWS integration returns \"OK\" response",
+  "operation_id": "DeleteAWSAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AWSAccountDeleteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"account_id\": \"{{ timestamp(\"now\") }}00\", \"role_name\": \"DatadogAWSIntegrationRole\"}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/aws"
+  },
+  "scenario": "Delete an AWS integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

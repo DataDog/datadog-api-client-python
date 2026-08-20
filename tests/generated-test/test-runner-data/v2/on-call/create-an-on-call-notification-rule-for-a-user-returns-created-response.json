@@ -1,0 +1,59 @@
+{
+  "api": "On-Call",
+  "expected_status": 201,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Create an On-Call notification rule for a user returns \"Created\" response",
+  "operation_id": "CreateUserNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateOnCallNotificationRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "category": "high_urgency",
+            "delay_minutes": 0
+          },
+          "relationships": {
+            "channel": {
+              "data": {
+                "id": "{{ oncall_email_notification_channel.data.id }}",
+                "type": "notification_channels"
+              }
+            }
+          },
+          "type": "notification_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/users/{user_id}/notification-rules"
+  },
+  "scenario": "Create an On-Call notification rule for a user returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

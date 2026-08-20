@@ -1,0 +1,42 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 200,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Reorder Groups returns \"OK\" response",
+  "operation_id": "ReorderScanningGroups",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerConfigRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "id": "{{ configuration.data.id }}",
+          "relationships": {
+            "groups": {
+              "data": [
+                {
+                  "id": "{{ group.data.id }}",
+                  "type": "sensitive_data_scanner_group"
+                }
+              ]
+            }
+          },
+          "type": "sensitive_data_scanner_configuration"
+        },
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/sensitive-data-scanner/config"
+  },
+  "scenario": "Reorder Groups returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

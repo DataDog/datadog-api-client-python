@@ -1,0 +1,35 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 404,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/Get the list of tags for a device returns \"Not Found\" response",
+  "operation_id": "ListDeviceUserTags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "device_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "unknown_device_id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ndm/tags/devices/{device_id}"
+  },
+  "scenario": "Get the list of tags for a device returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

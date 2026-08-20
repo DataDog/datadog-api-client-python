@@ -1,0 +1,51 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 200,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/Download artifact content returns \"OK\" response",
+  "operation_id": "GetModelLabArtifactContent",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "project_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "2387"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "artifact_path",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "f635c73b70594ab6bb6e212cdf87d0d5/artifacts/lora_model/adapter_config.json"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/artifacts/content"
+  },
+  "scenario": "Download artifact content returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

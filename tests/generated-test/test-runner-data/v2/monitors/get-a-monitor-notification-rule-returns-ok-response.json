@@ -1,0 +1,35 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Get a monitor notification rule returns \"OK\" response",
+  "operation_id": "GetMonitorNotificationRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "monitor_notification_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/notification_rule/{rule_id}"
+  },
+  "scenario": "Get a monitor notification rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

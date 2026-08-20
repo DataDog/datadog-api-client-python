@@ -1,0 +1,52 @@
+{
+  "api": "CIVisibilityTests",
+  "expected_status": 200,
+  "feature": "CI Visibility Tests",
+  "id": "v2/CI Visibility Tests/Aggregate tests events returns \"OK\" response",
+  "operation_id": "AggregateCIAppTestEvents",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CIAppTestsAggregateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "compute": [
+          {
+            "aggregation": "count",
+            "metric": "@test.is_flaky",
+            "type": "total"
+          }
+        ],
+        "filter": {
+          "from": "now-15m",
+          "query": "@language:(python OR go)",
+          "to": "now"
+        },
+        "group_by": [
+          {
+            "facet": "@git.branch",
+            "limit": 10,
+            "sort": {
+              "order": "asc"
+            },
+            "total": false
+          }
+        ],
+        "options": {
+          "timezone": "GMT"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ci/tests/analytics/aggregate"
+  },
+  "scenario": "Aggregate tests events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

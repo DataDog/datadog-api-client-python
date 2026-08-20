@@ -1,0 +1,788 @@
+{
+  "feature": "Org Connections",
+  "recordings": [
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:35.269Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs",
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"connection between orgs 4dee724d-00cc-11ea-a77b-570c9d03c6c5 and 83999dcd-7f97-11f0-8de1-1ecf66f1aa85 is not allowed\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create Org Connection returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:35.429Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"org_connection\",\"id\":\"b5d3a360-d6e2-4af7-8da2-b2ff41b9f5e0\",\"attributes\":{\"created_at\":\"2025-08-26T20:19:35.554634+00:00\",\"connection_types\":[\"logs\"]},\"relationships\":{\"source_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"name\":\"DD Integration Tests (321813)\"}},\"sink_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\",\"name\":\"Cross-Org BDD Test Org\"}},\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\",\"name\":\"Amy Li\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"connection between orgs 4dee724d-00cc-11ea-a77b-570c9d03c6c5 and 83999dcd-7f97-11f0-8de1-1ecf66f1aa85 already exists\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/b5d3a360-d6e2-4af7-8da2-b2ff41b9f5e0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create Org Connection returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:35.916Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "nonexistent-org-id",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Not found\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Create Org Connection returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:36.045Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"org_connection\",\"id\":\"40bbb1c2-32b2-4aa3-8a1a-5d93b5382e3d\",\"attributes\":{\"created_at\":\"2025-08-26T20:19:36.177236+00:00\",\"connection_types\":[\"logs\"]},\"relationships\":{\"source_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"name\":\"DD Integration Tests (321813)\"}},\"sink_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\",\"name\":\"Cross-Org BDD Test Org\"}},\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\",\"name\":\"Amy Li\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/40bbb1c2-32b2-4aa3-8a1a-5d93b5382e3d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create Org Connection returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:36.363Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/malformed_id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"connection id must be a valid uuid\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete Org Connection returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:36.481Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"org connection with id:00000000-0000-0000-0000-000000000000 not found not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete Org Connection returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:36.615Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"org_connection\",\"id\":\"7b01f30c-6100-4cbf-b583-a5e353d7edb7\",\"attributes\":{\"created_at\":\"2025-08-26T20:19:36.737560+00:00\",\"connection_types\":[\"logs\"]},\"relationships\":{\"source_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"name\":\"DD Integration Tests (321813)\"}},\"sink_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\",\"name\":\"Cross-Org BDD Test Org\"}},\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\",\"name\":\"Amy Li\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/7b01f30c-6100-4cbf-b583-a5e353d7edb7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/7b01f30c-6100-4cbf-b583-a5e353d7edb7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"org connection with id:7b01f30c-6100-4cbf-b583-a5e353d7edb7 not found not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete Org Connection returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:37.084Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"total_count\":0,\"total_filtered_count\":0}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List Org Connections returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:37.212Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"org_connection\",\"id\":\"76e1a71f-81e5-40c8-b8e0-1b98265d26fe\",\"attributes\":{\"created_at\":\"2025-08-26T20:19:37.335819+00:00\",\"connection_types\":[\"logs\"]},\"relationships\":{\"source_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"name\":\"DD Integration Tests (321813)\"}},\"sink_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\",\"name\":\"Cross-Org BDD Test Org\"}},\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\",\"name\":\"Amy Li\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs",
+                      "logs"
+                    ]
+                  },
+                  "id": "76e1a71f-81e5-40c8-b8e0-1b98265d26fe",
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/org_connections/76e1a71f-81e5-40c8-b8e0-1b98265d26fe",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Validation failed for input.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/76e1a71f-81e5-40c8-b8e0-1b98265d26fe",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update Org Connection returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:37.609Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"org_connection\",\"id\":\"d348b9ab-c7cf-4298-83a6-b4762fafff5e\",\"attributes\":{\"created_at\":\"2025-08-26T20:19:37.737812+00:00\",\"connection_types\":[\"logs\"]},\"relationships\":{\"source_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"name\":\"DD Integration Tests (321813)\"}},\"sink_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\",\"name\":\"Cross-Org BDD Test Org\"}},\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\",\"name\":\"Amy Li\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs",
+                      "metrics"
+                    ]
+                  },
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/org_connections/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Org connection with id:00000000-0000-0000-0000-000000000000 not found not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/d348b9ab-c7cf-4298-83a6-b4762fafff5e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update Org Connection returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Org Connections",
+      "frozen_at": "2025-08-26T20:19:38.089Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs"
+                    ]
+                  },
+                  "relationships": {
+                    "sink_org": {
+                      "data": {
+                        "id": "83999dcd-7f97-11f0-8de1-1ecf66f1aa85",
+                        "type": "orgs"
+                      }
+                    }
+                  },
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/org_connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"org_connection\",\"id\":\"0105233a-4d7b-4c52-b364-cc968d003de0\",\"attributes\":{\"created_at\":\"2025-08-26T20:19:38.208326+00:00\",\"connection_types\":[\"logs\"]},\"relationships\":{\"source_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"name\":\"DD Integration Tests (321813)\"}},\"sink_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\",\"name\":\"Cross-Org BDD Test Org\"}},\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\",\"name\":\"Amy Li\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "connection_types": [
+                      "logs",
+                      "metrics"
+                    ]
+                  },
+                  "id": "0105233a-4d7b-4c52-b364-cc968d003de0",
+                  "type": "org_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/org_connections/0105233a-4d7b-4c52-b364-cc968d003de0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"org_connection\",\"id\":\"0105233a-4d7b-4c52-b364-cc968d003de0\",\"attributes\":{\"created_at\":\"2025-08-26T20:19:38.208326+00:00\",\"connection_types\":[\"logs\",\"metrics\"]},\"relationships\":{\"source_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}},\"sink_org\":{\"data\":{\"type\":\"orgs\",\"id\":\"83999dcd-7f97-11f0-8de1-1ecf66f1aa85\"}},\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"03e6bc43-7ecc-11f0-b50b-f28f2be41840\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/org_connections/0105233a-4d7b-4c52-b364-cc968d003de0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update Org Connection returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

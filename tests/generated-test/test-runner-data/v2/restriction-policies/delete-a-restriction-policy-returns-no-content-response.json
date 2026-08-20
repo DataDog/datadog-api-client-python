@@ -1,0 +1,35 @@
+{
+  "api": "RestrictionPolicies",
+  "expected_status": 204,
+  "feature": "Restriction Policies",
+  "id": "v2/Restriction Policies/Delete a restriction policy returns \"No Content\" response",
+  "operation_id": "DeleteRestrictionPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "resource_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "dashboard:test-delete"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/restriction_policy/{resource_id}"
+  },
+  "scenario": "Delete a restriction policy returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

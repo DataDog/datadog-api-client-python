@@ -1,0 +1,54 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 400,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Create a RUM retention filter returns \"Bad Request\" response",
+  "operation_id": "CreateRetentionFilter",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumRetentionFilterCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "event_type": "session",
+            "name": "Test creating retention filter",
+            "query": "",
+            "sample_rate": 25
+          },
+          "type": "invalid_type"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/retention_filters"
+  },
+  "scenario": "Create a RUM retention filter returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

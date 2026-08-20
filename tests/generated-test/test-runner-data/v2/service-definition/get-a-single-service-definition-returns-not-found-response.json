@@ -1,0 +1,35 @@
+{
+  "api": "ServiceDefinition",
+  "expected_status": 404,
+  "feature": "Service Definition",
+  "id": "v2/Service Definition/Get a single service definition returns \"Not Found\" response",
+  "operation_id": "GetServiceDefinition",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "service_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "not-a-service"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/services/definitions/{service_name}"
+  },
+  "scenario": "Get a single service definition returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

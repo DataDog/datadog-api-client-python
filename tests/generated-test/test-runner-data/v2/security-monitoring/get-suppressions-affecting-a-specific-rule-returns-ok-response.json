@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get suppressions affecting a specific rule returns \"OK\" response",
+  "operation_id": "GetSuppressionsAffectingRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "security_rule.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/configuration/suppressions/rules/{rule_id}"
+  },
+  "scenario": "Get suppressions affecting a specific rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

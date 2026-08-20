@@ -1,0 +1,35 @@
+{
+  "api": "CloudNetworkMonitoring",
+  "expected_status": 400,
+  "feature": "Cloud Network Monitoring",
+  "id": "v2/Cloud Network Monitoring/Get all aggregated connections returns \"Bad Request\" response",
+  "operation_id": "GetAggregatedConnections",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "limit",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 8000
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/network/connections/aggregate"
+  },
+  "scenario": "Get all aggregated connections returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

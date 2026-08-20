@@ -1,0 +1,35 @@
+{
+  "api": "CaseManagementAttribute",
+  "expected_status": 200,
+  "feature": "Case Management Attribute",
+  "id": "v2/Case Management Attribute/Get all custom attributes config of case type returns \"OK\" response",
+  "operation_id": "GetAllCustomAttributeConfigsByCaseType",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_type_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case_type.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/types/{case_type_id}/custom_attributes"
+  },
+  "scenario": "Get all custom attributes config of case type returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

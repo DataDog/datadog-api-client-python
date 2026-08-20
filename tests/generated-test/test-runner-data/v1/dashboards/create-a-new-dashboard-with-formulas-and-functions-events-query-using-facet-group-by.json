@@ -1,0 +1,65 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with formulas and functions events query using facet group by",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with events facet group_by",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "events",
+                      "group_by": [
+                        {
+                          "facet": "service",
+                          "limit": 10
+                        }
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": ""
+                      }
+                    }
+                  ],
+                  "response_format": "timeseries"
+                }
+              ],
+              "type": "timeseries"
+            },
+            "layout": {
+              "height": 2,
+              "width": 4,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with formulas and functions events query using facet group by",
+  "schema_version": 1,
+  "version": "v1"
+}

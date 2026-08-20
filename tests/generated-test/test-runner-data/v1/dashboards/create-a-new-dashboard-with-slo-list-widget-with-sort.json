@@ -1,0 +1,62 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with slo list widget with sort",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/slo_list_widget_with_sort.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "query": {
+                    "limit": 75,
+                    "query_string": "env:prod AND service:my-app",
+                    "sort": [
+                      {
+                        "column": "status.sli",
+                        "order": "asc"
+                      }
+                    ]
+                  },
+                  "request_type": "slo_list"
+                }
+              ],
+              "title_align": "left",
+              "title_size": "16",
+              "type": "slo_list"
+            },
+            "layout": {
+              "height": 21,
+              "width": 60,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with slo list widget with sort",
+  "schema_version": 1,
+  "version": "v1"
+}

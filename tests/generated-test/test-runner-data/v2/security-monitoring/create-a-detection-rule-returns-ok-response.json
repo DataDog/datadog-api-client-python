@@ -1,0 +1,64 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a detection rule returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "condition": "a > 0",
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "filters": [],
+        "isEnabled": true,
+        "message": "Test rule",
+        "name": "{{ unique }}",
+        "options": {
+          "evaluationWindow": 900,
+          "keepAlive": 3600,
+          "maxSignalDuration": 86400
+        },
+        "queries": [
+          {
+            "aggregation": "count",
+            "distinctFields": [],
+            "groupByFields": [],
+            "metric": "",
+            "query": "@test:true"
+          }
+        ],
+        "referenceTables": [
+          {
+            "checkPresence": true,
+            "columnName": "value",
+            "logFieldPath": "testtag",
+            "ruleQueryName": "a",
+            "tableName": "synthetics_test_reference_table_dont_delete"
+          }
+        ],
+        "tags": [],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules"
+  },
+  "scenario": "Create a detection rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

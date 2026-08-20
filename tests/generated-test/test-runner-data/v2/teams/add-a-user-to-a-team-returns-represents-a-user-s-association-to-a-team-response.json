@@ -1,0 +1,58 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/Add a user to a team returns \"Represents a user's association to a team\" response",
+  "operation_id": "CreateTeamMembership",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UserTeamRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "role": "admin"
+          },
+          "relationships": {
+            "user": {
+              "data": {
+                "id": "{{user.data.id}}",
+                "type": "users"
+              }
+            }
+          },
+          "type": "team_memberships"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/memberships"
+  },
+  "scenario": "Add a user to a team returns \"Represents a user's association to a team\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,59 @@
+{
+  "api": "ActionsDatastores",
+  "expected_status": 400,
+  "feature": "Actions Datastores",
+  "id": "v2/Actions Datastores/Bulk write datastore items returns \"Bad Request\" response",
+  "operation_id": "BulkWriteDatastoreItems",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "BulkPutAppsDatastoreItemsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "values": [
+              {
+                "id": "cust_3141",
+                "name": "Johnathan"
+              },
+              {
+                "badPrimaryKey": "key2",
+                "name": "Johnathan"
+              }
+            ]
+          },
+          "type": "items"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "datastore_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "datastore.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions-datastores/{datastore_id}/items/bulk"
+  },
+  "scenario": "Bulk write datastore items returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

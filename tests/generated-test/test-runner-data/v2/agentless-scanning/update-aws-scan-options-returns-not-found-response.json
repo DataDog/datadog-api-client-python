@@ -1,0 +1,52 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 404,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/Update AWS scan options returns \"Not Found\" response",
+  "operation_id": "UpdateAwsScanOptions",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AwsScanOptionsUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "vuln_containers_os": true,
+            "vuln_host_os": true
+          },
+          "id": "000000000005",
+          "type": "aws_scan_options"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "000000000005"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/agentless_scanning/accounts/aws/{account_id}"
+  },
+  "scenario": "Update AWS scan options returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

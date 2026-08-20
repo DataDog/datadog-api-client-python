@@ -1,0 +1,54 @@
+{
+  "api": "Incidents",
+  "expected_status": 404,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Update incident notification template returns \"Not Found\" response",
+  "operation_id": "UpdateIncidentNotificationTemplate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchIncidentNotificationTemplateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "category": "update",
+            "content": "Incident Status Update: For more details, visit the incident page.",
+            "name": "Updated Template Name",
+            "subject": "Incident Update"
+          },
+          "id": "00000000-1111-2222-3333-444444444444",
+          "type": "notification_templates"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-1111-2222-3333-444444444444"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/notification-templates/{id}"
+  },
+  "scenario": "Update incident notification template returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,55 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v1/Downtimes/Update a downtime returns \"OK\" response",
+  "operation_id": "UpdateDowntime",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Downtime",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "{{ unique}}-updated",
+        "mute_first_recovery_notification": true,
+        "notify_end_states": [
+          "alert",
+          "no data",
+          "warn"
+        ],
+        "notify_end_types": [
+          "canceled",
+          "expired"
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "downtime_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "path": "downtime.id",
+          "type": "fixture"
+        },
+        "style": "simple"
+      }
+    ],
+    "path": "/api/v1/downtime/{downtime_id}"
+  },
+  "scenario": "Update a downtime returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

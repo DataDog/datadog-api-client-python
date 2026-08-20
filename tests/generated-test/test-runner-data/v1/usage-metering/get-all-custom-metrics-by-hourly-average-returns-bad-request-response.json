@@ -1,0 +1,18 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 400,
+  "feature": "Usage Metering",
+  "id": "v1/Usage Metering/Get all custom metrics by hourly average returns \"Bad Request\" response",
+  "operation_id": "GetUsageTopAvgMetrics",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/usage/top_avg_metrics"
+  },
+  "scenario": "Get all custom metrics by hourly average returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "Forms",
+  "expected_status": 200,
+  "feature": "Forms",
+  "id": "v2/Forms/Publish a form version returns \"OK\" response",
+  "operation_id": "PublishForm",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PublishFormRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "version": 1
+          },
+          "type": "form_publications"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "form_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "form.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/forms/{form_id}/publish"
+  },
+  "scenario": "Publish a form version returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

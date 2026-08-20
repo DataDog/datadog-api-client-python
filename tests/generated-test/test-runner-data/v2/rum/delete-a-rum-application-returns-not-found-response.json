@@ -1,0 +1,35 @@
+{
+  "api": "RUM",
+  "expected_status": 404,
+  "feature": "RUM",
+  "id": "v2/RUM/Delete a RUM application returns \"Not Found\" response",
+  "operation_id": "DeleteRUMApplication",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "abcde-12345"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{id}"
+  },
+  "scenario": "Delete a RUM application returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

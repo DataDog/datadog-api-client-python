@@ -1,0 +1,18 @@
+{
+  "api": "IPAllowlist",
+  "expected_status": 200,
+  "feature": "IP Allowlist",
+  "id": "v2/IP Allowlist/Get IP Allowlist returns \"OK\" response",
+  "operation_id": "GetIPAllowlist",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ip_allowlist"
+  },
+  "scenario": "Get IP Allowlist returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,45 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a ticket creation rule returns \"Successfully created the ticket creation rule\" response",
+  "operation_id": "CreateSecurityFindingsAutomationTicketCreationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TicketCreationRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "max_tickets_per_day": 10,
+              "project_id": "11111111-1111-1111-1111-111111111111",
+              "target": "jira"
+            },
+            "enabled": true,
+            "name": "{{ unique }}",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:staging"
+            }
+          },
+          "type": "ticket_creation_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/ticket_creation_rules"
+  },
+  "scenario": "Create a ticket creation rule returns \"Successfully created the ticket creation rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

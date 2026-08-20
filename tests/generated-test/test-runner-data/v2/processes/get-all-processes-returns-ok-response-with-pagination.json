@@ -1,0 +1,35 @@
+{
+  "api": "Processes",
+  "expected_status": 200,
+  "feature": "Processes",
+  "id": "v2/Processes/Get all processes returns \"OK\" response with pagination",
+  "operation_id": "ListProcesses",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/processes"
+  },
+  "scenario": "Get all processes returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

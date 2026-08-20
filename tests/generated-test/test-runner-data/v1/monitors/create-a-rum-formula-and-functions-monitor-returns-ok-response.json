@@ -1,0 +1,71 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a RUM formula and functions monitor returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "some message Notify: @hipchat-channel",
+        "name": "{{ unique }}",
+        "options": {
+          "thresholds": {
+            "critical": 0.8
+          },
+          "variables": [
+            {
+              "compute": {
+                "aggregation": "count"
+              },
+              "data_source": "rum",
+              "group_by": [],
+              "indexes": [
+                "*"
+              ],
+              "name": "query2",
+              "search": {
+                "query": ""
+              }
+            },
+            {
+              "compute": {
+                "aggregation": "count"
+              },
+              "data_source": "rum",
+              "group_by": [],
+              "indexes": [
+                "*"
+              ],
+              "name": "query1",
+              "search": {
+                "query": "status:error"
+              }
+            }
+          ]
+        },
+        "priority": 3,
+        "query": "formula(\"query2 / query1 * 100\").last(\"15m\") >= 0.8",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "rum alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a RUM formula and functions monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

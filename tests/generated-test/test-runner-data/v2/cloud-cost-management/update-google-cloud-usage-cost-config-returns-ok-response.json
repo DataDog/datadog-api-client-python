@@ -1,0 +1,50 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Update Google Cloud Usage Cost config returns \"OK\" response",
+  "operation_id": "UpdateCostGCPUsageCostConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "GCPUsageCostConfigPatchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "is_enabled": true
+          },
+          "type": "gcp_uc_config_patch_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "cloud_account_id",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 100
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/gcp_uc_config/{cloud_account_id}"
+  },
+  "scenario": "Update Google Cloud Usage Cost config returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

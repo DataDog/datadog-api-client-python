@@ -1,0 +1,35 @@
+{
+  "api": "AgentlessScanning",
+  "expected_status": 404,
+  "feature": "Agentless Scanning",
+  "id": "v2/Agentless Scanning/Get AWS scan options returns \"Not Found\" response",
+  "operation_id": "GetAwsScanOptions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "404404404404"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/agentless_scanning/accounts/aws/{account_id}"
+  },
+  "scenario": "Get AWS scan options returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

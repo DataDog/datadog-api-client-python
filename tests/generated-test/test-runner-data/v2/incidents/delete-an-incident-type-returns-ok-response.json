@@ -1,0 +1,35 @@
+{
+  "api": "Incidents",
+  "expected_status": 204,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Delete an incident type returns \"OK\" response",
+  "operation_id": "DeleteIncidentType",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_type_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident_type.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/types/{incident_type_id}"
+  },
+  "scenario": "Delete an incident type returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

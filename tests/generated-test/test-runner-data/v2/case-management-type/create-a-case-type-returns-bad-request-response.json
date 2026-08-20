@@ -1,0 +1,35 @@
+{
+  "api": "CaseManagementType",
+  "expected_status": 400,
+  "feature": "Case Management Type",
+  "id": "v2/Case Management Type/Create a case type returns \"Bad Request\" response",
+  "operation_id": "CreateCaseType",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CaseTypeCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Investigations done in case management",
+            "emoji": "notanemoji",
+            "name": "Investigation"
+          },
+          "type": "case_type"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cases/types"
+  },
+  "scenario": "Create a case type returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,315 @@
+{
+  "feature": "CI Visibility Tests",
+  "recordings": [
+    {
+      "feature": "CI Visibility Tests",
+      "frozen_at": "2022-10-21T14:50:52.443Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "compute": [
+                  {
+                    "aggregation": "count",
+                    "metric": "@test.is_flaky",
+                    "type": "total"
+                  }
+                ],
+                "filter": {
+                  "from": "now-15m",
+                  "query": "@language:(python OR go)",
+                  "to": "now"
+                },
+                "group_by": [
+                  {
+                    "facet": "@git.branch",
+                    "limit": 10,
+                    "sort": {
+                      "order": "asc"
+                    },
+                    "total": false
+                  }
+                ],
+                "options": {
+                  "timezone": "GMT"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ci/tests/analytics/aggregate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6eyJAZ2l0LmJyYW5jaCI6WyJDTElQLTM4MSIsImFsZWphbmRyby50b3JyZXMvbWlncmF0ZS10by1uZXctaG1zLWVuZHBvaW50IiwiYW1vbmdpbC9hZGQtcmF0ZS1saW1pdC1uYW1lLW1ldGFkYXRhLXRvLWFwaXZpZXdlciIsImFzYWQxMTIzL3Jlc3BvbmRlci10eXBlcy1xYS1maXhlcyIsImF3L2RleHN0ci10YWdzLWZvci1rZXkiLCJjcmVhdGVfaW52aXRlX29yZ19hcGkiLCJkYXZlLmhhbmR5L2ZpeC1uby1yZXNvdXJjZWlkIiwiZWRyZXZvL2dpdGRiLW1lbW9yeS1sZWFrIiwiZmlzaGVyL2FkZC1rOHMtbmFtZXNwYWNlcyIsImZsb3JlbnRjbGFycmV0L215cHktZXhjbHVkZSJdfX0\"},\"elapsed\":43,\"request_id\":\"pddv1ChZoVGp4aTdKV1FYQ1ZoM19LUF90eGx3IiwKHB0cQpJ-X_9gd5n7p8wRMAoRGyyFQlDJbjpK5SkSDEclibMc2UXCLboJqw\",\"status\":\"done\"},\"data\":{\"buckets\":[{\"by\":{\"@git.branch\":\"branch1\"},\"computes\":{\"c0\":345}},{\"by\":{\"@git.branch\":\"branch2\"},\"computes\":{\"c0\":309}},{\"by\":{\"@git.branch\":\"branch2\"},\"computes\":{\"c0\":30597}},{\"by\":{\"@git.branch\":\"branch3\"},\"computes\":{\"c0\":43457}},{\"by\":{\"@git.branch\":\"branch3\"},\"computes\":{\"c0\":96}},{\"by\":{\"@git.branch\":\"branch4\"},\"computes\":{\"c0\":382}},{\"by\":{\"@git.branch\":\"branch5\"},\"computes\":{\"c0\":16891}},{\"by\":{\"@git.branch\":\"branch6\"},\"computes\":{\"c0\":93}},{\"by\":{\"@git.branch\":\"branch7\"},\"computes\":{\"c0\":46490}},{\"by\":{\"@git.branch\":\"branch8\"},\"computes\":{\"c0\":370}}]}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Aggregate tests events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Tests",
+      "frozen_at": "2022-10-21T14:59:21.171Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/ci/tests/events",
+            "query": [
+              [
+                "filter[from]",
+                "2022-10-21T14:58:51.171Z"
+              ],
+              [
+                "filter[query]",
+                "@test.service:web-ui-tests"
+              ],
+              [
+                "filter[to]",
+                "2022-10-21T14:59:21.171Z"
+              ],
+              [
+                "page[limit]",
+                "5"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"AQAAAYP7DjkT1jtY0AAAAABBWVA3RGprVEFBQXFjVllsa2kwWm1LZGU\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"863929e666e072fd\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"javascript/datadog/organization-settings/components/sensitive-data-scanner/sensitive-data-scanner-validation.unit.ts\"},\"type\":\"test\",\"has_parameters\":false,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.coverage.config.js --color --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"javascript/datadog/organization-settings/components/sensitive-data-scanner/sensitive-data-scanner-validation.unit.ts\",\"full_name\":\"javascript/datadog/organization-settings/components/sensitive-data-scanner/sensitive-data-scanner-validation.unit.ts.shouldDisplaySensitiveDataWarning it should not display a warning for an empty string: \\\"\\\"\",\"service\":\"web-ui-tests\",\"name\":\"shouldDisplaySensitiveDataWarning it should not display a warning for an empty string: \\\"\\\"\",\"fingerprint\":\"59d10d35bcee973b\",\"status\":\"pass\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479980,\"name\":\"DataDog/repo\",\"id\":\"10631816\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10631816\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"optional-jobs\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test-coverage\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184832404\"}},\"sampling\":{\"priority\":1},\"start\":1666364356883000320,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":401123,\"test_session\":{\"fingerprint\":\"d0266bed689fa60c\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T14:49:17+00:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666363757000},\"author\":{\"date\":\"2022-10-21T14:49:17+00:00\",\"name\":\"Joe\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666363757000},\"message\":\"Remove suppression modal typo (#70411)\\n\\nCo-authored-by: r@datadoghq.com\",\"sha\":\"d04246da2ddbf9ceb599e7f4b5b5cbbca315bc0a\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"preprod\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"8d4be021-f2f7-4e63-b3c3-93d62ba0d1fa\"},\"tags\":[\"source:apm\",\"source:apm\"]}},{\"id\":\"AQAAAYP7DjhlyuNS-QAAAABBWVA3RGpobEFBRHoyX3Nfd21QQktySkE\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"b50f2adbaf2118cd\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"javascript/datadog/workflow-automation/lib/shared/validation.unit.ts\"},\"type\":\"test\",\"has_parameters\":true,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.browser.config.js --color --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"javascript/datadog/workflow-automation/lib/shared/validation.unit.ts\",\"full_name\":\"javascript/datadog/workflow-automation/lib/shared/validation.unit.ts.Validate XML Should identifies good and bad XML\",\"service\":\"web-ui-tests\",\"name\":\"Validate XML Should identifies good and bad XML\",\"fingerprint\":\"fe78dde37925d00d\",\"parameters\":\"{\\\"arguments\\\":[\\\"<a><b>foo</a>\\\",false],\\\"metadata\\\":{}}\",\"status\":\"pass\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479973,\"name\":\"DataDog/repo\",\"id\":\"10631599\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10631599\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"test\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184829344\"}},\"sampling\":{\"priority\":1},\"start\":1666364356707000320,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":2591797,\"test_session\":{\"fingerprint\":\"6bf54b12dc4341b8\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T23:44:50+09:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666363490000},\"author\":{\"date\":\"2022-10-21T23:44:50+09:00\",\"name\":\"Joe\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666363490000},\"message\":\"Merge branch 'preprod' into babbins/core-app-docs-landing-page\",\"sha\":\"dbd090f623d681a7b6a65acb826ccf3968bb5d91\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"babbins/core-app-docs-landing-page\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"7020ff7c-a7f9-466d-9124-84720cdfd15c\"},\"tags\":[\"source:apm\",\"source:apm\"]}},{\"id\":\"AQAAAYP7DjhfyuNS4wAAAABBWVA3RGpoZkFBQXVhaUhDM2JqdXJrY1c\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"ea677b198d03d0f1\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"internal-apps/sdp/src/components/jira-template/TeamBoardCreator/__test__/TeamBoardCreator.unit.jsx\"},\"type\":\"test\",\"has_parameters\":false,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.browser.config.js --color --testNamePattern=\\\\[flaky\\\\] --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"internal-apps/sdp/src/components/jira-template/TeamBoardCreator/__test__/TeamBoardCreator.unit.jsx\",\"full_name\":\"internal-apps/sdp/src/components/jira-template/TeamBoardCreator/__test__/TeamBoardCreator.unit.jsx.TeamBoardCreator Show Error Message for Bad Mutation found in Errors\",\"service\":\"web-ui-tests\",\"name\":\"TeamBoardCreator Show Error Message for Bad Mutation found in Errors\",\"fingerprint\":\"65589132d12f5a9\",\"status\":\"skip\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479992,\"name\":\"DataDog/repo\",\"id\":\"10632081\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10632081\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"optional-jobs\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test-flaky\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184836749\"}},\"sampling\":{\"priority\":1},\"start\":1666364356703001344,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":14160,\"test_session\":{\"fingerprint\":\"6957ad04dea312d6\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T10:55:42-04:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666364142000},\"author\":{\"date\":\"2022-10-21T10:55:42-04:00\",\"name\":\"alpinet\",\"email\":\"46504578+alpinet@users.noreply.github.com\",\"date_timestamp\":1666364142000},\"message\":\"Merge branch 'preprod' into alpinet/stripe_tile\",\"sha\":\"00c36e494ce1db0ef34245024904ae09f995a382\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"alpinet/stripe_tile\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"6e821bb2-2f25-4b80-9f0e-168ce1dc57e5\"},\"tags\":[\"source:apm\",\"source:apm\"]}}],\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWVA3RGpoYWdVb3luQUFBQUFCQldWQTNSR3BvWVVGQlFVaFJSamR3TWtKRlRXWklOVEkifQ\"}},\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=2022-10-21T14%3A58%3A51.171Z&filter%5Bquery%5D=%40test.service%3Aweb-ui-tests&filter%5Bto%5D=2022-10-21T14%3A59%3A21.171Z&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA3RGpoYWdVb3luQUFBQUFCQldWQTNSR3BvWVVGQlFVaFJSamR3TWtKRlRXWklOVEkifQ&page%5Blimit%5D=5\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of tests events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Tests",
+      "frozen_at": "2022-10-21T14:44:11.511Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/ci/tests/events",
+            "query": [
+              [
+                "filter[from]",
+                "2022-10-21T14:43:41.511Z"
+              ],
+              [
+                "filter[to]",
+                "2022-10-21T14:44:11.511Z"
+              ],
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"AQAAAYP7AGGfo7r-agAAAABBWVA3QUdHZkFBQlRMSUtLNkdvWHZNSUs\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"6c8995a36c21161e\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"javascript/datadog/dashboard/components/widgets/AlertGraph/alert-graph.utils.unit.ts\"},\"type\":\"test\",\"has_parameters\":false,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.browser.config.js --color --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"javascript/datadog/dashboard/components/widgets/AlertGraph/alert-graph.utils.unit.ts\",\"full_name\":\"javascript/datadog/dashboard/components/widgets/AlertGraph/alert-graph.utils.unit.ts.Alert Graph utils getAlertPeriod should return the alert period\",\"service\":\"web-ui-tests\",\"name\":\"Alert Graph utils getAlertPeriod should return the alert period\",\"fingerprint\":\"cf1b658113e4fe46\",\"status\":\"pass\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479961,\"name\":\"DataDog/repo\",\"id\":\"10631454\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10631454\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"test\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184825583\"}},\"sampling\":{\"priority\":1},\"start\":1666363449758001664,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":1797119,\"test_session\":{\"fingerprint\":\"6bf54b12dc4341b8\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T10:39:58-04:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666363198000},\"author\":{\"date\":\"2022-10-21T10:39:58-04:00\",\"name\":\"Joe\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666363198000},\"message\":\"Merge branch 'preprod' into zach.anderson/sendgrid_last_login\",\"sha\":\"ddc2d8cf8a68ca7c67553ea12d41b0df5d069bf7\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"zach.anderson/sendgrid_last_login\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"d3f4759f-5bda-4dab-a494-0736b2671798\"},\"tags\":[\"source:apm\",\"source:apm\"]}},{\"id\":\"AQAAAYP7AGE4o7r-XAAAAABBWVA3QUdFNEFBQ20wc3BXLWNYUDB5Z1M\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"18538434d1355cce\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"javascript/datadog/logs/components/UnifiedExplorer/export-csv.helpers.unit.ts\"},\"type\":\"test\",\"has_parameters\":false,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.browser.config.js --color --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"javascript/datadog/logs/components/UnifiedExplorer/export-csv.helpers.unit.ts\",\"full_name\":\"javascript/datadog/logs/components/UnifiedExplorer/export-csv.helpers.unit.ts.sanitizeCell should add a single-quote at the beginning if necessary (cell='')\",\"service\":\"web-ui-tests\",\"name\":\"sanitizeCell should add a single-quote at the beginning if necessary (cell='')\",\"fingerprint\":\"e1234fc553a164\",\"status\":\"pass\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479954,\"name\":\"DataDog/repo\",\"id\":\"10631295\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10631295\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"test\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184822096\"}},\"sampling\":{\"priority\":1},\"start\":1666363449656001024,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":961670,\"test_session\":{\"fingerprint\":\"6bf54b12dc4341b8\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T14:33:58+00:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666362838000},\"author\":{\"date\":\"2022-10-21T14:33:58+00:00\",\"name\":\"temporal-github-worker-1[bot]\",\"email\":\"83676731+temporal-github-worker-1[bot]@users.noreply.github.com\",\"date_timestamp\":1666362838000},\"message\":\"{\\\"base_commit\\\":\\\"000e36971943d45210e6c019e1ed6f5fb3f182c5\\\",\\\"head_commit\\\":\\\"87bfaa65b1d93acae749a437b4265d1535e0bcdb\\\"}\\n\",\"sha\":\"0756e4459a560f921c497b5054e7406e812fba70\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"mq-working-branch-6edc20d\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"9878210e-f42c-4786-b3e3-b2203dd4bfc1\"},\"tags\":[\"source:apm\",\"source:apm\"]}}],\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWVA3QUdFNG83ci1YQUFBQUFCQldWQTNRVWRGTkVGQlEyMHdjM0JYTFdOWVVEQjVaMU0ifQ\"}},\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=2022-10-21T14%3A43%3A41.511Z&filter%5Bto%5D=2022-10-21T14%3A44%3A11.511Z&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA3QUdFNG83ci1YQUFBQUFCQldWQTNRVWRGTkVGQlEyMHdjM0JYTFdOWVVEQjVaMU0ifQ&page%5Blimit%5D=2\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/ci/tests/events",
+            "query": [
+              [
+                "filter[from]",
+                "2022-10-21T14:43:41.511Z"
+              ],
+              [
+                "filter[to]",
+                "2022-10-21T14:44:11.511Z"
+              ],
+              [
+                "page[cursor]",
+                "eyJhZnRlciI6IkFRQUFBWVA3QUdFNG83ci1YQUFBQUFCQldWQTNRVWRGTkVGQlEyMHdjM0JYTFdOWVVEQjVaMU0ifQ"
+              ],
+              [
+                "page[limit]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWVA3QUdCdmxSc1pDd0FBQUFCQldWQTNRVWRDZGtGQlFtUlViV0ZTVVhKZmFFVXpiMWcifQ\"}},\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=2022-10-21T14%3A43%3A41.511Z&filter%5Bto%5D=2022-10-21T14%3A44%3A11.511Z&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA3QUdCdmxSc1pDd0FBQUFCQldWQTNRVWRDZGtGQlFtUlViV0ZTVVhKZmFFVXpiMWcifQ&page%5Blimit%5D=2\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of tests events returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Tests",
+      "frozen_at": "2022-10-21T15:04:00.502Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "query": "@test.service:web-ui-tests AND @test.status:skip",
+                  "to": "now"
+                },
+                "options": {
+                  "timezone": "GMT"
+                },
+                "page": {
+                  "limit": 25
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ci/tests/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"AQAAAYP7BNMIuIAxxAAAAABBWVA3Qk5NSUFBQ3dKNTJFSjhrZXlTZ0s\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"821da1fe0511456d\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"javascript/datadog/apps-sdk/internal/lib/managers/app-manager-with-controller/controller-manager.unit.ts\"},\"type\":\"test\",\"has_parameters\":false,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.browser.config.js --color --testNamePattern=\\\\[flaky\\\\] --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"javascript/datadog/apps-sdk/internal/lib/managers/app-manager-with-controller/controller-manager.unit.ts\",\"full_name\":\"javascript/datadog/apps-sdk/internal/lib/managers/app-manager-with-controller/controller-manager.unit.ts.request() delegates to the main iframe controller request method\",\"service\":\"web-ui-tests\",\"name\":\"request() delegates to the main iframe controller request method\",\"fingerprint\":\"3dbce8739d2972f9\",\"status\":\"skip\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479973,\"name\":\"DataDog/repo\",\"id\":\"10631599\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10631599\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"optional-jobs\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test-flaky\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184829407\"}},\"sampling\":{\"priority\":1},\"start\":1666363740936000512,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":18799,\"test_session\":{\"fingerprint\":\"6957ad04dea312d6\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T23:44:50+09:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666363490000},\"author\":{\"date\":\"2022-10-21T23:44:50+09:00\",\"name\":\"Joe\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666363490000},\"message\":\"Merge branch 'preprod' into babbins/core-app-docs-landing-page\",\"sha\":\"dbd090f623d681a7b6a65acb826ccf3968bb5d91\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"babbins/core-app-docs-landing-page\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"1f3e8a86-145c-4856-9e13-5228bed9a30e\"},\"tags\":[\"source:apm\",\"source:apm\"]}},{\"id\":\"AQAAAYP7BNMIR5G-XgAAAABBWVA3Qk5NSUFBQ3BDUTR2ZlFfMDRQQUo\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"b3887a56ac7dce6b\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"javascript/datadog/trace/components/trace/SpanNetworks/span-networks.unit.tsx\"},\"type\":\"test\",\"has_parameters\":false,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.browser.config.js --color --testNamePattern=\\\\[flaky\\\\] --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"javascript/datadog/trace/components/trace/SpanNetworks/span-networks.unit.tsx\",\"full_name\":\"javascript/datadog/trace/components/trace/SpanNetworks/span-networks.unit.tsx.getDefaultFilter() should return a container filter\",\"service\":\"web-ui-tests\",\"name\":\"getDefaultFilter() should return a container filter\",\"fingerprint\":\"133b6d44468c6022\",\"status\":\"skip\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479966,\"name\":\"DataDog/repo\",\"id\":\"10631485\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10631485\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"optional-jobs\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test-flaky\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184826196\"}},\"sampling\":{\"priority\":1},\"start\":1666363740936000768,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":19287,\"test_session\":{\"fingerprint\":\"6957ad04dea312d6\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T10:40:38-04:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666363238000},\"author\":{\"date\":\"2022-10-21T10:40:38-04:00\",\"name\":\"Joe\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666363238000},\"message\":\"Merge branch 'preprod' into alpinet/github_api_endpoint_ticket\",\"sha\":\"c22e7de6ca6bcc4d58b960fce095ebdbc4fc693a\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"alpinet/github_api_endpoint_ticket\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"afa6f593-d5f0-4627-97c9-8753e83fc1e9\"},\"tags\":[\"source:apm\",\"source:apm\"]}},{\"id\":\"AQAAAYP7BNMJzoQeRQAAAABBWVA3Qk5NSkFBQV9kTGg3U1RCSWpTY1Q\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"44abf7116df30562\"},\"test\":{\"framework_version\":\"0.0.2\",\"codeowners\":[\"@DataDog/repo\"],\"source\":{\"file\":\"javascript/datadog/dataviz/lib/stats/FrameTimer.unit.ts\"},\"type\":\"test\",\"has_parameters\":false,\"jest\":{\"test_runner\":\"jest-circus\"},\"command\":\"jest --config jest.browser.config.js --color --testNamePattern=\\\\[flaky\\\\] --ci --silent --maxWorkers=7\",\"framework\":\"jest\",\"suite\":\"javascript/datadog/dataviz/lib/stats/FrameTimer.unit.ts\",\"full_name\":\"javascript/datadog/dataviz/lib/stats/FrameTimer.unit.ts.FrameTimer should capture timings with a GPU timer\",\"service\":\"web-ui-tests\",\"name\":\"FrameTimer should capture timings with a GPU timer\",\"fingerprint\":\"99424c8cd4b1362b\",\"status\":\"skip\"},\"os\":{\"version\":\"5.15.0-1017-aws\",\"platform\":\"linux\",\"architecture\":\"x64\"},\"ci\":{\"pipeline\":{\"number\":479961,\"name\":\"DataDog/repo\",\"id\":\"10631454\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10631454\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"optional-jobs\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"unit-test-flaky\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184825642\"}},\"sampling\":{\"priority\":1},\"start\":1666363740937000448,\"runtime\":{\"name\":\"node\",\"version\":\"v16.3.0\"},\"language\":\"javascript\",\"env\":\"ci\",\"version\":\"0.0.2\",\"duration\":18799,\"test_session\":{\"fingerprint\":\"6957ad04dea312d6\"},\"library_version\":\"3.4.0\",\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T10:39:58-04:00\",\"name\":\"GitHub\",\"email\":\"noreply@github.com\",\"date_timestamp\":1666363198000},\"author\":{\"date\":\"2022-10-21T10:39:58-04:00\",\"name\":\"Joe\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666363198000},\"message\":\"Merge branch 'preprod' into zach.anderson/sendgrid_last_login\",\"sha\":\"ddc2d8cf8a68ca7c67553ea12d41b0df5d069bf7\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"zach.anderson/sendgrid_last_login\"},\"service\":\"web-ui-tests\",\"runtime-id\":\"7efabaf6-197f-4fcc-9a4d-6ca6c85d3ae4\"},\"tags\":[\"source:apm\",\"source:apm\"]}}],\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWVA3Qk5OWGUtNGVVQUFBQUFCQldWQTNRazVPV0VGQlJGUnBVbkkxZVU5MWJXSnpiM2MifQ\"}},\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=now-15m&filter%5Bquery%5D=%40test.service%3Aweb-ui-tests+AND+%40test.status%3Askip&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA3Qk5OWGUtNGVVQUFBQUFCQldWQTNRazVPV0VGQlJGUnBVbkkxZVU5MWJXSnpiM2MifQ&page%5Blimit%5D=25&sort=timestamp\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search tests events returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Tests",
+      "frozen_at": "2022-10-21T14:47:17.126Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "query": "@test.status:pass AND -@language:python",
+                  "to": "now"
+                },
+                "page": {
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ci/tests/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"AQAAAYP69YODhSYeRgAAAABBWVA2OVlPREFBQjB3THBpOVlKQXRhMEg\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"355d882863b0e6d8\"},\"test\":{\"suite\":\"github.com/DataDog/repo/apps/rocky/internal/catalog\",\"full_name\":\"github.com/DataDog/repo/apps/rocky/internal/catalog.TestOverscan\",\"codeowners\":[\"@DataDog/repo\"],\"service\":\"dd-go-metrics-retrieval\",\"name\":\"TestOverscan\",\"fingerprint\":\"f156dcaa592eb047\",\"type\":\"test\",\"has_parameters\":false,\"status\":\"pass\"},\"os\":{\"version\":\"bionic\"},\"ci\":{\"pipeline\":{\"number\":1669072,\"name\":\"DataDog/repo\",\"id\":\"10630527\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10630527\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"stage-1\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"test:go:race-bionic 1/2\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184817229\"}},\"start\":1666362737539000000,\"runtime\":{\"name\":\"go\",\"version\":\"1.19.2\"},\"language\":\"go\",\"env\":\"test\",\"duration\":0,\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T14:24:33+00:00\",\"name\":\"ci.dd-go\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666362273000},\"author\":{\"date\":\"2022-10-21T14:24:33+00:00\",\"name\":\"ci.dd-go\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666362273000},\"message\":\"Gitlab merged prod (c5fd9a72b75448ff60ba078960fe0ba5e23d7050) to staging-43\\n\\nGitlab merged prod (07bd1d762138e4b5bebc0f792cd26ef078c0d872) to staging-43\\n\\nGitlab merged prod (4ac1ba5d2b28caccc0640182d90e2d99a5234584) to staging-43\\n\\nGitlab merged prod (1c27b214276d2e70d502fdc7c840200faa3d80cf) to staging-43\\n\\nMerge branch 'ting.tu/scheduling' (06242fc) into staging-43\\n\\n pm_trace_id: 10629269\\n feature_branch_pipeline_id: 10629269\\n source: to-staging\\n\\n* commit '06242fcf113290ca0f273e23942d86f2fc803a6b':\\n  update nits\\n  Allow partial schedule\\n\",\"sha\":\"c34a29db1311b6945aaa644302a77f9bc30e2d7d\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"staging-43\"},\"service\":\"dd-go-metrics-retrieval\"},\"tags\":[\"source:apm\",\"source:apm\"]}},{\"id\":\"AQAAAYP69YODhSYeRwAAAABBWVA2OVlPREFBQmptZ3JJdUtpRmM0S3U\",\"type\":\"citest\",\"attributes\":{\"test_level\":\"test\",\"attributes\":{\"test_suite\":{\"fingerprint\":\"355d882863b0e6d8\"},\"test\":{\"suite\":\"github.com/DataDog/repo/apps/rocky/internal/catalog\",\"full_name\":\"github.com/DataDog/repo/apps/rocky/internal/catalog.TestHdqDebug\",\"codeowners\":[\"@DataDog/repo\"],\"service\":\"dd-go-metrics-retrieval\",\"name\":\"TestHdqDebug\",\"fingerprint\":\"7baf20ec99e08277\",\"type\":\"test\",\"has_parameters\":false,\"status\":\"pass\"},\"os\":{\"version\":\"bionic\"},\"ci\":{\"pipeline\":{\"number\":1669072,\"name\":\"DataDog/repo\",\"id\":\"10630527\",\"url\":\"https://gitlab.site.io/DataDog/repo/pipelines/10630527\"},\"workspace_path\":\"/go/src/github.com/DataDog/repo\",\"stage\":{\"name\":\"stage-1\"},\"provider\":{\"name\":\"gitlab\"},\"job\":{\"name\":\"test:go:race-bionic 1/2\",\"url\":\"https://gitlab.site.io/DataDog/repo/-/jobs/184817229\"}},\"start\":1666362737539000000,\"runtime\":{\"name\":\"go\",\"version\":\"1.19.2\"},\"language\":\"go\",\"env\":\"test\",\"duration\":0,\"git\":{\"commit\":{\"committer\":{\"date\":\"2022-10-21T14:24:33+00:00\",\"name\":\"ci.dd-go\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666362273000},\"author\":{\"date\":\"2022-10-21T14:24:33+00:00\",\"name\":\"ci.dd-go\",\"email\":\"support@datadoghq.com\",\"date_timestamp\":1666362273000},\"message\":\"Gitlab merged prod (c5fd9a72b75448ff60ba078960fe0ba5e23d7050) to staging-43\\n\\nGitlab merged prod (07bd1d762138e4b5bebc0f792cd26ef078c0d872) to staging-43\\n\\nGitlab merged prod (4ac1ba5d2b28caccc0640182d90e2d99a5234584) to staging-43\\n\\nGitlab merged prod (1c27b214276d2e70d502fdc7c840200faa3d80cf) to staging-43\\n\\nMerge branch 'ting.tu/scheduling' (06242fc) into staging-43\\n\\n pm_trace_id: 10629269\\n feature_branch_pipeline_id: 10629269\\n source: to-staging\\n\\n* commit '06242fcf113290ca0f273e23942d86f2fc803a6b':\\n  update nits\\n  Allow partial schedule\\n\",\"sha\":\"c34a29db1311b6945aaa644302a77f9bc30e2d7d\"},\"repository_url\":\"https://gitlab.site.io/DataDog/repo.git\",\"repository\":{\"path\":\"/DataDog/repo.git\",\"scheme\":\"https\",\"name\":\"DataDog/repo\",\"host\":\"gitlab.site.io\",\"id\":\"gitlab.site.io/DataDog/repo\"},\"branch\":\"staging-43\"},\"service\":\"dd-go-metrics-retrieval\"},\"tags\":[\"source:apm\",\"source:apm\"]}}],\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWVA2OVlPRGhTWWVSd0FBQUFCQldWQTJPVmxQUkVGQlFtcHRaM0pKZFV0cFJtTTBTM1UifQ\"}},\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=now-15m&filter%5Bquery%5D=%40test.status%3Apass+AND+-%40language%3Apython&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA2OVlPRGhTWWVSd0FBQUFCQldWQTJPVmxQUkVGQlFtcHRaM0pKZFV0cFJtTTBTM1UifQ&page%5Blimit%5D=2&sort=timestamp\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "now-15m",
+                  "query": "@test.status:pass AND -@language:python",
+                  "to": "now"
+                },
+                "page": {
+                  "cursor": "eyJhZnRlciI6IkFRQUFBWVA2OVlPRGhTWWVSd0FBQUFCQldWQTJPVmxQUkVGQlFtcHRaM0pKZFV0cFJtTTBTM1UifQ",
+                  "limit": 2
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ci/tests/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"after\":\"eyJhZnRlciI6IkFRQUFBWVA2OVlVbW5sUEFhd0FBQUFCQldWQTJPVmxWYlVGQlJGWkNWbGw1VTJWdVFWaHZNRm8ifQ\"}},\"links\":{\"next\":\"https://api.datadoghq.com/api/v2/ci/tests/events?filter%5Bfrom%5D=now-15m&filter%5Bquery%5D=%40test.status%3Apass+AND+-%40language%3Apython&filter%5Bto%5D=now&page%5Bcursor%5D=eyJhZnRlciI6IkFRQUFBWVA2OVlVbW5sUEFhd0FBQUFCQldWQTJPVmxWYlVGQlJGWkNWbGw1VTJWdVFWaHZNRm8ifQ&page%5Blimit%5D=2&sort=timestamp\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search tests events returns \"OK\" response with pagination",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,67 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 200,
+  "feature": "Service Level Objectives",
+  "id": "v1/Service Level Objectives/Search for SLOs returns \"OK\" response",
+  "operation_id": "SearchSLO",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "query",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "slo.data[0].name",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 20
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[number]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 0
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/slo/search"
+  },
+  "scenario": "Search for SLOs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

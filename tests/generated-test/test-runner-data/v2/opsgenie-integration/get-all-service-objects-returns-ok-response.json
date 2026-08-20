@@ -1,0 +1,18 @@
+{
+  "api": "OpsgenieIntegration",
+  "expected_status": 200,
+  "feature": "Opsgenie Integration",
+  "id": "v2/Opsgenie Integration/Get all service objects returns \"OK\" response",
+  "operation_id": "ListOpsgenieServices",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/opsgenie/services"
+  },
+  "scenario": "Get all service objects returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

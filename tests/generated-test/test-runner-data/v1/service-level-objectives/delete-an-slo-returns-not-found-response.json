@@ -1,0 +1,35 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 404,
+  "feature": "Service Level Objectives",
+  "id": "v1/Service Level Objectives/Delete an SLO returns \"Not found\" response",
+  "operation_id": "DeleteSLO",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "slo_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ unique_lower_alnum }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/slo/{slo_id}"
+  },
+  "scenario": "Delete an SLO returns \"Not found\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

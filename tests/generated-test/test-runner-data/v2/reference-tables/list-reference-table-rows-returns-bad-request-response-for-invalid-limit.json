@@ -1,0 +1,35 @@
+{
+  "api": "ReferenceTables",
+  "expected_status": 400,
+  "feature": "Reference Tables",
+  "id": "v2/Reference Tables/List reference table rows returns \"Bad Request\" response for invalid limit",
+  "operation_id": "ListReferenceTableRows",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "not-a-valid-uuid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/reference-tables/tables/{id}/rows/list"
+  },
+  "scenario": "List reference table rows returns \"Bad Request\" response for invalid limit",
+  "schema_version": 1,
+  "version": "v2"
+}

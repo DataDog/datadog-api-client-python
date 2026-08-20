@@ -1,0 +1,67 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 400,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/GetEstimatedCostByOrg with both start_month and start_date returns \"Bad Request\" response",
+  "operation_id": "GetEstimatedCostByOrg",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "view",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "sub-org"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "start_month",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now') }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "start_date",
+        "required": false,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now - 3d') }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/usage/estimated_cost"
+  },
+  "scenario": "GetEstimatedCostByOrg with both start_month and start_date returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

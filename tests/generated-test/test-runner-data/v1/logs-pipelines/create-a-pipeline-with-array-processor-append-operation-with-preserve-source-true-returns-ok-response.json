@@ -1,0 +1,45 @@
+{
+  "api": "LogsPipelines",
+  "expected_status": 200,
+  "feature": "Logs Pipelines",
+  "id": "v1/Logs Pipelines/Create a pipeline with Array Processor Append Operation with preserve_source true returns \"OK\" response",
+  "operation_id": "CreateLogsPipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "query": "source:python"
+        },
+        "name": "testPipelineArrayAppendPreserve",
+        "processors": [
+          {
+            "is_enabled": true,
+            "name": "append_ip_and_keep_source",
+            "operation": {
+              "preserve_source": true,
+              "source": "network.client.ip",
+              "target": "sourceIps",
+              "type": "append"
+            },
+            "type": "array-processor"
+          }
+        ],
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs/config/pipelines"
+  },
+  "scenario": "Create a pipeline with Array Processor Append Operation with preserve_source true returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

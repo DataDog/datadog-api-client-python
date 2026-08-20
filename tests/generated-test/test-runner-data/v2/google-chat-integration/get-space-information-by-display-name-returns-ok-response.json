@@ -1,0 +1,51 @@
+{
+  "api": "GoogleChatIntegration",
+  "expected_status": 200,
+  "feature": "Google Chat Integration",
+  "id": "v2/Google Chat Integration/Get space information by display name returns \"OK\" response",
+  "operation_id": "GetSpaceByDisplayName",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "domain_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "datadog.ninja"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "space_display_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "api-test-space"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integration/google-chat/organizations/app/named-spaces/{domain_name}/{space_display_name}"
+  },
+  "scenario": "Get space information by display name returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

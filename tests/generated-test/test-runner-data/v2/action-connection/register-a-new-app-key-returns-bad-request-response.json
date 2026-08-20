@@ -1,0 +1,35 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 400,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Register a new App Key returns \"Bad request\" response",
+  "operation_id": "RegisterAppKey",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "not_valid_app_key_id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/app_key_registrations/{app_key_id}"
+  },
+  "scenario": "Register a new App Key returns \"Bad request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,56 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Convert security monitoring resource to Terraform returns \"OK\" response",
+  "operation_id": "ConvertSecurityMonitoringTerraformResource",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringTerraformConvertRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "resource_json": {
+              "enabled": true,
+              "name": "Example-Security-Monitoring",
+              "rule_query": "source:cloudtrail",
+              "suppression_query": "env:test"
+            }
+          },
+          "id": "abc-123",
+          "type": "convert_resource"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "resource_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "SecurityMonitoringTerraformResourceType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "suppressions"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/terraform/{resource_type}/convert"
+  },
+  "scenario": "Convert security monitoring resource to Terraform returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

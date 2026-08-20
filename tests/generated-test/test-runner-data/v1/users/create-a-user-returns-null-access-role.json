@@ -1,0 +1,32 @@
+{
+  "api": "Users",
+  "expected_status": 200,
+  "feature": "Users",
+  "id": "v1/Users/Create a user returns null access role",
+  "operation_id": "CreateUser",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "User",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "access_role": null,
+        "disabled": false,
+        "email": "test@datadoghq.com",
+        "handle": "test@datadoghq.com",
+        "name": "test user"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/user"
+  },
+  "scenario": "Create a user returns null access role",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 404,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Update App Protection Level returns \"Not Found\" response",
+  "operation_id": "UpdateProtectionLevel",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppProtectionLevelRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "protectionLevel": "approval_required"
+          },
+          "type": "protectionLevel"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "7addb29b-f935-472c-ae79-d1963979a23e"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}/protection-level"
+  },
+  "scenario": "Update App Protection Level returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

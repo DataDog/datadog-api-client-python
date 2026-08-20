@@ -1,0 +1,29 @@
+{
+  "api": "AzureIntegration",
+  "expected_status": 200,
+  "feature": "Azure Integration",
+  "id": "v1/Azure Integration/Delete an Azure integration returns \"OK\" response",
+  "operation_id": "DeleteAzureIntegration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AzureAccount",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "client_id": "{{ uuid }}",
+        "tenant_name": "{{ uuid }}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/azure"
+  },
+  "scenario": "Delete an Azure integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get all critical assets returns \"OK\" response",
+  "operation_id": "ListSecurityMonitoringCriticalAssets",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/configuration/critical_assets"
+  },
+  "scenario": "Get all critical assets returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

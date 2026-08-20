@@ -1,0 +1,32 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Search security findings returns \"OK\" response",
+  "operation_id": "SearchSecurityFindings",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityFindingsSearchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "filter": "@severity:(critical OR high)"
+          }
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/search"
+  },
+  "scenario": "Search security findings returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

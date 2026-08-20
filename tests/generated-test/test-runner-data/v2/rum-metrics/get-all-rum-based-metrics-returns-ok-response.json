@@ -1,0 +1,18 @@
+{
+  "api": "RumMetrics",
+  "expected_status": 200,
+  "feature": "Rum Metrics",
+  "id": "v2/Rum Metrics/Get all RUM-based metrics returns \"OK\" response",
+  "operation_id": "ListRumMetrics",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config/metrics"
+  },
+  "scenario": "Get all RUM-based metrics returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,74 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 404,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Update deployment rule returns \"Deployment rule not found.\" response",
+  "operation_id": "UpdateDeploymentRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateDeploymentRuleParams",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "dry_run": false,
+            "name": "Updated deployment rule",
+            "options": {
+              "duration": 3600,
+              "excluded_resources": [
+                "resource1",
+                "resource2"
+              ]
+            }
+          },
+          "type": "deployment_rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "gate_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deployment_gates/{gate_id}/rules/{id}"
+  },
+  "scenario": "Update deployment rule returns \"Deployment rule not found.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

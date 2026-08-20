@@ -1,0 +1,70 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 200,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Update Scanning Group returns \"OK\" response",
+  "operation_id": "UpdateScanningGroup",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerGroupUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "filter": {
+              "query": "*"
+            },
+            "is_enabled": false,
+            "name": "{{ unique }}",
+            "product_list": [
+              "logs"
+            ]
+          },
+          "id": "{{ group.data.id }}",
+          "relationships": {
+            "configuration": {
+              "data": {
+                "id": "{{ configuration.data.id }}",
+                "type": "sensitive_data_scanner_configuration"
+              }
+            },
+            "rules": {
+              "data": []
+            }
+          },
+          "type": "sensitive_data_scanner_group"
+        },
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "group_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "group.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/sensitive-data-scanner/config/groups/{group_id}"
+  },
+  "scenario": "Update Scanning Group returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

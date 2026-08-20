@@ -1,0 +1,1359 @@
+{
+  "feature": "Service Level Objectives",
+  "recordings": [
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2026-02-25T17:45:38.518Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "description": "Metric SLO using sli_specification",
+                "name": "Test-Create_a_new_metric_SLO_object_using_bad_events_formula_returns_OK_response-1772041538",
+                "sli_specification": {
+                  "count": {
+                    "bad_events_formula": {
+                      "formula": "query2"
+                    },
+                    "good_events_formula": {
+                      "formula": "query1 - query2"
+                    },
+                    "queries": [
+                      {
+                        "data_source": "metrics",
+                        "name": "query1",
+                        "query": "sum:httpservice.hits{*}.as_count()"
+                      },
+                      {
+                        "data_source": "metrics",
+                        "name": "query2",
+                        "query": "sum:httpservice.errors{*}.as_count()"
+                      }
+                    ]
+                  }
+                },
+                "tags": [
+                  "env:prod",
+                  "type:count"
+                ],
+                "target_threshold": 99,
+                "thresholds": [
+                  {
+                    "target": 99,
+                    "target_display": "99.0",
+                    "timeframe": "7d",
+                    "warning": 99.5,
+                    "warning_display": "99.5"
+                  }
+                ],
+                "timeframe": "7d",
+                "type": "metric",
+                "warning_threshold": 99.5
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"7309ff3752fd519f80f65a2ed3247dbb\",\"name\":\"Test-Create_a_new_metric_SLO_object_using_bad_events_formula_returns_OK_response-1772041538\",\"tags\":[\"env:prod\",\"type:count\"],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":99.0,\"target_display\":\"99.\",\"warning\":99.5,\"warning_display\":\"99.5\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"Metric SLO using sli_specification\",\"timeframe\":\"7d\",\"warning_threshold\":99.5,\"target_threshold\":99,\"query\":{\"numerator\":\"sum:httpservice.hits{*}.as_count() - sum:httpservice.errors{*}.as_count()\",\"denominator\":\"(sum:httpservice.hits{*}.as_count() - sum:httpservice.errors{*}.as_count()) + (sum:httpservice.errors{*}.as_count())\"},\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"},\"created_at\":1772041538,\"modified_at\":1772041538,\"sli_specification\":{\"count\":{\"bad_events_formula\":{\"formula\":\"query2\"},\"good_events_formula\":{\"formula\":\"query1 - query2\"},\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"sum:httpservice.hits{*}.as_count()\"},{\"data_source\":\"metrics\",\"name\":\"query2\",\"query\":\"sum:httpservice.errors{*}.as_count()\"}]}}}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/7309ff3752fd519f80f65a2ed3247dbb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"7309ff3752fd519f80f65a2ed3247dbb\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a new metric SLO object using bad events formula returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2026-02-05T20:07:38.100Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "description": "Metric SLO using sli_specification",
+                "name": "Test-Create_a_new_metric_SLO_object_using_sli_specification_returns_OK_response-1770322058",
+                "sli_specification": {
+                  "count": {
+                    "good_events_formula": {
+                      "formula": "query1 - query2"
+                    },
+                    "queries": [
+                      {
+                        "data_source": "metrics",
+                        "name": "query1",
+                        "query": "sum:httpservice.hits{*}.as_count()"
+                      },
+                      {
+                        "data_source": "metrics",
+                        "name": "query2",
+                        "query": "sum:httpservice.errors{*}.as_count()"
+                      }
+                    ],
+                    "total_events_formula": {
+                      "formula": "query1"
+                    }
+                  }
+                },
+                "tags": [
+                  "env:prod",
+                  "type:count"
+                ],
+                "target_threshold": 99,
+                "thresholds": [
+                  {
+                    "target": 99,
+                    "target_display": "99.0",
+                    "timeframe": "7d",
+                    "warning": 99.5,
+                    "warning_display": "99.5"
+                  }
+                ],
+                "timeframe": "7d",
+                "type": "metric",
+                "warning_threshold": 99.5
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"6e49f8aa9883507dbc719f00eede5a5d\",\"name\":\"Test-Create_a_new_metric_SLO_object_using_sli_specification_returns_OK_response-1770322058\",\"tags\":[\"env:prod\",\"type:count\"],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":99.0,\"target_display\":\"99.\",\"warning\":99.5,\"warning_display\":\"99.5\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"Metric SLO using sli_specification\",\"timeframe\":\"7d\",\"warning_threshold\":99.5,\"target_threshold\":99,\"query\":{\"numerator\":\"sum:httpservice.hits{*}.as_count() - sum:httpservice.errors{*}.as_count()\",\"denominator\":\"sum:httpservice.hits{*}.as_count()\"},\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"},\"created_at\":1770322058,\"modified_at\":1770322058,\"sli_specification\":{\"count\":{\"good_events_formula\":{\"formula\":\"query1 - query2\"},\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"sum:httpservice.hits{*}.as_count()\"},{\"data_source\":\"metrics\",\"name\":\"query2\",\"query\":\"sum:httpservice.errors{*}.as_count()\"}],\"total_events_formula\":{\"formula\":\"query1\"}}}}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/6e49f8aa9883507dbc719f00eede5a5d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"6e49f8aa9883507dbc719f00eede5a5d\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a new metric SLO object using sli_specification returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:44.816Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "description": "string",
+                "name": "Test-Create_a_time_slice_SLO_object_returns_OK_response-1704322484",
+                "sli_specification": {
+                  "time_slice": {
+                    "comparator": ">",
+                    "query": {
+                      "formulas": [
+                        {
+                          "formula": "query1"
+                        }
+                      ],
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "query1",
+                          "query": "trace.servlet.request{env:prod}"
+                        }
+                      ]
+                    },
+                    "threshold": 5
+                  }
+                },
+                "tags": [
+                  "env:prod"
+                ],
+                "target_threshold": 97,
+                "thresholds": [
+                  {
+                    "target": 97,
+                    "target_display": "97.0",
+                    "timeframe": "7d",
+                    "warning": 98,
+                    "warning_display": "98.0"
+                  }
+                ],
+                "timeframe": "7d",
+                "type": "time_slice",
+                "warning_threshold": 98
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"776b80141eda520bbfae33e897849f61\",\"name\":\"Test-Create_a_time_slice_SLO_object_returns_OK_response-1704322484\",\"tags\":[\"env:prod\"],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":97.0,\"target_display\":\"97.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"time_slice\",\"type_id\":2,\"description\":\"string\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":97,\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322485,\"modified_at\":1704322485,\"sli_specification\":{\"time_slice\":{\"comparator\":\">\",\"query\":{\"formulas\":[{\"formula\":\"query1\"}],\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"trace.servlet.request{env:prod}\"}]},\"threshold\":5,\"query_interval_seconds\":300}}}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/776b80141eda520bbfae33e897849f61",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"776b80141eda520bbfae33e897849f61\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a time-slice SLO object returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:45.312Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Create_an_SLO_object_returns_Bad_Request_response-1704322485",
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "target_display": "95.0",
+                    "timeframe": "7d",
+                    "warning": 98,
+                    "warning_display": "98.0"
+                  }
+                ],
+                "type": "monitor"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid payload: must specify monitor_ids\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create an SLO object returns \"Bad Request\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:45.425Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "description": "string",
+                "groups": [
+                  "env:test",
+                  "role:mysql"
+                ],
+                "monitor_ids": [],
+                "name": "Test-Create_an_SLO_object_returns_OK_response-1704322485",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "tags": [
+                  "env:prod",
+                  "app:core"
+                ],
+                "target_threshold": 97,
+                "thresholds": [
+                  {
+                    "target": 97,
+                    "target_display": "97.0",
+                    "timeframe": "7d",
+                    "warning": 98,
+                    "warning_display": "98.0"
+                  }
+                ],
+                "timeframe": "7d",
+                "type": "metric",
+                "warning_threshold": 98
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"6a3ffb99fc285f4f947ccf83d888558b\",\"name\":\"Test-Create_an_SLO_object_returns_OK_response-1704322485\",\"tags\":[\"app:core\",\"env:prod\"],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":97.0,\"target_display\":\"97.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"string\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":97,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322485,\"modified_at\":1704322485,\"groups\":[\"env:test\",\"role:mysql\"]}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/6a3ffb99fc285f4f947ccf83d888558b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"6a3ffb99fc285f4f947ccf83d888558b\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create an SLO object returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:45.952Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/testdeleteansloreturnsnotfoundresponse1704322485",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"SLO not found: testdeleteansloreturnsnotfoundresponse1704322485 not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an SLO returns \"Not found\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:46.108Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Delete_an_SLO_returns_OK_response-1704322486",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"6065f42541b856f3abaf255e6a61de79\",\"name\":\"Test-Delete_an_SLO_returns_OK_response-1704322486\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322486,\"modified_at\":1704322486}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/6065f42541b856f3abaf255e6a61de79",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"6065f42541b856f3abaf255e6a61de79\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/6065f42541b856f3abaf255e6a61de79",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"SLO not found: 6065f42541b856f3abaf255e6a61de79 not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an SLO returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:46.662Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_Corrections_For_an_SLO_returns_OK_response-1704322486",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"029b3b619a6255eb899c46681dd7038f\",\"name\":\"Test-Get_Corrections_For_an_SLO_returns_OK_response-1704322486\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322486,\"modified_at\":1704322486}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "category": "Other",
+                    "description": "Test Correction",
+                    "end": 1704326086,
+                    "slo_id": "029b3b619a6255eb899c46681dd7038f",
+                    "start": 1704322486,
+                    "timezone": "UTC"
+                  },
+                  "type": "correction"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo/correction",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"correction\",\"id\":\"17b61420-aa8b-11ee-97f2-da7ad0902002\",\"attributes\":{\"slo_id\":\"029b3b619a6255eb899c46681dd7038f\",\"start\":1704322486,\"end\":1704326086,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":null,\"modified_at\":null,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"correction\",\"id\":\"17b61420-aa8b-11ee-97f2-da7ad0902002\",\"attributes\":{\"slo_id\":\"029b3b619a6255eb899c46681dd7038f\",\"start\":1704322486,\"end\":1704326086,\"description\":\"Test Correction\",\"category\":\"Other\",\"timezone\":\"UTC\",\"created_at\":1704322487,\"modified_at\":1704322487,\"rrule\":null,\"duration\":null,\"creator\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"name\":null,\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\"}}},\"modifier\":null}}],\"meta\":{\"pagination\":{\"offset\":0,\"first_offset\":0,\"prev_offset\":0,\"next_offset\":10,\"last_offset\":0,\"limit\":10,\"type\":\"offset_limit\",\"total\":1}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections\",\"last\":null,\"next\":\"https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections?page[offset]=10&page[limit]=10\",\"prev\":null,\"first\":\"https://api.datadoghq.com/api/v1/slo/029b3b619a6255eb899c46681dd7038f/corrections?page[offset]=0&page[limit]=10\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/correction/17b61420-aa8b-11ee-97f2-da7ad0902002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/029b3b619a6255eb899c46681dd7038f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"029b3b619a6255eb899c46681dd7038f\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get Corrections For an SLO returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:47.632Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_all_SLOs_returns_OK_response-1704322487",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"c2ce7fb6030c5c0b8035d1ce94dec12c\",\"name\":\"Test-Get_all_SLOs_returns_OK_response-1704322487\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322487,\"modified_at\":1704322487}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo",
+            "query": [
+              [
+                "ids",
+                "c2ce7fb6030c5c0b8035d1ce94dec12c"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"c2ce7fb6030c5c0b8035d1ce94dec12c\",\"name\":\"Test-Get_all_SLOs_returns_OK_response-1704322487\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98.0,\"target_threshold\":95.0,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322487,\"modified_at\":1704322487}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/c2ce7fb6030c5c0b8035d1ce94dec12c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"c2ce7fb6030c5c0b8035d1ce94dec12c\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all SLOs returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2023-08-25T12:33:42.432Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo",
+            "query": [
+              [
+                "limit",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"70e82706f4ae56ff8bdd7f02e767f97c\",\"name\":\"test SLO 1668426861\",\"tags\":[\"type:test\"],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":90.0,\"target_display\":\"90.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"target_threshold\":90.0,\"query\":{\"denominator\":\"sum:my.custom.metric{!type:ignored}.as_count()\",\"numerator\":\"sum:my.custom.metric{type:good,!type:ignored}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1668426862,\"modified_at\":1668426862},{\"id\":\"955ab6301fa656e7b061de4a05ad4774\",\"name\":\"tf-TestAccDatadogServiceLevelObjective_Basic-local-1673543942-updated\",\"tags\":[\"foo:bar\",\"baz\"],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":99.5,\"target_display\":\"99.5\",\"warning\":99.8,\"warning_display\":\"99.8\"},{\"timeframe\":\"30d\",\"target\":98.0,\"target_display\":\"98.\",\"warning\":99.0,\"warning_display\":\"99.\"},{\"timeframe\":\"90d\",\"target\":99.9,\"target_display\":\"99.9\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"some updated description about foo SLO\",\"timeframe\":\"7d\",\"warning_threshold\":99.8,\"target_threshold\":99.5,\"query\":{\"denominator\":\"sum:my.metric{type:good}.as_count() + sum:my.metric{type:bad}.as_count()\",\"numerator\":\"sum:my.metric{type:good}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1673543944,\"modified_at\":1673543945}],\"error\":null,\"metadata\":{\"page\":{\"total_count\":3,\"total_filtered_count\":2}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo",
+            "query": [
+              [
+                "limit",
+                "2"
+              ],
+              [
+                "offset",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"a17acfd48b7c55d19192e3a697cc1d01\",\"name\":\"test SLO 1677686870\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":90.0,\"target_display\":\"90.\"}],\"type\":\"monitor\",\"type_id\":0,\"description\":\"\",\"timeframe\":\"7d\",\"target_threshold\":90.0,\"monitor_ids\":[112445445],\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\"},\"created_at\":1677686871,\"modified_at\":1677686871}],\"error\":null,\"metadata\":{\"page\":{\"total_count\":3,\"total_filtered_count\":2}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all SLOs returns \"OK\" response with pagination",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:48.137Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_an_SLO_s_details_returns_OK_response-1704322488",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"ebf2e048f49a5134b61a586438c66505\",\"name\":\"Test-Get_an_SLO_s_details_returns_OK_response-1704322488\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322488,\"modified_at\":1704322488}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/ebf2e048f49a5134b61a586438c66505",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ebf2e048f49a5134b61a586438c66505\",\"name\":\"Test-Get_an_SLO_s_details_returns_OK_response-1704322488\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98.0,\"target_threshold\":95.0,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322488,\"modified_at\":1704322488},\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/ebf2e048f49a5134b61a586438c66505",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"ebf2e048f49a5134b61a586438c66505\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get an SLO's details returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:48.654Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_an_SLO_s_history_returns_OK_response-1704322488",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"627a3ccd24af50beb8eacbd36c5962f9\",\"name\":\"Test-Get_an_SLO_s_history_returns_OK_response-1704322488\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322488,\"modified_at\":1704322488}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/627a3ccd24af50beb8eacbd36c5962f9/history",
+            "query": [
+              [
+                "from_ts",
+                "1704236088"
+              ],
+              [
+                "to_ts",
+                "1704322488"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"thresholds\":{\"7d\":{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}},\"from_ts\":1704236088,\"to_ts\":1704322488,\"type\":\"metric\",\"type_id\":1,\"slo\":{\"id\":\"627a3ccd24af50beb8eacbd36c5962f9\",\"name\":\"Test-Get_an_SLO_s_history_returns_OK_response-1704322488\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98.0,\"target_threshold\":95.0,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322488,\"modified_at\":1704322488},\"group_by\":[],\"series\":{\"timing\":\"0.02146005630493164\",\"res_type\":\"time_series\",\"resp_version\":2,\"query\":\"default_zero(sum:httpservice.hits{code:2xx}.as_count()), default_zero(sum:httpservice.hits{!code:3xx}.as_count())\",\"from_date\":1704236088000,\"to_date\":1704322488000,\"message\":\"\",\"interval\":7200,\"times\":[1704235800000.0,1704240000000.0,1704247200000.0,1704254400000.0,1704261600000.0,1704268800000.0,1704276000000.0,1704283200000.0,1704290400000.0,1704297600000.0,1704304800000.0,1704312000000.0,1704319200000.0],\"numerator\":{\"values\":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],\"metadata\":{\"unit\":null,\"query_index\":0,\"aggr\":\"sum\",\"metric\":\"default_zero(httpservice.hits)\",\"tag_set\":[],\"expression\":\"default_zero(sum:httpservice.hits{code:2xx}.as_count())\",\"scope\":\"code:2xx\"},\"sum\":0.0,\"count\":13},\"denominator\":{\"values\":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],\"metadata\":{\"unit\":null,\"query_index\":1,\"aggr\":\"sum\",\"metric\":\"default_zero(httpservice.hits)\",\"tag_set\":[],\"expression\":\"default_zero(sum:httpservice.hits{!code:3xx}.as_count())\",\"scope\":\"!code:3xx\"},\"sum\":0.0,\"count\":13},\"numerator_query\":\"default_zero(sum:httpservice.hits{code:2xx}.as_count())\",\"denominator_query\":\"default_zero(sum:httpservice.hits{!code:3xx}.as_count())\",\"bad_series_query\":\"default_zero(sum:httpservice.hits{!code:3xx}.as_count()) - default_zero(sum:httpservice.hits{code:2xx}.as_count())\",\"graph_query\":\"default_zero(sum:httpservice.hits{code:2xx}.as_count()), default_zero(sum:httpservice.hits{!code:3xx}.as_count()) - default_zero(sum:httpservice.hits{code:2xx}.as_count())\"},\"overall\":{\"errors\":[{\"error_message\":\"The denominator is zero valued\",\"error_type\":\"ZERO_VALUED_DENOMINATOR\"}],\"sli_value\":null,\"span_precision\":2,\"precision\":{\"7d\":0},\"uptime\":null,\"corrections\":[],\"state\":\"no_data\"}},\"errors\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/627a3ccd24af50beb8eacbd36c5962f9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"627a3ccd24af50beb8eacbd36c5962f9\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get an SLO's history returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2023-02-14T21:35:39.636Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Search_for_SLOs_returns_OK_response-1676410539",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"34c97838f5c5578ebe812e5d068977a9\",\"name\":\"Test-Search_for_SLOs_returns_OK_response-1676410539\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1676410539,\"modified_at\":1676410539}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/slo/search",
+            "query": [
+              [
+                "page[number]",
+                "0"
+              ],
+              [
+                "page[size]",
+                "20"
+              ],
+              [
+                "query",
+                "Test-Search_for_SLOs_returns_OK_response-1676410539"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"service_level_objective_search_results\",\"attributes\":{\"slos\":[{\"data\":{\"type\":\"slo\",\"attributes\":{\"monitor_ids\":null,\"all_tags\":[],\"thresholds\":[{\"warning_display\":\"95\",\"target_display\":\"95\",\"target\":95.0,\"warning\":98.0,\"timeframe\":\"7d\"}],\"env_tags\":[],\"groups\":null,\"timeframe\":\"7d\",\"overall_status\":[{\"error_budget_remaining\":null,\"raw_error_budget_remaining\":null,\"indexed_at\":1676409980,\"status\":null,\"span_precision\":null,\"error\":\"The denominator is zero valued\",\"target\":95.0,\"state\":\"no_data\",\"timeframe\":\"7d\"}],\"query\":{\"metrics\":null,\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\",\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\"},\"warning_threshold\":98.0,\"slo_type\":\"metric\",\"name\":\"Test-Search_for_SLOs_returns_OK_response-1676410539\",\"service_tags\":[],\"status\":{\"error_budget_remaining\":null,\"raw_error_budget_remaining\":null,\"indexed_at\":1676409980,\"span_precision\":null,\"state\":\"no_data\",\"sli\":null,\"calculation_error\":\"The denominator is zero valued\"},\"creator\":{\"name\":null,\"id\":1445416,\"email\":\"frog@datadoghq.com\"},\"created_at\":1676364842,\"modified_at\":1676364842,\"description\":null,\"team_tags\":[],\"target_threshold\":95.0},\"id\":\"18101ab6982f547faba6c9bdc6de9413\"}}]}},\"meta\":{\"pagination\":{\"number\":0,\"first_number\":0,\"prev_number\":0,\"next_number\":1,\"last_number\":0,\"size\":20,\"type\":\"number_size\",\"total\":1}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v1/slo/search?query=Test-Search_for_SLOs_returns_OK_response-1676410539&page%5Bsize%5D=20&page%5Bnumber%5D=0\",\"last\":null,\"next\":\"https://api.datadoghq.com/api/v1/slo/search?query=Test-Search_for_SLOs_returns_OK_response-1676410539&page[number]=1&page[size]=20\",\"prev\":null,\"first\":\"https://api.datadoghq.com/api/v1/slo/search?query=Test-Search_for_SLOs_returns_OK_response-1676410539&page[number]=0&page[size]=20\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/34c97838f5c5578ebe812e5d068977a9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"34c97838f5c5578ebe812e5d068977a9\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search for SLOs returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:49.226Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Update_an_SLO_returns_Bad_Request_response-1704322489",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"9000070725e15b55a16fa1b2bcd1909c\",\"name\":\"Test-Update_an_SLO_returns_Bad_Request_response-1704322489\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322489,\"modified_at\":1704322489}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Update_an_SLO_returns_Bad_Request_response-1704322489",
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "target_display": "95.0",
+                    "timeframe": "7d",
+                    "warning": 98,
+                    "warning_display": "98.0"
+                  }
+                ],
+                "type": "monitor"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/slo/9000070725e15b55a16fa1b2bcd1909c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid payload: must specify the query for count types\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/9000070725e15b55a16fa1b2bcd1909c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"9000070725e15b55a16fa1b2bcd1909c\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update an SLO returns \"Bad Request\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Service Level Objectives",
+      "frozen_at": "2024-01-03T22:54:49.748Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Update_an_SLO_returns_OK_response-1704322489",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "thresholds": [
+                  {
+                    "target": 95,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "type": "metric"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/slo",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"f38441f875995acc9682503ee2d1901e\",\"name\":\"Test-Update_an_SLO_returns_OK_response-1704322489\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":95.0,\"target_display\":\"95.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":95,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322489,\"modified_at\":1704322489}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Update_an_SLO_returns_OK_response-1704322489",
+                "query": {
+                  "denominator": "sum:httpservice.hits{!code:3xx}.as_count()",
+                  "numerator": "sum:httpservice.hits{code:2xx}.as_count()"
+                },
+                "target_threshold": 97,
+                "thresholds": [
+                  {
+                    "target": 97,
+                    "timeframe": "7d",
+                    "warning": 98
+                  }
+                ],
+                "timeframe": "7d",
+                "type": "metric",
+                "warning_threshold": 98
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/slo/f38441f875995acc9682503ee2d1901e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"f38441f875995acc9682503ee2d1901e\",\"name\":\"Test-Update_an_SLO_returns_OK_response-1704322489\",\"tags\":[],\"monitor_tags\":[],\"thresholds\":[{\"timeframe\":\"7d\",\"target\":97.0,\"target_display\":\"97.\",\"warning\":98.0,\"warning_display\":\"98.\"}],\"type\":\"metric\",\"type_id\":1,\"description\":\"\",\"timeframe\":\"7d\",\"warning_threshold\":98,\"target_threshold\":97,\"query\":{\"denominator\":\"sum:httpservice.hits{!code:3xx}.as_count()\",\"numerator\":\"sum:httpservice.hits{code:2xx}.as_count()\"},\"creator\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\"},\"created_at\":1704322489,\"modified_at\":1704322490}],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/slo/f38441f875995acc9682503ee2d1901e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[\"f38441f875995acc9682503ee2d1901e\"],\"error\":null}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update an SLO returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

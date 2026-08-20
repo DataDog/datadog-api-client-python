@@ -1,0 +1,38 @@
+{
+  "feature": "OAuth2 Client Public",
+  "recordings": [
+    {
+      "feature": "OAuth2 Client Public",
+      "frozen_at": "2026-06-02T09:00:00.000Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/oauth2/.well-known/sites",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"prod\",\"type\":\"env\",\"attributes\":{\"sites\":[\"app.datadoghq.com\",\"app.datadoghq.eu\",\"us5.datadoghq.com\",\"us3.datadoghq.com\",\"ap1.datadoghq.com\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get OAuth2 well-known sites returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

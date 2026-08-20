@@ -1,0 +1,18 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 200,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/List execution policies returns \"OK\" response",
+  "operation_id": "ListExecutionPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/actions/execution-policies"
+  },
+  "scenario": "List execution policies returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

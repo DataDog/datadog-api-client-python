@@ -1,0 +1,54 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 200,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/Update the tags for a device returns \"OK\" response",
+  "operation_id": "UpdateDeviceUserTags",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ListTagsResponse",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "tags": [
+              "tag:test",
+              "tag:testbis"
+            ]
+          },
+          "id": "default_device",
+          "type": "tags"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "device_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "default_device"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ndm/tags/devices/{device_id}"
+  },
+  "scenario": "Update the tags for a device returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

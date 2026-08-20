@@ -1,0 +1,51 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 404,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Get deployment rule returns \"Deployment rule not found.\" response",
+  "operation_id": "GetDeploymentRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "gate_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deployment_gates/{gate_id}/rules/{id}"
+  },
+  "scenario": "Get deployment rule returns \"Deployment rule not found.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

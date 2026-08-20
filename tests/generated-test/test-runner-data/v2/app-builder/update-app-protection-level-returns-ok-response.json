@@ -1,0 +1,50 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 200,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Update App Protection Level returns \"OK\" response",
+  "operation_id": "UpdateProtectionLevel",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateAppProtectionLevelRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "protectionLevel": "approval_required"
+          },
+          "type": "protectionLevel"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "app.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/app-builder/apps/{app_id}/protection-level"
+  },
+  "scenario": "Update App Protection Level returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

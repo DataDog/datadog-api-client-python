@@ -1,0 +1,53 @@
+{
+  "api": "ApplicationSecurity",
+  "expected_status": 201,
+  "feature": "Application Security",
+  "id": "v2/Application Security/Create a WAF Policy returns \"Created\" response",
+  "operation_id": "CreateApplicationSecurityWafPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ApplicationSecurityPolicyCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "basedOn": "recommended",
+            "description": "Policy applied to internal web applications.",
+            "isDefault": false,
+            "name": "Internal Network Policy",
+            "protectionPresets": [
+              "attack-tools"
+            ],
+            "rules": [
+              {
+                "blocking": false,
+                "enabled": true,
+                "id": "rasp-001-002"
+              }
+            ],
+            "scope": [
+              {
+                "env": "prod",
+                "service": "billing-service"
+              }
+            ],
+            "version": 0
+          },
+          "type": "policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/remote_config/products/asm/waf/policies"
+  },
+  "scenario": "Create a WAF Policy returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

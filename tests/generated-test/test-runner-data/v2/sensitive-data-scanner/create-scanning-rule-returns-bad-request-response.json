@@ -1,0 +1,49 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 400,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Create Scanning Rule returns \"Bad Request\" response",
+  "operation_id": "CreateScanningRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "is_enabled": true,
+            "pattern": "pattern",
+            "tags": [
+              "sensitive_data:true"
+            ],
+            "text_replacement": {
+              "type": "none"
+            }
+          },
+          "relationships": {
+            "group": {
+              "data": {
+                "id": "{{ group.data.id }}",
+                "type": "{{ group.data.type }}"
+              }
+            }
+          },
+          "type": "sensitive_data_scanner_rule"
+        },
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/sensitive-data-scanner/config/rules"
+  },
+  "scenario": "Create Scanning Rule returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

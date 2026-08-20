@@ -1,0 +1,39 @@
+{
+  "api": "Teams",
+  "expected_status": 409,
+  "feature": "Teams",
+  "id": "v2/Teams/Create a team returns \"API error response.\" response",
+  "operation_id": "CreateTeam",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "handle": "{{dd_team.data.attributes.handle}}",
+            "name": "Example Team"
+          },
+          "relationships": {
+            "users": {
+              "data": []
+            }
+          },
+          "type": "team"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/team"
+  },
+  "scenario": "Create a team returns \"API error response.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

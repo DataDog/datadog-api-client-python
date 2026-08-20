@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Related Assets to a Metric returns \"Success\" response",
+  "operation_id": "ListMetricAssets",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "system.cpu.user"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/{metric_name}/assets"
+  },
+  "scenario": "Related Assets to a Metric returns \"Success\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

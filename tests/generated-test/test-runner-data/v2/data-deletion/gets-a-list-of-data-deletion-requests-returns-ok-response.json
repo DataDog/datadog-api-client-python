@@ -1,0 +1,18 @@
+{
+  "api": "DataDeletion",
+  "expected_status": 200,
+  "feature": "Data Deletion",
+  "id": "v2/Data Deletion/Gets a list of data deletion requests returns \"OK\" response",
+  "operation_id": "GetDataDeletionRequests",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/deletion/requests"
+  },
+  "scenario": "Gets a list of data deletion requests returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

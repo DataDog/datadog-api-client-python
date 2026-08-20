@@ -1,0 +1,35 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Get all dashboards returns \"OK\" response with pagination",
+  "operation_id": "ListDashboards",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "count",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Get all dashboards returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v1"
+}

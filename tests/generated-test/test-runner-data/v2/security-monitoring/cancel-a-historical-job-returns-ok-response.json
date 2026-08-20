@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 204,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Cancel a historical job returns \"OK\" response",
+  "operation_id": "CancelHistoricalJob",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "job_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "historical_job.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/siem-historical-detections/jobs/{job_id}/cancel"
+  },
+  "scenario": "Cancel a historical job returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

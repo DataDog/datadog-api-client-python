@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Restore a rule to a historical version returns \"Not Found\" response",
+  "operation_id": "RestoreSecurityMonitoringRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "security_rule.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "version",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 9999
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/rules/{rule_id}/restore/{version}"
+  },
+  "scenario": "Restore a rule to a historical version returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

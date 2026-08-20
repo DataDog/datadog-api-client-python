@@ -1,0 +1,35 @@
+{
+  "api": "OpsgenieIntegration",
+  "expected_status": 201,
+  "feature": "Opsgenie Integration",
+  "id": "v2/Opsgenie Integration/Create a new service object returns \"CREATED\" response",
+  "operation_id": "CreateOpsgenieService",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OpsgenieServiceCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{unique}}",
+            "opsgenie_api_key": "00000000-0000-0000-0000-000000000000",
+            "region": "us"
+          },
+          "type": "opsgenie-service"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/opsgenie/services"
+  },
+  "scenario": "Create a new service object returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

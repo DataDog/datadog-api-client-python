@@ -1,0 +1,68 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Update a monitor notification rule with conditional_recipients returns \"OK\" response",
+  "operation_id": "UpdateMonitorNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorNotificationRuleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "conditional_recipients": {
+              "conditions": [
+                {
+                  "recipients": [
+                    "slack-test-channel",
+                    "jira-test"
+                  ],
+                  "scope": "transition_type:is_alert"
+                }
+              ]
+            },
+            "filter": {
+              "tags": [
+                "test:{{ unique_lower }}",
+                "host:abc"
+              ]
+            },
+            "name": "updated rule"
+          },
+          "id": "{{ monitor_notification_rule.data.id }}",
+          "type": "monitor-notification-rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "monitor_notification_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/notification_rule/{rule_id}"
+  },
+  "scenario": "Update a monitor notification rule with conditional_recipients returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

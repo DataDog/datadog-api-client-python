@@ -1,0 +1,35 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Get a browser test's latest results summaries returns \"OK\" response",
+  "operation_id": "GetBrowserTestLatestResults",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "public_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "2yy-sem-mjh"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/synthetics/tests/browser/{public_id}/results"
+  },
+  "scenario": "Get a browser test's latest results summaries returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

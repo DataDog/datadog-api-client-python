@@ -1,0 +1,68 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 200,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Update Scanning Rule returns \"OK\" response",
+  "operation_id": "UpdateScanningRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerRuleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "included_keyword_configuration": {
+              "character_count": 35,
+              "keywords": [
+                "credit card",
+                "cc"
+              ]
+            },
+            "is_enabled": true,
+            "name": "{{ unique }}",
+            "pattern": "pattern",
+            "priority": 5,
+            "tags": [
+              "sensitive_data:true"
+            ],
+            "text_replacement": {
+              "type": "none"
+            }
+          },
+          "id": "{{ rule.data.id }}",
+          "type": "sensitive_data_scanner_rule"
+        },
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/sensitive-data-scanner/config/rules/{rule_id}"
+  },
+  "scenario": "Update Scanning Rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

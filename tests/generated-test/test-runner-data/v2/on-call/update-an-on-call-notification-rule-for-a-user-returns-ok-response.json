@@ -1,0 +1,92 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Update an On-Call notification rule for a user returns \"OK\" response",
+  "operation_id": "UpdateUserNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateOnCallNotificationRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "category": "high_urgency",
+            "delay_minutes": 1
+          },
+          "id": "{{ oncall_email_notification_rule.data.id }}",
+          "relationships": {
+            "channel": {
+              "data": {
+                "id": "{{ oncall_email_notification_channel.data.id }}",
+                "type": "notification_channels"
+              }
+            }
+          },
+          "type": "notification_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "oncall_email_notification_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "channel"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/users/{user_id}/notification-rules/{rule_id}"
+  },
+  "scenario": "Update an On-Call notification rule for a user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

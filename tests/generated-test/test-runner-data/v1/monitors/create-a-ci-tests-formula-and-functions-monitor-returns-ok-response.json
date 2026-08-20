@@ -1,0 +1,71 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a ci-tests formula and functions monitor returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "some message Notify: @hipchat-channel",
+        "name": "{{ unique }}",
+        "options": {
+          "thresholds": {
+            "critical": 0.8
+          },
+          "variables": [
+            {
+              "compute": {
+                "aggregation": "count"
+              },
+              "data_source": "ci_tests",
+              "group_by": [],
+              "indexes": [
+                "*"
+              ],
+              "name": "query1",
+              "search": {
+                "query": "@test.status:fail"
+              }
+            },
+            {
+              "compute": {
+                "aggregation": "count"
+              },
+              "data_source": "ci_tests",
+              "group_by": [],
+              "indexes": [
+                "*"
+              ],
+              "name": "query2",
+              "search": {
+                "query": ""
+              }
+            }
+          ]
+        },
+        "priority": 3,
+        "query": "formula(\"query1 / query2 * 100\").last(\"15m\") >= 0.8",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "ci-tests alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a ci-tests formula and functions monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,44 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/Get all teams with fields_team parameter returns \"OK\" response",
+  "operation_id": "ListTeams",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": false,
+        "in": "query",
+        "name": "fields[team]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "TeamsField",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "id",
+            "name",
+            "handle"
+          ]
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team"
+  },
+  "scenario": "Get all teams with fields_team parameter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

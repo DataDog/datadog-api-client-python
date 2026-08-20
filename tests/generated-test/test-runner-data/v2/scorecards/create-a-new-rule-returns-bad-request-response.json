@@ -1,0 +1,36 @@
+{
+  "api": "Scorecards",
+  "expected_status": 400,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/Create a new rule returns \"Bad Request\" response",
+  "operation_id": "CreateScorecardRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "level": 2,
+            "name": "Team Defined",
+            "scorecard_id": "NOT.FOUND"
+          },
+          "type": "rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/scorecard/rules"
+  },
+  "scenario": "Create a new rule returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

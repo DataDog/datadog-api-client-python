@@ -1,0 +1,35 @@
+{
+  "api": "ApplicationSecurity",
+  "expected_status": 204,
+  "feature": "Application Security",
+  "id": "v2/Application Security/Delete a WAF exclusion filter returns \"OK\" response",
+  "operation_id": "DeleteApplicationSecurityWafExclusionFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "exclusion_filter_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "exclusion_filter.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}"
+  },
+  "scenario": "Delete a WAF exclusion filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

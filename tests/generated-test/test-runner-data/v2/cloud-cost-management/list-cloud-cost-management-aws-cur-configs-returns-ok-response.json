@@ -1,0 +1,18 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/List Cloud Cost Management AWS CUR configs returns \"OK\" response",
+  "operation_id": "ListCostAWSCURConfigs",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cost/aws_cur_config"
+  },
+  "scenario": "List Cloud Cost Management AWS CUR configs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

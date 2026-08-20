@@ -1,0 +1,42 @@
+{
+  "api": "CIVisibilityPipelines",
+  "expected_status": 202,
+  "feature": "CI Visibility Pipelines",
+  "id": "v2/CI Visibility Pipelines/Send running job event returns \"Request accepted for processing\" response",
+  "operation_id": "CreateCIAppPipelineEvent",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CIAppCreatePipelineEventRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "resource": {
+              "id": "cf9456de-8b9e-4c27-aa79-27b1e78c1a33",
+              "level": "job",
+              "name": "Build image",
+              "pipeline_name": "Deploy to AWS",
+              "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
+              "start": "{{ timeISO('now - 120s') }}",
+              "status": "running",
+              "url": "https://my-ci-provider.example/jobs/my-jobs/run/1"
+            }
+          },
+          "type": "cipipeline_resource_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ci/pipeline"
+  },
+  "scenario": "Send running job event returns \"Request accepted for processing\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

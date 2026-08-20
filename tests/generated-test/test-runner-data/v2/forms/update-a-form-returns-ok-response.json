@@ -1,0 +1,59 @@
+{
+  "api": "Forms",
+  "expected_status": 200,
+  "feature": "Forms",
+  "id": "v2/Forms/Update a form returns \"OK\" response",
+  "operation_id": "UpdateForm",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateFormRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "form_update": {
+              "datastore_config": {
+                "datastore_id": "5108ea24-dd83-4696-9caa-f069f73d0fad",
+                "primary_column_name": "id",
+                "primary_key_generation_strategy": "none"
+              },
+              "description": "An updated description.",
+              "name": "Updated Form Name"
+            }
+          },
+          "id": "22f6006a-2302-4926-9396-d2dfcf7b0b34",
+          "type": "forms"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "form_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "form.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/forms/{form_id}"
+  },
+  "scenario": "Update a form returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

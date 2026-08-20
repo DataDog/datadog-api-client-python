@@ -1,0 +1,182 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a multi-step api test with every type of basicAuth returns \"OK - Returns the created test details.\" response",
+  "operation_id": "CreateSyntheticsAPITest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsAPITest",
+        "type": "object"
+      },
+      "source": "synthetics_api_test_multi_step_with_every_type_of_basic_auth.json",
+      "value": {
+        "config": {
+          "steps": [
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "password": "password",
+                  "username": "username"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            },
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "password": "password",
+                  "type": "web",
+                  "username": "username"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            },
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "accessKey": "accessKey",
+                  "secretKey": "secretKey",
+                  "type": "sigv4"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            },
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "type": "ntlm"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            },
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "password": "password",
+                  "type": "digest",
+                  "username": "username"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            },
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "accessTokenUrl": "accessTokenUrl",
+                  "clientId": "clientId",
+                  "clientSecret": "clientSecret",
+                  "tokenApiAuthentication": "header",
+                  "type": "oauth-client"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            },
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "accessTokenUrl": "accessTokenUrl",
+                  "password": "password",
+                  "tokenApiAuthentication": "header",
+                  "type": "oauth-rop",
+                  "username": "username"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            }
+          ]
+        },
+        "locations": [
+          "aws:us-east-2"
+        ],
+        "message": "BDD test payload: synthetics_api_test_multi_step_with_every_type_of_basic_auth.json",
+        "name": "{{ unique }}",
+        "options": {
+          "tick_every": 60
+        },
+        "subtype": "multi",
+        "type": "api"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/api"
+  },
+  "scenario": "Create a multi-step api test with every type of basicAuth returns \"OK - Returns the created test details.\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

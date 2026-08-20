@@ -1,0 +1,35 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 200,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/Get an execution policy returns \"OK\" response",
+  "operation_id": "GetExecutionPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "execution_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/execution-policies/{policy_id}"
+  },
+  "scenario": "Get an execution policy returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

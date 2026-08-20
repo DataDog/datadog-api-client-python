@@ -1,0 +1,76 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 201,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Create allocation for a flag in an environment returns \"Created\" response",
+  "operation_id": "CreateAllocationsForFeatureFlagInEnvironment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateAllocationsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "guardrail_metrics": [],
+            "key": "new-targeting-rule-{{ unique_lower }}",
+            "name": "New targeting rule {{ unique }}",
+            "targeting_rules": [],
+            "type": "CANARY",
+            "variant_weights": [
+              {
+                "value": 100,
+                "variant_id": "{{ feature_flag.data.attributes.variants[0].id }}"
+              }
+            ]
+          },
+          "type": "allocations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "feature_flag_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "feature_flag.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "environment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "environment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/allocations"
+  },
+  "scenario": "Create allocation for a flag in an environment returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

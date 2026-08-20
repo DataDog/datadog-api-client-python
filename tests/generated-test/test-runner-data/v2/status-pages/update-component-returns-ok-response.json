@@ -1,0 +1,67 @@
+{
+  "api": "StatusPages",
+  "expected_status": 200,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Update component returns \"OK\" response",
+  "operation_id": "UpdateComponent",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchComponentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Logs Indexing"
+          },
+          "id": "{{ status_page.data.attributes.components[0].id }}",
+          "type": "components"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "component_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.attributes.components[0].id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/components/{component_id}"
+  },
+  "scenario": "Update component returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

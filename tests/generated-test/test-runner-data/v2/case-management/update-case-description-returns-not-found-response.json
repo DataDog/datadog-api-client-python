@@ -1,0 +1,50 @@
+{
+  "api": "CaseManagement",
+  "expected_status": 404,
+  "feature": "Case Management",
+  "id": "v2/Case Management/Update case description returns \"Not Found\" response",
+  "operation_id": "UpdateCaseDescription",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CaseUpdateDescriptionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Seeing some weird memory increase... We shouldn't ignore this"
+          },
+          "type": "case"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "0198c6b0-2a0a-7bea-87ff-3876f119aebb"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/{case_id}/description"
+  },
+  "scenario": "Update case description returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

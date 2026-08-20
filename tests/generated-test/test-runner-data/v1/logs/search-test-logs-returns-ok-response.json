@@ -1,0 +1,28 @@
+{
+  "api": "Logs",
+  "expected_status": 200,
+  "feature": "Logs",
+  "id": "v1/Logs/Search test logs returns \"OK\" response",
+  "operation_id": "ListLogs",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsListRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"index\": \"main\", \"query\": \"host:Test*\", \"sort\": \"asc\", \"time\": {\"from\": \"{{ timeISO(\"now - 1h\") }}\", \"timezone\": \"Europe/Paris\", \"to\": \"{{ timeISO(\"now\") }}\" }}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs-queries/list"
+  },
+  "scenario": "Search test logs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

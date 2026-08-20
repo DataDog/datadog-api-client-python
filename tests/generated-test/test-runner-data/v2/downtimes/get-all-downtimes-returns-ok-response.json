@@ -1,0 +1,18 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v2/Downtimes/Get all downtimes returns \"OK\" response",
+  "operation_id": "ListDowntimes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/downtime"
+  },
+  "scenario": "Get all downtimes returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

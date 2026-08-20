@@ -1,0 +1,38 @@
+{
+  "feature": "AWS Logs Integration",
+  "recordings": [
+    {
+      "feature": "AWS Logs Integration",
+      "frozen_at": "2024-11-06T15:58:53.184Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/aws/logs/services",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"logs_services\",\"type\":\"logs_services\",\"attributes\":{\"logs_services\":[\"apigw-access-logs\",\"apigw-execution-logs\",\"cloudfront\",\"elb\",\"elbv2\",\"lambda\",\"redshift\",\"s3\",\"states\",\"waf\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get list of AWS log ready services returns \"AWS Logs Services List object\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

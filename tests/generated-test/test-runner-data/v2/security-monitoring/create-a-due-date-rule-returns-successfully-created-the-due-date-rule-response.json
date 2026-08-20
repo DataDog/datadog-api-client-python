@@ -1,0 +1,49 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a due date rule returns \"Successfully created the due date rule\" response",
+  "operation_id": "CreateSecurityFindingsAutomationDueDateRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DueDateRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "due_days_per_severity": [
+                {
+                  "due_in_days": 7,
+                  "severity": "critical"
+                }
+              ],
+              "due_from": "first_seen"
+            },
+            "enabled": true,
+            "name": "{{ unique }}",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:staging"
+            }
+          },
+          "type": "due_date_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/due_date_rules"
+  },
+  "scenario": "Create a due date rule returns \"Successfully created the due date rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

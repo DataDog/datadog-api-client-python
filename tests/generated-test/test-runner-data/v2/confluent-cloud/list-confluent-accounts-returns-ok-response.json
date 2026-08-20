@@ -1,0 +1,18 @@
+{
+  "api": "ConfluentCloud",
+  "expected_status": 200,
+  "feature": "Confluent Cloud",
+  "id": "v2/Confluent Cloud/List Confluent accounts returns \"OK\" response",
+  "operation_id": "ListConfluentAccount",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integrations/confluent-cloud/accounts"
+  },
+  "scenario": "List Confluent accounts returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

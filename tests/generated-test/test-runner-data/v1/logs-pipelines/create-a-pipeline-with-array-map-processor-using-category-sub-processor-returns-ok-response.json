@@ -1,0 +1,61 @@
+{
+  "api": "LogsPipelines",
+  "expected_status": 200,
+  "feature": "Logs Pipelines",
+  "id": "v1/Logs Pipelines/Create a pipeline with Array Map Processor using category sub-processor returns \"OK\" response",
+  "operation_id": "CreateLogsPipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "query": "source:python"
+        },
+        "name": "testPipelineArrayMapCategory",
+        "processors": [
+          {
+            "is_enabled": true,
+            "name": "categorize items",
+            "processors": [
+              {
+                "categories": [
+                  {
+                    "filter": {
+                      "query": "@$sourceElem.status:error"
+                    },
+                    "name": "error"
+                  },
+                  {
+                    "filter": {
+                      "query": "*"
+                    },
+                    "name": "info"
+                  }
+                ],
+                "target": "$targetElem.level",
+                "type": "category-processor"
+              }
+            ],
+            "source": "items",
+            "target": "out",
+            "type": "array-map-processor"
+          }
+        ],
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs/config/pipelines"
+  },
+  "scenario": "Create a pipeline with Array Map Processor using category sub-processor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

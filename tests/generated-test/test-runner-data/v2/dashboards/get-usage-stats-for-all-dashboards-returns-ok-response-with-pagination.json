@@ -1,0 +1,35 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v2/Dashboards/Get usage stats for all dashboards returns \"OK\" response with pagination",
+  "operation_id": "ListDashboardsUsage",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 500
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/dashboards/usage"
+  },
+  "scenario": "Get usage stats for all dashboards returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

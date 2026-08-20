@@ -1,0 +1,18 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get all mute rules returns \"Successfully retrieved the list of mute rules\" response",
+  "operation_id": "ListSecurityFindingsAutomationMuteRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/mute_rules"
+  },
+  "scenario": "Get all mute rules returns \"Successfully retrieved the list of mute rules\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

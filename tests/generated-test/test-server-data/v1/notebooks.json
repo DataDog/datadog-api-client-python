@@ -1,0 +1,581 @@
+{
+  "feature": "Notebooks",
+  "recordings": [
+    {
+      "feature": "Notebooks",
+      "frozen_at": "2025-10-03T14:49:56.873Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cells": [
+                      {
+                        "attributes": {
+                          "definition": {
+                            "text": "## Some test markdown\n\n```\nvar x, y;\nx = 5;\ny = 6;\n```",
+                            "type": "markdown"
+                          }
+                        },
+                        "type": "notebook_cells"
+                      },
+                      {
+                        "attributes": {
+                          "definition": {
+                            "requests": [
+                              {
+                                "display_type": "line",
+                                "q": "avg:system.load.1{*}",
+                                "style": {
+                                  "line_type": "solid",
+                                  "line_width": "normal",
+                                  "palette": "dog_classic"
+                                }
+                              }
+                            ],
+                            "show_legend": true,
+                            "type": "timeseries",
+                            "yaxis": {
+                              "scale": "linear"
+                            }
+                          },
+                          "graph_size": "m",
+                          "split_by": {
+                            "keys": [],
+                            "tags": []
+                          },
+                          "time": null
+                        },
+                        "type": "notebook_cells"
+                      }
+                    ],
+                    "name": "Test-Create_a_notebook_returns_OK_response-1759502996",
+                    "status": "published",
+                    "time": {
+                      "live_span": "1h"
+                    }
+                  },
+                  "type": "notebooks"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/notebooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"notebooks\",\"id\":13244449,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1759502996\",\"cells\":[{\"type\":\"notebook_cells\",\"id\":\"p2ywawtx\",\"attributes\":{\"definition\":{\"type\":\"markdown\",\"text\":\"## Some test markdown\\n\\n```\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\"}}},{\"type\":\"notebook_cells\",\"attributes\":{\"time\":null,\"split_by\":{\"keys\":[],\"tags\":[]},\"definition\":{\"type\":\"timeseries\",\"requests\":[{\"display_type\":\"line\",\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_type\":\"solid\",\"line_width\":\"normal\",\"palette\":\"dog_classic\"}}],\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\"},\"id\":\"g9sa14n1\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"take_snapshots\":false,\"is_template\":false,\"is_favorite\":false,\"type\":null},\"template_variables\":[],\"status\":\"published\",\"modified\":\"2025-10-03T14:49:57.096812+00:00\",\"created\":\"2025-10-03T14:49:57.096812+00:00\",\"deleted\":null,\"tags\":null,\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/notebooks/13244449",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a notebook returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Notebooks",
+      "frozen_at": "2022-05-12T09:50:06.695Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/notebooks/123456",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\": [\"Notebook not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a notebook returns \"Not Found\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Notebooks",
+      "frozen_at": "2022-05-12T09:50:07.168Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cells": [
+                      {
+                        "attributes": {
+                          "definition": {
+                            "text": "# Test-Delete_a_notebook_returns_OK_response-1652349007 notebook text",
+                            "type": "markdown"
+                          }
+                        },
+                        "type": "notebook_cells"
+                      }
+                    ],
+                    "name": "Test-Delete_a_notebook_returns_OK_response-1652349007",
+                    "time": {
+                      "live_span": "1h"
+                    }
+                  },
+                  "type": "notebooks"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/notebooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"notebooks\",\"id\":2466032,\"attributes\":{\"name\":\"Test-Delete_a_notebook_returns_OK_response-1652349007\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Delete_a_notebook_returns_OK_response-1652349007 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"t6d9lkvx\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_favorite\":false,\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":[],\"status\":\"published\",\"modified\":\"2022-05-12T09:50:07.586654+00:00\",\"created\":\"2022-05-12T09:50:07.586654+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/notebooks/2466032",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/notebooks/2466032",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\": [\"Notebook not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a notebook returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Notebooks",
+      "frozen_at": "2022-05-12T09:50:08.596Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cells": [
+                      {
+                        "attributes": {
+                          "definition": {
+                            "text": "# Test-Get_a_notebook_returns_OK_response-1652349008 notebook text",
+                            "type": "markdown"
+                          }
+                        },
+                        "type": "notebook_cells"
+                      }
+                    ],
+                    "name": "Test-Get_a_notebook_returns_OK_response-1652349008",
+                    "time": {
+                      "live_span": "1h"
+                    }
+                  },
+                  "type": "notebooks"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/notebooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"notebooks\",\"id\":2466033,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1652349008\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1652349008 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"hzy6fag9\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_favorite\":false,\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":[],\"status\":\"published\",\"modified\":\"2022-05-12T09:50:08.997931+00:00\",\"created\":\"2022-05-12T09:50:08.997931+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/notebooks/2466033",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"notebooks\",\"id\":2466033,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1652349008\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1652349008 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"hzy6fag9\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_favorite\":false,\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":[],\"status\":\"published\",\"modified\":\"2022-05-12T09:50:08.997931+00:00\",\"created\":\"2022-05-12T09:50:08.997931+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/notebooks/2466033",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a notebook returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Notebooks",
+      "frozen_at": "2022-01-06T00:51:03.825Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/notebooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"meta\":{\"page\":{\"total_filtered_count\":50,\"total_count\":465}},\"data\":[{\"type\":\"notebooks\",\"id\":1529861,\"attributes\":{\"name\":\"Example Notebook\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"zct6hr09\"},{\"attributes\":{\"definition\":{\"show_legend\":true,\"type\":\"timeseries\",\"requests\":[{\"formulas\":[{\"formula\":\"query1\"}],\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"bars\",\"response_format\":\"timeseries\",\"queries\":[{\"query\":\"avg:trace.cucumber.test.errors{*}.as_count()\",\"data_source\":\"metrics\",\"name\":\"query1\"}]}],\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"8afnyf7d\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":\"investigation\",\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2022-01-05T07:32:54.047760+00:00\",\"created\":\"2021-11-05T18:10:43.257960+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1721318,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1640112913\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ssrxoyo8\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"ht2o911k\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-21T18:55:13.305467+00:00\",\"created\":\"2021-12-21T18:55:13.305467+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1721294,\"attributes\":{\"name\":\"Test-Typescript-Create_a_notebook_returns_OK_response-1640112735\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"f8lj84u0\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"6s6dslvh\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-21T18:52:15.181874+00:00\",\"created\":\"2021-12-21T18:52:15.181874+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1717873,\"attributes\":{\"name\":\"Test-Typescript-Get_a_notebook_returns_OK_response-1640081721\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Typescript-Get_a_notebook_returns_OK_response-1640081721 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"601ph050\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-21T10:15:21.688698+00:00\",\"created\":\"2021-12-21T10:15:21.688698+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1717870,\"attributes\":{\"name\":\"Test-Go-Update_a_notebook_returns_OK_response-1640081635-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"vjydpvyz\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"ho2ivxv5\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-21T10:13:56.435016+00:00\",\"created\":\"2021-12-21T10:13:55.278107+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1660165,\"attributes\":{\"name\":\"Test-Python-Update_a_notebook_returns_OK_response-1638987033\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Python-Update_a_notebook_returns_OK_response-1638987033 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"7i7fz8oc\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-08T18:10:34.034069+00:00\",\"created\":\"2021-12-08T18:10:34.034069+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1660164,\"attributes\":{\"name\":\"Test-Python-Delete_a_notebook_returns_OK_response-1638987029\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Python-Delete_a_notebook_returns_OK_response-1638987029 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"hovq46bn\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-08T18:10:29.987110+00:00\",\"created\":\"2021-12-08T18:10:29.987110+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1660163,\"attributes\":{\"name\":\"Test-Python-Create_a_notebook_returns_OK_response-1638987028\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"sawtra8c\"},{\"attributes\":{\"definition\":{\"show_legend\":true,\"type\":\"timeseries\",\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"dkgafplg\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-08T18:10:28.682328+00:00\",\"created\":\"2021-12-08T18:10:28.682328+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1660160,\"attributes\":{\"name\":\"Test-Python-Get_a_notebook_returns_OK_response-1638987026\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Python-Get_a_notebook_returns_OK_response-1638987026 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"sccraa38\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-12-08T18:10:26.143019+00:00\",\"created\":\"2021-12-08T18:10:26.143019+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1600250,\"attributes\":{\"name\":\"Test-Typescript-Update_a_notebook_returns_OK_response-1637674398-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"aq3anjcd\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"ao2ygn9x\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-23T13:33:19.334585+00:00\",\"created\":\"2021-11-23T13:33:18.812190+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1600249,\"attributes\":{\"name\":\"Test-Typescript-Get_a_notebook_returns_OK_response-1637674397\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Typescript-Get_a_notebook_returns_OK_response-1637674397 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ti8ab3m4\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-23T13:33:17.638758+00:00\",\"created\":\"2021-11-23T13:33:17.638758+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1574187,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1637141144-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ci6mikrb\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"rmkegmjz\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-17T09:25:47.020254+00:00\",\"created\":\"2021-11-17T09:25:46.597716+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1574186,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1637141142\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1637141142 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"aub7w0cd\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-17T09:25:45.101074+00:00\",\"created\":\"2021-11-17T09:25:45.101074+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1574184,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1637141140\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"jc56b7v8\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"l6ihwsra\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-17T09:25:43.344897+00:00\",\"created\":\"2021-11-17T09:25:43.344897+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1574162,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1620731122-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"36qwo0wh\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"w6zcrkko\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-17T09:20:53.326430+00:00\",\"created\":\"2021-11-17T09:20:52.910209+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1574161,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1620726175\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1620726175 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ilm74x9l\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-17T09:20:51.992959+00:00\",\"created\":\"2021-11-17T09:20:51.992959+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1570535,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1637078414-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"8ka89nl6\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"mc08fjru\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T16:00:15.696963+00:00\",\"created\":\"2021-11-16T16:00:15.257941+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1570534,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1637078413\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1637078413 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"eq2bd466\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T16:00:13.605803+00:00\",\"created\":\"2021-11-16T16:00:13.605803+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1570532,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1637078411\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"3gyz0zdc\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"3tfpg3l8\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T16:00:11.681983+00:00\",\"created\":\"2021-11-16T16:00:11.681983+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1570471,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1637077898-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"29p7kj9c\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"1z0mvh1v\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T15:51:39.708117+00:00\",\"created\":\"2021-11-16T15:51:39.299674+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1570470,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1637077897\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1637077897 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"4kg8btjd\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T15:51:37.765488+00:00\",\"created\":\"2021-11-16T15:51:37.765488+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1570468,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1637077895\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"v37ns0tl\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"0lw3tmkw\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T15:51:35.908376+00:00\",\"created\":\"2021-11-16T15:51:35.908376+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1569695,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1637070460-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"2de8iz16\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"u1e1o76n\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T13:47:43.446141+00:00\",\"created\":\"2021-11-16T13:47:43.038481+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1569694,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1637070459\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1637070459 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"sl6lb02h\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T13:47:41.775053+00:00\",\"created\":\"2021-11-16T13:47:41.775053+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1569692,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1637070457\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"3ama8gjf\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"6lf5x85x\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T13:47:39.930386+00:00\",\"created\":\"2021-11-16T13:47:39.930386+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1569591,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1637063291-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"piecd7x6\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"8dgl8kh9\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T13:23:41.944589+00:00\",\"created\":\"2021-11-16T13:23:41.494508+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1569590,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1637063290\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1637063290 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"yqsx4b0w\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T13:23:40.575604+00:00\",\"created\":\"2021-11-16T13:23:40.575604+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1569288,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1637063289\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"zwe4jdl3\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"ez5uyknb\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-11-16T11:48:12.010803+00:00\",\"created\":\"2021-11-16T11:48:12.010803+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1418594,\"attributes\":{\"name\":\"Test-Go-Update_a_notebook_returns_OK_response-1634040178\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Update_a_notebook_returns_OK_response-1634040178 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"6xayew1l\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T12:02:58.725181+00:00\",\"created\":\"2021-10-12T12:02:58.725181+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1418592,\"attributes\":{\"name\":\"Test-Go-Get_a_notebook_returns_OK_response-1634040178\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Get_a_notebook_returns_OK_response-1634040178 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"6yvq7ri3\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T12:02:58.470375+00:00\",\"created\":\"2021-10-12T12:02:58.470375+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1418591,\"attributes\":{\"name\":\"Test-Go-Delete_a_notebook_returns_OK_response-1634040178\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Delete_a_notebook_returns_OK_response-1634040178 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"vbdf1bqq\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T12:02:58.357131+00:00\",\"created\":\"2021-10-12T12:02:58.357131+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1418589,\"attributes\":{\"name\":\"Test-Go-Create_a_notebook_returns_OK_response-1634040177\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"h39tcfex\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"o86tlsk2\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T12:02:58.118960+00:00\",\"created\":\"2021-10-12T12:02:58.118960+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417726,\"attributes\":{\"name\":\"Test-Go-Get_a_notebook_returns_OK_response-1634031528\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Get_a_notebook_returns_OK_response-1634031528 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"4t0fln2y\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:38:49.341316+00:00\",\"created\":\"2021-10-12T09:38:49.341316+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417686,\"attributes\":{\"name\":\"Test-Go-Get_a_notebook_returns_OK_response-1634031244\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Get_a_notebook_returns_OK_response-1634031244 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"80mbfpqo\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:34:05.404374+00:00\",\"created\":\"2021-10-12T09:34:05.404374+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417682,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1634031040\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1634031040 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ypci83fo\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:30:41.261694+00:00\",\"created\":\"2021-10-12T09:30:41.261694+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417680,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1634030875\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1634030875 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ebhtk48j\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:27:56.164598+00:00\",\"created\":\"2021-10-12T09:27:56.164598+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417658,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1634030685\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1634030685 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"p3qij47b\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:45.871488+00:00\",\"created\":\"2021-10-12T09:24:45.871488+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417657,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1634030660\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Update_a_notebook_returns_OK_response-1634030660 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"b4ahc8jj\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:20.560706+00:00\",\"created\":\"2021-10-12T09:24:20.560706+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417656,\"attributes\":{\"name\":\"Test-Get_a_notebook_returns_OK_response-1634030659\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Get_a_notebook_returns_OK_response-1634030659 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"rt3nwhxw\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:20.010537+00:00\",\"created\":\"2021-10-12T09:24:20.010537+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417655,\"attributes\":{\"name\":\"Test-Delete_a_notebook_returns_OK_response-1634030659\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Delete_a_notebook_returns_OK_response-1634030659 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"egelq2we\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:19.830533+00:00\",\"created\":\"2021-10-12T09:24:19.830533+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417654,\"attributes\":{\"name\":\"Test-Create_a_notebook_returns_OK_response-1634030658\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ohd6d678\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"7skxov27\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:19.391987+00:00\",\"created\":\"2021-10-12T09:24:19.391987+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417653,\"attributes\":{\"name\":\"Test-Go-Update_a_notebook_returns_OK_response-1634030642\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Update_a_notebook_returns_OK_response-1634030642 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"8s5ulvhq\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:02.654610+00:00\",\"created\":\"2021-10-12T09:24:02.654610+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417652,\"attributes\":{\"name\":\"Test-Go-Get_a_notebook_returns_OK_response-1634030641\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Get_a_notebook_returns_OK_response-1634030641 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"vi55dq1j\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:02.145423+00:00\",\"created\":\"2021-10-12T09:24:02.145423+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417651,\"attributes\":{\"name\":\"Test-Go-Delete_a_notebook_returns_OK_response-1634030641\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Delete_a_notebook_returns_OK_response-1634030641 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"pxnwygyc\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:01.807898+00:00\",\"created\":\"2021-10-12T09:24:01.807898+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417650,\"attributes\":{\"name\":\"Test-Go-Create_a_notebook_returns_OK_response-1634030640\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"a736lr9n\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"0xihqmlh\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:24:01.072040+00:00\",\"created\":\"2021-10-12T09:24:01.072040+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417506,\"attributes\":{\"name\":\"Test-Go-Update_a_notebook_returns_OK_response-1634029580\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Update_a_notebook_returns_OK_response-1634029580 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"otl9pb05\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:06:20.634221+00:00\",\"created\":\"2021-10-12T09:06:20.634221+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417505,\"attributes\":{\"name\":\"Test-Go-Get_a_notebook_returns_OK_response-1634029580\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Get_a_notebook_returns_OK_response-1634029580 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"oxi4qcrq\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:06:20.320499+00:00\",\"created\":\"2021-10-12T09:06:20.320499+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417504,\"attributes\":{\"name\":\"Test-Go-Delete_a_notebook_returns_OK_response-1634029580\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Delete_a_notebook_returns_OK_response-1634029580 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"7q3cyslm\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:06:20.171326+00:00\",\"created\":\"2021-10-12T09:06:20.171326+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417503,\"attributes\":{\"name\":\"Test-Go-Create_a_notebook_returns_OK_response-1634029579\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```js\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"jpagyh9r\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"3kjc6flm\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T09:06:19.932821+00:00\",\"created\":\"2021-10-12T09:06:19.932821+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":1417072,\"attributes\":{\"name\":\"Test-Go-Update_a_notebook_returns_OK_response-1634026036\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Go-Update_a_notebook_returns_OK_response-1634026036 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"d0hr7ys1\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":null,\"status\":\"published\",\"modified\":\"2021-10-12T08:07:16.752590+00:00\",\"created\":\"2021-10-12T08:07:16.752590+00:00\",\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all notebooks returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Notebooks",
+      "frozen_at": "2023-08-31T09:47:14.068Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/notebooks",
+            "query": [
+              [
+                "count",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"notebooks\",\"id\":4758632,\"attributes\":{\"name\":\"PCF Container Usage Attribution\",\"cells\":[{\"type\":\"notebook_cells\",\"id\":\"jod8dstf\",\"attributes\":{\"split_by\":{\"tags\":[],\"keys\":[]},\"definition\":{\"title\":\"Count of containers\",\"type\":\"query_table\",\"requests\":[{\"response_format\":\"scalar\",\"formulas\":[{\"alias\":\"containers\",\"formula\":\"query1\",\"limit\":{\"count\":10000,\"order\":\"desc\"}}],\"queries\":[{\"name\":\"query1\",\"data_source\":\"metrics\",\"query\":\"avg:cloudfoundry.nozzle.app.instances{$container_deployement_guid,$troux_uuid} by {app_name,bosh_id}\",\"aggregator\":\"avg\"}]}]},\"graph_size\":\"m\",\"time\":null}},{\"type\":\"notebook_cells\",\"id\":\"0t3xetbt\",\"attributes\":{\"definition\":{\"type\":\"markdown\",\"text\":\"This displays the count of containers per `troux_uuid` (`bosh_id`) and `container_deployment_guid` (`app_name`)\"}}},{\"type\":\"notebook_cells\",\"id\":\"7lxv9snf\",\"attributes\":{\"definition\":{\"title\":\"Percentage breakdown of containers on VMs\",\"requests\":[{\"response_format\":\"scalar\",\"formulas\":[{\"formula\":\"query1\",\"limit\":{\"order\":\"desc\"}}],\"queries\":[{\"query\":\"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployement_guid} by {app_name,bosh_id}.rollup(avg, 3600)\",\"data_source\":\"metrics\",\"name\":\"query1\",\"aggregator\":\"sum\"}],\"style\":{\"palette\":\"datadog16\"}}],\"type\":\"sunburst\",\"legend\":{\"type\":\"automatic\"}},\"time\":null}},{\"type\":\"notebook_cells\",\"id\":\"uhwq9m18\",\"attributes\":{\"definition\":{\"type\":\"markdown\",\"text\":\"This displays the count of containers per\\u00a0`troux_uuid` (`bosh_id`)\\u00a0and\\u00a0`container_deployment_guid` (`app_name`) as percentages of total containers\\n\"}}},{\"type\":\"notebook_cells\",\"id\":\"fcid5x88\",\"attributes\":{\"split_by\":{\"tags\":[],\"keys\":[]},\"definition\":{\"title\":\"Number of VMs per container_deployment_guid\",\"type\":\"query_value\",\"requests\":[{\"response_format\":\"scalar\",\"queries\":[{\"name\":\"query1\",\"data_source\":\"metrics\",\"query\":\"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployement_guid}\",\"aggregator\":\"avg\"}],\"formulas\":[{\"formula\":\"count_nonzero(query1)\",\"alias\":\"VMs\"}]}],\"autoscale\":true,\"precision\":2},\"graph_size\":\"xs\",\"time\":null}},{\"type\":\"notebook_cells\",\"id\":\"7qmg68gc\",\"attributes\":{\"definition\":{\"type\":\"markdown\",\"text\":\"When filtering by the template variable `container_deployment_guid`, this value represents the number of VMs (or `troux_uuid`s) that `container_deployment_guid` runs on \"}}},{\"type\":\"notebook_cells\",\"id\":\"h75xo4j5\",\"attributes\":{\"split_by\":{\"tags\":[],\"keys\":[]},\"definition\":{\"type\":\"query_table\",\"requests\":[{\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"avg:system.cpu.user{$troux_uuid,$container_deployement_guid} by {bosh_id,application_name}.rollup(avg, 3600)\",\"aggregator\":\"avg\"}],\"formulas\":[{\"conditional_formats\":[],\"cell_display_mode\":\"bar\",\"formula\":\"query1\",\"limit\":{\"count\":500,\"order\":\"desc\"}}],\"response_format\":\"scalar\"}],\"has_search_bar\":\"auto\"},\"time\":null}}],\"time\":{\"live_span\":\"2d\"},\"metadata\":{\"take_snapshots\":false,\"is_template\":false,\"is_favorite\":false,\"type\":null},\"template_variables\":[{\"name\":\"container_deployement_guid\",\"prefix\":\"app_name\",\"available_values\":[],\"default\":\"*\"},{\"name\":\"troux_uuid\",\"prefix\":\"bosh_id\",\"available_values\":[],\"default\":\"*\"}],\"status\":\"published\",\"modified\":\"2023-02-27T17:53:59.623647+00:00\",\"created\":\"2023-02-15T18:12:35.189588+00:00\",\"author\":{\"name\":\"Sarah Witt\",\"handle\":\"sarah.witt@datadoghq.com\",\"email\":\"sarah.witt@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/7f710a0bcefa8df8d47bfcba79f69a40?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}},{\"type\":\"notebooks\",\"id\":4823614,\"attributes\":{\"name\":\"Sarah Feb 22 2023 11:04\",\"cells\":[{\"type\":\"notebook_cells\",\"id\":\"dnulkt1p\",\"attributes\":{\"split_by\":{\"tags\":[],\"keys\":[]},\"definition\":{\"show_legend\":true,\"type\":\"timeseries\",\"requests\":[{\"response_format\":\"timeseries\",\"queries\":[{\"name\":\"query1\",\"data_source\":\"metrics\",\"query\":\"avg:system.cpu.user{*}\"}],\"style\":{\"palette\":\"dog_classic\",\"line_type\":\"solid\",\"line_width\":\"normal\"},\"display_type\":\"line\"}]},\"time\":null}}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"take_snapshots\":false,\"is_template\":false,\"is_favorite\":false,\"type\":null},\"template_variables\":[],\"status\":\"published\",\"modified\":\"2023-02-22T16:04:51.449049+00:00\",\"created\":\"2023-02-22T16:04:51.449049+00:00\",\"author\":{\"name\":\"Sarah Witt\",\"handle\":\"sarah.witt@datadoghq.com\",\"email\":\"sarah.witt@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/7f710a0bcefa8df8d47bfcba79f69a40?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}],\"meta\":{\"page\":{\"total_count\":158,\"total_filtered_count\":2}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/notebooks",
+            "query": [
+              [
+                "count",
+                "2"
+              ],
+              [
+                "start",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"notebooks\",\"id\":4745953,\"attributes\":{\"name\":\"PCF Container Usage Attribution\",\"cells\":[{\"type\":\"notebook_cells\",\"id\":\"bqyp7v5p\",\"attributes\":{\"definition\":{\"title\":\"Count of containers\",\"type\":\"query_table\",\"requests\":[{\"response_format\":\"scalar\",\"formulas\":[{\"alias\":\"containers\",\"formula\":\"query1\",\"limit\":{\"count\":500,\"order\":\"desc\"}}],\"queries\":[{\"name\":\"query1\",\"data_source\":\"metrics\",\"query\":\"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployment_guid} by {app_name,bosh_id}.rollup(avg, 3600)\",\"aggregator\":\"sum\"}]}]},\"time\":null,\"split_by\":{\"keys\":[],\"tags\":[]},\"graph_size\":\"m\"}},{\"type\":\"notebook_cells\",\"id\":\"svgafvhk\",\"attributes\":{\"definition\":{\"type\":\"markdown\",\"text\":\"This displays the count of containers per `troux_uuid` (`bosh_id`) and `container_deployment_guid` (`app_name`)\"}}},{\"type\":\"notebook_cells\",\"id\":\"vq0zsiia\",\"attributes\":{\"definition\":{\"title\":\"Percentage breakdown of containers on VMs\",\"requests\":[{\"response_format\":\"scalar\",\"formulas\":[{\"formula\":\"query1\",\"limit\":{\"order\":\"desc\"}}],\"queries\":[{\"query\":\"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployment_guid} by {app_name,bosh_id}.rollup(avg, 3600)\",\"data_source\":\"metrics\",\"name\":\"query1\",\"aggregator\":\"sum\"}],\"style\":{\"palette\":\"datadog16\"}}],\"type\":\"sunburst\",\"legend\":{\"type\":\"automatic\"}},\"time\":null}},{\"type\":\"notebook_cells\",\"id\":\"oldqd75v\",\"attributes\":{\"definition\":{\"type\":\"markdown\",\"text\":\"This displays the count of containers per\\u00a0`troux_uuid` (`bosh_id`)\\u00a0and\\u00a0`container_deployment_guid` (`app_name`) as percentages of total containers\\n\"}}},{\"type\":\"notebook_cells\",\"id\":\"m2dcz3jo\",\"attributes\":{\"definition\":{\"title\":\"Number of VMs per container_deployment_guid\",\"type\":\"query_value\",\"requests\":[{\"response_format\":\"scalar\",\"queries\":[{\"name\":\"query1\",\"data_source\":\"metrics\",\"query\":\"avg:cloudfoundry.nozzle.app.instances{$troux_uuid,$container_deployment_guid}\",\"aggregator\":\"avg\"}],\"formulas\":[{\"formula\":\"count_nonzero(query1)\",\"alias\":\"VMs\"}]}],\"autoscale\":true,\"precision\":2},\"time\":null,\"split_by\":{\"keys\":[],\"tags\":[]},\"graph_size\":\"xs\"}},{\"type\":\"notebook_cells\",\"id\":\"39crgjxd\",\"attributes\":{\"definition\":{\"type\":\"markdown\",\"text\":\"When filtering by the template variable `container_deployment_guid`, this value represents the number of VMs (or `troux_uuid`s) that `container_deployment_guid` runs on \"}}}],\"time\":{\"live_span\":\"2d\"},\"metadata\":{\"take_snapshots\":false,\"is_template\":false,\"is_favorite\":false,\"type\":null},\"template_variables\":[{\"name\":\"container_deployment_guid\",\"prefix\":\"app_name\",\"available_values\":[],\"default\":\"*\"},{\"name\":\"troux_uuid\",\"prefix\":\"bosh_id\",\"available_values\":[],\"default\":\"*\"}],\"status\":\"published\",\"modified\":\"2023-02-16T17:32:46.774359+00:00\",\"created\":\"2023-02-14T20:04:16.789408+00:00\",\"author\":{\"name\":\"Sarah Witt\",\"handle\":\"sarah.witt@datadoghq.com\",\"email\":\"sarah.witt@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/7f710a0bcefa8df8d47bfcba79f69a40?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}],\"meta\":{\"page\":{\"total_count\":158,\"total_filtered_count\":2}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all notebooks returns \"OK\" response with pagination",
+      "version": "v1"
+    },
+    {
+      "feature": "Notebooks",
+      "frozen_at": "2022-05-12T09:50:10.009Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cells": [
+                      {
+                        "attributes": {
+                          "definition": {
+                            "text": "# Test-Update_a_notebook_returns_OK_response-1652349010 notebook text",
+                            "type": "markdown"
+                          }
+                        },
+                        "type": "notebook_cells"
+                      }
+                    ],
+                    "name": "Test-Update_a_notebook_returns_OK_response-1652349010",
+                    "time": {
+                      "live_span": "1h"
+                    }
+                  },
+                  "type": "notebooks"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/notebooks",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"notebooks\",\"id\":2466034,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1652349010\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"# Test-Update_a_notebook_returns_OK_response-1652349010 notebook text\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"ous795rr\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_favorite\":false,\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":[],\"status\":\"published\",\"modified\":\"2022-05-12T09:50:10.418530+00:00\",\"created\":\"2022-05-12T09:50:10.418530+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cells": [
+                      {
+                        "attributes": {
+                          "definition": {
+                            "text": "## Some test markdown\n\n```\nvar x, y;\nx = 5;\ny = 6;\n```",
+                            "type": "markdown"
+                          }
+                        },
+                        "type": "notebook_cells"
+                      },
+                      {
+                        "attributes": {
+                          "definition": {
+                            "requests": [
+                              {
+                                "display_type": "line",
+                                "q": "avg:system.load.1{*}",
+                                "style": {
+                                  "line_type": "solid",
+                                  "line_width": "normal",
+                                  "palette": "dog_classic"
+                                }
+                              }
+                            ],
+                            "show_legend": true,
+                            "type": "timeseries",
+                            "yaxis": {
+                              "scale": "linear"
+                            }
+                          },
+                          "graph_size": "m",
+                          "split_by": {
+                            "keys": [],
+                            "tags": []
+                          },
+                          "time": null
+                        },
+                        "type": "notebook_cells"
+                      }
+                    ],
+                    "name": "Test-Update_a_notebook_returns_OK_response-1652349010-updated",
+                    "status": "published",
+                    "time": {
+                      "live_span": "1h"
+                    }
+                  },
+                  "type": "notebooks"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/notebooks/2466034",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"notebooks\",\"id\":2466034,\"attributes\":{\"name\":\"Test-Update_a_notebook_returns_OK_response-1652349010-updated\",\"cells\":[{\"attributes\":{\"definition\":{\"text\":\"## Some test markdown\\n\\n```\\nvar x, y;\\nx = 5;\\ny = 6;\\n```\",\"type\":\"markdown\"}},\"type\":\"notebook_cells\",\"id\":\"7th9aiq2\"},{\"attributes\":{\"definition\":{\"requests\":[{\"q\":\"avg:system.load.1{*}\",\"style\":{\"line_width\":\"normal\",\"palette\":\"dog_classic\",\"line_type\":\"solid\"},\"display_type\":\"line\"}],\"type\":\"timeseries\",\"show_legend\":true,\"yaxis\":{\"scale\":\"linear\"}},\"graph_size\":\"m\",\"split_by\":{\"keys\":[],\"tags\":[]},\"time\":null},\"type\":\"notebook_cells\",\"id\":\"dvsx205s\"}],\"time\":{\"live_span\":\"1h\"},\"metadata\":{\"is_favorite\":false,\"is_template\":false,\"type\":null,\"take_snapshots\":false},\"template_variables\":[],\"status\":\"published\",\"modified\":\"2022-05-12T09:50:10.903600+00:00\",\"created\":\"2022-05-12T09:50:10.418530+00:00\",\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"disabled\":false,\"status\":\"Active\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/notebooks/2466034",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a notebook returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

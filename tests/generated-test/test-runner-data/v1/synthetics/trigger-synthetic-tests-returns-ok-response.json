@@ -1,0 +1,32 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Trigger Synthetic tests returns \"OK\" response",
+  "operation_id": "TriggerTests",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsTriggerBody",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "tests": [
+          {
+            "public_id": "{{ synthetics_api_test.public_id }}"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/trigger"
+  },
+  "scenario": "Trigger Synthetic tests returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

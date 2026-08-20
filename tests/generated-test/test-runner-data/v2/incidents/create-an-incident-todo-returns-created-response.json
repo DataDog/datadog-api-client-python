@@ -1,0 +1,53 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create an incident todo returns \"CREATED\" response",
+  "operation_id": "CreateIncidentTodo",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentTodoCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "assignees": [
+              "@test.user@test.com"
+            ],
+            "content": "Restore lost data."
+          },
+          "type": "incident_todos"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/relationships/todos"
+  },
+  "scenario": "Create an incident todo returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

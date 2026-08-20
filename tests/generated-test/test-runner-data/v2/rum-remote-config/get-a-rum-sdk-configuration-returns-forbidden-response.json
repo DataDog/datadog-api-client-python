@@ -1,0 +1,35 @@
+{
+  "api": "RUMRemoteConfig",
+  "expected_status": 403,
+  "feature": "RUM Remote Config",
+  "id": "v2/RUM Remote Config/Get a RUM SDK configuration returns \"Forbidden\" response",
+  "operation_id": "GetRumSdkConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "config_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/remote_config/products/rum/configs/{config_id}"
+  },
+  "scenario": "Get a RUM SDK configuration returns \"Forbidden\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

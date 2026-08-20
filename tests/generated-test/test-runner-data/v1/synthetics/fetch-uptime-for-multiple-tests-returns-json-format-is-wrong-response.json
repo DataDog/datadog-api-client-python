@@ -1,0 +1,30 @@
+{
+  "api": "Synthetics",
+  "expected_status": 400,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Fetch uptime for multiple tests returns \"- JSON format is wrong\" response",
+  "operation_id": "FetchUptimes",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsFetchUptimesPayload",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "from_ts": 0,
+        "public_ids": [],
+        "to_ts": 0
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/uptimes"
+  },
+  "scenario": "Fetch uptime for multiple tests returns \"- JSON format is wrong\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

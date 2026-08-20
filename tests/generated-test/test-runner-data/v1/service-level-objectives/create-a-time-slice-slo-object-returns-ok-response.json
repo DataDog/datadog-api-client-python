@@ -1,0 +1,65 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 200,
+  "feature": "Service Level Objectives",
+  "id": "v1/Service Level Objectives/Create a time-slice SLO object returns \"OK\" response",
+  "operation_id": "CreateSLO",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ServiceLevelObjectiveRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": "string",
+        "name": "{{ unique }}",
+        "sli_specification": {
+          "time_slice": {
+            "comparator": ">",
+            "query": {
+              "formulas": [
+                {
+                  "formula": "query1"
+                }
+              ],
+              "queries": [
+                {
+                  "data_source": "metrics",
+                  "name": "query1",
+                  "query": "trace.servlet.request{env:prod}"
+                }
+              ]
+            },
+            "threshold": 5
+          }
+        },
+        "tags": [
+          "env:prod"
+        ],
+        "target_threshold": 97.0,
+        "thresholds": [
+          {
+            "target": 97.0,
+            "target_display": "97.0",
+            "timeframe": "7d",
+            "warning": 98,
+            "warning_display": "98.0"
+          }
+        ],
+        "timeframe": "7d",
+        "type": "time_slice",
+        "warning_threshold": 98
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/slo"
+  },
+  "scenario": "Create a time-slice SLO object returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

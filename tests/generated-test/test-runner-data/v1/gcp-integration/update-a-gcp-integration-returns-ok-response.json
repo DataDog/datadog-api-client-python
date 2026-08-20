@@ -1,0 +1,28 @@
+{
+  "api": "GCPIntegration",
+  "expected_status": 200,
+  "feature": "GCP Integration",
+  "id": "v1/GCP Integration/Update a GCP integration returns \"OK\" response",
+  "operation_id": "UpdateGCPIntegration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "GCPAccount",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"auth_provider_x509_cert_url\": \"https://www.googleapis.com/oauth2/v1/certs\", \"auth_uri\": \"https://accounts.google.com/o/oauth2/auth\", \"client_email\": \"{{unique_hash}}@example.com\", \"client_id\": \"{{ timestamp(\"now\") }}{{ timestamp(\"now\") }}0\", \"client_x509_cert_url\": \"https://www.googleapis.com/robot/v1/metadata/x509/$CLIENT_EMAIL\", \"host_filters\": \"key:value,filter:example\", \"is_cspm_enabled\": true, \"is_security_command_center_enabled\": true, \"is_resource_change_collection_enabled\": true, \"private_key\": \"private_key\", \"private_key_id\": \"123456789abcdefghi123456789abcdefghijklm\", \"project_id\": \"datadog-apitest\", \"resource_collection_enabled\": true, \"token_uri\": \"https://accounts.google.com/o/oauth2/token\", \"type\": \"service_account\"}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/integration/gcp"
+  },
+  "scenario": "Update a GCP integration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

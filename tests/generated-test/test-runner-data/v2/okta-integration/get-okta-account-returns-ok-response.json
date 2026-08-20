@@ -1,0 +1,35 @@
+{
+  "api": "OktaIntegration",
+  "expected_status": 200,
+  "feature": "Okta Integration",
+  "id": "v2/Okta Integration/Get Okta account returns \"OK\" response",
+  "operation_id": "GetOktaAccount",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "okta_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/okta/accounts/{account_id}"
+  },
+  "scenario": "Get Okta account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

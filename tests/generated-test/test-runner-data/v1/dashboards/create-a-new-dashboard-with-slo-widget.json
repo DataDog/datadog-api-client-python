@@ -1,0 +1,56 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with slo widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/slo_widget.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "additional_query_filters": "!host:excluded_host",
+              "global_time_target": "0",
+              "show_error_budget": true,
+              "slo_id": "{{ slo.data[0].id }}",
+              "time_windows": [
+                "7d"
+              ],
+              "title_align": "left",
+              "title_size": "16",
+              "type": "slo",
+              "view_mode": "overall",
+              "view_type": "detail"
+            },
+            "layout": {
+              "height": 21,
+              "width": 60,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with slo widget",
+  "schema_version": 1,
+  "version": "v1"
+}

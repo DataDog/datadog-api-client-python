@@ -1,0 +1,73 @@
+{
+  "api": "Metrics",
+  "expected_status": 404,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Update a tag indexing rule returns \"Not Found\" response",
+  "operation_id": "UpdateTagIndexingRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TagIndexingRuleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "ignored_metric_name_matches": [],
+            "metric_name_matches": [
+              "dd.test.*"
+            ],
+            "name": "my-indexing-rule",
+            "options": {
+              "data": {
+                "dynamic_tags": {
+                  "queried_tags_window_seconds": 3600,
+                  "related_asset_tags": false
+                },
+                "manage_preexisting_metrics": true,
+                "metric_match": {
+                  "queried_window_seconds": 3600
+                },
+                "override_previous_rules": false
+              },
+              "version": 1
+            },
+            "rule_order": 2,
+            "tags": [
+              "env",
+              "service"
+            ]
+          },
+          "type": "tag_indexing_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/tag-indexing-rules/{id}"
+  },
+  "scenario": "Update a tag indexing rule returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

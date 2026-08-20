@@ -1,0 +1,48 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create an incident returns \"CREATED\" response",
+  "operation_id": "CreateIncident",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "customer_impacted": false,
+            "fields": {
+              "state": {
+                "type": "dropdown",
+                "value": "resolved"
+              }
+            },
+            "title": "{{unique}}"
+          },
+          "relationships": {
+            "commander_user": {
+              "data": {
+                "id": "{{ user.data.id }}",
+                "type": "{{ user.data.type }}"
+              }
+            }
+          },
+          "type": "incidents"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents"
+  },
+  "scenario": "Create an incident returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,37 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 204,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Validate a suppression rule returns \"OK\" response",
+  "operation_id": "ValidateSecurityMonitoringSuppression",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringSuppressionCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "data_exclusion_query": "source:cloudtrail account_id:12345",
+            "description": "This rule suppresses low-severity signals in staging environments.",
+            "enabled": true,
+            "name": "Custom suppression",
+            "rule_query": "type:log_detection source:cloudtrail"
+          },
+          "type": "suppressions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/configuration/suppressions/validation"
+  },
+  "scenario": "Validate a suppression rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

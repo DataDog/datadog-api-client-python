@@ -1,0 +1,79 @@
+{
+  "feature": "Domain Allowlist",
+  "recordings": [
+    {
+      "feature": "Domain Allowlist",
+      "frozen_at": "2024-10-23T18:16:16.668Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/domain_allowlist",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"domain_allowlist\",\"attributes\":{\"enabled\":false,\"domains\":[\"@static-test-domain.test\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get Domain Allowlist returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Domain Allowlist",
+      "frozen_at": "2024-10-23T18:16:16.928Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "domains": [
+                      "@static-test-domain.test"
+                    ],
+                    "enabled": false
+                  },
+                  "type": "domain_allowlist"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/domain_allowlist",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"domain_allowlist\",\"attributes\":{\"enabled\":false,\"domains\":[\"@static-test-domain.test\"]}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Sets Domain Allowlist returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

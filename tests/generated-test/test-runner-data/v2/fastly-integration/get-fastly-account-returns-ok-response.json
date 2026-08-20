@@ -1,0 +1,35 @@
+{
+  "api": "FastlyIntegration",
+  "expected_status": 200,
+  "feature": "Fastly Integration",
+  "id": "v2/Fastly Integration/Get Fastly account returns \"OK\" response",
+  "operation_id": "GetFastlyAccount",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "fastly_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/fastly/accounts/{account_id}"
+  },
+  "scenario": "Get Fastly account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "LogsRestrictionQueries",
+  "expected_status": 400,
+  "feature": "Logs Restriction Queries",
+  "id": "v2/Logs Restriction Queries/Get all restriction queries for a given user returns \"Not found\" response",
+  "operation_id": "ListUserRestrictionQueries",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/restriction_queries/user/{user_id}"
+  },
+  "scenario": "Get all restriction queries for a given user returns \"Not found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

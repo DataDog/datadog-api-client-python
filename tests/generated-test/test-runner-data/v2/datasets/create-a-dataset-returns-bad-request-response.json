@@ -1,0 +1,28 @@
+{
+  "api": "Datasets",
+  "expected_status": 400,
+  "feature": "Datasets",
+  "id": "v2/Datasets/Create a dataset returns \"Bad Request\" response",
+  "operation_id": "CreateDataset",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DatasetCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "test": "bad_request"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/datasets"
+  },
+  "scenario": "Create a dataset returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

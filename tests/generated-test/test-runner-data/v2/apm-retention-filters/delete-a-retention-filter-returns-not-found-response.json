@@ -1,0 +1,35 @@
+{
+  "api": "APMRetentionFilters",
+  "expected_status": 404,
+  "feature": "APM Retention Filters",
+  "id": "v2/APM Retention Filters/Delete a retention filter returns \"Not Found\" response",
+  "operation_id": "DeleteApmRetentionFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "filter_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "not_found"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/apm/config/retention-filters/{filter_id}"
+  },
+  "scenario": "Delete a retention filter returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

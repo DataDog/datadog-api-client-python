@@ -1,0 +1,35 @@
+{
+  "api": "SoftwareCatalog",
+  "expected_status": 200,
+  "feature": "Software Catalog",
+  "id": "v2/Software Catalog/Get a list of entity relations returns \"OK\" response with pagination",
+  "operation_id": "ListCatalogRelation",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 20
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/catalog/relation"
+  },
+  "scenario": "Get a list of entity relations returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,48 @@
+{
+  "api": "Roles",
+  "expected_status": 200,
+  "feature": "Roles",
+  "id": "v2/Roles/Revoke permission returns \"OK\" response",
+  "operation_id": "RemovePermissionFromRole",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RelationshipToPermission",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "id": "{{ permission.id }}",
+          "type": "{{ permission.type }}"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "role_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "role.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/roles/{role_id}/permissions"
+  },
+  "scenario": "Revoke permission returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

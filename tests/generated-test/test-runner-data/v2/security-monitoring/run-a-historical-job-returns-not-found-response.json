@@ -1,0 +1,39 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Run a historical job returns \"Not Found\" response",
+  "operation_id": "RunHistoricalJob",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RunHistoricalJobRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "fromRule": {
+              "from": 1730201035064,
+              "id": "non-existng",
+              "index": "main",
+              "notifications": [],
+              "to": 1730204635115
+            }
+          },
+          "type": "historicalDetectionsJobCreate"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/siem-historical-detections/jobs"
+  },
+  "scenario": "Run a historical job returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

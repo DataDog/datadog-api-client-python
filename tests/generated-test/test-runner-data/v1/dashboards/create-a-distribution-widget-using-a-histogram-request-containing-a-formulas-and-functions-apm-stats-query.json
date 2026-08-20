@@ -1,0 +1,80 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a distribution widget using a histogram request containing a formulas and functions APM Stats query",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "description": "",
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "query": {
+                    "data_source": "apm_resource_stats",
+                    "env": "staging",
+                    "group_by": [
+                      "resource_name"
+                    ],
+                    "name": "query1",
+                    "operation_name": "universal.http.client",
+                    "primary_tag_name": "datacenter",
+                    "primary_tag_value": "*",
+                    "service": "azure-bill-import",
+                    "stat": "latency_distribution"
+                  },
+                  "request_type": "histogram",
+                  "style": {
+                    "palette": "dog_classic"
+                  }
+                }
+              ],
+              "show_legend": false,
+              "title": "APM Stats - Request latency HOP",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "distribution",
+              "xaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "scale": "linear"
+              },
+              "yaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "scale": "linear"
+              }
+            },
+            "layout": {
+              "height": 2,
+              "width": 4,
+              "x": 8,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a distribution widget using a histogram request containing a formulas and functions APM Stats query",
+  "schema_version": 1,
+  "version": "v1"
+}

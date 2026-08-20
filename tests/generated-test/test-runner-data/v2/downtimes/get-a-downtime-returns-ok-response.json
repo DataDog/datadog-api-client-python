@@ -1,0 +1,35 @@
+{
+  "api": "Downtimes",
+  "expected_status": 200,
+  "feature": "Downtimes",
+  "id": "v2/Downtimes/Get a downtime returns \"OK\" response",
+  "operation_id": "GetDowntime",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "downtime_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "downtime_v2.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/downtime/{downtime_id}"
+  },
+  "scenario": "Get a downtime returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

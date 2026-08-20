@@ -1,0 +1,18 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 200,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/Get active billing dimensions for cost attribution returns \"OK\" response",
+  "operation_id": "GetActiveBillingDimensions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cost_by_tag/active_billing_dimensions"
+  },
+  "scenario": "Get active billing dimensions for cost attribution returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

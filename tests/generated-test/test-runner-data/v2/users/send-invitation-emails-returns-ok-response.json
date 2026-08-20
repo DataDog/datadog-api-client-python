@@ -1,0 +1,40 @@
+{
+  "api": "Users",
+  "expected_status": 201,
+  "feature": "Users",
+  "id": "v2/Users/Send invitation emails returns \"OK\" response",
+  "operation_id": "SendInvitations",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UserInvitationsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "{{ user.data.id }}",
+                  "type": "{{ user.data.type }}"
+                }
+              }
+            },
+            "type": "user_invitations"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/user_invitations"
+  },
+  "scenario": "Send invitation emails returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

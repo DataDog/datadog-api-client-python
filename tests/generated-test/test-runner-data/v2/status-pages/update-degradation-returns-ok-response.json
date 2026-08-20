@@ -1,0 +1,67 @@
+{
+  "api": "StatusPages",
+  "expected_status": 200,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Update degradation returns \"OK\" response",
+  "operation_id": "UpdateDegradation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchDegradationRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "title": "Elevated API Latency in US1"
+          },
+          "id": "{{ degradation.data.id }}",
+          "type": "degradations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "degradation_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "degradation.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/degradations/{degradation_id}"
+  },
+  "scenario": "Update degradation returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

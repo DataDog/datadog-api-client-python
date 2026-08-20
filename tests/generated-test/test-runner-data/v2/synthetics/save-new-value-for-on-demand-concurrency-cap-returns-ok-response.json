@@ -1,0 +1,28 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v2/Synthetics/Save new value for on-demand concurrency cap returns \"OK\" response",
+  "operation_id": "SetOnDemandConcurrencyCap",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OnDemandConcurrencyCapAttributes",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "on_demand_concurrency_cap": 20
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/synthetics/settings/on_demand_concurrency_cap"
+  },
+  "scenario": "Save new value for on-demand concurrency cap returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

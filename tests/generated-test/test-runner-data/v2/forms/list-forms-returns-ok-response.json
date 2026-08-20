@@ -1,0 +1,18 @@
+{
+  "api": "Forms",
+  "expected_status": 200,
+  "feature": "Forms",
+  "id": "v2/Forms/List forms returns \"OK\" response",
+  "operation_id": "ListForms",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/forms"
+  },
+  "scenario": "List forms returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

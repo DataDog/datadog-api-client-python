@@ -1,0 +1,45 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v1/Security Monitoring/Add a security signal to an incident returns \"OK\" response",
+  "operation_id": "AddSecurityMonitoringSignalToIncident",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AddSignalToIncidentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "incident_id": 2609
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "signal_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "AQAAAYDiB_Ol8PbzFAAAAABBWURpQl9PbEFBQU0yeXhGTG9ZV2JnQUE"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/security_analytics/signals/{signal_id}/add_to_incident"
+  },
+  "scenario": "Add a security signal to an incident returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

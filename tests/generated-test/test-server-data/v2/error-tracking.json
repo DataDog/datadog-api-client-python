@@ -1,0 +1,698 @@
+{
+  "feature": "Error Tracking",
+  "recordings": [
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-29T12:19:16.262Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/error-tracking/issues/invalid-issue-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"issue id is not an uuid\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get the details of an error tracking issue returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:33.272Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1755012813000,
+                    "query": "service:synthetics-browser",
+                    "to": 1756308813000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/error-tracking/issues/67d80aa3-36ff-44b9-a694-c501a7591737",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"issue not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get the details of an error tracking issue returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:33.577Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1755012813000,
+                    "query": "service:synthetics-browser",
+                    "to": 1756308813000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\",\"attributes\":{\"error_message\":\"HTTP error\",\"error_type\":\"Error\",\"file_path\":\"\",\"first_seen\":1753944082256,\"first_seen_version\":\"\",\"function_name\":\"\",\"is_crash\":false,\"languages\":[\"JAVASCRIPT\"],\"last_seen\":1755686259367,\"last_seen_version\":\"\",\"platform\":\"BROWSER\",\"service\":\"synthetics-browser\",\"state\":\"RESOLVED\"},\"relationships\":{\"case\":{\"data\":{\"id\":\"f1b32a47-621d-4c57-9642-045aeb83891e\",\"type\":\"case\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get the details of an error tracking issue returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-10-17T14:43:40.022Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1759416220000,
+                    "query": "service:synthetics-browser",
+                    "to": 1760712220000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":4316,\"total_count\":8640},\"relationships\":{\"issue\":{\"data\":{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"issue\"}}}},{\"id\":\"a5bb2896-a4d0-11f0-bd76-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":280,\"total_count\":272},\"relationships\":{\"issue\":{\"data\":{\"id\":\"a5bb2896-a4d0-11f0-bd76-da7ad0900002\",\"type\":\"issue\"}}}},{\"id\":\"e2a89d14-6f07-11f0-8a88-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":4},\"relationships\":{\"issue\":{\"data\":{\"id\":\"e2a89d14-6f07-11f0-8a88-da7ad0900002\",\"type\":\"issue\"}}}},{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\"}}}},{\"id\":\"e2a89134-6f07-11f0-8d36-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"e2a89134-6f07-11f0-8d36-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/error-tracking/issues/d3ab59c6-84ee-11f0-87bb-da7ad0900002/assignee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Remove the assignee of an issue returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-10-17T14:43:41.755Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/error-tracking/issues/67d80aa3-36ff-44b9-a694-c501a7591737/assignee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"issue not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Remove the assignee of an issue returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-29T12:59:23.045Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1671612804000,
+                    "query": "service:orders-* AND @language:go",
+                    "to": 1671620004000,
+                    "track": "invalid-track"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid json value for TrackType: invalid-track\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Search error tracking issues returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:33.997Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1671612804000,
+                    "query": "service:orders-* AND @language:go",
+                    "to": 1671620004000,
+                    "track": "trace"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search error tracking issues returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-29T12:59:23.349Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1755176363000,
+                    "query": "service:synthetics-browser",
+                    "to": 1756472363000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "id": "invalid-id",
+                  "type": "assignee"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002/assignee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid UUID length: 10\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update the assignee of an issue returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:34.622Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "id": "87cb11a0-278c-440a-99fe-701223c80296",
+                  "type": "assignee"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/error-tracking/issues/67d80aa3-36ff-44b9-a694-c501a7591737/assignee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"issue not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update the assignee of an issue returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:34.689Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1755012814000,
+                    "query": "service:synthetics-browser",
+                    "to": 1756308814000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "id": "87cb11a0-278c-440a-99fe-701223c80296",
+                  "type": "assignee"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002/assignee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\",\"attributes\":{\"error_message\":\"HTTP error\",\"error_type\":\"Error\",\"file_path\":\"\",\"first_seen\":1753944082256,\"first_seen_version\":\"\",\"function_name\":\"\",\"is_crash\":false,\"languages\":[\"JAVASCRIPT\"],\"last_seen\":1755686259367,\"last_seen_version\":\"\",\"platform\":\"BROWSER\",\"service\":\"synthetics-browser\",\"state\":\"RESOLVED\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\"}},\"case\":{\"data\":{\"id\":\"f1b32a47-621d-4c57-9642-045aeb83891e\",\"type\":\"case\"}}}},\"included\":[{\"id\":\"f1b32a47-621d-4c57-9642-045aeb83891e\",\"type\":\"case\",\"attributes\":{\"closed_at\":\"2025-08-21T17:21:13.882831Z\",\"created_at\":\"2025-08-21T17:20:22.807979Z\",\"creation_source\":\"ERROR_TRACKING\",\"description\":\"\",\"insights\":[{\"type\":\"ERROR_TRACKING\",\"ref\":\"/error-tracking?issueId=5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"resource_id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\"}],\"key\":\"ET-1\",\"modified_at\":\"2025-08-21T17:21:13.882831Z\",\"priority\":\"NOT_DEFINED\",\"status\":\"CLOSED\",\"title\":\"Error: HTTP error\",\"type\":\"ERROR_TRACKING_ISSUE\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\"}},\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"384521ba-dc5f-481f-942d-15bd48428029\",\"type\":\"project\"}}}},{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\",\"attributes\":{\"email\":\"\",\"handle\":\"\",\"name\":\"\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update the assignee of an issue returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:35.029Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1755012815000,
+                    "query": "service:synthetics-browser",
+                    "to": 1756308815000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "state": "invalid-state"
+                  },
+                  "id": "5f8ebd5c-6dd9-11f0-8a28-da7ad0900002",
+                  "type": "error_tracking_issue"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002/state",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid json value for IssueState: \\\"invalid-state\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update the state of an issue returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:35.373Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "state": "resolved"
+                  },
+                  "id": "67d80aa3-36ff-44b9-a694-c501a7591737",
+                  "type": "error_tracking_issue"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/error-tracking/issues/67d80aa3-36ff-44b9-a694-c501a7591737/state",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"issue not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update the state of an issue returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "frozen_at": "2025-08-27T15:33:35.431Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1755012815000,
+                    "query": "service:synthetics-browser",
+                    "to": 1756308815000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":1,\"total_count\":1},\"relationships\":{\"issue\":{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "state": "RESOLVED"
+                  },
+                  "id": "5f8ebd5c-6dd9-11f0-8a28-da7ad0900002",
+                  "type": "error_tracking_issue"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/error-tracking/issues/5f8ebd5c-6dd9-11f0-8a28-da7ad0900002/state",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"type\":\"issue\",\"attributes\":{\"error_message\":\"HTTP error\",\"error_type\":\"Error\",\"file_path\":\"\",\"first_seen\":1753944082256,\"first_seen_version\":\"\",\"function_name\":\"\",\"is_crash\":false,\"languages\":[\"JAVASCRIPT\"],\"last_seen\":1755686259367,\"last_seen_version\":\"\",\"platform\":\"BROWSER\",\"service\":\"synthetics-browser\",\"state\":\"RESOLVED\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\"}},\"case\":{\"data\":{\"id\":\"f1b32a47-621d-4c57-9642-045aeb83891e\",\"type\":\"case\"}}}},\"included\":[{\"id\":\"f1b32a47-621d-4c57-9642-045aeb83891e\",\"type\":\"case\",\"attributes\":{\"closed_at\":\"2025-08-21T17:21:13.882831Z\",\"created_at\":\"2025-08-21T17:20:22.807979Z\",\"creation_source\":\"ERROR_TRACKING\",\"description\":\"\",\"insights\":[{\"type\":\"ERROR_TRACKING\",\"ref\":\"/error-tracking?issueId=5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\",\"resource_id\":\"5f8ebd5c-6dd9-11f0-8a28-da7ad0900002\"}],\"key\":\"ET-1\",\"modified_at\":\"2025-08-21T17:21:13.882831Z\",\"priority\":\"NOT_DEFINED\",\"status\":\"CLOSED\",\"title\":\"Error: HTTP error\",\"type\":\"ERROR_TRACKING_ISSUE\"},\"relationships\":{\"assignee\":{\"data\":{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\"}},\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"modified_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"user\"}},\"project\":{\"data\":{\"id\":\"384521ba-dc5f-481f-942d-15bd48428029\",\"type\":\"project\"}}}},{\"id\":\"87cb11a0-278c-440a-99fe-701223c80296\",\"type\":\"user\",\"attributes\":{\"email\":\"\",\"handle\":\"\",\"name\":\"\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update the state of an issue returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

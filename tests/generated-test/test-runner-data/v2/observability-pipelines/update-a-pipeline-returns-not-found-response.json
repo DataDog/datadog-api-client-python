@@ -1,0 +1,86 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 404,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Update a pipeline returns \"Not Found\" response",
+  "operation_id": "UpdatePipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ObservabilityPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "config": {
+              "destinations": [
+                {
+                  "id": "datadog-logs-destination",
+                  "inputs": [
+                    "my-processor-group"
+                  ],
+                  "type": "datadog_logs"
+                }
+              ],
+              "processor_groups": [
+                {
+                  "enabled": true,
+                  "id": "my-processor-group",
+                  "include": "service:my-service",
+                  "inputs": [
+                    "datadog-agent-source"
+                  ],
+                  "processors": [
+                    {
+                      "enabled": true,
+                      "id": "filter-processor",
+                      "include": "status:error",
+                      "type": "filter"
+                    }
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "id": "datadog-agent-source",
+                  "type": "datadog_agent"
+                }
+              ]
+            },
+            "name": "Main Observability Pipeline"
+          },
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "type": "pipelines"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "pipeline_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}"
+  },
+  "scenario": "Update a pipeline returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

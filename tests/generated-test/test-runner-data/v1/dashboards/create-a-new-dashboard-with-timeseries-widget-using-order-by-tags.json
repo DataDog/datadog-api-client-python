@@ -1,0 +1,46 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with timeseries widget using order_by tags",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with order_by tags",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "display_type": "line",
+                  "q": "avg:system.cpu.user{*} by {host}",
+                  "style": {
+                    "order_by": "tags",
+                    "palette": "dog_classic"
+                  }
+                }
+              ],
+              "type": "timeseries"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with timeseries widget using order_by tags",
+  "schema_version": 1,
+  "version": "v1"
+}

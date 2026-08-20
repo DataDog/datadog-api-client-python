@@ -1,0 +1,44 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create incident notification template returns \"Created\" response",
+  "operation_id": "CreateIncidentNotificationTemplate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateIncidentNotificationTemplateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "category": "alert",
+            "content": "An incident has been declared.\n\nTitle: Sample Incident Title\nSeverity: SEV-2\nAffected Services: web-service, database-service\nStatus: active\n\nPlease join the incident channel for updates.",
+            "name": "{{ unique }}",
+            "subject": "SEV-2 Incident: Sample Incident Title"
+          },
+          "relationships": {
+            "incident_type": {
+              "data": {
+                "id": "{{ incident_type.data.id }}",
+                "type": "incident_types"
+              }
+            }
+          },
+          "type": "notification_templates"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/config/notification-templates"
+  },
+  "scenario": "Create incident notification template returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/List distinct metric volumes by metric name returns \"Success\" response",
+  "operation_id": "ListVolumesByMetricName",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "static_test_metric_donotdelete"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/{metric_name}/volumes"
+  },
+  "scenario": "List distinct metric volumes by metric name returns \"Success\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

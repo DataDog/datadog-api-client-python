@@ -1,0 +1,39 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 400,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Upload Custom Costs file returns \"Bad Request\" response",
+  "operation_id": "UploadCustomCostsFile",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "items": {
+          "format": null,
+          "ref": "CustomCostsFileLineItem",
+          "type": "object"
+        },
+        "ref": "CustomCostsFileUploadRequest",
+        "type": "array"
+      },
+      "source": "inline",
+      "value": [
+        {
+          "BilledCost": 100.5,
+          "BillingCurrency": "USD",
+          "ChargeDescription": "Monthly usage charge for my service",
+          "ChargePeriodEnd": "2023-02-28",
+          "ChargePeriodStart": "2023-02-01"
+        }
+      ]
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cost/custom_costs"
+  },
+  "scenario": "Upload Custom Costs file returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

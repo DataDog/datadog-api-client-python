@@ -1,0 +1,51 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Edit an application key owned by current user returns \"OK\" response",
+  "operation_id": "UpdateCurrentUserApplicationKey",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ApplicationKeyUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ application_key.data.attributes.name }}-updated"
+          },
+          "id": "{{ application_key.data.id }}",
+          "type": "application_keys"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "application_key.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/current_user/application_keys/{app_key_id}"
+  },
+  "scenario": "Edit an application key owned by current user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

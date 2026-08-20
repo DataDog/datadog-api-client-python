@@ -1,0 +1,42 @@
+{
+  "api": "Logs",
+  "expected_status": 200,
+  "feature": "Logs",
+  "id": "v2/Logs/Aggregate compute events returns \"OK\" response",
+  "operation_id": "AggregateLogs",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsAggregateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "compute": [
+          {
+            "aggregation": "count",
+            "interval": "5m",
+            "type": "timeseries"
+          }
+        ],
+        "filter": {
+          "from": "now-15m",
+          "indexes": [
+            "main"
+          ],
+          "query": "*",
+          "to": "now"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/logs/analytics/aggregate"
+  },
+  "scenario": "Aggregate compute events returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

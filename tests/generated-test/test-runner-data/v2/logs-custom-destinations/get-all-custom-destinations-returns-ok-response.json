@@ -1,0 +1,18 @@
+{
+  "api": "LogsCustomDestinations",
+  "expected_status": 200,
+  "feature": "Logs Custom Destinations",
+  "id": "v2/Logs Custom Destinations/Get all custom destinations returns \"OK\" response",
+  "operation_id": "ListLogsCustomDestinations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/logs/config/custom-destinations"
+  },
+  "scenario": "Get all custom destinations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

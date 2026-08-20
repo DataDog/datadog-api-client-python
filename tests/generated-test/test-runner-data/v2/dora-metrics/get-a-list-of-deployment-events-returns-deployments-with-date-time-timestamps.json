@@ -1,0 +1,34 @@
+{
+  "api": "DORAMetrics",
+  "expected_status": 200,
+  "feature": "DORA Metrics",
+  "id": "v2/DORA Metrics/Get a list of deployment events returns deployments with date-time timestamps",
+  "operation_id": "ListDORADeployments",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DORAListDeploymentsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "from": "2023-08-31T00:00:00Z",
+            "to": "2023-09-01T00:00:00Z"
+          },
+          "type": "dora_deployments_list_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/dora/deployments"
+  },
+  "scenario": "Get a list of deployment events returns deployments with date-time timestamps",
+  "schema_version": 1,
+  "version": "v2"
+}

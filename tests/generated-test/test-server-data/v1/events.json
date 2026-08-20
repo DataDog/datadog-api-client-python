@@ -1,0 +1,119 @@
+{
+  "feature": "Events",
+  "recordings": [
+    {
+      "feature": "Events",
+      "frozen_at": "2022-01-06T00:50:51.738Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "date_happened": 1,
+                "tags": [
+                  "test:TestPostaneventinthepastreturnsBadRequestresponse1641430251"
+                ],
+                "text": "A text message.",
+                "title": "Test-Post_an_event_in_the_past_returns_Bad_Request_response-1641430251"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/events",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Event too far in the past\"]}"
+            },
+            "headers": {
+              "content-type": "text/plain; charset=utf-8"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Post an event in the past returns \"Bad Request\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Events",
+      "frozen_at": "2022-01-06T00:50:51.866Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "tags": [
+                  "test:TestPostaneventreturnsOKresponse1641430251"
+                ],
+                "text": "A text message.",
+                "title": "Test-Post_an_event_returns_OK_response-1641430251"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/events",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"status\":\"ok\",\"event\":{\"id\":6327818702635911000,\"id_str\":\"6327818702635911562\",\"title\":\"Test-Post_an_event_returns_OK_response-1641430251\",\"text\":\"A text message.\",\"date_happened\":1641430251,\"handle\":null,\"priority\":null,\"related_event_id\":null,\"tags\":[\"test:TestPostaneventreturnsOKresponse1641430251\"],\"url\":\"https://app.datadoghq.com/event/event?id=6327818702635911562\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Post an event returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Events",
+      "frozen_at": "2022-01-06T00:50:51.994Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "tags": [
+                  "test:TestPostaneventwithalongtitlereturnsOKresponse1641430251"
+                ],
+                "text": "A text message.",
+                "title": "Test-Post_an_event_with_a_long_title_returns_OK_response-1641430251 very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong title with 100+ characters"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/events",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"status\":\"ok\",\"event\":{\"id\":6327818704671040000,\"id_str\":\"6327818704671039975\",\"title\":\"Test-Post_an_event_with_a_long_title_returns_OK_response-1641430251 very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong title with 100+ characters\",\"text\":\"A text message.\",\"date_happened\":1641430252,\"handle\":null,\"priority\":null,\"related_event_id\":null,\"tags\":[\"test:TestPostaneventwithalongtitlereturnsOKresponse1641430251\"],\"url\":\"https://app.datadoghq.com/event/event?id=6327818704671039975\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Post an event with a long title returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

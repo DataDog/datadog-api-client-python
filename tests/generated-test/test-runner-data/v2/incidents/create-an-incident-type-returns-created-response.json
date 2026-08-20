@@ -1,0 +1,35 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create an incident type returns \"CREATED\" response",
+  "operation_id": "CreateIncidentType",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentTypeCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Any incidents that harm (or have the potential to) the confidentiality, integrity, or availability of our data.",
+            "is_default": false,
+            "name": "Security Incident"
+          },
+          "type": "incident_types"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/config/types"
+  },
+  "scenario": "Create an incident type returns \"CREATED\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

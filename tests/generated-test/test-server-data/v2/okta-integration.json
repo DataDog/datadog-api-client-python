@@ -1,0 +1,347 @@
+{
+  "feature": "Okta Integration",
+  "recordings": [
+    {
+      "feature": "Okta Integration",
+      "frozen_at": "2024-01-29T14:58:52.386Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "auth_method": "oauth",
+                    "client_id": "client_id",
+                    "client_secret": "client_secret",
+                    "domain": "https://example.okta.com/",
+                    "name": "testaddoktaaccountreturnsokresponse1706540332"
+                  },
+                  "id": "f749daaf-682e-4208-a38d-c9b43162c609",
+                  "type": "okta-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/okta/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"okta-accounts\",\"attributes\":{\"auth_method\":\"oauth\",\"client_id\":\"client_id\",\"domain\":\"https://example.okta.com/\",\"name\":\"testaddoktaaccountreturnsokresponse1706540332\"},\"id\":\"1e62be98-94ab-403d-9491-98b7fbf9a7de\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/okta/accounts/1e62be98-94ab-403d-9491-98b7fbf9a7de",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Add Okta account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Okta Integration",
+      "frozen_at": "2023-11-21T16:59:44.767Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "auth_method": "oauth",
+                    "client_id": "fakeclientid",
+                    "client_secret": "fakeclientsecret",
+                    "domain": "https://dev-test.okta.com/",
+                    "name": "testgetoktaaccountreturnsokresponse1700585984"
+                  },
+                  "type": "okta-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/okta/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"okta-accounts\",\"attributes\":{\"client_id\":\"fakeclientid\",\"auth_method\":\"oauth\",\"domain\":\"https://dev-test.okta.com/\",\"name\":\"testgetoktaaccountreturnsokresponse1700585984\"},\"id\":\"2bf39935-f5c8-46b1-b41b-eda0b4bd2e78\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/okta/accounts/2bf39935-f5c8-46b1-b41b-eda0b4bd2e78",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"okta-accounts\",\"attributes\":{\"client_id\":\"fakeclientid\",\"auth_method\":\"oauth\",\"domain\":\"https://dev-test.okta.com/\",\"name\":\"testgetoktaaccountreturnsokresponse1700585984\"},\"id\":\"2bf39935-f5c8-46b1-b41b-eda0b4bd2e78\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/okta/accounts/2bf39935-f5c8-46b1-b41b-eda0b4bd2e78",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get Okta account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Okta Integration",
+      "frozen_at": "2023-11-21T16:59:46.153Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "auth_method": "oauth",
+                    "client_id": "fakeclientid",
+                    "client_secret": "fakeclientsecret",
+                    "domain": "https://dev-test.okta.com/",
+                    "name": "testlistoktaaccountsreturnsokresponse1700585986"
+                  },
+                  "type": "okta-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/okta/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"okta-accounts\",\"attributes\":{\"client_id\":\"fakeclientid\",\"name\":\"testlistoktaaccountsreturnsokresponse1700585986\",\"auth_method\":\"oauth\",\"domain\":\"https://dev-test.okta.com/\"},\"id\":\"a5e9a04b-ac5b-4a5c-a4d5-c697deb232aa\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integrations/okta/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"okta-accounts\",\"attributes\":{\"name\":\"testoktapublicupdateaccountreturnsokresponse1699978854\",\"auth_method\":\"oauth\",\"domain\":\"https://example.okta.com/\",\"client_id\":\"client_id\"},\"id\":\"9637ddf0-4f5e-4adb-89b0-72b7c843116f\"},{\"type\":\"okta-accounts\",\"attributes\":{\"name\":\"testoktapublicupdateaccountreturnsokresponse1699978979\",\"auth_method\":\"oauth\",\"domain\":\"https://example.okta.com/\",\"client_id\":\"client_id\"},\"id\":\"199e06bf-6805-403c-8b97-34c10f526485\"},{\"type\":\"okta-accounts\",\"attributes\":{\"name\":\"testoktapublicupdateaccountreturnsokresponse1699989540\",\"auth_method\":\"oauth\",\"domain\":\"https://example.okta.com/\",\"client_id\":\"client_id\"},\"id\":\"2770caff-0eb2-4edf-b3dd-63b42d706c79\"},{\"type\":\"okta-accounts\",\"attributes\":{\"name\":\"testoktapublicupdateaccountreturnsokresponse1699990165\",\"auth_method\":\"oauth\",\"domain\":\"https://example.okta.com/\",\"client_id\":\"client_id\"},\"id\":\"ee163be4-1a6d-466e-ba9d-539e5c505645\"},{\"type\":\"okta-accounts\",\"attributes\":{\"name\":\"testupdateoktaaccountreturnsokresponse1700585947\",\"auth_method\":\"oauth\",\"domain\":\"https://example.okta.com/\",\"client_id\":\"client_id\"},\"id\":\"474f2d62-fb47-40fc-a201-f0c59c90d3e3\"},{\"type\":\"okta-accounts\",\"attributes\":{\"name\":\"testlistoktaaccountsreturnsokresponse1700585986\",\"auth_method\":\"oauth\",\"domain\":\"https://dev-test.okta.com/\",\"client_id\":\"fakeclientid\"},\"id\":\"a5e9a04b-ac5b-4a5c-a4d5-c697deb232aa\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/okta/accounts/a5e9a04b-ac5b-4a5c-a4d5-c697deb232aa",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List Okta accounts returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Okta Integration",
+      "frozen_at": "2023-11-21T16:59:47.501Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "auth_method": "oauth",
+                    "client_id": "fakeclientid",
+                    "client_secret": "fakeclientsecret",
+                    "domain": "https://dev-test.okta.com/",
+                    "name": "testupdateoktaaccountreturnsokresponse1700585987"
+                  },
+                  "type": "okta-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integrations/okta/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"okta-accounts\",\"attributes\":{\"domain\":\"https://dev-test.okta.com/\",\"auth_method\":\"oauth\",\"client_id\":\"fakeclientid\",\"name\":\"testupdateoktaaccountreturnsokresponse1700585987\"},\"id\":\"c847a349-9687-4b80-8b0f-996e0e75f73e\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "auth_method": "oauth",
+                    "client_id": "client_id",
+                    "client_secret": "client_secret",
+                    "domain": "https://example.okta.com/"
+                  },
+                  "type": "okta-accounts"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integrations/okta/accounts/c847a349-9687-4b80-8b0f-996e0e75f73e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"okta-accounts\",\"id\":\"7343985f-6e86-4327-8792-538b4c9b38e9\",\"attributes\":{\"auth_method\":\"oauth\",\"client_id\":\"client_id\",\"domain\":\"https://example.okta.com/\",\"name\":\"testupdateoktaaccountreturnsokresponse1700585987\"}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integrations/okta/accounts/c847a349-9687-4b80-8b0f-996e0e75f73e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Unknown error occurred: \"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update Okta account returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

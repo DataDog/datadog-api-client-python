@@ -1,0 +1,18 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get all due date rules returns \"Successfully retrieved the list of due date rules\" response",
+  "operation_id": "ListSecurityFindingsAutomationDueDateRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/due_date_rules"
+  },
+  "scenario": "Get all due date rules returns \"Successfully retrieved the list of due date rules\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

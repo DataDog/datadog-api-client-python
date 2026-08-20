@@ -1,0 +1,60 @@
+{
+  "api": "AuthNMappings",
+  "expected_status": 200,
+  "feature": "AuthN Mappings",
+  "id": "v2/AuthN Mappings/Edit an AuthN Mapping returns \"OK\" response",
+  "operation_id": "UpdateAuthNMapping",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AuthNMappingUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "attribute_key": "member-of",
+            "attribute_value": "Development"
+          },
+          "id": "{{ authn_mapping.data.id }}",
+          "relationships": {
+            "role": {
+              "data": {
+                "id": "{{ role.data.id }}",
+                "type": "roles"
+              }
+            }
+          },
+          "type": "authn_mappings"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "authn_mapping_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "authn_mapping.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/authn_mappings/{authn_mapping_id}"
+  },
+  "scenario": "Edit an AuthN Mapping returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,33 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Reorder ticket creation rules returns \"Successfully reordered the ticket creation rules\" response",
+  "operation_id": "ReorderSecurityFindingsAutomationTicketCreationRules",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TicketCreationRuleReorderRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "{{ valid_ticket_creation_rule.data.id }}",
+            "type": "ticket_creation_rules"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/ticket_creation_rules/reorder"
+  },
+  "scenario": "Reorder ticket creation rules returns \"Successfully reordered the ticket creation rules\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

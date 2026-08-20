@@ -1,0 +1,61 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a detection rule with type 'impossible_travel' returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleCreatePayload",
+        "type": null
+      },
+      "source": "inline",
+      "value": {
+        "cases": [
+          {
+            "name": "",
+            "notifications": [],
+            "status": "info"
+          }
+        ],
+        "filters": [],
+        "hasExtendedTitle": true,
+        "isEnabled": true,
+        "message": "test",
+        "name": "{{ unique }}",
+        "options": {
+          "detectionMethod": "impossible_travel",
+          "evaluationWindow": 900,
+          "impossibleTravelOptions": {
+            "baselineUserLocations": false
+          },
+          "keepAlive": 3600,
+          "maxSignalDuration": 86400
+        },
+        "queries": [
+          {
+            "aggregation": "geo_data",
+            "distinctFields": [],
+            "groupByFields": [
+              "@usr.id"
+            ],
+            "metric": "@network.client.geoip",
+            "query": "*"
+          }
+        ],
+        "tags": [],
+        "type": "log_detection"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules"
+  },
+  "scenario": "Create a detection rule with type 'impossible_travel' returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

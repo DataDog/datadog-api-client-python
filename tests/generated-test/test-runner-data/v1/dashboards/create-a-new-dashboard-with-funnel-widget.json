@@ -1,0 +1,46 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with funnel widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with funnel widget",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "query": {
+                    "data_source": "rum",
+                    "query_string": "",
+                    "steps": []
+                  },
+                  "request_type": "funnel"
+                }
+              ],
+              "type": "funnel"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with funnel widget",
+  "schema_version": 1,
+  "version": "v1"
+}

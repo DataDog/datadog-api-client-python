@@ -1,0 +1,51 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 200,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/List Model Lab project facet values returns \"OK\" response",
+  "operation_id": "ListModelLabProjectFacetValues",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "facet_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "ModelLabProjectFacetType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "tag"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "facet_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "model"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/project-facet-values"
+  },
+  "scenario": "List Model Lab project facet values returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

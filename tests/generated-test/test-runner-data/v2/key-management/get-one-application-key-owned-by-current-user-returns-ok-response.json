@@ -1,0 +1,35 @@
+{
+  "api": "KeyManagement",
+  "expected_status": 200,
+  "feature": "Key Management",
+  "id": "v2/Key Management/Get one application key owned by current user returns \"OK\" response",
+  "operation_id": "GetCurrentUserApplicationKey",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_key_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "application_key.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/current_user/application_keys/{app_key_id}"
+  },
+  "scenario": "Get one application key owned by current user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

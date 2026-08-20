@@ -1,0 +1,18 @@
+{
+  "api": "CSMThreats",
+  "expected_status": 200,
+  "feature": "CSM Threats",
+  "id": "v2/CSM Threats/Get all Workload Protection agent rules returns \"OK\" response",
+  "operation_id": "ListCSMThreatsAgentRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/remote_config/products/cws/agent_rules"
+  },
+  "scenario": "Get all Workload Protection agent rules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "CaseManagementType",
+  "expected_status": 204,
+  "feature": "Case Management Type",
+  "id": "v2/Case Management Type/Delete a case type returns \"NotContent\" response",
+  "operation_id": "DeleteCaseType",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_type_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case_type.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/types/{case_type_id}"
+  },
+  "scenario": "Delete a case type returns \"NotContent\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

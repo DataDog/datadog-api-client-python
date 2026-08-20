@@ -1,0 +1,51 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/List assets SBOMs returns \"OK\" response",
+  "operation_id": "ListAssetsSBOMs",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[package_name]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "pandas"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[asset_type]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "AssetType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "Service"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/sboms"
+  },
+  "scenario": "List assets SBOMs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

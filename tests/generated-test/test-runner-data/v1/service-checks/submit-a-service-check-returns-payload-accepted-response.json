@@ -1,0 +1,40 @@
+{
+  "api": "ServiceChecks",
+  "expected_status": 202,
+  "feature": "Service Checks",
+  "id": "v1/Service Checks/Submit a Service Check returns \"Payload accepted\" response",
+  "operation_id": "SubmitServiceCheck",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "items": {
+          "format": null,
+          "ref": "ServiceCheck",
+          "type": "object"
+        },
+        "ref": "ServiceChecks",
+        "type": "array"
+      },
+      "source": "inline",
+      "value": [
+        {
+          "check": "app.ok",
+          "host_name": "host",
+          "status": 0,
+          "tags": [
+            "test:{{ unique_alnum }}"
+          ]
+        }
+      ]
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/check_run"
+  },
+  "scenario": "Submit a Service Check returns \"Payload accepted\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

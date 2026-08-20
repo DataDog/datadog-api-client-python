@@ -1,0 +1,74 @@
+{
+  "api": "StatusPages",
+  "expected_status": 201,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Create backfilled maintenance returns \"Created\" response",
+  "operation_id": "CreateBackfilledMaintenance",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateBackfilledMaintenanceRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "title": "Past Database Maintenance",
+            "updates": [
+              {
+                "components_affected": [
+                  {
+                    "id": "{{ status_page.data.attributes.components[0].components[0].id }}",
+                    "status": "maintenance"
+                  }
+                ],
+                "description": "Database maintenance is in progress.",
+                "started_at": "{{ timeISO('now - 1h') }}",
+                "status": "in_progress"
+              },
+              {
+                "components_affected": [
+                  {
+                    "id": "{{ status_page.data.attributes.components[0].components[0].id }}",
+                    "status": "operational"
+                  }
+                ],
+                "description": "Database maintenance has been completed successfully.",
+                "started_at": "{{ timeISO('now') }}",
+                "status": "completed"
+              }
+            ]
+          },
+          "type": "maintenances"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/maintenances/backfill"
+  },
+  "scenario": "Create backfilled maintenance returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

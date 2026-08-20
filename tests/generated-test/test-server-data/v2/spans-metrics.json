@@ -1,0 +1,492 @@
+{
+  "feature": "Spans Metrics",
+  "recordings": [
+    {
+      "feature": "Spans Metrics",
+      "frozen_at": "2023-06-07T12:04:58.134Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "compute": {
+                      "aggregation_type": "distribution",
+                      "include_percentiles": false,
+                      "path": "@duration"
+                    },
+                    "filter": {
+                      "query": "@http.status_code:200 service:my-service"
+                    },
+                    "group_by": [
+                      {
+                        "path": "resource_name",
+                        "tag_name": "resource_name"
+                      }
+                    ]
+                  },
+                  "id": "TestCreateaspanbasedmetricreturnsOKresponse1686139498",
+                  "type": "spans_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/apm/config/metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TestCreateaspanbasedmetricreturnsOKresponse1686139498\",\"attributes\":{\"filter\":{\"query\":\"@http.status_code:200 service:my-service\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/apm/config/metrics/TestCreateaspanbasedmetricreturnsOKresponse1686139498",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a span-based metric returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Spans Metrics",
+      "frozen_at": "2023-04-18T17:28:08.946Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "compute": {
+                      "aggregation_type": "distribution",
+                      "include_percentiles": false,
+                      "path": "@duration"
+                    },
+                    "filter": {
+                      "query": "source:Test-Delete_a_span_based_metric_returns_OK_response-1681838888"
+                    },
+                    "group_by": [
+                      {
+                        "path": "resource_name",
+                        "tag_name": "resource_name"
+                      }
+                    ]
+                  },
+                  "id": "Test-Delete_a_span_based_metric_returns_OK_response-1681838888",
+                  "type": "spans_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/apm/config/metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"Test_Delete_a_span_based_metric_returns_OK_response_1681838888\",\"attributes\":{\"filter\":{\"query\":\"source:Test-Delete_a_span_based_metric_returns_OK_response-1681838888\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/apm/config/metrics/Test_Delete_a_span_based_metric_returns_OK_response_1681838888",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/apm/config/metrics/Test_Delete_a_span_based_metric_returns_OK_response_1681838888",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"not_found(Metric with name 'Test_Delete_a_span_based_metric_returns_OK_response_1681838888' not found)\"]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a span-based metric returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Spans Metrics",
+      "frozen_at": "2023-06-07T12:05:41.045Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "compute": {
+                      "aggregation_type": "distribution",
+                      "include_percentiles": false,
+                      "path": "@duration"
+                    },
+                    "filter": {
+                      "query": "source:Test-Get_a_span_based_metric_returns_OK_response-1686139541"
+                    },
+                    "group_by": [
+                      {
+                        "path": "resource_name",
+                        "tag_name": "resource_name"
+                      }
+                    ]
+                  },
+                  "id": "Test-Get_a_span_based_metric_returns_OK_response-1686139541",
+                  "type": "spans_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/apm/config/metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"Test_Get_a_span_based_metric_returns_OK_response_1686139541\",\"attributes\":{\"filter\":{\"query\":\"source:Test-Get_a_span_based_metric_returns_OK_response-1686139541\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1686139541",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"Test_Get_a_span_based_metric_returns_OK_response_1686139541\",\"attributes\":{\"filter\":{\"query\":\"source:Test-Get_a_span_based_metric_returns_OK_response-1686139541\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/apm/config/metrics/Test_Get_a_span_based_metric_returns_OK_response_1686139541",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a span-based metric returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Spans Metrics",
+      "frozen_at": "2023-06-07T12:05:50.879Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "compute": {
+                      "aggregation_type": "distribution",
+                      "include_percentiles": false,
+                      "path": "@duration"
+                    },
+                    "filter": {
+                      "query": "source:Test-Get_all_span_based_metrics_returns_OK_response-1686139550"
+                    },
+                    "group_by": [
+                      {
+                        "path": "resource_name",
+                        "tag_name": "resource_name"
+                      }
+                    ]
+                  },
+                  "id": "Test-Get_all_span_based_metrics_returns_OK_response-1686139550",
+                  "type": "spans_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/apm/config/metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"Test_Get_all_span_based_metrics_returns_OK_response_1686139550\",\"attributes\":{\"filter\":{\"query\":\"source:Test-Get_all_span_based_metrics_returns_OK_response-1686139550\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/apm/config/metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"tf_TestAccSpansMetric_import_local_1681996306\",\"attributes\":{\"filter\":{\"query\":\"@http.status_code:200 service:my-service\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"},{\"id\":\"Test_Get_all_span_based_metrics_returns_OK_response_1686139550\",\"attributes\":{\"filter\":{\"query\":\"source:Test-Get_all_span_based_metrics_returns_OK_response-1686139550\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/apm/config/metrics/Test_Get_all_span_based_metrics_returns_OK_response_1686139550",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all span-based metrics returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Spans Metrics",
+      "frozen_at": "2023-06-07T12:05:59.490Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "compute": {
+                      "aggregation_type": "distribution",
+                      "include_percentiles": false,
+                      "path": "@duration"
+                    },
+                    "filter": {
+                      "query": "source:Test-Update_a_span_based_metric_returns_OK_response-1686139559"
+                    },
+                    "group_by": [
+                      {
+                        "path": "resource_name",
+                        "tag_name": "resource_name"
+                      }
+                    ]
+                  },
+                  "id": "Test-Update_a_span_based_metric_returns_OK_response-1686139559",
+                  "type": "spans_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/apm/config/metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"Test_Update_a_span_based_metric_returns_OK_response_1686139559\",\"attributes\":{\"filter\":{\"query\":\"source:Test-Update_a_span_based_metric_returns_OK_response-1686139559\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "compute": {
+                      "include_percentiles": false
+                    },
+                    "filter": {
+                      "query": "source:Test-Update_a_span_based_metric_returns_OK_response-1686139559-updated"
+                    },
+                    "group_by": [
+                      {
+                        "path": "resource_name",
+                        "tag_name": "resource_name"
+                      }
+                    ]
+                  },
+                  "type": "spans_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/apm/config/metrics/Test_Update_a_span_based_metric_returns_OK_response_1686139559",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"Test_Update_a_span_based_metric_returns_OK_response_1686139559\",\"attributes\":{\"filter\":{\"query\":\"source:Test-Update_a_span_based_metric_returns_OK_response-1686139559-updated\"},\"group_by\":[{\"path\":\"resource_name\",\"tag_name\":\"resource_name\"}],\"compute\":{\"aggregation_type\":\"distribution\",\"path\":\"@duration\",\"include_percentiles\":false}},\"type\":\"spans_metrics\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/apm/config/metrics/Test_Update_a_span_based_metric_returns_OK_response_1686139559",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a span-based metric returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

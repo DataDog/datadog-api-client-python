@@ -1,0 +1,42 @@
+{
+  "api": "LogsPipelines",
+  "expected_status": 200,
+  "feature": "Logs Pipelines",
+  "id": "v1/Logs Pipelines/Create a pipeline with Span Id Remapper returns \"OK\" response",
+  "operation_id": "CreateLogsPipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "query": "source:python"
+        },
+        "name": "testPipeline",
+        "processors": [
+          {
+            "is_enabled": true,
+            "name": "test_filter",
+            "sources": [
+              "dd.span_id"
+            ],
+            "type": "span-id-remapper"
+          }
+        ],
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs/config/pipelines"
+  },
+  "scenario": "Create a pipeline with Span Id Remapper returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

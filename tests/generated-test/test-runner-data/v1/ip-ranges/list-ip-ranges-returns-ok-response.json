@@ -1,0 +1,18 @@
+{
+  "api": "IPRanges",
+  "expected_status": 200,
+  "feature": "IP Ranges",
+  "id": "v1/IP Ranges/List IP Ranges returns \"OK\" response",
+  "operation_id": "GetIPRanges",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/"
+  },
+  "scenario": "List IP Ranges returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

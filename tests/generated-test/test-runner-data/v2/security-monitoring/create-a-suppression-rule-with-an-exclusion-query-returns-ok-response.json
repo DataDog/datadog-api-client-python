@@ -1,0 +1,28 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a suppression rule with an exclusion query returns \"OK\" response",
+  "operation_id": "CreateSecurityMonitoringSuppression",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringSuppressionCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\": {\"attributes\": {\"description\": \"This rule suppresses low-severity signals in staging environments.\", \"enabled\": true, \"start_date\": {{ timestamp('now + 10d') }}000, \"expiration_date\": {{ timestamp('now + 21d') }}000, \"name\": \"{{ unique }}\", \"rule_query\": \"type:log_detection source:cloudtrail\", \"data_exclusion_query\": \"account_id:12345\"}, \"type\": \"suppressions\"}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/configuration/suppressions"
+  },
+  "scenario": "Create a suppression rule with an exclusion query returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

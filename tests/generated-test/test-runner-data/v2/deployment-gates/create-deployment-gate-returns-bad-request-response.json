@@ -1,0 +1,35 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 400,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Create deployment gate returns \"Bad Request\" response",
+  "operation_id": "CreateDeploymentGate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateDeploymentGateParams",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "env": "",
+            "identifier": "my-gate",
+            "service": "test-service"
+          },
+          "type": "deployment_gate"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/deployment_gates"
+  },
+  "scenario": "Create deployment gate returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

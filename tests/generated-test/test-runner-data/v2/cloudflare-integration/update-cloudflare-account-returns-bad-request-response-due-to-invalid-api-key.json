@@ -1,0 +1,50 @@
+{
+  "api": "CloudflareIntegration",
+  "expected_status": 400,
+  "feature": "Cloudflare Integration",
+  "id": "v2/Cloudflare Integration/Update Cloudflare account returns \"Bad Request\" response due to invalid api key",
+  "operation_id": "UpdateCloudflareAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CloudflareAccountUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "api_key": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          },
+          "type": "cloudflare-accounts"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "cloudflare_account.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/integrations/cloudflare/accounts/{account_id}"
+  },
+  "scenario": "Update Cloudflare account returns \"Bad Request\" response due to invalid api key",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,33 @@
+{
+  "api": "AppBuilder",
+  "expected_status": 200,
+  "feature": "App Builder",
+  "id": "v2/App Builder/Delete Multiple Apps returns \"OK\" response",
+  "operation_id": "DeleteApps",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DeleteAppsRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "{{ app.data.id }}",
+            "type": "appDefinitions"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/app-builder/apps"
+  },
+  "scenario": "Delete Multiple Apps returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

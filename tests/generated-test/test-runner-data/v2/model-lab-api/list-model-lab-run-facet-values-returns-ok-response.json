@@ -1,0 +1,67 @@
+{
+  "api": "ModelLabAPI",
+  "expected_status": 200,
+  "feature": "Model Lab API",
+  "id": "v2/Model Lab API/List Model Lab run facet values returns \"OK\" response",
+  "operation_id": "ListModelLabRunFacetValues",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[project_id]",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2387
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "facet_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "ModelLabFacetType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "tag"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "facet_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "model"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/model-lab-api/facet-values"
+  },
+  "scenario": "List Model Lab run facet values returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

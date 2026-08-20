@@ -1,0 +1,51 @@
+{
+  "api": "LogsCustomDestinations",
+  "expected_status": 400,
+  "feature": "Logs Custom Destinations",
+  "id": "v2/Logs Custom Destinations/Update a custom destination returns \"Bad Request\" response",
+  "operation_id": "UpdateLogsCustomDestination",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomDestinationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "forward_tags_restriction_list_type": "this_list_type_does_not_exist"
+          },
+          "id": "{{ custom_destination.data.id }}",
+          "type": "custom_destination"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "custom_destination_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "custom_destination.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/custom-destinations/{custom_destination_id}"
+  },
+  "scenario": "Update a custom destination returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

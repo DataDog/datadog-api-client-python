@@ -1,0 +1,81 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with hostmap infra widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/hostmap_infra_widget.json",
+      "value": {
+        "description": null,
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": {
+                "enrichments": [
+                  {
+                    "formulas": [
+                      {
+                        "dimension": "fill",
+                        "formula": "query1"
+                      }
+                    ],
+                    "queries": [
+                      {
+                        "data_source": "metrics",
+                        "name": "query1",
+                        "query": "avg:system.cpu.user{*} by {host}"
+                      }
+                    ],
+                    "response_format": "scalar"
+                  }
+                ],
+                "filter": "env:prod",
+                "group_by": [
+                  {
+                    "column": "tags",
+                    "key": "service"
+                  }
+                ],
+                "node_type": "host",
+                "request_type": "infrastructure_hostmap",
+                "style": {
+                  "palette": "green_to_orange",
+                  "palette_flip": false
+                }
+              },
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "hostmap"
+            },
+            "layout": {
+              "height": 22,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with hostmap infra widget",
+  "schema_version": 1,
+  "version": "v1"
+}

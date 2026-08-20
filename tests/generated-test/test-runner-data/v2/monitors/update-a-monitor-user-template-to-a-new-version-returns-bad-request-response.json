@@ -1,0 +1,69 @@
+{
+  "api": "Monitors",
+  "expected_status": 400,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Update a monitor user template to a new version returns \"Bad Request\" response",
+  "operation_id": "UpdateMonitorUserTemplate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorUserTemplateUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "A description.",
+            "monitor_definition": {},
+            "tags": [
+              "integration:Azure"
+            ],
+            "template_variables": [
+              {
+                "available_values": [
+                  "value1",
+                  "value2"
+                ],
+                "defaults": [
+                  "defaultValue"
+                ],
+                "name": "regionName",
+                "tag_key": "datacenter"
+              }
+            ],
+            "title": "Postgres DB {{ unique_lower }}"
+          },
+          "id": "00000000-0000-1234-0000-000000000000",
+          "type": "monitor-user-template"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "template_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "monitor_user_template.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/monitor/template/{template_id}"
+  },
+  "scenario": "Update a monitor user template to a new version returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

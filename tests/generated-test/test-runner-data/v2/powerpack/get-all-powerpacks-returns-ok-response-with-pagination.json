@@ -1,0 +1,35 @@
+{
+  "api": "Powerpack",
+  "expected_status": 200,
+  "feature": "Powerpack",
+  "id": "v2/Powerpack/Get all powerpacks returns \"OK\" response with pagination",
+  "operation_id": "ListPowerpacks",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": true,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/powerpacks"
+  },
+  "scenario": "Get all powerpacks returns \"OK\" response with pagination",
+  "schema_version": 1,
+  "version": "v2"
+}

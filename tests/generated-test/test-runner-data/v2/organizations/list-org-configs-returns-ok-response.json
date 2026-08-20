@@ -1,0 +1,18 @@
+{
+  "api": "Organizations",
+  "expected_status": 200,
+  "feature": "Organizations",
+  "id": "v2/Organizations/List Org Configs returns \"OK\" response",
+  "operation_id": "ListOrgConfigs",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/org_configs"
+  },
+  "scenario": "List Org Configs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

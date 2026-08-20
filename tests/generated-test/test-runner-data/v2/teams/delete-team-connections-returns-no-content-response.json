@@ -1,0 +1,33 @@
+{
+  "api": "Teams",
+  "expected_status": 204,
+  "feature": "Teams",
+  "id": "v2/Teams/Delete team connections returns \"No Content\" response",
+  "operation_id": "DeleteTeamConnections",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamConnectionDeleteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "{{ team_connection.id }}",
+            "type": "team_connection"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/team/connections"
+  },
+  "scenario": "Delete team connections returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Get scheduled on-call user returns \"OK\" response",
+  "operation_id": "GetScheduleOnCallUser",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "schedule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "schedule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/schedules/{schedule_id}/on-call"
+  },
+  "scenario": "Get scheduled on-call user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

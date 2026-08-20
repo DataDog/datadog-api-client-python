@@ -1,0 +1,3203 @@
+{
+  "feature": "Monitors",
+  "recordings": [
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:15.011Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "datacenter",
+                      "tag_key_required": true,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "INVALID"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Value of parameter 'policy_type' should be any of these ['tag']\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a monitor configuration policy returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:15.129Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testcreateamonitorconfigurationpolicyreturnsokresponse1748486175",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key_required\":false,\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key\":\"testcreateamonitorconfigurationpolicyreturnsokresponse1748486175\"}},\"id\":\"edb99130-4a6a-4970-b6df-83b5cba1182a\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/edb99130-4a6a-4970-b6df-83b5cba1182a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a monitor configuration policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:15.400Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "test:test-create_a_monitor_notification_rule_returns_bad_request_response-1748486175",
+                        "host:abc"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "@slack-test-channel",
+                      "@jira-test"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid recipients: Recipient handle should not start with '@'\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a monitor notification rule returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:15.486Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "test:test-create_a_monitor_notification_rule_returns_ok_response-1748486175"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-test-channel",
+                      "jira-test"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"created_at\":\"2025-05-29T02:36:15.639714+00:00\",\"filter\":{\"tags\":[\"test:test-create_a_monitor_notification_rule_returns_ok_response-1748486175\"]},\"recipients\":[\"slack-test-channel\",\"jira-test\"],\"modified_at\":\"1970-01-01T00:00:00+00:00\",\"name\":\"test rule\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}},\"id\":\"5dca07c7-267c-4159-9d8f-7dec1512fb77\"},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2025-05-06T01:37:11.870914+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/5dca07c7-267c-4159-9d8f-7dec1512fb77",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a monitor notification rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-08-17T21:40:51.600Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "bundle_config": {
+                      "duration": 3600
+                    },
+                    "filter": {
+                      "tags": [
+                        "test:test-create_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002851"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-test-channel"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"fc63c678-ecf4-4807-a3c9-317baea76bb1\",\"attributes\":{\"name\":\"test rule\",\"created_at\":\"2026-08-17T21:40:51.789668+00:00\",\"modified_at\":\"2026-08-17T21:40:51.806466+00:00\",\"filter\":{\"tags\":[\"test:test-create_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002851\"]},\"recipients\":[\"slack-test-channel\"],\"bundle_config\":{\"duration\":3600}},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2026-07-10T19:34:11.410571+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":\"2024-01-04T18:40:05+00:00\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/fc63c678-ecf4-4807-a3c9-317baea76bb1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a monitor notification rule with bundle config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-09-26T01:50:59.027Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "conditional_recipients": {
+                      "conditions": [
+                        {
+                          "recipients": [
+                            "slack-test-channel",
+                            "jira-test"
+                          ],
+                          "scope": "transition_type:is_alert"
+                        }
+                      ]
+                    },
+                    "filter": {
+                      "tags": [
+                        "test:test-create_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851459"
+                      ]
+                    },
+                    "name": "test rule"
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"name\":\"test rule\",\"filter\":{\"tags\":[\"test:test-create_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851459\"]},\"created_at\":\"2025-09-26T01:51:00.132009+00:00\",\"conditional_recipients\":{\"conditions\":[{\"recipients\":[\"slack-test-channel\",\"jira-test\"],\"scope\":\"transition_type:is_alert\"}]},\"modified_at\":\"1970-01-01T00:00:00+00:00\"},\"id\":\"707b82d7-6898-4b20-a577-64f76881fe89\",\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"modified_at\":\"2021-04-27T13:54:01.547888+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/707b82d7-6898-4b20-a577-64f76881fe89",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a monitor notification rule with conditional recipients returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-11-11T21:28:39.129Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "scope": "test:test-create_a_monitor_notification_rule_with_scope_returns_ok_response-1762896519"
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-test-channel",
+                      "jira-test"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"modified_at\":\"1970-01-01T00:00:00+00:00\",\"filter\":{\"scope\":\"test:test-create_a_monitor_notification_rule_with_scope_returns_ok_response-1762896519\"},\"name\":\"test rule\",\"recipients\":[\"slack-test-channel\",\"jira-test\"],\"created_at\":\"2025-11-11T21:28:40.032148+00:00\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}},\"id\":\"bbea2907-c191-48d0-9e0f-1ec5881ee37c\"},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"modified_at\":\"2021-04-27T13:54:01.547888+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/bbea2907-c191-48d0-9e0f-1ec5881ee37c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a monitor notification rule with scope returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:15.918Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {},
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-create_a_monitor_user_template_returns_bad_request_response-1748486175"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid monitor_definition or template variables: Monitor definition cannot be empty.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a monitor user template returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:16.048Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {
+                      "message": "A msg.",
+                      "name": "A name test-create_a_monitor_user_template_returns_ok_response-1748486176",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-create_a_monitor_user_template_returns_ok_response-1748486176"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"modified\":\"2025-05-29T02:36:16.272266+00:00\",\"tags\":[\"integration:Azure\"],\"monitor_definition\":{\"message\":\"A msg.\",\"name\":\"A name test-create_a_monitor_user_template_returns_ok_response-1748486176\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"},\"template_variables\":[{\"available_values\":[\"value1\",\"value2\"],\"defaults\":[\"defaultValue\"],\"tag_key\":\"datacenter\",\"name\":\"regionName\"}],\"description\":\"A description.\",\"version\":0,\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"created\":\"2025-05-29T02:36:16.272266+00:00\",\"title\":\"Postgres DB test-create_a_monitor_user_template_returns_ok_response-1748486176\"},\"id\":\"15c66feb-f77d-407b-bf4c-615d3dc4fa50\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/15c66feb-f77d-407b-bf4c-615d3dc4fa50",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a monitor user template returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:16.452Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/INVALID_UUID",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid URL param: policy_id must be an uuid\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete a monitor configuration policy returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:16.549Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor config policy not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a monitor configuration policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:16.671Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testdeleteamonitorconfigurationpolicyreturnsokresponse1748486176",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"testdeleteamonitorconfigurationpolicyreturnsokresponse1748486176\",\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key_required\":false}},\"id\":\"f0b1ee92-9635-45ed-8a18-a1631a8397d2\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/f0b1ee92-9635-45ed-8a18-a1631a8397d2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/f0b1ee92-9635-45ed-8a18-a1631a8397d2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor config policy not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a monitor configuration policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:17.047Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor Notification Rule not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a monitor notification rule returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:17.179Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-delete_a_monitor_notification_rule_returns_ok_response-1748486177"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"created_at\":\"2025-05-29T02:36:17.310680+00:00\",\"filter\":{\"tags\":[\"app:test-delete_a_monitor_notification_rule_returns_ok_response-1748486177\"]},\"modified_at\":\"1970-01-01T00:00:00+00:00\",\"recipients\":[\"slack-monitor-app\"],\"name\":\"test rule\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}},\"id\":\"ae73c449-eadb-40ce-9eb3-9d56d8216254\"},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2025-05-06T01:37:11.870914+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/ae73c449-eadb-40ce-9eb3-9d56d8216254",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/ae73c449-eadb-40ce-9eb3-9d56d8216254",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor Notification Rule not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a monitor notification rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:17.713Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor template not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a monitor user template returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:17.896Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "datacenter",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/policy/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor configuration policy not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Edit a monitor configuration policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:18.010Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testeditamonitorconfigurationpolicyreturnsokresponse1748486178",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy\":{\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key\":\"testeditamonitorconfigurationpolicyreturnsokresponse1748486178\",\"tag_key_required\":false},\"policy_type\":\"tag\"},\"id\":\"b967c47e-8f9b-49f5-bdff-744b4d50b26f\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testeditamonitorconfigurationpolicyreturnsokresponse1748486178",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "id": "b967c47e-8f9b-49f5-bdff-744b4d50b26f",
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/policy/b967c47e-8f9b-49f5-bdff-744b4d50b26f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key\":\"testeditamonitorconfigurationpolicyreturnsokresponse1748486178\",\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key_required\":false}},\"id\":\"b967c47e-8f9b-49f5-bdff-744b4d50b26f\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/b967c47e-8f9b-49f5-bdff-744b4d50b26f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Edit a monitor configuration policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:18.429Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testeditamonitorconfigurationpolicyreturnsunprocessableentityresponse1748486178",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy\":{\"tag_key\":\"testeditamonitorconfigurationpolicyreturnsunprocessableentityresponse1748486178\",\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key_required\":false},\"policy_type\":\"tag\"},\"id\":\"f2f83512-b2c2-4dc4-a8db-c785cd818d6f\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testeditamonitorconfigurationpolicyreturnsunprocessableentityresponse1748486178",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/policy/f2f83512-b2c2-4dc4-a8db-c785cd818d6f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Policy id in request body does not match id in URL param\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/f2f83512-b2c2-4dc4-a8db-c785cd818d6f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Edit a monitor configuration policy returns \"Unprocessable Entity\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:18.835Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/policy/12340000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor configuration policy not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a monitor configuration policy returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:18.939Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testgetamonitorconfigurationpolicyreturnsokresponse1748486178",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy\":{\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key_required\":false,\"tag_key\":\"testgetamonitorconfigurationpolicyreturnsokresponse1748486178\"},\"policy_type\":\"tag\"},\"id\":\"7916e37f-b0fe-4f9d-bf9e-37ee3e7a5460\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/policy/7916e37f-b0fe-4f9d-bf9e-37ee3e7a5460",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy_type\":\"tag\",\"policy\":{\"tag_key_required\":false,\"tag_key\":\"testgetamonitorconfigurationpolicyreturnsokresponse1748486178\",\"valid_tag_values\":[\"prod\",\"staging\"]}},\"id\":\"7916e37f-b0fe-4f9d-bf9e-37ee3e7a5460\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/7916e37f-b0fe-4f9d-bf9e-37ee3e7a5460",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a monitor configuration policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:19.291Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/notification_rule/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor Notification Rule not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a monitor notification rule returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:19.434Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-get_a_monitor_notification_rule_returns_ok_response-1748486179"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"78f7ac92-7bba-4f1f-838f-a6fdc2a08778\",\"attributes\":{\"created_at\":\"2025-05-29T02:36:19.570654+00:00\",\"name\":\"test rule\",\"filter\":{\"tags\":[\"app:test-get_a_monitor_notification_rule_returns_ok_response-1748486179\"]},\"recipients\":[\"slack-monitor-app\"],\"modified_at\":\"1970-01-01T00:00:00+00:00\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2025-05-06T01:37:11.870914+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/notification_rule/78f7ac92-7bba-4f1f-838f-a6fdc2a08778",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"modified_at\":\"2025-05-29T02:36:19.582092+00:00\",\"created_at\":\"2025-05-29T02:36:19.570655+00:00\",\"recipients\":[\"slack-monitor-app\"],\"filter\":{\"tags\":[\"app:test-get_a_monitor_notification_rule_returns_ok_response-1748486179\"]},\"name\":\"test rule\"},\"id\":\"78f7ac92-7bba-4f1f-838f-a6fdc2a08778\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/78f7ac92-7bba-4f1f-838f-a6fdc2a08778",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a monitor notification rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:19.940Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/template/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor template not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a monitor user template returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:20.064Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "It's a threshold",
+                    "monitor_definition": {
+                      "message": "cats",
+                      "name": "High Error Rate on service",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "category:test"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [],
+                        "defaults": [
+                          "cats"
+                        ],
+                        "name": "scope"
+                      }
+                    ],
+                    "title": "api spec given template test-get_a_monitor_user_template_returns_ok_response-1748486180"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"tags\":[\"category:test\"],\"created\":\"2025-05-29T02:36:20.380109+00:00\",\"title\":\"api spec given template test-get_a_monitor_user_template_returns_ok_response-1748486180\",\"version\":0,\"description\":\"It's a threshold\",\"template_variables\":[{\"defaults\":[\"cats\"],\"available_values\":[],\"name\":\"scope\"}],\"monitor_definition\":{\"message\":\"cats\",\"name\":\"High Error Rate on service\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"},\"modified\":\"2025-05-29T02:36:20.380109+00:00\",\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"},\"id\":\"90eb2b79-fc96-43a5-af65-bf4408f47d9d\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/template/90eb2b79-fc96-43a5-af65-bf4408f47d9d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"created\":\"2025-05-29T02:36:20.380109+00:00\",\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"version\":0,\"tags\":[\"category:test\"],\"title\":\"api spec given template test-get_a_monitor_user_template_returns_ok_response-1748486180\",\"modified\":\"2025-05-29T02:36:20.380109+00:00\",\"monitor_definition\":{\"name\":\"High Error Rate on service\",\"type\":\"query alert\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"message\":\"cats\"},\"description\":\"It's a threshold\",\"template_variables\":[{\"defaults\":[\"cats\"],\"name\":\"scope\",\"available_values\":[]}]},\"id\":\"90eb2b79-fc96-43a5-af65-bf4408f47d9d\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/90eb2b79-fc96-43a5-af65-bf4408f47d9d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a monitor user template returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:20.663Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "tag_key": "testgetallmonitorconfigurationpoliciesreturnsokresponse1748486180",
+                      "tag_key_required": false,
+                      "valid_tag_values": [
+                        "prod",
+                        "staging"
+                      ]
+                    },
+                    "policy_type": "tag"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy\":{\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key\":\"testgetallmonitorconfigurationpoliciesreturnsokresponse1748486180\",\"tag_key_required\":false},\"policy_type\":\"tag\"},\"id\":\"426917ea-f9b0-4c7d-938d-902208db50f8\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy\":{\"valid_tag_values\":[\"value\"],\"tag_key\":\"tagKey\",\"tag_key_required\":false},\"policy_type\":\"tag\"},\"id\":\"2817dfb9-d616-4a75-8a6b-c34f20493b76\"},{\"type\":\"monitor-config-policy\",\"attributes\":{\"policy\":{\"valid_tag_values\":[\"prod\",\"staging\"],\"tag_key\":\"testgetallmonitorconfigurationpoliciesreturnsokresponse1748486180\",\"tag_key_required\":false},\"policy_type\":\"tag\"},\"id\":\"426917ea-f9b0-4c7d-938d-902208db50f8\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/426917ea-f9b0-4c7d-938d-902208db50f8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all monitor configuration policies returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:21.000Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-get_all_monitor_notification_rules_returns_ok_response-1748486181"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"created_at\":\"2025-05-29T02:36:21.133807+00:00\",\"filter\":{\"tags\":[\"app:test-get_all_monitor_notification_rules_returns_ok_response-1748486181\"]},\"modified_at\":\"1970-01-01T00:00:00+00:00\",\"recipients\":[\"slack-monitor-app\"],\"name\":\"test rule\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}},\"id\":\"dbb04d74-98e6-4f3b-905b-f42d7f0cd9e3\"},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2025-05-06T01:37:11.870914+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"monitor-notification-rule\",\"attributes\":{\"created_at\":\"2025-05-29T02:36:21.133807+00:00\",\"filter\":{\"tags\":[\"app:test-get_all_monitor_notification_rules_returns_ok_response-1748486181\"]},\"recipients\":[\"slack-monitor-app\"],\"modified_at\":\"2025-05-29T02:36:21.141964+00:00\",\"name\":\"test rule\"},\"id\":\"dbb04d74-98e6-4f3b-905b-f42d7f0cd9e3\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/dbb04d74-98e6-4f3b-905b-f42d7f0cd9e3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all monitor notification rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:21.470Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "It's a threshold",
+                    "monitor_definition": {
+                      "message": "cats",
+                      "name": "High Error Rate on service",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "category:test"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [],
+                        "defaults": [
+                          "cats"
+                        ],
+                        "name": "scope"
+                      }
+                    ],
+                    "title": "api spec given template test-get_all_monitor_user_templates_returns_ok_response-1748486181"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"description\":\"It's a threshold\",\"created\":\"2025-05-29T02:36:21.696273+00:00\",\"template_variables\":[{\"available_values\":[],\"defaults\":[\"cats\"],\"name\":\"scope\"}],\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"version\":0,\"tags\":[\"category:test\"],\"modified\":\"2025-05-29T02:36:21.696273+00:00\",\"title\":\"api spec given template test-get_all_monitor_user_templates_returns_ok_response-1748486181\",\"monitor_definition\":{\"message\":\"cats\",\"name\":\"High Error Rate on service\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"}},\"id\":\"900b870a-1f9d-4b6c-95b7-9859bbb0a778\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"monitor-user-template\",\"attributes\":{\"created\":\"2025-05-29T02:36:21.696273+00:00\",\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"version\":0,\"tags\":[\"category:test\"],\"title\":\"api spec given template test-get_all_monitor_user_templates_returns_ok_response-1748486181\",\"modified\":\"2025-05-29T02:36:21.696273+00:00\",\"monitor_definition\":{\"name\":\"High Error Rate on service\",\"type\":\"query alert\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"message\":\"cats\"},\"description\":\"It's a threshold\",\"template_variables\":[{\"defaults\":[\"cats\"],\"name\":\"scope\",\"available_values\":[]}]},\"id\":\"900b870a-1f9d-4b6c-95b7-9859bbb0a778\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/900b870a-1f9d-4b6c-95b7-9859bbb0a778",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all monitor user templates returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:21.941Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-update_a_monitor_notification_rule_returns_bad_request_response-1748486181"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"name\":\"test rule\",\"created_at\":\"2025-05-29T02:36:22.099271+00:00\",\"filter\":{\"tags\":[\"app:test-update_a_monitor_notification_rule_returns_bad_request_response-1748486181\"]},\"recipients\":[\"slack-monitor-app\"],\"modified_at\":\"1970-01-01T00:00:00+00:00\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}},\"id\":\"571a01f1-8f6f-4792-9f4a-0aa99f9b2365\"},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2025-05-06T01:37:11.870914+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "test:test-update_a_monitor_notification_rule_returns_bad_request_response-1748486181",
+                        "host:abc"
+                      ]
+                    },
+                    "name": "updated rule",
+                    "recipients": [
+                      "@slack-test-channel"
+                    ]
+                  },
+                  "id": "571a01f1-8f6f-4792-9f4a-0aa99f9b2365",
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/notification_rule/571a01f1-8f6f-4792-9f4a-0aa99f9b2365",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid recipients: Recipient handle should not start with '@'\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/571a01f1-8f6f-4792-9f4a-0aa99f9b2365",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a monitor notification rule returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:22.374Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "test:test-update_a_monitor_notification_rule_returns_not_found_response-1748486182",
+                        "host:abc"
+                      ]
+                    },
+                    "name": "updated rule",
+                    "recipients": [
+                      "slack-test-channel",
+                      "jira-test"
+                    ]
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/notification_rule/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor Notification Rule not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a monitor notification rule returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:22.508Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-update_a_monitor_notification_rule_returns_ok_response-1748486182"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"modified_at\":\"1970-01-01T00:00:00+00:00\",\"created_at\":\"2025-05-29T02:36:22.625956+00:00\",\"filter\":{\"tags\":[\"app:test-update_a_monitor_notification_rule_returns_ok_response-1748486182\"]},\"name\":\"test rule\",\"recipients\":[\"slack-monitor-app\"]},\"id\":\"48a37c74-cf93-488c-b070-210d650b5687\",\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2025-05-06T01:37:11.870914+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "test:test-update_a_monitor_notification_rule_returns_ok_response-1748486182",
+                        "host:abc"
+                      ]
+                    },
+                    "name": "updated rule",
+                    "recipients": [
+                      "slack-test-channel"
+                    ]
+                  },
+                  "id": "48a37c74-cf93-488c-b070-210d650b5687",
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/notification_rule/48a37c74-cf93-488c-b070-210d650b5687",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"recipients\":[\"slack-test-channel\"],\"modified_at\":\"2025-05-29T02:36:22.798426+00:00\",\"name\":\"updated rule\",\"filter\":{\"tags\":[\"test:test-update_a_monitor_notification_rule_returns_ok_response-1748486182\",\"host:abc\"]},\"created_at\":\"2025-05-29T02:36:22.625956+00:00\"},\"id\":\"48a37c74-cf93-488c-b070-210d650b5687\",\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2025-05-06T01:37:11.870914+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/48a37c74-cf93-488c-b070-210d650b5687",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a monitor notification rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-08-17T21:41:19.954Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"649f51a4-76f5-4b0d-8ec3-90929a6570bc\",\"attributes\":{\"name\":\"test rule\",\"created_at\":\"2026-08-17T21:41:20.185857+00:00\",\"modified_at\":\"2026-08-17T21:41:20.209762+00:00\",\"filter\":{\"tags\":[\"app:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879\"]},\"recipients\":[\"slack-monitor-app\"]},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2026-07-10T19:34:11.410571+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":\"2024-01-04T18:40:05+00:00\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "bundle_config": {
+                      "duration": 3600
+                    },
+                    "filter": {
+                      "tags": [
+                        "test:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879"
+                      ]
+                    },
+                    "name": "updated rule",
+                    "recipients": [
+                      "slack-test-channel"
+                    ]
+                  },
+                  "id": "649f51a4-76f5-4b0d-8ec3-90929a6570bc",
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/notification_rule/649f51a4-76f5-4b0d-8ec3-90929a6570bc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"649f51a4-76f5-4b0d-8ec3-90929a6570bc\",\"attributes\":{\"name\":\"updated rule\",\"created_at\":\"2026-08-17T21:41:20.185857+00:00\",\"modified_at\":\"2026-08-17T21:41:22.287888+00:00\",\"filter\":{\"tags\":[\"test:test-update_a_monitor_notification_rule_with_bundle_config_returns_ok_response-1787002879\"]},\"recipients\":[\"slack-test-channel\"],\"bundle_config\":{\"duration\":3600}},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"attributes\":{\"uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\",\"created_at\":\"2019-10-02T08:15:39.795051+00:00\",\"modified_at\":\"2026-07-10T19:34:11.410571+00:00\",\"email\":\"frog@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/28a16dfe36e73b60c1d55872cb0f1172?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":\"2024-01-04T18:40:05+00:00\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/649f51a4-76f5-4b0d-8ec3-90929a6570bc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a monitor notification rule with bundle config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-09-26T01:51:00.504Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-update_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851460"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"filter\":{\"tags\":[\"app:test-update_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851460\"]},\"created_at\":\"2025-09-26T01:51:00.665373+00:00\",\"name\":\"test rule\",\"recipients\":[\"slack-monitor-app\"],\"modified_at\":\"1970-01-01T00:00:00+00:00\"},\"id\":\"954d2f74-ec41-4f7b-9f63-7146075f3537\",\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"modified_at\":\"2021-04-27T13:54:01.547888+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "conditional_recipients": {
+                      "conditions": [
+                        {
+                          "recipients": [
+                            "slack-test-channel",
+                            "jira-test"
+                          ],
+                          "scope": "transition_type:is_alert"
+                        }
+                      ]
+                    },
+                    "filter": {
+                      "tags": [
+                        "test:test-update_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851460",
+                        "host:abc"
+                      ]
+                    },
+                    "name": "updated rule"
+                  },
+                  "id": "954d2f74-ec41-4f7b-9f63-7146075f3537",
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/notification_rule/954d2f74-ec41-4f7b-9f63-7146075f3537",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"id\":\"954d2f74-ec41-4f7b-9f63-7146075f3537\",\"attributes\":{\"filter\":{\"tags\":[\"test:test-update_a_monitor_notification_rule_with_conditional_recipients_returns_ok_response-1758851460\",\"host:abc\"]},\"modified_at\":\"2025-09-26T01:51:00.876883+00:00\",\"conditional_recipients\":{\"conditions\":[{\"scope\":\"transition_type:is_alert\",\"recipients\":[\"slack-test-channel\",\"jira-test\"]}]},\"name\":\"updated rule\",\"created_at\":\"2025-09-26T01:51:00.665373+00:00\"},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"modified_at\":\"2021-04-27T13:54:01.547888+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\"}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/954d2f74-ec41-4f7b-9f63-7146075f3537",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a monitor notification rule with conditional_recipients returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-11-11T21:28:40.357Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "tags": [
+                        "app:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520"
+                      ]
+                    },
+                    "name": "test rule",
+                    "recipients": [
+                      "slack-monitor-app"
+                    ]
+                  },
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/notification_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"recipients\":[\"slack-monitor-app\"],\"modified_at\":\"1970-01-01T00:00:00+00:00\",\"created_at\":\"2025-11-11T21:28:40.540848+00:00\",\"name\":\"test rule\",\"filter\":{\"tags\":[\"app:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520\"]}},\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}},\"id\":\"827442a0-5d3e-408c-a930-7ac44775fff1\"},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"modified_at\":\"2021-04-27T13:54:01.547888+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "filter": {
+                      "scope": "test:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520"
+                    },
+                    "name": "updated rule",
+                    "recipients": [
+                      "slack-test-channel"
+                    ]
+                  },
+                  "id": "827442a0-5d3e-408c-a930-7ac44775fff1",
+                  "type": "monitor-notification-rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/monitor/notification_rule/827442a0-5d3e-408c-a930-7ac44775fff1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-notification-rule\",\"attributes\":{\"filter\":{\"scope\":\"test:test-update_a_monitor_notification_rule_with_scope_returns_ok_response-1762896520\"},\"recipients\":[\"slack-test-channel\"],\"created_at\":\"2025-11-11T21:28:40.540848+00:00\",\"name\":\"updated rule\",\"modified_at\":\"2025-11-11T21:28:40.815544+00:00\"},\"id\":\"827442a0-5d3e-408c-a930-7ac44775fff1\",\"relationships\":{\"created_by\":{\"data\":{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}},\"included\":[{\"type\":\"users\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"attributes\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"created_at\":\"2020-12-29T22:58:44.733921+00:00\",\"modified_at\":\"2021-04-27T13:54:01.547888+00:00\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/b7c189b5b4c2c429d7c1e0bc3749330e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/notification_rule/827442a0-5d3e-408c-a930-7ac44775fff1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a monitor notification rule with scope returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:22.996Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "It's a threshold",
+                    "monitor_definition": {
+                      "message": "cats",
+                      "name": "High Error Rate on service",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "category:test"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [],
+                        "defaults": [
+                          "cats"
+                        ],
+                        "name": "scope"
+                      }
+                    ],
+                    "title": "api spec given template test-update_a_monitor_user_template_to_a_new_version_returns_bad_request_response-1748486182"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"version\":0,\"created\":\"2025-05-29T02:36:23.224659+00:00\",\"template_variables\":[{\"available_values\":[],\"name\":\"scope\",\"defaults\":[\"cats\"]}],\"monitor_definition\":{\"message\":\"cats\",\"name\":\"High Error Rate on service\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"},\"title\":\"api spec given template test-update_a_monitor_user_template_to_a_new_version_returns_bad_request_response-1748486182\",\"description\":\"It's a threshold\",\"tags\":[\"category:test\"],\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":\"2025-05-29T02:36:23.224659+00:00\"},\"id\":\"a68243ec-7e1c-40da-a99d-8966282c3726\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {},
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-update_a_monitor_user_template_to_a_new_version_returns_bad_request_response-1748486182"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/monitor/template/a68243ec-7e1c-40da-a99d-8966282c3726",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid monitor_definition or template variables: Monitor definition cannot be empty.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/a68243ec-7e1c-40da-a99d-8966282c3726",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a monitor user template to a new version returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:23.616Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {
+                      "message": "A msg.",
+                      "name": "A name test-update_a_monitor_user_template_to_a_new_version_returns_not_found_response-1748486183",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-update_a_monitor_user_template_to_a_new_version_returns_not_found_response-1748486183"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/monitor/template/00000000-0000-1234-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor template not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a monitor user template to a new version returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:23.765Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "It's a threshold",
+                    "monitor_definition": {
+                      "message": "cats",
+                      "name": "High Error Rate on service",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "category:test"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [],
+                        "defaults": [
+                          "cats"
+                        ],
+                        "name": "scope"
+                      }
+                    ],
+                    "title": "api spec given template test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"template_variables\":[{\"name\":\"scope\",\"available_values\":[],\"defaults\":[\"cats\"]}],\"monitor_definition\":{\"message\":\"cats\",\"name\":\"High Error Rate on service\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"},\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"created\":\"2025-05-29T02:36:23.954533+00:00\",\"modified\":\"2025-05-29T02:36:23.954533+00:00\",\"version\":0,\"title\":\"api spec given template test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183\",\"tags\":[\"category:test\"],\"description\":\"It's a threshold\"},\"id\":\"fefd62df-924a-4438-a697-f7e6ccbad77e\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {
+                      "message": "A msg.",
+                      "name": "A name test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/monitor/template/fefd62df-924a-4438-a697-f7e6ccbad77e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"title\":\"Postgres DB test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183\",\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"modified\":\"2025-05-29T02:36:24.215009+00:00\",\"version\":1,\"description\":\"A description.\",\"versions\":[{\"title\":\"api spec given template test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183\",\"version\":0,\"description\":\"It's a threshold\",\"id\":\"fefd62df-924a-4438-a697-f7e6ccbad77e\",\"created\":\"2025-05-29T02:36:23.954533+00:00\",\"monitor_definition\":{\"name\":\"High Error Rate on service\",\"type\":\"query alert\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"message\":\"cats\"},\"template_variables\":[{\"defaults\":[\"cats\"],\"available_values\":[],\"name\":\"scope\"}],\"tags\":[\"category:test\"]},{\"title\":\"Postgres DB test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183\",\"version\":1,\"description\":\"A description.\",\"id\":\"5e4cd0de-4940-4060-8ffd-2ff13a0b3f5e\",\"created\":\"2025-05-29T02:36:23.954533+00:00\",\"monitor_definition\":{\"name\":\"A name test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183\",\"type\":\"query alert\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"message\":\"A msg.\"},\"template_variables\":[{\"defaults\":[\"defaultValue\"],\"available_values\":[\"value1\",\"value2\"],\"name\":\"regionName\",\"tag_key\":\"datacenter\"}],\"tags\":[\"integration:Azure\"]}],\"created\":\"2025-05-29T02:36:23.954533+00:00\",\"monitor_definition\":{\"message\":\"A msg.\",\"name\":\"A name test-update_a_monitor_user_template_to_a_new_version_returns_ok_response-1748486183\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"},\"template_variables\":[{\"defaults\":[\"defaultValue\"],\"available_values\":[\"value1\",\"value2\"],\"name\":\"regionName\",\"tag_key\":\"datacenter\"}],\"tags\":[\"integration:Azure\"]},\"id\":\"fefd62df-924a-4438-a697-f7e6ccbad77e\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/fefd62df-924a-4438-a697-f7e6ccbad77e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a monitor user template to a new version returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:24.411Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {},
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-validate_a_monitor_user_template_returns_bad_request_response-1748486184"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid monitor_definition or template variables: Monitor definition cannot be empty.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Validate a monitor user template returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:24.538Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {
+                      "message": "A msg.",
+                      "name": "A name test-validate_a_monitor_user_template_returns_ok_response-1748486184",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-validate_a_monitor_user_template_returns_ok_response-1748486184"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Validate a monitor user template returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:24.721Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "It's a threshold",
+                    "monitor_definition": {
+                      "message": "cats",
+                      "name": "High Error Rate on service",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "category:test"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [],
+                        "defaults": [
+                          "cats"
+                        ],
+                        "name": "scope"
+                      }
+                    ],
+                    "title": "api spec given template test-validate_an_existing_monitor_user_template_returns_bad_request_response-1748486184"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"monitor_definition\":{\"message\":\"cats\",\"name\":\"High Error Rate on service\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"},\"tags\":[\"category:test\"],\"created\":\"2025-05-29T02:36:24.928104+00:00\",\"modified\":\"2025-05-29T02:36:24.928104+00:00\",\"title\":\"api spec given template test-validate_an_existing_monitor_user_template_returns_bad_request_response-1748486184\",\"version\":0,\"template_variables\":[{\"name\":\"scope\",\"defaults\":[\"cats\"],\"available_values\":[]}],\"description\":\"It's a threshold\"},\"id\":\"599fecff-7834-42bd-976b-c2d145f42579\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {},
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-validate_an_existing_monitor_user_template_returns_bad_request_response-1748486184"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template/599fecff-7834-42bd-976b-c2d145f42579/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Invalid monitor_definition or template variables: Monitor definition cannot be empty.\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/599fecff-7834-42bd-976b-c2d145f42579",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Validate an existing monitor user template returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:25.252Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {
+                      "message": "A msg.",
+                      "name": "A name test-validate_an_existing_monitor_user_template_returns_not_found_response-1748486185",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-validate_an_existing_monitor_user_template_returns_not_found_response-1748486185"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template/00000000-0000-1234-0000-000000000000/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Monitor template not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Validate an existing monitor user template returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2025-05-29T02:36:25.384Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "It's a threshold",
+                    "monitor_definition": {
+                      "message": "cats",
+                      "name": "High Error Rate on service",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "category:test"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [],
+                        "defaults": [
+                          "cats"
+                        ],
+                        "name": "scope"
+                      }
+                    ],
+                    "title": "api spec given template test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185"
+                  },
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-user-template\",\"attributes\":{\"created\":\"2025-05-29T02:36:25.594440+00:00\",\"version\":0,\"description\":\"It's a threshold\",\"tags\":[\"category:test\"],\"modified\":\"2025-05-29T02:36:25.594440+00:00\",\"template_variables\":[{\"defaults\":[\"cats\"],\"available_values\":[],\"name\":\"scope\"}],\"creator_uuid\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"monitor_definition\":{\"message\":\"cats\",\"name\":\"High Error Rate on service\",\"query\":\"avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100\",\"type\":\"query alert\"},\"title\":\"api spec given template test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185\"},\"id\":\"dc86b1ba-9e7c-40cf-8859-777c53e4f1a2\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "A description.",
+                    "monitor_definition": {
+                      "message": "A msg.",
+                      "name": "A name test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185",
+                      "query": "avg(last_5m):sum:system.net.bytes_rcvd{host:host0} > 100",
+                      "type": "query alert"
+                    },
+                    "tags": [
+                      "integration:Azure"
+                    ],
+                    "template_variables": [
+                      {
+                        "available_values": [
+                          "value1",
+                          "value2"
+                        ],
+                        "defaults": [
+                          "defaultValue"
+                        ],
+                        "name": "regionName",
+                        "tag_key": "datacenter"
+                      }
+                    ],
+                    "title": "Postgres DB test-validate_an_existing_monitor_user_template_returns_ok_response-1748486185"
+                  },
+                  "id": "00000000-0000-1234-0000-000000000000",
+                  "type": "monitor-user-template"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/template/dc86b1ba-9e7c-40cf-8859-777c53e4f1a2/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/template/dc86b1ba-9e7c-40cf-8859-777c53e4f1a2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Validate an existing monitor user template returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

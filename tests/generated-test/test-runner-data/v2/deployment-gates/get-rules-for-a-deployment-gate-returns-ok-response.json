@@ -1,0 +1,35 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 200,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Get rules for a deployment gate returns \"OK\" response",
+  "operation_id": "GetDeploymentGateRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "gate_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "deployment_gate.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deployment_gates/{gate_id}/rules"
+  },
+  "scenario": "Get rules for a deployment gate returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,55 @@
+{
+  "api": "Incidents",
+  "expected_status": 201,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Create incident notification rule returns \"Created\" response",
+  "operation_id": "CreateIncidentNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateIncidentNotificationRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "conditions": [
+              {
+                "field": "severity",
+                "values": [
+                  "SEV-1",
+                  "SEV-2"
+                ]
+              }
+            ],
+            "enabled": true,
+            "handles": [
+              "@test-email@company.com"
+            ],
+            "trigger": "incident_created_trigger",
+            "visibility": "organization"
+          },
+          "relationships": {
+            "incident_type": {
+              "data": {
+                "id": "{{ incident_type.data.id }}",
+                "type": "incident_types"
+              }
+            }
+          },
+          "type": "incident_notification_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/config/notification-rules"
+  },
+  "scenario": "Create incident notification rule returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

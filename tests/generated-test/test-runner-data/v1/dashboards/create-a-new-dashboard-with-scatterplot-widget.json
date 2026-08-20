@@ -1,0 +1,93 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with scatterplot widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/scatterplot_widget.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "color_by_groups": [],
+              "requests": {
+                "table": {
+                  "formulas": [
+                    {
+                      "alias": "",
+                      "dimension": "x",
+                      "formula": "query1"
+                    },
+                    {
+                      "alias": "",
+                      "dimension": "y",
+                      "formula": "query2"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "aggregator": "avg",
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*} by {service}"
+                    },
+                    {
+                      "aggregator": "avg",
+                      "data_source": "metrics",
+                      "name": "query2",
+                      "query": "avg:system.mem.used{*} by {service}"
+                    }
+                  ],
+                  "response_format": "scalar"
+                }
+              },
+              "time": {},
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "scatterplot",
+              "xaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "scale": "linear"
+              },
+              "yaxis": {
+                "include_zero": true,
+                "max": "auto",
+                "min": "auto",
+                "scale": "linear"
+              }
+            },
+            "layout": {
+              "height": 15,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with scatterplot widget",
+  "schema_version": 1,
+  "version": "v1"
+}

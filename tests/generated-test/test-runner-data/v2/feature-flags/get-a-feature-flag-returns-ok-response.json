@@ -1,0 +1,35 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Get a feature flag returns \"OK\" response",
+  "operation_id": "GetFeatureFlag",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "feature_flag_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "feature_flag.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/{feature_flag_id}"
+  },
+  "scenario": "Get a feature flag returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

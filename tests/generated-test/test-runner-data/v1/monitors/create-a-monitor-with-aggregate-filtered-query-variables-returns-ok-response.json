@@ -1,0 +1,63 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a monitor with aggregate filtered query variables returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "test message",
+        "name": "{{ unique }}",
+        "options": {
+          "thresholds": {
+            "critical": 100
+          },
+          "variables": [
+            {
+              "base_query": {
+                "data_source": "metrics",
+                "name": "query1",
+                "query": "max:container.cpu.usage{*} by {kube_cluster_name}.rollup(max)"
+              },
+              "data_source": "aggregate_filtered_query",
+              "filter_query": {
+                "columns": [
+                  {
+                    "name": "cluster_name"
+                  }
+                ],
+                "data_source": "reference_table",
+                "name": "filter_query",
+                "table_name": "test_table"
+              },
+              "filters": [
+                {
+                  "base_attribute": "kube_cluster_name",
+                  "filter_attribute": "cluster_name"
+                }
+              ],
+              "name": "query1"
+            }
+          ]
+        },
+        "query": "formula(\"query1\").rollup(\"sum\").last(\"5m\") > 100",
+        "type": "query alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a monitor with aggregate filtered query variables returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

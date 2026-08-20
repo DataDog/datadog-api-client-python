@@ -1,0 +1,72 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Update incident notification rule returns \"OK\" response",
+  "operation_id": "UpdateIncidentNotificationRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PutIncidentNotificationRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "conditions": [
+              {
+                "field": "severity",
+                "values": [
+                  "SEV-1"
+                ]
+              }
+            ],
+            "enabled": false,
+            "handles": [
+              "@updated-team-email@company.com"
+            ],
+            "trigger": "incident_modified_trigger",
+            "visibility": "private"
+          },
+          "id": "{{ notification_rule.data.id }}",
+          "relationships": {
+            "incident_type": {
+              "data": {
+                "id": "{{ incident_type.data.id }}",
+                "type": "incident_types"
+              }
+            }
+          },
+          "type": "incident_notification_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "notification_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/notification-rules/{id}"
+  },
+  "scenario": "Update incident notification rule returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

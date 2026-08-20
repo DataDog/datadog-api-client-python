@@ -1,0 +1,18 @@
+{
+  "api": "GCPIntegration",
+  "expected_status": 200,
+  "feature": "GCP Integration",
+  "id": "v2/GCP Integration/List delegate account returns \"OK\" response",
+  "operation_id": "GetGCPSTSDelegate",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/gcp/sts_delegate"
+  },
+  "scenario": "List delegate account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,61 @@
+{
+  "api": "StatusPages",
+  "expected_status": 201,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Create maintenance returns \"Created\" response",
+  "operation_id": "CreateMaintenance",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateMaintenanceRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "completed_date": "{{ timeISO('now + 2h') }}",
+            "completed_description": "We have completed maintenance on the API to improve performance.",
+            "components_affected": [
+              {
+                "id": "{{ status_page.data.attributes.components[0].components[0].id }}",
+                "status": "operational"
+              }
+            ],
+            "in_progress_description": "We are currently performing maintenance on the API to improve performance.",
+            "scheduled_description": "We will be performing maintenance on the API to improve performance.",
+            "start_date": "{{ timeISO('now + 1h') }}",
+            "title": "API Maintenance"
+          },
+          "type": "maintenances"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/maintenances"
+  },
+  "scenario": "Create maintenance returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

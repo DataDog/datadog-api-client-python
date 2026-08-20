@@ -1,0 +1,51 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Update an incident type returns \"OK\" response",
+  "operation_id": "UpdateIncidentType",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IncidentTypePatchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{incident_type.data.attributes.name}}-updated"
+          },
+          "id": "{{incident_type.data.id}}",
+          "type": "incident_types"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_type_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident_type.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/config/types/{incident_type_id}"
+  },
+  "scenario": "Update an incident type returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

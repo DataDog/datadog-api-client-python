@@ -1,0 +1,35 @@
+{
+  "api": "RumMetrics",
+  "expected_status": 404,
+  "feature": "Rum Metrics",
+  "id": "v2/Rum Metrics/Get a RUM-based metric returns \"Not Found\" response",
+  "operation_id": "GetRumMetric",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ unique }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/metrics/{metric_id}"
+  },
+  "scenario": "Get a RUM-based metric returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

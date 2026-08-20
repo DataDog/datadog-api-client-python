@@ -1,0 +1,35 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/List On-Call notification channels for a user returns \"OK\" response",
+  "operation_id": "ListUserNotificationChannels",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "user.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/users/{user_id}/notification-channels"
+  },
+  "scenario": "List On-Call notification channels for a user returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

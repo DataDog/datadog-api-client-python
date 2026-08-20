@@ -1,0 +1,476 @@
+{
+  "feature": "Dashboard Lists",
+  "recordings": [
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2022-01-06T00:50:21.238Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Create_a_dashboard_list_returns_OK_response-1641430221"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard/lists/manual",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_favorite\":false,\"name\":\"Test-Create_a_dashboard_list_returns_OK_response-1641430221\",\"dashboard_count\":0,\"author\":{\"handle\":\"frog@datadoghq.com\",\"name\":null},\"created\":\"2022-01-06T00:50:21.382205+00:00\",\"type\":\"manual_dashboard_list\",\"dashboards\":null,\"modified\":\"2022-01-06T00:50:21.382231+00:00\",\"id\":269879}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/269879",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_list_id\":269879}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a dashboard list returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2022-01-06T00:50:21.689Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Manual Dashboard List with id 0 not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a dashboard list returns \"Not Found\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2022-01-06T00:50:21.880Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Delete_a_dashboard_list_returns_OK_response-1641430221"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard/lists/manual",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_favorite\":false,\"name\":\"Test-Delete_a_dashboard_list_returns_OK_response-1641430221\",\"dashboard_count\":0,\"author\":{\"handle\":\"frog@datadoghq.com\",\"name\":null},\"created\":\"2022-01-06T00:50:22.024122+00:00\",\"type\":\"manual_dashboard_list\",\"dashboards\":null,\"modified\":\"2022-01-06T00:50:22.024147+00:00\",\"id\":269880}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/269880",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_list_id\":269880}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/269880",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Manual Dashboard List with id 269880 not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a dashboard list returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2022-01-06T00:50:22.463Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/dashboard/lists/manual/0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Manual Dashboard List with id 0 not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a dashboard list returns \"Not Found\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2022-01-06T00:50:22.654Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_a_dashboard_list_returns_OK_response-1641430222"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard/lists/manual",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_favorite\":false,\"name\":\"Test-Get_a_dashboard_list_returns_OK_response-1641430222\",\"dashboard_count\":0,\"author\":{\"handle\":\"frog@datadoghq.com\",\"name\":null},\"created\":\"2022-01-06T00:50:22.806263+00:00\",\"type\":\"manual_dashboard_list\",\"dashboards\":null,\"modified\":\"2022-01-06T00:50:22.806287+00:00\",\"id\":269881}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/dashboard/lists/manual/269881",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_favorite\":false,\"name\":\"Test-Get_a_dashboard_list_returns_OK_response-1641430222\",\"dashboard_count\":0,\"author\":{\"handle\":\"frog@datadoghq.com\",\"name\":null},\"created\":\"2022-01-06T00:50:22.806263+00:00\",\"type\":\"manual_dashboard_list\",\"dashboards\":null,\"modified\":\"2022-01-06T00:50:22.806287+00:00\",\"id\":269881}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/269881",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_list_id\":269881}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a dashboard list returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2023-02-16T21:10:17.049Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_all_dashboard_lists_returns_OK_response-1676581817"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard/lists/manual",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\"},\"created\":\"2023-02-16T21:10:17.185865+00:00\",\"dashboards\":null,\"dashboard_count\":0,\"id\":364491,\"is_favorite\":false,\"modified\":\"2023-02-16T21:10:17.185872+00:00\",\"name\":\"Test-Get_all_dashboard_lists_returns_OK_response-1676581817\",\"type\":\"manual_dashboard_list\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/dashboard/lists/manual",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"dashboard_lists\":[{\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\"},\"created\":\"2023-02-16T21:10:17.185865+00:00\",\"dashboards\":null,\"dashboard_count\":0,\"id\":364491,\"is_favorite\":false,\"modified\":\"2023-02-16T21:10:17.185872+00:00\",\"name\":\"Test-Get_all_dashboard_lists_returns_OK_response-1676581817\",\"type\":\"manual_dashboard_list\"},{\"author\":{\"name\":null,\"handle\":\"frog@datadoghq.com\"},\"created\":\"2022-12-09T15:04:28.806069+00:00\",\"dashboards\":null,\"dashboard_count\":1,\"id\":348463,\"is_favorite\":false,\"modified\":\"2022-12-09T15:04:29.985883+00:00\",\"name\":\"Test-Go-TestDashboardListItemCRUD-1670598268\",\"type\":\"manual_dashboard_list\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/364491",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_list_id\":364491}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all dashboard lists returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2022-01-06T00:50:23.525Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Not found"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/dashboard/lists/manual/0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Manual Dashboard List with id 0 not found\"]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a dashboard list returns \"Not Found\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "frozen_at": "2022-01-06T00:50:23.727Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Update_a_dashboard_list_returns_OK_response-1641430223"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard/lists/manual",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_favorite\":false,\"name\":\"Test-Update_a_dashboard_list_returns_OK_response-1641430223\",\"dashboard_count\":0,\"author\":{\"handle\":\"frog@datadoghq.com\",\"name\":null},\"created\":\"2022-01-06T00:50:23.876774+00:00\",\"type\":\"manual_dashboard_list\",\"dashboards\":null,\"modified\":\"2022-01-06T00:50:23.876799+00:00\",\"id\":269882}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "updated Test-Update_a_dashboard_list_returns_OK_response-1641430223"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v1/dashboard/lists/manual/269882",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"is_favorite\":false,\"name\":\"updated Test-Update_a_dashboard_list_returns_OK_response-1641430223\",\"dashboard_count\":0,\"author\":{\"handle\":\"frog@datadoghq.com\",\"name\":null},\"created\":\"2022-01-06T00:50:23.876774+00:00\",\"type\":\"manual_dashboard_list\",\"dashboards\":null,\"modified\":\"2022-01-06T00:50:24.060886+00:00\",\"id\":269882}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/269882",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_list_id\":269882}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update a dashboard list returns \"OK\" response",
+      "version": "v1"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v1"
+}

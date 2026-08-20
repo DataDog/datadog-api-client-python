@@ -1,0 +1,65 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a multistep test with subtest returns \"OK\" response",
+  "operation_id": "CreateSyntheticsAPITest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsAPITest",
+        "type": "object"
+      },
+      "source": "synthetics_api_test_multi_step_with_subtest.json",
+      "value": {
+        "config": {
+          "steps": [
+            {
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "name": "request is sent",
+              "request": {
+                "basicAuth": {
+                  "password": "password",
+                  "username": "username"
+                },
+                "method": "GET",
+                "url": "https://httpbin.org/status/200"
+              },
+              "subtype": "http"
+            },
+            {
+              "name": "subtest step",
+              "subtestPublicId": "{{ synthetics_api_test.public_id }}",
+              "subtype": "playSubTest"
+            }
+          ]
+        },
+        "locations": [
+          "aws:us-east-2"
+        ],
+        "message": "BDD test payload: synthetics_api_test_multi_step_with_subtest.json",
+        "name": "{{ unique }}",
+        "options": {
+          "tick_every": 60
+        },
+        "subtype": "multi",
+        "type": "api"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/api"
+  },
+  "scenario": "Create a multistep test with subtest returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

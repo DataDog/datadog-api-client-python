@@ -1,0 +1,49 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 201,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Create a feature flag returns \"Created\" response",
+  "operation_id": "CreateFeatureFlag",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateFeatureFlagRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "default_variant_key": "variant-{{ unique }}-1",
+            "description": "Test feature flag for BDD scenarios",
+            "key": "test-feature-flag-{{ unique }}",
+            "name": "Test Feature Flag {{ unique }}",
+            "value_type": "BOOLEAN",
+            "variants": [
+              {
+                "key": "variant-{{ unique }}-1",
+                "name": "Variant {{ unique }} A",
+                "value": "true"
+              },
+              {
+                "key": "variant-{{ unique }}-2",
+                "name": "Variant {{ unique }} B",
+                "value": "false"
+              }
+            ]
+          },
+          "type": "feature-flags"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "Create a feature flag returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

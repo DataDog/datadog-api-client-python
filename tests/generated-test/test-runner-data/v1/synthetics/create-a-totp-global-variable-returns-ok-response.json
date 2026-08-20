@@ -1,0 +1,41 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create a TOTP global variable returns \"OK\" response",
+  "operation_id": "CreateGlobalVariable",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsGlobalVariableRequest",
+        "type": "object"
+      },
+      "source": "synthetics_global_variable_totp_payload.json",
+      "value": {
+        "description": "",
+        "is_totp": true,
+        "name": "GLOBAL_VARIABLE_TOTP_PAYLOAD_{{ unique_upper_alnum }}",
+        "tags": [],
+        "value": {
+          "options": {
+            "totp_parameters": {
+              "digits": 6,
+              "refresh_interval": 30
+            }
+          },
+          "secure": false,
+          "value": ""
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/variables"
+  },
+  "scenario": "Create a TOTP global variable returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

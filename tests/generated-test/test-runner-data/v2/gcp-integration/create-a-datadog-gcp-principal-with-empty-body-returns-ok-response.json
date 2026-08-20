@@ -1,0 +1,26 @@
+{
+  "api": "GCPIntegration",
+  "expected_status": 200,
+  "feature": "GCP Integration",
+  "id": "v2/GCP Integration/Create a Datadog GCP principal with empty body returns \"OK\" response",
+  "operation_id": "MakeGCPSTSDelegate",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": null,
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {}
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integration/gcp/sts_delegate"
+  },
+  "scenario": "Create a Datadog GCP principal with empty body returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

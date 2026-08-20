@@ -1,0 +1,51 @@
+{
+  "api": "CaseManagementAttribute",
+  "expected_status": 400,
+  "feature": "Case Management Attribute",
+  "id": "v2/Case Management Attribute/Delete custom attributes config returns \"Bad Request\" response",
+  "operation_id": "DeleteCustomAttributeConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "case_type_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "case_type.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "custom_attribute_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "not-an-uuid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cases/types/{case_type_id}/custom_attributes/{custom_attribute_id}"
+  },
+  "scenario": "Delete custom attributes config returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

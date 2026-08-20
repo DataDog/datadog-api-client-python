@@ -1,0 +1,82 @@
+{
+  "feature": "RUM Remote Config",
+  "recordings": [
+    {
+      "feature": "RUM Remote Config",
+      "frozen_at": "2026-06-17T12:36:53.338Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/remote_config/products/rum/configs/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Forbidden\"}]}\n"
+            },
+            "headers": {
+              "content-type": "text/plain; charset=utf-8"
+            },
+            "reason": "Forbidden",
+            "status": 403
+          }
+        }
+      ],
+      "scenario": "Get a RUM SDK configuration returns \"Forbidden\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Remote Config",
+      "frozen_at": "2026-06-17T12:36:53.745Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "rum": {
+                      "default_privacy_level": "mask",
+                      "enable_privacy_for_action_name": true,
+                      "session_replay_sample_rate": 20,
+                      "session_sample_rate": 75
+                    }
+                  },
+                  "id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+                  "type": "rum_sdk_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/remote_config/products/rum/configs/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Forbidden\"}]}\n"
+            },
+            "headers": {
+              "content-type": "text/plain; charset=utf-8"
+            },
+            "reason": "Forbidden",
+            "status": 403
+          }
+        }
+      ],
+      "scenario": "Update a RUM SDK configuration returns \"Forbidden\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

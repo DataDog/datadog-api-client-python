@@ -1,0 +1,72 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with a query value widget using timeseries background",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with QVW Timeseries Background",
+        "widgets": [
+          {
+            "definition": {
+              "autoscale": true,
+              "precision": 2,
+              "requests": [
+                {
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "aggregator": "percentile",
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "sum:my.cool.count.metric{*}"
+                    }
+                  ],
+                  "response_format": "scalar"
+                }
+              ],
+              "time": {},
+              "timeseries_background": {
+                "type": "area",
+                "yaxis": {
+                  "include_zero": true
+                }
+              },
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "query_value"
+            },
+            "layout": {
+              "height": 2,
+              "width": 2,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with a query value widget using timeseries background",
+  "schema_version": 1,
+  "version": "v1"
+}

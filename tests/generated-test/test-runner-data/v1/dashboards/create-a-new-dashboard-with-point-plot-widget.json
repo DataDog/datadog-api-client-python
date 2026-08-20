@@ -1,0 +1,61 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with point_plot widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/point_plot_widget.json",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "projection": {
+                    "dimensions": [
+                      {
+                        "column": "host",
+                        "dimension": "group"
+                      },
+                      {
+                        "column": "@duration",
+                        "dimension": "y"
+                      }
+                    ],
+                    "type": "point_plot"
+                  },
+                  "query": {
+                    "data_source": "logs",
+                    "query_string": "service:web-store"
+                  },
+                  "request_type": "data_projection"
+                }
+              ],
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "point_plot"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with point_plot widget",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,448 @@
+{
+  "feature": "Annotations",
+  "recordings": [
+    {
+      "feature": "Annotations",
+      "frozen_at": "2026-05-27T20:28:17.108Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "color": "blue",
+                    "description": "Deployed v2.3.1 to production.",
+                    "page_id": "dashboard:abc-def-xyz",
+                    "start_time": 1704067200000,
+                    "type": "pointInTime",
+                    "widget_ids": [
+                      "1234567890"
+                    ]
+                  },
+                  "type": "annotation"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/annotation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2035c4df-a060-4466-93ec-9304a039bbed\",\"type\":\"annotation\",\"attributes\":{\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"color\":\"blue\",\"created_at\":1779913697490,\"description\":\"Deployed v2.3.1 to production.\",\"end_time\":null,\"modified_at\":1779913697490,\"page_id\":\"dashboard:abc-def-xyz\",\"start_time\":1704067200000,\"type\":\"pointInTime\",\"widget_ids\":[\"1234567890\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/annotation/2035c4df-a060-4466-93ec-9304a039bbed",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an annotation returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Annotations",
+      "frozen_at": "2026-05-27T20:28:17.632Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "color": "blue",
+                    "description": "Deployed v2.3.1 to production.",
+                    "page_id": "dashboard:abc-def-xyz",
+                    "start_time": 1704067200000,
+                    "type": "pointInTime"
+                  },
+                  "type": "annotation"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/annotation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"152a2920-7598-4487-b185-b15931f92bc0\",\"type\":\"annotation\",\"attributes\":{\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"color\":\"blue\",\"created_at\":1779913697691,\"description\":\"Deployed v2.3.1 to production.\",\"end_time\":null,\"modified_at\":1779913697691,\"page_id\":\"dashboard:abc-def-xyz\",\"start_time\":1704067200000,\"type\":\"pointInTime\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/annotation/152a2920-7598-4487-b185-b15931f92bc0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/annotation/152a2920-7598-4487-b185-b15931f92bc0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete an annotation returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Annotations",
+      "frozen_at": "2026-05-27T20:28:17.883Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "color": "blue",
+                    "description": "Deployed v2.3.1 to production.",
+                    "page_id": "dashboard:abc-def-xyz",
+                    "start_time": 1704067200000,
+                    "type": "pointInTime"
+                  },
+                  "type": "annotation"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/annotation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"31d6c3c7-0519-49e3-bcdf-9b1c00530aea\",\"type\":\"annotation\",\"attributes\":{\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"color\":\"blue\",\"created_at\":1779913698075,\"description\":\"Deployed v2.3.1 to production.\",\"end_time\":null,\"modified_at\":1779913698075,\"page_id\":\"dashboard:abc-def-xyz\",\"start_time\":1704067200000,\"type\":\"pointInTime\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/annotation/page/dashboard:abc-def-xyz",
+            "query": [
+              [
+                "end_time",
+                "1704153600000"
+              ],
+              [
+                "start_time",
+                "1704067200000"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dashboard:abc-def-xyz\",\"type\":\"page_annotations\",\"attributes\":{\"annotations\":{\"31d6c3c7-0519-49e3-bcdf-9b1c00530aea\":{\"id\":\"31d6c3c7-0519-49e3-bcdf-9b1c00530aea\",\"page_id\":\"dashboard:abc-def-xyz\",\"description\":\"Deployed v2.3.1 to production.\",\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"type\":\"pointInTime\",\"color\":\"blue\",\"start_time\":1704067200000,\"end_time\":null,\"created_at\":1779913698075,\"modified_at\":1779913698075}},\"global_annotations\":[\"31d6c3c7-0519-49e3-bcdf-9b1c00530aea\"],\"widget_mapping\":{}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/annotation/31d6c3c7-0519-49e3-bcdf-9b1c00530aea",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get annotations for a page returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Annotations",
+      "frozen_at": "2026-05-27T20:28:18.281Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "color": "blue",
+                    "description": "Deployed v2.3.1 to production.",
+                    "page_id": "dashboard:abc-def-xyz",
+                    "start_time": 1704067200000,
+                    "type": "pointInTime"
+                  },
+                  "type": "annotation"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/annotation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9db3699d-4361-4062-b095-a4da3227afe6\",\"type\":\"annotation\",\"attributes\":{\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"color\":\"blue\",\"created_at\":1779913698338,\"description\":\"Deployed v2.3.1 to production.\",\"end_time\":null,\"modified_at\":1779913698338,\"page_id\":\"dashboard:abc-def-xyz\",\"start_time\":1704067200000,\"type\":\"pointInTime\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/annotation",
+            "query": [
+              [
+                "end_time",
+                "1704153600000"
+              ],
+              [
+                "page_id",
+                "dashboard:abc-def-xyz"
+              ],
+              [
+                "start_time",
+                "1704067200000"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"9db3699d-4361-4062-b095-a4da3227afe6\",\"type\":\"annotation\",\"attributes\":{\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"color\":\"blue\",\"created_at\":1779913698338,\"description\":\"Deployed v2.3.1 to production.\",\"end_time\":null,\"modified_at\":1779913698338,\"page_id\":\"dashboard:abc-def-xyz\",\"start_time\":1704067200000,\"type\":\"pointInTime\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/annotation/9db3699d-4361-4062-b095-a4da3227afe6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List annotations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Annotations",
+      "frozen_at": "2026-05-27T20:28:18.537Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "color": "blue",
+                    "description": "Deployed v2.3.1 to production.",
+                    "page_id": "dashboard:abc-def-xyz",
+                    "start_time": 1704067200000,
+                    "type": "pointInTime"
+                  },
+                  "type": "annotation"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/annotation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9f257ed0-87fb-42f8-9aaf-89397e766d15\",\"type\":\"annotation\",\"attributes\":{\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"color\":\"blue\",\"created_at\":1779913698596,\"description\":\"Deployed v2.3.1 to production.\",\"end_time\":null,\"modified_at\":1779913698596,\"page_id\":\"dashboard:abc-def-xyz\",\"start_time\":1704067200000,\"type\":\"pointInTime\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "color": "green",
+                    "description": "Updated annotation.",
+                    "page_id": "dashboard:abc-def-xyz",
+                    "start_time": 1704067200000,
+                    "type": "pointInTime"
+                  },
+                  "type": "annotation"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/annotation/9f257ed0-87fb-42f8-9aaf-89397e766d15",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9f257ed0-87fb-42f8-9aaf-89397e766d15\",\"type\":\"annotation\",\"attributes\":{\"author_id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"color\":\"green\",\"created_at\":1779913698596,\"description\":\"Updated annotation.\",\"end_time\":null,\"modified_at\":1779913698699,\"page_id\":\"dashboard:abc-def-xyz\",\"start_time\":1704067200000,\"type\":\"pointInTime\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/annotation/9f257ed0-87fb-42f8-9aaf-89397e766d15",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an annotation returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

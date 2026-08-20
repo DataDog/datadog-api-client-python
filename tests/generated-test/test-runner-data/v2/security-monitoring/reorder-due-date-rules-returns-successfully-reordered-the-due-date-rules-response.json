@@ -1,0 +1,33 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Reorder due date rules returns \"Successfully reordered the due date rules\" response",
+  "operation_id": "ReorderSecurityFindingsAutomationDueDateRules",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DueDateRuleReorderRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "id": "{{ valid_due_date_rule.data.id }}",
+            "type": "due_date_rules"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/due_date_rules/reorder"
+  },
+  "scenario": "Reorder due date rules returns \"Successfully reordered the due date rules\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

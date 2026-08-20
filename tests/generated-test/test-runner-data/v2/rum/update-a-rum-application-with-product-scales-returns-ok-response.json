@@ -1,0 +1,53 @@
+{
+  "api": "RUM",
+  "expected_status": 200,
+  "feature": "RUM",
+  "id": "v2/RUM/Update a RUM application with Product Scales returns \"OK\" response",
+  "operation_id": "UpdateRUMApplication",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMApplicationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "updated_rum_with_product_scales",
+            "product_analytics_retention_state": "MAX",
+            "rum_event_processing_state": "ALL"
+          },
+          "id": "{{ rum_application.data.id }}",
+          "type": "rum_application_update"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_application.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{id}"
+  },
+  "scenario": "Update a RUM application with Product Scales returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,43 @@
+{
+  "api": "Roles",
+  "expected_status": 200,
+  "feature": "Roles",
+  "id": "v2/Roles/Create role with a permission returns \"OK\" response",
+  "operation_id": "CreateRole",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RoleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }}"
+          },
+          "relationships": {
+            "permissions": {
+              "data": [
+                {
+                  "id": "{{ permission.id }}",
+                  "type": "{{ permission.type }}"
+                }
+              ]
+            }
+          },
+          "type": "roles"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/roles"
+  },
+  "scenario": "Create role with a permission returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

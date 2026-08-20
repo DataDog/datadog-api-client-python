@@ -1,0 +1,82 @@
+{
+  "api": "Dashboards",
+  "expected_status": 400,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with invalid team tags returns \"Bad Request\" response",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "tags": [
+          "tm:foobar"
+        ],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "change_type": "absolute",
+                  "compare_to": "hour_before",
+                  "formulas": [
+                    {
+                      "formula": "hour_before(query1)"
+                    },
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "increase_good": true,
+                  "order_by": "change",
+                  "order_dir": "desc",
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "logs",
+                      "indexes": [
+                        "*"
+                      ],
+                      "name": "query1",
+                      "search": {
+                        "query": ""
+                      }
+                    }
+                  ],
+                  "response_format": "scalar"
+                }
+              ],
+              "time": {},
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "change"
+            },
+            "layout": {
+              "height": 4,
+              "width": 4,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with invalid team tags returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

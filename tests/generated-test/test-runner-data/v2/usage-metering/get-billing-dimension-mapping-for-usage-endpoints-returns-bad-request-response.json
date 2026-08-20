@@ -1,0 +1,18 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 400,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/Get billing dimension mapping for usage endpoints returns \"Bad Request\" response",
+  "operation_id": "GetBillingDimensionMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/usage/billing_dimension_mapping"
+  },
+  "scenario": "Get billing dimension mapping for usage endpoints returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

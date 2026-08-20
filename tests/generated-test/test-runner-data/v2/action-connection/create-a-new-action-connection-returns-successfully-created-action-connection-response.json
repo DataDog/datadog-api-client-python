@@ -1,0 +1,41 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 201,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Create a new Action Connection returns \"Successfully created Action Connection\" response",
+  "operation_id": "CreateActionConnection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateActionConnectionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "integration": {
+              "credentials": {
+                "account_id": "123456789123",
+                "role": "MyRoleUpdated",
+                "type": "AWSAssumeRole"
+              },
+              "type": "AWS"
+            },
+            "name": "Cassette Connection {{ unique_lower_alnum }}"
+          },
+          "type": "action_connection"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/actions/connections"
+  },
+  "scenario": "Create a new Action Connection returns \"Successfully created Action Connection\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

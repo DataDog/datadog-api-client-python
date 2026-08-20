@@ -1,0 +1,18 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Get all monitor notification rules returns \"OK\" response",
+  "operation_id": "GetMonitorNotificationRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/notification_rule"
+  },
+  "scenario": "Get all monitor notification rules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

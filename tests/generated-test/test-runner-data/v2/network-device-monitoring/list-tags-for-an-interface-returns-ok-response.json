@@ -1,0 +1,35 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 200,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/List tags for an interface returns \"OK\" response",
+  "operation_id": "ListInterfaceUserTags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "interface_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "example:1.2.3.4:1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ndm/tags/interfaces/{interface_id}"
+  },
+  "scenario": "List tags for an interface returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

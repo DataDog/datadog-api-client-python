@@ -1,0 +1,53 @@
+{
+  "api": "SensitiveDataScanner",
+  "expected_status": 201,
+  "feature": "Sensitive Data Scanner",
+  "id": "v2/Sensitive Data Scanner/Create Scanning Rule with should_save_match returns \"OK\" response",
+  "operation_id": "CreateScanningRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SensitiveDataScannerRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "is_enabled": true,
+            "name": "{{ unique }}",
+            "pattern": "pattern",
+            "priority": 1,
+            "tags": [
+              "sensitive_data:true"
+            ],
+            "text_replacement": {
+              "replacement_string": "REDACTED",
+              "should_save_match": true,
+              "type": "replacement_string"
+            }
+          },
+          "relationships": {
+            "group": {
+              "data": {
+                "id": "{{ group.data.id }}",
+                "type": "{{ group.data.type }}"
+              }
+            }
+          },
+          "type": "sensitive_data_scanner_rule"
+        },
+        "meta": {}
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/sensitive-data-scanner/config/rules"
+  },
+  "scenario": "Create Scanning Rule with should_save_match returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

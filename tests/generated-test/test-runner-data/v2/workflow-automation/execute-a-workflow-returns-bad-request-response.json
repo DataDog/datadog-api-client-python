@@ -1,0 +1,49 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 400,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/Execute a workflow returns \"Bad Request\" response",
+  "operation_id": "CreateWorkflowInstance",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "WorkflowInstanceCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "meta": {
+          "payload": {
+            "input": "value"
+          }
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "workflow_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "malformed"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows/{workflow_id}/instances"
+  },
+  "scenario": "Execute a workflow returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

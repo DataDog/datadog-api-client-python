@@ -1,0 +1,34 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create or update an indicator triage state returns \"Bad Request\" response",
+  "operation_id": "CreateIoCTriageState",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "IoCTriageWriteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "indicator": "192.0.2.1",
+            "triage_state": "invalid_state"
+          },
+          "type": "ioc_triage_state"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/siem/ioc-explorer/triage"
+  },
+  "scenario": "Create or update an indicator triage state returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

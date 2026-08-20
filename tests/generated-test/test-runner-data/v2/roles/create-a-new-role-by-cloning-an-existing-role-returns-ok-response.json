@@ -1,0 +1,50 @@
+{
+  "api": "Roles",
+  "expected_status": 200,
+  "feature": "Roles",
+  "id": "v2/Roles/Create a new role by cloning an existing role returns \"OK\" response",
+  "operation_id": "CloneRole",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RoleCloneRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }} clone"
+          },
+          "type": "roles"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "role_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "role.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/roles/{role_id}/clone"
+  },
+  "scenario": "Create a new role by cloning an existing role returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

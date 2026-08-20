@@ -1,0 +1,55 @@
+{
+  "api": "Metrics",
+  "expected_status": 201,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Create a tag configuration returns \"Created\" response",
+  "operation_id": "CreateTagConfiguration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MetricTagConfigurationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "metric_type": "gauge",
+            "tags": [
+              "app",
+              "datacenter"
+            ]
+          },
+          "id": "{{ unique_alnum }}",
+          "type": "manage_tags"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ unique_alnum }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/{metric_name}/tags"
+  },
+  "scenario": "Create a tag configuration returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

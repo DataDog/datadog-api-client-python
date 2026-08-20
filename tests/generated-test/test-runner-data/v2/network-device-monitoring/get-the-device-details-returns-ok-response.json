@@ -1,0 +1,35 @@
+{
+  "api": "NetworkDeviceMonitoring",
+  "expected_status": 200,
+  "feature": "Network Device Monitoring",
+  "id": "v2/Network Device Monitoring/Get the device details returns \"OK\" response",
+  "operation_id": "GetDevice",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "device_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "default_device"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/ndm/devices/{device_id}"
+  },
+  "scenario": "Get the device details returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

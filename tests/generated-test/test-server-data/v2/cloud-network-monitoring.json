@@ -1,0 +1,141 @@
+{
+  "feature": "Cloud Network Monitoring",
+  "recordings": [
+    {
+      "feature": "Cloud Network Monitoring",
+      "frozen_at": "2025-03-31T18:18:50.338Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/network/connections/aggregate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get aggregated connections returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Network Monitoring",
+      "frozen_at": "2025-07-25T20:54:53.474Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/network/dns/aggregate",
+            "query": [
+              [
+                "group_by",
+                "server_ungrouped,server_service"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Cannot combine server_ungrouped with other server groupings or network.dns_query\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get all aggregated DNS traffic returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Network Monitoring",
+      "frozen_at": "2025-07-25T20:54:53.819Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/network/dns/aggregate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all aggregated DNS traffic returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Network Monitoring",
+      "frozen_at": "2025-07-25T20:54:53.978Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/network/connections/aggregate",
+            "query": [
+              [
+                "limit",
+                "8000"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Invalid limit\",\"detail\":\"Limit must meet requirements listed in https://docs.datadoghq.com/api/latest/cloud-network-monitoring/\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get all aggregated connections returns \"Bad Request\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

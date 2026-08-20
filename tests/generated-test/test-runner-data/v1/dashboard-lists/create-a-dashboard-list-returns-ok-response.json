@@ -1,0 +1,28 @@
+{
+  "api": "DashboardLists",
+  "expected_status": 200,
+  "feature": "Dashboard Lists",
+  "id": "v1/Dashboard Lists/Create a dashboard list returns \"OK\" response",
+  "operation_id": "CreateDashboardList",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DashboardList",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "name": "{{ unique }}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard/lists/manual"
+  },
+  "scenario": "Create a dashboard list returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

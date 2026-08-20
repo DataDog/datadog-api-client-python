@@ -1,0 +1,63 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with logs_transaction_stream list_stream widget and version",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} with list_stream widget",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "columns": [
+                    {
+                      "field": "timestamp",
+                      "width": "auto"
+                    }
+                  ],
+                  "query": {
+                    "compute": [
+                      {
+                        "aggregation": "count",
+                        "facet": "service"
+                      }
+                    ],
+                    "data_source": "logs_transaction_stream",
+                    "group_by": [
+                      {
+                        "facet": "service"
+                      }
+                    ],
+                    "query_string": "",
+                    "version": "sequential_query"
+                  },
+                  "response_format": "event_list"
+                }
+              ],
+              "type": "list_stream"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with logs_transaction_stream list_stream widget and version",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,43 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a mute rule returns \"Successfully created the mute rule\" response",
+  "operation_id": "CreateSecurityFindingsAutomationMuteRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MuteRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "reason": "risk_accepted"
+            },
+            "enabled": true,
+            "name": "{{ unique }}",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:staging"
+            }
+          },
+          "type": "mute_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/mute_rules"
+  },
+  "scenario": "Create a mute rule returns \"Successfully created the mute rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

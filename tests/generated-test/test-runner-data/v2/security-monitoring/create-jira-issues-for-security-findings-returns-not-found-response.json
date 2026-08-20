@@ -1,0 +1,49 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create Jira issues for security findings returns \"Not Found\" response",
+  "operation_id": "CreateJiraIssues",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateJiraIssueRequestArray",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {},
+            "relationships": {
+              "findings": {
+                "data": [
+                  {
+                    "id": "ZGZhMDI3ZjdjMDM3YjJmNzcxNTlhZGMwMjdmZWNiNTZ-MTVlYTNmYWU3NjNlOTNlYTE2YjM4N2JmZmI4Yjk5N2Y=",
+                    "type": "findings"
+                  }
+                ]
+              },
+              "project": {
+                "data": {
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "projects"
+                }
+              }
+            },
+            "type": "jira_issues"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/jira_issues"
+  },
+  "scenario": "Create Jira issues for security findings returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

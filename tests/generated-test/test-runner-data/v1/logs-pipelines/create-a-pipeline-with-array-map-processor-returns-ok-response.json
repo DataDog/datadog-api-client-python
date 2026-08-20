@@ -1,0 +1,57 @@
+{
+  "api": "LogsPipelines",
+  "expected_status": 200,
+  "feature": "Logs Pipelines",
+  "id": "v1/Logs Pipelines/Create a pipeline with Array Map Processor returns \"OK\" response",
+  "operation_id": "CreateLogsPipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LogsPipeline",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "filter": {
+          "query": "source:python"
+        },
+        "name": "testPipelineArrayMap",
+        "processors": [
+          {
+            "is_enabled": true,
+            "name": "map items",
+            "preserve_source": true,
+            "processors": [
+              {
+                "preserve_source": true,
+                "sources": [
+                  "$sourceElem.id"
+                ],
+                "target": "$targetElem.uid",
+                "type": "attribute-remapper"
+              },
+              {
+                "target": "$targetElem.label",
+                "template": "item-%{$sourceElem.id}",
+                "type": "string-builder-processor"
+              }
+            ],
+            "source": "items",
+            "target": "out",
+            "type": "array-map-processor"
+          }
+        ],
+        "tags": []
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/logs/config/pipelines"
+  },
+  "scenario": "Create a pipeline with Array Map Processor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

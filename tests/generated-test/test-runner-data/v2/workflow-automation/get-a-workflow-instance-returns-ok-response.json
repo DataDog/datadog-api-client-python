@@ -1,0 +1,51 @@
+{
+  "api": "WorkflowAutomation",
+  "expected_status": 200,
+  "feature": "Workflow Automation",
+  "id": "v2/Workflow Automation/Get a workflow instance returns \"OK\" response",
+  "operation_id": "GetWorkflowInstance",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "workflow_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "ccf73164-1998-4785-a7a3-8d06c7e5f558"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "instance_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "305a472b-71ab-4ce8-8f8d-75db635627b5"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/workflows/{workflow_id}/instances/{instance_id}"
+  },
+  "scenario": "Get a workflow instance returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

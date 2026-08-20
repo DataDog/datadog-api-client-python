@@ -1,0 +1,38 @@
+{
+  "api": "OktaIntegration",
+  "expected_status": 201,
+  "feature": "Okta Integration",
+  "id": "v2/Okta Integration/Add Okta account returns \"OK\" response",
+  "operation_id": "CreateOktaAccount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OktaAccountRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "auth_method": "oauth",
+            "client_id": "client_id",
+            "client_secret": "client_secret",
+            "domain": "https://example.okta.com/",
+            "name": "{{ unique_lower_alnum }}"
+          },
+          "id": "f749daaf-682e-4208-a38d-c9b43162c609",
+          "type": "okta-accounts"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integrations/okta/accounts"
+  },
+  "scenario": "Add Okta account returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,18 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/List incident notification rules returns \"OK\" response",
+  "operation_id": "ListIncidentNotificationRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/incidents/config/notification-rules"
+  },
+  "scenario": "List incident notification rules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

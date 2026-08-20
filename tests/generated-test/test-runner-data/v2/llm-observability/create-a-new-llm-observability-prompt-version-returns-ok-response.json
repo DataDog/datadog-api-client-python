@@ -1,0 +1,59 @@
+{
+  "api": "LLMObservability",
+  "expected_status": 200,
+  "feature": "LLM Observability",
+  "id": "v2/LLM Observability/Create a new LLM Observability prompt version returns \"OK\" response",
+  "operation_id": "CreateLLMObsPromptVersion",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "LLMObsCreatePromptVersionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "template": [
+              {
+                "content": "You are a concise customer support assistant for {{ '{{company_name}}' }}.",
+                "role": "system"
+              },
+              {
+                "content": "Answer {{ '{{customer_name}}' }}'s question: {{ '{{question}}' }}",
+                "role": "user"
+              }
+            ]
+          },
+          "type": "prompt-template-versions"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "prompt_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "prompt.data.attributes.prompt_id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions"
+  },
+  "scenario": "Create a new LLM Observability prompt version returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,55 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Patch a Synthetic test returns \"OK\" response",
+  "operation_id": "PatchTest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsPatchTestBody",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "op": "replace",
+            "path": "/name",
+            "value": "New test name"
+          },
+          {
+            "op": "remove",
+            "path": "/config/assertions/0"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "public_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "synthetics_api_test.public_id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/synthetics/tests/{public_id}"
+  },
+  "scenario": "Patch a Synthetic test returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1,0 +1,275 @@
+{
+  "api": "Synthetics",
+  "expected_status": 200,
+  "feature": "Synthetics",
+  "id": "v1/Synthetics/Create an API test with multi subtype returns \"OK - Returns the created test details.\" response",
+  "operation_id": "CreateSyntheticsAPITest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SyntheticsAPITest",
+        "type": "object"
+      },
+      "source": "synthetics_api_test_multi_step_payload.json",
+      "value": {
+        "config": {
+          "configVariables": [
+            {
+              "example": "content-type",
+              "name": "PROPERTY",
+              "pattern": "content-type",
+              "type": "text"
+            }
+          ],
+          "steps": [
+            {
+              "allowFailure": true,
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 200,
+                  "type": "statusCode"
+                }
+              ],
+              "exitIfSucceed": true,
+              "extractedValues": [
+                {
+                  "field": "server",
+                  "name": "EXTRACTED_VALUE",
+                  "parser": {
+                    "type": "raw"
+                  },
+                  "secure": true,
+                  "type": "http_header"
+                }
+              ],
+              "extractedValuesFromScript": "dd.variable.set('STATUS_CODE', dd.response.statusCode);",
+              "isCritical": true,
+              "name": "request is sent",
+              "request": {
+                "httpVersion": "http2",
+                "method": "GET",
+                "timeout": 10,
+                "url": "https://datadoghq.com"
+              },
+              "retry": {
+                "count": 5,
+                "interval": 1000
+              },
+              "subtype": "http"
+            },
+            {
+              "name": "Wait",
+              "subtype": "wait",
+              "value": 1
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "lessThan",
+                  "target": 1000,
+                  "type": "responseTime"
+                }
+              ],
+              "extractedValues": [],
+              "isCritical": true,
+              "name": "GRPC CALL",
+              "request": {
+                "callType": "unary",
+                "compressedJsonDescriptor": "eJy1lU1z2yAQhv+Lzj74I3ETH506bQ7OZOSm1w4Wa4epBARQppqM/3v5koCJJdvtxCdW77vPssCO3zMKUgHOFu/ZXvBiS6hZho/f8qe7pftYgXphWJrlA8XwxywEvNba+6PhkC2yVcVVswYp0R6ykRYlZ1SCV21SDrxsssPIeS9FJKqGfK2rqnmmSBwhWa2XlKgtaQPiDcRGCUDVfwGD2sKUqKEtc1cSoOrsMlaMOec1sySYCCgUYRSVLv2zSva2u+FQkB0pVkIw8bFuIudOOn3pOaKYVT3Iy97Pd0AYhOx5QcMsnxvRHlnuLf8ETDd3CNtrv2nejkDpRnANCmGkkFn/hsYzpBKE7jVbufgnKnV9HRM9zRPDDKPttYT61n0TdWkAAjggk9AhuxIeaXd69CYTcsGw7cBTakLVbNpRzGEgyWjkSOpMbZXkhGL6oX30R49qt3GoHrap7i0XdD41WQ+2icCNm5p1hmFqnHNlcla0riKmDZ183crDxChjbnurtxHPRE784sVhWvDfGP+SsTKibU3o5NtWHuZFGZOxP6P5VXqIOvaOSec4eYohyd7NslHuJbd1bewds85xYrNxkr2d+5IhFWF3NvaO684xjE2S5ulY+tu64Pna0fCPJgzw6vF5/WucLcYjt5xoq19O3UDptOg/OamJQRaCcPPnMTQ2QDFn+uhPvUfnCrMc99upyQY4Ui9Dlc/YoG3R/v4Cs9YE+g==",
+                "host": "grpcbin.test.k6.io",
+                "message": "{}",
+                "metadata": {},
+                "method": "Index",
+                "port": 9000,
+                "service": "grpcbin.GRPCBin"
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "grpc"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "isInMoreThan",
+                  "target": 10,
+                  "type": "certificate"
+                }
+              ],
+              "isCritical": true,
+              "name": "SSL step",
+              "request": {
+                "checkCertificateRevocation": true,
+                "disableAiaIntermediateFetching": true,
+                "host": "example.org",
+                "port": 443
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "ssl"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "lessThan",
+                  "target": 1000,
+                  "type": "responseTime"
+                }
+              ],
+              "isCritical": true,
+              "name": "DNS step",
+              "request": {
+                "dnsServer": "8.8.8.8",
+                "dnsServerPort": "53",
+                "host": "troisdizaines.com"
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "dns"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "lessThan",
+                  "target": 1000,
+                  "type": "responseTime"
+                }
+              ],
+              "isCritical": true,
+              "name": "TCP step",
+              "request": {
+                "host": "34.95.79.70",
+                "port": 80,
+                "shouldTrackHops": true,
+                "timeout": 32
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "tcp"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "is",
+                  "target": 0,
+                  "type": "packetLossPercentage"
+                }
+              ],
+              "isCritical": true,
+              "name": "ICMP step",
+              "request": {
+                "host": "34.95.79.70",
+                "numberOfPackets": 4,
+                "shouldTrackHops": true,
+                "timeout": 38
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "icmp"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "lessThan",
+                  "target": 1000,
+                  "type": "responseTime"
+                }
+              ],
+              "isCritical": true,
+              "name": "Websocket step",
+              "request": {
+                "basicAuth": {
+                  "password": "password",
+                  "type": "web",
+                  "username": "user"
+                },
+                "headers": {
+                  "f": "g"
+                },
+                "isMessageBase64Encoded": true,
+                "message": "My message",
+                "url": "ws://34.95.79.70/web-socket"
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "websocket"
+            },
+            {
+              "allowFailure": false,
+              "assertions": [
+                {
+                  "operator": "lessThan",
+                  "target": 1000,
+                  "type": "responseTime"
+                }
+              ],
+              "isCritical": true,
+              "name": "UDP step",
+              "request": {
+                "host": "8.8.8.8",
+                "message": "A image.google.com",
+                "port": 53
+              },
+              "retry": {
+                "count": 0,
+                "interval": 300
+              },
+              "subtype": "udp"
+            }
+          ]
+        },
+        "locations": [
+          "aws:us-east-2"
+        ],
+        "message": "BDD test payload: synthetics_api_test_multi_step_payload.json",
+        "name": "{{ unique }}",
+        "options": {
+          "accept_self_signed": false,
+          "allow_insecure": true,
+          "follow_redirects": true,
+          "min_failure_duration": 10,
+          "min_location_failed": 1,
+          "monitor_name": "{{ unique }}",
+          "monitor_priority": 5,
+          "retry": {
+            "count": 3,
+            "interval": 1000
+          },
+          "tick_every": 60
+        },
+        "subtype": "multi",
+        "tags": [
+          "testing:api"
+        ],
+        "type": "api"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/synthetics/tests/api"
+  },
+  "scenario": "Create an API test with multi subtype returns \"OK - Returns the created test details.\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

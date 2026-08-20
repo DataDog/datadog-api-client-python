@@ -1,0 +1,53 @@
+{
+  "api": "Scorecards",
+  "expected_status": 404,
+  "feature": "Scorecards",
+  "id": "v2/Scorecards/Update an existing scorecard rule returns \"Not Found\" response",
+  "operation_id": "UpdateScorecardRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateRuleRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "level": 2,
+            "name": "Team Defined",
+            "scorecard_name": "Deployments automated via Deployment Trains"
+          },
+          "type": "rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "REPLACE.ME"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/scorecard/rules/{rule_id}"
+  },
+  "scenario": "Update an existing scorecard rule returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

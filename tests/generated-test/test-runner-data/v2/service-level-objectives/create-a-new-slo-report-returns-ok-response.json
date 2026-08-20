@@ -1,0 +1,28 @@
+{
+  "api": "ServiceLevelObjectives",
+  "expected_status": 200,
+  "feature": "Service Level Objectives",
+  "id": "v2/Service Level Objectives/Create a new SLO report returns \"OK\" response",
+  "operation_id": "CreateSLOReportJob",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SloReportCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\": {\"attributes\": {\"from_ts\": {{ timestamp('now - 40d') }},  \"to_ts\": {{ timestamp('now') }}, \"query\": \"slo_type:metric \\\"SLO Reporting Test\\\"\", \"interval\": \"monthly\", \"timezone\": \"America/New_York\"}}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/slo/report"
+  },
+  "scenario": "Create a new SLO report returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

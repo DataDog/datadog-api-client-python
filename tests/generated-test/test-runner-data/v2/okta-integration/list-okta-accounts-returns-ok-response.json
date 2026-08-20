@@ -1,0 +1,18 @@
+{
+  "api": "OktaIntegration",
+  "expected_status": 200,
+  "feature": "Okta Integration",
+  "id": "v2/Okta Integration/List Okta accounts returns \"OK\" response",
+  "operation_id": "ListOktaAccounts",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/integrations/okta/accounts"
+  },
+  "scenario": "List Okta accounts returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

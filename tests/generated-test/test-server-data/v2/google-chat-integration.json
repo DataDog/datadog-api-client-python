@@ -1,0 +1,435 @@
+{
+  "feature": "Google Chat Integration",
+  "recordings": [
+    {
+      "feature": "Google Chat Integration",
+      "frozen_at": "2026-02-10T19:17:08.664Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_organization_handle_returns_CREATED_response-1770751028",
+                    "space_resource_name": "spaces/AAQA-zFIks8"
+                  }
+                },
+                "type": "google-chat-organization-handle"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dcad18fd-a3b1-4544-8fee-e1e2988204d8\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Create_organization_handle_returns_CREATED_response-1770751028\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/dcad18fd-a3b1-4544-8fee-e1e2988204d8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create organization handle returns \"CREATED\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Google Chat Integration",
+      "frozen_at": "2026-02-10T19:17:09.317Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_organization_handle_returns_OK_response-1770751029",
+                    "space_resource_name": "spaces/AAQA-zFIks8"
+                  }
+                },
+                "type": "google-chat-organization-handle"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e70e04d1-7547-47de-ad3b-41a345fd1abe\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Delete_organization_handle_returns_OK_response-1770751029\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/e70e04d1-7547-47de-ad3b-41a345fd1abe",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/e70e04d1-7547-47de-ad3b-41a345fd1abe",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete organization handle returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Google Chat Integration",
+      "frozen_at": "2026-02-10T19:17:10.064Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_all_organization_handles_returns_OK_response-1770751030",
+                    "space_resource_name": "spaces/AAQA-zFIks8"
+                  }
+                },
+                "type": "google-chat-organization-handle"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9c140b3f-05c1-4943-959a-cae272356979\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Get_all_organization_handles_returns_OK_response-1770751030\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"9c140b3f-05c1-4943-959a-cae272356979\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Get_all_organization_handles_returns_OK_response-1770751030\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/9c140b3f-05c1-4943-959a-cae272356979",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all organization handles returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Google Chat Integration",
+      "frozen_at": "2026-02-10T19:17:11.045Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_organization_handle_returns_OK_response-1770751031",
+                    "space_resource_name": "spaces/AAQA-zFIks8"
+                  }
+                },
+                "type": "google-chat-organization-handle"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f712e551-628f-4688-be1d-cb69c69c9690\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Get_organization_handle_returns_OK_response-1770751031\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/f712e551-628f-4688-be1d-cb69c69c9690",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f712e551-628f-4688-be1d-cb69c69c9690\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Get_organization_handle_returns_OK_response-1770751031\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/f712e551-628f-4688-be1d-cb69c69c9690",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get organization handle returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Google Chat Integration",
+      "frozen_at": "2026-02-10T19:17:12.022Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/google-chat/organizations/app/named-spaces/datadog.ninja/api-test-space",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d57f39c4-f22b-6da0-108c-23bdb9c460a3\",\"type\":\"google-chat-app-named-space\",\"attributes\":{\"display_name\":\"api-test-space\",\"organization_binding_id\":\"e54cb570-c674-529c-769d-84b312288ed7\",\"resource_name\":\"spaces/AAQA-zFIks8\",\"space_uri\":\"https://chat.google.com/room/AAQA-zFIks8?cls=11\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get space information by display name returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Google Chat Integration",
+      "frozen_at": "2026-02-10T19:17:12.337Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_organization_handle_returns_OK_response-1770751032",
+                    "space_resource_name": "spaces/AAQA-zFIks8"
+                  }
+                },
+                "type": "google-chat-organization-handle"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b036578c-665f-4ff2-8785-ba4d00fc87b5\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Update_organization_handle_returns_OK_response-1770751032\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_organization_handle_returns_OK_response-1770751032--updated"
+                  }
+                },
+                "type": "google-chat-organization-handle"
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/b036578c-665f-4ff2-8785-ba4d00fc87b5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b036578c-665f-4ff2-8785-ba4d00fc87b5\",\"type\":\"google-chat-organization-handle\",\"attributes\":{\"name\":\"Test-Update_organization_handle_returns_OK_response-1770751032--updated\",\"space_display_name\":\"api-test-space\",\"space_resource_name\":\"spaces/AAQA-zFIks8\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/google-chat/organizations/e54cb570-c674-529c-769d-84b312288ed7/organization-handles/b036578c-665f-4ff2-8785-ba4d00fc87b5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update organization handle returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

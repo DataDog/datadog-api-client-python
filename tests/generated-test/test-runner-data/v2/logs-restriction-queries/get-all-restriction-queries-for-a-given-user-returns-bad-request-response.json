@@ -1,0 +1,35 @@
+{
+  "api": "LogsRestrictionQueries",
+  "expected_status": 400,
+  "feature": "Logs Restriction Queries",
+  "id": "v2/Logs Restriction Queries/Get all restriction queries for a given user returns \"Bad Request\" response",
+  "operation_id": "ListUserRestrictionQueries",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "malformed_id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/logs/config/restriction_queries/user/{user_id}"
+  },
+  "scenario": "Get all restriction queries for a given user returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,35 @@
+{
+  "api": "CloudNetworkMonitoring",
+  "expected_status": 400,
+  "feature": "Cloud Network Monitoring",
+  "id": "v2/Cloud Network Monitoring/Get all aggregated DNS traffic returns \"Bad Request\" response",
+  "operation_id": "GetAggregatedDns",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "group_by",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "server_ungrouped,server_service"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/network/dns/aggregate"
+  },
+  "scenario": "Get all aggregated DNS traffic returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
