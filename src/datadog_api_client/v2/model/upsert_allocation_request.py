@@ -72,7 +72,9 @@ class UpsertAllocationRequest(ModelNormal):
         """
         Request to create or update a targeting rule (allocation) for a feature flag environment.
 
-        :param experiment_id: The experiment ID for experiment-linked allocations.
+        :param experiment_id: The experiment ID linked to the allocation. For ``FEATURE_GATE`` allocations,
+            a non-null value denotes a standard experiment. For ``CANARY`` allocations,
+            Datadog manages this value. Omit it when creating a canary allocation.
         :type experiment_id: str, none_type, optional
 
         :param exposure_schedule: Progressive release request payload.
