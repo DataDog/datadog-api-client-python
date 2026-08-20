@@ -122,7 +122,7 @@ class Spec(ModelNormal):
         :param handle: Unique identifier used to trigger workflows automatically in Datadog.
         :type handle: str, optional
 
-        :param input_schema: A list of input parameters for the workflow. These can be used as dynamic runtime values in your workflow.
+        :param input_schema: A list of input parameters for the workflow. Input parameters are available under the ``Trigger`` object and can be referenced in workflow steps using ``{{ Trigger.<parameter_name> }}``.
         :type input_schema: InputSchema, optional
 
         :param output_schema: A list of output parameters for the workflow.
