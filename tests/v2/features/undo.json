@@ -6357,6 +6357,12 @@
       "type": "unsafe"
     }
   },
+  "QueryProductAnalyticsList": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "QueryProductAnalyticsScalar": {
     "tag": "Product Analytics",
     "undo": {
@@ -6364,6 +6370,60 @@
     }
   },
   "QueryProductAnalyticsTimeseries": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsJourneyFunnel": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsJourneyList": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsJourneyScalar": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsJourneyTimeseries": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsRetentionGrid": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsRetentionList": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsRetentionScalar": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsRetentionTimeseries": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryProductAnalyticsSankey": {
     "tag": "Product Analytics",
     "undo": {
       "type": "safe"

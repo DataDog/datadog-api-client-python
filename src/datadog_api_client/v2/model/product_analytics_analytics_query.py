@@ -73,7 +73,8 @@ class ProductAnalyticsAnalyticsQuery(ModelNormal):
         :param group_by: Group-by rules for segmenting results.
         :type group_by: [ProductAnalyticsGroupBy], optional
 
-        :param indexes: Restrict the query to specific indexes. Max 1 entry.
+        :param indexes: Deprecated. Index selection is a rollout detail and will be removed.
+            Do not set this field. **Deprecated**.
         :type indexes: [str], optional
 
         :param query: A query definition discriminated by the ``data_source`` field.

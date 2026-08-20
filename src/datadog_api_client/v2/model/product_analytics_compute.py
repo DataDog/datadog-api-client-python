@@ -41,7 +41,8 @@ class ProductAnalyticsCompute(ModelNormal):
         :param aggregation: The aggregation function (count, cardinality, avg, sum, min, max, etc.).
         :type aggregation: str
 
-        :param interval: Time bucket size in milliseconds. Required for timeseries queries.
+        :param interval: Time bucket size in milliseconds. Required for timeseries queries; ignored by the
+            scalar endpoint, which returns a single value.
         :type interval: int, optional
 
         :param metric: The metric to aggregate on. Required for non-count aggregations.

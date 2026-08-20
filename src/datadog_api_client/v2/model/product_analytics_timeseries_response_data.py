@@ -54,7 +54,8 @@ class ProductAnalyticsTimeseriesResponseData(ModelNormal):
         """
         Data object for a timeseries analytics response.
 
-        :param attributes: Attributes of a timeseries analytics response, containing series data, timestamps, and interval definitions.
+        :param attributes: Attributes of a timeseries analytics response, containing series data, timestamps, and
+            interval definitions.
         :type attributes: ProductAnalyticsTimeseriesResponseAttributes, optional
 
         :param id: Unique identifier for this response data object.
