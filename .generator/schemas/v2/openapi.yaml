@@ -121170,7 +121170,7 @@ paths:
           appKeyAuth: []
       summary: List custom evaluator configurations
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -121214,7 +121214,7 @@ paths:
           appKeyAuth: []
       summary: Delete a custom evaluator configuration
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -121288,7 +121288,7 @@ paths:
           appKeyAuth: []
       summary: Get a custom evaluator configuration
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -121401,7 +121401,7 @@ paths:
           appKeyAuth: []
       summary: Create or update a custom evaluator configuration
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -159811,7 +159811,7 @@ paths:
           appKeyAuth: []
       summary: Get annotated interactions by content IDs
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -159882,7 +159882,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability annotation queues
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -159978,7 +159978,7 @@ paths:
           appKeyAuth: []
       summary: Create an Agent Observability annotation queue
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160016,7 +160016,7 @@ paths:
           appKeyAuth: []
       summary: Delete an Agent Observability annotation queue
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160094,7 +160094,7 @@ paths:
           appKeyAuth: []
       summary: Update an Agent Observability annotation queue
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160154,7 +160154,7 @@ paths:
           appKeyAuth: []
       summary: Get annotated queue interactions
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160243,7 +160243,7 @@ paths:
           appKeyAuth: []
       summary: Create or update annotations
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160329,7 +160329,7 @@ paths:
           appKeyAuth: []
       summary: Delete annotations
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160448,7 +160448,7 @@ paths:
           appKeyAuth: []
       summary: Add annotation queue interactions
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160508,7 +160508,7 @@ paths:
           appKeyAuth: []
       summary: Delete annotation queue interactions
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160578,7 +160578,7 @@ paths:
           appKeyAuth: []
       summary: Get annotation queue label schema
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160723,7 +160723,7 @@ paths:
           appKeyAuth: []
       summary: Update annotation queue label schema
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160810,7 +160810,7 @@ paths:
           appKeyAuth: []
       summary: Aggregate Agent Observability experimentation
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -160920,7 +160920,7 @@ paths:
           appKeyAuth: []
       summary: Search Agent Observability experimentation
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161013,7 +161013,7 @@ paths:
           appKeyAuth: []
       summary: Simple search experimentation entities
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161138,7 +161138,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability experiments
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161229,7 +161229,7 @@ paths:
           appKeyAuth: []
       summary: Create an Agent Observability experiment
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161280,7 +161280,7 @@ paths:
           appKeyAuth: []
       summary: Delete Agent Observability experiments
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161355,7 +161355,7 @@ paths:
           appKeyAuth: []
       summary: Update an Agent Observability experiment
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161426,7 +161426,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability experiment spans (v1)
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161497,7 +161497,7 @@ paths:
           appKeyAuth: []
       summary: Push events for an Agent Observability experiment
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161549,7 +161549,7 @@ paths:
           appKeyAuth: []
       summary: List LLM integration accounts
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161633,7 +161633,7 @@ paths:
           appKeyAuth: []
       summary: Run an LLM inference
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161690,7 +161690,7 @@ paths:
           appKeyAuth: []
       summary: List LLM integration models
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161763,7 +161763,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability projects
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161844,7 +161844,7 @@ paths:
           appKeyAuth: []
       summary: Create an Agent Observability project
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161895,7 +161895,7 @@ paths:
           appKeyAuth: []
       summary: Delete Agent Observability projects
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -161966,7 +161966,7 @@ paths:
           appKeyAuth: []
       summary: Update an Agent Observability project
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -162024,7 +162024,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability prompts
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: OR
         permissions:
@@ -162111,7 +162111,7 @@ paths:
           appKeyAuth: []
       summary: Create an Agent Observability prompt
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: AND
         permissions:
@@ -162171,7 +162171,7 @@ paths:
           appKeyAuth: []
       summary: Delete an Agent Observability prompt
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: AND
         permissions:
@@ -162236,7 +162236,7 @@ paths:
           appKeyAuth: []
       summary: Get an Agent Observability prompt
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: OR
         permissions:
@@ -162319,7 +162319,7 @@ paths:
           appKeyAuth: []
       summary: Update an Agent Observability prompt
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: AND
         permissions:
@@ -162388,7 +162388,7 @@ paths:
           appKeyAuth: []
       summary: List versions of an Agent Observability prompt
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: OR
         permissions:
@@ -162477,7 +162477,7 @@ paths:
           appKeyAuth: []
       summary: Create a new Agent Observability prompt version
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: AND
         permissions:
@@ -162553,7 +162553,7 @@ paths:
           appKeyAuth: []
       summary: Get a specific Agent Observability prompt version
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: OR
         permissions:
@@ -162639,7 +162639,7 @@ paths:
           appKeyAuth: []
       summary: Update an Agent Observability prompt version
       tags:
-        - LLM Observability
+        - Agent Observability
       x-permission:
         operator: AND
         permissions:
@@ -162798,7 +162798,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability spans
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -162897,7 +162897,7 @@ paths:
           appKeyAuth: []
       summary: Search Agent Observability spans
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -162973,7 +162973,7 @@ paths:
           appKeyAuth: []
       summary: List patterns clustered points
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163036,7 +163036,7 @@ paths:
           appKeyAuth: []
       summary: List patterns configurations
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163120,7 +163120,7 @@ paths:
           appKeyAuth: []
       summary: Create or update a patterns configuration
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163187,7 +163187,7 @@ paths:
           appKeyAuth: []
       summary: Get a patterns configuration
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163237,7 +163237,7 @@ paths:
           appKeyAuth: []
       summary: Delete a patterns configuration
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163303,7 +163303,7 @@ paths:
           appKeyAuth: []
       summary: List patterns runs
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163378,7 +163378,7 @@ paths:
           appKeyAuth: []
       summary: Trigger a patterns run
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163451,7 +163451,7 @@ paths:
           appKeyAuth: []
       summary: Get patterns run status
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163531,7 +163531,7 @@ paths:
           appKeyAuth: []
       summary: List patterns topics
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163623,7 +163623,7 @@ paths:
           appKeyAuth: []
       summary: List patterns topics with clustered points
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163705,7 +163705,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability datasets
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163798,7 +163798,7 @@ paths:
           appKeyAuth: []
       summary: Create an Agent Observability dataset
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163857,7 +163857,7 @@ paths:
           appKeyAuth: []
       summary: Delete Agent Observability datasets
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -163931,7 +163931,7 @@ paths:
           appKeyAuth: []
       summary: Update an Agent Observability dataset
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164046,7 +164046,7 @@ paths:
           appKeyAuth: []
       summary: Batch update Agent Observability dataset records
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164142,7 +164142,7 @@ paths:
           appKeyAuth: []
       summary: Clone an Agent Observability dataset
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164222,7 +164222,7 @@ paths:
           appKeyAuth: []
       summary: Get Agent Observability dataset draft state
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164302,7 +164302,7 @@ paths:
           appKeyAuth: []
       summary: Lock Agent Observability dataset draft state
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164365,7 +164365,7 @@ paths:
           appKeyAuth: []
       summary: Unlock Agent Observability dataset draft state
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164447,7 +164447,7 @@ paths:
           appKeyAuth: []
       summary: Export an Agent Observability dataset
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164526,7 +164526,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability dataset records
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164603,7 +164603,7 @@ paths:
           appKeyAuth: []
       summary: Update Agent Observability dataset records
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164697,7 +164697,7 @@ paths:
           appKeyAuth: []
       summary: Append records to an Agent Observability dataset
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164757,7 +164757,7 @@ paths:
           appKeyAuth: []
       summary: Delete Agent Observability dataset records
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164835,7 +164835,7 @@ paths:
           appKeyAuth: []
       summary: Restore an Agent Observability dataset version
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164918,7 +164918,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability dataset versions
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -164992,7 +164992,7 @@ paths:
           appKeyAuth: []
       summary: List Agent Observability experiment events (v2)
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -165097,7 +165097,7 @@ paths:
           appKeyAuth: []
       summary: Upload records to an Agent Observability dataset
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -165183,7 +165183,7 @@ paths:
           appKeyAuth: []
       summary: List events for an Agent Observability experiment
       tags:
-        - LLM Observability
+        - Agent Observability
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -215111,6 +215111,9 @@ tags:
     externalDocs:
       url: https://docs.datadoghq.com/actions/datastore
     name: Actions Datastores
+  - description: >-
+      Manage Agent Observability spans, data, projects, datasets, dataset records, experiments, prompts, and annotations.
+    name: Agent Observability
   - description: |-
       Datadog Agentless Scanning provides visibility into risks and vulnerabilities
       within your hosts, running containers, and serverless functions—all without
@@ -215393,9 +215396,6 @@ tags:
       description: Find out more at
       url: "https://docs.datadoghq.com/account_management/api-app-keys/"
     name: Key Management
-  - description: >-
-      Manage Agent Observability spans, data, projects, datasets, dataset records, experiments, prompts, and annotations.
-    name: LLM Observability
   - description: |-
       Search your logs and send them to your Datadog platform over HTTP. See the [Log Management page](https://docs.datadoghq.com/logs/) for more information.
     name: Logs

@@ -18,6 +18,13 @@ datadog\_api\_client.v2.api.actions\_datastores\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.agent\_observability\_api module
+------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.agent_observability_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.agentless\_scanning\_api module
 -----------------------------------------------------------
 
@@ -477,13 +484,6 @@ datadog\_api\_client.v2.api.key\_management\_api module
 -------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.api.key_management_api
-   :members:
-   :show-inheritance:
-
-datadog\_api\_client.v2.api.llm\_observability\_api module
-----------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.api.llm_observability_api
    :members:
    :show-inheritance:
 

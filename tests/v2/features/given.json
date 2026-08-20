@@ -879,7 +879,7 @@
     ],
     "step": "there is a valid \"prompt\" in the system",
     "key": "prompt",
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "operationId": "CreateLLMObsPrompt"
   },
   {
@@ -895,7 +895,7 @@
     ],
     "step": "there is a valid \"prompt_version\" in the system",
     "key": "prompt_version",
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "operationId": "CreateLLMObsPromptVersion"
   },
   {
