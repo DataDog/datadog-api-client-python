@@ -39,18 +39,18 @@ class AnnotationDisplayBounds(ModelNormal):
         **kwargs,
     ):
         """
-        The definition of ``AnnotationDisplayBounds`` object.
+        Canvas coordinates and dimensions for an annotation on the workflow canvas.
 
-        :param height: The ``bounds`` ``height``.
+        :param height: The annotation's height on the canvas.
         :type height: float, optional
 
-        :param width: The ``bounds`` ``width``.
+        :param width: The annotation's width on the canvas.
         :type width: float, optional
 
-        :param x: The ``bounds`` ``x``.
+        :param x: The annotation's horizontal canvas coordinate.
         :type x: float, optional
 
-        :param y: The ``bounds`` ``y``.
+        :param y: The annotation's vertical canvas coordinate.
         :type y: float, optional
         """
         if height is not unset:
