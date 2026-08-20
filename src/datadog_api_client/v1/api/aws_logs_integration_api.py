@@ -162,9 +162,9 @@ class AWSLogsIntegrationApi:
         self,
         body: AWSAccountAndLambdaRequest,
     ) -> AWSLogsAsyncResponse:
-        """Check that an AWS Lambda Function exists.
+        """Check that an AWS Lambda Function exists. **Deprecated**.
 
-        Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input
+        **This endpoint is deprecated.** Test if permissions are present to add a log-forwarding triggers for the given services and AWS account. The input
         is the same as for Enable an AWS service log collection. Subsequent requests will always repeat the above, so this
         endpoint can be polled intermittently instead of blocking.
 
@@ -180,15 +180,16 @@ class AWSLogsIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("check_aws_logs_lambda_async is deprecated", DeprecationWarning, stacklevel=2)
         return self._check_aws_logs_lambda_async_endpoint.call_with_http_info(**kwargs)
 
     def check_aws_logs_services_async(
         self,
         body: AWSLogsServicesRequest,
     ) -> AWSLogsAsyncResponse:
-        """Check permissions for log services.
+        """Check permissions for log services. **Deprecated**.
 
-        Test if permissions are present to add log-forwarding triggers for the
+        **This endpoint is deprecated.** Test if permissions are present to add log-forwarding triggers for the
         given services and AWS account. Input is the same as for ``EnableAWSLogServices``.
         Done async, so can be repeatedly polled in a non-blocking fashion until
         the async request completes.
@@ -206,15 +207,16 @@ class AWSLogsIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("check_aws_logs_services_async is deprecated", DeprecationWarning, stacklevel=2)
         return self._check_aws_logs_services_async_endpoint.call_with_http_info(**kwargs)
 
     def create_aws_lambda_arn(
         self,
         body: AWSAccountAndLambdaRequest,
     ) -> dict:
-        """Add AWS Log Lambda ARN.
+        """Add AWS Log Lambda ARN. **Deprecated**.
 
-        Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.
+        **This endpoint is deprecated.** Attach the Lambda ARN of the Lambda created for the Datadog-AWS log collection to your AWS account ID to enable log collection.
 
         :param body: AWS Log Lambda Async request body.
         :type body: AWSAccountAndLambdaRequest
@@ -223,15 +225,16 @@ class AWSLogsIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_aws_lambda_arn is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_aws_lambda_arn_endpoint.call_with_http_info(**kwargs)
 
     def delete_aws_lambda_arn(
         self,
         body: AWSAccountAndLambdaRequest,
     ) -> dict:
-        """Delete an AWS Logs integration.
+        """Delete an AWS Logs integration. **Deprecated**.
 
-        Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.
+        **This endpoint is deprecated.** Delete a Datadog-AWS logs configuration by removing the specific Lambda ARN associated with a given AWS account.
 
         :param body: Delete AWS Lambda ARN request body.
         :type body: AWSAccountAndLambdaRequest
@@ -240,6 +243,7 @@ class AWSLogsIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("delete_aws_lambda_arn is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_aws_lambda_arn_endpoint.call_with_http_info(**kwargs)
 
     def enable_aws_log_services(
