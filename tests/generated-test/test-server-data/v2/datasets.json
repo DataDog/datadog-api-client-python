@@ -386,7 +386,7 @@
               "type": "empty",
               "value": null
             },
-            "content_type": "application/json",
+            "content_type": "",
             "method": "PUT",
             "path": "/api/v2/datasets/malformed_id",
             "query": []

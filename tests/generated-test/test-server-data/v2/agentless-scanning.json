@@ -1138,7 +1138,7 @@
               "type": "empty",
               "value": null
             },
-            "content_type": "application/json",
+            "content_type": "",
             "method": "PATCH",
             "path": "/api/v2/agentless_scanning/accounts/aws/000000000003",
             "query": []

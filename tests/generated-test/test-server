@@ -109,7 +109,7 @@ class RecordingDatabase:
                 if cursor >= len(interactions):
                     raise LookupError(f"Recording has no interaction #{cursor + 1}")
                 expected = interactions[cursor]
-                if expected["request"] != actual:
+                if not _requests_match(expected["request"], actual):
                     raise RequestMismatchError(expected["request"], actual, cursor)
                 session["cursor"] += 1
                 return expected["response"]
@@ -118,7 +118,9 @@ class RecordingDatabase:
                 for recording in shard["recordings"]:
                     for index, interaction in enumerate(recording["interactions"]):
                         consumed_key = (version, feature, recording["scenario"], index)
-                        if consumed_key not in self.fallback_consumed and interaction["request"] == actual:
+                        if consumed_key not in self.fallback_consumed and _requests_match(
+                            interaction["request"], actual
+                        ):
                             self.fallback_consumed.add(consumed_key)
                             return interaction["response"]
             raise LookupError("No unconsumed interaction matches this request")
@@ -345,15 +347,17 @@ class TestRequestHandler(BaseHTTPRequestHandler):
             body = base64.b64decode(body_data.get("value", ""))
         else:
             body = body_data.get("value", "").encode("utf-8")
-        self.send_response(response["status"], response.get("reason"))
+        status = response["status"]
+        self.send_response(status, response.get("reason"))
         for key, value in response.get("headers", {}).items():
             if key.lower() not in HOP_BY_HOP_HEADERS | {"content-length"} | SAFE_BROWSER_HEADERS.keys():
                 self.send_header(key, value)
         for key, value in SAFE_BROWSER_HEADERS.items():
             self.send_header(key, value)
-        self.send_header("content-length", str(len(body)))
+        if _status_allows_message_content(status):
+            self.send_header("content-length", str(len(body)))
         self.end_headers()
-        if self.command != "HEAD":
+        if self.command != "HEAD" and _status_allows_message_content(status):
             self.wfile.write(body)
 
     def _send_json(self, status: HTTPStatus, value: dict[str, Any], *, error: str | None = None) -> None:
@@ -370,12 +374,13 @@ class TestRequestHandler(BaseHTTPRequestHandler):
 
 def _normalise_request(method: str, raw_path: str, content_type: str, body: bytes) -> dict[str, Any]:
     parsed = urlsplit(raw_path)
+    normalised_body = _normalise_body(body, content_type)
     return {
         "method": method.upper(),
         "path": _normalise_path(parsed.path),
         "query": sorted([list(pair) for pair in parse_qsl(parsed.query, keep_blank_values=True)]),
-        "content_type": _media_type(content_type),
-        "body": _normalise_body(body, content_type),
+        "content_type": _normalise_content_type(content_type, normalised_body),
+        "body": normalised_body,
     }
 
 
@@ -406,8 +411,41 @@ def _normalise_json(value: Any) -> Any:
     return value
 
 
+def _normalise_content_type(content_type: str, body: dict[str, Any]) -> str:
+    return "" if body["type"] == "empty" else _media_type(content_type)
+
+
+def _requests_match(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
+    comparable_fields = ("method", "path", "query", "content_type")
+    if any(expected[field] != actual[field] for field in comparable_fields):
+        return False
+    return _bodies_match(expected["body"], actual["body"])
+
+
+def _bodies_match(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
+    if expected == actual:
+        return True
+    if expected["type"] != "json" or actual["type"] != "json":
+        return False
+    return _json_contains(actual["value"], expected["value"])
+
+
+def _json_contains(actual: Any, expected: Any) -> bool:
+    if isinstance(expected, dict) and isinstance(actual, dict):
+        return all(key in actual and _json_contains(actual[key], value) for key, value in expected.items())
+    if isinstance(expected, list) and isinstance(actual, list):
+        return len(expected) == len(actual) and all(
+            _json_contains(actual_item, expected_item) for actual_item, expected_item in zip(actual, expected)
+        )
+    return actual == expected
+
+
 def _media_type(value: str) -> str:
     return value.partition(";")[0].strip().lower()
+
+
+def _status_allows_message_content(status: int) -> bool:
+    return status >= HTTPStatus.OK and status not in {HTTPStatus.NO_CONTENT, HTTPStatus.NOT_MODIFIED}
 
 
 def _normalise_path(path: str) -> str:

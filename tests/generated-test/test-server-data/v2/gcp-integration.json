@@ -11,7 +11,7 @@
               "type": "empty",
               "value": null
             },
-            "content_type": "application/json",
+            "content_type": "",
             "method": "POST",
             "path": "/api/v2/integration/gcp/sts_delegate",
             "query": []
