@@ -1370,6 +1370,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"severity_modifier_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"rule\": {\n        \"finding_types\": [\"misconfiguration\"],\n        \"query\": \"env:staging\"\n      },\n      \"action\": {\n        \"type\": \"set\",\n        \"severity\": \"low\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_severity_modifier_rule\" in the system",
+    "key": "valid_severity_modifier_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityFindingsAutomationSeverityModifierRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"ticket_creation_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"rule\": {\n        \"finding_types\": [\"misconfiguration\"],\n        \"query\": \"env:staging\"\n      },\n      \"action\": {\n        \"project_id\": \"11111111-1111-1111-1111-111111111111\",\n        \"target\": \"jira\",\n        \"max_tickets_per_day\": 10\n      }\n    }\n  }\n}"
       }
     ],

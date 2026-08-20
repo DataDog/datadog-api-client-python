@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: '{"data":{"attributes":{"action":{"severity":"low","type":"set"},"enabled":true,"name":"Test-Delete_a_severity_modifier_rule_returns_Rule_successfully_deleted_response-1787037658","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}},"type":"severity_modifier_rules"}}'
+    headers:
+      accept:
+      - application/json
+      content-type:
+      - application/json
+    method: POST
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/severity_modifier_rules
+  response:
+    body:
+      string: '{"data":{"id":"89935049-6349-4c1b-b54a-25f340248515","type":"severity_modifier_rules","attributes":{"action":{"type":"set","severity":"low"},"created_at":1787037658168,"created_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"enabled":true,"modified_at":1787037658168,"modified_by":{"type":"user","id":"9919ec9b-ebc7-49ee-8dc8-03626e717cca","name":"CI
+        Account"},"name":"Test-Delete_a_severity_modifier_rule_returns_Rule_successfully_deleted_response-1787037658","rule":{"finding_types":["misconfiguration"],"query":"env:staging"}}}}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/severity_modifier_rules/89935049-6349-4c1b-b54a-25f340248515
+  response:
+    body:
+      string: ''
+    headers: {}
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      accept:
+      - '*/*'
+    method: DELETE
+    uri: https://api.datadoghq.com/api/v2/security/findings/automation/severity_modifier_rules/89935049-6349-4c1b-b54a-25f340248515
+  response:
+    body:
+      string: '{"errors":[{"status":"404","title":"Not Found","detail":"rule does
+        not exist"}]}'
+    headers:
+      content-type:
+      - application/vnd.api+json
+    status:
+      code: 404
+      message: Not Found
+version: 1

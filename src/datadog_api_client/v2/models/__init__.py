@@ -9088,6 +9088,27 @@ from datadog_api_client.v2.model.service_repository_info_response_data import Se
 from datadog_api_client.v2.model.service_repository_info_status import ServiceRepositoryInfoStatus
 from datadog_api_client.v2.model.session_id_array import SessionIdArray
 from datadog_api_client.v2.model.session_id_data import SessionIdData
+from datadog_api_client.v2.model.severity_modifier_rule_action import SeverityModifierRuleAction
+from datadog_api_client.v2.model.severity_modifier_rule_attributes_create import SeverityModifierRuleAttributesCreate
+from datadog_api_client.v2.model.severity_modifier_rule_attributes_response import (
+    SeverityModifierRuleAttributesResponse,
+)
+from datadog_api_client.v2.model.severity_modifier_rule_create_request import SeverityModifierRuleCreateRequest
+from datadog_api_client.v2.model.severity_modifier_rule_data_create import SeverityModifierRuleDataCreate
+from datadog_api_client.v2.model.severity_modifier_rule_data_response import SeverityModifierRuleDataResponse
+from datadog_api_client.v2.model.severity_modifier_rule_reorder_item import SeverityModifierRuleReorderItem
+from datadog_api_client.v2.model.severity_modifier_rule_reorder_request import SeverityModifierRuleReorderRequest
+from datadog_api_client.v2.model.severity_modifier_rule_reorder_response import SeverityModifierRuleReorderResponse
+from datadog_api_client.v2.model.severity_modifier_rule_response import SeverityModifierRuleResponse
+from datadog_api_client.v2.model.severity_modifier_rule_set_action import SeverityModifierRuleSetAction
+from datadog_api_client.v2.model.severity_modifier_rule_set_action_type import SeverityModifierRuleSetActionType
+from datadog_api_client.v2.model.severity_modifier_rule_shift_action import SeverityModifierRuleShiftAction
+from datadog_api_client.v2.model.severity_modifier_rule_shift_action_type import SeverityModifierRuleShiftActionType
+from datadog_api_client.v2.model.severity_modifier_rule_type import SeverityModifierRuleType
+from datadog_api_client.v2.model.severity_modifier_rule_update_request import SeverityModifierRuleUpdateRequest
+from datadog_api_client.v2.model.severity_modifier_rules_response import SeverityModifierRulesResponse
+from datadog_api_client.v2.model.severity_modifier_severity import SeverityModifierSeverity
+from datadog_api_client.v2.model.severity_modifier_severity_delta import SeverityModifierSeverityDelta
 from datadog_api_client.v2.model.shared_dashboard_global_time import SharedDashboardGlobalTime
 from datadog_api_client.v2.model.shared_dashboard_included import SharedDashboardIncluded
 from datadog_api_client.v2.model.shared_dashboard_included_dashboard import SharedDashboardIncludedDashboard
@@ -16897,6 +16918,25 @@ __all__ = [
     "ServiceRepositoryInfoStatus",
     "SessionIdArray",
     "SessionIdData",
+    "SeverityModifierRuleAction",
+    "SeverityModifierRuleAttributesCreate",
+    "SeverityModifierRuleAttributesResponse",
+    "SeverityModifierRuleCreateRequest",
+    "SeverityModifierRuleDataCreate",
+    "SeverityModifierRuleDataResponse",
+    "SeverityModifierRuleReorderItem",
+    "SeverityModifierRuleReorderRequest",
+    "SeverityModifierRuleReorderResponse",
+    "SeverityModifierRuleResponse",
+    "SeverityModifierRuleSetAction",
+    "SeverityModifierRuleSetActionType",
+    "SeverityModifierRuleShiftAction",
+    "SeverityModifierRuleShiftActionType",
+    "SeverityModifierRuleType",
+    "SeverityModifierRuleUpdateRequest",
+    "SeverityModifierRulesResponse",
+    "SeverityModifierSeverity",
+    "SeverityModifierSeverityDelta",
     "SharedDashboardGlobalTime",
     "SharedDashboardIncluded",
     "SharedDashboardIncludedDashboard",

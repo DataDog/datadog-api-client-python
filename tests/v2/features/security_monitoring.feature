@@ -952,6 +952,30 @@ Feature: Security Monitoring
     And the response "data.attributes.exclusion_filters[0].name" is equal to "Exclude staging"
     And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a severity modifier rule returns "Bad Request" response
+    Given operation "CreateSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "CreateSecurityFindingsAutomationSeverityModifierRule" request
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Create a severity modifier rule returns "Successfully created the severity modifier rule" response
+    Given operation "CreateSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "CreateSecurityFindingsAutomationSeverityModifierRule" request
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the severity modifier rule
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create a severity modifier rule returns "Unprocessable Entity" response
+    Given operation "CreateSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "CreateSecurityFindingsAutomationSeverityModifierRule" request
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Create a suppression rule returns "Bad Request" response
     Given new "CreateSecurityMonitoringSuppression" request
@@ -1264,6 +1288,31 @@ Feature: Security Monitoring
     And request contains "security_filter_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a severity modifier rule returns "Not Found" response
+    Given operation "DeleteSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "DeleteSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Delete a severity modifier rule returns "Rule successfully deleted" response
+    Given operation "DeleteSecurityFindingsAutomationSeverityModifierRule" enabled
+    And there is a valid "valid_severity_modifier_rule" in the system
+    And new "DeleteSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "valid_severity_modifier_rule.data.id"
+    When the request is sent
+    Then the response status is 204 Rule successfully deleted
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a severity modifier rule returns "Unprocessable Entity" response
+    Given operation "DeleteSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "DeleteSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
 
   @team:DataDog/cloud-security-posture-management
   Scenario: Delete a signal-based notification rule returns "Not Found" response
@@ -1866,6 +1915,33 @@ Feature: Security Monitoring
     And the response "data.attributes.exclusion_filters[0].name" is equal to "Exclude logs from staging"
     And the response "data.attributes.exclusion_filters[0].query" is equal to "source:staging"
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get a severity modifier rule returns "Not Found" response
+    Given operation "GetSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "GetSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Get a severity modifier rule returns "Successfully retrieved the severity modifier rule" response
+    Given operation "GetSecurityFindingsAutomationSeverityModifierRule" enabled
+    And there is a valid "valid_severity_modifier_rule" in the system
+    And new "GetSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "valid_severity_modifier_rule.data.id"
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the severity modifier rule
+    And the response "data.id" is equal to "{{ valid_severity_modifier_rule.data.id }}"
+    And the response "data.type" is equal to "severity_modifier_rules"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get a severity modifier rule returns "Unprocessable Entity" response
+    Given operation "GetSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "GetSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
   @replay-only @team:DataDog/cloud-siem
   Scenario: Get a signal's details returns "Not Found" response
     Given new "GetSecurityMonitoringSignal" request
@@ -1986,6 +2062,22 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "data" has item with field "attributes.filtered_data_type" with value "logs"
     And the response "data" has item with field "attributes.is_builtin" with value true
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get all severity modifier rules returns "Not Found" response
+    Given operation "ListSecurityFindingsAutomationSeverityModifierRules" enabled
+    And new "ListSecurityFindingsAutomationSeverityModifierRules" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Get all severity modifier rules returns "Successfully retrieved the list of severity modifier rules" response
+    Given operation "ListSecurityFindingsAutomationSeverityModifierRules" enabled
+    And there is a valid "valid_severity_modifier_rule" in the system
+    And new "ListSecurityFindingsAutomationSeverityModifierRules" request
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the list of severity modifier rules
+    And the response "data" has item with field "id" with value "{{ valid_severity_modifier_rule.data.id }}"
 
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Get all suppression rules returns "OK" response
@@ -2907,6 +2999,31 @@ Feature: Security Monitoring
     Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder severity modifier rules returns "Bad Request" response
+    Given operation "ReorderSecurityFindingsAutomationSeverityModifierRules" enabled
+    And new "ReorderSecurityFindingsAutomationSeverityModifierRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "severity_modifier_rules"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/k9-automation
+  Scenario: Reorder severity modifier rules returns "Successfully reordered the severity modifier rules" response
+    Given operation "ReorderSecurityFindingsAutomationSeverityModifierRules" enabled
+    And there is a valid "valid_severity_modifier_rule" in the system
+    And new "ReorderSecurityFindingsAutomationSeverityModifierRules" request
+    And body with value {"data": [{"id": "{{ valid_severity_modifier_rule.data.id }}", "type": "severity_modifier_rules"}]}
+    When the request is sent
+    Then the response status is 200 Successfully reordered the severity modifier rules
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder severity modifier rules returns "Unprocessable Entity" response
+    Given operation "ReorderSecurityFindingsAutomationSeverityModifierRules" enabled
+    And new "ReorderSecurityFindingsAutomationSeverityModifierRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "severity_modifier_rules"}]}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/k9-automation
   Scenario: Reorder ticket creation rules returns "Bad Request" response
     Given operation "ReorderSecurityFindingsAutomationTicketCreationRules" enabled
     And new "ReorderSecurityFindingsAutomationTicketCreationRules" request
@@ -3389,6 +3506,43 @@ Feature: Security Monitoring
     And the response "data.type" is equal to "security_filters"
     And the response "data.attributes.filtered_data_type" is equal to "logs"
     And the response "data.attributes.name" is equal to "{{ unique }}"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a severity modifier rule returns "Bad Request" response
+    Given operation "UpdateSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a severity modifier rule returns "Not Found" response
+    Given operation "UpdateSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:DataDog/k9-automation
+  Scenario: Update a severity modifier rule returns "Successfully updated the severity modifier rule" response
+    Given operation "UpdateSecurityFindingsAutomationSeverityModifierRule" enabled
+    And there is a valid "valid_severity_modifier_rule" in the system
+    And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "valid_severity_modifier_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    When the request is sent
+    Then the response status is 200 Successfully updated the severity modifier rule
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update a severity modifier rule returns "Unprocessable Entity" response
+    Given operation "UpdateSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Update a suppression rule returns "Bad Request" response
