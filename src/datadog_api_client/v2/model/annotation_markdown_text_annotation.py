@@ -14,6 +14,12 @@ from datadog_api_client.model_utils import (
 
 
 class AnnotationMarkdownTextAnnotation(ModelNormal):
+    validations = {
+        "text": {
+            "max_length": 3000,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -26,9 +32,9 @@ class AnnotationMarkdownTextAnnotation(ModelNormal):
 
     def __init__(self_, text: Union[str, UnsetType] = unset, **kwargs):
         """
-        The definition of ``AnnotationMarkdownTextAnnotation`` object.
+        Markdown content displayed in an annotation.
 
-        :param text: The ``markdownTextAnnotation`` ``text``.
+        :param text: The annotation's Markdown content.
         :type text: str, optional
         """
         if text is not unset:

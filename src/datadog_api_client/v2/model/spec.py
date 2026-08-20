@@ -43,6 +43,12 @@ if TYPE_CHECKING:
 
 
 class Spec(ModelNormal):
+    validations = {
+        "annotations": {
+            "max_items": 100,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.annotation import Annotation
@@ -113,7 +119,7 @@ class Spec(ModelNormal):
         """
         A complete Workflow Automation definition, including its triggers, steps, and connections.
 
-        :param annotations: A list of annotations used in the workflow. These are like sticky notes for your workflow!
+        :param annotations: Up to 100 text annotations displayed on the workflow canvas.
         :type annotations: [Annotation], optional
 
         :param connection_envs: A list of connections or connection groups used in the workflow.
