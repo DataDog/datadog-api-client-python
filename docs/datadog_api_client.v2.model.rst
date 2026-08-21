@@ -11743,6 +11743,48 @@ datadog\_api\_client.v2.model.dashboard\_usage\_user module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.dashboard\_widget\_validation\_layout\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_widget_validation_layout_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_widget\_validation\_reflow\_type module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_widget_validation_reflow_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_widget\_validation\_request module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_widget_validation_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_widget\_validation\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_widget_validation_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_widget\_validation\_result module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_widget_validation_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.dashboard\_widget\_validation\_widget module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.dashboard_widget_validation_widget
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.data\_attributes\_rules\_items\_if\_tag\_exists module
 ------------------------------------------------------------------------------------
 
