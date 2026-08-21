@@ -2670,6 +2670,105 @@ from datadog_api_client.v2.model.due_date_severity import DueDateSeverity
 from datadog_api_client.v2.model.elf_sourcemap_attributes import ELFSourcemapAttributes
 from datadog_api_client.v2.model.elf_sourcemap_data import ELFSourcemapData
 from datadog_api_client.v2.model.epss import EPSS
+from datadog_api_client.v2.model.elastic_cloud_detailed_index_stats_integration_dataflow_request import (
+    ElasticCloudDetailedIndexStatsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_detailed_index_stats_integration_dataflow_response import (
+    ElasticCloudDetailedIndexStatsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_index_stats_integration_dataflow_request import (
+    ElasticCloudIndexStatsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_index_stats_integration_dataflow_response import (
+    ElasticCloudIndexStatsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_authentication_request import (
+    ElasticCloudIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_authentication_response import (
+    ElasticCloudIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_authentication_update import (
+    ElasticCloudIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_create_attributes import (
+    ElasticCloudIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_create_data import (
+    ElasticCloudIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_create_request import (
+    ElasticCloudIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_response import (
+    ElasticCloudIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_response_attributes import (
+    ElasticCloudIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_response_data import (
+    ElasticCloudIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_settings_request import (
+    ElasticCloudIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_settings_response import (
+    ElasticCloudIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_settings_update import (
+    ElasticCloudIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_update_attributes import (
+    ElasticCloudIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_update_data import (
+    ElasticCloudIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_update_request import (
+    ElasticCloudIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_accounts_response import (
+    ElasticCloudIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_dataflows_request import (
+    ElasticCloudIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_dataflows_response import (
+    ElasticCloudIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_metrics_integration_dataflow_response import (
+    ElasticCloudMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_pending_task_stats_integration_dataflow_request import (
+    ElasticCloudPendingTaskStatsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_pending_task_stats_integration_dataflow_response import (
+    ElasticCloudPendingTaskStatsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_primary_shard_graceful_timeout_integration_dataflow_request import (
+    ElasticCloudPrimaryShardGracefulTimeoutIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_primary_shard_graceful_timeout_integration_dataflow_response import (
+    ElasticCloudPrimaryShardGracefulTimeoutIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_primary_shard_stats_integration_dataflow_request import (
+    ElasticCloudPrimaryShardStatsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_primary_shard_stats_integration_dataflow_response import (
+    ElasticCloudPrimaryShardStatsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_shard_allocation_stats_integration_dataflow_request import (
+    ElasticCloudShardAllocationStatsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_shard_allocation_stats_integration_dataflow_response import (
+    ElasticCloudShardAllocationStatsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_slm_stats_integration_dataflow_request import (
+    ElasticCloudSlmStatsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_slm_stats_integration_dataflow_response import (
+    ElasticCloudSlmStatsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_context_entity import EntityContextEntity
 from datadog_api_client.v2.model.entity_context_entity_attributes import EntityContextEntityAttributes
@@ -4150,6 +4249,13 @@ from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParam
 from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.integration import Integration
+from datadog_api_client.v2.model.integration_account_basic_auth_request import IntegrationAccountBasicAuthRequest
+from datadog_api_client.v2.model.integration_account_basic_auth_response import IntegrationAccountBasicAuthResponse
+from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+from datadog_api_client.v2.model.integration_account_basic_auth_update import IntegrationAccountBasicAuthUpdate
+from datadog_api_client.v2.model.integration_account_dataflow_health import IntegrationAccountDataflowHealth
+from datadog_api_client.v2.model.integration_account_dataflow_status import IntegrationAccountDataflowStatus
+from datadog_api_client.v2.model.integration_account_type import IntegrationAccountType
 from datadog_api_client.v2.model.integration_attributes import IntegrationAttributes
 from datadog_api_client.v2.model.integration_incident import IntegrationIncident
 from datadog_api_client.v2.model.integration_incident_field_mappings_items import IntegrationIncidentFieldMappingsItems
@@ -10166,6 +10272,72 @@ from datadog_api_client.v2.model.trigger_source import TriggerSource
 from datadog_api_client.v2.model.trigger_type import TriggerType
 from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
 from datadog_api_client.v2.model.trigger_workflow_automation_action_type import TriggerWorkflowAutomationActionType
+from datadog_api_client.v2.model.twilio_alerts_logs_integration_dataflow_request import (
+    TwilioAlertsLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.twilio_alerts_logs_integration_dataflow_response import (
+    TwilioAlertsLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.twilio_call_summaries_logs_integration_dataflow_request import (
+    TwilioCallSummariesLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.twilio_call_summaries_logs_integration_dataflow_response import (
+    TwilioCallSummariesLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.twilio_cloud_cost_metrics_integration_dataflow_request import (
+    TwilioCloudCostMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.twilio_cloud_cost_metrics_integration_dataflow_response import (
+    TwilioCloudCostMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.twilio_events_logs_integration_dataflow_request import (
+    TwilioEventsLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.twilio_events_logs_integration_dataflow_response import (
+    TwilioEventsLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.twilio_integration_account_authentication_request import (
+    TwilioIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.twilio_integration_account_authentication_response import (
+    TwilioIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.twilio_integration_account_authentication_update import (
+    TwilioIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.twilio_integration_account_create_attributes import (
+    TwilioIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.twilio_integration_account_create_data import TwilioIntegrationAccountCreateData
+from datadog_api_client.v2.model.twilio_integration_account_create_request import TwilioIntegrationAccountCreateRequest
+from datadog_api_client.v2.model.twilio_integration_account_response import TwilioIntegrationAccountResponse
+from datadog_api_client.v2.model.twilio_integration_account_response_attributes import (
+    TwilioIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.twilio_integration_account_response_data import TwilioIntegrationAccountResponseData
+from datadog_api_client.v2.model.twilio_integration_account_settings_request import (
+    TwilioIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.twilio_integration_account_settings_response import (
+    TwilioIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.twilio_integration_account_settings_update import (
+    TwilioIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.twilio_integration_account_update_attributes import (
+    TwilioIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.twilio_integration_account_update_data import TwilioIntegrationAccountUpdateData
+from datadog_api_client.v2.model.twilio_integration_account_update_request import TwilioIntegrationAccountUpdateRequest
+from datadog_api_client.v2.model.twilio_integration_accounts_response import TwilioIntegrationAccountsResponse
+from datadog_api_client.v2.model.twilio_integration_dataflows_request import TwilioIntegrationDataflowsRequest
+from datadog_api_client.v2.model.twilio_integration_dataflows_response import TwilioIntegrationDataflowsResponse
+from datadog_api_client.v2.model.twilio_messages_logs_integration_dataflow_request import (
+    TwilioMessagesLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.twilio_messages_logs_integration_dataflow_response import (
+    TwilioMessagesLogsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.uc_config_pair import UCConfigPair
 from datadog_api_client.v2.model.uc_config_pair_data import UCConfigPairData
 from datadog_api_client.v2.model.uc_config_pair_data_attributes import UCConfigPairDataAttributes
@@ -12635,6 +12807,39 @@ __all__ = [
     "ELFSourcemapAttributes",
     "ELFSourcemapData",
     "EPSS",
+    "ElasticCloudDetailedIndexStatsIntegrationDataflowRequest",
+    "ElasticCloudDetailedIndexStatsIntegrationDataflowResponse",
+    "ElasticCloudIndexStatsIntegrationDataflowRequest",
+    "ElasticCloudIndexStatsIntegrationDataflowResponse",
+    "ElasticCloudIntegrationAccountAuthenticationRequest",
+    "ElasticCloudIntegrationAccountAuthenticationResponse",
+    "ElasticCloudIntegrationAccountAuthenticationUpdate",
+    "ElasticCloudIntegrationAccountCreateAttributes",
+    "ElasticCloudIntegrationAccountCreateData",
+    "ElasticCloudIntegrationAccountCreateRequest",
+    "ElasticCloudIntegrationAccountResponse",
+    "ElasticCloudIntegrationAccountResponseAttributes",
+    "ElasticCloudIntegrationAccountResponseData",
+    "ElasticCloudIntegrationAccountSettingsRequest",
+    "ElasticCloudIntegrationAccountSettingsResponse",
+    "ElasticCloudIntegrationAccountSettingsUpdate",
+    "ElasticCloudIntegrationAccountUpdateAttributes",
+    "ElasticCloudIntegrationAccountUpdateData",
+    "ElasticCloudIntegrationAccountUpdateRequest",
+    "ElasticCloudIntegrationAccountsResponse",
+    "ElasticCloudIntegrationDataflowsRequest",
+    "ElasticCloudIntegrationDataflowsResponse",
+    "ElasticCloudMetricsIntegrationDataflowResponse",
+    "ElasticCloudPendingTaskStatsIntegrationDataflowRequest",
+    "ElasticCloudPendingTaskStatsIntegrationDataflowResponse",
+    "ElasticCloudPrimaryShardGracefulTimeoutIntegrationDataflowRequest",
+    "ElasticCloudPrimaryShardGracefulTimeoutIntegrationDataflowResponse",
+    "ElasticCloudPrimaryShardStatsIntegrationDataflowRequest",
+    "ElasticCloudPrimaryShardStatsIntegrationDataflowResponse",
+    "ElasticCloudShardAllocationStatsIntegrationDataflowRequest",
+    "ElasticCloudShardAllocationStatsIntegrationDataflowResponse",
+    "ElasticCloudSlmStatsIntegrationDataflowRequest",
+    "ElasticCloudSlmStatsIntegrationDataflowResponse",
     "EntityAttributes",
     "EntityContextEntity",
     "EntityContextEntityAttributes",
@@ -13749,6 +13954,13 @@ __all__ = [
     "InputSchemaParametersType",
     "IntakePayloadAccepted",
     "Integration",
+    "IntegrationAccountBasicAuthRequest",
+    "IntegrationAccountBasicAuthResponse",
+    "IntegrationAccountBasicAuthType",
+    "IntegrationAccountBasicAuthUpdate",
+    "IntegrationAccountDataflowHealth",
+    "IntegrationAccountDataflowStatus",
+    "IntegrationAccountType",
     "IntegrationAttributes",
     "IntegrationIncident",
     "IntegrationIncidentFieldMappingsItems",
@@ -17727,6 +17939,34 @@ __all__ = [
     "TriggerType",
     "TriggerWorkflowAutomationAction",
     "TriggerWorkflowAutomationActionType",
+    "TwilioAlertsLogsIntegrationDataflowRequest",
+    "TwilioAlertsLogsIntegrationDataflowResponse",
+    "TwilioCallSummariesLogsIntegrationDataflowRequest",
+    "TwilioCallSummariesLogsIntegrationDataflowResponse",
+    "TwilioCloudCostMetricsIntegrationDataflowRequest",
+    "TwilioCloudCostMetricsIntegrationDataflowResponse",
+    "TwilioEventsLogsIntegrationDataflowRequest",
+    "TwilioEventsLogsIntegrationDataflowResponse",
+    "TwilioIntegrationAccountAuthenticationRequest",
+    "TwilioIntegrationAccountAuthenticationResponse",
+    "TwilioIntegrationAccountAuthenticationUpdate",
+    "TwilioIntegrationAccountCreateAttributes",
+    "TwilioIntegrationAccountCreateData",
+    "TwilioIntegrationAccountCreateRequest",
+    "TwilioIntegrationAccountResponse",
+    "TwilioIntegrationAccountResponseAttributes",
+    "TwilioIntegrationAccountResponseData",
+    "TwilioIntegrationAccountSettingsRequest",
+    "TwilioIntegrationAccountSettingsResponse",
+    "TwilioIntegrationAccountSettingsUpdate",
+    "TwilioIntegrationAccountUpdateAttributes",
+    "TwilioIntegrationAccountUpdateData",
+    "TwilioIntegrationAccountUpdateRequest",
+    "TwilioIntegrationAccountsResponse",
+    "TwilioIntegrationDataflowsRequest",
+    "TwilioIntegrationDataflowsResponse",
+    "TwilioMessagesLogsIntegrationDataflowRequest",
+    "TwilioMessagesLogsIntegrationDataflowResponse",
     "UCConfigPair",
     "UCConfigPairData",
     "UCConfigPairDataAttributes",
