@@ -15,6 +15,9 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+    from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression import (
+        ObservabilityPipelineAzureStorageDestinationCompression,
+    )
     from datadog_api_client.v2.model.azure_storage_destination_type import AzureStorageDestinationType
     from datadog_api_client.v2.model.observability_pipeline_disk_buffer_options import (
         ObservabilityPipelineDiskBufferOptions,
@@ -25,17 +28,27 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
         ObservabilityPipelineMemoryBufferSizeOptions,
     )
+    from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_zstd import (
+        ObservabilityPipelineAzureStorageDestinationCompressionZstd,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_gzip import (
+        ObservabilityPipelineAzureStorageDestinationCompressionGzip,
+    )
 
 
 class AzureStorageDestination(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+        from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression import (
+            ObservabilityPipelineAzureStorageDestinationCompression,
+        )
         from datadog_api_client.v2.model.azure_storage_destination_type import AzureStorageDestinationType
 
         return {
             "blob_prefix": (str,),
             "buffer": (ObservabilityPipelineBufferOptions,),
+            "compression": (ObservabilityPipelineAzureStorageDestinationCompression,),
             "connection_string_key": (str,),
             "container_name": (str,),
             "id": (str,),
@@ -46,6 +59,7 @@ class AzureStorageDestination(ModelNormal):
     attribute_map = {
         "blob_prefix": "blob_prefix",
         "buffer": "buffer",
+        "compression": "compression",
         "connection_string_key": "connection_string_key",
         "container_name": "container_name",
         "id": "id",
@@ -67,6 +81,12 @@ class AzureStorageDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        compression: Union[
+            ObservabilityPipelineAzureStorageDestinationCompression,
+            ObservabilityPipelineAzureStorageDestinationCompressionZstd,
+            ObservabilityPipelineAzureStorageDestinationCompressionGzip,
+            UnsetType,
+        ] = unset,
         connection_string_key: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -80,6 +100,10 @@ class AzureStorageDestination(ModelNormal):
 
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
+
+        :param compression: Compression configuration for archived logs. When omitted, logs are compressed with gzip
+            for backward compatibility.
+        :type compression: ObservabilityPipelineAzureStorageDestinationCompression, optional
 
         :param connection_string_key: Name of the environment variable or secret that holds the Azure Storage connection string.
         :type connection_string_key: str, optional
@@ -100,6 +124,8 @@ class AzureStorageDestination(ModelNormal):
             kwargs["blob_prefix"] = blob_prefix
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if compression is not unset:
+            kwargs["compression"] = compression
         if connection_string_key is not unset:
             kwargs["connection_string_key"] = connection_string_key
         super().__init__(kwargs)

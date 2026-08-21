@@ -5701,6 +5701,21 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_open_search_desti
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination import (
     ObservabilityPipelineAmazonS3Destination,
 )
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression import (
+    ObservabilityPipelineAmazonS3DestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_gzip import (
+    ObservabilityPipelineAmazonS3DestinationCompressionGzip,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_gzip_type import (
+    ObservabilityPipelineAmazonS3DestinationCompressionGzipType,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_zstd import (
+    ObservabilityPipelineAmazonS3DestinationCompressionZstd,
+)
+from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_zstd_type import (
+    ObservabilityPipelineAmazonS3DestinationCompressionZstdType,
+)
 from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_server_side_encryption import (
     ObservabilityPipelineAmazonS3DestinationServerSideEncryption,
 )
@@ -5769,6 +5784,21 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_des
     ObservabilityPipelineAmazonSecurityLakeDestinationType,
 )
 from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
+from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression import (
+    ObservabilityPipelineAzureStorageDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_gzip import (
+    ObservabilityPipelineAzureStorageDestinationCompressionGzip,
+)
+from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_gzip_type import (
+    ObservabilityPipelineAzureStorageDestinationCompressionGzipType,
+)
+from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_zstd import (
+    ObservabilityPipelineAzureStorageDestinationCompressionZstd,
+)
+from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_zstd_type import (
+    ObservabilityPipelineAzureStorageDestinationCompressionZstdType,
+)
 from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
 from datadog_api_client.v2.model.observability_pipeline_buffer_options_disk_type import (
     ObservabilityPipelineBufferOptionsDiskType,
@@ -6035,6 +6065,21 @@ from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_des
 )
 from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_acl import (
     ObservabilityPipelineGoogleCloudStorageDestinationAcl,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression import (
+    ObservabilityPipelineGoogleCloudStorageDestinationCompression,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_gzip import (
+    ObservabilityPipelineGoogleCloudStorageDestinationCompressionGzip,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_gzip_type import (
+    ObservabilityPipelineGoogleCloudStorageDestinationCompressionGzipType,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_zstd import (
+    ObservabilityPipelineGoogleCloudStorageDestinationCompressionZstd,
+)
+from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_zstd_type import (
+    ObservabilityPipelineGoogleCloudStorageDestinationCompressionZstdType,
 )
 from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_storage_class import (
     ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
@@ -14896,6 +14941,11 @@ __all__ = [
     "ObservabilityPipelineAmazonOpenSearchDestinationAuthStrategy",
     "ObservabilityPipelineAmazonOpenSearchDestinationType",
     "ObservabilityPipelineAmazonS3Destination",
+    "ObservabilityPipelineAmazonS3DestinationCompression",
+    "ObservabilityPipelineAmazonS3DestinationCompressionGzip",
+    "ObservabilityPipelineAmazonS3DestinationCompressionGzipType",
+    "ObservabilityPipelineAmazonS3DestinationCompressionZstd",
+    "ObservabilityPipelineAmazonS3DestinationCompressionZstdType",
     "ObservabilityPipelineAmazonS3DestinationServerSideEncryption",
     "ObservabilityPipelineAmazonS3DestinationStorageClass",
     "ObservabilityPipelineAmazonS3DestinationType",
@@ -14920,6 +14970,11 @@ __all__ = [
     "ObservabilityPipelineAmazonSecurityLakeDestination",
     "ObservabilityPipelineAmazonSecurityLakeDestinationType",
     "ObservabilityPipelineAwsAuth",
+    "ObservabilityPipelineAzureStorageDestinationCompression",
+    "ObservabilityPipelineAzureStorageDestinationCompressionGzip",
+    "ObservabilityPipelineAzureStorageDestinationCompressionGzipType",
+    "ObservabilityPipelineAzureStorageDestinationCompressionZstd",
+    "ObservabilityPipelineAzureStorageDestinationCompressionZstdType",
     "ObservabilityPipelineBufferOptions",
     "ObservabilityPipelineBufferOptionsDiskType",
     "ObservabilityPipelineBufferOptionsMemoryType",
@@ -15019,6 +15074,11 @@ __all__ = [
     "ObservabilityPipelineGoogleChronicleDestinationType",
     "ObservabilityPipelineGoogleCloudStorageDestination",
     "ObservabilityPipelineGoogleCloudStorageDestinationAcl",
+    "ObservabilityPipelineGoogleCloudStorageDestinationCompression",
+    "ObservabilityPipelineGoogleCloudStorageDestinationCompressionGzip",
+    "ObservabilityPipelineGoogleCloudStorageDestinationCompressionGzipType",
+    "ObservabilityPipelineGoogleCloudStorageDestinationCompressionZstd",
+    "ObservabilityPipelineGoogleCloudStorageDestinationCompressionZstdType",
     "ObservabilityPipelineGoogleCloudStorageDestinationStorageClass",
     "ObservabilityPipelineGoogleCloudStorageDestinationType",
     "ObservabilityPipelineGooglePubSubDestination",
