@@ -97,7 +97,7 @@ from datadog_api_client.v2.api.rum_config_api import RUMConfigApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
 from datadog_api_client.v2.api.rum_operations_api import RUMOperationsApi
 from datadog_api_client.v2.api.rum_remote_config_api import RUMRemoteConfigApi
-from datadog_api_client.v2.api.rum_retention_quota_api import RUMRetentionQuotaApi
+from datadog_api_client.v2.api.rum_retention_quotas_api import RUMRetentionQuotasApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
 from datadog_api_client.v2.api.reporting_and_sharing_api import ReportingAndSharingApi
@@ -242,7 +242,7 @@ __all__ = [
     "RUMInsightsApi",
     "RUMOperationsApi",
     "RUMRemoteConfigApi",
-    "RUMRetentionQuotaApi",
+    "RUMRetentionQuotasApi",
     "ReferenceTablesApi",
     "ReportSchedulesApi",
     "ReportingAndSharingApi",
