@@ -7120,6 +7120,32 @@ from datadog_api_client.v2.model.process_summary import ProcessSummary
 from datadog_api_client.v2.model.process_summary_attributes import ProcessSummaryAttributes
 from datadog_api_client.v2.model.process_summary_type import ProcessSummaryType
 from datadog_api_client.v2.model.process_timeseries_query import ProcessTimeseriesQuery
+from datadog_api_client.v2.model.product_analytics_analytics_list_query import ProductAnalyticsAnalyticsListQuery
+from datadog_api_client.v2.model.product_analytics_analytics_list_record import ProductAnalyticsAnalyticsListRecord
+from datadog_api_client.v2.model.product_analytics_analytics_list_request import ProductAnalyticsAnalyticsListRequest
+from datadog_api_client.v2.model.product_analytics_analytics_list_request_attributes import (
+    ProductAnalyticsAnalyticsListRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_analytics_list_request_data import (
+    ProductAnalyticsAnalyticsListRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_analytics_list_request_type import (
+    ProductAnalyticsAnalyticsListRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_analytics_list_response import ProductAnalyticsAnalyticsListResponse
+from datadog_api_client.v2.model.product_analytics_analytics_list_response_attributes import (
+    ProductAnalyticsAnalyticsListResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_analytics_list_response_data import (
+    ProductAnalyticsAnalyticsListResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_analytics_list_response_type import (
+    ProductAnalyticsAnalyticsListResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_analytics_list_sort import ProductAnalyticsAnalyticsListSort
+from datadog_api_client.v2.model.product_analytics_analytics_list_sort_order import (
+    ProductAnalyticsAnalyticsListSortOrder,
+)
 from datadog_api_client.v2.model.product_analytics_analytics_query import ProductAnalyticsAnalyticsQuery
 from datadog_api_client.v2.model.product_analytics_analytics_request import ProductAnalyticsAnalyticsRequest
 from datadog_api_client.v2.model.product_analytics_analytics_request_attributes import (
@@ -7136,14 +7162,153 @@ from datadog_api_client.v2.model.product_analytics_audience_segment_subquery imp
 )
 from datadog_api_client.v2.model.product_analytics_audience_user_subquery import ProductAnalyticsAudienceUserSubquery
 from datadog_api_client.v2.model.product_analytics_base_query import ProductAnalyticsBaseQuery
+from datadog_api_client.v2.model.product_analytics_calendar_interval import ProductAnalyticsCalendarInterval
+from datadog_api_client.v2.model.product_analytics_calendar_interval_type import ProductAnalyticsCalendarIntervalType
 from datadog_api_client.v2.model.product_analytics_compute import ProductAnalyticsCompute
+from datadog_api_client.v2.model.product_analytics_elapsed_time import ProductAnalyticsElapsedTime
 from datadog_api_client.v2.model.product_analytics_event_query import ProductAnalyticsEventQuery
 from datadog_api_client.v2.model.product_analytics_event_query_data_source import ProductAnalyticsEventQueryDataSource
 from datadog_api_client.v2.model.product_analytics_event_search import ProductAnalyticsEventSearch
 from datadog_api_client.v2.model.product_analytics_execution_type import ProductAnalyticsExecutionType
+from datadog_api_client.v2.model.product_analytics_formula_journey_query import ProductAnalyticsFormulaJourneyQuery
+from datadog_api_client.v2.model.product_analytics_formula_journey_request import ProductAnalyticsFormulaJourneyRequest
+from datadog_api_client.v2.model.product_analytics_formula_journey_request_attributes import (
+    ProductAnalyticsFormulaJourneyRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_formula_journey_request_data import (
+    ProductAnalyticsFormulaJourneyRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_formula_journey_request_type import (
+    ProductAnalyticsFormulaJourneyRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_formula_retention_query import ProductAnalyticsFormulaRetentionQuery
+from datadog_api_client.v2.model.product_analytics_formula_retention_request import (
+    ProductAnalyticsFormulaRetentionRequest,
+)
+from datadog_api_client.v2.model.product_analytics_formula_retention_request_attributes import (
+    ProductAnalyticsFormulaRetentionRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_formula_retention_request_data import (
+    ProductAnalyticsFormulaRetentionRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_formula_retention_request_type import (
+    ProductAnalyticsFormulaRetentionRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_graph_query_compute import ProductAnalyticsGraphQueryCompute
+from datadog_api_client.v2.model.product_analytics_graph_query_group_by import ProductAnalyticsGraphQueryGroupBy
+from datadog_api_client.v2.model.product_analytics_graph_query_group_by_source import (
+    ProductAnalyticsGraphQueryGroupBySource,
+)
 from datadog_api_client.v2.model.product_analytics_group_by import ProductAnalyticsGroupBy
 from datadog_api_client.v2.model.product_analytics_group_by_sort import ProductAnalyticsGroupBySort
 from datadog_api_client.v2.model.product_analytics_interval import ProductAnalyticsInterval
+from datadog_api_client.v2.model.product_analytics_join_keys import ProductAnalyticsJoinKeys
+from datadog_api_client.v2.model.product_analytics_journey_audience_account_query import (
+    ProductAnalyticsJourneyAudienceAccountQuery,
+)
+from datadog_api_client.v2.model.product_analytics_journey_audience_filters import (
+    ProductAnalyticsJourneyAudienceFilters,
+)
+from datadog_api_client.v2.model.product_analytics_journey_audience_segment_query import (
+    ProductAnalyticsJourneyAudienceSegmentQuery,
+)
+from datadog_api_client.v2.model.product_analytics_journey_audience_user_query import (
+    ProductAnalyticsJourneyAudienceUserQuery,
+)
+from datadog_api_client.v2.model.product_analytics_journey_computed_column import ProductAnalyticsJourneyComputedColumn
+from datadog_api_client.v2.model.product_analytics_journey_computed_column_name import (
+    ProductAnalyticsJourneyComputedColumnName,
+)
+from datadog_api_client.v2.model.product_analytics_journey_conversion_type import ProductAnalyticsJourneyConversionType
+from datadog_api_client.v2.model.product_analytics_journey_entity import ProductAnalyticsJourneyEntity
+from datadog_api_client.v2.model.product_analytics_journey_funnel_compute import ProductAnalyticsJourneyFunnelCompute
+from datadog_api_client.v2.model.product_analytics_journey_funnel_query import ProductAnalyticsJourneyFunnelQuery
+from datadog_api_client.v2.model.product_analytics_journey_funnel_request import ProductAnalyticsJourneyFunnelRequest
+from datadog_api_client.v2.model.product_analytics_journey_funnel_request_attributes import (
+    ProductAnalyticsJourneyFunnelRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_journey_funnel_request_data import (
+    ProductAnalyticsJourneyFunnelRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_funnel_response import ProductAnalyticsJourneyFunnelResponse
+from datadog_api_client.v2.model.product_analytics_journey_funnel_response_attributes import (
+    ProductAnalyticsJourneyFunnelResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_journey_funnel_response_data import (
+    ProductAnalyticsJourneyFunnelResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_funnel_response_type import (
+    ProductAnalyticsJourneyFunnelResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_journey_funnel_step import ProductAnalyticsJourneyFunnelStep
+from datadog_api_client.v2.model.product_analytics_journey_funnel_step_group import (
+    ProductAnalyticsJourneyFunnelStepGroup,
+)
+from datadog_api_client.v2.model.product_analytics_journey_list_query import ProductAnalyticsJourneyListQuery
+from datadog_api_client.v2.model.product_analytics_journey_list_record import ProductAnalyticsJourneyListRecord
+from datadog_api_client.v2.model.product_analytics_journey_list_request import ProductAnalyticsJourneyListRequest
+from datadog_api_client.v2.model.product_analytics_journey_list_request_attributes import (
+    ProductAnalyticsJourneyListRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_journey_list_request_data import (
+    ProductAnalyticsJourneyListRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_list_request_type import (
+    ProductAnalyticsJourneyListRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_journey_list_response import ProductAnalyticsJourneyListResponse
+from datadog_api_client.v2.model.product_analytics_journey_list_response_attributes import (
+    ProductAnalyticsJourneyListResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_journey_list_response_data import (
+    ProductAnalyticsJourneyListResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_list_response_type import (
+    ProductAnalyticsJourneyListResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_journey_list_sort import ProductAnalyticsJourneyListSort
+from datadog_api_client.v2.model.product_analytics_journey_node_target import ProductAnalyticsJourneyNodeTarget
+from datadog_api_client.v2.model.product_analytics_journey_node_target_type import ProductAnalyticsJourneyNodeTargetType
+from datadog_api_client.v2.model.product_analytics_journey_path_target import ProductAnalyticsJourneyPathTarget
+from datadog_api_client.v2.model.product_analytics_journey_path_target_type import ProductAnalyticsJourneyPathTargetType
+from datadog_api_client.v2.model.product_analytics_journey_request_type import ProductAnalyticsJourneyRequestType
+from datadog_api_client.v2.model.product_analytics_journey_scalar_compute import ProductAnalyticsJourneyScalarCompute
+from datadog_api_client.v2.model.product_analytics_journey_scalar_query import ProductAnalyticsJourneyScalarQuery
+from datadog_api_client.v2.model.product_analytics_journey_scalar_request import ProductAnalyticsJourneyScalarRequest
+from datadog_api_client.v2.model.product_analytics_journey_scalar_request_attributes import (
+    ProductAnalyticsJourneyScalarRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_journey_scalar_request_data import (
+    ProductAnalyticsJourneyScalarRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_scalar_response import ProductAnalyticsJourneyScalarResponse
+from datadog_api_client.v2.model.product_analytics_journey_scalar_response_data import (
+    ProductAnalyticsJourneyScalarResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_scalar_response_type import (
+    ProductAnalyticsJourneyScalarResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_journey_search import ProductAnalyticsJourneySearch
+from datadog_api_client.v2.model.product_analytics_journey_search_filters import ProductAnalyticsJourneySearchFilters
+from datadog_api_client.v2.model.product_analytics_journey_search_graph_filter import (
+    ProductAnalyticsJourneySearchGraphFilter,
+)
+from datadog_api_client.v2.model.product_analytics_journey_search_graph_filter_name import (
+    ProductAnalyticsJourneySearchGraphFilterName,
+)
+from datadog_api_client.v2.model.product_analytics_journey_search_graph_filter_operator import (
+    ProductAnalyticsJourneySearchGraphFilterOperator,
+)
+from datadog_api_client.v2.model.product_analytics_journey_target import ProductAnalyticsJourneyTarget
+from datadog_api_client.v2.model.product_analytics_journey_timeseries_response import (
+    ProductAnalyticsJourneyTimeseriesResponse,
+)
+from datadog_api_client.v2.model.product_analytics_journey_timeseries_response_data import (
+    ProductAnalyticsJourneyTimeseriesResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_timeseries_response_type import (
+    ProductAnalyticsJourneyTimeseriesResponseType,
+)
 from datadog_api_client.v2.model.product_analytics_occurrence_filter import ProductAnalyticsOccurrenceFilter
 from datadog_api_client.v2.model.product_analytics_occurrence_query import ProductAnalyticsOccurrenceQuery
 from datadog_api_client.v2.model.product_analytics_occurrence_query_data_source import (
@@ -7152,6 +7317,145 @@ from datadog_api_client.v2.model.product_analytics_occurrence_query_data_source 
 from datadog_api_client.v2.model.product_analytics_occurrence_search import ProductAnalyticsOccurrenceSearch
 from datadog_api_client.v2.model.product_analytics_response_meta import ProductAnalyticsResponseMeta
 from datadog_api_client.v2.model.product_analytics_response_meta_status import ProductAnalyticsResponseMetaStatus
+from datadog_api_client.v2.model.product_analytics_retention_aggregation_target import (
+    ProductAnalyticsRetentionAggregationTarget,
+)
+from datadog_api_client.v2.model.product_analytics_retention_aggregation_target_type import (
+    ProductAnalyticsRetentionAggregationTargetType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_calendar_time_interval import (
+    ProductAnalyticsRetentionCalendarTimeInterval,
+)
+from datadog_api_client.v2.model.product_analytics_retention_calendar_time_interval_type import (
+    ProductAnalyticsRetentionCalendarTimeIntervalType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_cell_scope import ProductAnalyticsRetentionCellScope
+from datadog_api_client.v2.model.product_analytics_retention_cell_scope_type import (
+    ProductAnalyticsRetentionCellScopeType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_cohort_criteria import (
+    ProductAnalyticsRetentionCohortCriteria,
+)
+from datadog_api_client.v2.model.product_analytics_retention_cohort_scope import ProductAnalyticsRetentionCohortScope
+from datadog_api_client.v2.model.product_analytics_retention_cohort_scope_type import (
+    ProductAnalyticsRetentionCohortScopeType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_cohort_target import ProductAnalyticsRetentionCohortTarget
+from datadog_api_client.v2.model.product_analytics_retention_compute import ProductAnalyticsRetentionCompute
+from datadog_api_client.v2.model.product_analytics_retention_compute_metric import (
+    ProductAnalyticsRetentionComputeMetric,
+)
+from datadog_api_client.v2.model.product_analytics_retention_entity import ProductAnalyticsRetentionEntity
+from datadog_api_client.v2.model.product_analytics_retention_filters import ProductAnalyticsRetentionFilters
+from datadog_api_client.v2.model.product_analytics_retention_fixed_time_interval import (
+    ProductAnalyticsRetentionFixedTimeInterval,
+)
+from datadog_api_client.v2.model.product_analytics_retention_fixed_time_interval_type import (
+    ProductAnalyticsRetentionFixedTimeIntervalType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_fixed_time_interval_unit import (
+    ProductAnalyticsRetentionFixedTimeIntervalUnit,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_cohort import ProductAnalyticsRetentionGridCohort
+from datadog_api_client.v2.model.product_analytics_retention_grid_cohort_cell import (
+    ProductAnalyticsRetentionGridCohortCell,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_cohort_type import (
+    ProductAnalyticsRetentionGridCohortType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_query import ProductAnalyticsRetentionGridQuery
+from datadog_api_client.v2.model.product_analytics_retention_grid_request import ProductAnalyticsRetentionGridRequest
+from datadog_api_client.v2.model.product_analytics_retention_grid_request_attributes import (
+    ProductAnalyticsRetentionGridRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_request_data import (
+    ProductAnalyticsRetentionGridRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_request_type import (
+    ProductAnalyticsRetentionGridRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_response import ProductAnalyticsRetentionGridResponse
+from datadog_api_client.v2.model.product_analytics_retention_grid_response_attributes import (
+    ProductAnalyticsRetentionGridResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_response_data import (
+    ProductAnalyticsRetentionGridResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_retention_grid_response_type import (
+    ProductAnalyticsRetentionGridResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_group_by import ProductAnalyticsRetentionGroupBy
+from datadog_api_client.v2.model.product_analytics_retention_group_by_target import (
+    ProductAnalyticsRetentionGroupByTarget,
+)
+from datadog_api_client.v2.model.product_analytics_retention_index_target import ProductAnalyticsRetentionIndexTarget
+from datadog_api_client.v2.model.product_analytics_retention_index_target_type import (
+    ProductAnalyticsRetentionIndexTargetType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_list_column import ProductAnalyticsRetentionListColumn
+from datadog_api_client.v2.model.product_analytics_retention_list_column_field import (
+    ProductAnalyticsRetentionListColumnField,
+)
+from datadog_api_client.v2.model.product_analytics_retention_list_query import ProductAnalyticsRetentionListQuery
+from datadog_api_client.v2.model.product_analytics_retention_list_record import ProductAnalyticsRetentionListRecord
+from datadog_api_client.v2.model.product_analytics_retention_list_request import ProductAnalyticsRetentionListRequest
+from datadog_api_client.v2.model.product_analytics_retention_list_request_attributes import (
+    ProductAnalyticsRetentionListRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_retention_list_request_data import (
+    ProductAnalyticsRetentionListRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_retention_list_request_type import (
+    ProductAnalyticsRetentionListRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_list_response import ProductAnalyticsRetentionListResponse
+from datadog_api_client.v2.model.product_analytics_retention_list_response_attributes import (
+    ProductAnalyticsRetentionListResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_retention_list_response_data import (
+    ProductAnalyticsRetentionListResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_retention_list_response_type import (
+    ProductAnalyticsRetentionListResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_period import ProductAnalyticsRetentionPeriod
+from datadog_api_client.v2.model.product_analytics_retention_return_condition import (
+    ProductAnalyticsRetentionReturnCondition,
+)
+from datadog_api_client.v2.model.product_analytics_retention_return_criteria import (
+    ProductAnalyticsRetentionReturnCriteria,
+)
+from datadog_api_client.v2.model.product_analytics_retention_return_period_scope import (
+    ProductAnalyticsRetentionReturnPeriodScope,
+)
+from datadog_api_client.v2.model.product_analytics_retention_return_period_scope_type import (
+    ProductAnalyticsRetentionReturnPeriodScopeType,
+)
+from datadog_api_client.v2.model.product_analytics_retention_scope import ProductAnalyticsRetentionScope
+from datadog_api_client.v2.model.product_analytics_retention_search import ProductAnalyticsRetentionSearch
+from datadog_api_client.v2.model.product_analytics_retention_time_interval import ProductAnalyticsRetentionTimeInterval
+from datadog_api_client.v2.model.product_analytics_sankey_aggregated_node import ProductAnalyticsSankeyAggregatedNode
+from datadog_api_client.v2.model.product_analytics_sankey_aggregated_node_type import (
+    ProductAnalyticsSankeyAggregatedNodeType,
+)
+from datadog_api_client.v2.model.product_analytics_sankey_definition import ProductAnalyticsSankeyDefinition
+from datadog_api_client.v2.model.product_analytics_sankey_link import ProductAnalyticsSankeyLink
+from datadog_api_client.v2.model.product_analytics_sankey_node import ProductAnalyticsSankeyNode
+from datadog_api_client.v2.model.product_analytics_sankey_node_type import ProductAnalyticsSankeyNodeType
+from datadog_api_client.v2.model.product_analytics_sankey_request import ProductAnalyticsSankeyRequest
+from datadog_api_client.v2.model.product_analytics_sankey_request_attributes import (
+    ProductAnalyticsSankeyRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_sankey_request_data import ProductAnalyticsSankeyRequestData
+from datadog_api_client.v2.model.product_analytics_sankey_request_type import ProductAnalyticsSankeyRequestType
+from datadog_api_client.v2.model.product_analytics_sankey_response import ProductAnalyticsSankeyResponse
+from datadog_api_client.v2.model.product_analytics_sankey_response_attributes import (
+    ProductAnalyticsSankeyResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_sankey_response_data import ProductAnalyticsSankeyResponseData
+from datadog_api_client.v2.model.product_analytics_sankey_response_type import ProductAnalyticsSankeyResponseType
+from datadog_api_client.v2.model.product_analytics_sankey_search import ProductAnalyticsSankeySearch
+from datadog_api_client.v2.model.product_analytics_sankey_time import ProductAnalyticsSankeyTime
 from datadog_api_client.v2.model.product_analytics_scalar_column import ProductAnalyticsScalarColumn
 from datadog_api_client.v2.model.product_analytics_scalar_column_meta import ProductAnalyticsScalarColumnMeta
 from datadog_api_client.v2.model.product_analytics_scalar_column_type import ProductAnalyticsScalarColumnType
@@ -15651,6 +15955,18 @@ __all__ = [
     "ProcessSummaryAttributes",
     "ProcessSummaryType",
     "ProcessTimeseriesQuery",
+    "ProductAnalyticsAnalyticsListQuery",
+    "ProductAnalyticsAnalyticsListRecord",
+    "ProductAnalyticsAnalyticsListRequest",
+    "ProductAnalyticsAnalyticsListRequestAttributes",
+    "ProductAnalyticsAnalyticsListRequestData",
+    "ProductAnalyticsAnalyticsListRequestType",
+    "ProductAnalyticsAnalyticsListResponse",
+    "ProductAnalyticsAnalyticsListResponseAttributes",
+    "ProductAnalyticsAnalyticsListResponseData",
+    "ProductAnalyticsAnalyticsListResponseType",
+    "ProductAnalyticsAnalyticsListSort",
+    "ProductAnalyticsAnalyticsListSortOrder",
     "ProductAnalyticsAnalyticsQuery",
     "ProductAnalyticsAnalyticsRequest",
     "ProductAnalyticsAnalyticsRequestAttributes",
@@ -15661,20 +15977,158 @@ __all__ = [
     "ProductAnalyticsAudienceSegmentSubquery",
     "ProductAnalyticsAudienceUserSubquery",
     "ProductAnalyticsBaseQuery",
+    "ProductAnalyticsCalendarInterval",
+    "ProductAnalyticsCalendarIntervalType",
     "ProductAnalyticsCompute",
+    "ProductAnalyticsElapsedTime",
     "ProductAnalyticsEventQuery",
     "ProductAnalyticsEventQueryDataSource",
     "ProductAnalyticsEventSearch",
     "ProductAnalyticsExecutionType",
+    "ProductAnalyticsFormulaJourneyQuery",
+    "ProductAnalyticsFormulaJourneyRequest",
+    "ProductAnalyticsFormulaJourneyRequestAttributes",
+    "ProductAnalyticsFormulaJourneyRequestData",
+    "ProductAnalyticsFormulaJourneyRequestType",
+    "ProductAnalyticsFormulaRetentionQuery",
+    "ProductAnalyticsFormulaRetentionRequest",
+    "ProductAnalyticsFormulaRetentionRequestAttributes",
+    "ProductAnalyticsFormulaRetentionRequestData",
+    "ProductAnalyticsFormulaRetentionRequestType",
+    "ProductAnalyticsGraphQueryCompute",
+    "ProductAnalyticsGraphQueryGroupBy",
+    "ProductAnalyticsGraphQueryGroupBySource",
     "ProductAnalyticsGroupBy",
     "ProductAnalyticsGroupBySort",
     "ProductAnalyticsInterval",
+    "ProductAnalyticsJoinKeys",
+    "ProductAnalyticsJourneyAudienceAccountQuery",
+    "ProductAnalyticsJourneyAudienceFilters",
+    "ProductAnalyticsJourneyAudienceSegmentQuery",
+    "ProductAnalyticsJourneyAudienceUserQuery",
+    "ProductAnalyticsJourneyComputedColumn",
+    "ProductAnalyticsJourneyComputedColumnName",
+    "ProductAnalyticsJourneyConversionType",
+    "ProductAnalyticsJourneyEntity",
+    "ProductAnalyticsJourneyFunnelCompute",
+    "ProductAnalyticsJourneyFunnelQuery",
+    "ProductAnalyticsJourneyFunnelRequest",
+    "ProductAnalyticsJourneyFunnelRequestAttributes",
+    "ProductAnalyticsJourneyFunnelRequestData",
+    "ProductAnalyticsJourneyFunnelResponse",
+    "ProductAnalyticsJourneyFunnelResponseAttributes",
+    "ProductAnalyticsJourneyFunnelResponseData",
+    "ProductAnalyticsJourneyFunnelResponseType",
+    "ProductAnalyticsJourneyFunnelStep",
+    "ProductAnalyticsJourneyFunnelStepGroup",
+    "ProductAnalyticsJourneyListQuery",
+    "ProductAnalyticsJourneyListRecord",
+    "ProductAnalyticsJourneyListRequest",
+    "ProductAnalyticsJourneyListRequestAttributes",
+    "ProductAnalyticsJourneyListRequestData",
+    "ProductAnalyticsJourneyListRequestType",
+    "ProductAnalyticsJourneyListResponse",
+    "ProductAnalyticsJourneyListResponseAttributes",
+    "ProductAnalyticsJourneyListResponseData",
+    "ProductAnalyticsJourneyListResponseType",
+    "ProductAnalyticsJourneyListSort",
+    "ProductAnalyticsJourneyNodeTarget",
+    "ProductAnalyticsJourneyNodeTargetType",
+    "ProductAnalyticsJourneyPathTarget",
+    "ProductAnalyticsJourneyPathTargetType",
+    "ProductAnalyticsJourneyRequestType",
+    "ProductAnalyticsJourneyScalarCompute",
+    "ProductAnalyticsJourneyScalarQuery",
+    "ProductAnalyticsJourneyScalarRequest",
+    "ProductAnalyticsJourneyScalarRequestAttributes",
+    "ProductAnalyticsJourneyScalarRequestData",
+    "ProductAnalyticsJourneyScalarResponse",
+    "ProductAnalyticsJourneyScalarResponseData",
+    "ProductAnalyticsJourneyScalarResponseType",
+    "ProductAnalyticsJourneySearch",
+    "ProductAnalyticsJourneySearchFilters",
+    "ProductAnalyticsJourneySearchGraphFilter",
+    "ProductAnalyticsJourneySearchGraphFilterName",
+    "ProductAnalyticsJourneySearchGraphFilterOperator",
+    "ProductAnalyticsJourneyTarget",
+    "ProductAnalyticsJourneyTimeseriesResponse",
+    "ProductAnalyticsJourneyTimeseriesResponseData",
+    "ProductAnalyticsJourneyTimeseriesResponseType",
     "ProductAnalyticsOccurrenceFilter",
     "ProductAnalyticsOccurrenceQuery",
     "ProductAnalyticsOccurrenceQueryDataSource",
     "ProductAnalyticsOccurrenceSearch",
     "ProductAnalyticsResponseMeta",
     "ProductAnalyticsResponseMetaStatus",
+    "ProductAnalyticsRetentionAggregationTarget",
+    "ProductAnalyticsRetentionAggregationTargetType",
+    "ProductAnalyticsRetentionCalendarTimeInterval",
+    "ProductAnalyticsRetentionCalendarTimeIntervalType",
+    "ProductAnalyticsRetentionCellScope",
+    "ProductAnalyticsRetentionCellScopeType",
+    "ProductAnalyticsRetentionCohortCriteria",
+    "ProductAnalyticsRetentionCohortScope",
+    "ProductAnalyticsRetentionCohortScopeType",
+    "ProductAnalyticsRetentionCohortTarget",
+    "ProductAnalyticsRetentionCompute",
+    "ProductAnalyticsRetentionComputeMetric",
+    "ProductAnalyticsRetentionEntity",
+    "ProductAnalyticsRetentionFilters",
+    "ProductAnalyticsRetentionFixedTimeInterval",
+    "ProductAnalyticsRetentionFixedTimeIntervalType",
+    "ProductAnalyticsRetentionFixedTimeIntervalUnit",
+    "ProductAnalyticsRetentionGridCohort",
+    "ProductAnalyticsRetentionGridCohortCell",
+    "ProductAnalyticsRetentionGridCohortType",
+    "ProductAnalyticsRetentionGridQuery",
+    "ProductAnalyticsRetentionGridRequest",
+    "ProductAnalyticsRetentionGridRequestAttributes",
+    "ProductAnalyticsRetentionGridRequestData",
+    "ProductAnalyticsRetentionGridRequestType",
+    "ProductAnalyticsRetentionGridResponse",
+    "ProductAnalyticsRetentionGridResponseAttributes",
+    "ProductAnalyticsRetentionGridResponseData",
+    "ProductAnalyticsRetentionGridResponseType",
+    "ProductAnalyticsRetentionGroupBy",
+    "ProductAnalyticsRetentionGroupByTarget",
+    "ProductAnalyticsRetentionIndexTarget",
+    "ProductAnalyticsRetentionIndexTargetType",
+    "ProductAnalyticsRetentionListColumn",
+    "ProductAnalyticsRetentionListColumnField",
+    "ProductAnalyticsRetentionListQuery",
+    "ProductAnalyticsRetentionListRecord",
+    "ProductAnalyticsRetentionListRequest",
+    "ProductAnalyticsRetentionListRequestAttributes",
+    "ProductAnalyticsRetentionListRequestData",
+    "ProductAnalyticsRetentionListRequestType",
+    "ProductAnalyticsRetentionListResponse",
+    "ProductAnalyticsRetentionListResponseAttributes",
+    "ProductAnalyticsRetentionListResponseData",
+    "ProductAnalyticsRetentionListResponseType",
+    "ProductAnalyticsRetentionPeriod",
+    "ProductAnalyticsRetentionReturnCondition",
+    "ProductAnalyticsRetentionReturnCriteria",
+    "ProductAnalyticsRetentionReturnPeriodScope",
+    "ProductAnalyticsRetentionReturnPeriodScopeType",
+    "ProductAnalyticsRetentionScope",
+    "ProductAnalyticsRetentionSearch",
+    "ProductAnalyticsRetentionTimeInterval",
+    "ProductAnalyticsSankeyAggregatedNode",
+    "ProductAnalyticsSankeyAggregatedNodeType",
+    "ProductAnalyticsSankeyDefinition",
+    "ProductAnalyticsSankeyLink",
+    "ProductAnalyticsSankeyNode",
+    "ProductAnalyticsSankeyNodeType",
+    "ProductAnalyticsSankeyRequest",
+    "ProductAnalyticsSankeyRequestAttributes",
+    "ProductAnalyticsSankeyRequestData",
+    "ProductAnalyticsSankeyRequestType",
+    "ProductAnalyticsSankeyResponse",
+    "ProductAnalyticsSankeyResponseAttributes",
+    "ProductAnalyticsSankeyResponseData",
+    "ProductAnalyticsSankeyResponseType",
+    "ProductAnalyticsSankeySearch",
+    "ProductAnalyticsSankeyTime",
     "ProductAnalyticsScalarColumn",
     "ProductAnalyticsScalarColumnMeta",
     "ProductAnalyticsScalarColumnType",

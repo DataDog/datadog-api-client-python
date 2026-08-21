@@ -43,7 +43,7 @@ class ProductAnalyticsResponseMeta(ModelNormal):
         """
         Metadata for a Product Analytics query response.
 
-        :param request_id: Unique identifier for the request, used for multi-step query continuation.
+        :param request_id: Unique identifier of the query.
         :type request_id: str, optional
 
         :param status: The execution status of a Product Analytics query.

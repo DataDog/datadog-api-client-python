@@ -48,7 +48,8 @@ class ProductAnalyticsTimeseriesResponseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a timeseries analytics response, containing series data, timestamps, and interval definitions.
+        Attributes of a timeseries analytics response, containing series data, timestamps, and
+        interval definitions.
 
         :param intervals: Interval definitions describing the time buckets used in the response.
         :type intervals: [ProductAnalyticsInterval], optional

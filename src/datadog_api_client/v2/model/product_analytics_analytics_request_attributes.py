@@ -61,7 +61,7 @@ class ProductAnalyticsAnalyticsRequestAttributes(ModelNormal):
         :param query: The analytics query definition containing a base query, compute rule, and optional grouping.
         :type query: ProductAnalyticsAnalyticsQuery
 
-        :param request_id: Optional request ID for multi-step query continuation.
+        :param request_id: Unique identifier of the query.
         :type request_id: str, optional
 
         :param to: End time in epoch milliseconds.
