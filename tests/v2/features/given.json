@@ -1334,6 +1334,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\":{\"type\":\"teams_ownership_mappings\",\"attributes\":{\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-{{ unique_lower_alnum }}\",\"service\":\"web-checkout-{{ unique_lower_alnum }}\",\"match_type\":\"exact\"}}}"
+      }
+    ],
+    "step": "there is a valid \"teams_ownership_mapping\" in the system",
+    "key": "teams_ownership_mapping",
+    "tag": "Rum Teams Ownership",
+    "operationId": "CreateTeamsOwnershipMapping"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"owner\": \"Datadog\",\n      \"scorecard_name\": \"OpenAPI Spec Test Best Practices\"\n    }\n  }\n}"
       }
     ],

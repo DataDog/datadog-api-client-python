@@ -9970,6 +9970,43 @@ from datadog_api_client.v2.model.teams_field import TeamsField
 from datadog_api_client.v2.model.teams_hierarchy_links_response_links import TeamsHierarchyLinksResponseLinks
 from datadog_api_client.v2.model.teams_hierarchy_links_response_meta import TeamsHierarchyLinksResponseMeta
 from datadog_api_client.v2.model.teams_hierarchy_links_response_meta_page import TeamsHierarchyLinksResponseMetaPage
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_error import TeamsOwnershipMappingBatchError
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_operation import TeamsOwnershipMappingBatchOperation
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_data import (
+    TeamsOwnershipMappingBatchOperationData,
+)
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_data_attributes import (
+    TeamsOwnershipMappingBatchOperationDataAttributes,
+)
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_op import TeamsOwnershipMappingBatchOperationOp
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_ref import (
+    TeamsOwnershipMappingBatchOperationRef,
+)
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_request import TeamsOwnershipMappingBatchRequest
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_response import TeamsOwnershipMappingBatchResponse
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_result import TeamsOwnershipMappingBatchResult
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_result_data import TeamsOwnershipMappingBatchResultData
+from datadog_api_client.v2.model.teams_ownership_mapping_batch_result_data_attributes import (
+    TeamsOwnershipMappingBatchResultDataAttributes,
+)
+from datadog_api_client.v2.model.teams_ownership_mapping_create_data import TeamsOwnershipMappingCreateData
+from datadog_api_client.v2.model.teams_ownership_mapping_create_data_attributes import (
+    TeamsOwnershipMappingCreateDataAttributes,
+)
+from datadog_api_client.v2.model.teams_ownership_mapping_create_request import TeamsOwnershipMappingCreateRequest
+from datadog_api_client.v2.model.teams_ownership_mapping_response import TeamsOwnershipMappingResponse
+from datadog_api_client.v2.model.teams_ownership_mapping_response_attributes import (
+    TeamsOwnershipMappingResponseAttributes,
+)
+from datadog_api_client.v2.model.teams_ownership_mapping_response_data import TeamsOwnershipMappingResponseData
+from datadog_api_client.v2.model.teams_ownership_mapping_type import TeamsOwnershipMappingType
+from datadog_api_client.v2.model.teams_ownership_mappings_response import TeamsOwnershipMappingsResponse
+from datadog_api_client.v2.model.teams_ownership_match_type import TeamsOwnershipMatchType
+from datadog_api_client.v2.model.teams_ownership_rule_response_attributes import TeamsOwnershipRuleResponseAttributes
+from datadog_api_client.v2.model.teams_ownership_rule_response_data import TeamsOwnershipRuleResponseData
+from datadog_api_client.v2.model.teams_ownership_rule_team_mapping import TeamsOwnershipRuleTeamMapping
+from datadog_api_client.v2.model.teams_ownership_rule_type import TeamsOwnershipRuleType
+from datadog_api_client.v2.model.teams_ownership_rules_response import TeamsOwnershipRulesResponse
 from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
@@ -17611,6 +17648,31 @@ __all__ = [
     "TeamsHierarchyLinksResponseLinks",
     "TeamsHierarchyLinksResponseMeta",
     "TeamsHierarchyLinksResponseMetaPage",
+    "TeamsOwnershipMappingBatchError",
+    "TeamsOwnershipMappingBatchOperation",
+    "TeamsOwnershipMappingBatchOperationData",
+    "TeamsOwnershipMappingBatchOperationDataAttributes",
+    "TeamsOwnershipMappingBatchOperationOp",
+    "TeamsOwnershipMappingBatchOperationRef",
+    "TeamsOwnershipMappingBatchRequest",
+    "TeamsOwnershipMappingBatchResponse",
+    "TeamsOwnershipMappingBatchResult",
+    "TeamsOwnershipMappingBatchResultData",
+    "TeamsOwnershipMappingBatchResultDataAttributes",
+    "TeamsOwnershipMappingCreateData",
+    "TeamsOwnershipMappingCreateDataAttributes",
+    "TeamsOwnershipMappingCreateRequest",
+    "TeamsOwnershipMappingResponse",
+    "TeamsOwnershipMappingResponseAttributes",
+    "TeamsOwnershipMappingResponseData",
+    "TeamsOwnershipMappingType",
+    "TeamsOwnershipMappingsResponse",
+    "TeamsOwnershipMatchType",
+    "TeamsOwnershipRuleResponseAttributes",
+    "TeamsOwnershipRuleResponseData",
+    "TeamsOwnershipRuleTeamMapping",
+    "TeamsOwnershipRuleType",
+    "TeamsOwnershipRulesResponse",
     "TeamsResponse",
     "TeamsResponseLinks",
     "TeamsResponseMeta",

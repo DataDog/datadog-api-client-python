@@ -7104,6 +7104,56 @@
       "type": "idempotent"
     }
   },
+  "ListTeamsOwnershipMappings": {
+    "tag": "Rum Teams Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTeamsOwnershipMapping": {
+    "tag": "Rum Teams Ownership",
+    "undo": {
+      "operationId": "DeleteTeamsOwnershipMapping",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateTeamsOwnershipMappingsBatch": {
+    "tag": "Rum Teams Ownership",
+    "undo": {
+      "operationId": "DeleteTeamsOwnershipMapping",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "atomic:results[0].data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTeamsOwnershipMapping": {
+    "tag": "Rum Teams Ownership",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTeamsOwnershipMapping": {
+    "tag": "Rum Teams Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListTeamsOwnershipRules": {
+    "tag": "Rum Teams Ownership",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListRUMEvents": {
     "tag": "RUM",
     "undo": {
