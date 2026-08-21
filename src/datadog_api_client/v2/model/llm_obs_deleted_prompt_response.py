@@ -30,9 +30,9 @@ class LLMObsDeletedPromptResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsDeletedPromptData, **kwargs):
         """
-        Response confirming that an LLM Observability prompt was deleted.
+        Response confirming that an Agent Observability prompt was deleted.
 
-        :param data: Data object confirming that an LLM Observability prompt was deleted.
+        :param data: Data object confirming that an Agent Observability prompt was deleted.
         :type data: LLMObsDeletedPromptData
         """
         super().__init__(kwargs)

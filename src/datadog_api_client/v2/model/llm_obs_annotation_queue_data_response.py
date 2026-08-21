@@ -46,15 +46,15 @@ class LLMObsAnnotationQueueDataResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Data object for an LLM Observability annotation queue.
+        Data object for an Agent Observability annotation queue.
 
-        :param attributes: Attributes of an LLM Observability annotation queue.
+        :param attributes: Attributes of an Agent Observability annotation queue.
         :type attributes: LLMObsAnnotationQueueDataAttributesResponse
 
         :param id: Unique identifier of the annotation queue.
         :type id: str
 
-        :param type: Resource type of an LLM Observability annotation queue.
+        :param type: Resource type of an Agent Observability annotation queue.
         :type type: LLMObsAnnotationQueueType
         """
         super().__init__(kwargs)

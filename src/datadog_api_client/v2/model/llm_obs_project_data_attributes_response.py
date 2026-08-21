@@ -34,7 +34,7 @@ class LLMObsProjectDataAttributesResponse(ModelNormal):
         self_, created_at: datetime, description: Union[str, none_type], name: str, updated_at: datetime, **kwargs
     ):
         """
-        Attributes of an LLM Observability project.
+        Attributes of an Agent Observability project.
 
         :param created_at: Timestamp when the project was created.
         :type created_at: datetime

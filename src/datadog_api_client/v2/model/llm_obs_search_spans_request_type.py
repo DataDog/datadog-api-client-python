@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsSearchSpansRequestType(ModelSimple):
     """
-    Resource type for an LLM Observability spans search request.
+    Resource type for an Agent Observability spans search request.
 
     :param value: If omitted defaults to "spans". Must be one of ["spans"].
     :type value: str

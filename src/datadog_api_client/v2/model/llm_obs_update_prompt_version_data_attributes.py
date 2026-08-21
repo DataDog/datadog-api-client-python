@@ -46,7 +46,7 @@ class LLMObsUpdatePromptVersionDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for updating an LLM Observability prompt version. At least one of ``description`` , ``labels`` , or ``env_ids`` must be provided; all three attributes are optional individually.
+        Attributes for updating an Agent Observability prompt version. At least one of ``description`` , ``labels`` , or ``env_ids`` must be provided; all three attributes are optional individually.
 
         :param description: Optional new description for this version.
         :type description: str, optional

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsAnnotationsType(ModelSimple):
     """
-    Resource type for LLM Observability annotations.
+    Resource type for Agent Observability annotations.
 
     :param value: If omitted defaults to "annotations". Must be one of ["annotations"].
     :type value: str

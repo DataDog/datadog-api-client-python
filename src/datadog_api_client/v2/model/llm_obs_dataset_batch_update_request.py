@@ -34,9 +34,9 @@ class LLMObsDatasetBatchUpdateRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetBatchUpdateDataRequest, **kwargs):
         """
-        Request to batch-insert, update, and delete records in an LLM Observability dataset.
+        Request to batch-insert, update, and delete records in an Agent Observability dataset.
 
-        :param data: Data object for batch-updating records in an LLM Observability dataset.
+        :param data: Data object for batch-updating records in an Agent Observability dataset.
         :type data: LLMObsDatasetBatchUpdateDataRequest
         """
         super().__init__(kwargs)

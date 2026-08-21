@@ -12,7 +12,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283",
+                    "prompt_id": "Test-Create_a_new_Agent_Observability_prompt_version_returns_Bad_Request_response-1784543283",
                     "template": [
                       {
                         "content": "Hello",
@@ -32,7 +32,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"9c67c0e2-0806-589b-8e8c-83ab2e6f76e3\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T10:28:04.139526235Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T10:28:04.139526235Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"9c67c0e2-0806-589b-8e8c-83ab2e6f76e3\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T10:28:04.139526235Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T10:28:04.139526235Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_a_new_Agent_Observability_prompt_version_returns_Bad_Request_response-1784543283\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -56,7 +56,7 @@
             },
             "content_type": "application/json",
             "method": "POST",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283/versions",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_Agent_Observability_prompt_version_returns_Bad_Request_response-1784543283/versions",
             "query": []
           },
           "response": {
@@ -79,13 +79,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_Agent_Observability_prompt_version_returns_Bad_Request_response-1784543283",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"9c67c0e2-0806-589b-8e8c-83ab2e6f76e3\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T10:28:05.328346Z\",\"prompt_id\":\"Test-Create_a_new_LLM_Observability_prompt_version_returns_Bad_Request_response-1784543283\"}}}"
+              "value": "{\"data\":{\"id\":\"9c67c0e2-0806-589b-8e8c-83ab2e6f76e3\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T10:28:05.328346Z\",\"prompt_id\":\"Test-Create_a_new_Agent_Observability_prompt_version_returns_Bad_Request_response-1784543283\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -95,7 +95,7 @@
           }
         }
       ],
-      "scenario": "Create a new LLM Observability prompt version returns \"Bad Request\" response",
+      "scenario": "Create a new Agent Observability prompt version returns \"Bad Request\" response",
       "version": "v2"
     },
     {
@@ -140,7 +140,7 @@
           }
         }
       ],
-      "scenario": "Create a new LLM Observability prompt version returns \"Not Found\" response",
+      "scenario": "Create a new Agent Observability prompt version returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -154,7 +154,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144",
+                    "prompt_id": "Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144",
                     "template": [
                       {
                         "content": "Hello",
@@ -174,7 +174,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-21T12:32:24.497241896Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-21T12:32:24.497241896Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-21T12:32:24.497241896Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-21T12:32:24.497241896Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -207,13 +207,13 @@
             },
             "content_type": "application/json",
             "method": "POST",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144/versions",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144/versions",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"a002055b-7e0f-501d-ba5b-45df41fbca73\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-21T12:32:25.272760959Z\",\"prompt_id\":\"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144\",\"prompt_uuid\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"template\":[{\"content\":\"You are a concise customer support assistant for {{company_name}}.\",\"role\":\"system\"},{\"content\":\"Answer {{customer_name}}'s question: {{question}}\",\"role\":\"user\"}],\"version\":2,\"version_created_at\":\"2026-07-21T12:32:25.272760959Z\"}}}"
+              "value": "{\"data\":{\"id\":\"a002055b-7e0f-501d-ba5b-45df41fbca73\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-21T12:32:25.272760959Z\",\"prompt_id\":\"Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144\",\"prompt_uuid\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"template\":[{\"content\":\"You are a concise customer support assistant for {{company_name}}.\",\"role\":\"system\"},{\"content\":\"Answer {{customer_name}}'s question: {{question}}\",\"role\":\"user\"}],\"version\":2,\"version_created_at\":\"2026-07-21T12:32:25.272760959Z\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -230,13 +230,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-21T12:32:25.768356Z\",\"prompt_id\":\"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144\"}}}"
+              "value": "{\"data\":{\"id\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-21T12:32:25.768356Z\",\"prompt_id\":\"Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -253,13 +253,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-21T12:32:26.168974Z\",\"prompt_id\":\"Test-Create_a_new_LLM_Observability_prompt_version_returns_OK_response-1784637144\"}}}"
+              "value": "{\"data\":{\"id\":\"c0077820-d57d-54d6-be0c-b62e4e827e67\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-21T12:32:26.168974Z\",\"prompt_id\":\"Test-Create_a_new_Agent_Observability_prompt_version_returns_OK_response-1784637144\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -269,7 +269,7 @@
           }
         }
       ],
-      "scenario": "Create a new LLM Observability prompt version returns \"OK\" response",
+      "scenario": "Create a new Agent Observability prompt version returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -283,7 +283,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Create_an_LLM_Observability_prompt_returns_Bad_Request_response-1784543299",
+                    "prompt_id": "Test-Create_an_Agent_Observability_prompt_returns_Bad_Request_response-1784543299",
                     "template": " "
                   },
                   "type": "prompt-templates"
@@ -308,7 +308,7 @@
           }
         }
       ],
-      "scenario": "Create an LLM Observability prompt returns \"Bad Request\" response",
+      "scenario": "Create an Agent Observability prompt returns \"Bad Request\" response",
       "version": "v2"
     },
     {
@@ -322,7 +322,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Create_an_LLM_Observability_prompt_returns_Conflict_response-1784539199",
+                    "prompt_id": "Test-Create_an_Agent_Observability_prompt_returns_Conflict_response-1784539199",
                     "template": [
                       {
                         "content": "Hello",
@@ -342,7 +342,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"2fedf714-8445-571b-bad9-f7d4bb131524\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:00.140121332Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:00.140121332Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_an_LLM_Observability_prompt_returns_Conflict_response-1784539199\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"2fedf714-8445-571b-bad9-f7d4bb131524\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:00.140121332Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:00.140121332Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_an_Agent_Observability_prompt_returns_Conflict_response-1784539199\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -360,7 +360,7 @@
                   "attributes": {
                     "env_ids": [],
                     "labels": [],
-                    "prompt_id": "Test-Create_an_LLM_Observability_prompt_returns_Conflict_response-1784539199",
+                    "prompt_id": "Test-Create_an_Agent_Observability_prompt_returns_Conflict_response-1784539199",
                     "template": [
                       {
                         "content": "Hello",
@@ -397,13 +397,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_an_LLM_Observability_prompt_returns_Conflict_response-1784539199",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_an_Agent_Observability_prompt_returns_Conflict_response-1784539199",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"2fedf714-8445-571b-bad9-f7d4bb131524\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:01.051306Z\",\"prompt_id\":\"Test-Create_an_LLM_Observability_prompt_returns_Conflict_response-1784539199\"}}}"
+              "value": "{\"data\":{\"id\":\"2fedf714-8445-571b-bad9-f7d4bb131524\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:01.051306Z\",\"prompt_id\":\"Test-Create_an_Agent_Observability_prompt_returns_Conflict_response-1784539199\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -413,7 +413,7 @@
           }
         }
       ],
-      "scenario": "Create an LLM Observability prompt returns \"Conflict\" response",
+      "scenario": "Create an Agent Observability prompt returns \"Conflict\" response",
       "version": "v2"
     },
     {
@@ -427,7 +427,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Create_an_LLM_Observability_prompt_returns_OK_response-1784637113",
+                    "prompt_id": "Test-Create_an_Agent_Observability_prompt_returns_OK_response-1784637113",
                     "template": [
                       {
                         "content": "You are a helpful customer support assistant for {{company_name}}.",
@@ -452,7 +452,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"7d3137ab-7d6a-5358-b791-26ead4540e09\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-21T12:31:53.812929348Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-21T12:31:53.812929348Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_an_LLM_Observability_prompt_returns_OK_response-1784637113\",\"source\":\"registry\",\"title\":\"Customer Support Assistant\"}}}"
+              "value": "{\"data\":{\"id\":\"7d3137ab-7d6a-5358-b791-26ead4540e09\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-21T12:31:53.812929348Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-21T12:31:53.812929348Z\",\"num_versions\":1,\"prompt_id\":\"Test-Create_an_Agent_Observability_prompt_returns_OK_response-1784637113\",\"source\":\"registry\",\"title\":\"Customer Support Assistant\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -469,13 +469,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_an_LLM_Observability_prompt_returns_OK_response-1784637113",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Create_an_Agent_Observability_prompt_returns_OK_response-1784637113",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"7d3137ab-7d6a-5358-b791-26ead4540e09\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-21T12:31:55.799078Z\",\"prompt_id\":\"Test-Create_an_LLM_Observability_prompt_returns_OK_response-1784637113\"}}}"
+              "value": "{\"data\":{\"id\":\"7d3137ab-7d6a-5358-b791-26ead4540e09\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-21T12:31:55.799078Z\",\"prompt_id\":\"Test-Create_an_Agent_Observability_prompt_returns_OK_response-1784637113\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -485,7 +485,7 @@
           }
         }
       ],
-      "scenario": "Create an LLM Observability prompt returns \"OK\" response",
+      "scenario": "Create an Agent Observability prompt returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -516,7 +516,7 @@
           }
         }
       ],
-      "scenario": "Delete an LLM Observability prompt returns \"Not Found\" response",
+      "scenario": "Delete an Agent Observability prompt returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -530,7 +530,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Delete_an_LLM_Observability_prompt_returns_OK_response-1784539202",
+                    "prompt_id": "Test-Delete_an_Agent_Observability_prompt_returns_OK_response-1784539202",
                     "template": [
                       {
                         "content": "Hello",
@@ -550,7 +550,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"d5df9e4e-acd0-5d9f-b0d5-c09a643c33e2\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:02.660067768Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:02.660067768Z\",\"num_versions\":1,\"prompt_id\":\"Test-Delete_an_LLM_Observability_prompt_returns_OK_response-1784539202\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"d5df9e4e-acd0-5d9f-b0d5-c09a643c33e2\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:02.660067768Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:02.660067768Z\",\"num_versions\":1,\"prompt_id\":\"Test-Delete_an_Agent_Observability_prompt_returns_OK_response-1784539202\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -567,13 +567,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Delete_an_LLM_Observability_prompt_returns_OK_response-1784539202",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Delete_an_Agent_Observability_prompt_returns_OK_response-1784539202",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"d5df9e4e-acd0-5d9f-b0d5-c09a643c33e2\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:03.299559Z\",\"prompt_id\":\"Test-Delete_an_LLM_Observability_prompt_returns_OK_response-1784539202\"}}}"
+              "value": "{\"data\":{\"id\":\"d5df9e4e-acd0-5d9f-b0d5-c09a643c33e2\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:03.299559Z\",\"prompt_id\":\"Test-Delete_an_Agent_Observability_prompt_returns_OK_response-1784539202\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -590,13 +590,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Delete_an_LLM_Observability_prompt_returns_OK_response-1784539202",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Delete_an_Agent_Observability_prompt_returns_OK_response-1784539202",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"d5df9e4e-acd0-5d9f-b0d5-c09a643c33e2\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:03.637257Z\",\"prompt_id\":\"Test-Delete_an_LLM_Observability_prompt_returns_OK_response-1784539202\"}}}"
+              "value": "{\"data\":{\"id\":\"d5df9e4e-acd0-5d9f-b0d5-c09a643c33e2\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:03.637257Z\",\"prompt_id\":\"Test-Delete_an_Agent_Observability_prompt_returns_OK_response-1784539202\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -606,7 +606,7 @@
           }
         }
       ],
-      "scenario": "Delete an LLM Observability prompt returns \"OK\" response",
+      "scenario": "Delete an Agent Observability prompt returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -637,7 +637,7 @@
           }
         }
       ],
-      "scenario": "Get a specific LLM Observability prompt version returns \"Not Found\" response",
+      "scenario": "Get a specific Agent Observability prompt version returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -651,7 +651,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285",
+                    "prompt_id": "Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285",
                     "template": [
                       {
                         "content": "Hello",
@@ -671,7 +671,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T12:24:46.021742711Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T12:24:46.021742711Z\",\"num_versions\":1,\"prompt_id\":\"Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T12:24:46.021742711Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T12:24:46.021742711Z\",\"num_versions\":1,\"prompt_id\":\"Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -700,13 +700,13 @@
             },
             "content_type": "application/json",
             "method": "POST",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285/versions",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285/versions",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"d80790f5-cd99-5d57-b6e0-4d4bbbc21514\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T12:24:46.796641541Z\",\"prompt_id\":\"Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285\",\"prompt_uuid\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"template\":[{\"content\":\"Hello v2\",\"role\":\"user\"}],\"version\":2,\"version_created_at\":\"2026-07-20T12:24:46.796641541Z\"}}}"
+              "value": "{\"data\":{\"id\":\"d80790f5-cd99-5d57-b6e0-4d4bbbc21514\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T12:24:46.796641541Z\",\"prompt_id\":\"Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285\",\"prompt_uuid\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"template\":[{\"content\":\"Hello v2\",\"role\":\"user\"}],\"version\":2,\"version_created_at\":\"2026-07-20T12:24:46.796641541Z\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -723,13 +723,13 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285/versions/2",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285/versions/2",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"d80790f5-cd99-5d57-b6e0-4d4bbbc21514\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T12:24:46.796641Z\",\"prompt_id\":\"Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285\",\"prompt_uuid\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"template\":[{\"role\":\"user\",\"content\":\"Hello v2\"}],\"version\":2,\"version_created_at\":\"2026-07-20T12:24:46.796641Z\"}}}"
+              "value": "{\"data\":{\"id\":\"d80790f5-cd99-5d57-b6e0-4d4bbbc21514\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T12:24:46.796641Z\",\"prompt_id\":\"Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285\",\"prompt_uuid\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"template\":[{\"role\":\"user\",\"content\":\"Hello v2\"}],\"version\":2,\"version_created_at\":\"2026-07-20T12:24:46.796641Z\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -746,13 +746,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T12:24:48.753279Z\",\"prompt_id\":\"Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285\"}}}"
+              "value": "{\"data\":{\"id\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T12:24:48.753279Z\",\"prompt_id\":\"Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -769,13 +769,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T12:24:49.086069Z\",\"prompt_id\":\"Test-Get_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784550285\"}}}"
+              "value": "{\"data\":{\"id\":\"599ee1f4-9680-5ff8-92c9-ca31130057f3\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T12:24:49.086069Z\",\"prompt_id\":\"Test-Get_a_specific_Agent_Observability_prompt_version_returns_OK_response-1784550285\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -785,7 +785,7 @@
           }
         }
       ],
-      "scenario": "Get a specific LLM Observability prompt version returns \"OK\" response",
+      "scenario": "Get a specific Agent Observability prompt version returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -816,7 +816,7 @@
           }
         }
       ],
-      "scenario": "Get an LLM Observability prompt returns \"Not Found\" response",
+      "scenario": "Get an Agent Observability prompt returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -830,7 +830,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Get_an_LLM_Observability_prompt_returns_OK_response-1784539208",
+                    "prompt_id": "Test-Get_an_Agent_Observability_prompt_returns_OK_response-1784539208",
                     "template": [
                       {
                         "content": "Hello",
@@ -850,7 +850,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"95e93a91-1020-5a23-9cb7-c8ca6e3b1785\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:09.112910708Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:09.112910708Z\",\"num_versions\":1,\"prompt_id\":\"Test-Get_an_LLM_Observability_prompt_returns_OK_response-1784539208\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"95e93a91-1020-5a23-9cb7-c8ca6e3b1785\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:09.112910708Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:09.112910708Z\",\"num_versions\":1,\"prompt_id\":\"Test-Get_an_Agent_Observability_prompt_returns_OK_response-1784539208\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -867,13 +867,13 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_an_LLM_Observability_prompt_returns_OK_response-1784539208",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_an_Agent_Observability_prompt_returns_OK_response-1784539208",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"95e93a91-1020-5a23-9cb7-c8ca6e3b1785\",\"type\":\"prompt-templates\",\"attributes\":{\"chat_template\":[{\"role\":\"user\",\"content\":\"Hello\"}],\"prompt_id\":\"Test-Get_an_LLM_Observability_prompt_returns_OK_response-1784539208\",\"prompt_version_uuid\":\"9cd92cc7-2f51-5867-8148-eaf41efee79d\",\"version\":\"1\"}}}"
+              "value": "{\"data\":{\"id\":\"95e93a91-1020-5a23-9cb7-c8ca6e3b1785\",\"type\":\"prompt-templates\",\"attributes\":{\"chat_template\":[{\"role\":\"user\",\"content\":\"Hello\"}],\"prompt_id\":\"Test-Get_an_Agent_Observability_prompt_returns_OK_response-1784539208\",\"prompt_version_uuid\":\"9cd92cc7-2f51-5867-8148-eaf41efee79d\",\"version\":\"1\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -890,13 +890,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_an_LLM_Observability_prompt_returns_OK_response-1784539208",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Get_an_Agent_Observability_prompt_returns_OK_response-1784539208",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"95e93a91-1020-5a23-9cb7-c8ca6e3b1785\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:10.172623Z\",\"prompt_id\":\"Test-Get_an_LLM_Observability_prompt_returns_OK_response-1784539208\"}}}"
+              "value": "{\"data\":{\"id\":\"95e93a91-1020-5a23-9cb7-c8ca6e3b1785\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:10.172623Z\",\"prompt_id\":\"Test-Get_an_Agent_Observability_prompt_returns_OK_response-1784539208\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -906,7 +906,7 @@
           }
         }
       ],
-      "scenario": "Get an LLM Observability prompt returns \"OK\" response",
+      "scenario": "Get an Agent Observability prompt returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -920,7 +920,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-List_LLM_Observability_prompts_returns_OK_response-1784539804",
+                    "prompt_id": "Test-List_Agent_Observability_prompts_returns_OK_response-1784539804",
                     "template": [
                       {
                         "content": "Hello",
@@ -940,7 +940,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"b04a1ded-d2da-578c-a520-1c1dd2046d1c\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:30:04.928462935Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:30:04.928462935Z\",\"num_versions\":1,\"prompt_id\":\"Test-List_LLM_Observability_prompts_returns_OK_response-1784539804\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"b04a1ded-d2da-578c-a520-1c1dd2046d1c\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:30:04.928462935Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:30:04.928462935Z\",\"num_versions\":1,\"prompt_id\":\"Test-List_Agent_Observability_prompts_returns_OK_response-1784539804\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -961,14 +961,14 @@
             "query": [
               [
                 "filter[prompt_id]",
-                "Test-List_LLM_Observability_prompts_returns_OK_response-1784539804"
+                "Test-List_Agent_Observability_prompts_returns_OK_response-1784539804"
               ]
             ]
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":[{\"id\":\"b04a1ded-d2da-578c-a520-1c1dd2046d1c\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:30:04.928462Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:30:04.928462Z\",\"num_versions\":1,\"prompt_id\":\"Test-List_LLM_Observability_prompts_returns_OK_response-1784539804\",\"source\":\"registry\"}}]}"
+              "value": "{\"data\":[{\"id\":\"b04a1ded-d2da-578c-a520-1c1dd2046d1c\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:30:04.928462Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:30:04.928462Z\",\"num_versions\":1,\"prompt_id\":\"Test-List_Agent_Observability_prompts_returns_OK_response-1784539804\",\"source\":\"registry\"}}]}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -985,13 +985,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-List_LLM_Observability_prompts_returns_OK_response-1784539804",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-List_Agent_Observability_prompts_returns_OK_response-1784539804",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"b04a1ded-d2da-578c-a520-1c1dd2046d1c\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:30:06.787619Z\",\"prompt_id\":\"Test-List_LLM_Observability_prompts_returns_OK_response-1784539804\"}}}"
+              "value": "{\"data\":{\"id\":\"b04a1ded-d2da-578c-a520-1c1dd2046d1c\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:30:06.787619Z\",\"prompt_id\":\"Test-List_Agent_Observability_prompts_returns_OK_response-1784539804\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1001,7 +1001,7 @@
           }
         }
       ],
-      "scenario": "List LLM Observability prompts returns \"OK\" response",
+      "scenario": "List Agent Observability prompts returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -1015,7 +1015,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212",
+                    "prompt_id": "Test-List_versions_of_an_Agent_Observability_prompt_returns_OK_response-1784539212",
                     "template": [
                       {
                         "content": "Hello",
@@ -1035,7 +1035,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"31fdf246-89b8-5a48-9544-ff84c4504939\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:13.145132213Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:13.145132213Z\",\"num_versions\":1,\"prompt_id\":\"Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"31fdf246-89b8-5a48-9544-ff84c4504939\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:13.145132213Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:13.145132213Z\",\"num_versions\":1,\"prompt_id\":\"Test-List_versions_of_an_Agent_Observability_prompt_returns_OK_response-1784539212\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1052,13 +1052,13 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212/versions",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-List_versions_of_an_Agent_Observability_prompt_returns_OK_response-1784539212/versions",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":[{\"id\":\"e0cc7c1d-cbb6-589c-bcd9-d9c1b35aec60\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:13.145132Z\",\"prompt_id\":\"Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212\",\"prompt_uuid\":\"31fdf246-89b8-5a48-9544-ff84c4504939\",\"version\":1,\"version_created_at\":\"2026-07-20T09:20:13.145132Z\"}}]}"
+              "value": "{\"data\":[{\"id\":\"e0cc7c1d-cbb6-589c-bcd9-d9c1b35aec60\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:13.145132Z\",\"prompt_id\":\"Test-List_versions_of_an_Agent_Observability_prompt_returns_OK_response-1784539212\",\"prompt_uuid\":\"31fdf246-89b8-5a48-9544-ff84c4504939\",\"version\":1,\"version_created_at\":\"2026-07-20T09:20:13.145132Z\"}}]}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1075,13 +1075,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-List_versions_of_an_Agent_Observability_prompt_returns_OK_response-1784539212",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"31fdf246-89b8-5a48-9544-ff84c4504939\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:15.144489Z\",\"prompt_id\":\"Test-List_versions_of_an_LLM_Observability_prompt_returns_OK_response-1784539212\"}}}"
+              "value": "{\"data\":{\"id\":\"31fdf246-89b8-5a48-9544-ff84c4504939\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:15.144489Z\",\"prompt_id\":\"Test-List_versions_of_an_Agent_Observability_prompt_returns_OK_response-1784539212\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1091,7 +1091,237 @@
           }
         }
       ],
-      "scenario": "List versions of an LLM Observability prompt returns \"OK\" response",
+      "scenario": "List versions of an Agent Observability prompt returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "LLM Observability",
+      "frozen_at": "2026-07-20T09:20:18.946Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "prompt_id": "Test-Update_an_Agent_Observability_prompt_returns_Bad_Request_response-1784539218",
+                    "template": [
+                      {
+                        "content": "Hello",
+                        "role": "user"
+                      }
+                    ]
+                  },
+                  "type": "prompt-templates"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/llm-obs/v1/prompts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b28f22d5-eec8-57f0-be7f-5042b6bb4ae1\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:19.301545921Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:19.301545921Z\",\"num_versions\":1,\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_returns_Bad_Request_response-1784539218\",\"source\":\"registry\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {},
+                  "type": "prompt-templates"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_returns_Bad_Request_response-1784539218",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"at least one of title or description must be provided\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_returns_Bad_Request_response-1784539218",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b28f22d5-eec8-57f0-be7f-5042b6bb4ae1\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:20.235152Z\",\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_returns_Bad_Request_response-1784539218\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update an Agent Observability prompt returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "LLM Observability",
+      "frozen_at": "2026-07-20T09:20:20.319Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "title": "New title"
+                  },
+                  "type": "prompt-templates"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/llm-obs/v1/prompts/nonexistent-prompt",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"prompt template not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update an Agent Observability prompt returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "LLM Observability",
+      "frozen_at": "2026-07-20T15:43:14.374Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "prompt_id": "Test-Update_an_Agent_Observability_prompt_returns_OK_response-1784562194",
+                    "template": [
+                      {
+                        "content": "Hello",
+                        "role": "user"
+                      }
+                    ]
+                  },
+                  "type": "prompt-templates"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/llm-obs/v1/prompts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a36505e7-3c2f-5482-b8ac-ac51250a0116\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:14.698626703Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T15:43:14.698626703Z\",\"num_versions\":1,\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_returns_OK_response-1784562194\",\"source\":\"registry\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "title": "Customer Support Assistant"
+                  },
+                  "type": "prompt-templates"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_returns_OK_response-1784562194",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a36505e7-3c2f-5482-b8ac-ac51250a0116\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:14.698626Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"num_versions\":0,\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_returns_OK_response-1784562194\",\"source\":\"registry\",\"title\":\"Customer Support Assistant\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_returns_OK_response-1784562194",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a36505e7-3c2f-5482-b8ac-ac51250a0116\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T15:43:16.39072Z\",\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_returns_OK_response-1784562194\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update an Agent Observability prompt returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -1130,7 +1360,7 @@
           }
         }
       ],
-      "scenario": "Update a specific LLM Observability prompt version returns \"Not Found\" response",
+      "scenario": "Update an Agent Observability prompt version returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -1144,7 +1374,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "prompt_id": "Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190",
+                    "prompt_id": "Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190",
                     "template": [
                       {
                         "content": "Hello",
@@ -1164,7 +1394,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:11.158625133Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T15:43:11.158625133Z\",\"num_versions\":1,\"prompt_id\":\"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190\",\"source\":\"registry\"}}}"
+              "value": "{\"data\":{\"id\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:11.158625133Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T15:43:11.158625133Z\",\"num_versions\":1,\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190\",\"source\":\"registry\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1193,13 +1423,13 @@
             },
             "content_type": "application/json",
             "method": "POST",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190/versions",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190/versions",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c5593d94-81b0-522b-8cae-7fa643ea7ec9\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:12.623730838Z\",\"prompt_id\":\"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190\",\"prompt_uuid\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"template\":[{\"content\":\"Hello v2\",\"role\":\"user\"}],\"version\":2,\"version_created_at\":\"2026-07-20T15:43:12.623730838Z\"}}}"
+              "value": "{\"data\":{\"id\":\"c5593d94-81b0-522b-8cae-7fa643ea7ec9\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:12.623730838Z\",\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190\",\"prompt_uuid\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"template\":[{\"content\":\"Hello v2\",\"role\":\"user\"}],\"version\":2,\"version_created_at\":\"2026-07-20T15:43:12.623730838Z\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1223,13 +1453,13 @@
             },
             "content_type": "application/json",
             "method": "PATCH",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190/versions/2",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190/versions/2",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c5593d94-81b0-522b-8cae-7fa643ea7ec9\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:12.62373Z\",\"description\":\"Give concise answers and cite relevant help-center articles.\",\"prompt_id\":\"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190\",\"prompt_uuid\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"template\":[{\"role\":\"user\",\"content\":\"Hello v2\"}],\"version\":2,\"version_created_at\":\"2026-07-20T15:43:12.62373Z\"}}}"
+              "value": "{\"data\":{\"id\":\"c5593d94-81b0-522b-8cae-7fa643ea7ec9\",\"type\":\"prompt-template-versions\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:12.62373Z\",\"description\":\"Give concise answers and cite relevant help-center articles.\",\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190\",\"prompt_uuid\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"template\":[{\"role\":\"user\",\"content\":\"Hello v2\"}],\"version\":2,\"version_created_at\":\"2026-07-20T15:43:12.62373Z\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1246,13 +1476,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T15:43:13.804223Z\",\"prompt_id\":\"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190\"}}}"
+              "value": "{\"data\":{\"id\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T15:43:13.804223Z\",\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1269,13 +1499,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190",
+            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T15:43:14.36251Z\",\"prompt_id\":\"Test-Update_a_specific_LLM_Observability_prompt_version_returns_OK_response-1784562190\"}}}"
+              "value": "{\"data\":{\"id\":\"3c7ea2ea-52df-5324-8e77-0f01cf441ef9\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T15:43:14.36251Z\",\"prompt_id\":\"Test-Update_an_Agent_Observability_prompt_version_returns_OK_response-1784562190\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1285,237 +1515,7 @@
           }
         }
       ],
-      "scenario": "Update a specific LLM Observability prompt version returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "frozen_at": "2026-07-20T09:20:18.946Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "prompt_id": "Test-Update_an_LLM_Observability_prompt_returns_Bad_Request_response-1784539218",
-                    "template": [
-                      {
-                        "content": "Hello",
-                        "role": "user"
-                      }
-                    ]
-                  },
-                  "type": "prompt-templates"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/llm-obs/v1/prompts",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":{\"id\":\"b28f22d5-eec8-57f0-be7f-5042b6bb4ae1\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T09:20:19.301545921Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T09:20:19.301545921Z\",\"num_versions\":1,\"prompt_id\":\"Test-Update_an_LLM_Observability_prompt_returns_Bad_Request_response-1784539218\",\"source\":\"registry\"}}}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {},
-                  "type": "prompt-templates"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "PATCH",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_LLM_Observability_prompt_returns_Bad_Request_response-1784539218",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"at least one of title or description must be provided\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_LLM_Observability_prompt_returns_Bad_Request_response-1784539218",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":{\"id\":\"b28f22d5-eec8-57f0-be7f-5042b6bb4ae1\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T09:20:20.235152Z\",\"prompt_id\":\"Test-Update_an_LLM_Observability_prompt_returns_Bad_Request_response-1784539218\"}}}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        }
-      ],
-      "scenario": "Update an LLM Observability prompt returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "frozen_at": "2026-07-20T09:20:20.319Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "title": "New title"
-                  },
-                  "type": "prompt-templates"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "PATCH",
-            "path": "/api/v2/llm-obs/v1/prompts/nonexistent-prompt",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"prompt template not found\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Not Found",
-            "status": 404
-          }
-        }
-      ],
-      "scenario": "Update an LLM Observability prompt returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "frozen_at": "2026-07-20T15:43:14.374Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "prompt_id": "Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194",
-                    "template": [
-                      {
-                        "content": "Hello",
-                        "role": "user"
-                      }
-                    ]
-                  },
-                  "type": "prompt-templates"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/llm-obs/v1/prompts",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":{\"id\":\"a36505e7-3c2f-5482-b8ac-ac51250a0116\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:14.698626703Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"last_version_created_at\":\"2026-07-20T15:43:14.698626703Z\",\"num_versions\":1,\"prompt_id\":\"Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194\",\"source\":\"registry\"}}}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "title": "Customer Support Assistant"
-                  },
-                  "type": "prompt-templates"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "PATCH",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":{\"id\":\"a36505e7-3c2f-5482-b8ac-ac51250a0116\",\"type\":\"prompt-templates\",\"attributes\":{\"author\":\"c5e19e5a-ad6b-11ed-ab4f-927130d31ef9\",\"created_at\":\"2026-07-20T15:43:14.698626Z\",\"created_from\":\"sdk-registry\",\"in_registry\":true,\"num_versions\":0,\"prompt_id\":\"Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194\",\"source\":\"registry\",\"title\":\"Customer Support Assistant\"}}}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/llm-obs/v1/prompts/Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":{\"id\":\"a36505e7-3c2f-5482-b8ac-ac51250a0116\",\"type\":\"prompt-templates\",\"attributes\":{\"deleted_at\":\"2026-07-20T15:43:16.39072Z\",\"prompt_id\":\"Test-Update_an_LLM_Observability_prompt_returns_OK_response-1784562194\"}}}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        }
-      ],
-      "scenario": "Update an LLM Observability prompt returns \"OK\" response",
+      "scenario": "Update an Agent Observability prompt version returns \"OK\" response",
       "version": "v2"
     }
   ],

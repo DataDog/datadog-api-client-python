@@ -30,9 +30,9 @@ class LLMObsProjectRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsProjectDataRequest, **kwargs):
         """
-        Request to create an LLM Observability project.
+        Request to create an Agent Observability project.
 
-        :param data: Data object for creating an LLM Observability project.
+        :param data: Data object for creating an Agent Observability project.
         :type data: LLMObsProjectDataRequest
         """
         super().__init__(kwargs)

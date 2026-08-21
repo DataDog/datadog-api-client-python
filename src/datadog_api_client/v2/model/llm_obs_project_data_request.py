@@ -36,12 +36,12 @@ class LLMObsProjectDataRequest(ModelNormal):
 
     def __init__(self_, attributes: LLMObsProjectDataAttributesRequest, type: LLMObsProjectType, **kwargs):
         """
-        Data object for creating an LLM Observability project.
+        Data object for creating an Agent Observability project.
 
-        :param attributes: Attributes for creating an LLM Observability project.
+        :param attributes: Attributes for creating an Agent Observability project.
         :type attributes: LLMObsProjectDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability project.
+        :param type: Resource type of an Agent Observability project.
         :type type: LLMObsProjectType
         """
         super().__init__(kwargs)

@@ -30,7 +30,7 @@ class LLMObsAnnotationQueuesResponse(ModelNormal):
 
     def __init__(self_, data: List[LLMObsAnnotationQueueDataResponse], **kwargs):
         """
-        Response containing a list of LLM Observability annotation queues.
+        Response containing a list of Agent Observability annotation queues.
 
         :param data: List of annotation queues.
         :type data: [LLMObsAnnotationQueueDataResponse]

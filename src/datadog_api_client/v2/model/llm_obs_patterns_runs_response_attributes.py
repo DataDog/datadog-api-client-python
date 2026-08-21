@@ -30,7 +30,7 @@ class LLMObsPatternsRunsResponseAttributes(ModelNormal):
 
     def __init__(self_, runs: List[LLMObsPatternsRunSummary], **kwargs):
         """
-        Attributes of an LLM Observability patterns runs response.
+        Attributes of an Agent Observability patterns runs response.
 
         :param runs: List of patterns runs.
         :type runs: [LLMObsPatternsRunSummary]

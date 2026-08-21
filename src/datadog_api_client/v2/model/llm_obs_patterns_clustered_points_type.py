@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsPatternsClusteredPointsType(ModelSimple):
     """
-    Resource type of an LLM Observability patterns clustered points response.
+    Resource type of an Agent Observability patterns clustered points response.
 
     :param value: If omitted defaults to "clustered_points_response". Must be one of ["clustered_points_response"].
     :type value: str

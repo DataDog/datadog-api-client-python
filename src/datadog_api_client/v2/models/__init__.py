@@ -7758,6 +7758,21 @@ from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
 from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_retention_quota_adaptive_config import RumRetentionQuotaAdaptiveConfig
+from datadog_api_client.v2.model.rum_retention_quota_config_attributes import RumRetentionQuotaConfigAttributes
+from datadog_api_client.v2.model.rum_retention_quota_config_data import RumRetentionQuotaConfigData
+from datadog_api_client.v2.model.rum_retention_quota_config_response import RumRetentionQuotaConfigResponse
+from datadog_api_client.v2.model.rum_retention_quota_config_type import RumRetentionQuotaConfigType
+from datadog_api_client.v2.model.rum_retention_quota_config_update_attributes import (
+    RumRetentionQuotaConfigUpdateAttributes,
+)
+from datadog_api_client.v2.model.rum_retention_quota_config_update_data import RumRetentionQuotaConfigUpdateData
+from datadog_api_client.v2.model.rum_retention_quota_config_update_request import RumRetentionQuotaConfigUpdateRequest
+from datadog_api_client.v2.model.rum_retention_quota_custom_config import RumRetentionQuotaCustomConfig
+from datadog_api_client.v2.model.rum_retention_quota_mode import RumRetentionQuotaMode
+from datadog_api_client.v2.model.rum_retention_quota_reached_action import RumRetentionQuotaReachedAction
+from datadog_api_client.v2.model.rum_retention_quota_scope_type import RumRetentionQuotaScopeType
+from datadog_api_client.v2.model.rum_retention_quota_window_type import RumRetentionQuotaWindowType
 from datadog_api_client.v2.model.rum_sdk_config_attributes import RumSdkConfigAttributes
 from datadog_api_client.v2.model.rum_sdk_config_data import RumSdkConfigData
 from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RumSdkConfigDynamicOption
@@ -16158,6 +16173,19 @@ __all__ = [
     "RumRetentionFiltersOrderRequest",
     "RumRetentionFiltersOrderResponse",
     "RumRetentionFiltersResponse",
+    "RumRetentionQuotaAdaptiveConfig",
+    "RumRetentionQuotaConfigAttributes",
+    "RumRetentionQuotaConfigData",
+    "RumRetentionQuotaConfigResponse",
+    "RumRetentionQuotaConfigType",
+    "RumRetentionQuotaConfigUpdateAttributes",
+    "RumRetentionQuotaConfigUpdateData",
+    "RumRetentionQuotaConfigUpdateRequest",
+    "RumRetentionQuotaCustomConfig",
+    "RumRetentionQuotaMode",
+    "RumRetentionQuotaReachedAction",
+    "RumRetentionQuotaScopeType",
+    "RumRetentionQuotaWindowType",
     "RumSdkConfigAttributes",
     "RumSdkConfigData",
     "RumSdkConfigDynamicOption",

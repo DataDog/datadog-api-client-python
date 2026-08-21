@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsProjectType(ModelSimple):
     """
-    Resource type of an LLM Observability project.
+    Resource type of an Agent Observability project.
 
     :param value: If omitted defaults to "projects". Must be one of ["projects"].
     :type value: str

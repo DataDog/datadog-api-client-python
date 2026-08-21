@@ -36,7 +36,7 @@ class LLMObsPromptSDKData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsPromptSDKDataAttributes, id: str, type: LLMObsPromptType, **kwargs):
         """
-        Data object for a flattened LLM Observability prompt version returned for SDK consumption.
+        Data object for a flattened Agent Observability prompt version returned for SDK consumption.
 
         :param attributes: Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned.
         :type attributes: LLMObsPromptSDKDataAttributes
@@ -44,7 +44,7 @@ class LLMObsPromptSDKData(ModelNormal):
         :param id: Unique identifier of the prompt.
         :type id: str
 
-        :param type: Resource type of an LLM Observability prompt.
+        :param type: Resource type of an Agent Observability prompt.
         :type type: LLMObsPromptType
         """
         super().__init__(kwargs)

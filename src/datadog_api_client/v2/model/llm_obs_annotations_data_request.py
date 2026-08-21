@@ -43,7 +43,7 @@ class LLMObsAnnotationsDataRequest(ModelNormal):
         :param attributes: Attributes for creating or updating annotations.
         :type attributes: LLMObsAnnotationsDataAttributesRequest
 
-        :param type: Resource type for LLM Observability annotations.
+        :param type: Resource type for Agent Observability annotations.
         :type type: LLMObsAnnotationsType
         """
         super().__init__(kwargs)

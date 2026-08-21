@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsPatternsConfigsListType(ModelSimple):
     """
-    Resource type of a list of LLM Observability patterns configurations.
+    Resource type of a list of Agent Observability patterns configurations.
 
     :param value: If omitted defaults to "list_topic_discovery_configs_response". Must be one of ["list_topic_discovery_configs_response"].
     :type value: str

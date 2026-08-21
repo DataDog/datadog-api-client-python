@@ -39,7 +39,7 @@ class LogsApi:
         self._aggregate_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsAggregateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/analytics/aggregate",
                 "operation_id": "aggregate_logs",
                 "http_method": "POST",
@@ -59,7 +59,7 @@ class LogsApi:
         self._list_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/events/search",
                 "operation_id": "list_logs",
                 "http_method": "POST",

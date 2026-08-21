@@ -30,9 +30,9 @@ class LLMObsPromptResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPromptData, **kwargs):
         """
-        Response containing a single LLM Observability prompt.
+        Response containing a single Agent Observability prompt.
 
-        :param data: Data object for an LLM Observability prompt.
+        :param data: Data object for an Agent Observability prompt.
         :type data: LLMObsPromptData
         """
         super().__init__(kwargs)

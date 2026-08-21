@@ -30,9 +30,9 @@ class LLMObsProjectResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsProjectDataResponse, **kwargs):
         """
-        Response containing a single LLM Observability project.
+        Response containing a single Agent Observability project.
 
-        :param data: Data object for an LLM Observability project.
+        :param data: Data object for an Agent Observability project.
         :type data: LLMObsProjectDataResponse
         """
         super().__init__(kwargs)

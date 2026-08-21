@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsPatternsRequestType(ModelSimple):
     """
-    Resource type for triggering an LLM Observability patterns run.
+    Resource type for triggering an Agent Observability patterns run.
 
     :param value: If omitted defaults to "topic_discovery". Must be one of ["topic_discovery"].
     :type value: str

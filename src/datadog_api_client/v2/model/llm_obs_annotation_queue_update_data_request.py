@@ -40,12 +40,12 @@ class LLMObsAnnotationQueueUpdateDataRequest(ModelNormal):
         self_, attributes: LLMObsAnnotationQueueUpdateDataAttributesRequest, type: LLMObsAnnotationQueueType, **kwargs
     ):
         """
-        Data object for updating an LLM Observability annotation queue.
+        Data object for updating an Agent Observability annotation queue.
 
-        :param attributes: Attributes for updating an LLM Observability annotation queue. All fields are optional.
+        :param attributes: Attributes for updating an Agent Observability annotation queue. All fields are optional.
         :type attributes: LLMObsAnnotationQueueUpdateDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability annotation queue.
+        :param type: Resource type of an Agent Observability annotation queue.
         :type type: LLMObsAnnotationQueueType
         """
         super().__init__(kwargs)

@@ -30,7 +30,7 @@ class LLMObsDatasetVersionsResponse(ModelNormal):
 
     def __init__(self_, data: List[LLMObsDatasetVersionData], **kwargs):
         """
-        Response containing the active versions of an LLM Observability dataset.
+        Response containing the active versions of an Agent Observability dataset.
 
         :param data: List of dataset versions.
         :type data: [LLMObsDatasetVersionData]

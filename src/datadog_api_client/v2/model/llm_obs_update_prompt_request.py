@@ -30,9 +30,9 @@ class LLMObsUpdatePromptRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsUpdatePromptData, **kwargs):
         """
-        Request to update an LLM Observability prompt's metadata.
+        Request to update an Agent Observability prompt's metadata.
 
-        :param data: Data object for updating an LLM Observability prompt.
+        :param data: Data object for updating an Agent Observability prompt.
         :type data: LLMObsUpdatePromptData
         """
         super().__init__(kwargs)

@@ -6,6 +6,7 @@ from datadog_api_client.v2.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v2.api.aws_logs_integration_api import AWSLogsIntegrationApi
 from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
 from datadog_api_client.v2.api.actions_datastores_api import ActionsDatastoresApi
+from datadog_api_client.v2.api.agent_observability_api import AgentObservabilityApi
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.api.annotations_api import AnnotationsApi
 from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
@@ -66,7 +67,6 @@ from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.api.integrations_api import IntegrationsApi
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
 from datadog_api_client.v2.api.key_management_api import KeyManagementApi
-from datadog_api_client.v2.api.llm_observability_api import LLMObservabilityApi
 from datadog_api_client.v2.api.logs_api import LogsApi
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDestinationsApi
@@ -97,6 +97,7 @@ from datadog_api_client.v2.api.rum_config_api import RUMConfigApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
 from datadog_api_client.v2.api.rum_operations_api import RUMOperationsApi
 from datadog_api_client.v2.api.rum_remote_config_api import RUMRemoteConfigApi
+from datadog_api_client.v2.api.rum_retention_quota_api import RUMRetentionQuotaApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
 from datadog_api_client.v2.api.reporting_and_sharing_api import ReportingAndSharingApi
@@ -150,6 +151,7 @@ __all__ = [
     "AWSLogsIntegrationApi",
     "ActionConnectionApi",
     "ActionsDatastoresApi",
+    "AgentObservabilityApi",
     "AgentlessScanningApi",
     "AnnotationsApi",
     "AppBuilderApi",
@@ -210,7 +212,6 @@ __all__ = [
     "IntegrationsApi",
     "JiraIntegrationApi",
     "KeyManagementApi",
-    "LLMObservabilityApi",
     "LogsApi",
     "LogsArchivesApi",
     "LogsCustomDestinationsApi",
@@ -241,6 +242,7 @@ __all__ = [
     "RUMInsightsApi",
     "RUMOperationsApi",
     "RUMRemoteConfigApi",
+    "RUMRetentionQuotaApi",
     "ReferenceTablesApi",
     "ReportSchedulesApi",
     "ReportingAndSharingApi",

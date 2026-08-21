@@ -30,9 +30,9 @@ class LLMObsExperimentUpdateRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsExperimentUpdateDataRequest, **kwargs):
         """
-        Request to partially update an LLM Observability experiment.
+        Request to partially update an Agent Observability experiment.
 
-        :param data: Data object for updating an LLM Observability experiment.
+        :param data: Data object for updating an Agent Observability experiment.
         :type data: LLMObsExperimentUpdateDataRequest
         """
         super().__init__(kwargs)

@@ -55,7 +55,7 @@ class LLMObsDatasetDataAttributesRequest(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating an LLM Observability dataset.
+        Attributes for creating an Agent Observability dataset.
 
         :param description: Description of the dataset.
         :type description: str, optional

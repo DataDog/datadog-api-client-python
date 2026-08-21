@@ -797,10 +797,10 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param lambda_traced_invocations_usage: The Serverless APM usage by tag(s).
         :type lambda_traced_invocations_usage: float, optional
 
-        :param llm_observability_percentage: The percentage of LLM Observability usage by tag(s).
+        :param llm_observability_percentage: The percentage of Agent Observability usage by tag(s).
         :type llm_observability_percentage: float, optional
 
-        :param llm_observability_usage: The LLM Observability usage by tag(s).
+        :param llm_observability_usage: The Agent Observability usage by tag(s).
         :type llm_observability_usage: float, optional
 
         :param llm_spans_percentage: The percentage of LLM Spans usage by tag(s).

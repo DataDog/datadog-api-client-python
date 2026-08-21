@@ -61,7 +61,7 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability annotation queue.
+        Attributes of an Agent Observability annotation queue.
 
         :param annotation_schema: Schema defining the labels for an annotation queue.
         :type annotation_schema: LLMObsAnnotationSchema, optional

@@ -30,9 +30,9 @@ class LLMObsPatternsTriggerResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPatternsTriggerResponseData, **kwargs):
         """
-        Response after triggering an LLM Observability patterns run.
+        Response after triggering an Agent Observability patterns run.
 
-        :param data: Data object of an LLM Observability patterns trigger response.
+        :param data: Data object of an Agent Observability patterns trigger response.
         :type data: LLMObsPatternsTriggerResponseData
         """
         super().__init__(kwargs)

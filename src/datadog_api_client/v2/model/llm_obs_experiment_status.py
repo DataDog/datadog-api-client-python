@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsExperimentStatus(ModelSimple):
     """
-    Execution status of an LLM Observability experiment.
+    Execution status of an Agent Observability experiment.
 
     :param value: Must be one of ["running", "completed", "failed", "interrupted"].
     :type value: str

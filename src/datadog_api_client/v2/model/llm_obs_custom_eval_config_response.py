@@ -30,9 +30,9 @@ class LLMObsCustomEvalConfigResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsCustomEvalConfigData, **kwargs):
         """
-        Response containing a custom LLM Observability evaluator configuration.
+        Response containing a custom Agent Observability evaluator configuration.
 
-        :param data: Data object for a custom LLM Observability evaluator configuration.
+        :param data: Data object for a custom Agent Observability evaluator configuration.
         :type data: LLMObsCustomEvalConfigData
         """
         super().__init__(kwargs)

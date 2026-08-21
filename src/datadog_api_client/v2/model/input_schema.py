@@ -32,7 +32,7 @@ class InputSchema(ModelNormal):
 
     def __init__(self_, parameters: Union[List[InputSchemaParameters], UnsetType] = unset, **kwargs):
         """
-        A list of input parameters for the workflow. These can be used as dynamic runtime values in your workflow.
+        A list of input parameters for the workflow. Input parameters are available under the ``Trigger`` object and can be referenced in workflow steps using ``{{ Trigger.<parameter_name> }}``.
 
         :param parameters: The ``InputSchema`` ``parameters``.
         :type parameters: [InputSchemaParameters], optional

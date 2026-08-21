@@ -38,12 +38,12 @@ class LLMObsExperimentDataRequest(ModelNormal):
 
     def __init__(self_, attributes: LLMObsExperimentDataAttributesRequest, type: LLMObsExperimentType, **kwargs):
         """
-        Data object for creating an LLM Observability experiment.
+        Data object for creating an Agent Observability experiment.
 
-        :param attributes: Attributes for creating an LLM Observability experiment.
+        :param attributes: Attributes for creating an Agent Observability experiment.
         :type attributes: LLMObsExperimentDataAttributesRequest
 
-        :param type: Resource type of an LLM Observability experiment.
+        :param type: Resource type of an Agent Observability experiment.
         :type type: LLMObsExperimentType
         """
         super().__init__(kwargs)

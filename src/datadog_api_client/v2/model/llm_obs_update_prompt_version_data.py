@@ -38,12 +38,12 @@ class LLMObsUpdatePromptVersionData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsUpdatePromptVersionDataAttributes, type: LLMObsPromptVersionType, **kwargs):
         """
-        Data object for updating an LLM Observability prompt version.
+        Data object for updating an Agent Observability prompt version.
 
-        :param attributes: Attributes for updating an LLM Observability prompt version. At least one of ``description`` , ``labels`` , or ``env_ids`` must be provided; all three attributes are optional individually.
+        :param attributes: Attributes for updating an Agent Observability prompt version. At least one of ``description`` , ``labels`` , or ``env_ids`` must be provided; all three attributes are optional individually.
         :type attributes: LLMObsUpdatePromptVersionDataAttributes
 
-        :param type: Resource type of an LLM Observability prompt version.
+        :param type: Resource type of an Agent Observability prompt version.
         :type type: LLMObsPromptVersionType
         """
         super().__init__(kwargs)

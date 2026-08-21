@@ -30,9 +30,9 @@ class LLMObsAnnotationQueueRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsAnnotationQueueDataRequest, **kwargs):
         """
-        Request to create an LLM Observability annotation queue.
+        Request to create an Agent Observability annotation queue.
 
-        :param data: Data object for creating an LLM Observability annotation queue.
+        :param data: Data object for creating an Agent Observability annotation queue.
         :type data: LLMObsAnnotationQueueDataRequest
         """
         super().__init__(kwargs)

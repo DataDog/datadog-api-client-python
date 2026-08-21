@@ -36,15 +36,15 @@ class LLMObsPromptData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsPromptDataAttributes, id: str, type: LLMObsPromptType, **kwargs):
         """
-        Data object for an LLM Observability prompt.
+        Data object for an Agent Observability prompt.
 
-        :param attributes: Attributes of an LLM Observability prompt registry entry.
+        :param attributes: Attributes of an Agent Observability prompt registry entry.
         :type attributes: LLMObsPromptDataAttributes
 
         :param id: Unique identifier of the prompt.
         :type id: str
 
-        :param type: Resource type of an LLM Observability prompt.
+        :param type: Resource type of an Agent Observability prompt.
         :type type: LLMObsPromptType
         """
         super().__init__(kwargs)

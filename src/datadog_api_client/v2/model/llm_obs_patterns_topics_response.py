@@ -30,9 +30,9 @@ class LLMObsPatternsTopicsResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsPatternsTopicsResponseData, **kwargs):
         """
-        Response containing the topics discovered by an LLM Observability patterns run.
+        Response containing the topics discovered by an Agent Observability patterns run.
 
-        :param data: Data object of an LLM Observability patterns topics response.
+        :param data: Data object of an Agent Observability patterns topics response.
         :type data: LLMObsPatternsTopicsResponseData
         """
         super().__init__(kwargs)

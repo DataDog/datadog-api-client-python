@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsPatternsRunStatusType(ModelSimple):
     """
-    Resource type of an LLM Observability patterns run status.
+    Resource type of an Agent Observability patterns run status.
 
     :param value: If omitted defaults to "topic_discovery_run_status". Must be one of ["topic_discovery_run_status"].
     :type value: str

@@ -108,7 +108,7 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 400 API error response.
 
-  @team:DataDog/synthetics-orchestrating-managing
+  @team:DataDog/synthetics-api-and-network
   Scenario: Create a Network Path test returns "OK" response
     Given new "CreateSyntheticsNetworkTest" request
     And body with value {"data": {"attributes": {"config": {"assertions": [{"operator": "lessThan", "property": "avg", "target": 500, "type": "latency"}], "request": {"host": "example.com", "port": 443, "tcp_method": "prefer_sack", "max_ttl": 30, "e2e_queries": 50, "traceroute_queries": 3}}, "locations": ["aws:us-east-1", "agent:my-agent-name"], "message": "Network Path test notification", "name": "Example Network Path test", "options": {"tick_every": 60}, "status": "live", "subtype": "tcp", "tags": ["env:production"], "type": "network"}, "type": "network"}}

@@ -34,7 +34,7 @@ class LLMObsExperimentationAnalyticsRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsExperimentationAnalyticsDataRequest, **kwargs):
         """
-        Request to run an analytics aggregation over LLM Observability experimentation data.
+        Request to run an analytics aggregation over Agent Observability experimentation data.
 
         :param data: Data object for an analytics request.
         :type data: LLMObsExperimentationAnalyticsDataRequest

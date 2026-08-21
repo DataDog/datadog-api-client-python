@@ -30,9 +30,9 @@ class LLMObsDatasetResponse(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetDataResponse, **kwargs):
         """
-        Response containing a single LLM Observability dataset.
+        Response containing a single Agent Observability dataset.
 
-        :param data: Data object for an LLM Observability dataset.
+        :param data: Data object for an Agent Observability dataset.
         :type data: LLMObsDatasetDataResponse
         """
         super().__init__(kwargs)

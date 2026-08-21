@@ -50,13 +50,13 @@
     }
   },
   "ListLLMObsCustomEvalConfigs": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "DeleteLLMObsCustomEvalConfig": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "UpdateLLMObsCustomEvalConfig",
       "parameters": [
@@ -69,13 +69,13 @@
     }
   },
   "GetLLMObsCustomEvalConfig": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateLLMObsCustomEvalConfig": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
@@ -4477,19 +4477,19 @@
     }
   },
   "GetLLMObsAnnotatedInteractionsByTraceIDs": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsAnnotationQueues": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsAnnotationQueue": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "DeleteLLMObsAnnotationQueue",
       "parameters": [
@@ -4502,25 +4502,25 @@
     }
   },
   "DeleteLLMObsAnnotationQueue": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "UpdateLLMObsAnnotationQueue": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetLLMObsAnnotatedInteractions": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UpsertLLMObsAnnotations": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "DeleteLLMObsAnnotations",
       "parameters": [
@@ -4537,13 +4537,13 @@
     }
   },
   "DeleteLLMObsAnnotations": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "CreateLLMObsAnnotationQueueInteractions": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "DeleteLLMObsAnnotationQueueInteractions",
       "parameters": [
@@ -4560,49 +4560,49 @@
     }
   },
   "DeleteLLMObsAnnotationQueueInteractions": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetLLMObsAnnotationQueueLabelSchema": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateLLMObsAnnotationQueueLabelSchema": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "AggregateLLMObsExperimentation": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "SearchLLMObsExperimentation": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "SimpleSearchLLMObsExperimentation": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsExperiments": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsExperiment": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "DeleteLLMObsExperiments",
       "parameters": [
@@ -4615,57 +4615,57 @@
     }
   },
   "DeleteLLMObsExperiments": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "parameters": [],
       "type": "unsafe"
     }
   },
   "UpdateLLMObsExperiment": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListLLMObsExperimentEventsV1": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsExperimentEvents": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "parameters": [],
       "type": "unsafe"
     }
   },
   "ListLLMObsIntegrationAccounts": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsIntegrationInference": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsIntegrationModels": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsProjects": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsProject": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "TODO",
       "parameters": [],
@@ -4673,7 +4673,7 @@
     }
   },
   "DeleteLLMObsProjects": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "TODO",
       "parameters": [],
@@ -4681,19 +4681,19 @@
     }
   },
   "UpdateLLMObsProject": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListLLMObsPrompts": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsPrompt": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "DeleteLLMObsPrompt",
       "parameters": [
@@ -4706,31 +4706,31 @@
     }
   },
   "DeleteLLMObsPrompt": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetLLMObsPrompt": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateLLMObsPrompt": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListLLMObsPromptVersions": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsPromptVersion": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "DeleteLLMObsPrompt",
       "parameters": [
@@ -4743,67 +4743,67 @@
     }
   },
   "GetLLMObsPromptVersion": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateLLMObsPromptVersion": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListLLMObsSpans": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "SearchLLMObsSpans": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsPatternsClusteredPoints": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsPatternsConfigs": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UpsertLLMObsPatternsConfig": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetLLMObsPatternsConfig": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "DeleteLLMObsPatternsConfig": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListLLMObsPatternsRuns": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "TriggerLLMObsPatterns": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "TODO",
       "parameters": [],
@@ -4811,31 +4811,31 @@
     }
   },
   "GetLLMObsPatternsRunStatus": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsPatternsTopics": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsPatternsTopicsWithClusteredPoints": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsDatasets": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "CreateLLMObsDataset": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "TODO",
       "parameters": [],
@@ -4843,7 +4843,7 @@
     }
   },
   "DeleteLLMObsDatasets": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "TODO",
       "parameters": [],
@@ -4851,19 +4851,19 @@
     }
   },
   "UpdateLLMObsDataset": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "BatchUpdateLLMObsDataset": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "CloneLLMObsDataset": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "TODO",
       "parameters": [],
@@ -4871,43 +4871,43 @@
     }
   },
   "GetLLMObsDatasetDraftState": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "LockLLMObsDatasetDraftState": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "UnlockLLMObsDatasetDraftState": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ExportLLMObsDataset": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsDatasetRecords": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UpdateLLMObsDatasetRecords": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "CreateLLMObsDatasetRecords": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "DeleteLLMObsDatasetRecords",
       "parameters": [
@@ -4924,7 +4924,7 @@
     }
   },
   "DeleteLLMObsDatasetRecords": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "operationId": "TODO",
       "parameters": [],
@@ -4932,31 +4932,31 @@
     }
   },
   "RestoreLLMObsDatasetVersion": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListLLMObsDatasetVersions": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "ListLLMObsExperimentEventsV2": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
   },
   "UploadLLMObsDatasetRecordsFile": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListLLMObsExperimentEvents": {
-    "tag": "LLM Observability",
+    "tag": "Agent Observability",
     "undo": {
       "type": "safe"
     }
@@ -7082,6 +7082,24 @@
   },
   "UpdateRumMetric": {
     "tag": "Rum Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteRumQuotaConfig": {
+    "tag": "RUM Retention Quota",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRumQuotaConfig": {
+    "tag": "RUM Retention Quota",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertRumQuotaConfig": {
+    "tag": "RUM Retention Quota",
     "undo": {
       "type": "idempotent"
     }

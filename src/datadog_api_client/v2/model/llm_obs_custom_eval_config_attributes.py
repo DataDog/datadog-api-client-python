@@ -73,7 +73,7 @@ class LLMObsCustomEvalConfigAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a custom LLM Observability evaluator configuration.
+        Attributes of a custom Agent Observability evaluator configuration.
 
         :param category: Category of the evaluator.
         :type category: str, optional

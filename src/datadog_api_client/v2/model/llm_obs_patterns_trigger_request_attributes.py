@@ -23,7 +23,7 @@ class LLMObsPatternsTriggerRequestAttributes(ModelNormal):
 
     def __init__(self_, config_id: str, **kwargs):
         """
-        Attributes for triggering an LLM Observability patterns run.
+        Attributes for triggering an Agent Observability patterns run.
 
         :param config_id: The ID of the patterns configuration to run.
         :type config_id: str

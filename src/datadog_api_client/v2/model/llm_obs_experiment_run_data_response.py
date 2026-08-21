@@ -68,7 +68,7 @@ class LLMObsExperimentRunDataResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Data object for an LLM Observability experiment run.
+        Data object for an Agent Observability experiment run.
 
         :param aggregate_data: Aggregated metric data for this run.
         :type aggregate_data: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, none_type, optional

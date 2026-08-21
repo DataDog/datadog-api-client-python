@@ -30,9 +30,9 @@ class LLMObsDatasetUpdateRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsDatasetUpdateDataRequest, **kwargs):
         """
-        Request to partially update an LLM Observability dataset.
+        Request to partially update an Agent Observability dataset.
 
-        :param data: Data object for updating an LLM Observability dataset.
+        :param data: Data object for updating an Agent Observability dataset.
         :type data: LLMObsDatasetUpdateDataRequest
         """
         super().__init__(kwargs)

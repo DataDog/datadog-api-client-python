@@ -36,12 +36,12 @@ class LLMObsSearchSpansRequestData(ModelNormal):
 
     def __init__(self_, attributes: LLMObsSearchSpansRequestAttributes, type: LLMObsSearchSpansRequestType, **kwargs):
         """
-        Data object for an LLM Observability spans search request.
+        Data object for an Agent Observability spans search request.
 
-        :param attributes: Attributes of an LLM Observability spans search request.
+        :param attributes: Attributes of an Agent Observability spans search request.
         :type attributes: LLMObsSearchSpansRequestAttributes
 
-        :param type: Resource type for an LLM Observability spans search request.
+        :param type: Resource type for an Agent Observability spans search request.
         :type type: LLMObsSearchSpansRequestType
         """
         super().__init__(kwargs)

@@ -34,7 +34,7 @@ class LLMObsExperimentationSimpleSearchRequest(ModelNormal):
 
     def __init__(self_, data: LLMObsExperimentationSimpleSearchDataRequest, **kwargs):
         """
-        Request to search across LLM Observability experimentation entities using offset-based pagination.
+        Request to search across Agent Observability experimentation entities using offset-based pagination.
 
         :param data: Data object for an experimentation simple search request.
         :type data: LLMObsExperimentationSimpleSearchDataRequest

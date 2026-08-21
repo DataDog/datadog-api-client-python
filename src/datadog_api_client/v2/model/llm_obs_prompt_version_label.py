@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class LLMObsPromptVersionLabel(ModelSimple):
     """
-    A label attached to an LLM Observability prompt version.
+    A label attached to an Agent Observability prompt version.
 
     :param value: Must be one of ["production", "development"].
     :type value: str

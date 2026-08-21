@@ -38,7 +38,7 @@ class LLMObsExperimentsResponse(ModelNormal):
         self_, data: List[LLMObsExperimentDataResponse], meta: Union[LLMObsCursorMeta, UnsetType] = unset, **kwargs
     ):
         """
-        Response containing a list of LLM Observability experiments.
+        Response containing a list of Agent Observability experiments.
 
         :param data: List of experiments.
         :type data: [LLMObsExperimentDataResponse]

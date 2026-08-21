@@ -50,7 +50,7 @@ class LLMObsAnnotationsDataResponse(ModelNormal):
         :param id: The annotation queue ID.
         :type id: str
 
-        :param type: Resource type for LLM Observability annotations.
+        :param type: Resource type for Agent Observability annotations.
         :type type: LLMObsAnnotationsType
         """
         super().__init__(kwargs)

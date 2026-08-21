@@ -88,7 +88,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a specific version of an LLM Observability prompt.
+        Attributes of a specific version of an Agent Observability prompt.
 
         :param author: UUID of the user who authored this version.
         :type author: str, optional

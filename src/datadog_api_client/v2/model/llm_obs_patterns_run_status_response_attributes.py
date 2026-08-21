@@ -39,7 +39,7 @@ class LLMObsPatternsRunStatusResponseAttributes(ModelNormal):
         self_, created_at: datetime, progress: List[LLMObsPatternsActivityProgress], status: str, step: str, **kwargs
     ):
         """
-        Attributes of an LLM Observability patterns run status.
+        Attributes of an Agent Observability patterns run status.
 
         :param created_at: Timestamp when the run was created.
         :type created_at: datetime

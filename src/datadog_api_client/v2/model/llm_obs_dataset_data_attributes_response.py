@@ -63,7 +63,7 @@ class LLMObsDatasetDataAttributesResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an LLM Observability dataset.
+        Attributes of an Agent Observability dataset.
 
         :param created_at: Timestamp when the dataset was created.
         :type created_at: datetime
