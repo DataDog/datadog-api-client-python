@@ -325,6 +325,11 @@ class MetricsApi:
                     "attribute": "filter[groups]",
                     "location": "query",
                 },
+                "filter_exclude_tags_mode": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[exclude_tags_mode]",
+                    "location": "query",
+                },
                 "filter_hours_ago": {
                     "validation": {
                         "inclusive_maximum": 2147483647,
@@ -1116,6 +1121,7 @@ class MetricsApi:
         metric_name: str,
         *,
         filter_groups: Union[str, UnsetType] = unset,
+        filter_exclude_tags_mode: Union[bool, UnsetType] = unset,
         filter_hours_ago: Union[int, UnsetType] = unset,
         filter_num_aggregations: Union[int, UnsetType] = unset,
         filter_pct: Union[bool, UnsetType] = unset,
@@ -1129,11 +1135,13 @@ class MetricsApi:
         :type metric_name: str
         :param filter_groups: Comma-separated list of tag keys that the metric is configured to query with. For example: ``filter[groups]=app,host``.
         :type filter_groups: str, optional
+        :param filter_exclude_tags_mode: When ``true`` , ``filter[groups]`` is treated as an exclude list instead of an include list. Defaults to ``false``.
+        :type filter_exclude_tags_mode: bool, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with. If unspecified, it defaults to 0 hours.
         :type filter_hours_ago: int, optional
         :param filter_num_aggregations: Deprecated. Number of aggregations has no impact on volume.
         :type filter_num_aggregations: int, optional
-        :param filter_pct: A boolean, for distribution metrics only, to estimate cardinality if the metric includes additional percentile aggregators.
+        :param filter_pct: Deprecated. This query parameter has no effect on the estimate.
         :type filter_pct: bool, optional
         :param filter_timespan_h: A window, in hours, from the look back to estimate cardinality with. The minimum and default is 1 hour.
         :type filter_timespan_h: int, optional
@@ -1144,6 +1152,9 @@ class MetricsApi:
 
         if filter_groups is not unset:
             kwargs["filter_groups"] = filter_groups
+
+        if filter_exclude_tags_mode is not unset:
+            kwargs["filter_exclude_tags_mode"] = filter_exclude_tags_mode
 
         if filter_hours_ago is not unset:
             kwargs["filter_hours_ago"] = filter_hours_ago
