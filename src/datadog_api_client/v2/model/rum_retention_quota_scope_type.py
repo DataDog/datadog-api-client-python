@@ -15,6 +15,7 @@ from typing import ClassVar
 class RumRetentionQuotaScopeType(ModelSimple):
     """
     The type of scope the retention quota configuration applies to.
+        `application` is the only supported scope type.
 
     :param value: If omitted defaults to "application". Must be one of ["application"].
     :type value: str

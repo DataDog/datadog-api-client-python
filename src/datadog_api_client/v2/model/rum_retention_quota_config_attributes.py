@@ -15,7 +15,6 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_quota_adaptive_config import RumRetentionQuotaAdaptiveConfig
     from datadog_api_client.v2.model.rum_retention_quota_custom_config import RumRetentionQuotaCustomConfig
     from datadog_api_client.v2.model.rum_retention_quota_mode import RumRetentionQuotaMode
 
@@ -23,12 +22,10 @@ if TYPE_CHECKING:
 class RumRetentionQuotaConfigAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_quota_adaptive_config import RumRetentionQuotaAdaptiveConfig
         from datadog_api_client.v2.model.rum_retention_quota_custom_config import RumRetentionQuotaCustomConfig
         from datadog_api_client.v2.model.rum_retention_quota_mode import RumRetentionQuotaMode
 
         return {
-            "adaptive": (RumRetentionQuotaAdaptiveConfig,),
             "custom": (RumRetentionQuotaCustomConfig,),
             "mode": (RumRetentionQuotaMode,),
             "org_id": (int,),
@@ -37,7 +34,6 @@ class RumRetentionQuotaConfigAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "adaptive": "adaptive",
         "custom": "custom",
         "mode": "mode",
         "org_id": "org_id",
@@ -49,7 +45,6 @@ class RumRetentionQuotaConfigAttributes(ModelNormal):
         self_,
         mode: RumRetentionQuotaMode,
         org_id: int,
-        adaptive: Union[RumRetentionQuotaAdaptiveConfig, UnsetType] = unset,
         custom: Union[RumRetentionQuotaCustomConfig, UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
         updated_by: Union[str, UnsetType] = unset,
@@ -58,14 +53,11 @@ class RumRetentionQuotaConfigAttributes(ModelNormal):
         """
         The RUM retention quota configuration properties.
 
-        :param adaptive: The configuration used when ``mode`` is ``adaptive``.
-        :type adaptive: RumRetentionQuotaAdaptiveConfig, optional
-
         :param custom: The configuration used when ``mode`` is ``custom``.
         :type custom: RumRetentionQuotaCustomConfig, optional
 
-        :param mode: The retention quota mode. ``custom`` enforces a fixed session limit, while
-            ``adaptive`` dynamically adjusts retention.
+        :param mode: The retention quota mode. ``custom`` enforces a fixed session limit.
+            ``custom`` is the only supported mode.
         :type mode: RumRetentionQuotaMode
 
         :param org_id: The ID of the organization the retention quota configuration belongs to.
@@ -77,8 +69,6 @@ class RumRetentionQuotaConfigAttributes(ModelNormal):
         :param updated_by: The handle of the user who last updated the retention quota configuration.
         :type updated_by: str, optional
         """
-        if adaptive is not unset:
-            kwargs["adaptive"] = adaptive
         if custom is not unset:
             kwargs["custom"] = custom
         if updated_at is not unset:
