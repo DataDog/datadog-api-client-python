@@ -16,6 +16,7 @@ from datadog_api_client.v2.model.create_data_deletion_request_body_data_type imp
 body = CreateDataDeletionRequestBody(
     data=CreateDataDeletionRequestBodyData(
         attributes=CreateDataDeletionRequestBodyAttributes(
+            displayed_total=100,
             _from=1672527600000,
             indexes=[
                 "test-index",
@@ -32,7 +33,6 @@ body = CreateDataDeletionRequestBody(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_data_deletion_request"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DataDeletionApi(api_client)
     response = api_instance.create_data_deletion_request(product="logs", body=body)
