@@ -314,7 +314,9 @@ class MetricsApi:
     ) -> MetricsQueryResponse:
         """Query timeseries points.
 
-        Query timeseries points.
+        Query timeseries points. Datadog recommends using the v2
+        ``/api/v2/query/timeseries`` endpoint over this endpoint for
+        querying timeseries data.
 
         :param _from: Start of the queried time period, seconds since the Unix epoch.
         :type _from: int
