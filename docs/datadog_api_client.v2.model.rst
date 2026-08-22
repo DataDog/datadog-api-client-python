@@ -29663,6 +29663,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination m
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_compression module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_compression\_gzip module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_gzip
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_compression\_gzip\_type module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_gzip_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_compression\_zstd module
+--------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_zstd
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_compression\_zstd\_type module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_zstd_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.observability\_pipeline\_amazon\_s3\_destination\_server\_side\_encryption module
 ---------------------------------------------------------------------------------------------------------------
 
@@ -29828,6 +29863,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_aws\_auth module
 -----------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_aws_auth
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_azure\_storage\_destination\_compression module
+------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_azure\_storage\_destination\_compression\_gzip module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_gzip
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_azure\_storage\_destination\_compression\_gzip\_type module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_gzip_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_azure\_storage\_destination\_compression\_zstd module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_zstd
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_azure\_storage\_destination\_compression\_zstd\_type module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_zstd_type
    :members:
    :show-inheritance:
 
@@ -30514,6 +30584,41 @@ datadog\_api\_client.v2.model.observability\_pipeline\_google\_cloud\_storage\_d
 ------------------------------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_acl
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_cloud\_storage\_destination\_compression module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_cloud\_storage\_destination\_compression\_gzip module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_gzip
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_cloud\_storage\_destination\_compression\_gzip\_type module
+--------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_gzip_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_cloud\_storage\_destination\_compression\_zstd module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_zstd
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.observability\_pipeline\_google\_cloud\_storage\_destination\_compression\_zstd\_type module
+--------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_zstd_type
    :members:
    :show-inheritance:
 
