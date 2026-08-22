@@ -49690,6 +49690,181 @@ datadog\_api\_client.v2.model.teams\_hierarchy\_links\_response\_meta\_page modu
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_error module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_error
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_operation module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_operation
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_operation\_data module
+--------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_operation\_data\_attributes module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_operation\_op module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_op
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_operation\_ref module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_operation_ref
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_request module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_result module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_result
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_result\_data module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_result_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_batch\_result\_data\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_batch_result_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_create\_data module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_create\_data\_attributes module
+----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_create_data_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_create\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_response module
+------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_response\_attributes module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_response\_data module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mapping\_type module
+--------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mapping_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_mappings\_response module
+-------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_mappings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_match\_type module
+------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_match_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_rule\_response\_attributes module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_rule_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_rule\_response\_data module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_rule_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_rule\_team\_mapping module
+--------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_rule_team_mapping
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_rule\_type module
+-----------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_rule_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.teams\_ownership\_rules\_response module
+----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.teams_ownership_rules_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.teams\_response module
 ----------------------------------------------------
 
