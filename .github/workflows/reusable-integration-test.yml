@@ -116,6 +116,7 @@ jobs:
         run: ./run-tests.sh
         shell: bash
         env:
+          DD_USE_GENERATED_TESTS: "true"
           DD_AGENT_HOST: localhost
           DD_ENV: prod
           DD_SERVICE: datadog-api-client-python

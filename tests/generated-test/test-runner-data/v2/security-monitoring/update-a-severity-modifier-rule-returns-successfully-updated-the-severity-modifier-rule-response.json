@@ -1,0 +1,62 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a severity modifier rule returns \"Successfully updated the severity modifier rule\" response",
+  "operation_id": "UpdateSecurityFindingsAutomationSeverityModifierRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SeverityModifierRuleUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "description": "Lower severity for dev environment noise",
+              "severity": "low",
+              "type": "set"
+            },
+            "enabled": true,
+            "name": "Downgrade misconfigurations in dev",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:prod team:platform"
+            }
+          },
+          "type": "severity_modifier_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_severity_modifier_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}"
+  },
+  "scenario": "Update a severity modifier rule returns \"Successfully updated the severity modifier rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

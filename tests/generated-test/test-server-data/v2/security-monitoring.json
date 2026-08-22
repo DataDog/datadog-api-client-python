@@ -3533,6 +3533,77 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-08-18T07:20:55.439Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Lower severity for dev environment noise",
+                      "severity": "low",
+                      "type": "set"
+                    },
+                    "enabled": true,
+                    "name": "Downgrade misconfigurations in dev",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:prod team:platform"
+                    }
+                  },
+                  "type": "severity_modifier_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a14d6808-eab2-4381-8a15-ae4874d33b9e\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\",\"description\":\"Lower severity for dev environment noise\"},\"created_at\":1787037657563,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037657563,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Downgrade misconfigurations in dev\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:prod team:platform\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/a14d6808-eab2-4381-8a15-ae4874d33b9e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a severity modifier rule returns \"Successfully created the severity modifier rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2025-11-07T12:27:25.514Z",
       "interactions": [
         {
@@ -4750,6 +4821,99 @@
         }
       ],
       "scenario": "Delete a security filter returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-08-18T07:20:58.050Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "severity": "low",
+                      "type": "set"
+                    },
+                    "enabled": true,
+                    "name": "Test-Delete_a_severity_modifier_rule_returns_Rule_successfully_deleted_response-1787037658",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "severity_modifier_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"89935049-6349-4c1b-b54a-25f340248515\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037658168,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037658168,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Delete_a_severity_modifier_rule_returns_Rule_successfully_deleted_response-1787037658\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/89935049-6349-4c1b-b54a-25f340248515",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/89935049-6349-4c1b-b54a-25f340248515",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rule does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a severity modifier rule returns \"Rule successfully deleted\" response",
       "version": "v2"
     },
     {
@@ -6917,6 +7081,99 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-08-18T07:20:58.799Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "severity": "low",
+                      "type": "set"
+                    },
+                    "enabled": true,
+                    "name": "Test-Get_a_severity_modifier_rule_returns_Successfully_retrieved_the_severity_modifier_rule_response-1787037658",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "severity_modifier_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a27e8943-8a97-472f-9468-fc1c7a197688\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037658926,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037658926,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_a_severity_modifier_rule_returns_Successfully_retrieved_the_severity_modifier_rule_response-1787037658\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/a27e8943-8a97-472f-9468-fc1c7a197688",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a27e8943-8a97-472f-9468-fc1c7a197688\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037658926,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037658926,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_a_severity_modifier_rule_returns_Successfully_retrieved_the_severity_modifier_rule_response-1787037658\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/a27e8943-8a97-472f-9468-fc1c7a197688",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a severity modifier rule returns \"Successfully retrieved the severity modifier rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2022-09-23T14:12:23.353Z",
       "interactions": [
         {
@@ -7563,6 +7820,99 @@
         }
       ],
       "scenario": "Get all security filters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-08-18T07:20:59.542Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "severity": "low",
+                      "type": "set"
+                    },
+                    "enabled": true,
+                    "name": "Test-Get_all_severity_modifier_rules_returns_Successfully_retrieved_the_list_of_severity_modifier_rules_r-1787037659",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "severity_modifier_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"23e58787-df52-4cd0-b5c8-bf2ba53c5739\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037659669,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037659669,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_all_severity_modifier_rules_returns_Successfully_retrieved_the_list_of_severity_modifier_rules_r-1787037659\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"23e58787-df52-4cd0-b5c8-bf2ba53c5739\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037659669,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037659669,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_all_severity_modifier_rules_returns_Successfully_retrieved_the_list_of_severity_modifier_rules_r-1787037659\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}],\"meta\":{\"page\":{\"total_filtered_count\":1}},\"links\":{\"first\":\"/api/v2/security/findings/automation/severity_modifier_rules?page[size]=1000\\u0026page[number]=0\",\"last\":\"/api/v2/security/findings/automation/severity_modifier_rules?page[size]=1000\\u0026page[number]=0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/23e58787-df52-4cd0-b5c8-bf2ba53c5739",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all severity modifier rules returns \"Successfully retrieved the list of severity modifier rules\" response",
       "version": "v2"
     },
     {
@@ -10935,6 +11285,106 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-08-18T07:21:00.320Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "severity": "low",
+                      "type": "set"
+                    },
+                    "enabled": true,
+                    "name": "Test-Reorder_severity_modifier_rules_returns_Successfully_reordered_the_severity_modifier_rules_response-1787037660",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "severity_modifier_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"25a8393e-3888-4ac3-81be-c45b6d23da3f\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037660440,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037660440,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Reorder_severity_modifier_rules_returns_Successfully_reordered_the_severity_modifier_rules_response-1787037660\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": [
+                  {
+                    "id": "25a8393e-3888-4ac3-81be-c45b6d23da3f",
+                    "type": "severity_modifier_rules"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/reorder",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"severity_modifier_rules\",\"id\":\"25a8393e-3888-4ac3-81be-c45b6d23da3f\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/25a8393e-3888-4ac3-81be-c45b6d23da3f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Reorder severity modifier rules returns \"Successfully reordered the severity modifier rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2026-06-16T15:41:17.183Z",
       "interactions": [
         {
@@ -12852,6 +13302,118 @@
         }
       ],
       "scenario": "Update a security filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-08-18T07:21:01.200Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "severity": "low",
+                      "type": "set"
+                    },
+                    "enabled": true,
+                    "name": "Test-Update_a_severity_modifier_rule_returns_Successfully_updated_the_severity_modifier_rule_response-1787037661",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "severity_modifier_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c58887bd-5c87-497c-adb8-db08a3593bbb\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037661319,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037661319,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_severity_modifier_rule_returns_Successfully_updated_the_severity_modifier_rule_response-1787037661\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Lower severity for dev environment noise",
+                      "severity": "low",
+                      "type": "set"
+                    },
+                    "enabled": true,
+                    "name": "Downgrade misconfigurations in dev",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:prod team:platform"
+                    }
+                  },
+                  "type": "severity_modifier_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/c58887bd-5c87-497c-adb8-db08a3593bbb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c58887bd-5c87-497c-adb8-db08a3593bbb\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\",\"description\":\"Lower severity for dev environment noise\"},\"created_at\":1787037661319,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037661614,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Downgrade misconfigurations in dev\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:prod team:platform\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/c58887bd-5c87-497c-adb8-db08a3593bbb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a severity modifier rule returns \"Successfully updated the severity modifier rule\" response",
       "version": "v2"
     },
     {

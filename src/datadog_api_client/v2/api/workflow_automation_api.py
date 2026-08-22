@@ -428,7 +428,7 @@ class WorkflowAutomationApi:
 
         :param workflow_id: The ID of the workflow.
         :type workflow_id: str
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Number of items to return per page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional

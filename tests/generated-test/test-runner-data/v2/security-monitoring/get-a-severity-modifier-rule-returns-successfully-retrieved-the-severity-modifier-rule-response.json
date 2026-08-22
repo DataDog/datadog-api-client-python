@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get a severity modifier rule returns \"Successfully retrieved the severity modifier rule\" response",
+  "operation_id": "GetSecurityFindingsAutomationSeverityModifierRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_severity_modifier_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}"
+  },
+  "scenario": "Get a severity modifier rule returns \"Successfully retrieved the severity modifier rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
