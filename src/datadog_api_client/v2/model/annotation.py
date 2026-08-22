@@ -17,6 +17,12 @@ if TYPE_CHECKING:
 
 
 class Annotation(ModelNormal):
+    validations = {
+        "id": {
+            "min_length": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.annotation_display import AnnotationDisplay
@@ -38,15 +44,15 @@ class Annotation(ModelNormal):
         self_, display: AnnotationDisplay, id: str, markdown_text_annotation: AnnotationMarkdownTextAnnotation, **kwargs
     ):
         """
-        A list of annotations used in the workflow. These are like sticky notes for your workflow!
+        A text annotation displayed on the workflow canvas.
 
-        :param display: The definition of ``AnnotationDisplay`` object.
+        :param display: The annotation's position and size on the workflow canvas.
         :type display: AnnotationDisplay
 
-        :param id: The ``Annotation`` ``id``.
+        :param id: The unique identifier of this annotation within the workflow.
         :type id: str
 
-        :param markdown_text_annotation: The definition of ``AnnotationMarkdownTextAnnotation`` object.
+        :param markdown_text_annotation: Markdown content displayed in an annotation.
         :type markdown_text_annotation: AnnotationMarkdownTextAnnotation
         """
         super().__init__(kwargs)

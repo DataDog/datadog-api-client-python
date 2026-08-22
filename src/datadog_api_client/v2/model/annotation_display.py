@@ -32,9 +32,9 @@ class AnnotationDisplay(ModelNormal):
 
     def __init__(self_, bounds: Union[AnnotationDisplayBounds, UnsetType] = unset, **kwargs):
         """
-        The definition of ``AnnotationDisplay`` object.
+        The annotation's position and size on the workflow canvas.
 
-        :param bounds: The definition of ``AnnotationDisplayBounds`` object.
+        :param bounds: Canvas coordinates and dimensions for an annotation on the workflow canvas.
         :type bounds: AnnotationDisplayBounds, optional
         """
         if bounds is not unset:
