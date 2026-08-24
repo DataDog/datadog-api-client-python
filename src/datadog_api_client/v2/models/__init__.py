@@ -2595,6 +2595,7 @@ from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFind
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
+from datadog_api_client.v2.model.device_tags_by_source import DeviceTagsBySource
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.dns_metric_key import DnsMetricKey
 from datadog_api_client.v2.model.domain_allowlist import DomainAllowlist
@@ -12874,6 +12875,7 @@ __all__ = [
     "DetailedFindingType",
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
+    "DeviceTagsBySource",
     "DevicesListData",
     "DnsMetricKey",
     "DomainAllowlist",
