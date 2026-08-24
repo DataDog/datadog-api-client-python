@@ -788,6 +788,13 @@ datadog\_api\_client.v2.api.rum\_retention\_quota\_api module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.api.rum\_teams\_ownership\_api module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.api.rum_teams_ownership_api
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.api.salesforce\_integration\_api module
 ---------------------------------------------------------------
 
