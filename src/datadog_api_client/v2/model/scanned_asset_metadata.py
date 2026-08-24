@@ -13,24 +13,28 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.scanned_asset_metadata_attributes import ScannedAssetMetadataAttributes
+    from datadog_api_client.v2.model.scanned_asset_metadata_type import ScannedAssetMetadataType
 
 
 class ScannedAssetMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.scanned_asset_metadata_attributes import ScannedAssetMetadataAttributes
+        from datadog_api_client.v2.model.scanned_asset_metadata_type import ScannedAssetMetadataType
 
         return {
             "attributes": (ScannedAssetMetadataAttributes,),
             "id": (str,),
+            "type": (ScannedAssetMetadataType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
         "id": "id",
+        "type": "type",
     }
 
-    def __init__(self_, attributes: ScannedAssetMetadataAttributes, id: str, **kwargs):
+    def __init__(self_, attributes: ScannedAssetMetadataAttributes, id: str, type: ScannedAssetMetadataType, **kwargs):
         """
         The metadata of a scanned asset.
 
@@ -39,8 +43,12 @@ class ScannedAssetMetadata(ModelNormal):
 
         :param id: The ID of the scanned asset metadata.
         :type id: str
+
+        :param type: The JSON:API type.
+        :type type: ScannedAssetMetadataType
         """
         super().__init__(kwargs)
 
         self_.attributes = attributes
         self_.id = id
+        self_.type = type

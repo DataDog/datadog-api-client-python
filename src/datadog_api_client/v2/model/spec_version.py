@@ -16,7 +16,7 @@ class SpecVersion(ModelSimple):
     """
     The version of the CycloneDX specification a BOM conforms to.
 
-    :param value: Must be one of ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5"].
+    :param value: Must be one of ["1.0", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6"].
     :type value: str
     """
 
@@ -27,6 +27,7 @@ class SpecVersion(ModelSimple):
         "1.3",
         "1.4",
         "1.5",
+        "1.6",
     }
     ONE_ZERO: ClassVar["SpecVersion"]
     ONE_ONE: ClassVar["SpecVersion"]
@@ -34,6 +35,7 @@ class SpecVersion(ModelSimple):
     ONE_THREE: ClassVar["SpecVersion"]
     ONE_FOUR: ClassVar["SpecVersion"]
     ONE_FIVE: ClassVar["SpecVersion"]
+    ONE_SIX: ClassVar["SpecVersion"]
 
     @cached_property
     def openapi_types(_):
@@ -48,3 +50,4 @@ SpecVersion.ONE_TWO = SpecVersion("1.2")
 SpecVersion.ONE_THREE = SpecVersion("1.3")
 SpecVersion.ONE_FOUR = SpecVersion("1.4")
 SpecVersion.ONE_FIVE = SpecVersion("1.5")
+SpecVersion.ONE_SIX = SpecVersion("1.6")

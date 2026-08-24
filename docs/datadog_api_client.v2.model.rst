@@ -40646,6 +40646,13 @@ datadog\_api\_client.v2.model.scanned\_asset\_metadata\_last\_success module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.scanned\_asset\_metadata\_type module
+-------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.scanned_asset_metadata_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.scanned\_assets\_metadata module
 --------------------------------------------------------------
 
