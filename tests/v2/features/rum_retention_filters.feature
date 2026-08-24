@@ -9,6 +9,24 @@ Feature: Rum Retention Filters
     And a valid "appKeyAuth" key in the system
     And an instance of "RumRetentionFilters" API
 
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Create a RUM exclusion filter returns "Bad Request" response
+    Given operation "CreateExclusionFilter" enabled
+    And new "CreateExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "type": "exclusion_filters"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Create a RUM exclusion filter returns "Created" response
+    Given operation "CreateExclusionFilter" enabled
+    And new "CreateExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "type": "exclusion_filters"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @team:DataDog/rum-backend
   Scenario: Create a RUM retention filter returns "Bad Request" response
     Given new "CreateRetentionFilter" request
@@ -31,6 +49,33 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 50
 
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Delete a RUM exclusion filter returns "Method Not Allowed" response
+    Given operation "DeleteExclusionFilter" enabled
+    And new "DeleteExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 405 Method Not Allowed
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Delete a RUM exclusion filter returns "No Content" response
+    Given operation "DeleteExclusionFilter" enabled
+    And new "DeleteExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Delete a RUM exclusion filter returns "Not Found" response
+    Given operation "DeleteExclusionFilter" enabled
+    And new "DeleteExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @replay-only @team:DataDog/rum-backend
   Scenario: Delete a RUM retention filter returns "No Content" response
     Given new "DeleteRetentionFilter" request
@@ -46,6 +91,24 @@ Feature: Rum Retention Filters
     And request contains "rf_id" parameter with value "{{ unique }}"
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Get a RUM exclusion filter returns "Not Found" response
+    Given operation "GetExclusionFilter" enabled
+    And new "GetExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Get a RUM exclusion filter returns "OK" response
+    Given operation "GetExclusionFilter" enabled
+    And new "GetExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @team:DataDog/rum-backend
   Scenario: Get a RUM retention filter returns "Not Found" response
@@ -86,6 +149,14 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Get all RUM exclusion filters returns "OK" response
+    Given operation "ListExclusionFilters" enabled
+    And new "ListExclusionFilters" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @replay-only @team:DataDog/rum-backend
   Scenario: Get all RUM retention filters returns "OK" response
     Given new "ListRetentionFilters" request
@@ -119,6 +190,46 @@ Feature: Rum Retention Filters
     And the response "data[0].id" is equal to "325631eb-94c9-49c0-93f9-ab7e4fd24529"
     And the response "data[1].id" is equal to "42d89430-5b80-426e-a44b-ba3b417ece25"
     And the response "data[2].id" is equal to "bff0bc34-99e9-4c16-adce-f47e71948c23"
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Update a RUM exclusion filter returns "Bad Request" response
+    Given operation "UpdateExclusionFilter" enabled
+    And new "UpdateExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Update a RUM exclusion filter returns "Conflict" response
+    Given operation "UpdateExclusionFilter" enabled
+    And new "UpdateExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Update a RUM exclusion filter returns "Not Found" response
+    Given operation "UpdateExclusionFilter" enabled
+    And new "UpdateExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/rum-backend
+  Scenario: Update a RUM exclusion filter returns "Updated" response
+    Given operation "UpdateExclusionFilter" enabled
+    And new "UpdateExclusionFilter" request
+    And request contains "app_id" parameter from "REPLACE.ME"
+    And request contains "ef_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    When the request is sent
+    Then the response status is 200 Updated
 
   @team:DataDog/rum-backend
   Scenario: Update a RUM retention filter returns "Bad Request" response

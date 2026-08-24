@@ -8008,6 +8008,19 @@ from datadog_api_client.v2.model.rum_config_update_request import RumConfigUpdat
 from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
 from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
 from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
+from datadog_api_client.v2.model.rum_exclusion_filter_attributes import RumExclusionFilterAttributes
+from datadog_api_client.v2.model.rum_exclusion_filter_create_attributes import RumExclusionFilterCreateAttributes
+from datadog_api_client.v2.model.rum_exclusion_filter_create_data import RumExclusionFilterCreateData
+from datadog_api_client.v2.model.rum_exclusion_filter_create_request import RumExclusionFilterCreateRequest
+from datadog_api_client.v2.model.rum_exclusion_filter_data import RumExclusionFilterData
+from datadog_api_client.v2.model.rum_exclusion_filter_event_type import RumExclusionFilterEventType
+from datadog_api_client.v2.model.rum_exclusion_filter_meta import RumExclusionFilterMeta
+from datadog_api_client.v2.model.rum_exclusion_filter_response import RumExclusionFilterResponse
+from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFilterType
+from datadog_api_client.v2.model.rum_exclusion_filter_update_attributes import RumExclusionFilterUpdateAttributes
+from datadog_api_client.v2.model.rum_exclusion_filter_update_data import RumExclusionFilterUpdateData
+from datadog_api_client.v2.model.rum_exclusion_filter_update_request import RumExclusionFilterUpdateRequest
+from datadog_api_client.v2.model.rum_exclusion_filters_response import RumExclusionFiltersResponse
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -16579,6 +16592,19 @@ __all__ = [
     "RumCrossProductSampling",
     "RumCrossProductSamplingCreate",
     "RumCrossProductSamplingUpdate",
+    "RumExclusionFilterAttributes",
+    "RumExclusionFilterCreateAttributes",
+    "RumExclusionFilterCreateData",
+    "RumExclusionFilterCreateRequest",
+    "RumExclusionFilterData",
+    "RumExclusionFilterEventType",
+    "RumExclusionFilterMeta",
+    "RumExclusionFilterResponse",
+    "RumExclusionFilterType",
+    "RumExclusionFilterUpdateAttributes",
+    "RumExclusionFilterUpdateData",
+    "RumExclusionFilterUpdateRequest",
+    "RumExclusionFiltersResponse",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",

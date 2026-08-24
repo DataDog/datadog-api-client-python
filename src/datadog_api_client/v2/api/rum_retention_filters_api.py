@@ -12,6 +12,10 @@ from datadog_api_client.v2.model.rum_retention_filters_order_request import RumR
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
 from datadog_api_client.v2.model.rum_retention_filter_response import RumRetentionFilterResponse
 from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
+from datadog_api_client.v2.model.rum_exclusion_filters_response import RumExclusionFiltersResponse
+from datadog_api_client.v2.model.rum_exclusion_filter_response import RumExclusionFilterResponse
+from datadog_api_client.v2.model.rum_exclusion_filter_create_request import RumExclusionFilterCreateRequest
+from datadog_api_client.v2.model.rum_exclusion_filter_update_request import RumExclusionFilterUpdateRequest
 from datadog_api_client.v2.model.rum_permanent_retention_filters_response import RumPermanentRetentionFiltersResponse
 from datadog_api_client.v2.model.rum_permanent_retention_filter_response import RumPermanentRetentionFilterResponse
 from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RumPermanentRetentionFilterID
@@ -30,6 +34,32 @@ class RumRetentionFiltersApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_exclusion_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (RumExclusionFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion",
+                "operation_id": "create_exclusion_filter",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RumExclusionFilterCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_retention_filter_endpoint = _Endpoint(
             settings={
@@ -54,6 +84,35 @@ class RumRetentionFiltersApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_exclusion_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
+                "operation_id": "delete_exclusion_filter",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "ef_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "ef_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -82,6 +141,35 @@ class RumRetentionFiltersApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_exclusion_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (RumExclusionFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
+                "operation_id": "get_exclusion_filter",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "ef_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "ef_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -135,6 +223,29 @@ class RumRetentionFiltersApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "rf_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_exclusion_filters_endpoint = _Endpoint(
+            settings={
+                "response_type": (RumExclusionFiltersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion",
+                "operation_id": "list_exclusion_filters",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
                     "location": "path",
                 },
             },
@@ -216,6 +327,38 @@ class RumRetentionFiltersApi:
             api_client=api_client,
         )
 
+        self._update_exclusion_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (RumExclusionFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
+                "operation_id": "update_exclusion_filter",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "app_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "app_id",
+                    "location": "path",
+                },
+                "ef_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "ef_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RumExclusionFilterUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_permanent_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumPermanentRetentionFilterResponse,),
@@ -280,6 +423,29 @@ class RumRetentionFiltersApi:
             api_client=api_client,
         )
 
+    def create_exclusion_filter(
+        self,
+        app_id: str,
+        body: RumExclusionFilterCreateRequest,
+    ) -> RumExclusionFilterResponse:
+        """Create a RUM exclusion filter.
+
+        Create an exclusion filter for a RUM application.
+        Returns the created exclusion filter when the request is successful.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :param body: The definition of the new RUM exclusion filter.
+        :type body: RumExclusionFilterCreateRequest
+        :rtype: RumExclusionFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["body"] = body
+
+        return self._create_exclusion_filter_endpoint.call_with_http_info(**kwargs)
+
     def create_retention_filter(
         self,
         app_id: str,
@@ -303,6 +469,30 @@ class RumRetentionFiltersApi:
 
         return self._create_retention_filter_endpoint.call_with_http_info(**kwargs)
 
+    def delete_exclusion_filter(
+        self,
+        app_id: str,
+        ef_id: str,
+    ) -> None:
+        """Delete a RUM exclusion filter.
+
+        Delete an exclusion filter for a RUM application.
+        The built-in Error Tracking exclusion filter ( ``error_tracking_exclusion_filter`` ) cannot be deleted;
+        attempting to do so returns a ``405 Method Not Allowed`` response.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :param ef_id: Exclusion filter ID.
+        :type ef_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["ef_id"] = ef_id
+
+        return self._delete_exclusion_filter_endpoint.call_with_http_info(**kwargs)
+
     def delete_retention_filter(
         self,
         app_id: str,
@@ -324,6 +514,28 @@ class RumRetentionFiltersApi:
         kwargs["rf_id"] = rf_id
 
         return self._delete_retention_filter_endpoint.call_with_http_info(**kwargs)
+
+    def get_exclusion_filter(
+        self,
+        app_id: str,
+        ef_id: str,
+    ) -> RumExclusionFilterResponse:
+        """Get a RUM exclusion filter.
+
+        Get a single exclusion filter for a RUM application.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :param ef_id: Exclusion filter ID.
+        :type ef_id: str
+        :rtype: RumExclusionFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["ef_id"] = ef_id
+
+        return self._get_exclusion_filter_endpoint.call_with_http_info(**kwargs)
 
     def get_permanent_retention_filter(
         self,
@@ -368,6 +580,24 @@ class RumRetentionFiltersApi:
         kwargs["rf_id"] = rf_id
 
         return self._get_retention_filter_endpoint.call_with_http_info(**kwargs)
+
+    def list_exclusion_filters(
+        self,
+        app_id: str,
+    ) -> RumExclusionFiltersResponse:
+        """Get all RUM exclusion filters.
+
+        Get the list of exclusion filters for a RUM application.
+        The built-in Error Tracking exclusion filter ( ``error_tracking_exclusion_filter`` ) is always returned first.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :rtype: RumExclusionFiltersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        return self._list_exclusion_filters_endpoint.call_with_http_info(**kwargs)
 
     def list_permanent_retention_filters(
         self,
@@ -427,6 +657,36 @@ class RumRetentionFiltersApi:
         kwargs["body"] = body
 
         return self._order_retention_filters_endpoint.call_with_http_info(**kwargs)
+
+    def update_exclusion_filter(
+        self,
+        app_id: str,
+        ef_id: str,
+        body: RumExclusionFilterUpdateRequest,
+    ) -> RumExclusionFilterResponse:
+        """Update a RUM exclusion filter.
+
+        Update an exclusion filter for a RUM application.
+        For the built-in Error Tracking exclusion filter ( ``error_tracking_exclusion_filter`` ), only ``enabled`` can be
+        updated; ``name`` , ``event_type`` , and ``query`` must be omitted.
+        Returns the updated exclusion filter when the request is successful.
+
+        :param app_id: RUM application ID.
+        :type app_id: str
+        :param ef_id: Exclusion filter ID.
+        :type ef_id: str
+        :param body: New definition of the RUM exclusion filter.
+        :type body: RumExclusionFilterUpdateRequest
+        :rtype: RumExclusionFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["app_id"] = app_id
+
+        kwargs["ef_id"] = ef_id
+
+        kwargs["body"] = body
+
+        return self._update_exclusion_filter_endpoint.call_with_http_info(**kwargs)
 
     def update_permanent_retention_filter(
         self,
