@@ -13850,6 +13850,237 @@ datadog\_api\_client.v2.model.due\_date\_severity module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.elastic\_cloud\_detailed\_index\_stats\_integration\_dataflow\_request module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_detailed_index_stats_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_detailed\_index\_stats\_integration\_dataflow\_response module
+------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_detailed_index_stats_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_index\_stats\_integration\_dataflow\_request module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_index_stats_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_index\_stats\_integration\_dataflow\_response module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_index_stats_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_authentication\_request module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_authentication_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_authentication\_response module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_authentication_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_authentication\_update module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_authentication_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_create\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_create\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_create\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_response module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_response\_attributes module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_response\_data module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_settings\_request module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_settings_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_settings\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_settings\_update module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_settings_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_update\_attributes module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_update\_data module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_account\_update\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_account_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_accounts\_response module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_accounts_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_dataflows\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_dataflows_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_integration\_dataflows\_response module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_integration_dataflows_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_metrics\_integration\_dataflow\_response module
+---------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_metrics_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_pending\_task\_stats\_integration\_dataflow\_request module
+---------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_pending_task_stats_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_pending\_task\_stats\_integration\_dataflow\_response module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_pending_task_stats_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_primary\_shard\_graceful\_timeout\_integration\_dataflow\_request module
+----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_primary_shard_graceful_timeout_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_primary\_shard\_graceful\_timeout\_integration\_dataflow\_response module
+-----------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_primary_shard_graceful_timeout_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_primary\_shard\_stats\_integration\_dataflow\_request module
+----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_primary_shard_stats_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_primary\_shard\_stats\_integration\_dataflow\_response module
+-----------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_primary_shard_stats_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_shard\_allocation\_stats\_integration\_dataflow\_request module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_shard_allocation_stats_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_shard\_allocation\_stats\_integration\_dataflow\_response module
+--------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_shard_allocation_stats_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_slm\_stats\_integration\_dataflow\_request module
+-----------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_slm_stats_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.elastic\_cloud\_slm\_stats\_integration\_dataflow\_response module
+------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.elastic_cloud_slm_stats_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.elf\_sourcemap\_attributes module
 ---------------------------------------------------------------
 
@@ -21582,6 +21813,55 @@ datadog\_api\_client.v2.model.integration module
 ------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.integration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_account\_basic\_auth\_request module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_account_basic_auth_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_account\_basic\_auth\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_account_basic_auth_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_account\_basic\_auth\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_account_basic_auth_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_account\_basic\_auth\_update module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_account_basic_auth_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_account\_dataflow\_health module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_account_dataflow_health
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_account\_dataflow\_status module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_account_dataflow_status
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.integration\_account\_type module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.integration_account_type
    :members:
    :show-inheritance:
 
@@ -50499,6 +50779,202 @@ datadog\_api\_client.v2.model.trigger\_workflow\_automation\_action\_type module
 --------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.trigger_workflow_automation_action_type
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_alerts\_logs\_integration\_dataflow\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_alerts_logs_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_alerts\_logs\_integration\_dataflow\_response module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_alerts_logs_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_call\_summaries\_logs\_integration\_dataflow\_request module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_call_summaries_logs_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_call\_summaries\_logs\_integration\_dataflow\_response module
+---------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_call_summaries_logs_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_cloud\_cost\_metrics\_integration\_dataflow\_request module
+-------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_cloud_cost_metrics_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_cloud\_cost\_metrics\_integration\_dataflow\_response module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_cloud_cost_metrics_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_events\_logs\_integration\_dataflow\_request module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_events_logs_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_events\_logs\_integration\_dataflow\_response module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_events_logs_integration_dataflow_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_authentication\_request module
+------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_authentication_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_authentication\_response module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_authentication_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_authentication\_update module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_authentication_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_create\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_create_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_create\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_create_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_create\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_create_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_response module
+---------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_response\_attributes module
+---------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_response_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_response\_data module
+---------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_response_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_settings\_request module
+------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_settings_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_settings\_response module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_settings_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_settings\_update module
+-----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_settings_update
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_update\_attributes module
+-------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_update_attributes
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_update\_data module
+-------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_update_data
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_account\_update\_request module
+----------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_account_update_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_accounts\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_accounts_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_dataflows\_request module
+----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_dataflows_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_integration\_dataflows\_response module
+-----------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_integration_dataflows_response
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_messages\_logs\_integration\_dataflow\_request module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_messages_logs_integration_dataflow_request
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.twilio\_messages\_logs\_integration\_dataflow\_response module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.twilio_messages_logs_integration_dataflow_response
    :members:
    :show-inheritance:
 
