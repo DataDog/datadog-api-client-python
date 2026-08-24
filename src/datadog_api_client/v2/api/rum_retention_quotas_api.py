@@ -12,7 +12,7 @@ from datadog_api_client.v2.model.rum_retention_quota_config_response import RumR
 from datadog_api_client.v2.model.rum_retention_quota_config_update_request import RumRetentionQuotaConfigUpdateRequest
 
 
-class RUMRetentionQuotaApi:
+class RUMRetentionQuotasApi:
     """
     Manage RUM retention quota configurations for your organization's RUM applications.
     """
@@ -122,6 +122,7 @@ class RUMRetentionQuotaApi:
         Delete the RUM retention quota configuration for a given scope.
 
         :param scope_type: The type of scope the retention quota configuration applies to.
+            ``application`` is the only supported scope type.
         :type scope_type: RumRetentionQuotaScopeType
         :param scope_id: The identifier of the scope the retention quota configuration applies to.
             For the ``application`` scope, this is the RUM application ID.
@@ -145,6 +146,7 @@ class RUMRetentionQuotaApi:
         Get the RUM retention quota configuration for a given scope.
 
         :param scope_type: The type of scope the retention quota configuration applies to.
+            ``application`` is the only supported scope type.
         :type scope_type: RumRetentionQuotaScopeType
         :param scope_id: The identifier of the scope the retention quota configuration applies to.
             For the ``application`` scope, this is the RUM application ID.
@@ -170,6 +172,7 @@ class RUMRetentionQuotaApi:
         Returns the retention quota configuration object when the request is successful.
 
         :param scope_type: The type of scope the retention quota configuration applies to.
+            ``application`` is the only supported scope type.
         :type scope_type: RumRetentionQuotaScopeType
         :param scope_id: The identifier of the scope the retention quota configuration applies to.
             For the ``application`` scope, this is the RUM application ID.

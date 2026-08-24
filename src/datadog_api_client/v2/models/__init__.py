@@ -8062,7 +8062,6 @@ from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
 from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
 from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
-from datadog_api_client.v2.model.rum_retention_quota_adaptive_config import RumRetentionQuotaAdaptiveConfig
 from datadog_api_client.v2.model.rum_retention_quota_config_attributes import RumRetentionQuotaConfigAttributes
 from datadog_api_client.v2.model.rum_retention_quota_config_data import RumRetentionQuotaConfigData
 from datadog_api_client.v2.model.rum_retention_quota_config_response import RumRetentionQuotaConfigResponse
@@ -16664,7 +16663,6 @@ __all__ = [
     "RumRetentionFiltersOrderRequest",
     "RumRetentionFiltersOrderResponse",
     "RumRetentionFiltersResponse",
-    "RumRetentionQuotaAdaptiveConfig",
     "RumRetentionQuotaConfigAttributes",
     "RumRetentionQuotaConfigData",
     "RumRetentionQuotaConfigResponse",

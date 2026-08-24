@@ -1799,7 +1799,9 @@ components:
         example: cd73a516-a481-4af5-8352-9b577465c77b
         type: string
     RumRetentionQuotaScopeTypeParameter:
-      description: The type of scope the retention quota configuration applies to.
+      description: |-
+        The type of scope the retention quota configuration applies to.
+        `application` is the only supported scope type.
       in: path
       name: scope_type
       required: true
@@ -92551,25 +92553,9 @@ components:
             $ref: "#/components/schemas/RumRetentionFilterData"
           type: array
       type: object
-    RumRetentionQuotaAdaptiveConfig:
-      description: The configuration used when `mode` is `adaptive`.
-      properties:
-        max_retention_rate:
-          description: The maximum fraction of sessions to retain, in the range `(0, 1]`.
-          example: 0.5
-          exclusiveMinimum: true
-          format: double
-          maximum: 1
-          minimum: 0
-          type: number
-      required:
-        - max_retention_rate
-      type: object
     RumRetentionQuotaConfigAttributes:
       description: The RUM retention quota configuration properties.
       properties:
-        adaptive:
-          $ref: "#/components/schemas/RumRetentionQuotaAdaptiveConfig"
         custom:
           $ref: "#/components/schemas/RumRetentionQuotaCustomConfig"
         mode:
@@ -92627,8 +92613,6 @@ components:
     RumRetentionQuotaConfigUpdateAttributes:
       description: The RUM retention quota configuration properties to create or update.
       properties:
-        adaptive:
-          $ref: "#/components/schemas/RumRetentionQuotaAdaptiveConfig"
         custom:
           $ref: "#/components/schemas/RumRetentionQuotaCustomConfig"
         mode:
@@ -92694,14 +92678,13 @@ components:
       type: object
     RumRetentionQuotaMode:
       description: |-
-        The retention quota mode. `custom` enforces a fixed session limit, while
-        `adaptive` dynamically adjusts retention.
+        The retention quota mode. `custom` enforces a fixed session limit.
+        `custom` is the only supported mode.
       enum:
         - custom
-        - adaptive
       example: custom
       type: string
-      x-enum-varnames: ["CUSTOM", "ADAPTIVE"]
+      x-enum-varnames: ["CUSTOM"]
     RumRetentionQuotaReachedAction:
       description: The action to take when the session quota is reached.
       enum:
@@ -92712,7 +92695,9 @@ components:
       x-enum-varnames: ["STOP", "SLOWDOWN"]
     RumRetentionQuotaScopeType:
       default: application
-      description: The type of scope the retention quota configuration applies to.
+      description: |-
+        The type of scope the retention quota configuration applies to.
+        `application` is the only supported scope type.
       enum:
         - application
       example: application
@@ -187921,7 +187906,7 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a RUM retention quota configuration
       tags:
-        - RUM Retention Quota
+        - RUM Retention Quotas
       x-permission:
         operator: OR
         permissions:
@@ -187984,7 +187969,7 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a RUM retention quota configuration
       tags:
-        - RUM Retention Quota
+        - RUM Retention Quotas
       x-permission:
         operator: OR
         permissions:
@@ -188070,7 +188055,7 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Create or update a RUM retention quota config
       tags:
-        - RUM Retention Quota
+        - RUM Retention Quotas
       x-codegen-request-body-name: body
       x-permission:
         operator: OR
@@ -219294,7 +219279,7 @@ tags:
     name: RUM Remote Config
   - description: |-
       Manage RUM retention quota configurations for your organization's RUM applications.
-    name: RUM Retention Quota
+    name: RUM Retention Quotas
   - description: View and manage Reference Tables in your organization.
     name: Reference Tables
   - description: |-
