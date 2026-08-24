@@ -40457,6 +40457,13 @@ datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_item
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_items\_locations\_items\_nullable\_file\_position module
+------------------------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_nullable_file_position
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_dependencies\_items\_locations\_items\_position module
 --------------------------------------------------------------------------------------------------------------------
 
@@ -40489,6 +40496,13 @@ datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_repository module
 -------------------------------------------------------------------------------
 
 .. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_repository
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.sca\_request\_data\_attributes\_scan\_start\_timestamp module
+-------------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.sca_request_data_attributes_scan_start_timestamp
    :members:
    :show-inheritance:
 
