@@ -14,9 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 class CreateDataDeletionRequestBodyAttributes(ModelNormal):
+    validations = {
+        "displayed_total": {
+            "inclusive_minimum": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
+            "displayed_total": (int,),
             "_from": (int,),
             "indexes": ([str],),
             "query": ({str: (str,)},),
@@ -24,6 +31,7 @@ class CreateDataDeletionRequestBodyAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "displayed_total": "displayed_total",
         "_from": "from",
         "indexes": "indexes",
         "query": "query",
@@ -31,10 +39,19 @@ class CreateDataDeletionRequestBodyAttributes(ModelNormal):
     }
 
     def __init__(
-        self_, _from: int, query: Dict[str, str], to: int, indexes: Union[List[str], UnsetType] = unset, **kwargs
+        self_,
+        displayed_total: int,
+        _from: int,
+        query: Dict[str, str],
+        to: int,
+        indexes: Union[List[str], UnsetType] = unset,
+        **kwargs,
     ):
         """
         Attributes for creating a data deletion request.
+
+        :param displayed_total: Total number of elements to be deleted as displayed to the user.
+        :type displayed_total: int
 
         :param _from: Start of requested time window, milliseconds since Unix epoch.
         :type _from: int
@@ -52,6 +69,7 @@ class CreateDataDeletionRequestBodyAttributes(ModelNormal):
             kwargs["indexes"] = indexes
         super().__init__(kwargs)
 
+        self_.displayed_total = displayed_total
         self_._from = _from
         self_.query = query
         self_.to = to

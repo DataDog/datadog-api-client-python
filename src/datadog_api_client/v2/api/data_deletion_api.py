@@ -19,7 +19,7 @@ from datadog_api_client.v2.model.cancel_data_deletion_response_body import Cance
 
 class DataDeletionApi:
     """
-    The Data Deletion API allows the user to target and delete data from the allowed products. It's currently enabled for Logs and RUM and depends on ``logs_delete_data`` and ``rum_delete_data`` permissions respectively.
+    The Data Deletion API allows the user to target and delete data from the allowed products. It's enabled for Logs and depends on the ``logs_delete_data`` permission.
     """
 
     def __init__(self, api_client=None):
@@ -148,7 +148,7 @@ class DataDeletionApi:
 
         Creates a data deletion request by providing a query and a timeframe targeting the proper data.
 
-        :param product: Name of the product to be deleted, either ``logs`` or ``rum``.
+        :param product: Name of the product to be deleted. Only ``logs`` is supported.
         :type product: str
         :type body: CreateDataDeletionRequestBody
         :rtype: CreateDataDeletionResponseBody
