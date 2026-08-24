@@ -19,6 +19,9 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         return {
             "created_at": (str,),
             "created_by": (str,),
+            "customer_message": (str,),
+            "displayed_total": (int,),
+            "error_category": (str,),
             "from_time": (int,),
             "indexes": ([str],),
             "is_created": (bool,),
@@ -35,6 +38,9 @@ class DataDeletionResponseItemAttributes(ModelNormal):
     attribute_map = {
         "created_at": "created_at",
         "created_by": "created_by",
+        "customer_message": "customer_message",
+        "displayed_total": "displayed_total",
+        "error_category": "error_category",
         "from_time": "from_time",
         "indexes": "indexes",
         "is_created": "is_created",
@@ -52,6 +58,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         self_,
         created_at: str,
         created_by: str,
+        displayed_total: int,
         from_time: int,
         is_created: bool,
         org_id: int,
@@ -62,6 +69,8 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         to_time: int,
         total_unrestricted: int,
         updated_at: str,
+        customer_message: Union[str, UnsetType] = unset,
+        error_category: Union[str, UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -73,6 +82,15 @@ class DataDeletionResponseItemAttributes(ModelNormal):
 
         :param created_by: User who created the deletion request.
         :type created_by: str
+
+        :param customer_message: A message for the customer regarding the deletion request, if any.
+        :type customer_message: str, optional
+
+        :param displayed_total: Total number of elements to be deleted as displayed to the user.
+        :type displayed_total: int
+
+        :param error_category: The category of the error for the deletion request, if any.
+        :type error_category: str, optional
 
         :param from_time: Start of requested time window, milliseconds since Unix epoch.
         :type from_time: int
@@ -107,12 +125,17 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         :param updated_at: Update time of the deletion request.
         :type updated_at: str
         """
+        if customer_message is not unset:
+            kwargs["customer_message"] = customer_message
+        if error_category is not unset:
+            kwargs["error_category"] = error_category
         if indexes is not unset:
             kwargs["indexes"] = indexes
         super().__init__(kwargs)
 
         self_.created_at = created_at
         self_.created_by = created_by
+        self_.displayed_total = displayed_total
         self_.from_time = from_time
         self_.is_created = is_created
         self_.org_id = org_id

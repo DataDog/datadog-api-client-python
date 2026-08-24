@@ -1538,7 +1538,7 @@ components:
         example: "-created_at"
         type: string
     ProductName:
-      description: Name of the product to be deleted, either `logs` or `rum`.
+      description: Name of the product to be deleted. Only `logs` is supported.
       in: path
       name: product
       required: true
@@ -24351,6 +24351,12 @@ components:
     CreateDataDeletionRequestBodyAttributes:
       description: Attributes for creating a data deletion request.
       properties:
+        displayed_total:
+          description: Total number of elements to be deleted as displayed to the user.
+          example: 100
+          format: int64
+          minimum: 1
+          type: integer
         from:
           description: Start of requested time window, milliseconds since Unix epoch.
           example: 1672527600000
@@ -24378,6 +24384,7 @@ components:
         - query
         - from
         - to
+        - displayed_total
       type: object
     CreateDataDeletionRequestBodyData:
       description: Data needed to create a data deletion request.
@@ -30968,6 +30975,19 @@ components:
           description: User who created the deletion request.
           example: "test.user@datadoghq.com"
           type: string
+        customer_message:
+          description: A message for the customer regarding the deletion request, if any.
+          example: "Your deletion request is being processed."
+          type: string
+        displayed_total:
+          description: Total number of elements to be deleted as displayed to the user.
+          example: 100
+          format: int64
+          type: integer
+        error_category:
+          description: The category of the error for the deletion request, if any.
+          example: "validation_error"
+          type: string
         from_time:
           description: Start of requested time window, milliseconds since Unix epoch.
           example: 1672527600000
@@ -31031,6 +31051,7 @@ components:
         - status
         - to_time
         - total_unrestricted
+        - displayed_total
         - updated_at
       type: object
     DataDeletionResponseMeta:
@@ -31041,7 +31062,7 @@ components:
             format: int64
             type: integer
           description: The total deletion requests created by product.
-          example: {"logs": 8, "rum": 7}
+          example: {"logs": 8}
           type: object
         count_status:
           additionalProperties:
@@ -143031,6 +143052,21 @@ paths:
       requestBody:
         content:
           application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      displayed_total: 100
+                      from: 1672527600000
+                      indexes:
+                        - test-index
+                        - test-index-2
+                      query:
+                        host: abc
+                        service: xyz
+                      to: 1704063600000
+                    type: create_deletion_req
             schema:
               $ref: "#/components/schemas/CreateDataDeletionRequestBody"
         required: true
@@ -143045,6 +143081,7 @@ paths:
                       attributes:
                         created_at: "2024-01-01T00:00:00.000000Z"
                         created_by: test@example.com
+                        displayed_total: 100
                         from_time: 1672527600000
                         is_created: true
                         org_id: 123
@@ -143090,11 +143127,7 @@ paths:
       x-permission:
         operator: OR
         permissions:
-          - rum_delete_data
           - logs_delete_data
-      x-unstable: |-
-        **Note**: This endpoint is in Preview. If you have any feedback,
-        contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deletion/requests:
     get:
       description: Gets a list of data deletion requests based on several filter parameters.
@@ -143151,6 +143184,7 @@ paths:
                       - attributes:
                           created_at: "2024-01-01T00:00:00.000000Z"
                           created_by: test@example.com
+                          displayed_total: 100
                           from_time: 1672527600000
                           is_created: true
                           org_id: 123
@@ -143190,11 +143224,7 @@ paths:
       x-permission:
         operator: OR
         permissions:
-          - rum_delete_data
           - logs_delete_data
-      x-unstable: |-
-        **Note**: This endpoint is in Preview. If you have any feedback,
-        contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deletion/requests/{id}/cancel:
     put:
       description: Cancels a data deletion request by providing its ID.
@@ -143212,6 +143242,7 @@ paths:
                       attributes:
                         created_at: "2024-01-01T00:00:00.000000Z"
                         created_by: test@example.com
+                        displayed_total: 100
                         from_time: 1672527600000
                         is_created: true
                         org_id: 123
@@ -143257,11 +143288,7 @@ paths:
       x-permission:
         operator: OR
         permissions:
-          - rum_delete_data
           - logs_delete_data
-      x-unstable: |-
-        **Note**: This endpoint is in Preview. If you have any feedback,
-        contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployment_gates:
     get:
       description: |-
@@ -218181,7 +218208,7 @@ tags:
       information.
     name: Dashboards
   - description: |-
-      The Data Deletion API allows the user to target and delete data from the allowed products. It's currently enabled for Logs and RUM and depends on `logs_delete_data` and `rum_delete_data` permissions respectively.
+      The Data Deletion API allows the user to target and delete data from the allowed products. It's enabled for Logs and depends on the `logs_delete_data` permission.
     name: Data Deletion
   - description: Manage and run data observability monitors.
     name: Data Observability
