@@ -15,6 +15,7 @@
       "value": {
         "data": {
           "attributes": {
+            "displayed_total": 100,
             "from": 1672527600000,
             "indexes": [
               "test-index",
