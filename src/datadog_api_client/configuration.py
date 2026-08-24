@@ -150,6 +150,10 @@ class Configuration:
     :type delegated_auth_provider: str
     :param delegated_auth_org_uuid: The organization UUID for delegated authentication.
     :type delegated_auth_org_uuid: str
+    :param is_iac: Set to True to indicate that requests made through this client originate from
+        infrastructure-as-code or other automation tooling. When set, the client sends the
+        ``X-Datadog-Managed-By: iac`` header on every request.
+    :type is_iac: bool
     """
 
     def __init__(
@@ -180,6 +184,7 @@ class Configuration:
         retry_policy=None,
         delegated_auth_provider=None,
         delegated_auth_org_uuid=None,
+        is_iac=False,
     ):
         """Constructor."""
         self._base_path = "https://api.datadoghq.com" if host is None else host
@@ -230,6 +235,10 @@ class Configuration:
 
         # Will translate to a Accept-Encoding header
         self.compress = compress
+
+        # Set to True to indicate that requests are made from infrastructure-as-code tooling.
+        # Will translate to a X-Datadog-Managed-By header.
+        self.is_iac = is_iac
 
         self.return_http_data_only = return_http_data_only
         self.preload_content = preload_content
