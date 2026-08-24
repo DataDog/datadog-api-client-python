@@ -7147,19 +7147,19 @@
     }
   },
   "DeleteRumQuotaConfig": {
-    "tag": "RUM Retention Quota",
+    "tag": "RUM Retention Quotas",
     "undo": {
       "type": "idempotent"
     }
   },
   "GetRumQuotaConfig": {
-    "tag": "RUM Retention Quota",
+    "tag": "RUM Retention Quotas",
     "undo": {
       "type": "safe"
     }
   },
   "UpsertRumQuotaConfig": {
-    "tag": "RUM Retention Quota",
+    "tag": "RUM Retention Quotas",
     "undo": {
       "type": "idempotent"
     }

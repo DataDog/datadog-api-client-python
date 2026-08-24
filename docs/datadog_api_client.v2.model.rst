@@ -39638,13 +39638,6 @@ datadog\_api\_client.v2.model.rum\_retention\_filters\_response module
    :members:
    :show-inheritance:
 
-datadog\_api\_client.v2.model.rum\_retention\_quota\_adaptive\_config module
-----------------------------------------------------------------------------
-
-.. automodule:: datadog_api_client.v2.model.rum_retention_quota_adaptive_config
-   :members:
-   :show-inheritance:
-
 datadog\_api\_client.v2.model.rum\_retention\_quota\_config\_attributes module
 ------------------------------------------------------------------------------
 
