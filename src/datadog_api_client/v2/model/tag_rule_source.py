@@ -12,9 +12,9 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class TagPolicySource(ModelSimple):
+class TagRuleSource(ModelSimple):
     """
-    The telemetry source that a tag policy applies to.
+    The telemetry source that a tag rule applies to.
 
     :param value: Must be one of ["logs", "spans", "metrics", "rum", "feed"].
     :type value: str
@@ -27,11 +27,11 @@ class TagPolicySource(ModelSimple):
         "rum",
         "feed",
     }
-    LOGS: ClassVar["TagPolicySource"]
-    SPANS: ClassVar["TagPolicySource"]
-    METRICS: ClassVar["TagPolicySource"]
-    RUM: ClassVar["TagPolicySource"]
-    FEED: ClassVar["TagPolicySource"]
+    LOGS: ClassVar["TagRuleSource"]
+    SPANS: ClassVar["TagRuleSource"]
+    METRICS: ClassVar["TagRuleSource"]
+    RUM: ClassVar["TagRuleSource"]
+    FEED: ClassVar["TagRuleSource"]
 
     @cached_property
     def openapi_types(_):
@@ -40,8 +40,8 @@ class TagPolicySource(ModelSimple):
         }
 
 
-TagPolicySource.LOGS = TagPolicySource("logs")
-TagPolicySource.SPANS = TagPolicySource("spans")
-TagPolicySource.METRICS = TagPolicySource("metrics")
-TagPolicySource.RUM = TagPolicySource("rum")
-TagPolicySource.FEED = TagPolicySource("feed")
+TagRuleSource.LOGS = TagRuleSource("logs")
+TagRuleSource.SPANS = TagRuleSource("spans")
+TagRuleSource.METRICS = TagRuleSource("metrics")
+TagRuleSource.RUM = TagRuleSource("rum")
+TagRuleSource.FEED = TagRuleSource("feed")

@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class TagPolicyScoreAttributes(ModelNormal):
+class TagRuleScoreAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
@@ -31,9 +31,9 @@ class TagPolicyScoreAttributes(ModelNormal):
 
     def __init__(self_, score: Union[float, none_type], ts_end: int, ts_start: int, version: int, **kwargs):
         """
-        Attributes of a tag policy compliance score.
+        Attributes of a tag rule compliance score.
 
-        :param score: The compliance score for the policy over the requested time window, as a percentage
+        :param score: The compliance score for the rule over the requested time window, as a percentage
             between 0 and 100. ``null`` indicates that no relevant telemetry was found.
         :type score: float, none_type
 
@@ -43,7 +43,7 @@ class TagPolicyScoreAttributes(ModelNormal):
         :param ts_start: Start of the time window the score was computed over, as a Unix timestamp in milliseconds.
         :type ts_start: int
 
-        :param version: The version of the tag policy that the score was computed against.
+        :param version: The version of the tag rule that the score was computed against.
         :type version: int
         """
         super().__init__(kwargs)

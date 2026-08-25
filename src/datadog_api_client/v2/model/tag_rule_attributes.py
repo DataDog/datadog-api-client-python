@@ -16,15 +16,15 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tag_policy_type import TagPolicyType
-    from datadog_api_client.v2.model.tag_policy_source import TagPolicySource
+    from datadog_api_client.v2.model.tag_rule_type import TagRuleType
+    from datadog_api_client.v2.model.tag_rule_source import TagRuleSource
 
 
-class TagPolicyAttributes(ModelNormal):
+class TagRuleAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tag_policy_type import TagPolicyType
-        from datadog_api_client.v2.model.tag_policy_source import TagPolicySource
+        from datadog_api_client.v2.model.tag_rule_type import TagRuleType
+        from datadog_api_client.v2.model.tag_rule_source import TagRuleSource
 
         return {
             "created_at": (datetime,),
@@ -34,12 +34,12 @@ class TagPolicyAttributes(ModelNormal):
             "enabled": (bool,),
             "modified_at": (datetime,),
             "modified_by": (str,),
+            "name": (str,),
             "negated": (bool,),
-            "policy_name": (str,),
-            "policy_type": (TagPolicyType,),
             "required": (bool,),
+            "rule_type": (TagRuleType,),
             "scope": (str,),
-            "source": (TagPolicySource,),
+            "source": (TagRuleSource,),
             "tag_key": (str,),
             "tag_value_patterns": ([str],),
             "version": (int,),
@@ -53,10 +53,10 @@ class TagPolicyAttributes(ModelNormal):
         "enabled": "enabled",
         "modified_at": "modified_at",
         "modified_by": "modified_by",
+        "name": "name",
         "negated": "negated",
-        "policy_name": "policy_name",
-        "policy_type": "policy_type",
         "required": "required",
+        "rule_type": "rule_type",
         "scope": "scope",
         "source": "source",
         "tag_key": "tag_key",
@@ -71,12 +71,12 @@ class TagPolicyAttributes(ModelNormal):
         enabled: bool,
         modified_at: datetime,
         modified_by: str,
+        name: str,
         negated: bool,
-        policy_name: str,
-        policy_type: TagPolicyType,
         required: bool,
+        rule_type: TagRuleType,
         scope: str,
-        source: TagPolicySource,
+        source: TagRuleSource,
         tag_key: str,
         tag_value_patterns: List[str],
         version: int,
@@ -85,49 +85,49 @@ class TagPolicyAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The attributes of a tag policy resource.
+        The attributes of a tag rule resource.
 
-        :param created_at: The RFC 3339 timestamp at which the policy was created.
+        :param created_at: The RFC 3339 timestamp at which the rule was created.
         :type created_at: datetime
 
-        :param created_by: The identifier of the user who created the policy.
+        :param created_by: The identifier of the user who created the rule.
         :type created_by: str
 
-        :param deleted_at: The RFC 3339 timestamp at which the policy was soft-deleted. ``null`` if the policy has not been deleted. Only present when ``include_deleted=true`` is requested.
+        :param deleted_at: The RFC 3339 timestamp at which the rule was soft-deleted. ``null`` if the rule has not been deleted. Only present when ``include_deleted=true`` is requested.
         :type deleted_at: datetime, none_type, optional
 
-        :param deleted_by: The identifier of the user who soft-deleted the policy. ``null`` if the policy has not been deleted.
+        :param deleted_by: The identifier of the user who soft-deleted the rule. ``null`` if the rule has not been deleted.
         :type deleted_by: str, none_type, optional
 
-        :param enabled: Whether the policy is currently enforced.
+        :param enabled: Whether the rule is currently enforced.
         :type enabled: bool
 
-        :param modified_at: The RFC 3339 timestamp at which the policy was last modified.
+        :param modified_at: The RFC 3339 timestamp at which the rule was last modified.
         :type modified_at: datetime
 
-        :param modified_by: The identifier of the user who last modified the policy.
+        :param modified_by: The identifier of the user who last modified the rule.
         :type modified_by: str
 
-        :param negated: When ``true`` , the policy matches tag values that do NOT match any of the supplied patterns.
+        :param name: Human-readable name for the tag rule.
+        :type name: str
+
+        :param negated: When ``true`` , the rule matches tag values that do NOT match any of the supplied patterns.
         :type negated: bool
-
-        :param policy_name: Human-readable name for the tag policy.
-        :type policy_name: str
-
-        :param policy_type: How the policy is enforced. ``blocking`` rejects telemetry that violates the policy.
-            ``surfacing`` only highlights non-compliant telemetry without blocking it.
-        :type policy_type: TagPolicyType
 
         :param required: When ``true`` , telemetry without this tag is treated as a violation.
         :type required: bool
 
-        :param scope: The scope the policy applies within.
+        :param rule_type: How the rule is enforced. ``blocking`` rejects telemetry that violates the rule.
+            ``surfacing`` only highlights non-compliant telemetry without blocking it.
+        :type rule_type: TagRuleType
+
+        :param scope: The scope the rule applies within.
         :type scope: str
 
-        :param source: The telemetry source that a tag policy applies to.
-        :type source: TagPolicySource
+        :param source: The telemetry source that a tag rule applies to.
+        :type source: TagRuleSource
 
-        :param tag_key: The tag key that the policy governs.
+        :param tag_key: The tag key that the rule governs.
         :type tag_key: str
 
         :param tag_value_patterns: The patterns that valid values for the tag key must match.
@@ -147,10 +147,10 @@ class TagPolicyAttributes(ModelNormal):
         self_.enabled = enabled
         self_.modified_at = modified_at
         self_.modified_by = modified_by
+        self_.name = name
         self_.negated = negated
-        self_.policy_name = policy_name
-        self_.policy_type = policy_type
         self_.required = required
+        self_.rule_type = rule_type
         self_.scope = scope
         self_.source = source
         self_.tag_key = tag_key

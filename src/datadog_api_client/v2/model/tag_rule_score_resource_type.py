@@ -12,18 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class TagPolicyResourceType(ModelSimple):
+class TagRuleScoreResourceType(ModelSimple):
     """
-    JSON:API resource type for a tag policy.
+    JSON:API resource type for a tag rule compliance score.
 
-    :param value: If omitted defaults to "tag_policy". Must be one of ["tag_policy"].
+    :param value: If omitted defaults to "tag_rule_score". Must be one of ["tag_rule_score"].
     :type value: str
     """
 
     allowed_values = {
-        "tag_policy",
+        "tag_rule_score",
     }
-    TAG_POLICY: ClassVar["TagPolicyResourceType"]
+    TAG_RULE_SCORE: ClassVar["TagRuleScoreResourceType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class TagPolicyResourceType(ModelSimple):
         }
 
 
-TagPolicyResourceType.TAG_POLICY = TagPolicyResourceType("tag_policy")
+TagRuleScoreResourceType.TAG_RULE_SCORE = TagRuleScoreResourceType("tag_rule_score")

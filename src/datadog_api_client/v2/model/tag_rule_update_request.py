@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tag_policy_create_data import TagPolicyCreateData
+    from datadog_api_client.v2.model.tag_rule_update_data import TagRuleUpdateData
 
 
-class TagPolicyCreateRequest(ModelNormal):
+class TagRuleUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tag_policy_create_data import TagPolicyCreateData
+        from datadog_api_client.v2.model.tag_rule_update_data import TagRuleUpdateData
 
         return {
-            "data": (TagPolicyCreateData,),
+            "data": (TagRuleUpdateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: TagPolicyCreateData, **kwargs):
+    def __init__(self_, data: TagRuleUpdateData, **kwargs):
         """
-        Payload for creating a new tag policy.
+        Payload for updating an existing tag rule. Only the supplied fields are modified.
 
-        :param data: Data object for creating a tag policy.
-        :type data: TagPolicyCreateData
+        :param data: Data object for updating a tag rule.
+        :type data: TagRuleUpdateData
         """
         super().__init__(kwargs)
 

@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tag_policy_score_relationship_data import TagPolicyScoreRelationshipData
+    from datadog_api_client.v2.model.tag_rule_score_relationship_data import TagRuleScoreRelationshipData
 
 
-class TagPolicyScoreRelationship(ModelNormal):
+class TagRuleScoreRelationship(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tag_policy_score_relationship_data import TagPolicyScoreRelationshipData
+        from datadog_api_client.v2.model.tag_rule_score_relationship_data import TagRuleScoreRelationshipData
 
         return {
-            "data": (TagPolicyScoreRelationshipData,),
+            "data": (TagRuleScoreRelationshipData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: TagPolicyScoreRelationshipData, **kwargs):
+    def __init__(self_, data: TagRuleScoreRelationshipData, **kwargs):
         """
-        A relationship to the compliance score resource for this policy.
+        A relationship to the compliance score resource for this rule.
 
         :param data: Identifier of the related compliance score resource.
-        :type data: TagPolicyScoreRelationshipData
+        :type data: TagRuleScoreRelationshipData
         """
         super().__init__(kwargs)
 

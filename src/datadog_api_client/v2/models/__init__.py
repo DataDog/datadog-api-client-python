@@ -10229,28 +10229,28 @@ from datadog_api_client.v2.model.tag_indexing_rule_update_data import TagIndexin
 from datadog_api_client.v2.model.tag_indexing_rule_update_request import TagIndexingRuleUpdateRequest
 from datadog_api_client.v2.model.tag_indexing_rules_response import TagIndexingRulesResponse
 from datadog_api_client.v2.model.tag_indexing_rules_response_meta import TagIndexingRulesResponseMeta
-from datadog_api_client.v2.model.tag_policies_list_response import TagPoliciesListResponse
-from datadog_api_client.v2.model.tag_policy_attributes import TagPolicyAttributes
-from datadog_api_client.v2.model.tag_policy_create_attributes import TagPolicyCreateAttributes
-from datadog_api_client.v2.model.tag_policy_create_data import TagPolicyCreateData
-from datadog_api_client.v2.model.tag_policy_create_request import TagPolicyCreateRequest
-from datadog_api_client.v2.model.tag_policy_create_type import TagPolicyCreateType
-from datadog_api_client.v2.model.tag_policy_data import TagPolicyData
-from datadog_api_client.v2.model.tag_policy_include import TagPolicyInclude
-from datadog_api_client.v2.model.tag_policy_relationships import TagPolicyRelationships
-from datadog_api_client.v2.model.tag_policy_resource_type import TagPolicyResourceType
-from datadog_api_client.v2.model.tag_policy_response import TagPolicyResponse
-from datadog_api_client.v2.model.tag_policy_score_attributes import TagPolicyScoreAttributes
-from datadog_api_client.v2.model.tag_policy_score_data import TagPolicyScoreData
-from datadog_api_client.v2.model.tag_policy_score_relationship import TagPolicyScoreRelationship
-from datadog_api_client.v2.model.tag_policy_score_relationship_data import TagPolicyScoreRelationshipData
-from datadog_api_client.v2.model.tag_policy_score_resource_type import TagPolicyScoreResourceType
-from datadog_api_client.v2.model.tag_policy_score_response import TagPolicyScoreResponse
-from datadog_api_client.v2.model.tag_policy_source import TagPolicySource
-from datadog_api_client.v2.model.tag_policy_type import TagPolicyType
-from datadog_api_client.v2.model.tag_policy_update_attributes import TagPolicyUpdateAttributes
-from datadog_api_client.v2.model.tag_policy_update_data import TagPolicyUpdateData
-from datadog_api_client.v2.model.tag_policy_update_request import TagPolicyUpdateRequest
+from datadog_api_client.v2.model.tag_rule_attributes import TagRuleAttributes
+from datadog_api_client.v2.model.tag_rule_create_attributes import TagRuleCreateAttributes
+from datadog_api_client.v2.model.tag_rule_create_data import TagRuleCreateData
+from datadog_api_client.v2.model.tag_rule_create_request import TagRuleCreateRequest
+from datadog_api_client.v2.model.tag_rule_create_type import TagRuleCreateType
+from datadog_api_client.v2.model.tag_rule_data import TagRuleData
+from datadog_api_client.v2.model.tag_rule_include import TagRuleInclude
+from datadog_api_client.v2.model.tag_rule_relationships import TagRuleRelationships
+from datadog_api_client.v2.model.tag_rule_resource_type import TagRuleResourceType
+from datadog_api_client.v2.model.tag_rule_response import TagRuleResponse
+from datadog_api_client.v2.model.tag_rule_score_attributes import TagRuleScoreAttributes
+from datadog_api_client.v2.model.tag_rule_score_data import TagRuleScoreData
+from datadog_api_client.v2.model.tag_rule_score_relationship import TagRuleScoreRelationship
+from datadog_api_client.v2.model.tag_rule_score_relationship_data import TagRuleScoreRelationshipData
+from datadog_api_client.v2.model.tag_rule_score_resource_type import TagRuleScoreResourceType
+from datadog_api_client.v2.model.tag_rule_score_response import TagRuleScoreResponse
+from datadog_api_client.v2.model.tag_rule_source import TagRuleSource
+from datadog_api_client.v2.model.tag_rule_type import TagRuleType
+from datadog_api_client.v2.model.tag_rule_update_attributes import TagRuleUpdateAttributes
+from datadog_api_client.v2.model.tag_rule_update_data import TagRuleUpdateData
+from datadog_api_client.v2.model.tag_rule_update_request import TagRuleUpdateRequest
+from datadog_api_client.v2.model.tag_rules_list_response import TagRulesListResponse
 from datadog_api_client.v2.model.tags_event_attribute import TagsEventAttribute
 from datadog_api_client.v2.model.targeting_rule import TargetingRule
 from datadog_api_client.v2.model.targeting_rule_request import TargetingRuleRequest
@@ -18198,28 +18198,28 @@ __all__ = [
     "TagIndexingRuleUpdateRequest",
     "TagIndexingRulesResponse",
     "TagIndexingRulesResponseMeta",
-    "TagPoliciesListResponse",
-    "TagPolicyAttributes",
-    "TagPolicyCreateAttributes",
-    "TagPolicyCreateData",
-    "TagPolicyCreateRequest",
-    "TagPolicyCreateType",
-    "TagPolicyData",
-    "TagPolicyInclude",
-    "TagPolicyRelationships",
-    "TagPolicyResourceType",
-    "TagPolicyResponse",
-    "TagPolicyScoreAttributes",
-    "TagPolicyScoreData",
-    "TagPolicyScoreRelationship",
-    "TagPolicyScoreRelationshipData",
-    "TagPolicyScoreResourceType",
-    "TagPolicyScoreResponse",
-    "TagPolicySource",
-    "TagPolicyType",
-    "TagPolicyUpdateAttributes",
-    "TagPolicyUpdateData",
-    "TagPolicyUpdateRequest",
+    "TagRuleAttributes",
+    "TagRuleCreateAttributes",
+    "TagRuleCreateData",
+    "TagRuleCreateRequest",
+    "TagRuleCreateType",
+    "TagRuleData",
+    "TagRuleInclude",
+    "TagRuleRelationships",
+    "TagRuleResourceType",
+    "TagRuleResponse",
+    "TagRuleScoreAttributes",
+    "TagRuleScoreData",
+    "TagRuleScoreRelationship",
+    "TagRuleScoreRelationshipData",
+    "TagRuleScoreResourceType",
+    "TagRuleScoreResponse",
+    "TagRuleSource",
+    "TagRuleType",
+    "TagRuleUpdateAttributes",
+    "TagRuleUpdateData",
+    "TagRuleUpdateRequest",
+    "TagRulesListResponse",
     "TagsEventAttribute",
     "TargetingRule",
     "TargetingRuleRequest",

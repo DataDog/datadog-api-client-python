@@ -12,21 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class TagPolicyType(ModelSimple):
+class TagRuleResourceType(ModelSimple):
     """
-    How the policy is enforced. `blocking` rejects telemetry that violates the policy.
-        `surfacing` only highlights non-compliant telemetry without blocking it.
+    JSON:API resource type for a tag rule.
 
-    :param value: Must be one of ["blocking", "surfacing"].
+    :param value: If omitted defaults to "tag_rule". Must be one of ["tag_rule"].
     :type value: str
     """
 
     allowed_values = {
-        "blocking",
-        "surfacing",
+        "tag_rule",
     }
-    BLOCKING: ClassVar["TagPolicyType"]
-    SURFACING: ClassVar["TagPolicyType"]
+    TAG_RULE: ClassVar["TagRuleResourceType"]
 
     @cached_property
     def openapi_types(_):
@@ -35,5 +32,4 @@ class TagPolicyType(ModelSimple):
         }
 
 
-TagPolicyType.BLOCKING = TagPolicyType("blocking")
-TagPolicyType.SURFACING = TagPolicyType("surfacing")
+TagRuleResourceType.TAG_RULE = TagRuleResourceType("tag_rule")

@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tag_policy_score_relationship import TagPolicyScoreRelationship
+    from datadog_api_client.v2.model.tag_rule_score_relationship import TagRuleScoreRelationship
 
 
-class TagPolicyRelationships(ModelNormal):
+class TagRuleRelationships(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tag_policy_score_relationship import TagPolicyScoreRelationship
+        from datadog_api_client.v2.model.tag_rule_score_relationship import TagRuleScoreRelationship
 
         return {
-            "score": (TagPolicyScoreRelationship,),
+            "score": (TagRuleScoreRelationship,),
         }
 
     attribute_map = {
         "score": "score",
     }
 
-    def __init__(self_, score: Union[TagPolicyScoreRelationship, UnsetType] = unset, **kwargs):
+    def __init__(self_, score: Union[TagRuleScoreRelationship, UnsetType] = unset, **kwargs):
         """
-        Related resources for a tag policy. Only present when the corresponding ``include`` query parameter is supplied.
+        Related resources for a tag rule. Only present when the corresponding ``include`` query parameter is supplied.
 
-        :param score: A relationship to the compliance score resource for this policy.
-        :type score: TagPolicyScoreRelationship, optional
+        :param score: A relationship to the compliance score resource for this rule.
+        :type score: TagRuleScoreRelationship, optional
         """
         if score is not unset:
             kwargs["score"] = score
