@@ -52,3 +52,5 @@ jobs:
       - name: Test
         run: ./run-tests.sh
         shell: bash
+        env:
+          DD_USE_GENERATED_TESTS: "true"

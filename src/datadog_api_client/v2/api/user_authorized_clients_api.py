@@ -204,7 +204,7 @@ class UserAuthorizedClientsApi:
 
         Get a list of all OAuth2 clients authorized by the current user.
 
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Number of items to return per page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
@@ -247,7 +247,7 @@ class UserAuthorizedClientsApi:
 
         Provide a paginated version of :meth:`list_user_authorized_clients`, returning all items.
 
-        :param page_size: Size for a given page. The maximum allowed value is 100.
+        :param page_size: Number of items to return per page. The maximum allowed value is 100.
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional

@@ -6308,139 +6308,6 @@
       "version": "v2"
     },
     {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/create-a-new-llm-observability-prompt-version-returns-bad-request-response.json",
-      "scenario": "Create a new LLM Observability prompt version returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/create-a-new-llm-observability-prompt-version-returns-not-found-response.json",
-      "scenario": "Create a new LLM Observability prompt version returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/create-a-new-llm-observability-prompt-version-returns-ok-response.json",
-      "scenario": "Create a new LLM Observability prompt version returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/create-an-llm-observability-prompt-returns-bad-request-response.json",
-      "scenario": "Create an LLM Observability prompt returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/create-an-llm-observability-prompt-returns-conflict-response.json",
-      "scenario": "Create an LLM Observability prompt returns \"Conflict\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/create-an-llm-observability-prompt-returns-ok-response.json",
-      "scenario": "Create an LLM Observability prompt returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/delete-an-llm-observability-prompt-returns-not-found-response.json",
-      "scenario": "Delete an LLM Observability prompt returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/delete-an-llm-observability-prompt-returns-ok-response.json",
-      "scenario": "Delete an LLM Observability prompt returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/get-a-specific-llm-observability-prompt-version-returns-not-found-response.json",
-      "scenario": "Get a specific LLM Observability prompt version returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/get-a-specific-llm-observability-prompt-version-returns-ok-response.json",
-      "scenario": "Get a specific LLM Observability prompt version returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/get-an-llm-observability-prompt-returns-not-found-response.json",
-      "scenario": "Get an LLM Observability prompt returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/get-an-llm-observability-prompt-returns-ok-response.json",
-      "scenario": "Get an LLM Observability prompt returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/list-llm-observability-prompts-returns-ok-response.json",
-      "scenario": "List LLM Observability prompts returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/list-versions-of-an-llm-observability-prompt-returns-ok-response.json",
-      "scenario": "List versions of an LLM Observability prompt returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/update-a-specific-llm-observability-prompt-version-returns-not-found-response.json",
-      "scenario": "Update a specific LLM Observability prompt version returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/update-a-specific-llm-observability-prompt-version-returns-ok-response.json",
-      "scenario": "Update a specific LLM Observability prompt version returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/update-an-llm-observability-prompt-returns-bad-request-response.json",
-      "scenario": "Update an LLM Observability prompt returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/update-an-llm-observability-prompt-returns-not-found-response.json",
-      "scenario": "Update an LLM Observability prompt returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "LLM Observability",
-      "feature_file": "../../v2/features/llm_observability.feature",
-      "file": "v2/llm-observability/update-an-llm-observability-prompt-returns-ok-response.json",
-      "scenario": "Update an LLM Observability prompt returns \"OK\" response",
-      "version": "v2"
-    },
-    {
       "feature": "Logs",
       "feature_file": "../../v2/features/logs.feature",
       "file": "v2/logs/aggregate-compute-events-returns-ok-response.json",
@@ -9551,6 +9418,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/create-a-severity-modifier-rule-returns-successfully-created-the-severity-modifier-rule-response.json",
+      "scenario": "Create a severity modifier rule returns \"Successfully created the severity modifier rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/create-a-suppression-rule-returns-ok-response.json",
       "scenario": "Create a suppression rule returns \"OK\" response",
       "version": "v2"
@@ -9665,6 +9539,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/delete-a-security-filter-returns-no-content-response.json",
       "scenario": "Delete a security filter returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/delete-a-severity-modifier-rule-returns-rule-successfully-deleted-response.json",
+      "scenario": "Delete a severity modifier rule returns \"Rule successfully deleted\" response",
       "version": "v2"
     },
     {
@@ -9887,6 +9768,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-a-severity-modifier-rule-returns-successfully-retrieved-the-severity-modifier-rule-response.json",
+      "scenario": "Get a severity modifier rule returns \"Successfully retrieved the severity modifier rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/get-a-signal-s-details-returns-not-found-response.json",
       "scenario": "Get a signal's details returns \"Not Found\" response",
       "version": "v2"
@@ -9959,6 +9847,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/get-all-security-filters-returns-ok-response.json",
       "scenario": "Get all security filters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-all-severity-modifier-rules-returns-successfully-retrieved-the-list-of-severity-modifier-rules-response.json",
+      "scenario": "Get all severity modifier rules returns \"Successfully retrieved the list of severity modifier rules\" response",
       "version": "v2"
     },
     {
@@ -10307,6 +10202,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/reorder-severity-modifier-rules-returns-successfully-reordered-the-severity-modifier-rules-response.json",
+      "scenario": "Reorder severity modifier rules returns \"Successfully reordered the severity modifier rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/reorder-ticket-creation-rules-returns-successfully-reordered-the-ticket-creation-rules-response.json",
       "scenario": "Reorder ticket creation rules returns \"Successfully reordered the ticket creation rules\" response",
       "version": "v2"
@@ -10463,6 +10365,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/update-a-security-filter-returns-ok-response.json",
       "scenario": "Update a security filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/update-a-severity-modifier-rule-returns-successfully-updated-the-severity-modifier-rule-response.json",
+      "scenario": "Update a severity modifier rule returns \"Successfully updated the severity modifier rule\" response",
       "version": "v2"
     },
     {
