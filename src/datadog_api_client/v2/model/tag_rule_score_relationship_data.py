@@ -12,17 +12,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tag_policy_score_resource_type import TagPolicyScoreResourceType
+    from datadog_api_client.v2.model.tag_rule_score_resource_type import TagRuleScoreResourceType
 
 
-class TagPolicyScoreRelationshipData(ModelNormal):
+class TagRuleScoreRelationshipData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tag_policy_score_resource_type import TagPolicyScoreResourceType
+        from datadog_api_client.v2.model.tag_rule_score_resource_type import TagRuleScoreResourceType
 
         return {
             "id": (str,),
-            "type": (TagPolicyScoreResourceType,),
+            "type": (TagRuleScoreResourceType,),
         }
 
     attribute_map = {
@@ -30,15 +30,15 @@ class TagPolicyScoreRelationshipData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: TagPolicyScoreResourceType, **kwargs):
+    def __init__(self_, id: str, type: TagRuleScoreResourceType, **kwargs):
         """
         Identifier of the related compliance score resource.
 
         :param id: The unique identifier of the related compliance score resource.
         :type id: str
 
-        :param type: JSON:API resource type for a tag policy compliance score.
-        :type type: TagPolicyScoreResourceType
+        :param type: JSON:API resource type for a tag rule compliance score.
+        :type type: TagRuleScoreResourceType
         """
         super().__init__(kwargs)
 

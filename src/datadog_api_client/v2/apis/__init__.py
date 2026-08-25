@@ -132,7 +132,7 @@ from datadog_api_client.v2.api.statuspage_integration_api import StatuspageInteg
 from datadog_api_client.v2.api.stegadography_api import StegadographyApi
 from datadog_api_client.v2.api.storage_management_api import StorageManagementApi
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
-from datadog_api_client.v2.api.tag_policies_api import TagPoliciesApi
+from datadog_api_client.v2.api.tag_rules_api import TagRulesApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.twilio_integration_accounts_api import TwilioIntegrationAccountsApi
@@ -280,7 +280,7 @@ __all__ = [
     "StegadographyApi",
     "StorageManagementApi",
     "SyntheticsApi",
-    "TagPoliciesApi",
+    "TagRulesApi",
     "TeamsApi",
     "TestOptimizationApi",
     "TwilioIntegrationAccountsApi",

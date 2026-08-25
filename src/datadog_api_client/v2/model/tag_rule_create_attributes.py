@@ -14,11 +14,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.tag_policy_create_type import TagPolicyCreateType
-    from datadog_api_client.v2.model.tag_policy_source import TagPolicySource
+    from datadog_api_client.v2.model.tag_rule_create_type import TagRuleCreateType
+    from datadog_api_client.v2.model.tag_rule_source import TagRuleSource
 
 
-class TagPolicyCreateAttributes(ModelNormal):
+class TagRuleCreateAttributes(ModelNormal):
     validations = {
         "tag_value_patterns": {
             "min_items": 1,
@@ -27,27 +27,27 @@ class TagPolicyCreateAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.tag_policy_create_type import TagPolicyCreateType
-        from datadog_api_client.v2.model.tag_policy_source import TagPolicySource
+        from datadog_api_client.v2.model.tag_rule_create_type import TagRuleCreateType
+        from datadog_api_client.v2.model.tag_rule_source import TagRuleSource
 
         return {
             "enabled": (bool,),
+            "name": (str,),
             "negated": (bool,),
-            "policy_name": (str,),
-            "policy_type": (TagPolicyCreateType,),
             "required": (bool,),
+            "rule_type": (TagRuleCreateType,),
             "scope": (str,),
-            "source": (TagPolicySource,),
+            "source": (TagRuleSource,),
             "tag_key": (str,),
             "tag_value_patterns": ([str],),
         }
 
     attribute_map = {
         "enabled": "enabled",
+        "name": "name",
         "negated": "negated",
-        "policy_name": "policy_name",
-        "policy_type": "policy_type",
         "required": "required",
+        "rule_type": "rule_type",
         "scope": "scope",
         "source": "source",
         "tag_key": "tag_key",
@@ -56,10 +56,10 @@ class TagPolicyCreateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        policy_name: str,
-        policy_type: TagPolicyCreateType,
+        name: str,
+        rule_type: TagRuleCreateType,
         scope: str,
-        source: TagPolicySource,
+        source: TagRuleSource,
         tag_key: str,
         tag_value_patterns: List[str],
         enabled: Union[bool, UnsetType] = unset,
@@ -68,32 +68,32 @@ class TagPolicyCreateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes that can be supplied when creating a tag policy.
+        Attributes that can be supplied when creating a tag rule.
 
-        :param enabled: Whether the policy is currently enforced. Defaults to ``true`` for newly created policies.
+        :param enabled: Whether the rule is currently enforced. Defaults to ``true`` for newly created rules.
         :type enabled: bool, optional
 
-        :param negated: When ``true`` , the policy matches tag values that do NOT match any of the supplied patterns. Defaults to ``false``.
+        :param name: Human-readable name for the tag rule.
+        :type name: str
+
+        :param negated: When ``true`` , the rule matches tag values that do NOT match any of the supplied patterns. Defaults to ``false``.
         :type negated: bool, optional
-
-        :param policy_name: Human-readable name for the tag policy.
-        :type policy_name: str
-
-        :param policy_type: The policy type allowed when creating a tag policy. Only ``surfacing`` is accepted at
-            creation time.
-        :type policy_type: TagPolicyCreateType
 
         :param required: When ``true`` , telemetry without this tag is treated as a violation. Defaults to ``false``.
         :type required: bool, optional
 
-        :param scope: The scope the policy applies within. Typically an environment, team, or
-            organization-level identifier used to limit where the policy is enforced.
+        :param rule_type: The rule type allowed when creating a tag rule. Only ``surfacing`` is accepted at
+            creation time.
+        :type rule_type: TagRuleCreateType
+
+        :param scope: The scope the rule applies within. Typically an environment, team, or
+            organization-level identifier used to limit where the rule is enforced.
         :type scope: str
 
-        :param source: The telemetry source that a tag policy applies to.
-        :type source: TagPolicySource
+        :param source: The telemetry source that a tag rule applies to.
+        :type source: TagRuleSource
 
-        :param tag_key: The tag key that the policy governs (for example, ``service`` ).
+        :param tag_key: The tag key that the rule governs (for example, ``service`` ).
         :type tag_key: str
 
         :param tag_value_patterns: One or more patterns that valid values for the tag key must match. At least one
@@ -108,8 +108,8 @@ class TagPolicyCreateAttributes(ModelNormal):
             kwargs["required"] = required
         super().__init__(kwargs)
 
-        self_.policy_name = policy_name
-        self_.policy_type = policy_type
+        self_.name = name
+        self_.rule_type = rule_type
         self_.scope = scope
         self_.source = source
         self_.tag_key = tag_key

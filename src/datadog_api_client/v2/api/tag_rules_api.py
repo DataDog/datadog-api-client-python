@@ -11,22 +11,22 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
-from datadog_api_client.v2.model.tag_policies_list_response import TagPoliciesListResponse
-from datadog_api_client.v2.model.tag_policy_include import TagPolicyInclude
-from datadog_api_client.v2.model.tag_policy_source import TagPolicySource
-from datadog_api_client.v2.model.tag_policy_response import TagPolicyResponse
-from datadog_api_client.v2.model.tag_policy_create_request import TagPolicyCreateRequest
-from datadog_api_client.v2.model.tag_policy_update_request import TagPolicyUpdateRequest
-from datadog_api_client.v2.model.tag_policy_score_response import TagPolicyScoreResponse
+from datadog_api_client.v2.model.tag_rules_list_response import TagRulesListResponse
+from datadog_api_client.v2.model.tag_rule_include import TagRuleInclude
+from datadog_api_client.v2.model.tag_rule_source import TagRuleSource
+from datadog_api_client.v2.model.tag_rule_response import TagRuleResponse
+from datadog_api_client.v2.model.tag_rule_create_request import TagRuleCreateRequest
+from datadog_api_client.v2.model.tag_rule_update_request import TagRuleUpdateRequest
+from datadog_api_client.v2.model.tag_rule_score_response import TagRuleScoreResponse
 
 
-class TagPoliciesApi:
+class TagRulesApi:
     """
-    Tag Policies define rules that govern which tag values are accepted for a given tag key,
-    scoped to a particular telemetry source (such as logs, spans, or metrics). Policies can be
-    ``blocking`` (data not matching the policy is rejected) or ``surfacing`` (matching data is
-    highlighted but not blocked). Each policy reports a compliance ``score`` derived from how
-    much recent telemetry adheres to the policy.
+    Tag Rules define rules that govern which tag values are accepted for a given tag key,
+    scoped to a particular telemetry source (such as logs, spans, or metrics). Rules can be
+    ``blocking`` (data not matching the rule is rejected) or ``surfacing`` (matching data is
+    highlighted but not blocked). Each rule reports a compliance ``score`` derived from how
+    much recent telemetry adheres to the rule.
     """
 
     def __init__(self, api_client=None):
@@ -34,19 +34,19 @@ class TagPoliciesApi:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
 
-        self._create_tag_policy_endpoint = _Endpoint(
+        self._create_tag_rule_endpoint = _Endpoint(
             settings={
-                "response_type": (TagPolicyResponse,),
+                "response_type": (TagRuleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag_policies",
-                "operation_id": "create_tag_policy",
+                "endpoint_path": "/api/v2/governance/tag_rules",
+                "operation_id": "create_tag_rule",
                 "http_method": "POST",
                 "version": "v2",
             },
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (TagPolicyCreateRequest,),
+                    "openapi_types": (TagRuleCreateRequest,),
                     "location": "body",
                 },
             },
@@ -54,20 +54,20 @@ class TagPoliciesApi:
             api_client=api_client,
         )
 
-        self._delete_tag_policy_endpoint = _Endpoint(
+        self._delete_tag_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag_policies/{policy_id}",
-                "operation_id": "delete_tag_policy",
+                "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}",
+                "operation_id": "delete_tag_rule",
                 "http_method": "DELETE",
                 "version": "v2",
             },
             params_map={
-                "policy_id": {
+                "rule_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "policy_id",
+                    "attribute": "rule_id",
                     "location": "path",
                 },
                 "hard_delete": {
@@ -82,24 +82,24 @@ class TagPoliciesApi:
             api_client=api_client,
         )
 
-        self._get_tag_policy_endpoint = _Endpoint(
+        self._get_tag_rule_endpoint = _Endpoint(
             settings={
-                "response_type": (TagPolicyResponse,),
+                "response_type": (TagRuleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag_policies/{policy_id}",
-                "operation_id": "get_tag_policy",
+                "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}",
+                "operation_id": "get_tag_rule",
                 "http_method": "GET",
                 "version": "v2",
             },
             params_map={
-                "policy_id": {
+                "rule_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "policy_id",
+                    "attribute": "rule_id",
                     "location": "path",
                 },
                 "include": {
-                    "openapi_types": (TagPolicyInclude,),
+                    "openapi_types": (TagRuleInclude,),
                     "attribute": "include",
                     "location": "query",
                 },
@@ -120,20 +120,20 @@ class TagPoliciesApi:
             api_client=api_client,
         )
 
-        self._get_tag_policy_score_endpoint = _Endpoint(
+        self._get_tag_rule_score_endpoint = _Endpoint(
             settings={
-                "response_type": (TagPolicyScoreResponse,),
+                "response_type": (TagRuleScoreResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag_policies/{policy_id}/score",
-                "operation_id": "get_tag_policy_score",
+                "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}/score",
+                "operation_id": "get_tag_rule_score",
                 "http_method": "GET",
                 "version": "v2",
             },
             params_map={
-                "policy_id": {
+                "rule_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "policy_id",
+                    "attribute": "rule_id",
                     "location": "path",
                 },
                 "ts_start": {
@@ -153,12 +153,12 @@ class TagPoliciesApi:
             api_client=api_client,
         )
 
-        self._list_tag_policies_endpoint = _Endpoint(
+        self._list_tag_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (TagPoliciesListResponse,),
+                "response_type": (TagRulesListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag_policies",
-                "operation_id": "list_tag_policies",
+                "endpoint_path": "/api/v2/governance/tag_rules",
+                "operation_id": "list_tag_rules",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -174,12 +174,12 @@ class TagPoliciesApi:
                     "location": "query",
                 },
                 "include": {
-                    "openapi_types": (TagPolicyInclude,),
+                    "openapi_types": (TagRuleInclude,),
                     "attribute": "include",
                     "location": "query",
                 },
                 "filter_source": {
-                    "openapi_types": (TagPolicySource,),
+                    "openapi_types": (TagRuleSource,),
                     "attribute": "filter[source]",
                     "location": "query",
                 },
@@ -200,25 +200,25 @@ class TagPoliciesApi:
             api_client=api_client,
         )
 
-        self._update_tag_policy_endpoint = _Endpoint(
+        self._update_tag_rule_endpoint = _Endpoint(
             settings={
-                "response_type": (TagPolicyResponse,),
+                "response_type": (TagRuleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
-                "endpoint_path": "/api/v2/tag_policies/{policy_id}",
-                "operation_id": "update_tag_policy",
+                "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}",
+                "operation_id": "update_tag_rule",
                 "http_method": "PATCH",
                 "version": "v2",
             },
             params_map={
-                "policy_id": {
+                "rule_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "policy_id",
+                    "attribute": "rule_id",
                     "location": "path",
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (TagPolicyUpdateRequest,),
+                    "openapi_types": (TagRuleUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -226,76 +226,76 @@ class TagPoliciesApi:
             api_client=api_client,
         )
 
-    def create_tag_policy(
+    def create_tag_rule(
         self,
-        body: TagPolicyCreateRequest,
-    ) -> TagPolicyResponse:
-        """Create a tag policy.
+        body: TagRuleCreateRequest,
+    ) -> TagRuleResponse:
+        """Create a tag rule.
 
-        Create a new tag policy for the organization. The caller's organization is derived from
+        Create a new tag rule for the organization. The caller's organization is derived from
         the authenticated user; cross-organization creation is not supported. Fields such as
-        ``policy_id`` , ``version`` , and the timestamp/audit fields are assigned by the server.
+        ``rule_id`` , ``version`` , and the timestamp/audit fields are assigned by the server.
 
-        :type body: TagPolicyCreateRequest
-        :rtype: TagPolicyResponse
+        :type body: TagRuleCreateRequest
+        :rtype: TagRuleResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
-        return self._create_tag_policy_endpoint.call_with_http_info(**kwargs)
+        return self._create_tag_rule_endpoint.call_with_http_info(**kwargs)
 
-    def delete_tag_policy(
+    def delete_tag_rule(
         self,
-        policy_id: str,
+        rule_id: str,
         *,
         hard_delete: Union[bool, UnsetType] = unset,
     ) -> None:
-        """Delete a tag policy.
+        """Delete a tag rule.
 
-        Delete a tag policy. By default the policy is soft-deleted so it can be recovered later
+        Delete a tag rule. By default the rule is soft-deleted so it can be recovered later
         and so that historical score data remains queryable. Pass ``hard_delete=true`` to remove
-        the policy permanently.
+        the rule permanently.
 
-        :param policy_id: The unique identifier of the tag policy to delete.
-        :type policy_id: str
-        :param hard_delete: Whether to permanently delete the policy instead of performing a soft delete. Defaults to ``false``.
+        :param rule_id: The unique identifier of the tag rule to delete.
+        :type rule_id: str
+        :param hard_delete: Whether to permanently delete the rule instead of performing a soft delete. Defaults to ``false``.
         :type hard_delete: bool, optional
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["policy_id"] = policy_id
+        kwargs["rule_id"] = rule_id
 
         if hard_delete is not unset:
             kwargs["hard_delete"] = hard_delete
 
-        return self._delete_tag_policy_endpoint.call_with_http_info(**kwargs)
+        return self._delete_tag_rule_endpoint.call_with_http_info(**kwargs)
 
-    def get_tag_policy(
+    def get_tag_rule(
         self,
-        policy_id: str,
+        rule_id: str,
         *,
-        include: Union[TagPolicyInclude, UnsetType] = unset,
+        include: Union[TagRuleInclude, UnsetType] = unset,
         ts_start: Union[int, UnsetType] = unset,
         ts_end: Union[int, UnsetType] = unset,
-    ) -> TagPolicyResponse:
-        """Get a tag policy.
+    ) -> TagRuleResponse:
+        """Get a tag rule.
 
-        Retrieve a single tag policy by ID. Optionally include the policy's current compliance
-        score via the ``include=score`` query parameter. Policies belonging to other organizations
+        Retrieve a single tag rule by ID. Optionally include the rule's current compliance
+        score via the ``include=score`` query parameter. Rules belonging to other organizations
         cannot be retrieved.
 
-        :param policy_id: The unique identifier of the tag policy.
-        :type policy_id: str
-        :param include: Comma-separated list of related resources to include alongside the policy. Currently the only supported value is ``score``.
-        :type include: TagPolicyInclude, optional
+        :param rule_id: The unique identifier of the tag rule.
+        :type rule_id: str
+        :param include: Comma-separated list of related resources to include alongside the rule. Currently the only supported value is ``score``.
+        :type include: TagRuleInclude, optional
         :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds.
         :type ts_start: int, optional
         :param ts_end: End of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Must be in the past and greater than ``ts_start``.
         :type ts_end: int, optional
-        :rtype: TagPolicyResponse
+        :rtype: TagRuleResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["policy_id"] = policy_id
+        kwargs["rule_id"] = rule_id
 
         if include is not unset:
             kwargs["include"] = include
@@ -306,32 +306,32 @@ class TagPoliciesApi:
         if ts_end is not unset:
             kwargs["ts_end"] = ts_end
 
-        return self._get_tag_policy_endpoint.call_with_http_info(**kwargs)
+        return self._get_tag_rule_endpoint.call_with_http_info(**kwargs)
 
-    def get_tag_policy_score(
+    def get_tag_rule_score(
         self,
-        policy_id: str,
+        rule_id: str,
         *,
         ts_start: Union[int, UnsetType] = unset,
         ts_end: Union[int, UnsetType] = unset,
-    ) -> TagPolicyScoreResponse:
-        """Get a tag policy compliance score.
+    ) -> TagRuleScoreResponse:
+        """Get a tag rule compliance score.
 
-        Retrieve the compliance score for a single tag policy. The score is computed over the
+        Retrieve the compliance score for a single tag rule. The score is computed over the
         requested time window (or a source-appropriate default) and represents the percentage of
-        telemetry within that window that conforms to the policy. A ``null`` score indicates that
+        telemetry within that window that conforms to the rule. A ``null`` score indicates that
         no relevant telemetry was found.
 
-        :param policy_id: The unique identifier of the tag policy.
-        :type policy_id: str
+        :param rule_id: The unique identifier of the tag rule.
+        :type rule_id: str
         :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds.
         :type ts_start: int, optional
         :param ts_end: End of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Must be in the past and greater than ``ts_start``.
         :type ts_end: int, optional
-        :rtype: TagPolicyScoreResponse
+        :rtype: TagRuleScoreResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["policy_id"] = policy_id
+        kwargs["rule_id"] = rule_id
 
         if ts_start is not unset:
             kwargs["ts_start"] = ts_start
@@ -339,37 +339,37 @@ class TagPoliciesApi:
         if ts_end is not unset:
             kwargs["ts_end"] = ts_end
 
-        return self._get_tag_policy_score_endpoint.call_with_http_info(**kwargs)
+        return self._get_tag_rule_score_endpoint.call_with_http_info(**kwargs)
 
-    def list_tag_policies(
+    def list_tag_rules(
         self,
         *,
         include_disabled: Union[bool, UnsetType] = unset,
         include_deleted: Union[bool, UnsetType] = unset,
-        include: Union[TagPolicyInclude, UnsetType] = unset,
-        filter_source: Union[TagPolicySource, UnsetType] = unset,
+        include: Union[TagRuleInclude, UnsetType] = unset,
+        filter_source: Union[TagRuleSource, UnsetType] = unset,
         ts_start: Union[int, UnsetType] = unset,
         ts_end: Union[int, UnsetType] = unset,
-    ) -> TagPoliciesListResponse:
-        """List tag policies.
+    ) -> TagRulesListResponse:
+        """List tag rules.
 
-        Retrieve all tag policies for the organization. Optionally include disabled or deleted
-        policies, filter by telemetry source, and include each policy's current compliance score
+        Retrieve all tag rules for the organization. Optionally include disabled or deleted
+        rules, filter by telemetry source, and include each rule's current compliance score
         via the ``include=score`` query parameter.
 
-        :param include_disabled: Whether to include policies that are currently disabled. Defaults to ``false``.
+        :param include_disabled: Whether to include rules that are currently disabled. Defaults to ``false``.
         :type include_disabled: bool, optional
-        :param include_deleted: Whether to include policies that have been soft-deleted. Defaults to ``false``.
+        :param include_deleted: Whether to include rules that have been soft-deleted. Defaults to ``false``.
         :type include_deleted: bool, optional
-        :param include: Comma-separated list of related resources to include alongside each policy in the response. Currently the only supported value is ``score``.
-        :type include: TagPolicyInclude, optional
-        :param filter_source: Restrict the result set to policies whose source matches the given value.
-        :type filter_source: TagPolicySource, optional
+        :param include: Comma-separated list of related resources to include alongside each rule in the response. Currently the only supported value is ``score``.
+        :type include: TagRuleInclude, optional
+        :param filter_source: Restrict the result set to rules whose source matches the given value.
+        :type filter_source: TagRuleSource, optional
         :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to a recent window appropriate for the source.
         :type ts_start: int, optional
         :param ts_end: End of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Must be in the past and greater than ``ts_start``.
         :type ts_end: int, optional
-        :rtype: TagPoliciesListResponse
+        :rtype: TagRulesListResponse
         """
         kwargs: Dict[str, Any] = {}
         if include_disabled is not unset:
@@ -390,27 +390,27 @@ class TagPoliciesApi:
         if ts_end is not unset:
             kwargs["ts_end"] = ts_end
 
-        return self._list_tag_policies_endpoint.call_with_http_info(**kwargs)
+        return self._list_tag_rules_endpoint.call_with_http_info(**kwargs)
 
-    def update_tag_policy(
+    def update_tag_rule(
         self,
-        policy_id: str,
-        body: TagPolicyUpdateRequest,
-    ) -> TagPolicyResponse:
-        """Update a tag policy.
+        rule_id: str,
+        body: TagRuleUpdateRequest,
+    ) -> TagRuleResponse:
+        """Update a tag rule.
 
-        Update one or more attributes of an existing tag policy. Only the fields supplied in the
-        request body are modified; omitted fields retain their current values. The policy's
+        Update one or more attributes of an existing tag rule. Only the fields supplied in the
+        request body are modified; omitted fields retain their current values. The rule's
         ``source`` cannot be changed after creation.
 
-        :param policy_id: The unique identifier of the tag policy to update.
-        :type policy_id: str
-        :type body: TagPolicyUpdateRequest
-        :rtype: TagPolicyResponse
+        :param rule_id: The unique identifier of the tag rule to update.
+        :type rule_id: str
+        :type body: TagRuleUpdateRequest
+        :rtype: TagRuleResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["policy_id"] = policy_id
+        kwargs["rule_id"] = rule_id
 
         kwargs["body"] = body
 
-        return self._update_tag_policy_endpoint.call_with_http_info(**kwargs)
+        return self._update_tag_rule_endpoint.call_with_http_info(**kwargs)

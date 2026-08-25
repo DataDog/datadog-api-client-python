@@ -12,18 +12,19 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class TagPolicyInclude(ModelSimple):
+class TagRuleCreateType(ModelSimple):
     """
-    A related resource to include alongside a tag policy in the response. Currently the only supported value is `score`.
+    The rule type allowed when creating a tag rule. Only `surfacing` is accepted at
+        creation time.
 
-    :param value: If omitted defaults to "score". Must be one of ["score"].
+    :param value: If omitted defaults to "surfacing". Must be one of ["surfacing"].
     :type value: str
     """
 
     allowed_values = {
-        "score",
+        "surfacing",
     }
-    SCORE: ClassVar["TagPolicyInclude"]
+    SURFACING: ClassVar["TagRuleCreateType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +33,4 @@ class TagPolicyInclude(ModelSimple):
         }
 
 
-TagPolicyInclude.SCORE = TagPolicyInclude("score")
+TagRuleCreateType.SURFACING = TagRuleCreateType("surfacing")
