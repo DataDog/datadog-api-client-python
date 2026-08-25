@@ -8297,6 +8297,7 @@ from datadog_api_client.v2.model.scanned_asset_metadata import ScannedAssetMetad
 from datadog_api_client.v2.model.scanned_asset_metadata_asset import ScannedAssetMetadataAsset
 from datadog_api_client.v2.model.scanned_asset_metadata_attributes import ScannedAssetMetadataAttributes
 from datadog_api_client.v2.model.scanned_asset_metadata_last_success import ScannedAssetMetadataLastSuccess
+from datadog_api_client.v2.model.scanned_asset_metadata_type import ScannedAssetMetadataType
 from datadog_api_client.v2.model.scanned_assets_metadata import ScannedAssetsMetadata
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
@@ -16835,6 +16836,7 @@ __all__ = [
     "ScannedAssetMetadataAsset",
     "ScannedAssetMetadataAttributes",
     "ScannedAssetMetadataLastSuccess",
+    "ScannedAssetMetadataType",
     "ScannedAssetsMetadata",
     "Schedule",
     "ScheduleCreateRequest",

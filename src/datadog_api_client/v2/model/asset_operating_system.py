@@ -19,14 +19,18 @@ class AssetOperatingSystem(ModelNormal):
         return {
             "description": (str,),
             "name": (str,),
+            "version": (str,),
         }
 
     attribute_map = {
         "description": "description",
         "name": "name",
+        "version": "version",
     }
 
-    def __init__(self_, name: str, description: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, name: str, description: Union[str, UnsetType] = unset, version: Union[str, UnsetType] = unset, **kwargs
+    ):
         """
         Asset operating system.
 
@@ -35,9 +39,14 @@ class AssetOperatingSystem(ModelNormal):
 
         :param name: Operating system name.
         :type name: str
+
+        :param version: Operating system version.
+        :type version: str, optional
         """
         if description is not unset:
             kwargs["description"] = description
+        if version is not unset:
+            kwargs["version"] = version
         super().__init__(kwargs)
 
         self_.name = name
