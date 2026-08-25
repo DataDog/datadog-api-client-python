@@ -48,6 +48,7 @@ from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
+from datadog_api_client.v2.api.elastic_cloud_integration_accounts_api import ElasticCloudIntegrationAccountsApi
 from datadog_api_client.v2.api.entity_integration_configs_api import EntityIntegrationConfigsApi
 from datadog_api_client.v2.api.entity_risk_scores_api import EntityRiskScoresApi
 from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
@@ -134,6 +135,7 @@ from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.tag_policies_api import TagPoliciesApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
+from datadog_api_client.v2.api.twilio_integration_accounts_api import TwilioIntegrationAccountsApi
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.api.user_authorized_clients_api import UserAuthorizedClientsApi
 from datadog_api_client.v2.api.users_api import UsersApi
@@ -194,6 +196,7 @@ __all__ = [
     "DeploymentGatesApi",
     "DomainAllowlistApi",
     "DowntimesApi",
+    "ElasticCloudIntegrationAccountsApi",
     "EntityIntegrationConfigsApi",
     "EntityRiskScoresApi",
     "ErrorTrackingApi",
@@ -280,6 +283,7 @@ __all__ = [
     "TagPoliciesApi",
     "TeamsApi",
     "TestOptimizationApi",
+    "TwilioIntegrationAccountsApi",
     "UsageMeteringApi",
     "UserAuthorizedClientsApi",
     "UsersApi",
