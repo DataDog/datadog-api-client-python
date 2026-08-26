@@ -54,6 +54,8 @@ class ApiClient:
         self.default_headers = {}
         if self.configuration.compress:
             self.default_headers["Accept-Encoding"] = "gzip"
+        if self.configuration.is_iac:
+            self.default_headers["X-Datadog-Managed-By"] = "iac"
         # Set default User-Agent.
         self.user_agent = user_agent()
 
