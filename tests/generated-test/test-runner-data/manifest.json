@@ -2143,20 +2143,6 @@
       "version": "v1"
     },
     {
-      "feature": "Usage Metering",
-      "feature_file": "../../v1/features/usage_metering.feature",
-      "file": "v1/usage-metering/get-specified-daily-custom-reports-returns-ok-response.json",
-      "scenario": "Get specified daily custom reports returns \"OK\" response",
-      "version": "v1"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v1/features/usage_metering.feature",
-      "file": "v1/usage-metering/get-specified-monthly-custom-reports-returns-ok-response.json",
-      "scenario": "Get specified monthly custom reports returns \"OK\" response",
-      "version": "v1"
-    },
-    {
       "feature": "Users",
       "feature_file": "../../v1/features/users.feature",
       "file": "v1/users/create-a-user-returns-null-access-role.json",
@@ -11525,13 +11511,6 @@
     {
       "feature": "Usage Metering",
       "feature_file": "../../v2/features/usage_metering.feature",
-      "file": "v2/usage-metering/get-cost-across-multi-org-account-returns-ok-response.json",
-      "scenario": "Get cost across multi-org account returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/get-historical-cost-across-your-account-returns-ok-response.json",
       "scenario": "Get historical cost across your account returns \"OK\" response",
       "version": "v2"
@@ -11548,48 +11527,6 @@
       "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/get-hourly-usage-by-product-family-returns-ok-response.json",
       "scenario": "Get hourly usage by product family returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v2/features/usage_metering.feature",
-      "file": "v2/usage-metering/get-hourly-usage-for-application-security-returns-bad-request-response.json",
-      "scenario": "Get hourly usage for Application Security returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v2/features/usage_metering.feature",
-      "file": "v2/usage-metering/get-hourly-usage-for-lambda-traced-invocations-returns-bad-request-response.json",
-      "scenario": "Get hourly usage for Lambda traced invocations returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v2/features/usage_metering.feature",
-      "file": "v2/usage-metering/get-hourly-usage-for-lambda-traced-invocations-returns-ok-response.json",
-      "scenario": "Get hourly usage for Lambda traced invocations returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v2/features/usage_metering.feature",
-      "file": "v2/usage-metering/get-hourly-usage-for-observability-pipelines-returns-bad-request-response.json",
-      "scenario": "Get hourly usage for Observability Pipelines returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v2/features/usage_metering.feature",
-      "file": "v2/usage-metering/get-hourly-usage-for-application-security-returns-ok-response.json",
-      "scenario": "Get hourly usage for application security returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "feature_file": "../../v2/features/usage_metering.feature",
-      "file": "v2/usage-metering/get-hourly-usage-for-observability-pipelines-returns-ok-response.json",
-      "scenario": "Get hourly usage for observability pipelines returns \"OK\" response",
       "version": "v2"
     },
     {

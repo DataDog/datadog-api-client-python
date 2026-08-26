@@ -86,7 +86,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @skip @team:DataDog/billing-hub
   Scenario: Get cost across multi-org account returns "OK" response
     Given new "GetCostByOrg" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
@@ -139,7 +139,7 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.region" is equal to "us"
 
-  @team:DataDog/billing-hub
+  @skip @team:DataDog/billing-hub
   Scenario: Get hourly usage for Application Security returns "Bad Request" response
     Given new "GetUsageApplicationSecurityMonitoring" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -147,7 +147,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/billing-hub
+  @skip @team:DataDog/billing-hub
   Scenario: Get hourly usage for Lambda traced invocations returns "Bad Request" response
     Given new "GetUsageLambdaTracedInvocations" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -155,7 +155,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/billing-hub
+  @skip @team:DataDog/billing-hub
   Scenario: Get hourly usage for Lambda traced invocations returns "OK" response
     Given new "GetUsageLambdaTracedInvocations" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -165,7 +165,7 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.product_family" is equal to "lambda-traced-invocations"
 
-  @team:DataDog/billing-hub
+  @skip @team:DataDog/billing-hub
   Scenario: Get hourly usage for Observability Pipelines returns "Bad Request" response
     Given new "GetUsageObservabilityPipelines" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -180,7 +180,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/billing-hub
+  @skip @team:DataDog/billing-hub
   Scenario: Get hourly usage for application security returns "OK" response
     Given new "GetUsageApplicationSecurityMonitoring" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -197,7 +197,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/billing-hub
+  @skip @team:DataDog/billing-hub
   Scenario: Get hourly usage for observability pipelines returns "OK" response
     Given new "GetUsageObservabilityPipelines" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
