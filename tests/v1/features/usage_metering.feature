@@ -645,7 +645,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @skip @team:DataDog/billing-hub
   Scenario: Get specified daily custom reports returns "OK" response
     Given new "GetSpecifiedDailyCustomReports" request
     And request contains "report_id" parameter with value "2022-03-20"
@@ -666,7 +666,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @skip @team:DataDog/billing-hub
   Scenario: Get specified monthly custom reports returns "OK" response
     Given new "GetSpecifiedMonthlyCustomReports" request
     And request contains "report_id" parameter with value "2021-05-01"
