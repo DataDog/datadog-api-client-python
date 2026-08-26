@@ -19,6 +19,9 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
     from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+    from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression import (
+        ObservabilityPipelineGoogleCloudStorageDestinationCompression,
+    )
     from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
     from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_storage_class import (
         ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
@@ -35,6 +38,12 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
         ObservabilityPipelineMemoryBufferSizeOptions,
     )
+    from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_zstd import (
+        ObservabilityPipelineGoogleCloudStorageDestinationCompressionZstd,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression_gzip import (
+        ObservabilityPipelineGoogleCloudStorageDestinationCompressionGzip,
+    )
 
 
 class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
@@ -45,6 +54,9 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         )
         from datadog_api_client.v2.model.observability_pipeline_gcp_auth import ObservabilityPipelineGcpAuth
         from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+        from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_compression import (
+            ObservabilityPipelineGoogleCloudStorageDestinationCompression,
+        )
         from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
         from datadog_api_client.v2.model.observability_pipeline_google_cloud_storage_destination_storage_class import (
             ObservabilityPipelineGoogleCloudStorageDestinationStorageClass,
@@ -58,6 +70,7 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
             "auth": (ObservabilityPipelineGcpAuth,),
             "bucket": (str,),
             "buffer": (ObservabilityPipelineBufferOptions,),
+            "compression": (ObservabilityPipelineGoogleCloudStorageDestinationCompression,),
             "id": (str,),
             "inputs": ([str],),
             "key_prefix": (str,),
@@ -71,6 +84,7 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
         "auth": "auth",
         "bucket": "bucket",
         "buffer": "buffer",
+        "compression": "compression",
         "id": "id",
         "inputs": "inputs",
         "key_prefix": "key_prefix",
@@ -95,6 +109,12 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        compression: Union[
+            ObservabilityPipelineGoogleCloudStorageDestinationCompression,
+            ObservabilityPipelineGoogleCloudStorageDestinationCompressionZstd,
+            ObservabilityPipelineGoogleCloudStorageDestinationCompressionGzip,
+            UnsetType,
+        ] = unset,
         key_prefix: Union[str, UnsetType] = unset,
         metadata: Union[List[ObservabilityPipelineMetadataEntry], UnsetType] = unset,
         **kwargs,
@@ -116,6 +136,10 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
 
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
+
+        :param compression: Compression configuration for archived logs. When omitted, logs are compressed with gzip
+            for backward compatibility.
+        :type compression: ObservabilityPipelineGoogleCloudStorageDestinationCompression, optional
 
         :param id: Unique identifier for the destination component.
         :type id: str
@@ -141,6 +165,8 @@ class ObservabilityPipelineGoogleCloudStorageDestination(ModelNormal):
             kwargs["auth"] = auth
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if compression is not unset:
+            kwargs["compression"] = compression
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
         if metadata is not unset:

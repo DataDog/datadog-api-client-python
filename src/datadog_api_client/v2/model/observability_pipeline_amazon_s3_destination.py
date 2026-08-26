@@ -16,6 +16,9 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
     from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+    from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression import (
+        ObservabilityPipelineAmazonS3DestinationCompression,
+    )
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_server_side_encryption import (
         ObservabilityPipelineAmazonS3DestinationServerSideEncryption,
     )
@@ -35,6 +38,12 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_options import (
         ObservabilityPipelineMemoryBufferSizeOptions,
     )
+    from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_zstd import (
+        ObservabilityPipelineAmazonS3DestinationCompressionZstd,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression_gzip import (
+        ObservabilityPipelineAmazonS3DestinationCompressionGzip,
+    )
 
 
 class ObservabilityPipelineAmazonS3Destination(ModelNormal):
@@ -42,6 +51,9 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
         from datadog_api_client.v2.model.observability_pipeline_buffer_options import ObservabilityPipelineBufferOptions
+        from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_compression import (
+            ObservabilityPipelineAmazonS3DestinationCompression,
+        )
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_destination_server_side_encryption import (
             ObservabilityPipelineAmazonS3DestinationServerSideEncryption,
         )
@@ -57,6 +69,7 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
             "auth": (ObservabilityPipelineAwsAuth,),
             "bucket": (str,),
             "buffer": (ObservabilityPipelineBufferOptions,),
+            "compression": (ObservabilityPipelineAmazonS3DestinationCompression,),
             "id": (str,),
             "inputs": ([str],),
             "key_prefix": (str,),
@@ -72,6 +85,7 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
         "auth": "auth",
         "bucket": "bucket",
         "buffer": "buffer",
+        "compression": "compression",
         "id": "id",
         "inputs": "inputs",
         "key_prefix": "key_prefix",
@@ -99,6 +113,12 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
             ObservabilityPipelineMemoryBufferSizeOptions,
             UnsetType,
         ] = unset,
+        compression: Union[
+            ObservabilityPipelineAmazonS3DestinationCompression,
+            ObservabilityPipelineAmazonS3DestinationCompressionZstd,
+            ObservabilityPipelineAmazonS3DestinationCompressionGzip,
+            UnsetType,
+        ] = unset,
         key_prefix: Union[str, UnsetType] = unset,
         server_side_encryption: Union[ObservabilityPipelineAmazonS3DestinationServerSideEncryption, UnsetType] = unset,
         ssekms_key_id: Union[str, UnsetType] = unset,
@@ -119,6 +139,10 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
 
         :param buffer: Configuration for buffer settings on destination components.
         :type buffer: ObservabilityPipelineBufferOptions, optional
+
+        :param compression: Compression configuration for archived logs. When omitted, logs are compressed with gzip
+            for backward compatibility.
+        :type compression: ObservabilityPipelineAmazonS3DestinationCompression, optional
 
         :param id: Unique identifier for the destination component.
         :type id: str
@@ -152,6 +176,8 @@ class ObservabilityPipelineAmazonS3Destination(ModelNormal):
             kwargs["auth"] = auth
         if buffer is not unset:
             kwargs["buffer"] = buffer
+        if compression is not unset:
+            kwargs["compression"] = compression
         if key_prefix is not unset:
             kwargs["key_prefix"] = key_prefix
         if server_side_encryption is not unset:
