@@ -348,3 +348,21 @@ class TestClientDelegatedAuthenticationWithRealMocks:
         api_client.use_delegated_token_auth(headers3)
         assert headers3["Authorization"] == "Bearer token-2"
         assert call_count == 2  # New call made
+
+
+class TestClientIsIac:
+    """Test that the is_iac configuration flag controls the X-Datadog-Managed-By header."""
+
+    def test_is_iac_header_absent_by_default(self):
+        """Test that the header is not set when is_iac is left at its default."""
+        config = Configuration()
+        api_client = ApiClient(config)
+
+        assert "X-Datadog-Managed-By" not in api_client.default_headers
+
+    def test_is_iac_header_present_when_enabled(self):
+        """Test that the header is set when is_iac is enabled on the configuration."""
+        config = Configuration(is_iac=True)
+        api_client = ApiClient(config)
+
+        assert api_client.default_headers["X-Datadog-Managed-By"] == "iac"
