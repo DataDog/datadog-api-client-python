@@ -14,7 +14,8 @@ from typing import ClassVar
 
 class CostAggregationType(ModelSimple):
     """
-    Controls how costs are aggregated when using `start_date`. The `cumulative` option returns month-to-date running totals.
+    Controls how costs are aggregated when using `start_date`.
+        The `cumulative` option returns month-to-date running totals.
 
     :param value: If omitted defaults to "cumulative". Must be one of ["cumulative"].
     :type value: str
