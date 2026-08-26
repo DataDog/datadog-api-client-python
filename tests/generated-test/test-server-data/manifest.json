@@ -536,6 +536,11 @@
       "version": "v2"
     },
     {
+      "feature": "Threat Intelligence",
+      "file": "v2/threat-intelligence.json",
+      "version": "v2"
+    },
+    {
       "feature": "Usage Metering",
       "file": "v2/usage-metering.json",
       "version": "v2"
