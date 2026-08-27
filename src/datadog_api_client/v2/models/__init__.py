@@ -6633,6 +6633,9 @@ from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination i
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
     ObservabilityPipelineSplunkHecDestinationEncoding,
 )
+from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_endpoint_target import (
+    ObservabilityPipelineSplunkHecDestinationEndpointTarget,
+)
 from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_token_strategy import (
     ObservabilityPipelineSplunkHecDestinationTokenStrategy,
 )
@@ -15807,6 +15810,7 @@ __all__ = [
     "ObservabilityPipelineSplitArrayProcessorType",
     "ObservabilityPipelineSplunkHecDestination",
     "ObservabilityPipelineSplunkHecDestinationEncoding",
+    "ObservabilityPipelineSplunkHecDestinationEndpointTarget",
     "ObservabilityPipelineSplunkHecDestinationTokenStrategy",
     "ObservabilityPipelineSplunkHecDestinationType",
     "ObservabilityPipelineSplunkHecMetricsDestination",

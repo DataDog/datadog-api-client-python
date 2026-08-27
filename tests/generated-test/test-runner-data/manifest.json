@@ -7941,6 +7941,13 @@
     {
       "feature": "Observability Pipelines",
       "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-splunk-hec-destination-endpoint-target-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with Splunk HEC destination endpoint_target returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-splunk-hec-destination-token-strategy-returns-ok-response.json",
       "scenario": "Validate an observability pipeline with Splunk HEC destination token_strategy returns \"OK\" response",
       "version": "v2"
