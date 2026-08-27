@@ -2242,6 +2242,7 @@ from datadog_api_client.v2.model.cyclone_dx_vulnerability_analysis import Cyclon
 from datadog_api_client.v2.model.cyclone_dx_vulnerability_rating import CycloneDXVulnerabilityRating
 from datadog_api_client.v2.model.cyclone_dx_vulnerability_reference import CycloneDXVulnerabilityReference
 from datadog_api_client.v2.model.cyclone_dx_vulnerability_reference_source import CycloneDXVulnerabilityReferenceSource
+from datadog_api_client.v2.model.dora_deployment_averaged_metrics import DORADeploymentAveragedMetrics
 from datadog_api_client.v2.model.dora_deployment_fetch_response import DORADeploymentFetchResponse
 from datadog_api_client.v2.model.dora_deployment_object import DORADeploymentObject
 from datadog_api_client.v2.model.dora_deployment_object_attributes import DORADeploymentObjectAttributes
@@ -2267,6 +2268,7 @@ from datadog_api_client.v2.model.dora_deployment_patch_request import DORADeploy
 from datadog_api_client.v2.model.dora_deployment_patch_request_attributes import DORADeploymentPatchRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_patch_request_data import DORADeploymentPatchRequestData
 from datadog_api_client.v2.model.dora_deployment_patch_request_data_type import DORADeploymentPatchRequestDataType
+from datadog_api_client.v2.model.dora_deployment_remediation import DORADeploymentRemediation
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
@@ -12839,6 +12841,7 @@ __all__ = [
     "CycloneDXVulnerabilityRating",
     "CycloneDXVulnerabilityReference",
     "CycloneDXVulnerabilityReferenceSource",
+    "DORADeploymentAveragedMetrics",
     "DORADeploymentFetchResponse",
     "DORADeploymentObject",
     "DORADeploymentObjectAttributes",
@@ -12854,6 +12857,7 @@ __all__ = [
     "DORADeploymentPatchRequestAttributes",
     "DORADeploymentPatchRequestData",
     "DORADeploymentPatchRequestDataType",
+    "DORADeploymentRemediation",
     "DORADeploymentRequest",
     "DORADeploymentRequestAttributes",
     "DORADeploymentRequestData",
