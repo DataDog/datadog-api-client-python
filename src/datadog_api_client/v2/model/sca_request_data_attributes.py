@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Dict, List, Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -23,6 +24,10 @@ if TYPE_CHECKING:
         ScaRequestDataAttributesRelationsItems,
     )
     from datadog_api_client.v2.model.sca_request_data_attributes_repository import ScaRequestDataAttributesRepository
+    from datadog_api_client.v2.model.sca_request_data_attributes_scan_start_timestamp import (
+        ScaRequestDataAttributesScanStartTimestamp,
+    )
+    from datadog_api_client.v2.model.sca_request_data_attributes_tags import ScaRequestDataAttributesTags
     from datadog_api_client.v2.model.sca_request_data_attributes_vulnerabilities_items import (
         ScaRequestDataAttributesVulnerabilitiesItems,
     )
@@ -44,6 +49,10 @@ class ScaRequestDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.sca_request_data_attributes_repository import (
             ScaRequestDataAttributesRepository,
         )
+        from datadog_api_client.v2.model.sca_request_data_attributes_scan_start_timestamp import (
+            ScaRequestDataAttributesScanStartTimestamp,
+        )
+        from datadog_api_client.v2.model.sca_request_data_attributes_tags import ScaRequestDataAttributesTags
         from datadog_api_client.v2.model.sca_request_data_attributes_vulnerabilities_items import (
             ScaRequestDataAttributesVulnerabilitiesItems,
         )
@@ -55,8 +64,9 @@ class ScaRequestDataAttributes(ModelNormal):
             "files": ([ScaRequestDataAttributesFilesItems],),
             "relations": ([ScaRequestDataAttributesRelationsItems],),
             "repository": (ScaRequestDataAttributesRepository,),
+            "scan_start_timestamp": (ScaRequestDataAttributesScanStartTimestamp,),
             "service": (str,),
-            "tags": ({str: (str,)},),
+            "tags": (ScaRequestDataAttributesTags,),
             "vulnerabilities": ([ScaRequestDataAttributesVulnerabilitiesItems],),
         }
 
@@ -67,6 +77,7 @@ class ScaRequestDataAttributes(ModelNormal):
         "files": "files",
         "relations": "relations",
         "repository": "repository",
+        "scan_start_timestamp": "scan_start_timestamp",
         "service": "service",
         "tags": "tags",
         "vulnerabilities": "vulnerabilities",
@@ -80,8 +91,9 @@ class ScaRequestDataAttributes(ModelNormal):
         files: Union[List[ScaRequestDataAttributesFilesItems], UnsetType] = unset,
         relations: Union[List[ScaRequestDataAttributesRelationsItems], UnsetType] = unset,
         repository: Union[ScaRequestDataAttributesRepository, UnsetType] = unset,
+        scan_start_timestamp: Union[ScaRequestDataAttributesScanStartTimestamp, none_type, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
-        tags: Union[Dict[str, str], UnsetType] = unset,
+        tags: Union[ScaRequestDataAttributesTags, UnsetType] = unset,
         vulnerabilities: Union[List[ScaRequestDataAttributesVulnerabilitiesItems], UnsetType] = unset,
         **kwargs,
     ):
@@ -106,11 +118,14 @@ class ScaRequestDataAttributes(ModelNormal):
         :param repository: Information about the source code repository being analyzed.
         :type repository: ScaRequestDataAttributesRepository, optional
 
+        :param scan_start_timestamp: The time when the SCA scan started.
+        :type scan_start_timestamp: ScaRequestDataAttributesScanStartTimestamp, none_type, optional
+
         :param service: The name of the service or application being analyzed.
         :type service: str, optional
 
-        :param tags: A map of key-value tags providing additional metadata for the SCA scan.
-        :type tags: {str: (str,)}, optional
+        :param tags: A map of tags providing additional metadata for the SCA scan.
+        :type tags: ScaRequestDataAttributesTags, optional
 
         :param vulnerabilities: The list of vulnerabilities identified in the dependency graph.
         :type vulnerabilities: [ScaRequestDataAttributesVulnerabilitiesItems], optional
@@ -127,6 +142,8 @@ class ScaRequestDataAttributes(ModelNormal):
             kwargs["relations"] = relations
         if repository is not unset:
             kwargs["repository"] = repository
+        if scan_start_timestamp is not unset:
+            kwargs["scan_start_timestamp"] = scan_start_timestamp
         if service is not unset:
             kwargs["service"] = service
         if tags is not unset:

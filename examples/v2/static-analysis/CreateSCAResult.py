@@ -17,6 +17,9 @@ from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_
 from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_file_position import (
     ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition,
 )
+from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_nullable_file_position import (
+    ScaRequestDataAttributesDependenciesItemsLocationsItemsNullableFilePosition,
+)
 from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_position import (
     ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition,
 )
@@ -28,6 +31,14 @@ from datadog_api_client.v2.model.sca_request_data_attributes_relations_items imp
     ScaRequestDataAttributesRelationsItems,
 )
 from datadog_api_client.v2.model.sca_request_data_attributes_repository import ScaRequestDataAttributesRepository
+from datadog_api_client.v2.model.sca_request_data_attributes_scan_start_timestamp import (
+    ScaRequestDataAttributesScanStartTimestamp,
+)
+from datadog_api_client.v2.model.sca_request_data_attributes_tags import ScaRequestDataAttributesTags
+from datadog_api_client.v2.model.sca_request_data_attributes_tags_tool import ScaRequestDataAttributesTagsTool
+from datadog_api_client.v2.model.sca_request_data_attributes_tags_tool_generator import (
+    ScaRequestDataAttributesTagsToolGenerator,
+)
 from datadog_api_client.v2.model.sca_request_data_attributes_vulnerabilities_items import (
     ScaRequestDataAttributesVulnerabilitiesItems,
 )
@@ -43,21 +54,23 @@ body = ScaRequest(
             dependencies=[
                 ScaRequestDataAttributesDependenciesItems(
                     exclusions=[],
+                    group=None,
+                    is_direct=None,
                     locations=[
                         ScaRequestDataAttributesDependenciesItemsLocationsItems(
                             block=ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition(
                                 end=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                                 start=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                             ),
-                            name=ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition(
+                            name=ScaRequestDataAttributesDependenciesItemsLocationsItemsNullableFilePosition(
                                 end=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                                 start=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                             ),
-                            namespace=ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition(
+                            namespace=ScaRequestDataAttributesDependenciesItemsLocationsItemsNullableFilePosition(
                                 end=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                                 start=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                             ),
-                            version=ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition(
+                            version=ScaRequestDataAttributesDependenciesItemsLocationsItemsNullableFilePosition(
                                 end=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                                 start=ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition(),
                             ),
@@ -66,6 +79,8 @@ body = ScaRequest(
                     reachable_symbol_properties=[
                         ScaRequestDataAttributesDependenciesItemsReachableSymbolPropertiesItems(),
                     ],
+                    target_frameworks=[],
+                    version=None,
                 ),
             ],
             files=[
@@ -77,6 +92,12 @@ body = ScaRequest(
                 ),
             ],
             repository=ScaRequestDataAttributesRepository(),
+            scan_start_timestamp=ScaRequestDataAttributesScanStartTimestamp(),
+            tags=ScaRequestDataAttributesTags(
+                tool=ScaRequestDataAttributesTagsTool(
+                    generator=ScaRequestDataAttributesTagsToolGenerator(),
+                ),
+            ),
             vulnerabilities=[
                 ScaRequestDataAttributesVulnerabilitiesItems(
                     affects=[

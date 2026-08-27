@@ -19,7 +19,9 @@ if TYPE_CHECKING:
     )
 
 
-class ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition(ModelNormal):
+class ScaRequestDataAttributesDependenciesItemsLocationsItemsNullableFilePosition(ModelNormal):
+    _nullable = True
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.sca_request_data_attributes_dependencies_items_locations_items_position import (
@@ -49,7 +51,7 @@ class ScaRequestDataAttributesDependenciesItemsLocationsItemsFilePosition(ModelN
         **kwargs,
     ):
         """
-        A range within a file defined by a start and end position, along with the file name.
+        A nullable range within a file defined by a start and end position, along with the file name.
 
         :param end: A specific position (line and column) within a source file.
         :type end: ScaRequestDataAttributesDependenciesItemsLocationsItemsPosition, optional
