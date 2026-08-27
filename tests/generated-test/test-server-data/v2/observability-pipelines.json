@@ -2167,6 +2167,81 @@
     },
     {
       "feature": "Observability Pipelines",
+      "frozen_at": "2026-08-03T12:48:21.947Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "endpoint_target": "raw",
+                          "id": "splunk-hec-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "token_key": "SPLUNK_HEC_TOKEN",
+                          "type": "splunk_hec"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Splunk HEC endpoint_target"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with Splunk HEC destination endpoint_target returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
       "frozen_at": "2026-04-08T15:11:59.762Z",
       "interactions": [
         {

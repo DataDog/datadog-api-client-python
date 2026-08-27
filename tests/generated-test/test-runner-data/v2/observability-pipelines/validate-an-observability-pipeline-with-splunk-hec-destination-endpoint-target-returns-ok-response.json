@@ -1,0 +1,70 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 200,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Validate an observability pipeline with Splunk HEC destination endpoint_target returns \"OK\" response",
+  "operation_id": "ValidatePipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ObservabilityPipelineSpec",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "config": {
+              "destinations": [
+                {
+                  "endpoint_target": "raw",
+                  "id": "splunk-hec-destination",
+                  "inputs": [
+                    "my-processor-group"
+                  ],
+                  "token_key": "SPLUNK_HEC_TOKEN",
+                  "type": "splunk_hec"
+                }
+              ],
+              "processor_groups": [
+                {
+                  "enabled": true,
+                  "id": "my-processor-group",
+                  "include": "service:my-service",
+                  "inputs": [
+                    "datadog-agent-source"
+                  ],
+                  "processors": [
+                    {
+                      "enabled": true,
+                      "id": "filter-processor",
+                      "include": "status:error",
+                      "type": "filter"
+                    }
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "id": "datadog-agent-source",
+                  "type": "datadog_agent"
+                }
+              ]
+            },
+            "name": "Pipeline with Splunk HEC endpoint_target"
+          },
+          "type": "pipelines"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/obs-pipelines/pipelines/validate"
+  },
+  "scenario": "Validate an observability pipeline with Splunk HEC destination endpoint_target returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

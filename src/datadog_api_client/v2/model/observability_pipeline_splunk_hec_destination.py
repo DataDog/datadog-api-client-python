@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
         ObservabilityPipelineSplunkHecDestinationEncoding,
     )
+    from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_endpoint_target import (
+        ObservabilityPipelineSplunkHecDestinationEndpointTarget,
+    )
     from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_token_strategy import (
         ObservabilityPipelineSplunkHecDestinationTokenStrategy,
     )
@@ -42,6 +45,9 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_encoding import (
             ObservabilityPipelineSplunkHecDestinationEncoding,
         )
+        from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_endpoint_target import (
+            ObservabilityPipelineSplunkHecDestinationEndpointTarget,
+        )
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_destination_token_strategy import (
             ObservabilityPipelineSplunkHecDestinationTokenStrategy,
         )
@@ -53,6 +59,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             "auto_extract_timestamp": (bool,),
             "buffer": (ObservabilityPipelineBufferOptions,),
             "encoding": (ObservabilityPipelineSplunkHecDestinationEncoding,),
+            "endpoint_target": (ObservabilityPipelineSplunkHecDestinationEndpointTarget,),
             "endpoint_url_key": (str,),
             "id": (str,),
             "index": (str,),
@@ -68,6 +75,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
         "auto_extract_timestamp": "auto_extract_timestamp",
         "buffer": "buffer",
         "encoding": "encoding",
+        "endpoint_target": "endpoint_target",
         "endpoint_url_key": "endpoint_url_key",
         "id": "id",
         "index": "index",
@@ -93,6 +101,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             UnsetType,
         ] = unset,
         encoding: Union[ObservabilityPipelineSplunkHecDestinationEncoding, UnsetType] = unset,
+        endpoint_target: Union[ObservabilityPipelineSplunkHecDestinationEndpointTarget, UnsetType] = unset,
         endpoint_url_key: Union[str, UnsetType] = unset,
         index: Union[str, UnsetType] = unset,
         indexed_fields: Union[List[str], UnsetType] = unset,
@@ -108,6 +117,7 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
 
         :param auto_extract_timestamp: If ``true`` , Splunk tries to extract timestamps from incoming log events.
             If ``false`` , Splunk assigns the time the event was received.
+            Only applies when ``endpoint_target`` is ``event`` ; cannot be ``true`` when ``endpoint_target`` is ``raw``.
         :type auto_extract_timestamp: bool, optional
 
         :param buffer: Configuration for buffer settings on destination components.
@@ -115,6 +125,9 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
 
         :param encoding: Encoding format for log events.
         :type encoding: ObservabilityPipelineSplunkHecDestinationEncoding, optional
+
+        :param endpoint_target: The Splunk HEC endpoint to send events to. Use ``event`` to send structured events to the ``/event`` endpoint, or ``raw`` to send the raw message to the ``/raw`` endpoint.
+        :type endpoint_target: ObservabilityPipelineSplunkHecDestinationEndpointTarget, optional
 
         :param endpoint_url_key: Name of the environment variable or secret that holds the Splunk HEC endpoint URL.
         :type endpoint_url_key: str, optional
@@ -149,6 +162,8 @@ class ObservabilityPipelineSplunkHecDestination(ModelNormal):
             kwargs["buffer"] = buffer
         if encoding is not unset:
             kwargs["encoding"] = encoding
+        if endpoint_target is not unset:
+            kwargs["endpoint_target"] = endpoint_target
         if endpoint_url_key is not unset:
             kwargs["endpoint_url_key"] = endpoint_url_key
         if index is not unset:
