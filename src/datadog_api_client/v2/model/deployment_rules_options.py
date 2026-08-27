@@ -24,8 +24,17 @@ class DeploymentRulesOptions(ModelComposed):
         :param excluded_resources: Resources to exclude from faulty deployment detection.
         :type excluded_resources: [str], optional
 
+        :param fail_on_no_data: Whether the rule should fail if a matching monitor group is in a NO DATA state.
+        :type fail_on_no_data: bool, optional
+
+        :param fail_on_no_groups_found: Whether the rule should fail if no monitor groups are found for the query.
+        :type fail_on_no_groups_found: bool, optional
+
         :param query: Monitors that match this query are evaluated.
         :type query: str
+
+        :param warmup: Seconds to wait after a deployment starts before evaluating the monitor's status.
+        :type warmup: int, optional
         """
         super().__init__(kwargs)
 
