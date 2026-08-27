@@ -294,7 +294,7 @@ class MetricsApi:
 
         **Note** : This endpoint is deprecated. Use ``/api/v2/metrics`` instead.
 
-        Search for metrics from the last 24 hours in Datadog.
+        Search for metrics from the last 24 hours in Datadog. This integration test verifies review gating for public operations.
 
         :param q: Query string to search metrics upon. Can optionally be prefixed with ``metrics:``.
         :type q: str
