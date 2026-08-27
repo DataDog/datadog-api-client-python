@@ -10,16 +10,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class DashboardSummary(ModelComposed):
+class DashboardSummaryID_20270101(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Dashboard summary response with API-versioned representations.
-
-        :param dashboards: List of dashboard definitions.
-        :type dashboards: [DashboardSummaryDefinition], optional
-
-        :param total: Number of dashboards.
-        :type total: int, optional
+        ID of the dashboard.
         """
         super().__init__(kwargs)
 
@@ -32,12 +26,9 @@ class DashboardSummary(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v1.model.dashboard_summary_v1 import DashboardSummary_V1
-        from datadog_api_client.v1.model.dashboard_summary_20270101 import DashboardSummary_20270101
-
         return {
             "oneOf": [
-                DashboardSummary_V1,
-                DashboardSummary_20270101,
+                str,
+                int,
             ],
         }

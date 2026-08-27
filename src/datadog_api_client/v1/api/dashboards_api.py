@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
-from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
 from datadog_api_client.v1.model.dashboard_restore_request import DashboardRestoreRequest
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.shared_dashboard import SharedDashboard
@@ -603,7 +602,7 @@ class DashboardsApi:
         filter_deleted: Union[bool, UnsetType] = unset,
         count: Union[int, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
-    ) -> collections.abc.Iterable[DashboardSummaryDefinition]:
+    ) -> collections.abc.Iterable[None]:
         """Get all dashboards.
 
         Provide a paginated version of :meth:`list_dashboards`, returning all items.
@@ -620,7 +619,7 @@ class DashboardsApi:
         :type start: int, optional
 
         :return: A generator of paginated results.
-        :rtype: collections.abc.Iterable[DashboardSummaryDefinition]
+        :rtype: collections.abc.Iterable[None]
         """
         kwargs: Dict[str, Any] = {}
         if filter_shared is not unset:
