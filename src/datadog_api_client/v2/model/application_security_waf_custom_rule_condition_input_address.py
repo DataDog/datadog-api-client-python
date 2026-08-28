@@ -16,7 +16,7 @@ class ApplicationSecurityWafCustomRuleConditionInputAddress(ModelSimple):
     """
     Input from the request on which the condition should apply.
 
-    :param value: Must be one of ["server.db.statement", "server.io.fs.file", "server.io.fs.file_write", "server.io.net.url", "server.sys.shell.cmd", "server.request.method", "server.request.uri.raw", "server.request.path_params", "server.request.query", "server.request.headers", "server.request.headers.no_cookies", "server.request.custom-auth", "server.request.cookies", "server.request.trailers", "server.request.body", "server.request.body.filenames", "server.request.body.files_content", "server.response.status", "server.response.headers.no_cookies", "server.response.trailers", "server.response.body", "grpc.server.request.metadata", "grpc.server.request.message", "grpc.server.method", "graphql.server.all_resolvers", "usr.id", "http.client_ip", "server.llm.event", "server.llm.guard.verdict", "_dd.appsec.fp.http.header", "_dd.appsec.fp.http.network", "_dd.appsec.fp.session", "_dd.appsec.fp.http.endpoint"].
+    :param value: Must be one of ["server.db.statement", "server.io.fs.file", "server.io.fs.file_write", "server.io.net.url", "server.sys.shell.cmd", "server.request.method", "server.request.uri.raw", "server.request.path_params", "server.request.query", "server.request.headers", "server.request.headers.no_cookies", "server.request.custom-auth", "server.request.cookies", "server.request.trailers", "server.request.body", "server.request.body.filenames", "server.request.body.files_content", "server.response.status", "server.response.headers.no_cookies", "server.response.trailers", "server.response.body", "server.response.body.raw", "grpc.server.request.metadata", "grpc.server.request.message", "grpc.server.method", "graphql.server.all_resolvers", "usr.id", "http.client_ip", "server.llm.event", "server.llm.guard.verdict", "_dd.appsec.fp.http.header", "_dd.appsec.fp.http.network", "_dd.appsec.fp.session", "_dd.appsec.fp.http.endpoint"].
     :type value: str
     """
 
@@ -42,6 +42,7 @@ class ApplicationSecurityWafCustomRuleConditionInputAddress(ModelSimple):
         "server.response.headers.no_cookies",
         "server.response.trailers",
         "server.response.body",
+        "server.response.body.raw",
         "grpc.server.request.metadata",
         "grpc.server.request.message",
         "grpc.server.method",
@@ -76,6 +77,7 @@ class ApplicationSecurityWafCustomRuleConditionInputAddress(ModelSimple):
     SERVER_RESPONSE_HEADERS_NO_COOKIES: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_RESPONSE_TRAILERS: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     SERVER_RESPONSE_BODY: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
+    SERVER_RESPONSE_BODY_RAW: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     GRPC_SERVER_REQUEST_METADATA: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     GRPC_SERVER_REQUEST_MESSAGE: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
     GRPC_SERVER_METHOD: ClassVar["ApplicationSecurityWafCustomRuleConditionInputAddress"]
@@ -158,6 +160,9 @@ ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_RESPONSE_TRAILERS =
 )
 ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_RESPONSE_BODY = (
     ApplicationSecurityWafCustomRuleConditionInputAddress("server.response.body")
+)
+ApplicationSecurityWafCustomRuleConditionInputAddress.SERVER_RESPONSE_BODY_RAW = (
+    ApplicationSecurityWafCustomRuleConditionInputAddress("server.response.body.raw")
 )
 ApplicationSecurityWafCustomRuleConditionInputAddress.GRPC_SERVER_REQUEST_METADATA = (
     ApplicationSecurityWafCustomRuleConditionInputAddress("grpc.server.request.metadata")
