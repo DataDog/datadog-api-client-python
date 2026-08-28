@@ -6348,6 +6348,12 @@ from datadog_api_client.v2.model.observability_pipeline_open_search_destination_
 from datadog_api_client.v2.model.observability_pipeline_open_search_destination_type import (
     ObservabilityPipelineOpenSearchDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination import (
+    ObservabilityPipelineOpentelemetryMetricsDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination_type import (
+    ObservabilityPipelineOpentelemetryMetricsDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
     ObservabilityPipelineOpentelemetrySource,
 )
@@ -15721,6 +15727,8 @@ __all__ = [
     "ObservabilityPipelineOpenSearchDestination",
     "ObservabilityPipelineOpenSearchDestinationDataStream",
     "ObservabilityPipelineOpenSearchDestinationType",
+    "ObservabilityPipelineOpentelemetryMetricsDestination",
+    "ObservabilityPipelineOpentelemetryMetricsDestinationType",
     "ObservabilityPipelineOpentelemetrySource",
     "ObservabilityPipelineOpentelemetrySourceType",
     "ObservabilityPipelineParseGrokProcessor",
