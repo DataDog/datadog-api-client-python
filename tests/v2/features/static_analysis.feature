@@ -581,7 +581,7 @@ Feature: Static Analysis
   Scenario: Post dependencies for analysis returns "OK" response
     Given operation "CreateSCAResult" enabled
     And new "CreateSCAResult" request
-    And body with value {"data": {"attributes": {"commit": {}, "dependencies": [{"exclusions": [], "locations": [{"block": {"end": {}, "start": {}}, "name": {"end": {}, "start": {}}, "namespace": {"end": {}, "start": {}}, "version": {"end": {}, "start": {}}}], "reachable_symbol_properties": [{}]}], "files": [{}], "relations": [{"depends_on": []}], "repository": {}, "vulnerabilities": [{"affects": [{}]}]}, "type": "scarequests"}}
+    And body with value {"data": {"attributes": {"commit": {}, "dependencies": [{"exclusions": [], "group": null, "is_direct": null, "locations": [{"block": {"end": {}, "start": {}}, "name": {"end": {}, "start": {}}, "namespace": {"end": {}, "start": {}}, "version": {"end": {}, "start": {}}}], "reachable_symbol_properties": [{}], "target_frameworks": [], "version": null}], "files": [{}], "relations": [{"depends_on": []}], "repository": {}, "scan_start_timestamp": {}, "tags": {"tool": {"generator": {}}}, "vulnerabilities": [{"affects": [{}]}]}, "type": "scarequests"}}
     When the request is sent
     Then the response status is 200 OK
 
