@@ -43,6 +43,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
         )
 
         return {
+            "disabled": (bool,),
             "filter": (str,),
             "hash": (CloudWorkloadSecurityAgentRuleActionHash,),
             "kill": (CloudWorkloadSecurityAgentRuleKill,),
@@ -51,6 +52,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
         }
 
     attribute_map = {
+        "disabled": "disabled",
         "filter": "filter",
         "hash": "hash",
         "kill": "kill",
@@ -60,6 +62,7 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
 
     def __init__(
         self_,
+        disabled: Union[bool, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         hash: Union[CloudWorkloadSecurityAgentRuleActionHash, UnsetType] = unset,
         kill: Union[CloudWorkloadSecurityAgentRuleKill, UnsetType] = unset,
@@ -69,6 +72,9 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
     ):
         """
         The action the rule can perform if triggered
+
+        :param disabled: Whether the action is disabled.
+        :type disabled: bool, optional
 
         :param filter: SECL expression used to target the container to apply the action on
         :type filter: str, optional
@@ -85,6 +91,8 @@ class CloudWorkloadSecurityAgentRuleAction(ModelNormal):
         :param set: The set action applied on the scope matching the rule
         :type set: CloudWorkloadSecurityAgentRuleActionSet, optional
         """
+        if disabled is not unset:
+            kwargs["disabled"] = disabled
         if filter is not unset:
             kwargs["filter"] = filter
         if hash is not unset:

@@ -34,6 +34,7 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
             "inherited": (bool,),
             "name": (str,),
             "scope": (str,),
+            "scope_field": (str,),
             "size": (int,),
             "ttl": (int,),
             "value": (CloudWorkloadSecurityAgentRuleActionSetValue,),
@@ -47,6 +48,7 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         "inherited": "inherited",
         "name": "name",
         "scope": "scope",
+        "scope_field": "scope_field",
         "size": "size",
         "ttl": "ttl",
         "value": "value",
@@ -61,6 +63,7 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         inherited: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
+        scope_field: Union[str, UnsetType] = unset,
         size: Union[int, UnsetType] = unset,
         ttl: Union[int, UnsetType] = unset,
         value: Union[CloudWorkloadSecurityAgentRuleActionSetValue, str, int, bool, UnsetType] = unset,
@@ -90,6 +93,9 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         :param scope: The scope of the set action.
         :type scope: str, optional
 
+        :param scope_field: The scope field of the set action.
+        :type scope_field: str, optional
+
         :param size: The size of the set action.
         :type size: int, optional
 
@@ -113,6 +119,8 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
             kwargs["name"] = name
         if scope is not unset:
             kwargs["scope"] = scope
+        if scope_field is not unset:
+            kwargs["scope_field"] = scope_field
         if size is not unset:
             kwargs["size"] = size
         if ttl is not unset:
