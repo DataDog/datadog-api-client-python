@@ -32,6 +32,7 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
 
         return {
             "annotations": ([LLMObsAnnotationItem],),
+            "can_annotate": (bool,),
             "content_id": (str,),
             "display_block": ([LLMObsContentBlock],),
             "id": (str,),
@@ -40,6 +41,7 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
 
     attribute_map = {
         "annotations": "annotations",
+        "can_annotate": "can_annotate",
         "content_id": "content_id",
         "display_block": "display_block",
         "id": "id",
@@ -49,6 +51,7 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
     def __init__(
         self_,
         annotations: List[LLMObsAnnotationItem],
+        can_annotate: bool,
         content_id: str,
         display_block: List[LLMObsContentBlock],
         id: str,
@@ -60,6 +63,9 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
 
         :param annotations: List of annotations for this interaction.
         :type annotations: [LLMObsAnnotationItem]
+
+        :param can_annotate: Whether the current caller can annotate this interaction.
+        :type can_annotate: bool
 
         :param content_id: Server-generated deterministic identifier derived from the block list.
         :type content_id: str
@@ -77,6 +83,7 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
         super().__init__(kwargs)
 
         self_.annotations = annotations
+        self_.can_annotate = can_annotate
         self_.content_id = content_id
         self_.display_block = display_block
         self_.id = id

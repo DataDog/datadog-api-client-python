@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -25,6 +25,7 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
 
         return {
             "annotation_schema": (LLMObsAnnotationSchema,),
+            "can_manage_access": (bool,),
             "created_at": (datetime,),
             "created_by": (str,),
             "description": (str,),
@@ -33,10 +34,14 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
             "name": (str,),
             "owned_by": (str,),
             "project_id": (str,),
+            "restrict_to_assignees": (bool,),
+            "restrict_to_reviewers": (bool,),
+            "reviewer_emails": ([str],),
         }
 
     attribute_map = {
         "annotation_schema": "annotation_schema",
+        "can_manage_access": "can_manage_access",
         "created_at": "created_at",
         "created_by": "created_by",
         "description": "description",
@@ -45,10 +50,17 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
         "name": "name",
         "owned_by": "owned_by",
         "project_id": "project_id",
+        "restrict_to_assignees": "restrict_to_assignees",
+        "restrict_to_reviewers": "restrict_to_reviewers",
+        "reviewer_emails": "reviewer_emails",
+    }
+    read_only_vars = {
+        "can_manage_access",
     }
 
     def __init__(
         self_,
+        can_manage_access: bool,
         created_at: datetime,
         created_by: str,
         description: str,
@@ -57,7 +69,10 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
         name: str,
         owned_by: str,
         project_id: str,
+        restrict_to_assignees: bool,
+        restrict_to_reviewers: bool,
         annotation_schema: Union[LLMObsAnnotationSchema, UnsetType] = unset,
+        reviewer_emails: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -65,6 +80,9 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
 
         :param annotation_schema: Schema defining the labels for an annotation queue.
         :type annotation_schema: LLMObsAnnotationSchema, optional
+
+        :param can_manage_access: Whether the current caller can manage access for the annotation queue.
+        :type can_manage_access: bool
 
         :param created_at: Timestamp when the queue was created.
         :type created_at: datetime
@@ -89,11 +107,24 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
 
         :param project_id: Identifier of the project this queue belongs to.
         :type project_id: str
+
+        :param restrict_to_assignees: Whether annotation access is restricted to assigned users.
+        :type restrict_to_assignees: bool
+
+        :param restrict_to_reviewers: Whether annotation access is restricted to queue reviewers.
+        :type restrict_to_reviewers: bool
+
+        :param reviewer_emails: Email addresses of reviewers for the annotation queue. Returned only
+            when the caller can manage queue access.
+        :type reviewer_emails: [str], optional
         """
         if annotation_schema is not unset:
             kwargs["annotation_schema"] = annotation_schema
+        if reviewer_emails is not unset:
+            kwargs["reviewer_emails"] = reviewer_emails
         super().__init__(kwargs)
 
+        self_.can_manage_access = can_manage_access
         self_.created_at = created_at
         self_.created_by = created_by
         self_.description = description
@@ -102,3 +133,5 @@ class LLMObsAnnotationQueueDataAttributesResponse(ModelNormal):
         self_.name = name
         self_.owned_by = owned_by
         self_.project_id = project_id
+        self_.restrict_to_assignees = restrict_to_assignees
+        self_.restrict_to_reviewers = restrict_to_reviewers

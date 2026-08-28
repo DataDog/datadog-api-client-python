@@ -35,6 +35,7 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
 
         return {
             "annotations": ([LLMObsAnnotationItem],),
+            "can_annotate": (bool,),
             "content_id": (str,),
             "created_at": (datetime,),
             "display_block": ([LLMObsContentBlock],),
@@ -47,6 +48,7 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
 
     attribute_map = {
         "annotations": "annotations",
+        "can_annotate": "can_annotate",
         "content_id": "content_id",
         "created_at": "created_at",
         "display_block": "display_block",
@@ -60,6 +62,7 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
     def __init__(
         self_,
         annotations: List[LLMObsAnnotationItem],
+        can_annotate: bool,
         content_id: str,
         created_at: datetime,
         id: str,
@@ -75,6 +78,9 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
 
         :param annotations: List of annotations for this interaction.
         :type annotations: [LLMObsAnnotationItem]
+
+        :param can_annotate: Whether the current caller can annotate this interaction.
+        :type can_annotate: bool
 
         :param content_id: Upstream entity identifier (trace ID, session ID, or deterministic display_block ID).
         :type content_id: str
@@ -106,6 +112,7 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
         super().__init__(kwargs)
 
         self_.annotations = annotations
+        self_.can_annotate = can_annotate
         self_.content_id = content_id
         self_.created_at = created_at
         self_.id = id

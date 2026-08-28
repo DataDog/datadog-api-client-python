@@ -1,6 +1,6 @@
 """
-Create or update annotations returns "OK — annotations created or updated. Per-item errors are listed in `errors`."
-response
+Create or update annotations returns "OK — annotations created or updated. For mixed batches, denied items and other
+per-item errors are listed in `errors`." response
 """
 
 from datadog_api_client import ApiClient, Configuration

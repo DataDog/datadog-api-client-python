@@ -55849,6 +55849,10 @@ components:
           items:
             $ref: "#/components/schemas/LLMObsAnnotationItem"
           type: array
+        can_annotate:
+          description: Whether the current caller can annotate this interaction.
+          example: true
+          type: boolean
         content_id:
           description: Upstream entity identifier (trace ID, session ID, or deterministic display_block ID).
           example: "trace-abc-123"
@@ -55887,6 +55891,7 @@ components:
         - modified_at
         - queue_id
         - queue_name
+        - can_annotate
         - annotations
       type: object
     LLMObsAnnotatedInteractionItem:
@@ -55951,6 +55956,7 @@ components:
           description: List of interactions with their annotations.
           example:
             - annotations: []
+              can_annotate: true
               content_id: trace-abc-123
               id: "interaction-456"
               type: trace
@@ -56009,6 +56015,8 @@ components:
           description: ID of the annotation that failed, if applicable.
           example: "00000000-0000-0000-0000-000000000000"
           type: string
+        code:
+          $ref: "#/components/schemas/LLMObsAnnotationErrorCode"
         error:
           description: Error message.
           example: "interaction not found"
@@ -56021,6 +56029,14 @@ components:
         - interaction_id
         - error
       type: object
+    LLMObsAnnotationErrorCode:
+      description: Stable error code. `permission_denied` indicates the item was rejected by queue access rules.
+      enum:
+        - permission_denied
+      example: permission_denied
+      type: string
+      x-enum-varnames:
+        - PERMISSION_DENIED
     LLMObsAnnotationItem:
       description: A single annotation on an interaction.
       properties:
@@ -56199,6 +56215,21 @@ components:
           description: Identifier of the project this queue belongs to.
           example: "00000000-0000-0000-0000-000000000002"
           type: string
+        restrict_to_assignees:
+          description: Whether annotation access is restricted to assigned users.
+          example: false
+          type: boolean
+        restrict_to_reviewers:
+          description: Whether annotation access is restricted to queue reviewers.
+          example: true
+          type: boolean
+        reviewer_emails:
+          description: Email addresses of reviewers who can access the annotation queue.
+          example:
+            - "reviewer@example.com"
+          items:
+            type: string
+          type: array
       required:
         - name
         - project_id
@@ -56208,6 +56239,11 @@ components:
       properties:
         annotation_schema:
           $ref: "#/components/schemas/LLMObsAnnotationSchema"
+        can_manage_access:
+          description: Whether the current caller can manage access for the annotation queue.
+          example: true
+          readOnly: true
+          type: boolean
         created_at:
           description: Timestamp when the queue was created.
           example: "2024-01-15T10:30:00Z"
@@ -56242,6 +56278,23 @@ components:
           description: Identifier of the project this queue belongs to.
           example: "00000000-0000-0000-0000-000000000002"
           type: string
+        restrict_to_assignees:
+          description: Whether annotation access is restricted to assigned users.
+          example: false
+          type: boolean
+        restrict_to_reviewers:
+          description: Whether annotation access is restricted to queue reviewers.
+          example: true
+          type: boolean
+        reviewer_emails:
+          description: |-
+            Email addresses of reviewers for the annotation queue. Returned only
+            when the caller can manage queue access.
+          example:
+            - "reviewer@example.com"
+          items:
+            type: string
+          type: array
       required:
         - name
         - project_id
@@ -56251,6 +56304,9 @@ components:
         - modified_by
         - modified_at
         - owned_by
+        - restrict_to_reviewers
+        - restrict_to_assignees
+        - can_manage_access
       type: object
     LLMObsAnnotationQueueDataRequest:
       description: Data object for creating an Agent Observability annotation queue.
@@ -56467,6 +56523,21 @@ components:
           description: Updated name of the annotation queue.
           example: "Updated queue name"
           type: string
+        restrict_to_assignees:
+          description: Whether annotation access is restricted to assigned users.
+          example: false
+          type: boolean
+        restrict_to_reviewers:
+          description: Whether annotation access is restricted to queue reviewers.
+          example: true
+          type: boolean
+        reviewer_emails:
+          description: Updated email addresses of reviewers who can access the annotation queue.
+          example:
+            - "reviewer@example.com"
+          items:
+            type: string
+          type: array
       type: object
     LLMObsAnnotationQueueUpdateDataRequest:
       description: Data object for updating an Agent Observability annotation queue.
@@ -58351,6 +58422,10 @@ components:
           items:
             $ref: "#/components/schemas/LLMObsAnnotationItem"
           type: array
+        can_annotate:
+          description: Whether the current caller can annotate this interaction.
+          example: true
+          type: boolean
         content_id:
           description: Server-generated deterministic identifier derived from the block list.
           example: "9a87f3e2b1d4c5a6f8b3e2d1c4a7b5f6e3d2a1c4b7e5f8a3d6c2e1b4a7d5f8c2"
@@ -58367,6 +58442,7 @@ components:
         - id
         - type
         - content_id
+        - can_annotate
         - annotations
         - display_block
       type: object
@@ -62357,6 +62433,10 @@ components:
           items:
             $ref: "#/components/schemas/LLMObsAnnotationItem"
           type: array
+        can_annotate:
+          description: Whether the current caller can annotate this interaction.
+          example: true
+          type: boolean
         content_id:
           description: Upstream entity identifier supplied by the caller.
           example: "trace-abc-123"
@@ -62383,6 +62463,7 @@ components:
         - content_id
         - created_at
         - modified_at
+        - can_annotate
         - annotations
       type: object
     LLMObsTraceInteractionItem:
@@ -164695,6 +164776,7 @@ paths:
                                     value: good
                                 modified_at: "0001-01-01T00:00:00Z"
                                 modified_by: "00000000-0000-0000-0000-000000000002"
+                            can_annotate: true
                             content_id: trace-abc-123
                             created_at: "2025-06-01T12:00:00Z"
                             id: interaction-456
@@ -164772,6 +164854,7 @@ paths:
                   value:
                     data:
                       - attributes:
+                          can_manage_access: true
                           created_at: "2024-01-15T10:30:00Z"
                           created_by: 00000000-0000-0000-0000-000000000002
                           description: Queue for annotating customer support traces
@@ -164780,6 +164863,10 @@ paths:
                           name: My annotation queue
                           owned_by: 00000000-0000-0000-0000-000000000002
                           project_id: 00000000-0000-0000-0000-000000000002
+                          restrict_to_assignees: false
+                          restrict_to_reviewers: true
+                          reviewer_emails:
+                            - reviewer@example.com
                         id: 00000000-0000-0000-0000-000000000001
                         type: queues
               schema:
@@ -164818,6 +164905,7 @@ paths:
       description: |-
         Create an annotation queue. The `name` and `project_id` fields are required.
         An optional `annotation_schema` can be provided to define the labels for the queue.
+        Optional access-control fields can restrict annotation access to reviewers or assignees.
         Fields such as `created_by`, `owned_by`, `created_at`, `modified_by`,
         and `modified_at` are inferred by the backend.
       operationId: CreateLLMObsAnnotationQueue
@@ -164832,6 +164920,19 @@ paths:
                       description: Queue for annotating customer support traces
                       name: My annotation queue
                       project_id: 00000000-0000-0000-0000-000000000002
+                    type: queues
+              with_access_controls:
+                summary: Create queue with access controls
+                value:
+                  data:
+                    attributes:
+                      description: Queue for annotating customer support traces
+                      name: Restricted annotation queue
+                      project_id: 00000000-0000-0000-0000-000000000002
+                      restrict_to_assignees: false
+                      restrict_to_reviewers: true
+                      reviewer_emails:
+                        - reviewer@example.com
                     type: queues
               with_schema:
                 summary: Create queue with annotation schema
@@ -164868,6 +164969,7 @@ paths:
                   value:
                     data:
                       attributes:
+                        can_manage_access: true
                         created_at: "2024-01-15T10:30:00Z"
                         created_by: 00000000-0000-0000-0000-000000000002
                         description: Queue for annotating customer support traces
@@ -164876,6 +164978,10 @@ paths:
                         name: My annotation queue
                         owned_by: 00000000-0000-0000-0000-000000000002
                         project_id: 00000000-0000-0000-0000-000000000002
+                        restrict_to_assignees: false
+                        restrict_to_reviewers: true
+                        reviewer_emails:
+                          - reviewer@example.com
                       id: 00000000-0000-0000-0000-000000000001
                       type: queues
               schema:
@@ -164950,7 +165056,9 @@ paths:
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     patch:
       description: |-
-        Partially update an annotation queue. The `name`, `description`, and `annotation_schema` fields can be updated.
+        Partially update an annotation queue. The `name`, `description`,
+        `annotation_schema`, `reviewer_emails`, `restrict_to_reviewers`, and
+        `restrict_to_assignees` fields can be updated.
       operationId: UpdateLLMObsAnnotationQueue
       parameters:
         - $ref: "#/components/parameters/LLMObsAnnotationQueueIDPathParameter"
@@ -164964,6 +165072,10 @@ paths:
                     attributes:
                       description: Updated description
                       name: Updated queue name
+                      restrict_to_assignees: false
+                      restrict_to_reviewers: true
+                      reviewer_emails:
+                        - reviewer@example.com
                     type: queues
             schema:
               $ref: "#/components/schemas/LLMObsAnnotationQueueUpdateRequest"
@@ -164978,6 +165090,7 @@ paths:
                   value:
                     data:
                       attributes:
+                        can_manage_access: true
                         created_at: "2024-01-15T10:30:00Z"
                         created_by: 00000000-0000-0000-0000-000000000002
                         description: Queue for annotating customer support traces
@@ -164986,6 +165099,10 @@ paths:
                         name: My annotation queue
                         owned_by: 00000000-0000-0000-0000-000000000002
                         project_id: 00000000-0000-0000-0000-000000000002
+                        restrict_to_assignees: false
+                        restrict_to_reviewers: true
+                        reviewer_emails:
+                          - reviewer@example.com
                       id: 00000000-0000-0000-0000-000000000001
                       type: queues
               schema:
@@ -165043,6 +165160,7 @@ paths:
                       attributes:
                         annotated_interactions:
                           - annotations: []
+                            can_annotate: true
                             content_id: trace-abc-123
                             id: interaction-456
                             type: trace
@@ -165093,6 +165211,7 @@ paths:
         by `interaction_id` and the requesting user's identity.
         Results and errors in the response are linked to request items by `interaction_id`.
         Errors for individual items are returned in the `errors` field without blocking the rest of the batch.
+        Requests where every item is denied by queue access rules return `403`.
       operationId: UpsertLLMObsAnnotations
       parameters:
         - $ref: "#/components/parameters/LLMObsAnnotationQueueIDPathParameter"
@@ -165137,9 +165256,31 @@ paths:
                             modified_by: 00000000-0000-0000-0000-000000000002
                       id: 00000000-0000-0000-0000-000000000001
                       type: annotations
+                mixed_access_denied:
+                  summary: Some annotations were denied by queue access rules
+                  value:
+                    data:
+                      attributes:
+                        annotations:
+                          - created_at: "2024-01-15T10:30:00Z"
+                            created_by: 00000000-0000-0000-0000-000000000002
+                            id: 00000000-0000-0000-0000-000000000000
+                            interaction_id: 00000000-0000-0000-0000-000000000001
+                            label_values:
+                              - label_schema_id: abc-123
+                                value: good
+                            modified_at: "2024-01-15T10:30:00Z"
+                            modified_by: 00000000-0000-0000-0000-000000000002
+                        errors:
+                          - code: permission_denied
+                            error: permission denied
+                            interaction_id: 00000000-0000-0000-0000-000000000003
+                      id: 00000000-0000-0000-0000-000000000001
+                      type: annotations
               schema:
                 $ref: "#/components/schemas/LLMObsAnnotationsResponse"
-          description: OK — annotations created or updated. Per-item errors are listed in `errors`.
+          description: >-
+            OK — annotations created or updated. For mixed batches, denied items and other per-item errors are listed in `errors`.
         "400":
           content:
             application/json:
@@ -165157,7 +165298,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/JSONAPIErrorResponse"
-          description: Forbidden
+          description: Forbidden — all request items were denied by queue access rules
         "404":
           content:
             application/json:
