@@ -766,6 +766,23 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/ml-observability
+  Scenario: Get an Agent Observability prompt by environment returns "OK" response
+    Given operation "GetLLMObsPrompt" enabled
+    And new "GetLLMObsPrompt" request
+    And request contains "prompt_id" parameter from "REPLACE.ME"
+    And request contains "environment" parameter with value "production"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get an Agent Observability prompt returns "Bad Request" response
+    Given operation "GetLLMObsPrompt" enabled
+    And new "GetLLMObsPrompt" request
+    And request contains "prompt_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @generated @skip @team:DataDog/ml-observability
   Scenario: Get an Agent Observability prompt returns "Not Found" response
     Given operation "GetLLMObsPrompt" enabled
