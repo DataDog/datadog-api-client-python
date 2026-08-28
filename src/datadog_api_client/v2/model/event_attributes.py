@@ -131,7 +131,8 @@ class EventAttributes(ModelNormal):
         :param monitor_id: ID of the monitor that triggered the event. When an event isn't related to a monitor, this field is empty.
         :type monitor_id: int, none_type, optional
 
-        :param priority: The priority of the event's monitor. For example, ``normal`` or ``low``.
+        :param priority: The priority of the event alert. Legacy events use ``normal`` or ``low``.
+            Alert events use ``1`` (highest priority) through ``5`` (lowest priority).
         :type priority: EventPriority, none_type, optional
 
         :param related_event_id: Related event ID.
@@ -148,9 +149,9 @@ class EventAttributes(ModelNormal):
         :param sourcecategory: Identifier for the source of the event, such as a monitor alert, an externally-submitted event, or an integration.
         :type sourcecategory: str, optional
 
-        :param status: If an alert event is enabled, its status is one of the following:
-            ``failure`` , ``error`` , ``warning`` , ``info`` , ``success`` , ``user_update`` ,
-            ``recommendation`` , or ``snapshot``.
+        :param status: The event status. Legacy events can use ``failure`` , ``error`` , ``warning`` ,
+            ``info`` , ``success`` , ``user_update`` , ``recommendation`` , or ``snapshot``.
+            Alert events can use ``error`` , ``warn`` , or ``ok``.
         :type status: EventStatusType, optional
 
         :param tags: A list of tags to apply to the event.

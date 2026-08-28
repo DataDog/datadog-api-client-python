@@ -39,7 +39,7 @@ class EventsRequestPage(ModelNormal):
         :param cursor: The returned paging point to use to get the next results.
         :type cursor: str, optional
 
-        :param limit: The maximum number of logs in the response.
+        :param limit: The maximum number of events in the response.
         :type limit: int, optional
         """
         if cursor is not unset:
