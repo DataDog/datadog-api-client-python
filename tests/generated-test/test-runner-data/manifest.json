@@ -11481,6 +11481,13 @@
       "version": "v2"
     },
     {
+      "feature": "Threat Intelligence",
+      "feature_file": "../../v2/features/threat_intelligence.feature",
+      "file": "v2/threat-intelligence/ingest-stix-threat-intelligence-returns-ok-response.json",
+      "scenario": "Ingest STIX threat intelligence returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Usage Metering",
       "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/get-monthly-cost-attribution-returns-bad-request-response.json",

@@ -8309,6 +8309,17 @@ from datadog_api_client.v2.model.slo_report_status import SLOReportStatus
 from datadog_api_client.v2.model.slo_report_status_get_response import SLOReportStatusGetResponse
 from datadog_api_client.v2.model.slo_report_status_get_response_attributes import SLOReportStatusGetResponseAttributes
 from datadog_api_client.v2.model.slo_report_status_get_response_data import SLOReportStatusGetResponseData
+from datadog_api_client.v2.model.stix_bundle_request import STIXBundleRequest
+from datadog_api_client.v2.model.stix_bundle_type import STIXBundleType
+from datadog_api_client.v2.model.stix_content_encoding import STIXContentEncoding
+from datadog_api_client.v2.model.stix_ingest_response import STIXIngestResponse
+from datadog_api_client.v2.model.stix_ingest_response_attributes import STIXIngestResponseAttributes
+from datadog_api_client.v2.model.stix_ingest_response_data import STIXIngestResponseData
+from datadog_api_client.v2.model.stix_ingest_response_type import STIXIngestResponseType
+from datadog_api_client.v2.model.stix_metadata_object import STIXMetadataObject
+from datadog_api_client.v2.model.stix_object import STIXObject
+from datadog_api_client.v2.model.stix_pattern_type import STIXPatternType
+from datadog_api_client.v2.model.stix_spec_version import STIXSpecVersion
 from datadog_api_client.v2.model.salesforce_incidents_organization_response_attributes import (
     SalesforceIncidentsOrganizationResponseAttributes,
 )
@@ -17038,6 +17049,17 @@ __all__ = [
     "SLOReportStatusGetResponse",
     "SLOReportStatusGetResponseAttributes",
     "SLOReportStatusGetResponseData",
+    "STIXBundleRequest",
+    "STIXBundleType",
+    "STIXContentEncoding",
+    "STIXIngestResponse",
+    "STIXIngestResponseAttributes",
+    "STIXIngestResponseData",
+    "STIXIngestResponseType",
+    "STIXMetadataObject",
+    "STIXObject",
+    "STIXPatternType",
+    "STIXSpecVersion",
     "SalesforceIncidentsOrganizationResponseAttributes",
     "SalesforceIncidentsOrganizationResponseData",
     "SalesforceIncidentsOrganizationType",
