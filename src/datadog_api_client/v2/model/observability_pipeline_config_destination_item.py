@@ -262,6 +262,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param unity_catalog_endpoint_key: Name of the environment variable or the secret identifier that references your Databricks workspace URL, which is used to communicate with the Unity Catalog API.
         :type unity_catalog_endpoint_key: str, optional
 
+        :param http_client_uri_key: Environment variable name containing the URI of the OTLP HTTP endpoint to send metrics to.
+        :type http_client_uri_key: str, optional
+
         :param default_namespace: Optional default namespace for metrics sent to Splunk HEC.
         :type default_namespace: str, optional
 
@@ -353,6 +356,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination import (
             ObservabilityPipelineDatadogMetricsDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination import (
+            ObservabilityPipelineOpentelemetryMetricsDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination import (
             ObservabilityPipelineSplunkHecMetricsDestination,
         )
@@ -385,6 +391,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineSyslogNgDestination,
                 ObservabilityPipelineDatabricksZerobusDestination,
                 ObservabilityPipelineDatadogMetricsDestination,
+                ObservabilityPipelineOpentelemetryMetricsDestination,
                 ObservabilityPipelineSplunkHecMetricsDestination,
             ],
         }
