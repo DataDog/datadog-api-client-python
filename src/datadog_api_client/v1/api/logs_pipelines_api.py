@@ -35,7 +35,7 @@ class LogsPipelinesApi:
     returned data to be configured before using in a request.**
     For example, if you are using the data returned from a
     request for another request body, and have a parsing rule
-    that uses a regex pattern like ``\s`` for spaces, you will
+    that uses a regex pattern like ``\\s`` for spaces, you will
     need to configure all escaped spaces as ``%{space}`` to use
     in the body data.
     """
