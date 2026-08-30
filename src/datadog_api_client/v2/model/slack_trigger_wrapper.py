@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,11 +13,17 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.slack_trigger import SlackTrigger
+
+
 class SlackTriggerWrapper(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.slack_trigger import SlackTrigger
+
         return {
-            "slack_trigger": (dict,),
+            "slack_trigger": (SlackTrigger,),
             "start_step_names": ([str],),
         }
 
@@ -26,12 +32,12 @@ class SlackTriggerWrapper(ModelNormal):
         "start_step_names": "startStepNames",
     }
 
-    def __init__(self_, slack_trigger: dict, start_step_names: Union[List[str], UnsetType] = unset, **kwargs):
+    def __init__(self_, slack_trigger: SlackTrigger, start_step_names: Union[List[str], UnsetType] = unset, **kwargs):
         """
         Schema for a Slack-based trigger.
 
         :param slack_trigger: Trigger a workflow from Slack. The workflow must be published.
-        :type slack_trigger: dict
+        :type slack_trigger: SlackTrigger
 
         :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional

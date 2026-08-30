@@ -14,32 +14,35 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.incident_trigger import IncidentTrigger
+    from datadog_api_client.v2.model.incident_created_trigger import IncidentCreatedTrigger
 
 
-class IncidentTriggerWrapper(ModelNormal):
+class IncidentCreatedTriggerWrapper(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.incident_trigger import IncidentTrigger
+        from datadog_api_client.v2.model.incident_created_trigger import IncidentCreatedTrigger
 
         return {
-            "incident_trigger": (IncidentTrigger,),
+            "incident_created_trigger": (IncidentCreatedTrigger,),
             "start_step_names": ([str],),
         }
 
     attribute_map = {
-        "incident_trigger": "incidentTrigger",
+        "incident_created_trigger": "incidentCreatedTrigger",
         "start_step_names": "startStepNames",
     }
 
     def __init__(
-        self_, incident_trigger: IncidentTrigger, start_step_names: Union[List[str], UnsetType] = unset, **kwargs
+        self_,
+        incident_created_trigger: IncidentCreatedTrigger,
+        start_step_names: Union[List[str], UnsetType] = unset,
+        **kwargs,
     ):
         """
-        Schema for an incident-based trigger.
+        Schema for an incident declared trigger.
 
-        :param incident_trigger: Trigger a workflow from an incident. For automatic triggering a handle must be configured and the workflow must be published.
-        :type incident_trigger: IncidentTrigger
+        :param incident_created_trigger: Trigger a workflow when an incident is declared.
+        :type incident_created_trigger: IncidentCreatedTrigger
 
         :param start_step_names: Names of existing workflow steps that run first after a trigger fires.
         :type start_step_names: [str], optional
@@ -48,4 +51,4 @@ class IncidentTriggerWrapper(ModelNormal):
             kwargs["start_step_names"] = start_step_names
         super().__init__(kwargs)
 
-        self_.incident_trigger = incident_trigger
+        self_.incident_created_trigger = incident_created_trigger

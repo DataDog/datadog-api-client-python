@@ -48,7 +48,28 @@ class Trigger(ModelComposed):
         :param github_webhook_trigger: Trigger a workflow from a GitHub webhook. To trigger a workflow from GitHub, you must set a `webhookSecret`. In your GitHub Webhook Settings, set the Payload URL to "base_url"/api/v2/workflows/"workflow_id"/webhook?orgId="org_id", select application/json for the content type, and be highly recommend enabling SSL verification for security. The workflow must be published.
         :type github_webhook_trigger: GithubWebhookTrigger
 
-        :param incident_trigger: Trigger a workflow from an Incident. For automatic triggering a handle must be configured and the workflow must be published.
+        :param incident_created_trigger: Trigger a workflow when an incident is declared.
+        :type incident_created_trigger: IncidentCreatedTrigger
+
+        :param incident_impact_created_trigger: Trigger a workflow when an impact is created for an incident.
+        :type incident_impact_created_trigger: IncidentImpactCreatedTrigger
+
+        :param incident_impact_updated_trigger: Trigger a workflow when an impact is updated for an incident.
+        :type incident_impact_updated_trigger: IncidentImpactUpdatedTrigger
+
+        :param incident_postmortem_updated_trigger: Trigger a workflow when a postmortem is updated for an incident.
+        :type incident_postmortem_updated_trigger: IncidentPostmortemUpdatedTrigger
+
+        :param incident_responder_created_trigger: Trigger a workflow when a responder is created for an incident.
+        :type incident_responder_created_trigger: IncidentResponderCreatedTrigger
+
+        :param incident_saved_trigger: Trigger a workflow when an incident is declared or updated.
+        :type incident_saved_trigger: IncidentSavedTrigger
+
+        :param incident_schedule_trigger: Trigger a workflow on a schedule for an incident.
+        :type incident_schedule_trigger: IncidentScheduleTrigger
+
+        :param incident_trigger: Trigger a workflow from an incident. For automatic triggering a handle must be configured and the workflow must be published.
         :type incident_trigger: IncidentTrigger
 
         :param monitor_trigger: Trigger a workflow from a Monitor. For automatic triggering a handle must be configured and the workflow must be published.
@@ -70,7 +91,7 @@ class Trigger(ModelComposed):
         :type self_service_trigger: dict
 
         :param slack_trigger: Trigger a workflow from Slack. The workflow must be published.
-        :type slack_trigger: dict
+        :type slack_trigger: SlackTrigger
 
         :param software_catalog_trigger: Trigger a workflow from Software Catalog.
         :type software_catalog_trigger: dict
@@ -99,6 +120,21 @@ class Trigger(ModelComposed):
         from datadog_api_client.v2.model.dashboard_trigger_wrapper import DashboardTriggerWrapper
         from datadog_api_client.v2.model.form_trigger_wrapper import FormTriggerWrapper
         from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
+        from datadog_api_client.v2.model.incident_created_trigger_wrapper import IncidentCreatedTriggerWrapper
+        from datadog_api_client.v2.model.incident_impact_created_trigger_wrapper import (
+            IncidentImpactCreatedTriggerWrapper,
+        )
+        from datadog_api_client.v2.model.incident_impact_updated_trigger_wrapper import (
+            IncidentImpactUpdatedTriggerWrapper,
+        )
+        from datadog_api_client.v2.model.incident_postmortem_updated_trigger_wrapper import (
+            IncidentPostmortemUpdatedTriggerWrapper,
+        )
+        from datadog_api_client.v2.model.incident_responder_created_trigger_wrapper import (
+            IncidentResponderCreatedTriggerWrapper,
+        )
+        from datadog_api_client.v2.model.incident_saved_trigger_wrapper import IncidentSavedTriggerWrapper
+        from datadog_api_client.v2.model.incident_schedule_trigger_wrapper import IncidentScheduleTriggerWrapper
         from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
         from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
         from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
@@ -122,6 +158,13 @@ class Trigger(ModelComposed):
                 DashboardTriggerWrapper,
                 FormTriggerWrapper,
                 GithubWebhookTriggerWrapper,
+                IncidentCreatedTriggerWrapper,
+                IncidentImpactCreatedTriggerWrapper,
+                IncidentImpactUpdatedTriggerWrapper,
+                IncidentPostmortemUpdatedTriggerWrapper,
+                IncidentResponderCreatedTriggerWrapper,
+                IncidentSavedTriggerWrapper,
+                IncidentScheduleTriggerWrapper,
                 IncidentTriggerWrapper,
                 MonitorTriggerWrapper,
                 NotebookTriggerWrapper,
