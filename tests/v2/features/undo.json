@@ -10164,6 +10164,30 @@
       "type": "safe"
     }
   },
+  "ListQuotas": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateQuotas": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteQuota": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateQuota": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetUsageSummaryAvailableFields": {
     "tag": "Usage Metering",
     "undo": {
