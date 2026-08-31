@@ -33,7 +33,7 @@ class Dashboard(ModelNormal):
             "max_items": 100,
         },
         "tags": {
-            "max_items": 5,
+            "max_items": 7,
         },
     }
 
@@ -171,7 +171,7 @@ class Dashboard(ModelNormal):
         :param tabs: List of tabs for organizing dashboard widgets into groups.
         :type tabs: [DashboardTab], none_type, optional
 
-        :param tags: List of team names representing ownership of a dashboard.
+        :param tags: Tags associated with the dashboard. Supports up to five team tags and two AI tags.
         :type tags: [str], none_type, optional
 
         :param template_variable_presets: Array of template variables saved views.

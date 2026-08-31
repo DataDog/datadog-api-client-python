@@ -337,6 +337,22 @@
       },
       {
         "name": "body",
+        "value": "{\"dashboards\": [{\"id\": \"{{ dashboard_with_team_and_ai_tags.id }}\", \"type\": \"custom_timeboard\"}]}"
+      }
+    ],
+    "step": "the \"dashboard_list\" has the \"dashboard_with_team_and_ai_tags\"",
+    "key": "dashboard_list_dashboard_with_team_and_ai_tags",
+    "tag": "Dashboard Lists",
+    "operationId": "CreateDashboardListItems"
+  },
+  {
+    "parameters": [
+      {
+        "name": "dashboard_list_id",
+        "source": "dashboard_list.id"
+      },
+      {
+        "name": "body",
         "value": "{\n  \"dashboards\": [\n    {\n      \"id\": \"{{ screenboard_dashboard.id }}\",\n      \"type\": \"custom_screenboard\"\n    }\n  ]\n}"
       }
     ],

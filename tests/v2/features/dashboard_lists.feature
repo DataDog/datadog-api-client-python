@@ -110,6 +110,21 @@ Feature: Dashboard Lists
     When the request is sent
     Then the response status is 200 OK
 
+  @team:DataDog/dashboards-backend
+  Scenario: Get dashboard list items with five team tags and two AI tags
+    Given there is a valid "dashboard_list" in the system
+    And there is a valid "dashboard_with_team_and_ai_tags" in the system
+    And the "dashboard_list" has the "dashboard_with_team_and_ai_tags"
+    And new "GetDashboardListItems" request
+    And request contains "dashboard_list_id" parameter from "dashboard_list.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "dashboards" has length 1
+    And the response "dashboards[0].tags" has length 7
+    And the response "dashboards[0].tags" array contains value "team:epsilon"
+    And the response "dashboards[0].tags" array contains value "ai:generated"
+    And the response "dashboards[0].tags" array contains value "ai:edited"
+
   @generated @skip @team:DataDog/dashboards-backend
   Scenario: Get items of a Dashboard List returns "Not Found" response
     Given new "GetDashboardListItems" request
