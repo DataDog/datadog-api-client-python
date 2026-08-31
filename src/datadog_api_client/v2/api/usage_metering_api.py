@@ -3,6 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 import warnings
 
@@ -10,6 +11,8 @@ from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     datetime,
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
@@ -26,6 +29,12 @@ from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageRespons
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
+from datadog_api_client.v2.model.usage_quotas_list_response import UsageQuotasListResponse
+from datadog_api_client.v2.model.usage_quota_response_data import UsageQuotaResponseData
+from datadog_api_client.v2.model.usage_quotas_bulk_response import UsageQuotasBulkResponse
+from datadog_api_client.v2.model.usage_quotas_create_request import UsageQuotasCreateRequest
+from datadog_api_client.v2.model.usage_quota_response import UsageQuotaResponse
+from datadog_api_client.v2.model.usage_quota_update_request import UsageQuotaUpdateRequest
 from datadog_api_client.v2.model.usage_summary_available_fields_response import UsageSummaryAvailableFieldsResponse
 from datadog_api_client.v2.model.usage_attribution_types_response import UsageAttributionTypesResponse
 
@@ -48,6 +57,66 @@ class UsageMeteringApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_quotas_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageQuotasBulkResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/quotas/{quota_namespace}",
+                "operation_id": "create_quotas",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "quota_namespace": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "quota_namespace",
+                    "location": "path",
+                },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UsageQuotasCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_quota_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/quotas/{quota_namespace}/{id}",
+                "operation_id": "delete_quota",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "quota_namespace": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "quota_namespace",
+                    "location": "path",
+                },
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
 
         self._get_active_billing_dimensions_endpoint = _Endpoint(
             settings={
@@ -479,6 +548,131 @@ class UsageMeteringApi:
             },
             api_client=api_client,
         )
+
+        self._list_quotas_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageQuotasListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/quotas/{quota_namespace}",
+                "operation_id": "list_quotas",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "quota_namespace": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "quota_namespace",
+                    "location": "path",
+                },
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._update_quota_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageQuotaResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/quotas/{quota_namespace}/{id}",
+                "operation_id": "update_quota",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "quota_namespace": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "quota_namespace",
+                    "location": "path",
+                },
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UsageQuotaUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+    def create_quotas(
+        self,
+        quota_namespace: str,
+        body: UsageQuotasCreateRequest,
+        *,
+        include_descendants: Union[bool, UnsetType] = unset,
+    ) -> UsageQuotasBulkResponse:
+        """Create or update usage quotas.
+
+        Creates or updates one or more usage quotas by scope. If a quota already exists for a supplied scope, it is updated; otherwise, a new quota is created. Requires the ``user_access_manage`` , ``billing_edit`` , and ``org_management`` permissions.
+
+        :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
+        :type quota_namespace: str
+        :param body: The usage quotas to create or update.
+        :type body: UsageQuotasCreateRequest
+        :param include_descendants: Whether to write every item in the request to the caller's organization and all of its descendant organizations, instead of only the caller's organization. Only descendants in the same datacenter are supported. For a user-handle scope, the quota is applied only to the caller's organization and to descendant organizations where that user handle exists; the item fails only if the handle exists in none of them.
+        :type include_descendants: bool, optional
+        :rtype: UsageQuotasBulkResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["quota_namespace"] = quota_namespace
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
+        kwargs["body"] = body
+
+        return self._create_quotas_endpoint.call_with_http_info(**kwargs)
+
+    def delete_quota(
+        self,
+        quota_namespace: str,
+        id: str,
+    ) -> None:
+        """Delete a usage quota.
+
+        Deletes a usage quota by its opaque identifier. The quota must belong to the caller's organization or one of its descendants, and its opaque identifier must belong to the requested quota namespace. Requires the ``user_access_manage`` , ``billing_edit`` , and ``org_management`` permissions.
+
+        :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
+        :type quota_namespace: str
+        :param id: The opaque quota identifier returned by a previous list or create request. Clients must pass this value verbatim.
+        :type id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["quota_namespace"] = quota_namespace
+
+        kwargs["id"] = id
+
+        return self._delete_quota_endpoint.call_with_http_info(**kwargs)
 
     def get_active_billing_dimensions(
         self,
@@ -976,3 +1170,115 @@ class UsageMeteringApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_usage_summary_available_fields_endpoint.call_with_http_info(**kwargs)
+
+    def list_quotas(
+        self,
+        quota_namespace: str,
+        *,
+        include_descendants: Union[bool, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> UsageQuotasListResponse:
+        """List usage quotas.
+
+        Lists usage quotas for the caller's organization in a quota namespace. You can optionally include descendant organizations in the same datacenter as the caller. Requires the ``user_access_manage`` , ``billing_edit`` , and ``org_management`` permissions.
+
+        :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
+        :type quota_namespace: str
+        :param include_descendants: Whether to include quotas configured on descendant organizations in the caller's organization hierarchy. Only descendants in the same datacenter are supported.
+        :type include_descendants: bool, optional
+        :param page_cursor: An opaque cursor from a previous response's ``meta.page.next_cursor`` used to retrieve the next page.
+        :type page_cursor: str, optional
+        :param page_limit: The number of usage quotas to return per page.
+        :type page_limit: int, optional
+        :rtype: UsageQuotasListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["quota_namespace"] = quota_namespace
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        return self._list_quotas_endpoint.call_with_http_info(**kwargs)
+
+    def list_quotas_with_pagination(
+        self,
+        quota_namespace: str,
+        *,
+        include_descendants: Union[bool, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[UsageQuotaResponseData]:
+        """List usage quotas.
+
+        Provide a paginated version of :meth:`list_quotas`, returning all items.
+
+        :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
+        :type quota_namespace: str
+        :param include_descendants: Whether to include quotas configured on descendant organizations in the caller's organization hierarchy. Only descendants in the same datacenter are supported.
+        :type include_descendants: bool, optional
+        :param page_cursor: An opaque cursor from a previous response's ``meta.page.next_cursor`` used to retrieve the next page.
+        :type page_cursor: str, optional
+        :param page_limit: The number of usage quotas to return per page.
+        :type page_limit: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[UsageQuotaResponseData]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["quota_namespace"] = quota_namespace
+
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
+        endpoint = self._list_quotas_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "page_cursor",
+            "cursor_path": "meta.page.next_cursor",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def update_quota(
+        self,
+        quota_namespace: str,
+        id: str,
+        body: UsageQuotaUpdateRequest,
+    ) -> UsageQuotaResponse:
+        """Update a usage quota.
+
+        Updates the supplied fields on a usage quota and leaves omitted fields unchanged. The quota must belong to the caller's organization or one of its descendants, and its opaque identifier must belong to the requested quota namespace. Requires the ``user_access_manage`` , ``billing_edit`` , and ``org_management`` permissions.
+
+        :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
+        :type quota_namespace: str
+        :param id: The opaque quota identifier returned by a previous list or create request. Clients must pass this value verbatim.
+        :type id: str
+        :param body: The usage quota fields to update. Omitting an attribute leaves its current value unchanged.
+        :type body: UsageQuotaUpdateRequest
+        :rtype: UsageQuotaResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["quota_namespace"] = quota_namespace
+
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._update_quota_endpoint.call_with_http_info(**kwargs)

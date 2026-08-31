@@ -10991,6 +10991,24 @@ from datadog_api_client.v2.model.usage_attribution_types_type import UsageAttrib
 from datadog_api_client.v2.model.usage_data_object import UsageDataObject
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
+from datadog_api_client.v2.model.usage_quota_bulk_result_attributes import UsageQuotaBulkResultAttributes
+from datadog_api_client.v2.model.usage_quota_bulk_result_data import UsageQuotaBulkResultData
+from datadog_api_client.v2.model.usage_quota_create_attributes import UsageQuotaCreateAttributes
+from datadog_api_client.v2.model.usage_quota_create_data import UsageQuotaCreateData
+from datadog_api_client.v2.model.usage_quota_request_scope import UsageQuotaRequestScope
+from datadog_api_client.v2.model.usage_quota_response import UsageQuotaResponse
+from datadog_api_client.v2.model.usage_quota_response_attributes import UsageQuotaResponseAttributes
+from datadog_api_client.v2.model.usage_quota_response_data import UsageQuotaResponseData
+from datadog_api_client.v2.model.usage_quota_response_scope import UsageQuotaResponseScope
+from datadog_api_client.v2.model.usage_quota_type import UsageQuotaType
+from datadog_api_client.v2.model.usage_quota_update_attributes import UsageQuotaUpdateAttributes
+from datadog_api_client.v2.model.usage_quota_update_data import UsageQuotaUpdateData
+from datadog_api_client.v2.model.usage_quota_update_request import UsageQuotaUpdateRequest
+from datadog_api_client.v2.model.usage_quotas_bulk_response import UsageQuotasBulkResponse
+from datadog_api_client.v2.model.usage_quotas_create_request import UsageQuotasCreateRequest
+from datadog_api_client.v2.model.usage_quotas_list_response import UsageQuotasListResponse
+from datadog_api_client.v2.model.usage_quotas_response_meta import UsageQuotasResponseMeta
+from datadog_api_client.v2.model.usage_quotas_response_meta_page import UsageQuotasResponseMetaPage
 from datadog_api_client.v2.model.usage_summary_available_fields_attributes import UsageSummaryAvailableFieldsAttributes
 from datadog_api_client.v2.model.usage_summary_available_fields_body import UsageSummaryAvailableFieldsBody
 from datadog_api_client.v2.model.usage_summary_available_fields_response import UsageSummaryAvailableFieldsResponse
@@ -18773,6 +18791,24 @@ __all__ = [
     "UsageDataObject",
     "UsageLambdaTracedInvocationsResponse",
     "UsageObservabilityPipelinesResponse",
+    "UsageQuotaBulkResultAttributes",
+    "UsageQuotaBulkResultData",
+    "UsageQuotaCreateAttributes",
+    "UsageQuotaCreateData",
+    "UsageQuotaRequestScope",
+    "UsageQuotaResponse",
+    "UsageQuotaResponseAttributes",
+    "UsageQuotaResponseData",
+    "UsageQuotaResponseScope",
+    "UsageQuotaType",
+    "UsageQuotaUpdateAttributes",
+    "UsageQuotaUpdateData",
+    "UsageQuotaUpdateRequest",
+    "UsageQuotasBulkResponse",
+    "UsageQuotasCreateRequest",
+    "UsageQuotasListResponse",
+    "UsageQuotasResponseMeta",
+    "UsageQuotasResponseMetaPage",
     "UsageSummaryAvailableFieldsAttributes",
     "UsageSummaryAvailableFieldsBody",
     "UsageSummaryAvailableFieldsResponse",
