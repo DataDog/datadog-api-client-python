@@ -8065,6 +8065,12 @@
       "type": "idempotent"
     }
   },
+  "AddSTIXThreatIntel": {
+    "tag": "Threat Intelligence",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListVulnerabilities": {
     "tag": "Security Monitoring",
     "undo": {
