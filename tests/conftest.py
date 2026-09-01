@@ -589,6 +589,7 @@ def api(context, package_name, client, name):
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
     context["api"] = {
         "api": getattr(package, _api_name(name))(client),
+        "name": name,
         "package": package_name,
         "calls": [],
     }
@@ -609,6 +610,33 @@ def api_request(configuration, context, name):
     context["api_request"] = {
         "api": api["api"],
         "request": getattr(api["api"], snake_case(name)),
+        "args": [],
+        "kwargs": {},
+        "response": (None, None, None),
+    }
+
+
+@given(parsers.parse('new "{name}" with version "{version}" request'))
+def versioned_api_request(context, client, api_version, name, version):
+    """Call an endpoint using its versioned client namespace."""
+    api_name = context["api"]["name"]
+    package_name = "datadog_api_client.{}_{}".format(
+        api_version, version.replace("-", "")
+    )
+    module_name = snake_case(api_name)
+    package = importlib.import_module(f"{package_name}.api.{module_name}_api")
+    api_instance = getattr(package, _api_name(api_name))(client)
+    context["api"] = {
+        "api": api_instance,
+        "name": api_name,
+        "package": package_name,
+        "calls": [],
+    }
+    if test_runner_enabled():
+        return
+    context["api_request"] = {
+        "api": api_instance,
+        "request": getattr(api_instance, snake_case(name)),
         "args": [],
         "kwargs": {},
         "response": (None, None, None),
