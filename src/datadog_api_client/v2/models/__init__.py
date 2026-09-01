@@ -3035,6 +3035,7 @@ from datadog_api_client.v2.model.events_sort import EventsSort
 from datadog_api_client.v2.model.events_sort_type import EventsSortType
 from datadog_api_client.v2.model.events_timeseries_query import EventsTimeseriesQuery
 from datadog_api_client.v2.model.events_warning import EventsWarning
+from datadog_api_client.v2.model.execution_limit import ExecutionLimit
 from datadog_api_client.v2.model.execution_policy_action_pattern import ExecutionPolicyActionPattern
 from datadog_api_client.v2.model.execution_policy_attributes import ExecutionPolicyAttributes
 from datadog_api_client.v2.model.execution_policy_create_request import ExecutionPolicyCreateRequest
@@ -3758,6 +3759,7 @@ from datadog_api_client.v2.model.incident_ai_postmortem_data_response import Inc
 from datadog_api_client.v2.model.incident_ai_postmortem_response import IncidentAIPostmortemResponse
 from datadog_api_client.v2.model.incident_ai_postmortem_response_type import IncidentAIPostmortemResponseType
 from datadog_api_client.v2.model.incident_attachment_type import IncidentAttachmentType
+from datadog_api_client.v2.model.incident_condition import IncidentCondition
 from datadog_api_client.v2.model.incident_configuration_data_attributes_request import (
     IncidentConfigurationDataAttributesRequest,
 )
@@ -3792,6 +3794,8 @@ from datadog_api_client.v2.model.incident_create_page_from_incident_request impo
 from datadog_api_client.v2.model.incident_create_page_from_incident_type import IncidentCreatePageFromIncidentType
 from datadog_api_client.v2.model.incident_create_relationships import IncidentCreateRelationships
 from datadog_api_client.v2.model.incident_create_request import IncidentCreateRequest
+from datadog_api_client.v2.model.incident_created_trigger import IncidentCreatedTrigger
+from datadog_api_client.v2.model.incident_created_trigger_wrapper import IncidentCreatedTriggerWrapper
 from datadog_api_client.v2.model.incident_field_attributes import IncidentFieldAttributes
 from datadog_api_client.v2.model.incident_field_attributes_multiple_value import IncidentFieldAttributesMultipleValue
 from datadog_api_client.v2.model.incident_field_attributes_single_value import IncidentFieldAttributesSingleValue
@@ -3885,6 +3889,8 @@ from datadog_api_client.v2.model.incident_impact_attributes import IncidentImpac
 from datadog_api_client.v2.model.incident_impact_create_attributes import IncidentImpactCreateAttributes
 from datadog_api_client.v2.model.incident_impact_create_data import IncidentImpactCreateData
 from datadog_api_client.v2.model.incident_impact_create_request import IncidentImpactCreateRequest
+from datadog_api_client.v2.model.incident_impact_created_trigger import IncidentImpactCreatedTrigger
+from datadog_api_client.v2.model.incident_impact_created_trigger_wrapper import IncidentImpactCreatedTriggerWrapper
 from datadog_api_client.v2.model.incident_impact_field_choice import IncidentImpactFieldChoice
 from datadog_api_client.v2.model.incident_impact_field_data_attributes_request import (
     IncidentImpactFieldDataAttributesRequest,
@@ -3912,6 +3918,8 @@ from datadog_api_client.v2.model.incident_impact_relationships import IncidentIm
 from datadog_api_client.v2.model.incident_impact_response import IncidentImpactResponse
 from datadog_api_client.v2.model.incident_impact_response_data import IncidentImpactResponseData
 from datadog_api_client.v2.model.incident_impact_type import IncidentImpactType
+from datadog_api_client.v2.model.incident_impact_updated_trigger import IncidentImpactUpdatedTrigger
+from datadog_api_client.v2.model.incident_impact_updated_trigger_wrapper import IncidentImpactUpdatedTriggerWrapper
 from datadog_api_client.v2.model.incident_impacts_response import IncidentImpactsResponse
 from datadog_api_client.v2.model.incident_impacts_type import IncidentImpactsType
 from datadog_api_client.v2.model.incident_import_field_attributes import IncidentImportFieldAttributes
@@ -4039,9 +4047,17 @@ from datadog_api_client.v2.model.incident_page_uuid_data_response import Inciden
 from datadog_api_client.v2.model.incident_page_uuid_response import IncidentPageUUIDResponse
 from datadog_api_client.v2.model.incident_page_uuid_type import IncidentPageUUIDType
 from datadog_api_client.v2.model.incident_postmortem_type import IncidentPostmortemType
+from datadog_api_client.v2.model.incident_postmortem_updated_trigger import IncidentPostmortemUpdatedTrigger
+from datadog_api_client.v2.model.incident_postmortem_updated_trigger_wrapper import (
+    IncidentPostmortemUpdatedTriggerWrapper,
+)
 from datadog_api_client.v2.model.incident_related_object import IncidentRelatedObject
 from datadog_api_client.v2.model.incident_relationship_data import IncidentRelationshipData
 from datadog_api_client.v2.model.incident_resource_type import IncidentResourceType
+from datadog_api_client.v2.model.incident_responder_created_trigger import IncidentResponderCreatedTrigger
+from datadog_api_client.v2.model.incident_responder_created_trigger_wrapper import (
+    IncidentResponderCreatedTriggerWrapper,
+)
 from datadog_api_client.v2.model.incident_responder_data_attributes_response import (
     IncidentResponderDataAttributesResponse,
 )
@@ -4088,6 +4104,10 @@ from datadog_api_client.v2.model.incident_rule_task_id_type import IncidentRuleT
 from datadog_api_client.v2.model.incident_rule_trigger_type import IncidentRuleTriggerType
 from datadog_api_client.v2.model.incident_rule_type import IncidentRuleType
 from datadog_api_client.v2.model.incident_rules_response import IncidentRulesResponse
+from datadog_api_client.v2.model.incident_saved_trigger import IncidentSavedTrigger
+from datadog_api_client.v2.model.incident_saved_trigger_wrapper import IncidentSavedTriggerWrapper
+from datadog_api_client.v2.model.incident_schedule_trigger import IncidentScheduleTrigger
+from datadog_api_client.v2.model.incident_schedule_trigger_wrapper import IncidentScheduleTriggerWrapper
 from datadog_api_client.v2.model.incident_search_response import IncidentSearchResponse
 from datadog_api_client.v2.model.incident_search_response_attributes import IncidentSearchResponseAttributes
 from datadog_api_client.v2.model.incident_search_response_data import IncidentSearchResponseData
@@ -4114,6 +4134,7 @@ from datadog_api_client.v2.model.incident_service_now_record_data_request import
 from datadog_api_client.v2.model.incident_service_now_record_prompt_type import IncidentServiceNowRecordPromptType
 from datadog_api_client.v2.model.incident_service_now_record_request import IncidentServiceNowRecordRequest
 from datadog_api_client.v2.model.incident_severity import IncidentSeverity
+from datadog_api_client.v2.model.incident_tag_value import IncidentTagValue
 from datadog_api_client.v2.model.incident_timeline_cell_create_attributes import IncidentTimelineCellCreateAttributes
 from datadog_api_client.v2.model.incident_timeline_cell_markdown_content_type import (
     IncidentTimelineCellMarkdownContentType,
@@ -9453,6 +9474,7 @@ from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import 
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type import (
     SensitiveDataScannerTextReplacementType,
 )
+from datadog_api_client.v2.model.serial_execution import SerialExecution
 from datadog_api_client.v2.model.service_access_token import ServiceAccessToken
 from datadog_api_client.v2.model.service_access_token_attributes import ServiceAccessTokenAttributes
 from datadog_api_client.v2.model.service_access_token_create_response import ServiceAccessTokenCreateResponse
@@ -9696,6 +9718,8 @@ from datadog_api_client.v2.model.single_aggregated_dns_response_data_type import
 from datadog_api_client.v2.model.single_entity_context_response import SingleEntityContextResponse
 from datadog_api_client.v2.model.slack_integration_metadata import SlackIntegrationMetadata
 from datadog_api_client.v2.model.slack_integration_metadata_channel_item import SlackIntegrationMetadataChannelItem
+from datadog_api_client.v2.model.slack_reaction_config import SlackReactionConfig
+from datadog_api_client.v2.model.slack_trigger import SlackTrigger
 from datadog_api_client.v2.model.slack_trigger_wrapper import SlackTriggerWrapper
 from datadog_api_client.v2.model.slack_user_binding_data import SlackUserBindingData
 from datadog_api_client.v2.model.slack_user_binding_type import SlackUserBindingType
@@ -13479,6 +13503,7 @@ __all__ = [
     "EventsSortType",
     "EventsTimeseriesQuery",
     "EventsWarning",
+    "ExecutionLimit",
     "ExecutionPolicyActionPattern",
     "ExecutionPolicyAttributes",
     "ExecutionPolicyCreateRequest",
@@ -14076,6 +14101,7 @@ __all__ = [
     "IncidentAIPostmortemResponse",
     "IncidentAIPostmortemResponseType",
     "IncidentAttachmentType",
+    "IncidentCondition",
     "IncidentConfigurationDataAttributesRequest",
     "IncidentConfigurationDataAttributesResponse",
     "IncidentConfigurationDataRequest",
@@ -14098,6 +14124,8 @@ __all__ = [
     "IncidentCreatePageFromIncidentType",
     "IncidentCreateRelationships",
     "IncidentCreateRequest",
+    "IncidentCreatedTrigger",
+    "IncidentCreatedTriggerWrapper",
     "IncidentFieldAttributes",
     "IncidentFieldAttributesMultipleValue",
     "IncidentFieldAttributesSingleValue",
@@ -14145,6 +14173,8 @@ __all__ = [
     "IncidentImpactCreateAttributes",
     "IncidentImpactCreateData",
     "IncidentImpactCreateRequest",
+    "IncidentImpactCreatedTrigger",
+    "IncidentImpactCreatedTriggerWrapper",
     "IncidentImpactFieldChoice",
     "IncidentImpactFieldDataAttributesRequest",
     "IncidentImpactFieldDataAttributesResponse",
@@ -14166,6 +14196,8 @@ __all__ = [
     "IncidentImpactResponse",
     "IncidentImpactResponseData",
     "IncidentImpactType",
+    "IncidentImpactUpdatedTrigger",
+    "IncidentImpactUpdatedTriggerWrapper",
     "IncidentImpactsResponse",
     "IncidentImpactsType",
     "IncidentImportFieldAttributes",
@@ -14247,9 +14279,13 @@ __all__ = [
     "IncidentPageUUIDResponse",
     "IncidentPageUUIDType",
     "IncidentPostmortemType",
+    "IncidentPostmortemUpdatedTrigger",
+    "IncidentPostmortemUpdatedTriggerWrapper",
     "IncidentRelatedObject",
     "IncidentRelationshipData",
     "IncidentResourceType",
+    "IncidentResponderCreatedTrigger",
+    "IncidentResponderCreatedTriggerWrapper",
     "IncidentResponderDataAttributesResponse",
     "IncidentResponderDataRequest",
     "IncidentResponderDataResponse",
@@ -14288,6 +14324,10 @@ __all__ = [
     "IncidentRuleTriggerType",
     "IncidentRuleType",
     "IncidentRulesResponse",
+    "IncidentSavedTrigger",
+    "IncidentSavedTriggerWrapper",
+    "IncidentScheduleTrigger",
+    "IncidentScheduleTriggerWrapper",
     "IncidentSearchResponse",
     "IncidentSearchResponseAttributes",
     "IncidentSearchResponseData",
@@ -14306,6 +14346,7 @@ __all__ = [
     "IncidentServiceNowRecordPromptType",
     "IncidentServiceNowRecordRequest",
     "IncidentSeverity",
+    "IncidentTagValue",
     "IncidentTimelineCellCreateAttributes",
     "IncidentTimelineCellMarkdownContentType",
     "IncidentTimelineCellMarkdownCreateAttributes",
@@ -17673,6 +17714,7 @@ __all__ = [
     "SensitiveDataScannerSuppressions",
     "SensitiveDataScannerTextReplacement",
     "SensitiveDataScannerTextReplacementType",
+    "SerialExecution",
     "ServiceAccessToken",
     "ServiceAccessTokenAttributes",
     "ServiceAccessTokenCreateResponse",
@@ -17874,6 +17916,8 @@ __all__ = [
     "SingleEntityContextResponse",
     "SlackIntegrationMetadata",
     "SlackIntegrationMetadataChannelItem",
+    "SlackReactionConfig",
+    "SlackTrigger",
     "SlackTriggerWrapper",
     "SlackUserBindingData",
     "SlackUserBindingType",
