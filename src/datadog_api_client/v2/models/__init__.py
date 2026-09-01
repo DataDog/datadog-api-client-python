@@ -4458,7 +4458,14 @@ from datadog_api_client.v2.model.kind_response_meta import KindResponseMeta
 from datadog_api_client.v2.model.llm_obs_annotated_interaction_by_trace_item import (
     LLMObsAnnotatedInteractionByTraceItem,
 )
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_data_attributes_response import (
+    LLMObsAnnotatedInteractionDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_data_response import (
+    LLMObsAnnotatedInteractionDataResponse,
+)
 from datadog_api_client.v2.model.llm_obs_annotated_interaction_item import LLMObsAnnotatedInteractionItem
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_response import LLMObsAnnotatedInteractionResponse
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_data_attributes_response import (
     LLMObsAnnotatedInteractionsByTraceDataAttributesResponse,
 )
@@ -4482,7 +4489,6 @@ from datadog_api_client.v2.model.llm_obs_annotated_interactions_type import LLMO
 from datadog_api_client.v2.model.llm_obs_annotation_assessment import LLMObsAnnotationAssessment
 from datadog_api_client.v2.model.llm_obs_annotation_error import LLMObsAnnotationError
 from datadog_api_client.v2.model.llm_obs_annotation_error_code import LLMObsAnnotationErrorCode
-from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
 from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
 from datadog_api_client.v2.model.llm_obs_annotation_label_value import LLMObsAnnotationLabelValue
 from datadog_api_client.v2.model.llm_obs_annotation_label_value_response import LLMObsAnnotationLabelValueResponse
@@ -4844,6 +4850,13 @@ from datadog_api_client.v2.model.llm_obs_experimentation_sort_field_direction im
 )
 from datadog_api_client.v2.model.llm_obs_experimentation_type import LLMObsExperimentationType
 from datadog_api_client.v2.model.llm_obs_experiments_response import LLMObsExperimentsResponse
+from datadog_api_client.v2.model.llm_obs_frontend_annotated_interaction_item import (
+    LLMObsFrontendAnnotatedInteractionItem,
+)
+from datadog_api_client.v2.model.llm_obs_frontend_content import LLMObsFrontendContent
+from datadog_api_client.v2.model.llm_obs_frontend_interaction_item import LLMObsFrontendInteractionItem
+from datadog_api_client.v2.model.llm_obs_frontend_interaction_response_item import LLMObsFrontendInteractionResponseItem
+from datadog_api_client.v2.model.llm_obs_frontend_interaction_type import LLMObsFrontendInteractionType
 from datadog_api_client.v2.model.llm_obs_inference_code import LLMObsInferenceCode
 from datadog_api_client.v2.model.llm_obs_inference_content import LLMObsInferenceContent
 from datadog_api_client.v2.model.llm_obs_inference_content_value import LLMObsInferenceContentValue
@@ -14608,7 +14621,10 @@ __all__ = [
     "KindObj",
     "KindResponseMeta",
     "LLMObsAnnotatedInteractionByTraceItem",
+    "LLMObsAnnotatedInteractionDataAttributesResponse",
+    "LLMObsAnnotatedInteractionDataResponse",
     "LLMObsAnnotatedInteractionItem",
+    "LLMObsAnnotatedInteractionResponse",
     "LLMObsAnnotatedInteractionsByTraceDataAttributesResponse",
     "LLMObsAnnotatedInteractionsByTraceDataResponse",
     "LLMObsAnnotatedInteractionsByTraceResponse",
@@ -14620,7 +14636,6 @@ __all__ = [
     "LLMObsAnnotationAssessment",
     "LLMObsAnnotationError",
     "LLMObsAnnotationErrorCode",
-    "LLMObsAnnotationItem",
     "LLMObsAnnotationItemResponse",
     "LLMObsAnnotationLabelValue",
     "LLMObsAnnotationLabelValueResponse",
@@ -14844,6 +14859,11 @@ __all__ = [
     "LLMObsExperimentationSortFieldDirection",
     "LLMObsExperimentationType",
     "LLMObsExperimentsResponse",
+    "LLMObsFrontendAnnotatedInteractionItem",
+    "LLMObsFrontendContent",
+    "LLMObsFrontendInteractionItem",
+    "LLMObsFrontendInteractionResponseItem",
+    "LLMObsFrontendInteractionType",
     "LLMObsInferenceCode",
     "LLMObsInferenceContent",
     "LLMObsInferenceContentValue",

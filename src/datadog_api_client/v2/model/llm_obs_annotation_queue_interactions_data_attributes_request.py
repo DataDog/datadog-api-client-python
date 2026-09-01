@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
     from datadog_api_client.v2.model.llm_obs_display_block_interaction_item import LLMObsDisplayBlockInteractionItem
+    from datadog_api_client.v2.model.llm_obs_frontend_interaction_item import LLMObsFrontendInteractionItem
 
 
 class LLMObsAnnotationQueueInteractionsDataAttributesRequest(ModelNormal):
@@ -43,7 +44,12 @@ class LLMObsAnnotationQueueInteractionsDataAttributesRequest(ModelNormal):
     def __init__(
         self_,
         interactions: List[
-            Union[LLMObsAnnotationQueueInteractionItem, LLMObsTraceInteractionItem, LLMObsDisplayBlockInteractionItem]
+            Union[
+                LLMObsAnnotationQueueInteractionItem,
+                LLMObsTraceInteractionItem,
+                LLMObsDisplayBlockInteractionItem,
+                LLMObsFrontendInteractionItem,
+            ]
         ],
         **kwargs,
     ):

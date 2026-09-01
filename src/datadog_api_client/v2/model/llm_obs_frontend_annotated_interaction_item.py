@@ -8,38 +8,37 @@ from typing import List, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    datetime,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
-    from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTraceInteractionType
+    from datadog_api_client.v2.model.llm_obs_frontend_content import LLMObsFrontendContent
+    from datadog_api_client.v2.model.llm_obs_frontend_interaction_type import LLMObsFrontendInteractionType
 
 
-class LLMObsTraceAnnotatedInteractionItem(ModelNormal):
+class LLMObsFrontendAnnotatedInteractionItem(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
-        from datadog_api_client.v2.model.llm_obs_trace_interaction_type import LLMObsTraceInteractionType
+        from datadog_api_client.v2.model.llm_obs_frontend_content import LLMObsFrontendContent
+        from datadog_api_client.v2.model.llm_obs_frontend_interaction_type import LLMObsFrontendInteractionType
 
         return {
             "annotations": ([LLMObsAnnotationItemResponse],),
             "can_annotate": (bool,),
             "content_id": (str,),
-            "created_at": (datetime,),
+            "frontend": (LLMObsFrontendContent,),
             "id": (str,),
-            "modified_at": (datetime,),
-            "type": (LLMObsTraceInteractionType,),
+            "type": (LLMObsFrontendInteractionType,),
         }
 
     attribute_map = {
         "annotations": "annotations",
         "can_annotate": "can_annotate",
         "content_id": "content_id",
-        "created_at": "created_at",
+        "frontend": "frontend",
         "id": "id",
-        "modified_at": "modified_at",
         "type": "type",
     }
 
@@ -48,14 +47,13 @@ class LLMObsTraceAnnotatedInteractionItem(ModelNormal):
         annotations: List[LLMObsAnnotationItemResponse],
         can_annotate: bool,
         content_id: str,
-        created_at: datetime,
+        frontend: LLMObsFrontendContent,
         id: str,
-        modified_at: datetime,
-        type: LLMObsTraceInteractionType,
+        type: LLMObsFrontendInteractionType,
         **kwargs,
     ):
         """
-        A trace, experiment trace, or session interaction with its associated annotations.
+        A frontend interaction with its associated annotations.
 
         :param annotations: List of annotations for this interaction.
         :type annotations: [LLMObsAnnotationItemResponse]
@@ -63,27 +61,23 @@ class LLMObsTraceAnnotatedInteractionItem(ModelNormal):
         :param can_annotate: Whether the current caller can annotate this interaction.
         :type can_annotate: bool
 
-        :param content_id: Upstream entity identifier supplied by the caller.
+        :param content_id: Server-generated deterministic identifier derived from the content.
         :type content_id: str
 
-        :param created_at: Timestamp when the interaction was added to the queue.
-        :type created_at: datetime
+        :param frontend: Web content that makes up a ``frontend`` interaction.
+        :type frontend: LLMObsFrontendContent
 
         :param id: Unique identifier of the interaction.
         :type id: str
 
-        :param modified_at: Timestamp when the interaction was last updated.
-        :type modified_at: datetime
-
-        :param type: Type of an upstream-entity interaction.
-        :type type: LLMObsTraceInteractionType
+        :param type: Type discriminator for a ``frontend`` interaction.
+        :type type: LLMObsFrontendInteractionType
         """
         super().__init__(kwargs)
 
         self_.annotations = annotations
         self_.can_annotate = can_annotate
         self_.content_id = content_id
-        self_.created_at = created_at
+        self_.frontend = frontend
         self_.id = id
-        self_.modified_at = modified_at
         self_.type = type

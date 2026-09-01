@@ -19,6 +19,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_display_block_interaction_response_item import (
         LLMObsDisplayBlockInteractionResponseItem,
     )
+    from datadog_api_client.v2.model.llm_obs_frontend_interaction_response_item import (
+        LLMObsFrontendInteractionResponseItem,
+    )
 
 
 class LLMObsAnnotationQueueInteractionsDataAttributesResponse(ModelNormal):
@@ -43,6 +46,7 @@ class LLMObsAnnotationQueueInteractionsDataAttributesResponse(ModelNormal):
                 LLMObsAnnotationQueueInteractionResponseItem,
                 LLMObsTraceInteractionResponseItem,
                 LLMObsDisplayBlockInteractionResponseItem,
+                LLMObsFrontendInteractionResponseItem,
             ]
         ],
         **kwargs,

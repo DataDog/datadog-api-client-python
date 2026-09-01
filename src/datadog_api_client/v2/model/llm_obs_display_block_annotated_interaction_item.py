@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
+    from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
     from datadog_api_client.v2.model.llm_obs_content_block import LLMObsContentBlock
     from datadog_api_client.v2.model.llm_obs_display_block_interaction_type import LLMObsDisplayBlockInteractionType
 
@@ -26,12 +26,12 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
+        from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
         from datadog_api_client.v2.model.llm_obs_content_block import LLMObsContentBlock
         from datadog_api_client.v2.model.llm_obs_display_block_interaction_type import LLMObsDisplayBlockInteractionType
 
         return {
-            "annotations": ([LLMObsAnnotationItem],),
+            "annotations": ([LLMObsAnnotationItemResponse],),
             "can_annotate": (bool,),
             "content_id": (str,),
             "display_block": ([LLMObsContentBlock],),
@@ -50,7 +50,7 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
 
     def __init__(
         self_,
-        annotations: List[LLMObsAnnotationItem],
+        annotations: List[LLMObsAnnotationItemResponse],
         can_annotate: bool,
         content_id: str,
         display_block: List[LLMObsContentBlock],
@@ -62,7 +62,7 @@ class LLMObsDisplayBlockAnnotatedInteractionItem(ModelNormal):
         A display_block interaction with its associated annotations.
 
         :param annotations: List of annotations for this interaction.
-        :type annotations: [LLMObsAnnotationItem]
+        :type annotations: [LLMObsAnnotationItemResponse]
 
         :param can_annotate: Whether the current caller can annotate this interaction.
         :type can_annotate: bool

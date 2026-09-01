@@ -783,6 +783,33 @@ Feature: Agent Observability
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ml-observability
+  Scenario: Get an annotated queue interaction returns "Bad Request" response
+    Given operation "GetLLMObsAnnotatedInteraction" enabled
+    And new "GetLLMObsAnnotatedInteraction" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And request contains "interaction_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get an annotated queue interaction returns "Not Found" response
+    Given operation "GetLLMObsAnnotatedInteraction" enabled
+    And new "GetLLMObsAnnotatedInteraction" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And request contains "interaction_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ml-observability
+  Scenario: Get an annotated queue interaction returns "OK" response
+    Given operation "GetLLMObsAnnotatedInteraction" enabled
+    And new "GetLLMObsAnnotatedInteraction" request
+    And request contains "queue_id" parameter from "REPLACE.ME"
+    And request contains "interaction_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/ml-observability
   Scenario: Get annotated interactions by content IDs returns "Bad Request" response
     Given operation "GetLLMObsAnnotatedInteractionsByTraceIDs" enabled
     And new "GetLLMObsAnnotatedInteractionsByTraceIDs" request

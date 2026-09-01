@@ -24,6 +24,9 @@ class LLMObsAnnotationQueueInteractionItem(ModelComposed):
         :param display_block: List of content blocks that make up a `display_block` interaction.
             Must contain at least one block.
         :type display_block: [LLMObsContentBlock]
+
+        :param frontend: Web content that makes up a `frontend` interaction.
+        :type frontend: LLMObsFrontendContent
         """
         super().__init__(kwargs)
 
@@ -38,10 +41,12 @@ class LLMObsAnnotationQueueInteractionItem(ModelComposed):
         # loading
         from datadog_api_client.v2.model.llm_obs_trace_interaction_item import LLMObsTraceInteractionItem
         from datadog_api_client.v2.model.llm_obs_display_block_interaction_item import LLMObsDisplayBlockInteractionItem
+        from datadog_api_client.v2.model.llm_obs_frontend_interaction_item import LLMObsFrontendInteractionItem
 
         return {
             "oneOf": [
                 LLMObsTraceInteractionItem,
                 LLMObsDisplayBlockInteractionItem,
+                LLMObsFrontendInteractionItem,
             ],
         }

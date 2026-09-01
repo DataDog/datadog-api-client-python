@@ -15,8 +15,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
+    from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
     from datadog_api_client.v2.model.llm_obs_content_block import LLMObsContentBlock
+    from datadog_api_client.v2.model.llm_obs_frontend_content import LLMObsFrontendContent
     from datadog_api_client.v2.model.llm_obs_any_interaction_type import LLMObsAnyInteractionType
 
 
@@ -29,16 +30,18 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.llm_obs_annotation_item import LLMObsAnnotationItem
+        from datadog_api_client.v2.model.llm_obs_annotation_item_response import LLMObsAnnotationItemResponse
         from datadog_api_client.v2.model.llm_obs_content_block import LLMObsContentBlock
+        from datadog_api_client.v2.model.llm_obs_frontend_content import LLMObsFrontendContent
         from datadog_api_client.v2.model.llm_obs_any_interaction_type import LLMObsAnyInteractionType
 
         return {
-            "annotations": ([LLMObsAnnotationItem],),
+            "annotations": ([LLMObsAnnotationItemResponse],),
             "can_annotate": (bool,),
             "content_id": (str,),
             "created_at": (datetime,),
             "display_block": ([LLMObsContentBlock],),
+            "frontend": (LLMObsFrontendContent,),
             "id": (str,),
             "modified_at": (datetime,),
             "queue_id": (str,),
@@ -52,6 +55,7 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
         "content_id": "content_id",
         "created_at": "created_at",
         "display_block": "display_block",
+        "frontend": "frontend",
         "id": "id",
         "modified_at": "modified_at",
         "queue_id": "queue_id",
@@ -61,7 +65,7 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
 
     def __init__(
         self_,
-        annotations: List[LLMObsAnnotationItem],
+        annotations: List[LLMObsAnnotationItemResponse],
         can_annotate: bool,
         content_id: str,
         created_at: datetime,
@@ -71,18 +75,19 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
         queue_name: str,
         type: LLMObsAnyInteractionType,
         display_block: Union[List[LLMObsContentBlock], UnsetType] = unset,
+        frontend: Union[LLMObsFrontendContent, UnsetType] = unset,
         **kwargs,
     ):
         """
         An annotated interaction returned by the cross-queue lookup, including the source queue metadata.
 
         :param annotations: List of annotations for this interaction.
-        :type annotations: [LLMObsAnnotationItem]
+        :type annotations: [LLMObsAnnotationItemResponse]
 
         :param can_annotate: Whether the current caller can annotate this interaction.
         :type can_annotate: bool
 
-        :param content_id: Upstream entity identifier (trace ID, session ID, or deterministic display_block ID).
+        :param content_id: Upstream entity identifier (trace ID, session ID, or deterministic display_block or frontend ID).
         :type content_id: str
 
         :param created_at: Timestamp when the interaction was added to the queue.
@@ -91,6 +96,9 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
         :param display_block: List of content blocks that make up a ``display_block`` interaction.
             Must contain at least one block.
         :type display_block: [LLMObsContentBlock], optional
+
+        :param frontend: Web content that makes up a ``frontend`` interaction.
+        :type frontend: LLMObsFrontendContent, optional
 
         :param id: Unique identifier of the interaction.
         :type id: str
@@ -109,6 +117,8 @@ class LLMObsAnnotatedInteractionByTraceItem(ModelNormal):
         """
         if display_block is not unset:
             kwargs["display_block"] = display_block
+        if frontend is not unset:
+            kwargs["frontend"] = frontend
         super().__init__(kwargs)
 
         self_.annotations = annotations

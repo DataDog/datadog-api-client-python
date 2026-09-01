@@ -16,7 +16,7 @@ class LLMObsAnnotatedInteractionItem(ModelComposed):
         An interaction with its associated annotations.
 
         :param annotations: List of annotations for this interaction.
-        :type annotations: [LLMObsAnnotationItem]
+        :type annotations: [LLMObsAnnotationItemResponse]
 
         :param can_annotate: Whether the current caller can annotate this interaction.
         :type can_annotate: bool
@@ -39,6 +39,9 @@ class LLMObsAnnotatedInteractionItem(ModelComposed):
         :param display_block: List of content blocks that make up a `display_block` interaction.
             Must contain at least one block.
         :type display_block: [LLMObsContentBlock]
+
+        :param frontend: Web content that makes up a `frontend` interaction.
+        :type frontend: LLMObsFrontendContent
         """
         super().__init__(kwargs)
 
@@ -57,10 +60,14 @@ class LLMObsAnnotatedInteractionItem(ModelComposed):
         from datadog_api_client.v2.model.llm_obs_display_block_annotated_interaction_item import (
             LLMObsDisplayBlockAnnotatedInteractionItem,
         )
+        from datadog_api_client.v2.model.llm_obs_frontend_annotated_interaction_item import (
+            LLMObsFrontendAnnotatedInteractionItem,
+        )
 
         return {
             "oneOf": [
                 LLMObsTraceAnnotatedInteractionItem,
                 LLMObsDisplayBlockAnnotatedInteractionItem,
+                LLMObsFrontendAnnotatedInteractionItem,
             ],
         }

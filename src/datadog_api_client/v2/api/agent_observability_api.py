@@ -24,6 +24,7 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObs
 from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_response import LLMObsAnnotatedInteractionsResponse
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_response import LLMObsAnnotatedInteractionResponse
 from datadog_api_client.v2.model.llm_obs_annotations_response import LLMObsAnnotationsResponse
 from datadog_api_client.v2.model.llm_obs_annotations_request import LLMObsAnnotationsRequest
 from datadog_api_client.v2.model.llm_obs_delete_annotations_response import LLMObsDeleteAnnotationsResponse
@@ -737,6 +738,35 @@ class AgentObservabilityApi:
             },
             headers_map={
                 "accept": ["text/csv", "application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_annotated_interaction_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotatedInteractionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotated-interactions/{interaction_id}",
+                "operation_id": "get_llm_obs_annotated_interaction",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "interaction_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "interaction_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -2277,6 +2307,9 @@ class AgentObservabilityApi:
         * ``display_block`` : omit ``content_id`` and provide the rendered content
           in ``display_block``. The server generates ``content_id`` as a
           deterministic hash of the block list.
+        * ``frontend`` : omit ``content_id`` and provide the web content in
+          ``frontend``. The server returns a deterministic ``content_id`` for the
+          content.
 
         Items of different types can be mixed in a single request.
 
@@ -2693,6 +2726,28 @@ class AgentObservabilityApi:
             kwargs["version"] = version
 
         return self._export_llm_obs_dataset_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_annotated_interaction(
+        self,
+        queue_id: str,
+        interaction_id: str,
+    ) -> LLMObsAnnotatedInteractionResponse:
+        """Get an annotated queue interaction.
+
+        Retrieve a single interaction (trace, session, display block, or frontend content) and its annotations for a given annotation queue.
+
+        :param queue_id: The ID of the Agent Observability annotation queue.
+        :type queue_id: str
+        :param interaction_id: The ID of the interaction within the annotation queue.
+        :type interaction_id: str
+        :rtype: LLMObsAnnotatedInteractionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["interaction_id"] = interaction_id
+
+        return self._get_llm_obs_annotated_interaction_endpoint.call_with_http_info(**kwargs)
 
     def get_llm_obs_annotated_interactions(
         self,
