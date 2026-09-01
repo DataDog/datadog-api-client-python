@@ -75,14 +75,17 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/feature-flags
+  @skip-validation @team:DataDog/feature-flags
   Scenario: Create a feature flag returns "Created" response
     Given new "CreateFeatureFlag" request
-    And body with value {"data": {"type": "feature-flags", "attributes": {"default_variant_key": "variant-{{ unique }}-1", "description": "Test feature flag for BDD scenarios", "key": "test-feature-flag-{{ unique }}", "name": "Test Feature Flag {{ unique }}", "value_type": "BOOLEAN", "variants": [{"key": "variant-{{ unique }}-1", "name": "Variant {{ unique }} A", "value": "true"}, {"key": "variant-{{ unique }}-2", "name": "Variant {{ unique }} B", "value": "false"}]}}}
+    And body with value {"data": {"type": "feature-flags", "attributes": {"default_variant_key": "variant-{{ unique }}-1", "distribution_channel": "SERVER", "key": "test-feature-flag-{{ unique }}", "name": "Test Feature Flag {{ unique }}", "require_approval": false, "staleness_status": "PERMANENT", "tags": ["env:api-client-test"], "value_type": "BOOLEAN", "variants": [{"key": "variant-{{ unique }}-1", "name": "Variant {{ unique }} A", "value": "true"}, {"key": "variant-{{ unique }}-2", "name": "Variant {{ unique }} B", "value": "false"}]}}}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data.attributes.distribution_channel" is equal to "SERVER"
     And the response "data.attributes.key" is equal to "test-feature-flag-{{ unique }}"
     And the response "data.attributes.name" is equal to "Test Feature Flag {{ unique }}"
+    And the response "data.attributes.require_approval" is equal to false
+    And the response "data.attributes.tags" is equal to ["env:api-client-test"]
     And the response "data.attributes.value_type" is equal to "BOOLEAN"
 
   @team:DataDog/feature-flags

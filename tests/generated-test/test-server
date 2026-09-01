@@ -16,7 +16,7 @@ import re
 import tempfile
 import threading
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -435,7 +435,8 @@ def _json_contains(actual: Any, expected: Any) -> bool:
         return all(key in actual and _json_contains(actual[key], value) for key, value in expected.items())
     if isinstance(expected, list) and isinstance(actual, list):
         return len(expected) == len(actual) and all(
-            _json_contains(actual_item, expected_item) for actual_item, expected_item in zip(actual, expected)
+            _json_contains(actual_item, expected_item)
+            for actual_item, expected_item in zip(actual, expected, strict=False)
         )
     return actual == expected
 
@@ -460,7 +461,7 @@ def _slug(value: str) -> str:
 
 
 def _now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+    return datetime.now(UTC).isoformat().replace("+00:00", "Z")
 
 
 def _read_json(path: Path) -> dict[str, Any]:
