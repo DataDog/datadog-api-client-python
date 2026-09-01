@@ -1,0 +1,36 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Get all dashboards with version \"2027-01-01\" returns \"OK\" response",
+  "operation_id": "ListDashboards",
+  "operation_version": "2027-01-01",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[shared]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": false
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Get all dashboards with version \"2027-01-01\" returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

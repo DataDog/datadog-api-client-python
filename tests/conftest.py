@@ -620,9 +620,7 @@ def api_request(configuration, context, name):
 def versioned_api_request(context, client, api_version, name, version):
     """Call an endpoint using its versioned client namespace."""
     api_name = context["api"]["name"]
-    package_name = "datadog_api_client.{}_{}".format(
-        api_version, version.replace("-", "")
-    )
+    package_name = "datadog_api_client.{}_{}".format(api_version, version.replace("-", ""))
     module_name = snake_case(api_name)
     package = importlib.import_module(f"{package_name}.api.{module_name}_api")
     api_instance = getattr(package, _api_name(api_name))(client)
