@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.issues_search_result import IssuesSearchResult
     from datadog_api_client.v2.model.issues_search_result_included import IssuesSearchResultIncluded
     from datadog_api_client.v2.model.issue import Issue
-    from datadog_api_client.v2.model.case import Case
+    from datadog_api_client.v2.model.issue_case import IssueCase
     from datadog_api_client.v2.model.issue_user import IssueUser
     from datadog_api_client.v2.model.issue_team import IssueTeam
 
@@ -41,7 +41,9 @@ class IssuesSearchResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[List[IssuesSearchResult], UnsetType] = unset,
-        included: Union[List[Union[IssuesSearchResultIncluded, Issue, Case, IssueUser, IssueTeam]], UnsetType] = unset,
+        included: Union[
+            List[Union[IssuesSearchResultIncluded, Issue, IssueCase, IssueUser, IssueTeam]], UnsetType
+        ] = unset,
         **kwargs,
     ):
         """

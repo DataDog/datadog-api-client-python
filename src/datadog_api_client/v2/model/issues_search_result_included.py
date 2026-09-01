@@ -39,14 +39,14 @@ class IssuesSearchResultIncluded(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.issue import Issue
-        from datadog_api_client.v2.model.case import Case
+        from datadog_api_client.v2.model.issue_case import IssueCase
         from datadog_api_client.v2.model.issue_user import IssueUser
         from datadog_api_client.v2.model.issue_team import IssueTeam
 
         return {
             "oneOf": [
                 Issue,
-                Case,
+                IssueCase,
                 IssueUser,
                 IssueTeam,
             ],
