@@ -286,6 +286,7 @@ class Configuration:
                 "v2.delete_llm_obs_projects": False,
                 "v2.delete_llm_obs_prompt": False,
                 "v2.export_llm_obs_dataset": False,
+                "v2.get_llm_obs_annotated_interaction": False,
                 "v2.get_llm_obs_annotated_interactions": False,
                 "v2.get_llm_obs_annotated_interactions_by_trace_i_ds": False,
                 "v2.get_llm_obs_annotation_queue_label_schema": False,

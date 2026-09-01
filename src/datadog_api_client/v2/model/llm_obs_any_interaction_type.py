@@ -16,7 +16,7 @@ class LLMObsAnyInteractionType(ModelSimple):
     """
     Type of an annotated interaction.
 
-    :param value: Must be one of ["trace", "experiment_trace", "session", "display_block"].
+    :param value: Must be one of ["trace", "experiment_trace", "session", "display_block", "frontend"].
     :type value: str
     """
 
@@ -25,11 +25,13 @@ class LLMObsAnyInteractionType(ModelSimple):
         "experiment_trace",
         "session",
         "display_block",
+        "frontend",
     }
     TRACE: ClassVar["LLMObsAnyInteractionType"]
     EXPERIMENT_TRACE: ClassVar["LLMObsAnyInteractionType"]
     SESSION: ClassVar["LLMObsAnyInteractionType"]
     DISPLAY_BLOCK: ClassVar["LLMObsAnyInteractionType"]
+    FRONTEND: ClassVar["LLMObsAnyInteractionType"]
 
     @cached_property
     def openapi_types(_):
@@ -42,3 +44,4 @@ LLMObsAnyInteractionType.TRACE = LLMObsAnyInteractionType("trace")
 LLMObsAnyInteractionType.EXPERIMENT_TRACE = LLMObsAnyInteractionType("experiment_trace")
 LLMObsAnyInteractionType.SESSION = LLMObsAnyInteractionType("session")
 LLMObsAnyInteractionType.DISPLAY_BLOCK = LLMObsAnyInteractionType("display_block")
+LLMObsAnyInteractionType.FRONTEND = LLMObsAnyInteractionType("frontend")
