@@ -1,5 +1,55 @@
 # CHANGELOG
 
+## 2.60.0/2026-09-02
+
+### Security
+* Require Python 3.10 [#3956](https://github.com/DataDog/datadog-api-client-python/pull/3956)
+
+### Added
+* Add opentelemetry metrics destination to observability pipelines public api spec [#3936](https://github.com/DataDog/datadog-api-client-python/pull/3936)
+* Add incident and Slack reaction triggers to Workflow Automation [#3935](https://github.com/DataDog/datadog-api-client-python/pull/3935)
+* Publish unstable STIX ingestion API [#3934](https://github.com/DataDog/datadog-api-client-python/pull/3934)
+* [AGV-1595] Add is_iac support to send X-Datadog-Managed-By header [#3925](https://github.com/DataDog/datadog-api-client-python/pull/3925)
+* Add warmup, fail_on_no_groups_found, and fail_on_no_data to Deployment Gates monitor rule options [#3924](https://github.com/DataDog/datadog-api-client-python/pull/3924)
+* Add server.response.body.raw WAF address [#3910](https://github.com/DataDog/datadog-api-client-python/pull/3910)
+* Fix estimate endpoint query params to match live schema [#3905](https://github.com/DataDog/datadog-api-client-python/pull/3905)
+* Add zstd/compression to archive destinations [#3903](https://github.com/DataDog/datadog-api-client-python/pull/3903)
+* Sync LLM Obs annotation access docs [#3898](https://github.com/DataDog/datadog-api-client-python/pull/3898)
+* RUM - Make exclusion filter operations public [#3896](https://github.com/DataDog/datadog-api-client-python/pull/3896)
+* Add OpenAPI docs for usage quotas admin [#3895](https://github.com/DataDog/datadog-api-client-python/pull/3895)
+* API spec for severity modifiers automation pipelines [#3886](https://github.com/DataDog/datadog-api-client-python/pull/3886)
+* Add bundle_config to Monitor Notification Rule [#3885](https://github.com/DataDog/datadog-api-client-python/pull/3885)
+* Document RUM retention quota config API [#3884](https://github.com/DataDog/datadog-api-client-python/pull/3884)
+* Add Integration Accounts v2 API for Twilio and Elastic Cloud [#3879](https://github.com/DataDog/datadog-api-client-python/pull/3879)
+* Add endpoint_target field to Splunk HEC destination [#3878](https://github.com/DataDog/datadog-api-client-python/pull/3878)
+* Add public Execution Policies endpoints [#3875](https://github.com/DataDog/datadog-api-client-python/pull/3875)
+* Add OpenAPI spec for RUM Teams Ownership public API [#3870](https://github.com/DataDog/datadog-api-client-python/pull/3870)
+* Add tags to Action Connection API spec [#3869](https://github.com/DataDog/datadog-api-client-python/pull/3869)
+* Add Work Management note to Case Management API tag description [#3867](https://github.com/DataDog/datadog-api-client-python/pull/3867)
+* Add OAuth support for v2 Logs queries [#3866](https://github.com/DataDog/datadog-api-client-python/pull/3866)
+* Declare OAuth support for Events Search [#3864](https://github.com/DataDog/datadog-api-client-python/pull/3864)
+* Add is_deleted query parameter to ListSLOs [#3836](https://github.com/DataDog/datadog-api-client-python/pull/3836)
+
+### Changed
+* Promote usage quotas admin endpoints to public unstable [#3929](https://github.com/DataDog/datadog-api-client-python/pull/3929)
+* AI Gateway - Fully type private beta control plane API [#3919](https://github.com/DataDog/datadog-api-client-python/pull/3919)
+* Fix SCA OpenAPI drift [#3915](https://github.com/DataDog/datadog-api-client-python/pull/3915)
+* Mark Data Deletion API as GA and update documentation [#3901](https://github.com/DataDog/datadog-api-client-python/pull/3901)
+* Update CODEOWNERS to IDP pack [#3883](https://github.com/DataDog/datadog-api-client-python/pull/3883)
+* Remove status_pages_settings_write as an accepted permission from Status Pages publishing APIs [#3877](https://github.com/DataDog/datadog-api-client-python/pull/3877)
+* Rename Tag Policies to Tag Rules and move to /api/v2/governance/tag_rules [#3850](https://github.com/DataDog/datadog-api-client-python/pull/3850)
+
+### Fixed
+* Fix CreateTeamConnections example missing required type fields [#3918](https://github.com/DataDog/datadog-api-client-python/pull/3918)
+* Fix ARM API security spec drift [#3908](https://github.com/DataDog/datadog-api-client-python/pull/3908)
+
+### Removed
+* Rename spec to RUM Retention Quotas and remove unsupported mode [#3904](https://github.com/DataDog/datadog-api-client-python/pull/3904)
+* Make LLM Observability data deletion endpoint private [#3874](https://github.com/DataDog/datadog-api-client-python/pull/3874)
+
+### Deprecated
+* Mark unused AWS logs v1 endpoints as deprecated [#3703](https://github.com/DataDog/datadog-api-client-python/pull/3703)
+
 ## 2.59.0/2026-08-12
 
 ### Changed
