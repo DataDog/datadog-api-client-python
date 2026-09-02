@@ -29600,6 +29600,34 @@ datadog\_api\_client.v2.model.notification\_rule\_routing\_mode module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.notification\_rule\_target module
+---------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_target
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_target\_configuration module
+------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_target_configuration
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_target\_configuration\_recipient module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_target_configuration_recipient
+   :members:
+   :show-inheritance:
+
+datadog\_api\_client.v2.model.notification\_rule\_target\_type module
+---------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.notification_rule_target_type
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.notification\_rules\_list\_response module
 ------------------------------------------------------------------------
 
