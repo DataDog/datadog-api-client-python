@@ -8,7 +8,9 @@ from datadog_api_client.v2.model.create_feature_flag_attributes import CreateFea
 from datadog_api_client.v2.model.create_feature_flag_data import CreateFeatureFlagData
 from datadog_api_client.v2.model.create_feature_flag_data_type import CreateFeatureFlagDataType
 from datadog_api_client.v2.model.create_feature_flag_request import CreateFeatureFlagRequest
+from datadog_api_client.v2.model.create_feature_flag_staleness_status import CreateFeatureFlagStalenessStatus
 from datadog_api_client.v2.model.create_variant import CreateVariant
+from datadog_api_client.v2.model.feature_flag_distribution_channel import FeatureFlagDistributionChannel
 from datadog_api_client.v2.model.value_type import ValueType
 
 body = CreateFeatureFlagRequest(
@@ -16,9 +18,14 @@ body = CreateFeatureFlagRequest(
         type=CreateFeatureFlagDataType.FEATURE_FLAGS,
         attributes=CreateFeatureFlagAttributes(
             default_variant_key="variant-Example-Feature-Flag-1",
-            description="Test feature flag for BDD scenarios",
+            distribution_channel=FeatureFlagDistributionChannel.SERVER,
             key="test-feature-flag-Example-Feature-Flag",
             name="Test Feature Flag Example-Feature-Flag",
+            require_approval=False,
+            staleness_status=CreateFeatureFlagStalenessStatus.PERMANENT,
+            tags=[
+                "env:api-client-test",
+            ],
             value_type=ValueType.BOOLEAN,
             variants=[
                 CreateVariant(
