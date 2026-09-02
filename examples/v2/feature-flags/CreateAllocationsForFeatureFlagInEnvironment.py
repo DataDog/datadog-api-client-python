@@ -34,6 +34,7 @@ body = CreateAllocationsRequest(
                 id=UUID("550e8400-e29b-41d4-a716-446655440010"),
                 rollout_options=RolloutOptionsRequest(
                     autostart=False,
+                    scheduled_start="absolute:2025-06-13T12:00:00Z",
                     selection_interval_ms=3600000,
                     strategy=RolloutStrategy.UNIFORM_INTERVALS,
                 ),

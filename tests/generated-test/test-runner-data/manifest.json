@@ -5524,6 +5524,13 @@
       "version": "v2"
     },
     {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-targeting-rules-for-a-flag-in-an-environment-with-a-scheduled-start-returns-ok-response.json",
+      "scenario": "Update targeting rules for a flag in an environment with a scheduled start returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Forms",
       "feature_file": "../../v2/features/forms.feature",
       "file": "v2/forms/clone-a-form-returns-not-found-response.json",

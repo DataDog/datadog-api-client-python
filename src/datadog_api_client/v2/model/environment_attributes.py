@@ -30,6 +30,7 @@ class EnvironmentAttributes(ModelNormal):
             "is_production": (bool,),
             "key": (str,),
             "name": (str,),
+            "observe_full_evaluation_data": (bool,),
             "queries": ([str],),
             "require_feature_flag_approval": (bool,),
             "updated_at": (datetime,),
@@ -41,6 +42,7 @@ class EnvironmentAttributes(ModelNormal):
         "is_production": "is_production",
         "key": "key",
         "name": "name",
+        "observe_full_evaluation_data": "observe_full_evaluation_data",
         "queries": "queries",
         "require_feature_flag_approval": "require_feature_flag_approval",
         "updated_at": "updated_at",
@@ -53,6 +55,7 @@ class EnvironmentAttributes(ModelNormal):
         description: Union[str, none_type, UnsetType] = unset,
         is_production: Union[bool, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
+        observe_full_evaluation_data: Union[bool, UnsetType] = unset,
         queries: Union[List[str], UnsetType] = unset,
         require_feature_flag_approval: Union[bool, UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
@@ -76,6 +79,9 @@ class EnvironmentAttributes(ModelNormal):
         :param name: The name of the environment.
         :type name: str
 
+        :param observe_full_evaluation_data: Indicates whether full evaluation data is observed for this environment.
+        :type observe_full_evaluation_data: bool, optional
+
         :param queries: List of queries to define the environment scope.
         :type queries: [str], optional
 
@@ -93,6 +99,8 @@ class EnvironmentAttributes(ModelNormal):
             kwargs["is_production"] = is_production
         if key is not unset:
             kwargs["key"] = key
+        if observe_full_evaluation_data is not unset:
+            kwargs["observe_full_evaluation_data"] = observe_full_evaluation_data
         if queries is not unset:
             kwargs["queries"] = queries
         if require_feature_flag_approval is not unset:
