@@ -15,10 +15,10 @@ You can control the behavior with the `RECORD` environment variable:
 Recording and freeze files are stored in the directory `tests/$VERSION/cassettes/test_scenarios/`
 
 To run the tests, it's generally better to use a virtual environment. [tox](https://tox.wiki/) makes it easier to manage them.
-For example to run the tests for Python 3.9:
+For example to run the tests for Python 3.11:
 
 ```shell
-tox -epy39
+tox -epy311
 ```
 
 Generated BDD artifacts
@@ -43,7 +43,7 @@ You can get more verbose information with the `-v` flag to `pytest`, filter the 
 specifying the test full path. For example:
 
 ```shell
-tox -epy39  -- -k test_get_a_list_of_all_incident_teams_returns_ok_response -vvv
+tox -epy311  -- -k test_get_a_list_of_all_incident_teams_returns_ok_response -vvv
 ```
 
 `-k` takes a regular expression, so you don't have to specify the whole exact
