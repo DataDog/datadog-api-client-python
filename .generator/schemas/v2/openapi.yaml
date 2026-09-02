@@ -26764,6 +26764,8 @@ components:
             description: "A sample workflow."
             name: "Example Workflow"
             published: true
+            runAs:
+              type: owner
             spec:
               annotations:
                 - display:
@@ -121560,6 +121562,8 @@ components:
             description: "A sample workflow."
             name: "Example Workflow"
             published: true
+            runAs:
+              type: owner
             spec:
               annotations:
                 - display:
@@ -124886,6 +124890,12 @@ components:
         published:
           description: Set the workflow to published or unpublished. Workflows in an unpublished state will only be executable via manual runs. Automatic triggers such as Schedule will not execute the workflow until it is published.
           type: boolean
+        runAs:
+          $ref: "#/components/schemas/WorkflowRunAs"
+          writeOnly: true
+        runAsUserMode:
+          $ref: "#/components/schemas/WorkflowRunAsUserMode"
+          readOnly: true
         spec:
           $ref: "#/components/schemas/Spec"
         tags:
@@ -124914,6 +124924,9 @@ components:
           $ref: "#/components/schemas/WorkflowUserRelationship"
         owner:
           $ref: "#/components/schemas/WorkflowUserRelationship"
+        runAs:
+          $ref: "#/components/schemas/WorkflowUserRelationship"
+          description: The service account used to run the workflow. Present when `runAsUserMode` is `service_account`.
       readOnly: true
       type: object
     WorkflowDataType:
@@ -124957,6 +124970,12 @@ components:
         published:
           description: Set the workflow to published or unpublished. Workflows in an unpublished state will only be executable via manual runs. Automatic triggers such as Schedule will not execute the workflow until it is published.
           type: boolean
+        runAs:
+          $ref: "#/components/schemas/WorkflowRunAs"
+          writeOnly: true
+        runAsUserMode:
+          $ref: "#/components/schemas/WorkflowRunAsUserMode"
+          readOnly: true
         spec:
           $ref: "#/components/schemas/Spec"
         tags:
@@ -125075,6 +125094,9 @@ components:
         published:
           description: Whether the workflow is published. Unpublished workflows can only be run manually. Automatic triggers such as Schedule do not fire until the workflow is published.
           type: boolean
+        runAsUserMode:
+          $ref: "#/components/schemas/WorkflowRunAsUserMode"
+          readOnly: true
         spec:
           $ref: "#/components/schemas/Spec"
           nullable: true
@@ -125092,6 +125114,82 @@ components:
       required:
         - name
       type: object
+    WorkflowRunAs:
+      description: Identity used to run the workflow.
+      example:
+        type: owner
+      oneOf:
+        - $ref: "#/components/schemas/WorkflowRunAsOwner"
+        - $ref: "#/components/schemas/WorkflowRunAsServiceAccount"
+        - $ref: "#/components/schemas/WorkflowRunAsInitiator"
+    WorkflowRunAsInitiator:
+      additionalProperties: false
+      description: Run the workflow as the user who initiates the execution.
+      properties:
+        type:
+          $ref: "#/components/schemas/WorkflowRunAsInitiatorType"
+      required:
+        - type
+      type: object
+    WorkflowRunAsInitiatorType:
+      description: The initiator run-as type.
+      enum:
+        - initiator
+      example: initiator
+      type: string
+      x-enum-varnames:
+        - INITIATOR
+    WorkflowRunAsOwner:
+      additionalProperties: false
+      description: Run the workflow as its owner.
+      properties:
+        type:
+          $ref: "#/components/schemas/WorkflowRunAsOwnerType"
+      required:
+        - type
+      type: object
+    WorkflowRunAsOwnerType:
+      description: The owner run-as type.
+      enum:
+        - owner
+      example: owner
+      type: string
+      x-enum-varnames:
+        - OWNER
+    WorkflowRunAsServiceAccount:
+      additionalProperties: false
+      description: Run the workflow as a service account.
+      properties:
+        id:
+          description: The service account identifier.
+          example: 00000000-0000-0000-0000-000000000007
+          type: string
+        type:
+          $ref: "#/components/schemas/WorkflowRunAsServiceAccountType"
+      required:
+        - type
+        - id
+      type: object
+    WorkflowRunAsServiceAccountType:
+      description: The service account run-as type.
+      enum:
+        - service_account
+      example: service_account
+      type: string
+      x-enum-varnames:
+        - SERVICE_ACCOUNT
+    WorkflowRunAsUserMode:
+      description: The effective type of identity used to run the workflow.
+      enum:
+        - owner
+        - service_account
+        - initiator
+      example: owner
+      type: string
+      x-enum-varnames:
+        - OWNER
+        - SERVICE_ACCOUNT
+        - INITIATOR
     WorkflowTriggerWrapper:
       description: "Schema for a Workflow-based trigger."
       properties:
@@ -221606,6 +221704,7 @@ paths:
                           description: A sample workflow.
                           name: Example Workflow
                           published: true
+                          runAsUserMode: owner
                           spec: {}
                           tags:
                             - team:infra
@@ -221660,6 +221759,8 @@ paths:
                       description: A sample workflow.
                       name: Example Workflow
                       published: true
+                      runAs:
+                        type: owner
                       spec:
                         annotations:
                           - display:
@@ -221726,6 +221827,7 @@ paths:
                     data:
                       attributes:
                         name: Example Workflow
+                        runAsUserMode: owner
                         spec: {}
                       id: 00000000-0000-0000-0000-000000000001
                       type: workflows
@@ -221809,6 +221911,7 @@ paths:
                         description: A sample workflow.
                         name: Example Workflow
                         published: true
+                        runAsUserMode: owner
                         spec: {}
                         tags:
                           - team:infra
@@ -221865,6 +221968,8 @@ paths:
                       description: A sample workflow.
                       name: Example Workflow
                       published: true
+                      runAs:
+                        type: owner
                       spec:
                         annotations:
                           - display:
@@ -221932,6 +222037,7 @@ paths:
                     data:
                       attributes:
                         name: Example Workflow
+                        runAsUserMode: owner
                       id: 00000000-0000-0000-0000-000000000003
                       type: workflows
               schema:

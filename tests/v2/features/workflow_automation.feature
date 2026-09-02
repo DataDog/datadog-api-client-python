@@ -47,9 +47,10 @@ Feature: Workflow Automation
   @team:DataDog/workflow-automation-dev
   Scenario: Create a Workflow returns "Successfully created a workflow." response
     Given new "CreateWorkflow" request
-    And body with value {"data": {"attributes": {"description": "A sample workflow.", "name": "Example Workflow", "published": true, "spec": {"connectionEnvs": [{"connections": [{"connectionId": "e1e64943-c7c5-4487-aece-25aaec7d3aad", "label": "INTEGRATION_DATADOG"}], "env": "default"}], "inputSchema": {"parameters": [{"defaultValue": "default", "name": "input", "type": "STRING"}]}, "outputSchema": {"parameters": [{"name": "output", "type": "ARRAY_OBJECT", "value": "outputValue"}]}, "steps": [{"actionId": "com.datadoghq.dd.monitor.listMonitors", "connectionLabel": "INTEGRATION_DATADOG", "name": "Step1", "outboundEdges": [{"branchName": "main", "nextStepName": "Step2"}], "parameters": [{"name": "tags", "value": "service:monitoring"}]}, {"actionId": "com.datadoghq.core.noop", "name": "Step2"}], "triggers": [{"monitorTrigger": {"rateLimit": {"count": 1, "interval": "3600s"}}, "startStepNames": ["Step1"]}, {"startStepNames": ["Step1"], "githubWebhookTrigger": {}}]}, "tags": ["team:infra", "service:monitoring", "foo:bar"]}, "type": "workflows"}}
+    And body with value {"data": {"attributes": {"description": "A sample workflow.", "name": "Example Workflow", "published": true, "runAs": {"type": "owner"}, "spec": {"connectionEnvs": [{"connections": [{"connectionId": "e1e64943-c7c5-4487-aece-25aaec7d3aad", "label": "INTEGRATION_DATADOG"}], "env": "default"}], "inputSchema": {"parameters": [{"defaultValue": "default", "name": "input", "type": "STRING"}]}, "outputSchema": {"parameters": [{"name": "output", "type": "ARRAY_OBJECT", "value": "outputValue"}]}, "steps": [{"actionId": "com.datadoghq.dd.monitor.listMonitors", "connectionLabel": "INTEGRATION_DATADOG", "name": "Step1", "outboundEdges": [{"branchName": "main", "nextStepName": "Step2"}], "parameters": [{"name": "tags", "value": "service:monitoring"}]}, {"actionId": "com.datadoghq.core.noop", "name": "Step2"}], "triggers": [{"monitorTrigger": {"rateLimit": {"count": 1, "interval": "3600s"}}, "startStepNames": ["Step1"]}, {"startStepNames": ["Step1"], "githubWebhookTrigger": {}}]}, "tags": ["team:infra", "service:monitoring", "foo:bar"]}, "type": "workflows"}}
     When the request is sent
     Then the response status is 201 Successfully created a workflow.
+    And the response "data.attributes.runAsUserMode" is equal to "owner"
 
   @team:DataDog/workflow-automation-dev
   Scenario: Delete an existing Workflow returns "Not found" response
@@ -127,6 +128,7 @@ Feature: Workflow Automation
     And request contains "workflow_id" parameter from "workflow.data.id"
     When the request is sent
     Then the response status is 200 Successfully got a workflow.
+    And the response "data.attributes.runAsUserMode" is equal to "owner"
 
   @replay-only @team:DataDog/workflow-automation-dev
   Scenario: List workflow instances returns "Bad Request" response
@@ -154,6 +156,7 @@ Feature: Workflow Automation
     And new "ListWorkflows" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has item with field "attributes.runAsUserMode" with value "owner"
 
   @replay-only @skip-validation @team:DataDog/workflow-automation-dev @with-pagination
   Scenario: List workflows returns "OK" response with pagination
@@ -186,6 +189,7 @@ Feature: Workflow Automation
     Given there is a valid "workflow" in the system
     And new "UpdateWorkflow" request
     And request contains "workflow_id" parameter from "workflow.data.id"
-    And body with value {"data": {"attributes": {"description": "A sample workflow.", "name": "Example Workflow", "published": true, "spec": {"connectionEnvs": [{"connections": [{"connectionId": "e1e64943-c7c5-4487-aece-25aaec7d3aad", "label": "INTEGRATION_DATADOG"}], "env": "default"}], "inputSchema": {"parameters": [{"defaultValue": "default", "name": "input", "type": "STRING"}]}, "outputSchema": {"parameters": [{"name": "output", "type": "ARRAY_OBJECT", "value": "outputValue"}]}, "steps": [{"actionId": "com.datadoghq.dd.monitor.listMonitors", "connectionLabel": "INTEGRATION_DATADOG", "name": "Step1", "outboundEdges": [{"branchName": "main", "nextStepName": "Step2"}], "parameters": [{"name": "tags", "value": "service:monitoring"}]}, {"actionId": "com.datadoghq.core.noop", "name": "Step2"}], "triggers": [{"monitorTrigger": {"rateLimit": {"count": 1, "interval": "3600s"}}, "startStepNames": ["Step1"]}, {"startStepNames": ["Step1"], "githubWebhookTrigger": {}}]}, "tags": ["team:infra", "service:monitoring", "foo:bar"]}, "id": "22222222-2222-2222-2222-222222222222", "type": "workflows"}}
+    And body with value {"data": {"attributes": {"description": "A sample workflow.", "name": "Example Workflow", "published": true, "runAs": {"type": "owner"}, "spec": {"connectionEnvs": [{"connections": [{"connectionId": "e1e64943-c7c5-4487-aece-25aaec7d3aad", "label": "INTEGRATION_DATADOG"}], "env": "default"}], "inputSchema": {"parameters": [{"defaultValue": "default", "name": "input", "type": "STRING"}]}, "outputSchema": {"parameters": [{"name": "output", "type": "ARRAY_OBJECT", "value": "outputValue"}]}, "steps": [{"actionId": "com.datadoghq.dd.monitor.listMonitors", "connectionLabel": "INTEGRATION_DATADOG", "name": "Step1", "outboundEdges": [{"branchName": "main", "nextStepName": "Step2"}], "parameters": [{"name": "tags", "value": "service:monitoring"}]}, {"actionId": "com.datadoghq.core.noop", "name": "Step2"}], "triggers": [{"monitorTrigger": {"rateLimit": {"count": 1, "interval": "3600s"}}, "startStepNames": ["Step1"]}, {"startStepNames": ["Step1"], "githubWebhookTrigger": {}}]}, "tags": ["team:infra", "service:monitoring", "foo:bar"]}, "id": "22222222-2222-2222-2222-222222222222", "type": "workflows"}}
     When the request is sent
     Then the response status is 200 Successfully updated a workflow.
+    And the response "data.attributes.runAsUserMode" is equal to "owner"
