@@ -103,6 +103,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
             This allows downstream components to forward the token to other Splunk HEC destinations.
         :type store_hec_token: bool, optional
 
+        :param max_connection_duration_secs: Maximum duration, in seconds, that a connection can remain open before it is closed. When unset, connections can remain open indefinitely.
+        :type max_connection_duration_secs: int, optional
+
         :param uri_key: Name of the environment variable or secret that holds the WebSocket server URI (`ws://` or `wss://`).
         :type uri_key: str, optional
 

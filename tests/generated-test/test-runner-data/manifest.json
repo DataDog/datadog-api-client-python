@@ -7983,6 +7983,13 @@
     {
       "feature": "Observability Pipelines",
       "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-splunk-tcp-source-max-connection-duration-secs-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with Splunk TCP source max_connection_duration_secs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-amazon-s3-source-compression-returns-ok-response.json",
       "scenario": "Validate an observability pipeline with amazon S3 source compression returns \"OK\" response",
       "version": "v2"
