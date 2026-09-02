@@ -1382,6 +1382,20 @@
     {
       "feature": "Monitors",
       "feature_file": "../../v1/features/monitors.feature",
+      "file": "v1/monitors/create-a-data-quality-monitor-with-a-model-configuration-returns-ok-response.json",
+      "scenario": "Create a Data Quality monitor with a model configuration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v1/features/monitors.feature",
+      "file": "v1/monitors/create-a-data-quality-monitor-with-a-source-to-target-configuration-returns-ok-response.json",
+      "scenario": "Create a Data Quality monitor with a source to target configuration returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v1/features/monitors.feature",
       "file": "v1/monitors/create-a-data-quality-monitor-with-sensitivity-returns-ok-response.json",
       "scenario": "Create a Data Quality monitor with sensitivity returns \"OK\" response",
       "version": "v1"
