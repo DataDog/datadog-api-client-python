@@ -6611,6 +6611,12 @@
       "type": "safe"
     }
   },
+  "ListProductCatalogSKUs": {
+    "tag": "Product Catalog",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetPrunedTraceByID": {
     "tag": "APM Trace",
     "undo": {

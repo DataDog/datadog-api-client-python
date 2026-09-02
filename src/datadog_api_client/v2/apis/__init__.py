@@ -93,6 +93,7 @@ from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.api.powerpack_api import PowerpackApi
 from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
+from datadog_api_client.v2.api.product_catalog_api import ProductCatalogApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.rum_config_api import RUMConfigApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
@@ -242,6 +243,7 @@ __all__ = [
     "PowerpackApi",
     "ProcessesApi",
     "ProductAnalyticsApi",
+    "ProductCatalogApi",
     "RUMApi",
     "RUMConfigApi",
     "RUMInsightsApi",
