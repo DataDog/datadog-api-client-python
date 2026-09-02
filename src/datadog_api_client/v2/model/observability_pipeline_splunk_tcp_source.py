@@ -21,6 +21,13 @@ if TYPE_CHECKING:
 
 
 class ObservabilityPipelineSplunkTcpSource(ModelNormal):
+    validations = {
+        "max_connection_duration_secs": {
+            "inclusive_maximum": 9007199254740991,
+            "inclusive_minimum": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
@@ -33,6 +40,7 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
         return {
             "address_key": (str,),
             "id": (str,),
+            "max_connection_duration_secs": (int,),
             "tls": (ObservabilityPipelineMtlsServerTls,),
             "type": (ObservabilityPipelineSplunkTcpSourceType,),
         }
@@ -40,6 +48,7 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
     attribute_map = {
         "address_key": "address_key",
         "id": "id",
+        "max_connection_duration_secs": "max_connection_duration_secs",
         "tls": "tls",
         "type": "type",
     }
@@ -49,6 +58,7 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
         id: str,
         type: ObservabilityPipelineSplunkTcpSourceType,
         address_key: Union[str, UnsetType] = unset,
+        max_connection_duration_secs: Union[int, UnsetType] = unset,
         tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
         **kwargs,
     ):
@@ -64,6 +74,9 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
+        :param max_connection_duration_secs: Maximum duration, in seconds, that a connection can remain open before it is closed. When unset, connections can remain open indefinitely.
+        :type max_connection_duration_secs: int, optional
+
         :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
         :type tls: ObservabilityPipelineMtlsServerTls, optional
 
@@ -72,6 +85,8 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
         """
         if address_key is not unset:
             kwargs["address_key"] = address_key
+        if max_connection_duration_secs is not unset:
+            kwargs["max_connection_duration_secs"] = max_connection_duration_secs
         if tls is not unset:
             kwargs["tls"] = tls
         super().__init__(kwargs)

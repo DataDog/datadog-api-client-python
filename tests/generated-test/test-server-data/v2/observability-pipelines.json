@@ -2478,6 +2478,80 @@
     },
     {
       "feature": "Observability Pipelines",
+      "frozen_at": "2026-09-02T13:38:34.105Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "splunk-tcp-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "filter-processor",
+                              "include": "status:error",
+                              "type": "filter"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "splunk-tcp-source",
+                          "max_connection_duration_secs": 3600,
+                          "type": "splunk_tcp"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Splunk TCP max connection duration"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with Splunk TCP source max_connection_duration_secs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
       "frozen_at": "2026-04-08T12:44:25.060Z",
       "interactions": [
         {

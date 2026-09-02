@@ -272,6 +272,14 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate an observability pipeline with Splunk TCP source max_connection_duration_secs returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["splunk-tcp-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "splunk-tcp-source", "type": "splunk_tcp", "max_connection_duration_secs": 3600}]}, "name": "Pipeline with Splunk TCP max connection duration"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate an observability pipeline with amazon S3 source compression returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["amazon-s3-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "service:my-service", "type": "filter"}]}], "sources": [{"id": "amazon-s3-source", "type": "amazon_s3", "region": "us-east-1", "compression": "gzip"}]}, "name": "Pipeline with S3 Source Compression"}, "type": "pipelines"}}
