@@ -414,7 +414,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED", "policy_name": "monitor_timezone"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -423,7 +423,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED", "policy_name": "monitor_timezone"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -432,7 +432,7 @@ Feature: Org Groups
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
     And request contains "org_group_policy_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
+    And body with value {"data": {"attributes": {"content": {"value": "UTC"}, "enforcement_tier": "OVERRIDE_ALLOWED", "policy_name": "monitor_timezone"}, "id": "1a2b3c4d-5e6f-7890-abcd-ef0123456789", "type": "org_group_policies"}}
     When the request is sent
     Then the response status is 200 OK
 

@@ -14,16 +14,18 @@ from typing import ClassVar
 
 class OrgGroupPolicyPolicyType(ModelSimple):
     """
-    The type of the policy. Only `org_config` is supported, indicating a policy backed by an organization configuration setting.
+    The type of the policy. `org_config` indicates a policy backed by an organization configuration setting. `role` indicates a policy backed by a Datadog custom role.
 
-    :param value: If omitted defaults to "org_config". Must be one of ["org_config"].
+    :param value: If omitted defaults to "org_config". Must be one of ["org_config", "role"].
     :type value: str
     """
 
     allowed_values = {
         "org_config",
+        "role",
     }
     ORG_CONFIG: ClassVar["OrgGroupPolicyPolicyType"]
+    ROLE: ClassVar["OrgGroupPolicyPolicyType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class OrgGroupPolicyPolicyType(ModelSimple):
 
 
 OrgGroupPolicyPolicyType.ORG_CONFIG = OrgGroupPolicyPolicyType("org_config")
+OrgGroupPolicyPolicyType.ROLE = OrgGroupPolicyPolicyType("role")

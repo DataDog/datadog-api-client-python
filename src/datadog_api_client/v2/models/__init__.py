@@ -6950,6 +6950,7 @@ from datadog_api_client.v2.model.org_group_policy_create_relationships import Or
 from datadog_api_client.v2.model.org_group_policy_create_request import OrgGroupPolicyCreateRequest
 from datadog_api_client.v2.model.org_group_policy_data import OrgGroupPolicyData
 from datadog_api_client.v2.model.org_group_policy_enforcement_tier import OrgGroupPolicyEnforcementTier
+from datadog_api_client.v2.model.org_group_policy_filter_policy_type_value import OrgGroupPolicyFilterPolicyTypeValue
 from datadog_api_client.v2.model.org_group_policy_list_response import OrgGroupPolicyListResponse
 from datadog_api_client.v2.model.org_group_policy_override_attributes import OrgGroupPolicyOverrideAttributes
 from datadog_api_client.v2.model.org_group_policy_override_create_attributes import (
@@ -16119,6 +16120,7 @@ __all__ = [
     "OrgGroupPolicyCreateRequest",
     "OrgGroupPolicyData",
     "OrgGroupPolicyEnforcementTier",
+    "OrgGroupPolicyFilterPolicyTypeValue",
     "OrgGroupPolicyListResponse",
     "OrgGroupPolicyOverrideAttributes",
     "OrgGroupPolicyOverrideCreateAttributes",
