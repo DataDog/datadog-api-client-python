@@ -16,6 +16,7 @@ body = OrgGroupPolicyUpdateRequest(
         attributes=OrgGroupPolicyUpdateAttributes(
             content=dict([("value", "UTC")]),
             enforcement_tier=OrgGroupPolicyEnforcementTier.OVERRIDE_ALLOWED,
+            policy_name="monitor_timezone",
         ),
         id=UUID("1a2b3c4d-5e6f-7890-abcd-ef0123456789"),
         type=OrgGroupPolicyType.ORG_GROUP_POLICIES,

@@ -46,7 +46,7 @@ class OrgGroupPolicyCreateData(ModelNormal):
         """
         Data for creating an org group policy.
 
-        :param attributes: Attributes for creating an org group policy. If ``policy_type`` or ``enforcement_tier`` are not provided, they default to ``org_config`` and ``DEFAULT`` respectively.
+        :param attributes: Attributes for creating an org group policy. If ``policy_type`` is not provided, it defaults to ``org_config``. ``enforcement_tier`` is optional; if not provided, the resulting value depends on ``policy_type`` and is otherwise unspecified.
         :type attributes: OrgGroupPolicyCreateAttributes
 
         :param relationships: Relationships for creating a policy.

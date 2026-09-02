@@ -16,9 +16,14 @@
         "data": {
           "attributes": {
             "default_variant_key": "variant-{{ unique }}-1",
-            "description": "Test feature flag for BDD scenarios",
+            "distribution_channel": "SERVER",
             "key": "test-feature-flag-{{ unique }}",
             "name": "Test Feature Flag {{ unique }}",
+            "require_approval": false,
+            "staleness_status": "PERMANENT",
+            "tags": [
+              "env:api-client-test"
+            ],
             "value_type": "BOOLEAN",
             "variants": [
               {

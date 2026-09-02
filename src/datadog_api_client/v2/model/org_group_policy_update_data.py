@@ -39,7 +39,7 @@ class OrgGroupPolicyUpdateData(ModelNormal):
         """
         Data for updating an org group policy.
 
-        :param attributes: Attributes for updating an org group policy.
+        :param attributes: Attributes for updating an org group policy. ``policy_name`` , ``content`` , and ``enforcement_tier`` may be omitted individually to leave them unchanged.
         :type attributes: OrgGroupPolicyUpdateAttributes
 
         :param id: The ID of the policy.

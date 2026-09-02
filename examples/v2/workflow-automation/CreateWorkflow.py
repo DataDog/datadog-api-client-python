@@ -26,6 +26,8 @@ from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
 from datadog_api_client.v2.model.workflow_data import WorkflowData
 from datadog_api_client.v2.model.workflow_data_attributes import WorkflowDataAttributes
 from datadog_api_client.v2.model.workflow_data_type import WorkflowDataType
+from datadog_api_client.v2.model.workflow_run_as_owner import WorkflowRunAsOwner
+from datadog_api_client.v2.model.workflow_run_as_owner_type import WorkflowRunAsOwnerType
 
 body = CreateWorkflowRequest(
     data=WorkflowData(
@@ -33,6 +35,9 @@ body = CreateWorkflowRequest(
             description="A sample workflow.",
             name="Example Workflow",
             published=True,
+            run_as=WorkflowRunAsOwner(
+                type=WorkflowRunAsOwnerType.OWNER,
+            ),
             spec=Spec(
                 connection_envs=[
                     ConnectionEnv(

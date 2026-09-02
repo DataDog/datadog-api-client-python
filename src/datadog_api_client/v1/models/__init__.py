@@ -510,6 +510,21 @@ from datadog_api_client.v1.model.monitor_formula_and_function_data_jobs_query_de
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_data_source import (
     MonitorFormulaAndFunctionDataQualityDataSource,
 )
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_diff_function import (
+    MonitorFormulaAndFunctionDataQualityDiffFunction,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_diff_type import (
+    MonitorFormulaAndFunctionDataQualityDiffType,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_entity_metric_config import (
+    MonitorFormulaAndFunctionDataQualityEntityMetricConfig,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model_bounds_override import (
+    MonitorFormulaAndFunctionDataQualityModelBoundsOverride,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model_configuration import (
+    MonitorFormulaAndFunctionDataQualityModelConfiguration,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model_type_override import (
     MonitorFormulaAndFunctionDataQualityModelTypeOverride,
 )
@@ -518,6 +533,9 @@ from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_monit
 )
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition import (
     MonitorFormulaAndFunctionDataQualityQueryDefinition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_source_to_target_config import (
+    MonitorFormulaAndFunctionDataQualitySourceToTargetConfig,
 )
 from datadog_api_client.v1.model.monitor_formula_and_function_event_aggregation import (
     MonitorFormulaAndFunctionEventAggregation,
@@ -1864,9 +1882,15 @@ __all__ = [
     "MonitorFormulaAndFunctionCostQueryDefinition",
     "MonitorFormulaAndFunctionDataJobsQueryDefinition",
     "MonitorFormulaAndFunctionDataQualityDataSource",
+    "MonitorFormulaAndFunctionDataQualityDiffFunction",
+    "MonitorFormulaAndFunctionDataQualityDiffType",
+    "MonitorFormulaAndFunctionDataQualityEntityMetricConfig",
+    "MonitorFormulaAndFunctionDataQualityModelBoundsOverride",
+    "MonitorFormulaAndFunctionDataQualityModelConfiguration",
     "MonitorFormulaAndFunctionDataQualityModelTypeOverride",
     "MonitorFormulaAndFunctionDataQualityMonitorOptions",
     "MonitorFormulaAndFunctionDataQualityQueryDefinition",
+    "MonitorFormulaAndFunctionDataQualitySourceToTargetConfig",
     "MonitorFormulaAndFunctionEventAggregation",
     "MonitorFormulaAndFunctionEventQueryDefinition",
     "MonitorFormulaAndFunctionEventQueryDefinitionCompute",

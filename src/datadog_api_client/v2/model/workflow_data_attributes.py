@@ -15,12 +15,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.workflow_run_as import WorkflowRunAs
+    from datadog_api_client.v2.model.workflow_run_as_user_mode import WorkflowRunAsUserMode
     from datadog_api_client.v2.model.spec import Spec
+    from datadog_api_client.v2.model.workflow_run_as_owner import WorkflowRunAsOwner
+    from datadog_api_client.v2.model.workflow_run_as_service_account import WorkflowRunAsServiceAccount
+    from datadog_api_client.v2.model.workflow_run_as_initiator import WorkflowRunAsInitiator
 
 
 class WorkflowDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.workflow_run_as import WorkflowRunAs
+        from datadog_api_client.v2.model.workflow_run_as_user_mode import WorkflowRunAsUserMode
         from datadog_api_client.v2.model.spec import Spec
 
         return {
@@ -28,6 +35,8 @@ class WorkflowDataAttributes(ModelNormal):
             "description": (str,),
             "name": (str,),
             "published": (bool,),
+            "run_as": (WorkflowRunAs,),
+            "run_as_user_mode": (WorkflowRunAsUserMode,),
             "spec": (Spec,),
             "tags": ([str],),
             "updated_at": (datetime,),
@@ -39,6 +48,8 @@ class WorkflowDataAttributes(ModelNormal):
         "description": "description",
         "name": "name",
         "published": "published",
+        "run_as": "runAs",
+        "run_as_user_mode": "runAsUserMode",
         "spec": "spec",
         "tags": "tags",
         "updated_at": "updatedAt",
@@ -56,6 +67,10 @@ class WorkflowDataAttributes(ModelNormal):
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         published: Union[bool, UnsetType] = unset,
+        run_as: Union[
+            WorkflowRunAs, WorkflowRunAsOwner, WorkflowRunAsServiceAccount, WorkflowRunAsInitiator, UnsetType
+        ] = unset,
+        run_as_user_mode: Union[WorkflowRunAsUserMode, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
         webhook_secret: Union[str, UnsetType] = unset,
@@ -76,6 +91,12 @@ class WorkflowDataAttributes(ModelNormal):
         :param published: Set the workflow to published or unpublished. Workflows in an unpublished state will only be executable via manual runs. Automatic triggers such as Schedule will not execute the workflow until it is published.
         :type published: bool, optional
 
+        :param run_as: Identity used to run the workflow.
+        :type run_as: WorkflowRunAs, optional
+
+        :param run_as_user_mode: The effective type of identity used to run the workflow.
+        :type run_as_user_mode: WorkflowRunAsUserMode, optional
+
         :param spec: A complete Workflow Automation definition, including its triggers, steps, and connections.
         :type spec: Spec
 
@@ -94,6 +115,10 @@ class WorkflowDataAttributes(ModelNormal):
             kwargs["description"] = description
         if published is not unset:
             kwargs["published"] = published
+        if run_as is not unset:
+            kwargs["run_as"] = run_as
+        if run_as_user_mode is not unset:
+            kwargs["run_as_user_mode"] = run_as_user_mode
         if tags is not unset:
             kwargs["tags"] = tags
         if updated_at is not unset:
