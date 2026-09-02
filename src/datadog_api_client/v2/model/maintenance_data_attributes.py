@@ -36,6 +36,7 @@ class MaintenanceDataAttributes(ModelNormal):
         )
 
         return {
+            "canceled_description": (str,),
             "completed_date": (datetime,),
             "completed_description": (str,),
             "components_affected": ([MaintenanceDataAttributesComponentsAffectedItems],),
@@ -51,6 +52,7 @@ class MaintenanceDataAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "canceled_description": "canceled_description",
         "completed_date": "completed_date",
         "completed_description": "completed_description",
         "components_affected": "components_affected",
@@ -67,6 +69,7 @@ class MaintenanceDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        canceled_description: Union[str, UnsetType] = unset,
         completed_date: Union[datetime, UnsetType] = unset,
         completed_description: Union[str, UnsetType] = unset,
         components_affected: Union[List[MaintenanceDataAttributesComponentsAffectedItems], UnsetType] = unset,
@@ -83,6 +86,9 @@ class MaintenanceDataAttributes(ModelNormal):
     ):
         """
         The attributes of a maintenance.
+
+        :param canceled_description: The description shown when the maintenance is canceled.
+        :type canceled_description: str, optional
 
         :param completed_date: Timestamp of when the maintenance was completed.
         :type completed_date: datetime, optional
@@ -120,6 +126,8 @@ class MaintenanceDataAttributes(ModelNormal):
         :param updates: Past updates made to the maintenance.
         :type updates: [MaintenanceDataAttributesUpdatesItems], optional
         """
+        if canceled_description is not unset:
+            kwargs["canceled_description"] = canceled_description
         if completed_date is not unset:
             kwargs["completed_date"] = completed_date
         if completed_description is not unset:
