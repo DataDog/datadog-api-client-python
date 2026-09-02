@@ -7680,6 +7680,19 @@ from datadog_api_client.v2.model.product_analytics_timeseries_response_type impo
     ProductAnalyticsTimeseriesResponseType,
 )
 from datadog_api_client.v2.model.product_analytics_unit import ProductAnalyticsUnit
+from datadog_api_client.v2.model.product_catalog_sku_allotment import ProductCatalogSKUAllotment
+from datadog_api_client.v2.model.product_catalog_sku_data_attributes_response import (
+    ProductCatalogSKUDataAttributesResponse,
+)
+from datadog_api_client.v2.model.product_catalog_sku_data_response import ProductCatalogSKUDataResponse
+from datadog_api_client.v2.model.product_catalog_sku_on_demand_option import ProductCatalogSKUOnDemandOption
+from datadog_api_client.v2.model.product_catalog_sku_pricing_tier import ProductCatalogSKUPricingTier
+from datadog_api_client.v2.model.product_catalog_sku_pricing_type import ProductCatalogSKUPricingType
+from datadog_api_client.v2.model.product_catalog_sku_pricing_unit_type import ProductCatalogSKUPricingUnitType
+from datadog_api_client.v2.model.product_catalog_sku_tiered_pricing import ProductCatalogSKUTieredPricing
+from datadog_api_client.v2.model.product_catalog_sku_type import ProductCatalogSKUType
+from datadog_api_client.v2.model.product_catalog_sk_us_api_version import ProductCatalogSKUsAPIVersion
+from datadog_api_client.v2.model.product_catalog_sk_us_response import ProductCatalogSKUsResponse
 from datadog_api_client.v2.model.project import Project
 from datadog_api_client.v2.model.project_attributes import ProjectAttributes
 from datadog_api_client.v2.model.project_columns_config import ProjectColumnsConfig
@@ -16576,6 +16589,17 @@ __all__ = [
     "ProductAnalyticsTimeseriesResponseData",
     "ProductAnalyticsTimeseriesResponseType",
     "ProductAnalyticsUnit",
+    "ProductCatalogSKUAllotment",
+    "ProductCatalogSKUDataAttributesResponse",
+    "ProductCatalogSKUDataResponse",
+    "ProductCatalogSKUOnDemandOption",
+    "ProductCatalogSKUPricingTier",
+    "ProductCatalogSKUPricingType",
+    "ProductCatalogSKUPricingUnitType",
+    "ProductCatalogSKUTieredPricing",
+    "ProductCatalogSKUType",
+    "ProductCatalogSKUsAPIVersion",
+    "ProductCatalogSKUsResponse",
     "Project",
     "ProjectAttributes",
     "ProjectColumnsConfig",

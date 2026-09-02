@@ -762,6 +762,7 @@ class Configuration:
                 "v2.query_event_filtered_users": False,
                 "v2.query_users": False,
                 "v2.update_connection": False,
+                "v2.list_product_catalog_sk_us": False,
                 "v2.get_pruned_trace_by_id": False,
                 "v2.get_trace_by_id": False,
                 "v2.get_asm_service_by_name": False,
