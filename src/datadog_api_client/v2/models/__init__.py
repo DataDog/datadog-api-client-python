@@ -3115,6 +3115,7 @@ from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
 from datadog_api_client.v2.model.feature_flag import FeatureFlag
 from datadog_api_client.v2.model.feature_flag_attributes import FeatureFlagAttributes
+from datadog_api_client.v2.model.feature_flag_attributes_staleness_details import FeatureFlagAttributesStalenessDetails
 from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
 from datadog_api_client.v2.model.feature_flag_environment_list_item import FeatureFlagEnvironmentListItem
 from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
@@ -13571,6 +13572,7 @@ __all__ = [
     "FastlyServicesResponse",
     "FeatureFlag",
     "FeatureFlagAttributes",
+    "FeatureFlagAttributesStalenessDetails",
     "FeatureFlagEnvironment",
     "FeatureFlagEnvironmentListItem",
     "FeatureFlagListItem",

@@ -6897,6 +6897,14 @@ components:
           items:
             $ref: "#/components/schemas/AllocationExposureRolloutStep"
           type: array
+        scheduled_start_time:
+          description: |-
+            The resolved UTC start time computed from `scheduled_start`. This field is
+            read-only and cannot be set directly.
+          example: "2025-06-13T12:00:00Z"
+          format: date-time
+          nullable: true
+          type: string
         updated_at:
           description: The timestamp when the schedule was last updated.
           example: "2024-01-01T12:00:00Z"
@@ -36788,6 +36796,10 @@ components:
           description: The name of the environment.
           example: "env-search-term"
           type: string
+        observe_full_evaluation_data:
+          description: Indicates whether full evaluation data is observed for this environment.
+          example: false
+          type: boolean
         queries:
           description: List of queries to define the environment scope.
           example: ["staging", "test"]
@@ -39095,6 +39107,10 @@ components:
           items:
             $ref: "#/components/schemas/FeatureFlagEnvironment"
           type: array
+        is_favorite:
+          description: Indicates whether the feature flag is marked as a favorite by the current user.
+          example: false
+          type: boolean
         json_schema:
           description: JSON schema for validation when value_type is JSON.
           example: '{"type": "object", "properties": {"enabled": {"type": "boolean"}}}'
@@ -39117,6 +39133,8 @@ components:
           description: Indicates whether this feature flag requires approval for changes.
           example: false
           type: boolean
+        staleness_details:
+          $ref: "#/components/schemas/FeatureFlagAttributesStalenessDetails"
         staleness_status:
           description: Indicates the whether a feature flag is stale or not.
           example: "ACTIVE"
@@ -39146,6 +39164,48 @@ components:
         - description
         - value_type
         - variants
+      type: object
+    FeatureFlagAttributesStalenessDetails:
+      description: Details about the feature flag's staleness status.
+      nullable: true
+      properties:
+        code_references:
+          description: Code references associated with the feature flag.
+          items:
+            additionalProperties: {}
+            type: object
+          nullable: true
+          type: array
+        dismissed_by:
+          description: The ID of the user who dismissed the staleness notification.
+          format: uuid
+          nullable: true
+          type: string
+        id:
+          description: The unique identifier of the staleness details record.
+          example: "550e8400-e29b-41d4-a716-446655440020"
+          format: uuid
+          type: string
+        recommended_actions:
+          description: Recommended actions to address the feature flag's staleness.
+          items:
+            additionalProperties: {}
+            type: object
+          nullable: true
+          type: array
+        skip_state_check_until:
+          description: The timestamp until which staleness checks are skipped.
+          format: date-time
+          nullable: true
+          type: string
+        stale_reason:
+          description: The reason the feature flag is considered stale.
+          nullable: true
+          type: string
+        staleness_status:
+          description: The staleness status of the feature flag.
+          example: "ACTIVE"
+          type: string
       type: object
     FeatureFlagEnvironment:
       description: Environment-specific settings for a feature flag.
@@ -39184,6 +39244,10 @@ components:
           type: array
         is_production:
           description: Indicates whether the environment is production.
+          example: false
+          type: boolean
+        observe_full_evaluation_data:
+          description: Indicates whether full evaluation data is observed for this environment.
           example: false
           type: boolean
         override_allocation_key:
@@ -91810,10 +91874,27 @@ components:
       description: Rollout options request payload.
       properties:
         autostart:
-          description: Whether the schedule should begin automatically.
+          deprecated: true
+          description: |-
+            Whether the schedule should begin automatically. Deprecated in favor of
+            `scheduled_start`, which takes precedence when both are set.
           example: false
           nullable: true
           type: boolean
+        scheduled_start:
+          description: |-
+            Controls when the schedule starts. Supersedes `autostart`. One of:
+
+            - `none`: create the schedule without starting it.
+            - `now`: start the schedule immediately.
+            - `relative:<duration>`: start after a duration (for example `relative:2h`).
+            - `absolute:<RFC3339 timestamp>`: start at a specific time (for example `absolute:2025-06-13T12:00:00Z`).
+
+            An `absolute` timestamp in the past or present is treated as `now`. A future start time
+            is not supported for allocations linked to a standard experiment.
+          example: "absolute:2025-06-13T12:00:00Z"
+          pattern: ^(none|now|relative:([0-9]+(\.[0-9]+)?(ns|us|µs|ms|s|m|h))+|absolute:\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[+-]\d{2}:\d{2}))$
+          type: string
         selection_interval_ms:
           description: Interval in milliseconds for uniform interval strategies.
           example: 3600000

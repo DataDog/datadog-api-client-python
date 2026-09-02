@@ -39,6 +39,7 @@ class AllocationExposureSchedule(ModelNormal):
             "id": (UUID,),
             "rollout_options": (RolloutOptions,),
             "rollout_steps": ([AllocationExposureRolloutStep],),
+            "scheduled_start_time": (datetime, none_type),
             "updated_at": (datetime,),
         }
 
@@ -52,6 +53,7 @@ class AllocationExposureSchedule(ModelNormal):
         "id": "id",
         "rollout_options": "rollout_options",
         "rollout_steps": "rollout_steps",
+        "scheduled_start_time": "scheduled_start_time",
         "updated_at": "updated_at",
     }
 
@@ -67,6 +69,7 @@ class AllocationExposureSchedule(ModelNormal):
         control_variant_id: Union[str, none_type, UnsetType] = unset,
         guardrail_triggered_action: Union[str, none_type, UnsetType] = unset,
         id: Union[UUID, UnsetType] = unset,
+        scheduled_start_time: Union[datetime, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -99,6 +102,10 @@ class AllocationExposureSchedule(ModelNormal):
         :param rollout_steps: Ordered progression steps for exposure.
         :type rollout_steps: [AllocationExposureRolloutStep]
 
+        :param scheduled_start_time: The resolved UTC start time computed from ``scheduled_start``. This field is
+            read-only and cannot be set directly.
+        :type scheduled_start_time: datetime, none_type, optional
+
         :param updated_at: The timestamp when the schedule was last updated.
         :type updated_at: datetime
         """
@@ -110,6 +117,8 @@ class AllocationExposureSchedule(ModelNormal):
             kwargs["guardrail_triggered_action"] = guardrail_triggered_action
         if id is not unset:
             kwargs["id"] = id
+        if scheduled_start_time is not unset:
+            kwargs["scheduled_start_time"] = scheduled_start_time
         super().__init__(kwargs)
 
         self_.allocation_id = allocation_id
