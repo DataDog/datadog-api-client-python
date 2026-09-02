@@ -42,6 +42,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         return {
             "actions": ([CloudWorkloadSecurityAgentRuleAction],),
             "agent_constraint": (str,),
+            "agent_version": (str,),
             "blocking": ([str],),
             "category": (str,),
             "creation_author_uu_id": (str,),
@@ -51,8 +52,10 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             "description": (str,),
             "disabled": ([str],),
             "enabled": (bool,),
+            "every": (int,),
             "expression": (str,),
             "filters": ([str],),
+            "group_id": (str,),
             "monitoring": ([str],),
             "name": (str,),
             "product_tags": ([str],),
@@ -67,6 +70,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
     attribute_map = {
         "actions": "actions",
         "agent_constraint": "agentConstraint",
+        "agent_version": "agent_version",
         "blocking": "blocking",
         "category": "category",
         "creation_author_uu_id": "creationAuthorUuId",
@@ -76,8 +80,10 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         "description": "description",
         "disabled": "disabled",
         "enabled": "enabled",
+        "every": "every",
         "expression": "expression",
         "filters": "filters",
+        "group_id": "group_id",
         "monitoring": "monitoring",
         "name": "name",
         "product_tags": "product_tags",
@@ -93,6 +99,7 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         self_,
         actions: Union[List[CloudWorkloadSecurityAgentRuleAction], none_type, UnsetType] = unset,
         agent_constraint: Union[str, UnsetType] = unset,
+        agent_version: Union[str, UnsetType] = unset,
         blocking: Union[List[str], UnsetType] = unset,
         category: Union[str, UnsetType] = unset,
         creation_author_uu_id: Union[str, UnsetType] = unset,
@@ -102,8 +109,10 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         disabled: Union[List[str], UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
+        every: Union[int, UnsetType] = unset,
         expression: Union[str, UnsetType] = unset,
         filters: Union[List[str], UnsetType] = unset,
+        group_id: Union[str, UnsetType] = unset,
         monitoring: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         product_tags: Union[List[str], UnsetType] = unset,
@@ -123,6 +132,9 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
 
         :param agent_constraint: The version of the Agent
         :type agent_constraint: str, optional
+
+        :param agent_version: The version constraint of the Datadog Agent the rule applies to
+        :type agent_version: str, optional
 
         :param blocking: The blocking policies that the rule belongs to
         :type blocking: [str], optional
@@ -151,11 +163,17 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
         :param enabled: Whether the Agent rule is enabled
         :type enabled: bool, optional
 
+        :param every: The rate limiting duration of the Agent rule, in nanoseconds
+        :type every: int, optional
+
         :param expression: The SECL expression of the Agent rule
         :type expression: str, optional
 
         :param filters: The platforms the Agent rule is supported on
         :type filters: [str], optional
+
+        :param group_id: The group of rules the Agent rule belongs to
+        :type group_id: str, optional
 
         :param monitoring: The monitoring policies that the rule belongs to
         :type monitoring: [str], optional
@@ -188,6 +206,8 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             kwargs["actions"] = actions
         if agent_constraint is not unset:
             kwargs["agent_constraint"] = agent_constraint
+        if agent_version is not unset:
+            kwargs["agent_version"] = agent_version
         if blocking is not unset:
             kwargs["blocking"] = blocking
         if category is not unset:
@@ -206,10 +226,14 @@ class CloudWorkloadSecurityAgentRuleAttributes(ModelNormal):
             kwargs["disabled"] = disabled
         if enabled is not unset:
             kwargs["enabled"] = enabled
+        if every is not unset:
+            kwargs["every"] = every
         if expression is not unset:
             kwargs["expression"] = expression
         if filters is not unset:
             kwargs["filters"] = filters
+        if group_id is not unset:
+            kwargs["group_id"] = group_id
         if monitoring is not unset:
             kwargs["monitoring"] = monitoring
         if name is not unset:
