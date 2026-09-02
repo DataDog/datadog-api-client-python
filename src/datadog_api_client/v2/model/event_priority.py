@@ -14,18 +14,29 @@ from typing import ClassVar
 
 class EventPriority(ModelSimple):
     """
-    The priority of the event's monitor. For example, `normal` or `low`.
+    The priority of the event alert. Legacy events use `normal` or `low`.
+        Alert events use `1` (highest priority) through `5` (lowest priority).
 
-    :param value: Must be one of ["normal", "low"].
+    :param value: Must be one of ["normal", "low", "1", "2", "3", "4", "5"].
     :type value: str
     """
 
     allowed_values = {
         "normal",
         "low",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
     }
     NORMAL: ClassVar["EventPriority"]
     LOW: ClassVar["EventPriority"]
+    PRIORITY_ONE: ClassVar["EventPriority"]
+    PRIORITY_TWO: ClassVar["EventPriority"]
+    PRIORITY_THREE: ClassVar["EventPriority"]
+    PRIORITY_FOUR: ClassVar["EventPriority"]
+    PRIORITY_FIVE: ClassVar["EventPriority"]
 
     _nullable = True
 
@@ -38,3 +49,8 @@ class EventPriority(ModelSimple):
 
 EventPriority.NORMAL = EventPriority("normal")
 EventPriority.LOW = EventPriority("low")
+EventPriority.PRIORITY_ONE = EventPriority("1")
+EventPriority.PRIORITY_TWO = EventPriority("2")
+EventPriority.PRIORITY_THREE = EventPriority("3")
+EventPriority.PRIORITY_FOUR = EventPriority("4")
+EventPriority.PRIORITY_FIVE = EventPriority("5")

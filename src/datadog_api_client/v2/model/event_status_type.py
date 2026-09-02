@@ -14,18 +14,20 @@ from typing import ClassVar
 
 class EventStatusType(ModelSimple):
     """
-    If an alert event is enabled, its status is one of the following:
-        `failure`, `error`, `warning`, `info`, `success`, `user_update`,
-        `recommendation`, or `snapshot`.
+    The event status. Legacy events can use `failure`, `error`, `warning`,
+        `info`, `success`, `user_update`, `recommendation`, or `snapshot`.
+        Alert events can use `error`, `warn`, or `ok`.
 
-    :param value: Must be one of ["failure", "error", "warning", "info", "success", "user_update", "recommendation", "snapshot"].
+    :param value: Must be one of ["failure", "error", "warn", "warning", "ok", "info", "success", "user_update", "recommendation", "snapshot"].
     :type value: str
     """
 
     allowed_values = {
         "failure",
         "error",
+        "warn",
         "warning",
+        "ok",
         "info",
         "success",
         "user_update",
@@ -34,7 +36,9 @@ class EventStatusType(ModelSimple):
     }
     FAILURE: ClassVar["EventStatusType"]
     ERROR: ClassVar["EventStatusType"]
+    WARN: ClassVar["EventStatusType"]
     WARNING: ClassVar["EventStatusType"]
+    OK: ClassVar["EventStatusType"]
     INFO: ClassVar["EventStatusType"]
     SUCCESS: ClassVar["EventStatusType"]
     USER_UPDATE: ClassVar["EventStatusType"]
@@ -50,7 +54,9 @@ class EventStatusType(ModelSimple):
 
 EventStatusType.FAILURE = EventStatusType("failure")
 EventStatusType.ERROR = EventStatusType("error")
+EventStatusType.WARN = EventStatusType("warn")
 EventStatusType.WARNING = EventStatusType("warning")
+EventStatusType.OK = EventStatusType("ok")
 EventStatusType.INFO = EventStatusType("info")
 EventStatusType.SUCCESS = EventStatusType("success")
 EventStatusType.USER_UPDATE = EventStatusType("user_update")
