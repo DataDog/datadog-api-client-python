@@ -40,9 +40,9 @@ jobs:
       github.event_name == 'schedule'
     uses: ./.github/workflows/reusable-python-test.yml
     with:
-      python-versions: '["3.8", "3.12"]'
+      python-versions: '["3.10", "3.11", "3.12"]'
       platforms: '["ubuntu-22.04", "ubuntu-latest", "macos-latest"]'
-      matrix-exclude: '[{"platform": "macos-latest", "python-version": "3.8"}, {"platform": "ubuntu-latest", "python-version": "3.8"}, {"platform": "ubuntu-22.04", "python-version": "3.12"}]'
+      matrix-exclude: '[{"platform": "macos-latest", "python-version": "3.10"}, {"platform": "ubuntu-latest", "python-version": "3.10"}, {"platform": "macos-latest", "python-version": "3.11"}, {"platform": "ubuntu-latest", "python-version": "3.11"}, {"platform": "ubuntu-22.04", "python-version": "3.12"}]'
 
   examples:
     if: >
