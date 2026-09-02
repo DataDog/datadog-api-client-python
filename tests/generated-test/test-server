@@ -16,7 +16,7 @@ import re
 import tempfile
 import threading
 import uuid
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -461,8 +461,7 @@ def _slug(value: str) -> str:
 
 
 def _now_iso() -> str:
-    # datetime.UTC is Python 3.11+; this standalone runtime supports Python 3.10.
-    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")  # noqa: UP017
+    return datetime.now(UTC).isoformat().replace("+00:00", "Z")
 
 
 def _read_json(path: Path) -> dict[str, Any]:
