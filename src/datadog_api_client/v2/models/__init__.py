@@ -11276,6 +11276,14 @@ from datadog_api_client.v2.model.workflow_list_instances_response_meta import Wo
 from datadog_api_client.v2.model.workflow_list_instances_response_meta_page import WorkflowListInstancesResponseMetaPage
 from datadog_api_client.v2.model.workflow_list_item import WorkflowListItem
 from datadog_api_client.v2.model.workflow_list_item_attributes import WorkflowListItemAttributes
+from datadog_api_client.v2.model.workflow_run_as import WorkflowRunAs
+from datadog_api_client.v2.model.workflow_run_as_initiator import WorkflowRunAsInitiator
+from datadog_api_client.v2.model.workflow_run_as_initiator_type import WorkflowRunAsInitiatorType
+from datadog_api_client.v2.model.workflow_run_as_owner import WorkflowRunAsOwner
+from datadog_api_client.v2.model.workflow_run_as_owner_type import WorkflowRunAsOwnerType
+from datadog_api_client.v2.model.workflow_run_as_service_account import WorkflowRunAsServiceAccount
+from datadog_api_client.v2.model.workflow_run_as_service_account_type import WorkflowRunAsServiceAccountType
+from datadog_api_client.v2.model.workflow_run_as_user_mode import WorkflowRunAsUserMode
 from datadog_api_client.v2.model.workflow_trigger_wrapper import WorkflowTriggerWrapper
 from datadog_api_client.v2.model.workflow_user_relationship import WorkflowUserRelationship
 from datadog_api_client.v2.model.workflow_user_relationship_data import WorkflowUserRelationshipData
@@ -19042,6 +19050,14 @@ __all__ = [
     "WorkflowListInstancesResponseMetaPage",
     "WorkflowListItem",
     "WorkflowListItemAttributes",
+    "WorkflowRunAs",
+    "WorkflowRunAsInitiator",
+    "WorkflowRunAsInitiatorType",
+    "WorkflowRunAsOwner",
+    "WorkflowRunAsOwnerType",
+    "WorkflowRunAsServiceAccount",
+    "WorkflowRunAsServiceAccountType",
+    "WorkflowRunAsUserMode",
     "WorkflowTriggerWrapper",
     "WorkflowUserRelationship",
     "WorkflowUserRelationshipData",

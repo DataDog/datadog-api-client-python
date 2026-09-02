@@ -25,17 +25,20 @@ class WorkflowDataRelationships(ModelNormal):
         return {
             "creator": (WorkflowUserRelationship,),
             "owner": (WorkflowUserRelationship,),
+            "run_as": (WorkflowUserRelationship,),
         }
 
     attribute_map = {
         "creator": "creator",
         "owner": "owner",
+        "run_as": "runAs",
     }
 
     def __init__(
         self_,
         creator: Union[WorkflowUserRelationship, UnsetType] = unset,
         owner: Union[WorkflowUserRelationship, UnsetType] = unset,
+        run_as: Union[WorkflowUserRelationship, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -46,9 +49,14 @@ class WorkflowDataRelationships(ModelNormal):
 
         :param owner: The definition of ``WorkflowUserRelationship`` object.
         :type owner: WorkflowUserRelationship, optional
+
+        :param run_as: The definition of ``WorkflowUserRelationship`` object.
+        :type run_as: WorkflowUserRelationship, optional
         """
         if creator is not unset:
             kwargs["creator"] = creator
         if owner is not unset:
             kwargs["owner"] = owner
+        if run_as is not unset:
+            kwargs["run_as"] = run_as
         super().__init__(kwargs)

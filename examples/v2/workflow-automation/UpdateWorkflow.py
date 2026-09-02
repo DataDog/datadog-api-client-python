@@ -27,6 +27,8 @@ from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRe
 from datadog_api_client.v2.model.workflow_data_type import WorkflowDataType
 from datadog_api_client.v2.model.workflow_data_update import WorkflowDataUpdate
 from datadog_api_client.v2.model.workflow_data_update_attributes import WorkflowDataUpdateAttributes
+from datadog_api_client.v2.model.workflow_run_as_owner import WorkflowRunAsOwner
+from datadog_api_client.v2.model.workflow_run_as_owner_type import WorkflowRunAsOwnerType
 
 # there is a valid "workflow" in the system
 WORKFLOW_DATA_ID = environ["WORKFLOW_DATA_ID"]
@@ -37,6 +39,9 @@ body = UpdateWorkflowRequest(
             description="A sample workflow.",
             name="Example Workflow",
             published=True,
+            run_as=WorkflowRunAsOwner(
+                type=WorkflowRunAsOwnerType.OWNER,
+            ),
             spec=Spec(
                 connection_envs=[
                     ConnectionEnv(
