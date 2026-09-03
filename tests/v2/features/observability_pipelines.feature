@@ -34,6 +34,7 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.sources" has length 1
     And the response "data.attributes.config.processor_groups" has length 1
     And the response "data.attributes.config.destinations" has length 1
+    And the response "data.attributes.config" does not have field "end_to_end_acknowledgements"
 
   @team:DataDog/observability-pipelines
   Scenario: Create a pipeline with dedupe processor with cache returns "OK" response
@@ -52,6 +53,22 @@ Feature: Observability Pipelines
     Then the response status is 201 OK
     And the response "data.attributes.config.processor_groups[0].processors[0].type" is equal to "dedupe"
     And the response "data.attributes.config.processor_groups[0].processors[0].fields[0]" is equal to "message"
+
+  @skip @team:DataDog/observability-pipelines
+  Scenario: Create a pipeline with end-to-end acknowledgements disabled returns "OK" response
+    Given new "CreatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "end_to_end_acknowledgements": false, "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with End-to-End Acknowledgements Disabled"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 201 OK
+    And the response "data.attributes.config.end_to_end_acknowledgements" is false
+
+  @skip @team:DataDog/observability-pipelines
+  Scenario: Create a pipeline with end-to-end acknowledgements enabled returns "OK" response
+    Given new "CreatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "end_to_end_acknowledgements": true, "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with End-to-End Acknowledgements"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 201 OK
+    And the response "data.attributes.config.end_to_end_acknowledgements" is equal to true
 
   @generated @skip @team:DataDog/observability-pipelines
   Scenario: Delete a pipeline returns "Conflict" response
@@ -74,6 +91,15 @@ Feature: Observability Pipelines
     And request contains "pipeline_id" parameter from "pipeline.data.id"
     When the request is sent
     Then the response status is 204 OK
+
+  @skip @team:DataDog/observability-pipelines
+  Scenario: Get a pipeline preserves end-to-end acknowledgements returns "OK" response
+    Given there is a valid "pipeline with end-to-end acknowledgements" in the system
+    And new "GetPipeline" request
+    And request contains "pipeline_id" parameter from "pipeline_with_end_to_end_acknowledgements.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.config.end_to_end_acknowledgements" is equal to true
 
   @team:DataDog/observability-pipelines
   Scenario: Get a specific pipeline returns "OK" response
