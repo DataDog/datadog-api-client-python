@@ -8094,6 +8094,8 @@ components:
           type: string
         group_by:
           description: Tag keys to group results by.
+          example:
+            - resource_name
           items:
             description: A tag key to group by.
             example: resource_name
@@ -8131,6 +8133,8 @@ components:
         - env
         - service
         - stat
+        - operation_name
+        - group_by
       type: object
     ApmRetentionFilterType:
       default: apm_retention_filter
