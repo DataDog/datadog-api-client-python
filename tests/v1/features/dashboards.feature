@@ -1374,6 +1374,8 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "dashboards[0].title" has the same value as "dashboard.title"
     And the response "dashboards[0].id" has the same value as "dashboard.id"
+    And the response "dashboards[0]" has field "layout_type"
+    And the response "dashboards[0]" does not have field "popularity"
 
   @replay-only @skip-validation @team:DataDog/dashboards-backend @with-pagination
   Scenario: Get all dashboards returns "OK" response with pagination
@@ -1382,6 +1384,18 @@ Feature: Dashboards
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @replay-only @team:DataDog/dashboards-backend
+  Scenario: Get all dashboards with version "2027-01-01" returns "OK" response
+    Given new "ListDashboards" with version "2027-01-01" request
+    And there is a valid "dashboard" in the system
+    And request contains "filter[shared]" parameter with value false
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "dashboards[0].title" has the same value as "dashboard.title"
+    And the response "dashboards[0].id" has the same value as "dashboard.id"
+    And the response "dashboards[0]" has field "popularity"
+    And the response "dashboards[0]" does not have field "layout_type"
 
   @generated @skip @team:DataDog/reporting-and-sharing
   Scenario: Get all invitations for a shared dashboard returns "Not Found" response

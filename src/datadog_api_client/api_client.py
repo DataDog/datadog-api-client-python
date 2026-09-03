@@ -682,7 +682,7 @@ class Endpoint:
         self,
         settings: Dict[str, Any],
         params_map: Dict[str, Dict[str, Any]],
-        headers_map: Dict[str, List[str]],
+        headers_map: Dict[str, Any],
         api_client: ApiClient,
     ):
         """Creates an endpoint.
@@ -708,6 +708,7 @@ class Endpoint:
         :type params_map: dict
         :param headers_map: See below key value pairs:
             'accept' (list): list of Accept header strings
+            'api_version' (str): optional Datadog API version header value
             'content_type' (list): list of Content-Type header strings
         :type headers_map: dict
         :param api_client API client instance.
@@ -779,6 +780,10 @@ class Endpoint:
         if content_type_headers_list:
             header_list = self.api_client.select_header_content_type(content_type_headers_list)
             params["header"]["Content-Type"] = header_list
+
+        api_version = self.headers_map.get("api_version")
+        if api_version:
+            params["header"]["DD-API-Version"] = api_version
 
         self.update_params_for_auth(params["header"], params["query"])
 

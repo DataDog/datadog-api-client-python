@@ -955,6 +955,13 @@
     {
       "feature": "Dashboards",
       "feature_file": "../../v1/features/dashboards.feature",
+      "file": "v1/dashboards/get-all-dashboards-with-version-2027-01-01-returns-ok-response.json",
+      "scenario": "Get all dashboards with version \"2027-01-01\" returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "feature_file": "../../v1/features/dashboards.feature",
       "file": "v1/dashboards/get-all-invitations-for-a-shared-dashboard-returns-ok-response.json",
       "scenario": "Get all invitations for a shared dashboard returns \"OK\" response",
       "version": "v1"

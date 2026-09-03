@@ -16,7 +16,6 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
 from datadog_api_client.v1.model.dashboard_summary import DashboardSummary
-from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
 from datadog_api_client.v1.model.dashboard_restore_request import DashboardRestoreRequest
 from datadog_api_client.v1.model.dashboard import Dashboard
 from datadog_api_client.v1.model.shared_dashboard import SharedDashboard
@@ -24,6 +23,7 @@ from datadog_api_client.v1.model.delete_shared_dashboard_response import DeleteS
 from datadog_api_client.v1.model.shared_dashboard_update_request import SharedDashboardUpdateRequest
 from datadog_api_client.v1.model.shared_dashboard_invites import SharedDashboardInvites
 from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
+from datadog_api_client.v1.model.dashboard_summary_definition import DashboardSummaryDefinition
 
 
 class DashboardsApi:

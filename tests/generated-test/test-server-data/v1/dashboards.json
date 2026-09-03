@@ -12109,6 +12109,122 @@
     },
     {
       "feature": "Dashboards",
+      "frozen_at": "2026-08-31T12:55:49.861Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Get_all_dashboards_with_version_2027_01_01_returns_OK_response-1788180949 with Profile Metrics Query",
+                "widgets": [
+                  {
+                    "definition": {
+                      "requests": [
+                        {
+                          "profile_metrics_query": {
+                            "compute": {
+                              "aggregation": "sum",
+                              "facet": "@prof_core_cpu_cores"
+                            },
+                            "group_by": [
+                              {
+                                "facet": "service",
+                                "limit": 10,
+                                "sort": {
+                                  "aggregation": "sum",
+                                  "facet": "@prof_core_cpu_cores",
+                                  "order": "desc"
+                                }
+                              }
+                            ],
+                            "search": {
+                              "query": "runtime:jvm"
+                            }
+                          }
+                        }
+                      ],
+                      "type": "timeseries"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"3ig-3cz-upi\",\"title\":\"Test-Get_all_dashboards_with_version_2027_01_01_returns_OK_response-1788180949 with Profile Metrics Query\",\"description\":null,\"author_handle\":\"frog@datadoghq.com\",\"author_name\":null,\"layout_type\":\"ordered\",\"url\":\"/dashboard/3ig-3cz-upi/test-getalldashboardswithversion20270101returnsokresponse-1788180949-with-profil\",\"template_variables\":null,\"widgets\":[{\"definition\":{\"requests\":[{\"profile_metrics_query\":{\"compute\":{\"aggregation\":\"sum\",\"facet\":\"@prof_core_cpu_cores\"},\"group_by\":[{\"facet\":\"service\",\"limit\":10,\"sort\":{\"aggregation\":\"sum\",\"facet\":\"@prof_core_cpu_cores\",\"order\":\"desc\"}}],\"search\":{\"query\":\"runtime:jvm\"}}}],\"type\":\"timeseries\"},\"id\":5095764361376494}],\"notify_list\":null,\"created_at\":\"2026-08-31T12:55:50.697197+00:00\",\"modified_at\":\"2026-08-31T12:55:50.697197+00:00\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v1/dashboard",
+            "query": [
+              [
+                "filter[shared]",
+                "false"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"total\":1,\"dashboards\":[{\"id\":\"3ig-3cz-upi\",\"title\":\"Test-Get_all_dashboards_with_version_2027_01_01_returns_OK_response-1788180949 with Profile Metrics Query\",\"popularity\":0}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/3ig-3cz-upi",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"3ig-3cz-upi\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all dashboards with version \"2027-01-01\" returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
       "frozen_at": "2024-11-15T19:33:07.625Z",
       "interactions": [
         {
