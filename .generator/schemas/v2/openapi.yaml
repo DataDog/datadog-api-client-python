@@ -78223,6 +78223,10 @@ components:
     OnCallTrigger:
       description: "Trigger a workflow from an On-Call Page or On-Call Handover. For automatic triggering a handle must be configured and the workflow must be published."
       properties:
+        handle:
+          description: "The handle used to reference this trigger from On-Call. Required for automatic triggering."
+          example: ""
+          type: string
         rateLimit:
           $ref: "#/components/schemas/TriggerRateLimit"
       type: object

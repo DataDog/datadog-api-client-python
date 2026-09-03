@@ -23,20 +23,29 @@ class OnCallTrigger(ModelNormal):
         from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
 
         return {
+            "handle": (str,),
             "rate_limit": (TriggerRateLimit,),
         }
 
     attribute_map = {
+        "handle": "handle",
         "rate_limit": "rateLimit",
     }
 
-    def __init__(self_, rate_limit: Union[TriggerRateLimit, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, handle: Union[str, UnsetType] = unset, rate_limit: Union[TriggerRateLimit, UnsetType] = unset, **kwargs
+    ):
         """
         Trigger a workflow from an On-Call Page or On-Call Handover. For automatic triggering a handle must be configured and the workflow must be published.
+
+        :param handle: The handle used to reference this trigger from On-Call. Required for automatic triggering.
+        :type handle: str, optional
 
         :param rate_limit: Defines a rate limit for a trigger.
         :type rate_limit: TriggerRateLimit, optional
         """
+        if handle is not unset:
+            kwargs["handle"] = handle
         if rate_limit is not unset:
             kwargs["rate_limit"] = rate_limit
         super().__init__(kwargs)
