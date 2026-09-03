@@ -135,6 +135,7 @@ from datadog_api_client.v2.api.storage_management_api import StorageManagementAp
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.tag_rules_api import TagRulesApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
+from datadog_api_client.v2.api.test_examples_api import TestExamplesApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.threat_intelligence_api import ThreatIntelligenceApi
 from datadog_api_client.v2.api.twilio_integration_accounts_api import TwilioIntegrationAccountsApi
@@ -285,6 +286,7 @@ __all__ = [
     "SyntheticsApi",
     "TagRulesApi",
     "TeamsApi",
+    "TestExamplesApi",
     "TestOptimizationApi",
     "ThreatIntelligenceApi",
     "TwilioIntegrationAccountsApi",
