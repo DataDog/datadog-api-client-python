@@ -46,7 +46,10 @@ class ScatterPlotWidgetDefinitionRequests(ModelNormal):
         """
         Widget definition.
 
-        :param table: Scatterplot request containing formulas and functions.
+        :param table: Scatterplot table request. Supports two modes:
+
+            * **Formulas and functions** (default): ``request_type`` is absent or ``"table"``. Uses ``queries`` and ``formulas``.
+            * **Data projection** : ``request_type`` is ``"data_projection"``. Uses ``query`` , ``projection`` , and optionally ``limit``.
         :type table: ScatterplotTableRequest, optional
 
         :param x: Updated scatter plot.
