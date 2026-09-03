@@ -18,6 +18,9 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.global_orgs_response import GlobalOrgsResponse
 from datadog_api_client.v2.model.global_org_data import GlobalOrgData
 from datadog_api_client.v2.model.max_session_duration_update_request import MaxSessionDurationUpdateRequest
+from datadog_api_client.v2.model.mcp_cross_app_access_issuer_url_update_request import (
+    McpCrossAppAccessIssuerUrlUpdateRequest,
+)
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.org_saml_preferences_update_request import OrgSAMLPreferencesUpdateRequest
 from datadog_api_client.v2.model.org_config_list_response import OrgConfigListResponse
@@ -188,6 +191,26 @@ class OrganizationsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (MaxSessionDurationUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_login_org_configs_mcp_cross_app_access_issuer_url_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/login/org_configs/mcp_cross_app_access_issuer_url",
+                "operation_id": "update_login_org_configs_mcp_cross_app_access_issuer_url",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (McpCrossAppAccessIssuerUrlUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -455,6 +478,26 @@ class OrganizationsApi:
         kwargs["body"] = body
 
         return self._update_login_org_configs_max_session_duration_endpoint.call_with_http_info(**kwargs)
+
+    def update_login_org_configs_mcp_cross_app_access_issuer_url(
+        self,
+        body: McpCrossAppAccessIssuerUrlUpdateRequest,
+    ) -> None:
+        """Update the MCP Cross-App Access issuer URL.
+
+        Update the Okta OIDC issuer URL used for MCP Cross-App Access (XAA)
+        for the current organization. The URL must be a bare Okta issuer such
+        as ``https://your-subdomain.okta.com`` (no path, port, query, or fragment).
+        Provide an empty string to unset the issuer URL and opt the organization
+        out of MCP Cross-App Access.
+
+        :type body: McpCrossAppAccessIssuerUrlUpdateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_login_org_configs_mcp_cross_app_access_issuer_url_endpoint.call_with_http_info(**kwargs)
 
     def update_org_config(
         self,

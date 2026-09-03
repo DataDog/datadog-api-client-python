@@ -5084,6 +5084,12 @@
       "type": "idempotent"
     }
   },
+  "UpdateLoginOrgConfigsMcpCrossAppAccessIssuerUrl": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SubmitLog": {
     "tag": "Logs",
     "undo": {
