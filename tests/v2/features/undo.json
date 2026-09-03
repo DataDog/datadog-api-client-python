@@ -3537,6 +3537,43 @@
       "type": "idempotent"
     }
   },
+  "ListDatabricksIntegrationAccounts": {
+    "tag": "Databricks Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateDatabricksIntegrationAccount": {
+    "tag": "Databricks Integration Accounts",
+    "undo": {
+      "operationId": "DeleteDatabricksIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDatabricksIntegrationAccount": {
+    "tag": "Databricks Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDatabricksIntegrationAccount": {
+    "tag": "Databricks Integration Accounts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDatabricksIntegrationAccount": {
+    "tag": "Databricks Integration Accounts",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListElasticCloudIntegrationAccounts": {
     "tag": "Elastic Cloud Integration Accounts",
     "undo": {
