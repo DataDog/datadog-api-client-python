@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RUMOperationStrongLinkType(ModelSimple):
     """
-    The JSON:API type for RUM operation strong link resources.
+    The JSON:API type for RUM operation link resources.
 
     :param value: If omitted defaults to "strong_links". Must be one of ["strong_links"].
     :type value: str

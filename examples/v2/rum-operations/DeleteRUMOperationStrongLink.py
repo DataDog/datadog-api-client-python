@@ -1,5 +1,5 @@
 """
-Delete a RUM operation strong link returns "No Content" response
+Delete a RUM operation link returns "No Content" response
 """
 
 from datadog_api_client import ApiClient, Configuration

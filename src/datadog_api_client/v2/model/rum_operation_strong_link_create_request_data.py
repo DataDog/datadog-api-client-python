@@ -40,12 +40,12 @@ class RUMOperationStrongLinkCreateRequestData(ModelNormal):
         self_, attributes: RUMOperationStrongLinkCreateRequestAttributes, type: RUMOperationStrongLinkType, **kwargs
     ):
         """
-        The data object for creating a RUM operation strong link.
+        The data object for creating a RUM operation link.
 
-        :param attributes: Attributes for creating a RUM operation strong link.
+        :param attributes: Attributes for creating a RUM operation link.
         :type attributes: RUMOperationStrongLinkCreateRequestAttributes
 
-        :param type: The JSON:API type for RUM operation strong link resources.
+        :param type: The JSON:API type for RUM operation link resources.
         :type type: RUMOperationStrongLinkType
         """
         super().__init__(kwargs)

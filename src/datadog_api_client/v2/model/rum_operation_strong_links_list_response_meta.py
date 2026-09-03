@@ -36,7 +36,7 @@ class RUMOperationStrongLinksListResponseMeta(ModelNormal):
         **kwargs,
     ):
         """
-        Metadata for a list of RUM operation strong links.
+        Metadata for a list of RUM operation links.
 
         :param limit: The pagination limit.
         :type limit: int, optional
@@ -44,7 +44,7 @@ class RUMOperationStrongLinksListResponseMeta(ModelNormal):
         :param offset: The current offset.
         :type offset: int, optional
 
-        :param total: The total number of strong links matching the request.
+        :param total: The total number of links matching the request.
         :type total: int, optional
         """
         if limit is not unset:

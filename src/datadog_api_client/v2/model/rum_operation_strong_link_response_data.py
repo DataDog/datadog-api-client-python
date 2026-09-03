@@ -45,15 +45,15 @@ class RUMOperationStrongLinkResponseData(ModelNormal):
         self_, attributes: RUMOperationStrongLinkResponseAttributes, id: str, type: RUMOperationStrongLinkType, **kwargs
     ):
         """
-        The data object in a RUM operation strong link response.
+        The data object in a RUM operation link response.
 
-        :param attributes: Attributes of a RUM operation strong link response.
+        :param attributes: Attributes of a RUM operation link response.
         :type attributes: RUMOperationStrongLinkResponseAttributes
 
-        :param id: The unique identifier of the strong link, formatted as ``<operation_id>:<feature_id>``.
+        :param id: The unique identifier of the link, formatted as ``<operation_id>:<feature_id>``.
         :type id: str
 
-        :param type: The JSON:API type for RUM operation strong link resources.
+        :param type: The JSON:API type for RUM operation link resources.
         :type type: RUMOperationStrongLinkType
         """
         super().__init__(kwargs)

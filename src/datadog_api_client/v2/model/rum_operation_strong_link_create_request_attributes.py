@@ -56,15 +56,15 @@ class RUMOperationStrongLinkCreateRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating a RUM operation strong link.
+        Attributes for creating a RUM operation link.
 
         :param application_id: The RUM application ID used when creating a stub operation from ``operation_name``.
         :type application_id: UUID, optional
 
-        :param description: A description of the strong link.
+        :param description: A description of the link.
         :type description: str, none_type, optional
 
-        :param feature_id: The unique identifier of the feature to link.
+        :param feature_id: The unique identifier of the journey to link.
         :type feature_id: str
 
         :param operation_id: The unique identifier of the RUM operation to link. Either ``operation_id`` or
@@ -75,10 +75,10 @@ class RUMOperationStrongLinkCreateRequestAttributes(ModelNormal):
             required. If no operation with this name exists, a stub operation is created.
         :type operation_name: str, optional
 
-        :param status: The status of a RUM operation strong link.
+        :param status: The status of a RUM operation link.
         :type status: RUMOperationStrongLinkStatus, optional
 
-        :param tags: A list of tags associated with the strong link.
+        :param tags: A list of tags associated with the link.
         :type tags: [str], optional
         """
         if application_id is not unset:

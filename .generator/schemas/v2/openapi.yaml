@@ -88537,7 +88537,7 @@ components:
           example: Checkout completed
           type: string
         feature_ids:
-          description: The list of feature IDs associated with the RUM operation.
+          description: The list of journey IDs associated with the RUM operation.
           items:
             type: string
           type: array
@@ -88595,7 +88595,7 @@ components:
           example: Checkout completed
           type: string
         feature_ids:
-          description: The list of feature IDs associated with the RUM operation.
+          description: The list of journey IDs associated with the RUM operation.
           items:
             type: string
           type: array
@@ -88648,7 +88648,7 @@ components:
         - attributes
       type: object
     RUMOperationStrongLinkCreateRequest:
-      description: The request body for creating a RUM operation strong link.
+      description: The request body for creating a RUM operation link.
       properties:
         data:
           $ref: "#/components/schemas/RUMOperationStrongLinkCreateRequestData"
@@ -88656,19 +88656,19 @@ components:
         - data
       type: object
     RUMOperationStrongLinkCreateRequestAttributes:
-      description: Attributes for creating a RUM operation strong link.
+      description: Attributes for creating a RUM operation link.
       properties:
         application_id:
           description: The RUM application ID used when creating a stub operation from `operation_name`.
           format: uuid
           type: string
         description:
-          description: A description of the strong link.
+          description: A description of the link.
           nullable: true
           type: string
         feature_id:
-          description: The unique identifier of the feature to link.
-          example: "feature-123"
+          description: The unique identifier of the journey to link.
+          example: "journey-123"
           type: string
         operation_id:
           description: |-
@@ -88684,7 +88684,7 @@ components:
         status:
           $ref: "#/components/schemas/RUMOperationStrongLinkStatus"
         tags:
-          description: A list of tags associated with the strong link.
+          description: A list of tags associated with the link.
           items:
             type: string
           type: array
@@ -88692,7 +88692,7 @@ components:
         - feature_id
       type: object
     RUMOperationStrongLinkCreateRequestData:
-      description: The data object for creating a RUM operation strong link.
+      description: The data object for creating a RUM operation link.
       properties:
         attributes:
           $ref: "#/components/schemas/RUMOperationStrongLinkCreateRequestAttributes"
@@ -88703,7 +88703,7 @@ components:
         - attributes
       type: object
     RUMOperationStrongLinkResponse:
-      description: The response for a single RUM operation strong link.
+      description: The response for a single RUM operation link.
       properties:
         data:
           $ref: "#/components/schemas/RUMOperationStrongLinkResponseData"
@@ -88711,20 +88711,20 @@ components:
         - data
       type: object
     RUMOperationStrongLinkResponseAttributes:
-      description: Attributes of a RUM operation strong link response.
+      description: Attributes of a RUM operation link response.
       properties:
         created_at:
-          description: The timestamp when the strong link was created.
+          description: The timestamp when the link was created.
           format: date-time
           readOnly: true
           type: string
         description:
-          description: A description of the strong link.
+          description: A description of the link.
           nullable: true
           type: string
         feature_id:
-          description: The unique identifier of the linked feature.
-          example: "feature-123"
+          description: The unique identifier of the linked journey.
+          example: "journey-123"
           readOnly: true
           type: string
         operation_id:
@@ -88735,12 +88735,12 @@ components:
         status:
           $ref: "#/components/schemas/RUMOperationStrongLinkStatus"
         tags:
-          description: A list of tags associated with the strong link.
+          description: A list of tags associated with the link.
           items:
             type: string
           type: array
         updated_at:
-          description: The timestamp when the strong link was last updated.
+          description: The timestamp when the link was last updated.
           format: date-time
           nullable: true
           readOnly: true
@@ -88751,13 +88751,13 @@ components:
         - status
       type: object
     RUMOperationStrongLinkResponseData:
-      description: The data object in a RUM operation strong link response.
+      description: The data object in a RUM operation link response.
       properties:
         attributes:
           $ref: "#/components/schemas/RUMOperationStrongLinkResponseAttributes"
         id:
-          description: The unique identifier of the strong link, formatted as `<operation_id>:<feature_id>`.
-          example: "abc12345-1234-5678-abcd-ef1234567890:feature-123"
+          description: The unique identifier of the link, formatted as `<operation_id>:<feature_id>`.
+          example: "abc12345-1234-5678-abcd-ef1234567890:journey-123"
           readOnly: true
           type: string
         type:
@@ -88768,7 +88768,7 @@ components:
         - attributes
       type: object
     RUMOperationStrongLinkStatus:
-      description: The status of a RUM operation strong link.
+      description: The status of a RUM operation link.
       enum:
         - DRAFT
         - CONFIRMED
@@ -88780,7 +88780,7 @@ components:
         - CONFIRMED
         - REJECTED
     RUMOperationStrongLinkType:
-      description: The JSON:API type for RUM operation strong link resources.
+      description: The JSON:API type for RUM operation link resources.
       enum:
         - strong_links
       example: strong_links
@@ -88788,7 +88788,7 @@ components:
       x-enum-varnames:
         - STRONG_LINKS
     RUMOperationStrongLinkUpdateRequest:
-      description: The request body for updating a RUM operation strong link.
+      description: The request body for updating a RUM operation link.
       properties:
         data:
           $ref: "#/components/schemas/RUMOperationStrongLinkUpdateRequestData"
@@ -88796,7 +88796,7 @@ components:
         - data
       type: object
     RUMOperationStrongLinkUpdateRequestAttributes:
-      description: Attributes for updating a RUM operation strong link.
+      description: Attributes for updating a RUM operation link.
       properties:
         status:
           $ref: "#/components/schemas/RUMOperationStrongLinkUpdateStatus"
@@ -88804,7 +88804,7 @@ components:
         - status
       type: object
     RUMOperationStrongLinkUpdateRequestData:
-      description: The data object for updating a RUM operation strong link.
+      description: The data object for updating a RUM operation link.
       properties:
         attributes:
           $ref: "#/components/schemas/RUMOperationStrongLinkUpdateRequestAttributes"
@@ -88815,7 +88815,7 @@ components:
         - attributes
       type: object
     RUMOperationStrongLinkUpdateStatus:
-      description: The status of a RUM operation strong link. Can only be set to `CONFIRMED` or `REJECTED`.
+      description: The status of a RUM operation link. Can only be set to `CONFIRMED` or `REJECTED`.
       enum:
         - CONFIRMED
         - REJECTED
@@ -88825,7 +88825,7 @@ components:
         - CONFIRMED
         - REJECTED
     RUMOperationStrongLinksListResponse:
-      description: The response for a list of RUM operation strong links.
+      description: The response for a list of RUM operation links.
       properties:
         data:
           items:
@@ -88837,7 +88837,7 @@ components:
         - data
       type: object
     RUMOperationStrongLinksListResponseMeta:
-      description: Metadata for a list of RUM operation strong links.
+      description: Metadata for a list of RUM operation links.
       properties:
         limit:
           description: The pagination limit.
@@ -88848,7 +88848,7 @@ components:
           format: int64
           type: integer
         total:
-          description: The total number of strong links matching the request.
+          description: The total number of links matching the request.
           format: int64
           type: integer
       type: object
@@ -192716,7 +192716,7 @@ paths:
                         description: "Tracks users completing the checkout flow."
                         display_name: Checkout completed
                         feature_ids:
-                          - "feature-123"
+                          - "journey-123"
                         journey_rum:
                           rum_steps:
                             - nodes:
@@ -192789,7 +192789,7 @@ paths:
                         description: "Tracks users completing the checkout flow."
                         display_name: Checkout completed
                         feature_ids:
-                          - "feature-123"
+                          - "journey-123"
                         journey_rum:
                           rum_steps:
                             - nodes:
@@ -192833,7 +192833,9 @@ paths:
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/operations/search:
     get:
-      description: Search RUM operations for your organization. Supports filtering by query, creator, team, feature, and application.
+      description: |-
+        Search RUM operations for your organization. Supports filtering by query, creator, team,
+        journey, and application.
       operationId: ListRUMOperations
       parameters:
         - description: A search query to filter operations by name.
@@ -192876,7 +192878,7 @@ paths:
           schema:
             example: "frontend,checkout"
             type: string
-        - description: Filter operations by feature ID. Accepts a comma-separated list of feature IDs.
+        - description: Filter operations by journey ID. Accepts a comma-separated list of journey IDs.
           in: query
           name: feature_id
           required: false
@@ -192910,7 +192912,7 @@ paths:
                           description: "Tracks users completing the checkout flow."
                           display_name: Checkout completed
                           feature_ids:
-                            - "feature-123"
+                            - "journey-123"
                           journey_rum:
                             rum_steps:
                               - nodes:
@@ -192959,18 +192961,18 @@ paths:
   /api/v2/rum/operations/strong_links:
     get:
       description: |-
-        List strong links between RUM operations and features. A strong link confirms that a feature
-        belongs to an operation. Provide `operation_id`, `feature_id`, or both to filter results;
+        List links between RUM operations and journeys. A link confirms that a journey
+        belongs to an operation. Provide `operation_id`, `feature_id` (journey ID), or both to filter results;
         at least one is required.
       operationId: ListRUMOperationStrongLinks
       parameters:
-        - description: Filter strong links by RUM operation ID.
+        - description: Filter links by RUM operation ID.
           in: query
           name: operation_id
           required: false
           schema:
             type: string
-        - description: Filter strong links by feature ID.
+        - description: Filter links by journey (feature) ID.
           in: query
           name: feature_id
           required: false
@@ -193005,14 +193007,14 @@ paths:
                     data:
                       - attributes:
                           created_at: "2024-01-15T10:30:00Z"
-                          description: "Confirmed link between checkout_completed and feature-123."
-                          feature_id: "feature-123"
+                          description: "Confirmed link between checkout_completed and journey-123."
+                          feature_id: "journey-123"
                           operation_id: "abc12345-1234-5678-abcd-ef1234567890"
                           status: CONFIRMED
                           tags:
                             - "team:checkout"
                           updated_at:
-                        id: "abc12345-1234-5678-abcd-ef1234567890:feature-123"
+                        id: "abc12345-1234-5678-abcd-ef1234567890:journey-123"
                         type: strong_links
                     meta:
                       limit: 50
@@ -193029,12 +193031,12 @@ paths:
           description: Bad Request
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
-      summary: List RUM operation strong links
+      summary: List RUM operation links
       tags:
         - RUM Operations
     post:
       description: |-
-        Create a strong link between a RUM operation and a feature, confirming that the feature
+        Create a link between a RUM operation and a journey, confirming that the journey
         belongs to the operation. The operation can be identified by `operation_id` or `operation_name`;
         if `operation_name` does not match an existing operation, a stub operation is created.
       operationId: CreateRUMOperationStrongLink
@@ -193054,14 +193056,14 @@ paths:
                     data:
                       attributes:
                         created_at: "2024-01-15T10:30:00Z"
-                        description: "Confirmed link between checkout_completed and feature-123."
-                        feature_id: "feature-123"
+                        description: "Confirmed link between checkout_completed and journey-123."
+                        feature_id: "journey-123"
                         operation_id: "abc12345-1234-5678-abcd-ef1234567890"
                         status: CONFIRMED
                         tags:
                           - "team:checkout"
                         updated_at:
-                      id: "abc12345-1234-5678-abcd-ef1234567890:feature-123"
+                      id: "abc12345-1234-5678-abcd-ef1234567890:journey-123"
                       type: strong_links
               schema:
                 $ref: "#/components/schemas/RUMOperationStrongLinkResponse"
@@ -193083,10 +193085,10 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/JSONAPIErrorResponse"
-          description: Conflict. A strong link between this operation and feature already exists.
+          description: Conflict. A link between this operation and journey already exists.
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
-      summary: Create a RUM operation strong link
+      summary: Create a RUM operation link
       tags:
         - RUM Operations
       x-unstable: |-
@@ -193094,7 +193096,7 @@ paths:
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}:
     delete:
-      description: Delete the strong link between a RUM operation and a feature.
+      description: Delete the link between a RUM operation and a journey.
       operationId: DeleteRUMOperationStrongLink
       parameters:
         - description: The unique identifier of the RUM operation.
@@ -193103,7 +193105,7 @@ paths:
           required: true
           schema:
             type: string
-        - description: The unique identifier of the feature.
+        - description: The unique identifier of the journey.
           in: path
           name: feature_id
           required: true
@@ -193120,14 +193122,14 @@ paths:
           description: Not Found
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
-      summary: Delete a RUM operation strong link
+      summary: Delete a RUM operation link
       tags:
         - RUM Operations
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     put:
-      description: Update the status of a strong link between a RUM operation and a feature.
+      description: Update the status of a link between a RUM operation and a journey.
       operationId: UpdateRUMOperationStrongLink
       parameters:
         - description: The unique identifier of the RUM operation.
@@ -193136,7 +193138,7 @@ paths:
           required: true
           schema:
             type: string
-        - description: The unique identifier of the feature.
+        - description: The unique identifier of the journey.
           in: path
           name: feature_id
           required: true
@@ -193158,14 +193160,14 @@ paths:
                     data:
                       attributes:
                         created_at: "2024-01-15T10:30:00Z"
-                        description: "Confirmed link between checkout_completed and feature-123."
-                        feature_id: "feature-123"
+                        description: "Confirmed link between checkout_completed and journey-123."
+                        feature_id: "journey-123"
                         operation_id: "abc12345-1234-5678-abcd-ef1234567890"
                         status: CONFIRMED
                         tags:
                           - "team:checkout"
                         updated_at: "2024-01-16T09:00:00Z"
-                      id: "abc12345-1234-5678-abcd-ef1234567890:feature-123"
+                      id: "abc12345-1234-5678-abcd-ef1234567890:journey-123"
                       type: strong_links
               schema:
                 $ref: "#/components/schemas/RUMOperationStrongLinkResponse"
@@ -193184,7 +193186,7 @@ paths:
           description: Not Found
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
-      summary: Update a RUM operation strong link
+      summary: Update a RUM operation link
       tags:
         - RUM Operations
       x-unstable: |-
@@ -193248,7 +193250,7 @@ paths:
                         description: "Tracks users completing the checkout flow."
                         display_name: Checkout completed
                         feature_ids:
-                          - "feature-123"
+                          - "journey-123"
                         journey_rum:
                           rum_steps:
                             - nodes:
@@ -193322,7 +193324,7 @@ paths:
                         description: "Tracks users completing the checkout flow."
                         display_name: Checkout completed
                         feature_ids:
-                          - "feature-123"
+                          - "journey-123"
                         journey_rum:
                           rum_steps:
                             - nodes:
@@ -223326,8 +223328,8 @@ tags:
     name: RUM Insights
   - description: |-
       Manage [RUM Operations](https://docs.datadoghq.com/real_user_monitoring/), business
-      transactions detected from RUM events through a configurable journey, and their strong links
-      to features. See the [RUM & Session Replay page](https://docs.datadoghq.com/real_user_monitoring/)
+      transactions detected from RUM events through a configurable journey, and their links
+      to journeys. See the [RUM & Session Replay page](https://docs.datadoghq.com/real_user_monitoring/)
       for more information.
     name: RUM Operations
   - description: |-
