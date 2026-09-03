@@ -4636,6 +4636,12 @@
       "type": "safe"
     }
   },
+  "GetLLMObsAnnotatedInteraction": {
+    "tag": "Agent Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpsertLLMObsAnnotations": {
     "tag": "Agent Observability",
     "undo": {

@@ -3,12 +3,15 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, List, Union
 import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     file_type,
     UnsetType,
     unset,
@@ -24,6 +27,8 @@ from datadog_api_client.v2.model.llm_obs_annotation_queue_response import LLMObs
 from datadog_api_client.v2.model.llm_obs_annotation_queue_request import LLMObsAnnotationQueueRequest
 from datadog_api_client.v2.model.llm_obs_annotation_queue_update_request import LLMObsAnnotationQueueUpdateRequest
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_response import LLMObsAnnotatedInteractionsResponse
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_response import LLMObsAnnotatedInteractionResponse
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_event import LLMObsAnnotatedInteractionEvent
 from datadog_api_client.v2.model.llm_obs_annotations_response import LLMObsAnnotationsResponse
 from datadog_api_client.v2.model.llm_obs_annotations_request import LLMObsAnnotationsRequest
 from datadog_api_client.v2.model.llm_obs_delete_annotations_response import LLMObsDeleteAnnotationsResponse
@@ -737,6 +742,49 @@ class AgentObservabilityApi:
             },
             headers_map={
                 "accept": ["text/csv", "application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_llm_obs_annotated_interaction_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsAnnotatedInteractionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotated-interactions/{interaction_id}",
+                "operation_id": "get_llm_obs_annotated_interaction",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "queue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "queue_id",
+                    "location": "path",
+                },
+                "interaction_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "interaction_id",
+                    "location": "path",
+                },
+                "limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "cursor",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -2693,6 +2741,89 @@ class AgentObservabilityApi:
             kwargs["version"] = version
 
         return self._export_llm_obs_dataset_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_annotated_interaction(
+        self,
+        queue_id: str,
+        interaction_id: str,
+        *,
+        limit: Union[int, UnsetType] = unset,
+        cursor: Union[str, UnsetType] = unset,
+    ) -> LLMObsAnnotatedInteractionResponse:
+        """Get an annotated queue interaction.
+
+        Retrieve an interaction, its annotations, and a page of related events from an annotation queue.
+
+        :param queue_id: The ID of the Agent Observability annotation queue.
+        :type queue_id: str
+        :param interaction_id: The ID of the interaction in the annotation queue.
+        :type interaction_id: str
+        :param limit: Maximum number of events to return. Defaults to 10.
+        :type limit: int, optional
+        :param cursor: Cursor from the previous response to retrieve the next page of events.
+        :type cursor: str, optional
+        :rtype: LLMObsAnnotatedInteractionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["interaction_id"] = interaction_id
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if cursor is not unset:
+            kwargs["cursor"] = cursor
+
+        return self._get_llm_obs_annotated_interaction_endpoint.call_with_http_info(**kwargs)
+
+    def get_llm_obs_annotated_interaction_with_pagination(
+        self,
+        queue_id: str,
+        interaction_id: str,
+        *,
+        limit: Union[int, UnsetType] = unset,
+        cursor: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[LLMObsAnnotatedInteractionEvent]:
+        """Get an annotated queue interaction.
+
+        Provide a paginated version of :meth:`get_llm_obs_annotated_interaction`, returning all items.
+
+        :param queue_id: The ID of the Agent Observability annotation queue.
+        :type queue_id: str
+        :param interaction_id: The ID of the interaction in the annotation queue.
+        :type interaction_id: str
+        :param limit: Maximum number of events to return. Defaults to 10.
+        :type limit: int, optional
+        :param cursor: Cursor from the previous response to retrieve the next page of events.
+        :type cursor: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[LLMObsAnnotatedInteractionEvent]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["queue_id"] = queue_id
+
+        kwargs["interaction_id"] = interaction_id
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if cursor is not unset:
+            kwargs["cursor"] = cursor
+
+        local_page_size = get_attribute_from_path(kwargs, "limit", 10)
+        endpoint = self._get_llm_obs_annotated_interaction_endpoint
+        set_attribute_from_path(kwargs, "limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data.attributes.events",
+            "cursor_param": "cursor",
+            "cursor_path": "data.attributes.next_cursor",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def get_llm_obs_annotated_interactions(
         self,

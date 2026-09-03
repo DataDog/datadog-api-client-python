@@ -4460,7 +4460,18 @@ from datadog_api_client.v2.model.kind_response_meta import KindResponseMeta
 from datadog_api_client.v2.model.llm_obs_annotated_interaction_by_trace_item import (
     LLMObsAnnotatedInteractionByTraceItem,
 )
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_data_attributes_response import (
+    LLMObsAnnotatedInteractionDataAttributesResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_data_response import (
+    LLMObsAnnotatedInteractionDataResponse,
+)
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_event import LLMObsAnnotatedInteractionEvent
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_event_attributes import (
+    LLMObsAnnotatedInteractionEventAttributes,
+)
 from datadog_api_client.v2.model.llm_obs_annotated_interaction_item import LLMObsAnnotatedInteractionItem
+from datadog_api_client.v2.model.llm_obs_annotated_interaction_response import LLMObsAnnotatedInteractionResponse
 from datadog_api_client.v2.model.llm_obs_annotated_interactions_by_trace_data_attributes_response import (
     LLMObsAnnotatedInteractionsByTraceDataAttributesResponse,
 )
@@ -14634,7 +14645,12 @@ __all__ = [
     "KindObj",
     "KindResponseMeta",
     "LLMObsAnnotatedInteractionByTraceItem",
+    "LLMObsAnnotatedInteractionDataAttributesResponse",
+    "LLMObsAnnotatedInteractionDataResponse",
+    "LLMObsAnnotatedInteractionEvent",
+    "LLMObsAnnotatedInteractionEventAttributes",
     "LLMObsAnnotatedInteractionItem",
+    "LLMObsAnnotatedInteractionResponse",
     "LLMObsAnnotatedInteractionsByTraceDataAttributesResponse",
     "LLMObsAnnotatedInteractionsByTraceDataResponse",
     "LLMObsAnnotatedInteractionsByTraceResponse",
