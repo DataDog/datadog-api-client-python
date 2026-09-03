@@ -62,27 +62,27 @@ class RUMOperationStrongLinkResponseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a RUM operation strong link response.
+        Attributes of a RUM operation link response.
 
-        :param created_at: The timestamp when the strong link was created.
+        :param created_at: The timestamp when the link was created.
         :type created_at: datetime, optional
 
-        :param description: A description of the strong link.
+        :param description: A description of the link.
         :type description: str, none_type, optional
 
-        :param feature_id: The unique identifier of the linked feature.
+        :param feature_id: The unique identifier of the linked journey.
         :type feature_id: str
 
         :param operation_id: The unique identifier of the linked RUM operation.
         :type operation_id: str
 
-        :param status: The status of a RUM operation strong link.
+        :param status: The status of a RUM operation link.
         :type status: RUMOperationStrongLinkStatus
 
-        :param tags: A list of tags associated with the strong link.
+        :param tags: A list of tags associated with the link.
         :type tags: [str], optional
 
-        :param updated_at: The timestamp when the strong link was last updated.
+        :param updated_at: The timestamp when the link was last updated.
         :type updated_at: datetime, none_type, optional
         """
         if created_at is not unset:

@@ -1,5 +1,5 @@
 """
-Create a RUM operation strong link returns "Created" response
+Create a RUM operation link returns "Created" response
 """
 
 from datadog_api_client import ApiClient, Configuration
@@ -18,7 +18,7 @@ body = RUMOperationStrongLinkCreateRequest(
     data=RUMOperationStrongLinkCreateRequestData(
         attributes=RUMOperationStrongLinkCreateRequestAttributes(
             description=None,
-            feature_id="feature-123",
+            feature_id="journey-123",
             operation_id="abc12345-1234-5678-abcd-ef1234567890",
             status=RUMOperationStrongLinkStatus.CONFIRMED,
             tags=[],

@@ -25,8 +25,8 @@ from datadog_api_client.v2.model.rum_operation_update_request import RUMOperatio
 class RUMOperationsApi:
     """
     Manage `RUM Operations <https://docs.datadoghq.com/real_user_monitoring/>`_ , business
-    transactions detected from RUM events through a configurable journey, and their strong links
-    to features. See the `RUM & Session Replay page <https://docs.datadoghq.com/real_user_monitoring/>`_
+    transactions detected from RUM events through a configurable journey, and their links
+    to journeys. See the `RUM & Session Replay page <https://docs.datadoghq.com/real_user_monitoring/>`_
     for more information.
     """
 
@@ -354,9 +354,9 @@ class RUMOperationsApi:
         self,
         body: RUMOperationStrongLinkCreateRequest,
     ) -> RUMOperationStrongLinkResponse:
-        """Create a RUM operation strong link.
+        """Create a RUM operation link.
 
-        Create a strong link between a RUM operation and a feature, confirming that the feature
+        Create a link between a RUM operation and a journey, confirming that the journey
         belongs to the operation. The operation can be identified by ``operation_id`` or ``operation_name`` ;
         if ``operation_name`` does not match an existing operation, a stub operation is created.
 
@@ -390,13 +390,13 @@ class RUMOperationsApi:
         rum_operation_id: str,
         feature_id: str,
     ) -> None:
-        """Delete a RUM operation strong link.
+        """Delete a RUM operation link.
 
-        Delete the strong link between a RUM operation and a feature.
+        Delete the link between a RUM operation and a journey.
 
         :param rum_operation_id: The unique identifier of the RUM operation.
         :type rum_operation_id: str
-        :param feature_id: The unique identifier of the feature.
+        :param feature_id: The unique identifier of the journey.
         :type feature_id: str
         :rtype: None
         """
@@ -454,7 +454,8 @@ class RUMOperationsApi:
     ) -> RUMOperationsListResponse:
         """Search RUM operations.
 
-        Search RUM operations for your organization. Supports filtering by query, creator, team, feature, and application.
+        Search RUM operations for your organization. Supports filtering by query, creator, team,
+        journey, and application.
 
         :param query: A search query to filter operations by name.
         :type query: str, optional
@@ -466,7 +467,7 @@ class RUMOperationsApi:
         :type creator: str, optional
         :param team: Filter operations by team. Accepts a comma-separated list of teams.
         :type team: str, optional
-        :param feature_id: Filter operations by feature ID. Accepts a comma-separated list of feature IDs.
+        :param feature_id: Filter operations by journey ID. Accepts a comma-separated list of journey IDs.
         :type feature_id: str, optional
         :param application_id: Filter operations by RUM application ID.
         :type application_id: UUID, optional
@@ -504,15 +505,15 @@ class RUMOperationsApi:
         page_offset: Union[int, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> RUMOperationStrongLinksListResponse:
-        """List RUM operation strong links.
+        """List RUM operation links.
 
-        List strong links between RUM operations and features. A strong link confirms that a feature
-        belongs to an operation. Provide ``operation_id`` , ``feature_id`` , or both to filter results;
+        List links between RUM operations and journeys. A link confirms that a journey
+        belongs to an operation. Provide ``operation_id`` , ``feature_id`` (journey ID), or both to filter results;
         at least one is required.
 
-        :param operation_id: Filter strong links by RUM operation ID.
+        :param operation_id: Filter links by RUM operation ID.
         :type operation_id: str, optional
-        :param feature_id: Filter strong links by feature ID.
+        :param feature_id: Filter links by journey (feature) ID.
         :type feature_id: str, optional
         :param page_offset: Offset for pagination.
         :type page_offset: int, optional
@@ -563,13 +564,13 @@ class RUMOperationsApi:
         feature_id: str,
         body: RUMOperationStrongLinkUpdateRequest,
     ) -> RUMOperationStrongLinkResponse:
-        """Update a RUM operation strong link.
+        """Update a RUM operation link.
 
-        Update the status of a strong link between a RUM operation and a feature.
+        Update the status of a link between a RUM operation and a journey.
 
         :param rum_operation_id: The unique identifier of the RUM operation.
         :type rum_operation_id: str
-        :param feature_id: The unique identifier of the feature.
+        :param feature_id: The unique identifier of the journey.
         :type feature_id: str
         :type body: RUMOperationStrongLinkUpdateRequest
         :rtype: RUMOperationStrongLinkResponse

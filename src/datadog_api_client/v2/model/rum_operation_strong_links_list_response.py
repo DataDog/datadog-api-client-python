@@ -47,12 +47,12 @@ class RUMOperationStrongLinksListResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The response for a list of RUM operation strong links.
+        The response for a list of RUM operation links.
 
         :param data:
         :type data: [RUMOperationStrongLinkResponseData]
 
-        :param meta: Metadata for a list of RUM operation strong links.
+        :param meta: Metadata for a list of RUM operation links.
         :type meta: RUMOperationStrongLinksListResponseMeta, optional
         """
         if meta is not unset:

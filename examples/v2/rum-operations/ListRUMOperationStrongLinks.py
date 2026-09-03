@@ -1,5 +1,5 @@
 """
-List RUM operation strong links returns "OK" response
+List RUM operation links returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
