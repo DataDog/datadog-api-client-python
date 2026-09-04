@@ -77064,7 +77064,7 @@ components:
         - data
       type: object
     ObservabilityPipelineSpecData:
-      description: Contains the the pipeline configuration.
+      description: Contains the pipeline configuration.
       properties:
         attributes:
           $ref: '#/components/schemas/ObservabilityPipelineDataAttributes'
