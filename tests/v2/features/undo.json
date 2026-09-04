@@ -2309,6 +2309,112 @@
       "type": "idempotent"
     }
   },
+  "CreateJourney": {
+    "tag": "DEM",
+    "undo": {
+      "operationId": "DeleteJourney",
+      "parameters": [
+        {
+          "name": "journey_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIgnoredInferredJourney": {
+    "tag": "DEM",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "SearchInferredJourneys": {
+    "tag": "DEM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "IgnoreInferredJourney": {
+    "tag": "DEM",
+    "undo": {
+      "operationId": "DeleteIgnoredInferredJourney",
+      "parameters": [
+        {
+          "name": "journey_id",
+          "origin": "path",
+          "source": "journey_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "SearchJourneys": {
+    "tag": "DEM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "BatchGetJourneysByTestSuiteIDs": {
+    "tag": "DEM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteJourneyVariant": {
+    "tag": "DEM",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateJourneyVariant": {
+    "tag": "DEM",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteJourney": {
+    "tag": "DEM",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetJourney": {
+    "tag": "DEM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateJourney": {
+    "tag": "DEM",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetJourneyRecommendedTests": {
+    "tag": "DEM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateJourneyVariant": {
+    "tag": "DEM",
+    "undo": {
+      "operationId": "DeleteJourneyVariant",
+      "parameters": [
+        {
+          "name": "variant_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateTestSuiteForJourney": {
+    "tag": "DEM",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListDeploymentGates": {
     "tag": "Deployment Gates",
     "undo": {
