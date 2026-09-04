@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -3046,13 +3047,16 @@ class CloudCostManagementApi:
     def list_cost_oci_configs(
         self,
     ) -> OCIConfigsResponse:
-        """List Cloud Cost Management OCI configs.
+        """List Cloud Cost Management OCI configs. **Deprecated**.
+
+        **Note** : This endpoint is deprecated. View OCI accounts in Cloud Cost Settings in the Datadog web application instead.
 
         List the OCI configs.
 
         :rtype: OCIConfigsResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_cost_oci_configs is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_cost_oci_configs_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_tag_descriptions(
