@@ -1090,6 +1090,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\":{\"attributes\":{\"config\":{\"end_to_end_acknowledgements\":true,\"destinations\":[{\"id\":\"datadog-logs-destination\",\"inputs\":[\"processor-group-0\"],\"type\":\"datadog_logs\"}],\"processor_groups\":[{\"id\":\"processor-group-0\",\"include\":\"service:my-service\",\"inputs\":[\"datadog-agent-source\"],\"enabled\":true,\"processors\":[{\"id\":\"filter-processor\",\"type\":\"filter\",\"include\":\"status:error\",\"enabled\":true}]}],\"sources\":[{\"id\":\"datadog-agent-source\",\"type\":\"datadog_agent\"}]},\"name\":\"End-to-End Acknowledgements Pipeline\"},\"type\":\"pipelines\"}}"
+      }
+    ],
+    "step": "there is a valid \"pipeline with end-to-end acknowledgements\" in the system",
+    "key": "pipeline_with_end_to_end_acknowledgements",
+    "tag": "Observability Pipelines",
+    "operationId": "CreatePipeline"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"resolve_page_on_policy_end\": true,\n      \"retries\": 2,\n      \"steps\": [\n        {\n          \"assignment\": \"default\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\"\n            },\n            {\n              \"id\": \"{{ schedule.data.id }}\",\n              \"type\": \"schedules\",\n              \"config\": {\n                \"schedule\": {\n                  \"position\": \"previous\"\n                }\n              }\n            },\n            {\n              \"id\": \"{{ user.data.id }}\",\n              \"type\": \"users\"\n            }\n          ]\n        },\n        {\n          \"assignment\": \"round-robin\",\n          \"escalate_after_seconds\": 3600,\n          \"targets\": [\n            {\n              \"id\": \"{{ dd_team.data.id }}\",\n              \"type\": \"teams\"\n            }\n          ]\n        }\n      ]\n    },\n    \"relationships\": {\n      \"teams\": {\n        \"data\": [\n          {\n            \"id\": \"{{ dd_team.data.id }}\",\n            \"type\": \"teams\"\n          }\n        ]\n      }\n    },\n    \"type\": \"policies\"\n  }\n}"
       }
     ],
