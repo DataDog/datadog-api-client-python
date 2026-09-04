@@ -58,6 +58,22 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
 
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Create a unit cost returns "Bad Request" response
+    Given operation "CreateUnitCost" enabled
+    And new "CreateUnitCost" request
+    And body with value {"data": {"attributes": {"denominator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "description": "Amortized cloud spend divided by the number of active users.", "name": "Cloud cost per active user", "numerator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "unit_label": "user"}, "type": "unit_cost"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Create a unit cost returns "Created" response
+    Given operation "CreateUnitCost" enabled
+    And new "CreateUnitCost" request
+    And body with value {"data": {"attributes": {"denominator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "description": "Amortized cloud spend divided by the number of active users.", "name": "Cloud cost per active user", "numerator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "unit_label": "user"}, "type": "unit_cost"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @replay-only @team:DataDog/cloud-cost-management
   Scenario: Create custom allocation rule returns "OK" response
     Given new "CreateCustomAllocationRule" request
@@ -253,6 +269,30 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Delete a unit cost returns "Bad Request" response
+    Given operation "DeleteUnitCost" enabled
+    And new "DeleteUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Delete a unit cost returns "No Content" response
+    Given operation "DeleteUnitCost" enabled
+    And new "DeleteUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Delete a unit cost returns "Not Found" response
+    Given operation "DeleteUnitCost" enabled
+    And new "DeleteUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Delete budget returns "No Content" response
     Given new "DeleteBudget" request
@@ -398,6 +438,30 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data.type" is equal to "ruleset"
     And the response "data.attributes.name" is equal to "EVP Cost Tags"
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Get a unit cost returns "Bad Request" response
+    Given operation "GetUnitCost" enabled
+    And new "GetUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Get a unit cost returns "Not Found" response
+    Given operation "GetUnitCost" enabled
+    And new "GetUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Get a unit cost returns "OK" response
+    Given operation "GetUnitCost" enabled
+    And new "GetUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Get account filters returns "Bad Request" response
@@ -885,6 +949,13 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data[0].attributes.name" is equal to "New Ruleset"
 
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: List unit costs returns "OK" response
+    Given operation "ListUnitCosts" enabled
+    And new "ListUnitCosts" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Reorder custom allocation rules returns "Successfully reordered rules" response
     Given new "ReorderCustomAllocationRules" request
@@ -973,6 +1044,33 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Update a unit cost returns "Bad Request" response
+    Given operation "UpdateUnitCost" enabled
+    And new "UpdateUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"denominator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "description": "Amortized cloud spend divided by the number of active users.", "name": "Cloud cost per active user", "numerator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "unit_label": "user"}, "id": "64aecd58-e355-4f07-9c3a-56ff6bda6cd8", "type": "unit_cost"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Update a unit cost returns "Not Found" response
+    Given operation "UpdateUnitCost" enabled
+    And new "UpdateUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"denominator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "description": "Amortized cloud spend divided by the number of active users.", "name": "Cloud cost per active user", "numerator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "unit_label": "user"}, "id": "64aecd58-e355-4f07-9c3a-56ff6bda6cd8", "type": "unit_cost"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ccm-roi
+  Scenario: Update a unit cost returns "OK" response
+    Given operation "UpdateUnitCost" enabled
+    And new "UpdateUnitCost" request
+    And request contains "unit_cost_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"denominator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "description": "Amortized cloud spend divided by the number of active users.", "name": "Cloud cost per active user", "numerator_query": {"formulas": [{"formula": "numerator"}], "queries": [{"data_source": "cloud_cost", "name": "numerator", "query": "sum:aws.cost.net.amortized.shared.resources.allocated{*}.rollup(sum, daily)"}]}, "unit_label": "user"}, "id": "64aecd58-e355-4f07-9c3a-56ff6bda6cd8", "type": "unit_cost"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Update account filters returns "Bad Request" response

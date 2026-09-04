@@ -10,6 +10,7 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.account_filters_response import AccountFiltersResponse
 from datadog_api_client.v2.model.account_filters_patch_request import AccountFiltersPatchRequest
@@ -76,6 +77,10 @@ from datadog_api_client.v2.model.cost_tag_metadata_months_response import CostTa
 from datadog_api_client.v2.model.cost_orchestrators_response import CostOrchestratorsResponse
 from datadog_api_client.v2.model.cost_tag_key_sources_response import CostTagKeySourcesResponse
 from datadog_api_client.v2.model.cost_tags_response import CostTagsResponse
+from datadog_api_client.v2.model.unit_costs_response import UnitCostsResponse
+from datadog_api_client.v2.model.unit_cost_response import UnitCostResponse
+from datadog_api_client.v2.model.unit_cost_create_request import UnitCostCreateRequest
+from datadog_api_client.v2.model.unit_cost_update_request import UnitCostUpdateRequest
 from datadog_api_client.v2.model.ruleset_resp_array import RulesetRespArray
 from datadog_api_client.v2.model.ruleset_resp import RulesetResp
 from datadog_api_client.v2.model.create_ruleset_request import CreateRulesetRequest
@@ -189,6 +194,26 @@ class CloudCostManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (CreateRulesetRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_unit_cost_endpoint = _Endpoint(
+            settings={
+                "response_type": (UnitCostResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/unit_costs",
+                "operation_id": "create_unit_cost",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (UnitCostCreateRequest,),
                     "location": "body",
                 },
             },
@@ -399,6 +424,29 @@ class CloudCostManagementApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "ruleset_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_unit_cost_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/unit_costs/{unit_cost_id}",
+                "operation_id": "delete_unit_cost",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "unit_cost_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "unit_cost_id",
                     "location": "path",
                 },
             },
@@ -1156,6 +1204,29 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_unit_cost_endpoint = _Endpoint(
+            settings={
+                "response_type": (UnitCostResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/unit_costs/{unit_cost_id}",
+                "operation_id": "get_unit_cost",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "unit_cost_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "unit_cost_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_budgets_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetArray,),
@@ -1673,6 +1744,22 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._list_unit_costs_endpoint = _Endpoint(
+            settings={
+                "response_type": (UnitCostsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/unit_costs",
+                "operation_id": "list_unit_costs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._reorder_custom_allocation_rules_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -1892,6 +1979,32 @@ class CloudCostManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (UpdateRulesetRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_unit_cost_endpoint = _Endpoint(
+            settings={
+                "response_type": (UnitCostResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/cost/unit_costs/{unit_cost_id}",
+                "operation_id": "update_unit_cost",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "unit_cost_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "unit_cost_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UnitCostUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -2136,6 +2249,22 @@ class CloudCostManagementApi:
 
         return self._create_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
 
+    def create_unit_cost(
+        self,
+        body: UnitCostCreateRequest,
+    ) -> UnitCostResponse:
+        """Create a unit cost.
+
+        Create an ROI metric (unit cost) using the given numerator and denominator queries.
+
+        :type body: UnitCostCreateRequest
+        :rtype: UnitCostResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_unit_cost_endpoint.call_with_http_info(**kwargs)
+
     def delete_budget(
         self,
         budget_id: str,
@@ -2295,6 +2424,23 @@ class CloudCostManagementApi:
         kwargs["ruleset_id"] = ruleset_id
 
         return self._delete_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
+
+    def delete_unit_cost(
+        self,
+        unit_cost_id: UUID,
+    ) -> None:
+        """Delete a unit cost.
+
+        Delete an ROI metric (unit cost).
+
+        :param unit_cost_id: The UUID of the unit cost.
+        :type unit_cost_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["unit_cost_id"] = unit_cost_id
+
+        return self._delete_unit_cost_endpoint.call_with_http_info(**kwargs)
 
     def generate_cost_tag_description_by_key(
         self,
@@ -2916,6 +3062,23 @@ class CloudCostManagementApi:
 
         return self._get_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
 
+    def get_unit_cost(
+        self,
+        unit_cost_id: UUID,
+    ) -> UnitCostResponse:
+        """Get a unit cost.
+
+        Retrieve an ROI metric (unit cost) by UUID.
+
+        :param unit_cost_id: The UUID of the unit cost.
+        :type unit_cost_id: UUID
+        :rtype: UnitCostResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["unit_cost_id"] = unit_cost_id
+
+        return self._get_unit_cost_endpoint.call_with_http_info(**kwargs)
+
     def list_budgets(
         self,
     ) -> BudgetArray:
@@ -3380,6 +3543,18 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._list_tag_pipelines_rulesets_status_endpoint.call_with_http_info(**kwargs)
 
+    def list_unit_costs(
+        self,
+    ) -> UnitCostsResponse:
+        """List unit costs.
+
+        List the ROI metrics (unit costs) for the authenticated organization.
+
+        :rtype: UnitCostsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_unit_costs_endpoint.call_with_http_info(**kwargs)
+
     def reorder_custom_allocation_rules(
         self,
         body: ReorderRuleResourceArray,
@@ -3587,6 +3762,27 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._update_tag_pipelines_ruleset_endpoint.call_with_http_info(**kwargs)
+
+    def update_unit_cost(
+        self,
+        unit_cost_id: UUID,
+        body: UnitCostUpdateRequest,
+    ) -> UnitCostResponse:
+        """Update a unit cost.
+
+        Replace an ROI metric (unit cost) with a new set of attributes.
+
+        :param unit_cost_id: The UUID of the unit cost.
+        :type unit_cost_id: UUID
+        :type body: UnitCostUpdateRequest
+        :rtype: UnitCostResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["unit_cost_id"] = unit_cost_id
+
+        kwargs["body"] = body
+
+        return self._update_unit_cost_endpoint.call_with_http_info(**kwargs)
 
     def upload_custom_costs_file(
         self,
