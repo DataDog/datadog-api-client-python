@@ -144,7 +144,7 @@ Feature: CSM Ownership
     And new "CreateOwnershipFeedback" request
     And request contains "resource_id" parameter from "REPLACE.ME"
     And request contains "owner_type" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": "confirm", "actor_handle": "user@example.com", "actor_type": "user", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
+    And body with value {"data": {"attributes": {"action": "confirm", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -154,7 +154,7 @@ Feature: CSM Ownership
     And new "CreateOwnershipFeedback" request
     And request contains "resource_id" parameter from "REPLACE.ME"
     And request contains "owner_type" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": "confirm", "actor_handle": "user@example.com", "actor_type": "user", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
+    And body with value {"data": {"attributes": {"action": "confirm", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -164,7 +164,7 @@ Feature: CSM Ownership
     And new "CreateOwnershipFeedback" request
     And request contains "resource_id" parameter from "REPLACE.ME"
     And request contains "owner_type" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": "confirm", "actor_handle": "user@example.com", "actor_type": "user", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
+    And body with value {"data": {"attributes": {"action": "confirm", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -174,7 +174,7 @@ Feature: CSM Ownership
     And new "CreateOwnershipFeedback" request
     And request contains "resource_id" parameter from "REPLACE.ME"
     And request contains "owner_type" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": "confirm", "actor_handle": "user@example.com", "actor_type": "user", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
+    And body with value {"data": {"attributes": {"action": "confirm", "corrected_owner_handle": "team-b", "corrected_owner_type": "team", "inference_checksum": "abc123", "reason": "Confirmed by team lead."}, "type": "ownership_feedback"}}
     When the request is sent
     Then the response status is 404 Not Found
 

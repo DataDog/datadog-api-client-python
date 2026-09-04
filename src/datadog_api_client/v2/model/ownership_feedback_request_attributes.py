@@ -25,8 +25,6 @@ class OwnershipFeedbackRequestAttributes(ModelNormal):
 
         return {
             "action": (OwnershipFeedbackAction,),
-            "actor_handle": (str,),
-            "actor_type": (str,),
             "corrected_owner_handle": (str, none_type),
             "corrected_owner_type": (str, none_type),
             "inference_checksum": (str,),
@@ -35,8 +33,6 @@ class OwnershipFeedbackRequestAttributes(ModelNormal):
 
     attribute_map = {
         "action": "action",
-        "actor_handle": "actor_handle",
-        "actor_type": "actor_type",
         "corrected_owner_handle": "corrected_owner_handle",
         "corrected_owner_type": "corrected_owner_type",
         "inference_checksum": "inference_checksum",
@@ -46,8 +42,6 @@ class OwnershipFeedbackRequestAttributes(ModelNormal):
     def __init__(
         self_,
         action: OwnershipFeedbackAction,
-        actor_handle: str,
-        actor_type: str,
         inference_checksum: str,
         corrected_owner_handle: Union[str, none_type, UnsetType] = unset,
         corrected_owner_type: Union[str, none_type, UnsetType] = unset,
@@ -59,12 +53,6 @@ class OwnershipFeedbackRequestAttributes(ModelNormal):
 
         :param action: The feedback action to apply to an inference.
         :type action: OwnershipFeedbackAction
-
-        :param actor_handle: The handle of the actor submitting the feedback.
-        :type actor_handle: str
-
-        :param actor_type: The type of actor submitting the feedback, for example ``user`` or ``service``.
-        :type actor_type: str
 
         :param corrected_owner_handle: The corrected owner handle. Required when ``action`` is ``correct``.
         :type corrected_owner_handle: str, none_type, optional
@@ -87,6 +75,4 @@ class OwnershipFeedbackRequestAttributes(ModelNormal):
         super().__init__(kwargs)
 
         self_.action = action
-        self_.actor_handle = actor_handle
-        self_.actor_type = actor_type
         self_.inference_checksum = inference_checksum
