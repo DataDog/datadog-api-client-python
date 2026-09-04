@@ -2284,6 +2284,18 @@
       "type": "idempotent"
     }
   },
+  "ExecuteDdsqlTabularQuery": {
+    "tag": "DDSQL",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "FetchDdsqlTabularQuery": {
+    "tag": "DDSQL",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateDataDeletionRequest": {
     "tag": "Data Deletion",
     "undo": {
