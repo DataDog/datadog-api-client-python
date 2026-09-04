@@ -17,6 +17,7 @@ if TYPE_CHECKING:
         DeploymentRuleOptionsFaultyDeploymentDetection,
     )
     from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
+    from datadog_api_client.v2.model.deployment_rule_options_monitor_ids import DeploymentRuleOptionsMonitorIds
 
 
 class UpdateDeploymentRuleParamsDataAttributes(ModelNormal):
@@ -41,7 +42,10 @@ class UpdateDeploymentRuleParamsDataAttributes(ModelNormal):
         dry_run: bool,
         name: str,
         options: Union[
-            DeploymentRulesOptions, DeploymentRuleOptionsFaultyDeploymentDetection, DeploymentRuleOptionsMonitor
+            DeploymentRulesOptions,
+            DeploymentRuleOptionsFaultyDeploymentDetection,
+            DeploymentRuleOptionsMonitor,
+            DeploymentRuleOptionsMonitorIds,
         ],
         **kwargs,
     ):

@@ -2575,6 +2575,8 @@ from datadog_api_client.v2.model.deployment_rule_options_faulty_deployment_detec
     DeploymentRuleOptionsFaultyDeploymentDetection,
 )
 from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
+from datadog_api_client.v2.model.deployment_rule_options_monitor_id import DeploymentRuleOptionsMonitorId
+from datadog_api_client.v2.model.deployment_rule_options_monitor_ids import DeploymentRuleOptionsMonitorIds
 from datadog_api_client.v2.model.deployment_rule_response import DeploymentRuleResponse
 from datadog_api_client.v2.model.deployment_rule_response_data import DeploymentRuleResponseData
 from datadog_api_client.v2.model.deployment_rule_response_data_attributes import DeploymentRuleResponseDataAttributes
@@ -13236,6 +13238,8 @@ __all__ = [
     "DeploymentRuleDataType",
     "DeploymentRuleOptionsFaultyDeploymentDetection",
     "DeploymentRuleOptionsMonitor",
+    "DeploymentRuleOptionsMonitorId",
+    "DeploymentRuleOptionsMonitorIds",
     "DeploymentRuleResponse",
     "DeploymentRuleResponseData",
     "DeploymentRuleResponseDataAttributes",
