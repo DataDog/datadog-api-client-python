@@ -199,7 +199,13 @@ class RolesApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "include_scopes": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_scopes",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -536,14 +542,25 @@ class RolesApi:
 
     def list_permissions(
         self,
+        *,
+        include_scopes: Union[bool, UnsetType] = unset,
     ) -> PermissionsResponse:
         """List permissions.
 
         Returns a list of all permissions, including name, description, and ID.
 
+        :param include_scopes: Set to ``true`` to return all permissions, including both permissions
+            that can be assigned to user roles and permissions that can only be
+            used as scopes for OAuth clients and scoped credentials. When ``false``
+            (default), only permissions that can be assigned to user roles are
+            returned.
+        :type include_scopes: bool, optional
         :rtype: PermissionsResponse
         """
         kwargs: Dict[str, Any] = {}
+        if include_scopes is not unset:
+            kwargs["include_scopes"] = include_scopes
+
         return self._list_permissions_endpoint.call_with_http_info(**kwargs)
 
     def list_role_permissions(
