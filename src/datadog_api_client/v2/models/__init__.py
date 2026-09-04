@@ -10833,6 +10833,19 @@ from datadog_api_client.v2.model.unassign_seats_user_request_data_attributes imp
     UnassignSeatsUserRequestDataAttributes,
 )
 from datadog_api_client.v2.model.unit import Unit
+from datadog_api_client.v2.model.unit_cost_create_request import UnitCostCreateRequest
+from datadog_api_client.v2.model.unit_cost_create_request_data import UnitCostCreateRequestData
+from datadog_api_client.v2.model.unit_cost_data_attributes_response import UnitCostDataAttributesResponse
+from datadog_api_client.v2.model.unit_cost_data_response import UnitCostDataResponse
+from datadog_api_client.v2.model.unit_cost_formula import UnitCostFormula
+from datadog_api_client.v2.model.unit_cost_query import UnitCostQuery
+from datadog_api_client.v2.model.unit_cost_query_definition import UnitCostQueryDefinition
+from datadog_api_client.v2.model.unit_cost_request_attributes import UnitCostRequestAttributes
+from datadog_api_client.v2.model.unit_cost_response import UnitCostResponse
+from datadog_api_client.v2.model.unit_cost_type import UnitCostType
+from datadog_api_client.v2.model.unit_cost_update_request import UnitCostUpdateRequest
+from datadog_api_client.v2.model.unit_cost_update_request_data import UnitCostUpdateRequestData
+from datadog_api_client.v2.model.unit_costs_response import UnitCostsResponse
 from datadog_api_client.v2.model.unpublish_app_response import UnpublishAppResponse
 from datadog_api_client.v2.model.update_action_connection_request import UpdateActionConnectionRequest
 from datadog_api_client.v2.model.update_action_connection_response import UpdateActionConnectionResponse
@@ -18746,6 +18759,19 @@ __all__ = [
     "UnassignSeatsUserRequestData",
     "UnassignSeatsUserRequestDataAttributes",
     "Unit",
+    "UnitCostCreateRequest",
+    "UnitCostCreateRequestData",
+    "UnitCostDataAttributesResponse",
+    "UnitCostDataResponse",
+    "UnitCostFormula",
+    "UnitCostQuery",
+    "UnitCostQueryDefinition",
+    "UnitCostRequestAttributes",
+    "UnitCostResponse",
+    "UnitCostType",
+    "UnitCostUpdateRequest",
+    "UnitCostUpdateRequestData",
+    "UnitCostsResponse",
     "UnpublishAppResponse",
     "UpdateActionConnectionRequest",
     "UpdateActionConnectionResponse",
