@@ -89,8 +89,17 @@ class ProductCatalogSKUDataAttributesResponse(ModelNormal):
         :param default_on_demand_option: The billing frequency applied to on-demand usage of the SKU by default.
         :type default_on_demand_option: ProductCatalogSKUOnDemandOption
 
-        :param number_of_units_included_in_price: The number of billable usage units included in the price. ``0`` for SKUs that are not
-            priced per unit of usage, such as those whose ``pricing_type`` is ``percent``.
+        :param number_of_units_included_in_price: The number of billable usage units that one unit of price covers. Divide measured
+            usage by this value before multiplying by the price. For example, a SKU priced at ``18.00`` with
+            ``number_of_units_included_in_price`` of ``1`` costs ``18.00`` per host, while a SKU priced
+            at ``12.00`` with ``number_of_units_included_in_price`` of ``10000`` costs ``12.00`` per
+            10,000 requests. It is a scaling factor on the price, not a free allotment; included
+            quantities are in ``allotments``. The same factor applies to the price of a tier in
+            ``on_demand_tiered`` whose ``pricing_unit_type`` is ``unit``. It does not apply to a tier
+            whose ``pricing_unit_type`` is ``block`` : that tier's ``price`` is charged for the whole
+            block bounded by ``min_usage_quantity`` and ``max_usage_quantity`` , however much of the
+            block is used. ``0`` for SKUs that are not priced per unit of usage, such as those
+            whose ``pricing_type`` is ``percent``.
         :type number_of_units_included_in_price: int
 
         :param on_demand_list_price: The public list price of on-demand usage of the SKU, as a decimal string. The number

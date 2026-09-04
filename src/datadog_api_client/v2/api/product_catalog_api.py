@@ -76,11 +76,14 @@ class ProductCatalogApi:
         that code in ascending order. The whole catalog is returned in a single response, so
         this endpoint is not paginated.
 
-        :param version: The version of the product catalog contract to return. ``v1`` is the latest.
+        :param version: The version of the product catalog response contract to return. ``v1`` is the latest.
+            This is independent of the ``/api/v2`` path segment, which is the version of the
+            Datadog API itself.
         :type version: ProductCatalogSKUsAPIVersion
         :param as_of_date: The date the returned prices, allotments, and pricing tiers are effective as of, in
             ``YYYY-MM-DD`` format. Defaults to the date of the request, and must not be later
-            than it.
+            than it. Set it to a date in a past billing period to reconcile that period against
+            the prices that were in effect then, rather than today.
         :type as_of_date: datetime, optional
         :rtype: ProductCatalogSKUsResponse
         """
