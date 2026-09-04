@@ -2510,6 +2510,49 @@ from datadog_api_client.v2.model.deleted_tests_request_delete_request import Del
 from datadog_api_client.v2.model.deleted_tests_request_type import DeletedTestsRequestType
 from datadog_api_client.v2.model.deleted_tests_response import DeletedTestsResponse
 from datadog_api_client.v2.model.deleted_tests_response_type import DeletedTestsResponseType
+from datadog_api_client.v2.model.dem_batch_get_journeys_attributes import DemBatchGetJourneysAttributes
+from datadog_api_client.v2.model.dem_batch_get_journeys_data import DemBatchGetJourneysData
+from datadog_api_client.v2.model.dem_batch_get_journeys_request import DemBatchGetJourneysRequest
+from datadog_api_client.v2.model.dem_batch_get_journeys_request_type import DemBatchGetJourneysRequestType
+from datadog_api_client.v2.model.dem_create_journey_test_suite_attributes import DemCreateJourneyTestSuiteAttributes
+from datadog_api_client.v2.model.dem_create_journey_test_suite_data import DemCreateJourneyTestSuiteData
+from datadog_api_client.v2.model.dem_create_journey_test_suite_request import DemCreateJourneyTestSuiteRequest
+from datadog_api_client.v2.model.dem_create_journey_test_suite_request_type import DemCreateJourneyTestSuiteRequestType
+from datadog_api_client.v2.model.dem_inferred_journey_status import DemInferredJourneyStatus
+from datadog_api_client.v2.model.dem_journey_create_attributes import DemJourneyCreateAttributes
+from datadog_api_client.v2.model.dem_journey_create_data import DemJourneyCreateData
+from datadog_api_client.v2.model.dem_journey_create_request import DemJourneyCreateRequest
+from datadog_api_client.v2.model.dem_journey_response import DemJourneyResponse
+from datadog_api_client.v2.model.dem_journey_response_attributes import DemJourneyResponseAttributes
+from datadog_api_client.v2.model.dem_journey_response_data import DemJourneyResponseData
+from datadog_api_client.v2.model.dem_journey_rum import DemJourneyRum
+from datadog_api_client.v2.model.dem_journey_test_suite_response import DemJourneyTestSuiteResponse
+from datadog_api_client.v2.model.dem_journey_test_suite_response_attributes import DemJourneyTestSuiteResponseAttributes
+from datadog_api_client.v2.model.dem_journey_test_suite_response_data import DemJourneyTestSuiteResponseData
+from datadog_api_client.v2.model.dem_journey_test_suite_type import DemJourneyTestSuiteType
+from datadog_api_client.v2.model.dem_journey_type import DemJourneyType
+from datadog_api_client.v2.model.dem_journeys_list_response import DemJourneysListResponse
+from datadog_api_client.v2.model.dem_recommended_test_attributes import DemRecommendedTestAttributes
+from datadog_api_client.v2.model.dem_recommended_test_config import DemRecommendedTestConfig
+from datadog_api_client.v2.model.dem_recommended_test_data import DemRecommendedTestData
+from datadog_api_client.v2.model.dem_recommended_test_type import DemRecommendedTestType
+from datadog_api_client.v2.model.dem_recommended_tests_response import DemRecommendedTestsResponse
+from datadog_api_client.v2.model.dem_rum_node import DemRumNode
+from datadog_api_client.v2.model.dem_rum_step import DemRumStep
+from datadog_api_client.v2.model.dem_rum_step_type import DemRumStepType
+from datadog_api_client.v2.model.dem_search_inferred_journeys_response import DemSearchInferredJourneysResponse
+from datadog_api_client.v2.model.dem_search_inferred_journeys_response_data_item import (
+    DemSearchInferredJourneysResponse_dataItem,
+)
+from datadog_api_client.v2.model.dem_test_suite_nested import DemTestSuiteNested
+from datadog_api_client.v2.model.dem_user import DemUser
+from datadog_api_client.v2.model.dem_variant import DemVariant
+from datadog_api_client.v2.model.dem_variant_attributes import DemVariantAttributes
+from datadog_api_client.v2.model.dem_variant_request import DemVariantRequest
+from datadog_api_client.v2.model.dem_variant_request_data import DemVariantRequestData
+from datadog_api_client.v2.model.dem_variant_response import DemVariantResponse
+from datadog_api_client.v2.model.dem_variant_response_data import DemVariantResponseData
+from datadog_api_client.v2.model.dem_variant_type import DemVariantType
 from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deployment import Deployment
 from datadog_api_client.v2.model.deployment_attributes import DeploymentAttributes
@@ -13195,6 +13238,47 @@ __all__ = [
     "DeletedTestsRequestType",
     "DeletedTestsResponse",
     "DeletedTestsResponseType",
+    "DemBatchGetJourneysAttributes",
+    "DemBatchGetJourneysData",
+    "DemBatchGetJourneysRequest",
+    "DemBatchGetJourneysRequestType",
+    "DemCreateJourneyTestSuiteAttributes",
+    "DemCreateJourneyTestSuiteData",
+    "DemCreateJourneyTestSuiteRequest",
+    "DemCreateJourneyTestSuiteRequestType",
+    "DemInferredJourneyStatus",
+    "DemJourneyCreateAttributes",
+    "DemJourneyCreateData",
+    "DemJourneyCreateRequest",
+    "DemJourneyResponse",
+    "DemJourneyResponseAttributes",
+    "DemJourneyResponseData",
+    "DemJourneyRum",
+    "DemJourneyTestSuiteResponse",
+    "DemJourneyTestSuiteResponseAttributes",
+    "DemJourneyTestSuiteResponseData",
+    "DemJourneyTestSuiteType",
+    "DemJourneyType",
+    "DemJourneysListResponse",
+    "DemRecommendedTestAttributes",
+    "DemRecommendedTestConfig",
+    "DemRecommendedTestData",
+    "DemRecommendedTestType",
+    "DemRecommendedTestsResponse",
+    "DemRumNode",
+    "DemRumStep",
+    "DemRumStepType",
+    "DemSearchInferredJourneysResponse",
+    "DemSearchInferredJourneysResponse_dataItem",
+    "DemTestSuiteNested",
+    "DemUser",
+    "DemVariant",
+    "DemVariantAttributes",
+    "DemVariantRequest",
+    "DemVariantRequestData",
+    "DemVariantResponse",
+    "DemVariantResponseData",
+    "DemVariantType",
     "DependencyLocation",
     "Deployment",
     "DeploymentAttributes",
