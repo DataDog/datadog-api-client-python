@@ -13129,6 +13129,13 @@ datadog\_api\_client.v2.model.device\_attributes\_interface\_statuses module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.device\_tags\_by\_source module
+-------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.device_tags_by_source
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.devices\_list\_data module
 --------------------------------------------------------
 
