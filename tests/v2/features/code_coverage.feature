@@ -11,24 +11,21 @@ Feature: Code Coverage
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get code coverage summary for a branch returns "Bad Request" response
-    Given operation "GetCodeCoverageBranchSummary" enabled
-    And new "GetCodeCoverageBranchSummary" request
+    Given new "GetCodeCoverageBranchSummary" request
     And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get code coverage summary for a branch returns "Not Found" response
-    Given operation "GetCodeCoverageBranchSummary" enabled
-    And new "GetCodeCoverageBranchSummary" request
+    Given new "GetCodeCoverageBranchSummary" request
     And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get code coverage summary for a branch returns "OK" response
-    Given operation "GetCodeCoverageBranchSummary" enabled
-    And new "GetCodeCoverageBranchSummary" request
+    Given new "GetCodeCoverageBranchSummary" request
     And body with value {"data": {"attributes": {"branch": "prod", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_branch_summary_request"}}
     When the request is sent
     Then the response status is 200 OK
@@ -59,24 +56,21 @@ Feature: Code Coverage
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get code coverage summary for a commit returns "Bad Request" response
-    Given operation "GetCodeCoverageCommitSummary" enabled
-    And new "GetCodeCoverageCommitSummary" request
+    Given new "GetCodeCoverageCommitSummary" request
     And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get code coverage summary for a commit returns "Not Found" response
-    Given operation "GetCodeCoverageCommitSummary" enabled
-    And new "GetCodeCoverageCommitSummary" request
+    Given new "GetCodeCoverageCommitSummary" request
     And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/ci-app-backend
   Scenario: Get code coverage summary for a commit returns "OK" response
-    Given operation "GetCodeCoverageCommitSummary" enabled
-    And new "GetCodeCoverageCommitSummary" request
+    Given new "GetCodeCoverageCommitSummary" request
     And body with value {"data": {"attributes": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_commit_summary_request"}}
     When the request is sent
     Then the response status is 200 OK
@@ -129,6 +123,27 @@ Feature: Code Coverage
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get code coverage summary for a pull request returns "Bad Request" response
+    Given new "GetCodeCoveragePRSummary" request
+    And body with value {"data": {"attributes": {"pr_number": 42, "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_pr_summary_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get code coverage summary for a pull request returns "Not Found" response
+    Given new "GetCodeCoveragePRSummary" request
+    And body with value {"data": {"attributes": {"pr_number": 42, "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_pr_summary_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get code coverage summary for a pull request returns "OK" response
+    Given new "GetCodeCoveragePRSummary" request
+    And body with value {"data": {"attributes": {"pr_number": 42, "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_pr_summary_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/ci-app-backend
   Scenario: Get code coverage summary for an existing branch with valid repository
     Given operation "GetCodeCoverageBranchSummary" enabled
@@ -154,3 +169,24 @@ Feature: Code Coverage
     And the response "data.attributes" has field "patch_coverage"
     And the response "data.attributes" has field "evaluated_reports_count"
     And the response "data.attributes" has field "evaluated_flags_count"
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Get per-file code coverage data returns "Bad Request" response
+    Given new "GetCodeCoverageFiles" request
+    And body with value {"data": {"attributes": {"branch": "main", "changed_only": true, "codeowner": "@my-team", "commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "flag": "unit-tests", "pr_number": 42, "repository_id": "github.com/datadog/shopist", "repository_url": "https://github.com/datadog/shopist", "service": "my-service"}, "type": "ci_app_coverage_files_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/ci-app-backend
+  Scenario: Get per-file code coverage data returns "Not Found" response
+    Given new "GetCodeCoverageFiles" request
+    And body with value {"data": {"attributes": {"changed_only": true, "commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_files_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/ci-app-backend
+  Scenario: Get per-file code coverage data returns "OK" response
+    Given new "GetCodeCoverageFiles" request
+    And body with value {"data": {"attributes": {"changed_only": true, "commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/datadog/shopist"}, "type": "ci_app_coverage_files_request"}}
+    When the request is sent
+    Then the response status is 200 OK

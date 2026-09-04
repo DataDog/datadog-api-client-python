@@ -451,8 +451,6 @@ class Configuration:
                 "v2.update_security_monitoring_integration_config": False,
                 "v2.validate_security_monitoring_integration_config": False,
                 "v2.validate_security_monitoring_integration_credentials": False,
-                "v2.get_code_coverage_branch_summary": False,
-                "v2.get_code_coverage_commit_summary": False,
                 "v2.get_rule_based_view": False,
                 "v2.get_commitments_commitment_list": False,
                 "v2.get_commitments_coverage_scalar": False,

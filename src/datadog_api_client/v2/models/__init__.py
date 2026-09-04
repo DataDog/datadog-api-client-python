@@ -3125,6 +3125,15 @@ from datadog_api_client.v2.model.feature_flag_response import FeatureFlagRespons
 from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
 from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 from datadog_api_client.v2.model.feature_flags_pagination_meta_page import FeatureFlagsPaginationMetaPage
+from datadog_api_client.v2.model.file_coverage_lines import FileCoverageLines
+from datadog_api_client.v2.model.files_coverage_attributes import FilesCoverageAttributes
+from datadog_api_client.v2.model.files_coverage_data import FilesCoverageData
+from datadog_api_client.v2.model.files_coverage_request import FilesCoverageRequest
+from datadog_api_client.v2.model.files_coverage_request_attributes import FilesCoverageRequestAttributes
+from datadog_api_client.v2.model.files_coverage_request_data import FilesCoverageRequestData
+from datadog_api_client.v2.model.files_coverage_request_type import FilesCoverageRequestType
+from datadog_api_client.v2.model.files_coverage_response import FilesCoverageResponse
+from datadog_api_client.v2.model.files_coverage_response_type import FilesCoverageResponseType
 from datadog_api_client.v2.model.filters_per_product import FiltersPerProduct
 from datadog_api_client.v2.model.finding import Finding
 from datadog_api_client.v2.model.finding_attributes import FindingAttributes
@@ -7083,6 +7092,10 @@ from datadog_api_client.v2.model.ownership_untagged_findings_attributes import O
 from datadog_api_client.v2.model.ownership_untagged_findings_data import OwnershipUntaggedFindingsData
 from datadog_api_client.v2.model.ownership_untagged_findings_response import OwnershipUntaggedFindingsResponse
 from datadog_api_client.v2.model.ownership_untagged_findings_type import OwnershipUntaggedFindingsType
+from datadog_api_client.v2.model.pr_coverage_summary_request import PRCoverageSummaryRequest
+from datadog_api_client.v2.model.pr_coverage_summary_request_attributes import PRCoverageSummaryRequestAttributes
+from datadog_api_client.v2.model.pr_coverage_summary_request_data import PRCoverageSummaryRequestData
+from datadog_api_client.v2.model.pr_coverage_summary_request_type import PRCoverageSummaryRequestType
 from datadog_api_client.v2.model.page_annotations_attributes import PageAnnotationsAttributes
 from datadog_api_client.v2.model.page_annotations_data import PageAnnotationsData
 from datadog_api_client.v2.model.page_annotations_response import PageAnnotationsResponse
@@ -13616,6 +13629,15 @@ __all__ = [
     "FeatureFlagStatus",
     "FeatureFlagsPaginationMeta",
     "FeatureFlagsPaginationMetaPage",
+    "FileCoverageLines",
+    "FilesCoverageAttributes",
+    "FilesCoverageData",
+    "FilesCoverageRequest",
+    "FilesCoverageRequestAttributes",
+    "FilesCoverageRequestData",
+    "FilesCoverageRequestType",
+    "FilesCoverageResponse",
+    "FilesCoverageResponseType",
     "FiltersPerProduct",
     "Finding",
     "FindingAttributes",
@@ -16252,6 +16274,10 @@ __all__ = [
     "OwnershipUntaggedFindingsData",
     "OwnershipUntaggedFindingsResponse",
     "OwnershipUntaggedFindingsType",
+    "PRCoverageSummaryRequest",
+    "PRCoverageSummaryRequestAttributes",
+    "PRCoverageSummaryRequestData",
+    "PRCoverageSummaryRequestType",
     "PageAnnotationsAttributes",
     "PageAnnotationsData",
     "PageAnnotationsResponse",
