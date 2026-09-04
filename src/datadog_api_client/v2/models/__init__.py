@@ -10714,6 +10714,102 @@ from datadog_api_client.v2.model.timeline_cell_resource import TimelineCellResou
 from datadog_api_client.v2.model.timeline_cell_resource_type import TimelineCellResourceType
 from datadog_api_client.v2.model.timeline_cell_type import TimelineCellType
 from datadog_api_client.v2.model.timeline_response import TimelineResponse
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_anomaly import TimeseriesAnomalyInvestigationAnomaly
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_anomaly_finding import (
+    TimeseriesAnomalyInvestigationAnomalyFinding,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_anomaly_finding_type import (
+    TimeseriesAnomalyInvestigationAnomalyFindingType,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_anomaly_type import (
+    TimeseriesAnomalyInvestigationAnomalyType,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_complete_status import (
+    TimeseriesAnomalyInvestigationCompleteStatus,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_configuration_source import (
+    TimeseriesAnomalyInvestigationConfigurationSource,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_data_source import (
+    TimeseriesAnomalyInvestigationDataSource,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_detection import (
+    TimeseriesAnomalyInvestigationDetection,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_finding import TimeseriesAnomalyInvestigationFinding
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_finding_synonym import (
+    TimeseriesAnomalyInvestigationFindingSynonym,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_finding_tag import (
+    TimeseriesAnomalyInvestigationFindingTag,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_formula import TimeseriesAnomalyInvestigationFormula
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_formula_limit import (
+    TimeseriesAnomalyInvestigationFormulaLimit,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_formula_limit_order import (
+    TimeseriesAnomalyInvestigationFormulaLimitOrder,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_influence_type import (
+    TimeseriesAnomalyInvestigationInfluenceType,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_influential_tag_finding import (
+    TimeseriesAnomalyInvestigationInfluentialTagFinding,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_influential_tag_finding_type import (
+    TimeseriesAnomalyInvestigationInfluentialTagFindingType,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_interval import TimeseriesAnomalyInvestigationInterval
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_maximum_deviation import (
+    TimeseriesAnomalyInvestigationMaximumDeviation,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_meta_type import (
+    TimeseriesAnomalyInvestigationMetaType,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_metric_query import (
+    TimeseriesAnomalyInvestigationMetricQuery,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_query_execution_status import (
+    TimeseriesAnomalyInvestigationQueryExecutionStatus,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_query_status import (
+    TimeseriesAnomalyInvestigationQueryStatus,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_request import TimeseriesAnomalyInvestigationRequest
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_request_attributes import (
+    TimeseriesAnomalyInvestigationRequestAttributes,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_request_data import (
+    TimeseriesAnomalyInvestigationRequestData,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_response import TimeseriesAnomalyInvestigationResponse
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_response_attributes import (
+    TimeseriesAnomalyInvestigationResponseAttributes,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_response_data import (
+    TimeseriesAnomalyInvestigationResponseData,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_response_id import (
+    TimeseriesAnomalyInvestigationResponseID,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_response_meta import (
+    TimeseriesAnomalyInvestigationResponseMeta,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_result import TimeseriesAnomalyInvestigationResult
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_results_warning import (
+    TimeseriesAnomalyInvestigationResultsWarning,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_series import TimeseriesAnomalyInvestigationSeries
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_tag_analysis import (
+    TimeseriesAnomalyInvestigationTagAnalysis,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_tag_analysis_status import (
+    TimeseriesAnomalyInvestigationTagAnalysisStatus,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_timeseries_request import (
+    TimeseriesAnomalyInvestigationTimeseriesRequest,
+)
+from datadog_api_client.v2.model.timeseries_anomaly_investigation_type import TimeseriesAnomalyInvestigationType
 from datadog_api_client.v2.model.timeseries_formula_query_request import TimeseriesFormulaQueryRequest
 from datadog_api_client.v2.model.timeseries_formula_query_response import TimeseriesFormulaQueryResponse
 from datadog_api_client.v2.model.timeseries_formula_request import TimeseriesFormulaRequest
@@ -18673,6 +18769,44 @@ __all__ = [
     "TimelineCellResourceType",
     "TimelineCellType",
     "TimelineResponse",
+    "TimeseriesAnomalyInvestigationAnomaly",
+    "TimeseriesAnomalyInvestigationAnomalyFinding",
+    "TimeseriesAnomalyInvestigationAnomalyFindingType",
+    "TimeseriesAnomalyInvestigationAnomalyType",
+    "TimeseriesAnomalyInvestigationCompleteStatus",
+    "TimeseriesAnomalyInvestigationConfigurationSource",
+    "TimeseriesAnomalyInvestigationDataSource",
+    "TimeseriesAnomalyInvestigationDetection",
+    "TimeseriesAnomalyInvestigationFinding",
+    "TimeseriesAnomalyInvestigationFindingSynonym",
+    "TimeseriesAnomalyInvestigationFindingTag",
+    "TimeseriesAnomalyInvestigationFormula",
+    "TimeseriesAnomalyInvestigationFormulaLimit",
+    "TimeseriesAnomalyInvestigationFormulaLimitOrder",
+    "TimeseriesAnomalyInvestigationInfluenceType",
+    "TimeseriesAnomalyInvestigationInfluentialTagFinding",
+    "TimeseriesAnomalyInvestigationInfluentialTagFindingType",
+    "TimeseriesAnomalyInvestigationInterval",
+    "TimeseriesAnomalyInvestigationMaximumDeviation",
+    "TimeseriesAnomalyInvestigationMetaType",
+    "TimeseriesAnomalyInvestigationMetricQuery",
+    "TimeseriesAnomalyInvestigationQueryExecutionStatus",
+    "TimeseriesAnomalyInvestigationQueryStatus",
+    "TimeseriesAnomalyInvestigationRequest",
+    "TimeseriesAnomalyInvestigationRequestAttributes",
+    "TimeseriesAnomalyInvestigationRequestData",
+    "TimeseriesAnomalyInvestigationResponse",
+    "TimeseriesAnomalyInvestigationResponseAttributes",
+    "TimeseriesAnomalyInvestigationResponseData",
+    "TimeseriesAnomalyInvestigationResponseID",
+    "TimeseriesAnomalyInvestigationResponseMeta",
+    "TimeseriesAnomalyInvestigationResult",
+    "TimeseriesAnomalyInvestigationResultsWarning",
+    "TimeseriesAnomalyInvestigationSeries",
+    "TimeseriesAnomalyInvestigationTagAnalysis",
+    "TimeseriesAnomalyInvestigationTagAnalysisStatus",
+    "TimeseriesAnomalyInvestigationTimeseriesRequest",
+    "TimeseriesAnomalyInvestigationType",
     "TimeseriesFormulaQueryRequest",
     "TimeseriesFormulaQueryResponse",
     "TimeseriesFormulaRequest",
