@@ -3292,6 +3292,7 @@ from datadog_api_client.v2.model.form_ui_definition_ui_theme_primary_color impor
 from datadog_api_client.v2.model.form_update_attributes import FormUpdateAttributes
 from datadog_api_client.v2.model.form_version_attributes import FormVersionAttributes
 from datadog_api_client.v2.model.form_version_data import FormVersionData
+from datadog_api_client.v2.model.form_version_list_type import FormVersionListType
 from datadog_api_client.v2.model.form_version_response import FormVersionResponse
 from datadog_api_client.v2.model.form_version_state import FormVersionState
 from datadog_api_client.v2.model.form_version_type import FormVersionType
@@ -5112,6 +5113,9 @@ from datadog_api_client.v2.model.list_feature_flags_response import ListFeatureF
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
 from datadog_api_client.v2.model.list_findings_response import ListFindingsResponse
+from datadog_api_client.v2.model.list_form_versions_data import ListFormVersionsData
+from datadog_api_client.v2.model.list_form_versions_data_attributes import ListFormVersionsDataAttributes
+from datadog_api_client.v2.model.list_form_versions_response import ListFormVersionsResponse
 from datadog_api_client.v2.model.list_historical_jobs_response import ListHistoricalJobsResponse
 from datadog_api_client.v2.model.list_integrations_response import ListIntegrationsResponse
 from datadog_api_client.v2.model.list_interface_tags_response import ListInterfaceTagsResponse
@@ -13769,6 +13773,7 @@ __all__ = [
     "FormUpdateAttributes",
     "FormVersionAttributes",
     "FormVersionData",
+    "FormVersionListType",
     "FormVersionResponse",
     "FormVersionState",
     "FormVersionType",
@@ -15093,6 +15098,9 @@ __all__ = [
     "ListFindingsMeta",
     "ListFindingsPage",
     "ListFindingsResponse",
+    "ListFormVersionsData",
+    "ListFormVersionsDataAttributes",
+    "ListFormVersionsResponse",
     "ListHistoricalJobsResponse",
     "ListIntegrationsResponse",
     "ListInterfaceTagsResponse",
