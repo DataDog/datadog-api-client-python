@@ -30,11 +30,14 @@ class DeploymentRulesOptions(ModelComposed):
         :param fail_on_no_groups_found: Whether the rule should fail if no monitor groups are found for the query.
         :type fail_on_no_groups_found: bool, optional
 
-        :param query: Monitors that match this query are evaluated.
+        :param query: A query that selects the monitors to evaluate.
         :type query: str
 
         :param warmup: Seconds to wait after a deployment starts before evaluating the monitor's status.
         :type warmup: int, optional
+
+        :param monitor_ids: A non-empty list of specific monitors to evaluate.
+        :type monitor_ids: [DeploymentRuleOptionsMonitorId]
         """
         super().__init__(kwargs)
 
@@ -51,10 +54,12 @@ class DeploymentRulesOptions(ModelComposed):
             DeploymentRuleOptionsFaultyDeploymentDetection,
         )
         from datadog_api_client.v2.model.deployment_rule_options_monitor import DeploymentRuleOptionsMonitor
+        from datadog_api_client.v2.model.deployment_rule_options_monitor_ids import DeploymentRuleOptionsMonitorIds
 
         return {
             "oneOf": [
                 DeploymentRuleOptionsFaultyDeploymentDetection,
                 DeploymentRuleOptionsMonitor,
+                DeploymentRuleOptionsMonitorIds,
             ],
         }
