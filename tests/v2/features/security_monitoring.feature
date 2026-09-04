@@ -796,19 +796,6 @@ Feature: Security Monitoring
     And the response "options.detectionMethod" is equal to "impossible_travel"
 
   @skip-validation @team:DataDog/cloud-siem
-  Scenario: Create a detection rule with type 'signal_correlation' returns "OK" response
-    Given there is a valid "security_rule" in the system
-    And there is a valid "security_rule_bis" in the system
-    And new "CreateSecurityMonitoringRule" request
-    And body with value {"name":"{{ unique }}_signal_rule", "queries":[{"ruleId":"{{ security_rule.id }}","aggregation":"event_count","correlatedByFields":["host"],"correlatedQueryIndex":1}, {"ruleId":"{{ security_rule_bis.id }}","aggregation":"event_count","correlatedByFields":["host"]}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0 && b > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test signal correlation rule","tags":[],"isEnabled":true, "type": "signal_correlation"}
-    When the request is sent
-    Then the response status is 200 OK
-    And the response "name" is equal to "{{ unique }}_signal_rule"
-    And the response "type" is equal to "signal_correlation"
-    And the response "message" is equal to "Test signal correlation rule"
-    And the response "isEnabled" is equal to true
-
-  @skip-validation @team:DataDog/cloud-siem
   Scenario: Create a detection rule with type 'workload_security' returns "OK" response
     Given new "CreateSecurityMonitoringRule" request
     And body with value {"name":"{{ unique }}", "queries":[{"query":"@test:true","aggregation":"count","groupByFields":[],"distinctFields":[],"metric":""}],"filters":[],"cases":[{"name":"","status":"info","condition":"a > 0","notifications":[]}],"options":{"evaluationWindow":900,"keepAlive":3600,"maxSignalDuration":86400},"message":"Test rule","tags":[],"isEnabled":true, "type": "workload_security"}

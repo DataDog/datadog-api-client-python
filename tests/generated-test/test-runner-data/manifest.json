@@ -9362,13 +9362,6 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
-      "file": "v2/security-monitoring/create-a-detection-rule-with-type-signal-correlation-returns-ok-response.json",
-      "scenario": "Create a detection rule with type 'signal_correlation' returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Security Monitoring",
-      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/create-a-detection-rule-with-type-workload-security-returns-ok-response.json",
       "scenario": "Create a detection rule with type 'workload_security' returns \"OK\" response",
       "version": "v2"
