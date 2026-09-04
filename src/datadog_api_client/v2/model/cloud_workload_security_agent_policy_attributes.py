@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -49,6 +50,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
 
         return {
             "blocking_rules_count": (int,),
+            "content_pack_update_available": (bool, none_type),
             "datadog_managed": (bool,),
             "description": (str,),
             "disabled_rules_count": (int,),
@@ -62,6 +64,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
             "policy_version": (str,),
             "priority": (int,),
             "rule_count": (int,),
+            "source_default_policy_id": (str,),
             "update_date": (int,),
             "updated_at": (int,),
             "updater": (CloudWorkloadSecurityAgentPolicyUpdaterAttributes,),
@@ -70,6 +73,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
 
     attribute_map = {
         "blocking_rules_count": "blockingRulesCount",
+        "content_pack_update_available": "contentPackUpdateAvailable",
         "datadog_managed": "datadogManaged",
         "description": "description",
         "disabled_rules_count": "disabledRulesCount",
@@ -83,6 +87,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         "policy_version": "policyVersion",
         "priority": "priority",
         "rule_count": "ruleCount",
+        "source_default_policy_id": "sourceDefaultPolicyId",
         "update_date": "updateDate",
         "updated_at": "updatedAt",
         "updater": "updater",
@@ -92,6 +97,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
     def __init__(
         self_,
         blocking_rules_count: Union[int, UnsetType] = unset,
+        content_pack_update_available: Union[bool, none_type, UnsetType] = unset,
         datadog_managed: Union[bool, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         disabled_rules_count: Union[int, UnsetType] = unset,
@@ -105,6 +111,7 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         policy_version: Union[str, UnsetType] = unset,
         priority: Union[int, UnsetType] = unset,
         rule_count: Union[int, UnsetType] = unset,
+        source_default_policy_id: Union[str, UnsetType] = unset,
         update_date: Union[int, UnsetType] = unset,
         updated_at: Union[int, UnsetType] = unset,
         updater: Union[CloudWorkloadSecurityAgentPolicyUpdaterAttributes, UnsetType] = unset,
@@ -116,6 +123,9 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
 
         :param blocking_rules_count: The number of rules with the blocking feature in this policy
         :type blocking_rules_count: int, optional
+
+        :param content_pack_update_available: Whether an update is available for the content pack. Only set for activated content packs, ``null`` otherwise
+        :type content_pack_update_available: bool, none_type, optional
 
         :param datadog_managed: Whether the policy is managed by Datadog
         :type datadog_managed: bool, optional
@@ -156,6 +166,9 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         :param rule_count: The number of rules in this policy
         :type rule_count: int, optional
 
+        :param source_default_policy_id: The ID of the Datadog-managed default policy this policy is derived from
+        :type source_default_policy_id: str, optional
+
         :param update_date: Timestamp in milliseconds when the policy was last updated
         :type update_date: int, optional
 
@@ -170,6 +183,8 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
         """
         if blocking_rules_count is not unset:
             kwargs["blocking_rules_count"] = blocking_rules_count
+        if content_pack_update_available is not unset:
+            kwargs["content_pack_update_available"] = content_pack_update_available
         if datadog_managed is not unset:
             kwargs["datadog_managed"] = datadog_managed
         if description is not unset:
@@ -196,6 +211,8 @@ class CloudWorkloadSecurityAgentPolicyAttributes(ModelNormal):
             kwargs["priority"] = priority
         if rule_count is not unset:
             kwargs["rule_count"] = rule_count
+        if source_default_policy_id is not unset:
+            kwargs["source_default_policy_id"] = source_default_policy_id
         if update_date is not unset:
             kwargs["update_date"] = update_date
         if updated_at is not unset:
