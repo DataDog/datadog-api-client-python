@@ -9136,6 +9136,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_keep_alive import Secu
 from datadog_api_client.v2.model.security_monitoring_rule_max_signal_duration import (
     SecurityMonitoringRuleMaxSignalDuration,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_metadata import SecurityMonitoringRuleMetadata
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options import SecurityMonitoringRuleNewValueOptions
 from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_learning_method import (
     SecurityMonitoringRuleNewValueOptionsLearningMethod,
@@ -9174,6 +9175,7 @@ from datadog_api_client.v2.model.security_monitoring_rule_type_create import Sec
 from datadog_api_client.v2.model.security_monitoring_rule_type_read import SecurityMonitoringRuleTypeRead
 from datadog_api_client.v2.model.security_monitoring_rule_type_test import SecurityMonitoringRuleTypeTest
 from datadog_api_client.v2.model.security_monitoring_rule_update_payload import SecurityMonitoringRuleUpdatePayload
+from datadog_api_client.v2.model.security_monitoring_rule_user import SecurityMonitoringRuleUser
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
 from datadog_api_client.v2.model.security_monitoring_sku import SecurityMonitoringSKU
 from datadog_api_client.v2.model.security_monitoring_scheduling_options import SecurityMonitoringSchedulingOptions
@@ -17585,6 +17587,7 @@ __all__ = [
     "SecurityMonitoringRuleImpossibleTravelOptions",
     "SecurityMonitoringRuleKeepAlive",
     "SecurityMonitoringRuleMaxSignalDuration",
+    "SecurityMonitoringRuleMetadata",
     "SecurityMonitoringRuleNewValueOptions",
     "SecurityMonitoringRuleNewValueOptionsLearningMethod",
     "SecurityMonitoringRuleNewValueOptionsLearningThreshold",
@@ -17607,6 +17610,7 @@ __all__ = [
     "SecurityMonitoringRuleTypeRead",
     "SecurityMonitoringRuleTypeTest",
     "SecurityMonitoringRuleUpdatePayload",
+    "SecurityMonitoringRuleUser",
     "SecurityMonitoringRuleValidatePayload",
     "SecurityMonitoringSKU",
     "SecurityMonitoringSchedulingOptions",
