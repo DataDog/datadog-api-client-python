@@ -1,5 +1,5 @@
 """
-Get SPA Recommendations with a shard parameter returns "OK" response
+Get SPA recommendations using a shard parameter returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration

@@ -117,7 +117,7 @@ class SpaApi:
         *,
         bypass_cache: Union[str, UnsetType] = unset,
     ) -> RecommendationDocument:
-        """Get SPA Recommendations with a shard parameter.
+        """Get SPA recommendations using a shard parameter.
 
         This endpoint is currently experimental and restricted to Datadog internal use only. Retrieve resource recommendations for a Spark job. The caller (Spark Gateway or DJM UI) provides a service name and shard identifier, and SPA returns structured recommendations for driver and executor resources.
 

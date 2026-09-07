@@ -23,7 +23,7 @@ Feature: Spa
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/data-and-analytics-processing
-  Scenario: Get SPA Recommendations with a shard parameter returns "Bad Request" response
+  Scenario: Get SPA recommendations using a shard parameter returns "Bad Request" response
     Given operation "GetSPARecommendationsWithShard" enabled
     And new "GetSPARecommendationsWithShard" request
     And request contains "shard" parameter from "REPLACE.ME"
@@ -32,7 +32,7 @@ Feature: Spa
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/data-and-analytics-processing
-  Scenario: Get SPA Recommendations with a shard parameter returns "OK" response
+  Scenario: Get SPA recommendations using a shard parameter returns "OK" response
     Given operation "GetSPARecommendationsWithShard" enabled
     And new "GetSPARecommendationsWithShard" request
     And request contains "shard" parameter from "REPLACE.ME"
