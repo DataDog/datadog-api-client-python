@@ -2663,6 +2663,7 @@ from datadog_api_client.v2.model.due_date_rule_data_create import DueDateRuleDat
 from datadog_api_client.v2.model.due_date_rule_data_response import DueDateRuleDataResponse
 from datadog_api_client.v2.model.due_date_rule_reorder_item import DueDateRuleReorderItem
 from datadog_api_client.v2.model.due_date_rule_reorder_request import DueDateRuleReorderRequest
+from datadog_api_client.v2.model.due_date_rule_reorder_response import DueDateRuleReorderResponse
 from datadog_api_client.v2.model.due_date_rule_response import DueDateRuleResponse
 from datadog_api_client.v2.model.due_date_rule_type import DueDateRuleType
 from datadog_api_client.v2.model.due_date_rule_update_request import DueDateRuleUpdateRequest
@@ -5700,6 +5701,7 @@ from datadog_api_client.v2.model.mute_rule_data_create import MuteRuleDataCreate
 from datadog_api_client.v2.model.mute_rule_data_response import MuteRuleDataResponse
 from datadog_api_client.v2.model.mute_rule_reorder_item import MuteRuleReorderItem
 from datadog_api_client.v2.model.mute_rule_reorder_request import MuteRuleReorderRequest
+from datadog_api_client.v2.model.mute_rule_reorder_response import MuteRuleReorderResponse
 from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
 from datadog_api_client.v2.model.mute_rule_type import MuteRuleType
 from datadog_api_client.v2.model.mute_rule_update_request import MuteRuleUpdateRequest
@@ -10696,6 +10698,7 @@ from datadog_api_client.v2.model.ticket_creation_rule_data_create import TicketC
 from datadog_api_client.v2.model.ticket_creation_rule_data_response import TicketCreationRuleDataResponse
 from datadog_api_client.v2.model.ticket_creation_rule_reorder_item import TicketCreationRuleReorderItem
 from datadog_api_client.v2.model.ticket_creation_rule_reorder_request import TicketCreationRuleReorderRequest
+from datadog_api_client.v2.model.ticket_creation_rule_reorder_response import TicketCreationRuleReorderResponse
 from datadog_api_client.v2.model.ticket_creation_rule_response import TicketCreationRuleResponse
 from datadog_api_client.v2.model.ticket_creation_rule_type import TicketCreationRuleType
 from datadog_api_client.v2.model.ticket_creation_rule_update_request import TicketCreationRuleUpdateRequest
@@ -13308,6 +13311,7 @@ __all__ = [
     "DueDateRuleDataResponse",
     "DueDateRuleReorderItem",
     "DueDateRuleReorderRequest",
+    "DueDateRuleReorderResponse",
     "DueDateRuleResponse",
     "DueDateRuleType",
     "DueDateRuleUpdateRequest",
@@ -15543,6 +15547,7 @@ __all__ = [
     "MuteRuleDataResponse",
     "MuteRuleReorderItem",
     "MuteRuleReorderRequest",
+    "MuteRuleReorderResponse",
     "MuteRuleResponse",
     "MuteRuleType",
     "MuteRuleUpdateRequest",
@@ -18655,6 +18660,7 @@ __all__ = [
     "TicketCreationRuleDataResponse",
     "TicketCreationRuleReorderItem",
     "TicketCreationRuleReorderRequest",
+    "TicketCreationRuleReorderResponse",
     "TicketCreationRuleResponse",
     "TicketCreationRuleType",
     "TicketCreationRuleUpdateRequest",
