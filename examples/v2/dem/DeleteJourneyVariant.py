@@ -1,0 +1,13 @@
+"""
+Delete a DEM journey variant returns "No Content" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.dem_api import DEMApi
+
+configuration = Configuration()
+with ApiClient(configuration) as api_client:
+    api_instance = DEMApi(api_client)
+    api_instance.delete_journey_variant(
+        variant_id="variant_id",
+    )

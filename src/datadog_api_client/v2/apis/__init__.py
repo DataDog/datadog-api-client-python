@@ -37,6 +37,7 @@ from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.containers_api import ContainersApi
 from datadog_api_client.v2.api.customer_org_api import CustomerOrgApi
 from datadog_api_client.v2.api.ddsql_api import DDSQLApi
+from datadog_api_client.v2.api.dem_api import DEMApi
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecureEmbedApi
@@ -187,6 +188,7 @@ __all__ = [
     "ContainersApi",
     "CustomerOrgApi",
     "DDSQLApi",
+    "DEMApi",
     "DORAMetricsApi",
     "DashboardListsApi",
     "DashboardSecureEmbedApi",
