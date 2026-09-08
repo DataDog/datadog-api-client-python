@@ -10259,6 +10259,12 @@
       "type": "safe"
     }
   },
+  "CreateTimeseriesAnomalyInvestigation": {
+    "tag": "Timeseries Anomaly Investigations",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetTraceByID": {
     "tag": "APM Trace",
     "undo": {
