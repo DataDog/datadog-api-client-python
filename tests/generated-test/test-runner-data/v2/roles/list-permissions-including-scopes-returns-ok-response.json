@@ -1,0 +1,35 @@
+{
+  "api": "Roles",
+  "expected_status": 200,
+  "feature": "Roles",
+  "id": "v2/Roles/List permissions including scopes returns \"OK\" response",
+  "operation_id": "ListPermissions",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include_scopes",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/permissions"
+  },
+  "scenario": "List permissions including scopes returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
