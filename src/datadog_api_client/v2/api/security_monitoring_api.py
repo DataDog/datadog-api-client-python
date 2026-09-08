@@ -45,11 +45,13 @@ from datadog_api_client.v2.model.assignee_request import AssigneeRequest
 from datadog_api_client.v2.model.due_date_rules_response import DueDateRulesResponse
 from datadog_api_client.v2.model.due_date_rule_response import DueDateRuleResponse
 from datadog_api_client.v2.model.due_date_rule_create_request import DueDateRuleCreateRequest
+from datadog_api_client.v2.model.due_date_rule_reorder_response import DueDateRuleReorderResponse
 from datadog_api_client.v2.model.due_date_rule_reorder_request import DueDateRuleReorderRequest
 from datadog_api_client.v2.model.due_date_rule_update_request import DueDateRuleUpdateRequest
 from datadog_api_client.v2.model.mute_rules_response import MuteRulesResponse
 from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
 from datadog_api_client.v2.model.mute_rule_create_request import MuteRuleCreateRequest
+from datadog_api_client.v2.model.mute_rule_reorder_response import MuteRuleReorderResponse
 from datadog_api_client.v2.model.mute_rule_reorder_request import MuteRuleReorderRequest
 from datadog_api_client.v2.model.mute_rule_update_request import MuteRuleUpdateRequest
 from datadog_api_client.v2.model.severity_modifier_rules_response import SeverityModifierRulesResponse
@@ -61,6 +63,7 @@ from datadog_api_client.v2.model.severity_modifier_rule_update_request import Se
 from datadog_api_client.v2.model.ticket_creation_rules_response import TicketCreationRulesResponse
 from datadog_api_client.v2.model.ticket_creation_rule_response import TicketCreationRuleResponse
 from datadog_api_client.v2.model.ticket_creation_rule_create_request import TicketCreationRuleCreateRequest
+from datadog_api_client.v2.model.ticket_creation_rule_reorder_response import TicketCreationRuleReorderResponse
 from datadog_api_client.v2.model.ticket_creation_rule_reorder_request import TicketCreationRuleReorderRequest
 from datadog_api_client.v2.model.ticket_creation_rule_update_request import TicketCreationRuleUpdateRequest
 from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
@@ -4110,7 +4113,7 @@ class SecurityMonitoringApi:
 
         self._reorder_security_findings_automation_due_date_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (DueDateRuleReorderRequest,),
+                "response_type": (DueDateRuleReorderResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_due_date_rules",
@@ -4130,7 +4133,7 @@ class SecurityMonitoringApi:
 
         self._reorder_security_findings_automation_mute_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (MuteRuleReorderRequest,),
+                "response_type": (MuteRuleReorderResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_mute_rules",
@@ -4170,7 +4173,7 @@ class SecurityMonitoringApi:
 
         self._reorder_security_findings_automation_ticket_creation_rules_endpoint = _Endpoint(
             settings={
-                "response_type": (TicketCreationRuleReorderRequest,),
+                "response_type": (TicketCreationRuleReorderResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/findings/automation/ticket_creation_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_ticket_creation_rules",
@@ -8646,13 +8649,13 @@ class SecurityMonitoringApi:
     def reorder_security_findings_automation_due_date_rules(
         self,
         body: DueDateRuleReorderRequest,
-    ) -> DueDateRuleReorderRequest:
+    ) -> DueDateRuleReorderResponse:
         """Reorder due date rules.
 
         Reorder the list of due date rules for the current organization.
 
         :type body: DueDateRuleReorderRequest
-        :rtype: DueDateRuleReorderRequest
+        :rtype: DueDateRuleReorderResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -8662,13 +8665,13 @@ class SecurityMonitoringApi:
     def reorder_security_findings_automation_mute_rules(
         self,
         body: MuteRuleReorderRequest,
-    ) -> MuteRuleReorderRequest:
+    ) -> MuteRuleReorderResponse:
         """Reorder mute rules.
 
         Reorder the list of mute rules for the current organization.
 
         :type body: MuteRuleReorderRequest
-        :rtype: MuteRuleReorderRequest
+        :rtype: MuteRuleReorderResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -8694,13 +8697,13 @@ class SecurityMonitoringApi:
     def reorder_security_findings_automation_ticket_creation_rules(
         self,
         body: TicketCreationRuleReorderRequest,
-    ) -> TicketCreationRuleReorderRequest:
+    ) -> TicketCreationRuleReorderResponse:
         """Reorder ticket creation rules.
 
         Reorder the list of ticket creation rules for the current organization.
 
         :type body: TicketCreationRuleReorderRequest
-        :rtype: TicketCreationRuleReorderRequest
+        :rtype: TicketCreationRuleReorderResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
