@@ -23,20 +23,32 @@ class GetMultipleRulesetsRequest(ModelNormal):
         from datadog_api_client.v2.model.get_multiple_rulesets_request_data import GetMultipleRulesetsRequestData
 
         return {
+            "_authentication_token": (str,),
             "data": (GetMultipleRulesetsRequestData,),
         }
 
     attribute_map = {
+        "_authentication_token": "_authentication_token",
         "data": "data",
     }
 
-    def __init__(self_, data: Union[GetMultipleRulesetsRequestData, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        _authentication_token: Union[str, UnsetType] = unset,
+        data: Union[GetMultipleRulesetsRequestData, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The request payload for retrieving rules for multiple rulesets in a single batch call.
+
+        :param _authentication_token: CSRF token for security, sent by browser-based clients. Ignored by the API when absent.
+        :type _authentication_token: str, optional
 
         :param data: The primary data object in the get-multiple-rulesets request, containing request attributes and resource type.
         :type data: GetMultipleRulesetsRequestData, optional
         """
+        if _authentication_token is not unset:
+            kwargs["_authentication_token"] = _authentication_token
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)

@@ -3,51 +3,38 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ast_node import AstNode
 
 
 class GetAstResponseDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ast_node import AstNode
+
         return {
-            "ast": (
-                {
-                    str: (
-                        bool,
-                        date,
-                        datetime,
-                        dict,
-                        float,
-                        int,
-                        list,
-                        str,
-                        UUID,
-                        none_type,
-                    )
-                },
-            ),
+            "result": (AstNode,),
         }
 
     attribute_map = {
-        "ast": "ast",
+        "result": "result",
     }
 
-    def __init__(self_, ast: Dict[str, Any], **kwargs):
+    def __init__(self_, result: AstNode, **kwargs):
         """
         The attributes of the get-AST response, containing the parsed abstract syntax tree.
 
-        :param ast: The parsed abstract syntax tree as a JSON object.
-        :type ast: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}
+        :param result: A node in the abstract syntax tree of the parsed source code.
+        :type result: AstNode
         """
         super().__init__(kwargs)
 
-        self_.ast = ast
+        self_.result = result

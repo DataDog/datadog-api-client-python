@@ -34,7 +34,10 @@ class CustomRulesetRequest(ModelNormal):
         """
         Request body for creating or updating a custom ruleset.
 
-        :param data: Data object for a custom ruleset create or update request.
+        :param data: Data object for a custom ruleset create or update request. The resource ``id`` is
+            required and must equal both ``attributes.name`` and, on update, the ``ruleset_name``
+            path parameter; a request that omits it or supplies a different value is rejected
+            with a 412 response.
         :type data: CustomRulesetRequestData, optional
         """
         if data is not unset:

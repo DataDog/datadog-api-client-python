@@ -56,7 +56,7 @@ Feature: Security Monitoring
   Scenario: Analyze code returns "Bad Request" response
     Given operation "CreateStaticAnalysisServerAnalysis" enabled
     And new "CreateStaticAnalysisServerAnalysis" request
-    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "filename": "test.py", "language": "python", "rules": [{"category": "BEST_PRACTICES", "checksum": "abc123def456", "code": "ZnVuY3Rpb24gdmlzaXQobm9kZSkge30=", "entity_checked": null, "id": "python-best-practices/no-exit", "language": "python", "regex": null, "severity": "WARNING", "tree_sitter_query": "KGNhbGwgbmFtZTogKGF0dHJpYnV0ZSkpQHZhbA==", "type": "TREE_SITTER_QUERY"}]}, "type": "analysis_request"}}
+    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "filename": "test.py", "language": "python", "rules": [{"arguments": [{}], "category": "BEST_PRACTICES", "checksum": "abc123def456", "code": "ZnVuY3Rpb24gdmlzaXQobm9kZSkge30=", "entity_checked": null, "id": "python-best-practices/no-exit", "language": "python", "name": "no-exit", "regex": null, "severity": "WARNING", "tests": [{}], "tree_sitter_query": "KGNhbGwgbmFtZTogKGF0dHJpYnV0ZSkpQHZhbA==", "type": "TREE_SITTER_QUERY"}]}, "type": "analysis_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -64,7 +64,7 @@ Feature: Security Monitoring
   Scenario: Analyze code returns "OK" response
     Given operation "CreateStaticAnalysisServerAnalysis" enabled
     And new "CreateStaticAnalysisServerAnalysis" request
-    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "filename": "test.py", "language": "python", "rules": [{"category": "BEST_PRACTICES", "checksum": "abc123def456", "code": "ZnVuY3Rpb24gdmlzaXQobm9kZSkge30=", "entity_checked": null, "id": "python-best-practices/no-exit", "language": "python", "regex": null, "severity": "WARNING", "tree_sitter_query": "KGNhbGwgbmFtZTogKGF0dHJpYnV0ZSkpQHZhbA==", "type": "TREE_SITTER_QUERY"}]}, "type": "analysis_request"}}
+    And body with value {"data": {"attributes": {"code": "aW1wb3J0IHN5cw==", "file_encoding": "utf-8", "filename": "test.py", "language": "python", "rules": [{"arguments": [{}], "category": "BEST_PRACTICES", "checksum": "abc123def456", "code": "ZnVuY3Rpb24gdmlzaXQobm9kZSkge30=", "entity_checked": null, "id": "python-best-practices/no-exit", "language": "python", "name": "no-exit", "regex": null, "severity": "WARNING", "tests": [{}], "tree_sitter_query": "KGNhbGwgbmFtZTogKGF0dHJpYnV0ZSkpQHZhbA==", "type": "TREE_SITTER_QUERY"}]}, "type": "analysis_request"}}
     When the request is sent
     Then the response status is 200 OK
 

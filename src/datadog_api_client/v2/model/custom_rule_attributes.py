@@ -14,44 +14,41 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.custom_ruleset_rule_embedded import CustomRulesetRuleEmbedded
+    from datadog_api_client.v2.model.custom_rule_revision_embedded import CustomRuleRevisionEmbedded
 
 
-class CustomRulesetAttributes(ModelNormal):
+class CustomRuleAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.custom_ruleset_rule_embedded import CustomRulesetRuleEmbedded
+        from datadog_api_client.v2.model.custom_rule_revision_embedded import CustomRuleRevisionEmbedded
 
         return {
             "created_at": (datetime,),
             "created_by": (str,),
-            "description": (str,),
+            "last_revision": (CustomRuleRevisionEmbedded,),
             "name": (str,),
-            "rules": ([CustomRulesetRuleEmbedded], none_type),
-            "short_description": (str,),
+            "revisions": ([CustomRuleRevisionEmbedded], none_type),
         }
 
     attribute_map = {
         "created_at": "created_at",
         "created_by": "created_by",
-        "description": "description",
+        "last_revision": "last_revision",
         "name": "name",
-        "rules": "rules",
-        "short_description": "short_description",
+        "revisions": "revisions",
     }
 
     def __init__(
         self_,
         created_at: datetime,
         created_by: str,
-        description: str,
+        last_revision: CustomRuleRevisionEmbedded,
         name: str,
-        rules: Union[List[CustomRulesetRuleEmbedded], none_type],
-        short_description: str,
+        revisions: Union[List[CustomRuleRevisionEmbedded], none_type],
         **kwargs,
     ):
         """
-        Attributes of a custom ruleset, including its name, description, and rules.
+        Attributes of a custom static analysis rule, including its most recent revision and revision history.
 
         :param created_at: Creation timestamp
         :type created_at: datetime
@@ -59,23 +56,19 @@ class CustomRulesetAttributes(ModelNormal):
         :param created_by: Creator identifier
         :type created_by: str
 
-        :param description: Base64-encoded full description
-        :type description: str
+        :param last_revision: A revision of a custom static analysis rule as embedded in a rule or ruleset response.
+        :type last_revision: CustomRuleRevisionEmbedded
 
-        :param name: Ruleset name
+        :param name: Rule name
         :type name: str
 
-        :param rules: Rules in the ruleset
-        :type rules: [CustomRulesetRuleEmbedded], none_type
-
-        :param short_description: Base64-encoded short description
-        :type short_description: str
+        :param revisions: Revision history of the rule.
+        :type revisions: [CustomRuleRevisionEmbedded], none_type
         """
         super().__init__(kwargs)
 
         self_.created_at = created_at
         self_.created_by = created_by
-        self_.description = description
+        self_.last_revision = last_revision
         self_.name = name
-        self_.rules = rules
-        self_.short_description = short_description
+        self_.revisions = revisions

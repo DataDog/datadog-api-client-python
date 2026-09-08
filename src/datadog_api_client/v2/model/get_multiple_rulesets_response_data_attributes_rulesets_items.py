@@ -3,20 +3,15 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data import (
-        GetMultipleRulesetsResponseDataAttributesRulesetsItemsData,
-    )
     from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items import (
         GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems,
     )
@@ -25,24 +20,21 @@ if TYPE_CHECKING:
 class GetMultipleRulesetsResponseDataAttributesRulesetsItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data import (
-            GetMultipleRulesetsResponseDataAttributesRulesetsItemsData,
-        )
         from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items import (
             GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems,
         )
 
         return {
-            "data": (GetMultipleRulesetsResponseDataAttributesRulesetsItemsData,),
             "description": (str,),
+            "id": (str,),
             "name": (str,),
             "rules": ([GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems],),
             "short_description": (str,),
         }
 
     attribute_map = {
-        "data": "data",
         "description": "description",
+        "id": "id",
         "name": "name",
         "rules": "rules",
         "short_description": "short_description",
@@ -50,39 +42,35 @@ class GetMultipleRulesetsResponseDataAttributesRulesetsItems(ModelNormal):
 
     def __init__(
         self_,
-        data: GetMultipleRulesetsResponseDataAttributesRulesetsItemsData,
-        description: Union[str, UnsetType] = unset,
-        name: Union[str, UnsetType] = unset,
-        rules: Union[List[GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems], UnsetType] = unset,
-        short_description: Union[str, UnsetType] = unset,
+        description: str,
+        id: str,
+        name: str,
+        rules: List[GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems],
+        short_description: str,
         **kwargs,
     ):
         """
         A ruleset returned in the response, containing its metadata and associated rules.
 
-        :param data: The resource identifier and type for a ruleset.
-        :type data: GetMultipleRulesetsResponseDataAttributesRulesetsItemsData
-
         :param description: A detailed description of the ruleset's purpose and the types of issues it targets.
-        :type description: str, optional
+        :type description: str
+
+        :param id: The unique identifier of the ruleset, which is the same as its name.
+        :type id: str
 
         :param name: The unique name of the ruleset.
-        :type name: str, optional
+        :type name: str
 
         :param rules: The list of static analysis rules included in this ruleset.
-        :type rules: [GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems], optional
+        :type rules: [GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems]
 
         :param short_description: A brief summary of the ruleset, suitable for display in listings.
-        :type short_description: str, optional
+        :type short_description: str
         """
-        if description is not unset:
-            kwargs["description"] = description
-        if name is not unset:
-            kwargs["name"] = name
-        if rules is not unset:
-            kwargs["rules"] = rules
-        if short_description is not unset:
-            kwargs["short_description"] = short_description
         super().__init__(kwargs)
 
-        self_.data = data
+        self_.description = description
+        self_.id = id
+        self_.name = name
+        self_.rules = rules
+        self_.short_description = short_description

@@ -11,6 +11,13 @@ from datadog_api_client.model_utils import (
 
 
 class CustomRuleRevisionTest(ModelNormal):
+    validations = {
+        "annotation_count": {
+            "inclusive_maximum": 65535,
+            "inclusive_minimum": 0,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
