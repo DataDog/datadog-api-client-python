@@ -8,7 +8,7 @@ Feature: Rum Replay Viewership
     And a valid "appKeyAuth" key in the system
     And an instance of "RumReplayViewership" API
 
-  @generated @skip @team:DataDog/session-replay-backend
+  @generated @skip @team:DataDog/session-replay
   Scenario: Create RUM replay session watch returns "Created" response
     Given new "CreateRumReplaySessionWatch" request
     And request contains "session_id" parameter from "REPLACE.ME"
@@ -16,21 +16,21 @@ Feature: Rum Replay Viewership
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/session-replay-backend
+  @generated @skip @team:DataDog/session-replay
   Scenario: Delete RUM replay session watch returns "No Content" response
     Given new "DeleteRumReplaySessionWatch" request
     And request contains "session_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/session-replay-backend
+  @generated @skip @team:DataDog/session-replay
   Scenario: List RUM replay session watchers returns "OK" response
     Given new "ListRumReplaySessionWatchers" request
     And request contains "session_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/session-replay-backend
+  @generated @skip @team:DataDog/session-replay
   Scenario: List RUM replay viewership history sessions returns "OK" response
     Given new "ListRumReplayViewershipHistorySessions" request
     When the request is sent
