@@ -8599,6 +8599,13 @@
     {
       "feature": "Roles",
       "feature_file": "../../v2/features/roles.feature",
+      "file": "v2/roles/list-permissions-including-scopes-returns-ok-response.json",
+      "scenario": "List permissions including scopes returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Roles",
+      "feature_file": "../../v2/features/roles.feature",
       "file": "v2/roles/list-permissions-returns-ok-response.json",
       "scenario": "List permissions returns \"OK\" response",
       "version": "v2"
