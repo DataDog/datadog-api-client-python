@@ -34,6 +34,7 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.sources" has length 1
     And the response "data.attributes.config.processor_groups" has length 1
     And the response "data.attributes.config.destinations" has length 1
+    And the response "data.attributes.config" does not have field "end_to_end_acknowledgements"
 
   @team:DataDog/observability-pipelines
   Scenario: Create a pipeline with dedupe processor with cache returns "OK" response
