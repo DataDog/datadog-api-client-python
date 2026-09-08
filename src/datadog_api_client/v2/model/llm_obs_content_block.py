@@ -27,6 +27,12 @@ if TYPE_CHECKING:
 
 
 class LLMObsContentBlock(ModelNormal):
+    validations = {
+        "code": {
+            "min_length": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.llm_obs_content_block_llm_obs_trace_interaction_type import (
@@ -38,6 +44,7 @@ class LLMObsContentBlock(ModelNormal):
 
         return {
             "alt": (str,),
+            "code": (str,),
             "content": (
                 bool,
                 date,
@@ -74,6 +81,7 @@ class LLMObsContentBlock(ModelNormal):
 
     attribute_map = {
         "alt": "alt",
+        "code": "code",
         "content": "content",
         "height": "height",
         "interaction_type": "interactionType",
@@ -90,6 +98,7 @@ class LLMObsContentBlock(ModelNormal):
         self_,
         type: LLMObsContentBlockType,
         alt: Union[str, UnsetType] = unset,
+        code: Union[str, UnsetType] = unset,
         content: Union[Any, UnsetType] = unset,
         height: Union[int, UnsetType] = unset,
         interaction_type: Union[LLMObsContentBlockLLMObsTraceInteractionType, UnsetType] = unset,
@@ -111,15 +120,19 @@ class LLMObsContentBlock(ModelNormal):
         * ``image`` : ``url`` is required.
         * ``widget`` : ``tileDef`` is required (any well-formed JSON; the frontend owns the renderable schema).
         * ``llmobs_trace`` : ``traceId`` is required; ``interactionType`` , when set, must be ``trace`` or ``experiment_trace``.
+        * ``frontend`` : ``code`` is required and must be a non-empty string; ``label`` is optional.
 
         ``height`` , when set, must be positive.
 
         :param alt: Alternative text for an ``image`` block.
         :type alt: str, optional
 
+        :param code: HTML code rendered by a ``frontend`` block. Required for ``frontend`` blocks.
+        :type code: str, optional
+
         :param content: Block payload. A string for ``markdown`` , ``header`` , and ``text`` ; an
             arbitrary JSON value (object, array, or scalar) for ``json``. Omitted
-            for ``image`` , ``widget`` , and ``llmobs_trace``.
+            for ``image`` , ``widget`` , ``llmobs_trace`` , and ``frontend``.
         :type content: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
         :param height: Optional rendered height. Must be positive when set.
@@ -129,7 +142,7 @@ class LLMObsContentBlock(ModelNormal):
             Restricted to ``trace`` or ``experiment_trace``.
         :type interaction_type: LLMObsContentBlockLLMObsTraceInteractionType, optional
 
-        :param label: Optional label rendered alongside the block.
+        :param label: Optional label rendered alongside a ``frontend`` block.
         :type label: str, optional
 
         :param level: Visual size for a ``header`` block.
@@ -154,6 +167,8 @@ class LLMObsContentBlock(ModelNormal):
         """
         if alt is not unset:
             kwargs["alt"] = alt
+        if code is not unset:
+            kwargs["code"] = code
         if content is not unset:
             kwargs["content"] = content
         if height is not unset:

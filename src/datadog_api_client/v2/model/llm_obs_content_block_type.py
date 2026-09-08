@@ -17,7 +17,7 @@ class LLMObsContentBlockType(ModelSimple):
     Discriminator for a single `display_block` content block. Adding a
         variant requires coordinated changes in the frontend renderer.
 
-    :param value: Must be one of ["markdown", "header", "text", "json", "image", "widget", "llmobs_trace"].
+    :param value: Must be one of ["markdown", "header", "text", "json", "image", "widget", "llmobs_trace", "frontend"].
     :type value: str
     """
 
@@ -29,6 +29,7 @@ class LLMObsContentBlockType(ModelSimple):
         "image",
         "widget",
         "llmobs_trace",
+        "frontend",
     }
     MARKDOWN: ClassVar["LLMObsContentBlockType"]
     HEADER: ClassVar["LLMObsContentBlockType"]
@@ -37,6 +38,7 @@ class LLMObsContentBlockType(ModelSimple):
     IMAGE: ClassVar["LLMObsContentBlockType"]
     WIDGET: ClassVar["LLMObsContentBlockType"]
     LLMOBS_TRACE: ClassVar["LLMObsContentBlockType"]
+    FRONTEND: ClassVar["LLMObsContentBlockType"]
 
     @cached_property
     def openapi_types(_):
@@ -52,3 +54,4 @@ LLMObsContentBlockType.JSON = LLMObsContentBlockType("json")
 LLMObsContentBlockType.IMAGE = LLMObsContentBlockType("image")
 LLMObsContentBlockType.WIDGET = LLMObsContentBlockType("widget")
 LLMObsContentBlockType.LLMOBS_TRACE = LLMObsContentBlockType("llmobs_trace")
+LLMObsContentBlockType.FRONTEND = LLMObsContentBlockType("frontend")
