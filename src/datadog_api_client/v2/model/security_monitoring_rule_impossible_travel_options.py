@@ -27,17 +27,20 @@ class SecurityMonitoringRuleImpossibleTravelOptions(ModelNormal):
         return {
             "baseline_user_locations": (bool,),
             "baseline_user_locations_duration": (int,),
+            "detect_ip_transition": (bool,),
         }
 
     attribute_map = {
         "baseline_user_locations": "baselineUserLocations",
         "baseline_user_locations_duration": "baselineUserLocationsDuration",
+        "detect_ip_transition": "detectIpTransition",
     }
 
     def __init__(
         self_,
         baseline_user_locations: Union[bool, UnsetType] = unset,
         baseline_user_locations_duration: Union[int, none_type, UnsetType] = unset,
+        detect_ip_transition: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -49,9 +52,14 @@ class SecurityMonitoringRuleImpossibleTravelOptions(ModelNormal):
 
         :param baseline_user_locations_duration: The duration in days during which Datadog learns the user's regular access locations. After this period, signals are generated for accesses from unknown locations.
         :type baseline_user_locations_duration: int, none_type, optional
+
+        :param detect_ip_transition: Whether to detect transitions between IP addresses.
+        :type detect_ip_transition: bool, optional
         """
         if baseline_user_locations is not unset:
             kwargs["baseline_user_locations"] = baseline_user_locations
         if baseline_user_locations_duration is not unset:
             kwargs["baseline_user_locations_duration"] = baseline_user_locations_duration
+        if detect_ip_transition is not unset:
+            kwargs["detect_ip_transition"] = detect_ip_transition
         super().__init__(kwargs)

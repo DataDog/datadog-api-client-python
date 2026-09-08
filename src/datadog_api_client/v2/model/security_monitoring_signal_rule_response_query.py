@@ -39,6 +39,7 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
             "default_rule_id": (str,),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
+            "has_optional_group_by_fields": (bool,),
             "metrics": ([str],),
             "name": (str,),
             "rule_id": (str,),
@@ -51,6 +52,7 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
         "default_rule_id": "defaultRuleId",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
+        "has_optional_group_by_fields": "hasOptionalGroupByFields",
         "metrics": "metrics",
         "name": "name",
         "rule_id": "ruleId",
@@ -64,6 +66,7 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
         default_rule_id: Union[str, UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
+        has_optional_group_by_fields: Union[bool, UnsetType] = unset,
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         rule_id: Union[str, UnsetType] = unset,
@@ -90,6 +93,9 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
         :param group_by_fields: Fields to group by.
         :type group_by_fields: [str], optional
 
+        :param has_optional_group_by_fields: Whether events with missing group-by fields are processed with a replacement value.
+        :type has_optional_group_by_fields: bool, optional
+
         :param metrics: Group of target fields to aggregate over.
         :type metrics: [str], optional
 
@@ -111,6 +117,8 @@ class SecurityMonitoringSignalRuleResponseQuery(ModelNormal):
             kwargs["distinct_fields"] = distinct_fields
         if group_by_fields is not unset:
             kwargs["group_by_fields"] = group_by_fields
+        if has_optional_group_by_fields is not unset:
+            kwargs["has_optional_group_by_fields"] = has_optional_group_by_fields
         if metrics is not unset:
             kwargs["metrics"] = metrics
         if name is not unset:

@@ -57,7 +57,7 @@ class RuleVersions(ModelNormal):
         :param changes: A list of changes.
         :type changes: [VersionHistoryUpdate], optional
 
-        :param rule: Create a new rule.
+        :param rule: A security monitoring rule.
         :type rule: SecurityMonitoringRuleResponse, optional
         """
         if changes is not unset:

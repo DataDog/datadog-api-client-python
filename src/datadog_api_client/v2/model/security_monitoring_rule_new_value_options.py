@@ -28,6 +28,9 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
             "inclusive_maximum": 30,
             "inclusive_minimum": 1,
         },
+        "instantaneous_baseline_timeout_minutes": {
+            "inclusive_maximum": 2147483647,
+        },
         "learning_duration": {
             "inclusive_maximum": 30,
             "inclusive_minimum": 0,
@@ -46,6 +49,7 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         return {
             "forget_after": (int,),
             "instantaneous_baseline": (bool,),
+            "instantaneous_baseline_timeout_minutes": (int,),
             "learning_duration": (int,),
             "learning_method": (SecurityMonitoringRuleNewValueOptionsLearningMethod,),
             "learning_threshold": (SecurityMonitoringRuleNewValueOptionsLearningThreshold,),
@@ -54,6 +58,7 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
     attribute_map = {
         "forget_after": "forgetAfter",
         "instantaneous_baseline": "instantaneousBaseline",
+        "instantaneous_baseline_timeout_minutes": "instantaneousBaselineTimeoutMinutes",
         "learning_duration": "learningDuration",
         "learning_method": "learningMethod",
         "learning_threshold": "learningThreshold",
@@ -63,6 +68,7 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
         self_,
         forget_after: Union[int, UnsetType] = unset,
         instantaneous_baseline: Union[bool, UnsetType] = unset,
+        instantaneous_baseline_timeout_minutes: Union[int, UnsetType] = unset,
         learning_duration: Union[int, UnsetType] = unset,
         learning_method: Union[SecurityMonitoringRuleNewValueOptionsLearningMethod, UnsetType] = unset,
         learning_threshold: Union[SecurityMonitoringRuleNewValueOptionsLearningThreshold, UnsetType] = unset,
@@ -76,6 +82,9 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
 
         :param instantaneous_baseline: When set to true, Datadog uses previous values that fall within the defined learning window to construct the baseline, enabling the system to establish an accurate baseline more rapidly rather than relying solely on gradual learning over time.
         :type instantaneous_baseline: bool, optional
+
+        :param instantaneous_baseline_timeout_minutes: Timeout in minutes for constructing the instantaneous baseline.
+        :type instantaneous_baseline_timeout_minutes: int, optional
 
         :param learning_duration: The duration in days during which values are learned, and after which signals will be generated for values that
             weren't learned. If set to 0, a signal will be generated for all new values after the first value is learned.
@@ -91,6 +100,8 @@ class SecurityMonitoringRuleNewValueOptions(ModelNormal):
             kwargs["forget_after"] = forget_after
         if instantaneous_baseline is not unset:
             kwargs["instantaneous_baseline"] = instantaneous_baseline
+        if instantaneous_baseline_timeout_minutes is not unset:
+            kwargs["instantaneous_baseline_timeout_minutes"] = instantaneous_baseline_timeout_minutes
         if learning_duration is not unset:
             kwargs["learning_duration"] = learning_duration
         if learning_method is not unset:

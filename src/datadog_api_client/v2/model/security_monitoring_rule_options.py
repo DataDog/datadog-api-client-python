@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -93,7 +93,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),
             "new_value_options": (SecurityMonitoringRuleNewValueOptions,),
+            "related_signals_fields": ([str],),
             "sequence_detection_options": (SecurityMonitoringRuleSequenceDetectionOptions,),
+            "signal_title_template": (str,),
             "third_party_rule_options": (SecurityMonitoringRuleThirdPartyOptions,),
         }
 
@@ -108,7 +110,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         "keep_alive": "keepAlive",
         "max_signal_duration": "maxSignalDuration",
         "new_value_options": "newValueOptions",
+        "related_signals_fields": "relatedSignalsFields",
         "sequence_detection_options": "sequenceDetectionOptions",
+        "signal_title_template": "signalTitleTemplate",
         "third_party_rule_options": "thirdPartyRuleOptions",
     }
 
@@ -124,7 +128,9 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         keep_alive: Union[SecurityMonitoringRuleKeepAlive, UnsetType] = unset,
         max_signal_duration: Union[SecurityMonitoringRuleMaxSignalDuration, UnsetType] = unset,
         new_value_options: Union[SecurityMonitoringRuleNewValueOptions, UnsetType] = unset,
+        related_signals_fields: Union[List[str], UnsetType] = unset,
         sequence_detection_options: Union[SecurityMonitoringRuleSequenceDetectionOptions, UnsetType] = unset,
+        signal_title_template: Union[str, UnsetType] = unset,
         third_party_rule_options: Union[SecurityMonitoringRuleThirdPartyOptions, UnsetType] = unset,
         **kwargs,
     ):
@@ -167,8 +173,14 @@ class SecurityMonitoringRuleOptions(ModelNormal):
         :param new_value_options: Options on new value detection method.
         :type new_value_options: SecurityMonitoringRuleNewValueOptions, optional
 
+        :param related_signals_fields: Fields used to identify related signals.
+        :type related_signals_fields: [str], optional
+
         :param sequence_detection_options: Options on sequence detection method.
         :type sequence_detection_options: SecurityMonitoringRuleSequenceDetectionOptions, optional
+
+        :param signal_title_template: A template for the signal title.
+        :type signal_title_template: str, optional
 
         :param third_party_rule_options: Options on third party detection method.
         :type third_party_rule_options: SecurityMonitoringRuleThirdPartyOptions, optional
@@ -193,8 +205,12 @@ class SecurityMonitoringRuleOptions(ModelNormal):
             kwargs["max_signal_duration"] = max_signal_duration
         if new_value_options is not unset:
             kwargs["new_value_options"] = new_value_options
+        if related_signals_fields is not unset:
+            kwargs["related_signals_fields"] = related_signals_fields
         if sequence_detection_options is not unset:
             kwargs["sequence_detection_options"] = sequence_detection_options
+        if signal_title_template is not unset:
+            kwargs["signal_title_template"] = signal_title_template
         if third_party_rule_options is not unset:
             kwargs["third_party_rule_options"] = third_party_rule_options
         super().__init__(kwargs)

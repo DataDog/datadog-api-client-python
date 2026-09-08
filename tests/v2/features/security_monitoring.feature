@@ -2669,11 +2669,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-validation @team:DataDog/cloud-siem
+  @team:DataDog/cloud-siem
   Scenario: List rules returns "OK" response
     Given new "ListSecurityMonitoringRules" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0]" has field "isPartner"
+    And the response "data[0]" has field "isBeta"
+    And the response "data[0]" has field "isDeprecated"
 
   @team:DataDog/k9-cloud-vm
   Scenario: List scanned assets metadata returns "Bad request: Invalid Pagination Token" response
