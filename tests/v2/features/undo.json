@@ -1988,6 +1988,43 @@
       "type": "safe"
     }
   },
+  "ListUnitCosts": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateUnitCost": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "operationId": "DeleteUnitCost",
+      "parameters": [
+        {
+          "name": "unit_cost_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteUnitCost": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetUnitCost": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateUnitCost": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetActiveBillingDimensions": {
     "tag": "Usage Metering",
     "undo": {
