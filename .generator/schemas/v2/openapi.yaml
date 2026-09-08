@@ -208342,8 +208342,9 @@ paths:
       tags: ["Security Monitoring"]
       x-codegen-request-body-name: body
       "x-permission":
-        operator: OR
+        operator: AND
         permissions:
+          - security_monitoring_signals_read
           - security_monitoring_signals_write
   /api/v2/security_monitoring/signals/bulk/state:
     patch:
@@ -208407,8 +208408,9 @@ paths:
       tags: ["Security Monitoring"]
       x-codegen-request-body-name: body
       "x-permission":
-        operator: OR
+        operator: AND
         permissions:
+          - security_monitoring_signals_read
           - security_monitoring_signals_write
   /api/v2/security_monitoring/signals/bulk/update:
     patch:
@@ -208476,8 +208478,9 @@ paths:
       tags: ["Security Monitoring"]
       x-codegen-request-body-name: body
       "x-permission":
-        operator: OR
+        operator: AND
         permissions:
+          - security_monitoring_signals_read
           - security_monitoring_signals_write
   /api/v2/security_monitoring/signals/search:
     post:
@@ -208641,8 +208644,9 @@ paths:
       tags: ["Security Monitoring"]
       x-codegen-request-body-name: body
       "x-permission":
-        operator: OR
+        operator: AND
         permissions:
+          - security_monitoring_signals_read
           - security_monitoring_signals_write
   /api/v2/security_monitoring/signals/{signal_id}/entities:
     get:
@@ -208861,8 +208865,9 @@ paths:
       tags: ["Security Monitoring"]
       x-codegen-request-body-name: body
       "x-permission":
-        operator: OR
+        operator: AND
         permissions:
+          - security_monitoring_signals_read
           - security_monitoring_signals_write
   /api/v2/security_monitoring/signals/{signal_id}/suggested_actions:
     get:
@@ -208980,8 +208985,9 @@ paths:
       tags: ["Security Monitoring"]
       x-codegen-request-body-name: body
       "x-permission":
-        operator: OR
+        operator: AND
         permissions:
+          - security_monitoring_signals_read
           - security_monitoring_signals_write
   /api/v2/security_monitoring/terraform/{resource_type}/bulk:
     post:
