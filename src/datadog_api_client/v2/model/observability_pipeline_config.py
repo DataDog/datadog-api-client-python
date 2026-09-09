@@ -164,6 +164,7 @@ class ObservabilityPipelineConfig(ModelNormal):
 
         return {
             "destinations": ([ObservabilityPipelineConfigDestinationItem],),
+            "end_to_end_acknowledgements": (bool,),
             "pipeline_type": (ObservabilityPipelineConfigPipelineType,),
             "processor_groups": ([ObservabilityPipelineConfigProcessorGroup],),
             "processors": ([ObservabilityPipelineConfigProcessorGroup],),
@@ -173,6 +174,7 @@ class ObservabilityPipelineConfig(ModelNormal):
 
     attribute_map = {
         "destinations": "destinations",
+        "end_to_end_acknowledgements": "end_to_end_acknowledgements",
         "pipeline_type": "pipeline_type",
         "processor_groups": "processor_groups",
         "processors": "processors",
@@ -238,6 +240,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineOpentelemetrySource,
             ]
         ],
+        end_to_end_acknowledgements: Union[bool, UnsetType] = unset,
         pipeline_type: Union[ObservabilityPipelineConfigPipelineType, UnsetType] = unset,
         processor_groups: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
         processors: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
@@ -249,6 +252,10 @@ class ObservabilityPipelineConfig(ModelNormal):
 
         :param destinations: A list of destination components where processed logs are sent.
         :type destinations: [ObservabilityPipelineConfigDestinationItem]
+
+        :param end_to_end_acknowledgements: Enables end-to-end event delivery confirmation. Without a disk buffer, sources acknowledge events after delivery to all final destinations; when a disk buffer provides the acknowledgment boundary, they acknowledge after durable persistence.
+            Defaults to ``false`` when omitted. Requires Observability Pipelines Worker 2.14 or later. All configured sources must support this behavior.
+        :type end_to_end_acknowledgements: bool, optional
 
         :param pipeline_type: The type of data being ingested. Defaults to ``logs`` if not specified.
         :type pipeline_type: ObservabilityPipelineConfigPipelineType, optional
@@ -271,6 +278,8 @@ class ObservabilityPipelineConfig(ModelNormal):
             See `Upgrade Your Filter Queries to the New Search Syntax <https://docs.datadoghq.com/observability_pipelines/guide/upgrade_your_filter_queries_to_the_new_search_syntax/>`_ for more information.
         :type use_legacy_search_syntax: bool, optional
         """
+        if end_to_end_acknowledgements is not unset:
+            kwargs["end_to_end_acknowledgements"] = end_to_end_acknowledgements
         if pipeline_type is not unset:
             kwargs["pipeline_type"] = pipeline_type
         if processor_groups is not unset:
