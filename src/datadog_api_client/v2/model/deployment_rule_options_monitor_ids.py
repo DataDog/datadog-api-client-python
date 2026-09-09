@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,8 +13,15 @@ from datadog_api_client.model_utils import (
 )
 
 
-class DeploymentRuleOptionsMonitor(ModelNormal):
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.deployment_rule_options_monitor_id import DeploymentRuleOptionsMonitorId
+
+
+class DeploymentRuleOptionsMonitorIds(ModelNormal):
     validations = {
+        "monitor_ids": {
+            "min_items": 1,
+        },
         "warmup": {
             "inclusive_minimum": 0,
         },
@@ -26,11 +33,13 @@ class DeploymentRuleOptionsMonitor(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.deployment_rule_options_monitor_id import DeploymentRuleOptionsMonitorId
+
         return {
             "duration": (int,),
             "fail_on_no_data": (bool,),
             "fail_on_no_groups_found": (bool,),
-            "query": (str,),
+            "monitor_ids": ([DeploymentRuleOptionsMonitorId],),
             "warmup": (int,),
         }
 
@@ -38,13 +47,13 @@ class DeploymentRuleOptionsMonitor(ModelNormal):
         "duration": "duration",
         "fail_on_no_data": "fail_on_no_data",
         "fail_on_no_groups_found": "fail_on_no_groups_found",
-        "query": "query",
+        "monitor_ids": "monitor_ids",
         "warmup": "warmup",
     }
 
     def __init__(
         self_,
-        query: str,
+        monitor_ids: List[DeploymentRuleOptionsMonitorId],
         duration: Union[int, UnsetType] = unset,
         fail_on_no_data: Union[bool, UnsetType] = unset,
         fail_on_no_groups_found: Union[bool, UnsetType] = unset,
@@ -52,21 +61,21 @@ class DeploymentRuleOptionsMonitor(ModelNormal):
         **kwargs,
     ):
         """
-        Monitor query options for deployment rules.
+        Specific monitor options for deployment rules.
 
-        :param duration: Seconds the monitor needs to stay in OK status for the rule to pass.
+        :param duration: Seconds the monitors need to stay in OK status for the rule to pass.
         :type duration: int, optional
 
-        :param fail_on_no_data: Whether the rule should fail if a matching monitor group is in a NO DATA state.
+        :param fail_on_no_data: Whether the rule should fail if a selected monitor group is in a NO DATA state.
         :type fail_on_no_data: bool, optional
 
-        :param fail_on_no_groups_found: Whether the rule should fail if no monitor groups are found for the query.
+        :param fail_on_no_groups_found: Whether the rule should fail if no monitor groups are found for the selected monitors.
         :type fail_on_no_groups_found: bool, optional
 
-        :param query: A query that selects the monitors to evaluate.
-        :type query: str
+        :param monitor_ids: A non-empty list of specific monitors to evaluate.
+        :type monitor_ids: [DeploymentRuleOptionsMonitorId]
 
-        :param warmup: Seconds to wait after a deployment starts before evaluating the monitor's status.
+        :param warmup: Seconds to wait after a deployment starts before evaluating the monitors' statuses.
         :type warmup: int, optional
         """
         if duration is not unset:
@@ -79,4 +88,4 @@ class DeploymentRuleOptionsMonitor(ModelNormal):
             kwargs["warmup"] = warmup
         super().__init__(kwargs)
 
-        self_.query = query
+        self_.monitor_ids = monitor_ids

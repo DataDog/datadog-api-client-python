@@ -4896,6 +4896,27 @@
     {
       "feature": "Deployment Gates",
       "feature_file": "../../v2/features/deployment_gates.feature",
+      "file": "v2/deployment-gates/create-monitor-deployment-rule-with-monitor-ids-returns-ok-response.json",
+      "scenario": "Create monitor deployment rule with monitor IDs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "feature_file": "../../v2/features/deployment_gates.feature",
+      "file": "v2/deployment-gates/create-monitor-deployment-rule-with-query-and-monitor-ids-returns-bad-request-response.json",
+      "scenario": "Create monitor deployment rule with query and monitor IDs returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "feature_file": "../../v2/features/deployment_gates.feature",
+      "file": "v2/deployment-gates/create-monitor-deployment-rule-with-query-returns-ok-response.json",
+      "scenario": "Create monitor deployment rule with query returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "feature_file": "../../v2/features/deployment_gates.feature",
       "file": "v2/deployment-gates/delete-deployment-gate-returns-bad-request-response.json",
       "scenario": "Delete deployment gate returns \"Bad Request\" response",
       "version": "v2"
