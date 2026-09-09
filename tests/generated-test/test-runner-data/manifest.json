@@ -7416,6 +7416,13 @@
     {
       "feature": "Monitors",
       "feature_file": "../../v2/features/monitors.feature",
+      "file": "v2/monitors/create-a-downtime-duration-monitor-configuration-policy-returns-ok-response.json",
+      "scenario": "Create a downtime duration monitor configuration policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v2/features/monitors.feature",
       "file": "v2/monitors/create-a-monitor-configuration-policy-returns-bad-request-response.json",
       "scenario": "Create a monitor configuration policy returns \"Bad Request\" response",
       "version": "v2"

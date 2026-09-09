@@ -1054,6 +1054,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"monitor-config-policy\",\n    \"attributes\": {\n      \"policy_type\": \"downtime\",\n      \"policy\": {\n        \"max_duration_ms\": 3600000\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"monitor_configuration_downtime_policy\" in the system",
+    "key": "monitor_configuration_downtime_policy",
+    "tag": "Monitors",
+    "operationId": "CreateMonitorConfigPolicy"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"monitor-config-policy\",\n    \"attributes\": {\n      \"policy_type\": \"tag\",\n      \"policy\": {\n        \"tag_key\": \"{{ unique_lower_alnum }}\", \"tag_key_required\": false, \"valid_tag_values\": [\"prod\", \"staging\"]\n      }\n    }\n  }\n}"
       }
     ],

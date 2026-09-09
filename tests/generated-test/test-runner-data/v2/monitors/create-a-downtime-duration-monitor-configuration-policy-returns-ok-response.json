@@ -1,0 +1,36 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v2/Monitors/Create a downtime duration monitor configuration policy returns \"OK\" response",
+  "operation_id": "CreateMonitorConfigPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "MonitorConfigPolicyCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "policy": {
+              "max_duration_ms": 3600000
+            },
+            "policy_type": "downtime"
+          },
+          "type": "monitor-config-policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/monitor/policy"
+  },
+  "scenario": "Create a downtime duration monitor configuration policy returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
