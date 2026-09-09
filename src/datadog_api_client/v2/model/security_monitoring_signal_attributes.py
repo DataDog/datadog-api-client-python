@@ -21,6 +21,22 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "attributes": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+            ),
             "custom": (
                 {
                     str: (
@@ -43,6 +59,7 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "attributes": "attributes",
         "custom": "custom",
         "message": "message",
         "tags": "tags",
@@ -51,6 +68,7 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
 
     def __init__(
         self_,
+        attributes: Union[Dict[str, Any], UnsetType] = unset,
         custom: Union[Dict[str, Any], UnsetType] = unset,
         message: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -61,7 +79,10 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         The object containing all signal attributes and their
         associated values.
 
-        :param custom: A JSON object of attributes in the security signal.
+        :param attributes: A JSON object of attributes in the security signal, returned when listing or searching signals.
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
+
+        :param custom: A JSON object of attributes in the security signal, returned when retrieving a single signal.
         :type custom: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param message: The message in the security signal defined by the rule that generated the signal.
@@ -73,6 +94,8 @@ class SecurityMonitoringSignalAttributes(ModelNormal):
         :param timestamp: The timestamp of the security signal.
         :type timestamp: datetime, optional
         """
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         if custom is not unset:
             kwargs["custom"] = custom
         if message is not unset:

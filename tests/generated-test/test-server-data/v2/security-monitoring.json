@@ -6317,6 +6317,47 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-09-07T11:46:49.362Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "2026-09-07T11:31:49.362Z",
+                  "query": "security:attack status:high",
+                  "to": "2026-09-07T11:46:49.362Z"
+                },
+                "page": {
+                  "limit": 25
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/signals/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"elapsed\":24,\"request_id\":\"pddv1ChZqcnNodVBJQ1RWQ3Z2c3ZWNk16b1hnIiwKHEcyOE2iTY5xAPH0dcTcAYFseqFJt4YjCHkKmO4SDDns4KG5VTag-ijkzg\",\"status\":\"done\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a list of security signals returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2022-04-13T11:32:57.080Z",
       "interactions": [
         {

@@ -1787,12 +1787,15 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/cloud-siem
+  @team:DataDog/cloud-siem
   Scenario: Get a list of security signals returns "OK" response
     Given new "SearchSecurityMonitoringSignals" request
-    And body with value {"filter": {"from": "2019-01-02T09:42:36.320Z", "query": "security:attack status:high", "to": "2019-01-03T09:42:36.320Z"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    And body with value {"filter": {"from": "{{ timeISO("now-15m") }}", "query": "security:attack status:high", "to": "{{ timeISO("now") }}"}, "page": {"limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 200 OK
+    And the response "meta" has field "elapsed"
+    And the response "meta" has field "request_id"
+    And the response "meta.status" is equal to "done"
 
   @replay-only @skip-validation @team:DataDog/cloud-siem @with-pagination
   Scenario: Get a list of security signals returns "OK" response with pagination

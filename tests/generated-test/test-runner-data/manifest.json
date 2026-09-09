@@ -9740,6 +9740,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-a-list-of-security-signals-returns-ok-response.json",
+      "scenario": "Get a list of security signals returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/get-a-list-of-security-signals-returns-ok-response-with-pagination.json",
       "scenario": "Get a list of security signals returns \"OK\" response with pagination",
       "version": "v2"
