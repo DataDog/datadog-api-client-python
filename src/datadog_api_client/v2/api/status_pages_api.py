@@ -894,6 +894,11 @@ class StatusPagesApi:
                     "attribute": "filter[domain_prefix]",
                     "location": "query",
                 },
+                "filter_name": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[name]",
+                    "location": "query",
+                },
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
@@ -1981,6 +1986,7 @@ class StatusPagesApi:
         page_offset: Union[int, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
         filter_domain_prefix: Union[str, UnsetType] = unset,
+        filter_name: Union[str, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
     ) -> StatusPageArray:
         """List status pages.
@@ -1993,6 +1999,8 @@ class StatusPagesApi:
         :type page_limit: int, optional
         :param filter_domain_prefix: Filter status pages by exact domain prefix match. Returns at most one result.
         :type filter_domain_prefix: str, optional
+        :param filter_name: Filter status pages by name with case-insensitive substring matching.
+        :type filter_name: str, optional
         :param include: Comma-separated list of resources to include. Supported values: created_by_user, last_modified_by_user.
         :type include: str, optional
         :rtype: StatusPageArray
@@ -2006,6 +2014,9 @@ class StatusPagesApi:
 
         if filter_domain_prefix is not unset:
             kwargs["filter_domain_prefix"] = filter_domain_prefix
+
+        if filter_name is not unset:
+            kwargs["filter_name"] = filter_name
 
         if include is not unset:
             kwargs["include"] = include
