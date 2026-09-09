@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.recommendations_filter_request_scope import RecommendationsFilterRequestScope
     from datadog_api_client.v2.model.recommendations_filter_request_sort_items import (
         RecommendationsFilterRequestSortItems,
     )
@@ -22,18 +23,21 @@ if TYPE_CHECKING:
 class RecommendationsFilterRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.recommendations_filter_request_scope import RecommendationsFilterRequestScope
         from datadog_api_client.v2.model.recommendations_filter_request_sort_items import (
             RecommendationsFilterRequestSortItems,
         )
 
         return {
             "filter": (str,),
+            "scope": (RecommendationsFilterRequestScope,),
             "sort": ([RecommendationsFilterRequestSortItems],),
             "view": (str,),
         }
 
     attribute_map = {
         "filter": "filter",
+        "scope": "scope",
         "sort": "sort",
         "view": "view",
     }
@@ -41,6 +45,7 @@ class RecommendationsFilterRequest(ModelNormal):
     def __init__(
         self_,
         filter: Union[str, UnsetType] = unset,
+        scope: Union[RecommendationsFilterRequestScope, UnsetType] = unset,
         sort: Union[List[RecommendationsFilterRequestSortItems], UnsetType] = unset,
         view: Union[str, UnsetType] = unset,
         **kwargs,
@@ -51,6 +56,9 @@ class RecommendationsFilterRequest(ModelNormal):
         :param filter: Filter expression applied to the recommendations.
         :type filter: str, optional
 
+        :param scope: Recommendations scope. Defaults to ``ccm`` ; use ``experiment`` for experimental recommendations or ``*`` for both.
+        :type scope: RecommendationsFilterRequestScope, optional
+
         :param sort: Ordered list of sort clauses applied to the result set.
         :type sort: [RecommendationsFilterRequestSortItems], optional
 
@@ -59,6 +67,8 @@ class RecommendationsFilterRequest(ModelNormal):
         """
         if filter is not unset:
             kwargs["filter"] = filter
+        if scope is not unset:
+            kwargs["scope"] = scope
         if sort is not unset:
             kwargs["sort"] = sort
         if view is not unset:
