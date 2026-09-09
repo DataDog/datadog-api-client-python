@@ -52,11 +52,11 @@ class TopLongTaskInvoker(ModelNormal):
 
     def __init__(
         self_,
-        file: Union[str, none_type],
         invoker: str,
         stats_per_view: LongTaskStatsPerView,
         view_occurrences: int,
         criteria_view_occurrences: Union[int, UnsetType] = unset,
+        file: Union[str, none_type, UnsetType] = unset,
         impact_score: Union[float, UnsetType] = unset,
         **kwargs,
     ):
@@ -67,7 +67,7 @@ class TopLongTaskInvoker(ModelNormal):
         :type criteria_view_occurrences: int, optional
 
         :param file: Cleaned source file path for the invoker script.
-        :type file: str, none_type
+        :type file: str, none_type, optional
 
         :param impact_score: Rank-product impact score combining view frequency and blocking time severity.
         :type impact_score: float, optional
@@ -83,11 +83,12 @@ class TopLongTaskInvoker(ModelNormal):
         """
         if criteria_view_occurrences is not unset:
             kwargs["criteria_view_occurrences"] = criteria_view_occurrences
+        if file is not unset:
+            kwargs["file"] = file
         if impact_score is not unset:
             kwargs["impact_score"] = impact_score
         super().__init__(kwargs)
 
-        self_.file = file
         self_.invoker = invoker
         self_.stats_per_view = stats_per_view
         self_.view_occurrences = view_occurrences

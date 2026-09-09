@@ -217,6 +217,9 @@ from datadog_api_client.v2.model.aggregated_long_tasks_request_data import Aggre
 from datadog_api_client.v2.model.aggregated_long_tasks_request_type import AggregatedLongTasksRequestType
 from datadog_api_client.v2.model.aggregated_long_tasks_response import AggregatedLongTasksResponse
 from datadog_api_client.v2.model.aggregated_long_tasks_response_attributes import AggregatedLongTasksResponseAttributes
+from datadog_api_client.v2.model.aggregated_long_tasks_response_attributes_criteria import (
+    AggregatedLongTasksResponseAttributesCriteria,
+)
 from datadog_api_client.v2.model.aggregated_long_tasks_response_data import AggregatedLongTasksResponseData
 from datadog_api_client.v2.model.aggregated_low_cache_hit_rate import AggregatedLowCacheHitRate
 from datadog_api_client.v2.model.aggregated_mobile_scroll_friction import AggregatedMobileScrollFriction
@@ -11665,6 +11668,7 @@ __all__ = [
     "AggregatedLongTasksRequestType",
     "AggregatedLongTasksResponse",
     "AggregatedLongTasksResponseAttributes",
+    "AggregatedLongTasksResponseAttributesCriteria",
     "AggregatedLongTasksResponseData",
     "AggregatedLowCacheHitRate",
     "AggregatedMobileScrollFriction",
