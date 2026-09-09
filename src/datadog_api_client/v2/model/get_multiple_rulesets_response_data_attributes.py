@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -34,17 +32,13 @@ class GetMultipleRulesetsResponseDataAttributes(ModelNormal):
         "rulesets": "rulesets",
     }
 
-    def __init__(
-        self_,
-        rulesets: Union[List[GetMultipleRulesetsResponseDataAttributesRulesetsItems], UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, rulesets: List[GetMultipleRulesetsResponseDataAttributesRulesetsItems], **kwargs):
         """
         The attributes of the get-multiple-rulesets response, containing the list of requested rulesets.
 
         :param rulesets: The list of rulesets returned in response to the batch request.
-        :type rulesets: [GetMultipleRulesetsResponseDataAttributesRulesetsItems], optional
+        :type rulesets: [GetMultipleRulesetsResponseDataAttributesRulesetsItems]
         """
-        if rulesets is not unset:
-            kwargs["rulesets"] = rulesets
         super().__init__(kwargs)
+
+        self_.rulesets = rulesets

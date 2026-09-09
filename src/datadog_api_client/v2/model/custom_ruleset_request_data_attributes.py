@@ -39,20 +39,21 @@ class CustomRulesetRequestDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        name: str,
         description: Union[str, UnsetType] = unset,
-        name: Union[str, UnsetType] = unset,
         rules: Union[List[CustomRule], none_type, UnsetType] = unset,
         short_description: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Attributes for creating or updating a custom ruleset.
+        Attributes for creating or updating a custom ruleset. ``name`` is required and must
+        equal the resource ``id`` ; the server rejects a mismatch with a 412 response.
 
         :param description: Base64-encoded full description
         :type description: str, optional
 
-        :param name: Ruleset name
-        :type name: str, optional
+        :param name: Ruleset name, which must be the same as the resource identifier.
+        :type name: str
 
         :param rules: Rules in the ruleset
         :type rules: [CustomRule], none_type, optional
@@ -62,10 +63,10 @@ class CustomRulesetRequestDataAttributes(ModelNormal):
         """
         if description is not unset:
             kwargs["description"] = description
-        if name is not unset:
-            kwargs["name"] = name
         if rules is not unset:
             kwargs["rules"] = rules
         if short_description is not unset:
             kwargs["short_description"] = short_description
         super().__init__(kwargs)
+
+        self_.name = name

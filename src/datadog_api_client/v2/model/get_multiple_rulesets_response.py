@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -30,13 +28,13 @@ class GetMultipleRulesetsResponse(ModelNormal):
         "data": "data",
     }
 
-    def __init__(self_, data: Union[GetMultipleRulesetsResponseData, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: GetMultipleRulesetsResponseData, **kwargs):
         """
         The response payload for the get-multiple-rulesets endpoint, containing the requested rulesets and their rules.
 
         :param data: The primary data object in the get-multiple-rulesets response, containing the response attributes and resource type.
-        :type data: GetMultipleRulesetsResponseData, optional
+        :type data: GetMultipleRulesetsResponseData
         """
-        if data is not unset:
-            kwargs["data"] = data
         super().__init__(kwargs)
+
+        self_.data = data

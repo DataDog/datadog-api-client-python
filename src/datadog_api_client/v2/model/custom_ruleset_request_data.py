@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -38,29 +36,25 @@ class CustomRulesetRequestData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(
-        self_,
-        attributes: Union[CustomRulesetRequestDataAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
-        type: Union[CustomRulesetDataType, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, attributes: CustomRulesetRequestDataAttributes, id: str, type: CustomRulesetDataType, **kwargs):
         """
-        Data object for a custom ruleset create or update request.
+        Data object for a custom ruleset create or update request. The resource ``id`` is
+        required and must equal both ``attributes.name`` and, on update, the ``ruleset_name``
+        path parameter; a request that omits it or supplies a different value is rejected
+        with a 412 response.
 
-        :param attributes: Attributes for creating or updating a custom ruleset.
-        :type attributes: CustomRulesetRequestDataAttributes, optional
+        :param attributes: Attributes for creating or updating a custom ruleset. ``name`` is required and must
+            equal the resource ``id`` ; the server rejects a mismatch with a 412 response.
+        :type attributes: CustomRulesetRequestDataAttributes
 
-        :param id: Ruleset identifier
-        :type id: str, optional
+        :param id: Ruleset identifier, which is the same as the ruleset name.
+        :type id: str
 
         :param type: Resource type
-        :type type: CustomRulesetDataType, optional
+        :type type: CustomRulesetDataType
         """
-        if attributes is not unset:
-            kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
-        if type is not unset:
-            kwargs["type"] = type
         super().__init__(kwargs)
+
+        self_.attributes = attributes
+        self_.id = id
+        self_.type = type

@@ -23,20 +23,32 @@ class CustomRuleRequest(ModelNormal):
         from datadog_api_client.v2.model.custom_rule_request_data import CustomRuleRequestData
 
         return {
+            "_authentication_token": (str,),
             "data": (CustomRuleRequestData,),
         }
 
     attribute_map = {
+        "_authentication_token": "_authentication_token",
         "data": "data",
     }
 
-    def __init__(self_, data: Union[CustomRuleRequestData, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        _authentication_token: Union[str, UnsetType] = unset,
+        data: Union[CustomRuleRequestData, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Request body for creating or updating a custom rule.
+
+        :param _authentication_token: CSRF token for security, sent by browser-based clients. Ignored by the API when absent.
+        :type _authentication_token: str, optional
 
         :param data: Data object for a custom rule create or update request.
         :type data: CustomRuleRequestData, optional
         """
+        if _authentication_token is not unset:
+            kwargs["_authentication_token"] = _authentication_token
         if data is not unset:
             kwargs["data"] = data
         super().__init__(kwargs)

@@ -27,7 +27,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.custom_rule_revision_test import CustomRuleRevisionTest
 
 
-class CustomRuleRevisionInputAttributes(ModelNormal):
+class CustomRuleRevisionEmbedded(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.argument import Argument
@@ -48,10 +48,11 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
             "created_at": (datetime,),
             "created_by": (str,),
             "creation_message": (str,),
-            "cve": (str, none_type),
-            "cwe": (str, none_type),
+            "cve": (str,),
+            "cwe": (str,),
             "description": (str,),
-            "documentation_url": (str, none_type),
+            "documentation_url": (str,),
+            "id": (str,),
             "is_published": (bool,),
             "is_testing": (bool,),
             "language": (Language,),
@@ -76,6 +77,7 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
         "cwe": "cwe",
         "description": "description",
         "documentation_url": "documentation_url",
+        "id": "id",
         "is_published": "is_published",
         "is_testing": "is_testing",
         "language": "language",
@@ -87,20 +89,18 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
         "tree_sitter_query": "tree_sitter_query",
         "version_id": "version_id",
     }
-    read_only_vars = {
-        "checksum",
-        "created_at",
-        "created_by",
-        "version_id",
-    }
 
     def __init__(
         self_,
         arguments: Union[List[Argument], none_type],
         category: CustomRuleRevisionAttributesCategory,
+        checksum: str,
         code: str,
+        created_at: datetime,
+        created_by: str,
         creation_message: str,
         description: str,
+        id: str,
         is_published: bool,
         is_testing: bool,
         language: Language,
@@ -110,17 +110,14 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
         tags: Union[List[str], none_type],
         tests: Union[List[CustomRuleRevisionTest], none_type],
         tree_sitter_query: str,
-        checksum: Union[str, UnsetType] = unset,
-        created_at: Union[datetime, UnsetType] = unset,
-        created_by: Union[str, UnsetType] = unset,
-        cve: Union[str, none_type, UnsetType] = unset,
-        cwe: Union[str, none_type, UnsetType] = unset,
-        documentation_url: Union[str, none_type, UnsetType] = unset,
-        version_id: Union[int, UnsetType] = unset,
+        version_id: int,
+        cve: Union[str, UnsetType] = unset,
+        cwe: Union[str, UnsetType] = unset,
+        documentation_url: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Input attributes for creating or updating a custom rule revision.
+        A revision of a custom static analysis rule as embedded in a rule or ruleset response.
 
         :param arguments: Rule arguments
         :type arguments: [Argument], none_type
@@ -128,32 +125,35 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
         :param category: Rule category
         :type category: CustomRuleRevisionAttributesCategory
 
-        :param checksum: Code checksum. Derived by the API from ``code`` ; ignored on write.
-        :type checksum: str, optional
+        :param checksum: Code checksum
+        :type checksum: str
 
         :param code: Rule code
         :type code: str
 
-        :param created_at: Creation timestamp. Set by the API; ignored on write.
-        :type created_at: datetime, optional
+        :param created_at: Creation timestamp
+        :type created_at: datetime
 
-        :param created_by: Creator identifier. Set by the API from the caller; ignored on write.
-        :type created_by: str, optional
+        :param created_by: Creator identifier
+        :type created_by: str
 
         :param creation_message: Revision creation message
         :type creation_message: str
 
-        :param cve: Associated CVE
-        :type cve: str, none_type, optional
+        :param cve: Associated CVE. Omitted when the revision has no associated CVE.
+        :type cve: str, optional
 
-        :param cwe: Associated CWE
-        :type cwe: str, none_type, optional
+        :param cwe: Associated CWE. Omitted when the revision has no associated CWE.
+        :type cwe: str, optional
 
         :param description: Full description
         :type description: str
 
-        :param documentation_url: Documentation URL
-        :type documentation_url: str, none_type, optional
+        :param documentation_url: Documentation URL. Omitted when the revision has no documentation URL.
+        :type documentation_url: str, optional
+
+        :param id: Revision identifier
+        :type id: str
 
         :param is_published: Whether the revision is published
         :type is_published: bool
@@ -182,30 +182,26 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
         :param tree_sitter_query: Tree-sitter query
         :type tree_sitter_query: str
 
-        :param version_id: Monotonically increasing version number of the revision. Assigned by the API; ignored on write.
-        :type version_id: int, optional
+        :param version_id: Monotonically increasing version number of the revision.
+        :type version_id: int
         """
-        if checksum is not unset:
-            kwargs["checksum"] = checksum
-        if created_at is not unset:
-            kwargs["created_at"] = created_at
-        if created_by is not unset:
-            kwargs["created_by"] = created_by
         if cve is not unset:
             kwargs["cve"] = cve
         if cwe is not unset:
             kwargs["cwe"] = cwe
         if documentation_url is not unset:
             kwargs["documentation_url"] = documentation_url
-        if version_id is not unset:
-            kwargs["version_id"] = version_id
         super().__init__(kwargs)
 
         self_.arguments = arguments
         self_.category = category
+        self_.checksum = checksum
         self_.code = code
+        self_.created_at = created_at
+        self_.created_by = created_by
         self_.creation_message = creation_message
         self_.description = description
+        self_.id = id
         self_.is_published = is_published
         self_.is_testing = is_testing
         self_.language = language
@@ -215,3 +211,4 @@ class CustomRuleRevisionInputAttributes(ModelNormal):
         self_.tags = tags
         self_.tests = tests
         self_.tree_sitter_query = tree_sitter_query
+        self_.version_id = version_id

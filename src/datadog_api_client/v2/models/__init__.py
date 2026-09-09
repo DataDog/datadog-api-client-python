@@ -326,6 +326,8 @@ from datadog_api_client.v2.model.analysis_request_data import AnalysisRequestDat
 from datadog_api_client.v2.model.analysis_request_data_attributes import AnalysisRequestDataAttributes
 from datadog_api_client.v2.model.analysis_request_data_type import AnalysisRequestDataType
 from datadog_api_client.v2.model.analysis_request_rule import AnalysisRequestRule
+from datadog_api_client.v2.model.analysis_request_rule_argument import AnalysisRequestRuleArgument
+from datadog_api_client.v2.model.analysis_request_rule_test import AnalysisRequestRuleTest
 from datadog_api_client.v2.model.analysis_response import AnalysisResponse
 from datadog_api_client.v2.model.analysis_response_data import AnalysisResponseData
 from datadog_api_client.v2.model.analysis_response_data_attributes import AnalysisResponseDataAttributes
@@ -651,6 +653,7 @@ from datadog_api_client.v2.model.assignee_response_data import AssigneeResponseD
 from datadog_api_client.v2.model.assignee_response_data_attributes import AssigneeResponseDataAttributes
 from datadog_api_client.v2.model.assignee_response_meta import AssigneeResponseMeta
 from datadog_api_client.v2.model.assignment_result import AssignmentResult
+from datadog_api_client.v2.model.ast_node import AstNode
 from datadog_api_client.v2.model.attach_case_request import AttachCaseRequest
 from datadog_api_client.v2.model.attach_case_request_data import AttachCaseRequestData
 from datadog_api_client.v2.model.attach_case_request_data_relationships import AttachCaseRequestDataRelationships
@@ -2195,6 +2198,7 @@ from datadog_api_client.v2.model.custom_framework_requirement import CustomFrame
 from datadog_api_client.v2.model.custom_framework_type import CustomFrameworkType
 from datadog_api_client.v2.model.custom_framework_without_requirements import CustomFrameworkWithoutRequirements
 from datadog_api_client.v2.model.custom_rule import CustomRule
+from datadog_api_client.v2.model.custom_rule_attributes import CustomRuleAttributes
 from datadog_api_client.v2.model.custom_rule_data_type import CustomRuleDataType
 from datadog_api_client.v2.model.custom_rule_request import CustomRuleRequest
 from datadog_api_client.v2.model.custom_rule_request_data import CustomRuleRequestData
@@ -2206,6 +2210,8 @@ from datadog_api_client.v2.model.custom_rule_revision_attributes import CustomRu
 from datadog_api_client.v2.model.custom_rule_revision_attributes_category import CustomRuleRevisionAttributesCategory
 from datadog_api_client.v2.model.custom_rule_revision_attributes_severity import CustomRuleRevisionAttributesSeverity
 from datadog_api_client.v2.model.custom_rule_revision_data_type import CustomRuleRevisionDataType
+from datadog_api_client.v2.model.custom_rule_revision_embedded import CustomRuleRevisionEmbedded
+from datadog_api_client.v2.model.custom_rule_revision_input import CustomRuleRevisionInput
 from datadog_api_client.v2.model.custom_rule_revision_input_attributes import CustomRuleRevisionInputAttributes
 from datadog_api_client.v2.model.custom_rule_revision_request import CustomRuleRevisionRequest
 from datadog_api_client.v2.model.custom_rule_revision_request_data import CustomRuleRevisionRequestData
@@ -2220,6 +2226,7 @@ from datadog_api_client.v2.model.custom_ruleset_request import CustomRulesetRequ
 from datadog_api_client.v2.model.custom_ruleset_request_data import CustomRulesetRequestData
 from datadog_api_client.v2.model.custom_ruleset_request_data_attributes import CustomRulesetRequestDataAttributes
 from datadog_api_client.v2.model.custom_ruleset_response import CustomRulesetResponse
+from datadog_api_client.v2.model.custom_ruleset_rule_embedded import CustomRulesetRuleEmbedded
 from datadog_api_client.v2.model.customer_org_disable_request import CustomerOrgDisableRequest
 from datadog_api_client.v2.model.customer_org_disable_request_attributes import CustomerOrgDisableRequestAttributes
 from datadog_api_client.v2.model.customer_org_disable_request_data import CustomerOrgDisableRequestData
@@ -3491,9 +3498,6 @@ from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes 
 from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items import (
     GetMultipleRulesetsResponseDataAttributesRulesetsItems,
 )
-from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data import (
-    GetMultipleRulesetsResponseDataAttributesRulesetsItemsData,
-)
 from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_data_type import (
     GetMultipleRulesetsResponseDataAttributesRulesetsItemsDataType,
 )
@@ -3502,12 +3506,6 @@ from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_
 )
 from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_arguments_items import (
     GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsArgumentsItems,
-)
-from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_data import (
-    GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsData,
-)
-from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_data_type import (
-    GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsDataType,
 )
 from datadog_api_client.v2.model.get_multiple_rulesets_response_data_attributes_rulesets_items_rules_items_tests_items import (
     GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsTestsItems,
@@ -11761,6 +11759,8 @@ __all__ = [
     "AnalysisRequestDataAttributes",
     "AnalysisRequestDataType",
     "AnalysisRequestRule",
+    "AnalysisRequestRuleArgument",
+    "AnalysisRequestRuleTest",
     "AnalysisResponse",
     "AnalysisResponseData",
     "AnalysisResponseDataAttributes",
@@ -11970,6 +11970,7 @@ __all__ = [
     "AssigneeResponseDataAttributes",
     "AssigneeResponseMeta",
     "AssignmentResult",
+    "AstNode",
     "AttachCaseRequest",
     "AttachCaseRequestData",
     "AttachCaseRequestDataRelationships",
@@ -13098,6 +13099,7 @@ __all__ = [
     "CustomFrameworkType",
     "CustomFrameworkWithoutRequirements",
     "CustomRule",
+    "CustomRuleAttributes",
     "CustomRuleDataType",
     "CustomRuleRequest",
     "CustomRuleRequestData",
@@ -13109,6 +13111,8 @@ __all__ = [
     "CustomRuleRevisionAttributesCategory",
     "CustomRuleRevisionAttributesSeverity",
     "CustomRuleRevisionDataType",
+    "CustomRuleRevisionEmbedded",
+    "CustomRuleRevisionInput",
     "CustomRuleRevisionInputAttributes",
     "CustomRuleRevisionRequest",
     "CustomRuleRevisionRequestData",
@@ -13123,6 +13127,7 @@ __all__ = [
     "CustomRulesetRequestData",
     "CustomRulesetRequestDataAttributes",
     "CustomRulesetResponse",
+    "CustomRulesetRuleEmbedded",
     "CustomerOrgDisableRequest",
     "CustomerOrgDisableRequestAttributes",
     "CustomerOrgDisableRequestData",
@@ -14096,12 +14101,9 @@ __all__ = [
     "GetMultipleRulesetsResponseData",
     "GetMultipleRulesetsResponseDataAttributes",
     "GetMultipleRulesetsResponseDataAttributesRulesetsItems",
-    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsData",
     "GetMultipleRulesetsResponseDataAttributesRulesetsItemsDataType",
     "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItems",
     "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsArgumentsItems",
-    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsData",
-    "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsDataType",
     "GetMultipleRulesetsResponseDataAttributesRulesetsItemsRulesItemsTestsItems",
     "GetMultipleRulesetsResponseDataType",
     "GetResourceEvaluationFiltersResponse",

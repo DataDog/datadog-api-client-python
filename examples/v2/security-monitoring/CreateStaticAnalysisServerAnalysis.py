@@ -9,6 +9,8 @@ from datadog_api_client.v2.model.analysis_request_data import AnalysisRequestDat
 from datadog_api_client.v2.model.analysis_request_data_attributes import AnalysisRequestDataAttributes
 from datadog_api_client.v2.model.analysis_request_data_type import AnalysisRequestDataType
 from datadog_api_client.v2.model.analysis_request_rule import AnalysisRequestRule
+from datadog_api_client.v2.model.analysis_request_rule_argument import AnalysisRequestRuleArgument
+from datadog_api_client.v2.model.analysis_request_rule_test import AnalysisRequestRuleTest
 
 body = AnalysisRequest(
     data=AnalysisRequestData(
@@ -19,14 +21,21 @@ body = AnalysisRequest(
             language="python",
             rules=[
                 AnalysisRequestRule(
+                    arguments=[
+                        AnalysisRequestRuleArgument(),
+                    ],
                     category="BEST_PRACTICES",
                     checksum="abc123def456",
                     code="ZnVuY3Rpb24gdmlzaXQobm9kZSkge30=",
                     entity_checked=None,
                     id="python-best-practices/no-exit",
                     language="python",
+                    name="no-exit",
                     regex=None,
                     severity="WARNING",
+                    tests=[
+                        AnalysisRequestRuleTest(),
+                    ],
                     tree_sitter_query="KGNhbGwgbmFtZTogKGF0dHJpYnV0ZSkpQHZhbA==",
                     type="TREE_SITTER_QUERY",
                 ),
