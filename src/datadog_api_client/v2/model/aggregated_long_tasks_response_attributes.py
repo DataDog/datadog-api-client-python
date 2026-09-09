@@ -8,14 +8,13 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
+    none_type,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria import (
-        AggregatedWaterfallPerformanceCriteria,
+    from datadog_api_client.v2.model.aggregated_long_tasks_response_attributes_criteria import (
+        AggregatedLongTasksResponseAttributesCriteria,
     )
     from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
 
@@ -29,14 +28,14 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria import (
-            AggregatedWaterfallPerformanceCriteria,
+        from datadog_api_client.v2.model.aggregated_long_tasks_response_attributes_criteria import (
+            AggregatedLongTasksResponseAttributesCriteria,
         )
         from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
 
         return {
             "application_id": (str,),
-            "criteria": (AggregatedWaterfallPerformanceCriteria,),
+            "criteria": (AggregatedLongTasksResponseAttributesCriteria,),
             "_from": (int,),
             "long_tasks_by_invoker_type": ([AggregatedLongTasksByInvokerType],),
             "sampled_view_ids": ([str],),
@@ -59,13 +58,13 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
     def __init__(
         self_,
         application_id: str,
+        criteria: Union[AggregatedLongTasksResponseAttributesCriteria, none_type],
         _from: int,
         long_tasks_by_invoker_type: List[AggregatedLongTasksByInvokerType],
         sampled_view_ids: List[str],
         to: int,
         view_count: int,
         view_name: str,
-        criteria: Union[AggregatedWaterfallPerformanceCriteria, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -74,8 +73,8 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
         :param application_id: The RUM application ID that was analyzed.
         :type application_id: str
 
-        :param criteria: Performance criteria to filter view instances by a metric threshold.
-        :type criteria: AggregatedWaterfallPerformanceCriteria, optional
+        :param criteria: Performance criteria used to filter view instances by a metric threshold, or null if no criteria were applied.
+        :type criteria: AggregatedLongTasksResponseAttributesCriteria, none_type
 
         :param _from: Start of the analyzed time range as a Unix timestamp in seconds.
         :type _from: int
@@ -95,11 +94,10 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
         :param view_name: The RUM view name that was analyzed.
         :type view_name: str
         """
-        if criteria is not unset:
-            kwargs["criteria"] = criteria
         super().__init__(kwargs)
 
         self_.application_id = application_id
+        self_.criteria = criteria
         self_._from = _from
         self_.long_tasks_by_invoker_type = long_tasks_by_invoker_type
         self_.sampled_view_ids = sampled_view_ids
