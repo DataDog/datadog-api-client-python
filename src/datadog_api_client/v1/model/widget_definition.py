@@ -87,6 +87,15 @@ class WidgetDefinition(ModelComposed):
         :param yaxis: Y Axis controls for the distribution widget.
         :type yaxis: DistributionWidgetYAxis, optional
 
+        :param app_id: UUID of the App Builder app to embed.
+        :type app_id: str, optional
+
+        :param inputs: Inputs passed to the embedded app.
+        :type inputs: [EmbeddedAppWidgetInput], optional
+
+        :param template_id: ID of the built-in app template to embed.
+        :type template_id: str, optional
+
         :param event_size: Size to use to display an event.
         :type event_size: WidgetEventSize, optional
 
@@ -248,9 +257,6 @@ class WidgetDefinition(ModelComposed):
         :param timeseries_background: Set a timeseries on the widget background.
         :type timeseries_background: TimeseriesBackground, optional
 
-        :param inputs: Array of workflow inputs to map to dashboard template variables.
-        :type inputs: [RunWorkflowWidgetInput], optional
-
         :param workflow_id: Workflow id.
         :type workflow_id: str
 
@@ -371,6 +377,7 @@ class WidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
         from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
         from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
+        from datadog_api_client.v1.model.embedded_app_widget_definition import EmbeddedAppWidgetDefinition
         from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
         from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
         from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
@@ -417,6 +424,7 @@ class WidgetDefinition(ModelComposed):
                 CheckStatusWidgetDefinition,
                 CohortWidgetDefinition,
                 DistributionWidgetDefinition,
+                EmbeddedAppWidgetDefinition,
                 EventStreamWidgetDefinition,
                 EventTimelineWidgetDefinition,
                 FreeTextWidgetDefinition,
