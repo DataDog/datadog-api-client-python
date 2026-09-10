@@ -126,6 +126,11 @@ from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionW
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_child import DowntimeChild
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
+from datadog_api_client.v1.model.embedded_app_widget_definition import EmbeddedAppWidgetDefinition
+from datadog_api_client.v1.model.embedded_app_widget_definition_type import EmbeddedAppWidgetDefinitionType
+from datadog_api_client.v1.model.embedded_app_widget_input import EmbeddedAppWidgetInput
+from datadog_api_client.v1.model.embedded_app_widget_input_value import EmbeddedAppWidgetInputValue
+from datadog_api_client.v1.model.embedded_app_widget_input_value_object import EmbeddedAppWidgetInputValueObject
 from datadog_api_client.v1.model.event import Event
 from datadog_api_client.v1.model.event_alert_type import EventAlertType
 from datadog_api_client.v1.model.event_create_request import EventCreateRequest
@@ -1594,6 +1599,11 @@ __all__ = [
     "Downtime",
     "DowntimeChild",
     "DowntimeRecurrence",
+    "EmbeddedAppWidgetDefinition",
+    "EmbeddedAppWidgetDefinitionType",
+    "EmbeddedAppWidgetInput",
+    "EmbeddedAppWidgetInputValue",
+    "EmbeddedAppWidgetInputValueObject",
     "Event",
     "EventAlertType",
     "EventCreateRequest",
