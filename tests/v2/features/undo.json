@@ -1585,6 +1585,18 @@
       "type": "safe"
     }
   },
+  "GetCodeCoverageFiles": {
+    "tag": "Code Coverage",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetCodeCoveragePRSummary": {
+    "tag": "Code Coverage",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetRuleBasedView": {
     "tag": "Compliance",
     "undo": {
