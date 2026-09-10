@@ -1,0 +1,18 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/List On-Call schedules returns \"OK\" response",
+  "operation_id": "ListOnCallSchedules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/on-call/schedules"
+  },
+  "scenario": "List On-Call schedules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
