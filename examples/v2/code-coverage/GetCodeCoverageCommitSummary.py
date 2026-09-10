@@ -23,7 +23,6 @@ body = CommitCoverageSummaryRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["get_code_coverage_commit_summary"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CodeCoverageApi(api_client)
     response = api_instance.get_code_coverage_commit_summary(body=body)

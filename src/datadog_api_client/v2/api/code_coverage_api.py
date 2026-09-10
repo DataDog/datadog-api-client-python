@@ -10,6 +10,9 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.v2.model.coverage_summary_response import CoverageSummaryResponse
 from datadog_api_client.v2.model.branch_coverage_summary_request import BranchCoverageSummaryRequest
 from datadog_api_client.v2.model.commit_coverage_summary_request import CommitCoverageSummaryRequest
+from datadog_api_client.v2.model.files_coverage_response import FilesCoverageResponse
+from datadog_api_client.v2.model.files_coverage_request import FilesCoverageRequest
+from datadog_api_client.v2.model.pr_coverage_summary_request import PRCoverageSummaryRequest
 
 
 class CodeCoverageApi:
@@ -62,6 +65,46 @@ class CodeCoverageApi:
             api_client=api_client,
         )
 
+        self._get_code_coverage_files_endpoint = _Endpoint(
+            settings={
+                "response_type": (FilesCoverageResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/code-coverage/files",
+                "operation_id": "get_code_coverage_files",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (FilesCoverageRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._get_code_coverage_pr_summary_endpoint = _Endpoint(
+            settings={
+                "response_type": (CoverageSummaryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/code-coverage/pr/summary",
+                "operation_id": "get_code_coverage_pr_summary",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (PRCoverageSummaryRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def get_code_coverage_branch_summary(
         self,
         body: BranchCoverageSummaryRequest,
@@ -99,3 +142,39 @@ class CodeCoverageApi:
         kwargs["body"] = body
 
         return self._get_code_coverage_commit_summary_endpoint.call_with_http_info(**kwargs)
+
+    def get_code_coverage_files(
+        self,
+        body: FilesCoverageRequest,
+    ) -> FilesCoverageResponse:
+        """Get per-file code coverage data.
+
+        Retrieve per-file code coverage data for a specific commit, branch, or pull request.
+        Exactly one of ``commit_sha`` , ``branch`` , or ``pr_number`` must be provided.
+        Optionally filter by ``service`` , ``codeowner`` , or ``flag`` (at most one).
+
+        :type body: FilesCoverageRequest
+        :rtype: FilesCoverageResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._get_code_coverage_files_endpoint.call_with_http_info(**kwargs)
+
+    def get_code_coverage_pr_summary(
+        self,
+        body: PRCoverageSummaryRequest,
+    ) -> CoverageSummaryResponse:
+        """Get code coverage summary for a pull request.
+
+        Retrieve aggregated code coverage statistics for a specific pull request in a repository.
+        This endpoint provides overall coverage metrics as well as breakdowns by service
+        and code owner.
+
+        :type body: PRCoverageSummaryRequest
+        :rtype: CoverageSummaryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._get_code_coverage_pr_summary_endpoint.call_with_http_info(**kwargs)
