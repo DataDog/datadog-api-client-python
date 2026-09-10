@@ -3,6 +3,70 @@
   "recordings": [
     {
       "feature": "Monitors",
+      "frozen_at": "2026-09-09T18:01:07.161Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "policy": {
+                      "max_duration_ms": 3600000
+                    },
+                    "policy_type": "downtime"
+                  },
+                  "type": "monitor-config-policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/monitor/policy",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"monitor-config-policy\",\"id\":\"6fdd7893-ba30-4ddc-bb64-5dd94321edb2\",\"attributes\":{\"policy_type\":\"downtime\",\"policy\":{\"max_duration_ms\":3600000}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/monitor/policy/6fdd7893-ba30-4ddc-bb64-5dd94321edb2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {
+              "content-type": "text/html; charset=utf-8"
+            },
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a downtime duration monitor configuration policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
       "frozen_at": "2025-05-29T02:36:15.011Z",
       "interactions": [
         {

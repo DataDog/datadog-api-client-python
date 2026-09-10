@@ -15,15 +15,19 @@ from typing import ClassVar
 class MonitorConfigPolicyType(ModelSimple):
     """
     The monitor configuration policy type.
+        `tag` enforces required tags on monitors.
+        `downtime` sets a maximum downtime duration for the organization.
 
-    :param value: If omitted defaults to "tag". Must be one of ["tag"].
+    :param value: If omitted defaults to "tag". Must be one of ["tag", "downtime"].
     :type value: str
     """
 
     allowed_values = {
         "tag",
+        "downtime",
     }
     TAG: ClassVar["MonitorConfigPolicyType"]
+    DOWNTIME: ClassVar["MonitorConfigPolicyType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +37,4 @@ class MonitorConfigPolicyType(ModelSimple):
 
 
 MonitorConfigPolicyType.TAG = MonitorConfigPolicyType("tag")
+MonitorConfigPolicyType.DOWNTIME = MonitorConfigPolicyType("downtime")

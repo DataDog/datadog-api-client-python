@@ -23,6 +23,9 @@ class MonitorConfigPolicyPolicyCreateRequest(ModelComposed):
 
         :param valid_tag_values: Valid values for the tag.
         :type valid_tag_values: [str]
+
+        :param max_duration_ms: The maximum allowed downtime duration, in milliseconds.
+        :type max_duration_ms: int
         """
         super().__init__(kwargs)
 
@@ -38,9 +41,13 @@ class MonitorConfigPolicyPolicyCreateRequest(ModelComposed):
         from datadog_api_client.v2.model.monitor_config_policy_tag_policy_create_request import (
             MonitorConfigPolicyTagPolicyCreateRequest,
         )
+        from datadog_api_client.v2.model.monitor_config_policy_downtime_policy_create_request import (
+            MonitorConfigPolicyDowntimePolicyCreateRequest,
+        )
 
         return {
             "oneOf": [
                 MonitorConfigPolicyTagPolicyCreateRequest,
+                MonitorConfigPolicyDowntimePolicyCreateRequest,
             ],
         }
