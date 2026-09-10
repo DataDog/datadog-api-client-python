@@ -265,7 +265,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param http_client_uri_key: Environment variable name containing the URI of the OTLP HTTP endpoint to send metrics to.
         :type http_client_uri_key: str, optional
 
-        :param default_namespace: Optional default namespace for metrics sent to Splunk HEC.
+        :param default_namespace: The default namespace to add as a prefix to metric names that do not already have one.
         :type default_namespace: str, optional
 
         :param source: The Splunk source field value for metric events.
@@ -359,6 +359,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination import (
             ObservabilityPipelineOpentelemetryMetricsDestination,
         )
+        from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination import (
+            ObservabilityPipelinePrometheusRemoteWriteDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination import (
             ObservabilityPipelineSplunkHecMetricsDestination,
         )
@@ -392,6 +395,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineDatabricksZerobusDestination,
                 ObservabilityPipelineDatadogMetricsDestination,
                 ObservabilityPipelineOpentelemetryMetricsDestination,
+                ObservabilityPipelinePrometheusRemoteWriteDestination,
                 ObservabilityPipelineSplunkHecMetricsDestination,
             ],
         }

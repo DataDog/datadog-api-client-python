@@ -6480,6 +6480,27 @@ from datadog_api_client.v2.model.observability_pipeline_parse_xml_processor impo
 from datadog_api_client.v2.model.observability_pipeline_parse_xml_processor_type import (
     ObservabilityPipelineParseXMLProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination import (
+    ObservabilityPipelinePrometheusRemoteWriteDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination_auth_strategy import (
+    ObservabilityPipelinePrometheusRemoteWriteDestinationAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination_type import (
+    ObservabilityPipelinePrometheusRemoteWriteDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source import (
+    ObservabilityPipelinePrometheusRemoteWriteSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source_auth_strategy import (
+    ObservabilityPipelinePrometheusRemoteWriteSourceAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source_type import (
+    ObservabilityPipelinePrometheusRemoteWriteSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source_valid_token import (
+    ObservabilityPipelinePrometheusRemoteWriteSourceValidToken,
+)
 from datadog_api_client.v2.model.observability_pipeline_quota_processor import ObservabilityPipelineQuotaProcessor
 from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit import (
     ObservabilityPipelineQuotaProcessorLimit,
@@ -16081,6 +16102,13 @@ __all__ = [
     "ObservabilityPipelineParseJSONProcessorType",
     "ObservabilityPipelineParseXMLProcessor",
     "ObservabilityPipelineParseXMLProcessorType",
+    "ObservabilityPipelinePrometheusRemoteWriteDestination",
+    "ObservabilityPipelinePrometheusRemoteWriteDestinationAuthStrategy",
+    "ObservabilityPipelinePrometheusRemoteWriteDestinationType",
+    "ObservabilityPipelinePrometheusRemoteWriteSource",
+    "ObservabilityPipelinePrometheusRemoteWriteSourceAuthStrategy",
+    "ObservabilityPipelinePrometheusRemoteWriteSourceType",
+    "ObservabilityPipelinePrometheusRemoteWriteSourceValidToken",
     "ObservabilityPipelineQuotaProcessor",
     "ObservabilityPipelineQuotaProcessorLimit",
     "ObservabilityPipelineQuotaProcessorLimitEnforceType",
