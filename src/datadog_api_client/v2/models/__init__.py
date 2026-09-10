@@ -8598,6 +8598,8 @@ from datadog_api_client.v2.model.schedule_data_relationships_layers_data_items_t
     ScheduleDataRelationshipsLayersDataItemsType,
 )
 from datadog_api_client.v2.model.schedule_data_type import ScheduleDataType
+from datadog_api_client.v2.model.schedule_list_item import ScheduleListItem
+from datadog_api_client.v2.model.schedule_list_item_relationships import ScheduleListItemRelationships
 from datadog_api_client.v2.model.schedule_member import ScheduleMember
 from datadog_api_client.v2.model.schedule_member_relationships import ScheduleMemberRelationships
 from datadog_api_client.v2.model.schedule_member_relationships_user import ScheduleMemberRelationshipsUser
@@ -8674,6 +8676,9 @@ from datadog_api_client.v2.model.schedule_update_request_data_type import Schedu
 from datadog_api_client.v2.model.schedule_user import ScheduleUser
 from datadog_api_client.v2.model.schedule_user_attributes import ScheduleUserAttributes
 from datadog_api_client.v2.model.schedule_user_type import ScheduleUserType
+from datadog_api_client.v2.model.schedules import Schedules
+from datadog_api_client.v2.model.schedules_response_meta import SchedulesResponseMeta
+from datadog_api_client.v2.model.schedules_response_meta_page import SchedulesResponseMetaPage
 from datadog_api_client.v2.model.scorecard_list_response_attributes import ScorecardListResponseAttributes
 from datadog_api_client.v2.model.scorecard_list_response_data import ScorecardListResponseData
 from datadog_api_client.v2.model.scorecard_list_type import ScorecardListType
@@ -17491,6 +17496,8 @@ __all__ = [
     "ScheduleDataRelationshipsLayersDataItems",
     "ScheduleDataRelationshipsLayersDataItemsType",
     "ScheduleDataType",
+    "ScheduleListItem",
+    "ScheduleListItemRelationships",
     "ScheduleMember",
     "ScheduleMemberRelationships",
     "ScheduleMemberRelationshipsUser",
@@ -17533,6 +17540,9 @@ __all__ = [
     "ScheduleUser",
     "ScheduleUserAttributes",
     "ScheduleUserType",
+    "Schedules",
+    "SchedulesResponseMeta",
+    "SchedulesResponseMetaPage",
     "ScorecardListResponseAttributes",
     "ScorecardListResponseData",
     "ScorecardListType",

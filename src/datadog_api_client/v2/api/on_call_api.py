@@ -3,18 +3,23 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
+from datadog_api_client.v2.model.schedules import Schedules
+from datadog_api_client.v2.model.schedule_list_item import ScheduleListItem
 from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
@@ -482,6 +487,43 @@ class OnCallApi:
                     "openapi_types": (str,),
                     "attribute": "rule_id",
                     "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_on_call_schedules_endpoint = _Endpoint(
+            settings={
+                "response_type": (Schedules,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules",
+                "operation_id": "list_on_call_schedules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
                 },
                 "include": {
                     "openapi_types": (str,),
@@ -1055,6 +1097,93 @@ class OnCallApi:
             kwargs["include"] = include
 
         return self._get_user_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_schedules(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> Schedules:
+        """List On-Call schedules.
+
+        Retrieve a list of On-Call schedules.
+
+        :param page_size: Number of items to return per page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param filter_query: Search query to filter schedules. Supports free-text search on schedule name (case-insensitive, ``*`` wildcards), and structured filters such as ``team.id:<uuid>`` and ``user.id:<uuid>`` (multiple values can be combined with ``OR`` , e.g. ``user.id:(<uuid> OR <uuid>)`` ).
+        :type filter_query: str, optional
+        :param include: Comma-separated list of included relationships to be returned. Allowed value: ``teams``.
+        :type include: str, optional
+        :rtype: Schedules
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_on_call_schedules_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_schedules_with_pagination(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[ScheduleListItem]:
+        """List On-Call schedules.
+
+        Provide a paginated version of :meth:`list_on_call_schedules`, returning all items.
+
+        :param page_size: Number of items to return per page. The maximum allowed value is 100.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param filter_query: Search query to filter schedules. Supports free-text search on schedule name (case-insensitive, ``*`` wildcards), and structured filters such as ``team.id:<uuid>`` and ``user.id:<uuid>`` (multiple values can be combined with ``OR`` , e.g. ``user.id:(<uuid> OR <uuid>)`` ).
+        :type filter_query: str, optional
+        :param include: Comma-separated list of included relationships to be returned. Allowed value: ``teams``.
+        :type include: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[ScheduleListItem]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._list_on_call_schedules_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "page_start": 0,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def list_user_notification_channels(
         self,

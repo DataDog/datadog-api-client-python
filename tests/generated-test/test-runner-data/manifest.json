@@ -8186,6 +8186,13 @@
     {
       "feature": "On-Call",
       "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/list-on-call-schedules-returns-ok-response.json",
+      "scenario": "List On-Call schedules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/set-on-call-team-routing-rules-returns-ok-response.json",
       "scenario": "Set On-Call team routing rules returns \"OK\" response",
       "version": "v2"

@@ -6120,6 +6120,12 @@
       "type": "unsafe"
     }
   },
+  "ListOnCallSchedules": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateOnCallSchedule": {
     "tag": "On-Call",
     "undo": {

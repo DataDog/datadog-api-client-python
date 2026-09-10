@@ -416,6 +416,24 @@ Feature: On-Call
     And the response "data" has length 1
     And the response "included" has length 1
 
+  @generated @skip @team:DataDog/on-call
+  Scenario: List On-Call schedules returns "Bad Request" response
+    Given new "ListOnCallSchedules" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/on-call
+  Scenario: List On-Call schedules returns "OK" response
+    Given new "ListOnCallSchedules" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/on-call @with-pagination
+  Scenario: List On-Call schedules returns "OK" response with pagination
+    Given new "ListOnCallSchedules" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @skip-python @team:DataDog/on-call
   Scenario: Set On-Call team routing rules returns "OK" response
     Given new "SetOnCallTeamRoutingRules" request

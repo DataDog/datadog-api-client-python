@@ -3316,6 +3316,37 @@
     },
     {
       "feature": "On-Call",
+      "frozen_at": "2026-09-09T14:54:42.222Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"a0a76964-f16e-4046-b004-3a0cc4c5dc8d\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Example-Get_team_on_call_users_returns_OK_response_1780484684\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"6898691d-d088-482b-a6b2-4f99853b42cc\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Example-Get_team_on_call_users_returns_OK_response_1781607884\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"a9f54856-1ea7-40e4-8208-eaa99c172c98\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Example-Get_team_on_call_users_returns_OK_response_1787670284\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"4fdb7dfa-1269-4fbd-b818-f7ee0fa541f8\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Example-Set_On_Call_team_routing_rules_returns_OK_response_1776121483\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"abc03348-514e-4d97-b90e-ba6514e2aee5\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Example-Set_On_Call_team_routing_rules_returns_OK_response_1779291023\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"2913247a-d9a7-466e-94b6-ae494be44eeb\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Example-Set_On_Call_team_routing_rules_returns_OK_response_1779291061\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"055c1bc1-92ff-4a96-a01f-5e3c3cde2e46\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Go-Create_On_Call_escalation_policy_returns_Created_response-1763772347\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"d4a45e02-85c1-4f1d-a110-f059e2d31d95\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Go-Create_On_Call_escalation_policy_returns_Created_response-1763859011\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"1fa8fdf5-13dd-4876-90db-18999f50917c\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Go-Create_On_Call_escalation_policy_returns_Created_response-1763945361\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"8c456447-4302-4e9e-9071-bf628ceaebbd\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Go-Create_On_Call_escalation_policy_returns_Created_response-1764031598\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}],\"meta\":{\"page\":{\"type\":\"number_size\",\"number\":0,\"size\":10,\"total\":885,\"first_number\":0,\"prev_number\":null,\"next_number\":1,\"last_number\":88}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List On-Call schedules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
       "frozen_at": "2026-05-15T14:39:18.459Z",
       "interactions": [
         {
