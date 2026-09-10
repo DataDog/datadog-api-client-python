@@ -249,6 +249,9 @@ from datadog_api_client.v2.model.aggregated_waterfall_request_data import Aggreg
 from datadog_api_client.v2.model.aggregated_waterfall_request_type import AggregatedWaterfallRequestType
 from datadog_api_client.v2.model.aggregated_waterfall_response import AggregatedWaterfallResponse
 from datadog_api_client.v2.model.aggregated_waterfall_response_attributes import AggregatedWaterfallResponseAttributes
+from datadog_api_client.v2.model.aggregated_waterfall_response_attributes_criteria import (
+    AggregatedWaterfallResponseAttributesCriteria,
+)
 from datadog_api_client.v2.model.aggregated_waterfall_response_data import AggregatedWaterfallResponseData
 from datadog_api_client.v2.model.ai_custom_rule_data_type import AiCustomRuleDataType
 from datadog_api_client.v2.model.ai_custom_rule_item import AiCustomRuleItem
@@ -11692,6 +11695,7 @@ __all__ = [
     "AggregatedWaterfallRequestType",
     "AggregatedWaterfallResponse",
     "AggregatedWaterfallResponseAttributes",
+    "AggregatedWaterfallResponseAttributesCriteria",
     "AggregatedWaterfallResponseData",
     "AiCustomRuleDataType",
     "AiCustomRuleItem",

@@ -8,14 +8,13 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
+    none_type,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria import (
-        AggregatedWaterfallPerformanceCriteria,
+    from datadog_api_client.v2.model.aggregated_waterfall_response_attributes_criteria import (
+        AggregatedWaterfallResponseAttributesCriteria,
     )
     from datadog_api_client.v2.model.aggregated_resource import AggregatedResource
 
@@ -29,14 +28,14 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria import (
-            AggregatedWaterfallPerformanceCriteria,
+        from datadog_api_client.v2.model.aggregated_waterfall_response_attributes_criteria import (
+            AggregatedWaterfallResponseAttributesCriteria,
         )
         from datadog_api_client.v2.model.aggregated_resource import AggregatedResource
 
         return {
             "application_id": (str,),
-            "criteria": (AggregatedWaterfallPerformanceCriteria,),
+            "criteria": (AggregatedWaterfallResponseAttributesCriteria,),
             "_from": (int,),
             "resources": ([AggregatedResource],),
             "sampled_view_ids": ([str],),
@@ -61,6 +60,7 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
     def __init__(
         self_,
         application_id: str,
+        criteria: Union[AggregatedWaterfallResponseAttributesCriteria, none_type],
         _from: int,
         resources: List[AggregatedResource],
         sampled_view_ids: List[str],
@@ -68,7 +68,6 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
         total_cache_hit_rate_pct: float,
         view_count: int,
         view_name: str,
-        criteria: Union[AggregatedWaterfallPerformanceCriteria, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -77,8 +76,8 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
         :param application_id: The RUM application ID that was analyzed.
         :type application_id: str
 
-        :param criteria: Performance criteria to filter view instances by a metric threshold.
-        :type criteria: AggregatedWaterfallPerformanceCriteria, optional
+        :param criteria: Performance criteria used to filter view instances by a metric threshold, or null if no criteria were applied.
+        :type criteria: AggregatedWaterfallResponseAttributesCriteria, none_type
 
         :param _from: Start of the analyzed time range as a Unix timestamp in seconds.
         :type _from: int
@@ -101,11 +100,10 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
         :param view_name: The RUM view name that was analyzed.
         :type view_name: str
         """
-        if criteria is not unset:
-            kwargs["criteria"] = criteria
         super().__init__(kwargs)
 
         self_.application_id = application_id
+        self_.criteria = criteria
         self_._from = _from
         self_.resources = resources
         self_.sampled_view_ids = sampled_view_ids
