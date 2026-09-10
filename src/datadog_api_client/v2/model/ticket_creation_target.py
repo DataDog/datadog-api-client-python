@@ -16,16 +16,18 @@ class TicketCreationTarget(ModelSimple):
     """
     The ticketing system to create tickets in.
 
-    :param value: Must be one of ["jira", "case_management"].
+    :param value: Must be one of ["jira", "case_management", "linear"].
     :type value: str
     """
 
     allowed_values = {
         "jira",
         "case_management",
+        "linear",
     }
     JIRA: ClassVar["TicketCreationTarget"]
     CASE_MANAGEMENT: ClassVar["TicketCreationTarget"]
+    LINEAR: ClassVar["TicketCreationTarget"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class TicketCreationTarget(ModelSimple):
 
 TicketCreationTarget.JIRA = TicketCreationTarget("jira")
 TicketCreationTarget.CASE_MANAGEMENT = TicketCreationTarget("case_management")
+TicketCreationTarget.LINEAR = TicketCreationTarget("linear")
