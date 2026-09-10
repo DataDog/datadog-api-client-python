@@ -462,6 +462,426 @@
     },
     {
       "feature": "Deployment Gates",
+      "frozen_at": "2026-09-09T08:52:04.617Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatemonitordeploymentrulewithmonitoridsreturnsokresponse1788943924",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f0a2f7a7-3edb-4c32-8b6f-2b294e050070\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-09-09T08:52:05.675749Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatemonitordeploymentrulewithmonitoridsreturnsokresponse1788943924\",\"service\":\"my-service\",\"updated_at\":\"2026-09-09T08:52:05.675749Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_monitor_deployment_rule_with_monitor_IDs_returns_OK_response-1788943924",
+                "options": {
+                  "enable_logs_sample": true,
+                  "escalation_message": "the situation has escalated",
+                  "evaluation_delay": 700,
+                  "include_tags": true,
+                  "locked": false,
+                  "new_host_delay": 600,
+                  "no_data_timeframe": null,
+                  "notification_preset_name": "hide_handles",
+                  "notify_audit": false,
+                  "notify_no_data": false,
+                  "on_missing_data": "show_and_notify_no_data",
+                  "renotify_interval": 60,
+                  "require_full_window": true,
+                  "thresholds": {
+                    "critical": 2,
+                    "warning": 1
+                  },
+                  "timeout_h": 24
+                },
+                "priority": 3,
+                "query": "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2",
+                "tags": [
+                  "test:testcreatemonitordeploymentrulewithmonitoridsreturnsokresponse1788943924",
+                  "env:ci"
+                ],
+                "type": "log alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":320387601,\"org_id\":321813,\"type\":\"log alert\",\"name\":\"Test-Create_monitor_deployment_rule_with_monitor_IDs_returns_OK_response-1788943924\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testcreatemonitordeploymentrulewithmonitoridsreturnsokresponse1788943924\",\"env:ci\"],\"query\":\"logs(\\\"service:foo AND type:error\\\").index(\\\"main\\\").rollup(\\\"count\\\").by(\\\"source\\\").last(\\\"5m\\\") > 2\",\"options\":{\"enable_logs_sample\":true,\"escalation_message\":\"the situation has escalated\",\"evaluation_delay\":700,\"include_tags\":true,\"locked\":false,\"new_host_delay\":600,\"no_data_timeframe\":null,\"notification_preset_name\":\"hide_handles\",\"notify_audit\":false,\"notify_no_data\":false,\"on_missing_data\":\"show_and_notify_no_data\",\"renotify_interval\":60,\"require_full_window\":true,\"thresholds\":{\"critical\":2.0,\"warning\":1.0},\"timeout_h\":24,\"groupby_simple_monitor\":false,\"silenced\":{}},\"multi\":true,\"created_at\":1788943926000,\"created\":\"2026-09-09T08:52:06.017418+00:00\",\"modified\":\"2026-09-09T08:52:06.017418+00:00\",\"deleted\":null,\"priority\":3,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"email\":\"team-intg-tools-libs-spam@datadoghq.com\",\"id\":2320499}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Specific monitor deployment rule",
+                    "options": {
+                      "monitor_ids": [
+                        {
+                          "groups": [],
+                          "id": "320387601"
+                        }
+                      ]
+                    },
+                    "type": "monitor"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/f0a2f7a7-3edb-4c32-8b6f-2b294e050070/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a7022950-2803-4275-a3a4-d2b611a38901\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2026-09-09T08:52:06.381853Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"f0a2f7a7-3edb-4c32-8b6f-2b294e050070\",\"name\":\"Specific monitor deployment rule\",\"options\":{\"monitor_ids\":[{\"id\":\"320387601\",\"groups\":[]}]},\"type\":\"monitor\",\"updated_at\":\"2026-09-09T08:52:06.381853Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/f0a2f7a7-3edb-4c32-8b6f-2b294e050070/rules/a7022950-2803-4275-a3a4-d2b611a38901",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/320387601",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":320387601}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/f0a2f7a7-3edb-4c32-8b6f-2b294e050070",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create monitor deployment rule with monitor IDs returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-09-09T08:52:07.322Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatemonitordeploymentrulewithqueryandmonitoridsreturnsbadrequestresponse1788943927",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a5f38bf8-bd06-4dac-82a8-8b80bdafb001\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-09-09T08:52:07.633476Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatemonitordeploymentrulewithqueryandmonitoridsreturnsbadrequestresponse1788943927\",\"service\":\"my-service\",\"updated_at\":\"2026-09-09T08:52:07.633476Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Ambiguous monitor deployment rule",
+                    "options": {
+                      "monitor_ids": [
+                        {
+                          "groups": [],
+                          "id": "123456"
+                        }
+                      ],
+                      "query": "service:transaction-backend env:production"
+                    },
+                    "type": "monitor"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/a5f38bf8-bd06-4dac-82a8-8b80bdafb001/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"options.query and options.monitor_ids are mutually exclusive\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/a5f38bf8-bd06-4dac-82a8-8b80bdafb001",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create monitor deployment rule with query and monitor IDs returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-09-09T08:52:08.166Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatemonitordeploymentrulewithqueryreturnsokresponse1788943928",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a4d3587f-f61d-42bd-869a-2318a4f377e7\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-09-09T08:52:08.338192Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatemonitordeploymentrulewithqueryreturnsokresponse1788943928\",\"service\":\"my-service\",\"updated_at\":\"2026-09-09T08:52:08.338192Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Query monitor deployment rule",
+                    "options": {
+                      "query": "service:transaction-backend env:production"
+                    },
+                    "type": "monitor"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/a4d3587f-f61d-42bd-869a-2318a4f377e7/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5db11563-3823-41bf-883b-791028de5b7d\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2026-09-09T08:52:08.601315Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"a4d3587f-f61d-42bd-869a-2318a4f377e7\",\"name\":\"Query monitor deployment rule\",\"options\":{\"query\":\"service:transaction-backend env:production\"},\"type\":\"monitor\",\"updated_at\":\"2026-09-09T08:52:08.601315Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/a4d3587f-f61d-42bd-869a-2318a4f377e7/rules/5db11563-3823-41bf-883b-791028de5b7d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/a4d3587f-f61d-42bd-869a-2318a4f377e7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create monitor deployment rule with query returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
       "frozen_at": "2025-10-28T14:03:29.170Z",
       "interactions": [
         {
