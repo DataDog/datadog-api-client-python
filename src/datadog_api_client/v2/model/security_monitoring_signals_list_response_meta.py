@@ -27,20 +27,48 @@ class SecurityMonitoringSignalsListResponseMeta(ModelNormal):
         )
 
         return {
+            "elapsed": (int,),
             "page": (SecurityMonitoringSignalsListResponseMetaPage,),
+            "request_id": (str,),
+            "status": (str,),
         }
 
     attribute_map = {
+        "elapsed": "elapsed",
         "page": "page",
+        "request_id": "request_id",
+        "status": "status",
     }
 
-    def __init__(self_, page: Union[SecurityMonitoringSignalsListResponseMetaPage, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        elapsed: Union[int, UnsetType] = unset,
+        page: Union[SecurityMonitoringSignalsListResponseMetaPage, UnsetType] = unset,
+        request_id: Union[str, UnsetType] = unset,
+        status: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Meta attributes.
 
+        :param elapsed: The time elapsed in milliseconds.
+        :type elapsed: int, optional
+
         :param page: Paging attributes.
         :type page: SecurityMonitoringSignalsListResponseMetaPage, optional
+
+        :param request_id: The unique identifier of the request.
+        :type request_id: str, optional
+
+        :param status: The status of the response.
+        :type status: str, optional
         """
+        if elapsed is not unset:
+            kwargs["elapsed"] = elapsed
         if page is not unset:
             kwargs["page"] = page
+        if request_id is not unset:
+            kwargs["request_id"] = request_id
+        if status is not unset:
+            kwargs["status"] = status
         super().__init__(kwargs)
