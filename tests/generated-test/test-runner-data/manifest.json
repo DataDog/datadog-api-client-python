@@ -934,6 +934,13 @@
     {
       "feature": "Dashboards",
       "feature_file": "../../v1/features/dashboards.feature",
+      "file": "v1/dashboards/get-a-dashboard-with-five-team-tags-and-two-ai-tags.json",
+      "scenario": "Get a dashboard with five team tags and two AI tags",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "feature_file": "../../v1/features/dashboards.feature",
       "file": "v1/dashboards/get-a-shared-dashboard-returns-ok-response.json",
       "scenario": "Get a shared dashboard returns \"OK\" response",
       "version": "v1"
@@ -4674,6 +4681,13 @@
       "feature_file": "../../v2/features/dashboard_lists.feature",
       "file": "v2/dashboard-lists/delete-custom-timeboard-dashboard-from-an-existing-dashboard-list-returns-ok-response.json",
       "scenario": "Delete custom timeboard dashboard from an existing dashboard list returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Dashboard Lists",
+      "feature_file": "../../v2/features/dashboard_lists.feature",
+      "file": "v2/dashboard-lists/get-dashboard-list-items-with-five-team-tags-and-two-ai-tags.json",
+      "scenario": "Get dashboard list items with five team tags and two AI tags",
       "version": "v2"
     },
     {
