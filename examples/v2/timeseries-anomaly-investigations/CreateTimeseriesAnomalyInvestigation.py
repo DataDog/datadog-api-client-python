@@ -30,7 +30,7 @@ body = TimeseriesAnomalyInvestigationRequest(
                 TimeseriesAnomalyInvestigationTimeseriesRequest(
                     formulas=[
                         TimeseriesAnomalyInvestigationFormula(
-                            formula="anomalies(query1, 'agile', 3)",
+                            formula="query1",
                         ),
                     ],
                     _from=1754406000000,

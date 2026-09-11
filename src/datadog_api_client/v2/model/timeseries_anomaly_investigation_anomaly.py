@@ -111,7 +111,7 @@ class TimeseriesAnomalyInvestigationAnomaly(ModelNormal):
         **kwargs,
     ):
         """
-        Most significant anomaly detected in the request.
+        One of the most significant anomalies detected in the request.
 
         :param anomaly_detection: Anomaly detection configuration used for the result.
         :type anomaly_detection: TimeseriesAnomalyInvestigationDetection
