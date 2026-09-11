@@ -10,6 +10,7 @@ from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
     UUID,
 )
+from datadog_api_client.v2.model.oidc_discovery_document import OIDCDiscoveryDocument
 from datadog_api_client.v2.model.o_auth2_well_known_sites_response import OAuth2WellKnownSitesResponse
 from datadog_api_client.v2.model.o_auth_scopes_restriction_response import OAuthScopesRestrictionResponse
 from datadog_api_client.v2.model.upsert_o_auth_scopes_restriction_request import UpsertOAuthScopesRestrictionRequest
@@ -57,6 +58,22 @@ class OAuth2ClientPublicApi:
                 "auth": [],
                 "endpoint_path": "/api/v2/oauth2/.well-known/sites",
                 "operation_id": "get_o_auth2_well_known_sites",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_oidc_discovery_document_endpoint = _Endpoint(
+            settings={
+                "response_type": (OIDCDiscoveryDocument,),
+                "auth": [],
+                "endpoint_path": "/api/v2/oauth2/.well-known/openid-configuration",
+                "operation_id": "get_oidc_discovery_document",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -164,6 +181,18 @@ class OAuth2ClientPublicApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._get_o_auth2_well_known_sites_endpoint.call_with_http_info(**kwargs)
+
+    def get_oidc_discovery_document(
+        self,
+    ) -> OIDCDiscoveryDocument:
+        """Get OpenID Connect provider metadata.
+
+        Retrieve OpenID Connect provider metadata for the OAuth2 v2 token endpoint.
+
+        :rtype: OIDCDiscoveryDocument
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_oidc_discovery_document_endpoint.call_with_http_info(**kwargs)
 
     def get_scopes_restriction(
         self,
