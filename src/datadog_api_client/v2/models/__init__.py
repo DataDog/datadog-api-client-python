@@ -9856,6 +9856,144 @@ from datadog_api_client.v2.model.snapshot_update_request import SnapshotUpdateRe
 from datadog_api_client.v2.model.snapshot_update_request_data import SnapshotUpdateRequestData
 from datadog_api_client.v2.model.snapshot_update_request_data_attributes import SnapshotUpdateRequestDataAttributes
 from datadog_api_client.v2.model.snapshot_update_request_data_type import SnapshotUpdateRequestDataType
+from datadog_api_client.v2.model.snowflake_account_usage_metrics_integration_dataflow_request import (
+    SnowflakeAccountUsageMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_account_usage_metrics_integration_dataflow_response import (
+    SnowflakeAccountUsageMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_account_usage_metrics_integration_dataflow_settings_request import (
+    SnowflakeAccountUsageMetricsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_account_usage_metrics_integration_dataflow_settings_response import (
+    SnowflakeAccountUsageMetricsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_cloud_cost_metrics_integration_dataflow_request import (
+    SnowflakeCloudCostMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_cloud_cost_metrics_integration_dataflow_response import (
+    SnowflakeCloudCostMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_cloud_cost_metrics_integration_dataflow_settings_request import (
+    SnowflakeCloudCostMetricsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_cloud_cost_metrics_integration_dataflow_settings_response import (
+    SnowflakeCloudCostMetricsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_data_observability_quality_monitoring_integration_dataflow_request import (
+    SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_data_observability_quality_monitoring_integration_dataflow_response import (
+    SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_data_observability_quality_monitoring_integration_dataflow_settings_request import (
+    SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_data_observability_quality_monitoring_integration_dataflow_settings_response import (
+    SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_event_table_logs_integration_dataflow_request import (
+    SnowflakeEventTableLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_event_table_logs_integration_dataflow_response import (
+    SnowflakeEventTableLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_event_table_logs_integration_dataflow_settings_request import (
+    SnowflakeEventTableLogsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_event_table_logs_integration_dataflow_settings_response import (
+    SnowflakeEventTableLogsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_authentication_request import (
+    SnowflakeIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_authentication_response import (
+    SnowflakeIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_create_attributes import (
+    SnowflakeIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_create_data import SnowflakeIntegrationAccountCreateData
+from datadog_api_client.v2.model.snowflake_integration_account_create_request import (
+    SnowflakeIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_private_key_auth_type import (
+    SnowflakeIntegrationAccountPrivateKeyAuthType,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_response import SnowflakeIntegrationAccountResponse
+from datadog_api_client.v2.model.snowflake_integration_account_response_attributes import (
+    SnowflakeIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_response_data import (
+    SnowflakeIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_settings_request import (
+    SnowflakeIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_settings_response import (
+    SnowflakeIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_settings_update import (
+    SnowflakeIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_update_attributes import (
+    SnowflakeIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.snowflake_integration_account_update_data import SnowflakeIntegrationAccountUpdateData
+from datadog_api_client.v2.model.snowflake_integration_account_update_request import (
+    SnowflakeIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.snowflake_integration_accounts_response import SnowflakeIntegrationAccountsResponse
+from datadog_api_client.v2.model.snowflake_integration_dataflows_request import SnowflakeIntegrationDataflowsRequest
+from datadog_api_client.v2.model.snowflake_integration_dataflows_response import SnowflakeIntegrationDataflowsResponse
+from datadog_api_client.v2.model.snowflake_organization_usage_metrics_integration_dataflow_request import (
+    SnowflakeOrganizationUsageMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_organization_usage_metrics_integration_dataflow_response import (
+    SnowflakeOrganizationUsageMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_organization_usage_metrics_integration_dataflow_settings_request import (
+    SnowflakeOrganizationUsageMetricsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_organization_usage_metrics_integration_dataflow_settings_response import (
+    SnowflakeOrganizationUsageMetricsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_query_history_logs_integration_dataflow_request import (
+    SnowflakeQueryHistoryLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_query_history_logs_integration_dataflow_response import (
+    SnowflakeQueryHistoryLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_query_history_logs_integration_dataflow_settings_request import (
+    SnowflakeQueryHistoryLogsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_query_history_logs_integration_dataflow_settings_response import (
+    SnowflakeQueryHistoryLogsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_security_logs_integration_dataflow_request import (
+    SnowflakeSecurityLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_security_logs_integration_dataflow_response import (
+    SnowflakeSecurityLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_security_logs_integration_dataflow_settings_request import (
+    SnowflakeSecurityLogsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_security_logs_integration_dataflow_settings_response import (
+    SnowflakeSecurityLogsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.snowflake_task_history_logs_integration_dataflow_request import (
+    SnowflakeTaskHistoryLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.snowflake_task_history_logs_integration_dataflow_response import (
+    SnowflakeTaskHistoryLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.snowflake_task_history_logs_integration_dataflow_settings_request import (
+    SnowflakeTaskHistoryLogsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.snowflake_task_history_logs_integration_dataflow_settings_response import (
+    SnowflakeTaskHistoryLogsIntegrationDataflowSettingsResponse,
+)
 from datadog_api_client.v2.model.software_catalog_trigger_wrapper import SoftwareCatalogTriggerWrapper
 from datadog_api_client.v2.model.sort_direction import SortDirection
 from datadog_api_client.v2.model.sourcemap_data_type import SourcemapDataType
@@ -18274,6 +18412,56 @@ __all__ = [
     "SnapshotUpdateRequestData",
     "SnapshotUpdateRequestDataAttributes",
     "SnapshotUpdateRequestDataType",
+    "SnowflakeAccountUsageMetricsIntegrationDataflowRequest",
+    "SnowflakeAccountUsageMetricsIntegrationDataflowResponse",
+    "SnowflakeAccountUsageMetricsIntegrationDataflowSettingsRequest",
+    "SnowflakeAccountUsageMetricsIntegrationDataflowSettingsResponse",
+    "SnowflakeCloudCostMetricsIntegrationDataflowRequest",
+    "SnowflakeCloudCostMetricsIntegrationDataflowResponse",
+    "SnowflakeCloudCostMetricsIntegrationDataflowSettingsRequest",
+    "SnowflakeCloudCostMetricsIntegrationDataflowSettingsResponse",
+    "SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowRequest",
+    "SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowResponse",
+    "SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowSettingsRequest",
+    "SnowflakeDataObservabilityQualityMonitoringIntegrationDataflowSettingsResponse",
+    "SnowflakeEventTableLogsIntegrationDataflowRequest",
+    "SnowflakeEventTableLogsIntegrationDataflowResponse",
+    "SnowflakeEventTableLogsIntegrationDataflowSettingsRequest",
+    "SnowflakeEventTableLogsIntegrationDataflowSettingsResponse",
+    "SnowflakeIntegrationAccountAuthenticationRequest",
+    "SnowflakeIntegrationAccountAuthenticationResponse",
+    "SnowflakeIntegrationAccountCreateAttributes",
+    "SnowflakeIntegrationAccountCreateData",
+    "SnowflakeIntegrationAccountCreateRequest",
+    "SnowflakeIntegrationAccountPrivateKeyAuthType",
+    "SnowflakeIntegrationAccountResponse",
+    "SnowflakeIntegrationAccountResponseAttributes",
+    "SnowflakeIntegrationAccountResponseData",
+    "SnowflakeIntegrationAccountSettingsRequest",
+    "SnowflakeIntegrationAccountSettingsResponse",
+    "SnowflakeIntegrationAccountSettingsUpdate",
+    "SnowflakeIntegrationAccountUpdateAttributes",
+    "SnowflakeIntegrationAccountUpdateData",
+    "SnowflakeIntegrationAccountUpdateRequest",
+    "SnowflakeIntegrationAccountsResponse",
+    "SnowflakeIntegrationDataflowsRequest",
+    "SnowflakeIntegrationDataflowsResponse",
+    "SnowflakeOrganizationUsageMetricsIntegrationDataflowRequest",
+    "SnowflakeOrganizationUsageMetricsIntegrationDataflowResponse",
+    "SnowflakeOrganizationUsageMetricsIntegrationDataflowSettingsRequest",
+    "SnowflakeOrganizationUsageMetricsIntegrationDataflowSettingsResponse",
+    "SnowflakeQueryHistoryLogsIntegrationDataflowRequest",
+    "SnowflakeQueryHistoryLogsIntegrationDataflowResponse",
+    "SnowflakeQueryHistoryLogsIntegrationDataflowSettingsRequest",
+    "SnowflakeQueryHistoryLogsIntegrationDataflowSettingsResponse",
+    "SnowflakeSecurityLogsIntegrationDataflowRequest",
+    "SnowflakeSecurityLogsIntegrationDataflowResponse",
+    "SnowflakeSecurityLogsIntegrationDataflowSettingsRequest",
+    "SnowflakeSecurityLogsIntegrationDataflowSettingsResponse",
+    "SnowflakeTaskHistoryLogsIntegrationDataflowRequest",
+    "SnowflakeTaskHistoryLogsIntegrationDataflowResponse",
+    "SnowflakeTaskHistoryLogsIntegrationDataflowSettingsRequest",
+    "SnowflakeTaskHistoryLogsIntegrationDataflowSettingsResponse",
     "SoftwareCatalogTriggerWrapper",
     "SortDirection",
     "SourcemapDataType",
