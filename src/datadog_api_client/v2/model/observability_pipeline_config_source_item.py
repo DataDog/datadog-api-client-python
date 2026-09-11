@@ -114,6 +114,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
 
         :param http_address_key: Environment variable name containing the HTTP server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
         :type http_address_key: str, optional
+
+        :param path: The HTTP path on which the source listens for incoming Prometheus Remote Write requests.
+        :type path: str, optional
         """
         super().__init__(kwargs)
 
@@ -172,6 +175,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
             ObservabilityPipelineOpentelemetrySource,
         )
+        from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source import (
+            ObservabilityPipelinePrometheusRemoteWriteSource,
+        )
 
         return {
             "oneOf": [
@@ -193,5 +199,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
                 ObservabilityPipelineSyslogNgSource,
                 ObservabilityPipelineWebsocketSource,
                 ObservabilityPipelineOpentelemetrySource,
+                ObservabilityPipelinePrometheusRemoteWriteSource,
             ],
         }
