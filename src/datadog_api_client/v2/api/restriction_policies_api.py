@@ -112,7 +112,7 @@ class RestrictionPoliciesApi:
 
         Deletes the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page`` , ``feature-flag`` , ``network-path-config``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``canvas`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page`` , ``feature-flag`` , ``network-path-config``.
         :type resource_id: str
         :rtype: None
         """
@@ -129,7 +129,7 @@ class RestrictionPoliciesApi:
 
         Retrieves the restriction policy associated with a specified resource.
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page`` , ``feature-flag`` , ``network-path-config``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``canvas`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page`` , ``feature-flag`` , ``network-path-config``.
         :type resource_id: str
         :rtype: RestrictionPolicyResponse
         """
@@ -154,6 +154,7 @@ class RestrictionPoliciesApi:
         Restriction policies can be applied to the following resources:
 
         * Dashboards: ``dashboard``
+        * Dashboard Canvases: ``canvas``
         * Integration Services: ``integration-service``
         * Integration Webhooks: ``integration-webhook``
         * Notebooks: ``notebook``
@@ -190,6 +191,8 @@ class RestrictionPoliciesApi:
            * - Resource Type
              - Supported Relations
            * - Dashboards
+             - ``viewer`` , ``editor``
+           * - Dashboard Canvases
              - ``viewer`` , ``editor``
            * - Integration Services
              - ``viewer`` , ``editor``
@@ -247,7 +250,7 @@ class RestrictionPoliciesApi:
              - ``viewer`` , ``editor``
 
 
-        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page`` , ``feature-flag`` , ``network-path-config``.
+        :param resource_id: Identifier, formatted as ``type:id``. Supported types: ``dashboard`` , ``canvas`` , ``integration-service`` , ``integration-webhook`` , ``notebook`` , ``powerpack`` , ``reference-table`` , ``security-rule`` , ``slo`` , ``synthetics-global-variable`` , ``synthetics-test`` , ``synthetics-private-location`` , ``monitor`` , ``workflow`` , ``app-builder-app`` , ``connection`` , ``connection-group`` , ``rum-application`` , ``cross-org-connection`` , ``spreadsheet`` , ``on-call-schedule`` , ``on-call-escalation-policy`` , ``on-call-team-routing-rules`` , ``logs-pipeline`` , ``case-management-project`` , ``monitor-notification-rule`` , ``status-page`` , ``feature-flag`` , ``network-path-config``.
         :type resource_id: str
         :param body: Restriction policy payload
         :type body: RestrictionPolicyUpdateRequest
