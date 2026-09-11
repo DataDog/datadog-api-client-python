@@ -45,7 +45,7 @@ class RumCrossProductSampling(ModelNormal):
         :param trace_enabled: Whether the cross-product retention filter for APM traces is enabled.
         :type trace_enabled: bool, optional
 
-        :param trace_sample_rate: The sample rate for the APM cross-product retention filter, between 0 and 100.
+        :param trace_sample_rate: The sample rate for the APM cross-product retention filter, between 0 and 100. Values returned by the API are rounded to two decimal places.
         :type trace_sample_rate: float, optional
         """
         if trace_enabled is not unset:

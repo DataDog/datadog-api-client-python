@@ -77,7 +77,7 @@ class RumRetentionFilterUpdateAttributes(ModelNormal):
         :param query: The query string for a RUM retention filter.
         :type query: str, optional
 
-        :param sample_rate: The sample rate for a RUM retention filter, between 0.1 and 100.
+        :param sample_rate: The sample rate for a RUM retention filter, between 0.1 and 100. Values are truncated to one decimal place.
         :type sample_rate: float, optional
         """
         if cross_product_sampling is not unset:
