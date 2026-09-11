@@ -3729,6 +3729,43 @@
       "type": "idempotent"
     }
   },
+  "ListSnowflakeIntegrationAccounts": {
+    "tag": "Snowflake Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSnowflakeIntegrationAccount": {
+    "tag": "Snowflake Integration",
+    "undo": {
+      "operationId": "DeleteSnowflakeIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSnowflakeIntegrationAccount": {
+    "tag": "Snowflake Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSnowflakeIntegrationAccount": {
+    "tag": "Snowflake Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSnowflakeIntegrationAccount": {
+    "tag": "Snowflake Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListTwilioIntegrationAccounts": {
     "tag": "Twilio Integration Accounts",
     "undo": {
