@@ -2338,6 +2338,112 @@ from datadog_api_client.v2.model.data_transform import DataTransform
 from datadog_api_client.v2.model.data_transform_properties import DataTransformProperties
 from datadog_api_client.v2.model.data_transform_type import DataTransformType
 from datadog_api_client.v2.model.database_monitoring_trigger_wrapper import DatabaseMonitoringTriggerWrapper
+from datadog_api_client.v2.model.databricks_cloud_cost_metrics_integration_dataflow_request import (
+    DatabricksCloudCostMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.databricks_cloud_cost_metrics_integration_dataflow_response import (
+    DatabricksCloudCostMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.databricks_cloud_cost_metrics_integration_dataflow_settings_request import (
+    DatabricksCloudCostMetricsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.databricks_cloud_cost_metrics_integration_dataflow_settings_response import (
+    DatabricksCloudCostMetricsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.databricks_data_observability_jobs_monitoring_integration_dataflow_request import (
+    DatabricksDataObservabilityJobsMonitoringIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.databricks_data_observability_jobs_monitoring_integration_dataflow_response import (
+    DatabricksDataObservabilityJobsMonitoringIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.databricks_data_observability_jobs_monitoring_integration_dataflow_settings_request import (
+    DatabricksDataObservabilityJobsMonitoringIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.databricks_data_observability_jobs_monitoring_integration_dataflow_settings_response import (
+    DatabricksDataObservabilityJobsMonitoringIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.databricks_data_observability_quality_monitoring_integration_dataflow_request import (
+    DatabricksDataObservabilityQualityMonitoringIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.databricks_data_observability_quality_monitoring_integration_dataflow_response import (
+    DatabricksDataObservabilityQualityMonitoringIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.databricks_data_observability_quality_monitoring_integration_dataflow_settings_request import (
+    DatabricksDataObservabilityQualityMonitoringIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.databricks_data_observability_quality_monitoring_integration_dataflow_settings_response import (
+    DatabricksDataObservabilityQualityMonitoringIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.databricks_integration_account_authentication_request import (
+    DatabricksIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.databricks_integration_account_authentication_response import (
+    DatabricksIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.databricks_integration_account_authentication_update import (
+    DatabricksIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.databricks_integration_account_create_attributes import (
+    DatabricksIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.databricks_integration_account_create_data import (
+    DatabricksIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.databricks_integration_account_create_request import (
+    DatabricksIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.databricks_integration_account_o_auth_auth_request import (
+    DatabricksIntegrationAccountOAuthAuthRequest,
+)
+from datadog_api_client.v2.model.databricks_integration_account_o_auth_auth_response import (
+    DatabricksIntegrationAccountOAuthAuthResponse,
+)
+from datadog_api_client.v2.model.databricks_integration_account_o_auth_auth_type import (
+    DatabricksIntegrationAccountOAuthAuthType,
+)
+from datadog_api_client.v2.model.databricks_integration_account_pat_auth_response import (
+    DatabricksIntegrationAccountPatAuthResponse,
+)
+from datadog_api_client.v2.model.databricks_integration_account_pat_auth_type import (
+    DatabricksIntegrationAccountPatAuthType,
+)
+from datadog_api_client.v2.model.databricks_integration_account_pat_auth_update import (
+    DatabricksIntegrationAccountPatAuthUpdate,
+)
+from datadog_api_client.v2.model.databricks_integration_account_response import DatabricksIntegrationAccountResponse
+from datadog_api_client.v2.model.databricks_integration_account_response_attributes import (
+    DatabricksIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.databricks_integration_account_response_data import (
+    DatabricksIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.databricks_integration_account_settings_request import (
+    DatabricksIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.databricks_integration_account_settings_response import (
+    DatabricksIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.databricks_integration_account_settings_update import (
+    DatabricksIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.databricks_integration_account_update_attributes import (
+    DatabricksIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.databricks_integration_account_update_data import (
+    DatabricksIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.databricks_integration_account_update_request import (
+    DatabricksIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.databricks_integration_accounts_response import DatabricksIntegrationAccountsResponse
+from datadog_api_client.v2.model.databricks_integration_dataflows_request import DatabricksIntegrationDataflowsRequest
+from datadog_api_client.v2.model.databricks_integration_dataflows_response import DatabricksIntegrationDataflowsResponse
+from datadog_api_client.v2.model.databricks_model_serving_metrics_integration_dataflow_request import (
+    DatabricksModelServingMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.databricks_model_serving_metrics_integration_dataflow_response import (
+    DatabricksModelServingMetricsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.datadog_api_key import DatadogAPIKey
 from datadog_api_client.v2.model.datadog_api_key_type import DatadogAPIKeyType
 from datadog_api_client.v2.model.datadog_api_key_update import DatadogAPIKeyUpdate
@@ -4350,6 +4456,15 @@ from datadog_api_client.v2.model.integration_account_basic_auth_type import Inte
 from datadog_api_client.v2.model.integration_account_basic_auth_update import IntegrationAccountBasicAuthUpdate
 from datadog_api_client.v2.model.integration_account_dataflow_health import IntegrationAccountDataflowHealth
 from datadog_api_client.v2.model.integration_account_dataflow_status import IntegrationAccountDataflowStatus
+from datadog_api_client.v2.model.integration_account_private_action_runner_auth_request import (
+    IntegrationAccountPrivateActionRunnerAuthRequest,
+)
+from datadog_api_client.v2.model.integration_account_private_action_runner_auth_response import (
+    IntegrationAccountPrivateActionRunnerAuthResponse,
+)
+from datadog_api_client.v2.model.integration_account_private_action_runner_auth_type import (
+    IntegrationAccountPrivateActionRunnerAuthType,
+)
 from datadog_api_client.v2.model.integration_account_type import IntegrationAccountType
 from datadog_api_client.v2.model.integration_attributes import IntegrationAttributes
 from datadog_api_client.v2.model.integration_incident import IntegrationIncident
@@ -13268,6 +13383,44 @@ __all__ = [
     "DataTransformProperties",
     "DataTransformType",
     "DatabaseMonitoringTriggerWrapper",
+    "DatabricksCloudCostMetricsIntegrationDataflowRequest",
+    "DatabricksCloudCostMetricsIntegrationDataflowResponse",
+    "DatabricksCloudCostMetricsIntegrationDataflowSettingsRequest",
+    "DatabricksCloudCostMetricsIntegrationDataflowSettingsResponse",
+    "DatabricksDataObservabilityJobsMonitoringIntegrationDataflowRequest",
+    "DatabricksDataObservabilityJobsMonitoringIntegrationDataflowResponse",
+    "DatabricksDataObservabilityJobsMonitoringIntegrationDataflowSettingsRequest",
+    "DatabricksDataObservabilityJobsMonitoringIntegrationDataflowSettingsResponse",
+    "DatabricksDataObservabilityQualityMonitoringIntegrationDataflowRequest",
+    "DatabricksDataObservabilityQualityMonitoringIntegrationDataflowResponse",
+    "DatabricksDataObservabilityQualityMonitoringIntegrationDataflowSettingsRequest",
+    "DatabricksDataObservabilityQualityMonitoringIntegrationDataflowSettingsResponse",
+    "DatabricksIntegrationAccountAuthenticationRequest",
+    "DatabricksIntegrationAccountAuthenticationResponse",
+    "DatabricksIntegrationAccountAuthenticationUpdate",
+    "DatabricksIntegrationAccountCreateAttributes",
+    "DatabricksIntegrationAccountCreateData",
+    "DatabricksIntegrationAccountCreateRequest",
+    "DatabricksIntegrationAccountOAuthAuthRequest",
+    "DatabricksIntegrationAccountOAuthAuthResponse",
+    "DatabricksIntegrationAccountOAuthAuthType",
+    "DatabricksIntegrationAccountPatAuthResponse",
+    "DatabricksIntegrationAccountPatAuthType",
+    "DatabricksIntegrationAccountPatAuthUpdate",
+    "DatabricksIntegrationAccountResponse",
+    "DatabricksIntegrationAccountResponseAttributes",
+    "DatabricksIntegrationAccountResponseData",
+    "DatabricksIntegrationAccountSettingsRequest",
+    "DatabricksIntegrationAccountSettingsResponse",
+    "DatabricksIntegrationAccountSettingsUpdate",
+    "DatabricksIntegrationAccountUpdateAttributes",
+    "DatabricksIntegrationAccountUpdateData",
+    "DatabricksIntegrationAccountUpdateRequest",
+    "DatabricksIntegrationAccountsResponse",
+    "DatabricksIntegrationDataflowsRequest",
+    "DatabricksIntegrationDataflowsResponse",
+    "DatabricksModelServingMetricsIntegrationDataflowRequest",
+    "DatabricksModelServingMetricsIntegrationDataflowResponse",
     "DatadogAPIKey",
     "DatadogAPIKeyType",
     "DatadogAPIKeyUpdate",
@@ -14752,6 +14905,9 @@ __all__ = [
     "IntegrationAccountBasicAuthUpdate",
     "IntegrationAccountDataflowHealth",
     "IntegrationAccountDataflowStatus",
+    "IntegrationAccountPrivateActionRunnerAuthRequest",
+    "IntegrationAccountPrivateActionRunnerAuthResponse",
+    "IntegrationAccountPrivateActionRunnerAuthType",
     "IntegrationAccountType",
     "IntegrationAttributes",
     "IntegrationIncident",
