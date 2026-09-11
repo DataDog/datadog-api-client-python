@@ -23,7 +23,7 @@ if TYPE_CHECKING:
 class TimeseriesAnomalyInvestigationResult(ModelNormal):
     validations = {
         "anomalies": {
-            "max_items": 1,
+            "max_items": 3,
         },
     }
 
@@ -55,7 +55,8 @@ class TimeseriesAnomalyInvestigationResult(ModelNormal):
         """
         Completed result for one timeseries request. The anomalies array is empty when no qualifying anomaly is found.
 
-        :param anomalies: Detected anomalies. This API version returns at most one anomaly.
+        :param anomalies: Detected anomalies, ordered by significance. This API version returns at most
+            three anomalies across the submitted request.
         :type anomalies: [TimeseriesAnomalyInvestigationAnomaly]
 
         :param status: Status value indicating successful completion.

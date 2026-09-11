@@ -47,8 +47,9 @@ class TimeseriesAnomalyInvestigationsApi:
     ) -> TimeseriesAnomalyInvestigationResponse:
         """Investigate a timeseries anomaly.
 
-        Investigates a metrics timeseries request for its most significant anomaly and returns deterministic findings.
-        Metrics queries with or without grouping are supported. This API version accepts exactly one request and returns at most one anomaly.
+        Investigates a metrics timeseries request for its most significant anomalies and returns
+        deterministic findings. Metrics queries with or without grouping are supported. This
+        API version accepts exactly one request and returns at most three anomalies.
 
         :param body: Metrics timeseries request to investigate. The request body must not exceed 2 MiB.
         :type body: TimeseriesAnomalyInvestigationRequest

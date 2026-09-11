@@ -49,6 +49,8 @@ class TimeseriesAnomalyInvestigationFormula(ModelNormal):
         Formula evaluated by the timeseries request.
 
         :param formula: Formula expression referencing one or more named queries.
+            When the expression does not contain an explicit ``anomalies()`` call,
+            the endpoint applies the default Watchdog Explains anomaly detection configuration.
         :type formula: str
 
         :param limit: Optional formula limit accepted for compatibility with Timeseries API requests. Formula limits have no effect on timeseries queries.

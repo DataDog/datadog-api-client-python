@@ -9,7 +9,7 @@ Feature: Timeseries Anomaly Investigations
     And an instance of "TimeseriesAnomalyInvestigations" API
     And operation "CreateTimeseriesAnomalyInvestigation" enabled
     And new "CreateTimeseriesAnomalyInvestigation" request
-    And body with value {"data": {"attributes": {"requests": [{"formulas": [{"formula": "anomalies(query1, 'agile', 3)"}], "from": 1754406000000, "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{env:prod} by {service}"}], "to": 1754423940000}]}, "type": "timeseries_anomaly_investigation"}}
+    And body with value {"data": {"attributes": {"requests": [{"formulas": [{"formula": "query1"}], "from": 1754406000000, "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{env:prod} by {service}"}], "to": 1754423940000}]}, "type": "timeseries_anomaly_investigation"}}
 
   @generated @skip @team:DataDog/dataviz-backend-maintainers
   Scenario: Investigate a timeseries anomaly returns "Bad Request" response

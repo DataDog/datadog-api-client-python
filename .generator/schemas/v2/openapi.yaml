@@ -121598,7 +121598,7 @@ components:
           type: array
       type: object
     TimeseriesAnomalyInvestigationAnomaly:
-      description: Most significant anomaly detected in the request.
+      description: One of the most significant anomalies detected in the request.
       properties:
         anomaly_detection:
           $ref: "#/components/schemas/TimeseriesAnomalyInvestigationDetection"
@@ -121774,8 +121774,11 @@ components:
       description: Formula evaluated by the timeseries request.
       properties:
         formula:
-          description: Formula expression referencing one or more named queries.
-          example: "anomalies(query1, 'agile', 3)"
+          description: |-
+            Formula expression referencing one or more named queries.
+            When the expression does not contain an explicit `anomalies()` call,
+            the endpoint applies the default Watchdog Explains anomaly detection configuration.
+          example: query1
           minLength: 1
           type: string
         limit:
@@ -121966,7 +121969,7 @@ components:
           description: Timeseries requests to investigate. This API version accepts exactly one request.
           example:
             - formulas:
-                - formula: "anomalies(query1, 'agile', 3)"
+                - formula: query1
               from: 1754406000000
               queries:
                 - data_source: metrics
@@ -122088,11 +122091,13 @@ components:
       description: Completed result for one timeseries request. The anomalies array is empty when no qualifying anomaly is found.
       properties:
         anomalies:
-          description: Detected anomalies. This API version returns at most one anomaly.
+          description: |-
+            Detected anomalies, ordered by significance. This API version returns at most
+            three anomalies across the submitted request.
           example: []
           items:
             $ref: "#/components/schemas/TimeseriesAnomalyInvestigationAnomaly"
-          maxItems: 1
+          maxItems: 3
           type: array
         status:
           $ref: "#/components/schemas/TimeseriesAnomalyInvestigationCompleteStatus"
@@ -122190,7 +122195,7 @@ components:
         formulas:
           description: Formulas to evaluate. Each formula may contain an explicit `anomalies()` call or a supported metrics expression.
           example:
-            - formula: "anomalies(query1, 'agile', 3)"
+            - formula: query1
           items:
             $ref: "#/components/schemas/TimeseriesAnomalyInvestigationFormula"
           minItems: 1
@@ -224627,8 +224632,9 @@ paths:
   /api/v2/timeseries-anomaly-investigations:
     post:
       description: |-
-        Investigates a metrics timeseries request for its most significant anomaly and returns deterministic findings.
-        Metrics queries with or without grouping are supported. This API version accepts exactly one request and returns at most one anomaly.
+        Investigates a metrics timeseries request for its most significant anomalies and returns
+        deterministic findings. Metrics queries with or without grouping are supported. This
+        API version accepts exactly one request and returns at most three anomalies.
       operationId: CreateTimeseriesAnomalyInvestigation
       requestBody:
         content:
@@ -224640,7 +224646,7 @@ paths:
                     attributes:
                       requests:
                         - formulas:
-                            - formula: "anomalies(query1, 'agile', 3)"
+                            - formula: query1
                           from: 1754406000000
                           queries:
                             - data_source: metrics
@@ -224664,8 +224670,8 @@ paths:
                         results:
                           - anomalies:
                               - anomaly_detection:
-                                  configuration_source: request_formula
-                                  profile:
+                                  configuration_source: watchdog_explains_default
+                                  profile: watchdog_explains_v1
                                 detected_interval:
                                   end: 1754406120000
                                   start: 1754406060000
