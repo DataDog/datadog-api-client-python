@@ -1041,6 +1041,33 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create an inbox rule returns "Bad Request" response
+    Given operation "CreateSecurityFindingsAutomationInboxRule" enabled
+    And new "CreateSecurityFindingsAutomationInboxRule" request
+    And body with value {"data": {"attributes": {"action": {"description": "Needs triage"}, "enabled": true, "name": "Triage production misconfigurations", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Create an inbox rule returns "Successfully created the inbox rule" response
+    Given operation "CreateSecurityFindingsAutomationInboxRule" enabled
+    And new "CreateSecurityFindingsAutomationInboxRule" request
+    And body with value {"data": {"attributes": {"action": {"description": "Needs triage"}, "enabled": true, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 201 Successfully created the inbox rule
+    And the response "data.type" is equal to "inbox_rules"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.enabled" is equal to true
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Create an inbox rule returns "Unprocessable Entity" response
+    Given operation "CreateSecurityFindingsAutomationInboxRule" enabled
+    And new "CreateSecurityFindingsAutomationInboxRule" request
+    And body with value {"data": {"attributes": {"action": {"description": "Needs triage"}, "enabled": true, "name": "Triage production misconfigurations", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
   @team:DataDog/k9-investigation
   Scenario: Create case for security finding returns "Created" response
     Given new "CreateCases" request
@@ -1231,6 +1258,14 @@ Feature: Security Monitoring
     Then the response status is 204 Rule successfully deleted.
 
   @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a due date rule returns "Successfully deleted the due date rule" response
+    Given operation "DeleteSecurityFindingsAutomationDueDateRule" enabled
+    And new "DeleteSecurityFindingsAutomationDueDateRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 Successfully deleted the due date rule
+
+  @generated @skip @team:DataDog/k9-automation
   Scenario: Delete a mute rule returns "Not Found" response
     Given operation "DeleteSecurityFindingsAutomationMuteRule" enabled
     And new "DeleteSecurityFindingsAutomationMuteRule" request
@@ -1246,6 +1281,14 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter from "valid_mute_rule.data.id"
     When the request is sent
     Then the response status is 204 Rule successfully deleted.
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a mute rule returns "Successfully deleted the mute rule" response
+    Given operation "DeleteSecurityFindingsAutomationMuteRule" enabled
+    And new "DeleteSecurityFindingsAutomationMuteRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 Successfully deleted the mute rule
 
   @skip @team:DataDog/cloud-siem
   Scenario: Delete a non existing rule returns "Not Found" response
@@ -1292,6 +1335,14 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter from "valid_severity_modifier_rule.data.id"
     When the request is sent
     Then the response status is 204 Rule successfully deleted
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a severity modifier rule returns "Successfully deleted the severity modifier rule" response
+    Given operation "DeleteSecurityFindingsAutomationSeverityModifierRule" enabled
+    And new "DeleteSecurityFindingsAutomationSeverityModifierRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 Successfully deleted the severity modifier rule
 
   @generated @skip @team:DataDog/k9-automation
   Scenario: Delete a severity modifier rule returns "Unprocessable Entity" response
@@ -1347,6 +1398,14 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter from "valid_ticket_creation_rule.data.id"
     When the request is sent
     Then the response status is 204 Rule successfully deleted.
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete a ticket creation rule returns "Successfully deleted the ticket creation rule" response
+    Given operation "DeleteSecurityFindingsAutomationTicketCreationRule" enabled
+    And new "DeleteSecurityFindingsAutomationTicketCreationRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 Successfully deleted the ticket creation rule
 
   @team:DataDog/cloud-security-posture-management
   Scenario: Delete a vulnerability-based notification rule returns "Not Found" response
@@ -1426,6 +1485,23 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 204 OK
 
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Delete an inbox rule returns "Not Found" response
+    Given operation "DeleteSecurityFindingsAutomationInboxRule" enabled
+    And new "DeleteSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Delete an inbox rule returns "Successfully deleted the inbox rule" response
+    Given operation "DeleteSecurityFindingsAutomationInboxRule" enabled
+    And there is a valid "valid_inbox_rule" in the system
+    And new "DeleteSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "valid_inbox_rule.data.id"
+    When the request is sent
+    Then the response status is 204 Successfully deleted the inbox rule
+
   @team:DataDog/k9-investigation
   Scenario: Detach security findings from their case returns "Bad Request" response
     Given new "DetachCase" request
@@ -1446,6 +1522,44 @@ Feature: Security Monitoring
     And body with value {"data": {"relationships": {"findings": {"data": [{"id": "wrong-finding-id", "type": "findings"}]}}, "type": "cases"}}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Disable a default inbox rule returns "Not Found" response
+    Given operation "DisableSecurityFindingsAutomationDefaultInboxRule" enabled
+    And new "DisableSecurityFindingsAutomationDefaultInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Disable a default inbox rule returns "Successfully disabled the default inbox rule" response
+    Given operation "DisableSecurityFindingsAutomationDefaultInboxRule" enabled
+    And new "DisableSecurityFindingsAutomationDefaultInboxRule" request
+    And request contains "rule_id" parameter with value "secret_default_rule"
+    When the request is sent
+    Then the response status is 200 Successfully disabled the default inbox rule
+    And the response "data.id" is equal to "secret_default_rule"
+    And the response "data.type" is equal to "default_inbox_rules"
+    And the response "data.attributes.enabled" is equal to false
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Enable a default inbox rule returns "Not Found" response
+    Given operation "EnableSecurityFindingsAutomationDefaultInboxRule" enabled
+    And new "EnableSecurityFindingsAutomationDefaultInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Enable a default inbox rule returns "Successfully enabled the default inbox rule" response
+    Given operation "EnableSecurityFindingsAutomationDefaultInboxRule" enabled
+    And new "EnableSecurityFindingsAutomationDefaultInboxRule" request
+    And request contains "rule_id" parameter with value "secret_default_rule"
+    When the request is sent
+    Then the response status is 200 Successfully enabled the default inbox rule
+    And the response "data.id" is equal to "secret_default_rule"
+    And the response "data.type" is equal to "default_inbox_rules"
+    And the response "data.attributes.enabled" is equal to true
 
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Export security monitoring resource to Terraform returns "Not Found" response
@@ -1661,6 +1775,24 @@ Feature: Security Monitoring
     And request contains "dataset_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get a default inbox rule returns "Not Found" response
+    Given operation "GetSecurityFindingsAutomationDefaultInboxRule" enabled
+    And new "GetSecurityFindingsAutomationDefaultInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Get a default inbox rule returns "Successfully retrieved the default inbox rule" response
+    Given operation "GetSecurityFindingsAutomationDefaultInboxRule" enabled
+    And new "GetSecurityFindingsAutomationDefaultInboxRule" request
+    And request contains "rule_id" parameter with value "secret_default_rule"
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the default inbox rule
+    And the response "data.id" is equal to "secret_default_rule"
+    And the response "data.type" is equal to "default_inbox_rules"
 
   @generated @skip @team:DataDog/k9-automation
   Scenario: Get a due date rule returns "Not Found" response
@@ -2027,6 +2159,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:DataDog/k9-automation
+  Scenario: Get all default inbox rules returns "Successfully retrieved the list of default inbox rules" response
+    Given operation "ListSecurityFindingsAutomationDefaultInboxRules" enabled
+    And new "ListSecurityFindingsAutomationDefaultInboxRules" request
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the list of default inbox rules
+    And the response "data" has item with field "id" with value "secret_default_rule"
+
   @team:DataDog/k9-automation
   Scenario: Get all due date rules returns "Successfully retrieved the list of due date rules" response
     Given operation "ListSecurityFindingsAutomationDueDateRules" enabled
@@ -2035,6 +2175,15 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 Successfully retrieved the list of due date rules
     And the response "data" has item with field "id" with value "{{ valid_due_date_rule.data.id }}"
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Get all inbox rules returns "Successfully retrieved the list of inbox rules" response
+    Given operation "ListSecurityFindingsAutomationInboxRules" enabled
+    And there is a valid "valid_inbox_rule" in the system
+    And new "ListSecurityFindingsAutomationInboxRules" request
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the list of inbox rules
+    And the response "data" has item with field "id" with value "{{ valid_inbox_rule.data.id }}"
 
   @team:DataDog/k9-automation
   Scenario: Get all mute rules returns "Successfully retrieved the list of mute rules" response
@@ -2133,6 +2282,25 @@ Feature: Security Monitoring
     And request contains "integration_config_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Get an inbox rule returns "Not Found" response
+    Given operation "GetSecurityFindingsAutomationInboxRule" enabled
+    And new "GetSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Get an inbox rule returns "Successfully retrieved the inbox rule" response
+    Given operation "GetSecurityFindingsAutomationInboxRule" enabled
+    And there is a valid "valid_inbox_rule" in the system
+    And new "GetSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "valid_inbox_rule.data.id"
+    When the request is sent
+    Then the response status is 200 Successfully retrieved the inbox rule
+    And the response "data.id" is equal to "{{ valid_inbox_rule.data.id }}"
+    And the response "data.type" is equal to "inbox_rules"
 
   @generated @skip @team:DataDog/cloud-siem
   Scenario: Get an indicator of compromise returns "Bad Request" response
@@ -2964,6 +3132,31 @@ Feature: Security Monitoring
     Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder inbox rules returns "Bad Request" response
+    Given operation "ReorderSecurityFindingsAutomationInboxRules" enabled
+    And new "ReorderSecurityFindingsAutomationInboxRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "inbox_rules"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Reorder inbox rules returns "Successfully reordered the inbox rules" response
+    Given operation "ReorderSecurityFindingsAutomationInboxRules" enabled
+    And there is a valid "valid_inbox_rule" in the system
+    And new "ReorderSecurityFindingsAutomationInboxRules" request
+    And body with value {"data": [{"id": "{{ valid_inbox_rule.data.id }}", "type": "inbox_rules"}]}
+    When the request is sent
+    Then the response status is 200 Successfully reordered the inbox rules
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Reorder inbox rules returns "Unprocessable Entity" response
+    Given operation "ReorderSecurityFindingsAutomationInboxRules" enabled
+    And new "ReorderSecurityFindingsAutomationInboxRules" request
+    And body with value {"data": [{"id": "00000000-0000-0000-0000-000000000000", "type": "inbox_rules"}]}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @generated @skip @team:DataDog/k9-automation
   Scenario: Reorder mute rules returns "Bad Request" response
     Given operation "ReorderSecurityFindingsAutomationMuteRules" enabled
     And new "ReorderSecurityFindingsAutomationMuteRules" request
@@ -3663,6 +3856,45 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}-Updated"
     And the response "id" has the same value as "security_rule.id"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update an inbox rule returns "Bad Request" response
+    Given operation "UpdateSecurityFindingsAutomationInboxRule" enabled
+    And new "UpdateSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"description": "Needs triage"}, "enabled": true, "name": "Triage production misconfigurations", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update an inbox rule returns "Not Found" response
+    Given operation "UpdateSecurityFindingsAutomationInboxRule" enabled
+    And new "UpdateSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"description": "Needs triage"}, "enabled": true, "name": "Triage production misconfigurations", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:DataDog/k9-automation
+  Scenario: Update an inbox rule returns "Successfully updated the inbox rule" response
+    Given operation "UpdateSecurityFindingsAutomationInboxRule" enabled
+    And there is a valid "valid_inbox_rule" in the system
+    And new "UpdateSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "valid_inbox_rule.data.id"
+    And body with value {"data": {"attributes": {"action": {"description": "Needs triage"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "id": "{{ valid_inbox_rule.data.id }}", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 200 Successfully updated the inbox rule
+    And the response "data.id" is equal to "{{ valid_inbox_rule.data.id }}"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+
+  @generated @skip @team:DataDog/k9-automation
+  Scenario: Update an inbox rule returns "Unprocessable Entity" response
+    Given operation "UpdateSecurityFindingsAutomationInboxRule" enabled
+    And new "UpdateSecurityFindingsAutomationInboxRule" request
+    And request contains "rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": {"description": "Needs triage"}, "enabled": true, "name": "Triage production misconfigurations", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "inbox_rules"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
 
   @team:DataDog/cloud-siem
   Scenario: Update resource filters returns "Bad Request" response

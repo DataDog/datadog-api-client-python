@@ -32,7 +32,7 @@ class TicketCreationRuleReorderRequest(ModelNormal):
         """
         The body of the ticket creation rule reorder request.
 
-        :param data: The ordered list of all ticket creation rules; every rule must be included.
+        :param data: The ordered list of all ticket creation rules. Every rule must be included.
         :type data: [TicketCreationRuleReorderItem]
         """
         super().__init__(kwargs)

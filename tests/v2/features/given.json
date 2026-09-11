@@ -1370,6 +1370,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"inbox_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"rule\": {\n        \"finding_types\": [\"misconfiguration\"],\n        \"query\": \"env:staging\"\n      },\n      \"action\": {\n        \"description\": \"Needs triage\"\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"valid_inbox_rule\" in the system",
+    "key": "valid_inbox_rule",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityFindingsAutomationInboxRule"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"mute_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"rule\": {\n        \"finding_types\": [\"misconfiguration\"],\n        \"query\": \"env:staging\"\n      },\n      \"action\": {\n        \"reason\": \"risk_accepted\"\n      }\n    }\n  }\n}"
       }
     ],

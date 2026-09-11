@@ -13,17 +13,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.due_date_rule_type import DueDateRuleType
+    from datadog_api_client.v2.model.inbox_rule_type import InboxRuleType
 
 
-class DueDateRuleReorderItem(ModelNormal):
+class InboxRuleReorderItem(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.due_date_rule_type import DueDateRuleType
+        from datadog_api_client.v2.model.inbox_rule_type import InboxRuleType
 
         return {
             "id": (UUID,),
-            "type": (DueDateRuleType,),
+            "type": (InboxRuleType,),
         }
 
     attribute_map = {
@@ -31,15 +31,15 @@ class DueDateRuleReorderItem(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: UUID, type: DueDateRuleType, **kwargs):
+    def __init__(self_, id: UUID, type: InboxRuleType, **kwargs):
         """
-        A reference to a due date rule used for reordering.
+        A reference to an inbox rule used for reordering.
 
-        :param id: The ID of the due date rule.
+        :param id: The ID of the inbox rule.
         :type id: UUID
 
-        :param type: The JSON:API type for due date rules.
-        :type type: DueDateRuleType
+        :param type: The JSON:API type for inbox rules.
+        :type type: InboxRuleType
         """
         super().__init__(kwargs)
 

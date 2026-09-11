@@ -35,7 +35,7 @@ class TicketCreationRuleReorderItem(ModelNormal):
         """
         A reference to a ticket creation rule used for reordering.
 
-        :param id: The ID of the automation rule.
+        :param id: The ID of the ticket creation rule.
         :type id: UUID
 
         :param type: The JSON:API type for ticket creation rules.

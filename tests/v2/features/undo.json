@@ -7899,6 +7899,30 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityFindingsAutomationDefaultInboxRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSecurityFindingsAutomationDefaultInboxRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DisableSecurityFindingsAutomationDefaultInboxRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EnableSecurityFindingsAutomationDefaultInboxRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSecurityFindingsAutomationDueDateRules": {
     "tag": "Security Monitoring",
     "undo": {
@@ -7937,6 +7961,49 @@
     }
   },
   "UpdateSecurityFindingsAutomationDueDateRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListSecurityFindingsAutomationInboxRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityFindingsAutomationInboxRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityFindingsAutomationInboxRule",
+      "parameters": [
+        {
+          "name": "rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ReorderSecurityFindingsAutomationInboxRules": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSecurityFindingsAutomationInboxRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSecurityFindingsAutomationInboxRule": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityFindingsAutomationInboxRule": {
     "tag": "Security Monitoring",
     "undo": {
       "type": "idempotent"

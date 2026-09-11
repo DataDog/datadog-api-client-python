@@ -42,11 +42,19 @@ from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsS
 from datadog_api_client.v2.model.security_findings_data import SecurityFindingsData
 from datadog_api_client.v2.model.assignee_response import AssigneeResponse
 from datadog_api_client.v2.model.assignee_request import AssigneeRequest
+from datadog_api_client.v2.model.default_inbox_rules_response import DefaultInboxRulesResponse
+from datadog_api_client.v2.model.default_inbox_rule_response import DefaultInboxRuleResponse
 from datadog_api_client.v2.model.due_date_rules_response import DueDateRulesResponse
 from datadog_api_client.v2.model.due_date_rule_response import DueDateRuleResponse
 from datadog_api_client.v2.model.due_date_rule_create_request import DueDateRuleCreateRequest
 from datadog_api_client.v2.model.due_date_rule_reorder_request import DueDateRuleReorderRequest
 from datadog_api_client.v2.model.due_date_rule_update_request import DueDateRuleUpdateRequest
+from datadog_api_client.v2.model.inbox_rules_response import InboxRulesResponse
+from datadog_api_client.v2.model.inbox_rule_response import InboxRuleResponse
+from datadog_api_client.v2.model.inbox_rule_create_request import InboxRuleCreateRequest
+from datadog_api_client.v2.model.inbox_rule_reorder_response import InboxRuleReorderResponse
+from datadog_api_client.v2.model.inbox_rule_reorder_request import InboxRuleReorderRequest
+from datadog_api_client.v2.model.inbox_rule_update_request import InboxRuleUpdateRequest
 from datadog_api_client.v2.model.mute_rules_response import MuteRulesResponse
 from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
 from datadog_api_client.v2.model.mute_rule_create_request import MuteRuleCreateRequest
@@ -898,6 +906,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._create_security_findings_automation_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/inbox_rules",
+                "operation_id": "create_security_findings_automation_inbox_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (InboxRuleCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_security_findings_automation_mute_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteRuleResponse,),
@@ -1325,6 +1353,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._delete_security_findings_automation_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}",
+                "operation_id": "delete_security_findings_automation_inbox_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_security_findings_automation_mute_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -1575,6 +1626,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._disable_security_findings_automation_default_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (DefaultInboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}/disable",
+                "operation_id": "disable_security_findings_automation_default_inbox_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._edit_security_monitoring_signal_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalTriageUpdateResponse,),
@@ -1676,6 +1750,29 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._enable_security_findings_automation_default_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (DefaultInboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}/enable",
+                "operation_id": "enable_security_findings_automation_default_inbox_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -2109,12 +2206,58 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_security_findings_automation_default_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (DefaultInboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}",
+                "operation_id": "get_security_findings_automation_default_inbox_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_security_findings_automation_due_date_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRuleResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_due_date_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_security_findings_automation_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}",
+                "operation_id": "get_security_findings_automation_inbox_rule",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -3283,12 +3426,62 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_security_findings_automation_default_inbox_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (DefaultInboxRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules",
+                "operation_id": "list_security_findings_automation_default_inbox_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_security_findings_automation_due_date_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRulesResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules",
                 "operation_id": "list_security_findings_automation_due_date_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_security_findings_automation_inbox_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/inbox_rules",
+                "operation_id": "list_security_findings_automation_inbox_rules",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -4128,6 +4321,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._reorder_security_findings_automation_inbox_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleReorderResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/reorder",
+                "operation_id": "reorder_security_findings_automation_inbox_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (InboxRuleReorderRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._reorder_security_findings_automation_mute_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteRuleReorderRequest,),
@@ -4478,6 +4691,32 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (DueDateRuleUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_security_findings_automation_inbox_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (InboxRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}",
+                "operation_id": "update_security_findings_automation_inbox_rule",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "rule_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (InboxRuleUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -5312,7 +5551,7 @@ class SecurityMonitoringApi:
     ) -> DueDateRuleResponse:
         """Create a due date rule.
 
-        Create a new due date rule for the current organization.
+        Create a due date rule for the current organization.
 
         :type body: DueDateRuleCreateRequest
         :rtype: DueDateRuleResponse
@@ -5322,13 +5561,29 @@ class SecurityMonitoringApi:
 
         return self._create_security_findings_automation_due_date_rule_endpoint.call_with_http_info(**kwargs)
 
+    def create_security_findings_automation_inbox_rule(
+        self,
+        body: InboxRuleCreateRequest,
+    ) -> InboxRuleResponse:
+        """Create an inbox rule.
+
+        Create an inbox rule for the current organization.
+
+        :type body: InboxRuleCreateRequest
+        :rtype: InboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_security_findings_automation_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
     def create_security_findings_automation_mute_rule(
         self,
         body: MuteRuleCreateRequest,
     ) -> MuteRuleResponse:
         """Create a mute rule.
 
-        Create a new mute rule for the current organization.
+        Create a mute rule for the current organization.
 
         :type body: MuteRuleCreateRequest
         :rtype: MuteRuleResponse
@@ -5344,7 +5599,7 @@ class SecurityMonitoringApi:
     ) -> SeverityModifierRuleResponse:
         """Create a severity modifier rule.
 
-        Create a new severity modifier rule for the current organization.
+        Create a severity modifier rule for the current organization.
 
         :type body: SeverityModifierRuleCreateRequest
         :rtype: SeverityModifierRuleResponse
@@ -5360,7 +5615,7 @@ class SecurityMonitoringApi:
     ) -> TicketCreationRuleResponse:
         """Create a ticket creation rule.
 
-        Create a new ticket creation rule for the current organization.
+        Create a ticket creation rule for the current organization.
 
         :type body: TicketCreationRuleCreateRequest
         :rtype: TicketCreationRuleResponse
@@ -5665,7 +5920,7 @@ class SecurityMonitoringApi:
     ) -> None:
         """Delete a due date rule.
 
-        Delete an existing due date rule by ID.
+        Delete a due date rule by ID.
 
         :param rule_id: The ID of the due date rule.
         :type rule_id: UUID
@@ -5676,13 +5931,30 @@ class SecurityMonitoringApi:
 
         return self._delete_security_findings_automation_due_date_rule_endpoint.call_with_http_info(**kwargs)
 
+    def delete_security_findings_automation_inbox_rule(
+        self,
+        rule_id: UUID,
+    ) -> None:
+        """Delete an inbox rule.
+
+        Delete an inbox rule by ID.
+
+        :param rule_id: The ID of the inbox rule.
+        :type rule_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._delete_security_findings_automation_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
     def delete_security_findings_automation_mute_rule(
         self,
         rule_id: UUID,
     ) -> None:
         """Delete a mute rule.
 
-        Delete an existing mute rule by ID.
+        Delete a mute rule by ID.
 
         :param rule_id: The ID of the mute rule.
         :type rule_id: UUID
@@ -5699,7 +5971,7 @@ class SecurityMonitoringApi:
     ) -> None:
         """Delete a severity modifier rule.
 
-        Delete an existing severity modifier rule by ID.
+        Delete a severity modifier rule by ID.
 
         :param rule_id: The ID of the severity modifier rule.
         :type rule_id: UUID
@@ -5716,7 +5988,7 @@ class SecurityMonitoringApi:
     ) -> None:
         """Delete a ticket creation rule.
 
-        Delete an existing ticket creation rule by ID.
+        Delete a ticket creation rule by ID.
 
         :param rule_id: The ID of the ticket creation rule.
         :type rule_id: UUID
@@ -5865,6 +6137,29 @@ class SecurityMonitoringApi:
 
         return self._detach_case_endpoint.call_with_http_info(**kwargs)
 
+    def disable_security_findings_automation_default_inbox_rule(
+        self,
+        rule_id: str,
+    ) -> DefaultInboxRuleResponse:
+        """Disable a default inbox rule.
+
+        Disable a default inbox rule for the current organization.
+
+        :param rule_id: The ID of the default inbox rule.
+            Known default rule IDs include: ``identity_risk_default_rule`` ,
+            ``secret_default_rule`` , ``library_vulnerability_default_rule`` ,
+            ``attack_path_default_rule`` , ``host_and_container_vulnerability_default_rule`` ,
+            ``runtime_code_vulnerability_default_rule`` , ``iac_misconfiguration_default_rule`` ,
+            and ``misconfiguration_default_rule``. Datadog can add new default rules
+            over time.
+        :type rule_id: str
+        :rtype: DefaultInboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._disable_security_findings_automation_default_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
     def edit_security_monitoring_signal(
         self,
         signal_id: str,
@@ -5952,6 +6247,29 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._edit_security_monitoring_signal_state_endpoint.call_with_http_info(**kwargs)
+
+    def enable_security_findings_automation_default_inbox_rule(
+        self,
+        rule_id: str,
+    ) -> DefaultInboxRuleResponse:
+        """Enable a default inbox rule.
+
+        Enable a default inbox rule for the current organization.
+
+        :param rule_id: The ID of the default inbox rule.
+            Known default rule IDs include: ``identity_risk_default_rule`` ,
+            ``secret_default_rule`` , ``library_vulnerability_default_rule`` ,
+            ``attack_path_default_rule`` , ``host_and_container_vulnerability_default_rule`` ,
+            ``runtime_code_vulnerability_default_rule`` , ``iac_misconfiguration_default_rule`` ,
+            and ``misconfiguration_default_rule``. Datadog can add new default rules
+            over time.
+        :type rule_id: str
+        :rtype: DefaultInboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._enable_security_findings_automation_default_inbox_rule_endpoint.call_with_http_info(**kwargs)
 
     def export_security_monitoring_terraform_resource(
         self,
@@ -6327,6 +6645,31 @@ class SecurityMonitoringApi:
 
         return self._get_security_filter_endpoint.call_with_http_info(**kwargs)
 
+    def get_security_findings_automation_default_inbox_rule(
+        self,
+        rule_id: str,
+    ) -> DefaultInboxRuleResponse:
+        """Get a default inbox rule.
+
+        Get the details of a default inbox rule by ID.
+        Datadog manages default inbox rules. Their name, rule, and action are
+        read-only, and each organization can change only whether they are enabled.
+
+        :param rule_id: The ID of the default inbox rule.
+            Known default rule IDs include: ``identity_risk_default_rule`` ,
+            ``secret_default_rule`` , ``library_vulnerability_default_rule`` ,
+            ``attack_path_default_rule`` , ``host_and_container_vulnerability_default_rule`` ,
+            ``runtime_code_vulnerability_default_rule`` , ``iac_misconfiguration_default_rule`` ,
+            and ``misconfiguration_default_rule``. Datadog can add new default rules
+            over time.
+        :type rule_id: str
+        :rtype: DefaultInboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._get_security_findings_automation_default_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
     def get_security_findings_automation_due_date_rule(
         self,
         rule_id: UUID,
@@ -6343,6 +6686,23 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._get_security_findings_automation_due_date_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_findings_automation_inbox_rule(
+        self,
+        rule_id: UUID,
+    ) -> InboxRuleResponse:
+        """Get an inbox rule.
+
+        Get the details of an inbox rule by ID.
+
+        :param rule_id: The ID of the inbox rule.
+        :type rule_id: UUID
+        :rtype: InboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        return self._get_security_findings_automation_inbox_rule_endpoint.call_with_http_info(**kwargs)
 
     def get_security_findings_automation_mute_rule(
         self,
@@ -7675,6 +8035,20 @@ class SecurityMonitoringApi:
         }
         return endpoint.call_with_http_info_paginated(pagination)
 
+    def list_security_findings_automation_default_inbox_rules(
+        self,
+    ) -> DefaultInboxRulesResponse:
+        """Get all default inbox rules.
+
+        Get all default inbox rules for the current organization.
+        Datadog manages default inbox rules. Their name, rule, and action are
+        read-only, and each organization can change only whether they are enabled.
+
+        :rtype: DefaultInboxRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_security_findings_automation_default_inbox_rules_endpoint.call_with_http_info(**kwargs)
+
     def list_security_findings_automation_due_date_rules(
         self,
         *,
@@ -7699,6 +8073,31 @@ class SecurityMonitoringApi:
             kwargs["page_number"] = page_number
 
         return self._list_security_findings_automation_due_date_rules_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_findings_automation_inbox_rules(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> InboxRulesResponse:
+        """Get all inbox rules.
+
+        Get all inbox rules for the current organization.
+
+        :param page_size: The number of rules per page. Maximum is 1000.
+        :type page_size: int, optional
+        :param page_number: The page number to return.
+        :type page_number: int, optional
+        :rtype: InboxRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._list_security_findings_automation_inbox_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_security_findings_automation_mute_rules(
         self,
@@ -8659,6 +9058,22 @@ class SecurityMonitoringApi:
 
         return self._reorder_security_findings_automation_due_date_rules_endpoint.call_with_http_info(**kwargs)
 
+    def reorder_security_findings_automation_inbox_rules(
+        self,
+        body: InboxRuleReorderRequest,
+    ) -> InboxRuleReorderResponse:
+        """Reorder inbox rules.
+
+        Reorder the list of inbox rules for the current organization.
+
+        :type body: InboxRuleReorderRequest
+        :rtype: InboxRuleReorderResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._reorder_security_findings_automation_inbox_rules_endpoint.call_with_http_info(**kwargs)
+
     def reorder_security_findings_automation_mute_rules(
         self,
         body: MuteRuleReorderRequest,
@@ -9009,7 +9424,7 @@ class SecurityMonitoringApi:
     ) -> DueDateRuleResponse:
         """Update a due date rule.
 
-        Update an existing due date rule by ID.
+        Update a due date rule by ID.
 
         :param rule_id: The ID of the due date rule.
         :type rule_id: UUID
@@ -9023,6 +9438,27 @@ class SecurityMonitoringApi:
 
         return self._update_security_findings_automation_due_date_rule_endpoint.call_with_http_info(**kwargs)
 
+    def update_security_findings_automation_inbox_rule(
+        self,
+        rule_id: UUID,
+        body: InboxRuleUpdateRequest,
+    ) -> InboxRuleResponse:
+        """Update an inbox rule.
+
+        Update an inbox rule by ID.
+
+        :param rule_id: The ID of the inbox rule.
+        :type rule_id: UUID
+        :type body: InboxRuleUpdateRequest
+        :rtype: InboxRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["rule_id"] = rule_id
+
+        kwargs["body"] = body
+
+        return self._update_security_findings_automation_inbox_rule_endpoint.call_with_http_info(**kwargs)
+
     def update_security_findings_automation_mute_rule(
         self,
         rule_id: UUID,
@@ -9030,7 +9466,7 @@ class SecurityMonitoringApi:
     ) -> MuteRuleResponse:
         """Update a mute rule.
 
-        Update an existing mute rule by ID.
+        Update a mute rule by ID.
 
         :param rule_id: The ID of the mute rule.
         :type rule_id: UUID
@@ -9051,7 +9487,7 @@ class SecurityMonitoringApi:
     ) -> SeverityModifierRuleResponse:
         """Update a severity modifier rule.
 
-        Update an existing severity modifier rule by ID.
+        Update a severity modifier rule by ID.
 
         :param rule_id: The ID of the severity modifier rule.
         :type rule_id: UUID
@@ -9072,7 +9508,7 @@ class SecurityMonitoringApi:
     ) -> TicketCreationRuleResponse:
         """Update a ticket creation rule.
 
-        Update an existing ticket creation rule by ID.
+        Update a ticket creation rule by ID.
 
         :param rule_id: The ID of the ticket creation rule.
         :type rule_id: UUID

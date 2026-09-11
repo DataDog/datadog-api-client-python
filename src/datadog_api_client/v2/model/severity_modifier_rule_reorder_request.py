@@ -32,7 +32,7 @@ class SeverityModifierRuleReorderRequest(ModelNormal):
         """
         The body of a severity modifier rule reorder request.
 
-        :param data: The ordered list of severity modifier rules; every rule must be included.
+        :param data: The ordered list of all severity modifier rules. Every rule must be included.
         :type data: [SeverityModifierRuleReorderItem]
         """
         super().__init__(kwargs)
