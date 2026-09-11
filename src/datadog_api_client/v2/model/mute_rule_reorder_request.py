@@ -32,7 +32,7 @@ class MuteRuleReorderRequest(ModelNormal):
         """
         The body of the mute rule reorder request.
 
-        :param data: The ordered list of all mute rules; every rule must be included.
+        :param data: The ordered list of all mute rules. Every rule must be included.
         :type data: [MuteRuleReorderItem]
         """
         super().__init__(kwargs)

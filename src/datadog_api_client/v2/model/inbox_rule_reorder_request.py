@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.due_date_rule_reorder_item import DueDateRuleReorderItem
+    from datadog_api_client.v2.model.inbox_rule_reorder_item import InboxRuleReorderItem
 
 
-class DueDateRuleReorderRequest(ModelNormal):
+class InboxRuleReorderRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.due_date_rule_reorder_item import DueDateRuleReorderItem
+        from datadog_api_client.v2.model.inbox_rule_reorder_item import InboxRuleReorderItem
 
         return {
-            "data": ([DueDateRuleReorderItem],),
+            "data": ([InboxRuleReorderItem],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: List[DueDateRuleReorderItem], **kwargs):
+    def __init__(self_, data: List[InboxRuleReorderItem], **kwargs):
         """
-        The body of the due date rule reorder request.
+        The body of an inbox rule reorder request.
 
-        :param data: The ordered list of all due date rules. Every rule must be included.
-        :type data: [DueDateRuleReorderItem]
+        :param data: The ordered list of all inbox rules. Every rule must be included.
+        :type data: [InboxRuleReorderItem]
         """
         super().__init__(kwargs)
 

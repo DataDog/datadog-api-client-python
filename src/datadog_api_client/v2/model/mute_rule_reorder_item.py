@@ -35,7 +35,7 @@ class MuteRuleReorderItem(ModelNormal):
         """
         A reference to a mute rule used for reordering.
 
-        :param id: The ID of the automation rule.
+        :param id: The ID of the mute rule.
         :type id: UUID
 
         :param type: The JSON:API type for mute rules.

@@ -35,7 +35,7 @@ class SeverityModifierRuleReorderItem(ModelNormal):
         """
         A reference to a severity modifier rule used for reordering.
 
-        :param id: The ID of the automation rule.
+        :param id: The ID of the severity modifier rule.
         :type id: UUID
 
         :param type: The JSON:API type for severity modifier rules.

@@ -2389,6 +2389,11 @@ from datadog_api_client.v2.model.ddsql_tabular_query_response_meta import DdsqlT
 from datadog_api_client.v2.model.ddsql_tabular_query_response_type import DdsqlTabularQueryResponseType
 from datadog_api_client.v2.model.ddsql_tabular_query_state import DdsqlTabularQueryState
 from datadog_api_client.v2.model.ddsql_tabular_query_time_window import DdsqlTabularQueryTimeWindow
+from datadog_api_client.v2.model.default_inbox_rule_attributes_response import DefaultInboxRuleAttributesResponse
+from datadog_api_client.v2.model.default_inbox_rule_data_response import DefaultInboxRuleDataResponse
+from datadog_api_client.v2.model.default_inbox_rule_response import DefaultInboxRuleResponse
+from datadog_api_client.v2.model.default_inbox_rule_type import DefaultInboxRuleType
+from datadog_api_client.v2.model.default_inbox_rules_response import DefaultInboxRulesResponse
 from datadog_api_client.v2.model.default_rulesets_per_language_data import DefaultRulesetsPerLanguageData
 from datadog_api_client.v2.model.default_rulesets_per_language_data_attributes import (
     DefaultRulesetsPerLanguageDataAttributes,
@@ -3807,6 +3812,20 @@ from datadog_api_client.v2.model.identity_provider_update_attributes import Iden
 from datadog_api_client.v2.model.identity_provider_update_data import IdentityProviderUpdateData
 from datadog_api_client.v2.model.identity_provider_update_request import IdentityProviderUpdateRequest
 from datadog_api_client.v2.model.identity_providers_response import IdentityProvidersResponse
+from datadog_api_client.v2.model.inbox_rule_action import InboxRuleAction
+from datadog_api_client.v2.model.inbox_rule_attributes_create import InboxRuleAttributesCreate
+from datadog_api_client.v2.model.inbox_rule_attributes_response import InboxRuleAttributesResponse
+from datadog_api_client.v2.model.inbox_rule_create_request import InboxRuleCreateRequest
+from datadog_api_client.v2.model.inbox_rule_data_create import InboxRuleDataCreate
+from datadog_api_client.v2.model.inbox_rule_data_response import InboxRuleDataResponse
+from datadog_api_client.v2.model.inbox_rule_data_update import InboxRuleDataUpdate
+from datadog_api_client.v2.model.inbox_rule_reorder_item import InboxRuleReorderItem
+from datadog_api_client.v2.model.inbox_rule_reorder_request import InboxRuleReorderRequest
+from datadog_api_client.v2.model.inbox_rule_reorder_response import InboxRuleReorderResponse
+from datadog_api_client.v2.model.inbox_rule_response import InboxRuleResponse
+from datadog_api_client.v2.model.inbox_rule_type import InboxRuleType
+from datadog_api_client.v2.model.inbox_rule_update_request import InboxRuleUpdateRequest
+from datadog_api_client.v2.model.inbox_rules_response import InboxRulesResponse
 from datadog_api_client.v2.model.incident_ai_postmortem_data_attributes_response import (
     IncidentAIPostmortemDataAttributesResponse,
 )
@@ -13296,6 +13315,11 @@ __all__ = [
     "DdsqlTabularQueryResponseType",
     "DdsqlTabularQueryState",
     "DdsqlTabularQueryTimeWindow",
+    "DefaultInboxRuleAttributesResponse",
+    "DefaultInboxRuleDataResponse",
+    "DefaultInboxRuleResponse",
+    "DefaultInboxRuleType",
+    "DefaultInboxRulesResponse",
     "DefaultRulesetsPerLanguageData",
     "DefaultRulesetsPerLanguageDataAttributes",
     "DefaultRulesetsPerLanguageDataType",
@@ -14360,6 +14384,20 @@ __all__ = [
     "IdentityProviderUpdateData",
     "IdentityProviderUpdateRequest",
     "IdentityProvidersResponse",
+    "InboxRuleAction",
+    "InboxRuleAttributesCreate",
+    "InboxRuleAttributesResponse",
+    "InboxRuleCreateRequest",
+    "InboxRuleDataCreate",
+    "InboxRuleDataResponse",
+    "InboxRuleDataUpdate",
+    "InboxRuleReorderItem",
+    "InboxRuleReorderRequest",
+    "InboxRuleReorderResponse",
+    "InboxRuleResponse",
+    "InboxRuleType",
+    "InboxRuleUpdateRequest",
+    "InboxRulesResponse",
     "IncidentAIPostmortemDataAttributesResponse",
     "IncidentAIPostmortemDataResponse",
     "IncidentAIPostmortemResponse",

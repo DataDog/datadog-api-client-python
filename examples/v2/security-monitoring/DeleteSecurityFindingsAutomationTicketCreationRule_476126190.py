@@ -1,15 +1,18 @@
 """
-Delete a ticket creation rule returns "Successfully deleted the ticket creation rule" response
+Delete a ticket creation rule returns "Rule successfully deleted." response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
-from uuid import UUID
+
+# there is a valid "valid_ticket_creation_rule" in the system
+VALID_TICKET_CREATION_RULE_DATA_ID = environ["VALID_TICKET_CREATION_RULE_DATA_ID"]
 
 configuration = Configuration()
 configuration.unstable_operations["delete_security_findings_automation_ticket_creation_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     api_instance.delete_security_findings_automation_ticket_creation_rule(
-        rule_id=UUID("00000000-0000-0000-0000-000000000000"),
+        rule_id=VALID_TICKET_CREATION_RULE_DATA_ID,
     )
