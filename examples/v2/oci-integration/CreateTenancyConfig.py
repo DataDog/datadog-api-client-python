@@ -76,7 +76,6 @@ body = CreateTenancyConfigRequest(
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_tenancy_config"] = True
 with ApiClient(configuration) as api_client:
     api_instance = OCIIntegrationApi(api_client)
     response = api_instance.create_tenancy_config(body=body)
