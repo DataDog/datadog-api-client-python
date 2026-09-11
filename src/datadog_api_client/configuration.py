@@ -730,6 +730,7 @@ class Configuration:
                 "v2.list_network_health_insights": False,
                 "v2.delete_scopes_restriction": False,
                 "v2.get_o_auth2_well_known_sites": False,
+                "v2.get_oidc_discovery_document": False,
                 "v2.get_scopes_restriction": False,
                 "v2.register_o_auth_client": False,
                 "v2.upsert_scopes_restriction": False,

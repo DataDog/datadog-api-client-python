@@ -5856,6 +5856,7 @@ from datadog_api_client.v2.model.oci_config import OCIConfig
 from datadog_api_client.v2.model.oci_config_attributes import OCIConfigAttributes
 from datadog_api_client.v2.model.oci_config_type import OCIConfigType
 from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
+from datadog_api_client.v2.model.oidc_discovery_document import OIDCDiscoveryDocument
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
 from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
     ObservabilityPipelineAddEnvVarsProcessor,
@@ -15886,6 +15887,7 @@ __all__ = [
     "OCIConfigAttributes",
     "OCIConfigType",
     "OCIConfigsResponse",
+    "OIDCDiscoveryDocument",
     "ObservabilityPipeline",
     "ObservabilityPipelineAddEnvVarsProcessor",
     "ObservabilityPipelineAddEnvVarsProcessorType",
