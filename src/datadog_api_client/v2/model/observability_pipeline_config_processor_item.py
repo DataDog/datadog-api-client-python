@@ -118,6 +118,8 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
             - `drop`: Drop the event.
             - `no_action`: Let the event pass through.
             - `overflow_routing`: Route to an overflow destination.
+
+            When `overflow_routing` is used, there must be a destination whose `inputs` reference this processor with the `<processor-id>.overflow_events` suffix to route the overflowing events. Only the following destination types support overflow inputs: `amazon_s3_generic`, `amazon_s3`, `google_cloud_storage`, and `azure_storage`.
         :type overflow_action: ObservabilityPipelineQuotaProcessorOverflowAction, optional
 
         :param overrides: A list of alternate quota rules that apply to specific sets of events, identified by matching field values. Each override can define a custom limit.
@@ -130,6 +132,8 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
             - `drop`: Drop the event.
             - `no_action`: Let the event pass through.
             - `overflow_routing`: Route to an overflow destination.
+
+            When `overflow_routing` is used, there must be a destination whose `inputs` reference this processor with the `<processor-id>.overflow_events` suffix to route the overflowing events. Only the following destination types support overflow inputs: `amazon_s3_generic`, `amazon_s3`, `google_cloud_storage`, and `azure_storage`.
         :type too_many_buckets_action: ObservabilityPipelineQuotaProcessorOverflowAction, optional
 
         :param group_by: A list of fields used to group log events for merging.

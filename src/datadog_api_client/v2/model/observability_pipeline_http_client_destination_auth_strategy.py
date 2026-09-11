@@ -16,7 +16,7 @@ class ObservabilityPipelineHttpClientDestinationAuthStrategy(ModelSimple):
     """
     HTTP authentication strategy.
 
-    :param value: Must be one of ["none", "basic", "bearer"].
+    :param value: Must be one of ["none", "basic", "bearer", "custom"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class ObservabilityPipelineHttpClientDestinationAuthStrategy(ModelSimple):
         "none",
         "basic",
         "bearer",
+        "custom",
     }
     NONE: ClassVar["ObservabilityPipelineHttpClientDestinationAuthStrategy"]
     BASIC: ClassVar["ObservabilityPipelineHttpClientDestinationAuthStrategy"]
     BEARER: ClassVar["ObservabilityPipelineHttpClientDestinationAuthStrategy"]
+    CUSTOM: ClassVar["ObservabilityPipelineHttpClientDestinationAuthStrategy"]
 
     @cached_property
     def openapi_types(_):
@@ -44,4 +46,7 @@ ObservabilityPipelineHttpClientDestinationAuthStrategy.BASIC = ObservabilityPipe
 )
 ObservabilityPipelineHttpClientDestinationAuthStrategy.BEARER = ObservabilityPipelineHttpClientDestinationAuthStrategy(
     "bearer"
+)
+ObservabilityPipelineHttpClientDestinationAuthStrategy.CUSTOM = ObservabilityPipelineHttpClientDestinationAuthStrategy(
+    "custom"
 )

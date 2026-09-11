@@ -61,7 +61,8 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
         """
         The ``generate_metrics`` processor creates custom metrics from logs.
         Metrics can be counters, gauges, or distributions and optionally grouped by log fields.
-        The generated metrics must be routed to a metrics destination using the input ``<processor-id>.metrics``.
+
+        There must be a destination whose ``inputs`` reference this processor with the ``<processor-id>.metrics`` suffix to route the generated metrics. All destination types normally supported for ``metrics`` pipelines are also supported as metrics destinations in ``logs`` pipelines.
 
         **Supported pipeline types:** logs
 
