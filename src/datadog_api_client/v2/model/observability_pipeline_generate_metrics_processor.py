@@ -64,6 +64,8 @@ class ObservabilityPipelineGenerateMetricsProcessor(ModelNormal):
 
         **Supported pipeline types:** logs
 
+        **Deprecated:** This processor is deprecated. Use the ``generate_metrics`` processor instead.
+
         :param display_name: The display name for a component.
         :type display_name: str, optional
 
