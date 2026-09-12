@@ -10,13 +10,19 @@ from datadog_api_client.model_utils import (
 )
 
 
-class LLMObsPromptTemplate(ModelComposed):
+class LLMObsPromptAuthoringItem(ModelComposed):
     def __init__(self, **kwargs):
         """
-        A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}``. Use an authored chat object when including prompts as chat messages.
+        A chat message or an explicitly versioned prompt include.
 
-        :param messages: A chat prompt containing messages, pinned includes, or both.
-        :type messages: [LLMObsPromptAuthoringItem]
+        :param content: Content of the message.
+        :type content: str
+
+        :param role: Role of the message (for example `system`, `user`, or `assistant`).
+        :type role: str
+
+        :param include: An explicitly versioned prompt included as chat items. Omitting `items` includes every child message in its original order. When `items` is present, its zero-based indexes are inserted in the order provided; duplicate indexes are preserved.
+        :type include: LLMObsPromptInclude
         """
         super().__init__(kwargs)
 
@@ -30,14 +36,11 @@ class LLMObsPromptTemplate(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
-        from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import (
-            LLMObsPromptAuthoringMessagesTemplate,
-        )
+        from datadog_api_client.v2.model.llm_obs_prompt_include_item import LLMObsPromptIncludeItem
 
         return {
             "oneOf": [
-                str,
-                [LLMObsPromptChatMessage],
-                LLMObsPromptAuthoringMessagesTemplate,
+                LLMObsPromptChatMessage,
+                LLMObsPromptIncludeItem,
             ],
         }

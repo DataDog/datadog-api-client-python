@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import (
+        LLMObsPromptAuthoringMessagesTemplate,
+    )
 
 
 class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
@@ -43,7 +46,9 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
 
     def __init__(
         self_,
-        template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
+        template: Union[
+            LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage], LLMObsPromptAuthoringMessagesTemplate
+        ],
         description: Union[str, UnsetType] = unset,
         env_ids: Union[List[str], UnsetType] = unset,
         labels: Union[List[LLMObsPromptVersionLabel], UnsetType] = unset,
@@ -62,7 +67,7 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
         :param labels: Optional labels to attach to this version. Do not use this attribute for new integrations. **Deprecated**.
         :type labels: [LLMObsPromptVersionLabel], optional
 
-        :param template: A text template or a list of chat messages.
+        :param template: A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}``. Use an authored chat object when including prompts as chat messages.
         :type template: LLMObsPromptTemplate
 
         :param user_version: Optional user-supplied version identifier for this version.
