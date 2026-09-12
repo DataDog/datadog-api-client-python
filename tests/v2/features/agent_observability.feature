@@ -184,7 +184,7 @@ Feature: Agent Observability
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
     And request contains "prompt_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"], "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-template-versions"}}
+    And body with value {"data": {"attributes": {"config": {"model": "provider-model", "response_format": {"type": "json_object"}, "temperature": 0.2}, "env_ids": [], "labels": ["production"], "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-template-versions"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -193,7 +193,7 @@ Feature: Agent Observability
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
     And request contains "prompt_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"], "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-template-versions"}}
+    And body with value {"data": {"attributes": {"config": {"model": "provider-model", "response_format": {"type": "json_object"}, "temperature": 0.2}, "env_ids": [], "labels": ["production"], "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-template-versions"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -202,7 +202,7 @@ Feature: Agent Observability
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
     And request contains "prompt_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"], "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-template-versions"}}
+    And body with value {"data": {"attributes": {"config": {"model": "provider-model", "response_format": {"type": "json_object"}, "temperature": 0.2}, "env_ids": [], "labels": ["production"], "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-template-versions"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -310,7 +310,7 @@ Feature: Agent Observability
   Scenario: Create an Agent Observability prompt returns "Bad Request" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"], "prompt_id": "customer-support-assistant", "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-templates"}}
+    And body with value {"data": {"attributes": {"config": {"model": "provider-model", "response_format": {"type": "json_object"}, "temperature": 0.2}, "env_ids": [], "labels": ["production"], "prompt_id": "customer-support-assistant", "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-templates"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -318,7 +318,7 @@ Feature: Agent Observability
   Scenario: Create an Agent Observability prompt returns "Conflict" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"], "prompt_id": "customer-support-assistant", "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-templates"}}
+    And body with value {"data": {"attributes": {"config": {"model": "provider-model", "response_format": {"type": "json_object"}, "temperature": 0.2}, "env_ids": [], "labels": ["production"], "prompt_id": "customer-support-assistant", "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-templates"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -326,7 +326,7 @@ Feature: Agent Observability
   Scenario: Create an Agent Observability prompt returns "OK" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
-    And body with value {"data": {"attributes": {"env_ids": [], "labels": ["production"], "prompt_id": "customer-support-assistant", "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-templates"}}
+    And body with value {"data": {"attributes": {"config": {"model": "provider-model", "response_format": {"type": "json_object"}, "temperature": 0.2}, "env_ids": [], "labels": ["production"], "prompt_id": "customer-support-assistant", "template": "You are a helpful assistant for {{audience}}."}, "type": "prompt-templates"}}
     When the request is sent
     Then the response status is 200 OK
 

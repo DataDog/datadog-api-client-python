@@ -4659,6 +4659,11 @@ from datadog_api_client.v2.model.llm_obs_content_block_type import LLMObsContent
 from datadog_api_client.v2.model.llm_obs_create_prompt_data import LLMObsCreatePromptData
 from datadog_api_client.v2.model.llm_obs_create_prompt_data_attributes import LLMObsCreatePromptDataAttributes
 from datadog_api_client.v2.model.llm_obs_create_prompt_request import LLMObsCreatePromptRequest
+from datadog_api_client.v2.model.llm_obs_create_prompt_response import LLMObsCreatePromptResponse
+from datadog_api_client.v2.model.llm_obs_create_prompt_response_data import LLMObsCreatePromptResponseData
+from datadog_api_client.v2.model.llm_obs_create_prompt_response_data_attributes import (
+    LLMObsCreatePromptResponseDataAttributes,
+)
 from datadog_api_client.v2.model.llm_obs_create_prompt_version_data import LLMObsCreatePromptVersionData
 from datadog_api_client.v2.model.llm_obs_create_prompt_version_data_attributes import (
     LLMObsCreatePromptVersionDataAttributes,
@@ -5044,6 +5049,7 @@ from datadog_api_client.v2.model.llm_obs_project_update_data_request import LLMO
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
 from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 from datadog_api_client.v2.model.llm_obs_prompt_data import LLMObsPromptData
 from datadog_api_client.v2.model.llm_obs_prompt_data_attributes import LLMObsPromptDataAttributes
 from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
@@ -14981,6 +14987,9 @@ __all__ = [
     "LLMObsCreatePromptData",
     "LLMObsCreatePromptDataAttributes",
     "LLMObsCreatePromptRequest",
+    "LLMObsCreatePromptResponse",
+    "LLMObsCreatePromptResponseData",
+    "LLMObsCreatePromptResponseDataAttributes",
     "LLMObsCreatePromptVersionData",
     "LLMObsCreatePromptVersionDataAttributes",
     "LLMObsCreatePromptVersionRequest",
@@ -15234,6 +15243,7 @@ __all__ = [
     "LLMObsProjectUpdateRequest",
     "LLMObsProjectsResponse",
     "LLMObsPromptChatMessage",
+    "LLMObsPromptConfig",
     "LLMObsPromptData",
     "LLMObsPromptDataAttributes",
     "LLMObsPromptDataset",

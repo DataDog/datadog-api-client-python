@@ -7,12 +7,16 @@ from datadog_api_client.v2.api.agent_observability_api import AgentObservability
 from datadog_api_client.v2.model.llm_obs_create_prompt_data import LLMObsCreatePromptData
 from datadog_api_client.v2.model.llm_obs_create_prompt_data_attributes import LLMObsCreatePromptDataAttributes
 from datadog_api_client.v2.model.llm_obs_create_prompt_request import LLMObsCreatePromptRequest
+from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 from datadog_api_client.v2.model.llm_obs_prompt_type import LLMObsPromptType
 from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
 
 body = LLMObsCreatePromptRequest(
     data=LLMObsCreatePromptData(
         attributes=LLMObsCreatePromptDataAttributes(
+            config=LLMObsPromptConfig(
+                [("model", "provider-model"), ("response_format", "{'type': 'json_object'}"), ("temperature", "0.2")]
+            ),
             env_ids=[],
             labels=[
                 LLMObsPromptVersionLabel.PRODUCTION,

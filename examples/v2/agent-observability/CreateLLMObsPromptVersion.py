@@ -9,12 +9,16 @@ from datadog_api_client.v2.model.llm_obs_create_prompt_version_data_attributes i
     LLMObsCreatePromptVersionDataAttributes,
 )
 from datadog_api_client.v2.model.llm_obs_create_prompt_version_request import LLMObsCreatePromptVersionRequest
+from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
 from datadog_api_client.v2.model.llm_obs_prompt_version_type import LLMObsPromptVersionType
 
 body = LLMObsCreatePromptVersionRequest(
     data=LLMObsCreatePromptVersionData(
         attributes=LLMObsCreatePromptVersionDataAttributes(
+            config=LLMObsPromptConfig(
+                [("model", "provider-model"), ("response_format", "{'type': 'json_object'}"), ("temperature", "0.2")]
+            ),
             env_ids=[],
             labels=[
                 LLMObsPromptVersionLabel.PRODUCTION,
