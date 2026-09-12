@@ -38,7 +38,7 @@ class LLMObsPromptData(ModelNormal):
         """
         Data object for an Agent Observability prompt.
 
-        :param attributes: Attributes of an Agent Observability prompt registry entry.
+        :param attributes: Attributes of an Agent Observability prompt registry entry. Prompt list and metadata-update responses omit complete template and configuration data.
         :type attributes: LLMObsPromptDataAttributes
 
         :param id: Unique identifier of the prompt.

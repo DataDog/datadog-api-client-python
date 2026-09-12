@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
     from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
@@ -28,10 +29,12 @@ class LLMObsCreatePromptDataAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
         from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
         from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
 
         return {
+            "config": (LLMObsPromptConfig,),
             "description": (str,),
             "env_ids": ([str],),
             "labels": ([LLMObsPromptVersionLabel],),
@@ -42,6 +45,7 @@ class LLMObsCreatePromptDataAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "config": "config",
         "description": "description",
         "env_ids": "env_ids",
         "labels": "labels",
@@ -55,6 +59,7 @@ class LLMObsCreatePromptDataAttributes(ModelNormal):
         self_,
         prompt_id: str,
         template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
+        config: Union[LLMObsPromptConfig, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         env_ids: Union[List[str], UnsetType] = unset,
         labels: Union[List[LLMObsPromptVersionLabel], UnsetType] = unset,
@@ -63,7 +68,10 @@ class LLMObsCreatePromptDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating an Agent Observability prompt and its first version. ``prompt_id`` and ``template`` are required; all other attributes are optional.
+        Attributes for creating an Agent Observability prompt and its first version. ``prompt_id`` and ``template`` are required; all other attributes are optional. If ``config`` is omitted, the first version stores an empty object.
+
+        :param config: Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
+        :type config: LLMObsPromptConfig, optional
 
         :param description: Optional description of the prompt.
         :type description: str, optional
@@ -86,6 +94,8 @@ class LLMObsCreatePromptDataAttributes(ModelNormal):
         :param user_version: Optional user-supplied version identifier for the first version.
         :type user_version: str, optional
         """
+        if config is not unset:
+            kwargs["config"] = config
         if description is not unset:
             kwargs["description"] = description
         if env_ids is not unset:

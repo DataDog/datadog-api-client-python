@@ -15,15 +15,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 
 
 class LLMObsPromptSDKDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+        from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 
         return {
             "chat_template": ([LLMObsPromptChatMessage],),
+            "config": (LLMObsPromptConfig,),
             "labels": ([str],),
             "prompt_id": (str,),
             "prompt_version_uuid": (str,),
@@ -33,6 +36,7 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
 
     attribute_map = {
         "chat_template": "chat_template",
+        "config": "config",
         "labels": "labels",
         "prompt_id": "prompt_id",
         "prompt_version_uuid": "prompt_version_uuid",
@@ -42,6 +46,7 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        config: LLMObsPromptConfig,
         chat_template: Union[List[LLMObsPromptChatMessage], UnsetType] = unset,
         labels: Union[List[str], UnsetType] = unset,
         prompt_id: Union[str, UnsetType] = unset,
@@ -55,6 +60,9 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
 
         :param chat_template: Chat template for this prompt version, as a list of role and content messages. Omitted for text templates.
         :type chat_template: [LLMObsPromptChatMessage], optional
+
+        :param config: Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
+        :type config: LLMObsPromptConfig
 
         :param labels: Labels attached to the selected version. **Deprecated**.
         :type labels: [str], optional
@@ -84,3 +92,5 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
+
+        self_.config = config

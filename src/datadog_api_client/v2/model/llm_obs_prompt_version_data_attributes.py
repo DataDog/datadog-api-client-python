@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
     from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
@@ -29,11 +30,13 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
         from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
         from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
 
         return {
             "author": (str,),
+            "config": (LLMObsPromptConfig,),
             "created_at": (datetime,),
             "datasets": ([LLMObsPromptDataset],),
             "description": (str,),
@@ -52,6 +55,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
     attribute_map = {
         "author": "author",
+        "config": "config",
         "created_at": "created_at",
         "datasets": "datasets",
         "description": "description",
@@ -70,6 +74,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        config: LLMObsPromptConfig,
         prompt_id: str,
         prompt_uuid: str,
         template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
@@ -92,6 +97,9 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
         :param author: UUID of the user who authored this version.
         :type author: str, optional
+
+        :param config: Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
+        :type config: LLMObsPromptConfig
 
         :param created_at: Timestamp stored on this prompt version.
         :type created_at: datetime, optional
@@ -159,6 +167,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
             kwargs["version_created_at"] = version_created_at
         super().__init__(kwargs)
 
+        self_.config = config
         self_.prompt_id = prompt_id
         self_.prompt_uuid = prompt_uuid
         self_.template = template
