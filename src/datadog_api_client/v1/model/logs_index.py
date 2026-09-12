@@ -37,6 +37,7 @@ class LogsIndex(ModelNormal):
             "daily_limit": (int,),
             "daily_limit_reset": (LogsDailyLimitReset,),
             "daily_limit_warning_threshold_percentage": (float,),
+            "description": (str,),
             "exclusion_filters": ([LogsExclusion],),
             "filter": (LogsFilter,),
             "is_rate_limited": (bool,),
@@ -50,6 +51,7 @@ class LogsIndex(ModelNormal):
         "daily_limit": "daily_limit",
         "daily_limit_reset": "daily_limit_reset",
         "daily_limit_warning_threshold_percentage": "daily_limit_warning_threshold_percentage",
+        "description": "description",
         "exclusion_filters": "exclusion_filters",
         "filter": "filter",
         "is_rate_limited": "is_rate_limited",
@@ -69,6 +71,7 @@ class LogsIndex(ModelNormal):
         daily_limit: Union[int, UnsetType] = unset,
         daily_limit_reset: Union[LogsDailyLimitReset, UnsetType] = unset,
         daily_limit_warning_threshold_percentage: Union[float, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
         is_rate_limited: Union[bool, UnsetType] = unset,
         num_flex_logs_retention_days: Union[int, UnsetType] = unset,
@@ -87,6 +90,10 @@ class LogsIndex(ModelNormal):
 
         :param daily_limit_warning_threshold_percentage: A percentage threshold of the daily quota at which a Datadog warning event is generated.
         :type daily_limit_warning_threshold_percentage: float, optional
+
+        :param description: A description of the index, to help explain its purpose or configuration to other users.
+            Maximum length of 250 characters.
+        :type description: str, optional
 
         :param exclusion_filters: An array of exclusion objects. The logs are tested against the query of each filter,
             following the order of the array. Only the first matching active exclusion matters,
@@ -122,6 +129,8 @@ class LogsIndex(ModelNormal):
             kwargs["daily_limit_reset"] = daily_limit_reset
         if daily_limit_warning_threshold_percentage is not unset:
             kwargs["daily_limit_warning_threshold_percentage"] = daily_limit_warning_threshold_percentage
+        if description is not unset:
+            kwargs["description"] = description
         if exclusion_filters is not unset:
             kwargs["exclusion_filters"] = exclusion_filters
         if is_rate_limited is not unset:

@@ -17,6 +17,7 @@ body = LogsIndexUpdateRequest(
         reset_utc_offset="+02:00",
     ),
     daily_limit_warning_threshold_percentage=70.0,
+    description="Contains logs matching the criteria defined by the filter.",
     disable_daily_limit=False,
     exclusion_filters=[
         LogsExclusion(
