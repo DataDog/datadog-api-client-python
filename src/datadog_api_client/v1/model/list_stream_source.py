@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class ListStreamSource(ModelSimple):
     """
-    Source from which to query items to display in the stream. apm_issue_stream, rum_issue_stream, and logs_issue_stream are deprecated. Use issue_stream instead.
+    Source from which to query items to display in the stream. apm_issue_stream, rum_issue_stream, and logs_issue_stream are deprecated. Use issue_stream instead. apm_recommendations_stream is used to query APM recommendations, and supports filtering by environment, services, teams, recommendation types, and status.
 
-    :param value: If omitted defaults to "logs_stream". Must be one of ["logs_stream", "audit_stream", "ci_pipeline_stream", "ci_test_stream", "rum_issue_stream", "apm_issue_stream", "trace_stream", "logs_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "event_stream", "rum_stream", "llm_observability_stream", "issue_stream", "security_runtime_stream", "security_signals_stream", "incidents_stream"].
+    :param value: If omitted defaults to "logs_stream". Must be one of ["logs_stream", "audit_stream", "ci_pipeline_stream", "ci_test_stream", "rum_issue_stream", "apm_issue_stream", "trace_stream", "logs_issue_stream", "logs_pattern_stream", "logs_transaction_stream", "event_stream", "rum_stream", "llm_observability_stream", "issue_stream", "security_runtime_stream", "security_signals_stream", "incidents_stream", "apm_recommendations_stream"].
     :type value: str
     """
 
@@ -38,6 +38,7 @@ class ListStreamSource(ModelSimple):
         "security_runtime_stream",
         "security_signals_stream",
         "incidents_stream",
+        "apm_recommendations_stream",
     }
     LOGS_STREAM: ClassVar["ListStreamSource"]
     AUDIT_STREAM: ClassVar["ListStreamSource"]
@@ -56,6 +57,7 @@ class ListStreamSource(ModelSimple):
     SECURITY_RUNTIME_STREAM: ClassVar["ListStreamSource"]
     SECURITY_SIGNALS_STREAM: ClassVar["ListStreamSource"]
     INCIDENTS_STREAM: ClassVar["ListStreamSource"]
+    APM_RECOMMENDATIONS_STREAM: ClassVar["ListStreamSource"]
 
     @cached_property
     def openapi_types(_):
@@ -81,3 +83,4 @@ ListStreamSource.ISSUE_STREAM = ListStreamSource("issue_stream")
 ListStreamSource.SECURITY_RUNTIME_STREAM = ListStreamSource("security_runtime_stream")
 ListStreamSource.SECURITY_SIGNALS_STREAM = ListStreamSource("security_signals_stream")
 ListStreamSource.INCIDENTS_STREAM = ListStreamSource("incidents_stream")
+ListStreamSource.APM_RECOMMENDATIONS_STREAM = ListStreamSource("apm_recommendations_stream")
