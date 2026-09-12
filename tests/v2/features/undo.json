@@ -3026,10 +3026,22 @@
       "type": "idempotent"
     }
   },
+  "ListFormVersions": {
+    "tag": "Forms",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpsertFormVersion": {
     "tag": "Forms",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "RevertFormVersion": {
+    "tag": "Forms",
+    "undo": {
+      "type": "unsafe"
     }
   },
   "UpsertAndPublishFormVersion": {
