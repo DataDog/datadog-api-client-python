@@ -32,7 +32,7 @@ class ObservabilityPipelineSpec(ModelNormal):
         """
         Input schema representing an observability pipeline configuration. Used in create and validate requests.
 
-        :param data: Contains the the pipeline configuration.
+        :param data: Contains the pipeline configuration.
         :type data: ObservabilityPipelineSpecData
         """
         super().__init__(kwargs)
