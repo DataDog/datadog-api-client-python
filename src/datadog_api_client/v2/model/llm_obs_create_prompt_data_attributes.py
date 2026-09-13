@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
-    from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
 
 
 class LLMObsCreatePromptDataAttributes(ModelNormal):
@@ -54,7 +54,11 @@ class LLMObsCreatePromptDataAttributes(ModelNormal):
     def __init__(
         self_,
         prompt_id: str,
-        template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
+        template: Union[
+            LLMObsPromptTemplate,
+            str,
+            List[Union[LLMObsPromptChatTemplateItem, LLMObsPromptChatMessage, LLMObsPromptMessagePlaceholder]],
+        ],
         description: Union[str, UnsetType] = unset,
         env_ids: Union[List[str], UnsetType] = unset,
         labels: Union[List[LLMObsPromptVersionLabel], UnsetType] = unset,

@@ -14,16 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder import LLMObsPromptMessagePlaceholder
 
 
 class LLMObsPromptSDKDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+        from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
 
         return {
-            "chat_template": ([LLMObsPromptChatMessage],),
+            "chat_template": ([LLMObsPromptChatTemplateItem],),
             "labels": ([str],),
             "prompt_id": (str,),
             "prompt_version_uuid": (str,),
@@ -42,7 +44,10 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
 
     def __init__(
         self_,
-        chat_template: Union[List[LLMObsPromptChatMessage], UnsetType] = unset,
+        chat_template: Union[
+            List[Union[LLMObsPromptChatTemplateItem, LLMObsPromptChatMessage, LLMObsPromptMessagePlaceholder]],
+            UnsetType,
+        ] = unset,
         labels: Union[List[str], UnsetType] = unset,
         prompt_id: Union[str, UnsetType] = unset,
         prompt_version_uuid: Union[str, UnsetType] = unset,
@@ -53,8 +58,8 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
         """
         Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned.
 
-        :param chat_template: Chat template for this prompt version, as a list of role and content messages. Omitted for text templates.
-        :type chat_template: [LLMObsPromptChatMessage], optional
+        :param chat_template: Chat template for this prompt version, as a list of messages and named message placeholders. Omitted for text templates.
+        :type chat_template: [LLMObsPromptChatTemplateItem], optional
 
         :param labels: Labels attached to the selected version. **Deprecated**.
         :type labels: [str], optional
