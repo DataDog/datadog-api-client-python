@@ -5043,10 +5043,14 @@ from datadog_api_client.v2.model.llm_obs_project_update_data_attributes_request 
 from datadog_api_client.v2.model.llm_obs_project_update_data_request import LLMObsProjectUpdateDataRequest
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
+from datadog_api_client.v2.model.llm_obs_prompt_authoring_item import LLMObsPromptAuthoringItem
+from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import LLMObsPromptAuthoringMessagesTemplate
 from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
 from datadog_api_client.v2.model.llm_obs_prompt_data import LLMObsPromptData
 from datadog_api_client.v2.model.llm_obs_prompt_data_attributes import LLMObsPromptDataAttributes
 from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
+from datadog_api_client.v2.model.llm_obs_prompt_include import LLMObsPromptInclude
+from datadog_api_client.v2.model.llm_obs_prompt_include_item import LLMObsPromptIncludeItem
 from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
 from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 from datadog_api_client.v2.model.llm_obs_prompt_sdk_data import LLMObsPromptSDKData
@@ -15233,10 +15237,14 @@ __all__ = [
     "LLMObsProjectUpdateDataRequest",
     "LLMObsProjectUpdateRequest",
     "LLMObsProjectsResponse",
+    "LLMObsPromptAuthoringItem",
+    "LLMObsPromptAuthoringMessagesTemplate",
     "LLMObsPromptChatMessage",
     "LLMObsPromptData",
     "LLMObsPromptDataAttributes",
     "LLMObsPromptDataset",
+    "LLMObsPromptInclude",
+    "LLMObsPromptIncludeItem",
     "LLMObsPromptResponse",
     "LLMObsPromptResponseSource",
     "LLMObsPromptSDKData",
