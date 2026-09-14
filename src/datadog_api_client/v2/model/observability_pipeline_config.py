@@ -103,6 +103,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination import (
         ObservabilityPipelineOpentelemetryMetricsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination import (
+        ObservabilityPipelinePrometheusRemoteWriteDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination import (
         ObservabilityPipelineSplunkHecMetricsDestination,
     )
@@ -143,6 +146,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_websocket_source import ObservabilityPipelineWebsocketSource
     from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
         ObservabilityPipelineOpentelemetrySource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source import (
+        ObservabilityPipelinePrometheusRemoteWriteSource,
     )
 
 
@@ -212,6 +218,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineDatabricksZerobusDestination,
                 ObservabilityPipelineDatadogMetricsDestination,
                 ObservabilityPipelineOpentelemetryMetricsDestination,
+                ObservabilityPipelinePrometheusRemoteWriteDestination,
                 ObservabilityPipelineSplunkHecMetricsDestination,
             ]
         ],
@@ -236,6 +243,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSyslogNgSource,
                 ObservabilityPipelineWebsocketSource,
                 ObservabilityPipelineOpentelemetrySource,
+                ObservabilityPipelinePrometheusRemoteWriteSource,
             ]
         ],
         pipeline_type: Union[ObservabilityPipelineConfigPipelineType, UnsetType] = unset,
