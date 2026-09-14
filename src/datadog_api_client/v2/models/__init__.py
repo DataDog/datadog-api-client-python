@@ -5049,9 +5049,12 @@ from datadog_api_client.v2.model.llm_obs_project_update_data_request import LLMO
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjectsResponse
 from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
 from datadog_api_client.v2.model.llm_obs_prompt_data import LLMObsPromptData
 from datadog_api_client.v2.model.llm_obs_prompt_data_attributes import LLMObsPromptDataAttributes
 from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
+from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder import LLMObsPromptMessagePlaceholder
+from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder_type import LLMObsPromptMessagePlaceholderType
 from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
 from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 from datadog_api_client.v2.model.llm_obs_prompt_sdk_data import LLMObsPromptSDKData
@@ -15246,9 +15249,12 @@ __all__ = [
     "LLMObsProjectUpdateRequest",
     "LLMObsProjectsResponse",
     "LLMObsPromptChatMessage",
+    "LLMObsPromptChatTemplateItem",
     "LLMObsPromptData",
     "LLMObsPromptDataAttributes",
     "LLMObsPromptDataset",
+    "LLMObsPromptMessagePlaceholder",
+    "LLMObsPromptMessagePlaceholderType",
     "LLMObsPromptResponse",
     "LLMObsPromptResponseSource",
     "LLMObsPromptSDKData",
