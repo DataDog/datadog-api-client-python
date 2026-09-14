@@ -29,6 +29,18 @@ class AggregatedResource(ModelNormal):
         "global_view_name_count": {
             "inclusive_maximum": 2147483647,
         },
+        "local_cache_count": {
+            "inclusive_maximum": 2147483647,
+        },
+        "non_blocking_count": {
+            "inclusive_maximum": 2147483647,
+        },
+        "render_blocking_count": {
+            "inclusive_maximum": 2147483647,
+        },
+        "server_validated_cache_count": {
+            "inclusive_maximum": 2147483647,
+        },
         "total_requests": {
             "inclusive_maximum": 2147483647,
         },
@@ -52,13 +64,18 @@ class AggregatedResource(ModelNormal):
             "global_view_name_pct": (float,),
             "http_method": (str, none_type),
             "load_frequency_pct": (float,),
+            "local_cache_count": (int,),
             "max_duration_ms": (float,),
             "median_duration_ms": (float,),
             "min_duration_ms": (float,),
+            "non_blocking_count": (int,),
             "p75_duration_ms": (float,),
             "p95_duration_ms": (float,),
+            "render_blocking_count": (int,),
+            "render_blocking_pct": (float,),
             "resource_type": (str, none_type),
             "resource_url_path_group": (str,),
+            "server_validated_cache_count": (int,),
             "timing_breakdown": (AggregatedResourceTimingBreakdown,),
             "total_requests": (int,),
             "views_with_resource": (int,),
@@ -75,13 +92,18 @@ class AggregatedResource(ModelNormal):
         "global_view_name_pct": "global_view_name_pct",
         "http_method": "http_method",
         "load_frequency_pct": "load_frequency_pct",
+        "local_cache_count": "local_cache_count",
         "max_duration_ms": "max_duration_ms",
         "median_duration_ms": "median_duration_ms",
         "min_duration_ms": "min_duration_ms",
+        "non_blocking_count": "non_blocking_count",
         "p75_duration_ms": "p75_duration_ms",
         "p95_duration_ms": "p95_duration_ms",
+        "render_blocking_count": "render_blocking_count",
+        "render_blocking_pct": "render_blocking_pct",
         "resource_type": "resource_type",
         "resource_url_path_group": "resource_url_path_group",
+        "server_validated_cache_count": "server_validated_cache_count",
         "timing_breakdown": "timing_breakdown",
         "total_requests": "total_requests",
         "views_with_resource": "views_with_resource",
@@ -96,13 +118,18 @@ class AggregatedResource(ModelNormal):
         downloaded_count: int,
         http_method: Union[str, none_type],
         load_frequency_pct: float,
+        local_cache_count: int,
         max_duration_ms: float,
         median_duration_ms: float,
         min_duration_ms: float,
+        non_blocking_count: int,
         p75_duration_ms: float,
         p95_duration_ms: float,
+        render_blocking_count: int,
+        render_blocking_pct: float,
         resource_type: Union[str, none_type],
         resource_url_path_group: str,
+        server_validated_cache_count: int,
         timing_breakdown: AggregatedResourceTimingBreakdown,
         total_requests: int,
         views_with_resource: int,
@@ -144,6 +171,9 @@ class AggregatedResource(ModelNormal):
         :param load_frequency_pct: Percentage of sampled view instances that loaded this resource.
         :type load_frequency_pct: float
 
+        :param local_cache_count: Number of requests served from the local browser cache without a network round trip.
+        :type local_cache_count: int
+
         :param max_duration_ms: Maximum duration in milliseconds.
         :type max_duration_ms: float
 
@@ -153,17 +183,29 @@ class AggregatedResource(ModelNormal):
         :param min_duration_ms: Minimum duration in milliseconds.
         :type min_duration_ms: float
 
+        :param non_blocking_count: Number of requests reported by the browser as non-render-blocking.
+        :type non_blocking_count: int
+
         :param p75_duration_ms: 75th percentile duration in milliseconds.
         :type p75_duration_ms: float
 
         :param p95_duration_ms: 95th percentile duration in milliseconds.
         :type p95_duration_ms: float
 
+        :param render_blocking_count: Number of requests reported by the browser as render-blocking.
+        :type render_blocking_count: int
+
+        :param render_blocking_pct: Percentage of render-blocking requests among those reporting a render-blocking status.
+        :type render_blocking_pct: float
+
         :param resource_type: Resource type (JS, CSS, image, fetch, XHR, document, and so on).
         :type resource_type: str, none_type
 
         :param resource_url_path_group: URL path group used to aggregate similar resources.
         :type resource_url_path_group: str
+
+        :param server_validated_cache_count: Number of cached requests revalidated by the server with a 304 response.
+        :type server_validated_cache_count: int
 
         :param timing_breakdown: Average timing breakdown per network phase for a resource.
         :type timing_breakdown: AggregatedResourceTimingBreakdown
@@ -189,13 +231,18 @@ class AggregatedResource(ModelNormal):
         self_.downloaded_count = downloaded_count
         self_.http_method = http_method
         self_.load_frequency_pct = load_frequency_pct
+        self_.local_cache_count = local_cache_count
         self_.max_duration_ms = max_duration_ms
         self_.median_duration_ms = median_duration_ms
         self_.min_duration_ms = min_duration_ms
+        self_.non_blocking_count = non_blocking_count
         self_.p75_duration_ms = p75_duration_ms
         self_.p95_duration_ms = p95_duration_ms
+        self_.render_blocking_count = render_blocking_count
+        self_.render_blocking_pct = render_blocking_pct
         self_.resource_type = resource_type
         self_.resource_url_path_group = resource_url_path_group
+        self_.server_validated_cache_count = server_validated_cache_count
         self_.timing_breakdown = timing_breakdown
         self_.total_requests = total_requests
         self_.views_with_resource = views_with_resource
