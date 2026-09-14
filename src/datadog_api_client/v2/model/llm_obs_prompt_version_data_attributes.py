@@ -15,9 +15,12 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
+    from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import (
+        LLMObsPromptAuthoringMessagesTemplate,
+    )
 
 
 class LLMObsPromptVersionDataAttributes(ModelNormal):
@@ -29,11 +32,12 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
         from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
+        from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
 
         return {
             "author": (str,),
+            "authoring_template": (LLMObsPromptTemplate,),
             "created_at": (datetime,),
             "datasets": ([LLMObsPromptDataset],),
             "description": (str,),
@@ -52,6 +56,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
     attribute_map = {
         "author": "author",
+        "authoring_template": "authoring_template",
         "created_at": "created_at",
         "datasets": "datasets",
         "description": "description",
@@ -72,9 +77,14 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         self_,
         prompt_id: str,
         prompt_uuid: str,
-        template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
+        template: Union[
+            LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage], LLMObsPromptAuthoringMessagesTemplate
+        ],
         version: int,
         author: Union[str, UnsetType] = unset,
+        authoring_template: Union[
+            LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage], LLMObsPromptAuthoringMessagesTemplate, UnsetType
+        ] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         datasets: Union[List[LLMObsPromptDataset], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
@@ -88,10 +98,13 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a specific version of an Agent Observability prompt.
+        Attributes of a specific version of an Agent Observability prompt. For a composed version, ``authoring_template`` contains its pinned include-bearing source; ordinary versions omit that attribute.
 
         :param author: UUID of the user who authored this version.
         :type author: str, optional
+
+        :param authoring_template: A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}``. Use an authored chat object when including prompts as chat messages.
+        :type authoring_template: LLMObsPromptTemplate, optional
 
         :param created_at: Timestamp stored on this prompt version.
         :type created_at: datetime, optional
@@ -123,7 +136,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         :param tags: Tags observed on runs of this prompt version.
         :type tags: [str], optional
 
-        :param template: A text template or a list of chat messages.
+        :param template: A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}``. Use an authored chat object when including prompts as chat messages.
         :type template: LLMObsPromptTemplate
 
         :param user_version: User-supplied identifier for this version.
@@ -137,6 +150,8 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         """
         if author is not unset:
             kwargs["author"] = author
+        if authoring_template is not unset:
+            kwargs["authoring_template"] = authoring_template
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if datasets is not unset:
