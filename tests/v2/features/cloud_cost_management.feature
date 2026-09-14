@@ -107,21 +107,21 @@ Feature: Cloud Cost Management
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or update a budget returns "Bad Request" response
     Given new "UpsertBudget" request
-    And body with value {"data": {"attributes": {"costs": {"actual": null, "amount": null, "forecast": null, "ootb_forecast": null}, "costs_unit": {}, "created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"costs": {"actual": null, "amount": null, "custom_forecast": null, "forecast": null, "ootb_forecast": null}, "tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
+    And body with value {"data": {"attributes": {"costs": {"actual": null, "amount": null, "forecast": null, "ootb_forecast": null}, "costs_unit": {}, "created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"costs": {"actual": null, "amount": null, "custom_forecast": null, "forecast": null, "ootb_forecast": null}, "tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "tags": ["service"], "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or update a budget returns "Not Found" response
     Given new "UpsertBudget" request
-    And body with value {"data": {"attributes": {"costs": {"actual": null, "amount": null, "forecast": null, "ootb_forecast": null}, "costs_unit": {}, "created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"costs": {"actual": null, "amount": null, "custom_forecast": null, "forecast": null, "ootb_forecast": null}, "tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
+    And body with value {"data": {"attributes": {"costs": {"actual": null, "amount": null, "forecast": null, "ootb_forecast": null}, "costs_unit": {}, "created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"costs": {"actual": null, "amount": null, "custom_forecast": null, "forecast": null, "ootb_forecast": null}, "tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "tags": ["service"], "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:DataDog/cloud-cost-management
   Scenario: Create or update a budget returns "OK" response
     Given new "UpsertBudget" request
-    And body with value {"data": {"attributes": {"costs": {"actual": null, "amount": null, "forecast": null, "ootb_forecast": null}, "costs_unit": {}, "created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"costs": {"actual": null, "amount": null, "custom_forecast": null, "forecast": null, "ootb_forecast": null}, "tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
+    And body with value {"data": {"attributes": {"costs": {"actual": null, "amount": null, "forecast": null, "ootb_forecast": null}, "costs_unit": {}, "created_at": 1738258683590, "created_by": "00000000-0a0a-0a0a-aaa0-00000000000a", "end_month": 202502, "entries": [{"costs": {"actual": null, "amount": null, "custom_forecast": null, "forecast": null, "ootb_forecast": null}, "tag_filters": [{}]}], "metrics_query": "aws.cost.amortized{service:ec2} by {service}", "name": "my budget", "org_id": 123, "start_month": 202501, "tags": ["service"], "total_amount": 1000, "updated_at": 1738258683590, "updated_by": "00000000-0a0a-0a0a-aaa0-00000000000a"}, "id": "00000000-0a0a-0a0a-aaa0-00000000000a", "type": ""}}
     When the request is sent
     Then the response status is 200 OK
 
