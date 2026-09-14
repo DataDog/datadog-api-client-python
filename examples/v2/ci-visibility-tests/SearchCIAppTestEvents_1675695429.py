@@ -4,9 +4,9 @@ Search tests events returns "OK" response with pagination
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
-from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
 from datadog_api_client.v2.model.ci_app_sort import CIAppSort
 from datadog_api_client.v2.model.ci_app_test_events_request import CIAppTestEventsRequest
+from datadog_api_client.v2.model.ci_app_test_query_page_options import CIAppTestQueryPageOptions
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 
 body = CIAppTestEventsRequest(
@@ -15,7 +15,7 @@ body = CIAppTestEventsRequest(
         query="@test.status:pass AND -@language:python",
         to="now",
     ),
-    page=CIAppQueryPageOptions(
+    page=CIAppTestQueryPageOptions(
         limit=2,
     ),
     sort=CIAppSort.TIMESTAMP_ASCENDING,

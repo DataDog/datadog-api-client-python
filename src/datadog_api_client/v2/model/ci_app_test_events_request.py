@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
     from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
-    from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
+    from datadog_api_client.v2.model.ci_app_test_query_page_options import CIAppTestQueryPageOptions
     from datadog_api_client.v2.model.ci_app_sort import CIAppSort
 
 
@@ -25,13 +25,13 @@ class CIAppTestEventsRequest(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
         from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
-        from datadog_api_client.v2.model.ci_app_query_page_options import CIAppQueryPageOptions
+        from datadog_api_client.v2.model.ci_app_test_query_page_options import CIAppTestQueryPageOptions
         from datadog_api_client.v2.model.ci_app_sort import CIAppSort
 
         return {
             "filter": (CIAppTestsQueryFilter,),
             "options": (CIAppQueryOptions,),
-            "page": (CIAppQueryPageOptions,),
+            "page": (CIAppTestQueryPageOptions,),
             "sort": (CIAppSort,),
         }
 
@@ -46,7 +46,7 @@ class CIAppTestEventsRequest(ModelNormal):
         self_,
         filter: Union[CIAppTestsQueryFilter, UnsetType] = unset,
         options: Union[CIAppQueryOptions, UnsetType] = unset,
-        page: Union[CIAppQueryPageOptions, UnsetType] = unset,
+        page: Union[CIAppTestQueryPageOptions, UnsetType] = unset,
         sort: Union[CIAppSort, UnsetType] = unset,
         **kwargs,
     ):
@@ -60,8 +60,8 @@ class CIAppTestEventsRequest(ModelNormal):
             Only supply timezone or time offset, not both. Otherwise, the query fails.
         :type options: CIAppQueryOptions, optional
 
-        :param page: Paging attributes for listing events.
-        :type page: CIAppQueryPageOptions, optional
+        :param page: Paging attributes for listing test events.
+        :type page: CIAppTestQueryPageOptions, optional
 
         :param sort: Sort parameters when querying events.
         :type sort: CIAppSort, optional

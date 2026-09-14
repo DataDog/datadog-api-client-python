@@ -1008,6 +1008,8 @@ from datadog_api_client.v2.model.ci_app_test_event_type_name import CIAppTestEve
 from datadog_api_client.v2.model.ci_app_test_events_request import CIAppTestEventsRequest
 from datadog_api_client.v2.model.ci_app_test_events_response import CIAppTestEventsResponse
 from datadog_api_client.v2.model.ci_app_test_level import CIAppTestLevel
+from datadog_api_client.v2.model.ci_app_test_query_page_limit import CIAppTestQueryPageLimit
+from datadog_api_client.v2.model.ci_app_test_query_page_options import CIAppTestQueryPageOptions
 from datadog_api_client.v2.model.ci_app_tests_aggregate_request import CIAppTestsAggregateRequest
 from datadog_api_client.v2.model.ci_app_tests_aggregation_buckets_response import CIAppTestsAggregationBucketsResponse
 from datadog_api_client.v2.model.ci_app_tests_analytics_aggregate_response import CIAppTestsAnalyticsAggregateResponse
@@ -12298,6 +12300,8 @@ __all__ = [
     "CIAppTestEventsRequest",
     "CIAppTestEventsResponse",
     "CIAppTestLevel",
+    "CIAppTestQueryPageLimit",
+    "CIAppTestQueryPageOptions",
     "CIAppTestsAggregateRequest",
     "CIAppTestsAggregationBucketsResponse",
     "CIAppTestsAnalyticsAggregateResponse",
