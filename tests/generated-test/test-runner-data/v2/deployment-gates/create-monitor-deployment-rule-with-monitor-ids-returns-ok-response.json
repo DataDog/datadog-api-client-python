@@ -1,0 +1,60 @@
+{
+  "api": "DeploymentGates",
+  "expected_status": 200,
+  "feature": "Deployment Gates",
+  "id": "v2/Deployment Gates/Create monitor deployment rule with monitor IDs returns \"OK\" response",
+  "operation_id": "CreateDeploymentRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateDeploymentRuleParams",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "dry_run": false,
+            "name": "Specific monitor deployment rule",
+            "options": {
+              "monitor_ids": [
+                {
+                  "groups": [],
+                  "id": "{{ monitor.id }}"
+                }
+              ]
+            },
+            "type": "monitor"
+          },
+          "type": "deployment_rule"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "gate_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "deployment_gate.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/deployment_gates/{gate_id}/rules"
+  },
+  "scenario": "Create monitor deployment rule with monitor IDs returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
