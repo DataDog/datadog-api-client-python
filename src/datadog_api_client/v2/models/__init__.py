@@ -2659,7 +2659,6 @@ from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFind
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
-from datadog_api_client.v2.model.device_tags_by_source import DeviceTagsBySource
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.dns_metric_key import DnsMetricKey
 from datadog_api_client.v2.model.domain_allowlist import DomainAllowlist
@@ -6504,6 +6503,27 @@ from datadog_api_client.v2.model.observability_pipeline_parse_xml_processor impo
 )
 from datadog_api_client.v2.model.observability_pipeline_parse_xml_processor_type import (
     ObservabilityPipelineParseXMLProcessorType,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination import (
+    ObservabilityPipelinePrometheusRemoteWriteDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination_auth_strategy import (
+    ObservabilityPipelinePrometheusRemoteWriteDestinationAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination_type import (
+    ObservabilityPipelinePrometheusRemoteWriteDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source import (
+    ObservabilityPipelinePrometheusRemoteWriteSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source_auth_strategy import (
+    ObservabilityPipelinePrometheusRemoteWriteSourceAuthStrategy,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source_type import (
+    ObservabilityPipelinePrometheusRemoteWriteSourceType,
+)
+from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source_valid_token import (
+    ObservabilityPipelinePrometheusRemoteWriteSourceValidToken,
 )
 from datadog_api_client.v2.model.observability_pipeline_quota_processor import ObservabilityPipelineQuotaProcessor
 from datadog_api_client.v2.model.observability_pipeline_quota_processor_limit import (
@@ -13505,7 +13525,6 @@ __all__ = [
     "DetailedFindingType",
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
-    "DeviceTagsBySource",
     "DevicesListData",
     "DnsMetricKey",
     "DomainAllowlist",
@@ -16129,6 +16148,13 @@ __all__ = [
     "ObservabilityPipelineParseJSONProcessorType",
     "ObservabilityPipelineParseXMLProcessor",
     "ObservabilityPipelineParseXMLProcessorType",
+    "ObservabilityPipelinePrometheusRemoteWriteDestination",
+    "ObservabilityPipelinePrometheusRemoteWriteDestinationAuthStrategy",
+    "ObservabilityPipelinePrometheusRemoteWriteDestinationType",
+    "ObservabilityPipelinePrometheusRemoteWriteSource",
+    "ObservabilityPipelinePrometheusRemoteWriteSourceAuthStrategy",
+    "ObservabilityPipelinePrometheusRemoteWriteSourceType",
+    "ObservabilityPipelinePrometheusRemoteWriteSourceValidToken",
     "ObservabilityPipelineQuotaProcessor",
     "ObservabilityPipelineQuotaProcessorLimit",
     "ObservabilityPipelineQuotaProcessorLimitEnforceType",
