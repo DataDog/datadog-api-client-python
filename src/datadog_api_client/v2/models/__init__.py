@@ -2659,7 +2659,6 @@ from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFind
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
-from datadog_api_client.v2.model.device_tags_by_source import DeviceTagsBySource
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.dns_metric_key import DnsMetricKey
 from datadog_api_client.v2.model.domain_allowlist import DomainAllowlist
@@ -5679,6 +5678,10 @@ from datadog_api_client.v2.model.monitor_config_policy_attribute_edit_request im
 from datadog_api_client.v2.model.monitor_config_policy_attribute_response import MonitorConfigPolicyAttributeResponse
 from datadog_api_client.v2.model.monitor_config_policy_create_data import MonitorConfigPolicyCreateData
 from datadog_api_client.v2.model.monitor_config_policy_create_request import MonitorConfigPolicyCreateRequest
+from datadog_api_client.v2.model.monitor_config_policy_downtime_policy import MonitorConfigPolicyDowntimePolicy
+from datadog_api_client.v2.model.monitor_config_policy_downtime_policy_create_request import (
+    MonitorConfigPolicyDowntimePolicyCreateRequest,
+)
 from datadog_api_client.v2.model.monitor_config_policy_edit_data import MonitorConfigPolicyEditData
 from datadog_api_client.v2.model.monitor_config_policy_edit_request import MonitorConfigPolicyEditRequest
 from datadog_api_client.v2.model.monitor_config_policy_list_response import MonitorConfigPolicyListResponse
@@ -13505,7 +13508,6 @@ __all__ = [
     "DetailedFindingType",
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
-    "DeviceTagsBySource",
     "DevicesListData",
     "DnsMetricKey",
     "DomainAllowlist",
@@ -15743,6 +15745,8 @@ __all__ = [
     "MonitorConfigPolicyAttributeResponse",
     "MonitorConfigPolicyCreateData",
     "MonitorConfigPolicyCreateRequest",
+    "MonitorConfigPolicyDowntimePolicy",
+    "MonitorConfigPolicyDowntimePolicyCreateRequest",
     "MonitorConfigPolicyEditData",
     "MonitorConfigPolicyEditRequest",
     "MonitorConfigPolicyListResponse",
