@@ -21,6 +21,10 @@ class MonitorConfigPolicyTagPolicy(ModelNormal):
     }
 
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "tag_key": (str,),

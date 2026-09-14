@@ -11,6 +11,16 @@ Feature: Monitors
     And a valid "appKeyAuth" key in the system
     And an instance of "Monitors" API
 
+  @team:DataDog/monitor-app
+  Scenario: Create a downtime duration monitor configuration policy returns "OK" response
+    Given new "CreateMonitorConfigPolicy" request
+    And body with value {"data": {"attributes": {"policy_type": "downtime", "policy": {"max_duration_ms": 3600000}}, "type": "monitor-config-policy"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "monitor-config-policy"
+    And the response "data.attributes.policy_type" is equal to "downtime"
+    And the response "data.attributes.policy.max_duration_ms" is equal to 3600000
+
   @skip-validation @team:DataDog/monitor-app
   Scenario: Create a monitor configuration policy returns "Bad Request" response
     Given new "CreateMonitorConfigPolicy" request

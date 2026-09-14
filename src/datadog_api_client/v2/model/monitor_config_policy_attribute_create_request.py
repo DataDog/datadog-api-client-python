@@ -19,6 +19,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.monitor_config_policy_tag_policy_create_request import (
         MonitorConfigPolicyTagPolicyCreateRequest,
     )
+    from datadog_api_client.v2.model.monitor_config_policy_downtime_policy_create_request import (
+        MonitorConfigPolicyDowntimePolicyCreateRequest,
+    )
 
 
 class MonitorConfigPolicyAttributeCreateRequest(ModelNormal):
@@ -41,7 +44,11 @@ class MonitorConfigPolicyAttributeCreateRequest(ModelNormal):
 
     def __init__(
         self_,
-        policy: Union[MonitorConfigPolicyPolicyCreateRequest, MonitorConfigPolicyTagPolicyCreateRequest],
+        policy: Union[
+            MonitorConfigPolicyPolicyCreateRequest,
+            MonitorConfigPolicyTagPolicyCreateRequest,
+            MonitorConfigPolicyDowntimePolicyCreateRequest,
+        ],
         policy_type: MonitorConfigPolicyType,
         **kwargs,
     ):
@@ -52,6 +59,8 @@ class MonitorConfigPolicyAttributeCreateRequest(ModelNormal):
         :type policy: MonitorConfigPolicyPolicyCreateRequest
 
         :param policy_type: The monitor configuration policy type.
+            ``tag`` enforces required tags on monitors.
+            ``downtime`` sets a maximum downtime duration for the organization.
         :type policy_type: MonitorConfigPolicyType
         """
         super().__init__(kwargs)
