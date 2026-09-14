@@ -15,18 +15,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
     from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
     from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 
 
-class LLMObsPromptDataAttributes(ModelNormal):
+class LLMObsCreatePromptResponseDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
         from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
         from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 
         return {
             "author": (str,),
+            "config": (LLMObsPromptConfig,),
             "created_at": (datetime,),
             "created_from": (str,),
             "datasets": ([LLMObsPromptDataset],),
@@ -46,6 +49,7 @@ class LLMObsPromptDataAttributes(ModelNormal):
 
     attribute_map = {
         "author": "author",
+        "config": "config",
         "created_at": "created_at",
         "created_from": "created_from",
         "datasets": "datasets",
@@ -65,6 +69,7 @@ class LLMObsPromptDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        config: LLMObsPromptConfig,
         created_from: str,
         in_registry: bool,
         num_versions: int,
@@ -84,10 +89,13 @@ class LLMObsPromptDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an Agent Observability prompt registry entry. Prompt list and metadata-update responses omit complete template and configuration data.
+        Attributes returned after creating an Agent Observability prompt and its first version.
 
         :param author: UUID of the user who authored the prompt.
         :type author: str, optional
+
+        :param config: Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
+        :type config: LLMObsPromptConfig
 
         :param created_at: Timestamp when the prompt was created.
         :type created_at: datetime, optional
@@ -158,6 +166,7 @@ class LLMObsPromptDataAttributes(ModelNormal):
             kwargs["title"] = title
         super().__init__(kwargs)
 
+        self_.config = config
         self_.created_from = created_from
         self_.in_registry = in_registry
         self_.num_versions = num_versions

@@ -12,32 +12,43 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.llm_obs_create_prompt_data_attributes import LLMObsCreatePromptDataAttributes
+    from datadog_api_client.v2.model.llm_obs_create_prompt_response_data_attributes import (
+        LLMObsCreatePromptResponseDataAttributes,
+    )
     from datadog_api_client.v2.model.llm_obs_prompt_type import LLMObsPromptType
 
 
-class LLMObsCreatePromptData(ModelNormal):
+class LLMObsCreatePromptResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.llm_obs_create_prompt_data_attributes import LLMObsCreatePromptDataAttributes
+        from datadog_api_client.v2.model.llm_obs_create_prompt_response_data_attributes import (
+            LLMObsCreatePromptResponseDataAttributes,
+        )
         from datadog_api_client.v2.model.llm_obs_prompt_type import LLMObsPromptType
 
         return {
-            "attributes": (LLMObsCreatePromptDataAttributes,),
+            "attributes": (LLMObsCreatePromptResponseDataAttributes,),
+            "id": (str,),
             "type": (LLMObsPromptType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
-    def __init__(self_, attributes: LLMObsCreatePromptDataAttributes, type: LLMObsPromptType, **kwargs):
+    def __init__(
+        self_, attributes: LLMObsCreatePromptResponseDataAttributes, id: str, type: LLMObsPromptType, **kwargs
+    ):
         """
-        Data object for creating an Agent Observability prompt.
+        Data object returned after creating an Agent Observability prompt.
 
-        :param attributes: Attributes for creating an Agent Observability prompt and its first version. ``prompt_id`` and ``template`` are required; all other attributes are optional. If ``config`` is omitted, the first version stores an empty object.
-        :type attributes: LLMObsCreatePromptDataAttributes
+        :param attributes: Attributes returned after creating an Agent Observability prompt and its first version.
+        :type attributes: LLMObsCreatePromptResponseDataAttributes
+
+        :param id: Unique identifier of the prompt.
+        :type id: str
 
         :param type: Resource type of an Agent Observability prompt.
         :type type: LLMObsPromptType
@@ -45,4 +56,5 @@ class LLMObsCreatePromptData(ModelNormal):
         super().__init__(kwargs)
 
         self_.attributes = attributes
+        self_.id = id
         self_.type = type

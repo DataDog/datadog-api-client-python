@@ -40,7 +40,7 @@ class LLMObsCreatePromptVersionData(ModelNormal):
         """
         Data object for creating an Agent Observability prompt version.
 
-        :param attributes: Attributes for creating a new version of an Agent Observability prompt. ``template`` is required; all other attributes are optional.
+        :param attributes: Attributes for creating a new version of an Agent Observability prompt. ``template`` is required; all other attributes are optional. If ``config`` is omitted, the latest version's configuration is carried forward. An explicit empty object clears it.
         :type attributes: LLMObsCreatePromptVersionDataAttributes
 
         :param type: Resource type of an Agent Observability prompt version.
