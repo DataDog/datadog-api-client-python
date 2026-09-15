@@ -18,19 +18,26 @@ class CloudWorkloadSecurityAgentRuleActionHash(ModelNormal):
     def openapi_types(_):
         return {
             "field": (str,),
+            "max_file_size": (int,),
         }
 
     attribute_map = {
         "field": "field",
+        "max_file_size": "max_file_size",
     }
 
-    def __init__(self_, field: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, field: Union[str, UnsetType] = unset, max_file_size: Union[int, UnsetType] = unset, **kwargs):
         """
         Hash file specified by the field attribute
 
         :param field: The field of the hash action
         :type field: str, optional
+
+        :param max_file_size: The maximum size of the files to hash, in bytes.
+        :type max_file_size: int, optional
         """
         if field is not unset:
             kwargs["field"] = field
+        if max_file_size is not unset:
+            kwargs["max_file_size"] = max_file_size
         super().__init__(kwargs)

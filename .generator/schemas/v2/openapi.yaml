@@ -19559,6 +19559,8 @@ components:
     CloudWorkloadSecurityAgentRuleAction:
       description: "The action the rule can perform if triggered"
       properties:
+        coredump:
+          $ref: "#/components/schemas/CloudWorkloadSecurityAgentRuleActionCoreDump"
         disabled:
           description: "Whether the action is disabled"
           example: false
@@ -19570,16 +19572,50 @@ components:
           $ref: "#/components/schemas/CloudWorkloadSecurityAgentRuleActionHash"
         kill:
           $ref: "#/components/schemas/CloudWorkloadSecurityAgentRuleKill"
+        log:
+          $ref: "#/components/schemas/CloudWorkloadSecurityAgentRuleActionLog"
         metadata:
           $ref: "#/components/schemas/CloudWorkloadSecurityAgentRuleActionMetadata"
+        network_filter:
+          $ref: "#/components/schemas/CloudWorkloadSecurityAgentRuleActionNetworkFilter"
         set:
           $ref: "#/components/schemas/CloudWorkloadSecurityAgentRuleActionSet"
+      type: object
+    CloudWorkloadSecurityAgentRuleActionCoreDump:
+      description: "The core dump action applied on the process matching the rule."
+      properties:
+        dentry:
+          description: "Whether the directory entry information is included in the core dump."
+          type: boolean
+        mount:
+          description: "Whether the mount information is included in the core dump."
+          type: boolean
+        no_compression:
+          description: "Whether the core dump is left uncompressed."
+          type: boolean
+        process:
+          description: "Whether the process memory is included in the core dump."
+          type: boolean
       type: object
     CloudWorkloadSecurityAgentRuleActionHash:
       description: "Hash file specified by the field attribute"
       properties:
         field:
           description: "The field of the hash action"
+          type: string
+        max_file_size:
+          description: "The maximum size of the files to hash, in bytes."
+          format: int64
+          type: integer
+      type: object
+    CloudWorkloadSecurityAgentRuleActionLog:
+      description: "The log action applied when the rule is triggered."
+      properties:
+        level:
+          description: "The level of the log action."
+          type: string
+        message:
+          description: "The message of the log action."
           type: string
       type: object
     CloudWorkloadSecurityAgentRuleActionMetadata:
@@ -19593,6 +19629,19 @@ components:
           type: string
         short_image:
           description: "The short image of the metadata action"
+          type: string
+      type: object
+    CloudWorkloadSecurityAgentRuleActionNetworkFilter:
+      description: "The network filter action applied on the network traffic matching the rule."
+      properties:
+        filter:
+          description: "The filter expression of the network filter action."
+          type: string
+        policy:
+          description: "The policy of the network filter action."
+          type: string
+        scope:
+          description: "The scope of the network filter action."
           type: string
       type: object
     CloudWorkloadSecurityAgentRuleActionSet:
@@ -19616,8 +19665,14 @@ components:
         name:
           description: "The name of the set action"
           type: string
+        private:
+          description: "Whether the value of the set action is private."
+          type: boolean
         scope:
           description: "The scope of the set action."
+          type: string
+        scope_field:
+          description: "The scope field of the set action."
           type: string
         size:
           description: "The size of the set action."
@@ -19873,6 +19928,15 @@ components:
     CloudWorkloadSecurityAgentRuleKill:
       description: "Kill system call applied on the container matching the rule"
       properties:
+        disable_container_disarmer:
+          description: "Whether the automatic container safeguard of the kill action is disabled."
+          type: boolean
+        disable_executable_disarmer:
+          description: "Whether the automatic executable safeguard of the kill action is disabled."
+          type: boolean
+        scope:
+          description: "The scope of the kill action."
+          type: string
         signal:
           description: "Supported signals for the kill system call"
           type: string

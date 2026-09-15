@@ -1322,11 +1322,20 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_policy_version im
     CloudWorkloadSecurityAgentPolicyVersion,
 )
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action import CloudWorkloadSecurityAgentRuleAction
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_core_dump import (
+    CloudWorkloadSecurityAgentRuleActionCoreDump,
+)
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_hash import (
     CloudWorkloadSecurityAgentRuleActionHash,
 )
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_log import (
+    CloudWorkloadSecurityAgentRuleActionLog,
+)
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_metadata import (
     CloudWorkloadSecurityAgentRuleActionMetadata,
+)
+from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_network_filter import (
+    CloudWorkloadSecurityAgentRuleActionNetworkFilter,
 )
 from datadog_api_client.v2.model.cloud_workload_security_agent_rule_action_set import (
     CloudWorkloadSecurityAgentRuleActionSet,
@@ -12583,8 +12592,11 @@ __all__ = [
     "CloudWorkloadSecurityAgentPolicyUpdaterAttributes",
     "CloudWorkloadSecurityAgentPolicyVersion",
     "CloudWorkloadSecurityAgentRuleAction",
+    "CloudWorkloadSecurityAgentRuleActionCoreDump",
     "CloudWorkloadSecurityAgentRuleActionHash",
+    "CloudWorkloadSecurityAgentRuleActionLog",
     "CloudWorkloadSecurityAgentRuleActionMetadata",
+    "CloudWorkloadSecurityAgentRuleActionNetworkFilter",
     "CloudWorkloadSecurityAgentRuleActionSet",
     "CloudWorkloadSecurityAgentRuleActionSetValue",
     "CloudWorkloadSecurityAgentRuleAttributes",
