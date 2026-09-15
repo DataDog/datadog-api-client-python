@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
 
 class TwilioAlertsLogsIntegrationDataflowRequest(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "enabled": (bool,),
@@ -26,9 +30,9 @@ class TwilioAlertsLogsIntegrationDataflowRequest(ModelNormal):
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
-        The Twilio alerts logs dataflow.
+        Twilio Alert resource logs, which detail the errors and warnings raised when Twilio makes a webhook request to your server or when your application calls the Twilio REST API. This is the one kind of data the integration collects by default.
 
-        :param enabled: Whether the Twilio dataflow is enabled.
+        :param enabled: Whether Datadog collects this data. Defaults to ``true`` ; set to ``false`` to stop collection.
         :type enabled: bool, optional
         """
         if enabled is not unset:

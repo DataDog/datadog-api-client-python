@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
 
 class ElasticCloudShardAllocationStatsIntegrationDataflowRequest(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "enabled": (bool,),
@@ -26,9 +30,9 @@ class ElasticCloudShardAllocationStatsIntegrationDataflowRequest(ModelNormal):
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
-        The Elastic Cloud shard allocation stats dataflow.
+        Metrics for how many shards are allocated to each data node, and the disk space they use.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether Datadog collects this data. Defaults to ``false`` ; set to ``true`` to start collection.
         :type enabled: bool, optional
         """
         if enabled is not unset:

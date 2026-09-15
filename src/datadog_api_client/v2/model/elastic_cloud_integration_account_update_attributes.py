@@ -69,7 +69,7 @@ class ElasticCloudIntegrationAccountUpdateAttributes(ModelNormal):
         :param authentication: Authentication for updating the Elastic Cloud integration account. Exactly one method is set.
         :type authentication: ElasticCloudIntegrationAccountAuthenticationUpdate, optional
 
-        :param dataflows: Dataflows to configure on the Elastic Cloud integration account, keyed by dataflow id.
+        :param dataflows: Data Datadog collects from Elastic Cloud, keyed by dataflow id. Node-level cluster statistics are always collected; each dataflow here adds a further set of metrics on top of that baseline, so set ``enabled`` to start or stop it. Defaults listed on each dataflow apply when the account is created; on update, omitted fields keep their current values. Every dataflow queries the deployment as the user in ``authentication`` , so that user's role must hold the required Elasticsearch privileges; a dataflow enabled without them is stored but collects no data.
         :type dataflows: ElasticCloudIntegrationDataflowsRequest, optional
 
         :param name: Human-readable name of the Elastic Cloud integration account.

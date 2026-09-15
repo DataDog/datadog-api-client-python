@@ -42,9 +42,9 @@ class TwilioAlertsLogsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Twilio alerts logs dataflow.
+        Twilio Alert resource logs, which detail the errors and warnings raised when Twilio makes a webhook request to your server or when your application calls the Twilio REST API.
 
-        :param enabled: Whether the Twilio dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.

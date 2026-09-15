@@ -42,9 +42,9 @@ class TwilioEventsLogsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Twilio events logs dataflow.
+        Twilio Event resource logs, which record virtually every action taken in your Twilio account, such as provisioning a phone number, changing account security settings, or deleting a recording. Actions are recorded whether they came from the REST API, a user in the Twilio Console, or Twilio itself. `Cloud SIEM <https://docs.datadoghq.com/security/cloud_siem/>`_ analyzes and correlates these logs to detect threats in real time.
 
-        :param enabled: Whether the Twilio dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.
