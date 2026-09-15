@@ -18,6 +18,7 @@ from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_ite
 from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_items_tag_filters_items import (
     BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
 )
+from datadog_api_client.v2.model.budget_with_entries_meta import BudgetWithEntriesMeta
 
 body = BudgetWithEntries(
     data=BudgetWithEntriesData(
@@ -56,6 +57,9 @@ body = BudgetWithEntries(
         ),
         id="00000000-0a0a-0a0a-aaa0-00000000000a",
         type="",
+    ),
+    meta=BudgetWithEntriesMeta(
+        error="",
     ),
 )
 
