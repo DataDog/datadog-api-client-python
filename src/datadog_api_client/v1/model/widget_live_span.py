@@ -16,7 +16,7 @@ class WidgetLiveSpan(ModelSimple):
     """
     The available timeframes depend on the widget you are using.
 
-    :param value: Must be one of ["1m", "5m", "10m", "15m", "30m", "1h", "4h", "1d", "2d", "1w", "1mo", "3mo", "6mo", "week_to_date", "month_to_date", "1y", "alert"].
+    :param value: Must be one of ["1m", "5m", "10m", "15m", "30m", "1h", "4h", "1d", "2d", "1w", "1mo", "3mo", "6mo", "week_to_date", "month_to_date", "1y", "alert", "full_week", "full_month", "year_to_date"].
     :type value: str
     """
 
@@ -38,6 +38,9 @@ class WidgetLiveSpan(ModelSimple):
         "month_to_date",
         "1y",
         "alert",
+        "full_week",
+        "full_month",
+        "year_to_date",
     }
     PAST_ONE_MINUTE: ClassVar["WidgetLiveSpan"]
     PAST_FIVE_MINUTES: ClassVar["WidgetLiveSpan"]
@@ -56,6 +59,9 @@ class WidgetLiveSpan(ModelSimple):
     MONTH_TO_DATE: ClassVar["WidgetLiveSpan"]
     PAST_ONE_YEAR: ClassVar["WidgetLiveSpan"]
     ALERT: ClassVar["WidgetLiveSpan"]
+    FULL_WEEK: ClassVar["WidgetLiveSpan"]
+    FULL_MONTH: ClassVar["WidgetLiveSpan"]
+    YEAR_TO_DATE: ClassVar["WidgetLiveSpan"]
 
     @cached_property
     def openapi_types(_):
@@ -81,3 +87,6 @@ WidgetLiveSpan.WEEK_TO_DATE = WidgetLiveSpan("week_to_date")
 WidgetLiveSpan.MONTH_TO_DATE = WidgetLiveSpan("month_to_date")
 WidgetLiveSpan.PAST_ONE_YEAR = WidgetLiveSpan("1y")
 WidgetLiveSpan.ALERT = WidgetLiveSpan("alert")
+WidgetLiveSpan.FULL_WEEK = WidgetLiveSpan("full_week")
+WidgetLiveSpan.FULL_MONTH = WidgetLiveSpan("full_month")
+WidgetLiveSpan.YEAR_TO_DATE = WidgetLiveSpan("year_to_date")
