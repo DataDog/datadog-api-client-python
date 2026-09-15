@@ -4,13 +4,15 @@ Create investigation notebook for case returns "No Content" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
-from datadog_api_client.v2.model.notebook_create_data import NotebookCreateData
-from datadog_api_client.v2.model.notebook_create_request import NotebookCreateRequest
-from datadog_api_client.v2.model.notebook_resource_type import NotebookResourceType
+from datadog_api_client.v2.model.case_investigation_notebook_create_data import CaseInvestigationNotebookCreateData
+from datadog_api_client.v2.model.case_investigation_notebook_create_request import (
+    CaseInvestigationNotebookCreateRequest,
+)
+from datadog_api_client.v2.model.case_investigation_notebook_resource_type import CaseInvestigationNotebookResourceType
 
-body = NotebookCreateRequest(
-    data=NotebookCreateData(
-        type=NotebookResourceType.NOTEBOOK,
+body = CaseInvestigationNotebookCreateRequest(
+    data=CaseInvestigationNotebookCreateData(
+        type=CaseInvestigationNotebookResourceType.NOTEBOOK,
     ),
 )
 
