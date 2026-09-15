@@ -144,6 +144,30 @@ Feature: Forms
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
   @generated @skip @team:DataDog/app-builder-backend
+  Scenario: List form versions returns "Bad Request" response
+    Given operation "ListFormVersions" enabled
+    And new "ListFormVersions" request
+    And request contains "form_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/app-builder-backend
+  Scenario: List form versions returns "Not Found" response
+    Given operation "ListFormVersions" enabled
+    And new "ListFormVersions" request
+    And request contains "form_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/app-builder-backend
+  Scenario: List form versions returns "OK" response
+    Given operation "ListFormVersions" enabled
+    And new "ListFormVersions" request
+    And request contains "form_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/app-builder-backend
   Scenario: List forms returns "Bad Request" response
     Given operation "ListForms" enabled
     And new "ListForms" request
@@ -186,6 +210,42 @@ Feature: Forms
     And new "PublishForm" request
     And request contains "form_id" parameter from "form.data.id"
     And body with value {"data": {"attributes": {"version": 1}, "type": "form_publications"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/app-builder-backend
+  Scenario: Revert a form to a prior version returns "Bad Request" response
+    Given operation "RevertFormVersion" enabled
+    And new "RevertFormVersion" request
+    And request contains "form_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/app-builder-backend
+  Scenario: Revert a form to a prior version returns "Conflict" response
+    Given operation "RevertFormVersion" enabled
+    And new "RevertFormVersion" request
+    And request contains "form_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:DataDog/app-builder-backend
+  Scenario: Revert a form to a prior version returns "Not Found" response
+    Given operation "RevertFormVersion" enabled
+    And new "RevertFormVersion" request
+    And request contains "form_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/app-builder-backend
+  Scenario: Revert a form to a prior version returns "OK" response
+    Given operation "RevertFormVersion" enabled
+    And new "RevertFormVersion" request
+    And request contains "form_id" parameter from "REPLACE.ME"
+    And request contains "version" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

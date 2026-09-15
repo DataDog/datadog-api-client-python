@@ -20,6 +20,7 @@ from datadog_api_client.v2.model.update_form_request import UpdateFormRequest
 from datadog_api_client.v2.model.clone_form_request import CloneFormRequest
 from datadog_api_client.v2.model.form_publication_response import FormPublicationResponse
 from datadog_api_client.v2.model.publish_form_request import PublishFormRequest
+from datadog_api_client.v2.model.list_form_versions_response import ListFormVersionsResponse
 from datadog_api_client.v2.model.form_version_response import FormVersionResponse
 from datadog_api_client.v2.model.upsert_form_version_request import UpsertFormVersionRequest
 from datadog_api_client.v2.model.upsert_and_publish_form_version_request import UpsertAndPublishFormVersionRequest
@@ -169,6 +170,29 @@ class FormsApi:
             api_client=api_client,
         )
 
+        self._list_form_versions_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListFormVersionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/forms/{form_id}/versions",
+                "operation_id": "list_form_versions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "form_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "form_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._publish_form_endpoint = _Endpoint(
             settings={
                 "response_type": (FormPublicationResponse,),
@@ -192,6 +216,35 @@ class FormsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._revert_form_version_endpoint = _Endpoint(
+            settings={
+                "response_type": (FormVersionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/forms/{form_id}/versions/revert",
+                "operation_id": "revert_form_version",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "form_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "form_id",
+                    "location": "path",
+                },
+                "version": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "version",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -300,7 +353,8 @@ class FormsApi:
     ) -> FormResponse:
         """Create and publish a form.
 
-        Creates a new form and immediately publishes its initial version. This also creates a new datastore for form responses and links it to the form.
+        Creates a new form and immediately publishes its initial version. This also creates a new datastore for
+        form responses and links it to the form.
 
         :type body: CreateFormRequest
         :rtype: FormResponse
@@ -316,7 +370,8 @@ class FormsApi:
     ) -> FormResponse:
         """Create a form.
 
-        Create a new form. The form is created in draft mode and must be published before it can be used. This also creates a new datastore for form responses and links it to the form.
+        Create a new form. The form is created in draft mode and must be published before it can be used. This
+        also creates a new datastore for form responses and links it to the form.
 
         :type body: CreateFormRequest
         :rtype: FormResponse
@@ -355,7 +410,8 @@ class FormsApi:
 
         :param form_id: The ID of the form.
         :type form_id: UUID
-        :param version: The version of the form to retrieve. Use 'latest' for the most recent draft, 'published' for the last published version, or a specific version number.
+        :param version: The version of the form to retrieve. Use 'latest' for the most recent draft, 'published' for the
+            last published version, or a specific version number.
         :type version: str, optional
         :rtype: FormResponse
         """
@@ -379,6 +435,23 @@ class FormsApi:
         kwargs: Dict[str, Any] = {}
         return self._list_forms_endpoint.call_with_http_info(**kwargs)
 
+    def list_form_versions(
+        self,
+        form_id: UUID,
+    ) -> ListFormVersionsResponse:
+        """List form versions.
+
+        List all versions of a form.
+
+        :param form_id: The ID of the form.
+        :type form_id: UUID
+        :rtype: ListFormVersionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["form_id"] = form_id
+
+        return self._list_form_versions_endpoint.call_with_http_info(**kwargs)
+
     def publish_form(
         self,
         form_id: UUID,
@@ -399,6 +472,28 @@ class FormsApi:
         kwargs["body"] = body
 
         return self._publish_form_endpoint.call_with_http_info(**kwargs)
+
+    def revert_form_version(
+        self,
+        form_id: UUID,
+        version: int,
+    ) -> FormVersionResponse:
+        """Revert a form to a prior version.
+
+        Revert a form to a prior version by creating a new draft version copied from it.
+
+        :param form_id: The ID of the form.
+        :type form_id: UUID
+        :param version: The version number to revert to.
+        :type version: int
+        :rtype: FormVersionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["form_id"] = form_id
+
+        kwargs["version"] = version
+
+        return self._revert_form_version_endpoint.call_with_http_info(**kwargs)
 
     def update_form(
         self,
