@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -159,7 +160,7 @@ class SalesforceIntegrationApi:
         self,
         body: SalesforceIncidentsTemplateCreateRequest,
     ) -> SalesforceIncidentsTemplateResponse:
-        """Create a Salesforce incident template.
+        """Create a Salesforce incident template. **Deprecated**.
 
         Create a new Salesforce incident template for your organization. Template
         names must be unique within an organization.
@@ -171,13 +172,14 @@ class SalesforceIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_incident_template is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_incident_template_endpoint.call_with_http_info(**kwargs)
 
     def delete_incident_template(
         self,
         incident_template_id: str,
     ) -> None:
-        """Delete a Salesforce incident template.
+        """Delete a Salesforce incident template. **Deprecated**.
 
         Delete a single Salesforce incident template from your organization.
 
@@ -188,13 +190,14 @@ class SalesforceIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["incident_template_id"] = incident_template_id
 
+        warnings.warn("delete_incident_template is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_incident_template_endpoint.call_with_http_info(**kwargs)
 
     def delete_salesforce_organization(
         self,
         salesforce_org_id: str,
     ) -> None:
-        """Delete a connected Salesforce organization.
+        """Delete a connected Salesforce organization. **Deprecated**.
 
         Disconnect a Salesforce organization from your Datadog organization.
         This also deletes any incident templates referencing the organization.
@@ -206,24 +209,26 @@ class SalesforceIntegrationApi:
         kwargs: Dict[str, Any] = {}
         kwargs["salesforce_org_id"] = salesforce_org_id
 
+        warnings.warn("delete_salesforce_organization is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_salesforce_organization_endpoint.call_with_http_info(**kwargs)
 
     def get_incident_templates(
         self,
     ) -> SalesforceIncidentsTemplatesResponse:
-        """Get all Salesforce incident templates.
+        """Get all Salesforce incident templates. **Deprecated**.
 
         Get all Salesforce incident templates configured for your organization.
 
         :rtype: SalesforceIncidentsTemplatesResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("get_incident_templates is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_incident_templates_endpoint.call_with_http_info(**kwargs)
 
     def get_salesforce_organizations(
         self,
     ) -> SalesforceIncidentsOrganizationsResponse:
-        """Get all connected Salesforce organizations.
+        """Get all connected Salesforce organizations. **Deprecated**.
 
         Get all Salesforce organizations connected to your Datadog organization
         through the Salesforce integration. Salesforce organizations are connected
@@ -232,6 +237,7 @@ class SalesforceIntegrationApi:
         :rtype: SalesforceIncidentsOrganizationsResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("get_salesforce_organizations is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_salesforce_organizations_endpoint.call_with_http_info(**kwargs)
 
     def update_incident_template(
@@ -239,7 +245,7 @@ class SalesforceIntegrationApi:
         incident_template_id: str,
         body: SalesforceIncidentsTemplateUpdateRequest,
     ) -> SalesforceIncidentsTemplateResponse:
-        """Update a Salesforce incident template.
+        """Update a Salesforce incident template. **Deprecated**.
 
         Update a single Salesforce incident template in your organization.
 
@@ -254,4 +260,5 @@ class SalesforceIntegrationApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_incident_template is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_incident_template_endpoint.call_with_http_info(**kwargs)

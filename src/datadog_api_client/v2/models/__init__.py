@@ -5679,10 +5679,6 @@ from datadog_api_client.v2.model.monitor_config_policy_attribute_edit_request im
 from datadog_api_client.v2.model.monitor_config_policy_attribute_response import MonitorConfigPolicyAttributeResponse
 from datadog_api_client.v2.model.monitor_config_policy_create_data import MonitorConfigPolicyCreateData
 from datadog_api_client.v2.model.monitor_config_policy_create_request import MonitorConfigPolicyCreateRequest
-from datadog_api_client.v2.model.monitor_config_policy_downtime_policy import MonitorConfigPolicyDowntimePolicy
-from datadog_api_client.v2.model.monitor_config_policy_downtime_policy_create_request import (
-    MonitorConfigPolicyDowntimePolicyCreateRequest,
-)
 from datadog_api_client.v2.model.monitor_config_policy_edit_data import MonitorConfigPolicyEditData
 from datadog_api_client.v2.model.monitor_config_policy_edit_request import MonitorConfigPolicyEditRequest
 from datadog_api_client.v2.model.monitor_config_policy_list_response import MonitorConfigPolicyListResponse
@@ -15768,8 +15764,6 @@ __all__ = [
     "MonitorConfigPolicyAttributeResponse",
     "MonitorConfigPolicyCreateData",
     "MonitorConfigPolicyCreateRequest",
-    "MonitorConfigPolicyDowntimePolicy",
-    "MonitorConfigPolicyDowntimePolicyCreateRequest",
     "MonitorConfigPolicyEditData",
     "MonitorConfigPolicyEditRequest",
     "MonitorConfigPolicyListResponse",
