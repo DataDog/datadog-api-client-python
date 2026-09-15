@@ -37,6 +37,7 @@ class LogsIndexUpdateRequest(ModelNormal):
             "daily_limit": (int,),
             "daily_limit_reset": (LogsDailyLimitReset,),
             "daily_limit_warning_threshold_percentage": (float,),
+            "description": (str,),
             "disable_daily_limit": (bool,),
             "exclusion_filters": ([LogsExclusion],),
             "filter": (LogsFilter,),
@@ -49,6 +50,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         "daily_limit": "daily_limit",
         "daily_limit_reset": "daily_limit_reset",
         "daily_limit_warning_threshold_percentage": "daily_limit_warning_threshold_percentage",
+        "description": "description",
         "disable_daily_limit": "disable_daily_limit",
         "exclusion_filters": "exclusion_filters",
         "filter": "filter",
@@ -63,6 +65,7 @@ class LogsIndexUpdateRequest(ModelNormal):
         daily_limit: Union[int, UnsetType] = unset,
         daily_limit_reset: Union[LogsDailyLimitReset, UnsetType] = unset,
         daily_limit_warning_threshold_percentage: Union[float, UnsetType] = unset,
+        description: Union[str, UnsetType] = unset,
         disable_daily_limit: Union[bool, UnsetType] = unset,
         exclusion_filters: Union[List[LogsExclusion], UnsetType] = unset,
         num_flex_logs_retention_days: Union[int, UnsetType] = unset,
@@ -81,6 +84,10 @@ class LogsIndexUpdateRequest(ModelNormal):
 
         :param daily_limit_warning_threshold_percentage: A percentage threshold of the daily quota at which a Datadog warning event is generated.
         :type daily_limit_warning_threshold_percentage: float, optional
+
+        :param description: A description of the index, to help explain its purpose or configuration to other users.
+            Maximum length of 250 characters.
+        :type description: str, optional
 
         :param disable_daily_limit: If true, sets the ``daily_limit`` value to null and the index is not limited on a daily basis (any
             specified ``daily_limit`` value in the request is ignored). If false or omitted, the index's current
@@ -118,6 +125,8 @@ class LogsIndexUpdateRequest(ModelNormal):
             kwargs["daily_limit_reset"] = daily_limit_reset
         if daily_limit_warning_threshold_percentage is not unset:
             kwargs["daily_limit_warning_threshold_percentage"] = daily_limit_warning_threshold_percentage
+        if description is not unset:
+            kwargs["description"] = description
         if disable_daily_limit is not unset:
             kwargs["disable_daily_limit"] = disable_daily_limit
         if exclusion_filters is not unset:
