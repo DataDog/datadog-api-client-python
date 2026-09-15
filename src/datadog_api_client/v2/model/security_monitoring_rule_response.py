@@ -15,6 +15,9 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         """
         Create a new rule.
 
+        :param blocking: Whether the rule blocks requests.
+        :type blocking: bool, optional
+
         :param calculated_fields: Calculated fields. Only allowed for scheduled rules - in other words, when schedulingOptions is also defined.
         :type calculated_fields: [CalculatedField], optional
 
@@ -30,14 +33,23 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param creation_author_id: User ID of the user who created the rule.
         :type creation_author_id: int, optional
 
+        :param creator: A user.
+        :type creator: SecurityMonitoringUser, optional
+
         :param custom_message: Custom/Overridden message for generated signals (used in case of Default rule update).
         :type custom_message: str, optional
 
         :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
         :type custom_name: str, optional
 
+        :param data_source: Source of events, either logs, audit trail, security signals, or Datadog events. `app_sec_spans` is deprecated in favor of `spans`.
+        :type data_source: SecurityMonitoringStandardDataSource, optional
+
         :param default_tags: Default Tags for default rules (included in tags)
         :type default_tags: [str], optional
+
+        :param dependencies: Dependencies used by the rule.
+        :type dependencies: [str], optional
 
         :param deprecation_date: When the rule will be deprecated, timestamp in milliseconds.
         :type deprecation_date: int, optional
@@ -54,17 +66,29 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param id: The ID of the rule.
         :type id: str, optional
 
+        :param is_beta: Whether the rule is in beta.
+        :type is_beta: bool, optional
+
         :param is_default: Whether the rule is included by default.
         :type is_default: bool, optional
 
         :param is_deleted: Whether the rule has been deleted.
         :type is_deleted: bool, optional
 
+        :param is_deprecated: Whether the rule is deprecated.
+        :type is_deprecated: bool, optional
+
         :param is_enabled: Whether the rule is enabled.
         :type is_enabled: bool, optional
 
+        :param is_partner: Whether the rule is provided by a partner.
+        :type is_partner: bool, optional
+
         :param message: Message for generated signals.
         :type message: str, optional
+
+        :param metadata: Additional metadata about the rule.
+        :type metadata: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param name: The name of the rule.
         :type name: str, optional
@@ -95,6 +119,9 @@ class SecurityMonitoringRuleResponse(ModelComposed):
 
         :param updated_at: The date the rule was last updated, in milliseconds.
         :type updated_at: int, optional
+
+        :param updater: A user.
+        :type updater: SecurityMonitoringUser, optional
 
         :param version: The version of the rule.
         :type version: int, optional
