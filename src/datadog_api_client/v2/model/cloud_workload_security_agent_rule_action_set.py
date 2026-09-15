@@ -33,7 +33,9 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
             "field": (str,),
             "inherited": (bool,),
             "name": (str,),
+            "private": (bool,),
             "scope": (str,),
+            "scope_field": (str,),
             "size": (int,),
             "ttl": (int,),
             "value": (CloudWorkloadSecurityAgentRuleActionSetValue,),
@@ -46,7 +48,9 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         "field": "field",
         "inherited": "inherited",
         "name": "name",
+        "private": "private",
         "scope": "scope",
+        "scope_field": "scope_field",
         "size": "size",
         "ttl": "ttl",
         "value": "value",
@@ -60,7 +64,9 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         field: Union[str, UnsetType] = unset,
         inherited: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        private: Union[bool, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
+        scope_field: Union[str, UnsetType] = unset,
         size: Union[int, UnsetType] = unset,
         ttl: Union[int, UnsetType] = unset,
         value: Union[CloudWorkloadSecurityAgentRuleActionSetValue, str, int, bool, UnsetType] = unset,
@@ -87,8 +93,14 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
         :param name: The name of the set action
         :type name: str, optional
 
+        :param private: Whether the value of the set action is private.
+        :type private: bool, optional
+
         :param scope: The scope of the set action.
         :type scope: str, optional
+
+        :param scope_field: The scope field of the set action.
+        :type scope_field: str, optional
 
         :param size: The size of the set action.
         :type size: int, optional
@@ -111,8 +123,12 @@ class CloudWorkloadSecurityAgentRuleActionSet(ModelNormal):
             kwargs["inherited"] = inherited
         if name is not unset:
             kwargs["name"] = name
+        if private is not unset:
+            kwargs["private"] = private
         if scope is not unset:
             kwargs["scope"] = scope
+        if scope_field is not unset:
+            kwargs["scope_field"] = scope_field
         if size is not unset:
             kwargs["size"] = size
         if ttl is not unset:
