@@ -43,7 +43,7 @@ class FeatureFlagsApi:
         self._archive_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (FeatureFlagResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/archive",
                 "operation_id": "archive_feature_flag",
                 "http_method": "POST",
@@ -66,7 +66,7 @@ class FeatureFlagsApi:
         self._create_allocations_for_feature_flag_in_environment_endpoint = _Endpoint(
             settings={
                 "response_type": (AllocationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/allocations",
                 "operation_id": "create_allocations_for_feature_flag_in_environment",
                 "http_method": "POST",
@@ -98,7 +98,7 @@ class FeatureFlagsApi:
         self._create_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (FeatureFlagResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags",
                 "operation_id": "create_feature_flag",
                 "http_method": "POST",
@@ -118,7 +118,7 @@ class FeatureFlagsApi:
         self._create_feature_flags_environment_endpoint = _Endpoint(
             settings={
                 "response_type": (EnvironmentResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/environments",
                 "operation_id": "create_feature_flags_environment",
                 "http_method": "POST",
@@ -138,7 +138,7 @@ class FeatureFlagsApi:
         self._create_variant_for_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (Variant,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants",
                 "operation_id": "create_variant_for_feature_flag",
                 "http_method": "POST",
@@ -164,7 +164,7 @@ class FeatureFlagsApi:
         self._delete_feature_flags_environment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/environments/{environment_id}",
                 "operation_id": "delete_feature_flags_environment",
                 "http_method": "DELETE",
@@ -187,7 +187,7 @@ class FeatureFlagsApi:
         self._delete_variant_from_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants/{variant_id}",
                 "operation_id": "delete_variant_from_feature_flag",
                 "http_method": "DELETE",
@@ -216,7 +216,7 @@ class FeatureFlagsApi:
         self._disable_feature_flag_environment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/disable",
                 "operation_id": "disable_feature_flag_environment",
                 "http_method": "POST",
@@ -245,7 +245,7 @@ class FeatureFlagsApi:
         self._enable_feature_flag_environment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/enable",
                 "operation_id": "enable_feature_flag_environment",
                 "http_method": "POST",
@@ -274,7 +274,7 @@ class FeatureFlagsApi:
         self._get_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (FeatureFlagResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}",
                 "operation_id": "get_feature_flag",
                 "http_method": "GET",
@@ -297,7 +297,7 @@ class FeatureFlagsApi:
         self._get_feature_flags_environment_endpoint = _Endpoint(
             settings={
                 "response_type": (EnvironmentResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/environments/{environment_id}",
                 "operation_id": "get_feature_flags_environment",
                 "http_method": "GET",
@@ -320,7 +320,7 @@ class FeatureFlagsApi:
         self._list_feature_flags_endpoint = _Endpoint(
             settings={
                 "response_type": (ListFeatureFlagsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags",
                 "operation_id": "list_feature_flags",
                 "http_method": "GET",
@@ -364,7 +364,7 @@ class FeatureFlagsApi:
         self._list_feature_flags_environments_endpoint = _Endpoint(
             settings={
                 "response_type": (ListEnvironmentsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/environments",
                 "operation_id": "list_feature_flags_environments",
                 "http_method": "GET",
@@ -413,7 +413,7 @@ class FeatureFlagsApi:
         self._pause_exposure_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (AllocationExposureScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/pause",
                 "operation_id": "pause_exposure_schedule",
                 "http_method": "POST",
@@ -436,7 +436,7 @@ class FeatureFlagsApi:
         self._resume_exposure_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (AllocationExposureScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/resume",
                 "operation_id": "resume_exposure_schedule",
                 "http_method": "POST",
@@ -459,7 +459,7 @@ class FeatureFlagsApi:
         self._start_exposure_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (AllocationExposureScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/start",
                 "operation_id": "start_exposure_schedule",
                 "http_method": "POST",
@@ -482,7 +482,7 @@ class FeatureFlagsApi:
         self._stop_exposure_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (AllocationExposureScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/exposure-schedules/{exposure_schedule_id}/stop",
                 "operation_id": "stop_exposure_schedule",
                 "http_method": "POST",
@@ -505,7 +505,7 @@ class FeatureFlagsApi:
         self._unarchive_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (FeatureFlagResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/unarchive",
                 "operation_id": "unarchive_feature_flag",
                 "http_method": "POST",
@@ -528,7 +528,7 @@ class FeatureFlagsApi:
         self._update_allocations_for_feature_flag_in_environment_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAllocationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/environments/{environment_id}/allocations",
                 "operation_id": "update_allocations_for_feature_flag_in_environment",
                 "http_method": "PUT",
@@ -560,7 +560,7 @@ class FeatureFlagsApi:
         self._update_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (FeatureFlagResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}",
                 "operation_id": "update_feature_flag",
                 "http_method": "PUT",
@@ -586,7 +586,7 @@ class FeatureFlagsApi:
         self._update_feature_flags_environment_endpoint = _Endpoint(
             settings={
                 "response_type": (EnvironmentResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/environments/{environment_id}",
                 "operation_id": "update_feature_flags_environment",
                 "http_method": "PUT",
@@ -612,7 +612,7 @@ class FeatureFlagsApi:
         self._update_variant_for_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (Variant,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants/{variant_id}",
                 "operation_id": "update_variant_for_feature_flag",
                 "http_method": "PUT",
