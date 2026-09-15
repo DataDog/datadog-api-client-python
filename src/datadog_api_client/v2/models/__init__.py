@@ -894,6 +894,7 @@ from datadog_api_client.v2.model.budget_with_entries_data_attributes_entries_ite
     BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems,
 )
 from datadog_api_client.v2.model.budget_with_entries_data_type import BudgetWithEntriesDataType
+from datadog_api_client.v2.model.budget_with_entries_meta import BudgetWithEntriesMeta
 from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request import BulkDeleteAppsDatastoreItemsRequest
 from datadog_api_client.v2.model.bulk_delete_apps_datastore_items_request_data import (
     BulkDeleteAppsDatastoreItemsRequestData,
@@ -12250,6 +12251,7 @@ __all__ = [
     "BudgetWithEntriesDataAttributesEntriesItemsCosts",
     "BudgetWithEntriesDataAttributesEntriesItemsTagFiltersItems",
     "BudgetWithEntriesDataType",
+    "BudgetWithEntriesMeta",
     "BulkDeleteAppsDatastoreItemsRequest",
     "BulkDeleteAppsDatastoreItemsRequestData",
     "BulkDeleteAppsDatastoreItemsRequestDataAttributes",
