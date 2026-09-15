@@ -38,6 +38,7 @@ body = CreateWorkflowRequest(
             run_as=WorkflowRunAsOwner(
                 type=WorkflowRunAsOwnerType.OWNER,
             ),
+            sensitive_privileges=True,
             spec=Spec(
                 connection_envs=[
                     ConnectionEnv(

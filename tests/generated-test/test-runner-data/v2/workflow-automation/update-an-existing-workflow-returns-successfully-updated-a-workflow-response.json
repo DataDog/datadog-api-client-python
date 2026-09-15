@@ -21,6 +21,7 @@
             "runAs": {
               "type": "owner"
             },
+            "sensitivePrivileges": false,
             "spec": {
               "connectionEnvs": [
                 {
