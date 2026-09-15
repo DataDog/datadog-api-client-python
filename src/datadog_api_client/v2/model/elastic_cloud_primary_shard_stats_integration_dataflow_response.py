@@ -42,9 +42,9 @@ class ElasticCloudPrimaryShardStatsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Elastic Cloud primary shard stats dataflow.
+        Metrics covering only the cluster's primary shards.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.

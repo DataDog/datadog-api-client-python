@@ -42,9 +42,9 @@ class ElasticCloudPendingTaskStatsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Elastic Cloud pending task stats dataflow.
+        Metrics for cluster-level changes that have been submitted but not yet executed.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.

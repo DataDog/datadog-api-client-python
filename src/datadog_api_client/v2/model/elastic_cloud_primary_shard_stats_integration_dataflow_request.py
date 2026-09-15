@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
 
 class ElasticCloudPrimaryShardStatsIntegrationDataflowRequest(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "enabled": (bool,),
@@ -26,9 +30,9 @@ class ElasticCloudPrimaryShardStatsIntegrationDataflowRequest(ModelNormal):
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
-        The Elastic Cloud primary shard stats dataflow.
+        Metrics covering only the cluster's primary shards.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether Datadog collects this data. Defaults to ``false`` ; set to ``true`` to start collection.
         :type enabled: bool, optional
         """
         if enabled is not unset:

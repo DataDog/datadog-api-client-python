@@ -65,7 +65,7 @@ class TwilioIntegrationAccountResponseAttributes(ModelNormal):
         :param authentication: Authentication configured on the Twilio integration account.
         :type authentication: TwilioIntegrationAccountAuthenticationResponse, optional
 
-        :param dataflows: Dataflows configured on the Twilio integration account, keyed by dataflow id.
+        :param dataflows: Data Datadog collects from Twilio, keyed by dataflow id.
         :type dataflows: TwilioIntegrationDataflowsResponse, optional
 
         :param name: Human-readable name of the Twilio integration account.

@@ -115,30 +115,30 @@ class ElasticCloudIntegrationDataflowsResponse(ModelNormal):
         **kwargs,
     ):
         """
-        Dataflows configured on the Elastic Cloud integration account, keyed by dataflow id.
+        Data Datadog collects from Elastic Cloud, keyed by dataflow id.
 
-        :param elastic_cloud_detailed_index_stats: The Elastic Cloud detailed index stats dataflow.
+        :param elastic_cloud_detailed_index_stats: Primary shard metrics broken down per index, rather than aggregated across the cluster.
         :type elastic_cloud_detailed_index_stats: ElasticCloudDetailedIndexStatsIntegrationDataflowResponse, optional
 
-        :param elastic_cloud_index_stats: The Elastic Cloud index stats dataflow.
+        :param elastic_cloud_index_stats: Metrics for individual indices. Only the indices granted to the role of the user in ``authentication`` are collected.
         :type elastic_cloud_index_stats: ElasticCloudIndexStatsIntegrationDataflowResponse, optional
 
-        :param elastic_cloud_metrics: The Elastic Cloud metrics dataflow.
+        :param elastic_cloud_metrics: Node-level statistics for the clusters in your deployment, such as the number of nodes and the number of documents on each node. This is the integration's baseline collection: it is always on and cannot be turned off, which is why it appears in responses only.
         :type elastic_cloud_metrics: ElasticCloudMetricsIntegrationDataflowResponse, optional
 
-        :param elastic_cloud_pending_task_stats: The Elastic Cloud pending task stats dataflow.
+        :param elastic_cloud_pending_task_stats: Metrics for cluster-level changes that have been submitted but not yet executed.
         :type elastic_cloud_pending_task_stats: ElasticCloudPendingTaskStatsIntegrationDataflowResponse, optional
 
-        :param elastic_cloud_primary_shard_graceful_timeout: The Elastic Cloud primary shard graceful timeout dataflow.
+        :param elastic_cloud_primary_shard_graceful_timeout: Tolerance for slow primary shard requests, keeping the rest of the collection running when a primary shard request times out instead of failing the run. Only has an effect alongside ``elastic-cloud-primary-shard-stats``.
         :type elastic_cloud_primary_shard_graceful_timeout: ElasticCloudPrimaryShardGracefulTimeoutIntegrationDataflowResponse, optional
 
-        :param elastic_cloud_primary_shard_stats: The Elastic Cloud primary shard stats dataflow.
+        :param elastic_cloud_primary_shard_stats: Metrics covering only the cluster's primary shards.
         :type elastic_cloud_primary_shard_stats: ElasticCloudPrimaryShardStatsIntegrationDataflowResponse, optional
 
-        :param elastic_cloud_shard_allocation_stats: The Elastic Cloud shard allocation stats dataflow.
+        :param elastic_cloud_shard_allocation_stats: Metrics for how many shards are allocated to each data node, and the disk space they use.
         :type elastic_cloud_shard_allocation_stats: ElasticCloudShardAllocationStatsIntegrationDataflowResponse, optional
 
-        :param elastic_cloud_slm_stats: The Elastic Cloud snapshot lifecycle management stats dataflow.
+        :param elastic_cloud_slm_stats: Metrics about the actions taken by snapshot lifecycle management. Requires the ``read_slm`` Elasticsearch cluster privilege on the role of the user in ``authentication`` ; without it this dataflow collects no data.
         :type elastic_cloud_slm_stats: ElasticCloudSlmStatsIntegrationDataflowResponse, optional
         """
         if elastic_cloud_detailed_index_stats is not unset:

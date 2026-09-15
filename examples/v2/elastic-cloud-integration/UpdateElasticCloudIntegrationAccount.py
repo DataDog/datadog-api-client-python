@@ -3,7 +3,7 @@ Update an Elastic Cloud integration account returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.elastic_cloud_integration_accounts_api import ElasticCloudIntegrationAccountsApi
+from datadog_api_client.v2.api.elastic_cloud_integration_api import ElasticCloudIntegrationApi
 from datadog_api_client.v2.model.elastic_cloud_detailed_index_stats_integration_dataflow_request import (
     ElasticCloudDetailedIndexStatsIntegrationDataflowRequest,
 )
@@ -89,7 +89,7 @@ body = ElasticCloudIntegrationAccountUpdateRequest(
 configuration = Configuration()
 configuration.unstable_operations["update_elastic_cloud_integration_account"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = ElasticCloudIntegrationAccountsApi(api_client)
+    api_instance = ElasticCloudIntegrationApi(api_client)
     response = api_instance.update_elastic_cloud_integration_account(account_id="account_id", body=body)
 
     print(response)

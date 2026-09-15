@@ -1,17 +1,14 @@
-@endpoint(elastic-cloud-integration-accounts) @endpoint(elastic-cloud-integration-accounts-v2)
-Feature: Elastic Cloud Integration Accounts
-  Manage your Datadog Elastic Cloud integration accounts directly through
-  the Datadog API. Create, update, and delete accounts, configure
-  authentication and settings, and enable or disable dataflows such as
-  cluster metrics, index stats, shard stats, pending tasks, and snapshot
-  lifecycle management stats. See the [Elastic Cloud integration
-  page](https://docs.datadoghq.com/integrations/elastic-cloud/) for more
-  information.
+@endpoint(elastic-cloud-integration) @endpoint(elastic-cloud-integration-v2)
+Feature: Elastic Cloud Integration
+  Manage your Datadog Elastic Cloud integration accounts and account
+  resources directly through the Datadog API. See the [Elastic Cloud
+  integration page](https://docs.datadoghq.com/integrations/elastic-cloud/)
+  for more information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "ElasticCloudIntegrationAccounts" API
+    And an instance of "ElasticCloudIntegration" API
 
   @generated @skip @team:DataDog/saas-integrations
   Scenario: Create an Elastic Cloud integration account returns "Bad Request" response

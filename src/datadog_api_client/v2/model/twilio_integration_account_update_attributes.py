@@ -65,7 +65,7 @@ class TwilioIntegrationAccountUpdateAttributes(ModelNormal):
         :param authentication: Authentication for updating the Twilio integration account. Exactly one method is set.
         :type authentication: TwilioIntegrationAccountAuthenticationUpdate, optional
 
-        :param dataflows: Dataflows to configure on the Twilio integration account, keyed by dataflow id.
+        :param dataflows: Data Datadog collects from Twilio, keyed by dataflow id. Each dataflow turns on a distinct kind of collection: set ``enabled`` to start or stop it. Defaults listed on each dataflow apply when the account is created; on update, omitted fields keep their current values. Where a dataflow depends on a Twilio feature being enabled, that prerequisite is noted on the dataflow; a dataflow enabled without it is stored but collects no data.
         :type dataflows: TwilioIntegrationDataflowsRequest, optional
 
         :param name: Human-readable name of the Twilio integration account.

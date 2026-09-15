@@ -69,7 +69,7 @@ class ElasticCloudIntegrationAccountResponseAttributes(ModelNormal):
         :param authentication: Authentication configured on the Elastic Cloud integration account.
         :type authentication: ElasticCloudIntegrationAccountAuthenticationResponse, optional
 
-        :param dataflows: Dataflows configured on the Elastic Cloud integration account, keyed by dataflow id.
+        :param dataflows: Data Datadog collects from Elastic Cloud, keyed by dataflow id.
         :type dataflows: ElasticCloudIntegrationDataflowsResponse, optional
 
         :param name: Human-readable name of the Elastic Cloud integration account.

@@ -1,16 +1,14 @@
-@endpoint(twilio-integration-accounts) @endpoint(twilio-integration-accounts-v2)
-Feature: Twilio Integration Accounts
-  Manage your Datadog Twilio integration accounts directly through the
-  Datadog API. Create, update, and delete accounts, configure authentication
-  and settings, and enable or disable dataflows such as message logs, event
-  logs, alerts, call summaries, and Cloud Cost Management metrics. See the
-  [Twilio integration page](https://docs.datadoghq.com/integrations/twilio/)
-  for more information.
+@endpoint(twilio-integration) @endpoint(twilio-integration-v2)
+Feature: Twilio Integration
+  Manage your Datadog Twilio integration accounts and account resources
+  directly through the Datadog API. See the [Twilio integration
+  page](https://docs.datadoghq.com/integrations/twilio/) for more
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "TwilioIntegrationAccounts" API
+    And an instance of "TwilioIntegration" API
 
   @generated @skip @team:DataDog/saas-integrations
   Scenario: Create a Twilio integration account returns "Bad Request" response

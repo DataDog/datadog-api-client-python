@@ -21,12 +21,10 @@ from datadog_api_client.v2.model.elastic_cloud_integration_account_update_reques
 )
 
 
-class ElasticCloudIntegrationAccountsApi:
+class ElasticCloudIntegrationApi:
     """
-    Manage your Datadog Elastic Cloud integration accounts directly through the Datadog API.
-    Create, update, and delete accounts, configure authentication and settings, and
-    enable or disable dataflows such as cluster metrics, index stats, shard stats,
-    pending tasks, and snapshot lifecycle management stats. See the
+    Manage your Datadog Elastic Cloud integration accounts and account resources
+    directly through the Datadog API. See the
     `Elastic Cloud integration page <https://docs.datadoghq.com/integrations/elastic-cloud/>`_ for
     more information.
     """
