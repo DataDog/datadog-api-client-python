@@ -28,7 +28,9 @@ body = BudgetWithEntries(
                 forecast=None,
                 ootb_forecast=None,
             ),
-            costs_unit=BudgetAttributesCostsUnit(),
+            costs_unit=BudgetAttributesCostsUnit(
+                id=42,
+            ),
             created_at=1738258683590,
             created_by="00000000-0a0a-0a0a-aaa0-00000000000a",
             end_month=202502,
