@@ -31,6 +31,7 @@ class WorkflowListItemAttributes(ModelNormal):
             "name": (str,),
             "published": (bool,),
             "run_as_user_mode": (WorkflowRunAsUserMode,),
+            "sensitive_privileges": (bool,),
             "spec": (Spec,),
             "tags": ([str],),
             "updated_at": (datetime,),
@@ -42,6 +43,7 @@ class WorkflowListItemAttributes(ModelNormal):
         "name": "name",
         "published": "published",
         "run_as_user_mode": "runAsUserMode",
+        "sensitive_privileges": "sensitivePrivileges",
         "spec": "spec",
         "tags": "tags",
         "updated_at": "updatedAt",
@@ -58,6 +60,7 @@ class WorkflowListItemAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         published: Union[bool, UnsetType] = unset,
         run_as_user_mode: Union[WorkflowRunAsUserMode, UnsetType] = unset,
+        sensitive_privileges: Union[bool, UnsetType] = unset,
         spec: Union[Spec, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
@@ -81,6 +84,9 @@ class WorkflowListItemAttributes(ModelNormal):
         :param run_as_user_mode: The effective type of identity used to run the workflow.
         :type run_as_user_mode: WorkflowRunAsUserMode, optional
 
+        :param sensitive_privileges: Whether the workflow requires sensitive privileges to run. Only the workflow owner can update this field. This allows it to run actions that use `Execution Policies <https://docs.datadoghq.com/actions/private_actions/execution_policies/>`_.
+        :type sensitive_privileges: bool, optional
+
         :param spec: A complete Workflow Automation definition, including its triggers, steps, and connections.
         :type spec: Spec, optional
 
@@ -98,6 +104,8 @@ class WorkflowListItemAttributes(ModelNormal):
             kwargs["published"] = published
         if run_as_user_mode is not unset:
             kwargs["run_as_user_mode"] = run_as_user_mode
+        if sensitive_privileges is not unset:
+            kwargs["sensitive_privileges"] = sensitive_privileges
         if spec is not unset:
             kwargs["spec"] = spec
         if tags is not unset:

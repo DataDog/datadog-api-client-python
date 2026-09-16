@@ -42,6 +42,7 @@ body = UpdateWorkflowRequest(
             run_as=WorkflowRunAsOwner(
                 type=WorkflowRunAsOwnerType.OWNER,
             ),
+            sensitive_privileges=False,
             spec=Spec(
                 connection_envs=[
                     ConnectionEnv(
