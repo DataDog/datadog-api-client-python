@@ -43,6 +43,7 @@ class BudgetAttributes(ModelNormal):
             "name": (str,),
             "org_id": (int,),
             "start_month": (int,),
+            "tags": ([str],),
             "total_amount": (float,),
             "updated_at": (int,),
             "updated_by": (str,),
@@ -61,6 +62,7 @@ class BudgetAttributes(ModelNormal):
         "name": "name",
         "org_id": "org_id",
         "start_month": "start_month",
+        "tags": "tags",
         "total_amount": "total_amount",
         "updated_at": "updated_at",
         "updated_by": "updated_by",
@@ -80,6 +82,7 @@ class BudgetAttributes(ModelNormal):
         name: Union[str, UnsetType] = unset,
         org_id: Union[int, UnsetType] = unset,
         start_month: Union[int, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         total_amount: Union[float, UnsetType] = unset,
         updated_at: Union[int, UnsetType] = unset,
         updated_by: Union[str, UnsetType] = unset,
@@ -124,6 +127,9 @@ class BudgetAttributes(ModelNormal):
         :param start_month: The month when the budget starts.
         :type start_month: int, optional
 
+        :param tags: The tag keys used to group costs for the budget.
+        :type tags: [str], optional
+
         :param total_amount: The sum of all budget entries' amounts.
         :type total_amount: float, optional
 
@@ -157,6 +163,8 @@ class BudgetAttributes(ModelNormal):
             kwargs["org_id"] = org_id
         if start_month is not unset:
             kwargs["start_month"] = start_month
+        if tags is not unset:
+            kwargs["tags"] = tags
         if total_amount is not unset:
             kwargs["total_amount"] = total_amount
         if updated_at is not unset:
