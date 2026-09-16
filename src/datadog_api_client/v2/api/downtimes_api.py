@@ -102,6 +102,11 @@ class DowntimesApi:
                     "attribute": "include",
                     "location": "query",
                 },
+                "with_run_as": {
+                    "openapi_types": (bool,),
+                    "attribute": "with_run_as",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -246,6 +251,7 @@ class DowntimesApi:
         downtime_id: str,
         *,
         include: Union[str, UnsetType] = unset,
+        with_run_as: Union[bool, UnsetType] = unset,
     ) -> DowntimeResponse:
         """Get a downtime.
 
@@ -256,6 +262,11 @@ class DowntimesApi:
         :param include: Comma-separated list of resource paths for related resources to include in the response. Supported resource
             paths are ``created_by`` and ``monitor``.
         :type include: str, optional
+        :param with_run_as: If ``true`` , include the ``run_as`` attribute in the response, which lists the principals allowed to
+            act on behalf of the downtime.
+
+            **Note** : This feature is currently in Preview and may not be available for all organizations.
+        :type with_run_as: bool, optional
         :rtype: DowntimeResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -263,6 +274,9 @@ class DowntimesApi:
 
         if include is not unset:
             kwargs["include"] = include
+
+        if with_run_as is not unset:
+            kwargs["with_run_as"] = with_run_as
 
         return self._get_downtime_endpoint.call_with_http_info(**kwargs)
 

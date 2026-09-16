@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.downtime_monitor_identifier import DowntimeMonitorIdentifier
     from datadog_api_client.v2.model.downtime_notify_end_state_types import DowntimeNotifyEndStateTypes
     from datadog_api_client.v2.model.downtime_notify_end_state_actions import DowntimeNotifyEndStateActions
+    from datadog_api_client.v2.model.downtime_run_as_item import DowntimeRunAsItem
     from datadog_api_client.v2.model.downtime_schedule_response import DowntimeScheduleResponse
     from datadog_api_client.v2.model.downtime_status import DowntimeStatus
     from datadog_api_client.v2.model.downtime_monitor_identifier_id import DowntimeMonitorIdentifierId
@@ -33,6 +34,7 @@ class DowntimeResponseAttributes(ModelNormal):
         from datadog_api_client.v2.model.downtime_monitor_identifier import DowntimeMonitorIdentifier
         from datadog_api_client.v2.model.downtime_notify_end_state_types import DowntimeNotifyEndStateTypes
         from datadog_api_client.v2.model.downtime_notify_end_state_actions import DowntimeNotifyEndStateActions
+        from datadog_api_client.v2.model.downtime_run_as_item import DowntimeRunAsItem
         from datadog_api_client.v2.model.downtime_schedule_response import DowntimeScheduleResponse
         from datadog_api_client.v2.model.downtime_status import DowntimeStatus
 
@@ -46,6 +48,7 @@ class DowntimeResponseAttributes(ModelNormal):
             "mute_first_recovery_notification": (bool,),
             "notify_end_states": ([DowntimeNotifyEndStateTypes],),
             "notify_end_types": ([DowntimeNotifyEndStateActions],),
+            "run_as": ([DowntimeRunAsItem],),
             "schedule": (DowntimeScheduleResponse,),
             "scope": (str,),
             "status": (DowntimeStatus,),
@@ -61,9 +64,13 @@ class DowntimeResponseAttributes(ModelNormal):
         "mute_first_recovery_notification": "mute_first_recovery_notification",
         "notify_end_states": "notify_end_states",
         "notify_end_types": "notify_end_types",
+        "run_as": "run_as",
         "schedule": "schedule",
         "scope": "scope",
         "status": "status",
+    }
+    read_only_vars = {
+        "run_as",
     }
 
     def __init__(
@@ -79,6 +86,7 @@ class DowntimeResponseAttributes(ModelNormal):
         mute_first_recovery_notification: Union[bool, UnsetType] = unset,
         notify_end_states: Union[List[DowntimeNotifyEndStateTypes], UnsetType] = unset,
         notify_end_types: Union[List[DowntimeNotifyEndStateActions], UnsetType] = unset,
+        run_as: Union[List[DowntimeRunAsItem], UnsetType] = unset,
         schedule: Union[
             DowntimeScheduleResponse, DowntimeScheduleRecurrencesResponse, DowntimeScheduleOneTimeResponse, UnsetType
         ] = unset,
@@ -118,6 +126,11 @@ class DowntimeResponseAttributes(ModelNormal):
         :param notify_end_types: Actions that will trigger a monitor notification if the downtime is in the ``notify_end_types`` state.
         :type notify_end_types: [DowntimeNotifyEndStateActions], optional
 
+        :param run_as: The principals (users, roles, or teams) allowed to act on behalf of the downtime.
+
+            **Note** : This feature is currently in Preview and may not be available for all organizations.
+        :type run_as: [DowntimeRunAsItem], optional
+
         :param schedule: The schedule that defines when the monitor starts, stops, and recurs. There are two types of schedules:
             one-time and recurring. Recurring schedules may have up to five RRULE-based recurrences. If no schedules are
             provided, the downtime will begin immediately and never end.
@@ -147,6 +160,8 @@ class DowntimeResponseAttributes(ModelNormal):
             kwargs["notify_end_states"] = notify_end_states
         if notify_end_types is not unset:
             kwargs["notify_end_types"] = notify_end_types
+        if run_as is not unset:
+            kwargs["run_as"] = run_as
         if schedule is not unset:
             kwargs["schedule"] = schedule
         if scope is not unset:
