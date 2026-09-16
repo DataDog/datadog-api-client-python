@@ -23,6 +23,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
     from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
     from datadog_api_client.v1.model.distribution_widget_definition import DistributionWidgetDefinition
+    from datadog_api_client.v1.model.embedded_app_widget_definition import EmbeddedAppWidgetDefinition
     from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
     from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
     from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
@@ -90,6 +91,7 @@ class Widget(ModelNormal):
             CheckStatusWidgetDefinition,
             CohortWidgetDefinition,
             DistributionWidgetDefinition,
+            EmbeddedAppWidgetDefinition,
             EventStreamWidgetDefinition,
             EventTimelineWidgetDefinition,
             FreeTextWidgetDefinition,
