@@ -18,7 +18,7 @@ class BudgetAttributesCostsUnit(ModelNormal):
     def openapi_types(_):
         return {
             "family": (str,),
-            "id": (str,),
+            "id": (int,),
             "name": (str,),
             "plural": (str,),
             "scale_factor": (float,),
@@ -37,7 +37,7 @@ class BudgetAttributesCostsUnit(ModelNormal):
     def __init__(
         self_,
         family: Union[str, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         plural: Union[str, UnsetType] = unset,
         scale_factor: Union[float, UnsetType] = unset,
@@ -51,7 +51,7 @@ class BudgetAttributesCostsUnit(ModelNormal):
         :type family: str, optional
 
         :param id: The unique identifier for the unit.
-        :type id: str, optional
+        :type id: int, optional
 
         :param name: The full name of the unit.
         :type name: str, optional
