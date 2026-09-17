@@ -17,6 +17,8 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
     from datadog_api_client.v2.model.metric_tag_configuration_metric_types import MetricTagConfigurationMetricTypes
+    from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
+    from datadog_api_client.v2.model.metric_available_aggr_functions import MetricAvailableAggrFunctions
 
 
 class MetricTagConfigurationAttributes(ModelNormal):
@@ -47,7 +49,9 @@ class MetricTagConfigurationAttributes(ModelNormal):
 
     def __init__(
         self_,
-        aggregations: Union[MetricCustomAggregations, UnsetType] = unset,
+        aggregations: Union[
+            MetricCustomAggregations, List[MetricCustomAggregation], List[MetricAvailableAggrFunctions], UnsetType
+        ] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         exclude_tags_mode: Union[bool, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,

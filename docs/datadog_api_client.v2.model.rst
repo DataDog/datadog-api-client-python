@@ -27647,6 +27647,13 @@ datadog\_api\_client.v2.model.metric\_assets\_response module
    :members:
    :show-inheritance:
 
+datadog\_api\_client.v2.model.metric\_available\_aggr\_functions module
+-----------------------------------------------------------------------
+
+.. automodule:: datadog_api_client.v2.model.metric_available_aggr_functions
+   :members:
+   :show-inheritance:
+
 datadog\_api\_client.v2.model.metric\_bulk\_configure\_tags\_type module
 ------------------------------------------------------------------------
 
