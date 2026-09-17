@@ -21,7 +21,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.twilio_integration_account_settings_update import (
         TwilioIntegrationAccountSettingsUpdate,
     )
-    from datadog_api_client.v2.model.integration_account_basic_auth_update import IntegrationAccountBasicAuthUpdate
+    from datadog_api_client.v2.model.twilio_integration_account_basic_auth_update import (
+        TwilioIntegrationAccountBasicAuthUpdate,
+    )
 
 
 class TwilioIntegrationAccountUpdateAttributes(ModelNormal):
@@ -52,7 +54,7 @@ class TwilioIntegrationAccountUpdateAttributes(ModelNormal):
     def __init__(
         self_,
         authentication: Union[
-            TwilioIntegrationAccountAuthenticationUpdate, IntegrationAccountBasicAuthUpdate, UnsetType
+            TwilioIntegrationAccountAuthenticationUpdate, TwilioIntegrationAccountBasicAuthUpdate, UnsetType
         ] = unset,
         dataflows: Union[TwilioIntegrationDataflowsRequest, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -65,7 +67,7 @@ class TwilioIntegrationAccountUpdateAttributes(ModelNormal):
         :param authentication: Authentication for updating the Twilio integration account. Exactly one method is set.
         :type authentication: TwilioIntegrationAccountAuthenticationUpdate, optional
 
-        :param dataflows: Dataflows to configure on the Twilio integration account, keyed by dataflow id.
+        :param dataflows: Data Datadog collects from Twilio, keyed by dataflow id. Each dataflow turns on a distinct kind of collection: set ``enabled`` to start or stop it. Defaults listed on each dataflow apply when the account is created; on update, omitted fields keep their current values. Where a dataflow depends on a Twilio feature being enabled, that prerequisite is noted on the dataflow; a dataflow enabled without it is stored but collects no data.
         :type dataflows: TwilioIntegrationDataflowsRequest, optional
 
         :param name: Human-readable name of the Twilio integration account.

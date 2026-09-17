@@ -2769,6 +2769,18 @@ from datadog_api_client.v2.model.elastic_cloud_integration_account_authenticatio
 from datadog_api_client.v2.model.elastic_cloud_integration_account_authentication_update import (
     ElasticCloudIntegrationAccountAuthenticationUpdate,
 )
+from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_request import (
+    ElasticCloudIntegrationAccountBasicAuthRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_response import (
+    ElasticCloudIntegrationAccountBasicAuthResponse,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_type import (
+    ElasticCloudIntegrationAccountBasicAuthType,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_update import (
+    ElasticCloudIntegrationAccountBasicAuthUpdate,
+)
 from datadog_api_client.v2.model.elastic_cloud_integration_account_create_attributes import (
     ElasticCloudIntegrationAccountCreateAttributes,
 )
@@ -4363,10 +4375,6 @@ from datadog_api_client.v2.model.input_schema_parameters import InputSchemaParam
 from datadog_api_client.v2.model.input_schema_parameters_type import InputSchemaParametersType
 from datadog_api_client.v2.model.intake_payload_accepted import IntakePayloadAccepted
 from datadog_api_client.v2.model.integration import Integration
-from datadog_api_client.v2.model.integration_account_basic_auth_request import IntegrationAccountBasicAuthRequest
-from datadog_api_client.v2.model.integration_account_basic_auth_response import IntegrationAccountBasicAuthResponse
-from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
-from datadog_api_client.v2.model.integration_account_basic_auth_update import IntegrationAccountBasicAuthUpdate
 from datadog_api_client.v2.model.integration_account_dataflow_health import IntegrationAccountDataflowHealth
 from datadog_api_client.v2.model.integration_account_dataflow_status import IntegrationAccountDataflowStatus
 from datadog_api_client.v2.model.integration_account_type import IntegrationAccountType
@@ -11010,6 +11018,16 @@ from datadog_api_client.v2.model.twilio_integration_account_authentication_respo
 from datadog_api_client.v2.model.twilio_integration_account_authentication_update import (
     TwilioIntegrationAccountAuthenticationUpdate,
 )
+from datadog_api_client.v2.model.twilio_integration_account_basic_auth_request import (
+    TwilioIntegrationAccountBasicAuthRequest,
+)
+from datadog_api_client.v2.model.twilio_integration_account_basic_auth_response import (
+    TwilioIntegrationAccountBasicAuthResponse,
+)
+from datadog_api_client.v2.model.twilio_integration_account_basic_auth_type import TwilioIntegrationAccountBasicAuthType
+from datadog_api_client.v2.model.twilio_integration_account_basic_auth_update import (
+    TwilioIntegrationAccountBasicAuthUpdate,
+)
 from datadog_api_client.v2.model.twilio_integration_account_create_attributes import (
     TwilioIntegrationAccountCreateAttributes,
 )
@@ -13624,6 +13642,10 @@ __all__ = [
     "ElasticCloudIntegrationAccountAuthenticationRequest",
     "ElasticCloudIntegrationAccountAuthenticationResponse",
     "ElasticCloudIntegrationAccountAuthenticationUpdate",
+    "ElasticCloudIntegrationAccountBasicAuthRequest",
+    "ElasticCloudIntegrationAccountBasicAuthResponse",
+    "ElasticCloudIntegrationAccountBasicAuthType",
+    "ElasticCloudIntegrationAccountBasicAuthUpdate",
     "ElasticCloudIntegrationAccountCreateAttributes",
     "ElasticCloudIntegrationAccountCreateData",
     "ElasticCloudIntegrationAccountCreateRequest",
@@ -14802,10 +14824,6 @@ __all__ = [
     "InputSchemaParametersType",
     "IntakePayloadAccepted",
     "Integration",
-    "IntegrationAccountBasicAuthRequest",
-    "IntegrationAccountBasicAuthResponse",
-    "IntegrationAccountBasicAuthType",
-    "IntegrationAccountBasicAuthUpdate",
     "IntegrationAccountDataflowHealth",
     "IntegrationAccountDataflowStatus",
     "IntegrationAccountType",
@@ -19099,6 +19117,10 @@ __all__ = [
     "TwilioIntegrationAccountAuthenticationRequest",
     "TwilioIntegrationAccountAuthenticationResponse",
     "TwilioIntegrationAccountAuthenticationUpdate",
+    "TwilioIntegrationAccountBasicAuthRequest",
+    "TwilioIntegrationAccountBasicAuthResponse",
+    "TwilioIntegrationAccountBasicAuthType",
+    "TwilioIntegrationAccountBasicAuthUpdate",
     "TwilioIntegrationAccountCreateAttributes",
     "TwilioIntegrationAccountCreateData",
     "TwilioIntegrationAccountCreateRequest",

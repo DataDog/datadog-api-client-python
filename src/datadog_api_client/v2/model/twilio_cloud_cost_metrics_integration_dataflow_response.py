@@ -42,9 +42,9 @@ class TwilioCloudCostMetricsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Twilio cloud cost metrics dataflow.
+        Your Twilio cost data, so that Twilio spend can be broken down and attributed in `Cloud Cost Management <https://docs.datadoghq.com/cloud_cost_management/>`_.
 
-        :param enabled: Whether the Twilio dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.

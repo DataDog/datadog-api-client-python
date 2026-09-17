@@ -23,7 +23,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.elastic_cloud_integration_account_settings_response import (
         ElasticCloudIntegrationAccountSettingsResponse,
     )
-    from datadog_api_client.v2.model.integration_account_basic_auth_response import IntegrationAccountBasicAuthResponse
+    from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_response import (
+        ElasticCloudIntegrationAccountBasicAuthResponse,
+    )
 
 
 class ElasticCloudIntegrationAccountResponseAttributes(ModelNormal):
@@ -58,7 +60,9 @@ class ElasticCloudIntegrationAccountResponseAttributes(ModelNormal):
         name: str,
         settings: ElasticCloudIntegrationAccountSettingsResponse,
         authentication: Union[
-            ElasticCloudIntegrationAccountAuthenticationResponse, IntegrationAccountBasicAuthResponse, UnsetType
+            ElasticCloudIntegrationAccountAuthenticationResponse,
+            ElasticCloudIntegrationAccountBasicAuthResponse,
+            UnsetType,
         ] = unset,
         dataflows: Union[ElasticCloudIntegrationDataflowsResponse, UnsetType] = unset,
         **kwargs,
@@ -69,7 +73,7 @@ class ElasticCloudIntegrationAccountResponseAttributes(ModelNormal):
         :param authentication: Authentication configured on the Elastic Cloud integration account.
         :type authentication: ElasticCloudIntegrationAccountAuthenticationResponse, optional
 
-        :param dataflows: Dataflows configured on the Elastic Cloud integration account, keyed by dataflow id.
+        :param dataflows: Data Datadog collects from Elastic Cloud, keyed by dataflow id.
         :type dataflows: ElasticCloudIntegrationDataflowsResponse, optional
 
         :param name: Human-readable name of the Elastic Cloud integration account.

@@ -21,7 +21,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.twilio_integration_account_settings_response import (
         TwilioIntegrationAccountSettingsResponse,
     )
-    from datadog_api_client.v2.model.integration_account_basic_auth_response import IntegrationAccountBasicAuthResponse
+    from datadog_api_client.v2.model.twilio_integration_account_basic_auth_response import (
+        TwilioIntegrationAccountBasicAuthResponse,
+    )
 
 
 class TwilioIntegrationAccountResponseAttributes(ModelNormal):
@@ -54,7 +56,7 @@ class TwilioIntegrationAccountResponseAttributes(ModelNormal):
         name: str,
         settings: TwilioIntegrationAccountSettingsResponse,
         authentication: Union[
-            TwilioIntegrationAccountAuthenticationResponse, IntegrationAccountBasicAuthResponse, UnsetType
+            TwilioIntegrationAccountAuthenticationResponse, TwilioIntegrationAccountBasicAuthResponse, UnsetType
         ] = unset,
         dataflows: Union[TwilioIntegrationDataflowsResponse, UnsetType] = unset,
         **kwargs,
@@ -65,7 +67,7 @@ class TwilioIntegrationAccountResponseAttributes(ModelNormal):
         :param authentication: Authentication configured on the Twilio integration account.
         :type authentication: TwilioIntegrationAccountAuthenticationResponse, optional
 
-        :param dataflows: Dataflows configured on the Twilio integration account, keyed by dataflow id.
+        :param dataflows: Data Datadog collects from Twilio, keyed by dataflow id.
         :type dataflows: TwilioIntegrationDataflowsResponse, optional
 
         :param name: Human-readable name of the Twilio integration account.

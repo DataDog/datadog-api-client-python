@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class IntegrationAccountBasicAuthType(ModelSimple):
+class ElasticCloudIntegrationAccountBasicAuthType(ModelSimple):
     """
     The authentication method type.
 
@@ -23,7 +23,7 @@ class IntegrationAccountBasicAuthType(ModelSimple):
     allowed_values = {
         "basic",
     }
-    BASIC: ClassVar["IntegrationAccountBasicAuthType"]
+    BASIC: ClassVar["ElasticCloudIntegrationAccountBasicAuthType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class IntegrationAccountBasicAuthType(ModelSimple):
         }
 
 
-IntegrationAccountBasicAuthType.BASIC = IntegrationAccountBasicAuthType("basic")
+ElasticCloudIntegrationAccountBasicAuthType.BASIC = ElasticCloudIntegrationAccountBasicAuthType("basic")

@@ -16,7 +16,7 @@ class ElasticCloudIntegrationAccountAuthenticationResponse(ModelComposed):
         Authentication configured on the Elastic Cloud integration account.
 
         :param auth_type: The authentication method type.
-        :type auth_type: IntegrationAccountBasicAuthType
+        :type auth_type: ElasticCloudIntegrationAccountBasicAuthType
 
         :param username: Non-secret username or public identifier for the credential pair.
         :type username: str
@@ -32,12 +32,12 @@ class ElasticCloudIntegrationAccountAuthenticationResponse(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.integration_account_basic_auth_response import (
-            IntegrationAccountBasicAuthResponse,
+        from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_response import (
+            ElasticCloudIntegrationAccountBasicAuthResponse,
         )
 
         return {
             "oneOf": [
-                IntegrationAccountBasicAuthResponse,
+                ElasticCloudIntegrationAccountBasicAuthResponse,
             ],
         }

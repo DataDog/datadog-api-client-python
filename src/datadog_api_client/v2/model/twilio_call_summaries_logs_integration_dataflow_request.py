@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
 
 class TwilioCallSummariesLogsIntegrationDataflowRequest(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "enabled": (bool,),
@@ -26,9 +30,9 @@ class TwilioCallSummariesLogsIntegrationDataflowRequest(ModelNormal):
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
-        The Twilio call summaries logs dataflow.
+        Twilio Call Summary resource logs, covering the metadata and performance of the calls made from your Twilio account. Requires Voice Insights Advanced Features to be enabled on the Twilio account; without it this dataflow collects no data.
 
-        :param enabled: Whether the Twilio dataflow is enabled.
+        :param enabled: Whether Datadog collects this data. Defaults to ``false`` ; set to ``true`` to start collection.
         :type enabled: bool, optional
         """
         if enabled is not unset:

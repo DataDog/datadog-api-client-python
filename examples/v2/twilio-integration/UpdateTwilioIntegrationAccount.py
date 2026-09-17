@@ -1,11 +1,9 @@
 """
-Create a Twilio integration account returns "Created" response
+Update a Twilio integration account returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.twilio_integration_accounts_api import TwilioIntegrationAccountsApi
-from datadog_api_client.v2.model.integration_account_basic_auth_request import IntegrationAccountBasicAuthRequest
-from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+from datadog_api_client.v2.api.twilio_integration_api import TwilioIntegrationApi
 from datadog_api_client.v2.model.integration_account_type import IntegrationAccountType
 from datadog_api_client.v2.model.twilio_alerts_logs_integration_dataflow_request import (
     TwilioAlertsLogsIntegrationDataflowRequest,
@@ -19,24 +17,28 @@ from datadog_api_client.v2.model.twilio_cloud_cost_metrics_integration_dataflow_
 from datadog_api_client.v2.model.twilio_events_logs_integration_dataflow_request import (
     TwilioEventsLogsIntegrationDataflowRequest,
 )
-from datadog_api_client.v2.model.twilio_integration_account_create_attributes import (
-    TwilioIntegrationAccountCreateAttributes,
+from datadog_api_client.v2.model.twilio_integration_account_basic_auth_type import TwilioIntegrationAccountBasicAuthType
+from datadog_api_client.v2.model.twilio_integration_account_basic_auth_update import (
+    TwilioIntegrationAccountBasicAuthUpdate,
 )
-from datadog_api_client.v2.model.twilio_integration_account_create_data import TwilioIntegrationAccountCreateData
-from datadog_api_client.v2.model.twilio_integration_account_create_request import TwilioIntegrationAccountCreateRequest
-from datadog_api_client.v2.model.twilio_integration_account_settings_request import (
-    TwilioIntegrationAccountSettingsRequest,
+from datadog_api_client.v2.model.twilio_integration_account_settings_update import (
+    TwilioIntegrationAccountSettingsUpdate,
 )
+from datadog_api_client.v2.model.twilio_integration_account_update_attributes import (
+    TwilioIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.twilio_integration_account_update_data import TwilioIntegrationAccountUpdateData
+from datadog_api_client.v2.model.twilio_integration_account_update_request import TwilioIntegrationAccountUpdateRequest
 from datadog_api_client.v2.model.twilio_integration_dataflows_request import TwilioIntegrationDataflowsRequest
 from datadog_api_client.v2.model.twilio_messages_logs_integration_dataflow_request import (
     TwilioMessagesLogsIntegrationDataflowRequest,
 )
 
-body = TwilioIntegrationAccountCreateRequest(
-    data=TwilioIntegrationAccountCreateData(
-        attributes=TwilioIntegrationAccountCreateAttributes(
-            authentication=IntegrationAccountBasicAuthRequest(
-                auth_type=IntegrationAccountBasicAuthType.BASIC,
+body = TwilioIntegrationAccountUpdateRequest(
+    data=TwilioIntegrationAccountUpdateData(
+        attributes=TwilioIntegrationAccountUpdateAttributes(
+            authentication=TwilioIntegrationAccountBasicAuthUpdate(
+                auth_type=TwilioIntegrationAccountBasicAuthType.BASIC,
                 password="your-password",
                 username="datadog",
             ),
@@ -58,19 +60,20 @@ body = TwilioIntegrationAccountCreateRequest(
                 ),
             ),
             name="twilio-prod",
-            settings=TwilioIntegrationAccountSettingsRequest(
+            settings=TwilioIntegrationAccountSettingsUpdate(
                 account_sid="ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                 censor_logs=True,
             ),
         ),
+        id="953a0060-81ec-4221-aed4-d4733b59cd96",
         type=IntegrationAccountType.INTEGRATION_ACCOUNT,
     ),
 )
 
 configuration = Configuration()
-configuration.unstable_operations["create_twilio_integration_account"] = True
+configuration.unstable_operations["update_twilio_integration_account"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = TwilioIntegrationAccountsApi(api_client)
-    response = api_instance.create_twilio_integration_account(body=body)
+    api_instance = TwilioIntegrationApi(api_client)
+    response = api_instance.update_twilio_integration_account(account_id="account_id", body=body)
 
     print(response)

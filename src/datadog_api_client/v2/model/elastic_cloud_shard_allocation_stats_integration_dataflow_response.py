@@ -42,9 +42,9 @@ class ElasticCloudShardAllocationStatsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Elastic Cloud shard allocation stats dataflow.
+        Metrics for how many shards are allocated to each data node, and the disk space they use.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.

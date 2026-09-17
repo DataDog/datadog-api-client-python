@@ -42,9 +42,9 @@ class ElasticCloudIndexStatsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Elastic Cloud index stats dataflow.
+        Metrics for individual indices. Only the indices granted to the role of the user in ``authentication`` are collected.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.
