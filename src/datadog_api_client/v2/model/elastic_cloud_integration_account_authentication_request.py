@@ -16,7 +16,7 @@ class ElasticCloudIntegrationAccountAuthenticationRequest(ModelComposed):
         Authentication for creating the Elastic Cloud integration account. Exactly one method is set.
 
         :param auth_type: The authentication method type.
-        :type auth_type: IntegrationAccountBasicAuthType
+        :type auth_type: ElasticCloudIntegrationAccountBasicAuthType
 
         :param password: Secret password or private key.
         :type password: str
@@ -35,12 +35,12 @@ class ElasticCloudIntegrationAccountAuthenticationRequest(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.integration_account_basic_auth_request import (
-            IntegrationAccountBasicAuthRequest,
+        from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_request import (
+            ElasticCloudIntegrationAccountBasicAuthRequest,
         )
 
         return {
             "oneOf": [
-                IntegrationAccountBasicAuthRequest,
+                ElasticCloudIntegrationAccountBasicAuthRequest,
             ],
         }

@@ -12,16 +12,24 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+    from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_type import (
+        ElasticCloudIntegrationAccountBasicAuthType,
+    )
 
 
-class IntegrationAccountBasicAuthRequest(ModelNormal):
+class ElasticCloudIntegrationAccountBasicAuthRequest(ModelNormal):
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+        from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_type import (
+            ElasticCloudIntegrationAccountBasicAuthType,
+        )
 
         return {
-            "auth_type": (IntegrationAccountBasicAuthType,),
+            "auth_type": (ElasticCloudIntegrationAccountBasicAuthType,),
             "password": (str,),
             "username": (str,),
         }
@@ -32,12 +40,12 @@ class IntegrationAccountBasicAuthRequest(ModelNormal):
         "username": "username",
     }
 
-    def __init__(self_, auth_type: IntegrationAccountBasicAuthType, password: str, username: str, **kwargs):
+    def __init__(self_, auth_type: ElasticCloudIntegrationAccountBasicAuthType, password: str, username: str, **kwargs):
         """
         Username and password authentication.
 
         :param auth_type: The authentication method type.
-        :type auth_type: IntegrationAccountBasicAuthType
+        :type auth_type: ElasticCloudIntegrationAccountBasicAuthType
 
         :param password: Secret password or private key.
         :type password: str

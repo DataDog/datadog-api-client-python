@@ -16,7 +16,7 @@ class TwilioIntegrationAccountAuthenticationResponse(ModelComposed):
         Authentication configured on the Twilio integration account.
 
         :param auth_type: The authentication method type.
-        :type auth_type: IntegrationAccountBasicAuthType
+        :type auth_type: TwilioIntegrationAccountBasicAuthType
 
         :param username: Non-secret username or public identifier for the credential pair.
         :type username: str
@@ -32,12 +32,12 @@ class TwilioIntegrationAccountAuthenticationResponse(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.integration_account_basic_auth_response import (
-            IntegrationAccountBasicAuthResponse,
+        from datadog_api_client.v2.model.twilio_integration_account_basic_auth_response import (
+            TwilioIntegrationAccountBasicAuthResponse,
         )
 
         return {
             "oneOf": [
-                IntegrationAccountBasicAuthResponse,
+                TwilioIntegrationAccountBasicAuthResponse,
             ],
         }

@@ -42,9 +42,9 @@ class ElasticCloudDetailedIndexStatsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Elastic Cloud detailed index stats dataflow.
+        Primary shard metrics broken down per index, rather than aggregated across the cluster.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.

@@ -14,16 +14,24 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+    from datadog_api_client.v2.model.twilio_integration_account_basic_auth_type import (
+        TwilioIntegrationAccountBasicAuthType,
+    )
 
 
-class IntegrationAccountBasicAuthUpdate(ModelNormal):
+class TwilioIntegrationAccountBasicAuthUpdate(ModelNormal):
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+        from datadog_api_client.v2.model.twilio_integration_account_basic_auth_type import (
+            TwilioIntegrationAccountBasicAuthType,
+        )
 
         return {
-            "auth_type": (IntegrationAccountBasicAuthType,),
+            "auth_type": (TwilioIntegrationAccountBasicAuthType,),
             "password": (str,),
             "username": (str,),
         }
@@ -36,7 +44,7 @@ class IntegrationAccountBasicAuthUpdate(ModelNormal):
 
     def __init__(
         self_,
-        auth_type: IntegrationAccountBasicAuthType,
+        auth_type: TwilioIntegrationAccountBasicAuthType,
         password: Union[str, UnsetType] = unset,
         username: Union[str, UnsetType] = unset,
         **kwargs,
@@ -45,7 +53,7 @@ class IntegrationAccountBasicAuthUpdate(ModelNormal):
         Username and password authentication. Only the fields provided are changed; omit ``password`` to keep the stored one.
 
         :param auth_type: The authentication method type.
-        :type auth_type: IntegrationAccountBasicAuthType
+        :type auth_type: TwilioIntegrationAccountBasicAuthType
 
         :param password: Secret password or private key.
         :type password: str, optional

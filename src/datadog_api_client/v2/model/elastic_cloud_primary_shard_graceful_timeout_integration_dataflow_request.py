@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
 
 class ElasticCloudPrimaryShardGracefulTimeoutIntegrationDataflowRequest(ModelNormal):
     @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
     def openapi_types(_):
         return {
             "enabled": (bool,),
@@ -26,9 +30,9 @@ class ElasticCloudPrimaryShardGracefulTimeoutIntegrationDataflowRequest(ModelNor
 
     def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
         """
-        The Elastic Cloud primary shard graceful timeout dataflow.
+        Tolerance for slow primary shard requests. Primary shard metrics can grow large enough for the request to time out; enabling this keeps the rest of the collection running when that happens instead of failing the run. Only has an effect alongside ``elastic-cloud-primary-shard-stats``.
 
-        :param enabled: Whether the Elastic Cloud dataflow is enabled.
+        :param enabled: Whether this tolerance is applied. Defaults to ``false`` ; set to ``true`` to apply it.
         :type enabled: bool, optional
         """
         if enabled is not unset:

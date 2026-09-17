@@ -3,12 +3,18 @@ Update an Elastic Cloud integration account returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.elastic_cloud_integration_accounts_api import ElasticCloudIntegrationAccountsApi
+from datadog_api_client.v2.api.elastic_cloud_integration_api import ElasticCloudIntegrationApi
 from datadog_api_client.v2.model.elastic_cloud_detailed_index_stats_integration_dataflow_request import (
     ElasticCloudDetailedIndexStatsIntegrationDataflowRequest,
 )
 from datadog_api_client.v2.model.elastic_cloud_index_stats_integration_dataflow_request import (
     ElasticCloudIndexStatsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_type import (
+    ElasticCloudIntegrationAccountBasicAuthType,
+)
+from datadog_api_client.v2.model.elastic_cloud_integration_account_basic_auth_update import (
+    ElasticCloudIntegrationAccountBasicAuthUpdate,
 )
 from datadog_api_client.v2.model.elastic_cloud_integration_account_settings_update import (
     ElasticCloudIntegrationAccountSettingsUpdate,
@@ -40,15 +46,13 @@ from datadog_api_client.v2.model.elastic_cloud_shard_allocation_stats_integratio
 from datadog_api_client.v2.model.elastic_cloud_slm_stats_integration_dataflow_request import (
     ElasticCloudSlmStatsIntegrationDataflowRequest,
 )
-from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
-from datadog_api_client.v2.model.integration_account_basic_auth_update import IntegrationAccountBasicAuthUpdate
 from datadog_api_client.v2.model.integration_account_type import IntegrationAccountType
 
 body = ElasticCloudIntegrationAccountUpdateRequest(
     data=ElasticCloudIntegrationAccountUpdateData(
         attributes=ElasticCloudIntegrationAccountUpdateAttributes(
-            authentication=IntegrationAccountBasicAuthUpdate(
-                auth_type=IntegrationAccountBasicAuthType.BASIC,
+            authentication=ElasticCloudIntegrationAccountBasicAuthUpdate(
+                auth_type=ElasticCloudIntegrationAccountBasicAuthType.BASIC,
                 password="your-password",
                 username="datadog",
             ),
@@ -89,7 +93,7 @@ body = ElasticCloudIntegrationAccountUpdateRequest(
 configuration = Configuration()
 configuration.unstable_operations["update_elastic_cloud_integration_account"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = ElasticCloudIntegrationAccountsApi(api_client)
+    api_instance = ElasticCloudIntegrationApi(api_client)
     response = api_instance.update_elastic_cloud_integration_account(account_id="account_id", body=body)
 
     print(response)

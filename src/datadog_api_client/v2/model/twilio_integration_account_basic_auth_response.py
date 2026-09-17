@@ -12,16 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+    from datadog_api_client.v2.model.twilio_integration_account_basic_auth_type import (
+        TwilioIntegrationAccountBasicAuthType,
+    )
 
 
-class IntegrationAccountBasicAuthResponse(ModelNormal):
+class TwilioIntegrationAccountBasicAuthResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.integration_account_basic_auth_type import IntegrationAccountBasicAuthType
+        from datadog_api_client.v2.model.twilio_integration_account_basic_auth_type import (
+            TwilioIntegrationAccountBasicAuthType,
+        )
 
         return {
-            "auth_type": (IntegrationAccountBasicAuthType,),
+            "auth_type": (TwilioIntegrationAccountBasicAuthType,),
             "username": (str,),
         }
 
@@ -30,12 +34,12 @@ class IntegrationAccountBasicAuthResponse(ModelNormal):
         "username": "username",
     }
 
-    def __init__(self_, auth_type: IntegrationAccountBasicAuthType, username: str, **kwargs):
+    def __init__(self_, auth_type: TwilioIntegrationAccountBasicAuthType, username: str, **kwargs):
         """
         The basic authentication method and username configured on the account.
 
         :param auth_type: The authentication method type.
-        :type auth_type: IntegrationAccountBasicAuthType
+        :type auth_type: TwilioIntegrationAccountBasicAuthType
 
         :param username: Non-secret username or public identifier for the credential pair.
         :type username: str

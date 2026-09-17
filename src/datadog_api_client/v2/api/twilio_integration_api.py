@@ -13,12 +13,10 @@ from datadog_api_client.v2.model.twilio_integration_account_create_request impor
 from datadog_api_client.v2.model.twilio_integration_account_update_request import TwilioIntegrationAccountUpdateRequest
 
 
-class TwilioIntegrationAccountsApi:
+class TwilioIntegrationApi:
     """
-    Manage your Datadog Twilio integration accounts directly through the Datadog API.
-    Create, update, and delete accounts, configure authentication and settings, and
-    enable or disable dataflows such as message logs, event logs, alerts, call
-    summaries, and Cloud Cost Management metrics. See the
+    Manage your Datadog Twilio integration accounts and account resources directly
+    through the Datadog API. See the
     `Twilio integration page <https://docs.datadoghq.com/integrations/twilio/>`_ for
     more information.
     """

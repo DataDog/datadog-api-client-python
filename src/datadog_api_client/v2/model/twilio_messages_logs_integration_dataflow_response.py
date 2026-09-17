@@ -42,9 +42,9 @@ class TwilioMessagesLogsIntegrationDataflowResponse(ModelNormal):
         **kwargs,
     ):
         """
-        The Twilio messages logs dataflow.
+        Twilio Message resource logs for inbound and outbound messages, used to track delivery and troubleshoot message errors. A log is produced when you send a message through the REST API, when Twilio executes a TwiML instruction, and when someone messages one of your Twilio numbers or channel addresses. Message bodies are never collected.
 
-        :param enabled: Whether the Twilio dataflow is enabled.
+        :param enabled: Whether Datadog collects this data.
         :type enabled: bool, optional
 
         :param status: Read-only collection status of a dataflow.
