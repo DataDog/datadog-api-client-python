@@ -698,6 +698,9 @@ def prepare_test_runner_request(context, client, api_version, request, path_para
         body = _materialize_test_value(request_plan["body"]["value"], context)
         api_request["kwargs"]["body"] = json.dumps(body)
 
+    if request_plan.get("compression") is not None:
+        api_request["kwargs"]["content_encoding"] = json.dumps(request_plan["compression"])
+
     for parameter in request_plan["parameters"]:
         source = parameter["source"]
         if source["type"] == "fixture":
