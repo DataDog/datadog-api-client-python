@@ -42,6 +42,7 @@ import functools
 import json
 import logging
 import pathlib
+import pkgutil
 import re
 import subprocess
 import sys
@@ -58,20 +59,14 @@ from jinja2 import Template, Environment, meta
 from pytest_bdd import given, parsers, then, when
 
 from datadog_api_client import exceptions
-from datadog_api_client.api_client import ApiClient
+from datadog_api_client.api_client import ApiClient, Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import OpenApiModel, file_type, data_to_dict
 
 logging.basicConfig()
 
-with (pathlib.Path(__file__).parent.parent / ".generator" / "src" / "generator" / "replacement.json").open() as f:
-    EDGE_CASES = json.load(f)
-
 PATTERN_ALPHANUM = re.compile(r"[^A-Za-z0-9]+")
 PATTERN_DOUBLE_UNDERSCORE = re.compile(r"__+")
-PATTERN_LEADING_ALPHA = re.compile(r"(.)([A-Z][a-z]+)")
-PATTERN_FOLLOWING_ALPHA = re.compile(r"([a-z0-9])([A-Z])")
-PATTERN_WHITESPACE = re.compile(r"\W")
 PATTERN_INDEX = re.compile(r"\[([0-9]*)\]")
 TEST_RUNNER_TEMPLATE_KEY = "$openapi_transformer_template"
 GENERATED_TEST_ROOT = pathlib.Path(__file__).parent / "generated-test"
@@ -221,18 +216,6 @@ def sleep_after_request(f):
     return wrapper
 
 
-def escape_reserved_keyword(word):
-    """Escape reserved language keywords like openapi generator does it.
-
-    :param word: Word to escape
-    :return: The escaped word if it was a reserved keyword, the word unchanged otherwise
-    """
-    reserved_keywords = ["from"]
-    if word in reserved_keywords:
-        return f"_{word}"
-    return word
-
-
 def pytest_bdd_before_scenario(request, feature, scenario):
     request.node._openapi_test_feature = feature.name
     request.node._openapi_test_scenario = scenario.name
@@ -262,14 +245,57 @@ def pytest_bdd_apply_tag(tag, function):
     return True
 
 
-def snake_case(value):
-    for token, replacement in EDGE_CASES.items():
-        value = value.replace(token, replacement)
-    s1 = PATTERN_LEADING_ALPHA.sub(r"\1_\2", value)
-    s1 = PATTERN_FOLLOWING_ALPHA.sub(r"\1_\2", s1).lower()
-    s1 = PATTERN_WHITESPACE.sub("_", s1)
-    s1 = s1.rstrip("_")
-    return PATTERN_DOUBLE_UNDERSCORE.sub("_", s1)
+def normalize_identifier(value):
+    """Normalize OpenAPI and generated Python identifiers for comparison."""
+    return PATTERN_ALPHANUM.sub("", str(value)).lower()
+
+
+def find_identifier(value, candidates):
+    """Find the generated identifier corresponding to an OpenAPI identifier."""
+    normalized = normalize_identifier(value)
+    matches = [candidate for candidate in candidates if normalize_identifier(candidate) == normalized]
+    if len(matches) > 1:
+        raise NameError(f"Ambiguous generated identifier for {value!r}: {matches}")
+    return matches[0] if matches else None
+
+
+@functools.lru_cache
+def generated_api_module(package_name, name):
+    """Import the generated API module matching an OpenAPI tag."""
+    api_package = importlib.import_module(f"{package_name}.api")
+    modules = [module.name for module in pkgutil.iter_modules(api_package.__path__) if module.name.endswith("_api")]
+    module_name = find_identifier(name, (module.removesuffix("_api") for module in modules))
+    if module_name is None:
+        raise NameError(f"No generated API module for {name!r} in {package_name}")
+    return importlib.import_module(f"{package_name}.api.{module_name}_api")
+
+
+def generated_api_class(module, name):
+    """Return the generated API class matching an OpenAPI tag."""
+    class_name = find_identifier(f"{name}Api", (candidate for candidate in vars(module) if candidate.endswith("Api")))
+    if class_name is None:
+        raise NameError(f"No generated API class for {name!r} in {module.__name__}")
+    return getattr(module, class_name)
+
+
+def generated_operation_name(api, operation_id):
+    """Return the generated method name matching an OpenAPI operation ID."""
+    operations = [
+        endpoint.settings["operation_id"] for endpoint in vars(api).values() if isinstance(endpoint, Endpoint)
+    ]
+    operation_name = find_identifier(operation_id, operations)
+    if operation_name is None:
+        raise NameError(f"No generated API method for {operation_id!r} on {type(api).__name__}")
+    return operation_name
+
+
+def generated_parameter_name(api, operation_name, parameter_name):
+    """Return the generated parameter name matching an OpenAPI parameter."""
+    endpoint = getattr(api, f"_{operation_name}_endpoint")
+    name = find_identifier(parameter_name, endpoint.params_map)
+    if name is None:
+        raise NameError(f"No generated parameter for {parameter_name!r} on {type(api).__name__}.{operation_name}")
+    return name
 
 
 def glom(value, path):
@@ -277,13 +303,33 @@ def glom(value, path):
 
     # replace foo[index].bar by foo.index.bar
     path = PATTERN_INDEX.sub(r".\1", path)
-    if not isinstance(value, dict):
-        path = ".".join(snake_case(p) for p in path.split("."))
-
     # Support top level array indexing
     path = re.sub(r"^[.]+", "", path)
+    if not path:
+        return value
 
-    return g(value, path) if path else value
+    result = value
+    for part in path.split("."):
+        if isinstance(result, (list, tuple)):
+            attribute = part
+        elif isinstance(result, dict):
+            attribute = part if part in result else find_identifier(part, result) or part
+        else:
+            attribute_map = getattr(type(result), "attribute_map", {})
+            attribute = next(
+                (
+                    python_name
+                    for python_name, json_name in attribute_map.items()
+                    if normalize_identifier(part)
+                    in {normalize_identifier(python_name), normalize_identifier(json_name)}
+                ),
+                None,
+            )
+            attribute = (
+                attribute or find_identifier(part, (name for name in dir(result) if not name.startswith("_"))) or part
+            )
+        result = g(result, attribute)
+    return result
 
 
 def _get_prefix(request):
@@ -466,20 +512,16 @@ def freezed_time(default_cassette_name, record_mode, request, test_server_sessio
     else:
         freeze_file = pathlib.Path(vcr._path).with_suffix(".frozen")
         if not freeze_file.exists():
-            msg = (
-                "Time file '{}' not found: create one setting `RECORD=true` or " "ignore it using `RECORD=none`".format(
-                    freeze_file
-                )
+            msg = "Time file '{}' not found: create one setting `RECORD=true` or ignore it using `RECORD=none`".format(
+                freeze_file
             )
             raise RuntimeError(msg)
         with freeze_file.open("r") as f:
             freeze_at = f.readline().strip()
 
         if not pathlib.Path(vcr._path).exists():
-            msg = (
-                "Cassette '{}' not found: create one setting `RECORD=true` or " "ignore it using `RECORD=none`".format(
-                    vcr._path
-                )
+            msg = "Cassette '{}' not found: create one setting `RECORD=true` or ignore it using `RECORD=none`".format(
+                vcr._path
             )
             raise RuntimeError(msg)
 
@@ -545,7 +587,7 @@ def undo_operations():
             for operation_id, settings in data.items():
                 undo_settings = settings.get("undo")
                 undo_settings["base_tag"] = settings.get("tag")
-                result[version][snake_case(operation_id)] = undo_settings
+                result[version][normalize_identifier(operation_id)] = undo_settings
 
     return result
 
@@ -577,27 +619,22 @@ def client(configuration, test_server_session):
         yield _add_test_server_session(api_client, test_server_session)
 
 
-def _api_name(value):
-    value = re.sub(r"[^a-zA-Z0-9]", "", value)
-    return value + "Api"
-
-
 @given(parsers.parse('an instance of "{name}" API'))
 def api(context, package_name, client, name):
     """Return an API instance."""
-    module_name = snake_case(name)
-    package = importlib.import_module(f"{package_name}.api.{module_name}_api")
+    package = generated_api_module(package_name, name)
     context["api"] = {
-        "api": getattr(package, _api_name(name))(client),
+        "api": generated_api_class(package, name)(client),
         "package": package_name,
         "calls": [],
     }
 
 
 @given(parsers.parse('operation "{name}" enabled'))
-def operation_enabled(client, name):
+def operation_enabled(client, context, name):
     """Enable the unstable operation specific in the clause."""
-    client.configuration.unstable_operations[snake_case(name)] = True
+    operation_name = generated_operation_name(context["api"]["api"], name)
+    client.configuration.unstable_operations[operation_name] = True
 
 
 @given(parsers.parse('new "{name}" request'))
@@ -606,9 +643,10 @@ def api_request(configuration, context, name):
     if test_runner_enabled():
         return
     api = context["api"]
+    operation_name = generated_operation_name(api["api"], name)
     context["api_request"] = {
         "api": api["api"],
-        "request": getattr(api["api"], snake_case(name)),
+        "request": getattr(api["api"], operation_name),
         "args": [],
         "kwargs": {},
         "response": (None, None, None),
@@ -642,7 +680,8 @@ def request_parameter(context, name, path, path_parameters):
     if test_runner_enabled():
         return
     value = glom(context, path)
-    param_name = escape_reserved_keyword(snake_case(name))
+    api_request = context["api_request"]
+    param_name = generated_parameter_name(api_request["api"], api_request["request"].__name__, name)
     context["api_request"]["kwargs"][param_name] = json.dumps(value)
     # Store in path_parameters for undo operations
     path_parameters[name] = value
@@ -655,7 +694,8 @@ def request_parameter_with_value(context, name, value, path_parameters):
     if test_runner_enabled():
         return
     tpl = Template(value).render(**context)
-    param_name = escape_reserved_keyword(snake_case(name))
+    api_request = context["api_request"]
+    param_name = generated_parameter_name(api_request["api"], api_request["request"].__name__, name)
     context["api_request"]["kwargs"][param_name] = tpl
     # Store in path_parameters for undo operations (deserialize to strip JSON encoding)
     path_parameters[name] = json.loads(tpl)
@@ -679,7 +719,7 @@ def prepare_test_runner_request(context, client, api_version, request, path_para
     """Build the SDK invocation from a generated, language-neutral plan."""
     plan = _test_runner_plan(request, api_version)
     api = context["api"]
-    operation_name = snake_case(plan["operation_id"])
+    operation_name = generated_operation_name(api["api"], plan["operation_id"])
     api_request = {
         "api": api["api"],
         "request": getattr(api["api"], operation_name),
@@ -698,7 +738,7 @@ def prepare_test_runner_request(context, client, api_version, request, path_para
             value = glom(context, source["path"])
         else:
             value = _materialize_test_value(source["value"], context)
-        param_name = escape_reserved_keyword(snake_case(parameter["name"]))
+        param_name = generated_parameter_name(api["api"], operation_name, parameter["name"])
         api_request["kwargs"][param_name] = json.dumps(value)
         path_parameters[parameter["name"]] = value
         path_parameters[param_name] = value
@@ -710,8 +750,6 @@ def build_given(version, operation):
     @sleep_after_request
     def wrapper(context, undo, test_server_session):
         name = operation["tag"].replace(" ", "")
-        module_name = snake_case(operation["tag"])
-        operation_name = snake_case(operation["operationId"])
         package_name = f"datadog_api_client.{version}"
 
         # make sure we have a fresh instance of API client and configuration
@@ -721,20 +759,20 @@ def build_given(version, operation):
         configuration.check_input_type = False
         configuration.return_http_data_only = True
 
-        # enable unstable operation
-        if operation_name in configuration.unstable_operations:
-            configuration.unstable_operations[operation_name] = True
-
-        package = importlib.import_module(f"{package_name}.api.{module_name}_api")
+        package = generated_api_module(package_name, operation["tag"])
         with ApiClient(configuration) as client:
             _add_test_server_session(client, test_server_session)
-            api = getattr(package, _api_name(name))(client)
+            api = generated_api_class(package, name)(client)
+            operation_name = generated_operation_name(api, operation["operationId"])
+            if operation_name in configuration.unstable_operations:
+                configuration.unstable_operations[operation_name] = True
             operation_method = getattr(api, operation_name)
             params_map = getattr(api, f"_{operation_name}_endpoint").params_map
 
             # perform operation
             def build_param(p):
-                openapi_types = params_map[p["name"]]["openapi_types"]
+                parameter_name = generated_parameter_name(api, operation_name, p["name"])
+                openapi_types = params_map[parameter_name]["openapi_types"]
                 if "value" in p:
                     if openapi_types == (file_type,):
                         filepath = test_feature_path(
@@ -747,7 +785,8 @@ def build_given(version, operation):
                     return glom(context, p["source"])
 
             kwargs = {
-                escape_reserved_keyword(snake_case(p["name"])): build_param(p) for p in operation.get("parameters", [])
+                generated_parameter_name(api, operation_name, p["name"]): build_param(p)
+                for p in operation.get("parameters", [])
             }
             result = operation_method(**kwargs)
             request_body = kwargs.get("body", "")
@@ -779,15 +818,15 @@ for version in ("v1", "v2"):
             given(settings["step"])(build_given(version, settings))
 
 
-def extract_parameters(kwargs, data, parameter):
+def extract_parameters(kwargs, data, parameter, parameter_name):
     if "source" in parameter:
-        kwargs[parameter["name"]] = glom(data, parameter["source"])
+        kwargs[parameter_name] = glom(data, parameter["source"])
     elif "template" in parameter:
         variables = meta.find_undeclared_variables(Environment().parse(parameter["template"]))
         ctx = {}
         for var in variables:
             ctx[var] = glom(data, var)
-        kwargs[parameter["name"]] = json.loads(Template(parameter["template"]).render(**ctx))
+        kwargs[parameter_name] = json.loads(Template(parameter["template"]).render(**ctx))
 
 
 @pytest.fixture
@@ -801,8 +840,8 @@ def undo(package_name, undo_operations, client, path_parameters):
     """Clean after operation."""
 
     def cleanup(api, version, operation_id, response, request, client=client):
-        operation = undo_operations.get(version, {}).get(operation_id)
-        if operation_id is None:
+        operation = undo_operations.get(version, {}).get(normalize_identifier(operation_id))
+        if operation is None:
             raise NotImplementedError((version, operation_id))
 
         if operation["type"] is None:
@@ -816,30 +855,30 @@ def undo(package_name, undo_operations, client, path_parameters):
         if "tag" in operation and operation["base_tag"] != operation["tag"]:
             undo_tag = operation["tag"]
             undo_name = undo_tag.replace(" ", "")
-            undo_module_name = snake_case(undo_tag)
-            undo_package = importlib.import_module(f"{package_name}.api.{undo_module_name}_api")
-            api = getattr(undo_package, _api_name(undo_name))(client)
+            undo_package = generated_api_module(package_name, undo_tag)
+            api = generated_api_class(undo_package, undo_name)(client)
 
-        operation_name = snake_case(operation["operationId"])
+        operation_name = generated_operation_name(api, operation["operationId"])
         method = getattr(api, operation_name)
         kwargs = {}
         parameters = operation.get("parameters", [])
         for parameter in parameters:
+            parameter_name = generated_parameter_name(api, operation_name, parameter["name"])
             origin = parameter.get("origin", "response")
             if origin == "path":
                 # Extract from path parameters
                 if "source" in parameter:
-                    param_name = parameter["source"]
-                    if param_name in path_parameters:
-                        kwargs[parameter["name"]] = path_parameters[param_name]
+                    source_name = find_identifier(parameter["source"], path_parameters)
+                    if source_name is not None:
+                        kwargs[parameter_name] = path_parameters[source_name]
                     else:
-                        warnings.warn(f"Path parameter '{param_name}' not found")
+                        warnings.warn(f"Path parameter '{parameter['source']}' not found")
                 else:
-                    warnings.warn(f"Path origin requires 'source' field")
+                    warnings.warn("Path origin requires 'source' field")
             elif origin == "request":
-                extract_parameters(kwargs, request, parameter)
+                extract_parameters(kwargs, request, parameter, parameter_name)
             else:  # response or default
-                extract_parameters(kwargs, response, parameter)
+                extract_parameters(kwargs, response, parameter, parameter_name)
         if operation_name in client.configuration.unstable_operations:
             client.configuration.unstable_operations[operation_name] = True
 
@@ -858,7 +897,7 @@ def execute_request(undo, context, client, api_version, request, path_parameters
         prepare_test_runner_request(context, client, api_version, request, path_parameters)
     api_request = context["api_request"]
 
-    params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
+    params_map = getattr(api_request["api"], f"_{api_request['request'].__name__}_endpoint").params_map
     for k, v in api_request["kwargs"].items():
         openapi_types = params_map[k]["openapi_types"]
         if openapi_types == (file_type,):
@@ -906,7 +945,7 @@ def execute_request_with_pagination(undo, context, client, api_version, request,
         prepare_test_runner_request(context, client, api_version, request, path_parameters)
     api_request = context["api_request"]
 
-    params_map = getattr(api_request["api"], f'_{api_request["request"].__name__}_endpoint').params_map
+    params_map = getattr(api_request["api"], f"_{api_request['request'].__name__}_endpoint").params_map
     for k, v in api_request["kwargs"].items():
         api_request["kwargs"][k] = client.deserialize(v, params_map[k]["openapi_types"], True)
 
