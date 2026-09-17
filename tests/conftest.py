@@ -326,9 +326,7 @@ def glom(value, path):
                 None,
             )
             attribute = (
-                attribute
-                or find_identifier(part, (name for name in dir(result) if not name.startswith("_")))
-                or part
+                attribute or find_identifier(part, (name for name in dir(result) if not name.startswith("_"))) or part
             )
         result = g(result, attribute)
     return result
