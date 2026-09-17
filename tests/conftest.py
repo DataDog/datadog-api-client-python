@@ -702,6 +702,12 @@ def request_parameter_with_value(context, name, value, path_parameters):
     path_parameters[param_name] = json.loads(tpl)
 
 
+@given(parsers.parse('the request uses "{compression}" compression'))
+def request_uses_compression(compression):
+    """Defer compression validation to the generated replay server."""
+    assert compression
+
+
 def assert_no_unparsed(data):
     if isinstance(data, list):
         for item in data:
