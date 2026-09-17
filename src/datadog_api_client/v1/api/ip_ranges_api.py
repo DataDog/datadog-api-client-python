@@ -89,7 +89,7 @@ class IPRangesApi:
     ) -> IPRanges:
         """List IP Ranges.
 
-        Get information about Datadog IP ranges.
+        Get information about Datadog IP ranges, including service-specific prefixes.
 
         :rtype: IPRanges
         """
