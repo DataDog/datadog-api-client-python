@@ -12,20 +12,18 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class TriggerType(ModelSimple):
+class GeneralInvestigationTriggerType(ModelSimple):
     """
-    The type of trigger for the investigation.
+    The type of general investigation trigger.
 
-    :param value: Must be one of ["monitor_alert_trigger", "general_investigation"].
+    :param value: If omitted defaults to "general_investigation". Must be one of ["general_investigation"].
     :type value: str
     """
 
     allowed_values = {
-        "monitor_alert_trigger",
         "general_investigation",
     }
-    MONITOR_ALERT_TRIGGER: ClassVar["TriggerType"]
-    GENERAL_INVESTIGATION: ClassVar["TriggerType"]
+    GENERAL_INVESTIGATION: ClassVar["GeneralInvestigationTriggerType"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +32,4 @@ class TriggerType(ModelSimple):
         }
 
 
-TriggerType.MONITOR_ALERT_TRIGGER = TriggerType("monitor_alert_trigger")
-TriggerType.GENERAL_INVESTIGATION = TriggerType("general_investigation")
+GeneralInvestigationTriggerType.GENERAL_INVESTIGATION = GeneralInvestigationTriggerType("general_investigation")

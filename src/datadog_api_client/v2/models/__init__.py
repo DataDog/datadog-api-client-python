@@ -3467,6 +3467,15 @@ from datadog_api_client.v2.model.gemini_credentials_update import GeminiCredenti
 from datadog_api_client.v2.model.gemini_integration import GeminiIntegration
 from datadog_api_client.v2.model.gemini_integration_type import GeminiIntegrationType
 from datadog_api_client.v2.model.gemini_integration_update import GeminiIntegrationUpdate
+from datadog_api_client.v2.model.general_investigation_attributes import GeneralInvestigationAttributes
+from datadog_api_client.v2.model.general_investigation_attributes_with_time_bounds import (
+    GeneralInvestigationAttributesWithTimeBounds,
+)
+from datadog_api_client.v2.model.general_investigation_attributes_without_time_bounds import (
+    GeneralInvestigationAttributesWithoutTimeBounds,
+)
+from datadog_api_client.v2.model.general_investigation_trigger import GeneralInvestigationTrigger
+from datadog_api_client.v2.model.general_investigation_trigger_type import GeneralInvestigationTriggerType
 from datadog_api_client.v2.model.generate_cost_tag_description_response import GenerateCostTagDescriptionResponse
 from datadog_api_client.v2.model.generated_cost_tag_description import GeneratedCostTagDescription
 from datadog_api_client.v2.model.generated_cost_tag_description_attributes import GeneratedCostTagDescriptionAttributes
@@ -5682,7 +5691,9 @@ from datadog_api_client.v2.model.model_lab_run_status import ModelLabRunStatus
 from datadog_api_client.v2.model.model_lab_run_type import ModelLabRunType
 from datadog_api_client.v2.model.model_lab_runs_response import ModelLabRunsResponse
 from datadog_api_client.v2.model.model_lab_tag import ModelLabTag
+from datadog_api_client.v2.model.monitor_alert_trigger import MonitorAlertTrigger
 from datadog_api_client.v2.model.monitor_alert_trigger_attributes import MonitorAlertTriggerAttributes
+from datadog_api_client.v2.model.monitor_alert_trigger_type import MonitorAlertTriggerType
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
 )
@@ -14162,6 +14173,11 @@ __all__ = [
     "GeminiIntegration",
     "GeminiIntegrationType",
     "GeminiIntegrationUpdate",
+    "GeneralInvestigationAttributes",
+    "GeneralInvestigationAttributesWithTimeBounds",
+    "GeneralInvestigationAttributesWithoutTimeBounds",
+    "GeneralInvestigationTrigger",
+    "GeneralInvestigationTriggerType",
     "GenerateCostTagDescriptionResponse",
     "GeneratedCostTagDescription",
     "GeneratedCostTagDescriptionAttributes",
@@ -15783,7 +15799,9 @@ __all__ = [
     "ModelLabRunType",
     "ModelLabRunsResponse",
     "ModelLabTag",
+    "MonitorAlertTrigger",
     "MonitorAlertTriggerAttributes",
+    "MonitorAlertTriggerType",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",

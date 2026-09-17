@@ -206,7 +206,7 @@ class BitsAIApi:
     ) -> TriggerInvestigationResponse:
         """Trigger a Bits AI investigation.
 
-        Trigger a new Bits AI investigation based on a monitor alert.
+        Trigger a new Bits AI investigation from either a monitor alert or a general investigation request.
 
         :param body: Trigger investigation request body.
         :type body: TriggerInvestigationRequest
