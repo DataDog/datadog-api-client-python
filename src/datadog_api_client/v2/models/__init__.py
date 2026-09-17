@@ -8007,6 +8007,11 @@ from datadog_api_client.v2.model.recommendation_data import RecommendationData
 from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
 from datadog_api_client.v2.model.recommendation_type import RecommendationType
 from datadog_api_client.v2.model.recommendations_filter_request import RecommendationsFilterRequest
+from datadog_api_client.v2.model.recommendations_filter_request_data import RecommendationsFilterRequestData
+from datadog_api_client.v2.model.recommendations_filter_request_data_attributes import (
+    RecommendationsFilterRequestDataAttributes,
+)
+from datadog_api_client.v2.model.recommendations_filter_request_data_type import RecommendationsFilterRequestDataType
 from datadog_api_client.v2.model.recommendations_filter_request_scope import RecommendationsFilterRequestScope
 from datadog_api_client.v2.model.recommendations_filter_request_sort_items import RecommendationsFilterRequestSortItems
 from datadog_api_client.v2.model.recommendations_page_meta import RecommendationsPageMeta
@@ -17114,6 +17119,9 @@ __all__ = [
     "RecommendationDocument",
     "RecommendationType",
     "RecommendationsFilterRequest",
+    "RecommendationsFilterRequestData",
+    "RecommendationsFilterRequestDataAttributes",
+    "RecommendationsFilterRequestDataType",
     "RecommendationsFilterRequestScope",
     "RecommendationsFilterRequestSortItems",
     "RecommendationsPageMeta",
