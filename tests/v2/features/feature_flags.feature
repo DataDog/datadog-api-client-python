@@ -433,6 +433,13 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @generated @skip @team:DataDog/feature-flags
+  Scenario: Unarchive a feature flag returns "Conflict - Another active feature flag already uses the archived flag's key or name." response
+    Given new "UnarchiveFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - Another active feature flag already uses the archived flag's key or name.
+
   @skip @team:DataDog/feature-flags
   Scenario: Unarchive a feature flag returns "Not Found" response
     Given new "UnarchiveFeatureFlag" request
