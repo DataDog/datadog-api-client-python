@@ -8708,6 +8708,12 @@
       "type": "safe"
     }
   },
+  "GetMatchingSignals": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringRules": {
     "tag": "Security Monitoring",
     "undo": {

@@ -2533,6 +2533,33 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/cloud-siem
+  Scenario: Get signals matching an event returns "Bad Request" response
+    Given operation "GetMatchingSignals" enabled
+    And new "GetMatchingSignals" request
+    And request contains "event_id" parameter from "REPLACE.ME"
+    And request contains "track" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Get signals matching an event returns "Not Found" response
+    Given operation "GetMatchingSignals" enabled
+    And new "GetMatchingSignals" request
+    And request contains "event_id" parameter from "REPLACE.ME"
+    And request contains "track" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Get signals matching an event returns "OK" response
+    Given operation "GetMatchingSignals" enabled
+    And new "GetMatchingSignals" request
+    And request contains "event_id" parameter from "REPLACE.ME"
+    And request contains "track" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/cloud-siem
   Scenario: Get suggested actions for a signal returns "Not Found" response
     Given new "GetSuggestedActionsMatchingSignal" request
     And request contains "signal_id" parameter from "REPLACE.ME"

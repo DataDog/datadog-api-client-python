@@ -5441,6 +5441,10 @@ from datadog_api_client.v2.model.managed_orgs_relationship_to_orgs import Manage
 from datadog_api_client.v2.model.managed_orgs_relationships import ManagedOrgsRelationships
 from datadog_api_client.v2.model.managed_orgs_response import ManagedOrgsResponse
 from datadog_api_client.v2.model.managed_orgs_type import ManagedOrgsType
+from datadog_api_client.v2.model.matching_signal_attributes import MatchingSignalAttributes
+from datadog_api_client.v2.model.matching_signal_data import MatchingSignalData
+from datadog_api_client.v2.model.matching_signal_type import MatchingSignalType
+from datadog_api_client.v2.model.matching_signals_response import MatchingSignalsResponse
 from datadog_api_client.v2.model.max_session_duration_type import MaxSessionDurationType
 from datadog_api_client.v2.model.max_session_duration_update_attributes import MaxSessionDurationUpdateAttributes
 from datadog_api_client.v2.model.max_session_duration_update_data import MaxSessionDurationUpdateData
@@ -15621,6 +15625,10 @@ __all__ = [
     "ManagedOrgsRelationships",
     "ManagedOrgsResponse",
     "ManagedOrgsType",
+    "MatchingSignalAttributes",
+    "MatchingSignalData",
+    "MatchingSignalType",
+    "MatchingSignalsResponse",
     "MaxSessionDurationType",
     "MaxSessionDurationUpdateAttributes",
     "MaxSessionDurationUpdateData",
