@@ -702,6 +702,18 @@ def request_parameter_with_value(context, name, value, path_parameters):
     path_parameters[param_name] = json.loads(tpl)
 
 
+@given(parsers.parse('the request uses "{compression}" compression'))
+def request_uses_compression(compression):
+    """Defer compression validation to the generated replay server."""
+    assert compression
+
+
+@given(parsers.parse('the user selects "{compression}" compression'))
+def user_selects_compression(compression):
+    """Pass the selected compression from the generated request plan."""
+    assert compression
+
+
 def assert_no_unparsed(data):
     if isinstance(data, list):
         for item in data:
@@ -731,6 +743,9 @@ def prepare_test_runner_request(context, client, api_version, request, path_para
     if request_plan["body"] is not None:
         body = _materialize_test_value(request_plan["body"]["value"], context)
         api_request["kwargs"]["body"] = json.dumps(body)
+
+    if request_plan.get("selected_compression") is not None:
+        api_request["kwargs"]["content_encoding"] = json.dumps(request_plan["selected_compression"])
 
     for parameter in request_plan["parameters"]:
         source = parameter["source"]

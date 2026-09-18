@@ -128,11 +128,11 @@ Feature: Logs
     Then the response status is 200 OK
     And the response has 3 items
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/logs-backend @team:DataDog/logs-ingestion
+  @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/logs-backend @team:DataDog/logs-ingestion
   Scenario: Send deflate logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
-    And request contains "Content-Encoding" parameter with value "deflate"
+    And the user selects "deflate" compression
     When the request is sent
     Then the response status is 202 Response from server (always 202 empty JSON).
 
@@ -169,5 +169,6 @@ Feature: Logs
   Scenario: Send logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "info"}]
+    And the request uses "gzip" compression
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).

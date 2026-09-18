@@ -485,6 +485,8 @@ class LogsApi:
         kwargs: Dict[str, Any] = {}
         if content_encoding is not unset:
             kwargs["content_encoding"] = content_encoding
+        else:
+            kwargs["content_encoding"] = "gzip"
 
         if ddtags is not unset:
             kwargs["ddtags"] = ddtags
