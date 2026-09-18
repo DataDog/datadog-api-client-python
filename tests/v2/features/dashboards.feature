@@ -99,3 +99,32 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "meta.page" has field "total"
+
+  @generated @skip @team:DataDog/dashboards-backend
+  Scenario: Validate dashboard widgets returns "Bad Request" response
+    Given operation "ValidateDashboardWidgets" enabled
+    And new "ValidateDashboardWidgets" request
+    And body with value {"layout_type": "ordered", "reflow_type": "auto", "widgets": [{"definition": {"content": "Valid note", "type": "note"}}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:DataDog/dashboards-backend
+  Scenario: Validate dashboard widgets returns "OK" response
+    Given operation "ValidateDashboardWidgets" enabled
+    And new "ValidateDashboardWidgets" request
+    And body with value {"layout_type": "ordered", "reflow_type": "auto", "widgets": [{"definition": {"content": "Valid note", "type": "note"}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "results" has length 1
+    And the response "results[0].is_valid" is equal to true
+    And the response "results[0].widget_type" is equal to "note"
+    And the response "results[0]" has field "error_message"
+    And the response "results[0]" has field "error_path"
+
+  @generated @skip @team:DataDog/dashboards-backend
+  Scenario: Validate dashboard widgets returns "Unprocessable Entity" response
+    Given operation "ValidateDashboardWidgets" enabled
+    And new "ValidateDashboardWidgets" request
+    And body with value {"layout_type": "ordered", "reflow_type": "auto", "widgets": [{"definition": {"content": "Valid note", "type": "note"}}]}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
