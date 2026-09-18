@@ -5,7 +5,6 @@ Update a tag indexing rule returns "OK" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
-from datadog_api_client.v2.model.tag_indexing_rule_dynamic_tags import TagIndexingRuleDynamicTags
 from datadog_api_client.v2.model.tag_indexing_rule_metric_match import TagIndexingRuleMetricMatch
 from datadog_api_client.v2.model.tag_indexing_rule_options import TagIndexingRuleOptions
 from datadog_api_client.v2.model.tag_indexing_rule_options_data import TagIndexingRuleOptionsData
@@ -27,10 +26,6 @@ body = TagIndexingRuleUpdateRequest(
             name="my-indexing-rule",
             options=TagIndexingRuleOptions(
                 data=TagIndexingRuleOptionsData(
-                    dynamic_tags=TagIndexingRuleDynamicTags(
-                        queried_tags_window_seconds=3600,
-                        related_asset_tags=False,
-                    ),
                     manage_preexisting_metrics=True,
                     metric_match=TagIndexingRuleMetricMatch(
                         queried_window_seconds=3600,
