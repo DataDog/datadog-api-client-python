@@ -10,12 +10,14 @@ from __future__ import annotations
 
 import argparse
 import base64
+import gzip
 import json
 import os
 import re
 import tempfile
 import threading
 import uuid
+import zlib
 from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -44,6 +46,7 @@ SAFE_BROWSER_HEADERS = {
     "content-security-policy": "default-src 'none'; sandbox",
     "x-content-type-options": "nosniff",
 }
+ZSTD_FRAME_MAGIC = b"\x28\xb5\x2f\xfd"
 
 
 class RecordingDatabase:
@@ -52,9 +55,11 @@ class RecordingDatabase:
         self.lock = threading.RLock()
         self.shards: dict[tuple[str, str], dict[str, Any]] = {}
         self.shard_paths: dict[tuple[str, str], Path] = {}
+        self.request_plans: dict[tuple[str, str, str], dict[str, Any]] = {}
         self.sessions: dict[str, dict[str, Any]] = {}
         self.fallback_consumed: set[tuple[str, str, str, int]] = set()
         self._load()
+        self._load_request_plans()
 
     def _load(self) -> None:
         manifest_path = self.root / "manifest.json"
@@ -69,6 +74,17 @@ class RecordingDatabase:
             key = (shard["version"], shard["feature"])
             self.shards[key] = shard
             self.shard_paths[key] = path
+
+    def _load_request_plans(self) -> None:
+        root = self.root.parent / "test-runner-data"
+        manifest_path = root / "manifest.json"
+        if not manifest_path.exists():
+            return
+        manifest = _read_json(manifest_path)
+        for item in manifest.get("scenarios", []):
+            plan = _read_json(root / item["file"])
+            key = (item["version"], item["feature"], item["scenario"])
+            self.request_plans[key] = plan.get("request", {})
 
     def start(self, version: str, feature: str, scenario: str, mode: str) -> dict[str, Any]:
         with self.lock:
@@ -91,6 +107,7 @@ class RecordingDatabase:
                 "key": key,
                 "scenario": scenario,
                 "recording": recording,
+                "request_plan": self.request_plans.get((version, feature, scenario)),
                 "cursor": 0,
                 "captures": [],
                 "frozen_at": frozen_at,
@@ -109,7 +126,7 @@ class RecordingDatabase:
                 if cursor >= len(interactions):
                     raise LookupError(f"Recording has no interaction #{cursor + 1}")
                 expected = interactions[cursor]
-                if not _requests_match(expected["request"], actual):
+                if not _requests_match(expected["request"], actual, session["request_plan"]):
                     raise RequestMismatchError(expected["request"], actual, cursor)
                 session["cursor"] += 1
                 return expected["response"]
@@ -298,7 +315,13 @@ class TestRequestHandler(BaseHTTPRequestHandler):
 
     def _handle_api_request(self) -> None:
         body = self._read_body()
-        actual = _normalise_request(self.command, self.path, self.headers.get("content-type", ""), body)
+        actual = _normalise_request(
+            self.command,
+            self.path,
+            self.headers.get("content-type", ""),
+            self.headers.get("content-encoding", ""),
+            body,
+        )
         session_id = self.headers.get(SESSION_HEADER)
         if self.server.mode == "replay":
             response = self.server.database.replay(session_id, actual)
@@ -372,21 +395,50 @@ class TestRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
 
 
-def _normalise_request(method: str, raw_path: str, content_type: str, body: bytes) -> dict[str, Any]:
+def _normalise_request(
+    method: str,
+    raw_path: str,
+    content_type: str,
+    content_encoding: str,
+    body: bytes,
+) -> dict[str, Any]:
     parsed = urlsplit(raw_path)
-    normalised_body = _normalise_body(body, content_type)
-    return {
+    compression = content_encoding.strip().casefold()
+    normalised_body = _normalise_body(body, content_type, compression)
+    request = {
         "method": method.upper(),
         "path": _normalise_path(parsed.path),
         "query": sorted([list(pair) for pair in parse_qsl(parsed.query, keep_blank_values=True)]),
         "content_type": _normalise_content_type(content_type, normalised_body),
         "body": normalised_body,
     }
+    if compression:
+        request["compression"] = compression
+    return request
 
 
-def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
+def _normalise_body(body: bytes, content_type: str, compression: str = "") -> dict[str, Any]:
     if not body:
         return {"type": "empty", "value": None}
+    if compression == "zstd1":
+        if len(body) > len(ZSTD_FRAME_MAGIC) and body.startswith(ZSTD_FRAME_MAGIC):
+            # The generated server has no third-party dependencies, so validate
+            # the Zstandard frame on the wire without attempting to decode it.
+            return {"type": "zstd1", "value": None}
+        return {
+            "type": "invalid-compression",
+            "value": base64.b64encode(body).decode("ascii"),
+        }
+    try:
+        if compression == "gzip":
+            body = gzip.decompress(body)
+        elif compression == "deflate":
+            body = zlib.decompress(body)
+    except (EOFError, OSError, zlib.error):
+        return {
+            "type": "invalid-compression",
+            "value": base64.b64encode(body).decode("ascii"),
+        }
     media_type = _media_type(content_type)
     text = body.decode("utf-8", errors="surrogateescape")
     if media_type.endswith("json"):
@@ -415,16 +467,38 @@ def _normalise_content_type(content_type: str, body: dict[str, Any]) -> str:
     return "" if body["type"] == "empty" else _media_type(content_type)
 
 
-def _requests_match(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
+def _requests_match(
+    expected: dict[str, Any],
+    actual: dict[str, Any],
+    request_plan: dict[str, Any] | None = None,
+) -> bool:
     comparable_fields = ("method", "path", "query", "content_type")
     if any(expected[field] != actual[field] for field in comparable_fields):
         return False
+    expected_compression = expected.get("compression")
+    if request_plan and _request_matches_plan(expected, request_plan):
+        expected_compression = request_plan.get("compression", expected_compression)
+    if expected_compression is not None and actual.get("compression", "") != expected_compression:
+        return False
     return _bodies_match(expected["body"], actual["body"])
+
+
+def _request_matches_plan(request: dict[str, Any], plan: dict[str, Any]) -> bool:
+    if request["method"] != plan.get("method"):
+        return False
+    path = plan.get("path")
+    if not path:
+        return False
+    parts = re.split(r"(\{[^/{}]+\})", path)
+    pattern = "".join(r"[^/]+" if part.startswith("{") else re.escape(part) for part in parts)
+    return re.fullmatch(pattern, request["path"]) is not None
 
 
 def _bodies_match(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
     if expected == actual:
         return True
+    if actual["type"] == "zstd1":
+        return expected["type"] != "empty"
     if expected["type"] != "json" or actual["type"] != "json":
         return False
     return _json_contains(actual["value"], expected["value"])

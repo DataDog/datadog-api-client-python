@@ -16,7 +16,7 @@ class ContentEncoding(ModelSimple):
     """
     HTTP header used to compress the media-type.
 
-    :param value: Must be one of ["identity", "gzip", "deflate"].
+    :param value: If omitted defaults to "gzip". Must be one of ["identity", "gzip", "deflate"].
     :type value: str
     """
 

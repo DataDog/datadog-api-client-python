@@ -43,6 +43,42 @@
     },
     {
       "feature": "Logs",
+      "frozen_at": "2026-02-02T02:40:00.000Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "ddtags": "host:TestSenddeflatelogsreturnsResponsefromserveralways200emptyJSONresponse1770000000",
+                  "message": "Test-Send_deflate_logs_returns_Response_from_server_always_200_empty_JSON_response-1770000000"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/v1/input",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Send deflate logs returns \"Response from server (always 200 empty JSON).\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Logs",
       "frozen_at": "2022-04-12T14:46:46.337Z",
       "interactions": [
         {
