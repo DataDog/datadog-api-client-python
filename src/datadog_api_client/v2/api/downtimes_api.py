@@ -290,7 +290,7 @@ class DowntimesApi:
     ) -> ListDowntimesResponse:
         """Get all downtimes.
 
-        Get all scheduled downtimes.
+        List scheduled downtimes, optionally filtering to those that are active when the request is made.
 
         :param current_only: Only return downtimes that are active when the request is made.
         :type current_only: bool, optional
