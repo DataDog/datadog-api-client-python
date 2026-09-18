@@ -111,7 +111,8 @@ class FormDataAttributes(ModelNormal):
         :param end_date: The date and time at which the form stops accepting responses.
         :type end_date: datetime, none_type, optional
 
-        :param has_submitted: Whether the current user has already submitted this form. Only present for forms with ``single_response`` set to ``true``.
+        :param has_submitted: Whether the current user has already submitted this form. Only present for forms with
+            ``single_response`` set to ``true``.
         :type has_submitted: bool, none_type, optional
 
         :param idp_survey: Whether the form is an IDP survey.
