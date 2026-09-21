@@ -33,6 +33,7 @@ body = AnalysisRequest(
                     name="no-exit",
                     regex=None,
                     severity="WARNING",
+                    tags=[],
                     tests=[
                         AnalysisRequestRuleTest(),
                     ],

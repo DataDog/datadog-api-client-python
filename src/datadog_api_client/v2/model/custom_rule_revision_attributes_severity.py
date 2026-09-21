@@ -16,7 +16,7 @@ class CustomRuleRevisionAttributesSeverity(ModelSimple):
     """
     Rule severity
 
-    :param value: Must be one of ["ERROR", "WARNING", "NOTICE"].
+    :param value: Must be one of ["ERROR", "WARNING", "NOTICE", "NONE"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class CustomRuleRevisionAttributesSeverity(ModelSimple):
         "ERROR",
         "WARNING",
         "NOTICE",
+        "NONE",
     }
     ERROR: ClassVar["CustomRuleRevisionAttributesSeverity"]
     WARNING: ClassVar["CustomRuleRevisionAttributesSeverity"]
     NOTICE: ClassVar["CustomRuleRevisionAttributesSeverity"]
+    NONE: ClassVar["CustomRuleRevisionAttributesSeverity"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class CustomRuleRevisionAttributesSeverity(ModelSimple):
 CustomRuleRevisionAttributesSeverity.ERROR = CustomRuleRevisionAttributesSeverity("ERROR")
 CustomRuleRevisionAttributesSeverity.WARNING = CustomRuleRevisionAttributesSeverity("WARNING")
 CustomRuleRevisionAttributesSeverity.NOTICE = CustomRuleRevisionAttributesSeverity("NOTICE")
+CustomRuleRevisionAttributesSeverity.NONE = CustomRuleRevisionAttributesSeverity("NONE")
