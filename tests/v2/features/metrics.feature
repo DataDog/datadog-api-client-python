@@ -102,7 +102,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRule" enabled
     And new "CreateTagIndexingRule" request
-    And body with value {"data": {"attributes": {"exclude_tags_mode": false, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"exclude_tags_mode": false, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -1111,7 +1111,7 @@ Feature: Metrics
     And operation "UpdateTagIndexingRule" enabled
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter with value "not-a-valid-uuid"
-    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1121,7 +1121,7 @@ Feature: Metrics
     And operation "UpdateTagIndexingRule" enabled
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 3600, "exclude_not_used_in_assets": false, "queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 3600, "exclude_not_used_in_assets": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -1131,7 +1131,7 @@ Feature: Metrics
     And operation "UpdateTagIndexingRule" enabled
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter with value "00000000-0000-0000-0000-000000000000"
-    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1142,7 +1142,7 @@ Feature: Metrics
     And there is a valid "tag_indexing_rule" in the system
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "tag_indexing_rule.data.id"
-    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"queried_tags_window_seconds": 3600, "related_asset_tags": false}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 200 OK
 

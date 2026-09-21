@@ -25,23 +25,17 @@ class TagIndexingRuleDynamicTags(ModelNormal):
         return {
             "exclude_not_queried_window_seconds": (int,),
             "exclude_not_used_in_assets": (bool,),
-            "queried_tags_window_seconds": (int,),
-            "related_asset_tags": (bool,),
         }
 
     attribute_map = {
         "exclude_not_queried_window_seconds": "exclude_not_queried_window_seconds",
         "exclude_not_used_in_assets": "exclude_not_used_in_assets",
-        "queried_tags_window_seconds": "queried_tags_window_seconds",
-        "related_asset_tags": "related_asset_tags",
     }
 
     def __init__(
         self_,
         exclude_not_queried_window_seconds: Union[int, UnsetType] = unset,
         exclude_not_used_in_assets: Union[bool, UnsetType] = unset,
-        queried_tags_window_seconds: Union[int, UnsetType] = unset,
-        related_asset_tags: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -60,19 +54,9 @@ class TagIndexingRuleDynamicTags(ModelNormal):
 
         :param exclude_not_used_in_assets: Tags not used in any dashboards,  monitors, notebooks, or SLOs are excluded from indexing.
         :type exclude_not_used_in_assets: bool, optional
-
-        :param queried_tags_window_seconds: Window in seconds for evaluating queried tags.
-        :type queried_tags_window_seconds: int, optional
-
-        :param related_asset_tags: When true, tags from related assets are included.
-        :type related_asset_tags: bool, optional
         """
         if exclude_not_queried_window_seconds is not unset:
             kwargs["exclude_not_queried_window_seconds"] = exclude_not_queried_window_seconds
         if exclude_not_used_in_assets is not unset:
             kwargs["exclude_not_used_in_assets"] = exclude_not_used_in_assets
-        if queried_tags_window_seconds is not unset:
-            kwargs["queried_tags_window_seconds"] = queried_tags_window_seconds
-        if related_asset_tags is not unset:
-            kwargs["related_asset_tags"] = related_asset_tags
         super().__init__(kwargs)

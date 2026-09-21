@@ -27,10 +27,7 @@ body = TagIndexingRuleUpdateRequest(
             name="my-indexing-rule",
             options=TagIndexingRuleOptions(
                 data=TagIndexingRuleOptionsData(
-                    dynamic_tags=TagIndexingRuleDynamicTags(
-                        queried_tags_window_seconds=3600,
-                        related_asset_tags=False,
-                    ),
+                    dynamic_tags=TagIndexingRuleDynamicTags(),
                     manage_preexisting_metrics=True,
                     metric_match=TagIndexingRuleMetricMatch(
                         queried_window_seconds=3600,
