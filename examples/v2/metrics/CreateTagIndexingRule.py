@@ -7,7 +7,6 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.model.tag_indexing_rule_create_attributes import TagIndexingRuleCreateAttributes
 from datadog_api_client.v2.model.tag_indexing_rule_create_data import TagIndexingRuleCreateData
 from datadog_api_client.v2.model.tag_indexing_rule_create_request import TagIndexingRuleCreateRequest
-from datadog_api_client.v2.model.tag_indexing_rule_dynamic_tags import TagIndexingRuleDynamicTags
 from datadog_api_client.v2.model.tag_indexing_rule_metric_match import TagIndexingRuleMetricMatch
 from datadog_api_client.v2.model.tag_indexing_rule_options import TagIndexingRuleOptions
 from datadog_api_client.v2.model.tag_indexing_rule_options_data import TagIndexingRuleOptionsData
@@ -24,10 +23,6 @@ body = TagIndexingRuleCreateRequest(
             name="my-indexing-rule",
             options=TagIndexingRuleOptions(
                 data=TagIndexingRuleOptionsData(
-                    dynamic_tags=TagIndexingRuleDynamicTags(
-                        queried_tags_window_seconds=3600,
-                        related_asset_tags=False,
-                    ),
                     manage_preexisting_metrics=True,
                     metric_match=TagIndexingRuleMetricMatch(
                         queried_window_seconds=3600,
