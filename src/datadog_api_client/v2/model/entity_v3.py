@@ -52,6 +52,7 @@ class EntityV3(ModelComposed):
         from datadog_api_client.v2.model.entity_v3_queue import EntityV3Queue
         from datadog_api_client.v2.model.entity_v3_system import EntityV3System
         from datadog_api_client.v2.model.entity_v3_api import EntityV3API
+        from datadog_api_client.v2.model.entity_v3_repository import EntityV3Repository
 
         return {
             "oneOf": [
@@ -60,5 +61,6 @@ class EntityV3(ModelComposed):
                 EntityV3Queue,
                 EntityV3System,
                 EntityV3API,
+                EntityV3Repository,
             ],
         }
