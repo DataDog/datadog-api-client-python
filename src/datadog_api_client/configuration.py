@@ -404,6 +404,7 @@ class Configuration:
                 "v2.get_finding": False,
                 "v2.get_historical_job": False,
                 "v2.get_indicator_of_compromise": False,
+                "v2.get_matching_signals": False,
                 "v2.get_rule_version_history": False,
                 "v2.get_secrets_rules": False,
                 "v2.get_security_findings_automation_default_inbox_rule": False,
