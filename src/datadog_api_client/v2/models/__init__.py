@@ -10463,6 +10463,7 @@ from datadog_api_client.v2.model.table_result_v2_data_attributes_schema_fields_i
 )
 from datadog_api_client.v2.model.table_result_v2_data_type import TableResultV2DataType
 from datadog_api_client.v2.model.table_row_resource_array import TableRowResourceArray
+from datadog_api_client.v2.model.table_row_resource_array_meta import TableRowResourceArrayMeta
 from datadog_api_client.v2.model.table_row_resource_data import TableRowResourceData
 from datadog_api_client.v2.model.table_row_resource_data_attributes import TableRowResourceDataAttributes
 from datadog_api_client.v2.model.table_row_resource_data_type import TableRowResourceDataType
@@ -18761,6 +18762,7 @@ __all__ = [
     "TableResultV2DataAttributesSchemaFieldsItems",
     "TableResultV2DataType",
     "TableRowResourceArray",
+    "TableRowResourceArrayMeta",
     "TableRowResourceData",
     "TableRowResourceDataAttributes",
     "TableRowResourceDataType",
