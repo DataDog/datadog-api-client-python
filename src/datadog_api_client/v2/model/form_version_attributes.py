@@ -34,6 +34,7 @@ class FormVersionAttributes(ModelNormal):
             "data_definition": (FormDataDefinition,),
             "definition_signature": (str,),
             "etag": (str, none_type),
+            "has_ever_been_published": (bool,),
             "id": (str,),
             "modified_at": (datetime,),
             "state": (FormVersionState,),
@@ -48,6 +49,7 @@ class FormVersionAttributes(ModelNormal):
         "data_definition": "data_definition",
         "definition_signature": "definition_signature",
         "etag": "etag",
+        "has_ever_been_published": "has_ever_been_published",
         "id": "id",
         "modified_at": "modified_at",
         "state": "state",
@@ -69,6 +71,7 @@ class FormVersionAttributes(ModelNormal):
         user_id: int,
         user_uuid: UUID,
         version: int,
+        has_ever_been_published: Union[bool, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -86,6 +89,9 @@ class FormVersionAttributes(ModelNormal):
 
         :param etag: The ETag for optimistic concurrency control.
         :type etag: str, none_type
+
+        :param has_ever_been_published: Whether this version number has ever appeared in the form's publication history.
+        :type has_ever_been_published: bool, optional
 
         :param id: The ID of the form version.
         :type id: str, optional
@@ -108,6 +114,8 @@ class FormVersionAttributes(ModelNormal):
         :param version: The sequential version number.
         :type version: int
         """
+        if has_ever_been_published is not unset:
+            kwargs["has_ever_been_published"] = has_ever_been_published
         if id is not unset:
             kwargs["id"] = id
         super().__init__(kwargs)
