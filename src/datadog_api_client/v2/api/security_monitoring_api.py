@@ -197,6 +197,7 @@ from datadog_api_client.v2.model.security_monitoring_dataset_version_history_res
 )
 from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
 from datadog_api_client.v2.model.single_entity_context_response import SingleEntityContextResponse
+from datadog_api_client.v2.model.matching_signals_response import MatchingSignalsResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
 from datadog_api_client.v2.model.security_monitoring_rule_sort import SecurityMonitoringRuleSort
 from datadog_api_client.v2.model.security_monitoring_rule_response import SecurityMonitoringRuleResponse
@@ -2055,6 +2056,35 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "signal_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_matching_signals_endpoint = _Endpoint(
+            settings={
+                "response_type": (MatchingSignalsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/events/{event_id}/matching_signals",
+                "operation_id": "get_matching_signals",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "event_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "event_id",
+                    "location": "path",
+                },
+                "track": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "track",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -6516,6 +6546,28 @@ class SecurityMonitoringApi:
         kwargs["signal_id"] = signal_id
 
         return self._get_investigation_log_queries_matching_signal_endpoint.call_with_http_info(**kwargs)
+
+    def get_matching_signals(
+        self,
+        event_id: str,
+        track: str,
+    ) -> MatchingSignalsResponse:
+        """Get signals matching an event.
+
+        Returns the list of security signals that match a given event on the given track.
+
+        :param event_id: The ID of the event to find matching signals for.
+        :type event_id: str
+        :param track: The product track that the event belongs to.
+        :type track: str
+        :rtype: MatchingSignalsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["event_id"] = event_id
+
+        kwargs["track"] = track
+
+        return self._get_matching_signals_endpoint.call_with_http_info(**kwargs)
 
     def get_resource_evaluation_filters(
         self,
