@@ -2,6 +2,7 @@
 Update Azure scan options returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.model.azure_scan_options_input_update import AzureScanOptionsInputUpdate
@@ -16,6 +17,7 @@ body = AzureScanOptionsInputUpdate(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AgentlessScanningApi(api_client)
     response = api_instance.update_azure_scan_options(subscription_id="12345678-90ab-cdef-1234-567890abcdef", body=body)

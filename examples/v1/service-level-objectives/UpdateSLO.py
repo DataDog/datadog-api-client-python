@@ -35,6 +35,7 @@ body = ServiceLevelObjective(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
     response = api_instance.update_slo(slo_id=SLO_DATA_0_ID, body=body)

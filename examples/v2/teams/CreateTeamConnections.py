@@ -47,6 +47,7 @@ body = TeamConnectionCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     response = api_instance.create_team_connections(body=body)

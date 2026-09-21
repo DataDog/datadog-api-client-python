@@ -11,6 +11,7 @@ INCIDENT_IMPACT_DATA_ID = environ["INCIDENT_IMPACT_DATA_ID"]
 INCIDENT_IMPACT_DATA_RELATIONSHIPS_INCIDENT_DATA_ID = environ["INCIDENT_IMPACT_DATA_RELATIONSHIPS_INCIDENT_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["delete_incident_impact"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

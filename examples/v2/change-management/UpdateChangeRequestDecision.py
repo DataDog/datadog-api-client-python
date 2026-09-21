@@ -2,6 +2,7 @@
 Update a change request decision returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.change_management_api import ChangeManagementApi
 from datadog_api_client.v2.model.change_request_decision_create_attributes import ChangeRequestDecisionCreateAttributes
@@ -63,6 +64,7 @@ body = ChangeRequestDecisionUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_change_request_decision"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ChangeManagementApi(api_client)

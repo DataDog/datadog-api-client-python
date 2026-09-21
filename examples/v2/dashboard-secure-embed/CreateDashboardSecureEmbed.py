@@ -2,6 +2,7 @@
 Create a secure embed for a dashboard returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecureEmbedApi
 from datadog_api_client.v2.model.secure_embed_create_request import SecureEmbedCreateRequest
@@ -46,6 +47,7 @@ body = SecureEmbedCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_dashboard_secure_embed"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DashboardSecureEmbedApi(api_client)

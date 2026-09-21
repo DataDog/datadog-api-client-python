@@ -2,6 +2,7 @@
 Disable the authenticated customer organization returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.customer_org_api import CustomerOrgApi
 from datadog_api_client.v2.model.customer_org_disable_request import CustomerOrgDisableRequest
@@ -20,6 +21,7 @@ body = CustomerOrgDisableRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["disable_customer_org"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CustomerOrgApi(api_client)

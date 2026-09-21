@@ -2,6 +2,7 @@
 Update a custom framework returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.custom_framework_control import CustomFrameworkControl
@@ -37,6 +38,7 @@ body = UpdateCustomFrameworkRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.update_custom_framework(handle="create-framework-new", version="10", body=body)

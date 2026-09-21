@@ -33,6 +33,7 @@ body = UserInvitationsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = UsersApi(api_client)
     response = api_instance.send_invitations(body=body)

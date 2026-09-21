@@ -2,6 +2,7 @@
 Update a variant returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequest
@@ -13,6 +14,7 @@ body = UpdateVariantRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     response = api_instance.update_variant_for_feature_flag(

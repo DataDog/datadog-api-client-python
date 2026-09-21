@@ -2,6 +2,7 @@
 Get account facet info returns "Successful response with facet information" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_audience_management_api import RumAudienceManagementApi
 from datadog_api_client.v2.model.facet_info_request import FacetInfoRequest
@@ -31,6 +32,7 @@ body = FacetInfoRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["get_account_facet_info"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RumAudienceManagementApi(api_client)

@@ -108,6 +108,7 @@ body = TeamRoutingRulesRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
     response = api_instance.set_on_call_team_routing_rules(team_id=DD_TEAM_DATA_ID, include="rules", body=body)

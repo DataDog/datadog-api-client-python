@@ -10,6 +10,7 @@ from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 SHARED_DASHBOARD_TOKEN = environ["SHARED_DASHBOARD_TOKEN"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)
     response = api_instance.get_public_dashboard(

@@ -2,6 +2,7 @@
 Create or update service definition returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.service_definition_api import ServiceDefinitionApi
 from datadog_api_client.v2.model.service_definition_v2_dot2 import ServiceDefinitionV2Dot2
@@ -68,6 +69,7 @@ body = ServiceDefinitionV2Dot2(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceDefinitionApi(api_client)
     response = api_instance.create_or_update_service_definitions(body=body)

@@ -4,11 +4,13 @@ Get hourly usage attribution returns "OK" response
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v1.model.hourly_usage_attribution_usage_type import HourlyUsageAttributionUsageType
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.get_hourly_usage_attribution(

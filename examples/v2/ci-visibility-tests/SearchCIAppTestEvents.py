@@ -2,6 +2,7 @@
 Search tests events returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.ci_visibility_tests_api import CIVisibilityTestsApi
 from datadog_api_client.v2.model.ci_app_query_options import CIAppQueryOptions
@@ -26,6 +27,7 @@ body = CIAppTestEventsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CIVisibilityTestsApi(api_client)
     response = api_instance.search_ci_app_test_events(body=body)

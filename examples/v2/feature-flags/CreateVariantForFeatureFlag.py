@@ -2,6 +2,7 @@
 Add a variant to a feature flag returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.model.create_variant import CreateVariant
@@ -14,6 +15,7 @@ body = CreateVariant(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     response = api_instance.create_variant_for_feature_flag(

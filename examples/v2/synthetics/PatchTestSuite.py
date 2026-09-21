@@ -2,6 +2,7 @@
 Patch a test suite returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.model.json_patch_operation import JsonPatchOperation
@@ -26,6 +27,7 @@ body = SuiteJsonPatchRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.patch_test_suite(public_id="123-abc-456", body=body)

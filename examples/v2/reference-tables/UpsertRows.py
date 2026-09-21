@@ -2,6 +2,7 @@
 Upsert rows returns "Rows created or updated successfully" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.model.batch_upsert_rows_request_array import BatchUpsertRowsRequestArray
@@ -22,6 +23,7 @@ body = BatchUpsertRowsRequestArray(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ReferenceTablesApi(api_client)
     api_instance.upsert_rows(id="id", body=body)

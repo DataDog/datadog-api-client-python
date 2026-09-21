@@ -13,6 +13,7 @@ from datadog_api_client.v2.model.security_monitoring_terraform_resource_type imp
 SUPPRESSION_DATA_ID = environ["SUPPRESSION_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["export_security_monitoring_terraform_resource"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)

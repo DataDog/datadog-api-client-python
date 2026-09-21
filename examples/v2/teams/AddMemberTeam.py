@@ -2,6 +2,7 @@
 Add a member team returns "Added" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.teams_api import TeamsApi
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
@@ -16,6 +17,7 @@ body = AddMemberTeamRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["add_member_team"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)

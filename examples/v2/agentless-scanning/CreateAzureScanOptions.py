@@ -2,6 +2,7 @@
 Create Azure scan options returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.model.azure_scan_options import AzureScanOptions
@@ -22,6 +23,7 @@ body = AzureScanOptions(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AgentlessScanningApi(api_client)
     response = api_instance.create_azure_scan_options(body=body)

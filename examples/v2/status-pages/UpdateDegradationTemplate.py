@@ -2,6 +2,7 @@
 Update degradation template returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.status_pages_api import StatusPagesApi
 from datadog_api_client.v2.model.create_degradation_request_data_attributes_status import (
@@ -47,6 +48,7 @@ body = PatchDegradationTemplateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = StatusPagesApi(api_client)
     response = api_instance.update_degradation_template(

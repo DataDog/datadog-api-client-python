@@ -2,6 +2,7 @@
 Create role returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.roles_api import RolesApi
 from datadog_api_client.v2.model.permissions_type import PermissionsType
@@ -33,6 +34,7 @@ body = RoleCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RolesApi(api_client)
     response = api_instance.create_role(body=body)

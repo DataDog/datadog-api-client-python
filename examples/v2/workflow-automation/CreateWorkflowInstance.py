@@ -2,6 +2,7 @@
 Execute a workflow returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.workflow_automation_api import WorkflowAutomationApi
 from datadog_api_client.v2.model.workflow_instance_create_meta import WorkflowInstanceCreateMeta
@@ -14,6 +15,7 @@ body = WorkflowInstanceCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = WorkflowAutomationApi(api_client)
     response = api_instance.create_workflow_instance(workflow_id="ccf73164-1998-4785-a7a3-8d06c7e5f558", body=body)

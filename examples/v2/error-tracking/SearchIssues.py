@@ -2,6 +2,7 @@
 Search error tracking issues returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
 from datadog_api_client.v2.model.issues_search_request import IssuesSearchRequest
@@ -25,6 +26,7 @@ body = IssuesSearchRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ErrorTrackingApi(api_client)
     response = api_instance.search_issues(body=body)

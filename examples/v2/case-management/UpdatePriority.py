@@ -24,6 +24,7 @@ body = CaseUpdatePriorityRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.update_priority(case_id=CASE_ID, body=body)

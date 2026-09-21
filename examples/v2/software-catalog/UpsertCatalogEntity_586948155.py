@@ -2,6 +2,7 @@
 Create or update software catalog entity using schema v3 returns "ACCEPTED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.software_catalog_api import SoftwareCatalogApi
 from datadog_api_client.v2.model.entity_v3_api_version import EntityV3APIVersion
@@ -81,6 +82,7 @@ body = EntityV3Service(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SoftwareCatalogApi(api_client)
     response = api_instance.upsert_catalog_entity(body=body)

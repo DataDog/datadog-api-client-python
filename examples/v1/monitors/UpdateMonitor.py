@@ -30,6 +30,7 @@ body = MonitorUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.update_monitor(monitor_id=int(MONITOR_ID), body=body)

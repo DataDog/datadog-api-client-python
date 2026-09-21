@@ -2,6 +2,7 @@
 Create reference table upload returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.model.create_upload_request import CreateUploadRequest
@@ -26,6 +27,7 @@ body = CreateUploadRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ReferenceTablesApi(api_client)
     response = api_instance.create_reference_table_upload(body=body)

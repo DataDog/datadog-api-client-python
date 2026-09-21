@@ -2,6 +2,7 @@
 Create Jira issue for case returns "Accepted" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.model.jira_issue_create_attributes import JiraIssueCreateAttributes
@@ -22,6 +23,7 @@ body = JiraIssueCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.create_case_jira_issue(case_id="case_id", body=body)

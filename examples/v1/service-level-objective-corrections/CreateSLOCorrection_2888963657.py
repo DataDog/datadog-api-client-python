@@ -4,6 +4,7 @@ Create an SLO correction with slo_query returns "OK" response
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objective_corrections_api import ServiceLevelObjectiveCorrectionsApi
 from datadog_api_client.v1.model.slo_correction_category import SLOCorrectionCategory
@@ -27,6 +28,7 @@ body = SLOCorrectionCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectiveCorrectionsApi(api_client)
     response = api_instance.create_slo_correction(body=body)

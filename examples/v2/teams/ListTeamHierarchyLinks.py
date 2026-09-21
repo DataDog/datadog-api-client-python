@@ -15,6 +15,7 @@ TEAM_HIERARCHY_LINK_DATA_RELATIONSHIPS_SUB_TEAM_DATA_ID = environ[
 ]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     response = api_instance.list_team_hierarchy_links(

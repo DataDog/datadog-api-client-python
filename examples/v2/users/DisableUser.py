@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.users_api import UsersApi
 USER_DATA_ID = environ["USER_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = UsersApi(api_client)
     api_instance.disable_user(

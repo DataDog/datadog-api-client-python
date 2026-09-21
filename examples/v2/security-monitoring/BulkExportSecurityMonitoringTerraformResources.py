@@ -33,6 +33,7 @@ body = SecurityMonitoringTerraformBulkExportRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["bulk_export_security_monitoring_terraform_resources"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)

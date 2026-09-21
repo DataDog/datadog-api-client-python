@@ -2,6 +2,7 @@
 Create an environment returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.model.create_environment_attributes import CreateEnvironmentAttributes
@@ -23,6 +24,7 @@ body = CreateEnvironmentRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     response = api_instance.create_feature_flags_environment(body=body)

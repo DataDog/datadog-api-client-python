@@ -2,6 +2,7 @@
 Create a dataset returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
 from datadog_api_client.v2.model.dataset_attributes_request import DatasetAttributesRequest
@@ -31,6 +32,7 @@ body = DatasetCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_dataset"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DatasetsApi(api_client)

@@ -32,6 +32,7 @@ body = UpdateOutcomesAsyncRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ScorecardsApi(api_client)
     api_instance.update_scorecard_outcomes(body=body)

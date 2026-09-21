@@ -2,6 +2,7 @@
 Update an existing scorecard rule returns "Rule updated successfully" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
 from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
@@ -23,6 +24,7 @@ body = UpdateRuleRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ScorecardsApi(api_client)
     response = api_instance.update_scorecard_rule(rule_id="rule_id", body=body)

@@ -28,6 +28,7 @@ body = SyntheticsPrivateLocation(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.create_private_location(body=body)
