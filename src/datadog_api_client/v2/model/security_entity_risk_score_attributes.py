@@ -136,7 +136,7 @@ class SecurityEntityRiskScoreAttributes(ModelNormal):
         :param severity: Severity level based on risk score
         :type severity: SecurityEntityRiskScoreAttributesSeverity
 
-        :param signals_detected: Number of security signals detected for this entity.
+        :param signals_detected: Number of risk-contributing security signals detected for this entity.
         :type signals_detected: int
         """
         if entity_name is not unset:
