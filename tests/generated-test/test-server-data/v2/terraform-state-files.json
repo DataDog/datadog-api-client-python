@@ -1,0 +1,158 @@
+{
+  "feature": "Terraform State Files",
+  "recordings": [
+    {
+      "feature": "Terraform State Files",
+      "frozen_at": "2026-09-21T14:21:29.111Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_id": " ",
+                    "backend_type": "terraform",
+                    "bucket_names": [
+                      "terraform-state-bucket"
+                    ],
+                    "region": "us-east-1"
+                  },
+                  "type": "terraform-backends"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/iac-api/terraform/backends",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"account_id must not be empty\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a Terraform backend sync configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Terraform State Files",
+      "frozen_at": "2026-09-21T14:21:29.176Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/iac-api/terraform/backends/invalid-id",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"path parameter id must be an integer\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete a Terraform backend sync configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Terraform State Files",
+      "frozen_at": "2026-09-21T14:21:29.270Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/iac-api/terraform/backends",
+            "query": [
+              [
+                "account_id",
+                "123456789012"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List Terraform backend sync configurations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Terraform State Files",
+      "frozen_at": "2026-09-21T14:21:29.365Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "bucket_names": [
+                      "terraform-state-bucket"
+                    ]
+                  },
+                  "id": "2",
+                  "type": "terraform-backends"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/iac-api/terraform/backends/1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"data.id must match the configuration id in the URL\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        }
+      ],
+      "scenario": "Update a Terraform backend sync configuration returns \"Conflict\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

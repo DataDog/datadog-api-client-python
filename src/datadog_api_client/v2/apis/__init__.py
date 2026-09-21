@@ -137,6 +137,7 @@ from datadog_api_client.v2.api.storage_management_api import StorageManagementAp
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.api.tag_rules_api import TagRulesApi
 from datadog_api_client.v2.api.teams_api import TeamsApi
+from datadog_api_client.v2.api.terraform_state_files_api import TerraformStateFilesApi
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.api.threat_intelligence_api import ThreatIntelligenceApi
 from datadog_api_client.v2.api.timeseries_anomaly_investigations_api import TimeseriesAnomalyInvestigationsApi
@@ -290,6 +291,7 @@ __all__ = [
     "SyntheticsApi",
     "TagRulesApi",
     "TeamsApi",
+    "TerraformStateFilesApi",
     "TestOptimizationApi",
     "ThreatIntelligenceApi",
     "TimeseriesAnomalyInvestigationsApi",

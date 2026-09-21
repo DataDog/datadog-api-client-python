@@ -1,0 +1,38 @@
+{
+  "api": "TerraformStateFiles",
+  "expected_status": 400,
+  "feature": "Terraform State Files",
+  "id": "v2/Terraform State Files/Create a Terraform backend sync configuration returns \"Bad Request\" response",
+  "operation_id": "CreateTerraformBackendSyncConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TerraformBackendCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "account_id": " ",
+            "backend_type": "terraform",
+            "bucket_names": [
+              "terraform-state-bucket"
+            ],
+            "region": "us-east-1"
+          },
+          "type": "terraform-backends"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/iac-api/terraform/backends"
+  },
+  "scenario": "Create a Terraform backend sync configuration returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

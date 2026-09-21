@@ -1,0 +1,53 @@
+{
+  "api": "TerraformStateFiles",
+  "expected_status": 409,
+  "feature": "Terraform State Files",
+  "id": "v2/Terraform State Files/Update a Terraform backend sync configuration returns \"Conflict\" response",
+  "operation_id": "UpdateTerraformBackendSyncConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TerraformBackendUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "bucket_names": [
+              "terraform-state-bucket"
+            ]
+          },
+          "id": "2",
+          "type": "terraform-backends"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/iac-api/terraform/backends/{id}"
+  },
+  "scenario": "Update a Terraform backend sync configuration returns \"Conflict\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
