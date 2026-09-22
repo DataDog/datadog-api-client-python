@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, List, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -3017,9 +3018,12 @@ class IncidentsApi:
         incident_id: str,
         body: IncidentCreatePageFromIncidentRequest,
     ) -> IncidentPageUUIDResponse:
-        """Create a page from an incident.
+        """Create a page from an incident. **Deprecated**.
 
         Create a page from an incident using the Cases service.
+
+        **Deprecated** : This endpoint is deprecated. Use
+        `Create an on-call page from an incident <#create-an-on-call-page-from-an-incident>`_ instead.
 
         :param incident_id: The UUID of the incident.
         :type incident_id: str
@@ -3032,6 +3036,7 @@ class IncidentsApi:
 
         kwargs["body"] = body
 
+        warnings.warn("create_page_from_incident is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_page_from_incident_endpoint.call_with_http_info(**kwargs)
 
     def create_timestamp_override(
