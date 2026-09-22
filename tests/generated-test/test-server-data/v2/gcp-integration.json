@@ -322,6 +322,67 @@
     },
     {
       "feature": "GCP Integration",
+      "frozen_at": "2026-09-21T12:55:57.467Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "client_email": "Test-adf02e78612f5af0@test-project.iam.gserviceaccount.com",
+                    "host_filters": [],
+                    "is_org_folder_resource_collection_enabled": true
+                  },
+                  "type": "gcp_service_account"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/gcp/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9f54448b-f2db-4b40-a311-db7bf0eba7f8\",\"type\":\"gcp_service_account\",\"attributes\":{\"account_tags\":[],\"automute\":false,\"client_email\":\"Test-adf02e78612f5af0@test-project.iam.gserviceaccount.com\",\"cloud_run_revision_filters\":[],\"host_filters\":[],\"is_cspm_enabled\":false,\"is_global_location_enabled\":true,\"is_org_folder_resource_collection_enabled\":true,\"is_per_project_quota_enabled\":false,\"is_resource_change_collection_enabled\":false,\"is_security_command_center_enabled\":false,\"metric_namespace_configs\":[{\"id\":\"prometheus\",\"disabled\":true,\"filters\":[]}],\"monitored_resource_configs\":[],\"region_filter_configs\":[],\"resource_collection_enabled\":true}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/gcp/accounts/9f54448b-f2db-4b40-a311-db7bf0eba7f8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a new entry for your service account with org folder resource collection enabled returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "GCP Integration",
       "frozen_at": "2024-03-11T19:47:24.676Z",
       "interactions": [
         {
@@ -888,6 +949,98 @@
         }
       ],
       "scenario": "Update STS Service Account returns \"OK\" response with enable resource collection turned on",
+      "version": "v2"
+    },
+    {
+      "feature": "GCP Integration",
+      "frozen_at": "2026-09-21T12:55:59.538Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "client_email": "Test-746106a10e59cd21@example.com",
+                    "host_filters": []
+                  },
+                  "type": "gcp_service_account"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/integration/gcp/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fcf23df5-89e0-40af-b19c-f7dfa93c063c\",\"type\":\"gcp_service_account\",\"attributes\":{\"account_tags\":[],\"automute\":false,\"client_email\":\"Test-746106a10e59cd21@example.com\",\"cloud_run_revision_filters\":[],\"host_filters\":[],\"is_cspm_enabled\":false,\"is_global_location_enabled\":true,\"is_org_folder_resource_collection_enabled\":false,\"is_per_project_quota_enabled\":false,\"is_resource_change_collection_enabled\":false,\"is_security_command_center_enabled\":false,\"metric_namespace_configs\":[{\"id\":\"prometheus\",\"disabled\":true,\"filters\":[]}],\"monitored_resource_configs\":[],\"region_filter_configs\":[],\"resource_collection_enabled\":true}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "client_email": "Test-746106a10e59cd21@example.com",
+                    "is_org_folder_resource_collection_enabled": true
+                  },
+                  "id": "fcf23df5-89e0-40af-b19c-f7dfa93c063c",
+                  "type": "gcp_service_account"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/integration/gcp/accounts/fcf23df5-89e0-40af-b19c-f7dfa93c063c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fcf23df5-89e0-40af-b19c-f7dfa93c063c\",\"type\":\"gcp_service_account\",\"attributes\":{\"account_tags\":[],\"automute\":false,\"client_email\":\"Test-746106a10e59cd21@example.com\",\"cloud_run_revision_filters\":[],\"host_filters\":[],\"is_cspm_enabled\":false,\"is_global_location_enabled\":true,\"is_org_folder_resource_collection_enabled\":true,\"is_per_project_quota_enabled\":false,\"is_resource_change_collection_enabled\":false,\"is_security_command_center_enabled\":false,\"metric_namespace_configs\":[{\"id\":\"prometheus\",\"disabled\":true,\"filters\":[]}],\"monitored_resource_configs\":[],\"region_filter_configs\":[],\"resource_collection_enabled\":true}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/integration/gcp/accounts/fcf23df5-89e0-40af-b19c-f7dfa93c063c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update STS Service Account returns \"OK\" response with org folder resource collection enabled",
       "version": "v2"
     }
   ],

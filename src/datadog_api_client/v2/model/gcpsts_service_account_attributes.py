@@ -32,6 +32,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "host_filters": ([str],),
             "is_cspm_enabled": (bool,),
             "is_global_location_enabled": (bool,),
+            "is_org_folder_resource_collection_enabled": (bool,),
             "is_per_project_quota_enabled": (bool,),
             "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
@@ -49,6 +50,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "host_filters": "host_filters",
         "is_cspm_enabled": "is_cspm_enabled",
         "is_global_location_enabled": "is_global_location_enabled",
+        "is_org_folder_resource_collection_enabled": "is_org_folder_resource_collection_enabled",
         "is_per_project_quota_enabled": "is_per_project_quota_enabled",
         "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
@@ -67,6 +69,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         host_filters: Union[List[str], UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
         is_global_location_enabled: Union[bool, UnsetType] = unset,
+        is_org_folder_resource_collection_enabled: Union[bool, UnsetType] = unset,
         is_per_project_quota_enabled: Union[bool, UnsetType] = unset,
         is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
@@ -104,6 +107,10 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param is_global_location_enabled: When enabled, Datadog collects metrics where location is explicitly stated as "global" or where location information cannot be deduced from GCP labels.
         :type is_global_location_enabled: bool, optional
 
+        :param is_org_folder_resource_collection_enabled: When enabled, Datadog scans for organization and folder-level resources
+            under the organization the service account belongs to.
+        :type is_org_folder_resource_collection_enabled: bool, optional
+
         :param is_per_project_quota_enabled: When enabled, Datadog applies the ``X-Goog-User-Project`` header, attributing Google Cloud billing and quota usage to the project being monitored rather than the default service account project.
         :type is_per_project_quota_enabled: bool, optional
 
@@ -122,7 +129,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param region_filter_configs: Configurations for GCP location filtering, such as region, multi-region, or zone. Only monitored resources that match the specified regions are imported into Datadog. By default, Datadog collects from all locations.
         :type region_filter_configs: [str], optional
 
-        :param resource_collection_enabled: When enabled, Datadog scans for all resources in your GCP environment.
+        :param resource_collection_enabled: When enabled, Datadog scans for all project-level resources in your GCP environment.
         :type resource_collection_enabled: bool, optional
         """
         if account_tags is not unset:
@@ -139,6 +146,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["is_cspm_enabled"] = is_cspm_enabled
         if is_global_location_enabled is not unset:
             kwargs["is_global_location_enabled"] = is_global_location_enabled
+        if is_org_folder_resource_collection_enabled is not unset:
+            kwargs["is_org_folder_resource_collection_enabled"] = is_org_folder_resource_collection_enabled
         if is_per_project_quota_enabled is not unset:
             kwargs["is_per_project_quota_enabled"] = is_per_project_quota_enabled
         if is_resource_change_collection_enabled is not unset:

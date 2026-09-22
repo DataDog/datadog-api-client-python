@@ -5708,6 +5708,13 @@
     {
       "feature": "GCP Integration",
       "feature_file": "../../v2/features/gcp_integration.feature",
+      "file": "v2/gcp-integration/create-a-new-entry-for-your-service-account-with-org-folder-resource-collection-enabled-returns-ok-response.json",
+      "scenario": "Create a new entry for your service account with org folder resource collection enabled returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "GCP Integration",
+      "feature_file": "../../v2/features/gcp_integration.feature",
       "file": "v2/gcp-integration/create-a-new-entry-for-your-service-account-with-resource-collection-enabled-disabled-and-cspm-enabled-returns-bad-request-response.json",
       "scenario": "Create a new entry for your service account with resource collection enabled disabled and cspm enabled returns \"Bad Request\" response",
       "version": "v2"
@@ -5759,6 +5766,13 @@
       "feature_file": "../../v2/features/gcp_integration.feature",
       "file": "v2/gcp-integration/update-sts-service-account-returns-ok-response-with-enable-resource-collection-turned-on.json",
       "scenario": "Update STS Service Account returns \"OK\" response with enable resource collection turned on",
+      "version": "v2"
+    },
+    {
+      "feature": "GCP Integration",
+      "feature_file": "../../v2/features/gcp_integration.feature",
+      "file": "v2/gcp-integration/update-sts-service-account-returns-ok-response-with-org-folder-resource-collection-enabled.json",
+      "scenario": "Update STS Service Account returns \"OK\" response with org folder resource collection enabled",
       "version": "v2"
     },
     {
