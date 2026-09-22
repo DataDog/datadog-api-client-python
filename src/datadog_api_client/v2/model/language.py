@@ -16,7 +16,7 @@ class Language(ModelSimple):
     """
     Programming language
 
-    :param value: Must be one of ["PYTHON", "JAVASCRIPT", "TYPESCRIPT", "JAVA", "GO", "YAML", "RUBY", "CSHARP", "PHP", "KOTLIN", "SWIFT"].
+    :param value: Must be one of ["PYTHON", "JAVASCRIPT", "TYPESCRIPT", "JAVA", "GO", "YAML", "RUBY", "CSHARP", "PHP", "KOTLIN", "SWIFT", "DART", "DOCKERFILE", "ELIXIR", "JSON", "RUST", "TERRAFORM", "STARLARK", "BASH", "MARKDOWN", "APEX", "R", "SQL"].
     :type value: str
     """
 
@@ -32,6 +32,18 @@ class Language(ModelSimple):
         "PHP",
         "KOTLIN",
         "SWIFT",
+        "DART",
+        "DOCKERFILE",
+        "ELIXIR",
+        "JSON",
+        "RUST",
+        "TERRAFORM",
+        "STARLARK",
+        "BASH",
+        "MARKDOWN",
+        "APEX",
+        "R",
+        "SQL",
     }
     PYTHON: ClassVar["Language"]
     JAVASCRIPT: ClassVar["Language"]
@@ -44,6 +56,18 @@ class Language(ModelSimple):
     PHP: ClassVar["Language"]
     KOTLIN: ClassVar["Language"]
     SWIFT: ClassVar["Language"]
+    DART: ClassVar["Language"]
+    DOCKERFILE: ClassVar["Language"]
+    ELIXIR: ClassVar["Language"]
+    JSON: ClassVar["Language"]
+    RUST: ClassVar["Language"]
+    TERRAFORM: ClassVar["Language"]
+    STARLARK: ClassVar["Language"]
+    BASH: ClassVar["Language"]
+    MARKDOWN: ClassVar["Language"]
+    APEX: ClassVar["Language"]
+    R: ClassVar["Language"]
+    SQL: ClassVar["Language"]
 
     @cached_property
     def openapi_types(_):
@@ -63,3 +87,15 @@ Language.CSHARP = Language("CSHARP")
 Language.PHP = Language("PHP")
 Language.KOTLIN = Language("KOTLIN")
 Language.SWIFT = Language("SWIFT")
+Language.DART = Language("DART")
+Language.DOCKERFILE = Language("DOCKERFILE")
+Language.ELIXIR = Language("ELIXIR")
+Language.JSON = Language("JSON")
+Language.RUST = Language("RUST")
+Language.TERRAFORM = Language("TERRAFORM")
+Language.STARLARK = Language("STARLARK")
+Language.BASH = Language("BASH")
+Language.MARKDOWN = Language("MARKDOWN")
+Language.APEX = Language("APEX")
+Language.R = Language("R")
+Language.SQL = Language("SQL")

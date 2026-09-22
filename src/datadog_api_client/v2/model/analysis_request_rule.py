@@ -33,6 +33,7 @@ class AnalysisRequestRule(ModelNormal):
             "code": (str,),
             "created_at": (datetime,),
             "created_by": (str,),
+            "creation_message": (str,),
             "cve": (str,),
             "cwe": (str,),
             "description": (str,),
@@ -49,9 +50,11 @@ class AnalysisRequestRule(ModelNormal):
             "severity": (str,),
             "short_description": (str,),
             "should_use_ai_fix": (bool,),
+            "tags": ([str],),
             "tests": ([AnalysisRequestRuleTest],),
             "tree_sitter_query": (str,),
             "type": (str,),
+            "version_id": (int,),
         }
 
     attribute_map = {
@@ -61,6 +64,7 @@ class AnalysisRequestRule(ModelNormal):
         "code": "code",
         "created_at": "created_at",
         "created_by": "created_by",
+        "creation_message": "creation_message",
         "cve": "cve",
         "cwe": "cwe",
         "description": "description",
@@ -77,9 +81,11 @@ class AnalysisRequestRule(ModelNormal):
         "severity": "severity",
         "short_description": "short_description",
         "should_use_ai_fix": "should_use_ai_fix",
+        "tags": "tags",
         "tests": "tests",
         "tree_sitter_query": "tree_sitter_query",
         "type": "type",
+        "version_id": "version_id",
     }
     read_only_vars = {
         "created_at",
@@ -101,6 +107,7 @@ class AnalysisRequestRule(ModelNormal):
         arguments: Union[List[AnalysisRequestRuleArgument], UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         created_by: Union[str, UnsetType] = unset,
+        creation_message: Union[str, UnsetType] = unset,
         cve: Union[str, UnsetType] = unset,
         cwe: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
@@ -114,7 +121,9 @@ class AnalysisRequestRule(ModelNormal):
         regex: Union[str, none_type, UnsetType] = unset,
         short_description: Union[str, UnsetType] = unset,
         should_use_ai_fix: Union[bool, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         tests: Union[List[AnalysisRequestRuleTest], UnsetType] = unset,
+        version_id: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -143,6 +152,9 @@ class AnalysisRequestRule(ModelNormal):
 
         :param created_by: The identifier of the user or system that created the rule. Server-assigned by the rulesets endpoints; ignored by this operation.
         :type created_by: str, optional
+
+        :param creation_message: The message associated with the custom rule revision. Forwarded from the custom rulesets endpoints; ignored by this operation.
+        :type creation_message: str, optional
 
         :param cve: The CVE identifier associated with the rule. Forwarded from the rulesets endpoints; ignored by this operation.
         :type cve: str, optional
@@ -192,6 +204,9 @@ class AnalysisRequestRule(ModelNormal):
         :param should_use_ai_fix: Whether an AI-generated fix should be offered. Forwarded from the rulesets endpoints; ignored by this operation.
         :type should_use_ai_fix: bool, optional
 
+        :param tags: Tags associated with the custom rule revision. Forwarded from the custom rulesets endpoints; ignored by this operation.
+        :type tags: [str], optional
+
         :param tests: The test cases associated with the rule. Forwarded from the rulesets endpoints; ignored by this operation.
         :type tests: [AnalysisRequestRuleTest], optional
 
@@ -200,6 +215,9 @@ class AnalysisRequestRule(ModelNormal):
 
         :param type: The rule type indicating the detection mechanism (for example, ``TREE_SITTER_QUERY`` ).
         :type type: str
+
+        :param version_id: The custom rule revision version. Forwarded from the custom rulesets endpoints; ignored by this operation.
+        :type version_id: int, optional
         """
         if arguments is not unset:
             kwargs["arguments"] = arguments
@@ -207,6 +225,8 @@ class AnalysisRequestRule(ModelNormal):
             kwargs["created_at"] = created_at
         if created_by is not unset:
             kwargs["created_by"] = created_by
+        if creation_message is not unset:
+            kwargs["creation_message"] = creation_message
         if cve is not unset:
             kwargs["cve"] = cve
         if cwe is not unset:
@@ -233,8 +253,12 @@ class AnalysisRequestRule(ModelNormal):
             kwargs["short_description"] = short_description
         if should_use_ai_fix is not unset:
             kwargs["should_use_ai_fix"] = should_use_ai_fix
+        if tags is not unset:
+            kwargs["tags"] = tags
         if tests is not unset:
             kwargs["tests"] = tests
+        if version_id is not unset:
+            kwargs["version_id"] = version_id
         super().__init__(kwargs)
 
         self_.category = category
