@@ -11544,6 +11544,34 @@
       "version": "v2"
     },
     {
+      "feature": "Terraform State Files",
+      "feature_file": "../../v2/features/terraform_state_files.feature",
+      "file": "v2/terraform-state-files/create-a-terraform-backend-sync-configuration-returns-bad-request-response.json",
+      "scenario": "Create a Terraform backend sync configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Terraform State Files",
+      "feature_file": "../../v2/features/terraform_state_files.feature",
+      "file": "v2/terraform-state-files/delete-a-terraform-backend-sync-configuration-returns-bad-request-response.json",
+      "scenario": "Delete a Terraform backend sync configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Terraform State Files",
+      "feature_file": "../../v2/features/terraform_state_files.feature",
+      "file": "v2/terraform-state-files/list-terraform-backend-sync-configurations-returns-ok-response.json",
+      "scenario": "List Terraform backend sync configurations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Terraform State Files",
+      "feature_file": "../../v2/features/terraform_state_files.feature",
+      "file": "v2/terraform-state-files/update-a-terraform-backend-sync-configuration-returns-conflict-response.json",
+      "scenario": "Update a Terraform backend sync configuration returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Threat Intelligence",
       "feature_file": "../../v2/features/threat_intelligence.feature",
       "file": "v2/threat-intelligence/ingest-stix-threat-intelligence-returns-ok-response.json",

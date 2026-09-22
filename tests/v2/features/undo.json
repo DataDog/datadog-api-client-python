@@ -3179,6 +3179,37 @@
       "type": "unsafe"
     }
   },
+  "ListTerraformBackendSyncConfigs": {
+    "tag": "Terraform State Files",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTerraformBackendSyncConfig": {
+    "tag": "Terraform State Files",
+    "undo": {
+      "operationId": "DeleteTerraformBackendSyncConfig",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTerraformBackendSyncConfig": {
+    "tag": "Terraform State Files",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateTerraformBackendSyncConfig": {
+    "tag": "Terraform State Files",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListIdentityProviders": {
     "tag": "Identity Providers",
     "undo": {

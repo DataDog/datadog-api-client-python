@@ -1,0 +1,35 @@
+{
+  "api": "TerraformStateFiles",
+  "expected_status": 200,
+  "feature": "Terraform State Files",
+  "id": "v2/Terraform State Files/List Terraform backend sync configurations returns \"OK\" response",
+  "operation_id": "ListTerraformBackendSyncConfigs",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "account_id",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "123456789012"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/iac-api/terraform/backends"
+  },
+  "scenario": "List Terraform backend sync configurations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

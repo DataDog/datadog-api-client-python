@@ -536,6 +536,11 @@
       "version": "v2"
     },
     {
+      "feature": "Terraform State Files",
+      "file": "v2/terraform-state-files.json",
+      "version": "v2"
+    },
+    {
       "feature": "Threat Intelligence",
       "file": "v2/threat-intelligence.json",
       "version": "v2"

@@ -1,0 +1,35 @@
+{
+  "api": "TerraformStateFiles",
+  "expected_status": 400,
+  "feature": "Terraform State Files",
+  "id": "v2/Terraform State Files/Delete a Terraform backend sync configuration returns \"Bad Request\" response",
+  "operation_id": "DeleteTerraformBackendSyncConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid-id"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/iac-api/terraform/backends/{id}"
+  },
+  "scenario": "Delete a Terraform backend sync configuration returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

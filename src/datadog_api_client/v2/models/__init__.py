@@ -10874,6 +10874,20 @@ from datadog_api_client.v2.model.tenancy_products_data_attributes_products_items
 )
 from datadog_api_client.v2.model.tenancy_products_data_type import TenancyProductsDataType
 from datadog_api_client.v2.model.tenancy_products_list import TenancyProductsList
+from datadog_api_client.v2.model.terraform_backend_attributes import TerraformBackendAttributes
+from datadog_api_client.v2.model.terraform_backend_bucket import TerraformBackendBucket
+from datadog_api_client.v2.model.terraform_backend_create_attributes import TerraformBackendCreateAttributes
+from datadog_api_client.v2.model.terraform_backend_create_data import TerraformBackendCreateData
+from datadog_api_client.v2.model.terraform_backend_create_request import TerraformBackendCreateRequest
+from datadog_api_client.v2.model.terraform_backend_data import TerraformBackendData
+from datadog_api_client.v2.model.terraform_backend_kind import TerraformBackendKind
+from datadog_api_client.v2.model.terraform_backend_list_response import TerraformBackendListResponse
+from datadog_api_client.v2.model.terraform_backend_response import TerraformBackendResponse
+from datadog_api_client.v2.model.terraform_backend_sync_status import TerraformBackendSyncStatus
+from datadog_api_client.v2.model.terraform_backend_type import TerraformBackendType
+from datadog_api_client.v2.model.terraform_backend_update_attributes import TerraformBackendUpdateAttributes
+from datadog_api_client.v2.model.terraform_backend_update_data import TerraformBackendUpdateData
+from datadog_api_client.v2.model.terraform_backend_update_request import TerraformBackendUpdateRequest
 from datadog_api_client.v2.model.test_optimization_delete_service_settings_request import (
     TestOptimizationDeleteServiceSettingsRequest,
 )
@@ -19188,6 +19202,20 @@ __all__ = [
     "TenancyProductsDataAttributesProductsItems",
     "TenancyProductsDataType",
     "TenancyProductsList",
+    "TerraformBackendAttributes",
+    "TerraformBackendBucket",
+    "TerraformBackendCreateAttributes",
+    "TerraformBackendCreateData",
+    "TerraformBackendCreateRequest",
+    "TerraformBackendData",
+    "TerraformBackendKind",
+    "TerraformBackendListResponse",
+    "TerraformBackendResponse",
+    "TerraformBackendSyncStatus",
+    "TerraformBackendType",
+    "TerraformBackendUpdateAttributes",
+    "TerraformBackendUpdateData",
+    "TerraformBackendUpdateRequest",
     "TestOptimizationDeleteServiceSettingsRequest",
     "TestOptimizationDeleteServiceSettingsRequestAttributes",
     "TestOptimizationDeleteServiceSettingsRequestData",
