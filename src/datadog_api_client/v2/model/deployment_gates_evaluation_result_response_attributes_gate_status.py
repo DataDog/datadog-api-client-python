@@ -14,10 +14,10 @@ from typing import ClassVar
 
 class DeploymentGatesEvaluationResultResponseAttributesGateStatus(ModelSimple):
     """
-    The overall status of the gate evaluation.
+    The recorded result of a gate or rule evaluation.
         - `in_progress`: The evaluation is still running.
-        - `pass`: All rules passed successfully and the deployment is allowed to proceed.
-        - `fail`: One or more rules did not pass; the deployment should not proceed.
+        - `pass`: All rules passed successfully.
+        - `fail`: One or more rules did not pass.
 
     :param value: Must be one of ["in_progress", "pass", "fail"].
     :type value: str

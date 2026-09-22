@@ -70,11 +70,11 @@ class DeploymentGatesEvaluationResultResponseAttributes(ModelNormal):
         :param gate_id: The unique identifier of the deployment gate.
         :type gate_id: UUID
 
-        :param gate_status: The overall status of the gate evaluation.
+        :param gate_status: The recorded result of a gate or rule evaluation.
 
             * ``in_progress`` : The evaluation is still running.
-            * ``pass`` : All rules passed successfully and the deployment is allowed to proceed.
-            * ``fail`` : One or more rules did not pass; the deployment should not proceed.
+            * ``pass`` : All rules passed successfully.
+            * ``fail`` : One or more rules did not pass.
         :type gate_status: DeploymentGatesEvaluationResultResponseAttributesGateStatus
 
         :param rules: The results of individual rule evaluations.
