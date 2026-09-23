@@ -15,13 +15,14 @@ from datadog_api_client.v2.model.dem_variant_type import DemVariantType
 body = DemVariantRequest(
     data=DemVariantRequestData(
         attributes=DemVariantAttributes(
-            filter="device.type:mobile",
+            filter="@device.type:mobile",
             name="Mobile checkout",
             rum_steps=[
                 DemRumStep(
                     nodes=[
                         DemRumNode(
-                            query="action.name:'checkout'",
+                            app_id="11111111-2222-3333-4444-555555555555",
+                            query='@action.name:"Checkout"',
                         ),
                     ],
                     type=DemRumStepType.START,
@@ -29,7 +30,8 @@ body = DemVariantRequest(
                 DemRumStep(
                     nodes=[
                         DemRumNode(
-                            query="action.name:'confirmation'",
+                            app_id="11111111-2222-3333-4444-555555555555",
+                            query='@view.url_path:"/confirmation"',
                         ),
                     ],
                     type=DemRumStepType.STOP,

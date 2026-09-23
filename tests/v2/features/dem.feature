@@ -31,7 +31,7 @@ Feature: DEM
   @generated @skip @team:DataDog/dem-features
   Scenario: Create a DEM journey returns "OK" response
     Given new "CreateJourney" request
-    And body with value {"data": {"attributes": {"description": "Tracks the user checkout flow from cart to confirmation.", "journey_rum": {"filter": "env:prod", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}]}, "name": "Checkout Flow", "tags": ["team:synthetics", "env:prod"], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}]}, "type": "journeys"}}
+    And body with value {"data": {"attributes": {"description": "Tracks the user checkout flow from cart to confirmation.", "journey_rum": {"filter": "@application.id:11111111-2222-3333-4444-555555555555 env:prod", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "name": "Checkout Flow", "tags": ["team:synthetics", "env:prod"], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "type": "journeys"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -39,7 +39,7 @@ Feature: DEM
   Scenario: Create a DEM journey variant returns "Bad Request" response
     Given new "CreateJourneyVariant" request
     And request contains "journey_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": "device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}, "type": "variants"}}
+    And body with value {"data": {"attributes": {"filter": "@device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}, "type": "variants"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -47,7 +47,7 @@ Feature: DEM
   Scenario: Create a DEM journey variant returns "Not Found" response
     Given new "CreateJourneyVariant" request
     And request contains "journey_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": "device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}, "type": "variants"}}
+    And body with value {"data": {"attributes": {"filter": "@device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}, "type": "variants"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -55,7 +55,7 @@ Feature: DEM
   Scenario: Create a DEM journey variant returns "OK" response
     Given new "CreateJourneyVariant" request
     And request contains "journey_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": "device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}, "type": "variants"}}
+    And body with value {"data": {"attributes": {"filter": "@device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}, "type": "variants"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -196,10 +196,18 @@ Feature: DEM
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/dem-features
+  Scenario: Update a DEM journey returns "Bad Request" response
+    Given new "UpdateJourney" request
+    And request contains "journey_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Tracks the user checkout flow from cart to confirmation.", "journey_rum": {"filter": "@application.id:11111111-2222-3333-4444-555555555555 env:prod", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "name": "Checkout Flow", "tags": ["team:synthetics", "env:prod"], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "type": "journeys"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/dem-features
   Scenario: Update a DEM journey returns "Not Found" response
     Given new "UpdateJourney" request
     And request contains "journey_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "Tracks the user checkout flow from cart to confirmation.", "journey_rum": {"filter": "env:prod", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}]}, "name": "Checkout Flow", "tags": ["team:synthetics", "env:prod"], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}]}, "type": "journeys"}}
+    And body with value {"data": {"attributes": {"description": "Tracks the user checkout flow from cart to confirmation.", "journey_rum": {"filter": "@application.id:11111111-2222-3333-4444-555555555555 env:prod", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "name": "Checkout Flow", "tags": ["team:synthetics", "env:prod"], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "type": "journeys"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -207,7 +215,7 @@ Feature: DEM
   Scenario: Update a DEM journey returns "OK" response
     Given new "UpdateJourney" request
     And request contains "journey_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "Tracks the user checkout flow from cart to confirmation.", "journey_rum": {"filter": "env:prod", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}]}, "name": "Checkout Flow", "tags": ["team:synthetics", "env:prod"], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}]}, "type": "journeys"}}
+    And body with value {"data": {"attributes": {"description": "Tracks the user checkout flow from cart to confirmation.", "journey_rum": {"filter": "@application.id:11111111-2222-3333-4444-555555555555 env:prod", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "name": "Checkout Flow", "tags": ["team:synthetics", "env:prod"], "variants": [{"name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}]}, "type": "journeys"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -215,7 +223,7 @@ Feature: DEM
   Scenario: Update a DEM journey variant returns "Bad Request" response
     Given new "UpdateJourneyVariant" request
     And request contains "variant_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": "device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}, "type": "variants"}}
+    And body with value {"data": {"attributes": {"filter": "@device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}, "type": "variants"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -223,7 +231,7 @@ Feature: DEM
   Scenario: Update a DEM journey variant returns "Not Found" response
     Given new "UpdateJourneyVariant" request
     And request contains "variant_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": "device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}, "type": "variants"}}
+    And body with value {"data": {"attributes": {"filter": "@device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}, "type": "variants"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -231,6 +239,6 @@ Feature: DEM
   Scenario: Update a DEM journey variant returns "OK" response
     Given new "UpdateJourneyVariant" request
     And request contains "variant_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"filter": "device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"query": "action.name:'checkout'"}], "type": "start"}, {"nodes": [{"query": "action.name:'confirmation'"}], "type": "stop"}]}, "type": "variants"}}
+    And body with value {"data": {"attributes": {"filter": "@device.type:mobile", "name": "Mobile checkout", "rum_steps": [{"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@action.name:\"Checkout\""}], "type": "start"}, {"nodes": [{"app_id": "11111111-2222-3333-4444-555555555555", "query": "@view.url_path:\"/confirmation\""}], "type": "stop"}]}, "type": "variants"}}
     When the request is sent
     Then the response status is 200 OK

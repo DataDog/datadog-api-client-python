@@ -19,12 +19,13 @@ body = DemJourneyCreateRequest(
         attributes=DemJourneyCreateAttributes(
             description="Tracks the user checkout flow from cart to confirmation.",
             journey_rum=DemJourneyRum(
-                filter="env:prod",
+                filter="@application.id:11111111-2222-3333-4444-555555555555 env:prod",
                 rum_steps=[
                     DemRumStep(
                         nodes=[
                             DemRumNode(
-                                query="action.name:'checkout'",
+                                app_id="11111111-2222-3333-4444-555555555555",
+                                query='@action.name:"Checkout"',
                             ),
                         ],
                         type=DemRumStepType.START,
@@ -32,7 +33,8 @@ body = DemJourneyCreateRequest(
                     DemRumStep(
                         nodes=[
                             DemRumNode(
-                                query="action.name:'confirmation'",
+                                app_id="11111111-2222-3333-4444-555555555555",
+                                query='@view.url_path:"/confirmation"',
                             ),
                         ],
                         type=DemRumStepType.STOP,
@@ -45,7 +47,8 @@ body = DemJourneyCreateRequest(
                             DemRumStep(
                                 nodes=[
                                     DemRumNode(
-                                        query="action.name:'checkout'",
+                                        app_id="11111111-2222-3333-4444-555555555555",
+                                        query='@action.name:"Checkout"',
                                     ),
                                 ],
                                 type=DemRumStepType.START,
@@ -53,7 +56,8 @@ body = DemJourneyCreateRequest(
                             DemRumStep(
                                 nodes=[
                                     DemRumNode(
-                                        query="action.name:'confirmation'",
+                                        app_id="11111111-2222-3333-4444-555555555555",
+                                        query='@view.url_path:"/confirmation"',
                                     ),
                                 ],
                                 type=DemRumStepType.STOP,
@@ -74,7 +78,8 @@ body = DemJourneyCreateRequest(
                         DemRumStep(
                             nodes=[
                                 DemRumNode(
-                                    query="action.name:'checkout'",
+                                    app_id="11111111-2222-3333-4444-555555555555",
+                                    query='@action.name:"Checkout"',
                                 ),
                             ],
                             type=DemRumStepType.START,
@@ -82,7 +87,8 @@ body = DemJourneyCreateRequest(
                         DemRumStep(
                             nodes=[
                                 DemRumNode(
-                                    query="action.name:'confirmation'",
+                                    app_id="11111111-2222-3333-4444-555555555555",
+                                    query='@view.url_path:"/confirmation"',
                                 ),
                             ],
                             type=DemRumStepType.STOP,
