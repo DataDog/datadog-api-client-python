@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class BatchDeleteRowsRequestArray(ModelNormal):
     validations = {
         "data": {
-            "max_items": 200,
+            "max_items": 45589,
         },
     }
 
@@ -38,7 +38,7 @@ class BatchDeleteRowsRequestArray(ModelNormal):
         """
         The request body for deleting multiple rows from a reference table.
 
-        :param data: List of row resources to delete from the reference table.
+        :param data: List of row resources to delete from the reference table. The request payload can be up to 1 MiB.
         :type data: [TableRowResourceIdentifier]
         """
         super().__init__(kwargs)
