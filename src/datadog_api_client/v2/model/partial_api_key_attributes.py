@@ -32,6 +32,7 @@ class PartialAPIKeyAttributes(ModelNormal):
             "last4": (str,),
             "modified_at": (str,),
             "name": (str,),
+            "private_action_runner_enroll_enabled": (bool,),
             "remote_config_read_enabled": (bool,),
         }
 
@@ -42,6 +43,7 @@ class PartialAPIKeyAttributes(ModelNormal):
         "last4": "last4",
         "modified_at": "modified_at",
         "name": "name",
+        "private_action_runner_enroll_enabled": "private_action_runner_enroll_enabled",
         "remote_config_read_enabled": "remote_config_read_enabled",
     }
     read_only_vars = {
@@ -59,6 +61,7 @@ class PartialAPIKeyAttributes(ModelNormal):
         last4: Union[str, UnsetType] = unset,
         modified_at: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        private_action_runner_enroll_enabled: Union[bool, UnsetType] = unset,
         remote_config_read_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
@@ -83,6 +86,9 @@ class PartialAPIKeyAttributes(ModelNormal):
         :param name: Name of the API key.
         :type name: str, optional
 
+        :param private_action_runner_enroll_enabled: Whether the API key can enroll a Private Action Runner.
+        :type private_action_runner_enroll_enabled: bool, optional
+
         :param remote_config_read_enabled: The remote config read enabled status.
         :type remote_config_read_enabled: bool, optional
         """
@@ -98,6 +104,8 @@ class PartialAPIKeyAttributes(ModelNormal):
             kwargs["modified_at"] = modified_at
         if name is not unset:
             kwargs["name"] = name
+        if private_action_runner_enroll_enabled is not unset:
+            kwargs["private_action_runner_enroll_enabled"] = private_action_runner_enroll_enabled
         if remote_config_read_enabled is not unset:
             kwargs["remote_config_read_enabled"] = remote_config_read_enabled
         super().__init__(kwargs)
