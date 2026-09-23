@@ -29,12 +29,14 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
         )
 
         return {
+            "filter": (str,),
             "scope": (RecommendationsFilterRequestScope,),
             "sort": ([RecommendationsFilterRequestSortItems],),
             "view": (str,),
         }
 
     attribute_map = {
+        "filter": "filter",
         "scope": "scope",
         "sort": "sort",
         "view": "view",
@@ -42,6 +44,7 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        filter: Union[str, UnsetType] = unset,
         scope: Union[RecommendationsFilterRequestScope, UnsetType] = unset,
         sort: Union[List[RecommendationsFilterRequestSortItems], UnsetType] = unset,
         view: Union[str, UnsetType] = unset,
@@ -49,6 +52,11 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
     ):
         """
         Attributes used to filter and sort cost recommendations.
+
+        :param filter: Filter expression applied to the recommendations. When supplied, this attribute overrides
+            ``data.id`` , including when empty. When omitted, ``data.id`` is used. If the resulting filter
+            is empty, it defaults to ``*``. Scope, view, and pagination still apply.
+        :type filter: str, optional
 
         :param scope: Recommendations scope. Defaults to ``ccm`` ; use ``experiment`` for experimental recommendations or ``*`` for both.
         :type scope: RecommendationsFilterRequestScope, optional
@@ -59,6 +67,8 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
         :param view: Active view name (for example, ``active`` , ``dismissed`` , ``open`` , ``in-progress`` , or ``completed`` ).
         :type view: str, optional
         """
+        if filter is not unset:
+            kwargs["filter"] = filter
         if scope is not unset:
             kwargs["scope"] = scope
         if sort is not unset:
