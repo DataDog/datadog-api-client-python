@@ -1,5 +1,70 @@
 # CHANGELOG
 
+## 2.61.0/2026-09-24
+
+### Added
+* Document Deployment Gate evaluation APIs [#4049](https://github.com/DataDog/datadog-api-client-python/pull/4049)
+* Update GCP V2 API spec to support is_org_folder_resource_collection_enabled  [#4041](https://github.com/DataDog/datadog-api-client-python/pull/4041)
+* allow billing read for ListQuotas GET endpoint [#4034](https://github.com/DataDog/datadog-api-client-python/pull/4034)
+* Document run_as attribute and with_run_as param for downtime v2 API [#4027](https://github.com/DataDog/datadog-api-client-python/pull/4027)
+* Add draft monitor permissions definition [#4021](https://github.com/DataDog/datadog-api-client-python/pull/4021)
+* Add sensitivePrivileges field to Workflow Automation spec [#4020](https://github.com/DataDog/datadog-api-client-python/pull/4020)
+* Document NDM device tag sources [#4013](https://github.com/DataDog/datadog-api-client-python/pull/4013)
+* Document GetBudget response metadata [#4010](https://github.com/DataDog/datadog-api-client-python/pull/4010)
+* LLMObs Document version-pinned prompt composition [#4005](https://github.com/DataDog/datadog-api-client-python/pull/4005)
+* Add versioned prompt configuration [#4004](https://github.com/DataDog/datadog-api-client-python/pull/4004)
+* Document OAuth v2 OIDC discovery endpoint [#4003](https://github.com/DataDog/datadog-api-client-python/pull/4003)
+* Add prometheus remote write source and sink to obs-pipelines public api spec [#3999](https://github.com/DataDog/datadog-api-client-python/pull/3999)
+* Allow up to three timeseries anomaly investigation results [#3998](https://github.com/DataDog/datadog-api-client-python/pull/3998)
+* Security findings default and regular inbox rules API spec [#3996](https://github.com/DataDog/datadog-api-client-python/pull/3996)
+* Add Integration Accounts v2 API for Snowflake [#3995](https://github.com/DataDog/datadog-api-client-python/pull/3995)
+* Add downtime duration policy to Monitor Config Policy API spec [#3993](https://github.com/DataDog/datadog-api-client-python/pull/3993)
+* Add overflow and metrics destinations, deprecate generate_datadog_metrics, add custom auth for http_client [#3992](https://github.com/DataDog/datadog-api-client-python/pull/3992)
+* promote GET `/api/v2/on-call/schedules` to a public ListOnCallSchedules operation [#3991](https://github.com/DataDog/datadog-api-client-python/pull/3991)
+* Add documentation for name filter query parameter in ListStatusPages [#3990](https://github.com/DataDog/datadog-api-client-python/pull/3990)
+* Add embedded app widgets to the Dashboard API [#3986](https://github.com/DataDog/datadog-api-client-python/pull/3986)
+* Support frontend annotation display blocks [#3985](https://github.com/DataDog/datadog-api-client-python/pull/3985)
+* Accept the linear ticket creation target in security pipelines automation [#3984](https://github.com/DataDog/datadog-api-client-python/pull/3984)
+* Add timeseries anomaly investigations API [#3976](https://github.com/DataDog/datadog-api-client-python/pull/3976)
+* Add monitor IDs to deployment rules [#3974](https://github.com/DataDog/datadog-api-client-python/pull/3974)
+* Change usage quotas public APIs to only required billing_edit [#3973](https://github.com/DataDog/datadog-api-client-python/pull/3973)
+* Add `sensitive_data` and `serverless_function_code_vulnerability` to security finding notification API spec [#3972](https://github.com/DataDog/datadog-api-client-python/pull/3972)
+* Add Integration Accounts v2 API for Databricks [#3968](https://github.com/DataDog/datadog-api-client-python/pull/3968)
+* Add source to target and model configuration options to data quality monitors [#3965](https://github.com/DataDog/datadog-api-client-python/pull/3965)
+* Publish product catalog SKUs and pricing API in preview [#3964](https://github.com/DataDog/datadog-api-client-python/pull/3964)
+* Add unit cost ROI endpoints to Cloud Cost Management [#3963](https://github.com/DataDog/datadog-api-client-python/pull/3963)
+* Update Observability Pipelines Splunk TCP source in OpenAPI spec [#3962](https://github.com/DataDog/datadog-api-client-python/pull/3962)
+* Add annotated interaction details endpoint [#3954](https://github.com/DataDog/datadog-api-client-python/pull/3954)
+* [DEM-68] - Publish DEM Journey APIs [#3952](https://github.com/DataDog/datadog-api-client-python/pull/3952)
+* Add canceled_description to maintenance response attributes [#3950](https://github.com/DataDog/datadog-api-client-python/pull/3950)
+* Add Feature Flag creation options [#3944](https://github.com/DataDog/datadog-api-client-python/pull/3944)
+* Add workflow run as configuration [#3928](https://github.com/DataDog/datadog-api-client-python/pull/3928)
+* Document NDM device tag sources [#3909](https://github.com/DataDog/datadog-api-client-python/pull/3909)
+* Promote Code Coverage v2 endpoints to stable [#3880](https://github.com/DataDog/datadog-api-client-python/pull/3880)
+* Document include_scopes query param on GET /api/v2/permissions [#3845](https://github.com/DataDog/datadog-api-client-python/pull/3845)
+
+### Removed
+* Remove deprecated queried_tags_window_seconds and related_asset_tags fields [#4045](https://github.com/DataDog/datadog-api-client-python/pull/4045)
+* Deprecate POST incidents /cases/page endpoint [#4035](https://github.com/DataDog/datadog-api-client-python/pull/4035)
+* Remove actor_handle and actor_type from the CSM ownership feedback request [#3969](https://github.com/DataDog/datadog-api-client-python/pull/3969)
+
+### Fixed
+* Fix static analysis OpenAPI drift [#4044](https://github.com/DataDog/datadog-api-client-python/pull/4044)
+* Allow SDS configuration metadata extensions [#4040](https://github.com/DataDog/datadog-api-client-python/pull/4040)
+* Fix cost recommendations JSON API request schema [#4028](https://github.com/DataDog/datadog-api-client-python/pull/4028)
+* Add Private Action Runner flag to API key schemas [#4025](https://github.com/DataDog/datadog-api-client-python/pull/4025)
+* Document monitor scope for investigations [#4000](https://github.com/DataDog/datadog-api-client-python/pull/4000)
+* Fix static-analysis-api spec drift [#3988](https://github.com/DataDog/datadog-api-client-python/pull/3988)
+
+### Changed
+* Normalize Twilio and Elastic Cloud integration account specs [#4018](https://github.com/DataDog/datadog-api-client-python/pull/4018)
+* Use JSONAPI error schema for cost tag endpoints [#4015](https://github.com/DataDog/datadog-api-client-python/pull/4015)
+* Fix GetBudget costs_unit.id type to integer [#4012](https://github.com/DataDog/datadog-api-client-python/pull/4012)
+* Add role policy type to org group policies [#3966](https://github.com/DataDog/datadog-api-client-python/pull/3966)
+
+### Deprecated
+* Deprecate OCI config listing endpoint [#3945](https://github.com/DataDog/datadog-api-client-python/pull/3945)
+
 ## 2.60.0/2026-09-02
 
 ### Security
