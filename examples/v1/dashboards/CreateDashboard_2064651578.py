@@ -2,6 +2,7 @@
 Create a new dashboard with team tags returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
@@ -90,6 +91,7 @@ body = Dashboard(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)
     response = api_instance.create_dashboard(body=body)

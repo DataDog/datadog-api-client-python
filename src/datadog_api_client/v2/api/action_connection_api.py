@@ -41,7 +41,7 @@ class ActionConnectionApi:
         self._create_action_connection_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateActionConnectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/connections",
                 "operation_id": "create_action_connection",
                 "http_method": "POST",
@@ -61,7 +61,7 @@ class ActionConnectionApi:
         self._delete_action_connection_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/connections/{connection_id}",
                 "operation_id": "delete_action_connection",
                 "http_method": "DELETE",
@@ -84,7 +84,7 @@ class ActionConnectionApi:
         self._get_action_connection_endpoint = _Endpoint(
             settings={
                 "response_type": (GetActionConnectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/connections/{connection_id}",
                 "operation_id": "get_action_connection",
                 "http_method": "GET",
@@ -107,7 +107,7 @@ class ActionConnectionApi:
         self._get_app_key_registration_endpoint = _Endpoint(
             settings={
                 "response_type": (GetAppKeyRegistrationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/app_key_registrations/{app_key_id}",
                 "operation_id": "get_app_key_registration",
                 "http_method": "GET",
@@ -130,7 +130,7 @@ class ActionConnectionApi:
         self._list_app_key_registrations_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAppKeyRegistrationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/app_key_registrations",
                 "operation_id": "list_app_key_registrations",
                 "http_method": "GET",
@@ -157,7 +157,7 @@ class ActionConnectionApi:
         self._register_app_key_endpoint = _Endpoint(
             settings={
                 "response_type": (RegisterAppKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/app_key_registrations/{app_key_id}",
                 "operation_id": "register_app_key",
                 "http_method": "PUT",
@@ -180,7 +180,7 @@ class ActionConnectionApi:
         self._unregister_app_key_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/app_key_registrations/{app_key_id}",
                 "operation_id": "unregister_app_key",
                 "http_method": "DELETE",
@@ -203,7 +203,7 @@ class ActionConnectionApi:
         self._update_action_connection_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateActionConnectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/connections/{connection_id}",
                 "operation_id": "update_action_connection",
                 "http_method": "PATCH",

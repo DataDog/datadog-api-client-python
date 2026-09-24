@@ -28,7 +28,7 @@ class EntityRiskScoresApi:
         self._get_entity_risk_score_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityEntityRiskScoreResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security-entities/risk-scores/{entity_id}",
                 "operation_id": "get_entity_risk_score",
                 "http_method": "GET",
@@ -51,7 +51,7 @@ class EntityRiskScoresApi:
         self._list_entity_risk_scores_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityEntityRiskScoresResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security-entities/risk-scores",
                 "operation_id": "list_entity_risk_scores",
                 "http_method": "GET",

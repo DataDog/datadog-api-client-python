@@ -13,6 +13,7 @@ AGENT_RULE_DATA_ID = environ["AGENT_RULE_DATA_ID"]
 POLICY_DATA_ID = environ["POLICY_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CSMThreatsApi(api_client)
     api_instance.delete_csm_threats_agent_rule(

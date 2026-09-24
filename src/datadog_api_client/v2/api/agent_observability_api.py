@@ -134,7 +134,7 @@ class AgentObservabilityApi:
         self._aggregate_llm_obs_experimentation_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentationAnalyticsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experimentation/analytics",
                 "operation_id": "aggregate_llm_obs_experimentation",
                 "http_method": "POST",
@@ -154,7 +154,7 @@ class AgentObservabilityApi:
         self._batch_update_llm_obs_dataset_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetRecordsMutationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/batch_update",
                 "operation_id": "batch_update_llm_obs_dataset",
                 "http_method": "POST",
@@ -186,7 +186,7 @@ class AgentObservabilityApi:
         self._clone_llm_obs_dataset_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/clone",
                 "operation_id": "clone_llm_obs_dataset",
                 "http_method": "POST",
@@ -218,7 +218,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_annotation_queue_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationQueueResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues",
                 "operation_id": "create_llm_obs_annotation_queue",
                 "http_method": "POST",
@@ -238,7 +238,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_annotation_queue_interactions_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationQueueInteractionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/interactions",
                 "operation_id": "create_llm_obs_annotation_queue_interactions",
                 "http_method": "POST",
@@ -264,7 +264,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_dataset_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets",
                 "operation_id": "create_llm_obs_dataset",
                 "http_method": "POST",
@@ -290,7 +290,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_dataset_records_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetRecordsMutationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/records",
                 "operation_id": "create_llm_obs_dataset_records",
                 "http_method": "POST",
@@ -322,7 +322,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_experiment_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experiments",
                 "operation_id": "create_llm_obs_experiment",
                 "http_method": "POST",
@@ -342,7 +342,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_experiment_events_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experiments/{experiment_id}/events",
                 "operation_id": "create_llm_obs_experiment_events",
                 "http_method": "POST",
@@ -368,7 +368,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_integration_inference_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsIntegrationInferenceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/integrations/{integration}/{account_id}/inference",
                 "operation_id": "create_llm_obs_integration_inference",
                 "http_method": "POST",
@@ -400,7 +400,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_project_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsProjectResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/projects",
                 "operation_id": "create_llm_obs_project",
                 "http_method": "POST",
@@ -420,7 +420,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_prompt_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsCreatePromptResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts",
                 "operation_id": "create_llm_obs_prompt",
                 "http_method": "POST",
@@ -440,7 +440,7 @@ class AgentObservabilityApi:
         self._create_llm_obs_prompt_version_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPromptVersionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions",
                 "operation_id": "create_llm_obs_prompt_version",
                 "http_method": "POST",
@@ -466,7 +466,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_annotation_queue_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}",
                 "operation_id": "delete_llm_obs_annotation_queue",
                 "http_method": "DELETE",
@@ -489,7 +489,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_annotation_queue_interactions_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/interactions/delete",
                 "operation_id": "delete_llm_obs_annotation_queue_interactions",
                 "http_method": "POST",
@@ -515,7 +515,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_annotations_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDeleteAnnotationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotations/delete",
                 "operation_id": "delete_llm_obs_annotations",
                 "http_method": "POST",
@@ -541,7 +541,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_custom_eval_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom/{eval_name}",
                 "operation_id": "delete_llm_obs_custom_eval_config",
                 "http_method": "DELETE",
@@ -564,7 +564,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_dataset_records_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/records/delete",
                 "operation_id": "delete_llm_obs_dataset_records",
                 "http_method": "POST",
@@ -596,7 +596,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_datasets_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/delete",
                 "operation_id": "delete_llm_obs_datasets",
                 "http_method": "POST",
@@ -622,7 +622,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_experiments_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experiments/delete",
                 "operation_id": "delete_llm_obs_experiments",
                 "http_method": "POST",
@@ -642,7 +642,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_patterns_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs/{config_id}",
                 "operation_id": "delete_llm_obs_patterns_config",
                 "http_method": "DELETE",
@@ -665,7 +665,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_projects_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/projects/delete",
                 "operation_id": "delete_llm_obs_projects",
                 "http_method": "POST",
@@ -685,7 +685,7 @@ class AgentObservabilityApi:
         self._delete_llm_obs_prompt_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDeletedPromptResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}",
                 "operation_id": "delete_llm_obs_prompt",
                 "http_method": "DELETE",
@@ -708,7 +708,7 @@ class AgentObservabilityApi:
         self._export_llm_obs_dataset_endpoint = _Endpoint(
             settings={
                 "response_type": (str,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/export",
                 "operation_id": "export_llm_obs_dataset",
                 "http_method": "GET",
@@ -750,7 +750,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_annotated_interaction_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotatedInteractionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotated-interactions/{interaction_id}",
                 "operation_id": "get_llm_obs_annotated_interaction",
                 "http_method": "GET",
@@ -793,7 +793,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_annotated_interactions_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotatedInteractionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotated-interactions",
                 "operation_id": "get_llm_obs_annotated_interactions",
                 "http_method": "GET",
@@ -816,7 +816,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_annotated_interactions_by_trace_i_ds_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotatedInteractionsByTraceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotated-interactions",
                 "operation_id": "get_llm_obs_annotated_interactions_by_trace_i_ds",
                 "http_method": "GET",
@@ -858,7 +858,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_annotation_queue_label_schema_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationQueueLabelSchemaResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/label-schema",
                 "operation_id": "get_llm_obs_annotation_queue_label_schema",
                 "http_method": "GET",
@@ -881,7 +881,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_custom_eval_config_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsCustomEvalConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom/{eval_name}",
                 "operation_id": "get_llm_obs_custom_eval_config",
                 "http_method": "GET",
@@ -904,7 +904,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_dataset_draft_state_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetDraftStateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/draft_state",
                 "operation_id": "get_llm_obs_dataset_draft_state",
                 "http_method": "GET",
@@ -933,7 +933,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_patterns_config_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs/latest",
                 "operation_id": "get_llm_obs_patterns_config",
                 "http_method": "GET",
@@ -949,7 +949,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_patterns_run_status_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsRunStatusResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-runs/status",
                 "operation_id": "get_llm_obs_patterns_run_status",
                 "http_method": "GET",
@@ -972,7 +972,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_prompt_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPromptSDKResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}",
                 "operation_id": "get_llm_obs_prompt",
                 "http_method": "GET",
@@ -1000,7 +1000,7 @@ class AgentObservabilityApi:
         self._get_llm_obs_prompt_version_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPromptVersionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions/{version}",
                 "operation_id": "get_llm_obs_prompt_version",
                 "http_method": "GET",
@@ -1032,7 +1032,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_annotation_queues_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationQueuesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues",
                 "operation_id": "list_llm_obs_annotation_queues",
                 "http_method": "GET",
@@ -1060,7 +1060,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_custom_eval_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsCustomEvalConfigListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom",
                 "operation_id": "list_llm_obs_custom_eval_configs",
                 "http_method": "GET",
@@ -1076,7 +1076,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_dataset_records_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetRecordsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/records",
                 "operation_id": "list_llm_obs_dataset_records",
                 "http_method": "GET",
@@ -1120,7 +1120,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_datasets_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets",
                 "operation_id": "list_llm_obs_datasets",
                 "http_method": "GET",
@@ -1163,7 +1163,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_dataset_versions_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetVersionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/versions",
                 "operation_id": "list_llm_obs_dataset_versions",
                 "http_method": "GET",
@@ -1192,7 +1192,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_experiment_events_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentEventsV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v3/experiments/{experiment_id}/events",
                 "operation_id": "list_llm_obs_experiment_events",
                 "http_method": "GET",
@@ -1225,7 +1225,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_experiment_events_v1_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentSpansResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experiments/{experiment_id}/events",
                 "operation_id": "list_llm_obs_experiment_events_v1",
                 "http_method": "GET",
@@ -1248,7 +1248,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_experiment_events_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentEventsV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v2/experiments/{experiment_id}/events",
                 "operation_id": "list_llm_obs_experiment_events_v2",
                 "http_method": "GET",
@@ -1271,7 +1271,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_experiments_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experiments",
                 "operation_id": "list_llm_obs_experiments",
                 "http_method": "GET",
@@ -1351,7 +1351,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_integration_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": ([LLMObsIntegrationAccount],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/integrations/{integration}/accounts",
                 "operation_id": "list_llm_obs_integration_accounts",
                 "http_method": "GET",
@@ -1374,7 +1374,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_integration_models_endpoint = _Endpoint(
             settings={
                 "response_type": ([LLMObsIntegrationModel],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/integrations/{integration}/{account_id}/models",
                 "operation_id": "list_llm_obs_integration_models",
                 "http_method": "GET",
@@ -1403,7 +1403,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_patterns_clustered_points_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsClusteredPointsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-clustered-points",
                 "operation_id": "list_llm_obs_patterns_clustered_points",
                 "http_method": "GET",
@@ -1436,7 +1436,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_patterns_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsConfigsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs",
                 "operation_id": "list_llm_obs_patterns_configs",
                 "http_method": "GET",
@@ -1452,7 +1452,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_patterns_runs_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsRunsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-runs",
                 "operation_id": "list_llm_obs_patterns_runs",
                 "http_method": "GET",
@@ -1475,7 +1475,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_patterns_topics_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsTopicsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-topics",
                 "operation_id": "list_llm_obs_patterns_topics",
                 "http_method": "GET",
@@ -1503,7 +1503,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_patterns_topics_with_clustered_points_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsTopicsWithClusteredPointsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-topics/with-cluster-points",
                 "operation_id": "list_llm_obs_patterns_topics_with_clustered_points",
                 "http_method": "GET",
@@ -1536,7 +1536,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_projects_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsProjectsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/projects",
                 "operation_id": "list_llm_obs_projects",
                 "http_method": "GET",
@@ -1573,7 +1573,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_prompts_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPromptsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts",
                 "operation_id": "list_llm_obs_prompts",
                 "http_method": "GET",
@@ -1595,7 +1595,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_prompt_versions_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPromptVersionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions",
                 "operation_id": "list_llm_obs_prompt_versions",
                 "http_method": "GET",
@@ -1618,7 +1618,7 @@ class AgentObservabilityApi:
         self._list_llm_obs_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsSpansResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/spans/events",
                 "operation_id": "list_llm_obs_spans",
                 "http_method": "GET",
@@ -1695,7 +1695,7 @@ class AgentObservabilityApi:
         self._lock_llm_obs_dataset_draft_state_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetDraftStateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/draft_state/lock",
                 "operation_id": "lock_llm_obs_dataset_draft_state",
                 "http_method": "PATCH",
@@ -1724,7 +1724,7 @@ class AgentObservabilityApi:
         self._restore_llm_obs_dataset_version_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/restore",
                 "operation_id": "restore_llm_obs_dataset_version",
                 "http_method": "POST",
@@ -1756,7 +1756,7 @@ class AgentObservabilityApi:
         self._search_llm_obs_experimentation_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentationSearchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experimentation/search",
                 "operation_id": "search_llm_obs_experimentation",
                 "http_method": "POST",
@@ -1776,7 +1776,7 @@ class AgentObservabilityApi:
         self._search_llm_obs_spans_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsSpansResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/spans/events/search",
                 "operation_id": "search_llm_obs_spans",
                 "http_method": "POST",
@@ -1796,7 +1796,7 @@ class AgentObservabilityApi:
         self._simple_search_llm_obs_experimentation_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentationSimpleSearchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experimentation/simple-search",
                 "operation_id": "simple_search_llm_obs_experimentation",
                 "http_method": "POST",
@@ -1816,7 +1816,7 @@ class AgentObservabilityApi:
         self._trigger_llm_obs_patterns_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsTriggerResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-runs",
                 "operation_id": "trigger_llm_obs_patterns",
                 "http_method": "POST",
@@ -1836,7 +1836,7 @@ class AgentObservabilityApi:
         self._unlock_llm_obs_dataset_draft_state_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/draft_state/unlock",
                 "operation_id": "unlock_llm_obs_dataset_draft_state",
                 "http_method": "PATCH",
@@ -1865,7 +1865,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_annotation_queue_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationQueueResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}",
                 "operation_id": "update_llm_obs_annotation_queue",
                 "http_method": "PATCH",
@@ -1891,7 +1891,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_annotation_queue_label_schema_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationQueueLabelSchemaResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/label-schema",
                 "operation_id": "update_llm_obs_annotation_queue_label_schema",
                 "http_method": "PUT",
@@ -1917,7 +1917,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_custom_eval_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/llm-obs/config/evaluators/custom/{eval_name}",
                 "operation_id": "update_llm_obs_custom_eval_config",
                 "http_method": "PUT",
@@ -1943,7 +1943,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_dataset_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}",
                 "operation_id": "update_llm_obs_dataset",
                 "http_method": "PATCH",
@@ -1975,7 +1975,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_dataset_records_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsDatasetRecordsMutationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/{project_id}/datasets/{dataset_id}/records",
                 "operation_id": "update_llm_obs_dataset_records",
                 "http_method": "PATCH",
@@ -2007,7 +2007,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_experiment_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsExperimentResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/experiments/{experiment_id}",
                 "operation_id": "update_llm_obs_experiment",
                 "http_method": "PATCH",
@@ -2033,7 +2033,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_project_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsProjectResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/projects/{project_id}",
                 "operation_id": "update_llm_obs_project",
                 "http_method": "PATCH",
@@ -2059,7 +2059,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_prompt_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPromptResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}",
                 "operation_id": "update_llm_obs_prompt",
                 "http_method": "PATCH",
@@ -2085,7 +2085,7 @@ class AgentObservabilityApi:
         self._update_llm_obs_prompt_version_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPromptVersionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts/{prompt_id}/versions/{version}",
                 "operation_id": "update_llm_obs_prompt_version",
                 "http_method": "PATCH",
@@ -2120,7 +2120,7 @@ class AgentObservabilityApi:
         self._upload_llm_obs_dataset_records_file_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v2/{project_id}/datasets/{dataset_id}/records/upload",
                 "operation_id": "upload_llm_obs_dataset_records_file",
                 "http_method": "POST",
@@ -2173,7 +2173,7 @@ class AgentObservabilityApi:
         self._upsert_llm_obs_annotations_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsAnnotationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/annotation-queues/{queue_id}/annotations",
                 "operation_id": "upsert_llm_obs_annotations",
                 "http_method": "POST",
@@ -2199,7 +2199,7 @@ class AgentObservabilityApi:
         self._upsert_llm_obs_patterns_config_endpoint = _Endpoint(
             settings={
                 "response_type": (LLMObsPatternsConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-configs",
                 "operation_id": "upsert_llm_obs_patterns_config",
                 "http_method": "PUT",

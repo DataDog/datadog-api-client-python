@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.case_management_attribute_api import CaseManageme
 CASE_TYPE_ID = environ["CASE_TYPE_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementAttributeApi(api_client)
     response = api_instance.get_all_custom_attribute_configs_by_case_type(

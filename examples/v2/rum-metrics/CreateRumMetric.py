@@ -2,6 +2,7 @@
 Create a RUM-based metric returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
@@ -44,6 +45,7 @@ body = RumMetricCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumMetricsApi(api_client)
     response = api_instance.create_rum_metric(body=body)

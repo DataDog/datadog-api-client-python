@@ -2,6 +2,7 @@
 Update a report schedule returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
 from datadog_api_client.v2.model.report_schedule_delivery_format import ReportScheduleDeliveryFormat
@@ -41,6 +42,7 @@ body = ReportSchedulePatchRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["patch_report_schedule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ReportSchedulesApi(api_client)

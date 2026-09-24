@@ -15,6 +15,7 @@ body = CancelDowntimesByScopeRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     response = api_instance.cancel_downtimes_by_scope(body=body)

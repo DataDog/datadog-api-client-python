@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.teams_api import TeamsApi
 USER_DATA_ID = environ["USER_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     response = api_instance.get_user_memberships(

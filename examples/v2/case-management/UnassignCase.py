@@ -19,6 +19,7 @@ body = CaseEmptyRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.unassign_case(case_id=CASE_ID, body=body)

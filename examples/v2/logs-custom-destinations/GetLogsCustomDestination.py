@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDes
 CUSTOM_DESTINATION_DATA_ID = environ["CUSTOM_DESTINATION_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = LogsCustomDestinationsApi(api_client)
     response = api_instance.get_logs_custom_destination(

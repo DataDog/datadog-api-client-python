@@ -28,6 +28,7 @@ body = UnassignSeatsUserRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SeatsApi(api_client)
     api_instance.unassign_seats_user(body=body)

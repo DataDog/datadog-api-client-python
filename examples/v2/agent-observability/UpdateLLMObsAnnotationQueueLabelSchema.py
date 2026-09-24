@@ -2,6 +2,7 @@
 Update annotation queue label schema returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agent_observability_api import AgentObservabilityApi
 from datadog_api_client.v2.model.llm_obs_annotation_queue_label_schema_update_attributes import (
@@ -49,6 +50,7 @@ body = LLMObsAnnotationQueueLabelSchemaUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_llm_obs_annotation_queue_label_schema"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AgentObservabilityApi(api_client)

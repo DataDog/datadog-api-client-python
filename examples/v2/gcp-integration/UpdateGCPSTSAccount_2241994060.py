@@ -27,6 +27,7 @@ body = GCPSTSServiceAccountUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = GCPIntegrationApi(api_client)
     response = api_instance.update_gcpsts_account(account_id=GCP_STS_ACCOUNT_DATA_ID, body=body)

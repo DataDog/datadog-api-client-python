@@ -2,6 +2,7 @@
 Generate a new external ID returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v1.model.aws_account import AWSAccount
@@ -30,6 +31,7 @@ body = AWSAccount(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AWSIntegrationApi(api_client)
     response = api_instance.create_new_aws_external_id(body=body)

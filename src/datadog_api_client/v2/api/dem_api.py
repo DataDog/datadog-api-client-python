@@ -37,7 +37,7 @@ class DEMApi:
         self._batch_get_journeys_by_test_suite_i_ds_endpoint = _Endpoint(
             settings={
                 "response_type": (DemJourneysListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/suites/batch",
                 "operation_id": "batch_get_journeys_by_test_suite_i_ds",
                 "http_method": "POST",
@@ -57,7 +57,7 @@ class DEMApi:
         self._create_journey_endpoint = _Endpoint(
             settings={
                 "response_type": (DemJourneyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys",
                 "operation_id": "create_journey",
                 "http_method": "POST",
@@ -77,7 +77,7 @@ class DEMApi:
         self._create_journey_variant_endpoint = _Endpoint(
             settings={
                 "response_type": (DemVariantResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/{journey_id}/variants",
                 "operation_id": "create_journey_variant",
                 "http_method": "POST",
@@ -103,7 +103,7 @@ class DEMApi:
         self._create_test_suite_for_journey_endpoint = _Endpoint(
             settings={
                 "response_type": (DemJourneyTestSuiteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/{public_journey_id}/suite",
                 "operation_id": "create_test_suite_for_journey",
                 "http_method": "POST",
@@ -129,7 +129,7 @@ class DEMApi:
         self._delete_ignored_inferred_journey_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/inferred/ignored/{journey_id}",
                 "operation_id": "delete_ignored_inferred_journey",
                 "http_method": "DELETE",
@@ -152,7 +152,7 @@ class DEMApi:
         self._delete_journey_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/{journey_id}",
                 "operation_id": "delete_journey",
                 "http_method": "DELETE",
@@ -175,7 +175,7 @@ class DEMApi:
         self._delete_journey_variant_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/variants/{variant_id}",
                 "operation_id": "delete_journey_variant",
                 "http_method": "DELETE",
@@ -198,7 +198,7 @@ class DEMApi:
         self._get_journey_endpoint = _Endpoint(
             settings={
                 "response_type": (DemJourneyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/{journey_id}",
                 "operation_id": "get_journey",
                 "http_method": "GET",
@@ -221,7 +221,7 @@ class DEMApi:
         self._get_journey_recommended_tests_endpoint = _Endpoint(
             settings={
                 "response_type": (DemRecommendedTestsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/{journey_id}/recommended-tests",
                 "operation_id": "get_journey_recommended_tests",
                 "http_method": "GET",
@@ -244,7 +244,7 @@ class DEMApi:
         self._ignore_inferred_journey_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/inferred/{journey_id}/ignore",
                 "operation_id": "ignore_inferred_journey",
                 "http_method": "POST",
@@ -267,7 +267,7 @@ class DEMApi:
         self._search_inferred_journeys_endpoint = _Endpoint(
             settings={
                 "response_type": (DemSearchInferredJourneysResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/inferred/search",
                 "operation_id": "search_inferred_journeys",
                 "http_method": "GET",
@@ -299,7 +299,7 @@ class DEMApi:
         self._search_journeys_endpoint = _Endpoint(
             settings={
                 "response_type": (DemJourneysListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/search",
                 "operation_id": "search_journeys",
                 "http_method": "GET",
@@ -346,7 +346,7 @@ class DEMApi:
         self._update_journey_endpoint = _Endpoint(
             settings={
                 "response_type": (DemJourneyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/{journey_id}",
                 "operation_id": "update_journey",
                 "http_method": "PUT",
@@ -372,7 +372,7 @@ class DEMApi:
         self._update_journey_variant_endpoint = _Endpoint(
             settings={
                 "response_type": (DemVariantResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dem/journeys/variants/{variant_id}",
                 "operation_id": "update_journey_variant",
                 "http_method": "PUT",

@@ -2,6 +2,7 @@
 Test a notification rule returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.create_notification_rule_parameters import CreateNotificationRuleParameters
@@ -39,6 +40,7 @@ body = CreateNotificationRuleParameters(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.send_security_monitoring_notification_preview(body=body)

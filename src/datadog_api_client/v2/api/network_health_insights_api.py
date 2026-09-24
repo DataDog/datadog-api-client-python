@@ -29,7 +29,7 @@ class NetworkHealthInsightsApi:
         self._list_network_health_insights_endpoint = _Endpoint(
             settings={
                 "response_type": (NetworkHealthInsightsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/network-health-insights",
                 "operation_id": "list_network_health_insights",
                 "http_method": "GET",

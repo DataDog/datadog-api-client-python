@@ -17,6 +17,7 @@ body = WebhooksIntegrationCustomVariableUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
     response = api_instance.update_webhooks_integration_custom_variable(

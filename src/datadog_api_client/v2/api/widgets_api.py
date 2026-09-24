@@ -34,7 +34,7 @@ class WidgetsApi:
         self._create_widget_endpoint = _Endpoint(
             settings={
                 "response_type": (WidgetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/widgets/{experience_type}",
                 "operation_id": "create_widget",
                 "http_method": "POST",
@@ -60,7 +60,7 @@ class WidgetsApi:
         self._delete_widget_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/widgets/{experience_type}/{uuid}",
                 "operation_id": "delete_widget",
                 "http_method": "DELETE",
@@ -89,7 +89,7 @@ class WidgetsApi:
         self._get_widget_endpoint = _Endpoint(
             settings={
                 "response_type": (WidgetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/widgets/{experience_type}/{uuid}",
                 "operation_id": "get_widget",
                 "http_method": "GET",
@@ -118,7 +118,7 @@ class WidgetsApi:
         self._search_widgets_endpoint = _Endpoint(
             settings={
                 "response_type": (WidgetListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/widgets/{experience_type}",
                 "operation_id": "search_widgets",
                 "http_method": "GET",
@@ -187,7 +187,7 @@ class WidgetsApi:
         self._update_widget_endpoint = _Endpoint(
             settings={
                 "response_type": (WidgetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/widgets/{experience_type}/{uuid}",
                 "operation_id": "update_widget",
                 "http_method": "PUT",

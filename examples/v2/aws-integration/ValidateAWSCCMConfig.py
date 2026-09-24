@@ -2,6 +2,7 @@
 Validate AWS CCM config returns "AWS CCM Config validation result" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v2.model.aws_ccm_config_validation_request import AWSCcmConfigValidationRequest
@@ -25,6 +26,7 @@ body = AWSCcmConfigValidationRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["validate_awsccm_config"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AWSIntegrationApi(api_client)

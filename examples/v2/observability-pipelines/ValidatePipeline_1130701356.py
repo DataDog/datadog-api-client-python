@@ -2,6 +2,7 @@
 Validate an observability pipeline with Splunk HEC source valid_tokens returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.model.observability_pipeline_config import ObservabilityPipelineConfig
@@ -91,6 +92,7 @@ body = ObservabilityPipelineSpec(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ObservabilityPipelinesApi(api_client)
     response = api_instance.validate_pipeline(body=body)

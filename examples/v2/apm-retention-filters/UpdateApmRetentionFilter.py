@@ -32,6 +32,7 @@ body = RetentionFilterUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = APMRetentionFiltersApi(api_client)
     response = api_instance.update_apm_retention_filter(filter_id=RETENTION_FILTER_DATA_ID, body=body)

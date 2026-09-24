@@ -2,11 +2,13 @@
 List Model Lab run facet values returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.model_lab_api_api import ModelLabAPIApi
 from datadog_api_client.v2.model.model_lab_facet_type import ModelLabFacetType
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["list_model_lab_run_facet_values"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ModelLabAPIApi(api_client)

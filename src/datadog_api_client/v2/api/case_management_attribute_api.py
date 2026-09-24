@@ -26,7 +26,7 @@ class CaseManagementAttributeApi:
         self._create_custom_attribute_config_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomAttributeConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/types/{case_type_id}/custom_attributes",
                 "operation_id": "create_custom_attribute_config",
                 "http_method": "POST",
@@ -52,7 +52,7 @@ class CaseManagementAttributeApi:
         self._delete_custom_attribute_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/types/{case_type_id}/custom_attributes/{custom_attribute_id}",
                 "operation_id": "delete_custom_attribute_config",
                 "http_method": "DELETE",
@@ -81,7 +81,7 @@ class CaseManagementAttributeApi:
         self._get_all_custom_attribute_configs_by_case_type_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomAttributeConfigsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/types/{case_type_id}/custom_attributes",
                 "operation_id": "get_all_custom_attribute_configs_by_case_type",
                 "http_method": "GET",
@@ -104,7 +104,7 @@ class CaseManagementAttributeApi:
         self._get_all_custom_attributes_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomAttributeConfigsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/types/custom_attributes",
                 "operation_id": "get_all_custom_attributes",
                 "http_method": "GET",

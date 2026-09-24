@@ -13,6 +13,7 @@ FEATURE_FLAG_DATA_ID = environ["FEATURE_FLAG_DATA_ID"]
 ENVIRONMENT_DATA_ID = environ["ENVIRONMENT_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     api_instance.disable_feature_flag_environment(

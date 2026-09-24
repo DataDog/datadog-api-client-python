@@ -13,6 +13,7 @@ CASE_TYPE_ID = environ["CASE_TYPE_ID"]
 CUSTOM_ATTRIBUTE_ID = environ["CUSTOM_ATTRIBUTE_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementAttributeApi(api_client)
     api_instance.delete_custom_attribute_config(

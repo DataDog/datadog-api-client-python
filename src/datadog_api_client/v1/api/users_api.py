@@ -26,7 +26,7 @@ class UsersApi:
         self._create_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/user",
                 "operation_id": "create_user",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class UsersApi:
         self._disable_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserDisableResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/user/{user_handle}",
                 "operation_id": "disable_user",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class UsersApi:
         self._get_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/user/{user_handle}",
                 "operation_id": "get_user",
                 "http_method": "GET",
@@ -108,7 +108,7 @@ class UsersApi:
         self._update_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/user/{user_handle}",
                 "operation_id": "update_user",
                 "http_method": "PUT",

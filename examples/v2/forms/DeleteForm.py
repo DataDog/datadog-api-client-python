@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.forms_api import FormsApi
 FORM_DATA_ID = environ["FORM_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["delete_form"] = True
 with ApiClient(configuration) as api_client:
     api_instance = FormsApi(api_client)

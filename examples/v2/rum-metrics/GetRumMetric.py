@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
 RUM_METRIC_DATA_ID = environ["RUM_METRIC_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumMetricsApi(api_client)
     response = api_instance.get_rum_metric(

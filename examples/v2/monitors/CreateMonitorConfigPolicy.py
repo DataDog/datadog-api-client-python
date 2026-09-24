@@ -2,6 +2,7 @@
 Create a monitor configuration policy returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
@@ -33,6 +34,7 @@ body = MonitorConfigPolicyCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.create_monitor_config_policy(body=body)

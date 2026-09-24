@@ -78,6 +78,7 @@ body = ApplicationSecurityWafCustomRuleUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ApplicationSecurityApi(api_client)
     response = api_instance.update_application_security_waf_custom_rule(custom_rule_id=CUSTOM_RULE_DATA_ID, body=body)

@@ -38,7 +38,7 @@ class WebhooksIntegrationApi:
         self._create_o_auth2_client_credentials_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksOAuth2ClientCredentialsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/webhooks/configuration/auth-method/oauth2-client-credentials",
                 "operation_id": "create_o_auth2_client_credentials",
                 "http_method": "POST",
@@ -58,7 +58,7 @@ class WebhooksIntegrationApi:
         self._delete_o_auth2_client_credentials_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/webhooks/configuration/auth-method/oauth2-client-credentials/{auth_method_id}",
                 "operation_id": "delete_o_auth2_client_credentials",
                 "http_method": "DELETE",
@@ -81,7 +81,7 @@ class WebhooksIntegrationApi:
         self._get_all_auth_methods_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksAuthMethodsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/webhooks/configuration/auth-method",
                 "operation_id": "get_all_auth_methods",
                 "http_method": "GET",
@@ -103,7 +103,7 @@ class WebhooksIntegrationApi:
         self._get_o_auth2_client_credentials_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksOAuth2ClientCredentialsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/webhooks/configuration/auth-method/oauth2-client-credentials/{auth_method_id}",
                 "operation_id": "get_o_auth2_client_credentials",
                 "http_method": "GET",
@@ -126,7 +126,7 @@ class WebhooksIntegrationApi:
         self._update_o_auth2_client_credentials_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksOAuth2ClientCredentialsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/webhooks/configuration/auth-method/oauth2-client-credentials/{auth_method_id}",
                 "operation_id": "update_o_auth2_client_credentials",
                 "http_method": "PATCH",

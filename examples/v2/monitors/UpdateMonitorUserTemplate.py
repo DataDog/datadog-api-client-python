@@ -52,6 +52,7 @@ body = MonitorUserTemplateUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_monitor_user_template"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)

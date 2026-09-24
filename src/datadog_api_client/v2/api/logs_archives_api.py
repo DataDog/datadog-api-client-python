@@ -31,7 +31,7 @@ class LogsArchivesApi:
         self._add_read_role_to_archive_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
                 "operation_id": "add_read_role_to_archive",
                 "http_method": "POST",
@@ -57,7 +57,7 @@ class LogsArchivesApi:
         self._create_logs_archive_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsArchive,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives",
                 "operation_id": "create_logs_archive",
                 "http_method": "POST",
@@ -77,7 +77,7 @@ class LogsArchivesApi:
         self._delete_logs_archive_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
                 "operation_id": "delete_logs_archive",
                 "http_method": "DELETE",
@@ -100,7 +100,7 @@ class LogsArchivesApi:
         self._get_logs_archive_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsArchive,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
                 "operation_id": "get_logs_archive",
                 "http_method": "GET",
@@ -123,7 +123,7 @@ class LogsArchivesApi:
         self._get_logs_archive_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsArchiveOrder,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archive-order",
                 "operation_id": "get_logs_archive_order",
                 "http_method": "GET",
@@ -139,7 +139,7 @@ class LogsArchivesApi:
         self._list_archive_read_roles_endpoint = _Endpoint(
             settings={
                 "response_type": (RolesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
                 "operation_id": "list_archive_read_roles",
                 "http_method": "GET",
@@ -162,7 +162,7 @@ class LogsArchivesApi:
         self._list_logs_archives_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsArchives,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives",
                 "operation_id": "list_logs_archives",
                 "http_method": "GET",
@@ -178,7 +178,7 @@ class LogsArchivesApi:
         self._remove_role_from_archive_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}/readers",
                 "operation_id": "remove_role_from_archive",
                 "http_method": "DELETE",
@@ -204,7 +204,7 @@ class LogsArchivesApi:
         self._update_logs_archive_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsArchive,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archives/{archive_id}",
                 "operation_id": "update_logs_archive",
                 "http_method": "PUT",
@@ -230,7 +230,7 @@ class LogsArchivesApi:
         self._update_logs_archive_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsArchiveOrder,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/archive-order",
                 "operation_id": "update_logs_archive_order",
                 "http_method": "PUT",

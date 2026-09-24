@@ -26,7 +26,7 @@ class OktaIntegrationApi:
         self._create_okta_account_endpoint = _Endpoint(
             settings={
                 "response_type": (OktaAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/okta/accounts",
                 "operation_id": "create_okta_account",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class OktaIntegrationApi:
         self._delete_okta_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/okta/accounts/{account_id}",
                 "operation_id": "delete_okta_account",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class OktaIntegrationApi:
         self._get_okta_account_endpoint = _Endpoint(
             settings={
                 "response_type": (OktaAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/okta/accounts/{account_id}",
                 "operation_id": "get_okta_account",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class OktaIntegrationApi:
         self._list_okta_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (OktaAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/okta/accounts",
                 "operation_id": "list_okta_accounts",
                 "http_method": "GET",
@@ -108,7 +108,7 @@ class OktaIntegrationApi:
         self._update_okta_account_endpoint = _Endpoint(
             settings={
                 "response_type": (OktaAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/okta/accounts/{account_id}",
                 "operation_id": "update_okta_account",
                 "http_method": "PATCH",

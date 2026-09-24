@@ -2,10 +2,12 @@
 Get all monitors returns "OK" response with pagination
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.monitors_api import MonitorsApi
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     items = api_instance.list_monitors_with_pagination(

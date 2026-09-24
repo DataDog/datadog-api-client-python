@@ -2,6 +2,7 @@
 Create a log-based metric returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 from datadog_api_client.v2.model.logs_metric_compute import LogsMetricCompute
@@ -26,6 +27,7 @@ body = LogsMetricCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = LogsMetricsApi(api_client)
     response = api_instance.create_logs_metric(body=body)

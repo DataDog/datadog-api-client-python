@@ -2,6 +2,7 @@
 Update a project returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.model.project_resource_type import ProjectResourceType
@@ -19,6 +20,7 @@ body = ProjectUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.update_project(project_id="d4bbe1af-f36e-42f1-87c1-493ca35c320e", body=body)

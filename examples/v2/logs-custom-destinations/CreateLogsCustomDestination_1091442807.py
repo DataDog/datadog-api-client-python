@@ -2,6 +2,7 @@
 Create a Custom Header HTTP custom destination returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_custom_destinations_api import LogsCustomDestinationsApi
 from datadog_api_client.v2.model.custom_destination_attribute_tags_restriction_list_type import (
@@ -55,6 +56,7 @@ body = CustomDestinationCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = LogsCustomDestinationsApi(api_client)
     response = api_instance.create_logs_custom_destination(body=body)

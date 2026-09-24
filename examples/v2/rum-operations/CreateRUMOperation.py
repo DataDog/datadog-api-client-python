@@ -2,6 +2,7 @@
 Create a RUM operation returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_operations_api import RUMOperationsApi
 from datadog_api_client.v2.model.rum_operation_create_request import RUMOperationCreateRequest
@@ -56,6 +57,7 @@ body = RUMOperationCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_rum_operation"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMOperationsApi(api_client)

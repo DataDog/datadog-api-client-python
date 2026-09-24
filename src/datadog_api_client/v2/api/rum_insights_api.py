@@ -28,7 +28,7 @@ class RUMInsightsApi:
         self._query_aggregated_long_tasks_endpoint = _Endpoint(
             settings={
                 "response_type": (AggregatedLongTasksResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/query/insight/aggregated_long_tasks",
                 "operation_id": "query_aggregated_long_tasks",
                 "http_method": "POST",
@@ -48,7 +48,7 @@ class RUMInsightsApi:
         self._query_aggregated_signals_problems_endpoint = _Endpoint(
             settings={
                 "response_type": (AggregatedSignalsProblemsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/query/insight/aggregated_signals_problems",
                 "operation_id": "query_aggregated_signals_problems",
                 "http_method": "POST",
@@ -68,7 +68,7 @@ class RUMInsightsApi:
         self._query_aggregated_waterfall_endpoint = _Endpoint(
             settings={
                 "response_type": (AggregatedWaterfallResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/query/insight/aggregated_waterfall",
                 "operation_id": "query_aggregated_waterfall",
                 "http_method": "POST",

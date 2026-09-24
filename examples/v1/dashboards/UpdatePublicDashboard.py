@@ -24,6 +24,7 @@ body = SharedDashboardUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)
     response = api_instance.update_public_dashboard(token=SHARED_DASHBOARD_TOKEN, body=body)

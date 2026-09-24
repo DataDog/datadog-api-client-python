@@ -2,6 +2,7 @@
 Add Cloudflare account returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloudflare_integration_api import CloudflareIntegrationApi
 from datadog_api_client.v2.model.cloudflare_account_create_request import CloudflareAccountCreateRequest
@@ -23,6 +24,7 @@ body = CloudflareAccountCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CloudflareIntegrationApi(api_client)
     response = api_instance.create_cloudflare_account(body=body)

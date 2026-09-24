@@ -52,7 +52,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_journey_funnel_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsJourneyFunnelResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/journey/funnel",
                 "operation_id": "query_product_analytics_journey_funnel",
                 "http_method": "POST",
@@ -72,7 +72,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_journey_list_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsJourneyListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/journey/list",
                 "operation_id": "query_product_analytics_journey_list",
                 "http_method": "POST",
@@ -92,7 +92,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_journey_scalar_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsJourneyScalarResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/journey/scalar",
                 "operation_id": "query_product_analytics_journey_scalar",
                 "http_method": "POST",
@@ -112,7 +112,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_journey_timeseries_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsJourneyTimeseriesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/journey/timeseries",
                 "operation_id": "query_product_analytics_journey_timeseries",
                 "http_method": "POST",
@@ -132,7 +132,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_list_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsAnalyticsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/analytics/list",
                 "operation_id": "query_product_analytics_list",
                 "http_method": "POST",
@@ -152,7 +152,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_retention_grid_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsRetentionGridResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/retention/grid",
                 "operation_id": "query_product_analytics_retention_grid",
                 "http_method": "POST",
@@ -172,7 +172,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_retention_list_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsRetentionListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/retention/list",
                 "operation_id": "query_product_analytics_retention_list",
                 "http_method": "POST",
@@ -192,7 +192,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_retention_scalar_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsScalarResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/retention/scalar",
                 "operation_id": "query_product_analytics_retention_scalar",
                 "http_method": "POST",
@@ -212,7 +212,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_retention_timeseries_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsTimeseriesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/retention/timeseries",
                 "operation_id": "query_product_analytics_retention_timeseries",
                 "http_method": "POST",
@@ -232,7 +232,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_sankey_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsSankeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/sankey",
                 "operation_id": "query_product_analytics_sankey",
                 "http_method": "POST",
@@ -252,7 +252,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_scalar_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsScalarResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/analytics/scalar",
                 "operation_id": "query_product_analytics_scalar",
                 "http_method": "POST",
@@ -272,7 +272,7 @@ class ProductAnalyticsApi:
         self._query_product_analytics_timeseries_endpoint = _Endpoint(
             settings={
                 "response_type": (ProductAnalyticsTimeseriesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/product-analytics/analytics/timeseries",
                 "operation_id": "query_product_analytics_timeseries",
                 "http_method": "POST",

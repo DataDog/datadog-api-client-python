@@ -68,6 +68,7 @@ body = CreateBackfilledMaintenanceRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = StatusPagesApi(api_client)
     response = api_instance.create_backfilled_maintenance(page_id=STATUS_PAGE_DATA_ID, body=body)

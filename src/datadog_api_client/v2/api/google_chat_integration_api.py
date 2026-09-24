@@ -39,7 +39,7 @@ class GoogleChatIntegrationApi:
         self._create_google_chat_target_audience_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatTargetAudienceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences",
                 "operation_id": "create_google_chat_target_audience",
                 "http_method": "POST",
@@ -65,7 +65,7 @@ class GoogleChatIntegrationApi:
         self._create_organization_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatOrganizationHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/organization-handles",
                 "operation_id": "create_organization_handle",
                 "http_method": "POST",
@@ -91,7 +91,7 @@ class GoogleChatIntegrationApi:
         self._delete_google_chat_delegated_user_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/delegated-user",
                 "operation_id": "delete_google_chat_delegated_user",
                 "http_method": "DELETE",
@@ -114,7 +114,7 @@ class GoogleChatIntegrationApi:
         self._delete_google_chat_organization_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}",
                 "operation_id": "delete_google_chat_organization",
                 "http_method": "DELETE",
@@ -137,7 +137,7 @@ class GoogleChatIntegrationApi:
         self._delete_google_chat_target_audience_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences/{target_audience_id}",
                 "operation_id": "delete_google_chat_target_audience",
                 "http_method": "DELETE",
@@ -166,7 +166,7 @@ class GoogleChatIntegrationApi:
         self._delete_organization_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/organization-handles/{handle_id}",
                 "operation_id": "delete_organization_handle",
                 "http_method": "DELETE",
@@ -195,7 +195,7 @@ class GoogleChatIntegrationApi:
         self._get_google_chat_delegated_user_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatDelegatedUserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/delegated-user",
                 "operation_id": "get_google_chat_delegated_user",
                 "http_method": "GET",
@@ -218,7 +218,7 @@ class GoogleChatIntegrationApi:
         self._get_google_chat_organization_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatOrganizationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}",
                 "operation_id": "get_google_chat_organization",
                 "http_method": "GET",
@@ -241,7 +241,7 @@ class GoogleChatIntegrationApi:
         self._get_google_chat_target_audience_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatTargetAudienceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences/{target_audience_id}",
                 "operation_id": "get_google_chat_target_audience",
                 "http_method": "GET",
@@ -270,7 +270,7 @@ class GoogleChatIntegrationApi:
         self._get_organization_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatOrganizationHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/organization-handles/{handle_id}",
                 "operation_id": "get_organization_handle",
                 "http_method": "GET",
@@ -299,7 +299,7 @@ class GoogleChatIntegrationApi:
         self._get_space_by_display_name_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatAppNamedSpaceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/app/named-spaces/{domain_name}/{space_display_name}",
                 "operation_id": "get_space_by_display_name",
                 "http_method": "GET",
@@ -328,7 +328,7 @@ class GoogleChatIntegrationApi:
         self._list_google_chat_organizations_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatOrganizationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations",
                 "operation_id": "list_google_chat_organizations",
                 "http_method": "GET",
@@ -344,7 +344,7 @@ class GoogleChatIntegrationApi:
         self._list_google_chat_target_audiences_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatTargetAudiencesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences",
                 "operation_id": "list_google_chat_target_audiences",
                 "http_method": "GET",
@@ -367,7 +367,7 @@ class GoogleChatIntegrationApi:
         self._list_organization_handles_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatOrganizationHandlesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/organization-handles",
                 "operation_id": "list_organization_handles",
                 "http_method": "GET",
@@ -390,7 +390,7 @@ class GoogleChatIntegrationApi:
         self._update_google_chat_target_audience_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatTargetAudienceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/target-audiences/{target_audience_id}",
                 "operation_id": "update_google_chat_target_audience",
                 "http_method": "PATCH",
@@ -422,7 +422,7 @@ class GoogleChatIntegrationApi:
         self._update_organization_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (GoogleChatOrganizationHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/google-chat/organizations/{organization_binding_id}/organization-handles/{handle_id}",
                 "operation_id": "update_organization_handle",
                 "http_method": "PATCH",

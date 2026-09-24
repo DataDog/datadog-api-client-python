@@ -52,7 +52,7 @@ class WebhooksIntegrationApi:
         self._create_webhooks_integration_custom_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksIntegrationCustomVariableResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables",
                 "operation_id": "create_webhooks_integration_custom_variable",
                 "http_method": "POST",
@@ -72,7 +72,7 @@ class WebhooksIntegrationApi:
         self._delete_webhooks_integration_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks/{webhook_name}",
                 "operation_id": "delete_webhooks_integration",
                 "http_method": "DELETE",
@@ -95,7 +95,7 @@ class WebhooksIntegrationApi:
         self._delete_webhooks_integration_custom_variable_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}",
                 "operation_id": "delete_webhooks_integration_custom_variable",
                 "http_method": "DELETE",
@@ -118,7 +118,7 @@ class WebhooksIntegrationApi:
         self._get_webhooks_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksIntegration,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks/{webhook_name}",
                 "operation_id": "get_webhooks_integration",
                 "http_method": "GET",
@@ -141,7 +141,7 @@ class WebhooksIntegrationApi:
         self._get_webhooks_integration_custom_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksIntegrationCustomVariableResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}",
                 "operation_id": "get_webhooks_integration_custom_variable",
                 "http_method": "GET",
@@ -164,7 +164,7 @@ class WebhooksIntegrationApi:
         self._update_webhooks_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksIntegration,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/webhooks/{webhook_name}",
                 "operation_id": "update_webhooks_integration",
                 "http_method": "PUT",
@@ -190,7 +190,7 @@ class WebhooksIntegrationApi:
         self._update_webhooks_integration_custom_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (WebhooksIntegrationCustomVariableResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/webhooks/configuration/custom-variables/{custom_variable_name}",
                 "operation_id": "update_webhooks_integration_custom_variable",
                 "http_method": "PUT",

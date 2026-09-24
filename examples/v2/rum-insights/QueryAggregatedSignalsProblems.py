@@ -2,6 +2,7 @@
 Query aggregated signals and problems returns "Successful response" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
 from datadog_api_client.v2.model.aggregated_signals_problems_request import AggregatedSignalsProblemsRequest
@@ -39,6 +40,7 @@ body = AggregatedSignalsProblemsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["query_aggregated_signals_problems"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMInsightsApi(api_client)

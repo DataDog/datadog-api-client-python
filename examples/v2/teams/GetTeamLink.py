@@ -13,6 +13,7 @@ DD_TEAM_DATA_ID = environ["DD_TEAM_DATA_ID"]
 TEAM_LINK_DATA_ID = environ["TEAM_LINK_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     response = api_instance.get_team_link(

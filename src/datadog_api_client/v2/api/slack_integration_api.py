@@ -27,7 +27,7 @@ class SlackIntegrationApi:
         self._list_slack_user_bindings_endpoint = _Endpoint(
             settings={
                 "response_type": (SlackUserBindingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/slack/user-bindings",
                 "operation_id": "list_slack_user_bindings",
                 "http_method": "GET",

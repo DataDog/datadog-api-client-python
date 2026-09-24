@@ -2,6 +2,7 @@
 Create a teams ownership mapping returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_teams_ownership_api import RumTeamsOwnershipApi
 from datadog_api_client.v2.model.teams_ownership_mapping_create_data import TeamsOwnershipMappingCreateData
@@ -27,6 +28,7 @@ body = TeamsOwnershipMappingCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_teams_ownership_mapping"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RumTeamsOwnershipApi(api_client)

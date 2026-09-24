@@ -83,7 +83,7 @@ class MetricsApi:
         self._create_bulk_tags_metrics_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricBulkTagConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/config/bulk-tags",
                 "operation_id": "create_bulk_tags_metrics_configuration",
                 "http_method": "POST",
@@ -123,7 +123,7 @@ class MetricsApi:
         self._create_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "create_tag_configuration",
                 "http_method": "POST",
@@ -195,7 +195,7 @@ class MetricsApi:
         self._delete_bulk_tags_metrics_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricBulkTagConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/config/bulk-tags",
                 "operation_id": "delete_bulk_tags_metrics_configuration",
                 "http_method": "DELETE",
@@ -238,7 +238,7 @@ class MetricsApi:
         self._delete_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "delete_tag_configuration",
                 "http_method": "DELETE",
@@ -307,7 +307,7 @@ class MetricsApi:
         self._estimate_metrics_output_series_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricEstimateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/estimate",
                 "operation_id": "estimate_metrics_output_series",
                 "http_method": "GET",
@@ -393,7 +393,7 @@ class MetricsApi:
         self._get_metric_tag_cardinality_details_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagCardinalitiesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tag-cardinalities",
                 "operation_id": "get_metric_tag_cardinality_details",
                 "http_method": "GET",
@@ -462,7 +462,7 @@ class MetricsApi:
         self._list_active_metric_configurations_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricSuggestedTagsAndAggregationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/active-configurations",
                 "operation_id": "list_active_metric_configurations",
                 "http_method": "GET",
@@ -747,7 +747,7 @@ class MetricsApi:
         self._list_volumes_by_metric_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricVolumesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/volumes",
                 "operation_id": "list_volumes_by_metric_name",
                 "http_method": "GET",
@@ -860,7 +860,7 @@ class MetricsApi:
         self._update_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/metrics/{metric_name}/tags",
                 "operation_id": "update_tag_configuration",
                 "http_method": "PATCH",

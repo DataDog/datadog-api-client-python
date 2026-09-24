@@ -26,7 +26,7 @@ class LogsIndexesApi:
         self._create_logs_index_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndex,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/indexes",
                 "operation_id": "create_logs_index",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class LogsIndexesApi:
         self._delete_logs_index_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/indexes/{name}",
                 "operation_id": "delete_logs_index",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class LogsIndexesApi:
         self._get_logs_index_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndex,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/indexes/{name}",
                 "operation_id": "get_logs_index",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class LogsIndexesApi:
         self._get_logs_index_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndexesOrder,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/index-order",
                 "operation_id": "get_logs_index_order",
                 "http_method": "GET",
@@ -108,7 +108,7 @@ class LogsIndexesApi:
         self._list_log_indexes_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndexListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/indexes",
                 "operation_id": "list_log_indexes",
                 "http_method": "GET",
@@ -124,7 +124,7 @@ class LogsIndexesApi:
         self._update_logs_index_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndex,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/indexes/{name}",
                 "operation_id": "update_logs_index",
                 "http_method": "PUT",
@@ -150,7 +150,7 @@ class LogsIndexesApi:
         self._update_logs_index_order_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsIndexesOrder,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/logs/config/index-order",
                 "operation_id": "update_logs_index_order",
                 "http_method": "PUT",

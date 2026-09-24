@@ -2,6 +2,7 @@
 Create a target audience returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.google_chat_integration_api import GoogleChatIntegrationApi
 from datadog_api_client.v2.model.google_chat_target_audience_create_request import GoogleChatTargetAudienceCreateRequest
@@ -24,6 +25,7 @@ body = GoogleChatTargetAudienceCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = GoogleChatIntegrationApi(api_client)
     response = api_instance.create_google_chat_target_audience(

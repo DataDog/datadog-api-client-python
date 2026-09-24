@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.logs_metrics_api import LogsMetricsApi
 LOGS_METRIC_DATA_ID = environ["LOGS_METRIC_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = LogsMetricsApi(api_client)
     api_instance.delete_logs_metric(

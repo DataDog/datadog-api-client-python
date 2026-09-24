@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningAp
 AWS_SCAN_OPTIONS_ID = environ["AWS_SCAN_OPTIONS_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AgentlessScanningApi(api_client)
     response = api_instance.get_aws_scan_options(

@@ -25,6 +25,7 @@ body = DashboardListAddItemsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DashboardListsApi(api_client)
     response = api_instance.create_dashboard_list_items(dashboard_list_id=int(DASHBOARD_LIST_ID), body=body)

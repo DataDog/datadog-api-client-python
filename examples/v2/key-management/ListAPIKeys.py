@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.key_management_api import KeyManagementApi
 API_KEY_DATA_ATTRIBUTES_NAME = environ["API_KEY_DATA_ATTRIBUTES_NAME"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = KeyManagementApi(api_client)
     response = api_instance.list_api_keys(

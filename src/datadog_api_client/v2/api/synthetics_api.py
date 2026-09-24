@@ -105,7 +105,7 @@ class SyntheticsApi:
         self._add_test_to_synthetics_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsDowntimeResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}/tests/{test_id}",
                 "operation_id": "add_test_to_synthetics_downtime",
                 "http_method": "PUT",
@@ -160,7 +160,7 @@ class SyntheticsApi:
         self._create_synthetics_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsDowntimeResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/downtimes",
                 "operation_id": "create_synthetics_downtime",
                 "http_method": "POST",
@@ -220,7 +220,7 @@ class SyntheticsApi:
         self._delete_synthetics_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}",
                 "operation_id": "delete_synthetics_downtime",
                 "http_method": "DELETE",
@@ -355,7 +355,7 @@ class SyntheticsApi:
         self._get_on_demand_concurrency_cap_endpoint = _Endpoint(
             settings={
                 "response_type": (OnDemandConcurrencyCapResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/settings/on_demand_concurrency_cap",
                 "operation_id": "get_on_demand_concurrency_cap",
                 "http_method": "GET",
@@ -410,7 +410,7 @@ class SyntheticsApi:
         self._get_synthetics_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsDowntimeResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}",
                 "operation_id": "get_synthetics_downtime",
                 "http_method": "GET",
@@ -710,7 +710,7 @@ class SyntheticsApi:
         self._list_synthetics_downtimes_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsDowntimesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/downtimes",
                 "operation_id": "list_synthetics_downtimes",
                 "http_method": "GET",
@@ -828,7 +828,7 @@ class SyntheticsApi:
         self._patch_global_variable_endpoint = _Endpoint(
             settings={
                 "response_type": (GlobalVariableResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/variables/{variable_id}/jsonpatch",
                 "operation_id": "patch_global_variable",
                 "http_method": "PATCH",
@@ -903,7 +903,7 @@ class SyntheticsApi:
         self._remove_test_from_synthetics_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsDowntimeResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}/tests/{test_id}",
                 "operation_id": "remove_test_from_synthetics_downtime",
                 "http_method": "DELETE",
@@ -974,7 +974,7 @@ class SyntheticsApi:
         self._set_on_demand_concurrency_cap_endpoint = _Endpoint(
             settings={
                 "response_type": (OnDemandConcurrencyCapResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/settings/on_demand_concurrency_cap",
                 "operation_id": "set_on_demand_concurrency_cap",
                 "http_method": "POST",
@@ -994,7 +994,7 @@ class SyntheticsApi:
         self._update_synthetics_downtime_endpoint = _Endpoint(
             settings={
                 "response_type": (SyntheticsDowntimeResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/synthetics/downtimes/{downtime_id}",
                 "operation_id": "update_synthetics_downtime",
                 "http_method": "PUT",

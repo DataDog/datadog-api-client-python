@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.incidents_api import IncidentsApi
 INCIDENT_TYPE_DATA_ID = environ["INCIDENT_TYPE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["delete_incident_type"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

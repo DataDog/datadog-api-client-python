@@ -38,7 +38,7 @@ class RumRetentionFiltersApi:
         self._create_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumExclusionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion",
                 "operation_id": "create_exclusion_filter",
                 "http_method": "POST",
@@ -64,7 +64,7 @@ class RumRetentionFiltersApi:
         self._create_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters",
                 "operation_id": "create_retention_filter",
                 "http_method": "POST",
@@ -90,7 +90,7 @@ class RumRetentionFiltersApi:
         self._delete_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
                 "operation_id": "delete_exclusion_filter",
                 "http_method": "DELETE",
@@ -119,7 +119,7 @@ class RumRetentionFiltersApi:
         self._delete_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/{rf_id}",
                 "operation_id": "delete_retention_filter",
                 "http_method": "DELETE",
@@ -148,7 +148,7 @@ class RumRetentionFiltersApi:
         self._get_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumExclusionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
                 "operation_id": "get_exclusion_filter",
                 "http_method": "GET",
@@ -177,7 +177,7 @@ class RumRetentionFiltersApi:
         self._get_permanent_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumPermanentRetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}",
                 "operation_id": "get_permanent_retention_filter",
                 "http_method": "GET",
@@ -206,7 +206,7 @@ class RumRetentionFiltersApi:
         self._get_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/{rf_id}",
                 "operation_id": "get_retention_filter",
                 "http_method": "GET",
@@ -235,7 +235,7 @@ class RumRetentionFiltersApi:
         self._list_exclusion_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (RumExclusionFiltersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion",
                 "operation_id": "list_exclusion_filters",
                 "http_method": "GET",
@@ -258,7 +258,7 @@ class RumRetentionFiltersApi:
         self._list_permanent_retention_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (RumPermanentRetentionFiltersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent",
                 "operation_id": "list_permanent_retention_filters",
                 "http_method": "GET",
@@ -281,7 +281,7 @@ class RumRetentionFiltersApi:
         self._list_retention_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionFiltersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters",
                 "operation_id": "list_retention_filters",
                 "http_method": "GET",
@@ -304,7 +304,7 @@ class RumRetentionFiltersApi:
         self._order_retention_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionFiltersOrderResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/relationships/retention_filters",
                 "operation_id": "order_retention_filters",
                 "http_method": "PATCH",
@@ -330,7 +330,7 @@ class RumRetentionFiltersApi:
         self._update_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumExclusionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
                 "operation_id": "update_exclusion_filter",
                 "http_method": "PATCH",
@@ -362,7 +362,7 @@ class RumRetentionFiltersApi:
         self._update_permanent_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumPermanentRetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}",
                 "operation_id": "update_permanent_retention_filter",
                 "http_method": "PATCH",
@@ -394,7 +394,7 @@ class RumRetentionFiltersApi:
         self._update_retention_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/{rf_id}",
                 "operation_id": "update_retention_filter",
                 "http_method": "PATCH",

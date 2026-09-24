@@ -2,6 +2,7 @@
 Restore an Agent Observability dataset version returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agent_observability_api import AgentObservabilityApi
 from datadog_api_client.v2.model.llm_obs_dataset_restore_version_data_attributes_request import (
@@ -24,6 +25,7 @@ body = LLMObsDatasetRestoreVersionRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["restore_llm_obs_dataset_version"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AgentObservabilityApi(api_client)

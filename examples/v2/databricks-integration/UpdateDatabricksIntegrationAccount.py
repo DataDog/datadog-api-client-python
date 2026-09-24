@@ -2,6 +2,7 @@
 Update a Databricks integration account returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.databricks_integration_api import DatabricksIntegrationApi
 from datadog_api_client.v2.model.databricks_cloud_cost_metrics_integration_dataflow_request import (
@@ -96,6 +97,7 @@ body = DatabricksIntegrationAccountUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_databricks_integration_account"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DatabricksIntegrationApi(api_client)

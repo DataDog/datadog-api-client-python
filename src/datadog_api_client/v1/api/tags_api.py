@@ -38,7 +38,7 @@ class TagsApi:
         self._create_host_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (HostTags,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/tags/hosts/{host_name}",
                 "operation_id": "create_host_tags",
                 "http_method": "POST",
@@ -69,7 +69,7 @@ class TagsApi:
         self._delete_host_tags_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/tags/hosts/{host_name}",
                 "operation_id": "delete_host_tags",
                 "http_method": "DELETE",
@@ -97,7 +97,7 @@ class TagsApi:
         self._get_host_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (HostTags,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/tags/hosts/{host_name}",
                 "operation_id": "get_host_tags",
                 "http_method": "GET",
@@ -147,7 +147,7 @@ class TagsApi:
         self._update_host_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (HostTags,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/tags/hosts/{host_name}",
                 "operation_id": "update_host_tags",
                 "http_method": "PUT",

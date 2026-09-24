@@ -2,6 +2,7 @@
 Create a tag indexing rule with exclude-mode tag usage fields returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.model.tag_indexing_rule_create_attributes import TagIndexingRuleCreateAttributes
@@ -42,6 +43,7 @@ body = TagIndexingRuleCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_tag_indexing_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)

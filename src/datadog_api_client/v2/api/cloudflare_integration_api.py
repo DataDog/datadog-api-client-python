@@ -26,7 +26,7 @@ class CloudflareIntegrationApi:
         self._create_cloudflare_account_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudflareAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/cloudflare/accounts",
                 "operation_id": "create_cloudflare_account",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class CloudflareIntegrationApi:
         self._delete_cloudflare_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/cloudflare/accounts/{account_id}",
                 "operation_id": "delete_cloudflare_account",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class CloudflareIntegrationApi:
         self._get_cloudflare_account_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudflareAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/cloudflare/accounts/{account_id}",
                 "operation_id": "get_cloudflare_account",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class CloudflareIntegrationApi:
         self._list_cloudflare_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudflareAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/cloudflare/accounts",
                 "operation_id": "list_cloudflare_accounts",
                 "http_method": "GET",
@@ -108,7 +108,7 @@ class CloudflareIntegrationApi:
         self._update_cloudflare_account_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudflareAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/cloudflare/accounts/{account_id}",
                 "operation_id": "update_cloudflare_account",
                 "http_method": "PATCH",

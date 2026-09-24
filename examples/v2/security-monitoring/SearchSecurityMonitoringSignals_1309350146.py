@@ -4,6 +4,7 @@ Get a list of security signals returns "OK" response with pagination
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_signal_list_request import SecurityMonitoringSignalListRequest
@@ -28,6 +29,7 @@ body = SecurityMonitoringSignalListRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     items = api_instance.search_security_monitoring_signals_with_pagination(body=body)

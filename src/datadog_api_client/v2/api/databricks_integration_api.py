@@ -33,7 +33,7 @@ class DatabricksIntegrationApi:
         self._create_databricks_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (DatabricksIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/databricks/accounts",
                 "operation_id": "create_databricks_integration_account",
                 "http_method": "POST",
@@ -53,7 +53,7 @@ class DatabricksIntegrationApi:
         self._delete_databricks_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/databricks/accounts/{account_id}",
                 "operation_id": "delete_databricks_integration_account",
                 "http_method": "DELETE",
@@ -76,7 +76,7 @@ class DatabricksIntegrationApi:
         self._get_databricks_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (DatabricksIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/databricks/accounts/{account_id}",
                 "operation_id": "get_databricks_integration_account",
                 "http_method": "GET",
@@ -99,7 +99,7 @@ class DatabricksIntegrationApi:
         self._list_databricks_integration_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (DatabricksIntegrationAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/databricks/accounts",
                 "operation_id": "list_databricks_integration_accounts",
                 "http_method": "GET",
@@ -115,7 +115,7 @@ class DatabricksIntegrationApi:
         self._update_databricks_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (DatabricksIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/databricks/accounts/{account_id}",
                 "operation_id": "update_databricks_integration_account",
                 "http_method": "PATCH",

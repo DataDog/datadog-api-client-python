@@ -25,6 +25,7 @@ body = DashboardBulkDeleteRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)
     api_instance.delete_dashboards(body=body)

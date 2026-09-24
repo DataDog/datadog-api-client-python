@@ -44,7 +44,7 @@ class ServiceAccountsApi:
         self._create_service_account_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts",
                 "operation_id": "create_service_account",
                 "http_method": "POST",
@@ -64,7 +64,7 @@ class ServiceAccountsApi:
         self._create_service_account_access_token_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceAccessTokenCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens",
                 "operation_id": "create_service_account_access_token",
                 "http_method": "POST",
@@ -90,7 +90,7 @@ class ServiceAccountsApi:
         self._create_service_account_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys",
                 "operation_id": "create_service_account_application_key",
                 "http_method": "POST",
@@ -116,7 +116,7 @@ class ServiceAccountsApi:
         self._delete_service_account_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}",
                 "operation_id": "delete_service_account_application_key",
                 "http_method": "DELETE",
@@ -145,7 +145,7 @@ class ServiceAccountsApi:
         self._get_service_account_access_token_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceAccessTokenResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{token_id}",
                 "operation_id": "get_service_account_access_token",
                 "http_method": "GET",
@@ -174,7 +174,7 @@ class ServiceAccountsApi:
         self._get_service_account_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (PartialApplicationKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}",
                 "operation_id": "get_service_account_application_key",
                 "http_method": "GET",
@@ -203,7 +203,7 @@ class ServiceAccountsApi:
         self._list_service_account_access_tokens_endpoint = _Endpoint(
             settings={
                 "response_type": (ListServiceAccessTokensResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens",
                 "operation_id": "list_service_account_access_tokens",
                 "http_method": "GET",
@@ -246,7 +246,7 @@ class ServiceAccountsApi:
         self._list_service_account_application_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (ListApplicationKeysResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys",
                 "operation_id": "list_service_account_application_keys",
                 "http_method": "GET",
@@ -299,7 +299,7 @@ class ServiceAccountsApi:
         self._revoke_service_account_access_token_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{token_id}",
                 "operation_id": "revoke_service_account_access_token",
                 "http_method": "DELETE",
@@ -328,7 +328,7 @@ class ServiceAccountsApi:
         self._update_service_account_access_token_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceAccessTokenResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{token_id}",
                 "operation_id": "update_service_account_access_token",
                 "http_method": "PATCH",
@@ -360,7 +360,7 @@ class ServiceAccountsApi:
         self._update_service_account_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (PartialApplicationKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/application_keys/{app_key_id}",
                 "operation_id": "update_service_account_application_key",
                 "http_method": "PATCH",

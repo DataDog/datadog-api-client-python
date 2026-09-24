@@ -2,6 +2,7 @@
 Query aggregated waterfall returns "Successful response" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
 from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria import AggregatedWaterfallPerformanceCriteria
@@ -34,6 +35,7 @@ body = AggregatedWaterfallRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["query_aggregated_waterfall"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMInsightsApi(api_client)

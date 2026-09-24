@@ -46,7 +46,7 @@ class RUMApi:
         self._aggregate_rum_events_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMAnalyticsAggregateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/analytics/aggregate",
                 "operation_id": "aggregate_rum_events",
                 "http_method": "POST",
@@ -66,7 +66,7 @@ class RUMApi:
         self._create_rum_application_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMApplicationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications",
                 "operation_id": "create_rum_application",
                 "http_method": "POST",
@@ -86,7 +86,7 @@ class RUMApi:
         self._delete_rum_application_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{id}",
                 "operation_id": "delete_rum_application",
                 "http_method": "DELETE",
@@ -109,7 +109,7 @@ class RUMApi:
         self._delete_sourcemaps_endpoint = _Endpoint(
             settings={
                 "response_type": (SourcemapsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sourcemaps",
                 "operation_id": "delete_sourcemaps",
                 "http_method": "DELETE",
@@ -241,7 +241,7 @@ class RUMApi:
         self._get_rum_application_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMApplicationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{id}",
                 "operation_id": "get_rum_application",
                 "http_method": "GET",
@@ -264,7 +264,7 @@ class RUMApi:
         self._get_rum_applications_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMApplicationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications",
                 "operation_id": "get_rum_applications",
                 "http_method": "GET",
@@ -280,7 +280,7 @@ class RUMApi:
         self._get_service_repository_info_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceRepositoryInfoResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sourcemaps/service_repository_info",
                 "operation_id": "get_service_repository_info",
                 "http_method": "POST",
@@ -300,7 +300,7 @@ class RUMApi:
         self._get_sourcemaps_endpoint = _Endpoint(
             settings={
                 "response_type": (SourcemapFileResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sourcemaps",
                 "operation_id": "get_sourcemaps",
                 "http_method": "GET",
@@ -335,7 +335,7 @@ class RUMApi:
         self._list_rum_events_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/events",
                 "operation_id": "list_rum_events",
                 "http_method": "GET",
@@ -385,7 +385,7 @@ class RUMApi:
         self._list_sourcemaps_endpoint = _Endpoint(
             settings={
                 "response_type": (ListSourcemapsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sourcemaps/list",
                 "operation_id": "list_sourcemaps",
                 "http_method": "GET",
@@ -520,7 +520,7 @@ class RUMApi:
         self._restore_sourcemaps_endpoint = _Endpoint(
             settings={
                 "response_type": (SourcemapsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/sourcemaps/restore",
                 "operation_id": "restore_sourcemaps",
                 "http_method": "PATCH",
@@ -652,7 +652,7 @@ class RUMApi:
         self._search_rum_events_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/events/search",
                 "operation_id": "search_rum_events",
                 "http_method": "POST",
@@ -672,7 +672,7 @@ class RUMApi:
         self._update_rum_application_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMApplicationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{id}",
                 "operation_id": "update_rum_application",
                 "http_method": "PATCH",

@@ -2,6 +2,7 @@
 Update replay heatmap snapshot returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_replay_heatmaps_api import RumReplayHeatmapsApi
 from datadog_api_client.v2.model.snapshot_update_request import SnapshotUpdateRequest
@@ -22,6 +23,7 @@ body = SnapshotUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumReplayHeatmapsApi(api_client)
     response = api_instance.update_replay_heatmap_snapshot(

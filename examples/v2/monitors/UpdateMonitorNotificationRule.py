@@ -36,6 +36,7 @@ body = MonitorNotificationRuleUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.update_monitor_notification_rule(rule_id=MONITOR_NOTIFICATION_RULE_DATA_ID, body=body)

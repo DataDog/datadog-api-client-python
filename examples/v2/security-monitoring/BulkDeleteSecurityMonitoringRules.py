@@ -2,6 +2,7 @@
 Bulk delete security monitoring rules returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_rule_bulk_delete_attributes import (
@@ -29,6 +30,7 @@ body = SecurityMonitoringRuleBulkDeletePayload(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.bulk_delete_security_monitoring_rules(body=body)

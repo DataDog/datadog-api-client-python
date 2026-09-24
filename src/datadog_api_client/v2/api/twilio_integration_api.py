@@ -29,7 +29,7 @@ class TwilioIntegrationApi:
         self._create_twilio_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (TwilioIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/twilio/accounts",
                 "operation_id": "create_twilio_integration_account",
                 "http_method": "POST",
@@ -49,7 +49,7 @@ class TwilioIntegrationApi:
         self._delete_twilio_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/twilio/accounts/{account_id}",
                 "operation_id": "delete_twilio_integration_account",
                 "http_method": "DELETE",
@@ -72,7 +72,7 @@ class TwilioIntegrationApi:
         self._get_twilio_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (TwilioIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/twilio/accounts/{account_id}",
                 "operation_id": "get_twilio_integration_account",
                 "http_method": "GET",
@@ -95,7 +95,7 @@ class TwilioIntegrationApi:
         self._list_twilio_integration_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (TwilioIntegrationAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/twilio/accounts",
                 "operation_id": "list_twilio_integration_accounts",
                 "http_method": "GET",
@@ -111,7 +111,7 @@ class TwilioIntegrationApi:
         self._update_twilio_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (TwilioIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/twilio/accounts/{account_id}",
                 "operation_id": "update_twilio_integration_account",
                 "http_method": "PATCH",

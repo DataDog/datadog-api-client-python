@@ -2,6 +2,7 @@
 Update a RUM retention filter returns "Updated" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
@@ -25,6 +26,7 @@ body = RumRetentionFilterUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumRetentionFiltersApi(api_client)
     response = api_instance.update_retention_filter(

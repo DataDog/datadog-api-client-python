@@ -38,7 +38,7 @@ class ReportSchedulesApi:
         self._create_report_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/schedule",
                 "operation_id": "create_report_schedule",
                 "http_method": "POST",
@@ -58,7 +58,7 @@ class ReportSchedulesApi:
         self._delete_report_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/schedule/{schedule_uuid}",
                 "operation_id": "delete_report_schedule",
                 "http_method": "DELETE",
@@ -81,7 +81,7 @@ class ReportSchedulesApi:
         self._get_report_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/schedule/{schedule_uuid}",
                 "operation_id": "get_report_schedule",
                 "http_method": "GET",
@@ -104,7 +104,7 @@ class ReportSchedulesApi:
         self._get_report_schedules_for_resource_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/schedule/{resource_type}/{resource_id}",
                 "operation_id": "get_report_schedules_for_resource",
                 "http_method": "GET",
@@ -133,7 +133,7 @@ class ReportSchedulesApi:
         self._list_dataset_report_schedules_endpoint = _Endpoint(
             settings={
                 "response_type": (DatasetReportScheduleListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/dataset/{dataset_id}/schedules",
                 "operation_id": "list_dataset_report_schedules",
                 "http_method": "GET",
@@ -156,7 +156,7 @@ class ReportSchedulesApi:
         self._list_report_schedules_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/schedule/list",
                 "operation_id": "list_report_schedules",
                 "http_method": "GET",
@@ -205,7 +205,7 @@ class ReportSchedulesApi:
         self._patch_report_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/schedule/{schedule_uuid}",
                 "operation_id": "patch_report_schedule",
                 "http_method": "PATCH",
@@ -231,7 +231,7 @@ class ReportSchedulesApi:
         self._print_report_endpoint = _Endpoint(
             settings={
                 "response_type": (PrintReportResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/print",
                 "operation_id": "print_report",
                 "http_method": "POST",
@@ -251,7 +251,7 @@ class ReportSchedulesApi:
         self._toggle_report_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (ReportScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/reporting/schedule/{schedule_uuid}/toggle",
                 "operation_id": "toggle_report_schedule",
                 "http_method": "PATCH",

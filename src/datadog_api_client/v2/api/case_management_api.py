@@ -203,7 +203,7 @@ class CaseManagementApi:
         self._comment_case_endpoint = _Endpoint(
             settings={
                 "response_type": (TimelineResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/{case_id}/comment",
                 "operation_id": "comment_case",
                 "http_method": "POST",
@@ -520,7 +520,7 @@ class CaseManagementApi:
         self._delete_case_comment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/{case_id}/comment/{cell_id}",
                 "operation_id": "delete_case_comment",
                 "http_method": "DELETE",

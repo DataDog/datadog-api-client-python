@@ -50,7 +50,7 @@ class AppBuilderApi:
         self._create_app_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps",
                 "operation_id": "create_app",
                 "http_method": "POST",
@@ -70,7 +70,7 @@ class AppBuilderApi:
         self._create_publish_request_endpoint = _Endpoint(
             settings={
                 "response_type": (PublishAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/publish-request",
                 "operation_id": "create_publish_request",
                 "http_method": "POST",
@@ -96,7 +96,7 @@ class AppBuilderApi:
         self._delete_app_endpoint = _Endpoint(
             settings={
                 "response_type": (DeleteAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}",
                 "operation_id": "delete_app",
                 "http_method": "DELETE",
@@ -119,7 +119,7 @@ class AppBuilderApi:
         self._delete_apps_endpoint = _Endpoint(
             settings={
                 "response_type": (DeleteAppsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps",
                 "operation_id": "delete_apps",
                 "http_method": "DELETE",
@@ -139,7 +139,7 @@ class AppBuilderApi:
         self._get_app_endpoint = _Endpoint(
             settings={
                 "response_type": (GetAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}",
                 "operation_id": "get_app",
                 "http_method": "GET",
@@ -167,7 +167,7 @@ class AppBuilderApi:
         self._get_blueprint_endpoint = _Endpoint(
             settings={
                 "response_type": (GetBlueprintResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/blueprint/{blueprint_id}",
                 "operation_id": "get_blueprint",
                 "http_method": "GET",
@@ -190,7 +190,7 @@ class AppBuilderApi:
         self._get_blueprints_by_integration_id_endpoint = _Endpoint(
             settings={
                 "response_type": (GetBlueprintsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/blueprints/integration-id/{integration_id}",
                 "operation_id": "get_blueprints_by_integration_id",
                 "http_method": "GET",
@@ -213,7 +213,7 @@ class AppBuilderApi:
         self._get_blueprints_by_slugs_endpoint = _Endpoint(
             settings={
                 "response_type": (GetBlueprintsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/blueprints/slugs/{slugs}",
                 "operation_id": "get_blueprints_by_slugs",
                 "http_method": "GET",
@@ -236,7 +236,7 @@ class AppBuilderApi:
         self._list_apps_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAppsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps",
                 "operation_id": "list_apps",
                 "http_method": "GET",
@@ -309,7 +309,7 @@ class AppBuilderApi:
         self._list_app_versions_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAppVersionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/versions",
                 "operation_id": "list_app_versions",
                 "http_method": "GET",
@@ -342,7 +342,7 @@ class AppBuilderApi:
         self._list_blueprints_endpoint = _Endpoint(
             settings={
                 "response_type": (ListBlueprintsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/blueprints",
                 "operation_id": "list_blueprints",
                 "http_method": "GET",
@@ -369,7 +369,7 @@ class AppBuilderApi:
         self._list_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (AppBuilderListTagsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/tags",
                 "operation_id": "list_tags",
                 "http_method": "GET",
@@ -385,7 +385,7 @@ class AppBuilderApi:
         self._publish_app_endpoint = _Endpoint(
             settings={
                 "response_type": (PublishAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/deployment",
                 "operation_id": "publish_app",
                 "http_method": "POST",
@@ -408,7 +408,7 @@ class AppBuilderApi:
         self._revert_app_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/revert",
                 "operation_id": "revert_app",
                 "http_method": "POST",
@@ -437,7 +437,7 @@ class AppBuilderApi:
         self._unpublish_app_endpoint = _Endpoint(
             settings={
                 "response_type": (UnpublishAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/deployment",
                 "operation_id": "unpublish_app",
                 "http_method": "DELETE",
@@ -460,7 +460,7 @@ class AppBuilderApi:
         self._update_app_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}",
                 "operation_id": "update_app",
                 "http_method": "PATCH",
@@ -486,7 +486,7 @@ class AppBuilderApi:
         self._update_app_favorite_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/favorite",
                 "operation_id": "update_app_favorite",
                 "http_method": "PATCH",
@@ -512,7 +512,7 @@ class AppBuilderApi:
         self._update_app_self_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/self-service",
                 "operation_id": "update_app_self_service",
                 "http_method": "PATCH",
@@ -538,7 +538,7 @@ class AppBuilderApi:
         self._update_app_tags_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/tags",
                 "operation_id": "update_app_tags",
                 "http_method": "PATCH",
@@ -564,7 +564,7 @@ class AppBuilderApi:
         self._update_app_version_name_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/version-name",
                 "operation_id": "update_app_version_name",
                 "http_method": "PATCH",
@@ -596,7 +596,7 @@ class AppBuilderApi:
         self._update_protection_level_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateAppResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/app-builder/apps/{app_id}/protection-level",
                 "operation_id": "update_protection_level",
                 "http_method": "PATCH",

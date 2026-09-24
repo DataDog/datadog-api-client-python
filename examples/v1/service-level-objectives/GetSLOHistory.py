@@ -12,6 +12,7 @@ from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelO
 SLO_DATA_0_ID = environ["SLO_DATA_0_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
     response = api_instance.get_slo_history(

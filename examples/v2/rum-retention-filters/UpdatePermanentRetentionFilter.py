@@ -2,6 +2,7 @@
 Update a permanent RUM retention filter returns "Updated" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
@@ -29,6 +30,7 @@ body = RumPermanentRetentionFilterUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumRetentionFiltersApi(api_client)
     response = api_instance.update_permanent_retention_filter(

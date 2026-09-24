@@ -2,6 +2,7 @@
 Update targeting rules for a flag returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.model.allocation_data_request import AllocationDataRequest
@@ -87,6 +88,7 @@ body = OverwriteAllocationsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     response = api_instance.update_allocations_for_feature_flag_in_environment(

@@ -2,6 +2,7 @@
 Create and publish a form returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.forms_api import FormsApi
 from datadog_api_client.v2.model.create_form_data import CreateFormData
@@ -27,6 +28,7 @@ body = CreateFormRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_and_publish_form"] = True
 with ApiClient(configuration) as api_client:
     api_instance = FormsApi(api_client)

@@ -2,6 +2,7 @@
 Update global incident handle returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.incidents_api import IncidentsApi
 from datadog_api_client.v2.model.incident_handle_attributes_fields import IncidentHandleAttributesFields
@@ -43,6 +44,7 @@ body = IncidentHandleRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_global_incident_handle"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

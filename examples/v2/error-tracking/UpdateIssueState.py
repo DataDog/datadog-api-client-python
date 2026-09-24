@@ -25,6 +25,7 @@ body = IssueUpdateStateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ErrorTrackingApi(api_client)
     response = api_instance.update_issue_state(issue_id=ISSUE_ID, body=body)

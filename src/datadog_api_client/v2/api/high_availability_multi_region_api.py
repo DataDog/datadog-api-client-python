@@ -26,7 +26,7 @@ class HighAvailabilityMultiRegionApi:
         self._create_hamr_org_connection_endpoint = _Endpoint(
             settings={
                 "response_type": (HamrOrgConnectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/hamr",
                 "operation_id": "create_hamr_org_connection",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class HighAvailabilityMultiRegionApi:
         self._get_hamr_org_connection_endpoint = _Endpoint(
             settings={
                 "response_type": (HamrOrgConnectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/hamr",
                 "operation_id": "get_hamr_org_connection",
                 "http_method": "GET",

@@ -31,7 +31,7 @@ class DashboardListsApi:
         self._create_dashboard_list_items_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardListAddItemsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards",
                 "operation_id": "create_dashboard_list_items",
                 "http_method": "POST",
@@ -57,7 +57,7 @@ class DashboardListsApi:
         self._delete_dashboard_list_items_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardListDeleteItemsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards",
                 "operation_id": "delete_dashboard_list_items",
                 "http_method": "DELETE",
@@ -106,7 +106,7 @@ class DashboardListsApi:
         self._update_dashboard_list_items_endpoint = _Endpoint(
             settings={
                 "response_type": (DashboardListUpdateItemsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dashboard/lists/manual/{dashboard_list_id}/dashboards",
                 "operation_id": "update_dashboard_list_items",
                 "http_method": "PUT",

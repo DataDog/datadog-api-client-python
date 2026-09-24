@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 FEATURE_FLAG_DATA_ID = environ["FEATURE_FLAG_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     response = api_instance.get_feature_flag(

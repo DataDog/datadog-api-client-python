@@ -2,6 +2,7 @@
 Attach security findings to a Linear issue returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.attach_linear_issue_request import AttachLinearIssueRequest
@@ -46,6 +47,7 @@ body = AttachLinearIssueRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.attach_linear_issue(body=body)

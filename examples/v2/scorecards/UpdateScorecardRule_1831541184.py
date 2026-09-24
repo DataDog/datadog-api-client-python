@@ -28,6 +28,7 @@ body = UpdateRuleRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ScorecardsApi(api_client)
     response = api_instance.update_scorecard_rule(rule_id=CREATE_SCORECARD_RULE_DATA_ID, body=body)

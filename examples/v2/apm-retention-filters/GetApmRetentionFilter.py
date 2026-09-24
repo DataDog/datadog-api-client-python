@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFilt
 RETENTION_FILTER_DATA_ID = environ["RETENTION_FILTER_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = APMRetentionFiltersApi(api_client)
     response = api_instance.get_apm_retention_filter(

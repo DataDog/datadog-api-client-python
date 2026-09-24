@@ -2,6 +2,7 @@
 Update a GCP integration cloud run revision filters returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.gcp_integration_api import GCPIntegrationApi
 from datadog_api_client.v1.model.gcp_account import GCPAccount
@@ -28,6 +29,7 @@ body = GCPAccount(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = GCPIntegrationApi(api_client)
     response = api_instance.update_gcp_integration(body=body)

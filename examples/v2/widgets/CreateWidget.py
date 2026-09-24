@@ -2,6 +2,7 @@
 Create a widget returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.widgets_api import WidgetsApi
 from datadog_api_client.v2.model.create_or_update_widget_request import CreateOrUpdateWidgetRequest
@@ -25,6 +26,7 @@ body = CreateOrUpdateWidgetRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = WidgetsApi(api_client)
     response = api_instance.create_widget(experience_type=WidgetExperienceType.CCM_REPORTS, body=body)

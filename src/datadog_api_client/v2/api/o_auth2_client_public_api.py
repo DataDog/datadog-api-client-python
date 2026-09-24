@@ -32,7 +32,7 @@ class OAuth2ClientPublicApi:
         self._delete_scopes_restriction_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/oauth2/clients/{client_uuid}/scopes_restriction",
                 "operation_id": "delete_scopes_restriction",
                 "http_method": "DELETE",
@@ -139,7 +139,7 @@ class OAuth2ClientPublicApi:
         self._get_scopes_restriction_endpoint = _Endpoint(
             settings={
                 "response_type": (OAuthScopesRestrictionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/oauth2/clients/{client_uuid}/scopes_restriction",
                 "operation_id": "get_scopes_restriction",
                 "http_method": "GET",
@@ -182,7 +182,7 @@ class OAuth2ClientPublicApi:
         self._upsert_scopes_restriction_endpoint = _Endpoint(
             settings={
                 "response_type": (OAuthScopesRestrictionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/oauth2/clients/{client_uuid}/scopes_restriction",
                 "operation_id": "upsert_scopes_restriction",
                 "http_method": "POST",

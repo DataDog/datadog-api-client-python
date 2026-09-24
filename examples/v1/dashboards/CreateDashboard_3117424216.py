@@ -2,6 +2,7 @@
 Create a new dashboard with logs_stream list_stream widget and storage parameter
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.dashboards_api import DashboardsApi
 from datadog_api_client.v1.model.dashboard import Dashboard
@@ -45,6 +46,7 @@ body = Dashboard(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)
     response = api_instance.create_dashboard(body=body)

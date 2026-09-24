@@ -2,6 +2,7 @@
 Update ownership settings for the org returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.csm_ownership_api import CSMOwnershipApi
 from datadog_api_client.v2.model.ownership_confidence_level import OwnershipConfidenceLevel
@@ -21,6 +22,7 @@ body = OwnershipSettingsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["post_ownership_settings"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CSMOwnershipApi(api_client)

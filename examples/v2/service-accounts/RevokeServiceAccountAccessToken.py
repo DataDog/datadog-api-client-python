@@ -13,6 +13,7 @@ SERVICE_ACCOUNT_USER_DATA_ID = environ["SERVICE_ACCOUNT_USER_DATA_ID"]
 SERVICE_ACCOUNT_ACCESS_TOKEN_DATA_ID = environ["SERVICE_ACCOUNT_ACCESS_TOKEN_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceAccountsApi(api_client)
     api_instance.revoke_service_account_access_token(

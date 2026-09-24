@@ -2,6 +2,7 @@
 Enable historical metrics ingestion returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.model.historical_metrics_configuration_create_data import (
@@ -20,6 +21,7 @@ body = HistoricalMetricsConfigurationCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_historical_metrics_configuration"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)

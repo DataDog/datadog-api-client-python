@@ -32,6 +32,7 @@ body = RestrictionPolicyUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RestrictionPoliciesApi(api_client)
     response = api_instance.update_restriction_policy(resource_id="dashboard:test-update", body=body)

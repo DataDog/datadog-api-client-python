@@ -2,10 +2,12 @@
 Get usage stats for all dashboards returns "OK" response with pagination
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dashboards_api import DashboardsApi
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["list_dashboards_usage"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)

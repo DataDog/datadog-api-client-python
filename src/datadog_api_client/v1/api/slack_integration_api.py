@@ -25,7 +25,7 @@ class SlackIntegrationApi:
         self._create_slack_integration_channel_endpoint = _Endpoint(
             settings={
                 "response_type": (SlackIntegrationChannel,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels",
                 "operation_id": "create_slack_integration_channel",
                 "http_method": "POST",
@@ -51,7 +51,7 @@ class SlackIntegrationApi:
         self._get_slack_integration_channel_endpoint = _Endpoint(
             settings={
                 "response_type": (SlackIntegrationChannel,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}",
                 "operation_id": "get_slack_integration_channel",
                 "http_method": "GET",
@@ -80,7 +80,7 @@ class SlackIntegrationApi:
         self._get_slack_integration_channels_endpoint = _Endpoint(
             settings={
                 "response_type": (SlackIntegrationChannels,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels",
                 "operation_id": "get_slack_integration_channels",
                 "http_method": "GET",
@@ -103,7 +103,7 @@ class SlackIntegrationApi:
         self._remove_slack_integration_channel_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}",
                 "operation_id": "remove_slack_integration_channel",
                 "http_method": "DELETE",
@@ -132,7 +132,7 @@ class SlackIntegrationApi:
         self._update_slack_integration_channel_endpoint = _Endpoint(
             settings={
                 "response_type": (SlackIntegrationChannel,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/slack/configuration/accounts/{account_name}/channels/{channel_name}",
                 "operation_id": "update_slack_integration_channel",
                 "http_method": "PATCH",

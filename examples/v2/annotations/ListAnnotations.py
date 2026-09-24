@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.annotations_api import AnnotationsApi
 ANNOTATION_DATA_ATTRIBUTES_PAGE_ID = environ["ANNOTATION_DATA_ATTRIBUTES_PAGE_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["list_annotations"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AnnotationsApi(api_client)

@@ -26,7 +26,7 @@ class SpansMetricsApi:
         self._create_spans_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apm/config/metrics",
                 "operation_id": "create_spans_metric",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class SpansMetricsApi:
         self._delete_spans_metric_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apm/config/metrics/{metric_id}",
                 "operation_id": "delete_spans_metric",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class SpansMetricsApi:
         self._get_spans_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apm/config/metrics/{metric_id}",
                 "operation_id": "get_spans_metric",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class SpansMetricsApi:
         self._list_spans_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansMetricsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apm/config/metrics",
                 "operation_id": "list_spans_metrics",
                 "http_method": "GET",
@@ -108,7 +108,7 @@ class SpansMetricsApi:
         self._update_spans_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (SpansMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/apm/config/metrics/{metric_id}",
                 "operation_id": "update_spans_metric",
                 "http_method": "PATCH",

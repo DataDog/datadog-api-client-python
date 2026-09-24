@@ -32,7 +32,7 @@ class CSMCoverageAnalysisApi:
         self._get_csm_cloud_accounts_coverage_analysis_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmCloudAccountsCoverageAnalysisResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/onboarding/coverage_analysis/cloud_accounts",
                 "operation_id": "get_csm_cloud_accounts_coverage_analysis",
                 "http_method": "GET",
@@ -48,7 +48,7 @@ class CSMCoverageAnalysisApi:
         self._get_csm_hosts_and_containers_coverage_analysis_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmHostsAndContainersCoverageAnalysisResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/onboarding/coverage_analysis/hosts_and_containers",
                 "operation_id": "get_csm_hosts_and_containers_coverage_analysis",
                 "http_method": "GET",
@@ -64,7 +64,7 @@ class CSMCoverageAnalysisApi:
         self._get_csm_serverless_coverage_analysis_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmServerlessCoverageAnalysisResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/onboarding/coverage_analysis/serverless",
                 "operation_id": "get_csm_serverless_coverage_analysis",
                 "http_method": "GET",

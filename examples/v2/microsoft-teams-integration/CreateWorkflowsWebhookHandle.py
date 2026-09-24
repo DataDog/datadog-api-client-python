@@ -2,6 +2,7 @@
 Create Workflows webhook handle returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftTeamsIntegrationApi
 from datadog_api_client.v2.model.microsoft_teams_create_workflows_webhook_handle_request import (
@@ -28,6 +29,7 @@ body = MicrosoftTeamsCreateWorkflowsWebhookHandleRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MicrosoftTeamsIntegrationApi(api_client)
     response = api_instance.create_workflows_webhook_handle(body=body)

@@ -33,7 +33,7 @@ class ServiceNowIntegrationApi:
         self._create_service_now_template_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/handles",
                 "operation_id": "create_service_now_template",
                 "http_method": "POST",
@@ -53,7 +53,7 @@ class ServiceNowIntegrationApi:
         self._delete_service_now_template_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/handles/{template_id}",
                 "operation_id": "delete_service_now_template",
                 "http_method": "DELETE",
@@ -76,7 +76,7 @@ class ServiceNowIntegrationApi:
         self._get_service_now_template_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/handles/{template_id}",
                 "operation_id": "get_service_now_template",
                 "http_method": "GET",
@@ -99,7 +99,7 @@ class ServiceNowIntegrationApi:
         self._list_service_now_assignment_groups_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowAssignmentGroupsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/assignment_groups/{instance_id}",
                 "operation_id": "list_service_now_assignment_groups",
                 "http_method": "GET",
@@ -122,7 +122,7 @@ class ServiceNowIntegrationApi:
         self._list_service_now_business_services_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowBusinessServicesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/business_services/{instance_id}",
                 "operation_id": "list_service_now_business_services",
                 "http_method": "GET",
@@ -145,7 +145,7 @@ class ServiceNowIntegrationApi:
         self._list_service_now_instances_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowInstancesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/instances",
                 "operation_id": "list_service_now_instances",
                 "http_method": "GET",
@@ -161,7 +161,7 @@ class ServiceNowIntegrationApi:
         self._list_service_now_templates_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowTemplatesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/handles",
                 "operation_id": "list_service_now_templates",
                 "http_method": "GET",
@@ -177,7 +177,7 @@ class ServiceNowIntegrationApi:
         self._list_service_now_users_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowUsersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/users/{instance_id}",
                 "operation_id": "list_service_now_users",
                 "http_method": "GET",
@@ -200,7 +200,7 @@ class ServiceNowIntegrationApi:
         self._update_service_now_template_endpoint = _Endpoint(
             settings={
                 "response_type": (ServiceNowTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/servicenow/handles/{template_id}",
                 "operation_id": "update_service_now_template",
                 "http_method": "PUT",

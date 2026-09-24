@@ -29,7 +29,7 @@ class AWSLogsIntegrationApi:
         self._check_aws_logs_lambda_async_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSLogsAsyncResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/logs/check_async",
                 "operation_id": "check_aws_logs_lambda_async",
                 "http_method": "POST",
@@ -49,7 +49,7 @@ class AWSLogsIntegrationApi:
         self._check_aws_logs_services_async_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSLogsAsyncResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/logs/services_async",
                 "operation_id": "check_aws_logs_services_async",
                 "http_method": "POST",
@@ -69,7 +69,7 @@ class AWSLogsIntegrationApi:
         self._create_aws_lambda_arn_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "create_aws_lambda_arn",
                 "http_method": "POST",
@@ -89,7 +89,7 @@ class AWSLogsIntegrationApi:
         self._delete_aws_lambda_arn_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "delete_aws_lambda_arn",
                 "http_method": "DELETE",
@@ -109,7 +109,7 @@ class AWSLogsIntegrationApi:
         self._enable_aws_log_services_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/logs/services",
                 "operation_id": "enable_aws_log_services",
                 "http_method": "POST",
@@ -129,7 +129,7 @@ class AWSLogsIntegrationApi:
         self._list_aws_logs_integrations_endpoint = _Endpoint(
             settings={
                 "response_type": ([AWSLogsListResponse],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/logs",
                 "operation_id": "list_aws_logs_integrations",
                 "http_method": "GET",
@@ -145,7 +145,7 @@ class AWSLogsIntegrationApi:
         self._list_aws_logs_services_endpoint = _Endpoint(
             settings={
                 "response_type": ([AWSLogsListServicesResponse],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/logs/services",
                 "operation_id": "list_aws_logs_services",
                 "http_method": "GET",

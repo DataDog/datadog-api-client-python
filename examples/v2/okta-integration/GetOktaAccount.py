@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 OKTA_ACCOUNT_DATA_ID = environ["OKTA_ACCOUNT_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OktaIntegrationApi(api_client)
     response = api_instance.get_okta_account(

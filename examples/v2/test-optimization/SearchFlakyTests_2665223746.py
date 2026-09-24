@@ -2,6 +2,7 @@
 Search flaky tests returns "OK" response with filtered query
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.model.flaky_tests_search_filter import FlakyTestsSearchFilter
@@ -28,6 +29,7 @@ body = FlakyTestsSearchRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["search_flaky_tests"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)

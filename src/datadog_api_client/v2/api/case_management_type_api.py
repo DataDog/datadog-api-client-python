@@ -26,7 +26,7 @@ class CaseManagementTypeApi:
         self._create_case_type_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseTypeResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/types",
                 "operation_id": "create_case_type",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class CaseManagementTypeApi:
         self._delete_case_type_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/types/{case_type_id}",
                 "operation_id": "delete_case_type",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class CaseManagementTypeApi:
         self._get_all_case_types_endpoint = _Endpoint(
             settings={
                 "response_type": (CaseTypesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cases/types",
                 "operation_id": "get_all_case_types",
                 "http_method": "GET",

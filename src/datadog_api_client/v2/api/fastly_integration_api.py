@@ -29,7 +29,7 @@ class FastlyIntegrationApi:
         self._create_fastly_account_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts",
                 "operation_id": "create_fastly_account",
                 "http_method": "POST",
@@ -49,7 +49,7 @@ class FastlyIntegrationApi:
         self._create_fastly_service_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}/services",
                 "operation_id": "create_fastly_service",
                 "http_method": "POST",
@@ -75,7 +75,7 @@ class FastlyIntegrationApi:
         self._delete_fastly_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}",
                 "operation_id": "delete_fastly_account",
                 "http_method": "DELETE",
@@ -98,7 +98,7 @@ class FastlyIntegrationApi:
         self._delete_fastly_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}/services/{service_id}",
                 "operation_id": "delete_fastly_service",
                 "http_method": "DELETE",
@@ -127,7 +127,7 @@ class FastlyIntegrationApi:
         self._get_fastly_account_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}",
                 "operation_id": "get_fastly_account",
                 "http_method": "GET",
@@ -150,7 +150,7 @@ class FastlyIntegrationApi:
         self._get_fastly_service_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}/services/{service_id}",
                 "operation_id": "get_fastly_service",
                 "http_method": "GET",
@@ -179,7 +179,7 @@ class FastlyIntegrationApi:
         self._list_fastly_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts",
                 "operation_id": "list_fastly_accounts",
                 "http_method": "GET",
@@ -195,7 +195,7 @@ class FastlyIntegrationApi:
         self._list_fastly_services_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyServicesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}/services",
                 "operation_id": "list_fastly_services",
                 "http_method": "GET",
@@ -218,7 +218,7 @@ class FastlyIntegrationApi:
         self._update_fastly_account_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}",
                 "operation_id": "update_fastly_account",
                 "http_method": "PATCH",
@@ -244,7 +244,7 @@ class FastlyIntegrationApi:
         self._update_fastly_service_endpoint = _Endpoint(
             settings={
                 "response_type": (FastlyServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/fastly/accounts/{account_id}/services/{service_id}",
                 "operation_id": "update_fastly_service",
                 "http_method": "PATCH",

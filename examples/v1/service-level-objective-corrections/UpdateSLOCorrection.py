@@ -30,6 +30,7 @@ body = SLOCorrectionUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectiveCorrectionsApi(api_client)
     response = api_instance.update_slo_correction(slo_correction_id=CORRECTION_DATA_ID, body=body)

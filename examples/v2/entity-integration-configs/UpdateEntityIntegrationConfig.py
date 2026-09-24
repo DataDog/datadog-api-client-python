@@ -2,6 +2,7 @@
 Create or update entity integration configuration returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.entity_integration_configs_api import EntityIntegrationConfigsApi
 from datadog_api_client.v2.model.entity_integration_config_payload import EntityIntegrationConfigPayload
@@ -24,6 +25,7 @@ body = EntityIntegrationConfigRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_entity_integration_config"] = True
 with ApiClient(configuration) as api_client:
     api_instance = EntityIntegrationConfigsApi(api_client)

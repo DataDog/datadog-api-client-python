@@ -2,6 +2,7 @@
 Search events returns "OK" response with pagination
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.events_api import EventsApi
 from datadog_api_client.v2.model.events_list_request import EventsListRequest
@@ -25,6 +26,7 @@ body = EventsListRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = EventsApi(api_client)
     items = api_instance.search_events_with_pagination(body=body)

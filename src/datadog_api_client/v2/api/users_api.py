@@ -130,7 +130,7 @@ class UsersApi:
         self._get_current_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/current_user",
                 "operation_id": "get_current_user",
                 "http_method": "GET",
@@ -328,7 +328,7 @@ class UsersApi:
         self._update_current_user_endpoint = _Endpoint(
             settings={
                 "response_type": (UserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/current_user",
                 "operation_id": "update_current_user",
                 "http_method": "PATCH",

@@ -2,6 +2,7 @@
 Validate entity context sync credentials returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_google_workspace_integration_credentials_validate_attributes import (
@@ -46,6 +47,7 @@ body = SecurityMonitoringIntegrationCredentialsValidateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["validate_security_monitoring_integration_credentials"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)

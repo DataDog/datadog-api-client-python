@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftT
 WORKFLOWS_WEBHOOK_HANDLE_DATA_ID = environ["WORKFLOWS_WEBHOOK_HANDLE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MicrosoftTeamsIntegrationApi(api_client)
     response = api_instance.get_workflows_webhook_handle(

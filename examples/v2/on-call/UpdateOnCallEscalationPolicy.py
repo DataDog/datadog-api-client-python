@@ -72,6 +72,7 @@ body = EscalationPolicyUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
     response = api_instance.update_on_call_escalation_policy(policy_id=ESCALATION_POLICY_DATA_ID, body=body)

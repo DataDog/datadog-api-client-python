@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.google_chat_integration_api import GoogleChatInte
 ORGANIZATION_HANDLE_DATA_ID = environ["ORGANIZATION_HANDLE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = GoogleChatIntegrationApi(api_client)
     api_instance.delete_organization_handle(

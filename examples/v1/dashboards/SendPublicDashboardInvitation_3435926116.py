@@ -25,6 +25,7 @@ body = SharedDashboardInvites(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DashboardsApi(api_client)
     response = api_instance.send_public_dashboard_invitation(token=SHARED_DASHBOARD_TOKEN, body=body)

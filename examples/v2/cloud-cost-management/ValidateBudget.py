@@ -2,6 +2,7 @@
 Validate budget returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.model.budget_validation_request import BudgetValidationRequest
@@ -57,6 +58,7 @@ body = BudgetValidationRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CloudCostManagementApi(api_client)
     response = api_instance.validate_budget(body=body)

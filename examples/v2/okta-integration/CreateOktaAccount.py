@@ -2,6 +2,7 @@
 Add Okta account returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.model.okta_account import OktaAccount
@@ -24,6 +25,7 @@ body = OktaAccountRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OktaIntegrationApi(api_client)
     response = api_instance.create_okta_account(body=body)

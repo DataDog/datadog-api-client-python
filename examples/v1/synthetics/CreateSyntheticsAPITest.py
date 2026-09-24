@@ -2,6 +2,7 @@
 Create an API test returns "OK - Returns the created test details." response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v1.model.synthetics_api_test import SyntheticsAPITest
@@ -96,6 +97,7 @@ body = SyntheticsAPITest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.create_synthetics_api_test(body=body)

@@ -2,6 +2,7 @@
 Update an org group membership returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.org_groups_api import OrgGroupsApi
 from datadog_api_client.v2.model.org_group_membership_type import OrgGroupMembershipType
@@ -29,6 +30,7 @@ body = OrgGroupMembershipUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_org_group_membership"] = True
 with ApiClient(configuration) as api_client:
     api_instance = OrgGroupsApi(api_client)

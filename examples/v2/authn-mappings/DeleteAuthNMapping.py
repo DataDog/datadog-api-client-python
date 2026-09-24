@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.authn_mappings_api import AuthNMappingsApi
 AUTHN_MAPPING_DATA_ID = environ["AUTHN_MAPPING_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AuthNMappingsApi(api_client)
     api_instance.delete_authn_mapping(

@@ -30,7 +30,7 @@ class DataDeletionApi:
         self._cancel_data_deletion_request_endpoint = _Endpoint(
             settings={
                 "response_type": (CancelDataDeletionResponseBody,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deletion/requests/{id}/cancel",
                 "operation_id": "cancel_data_deletion_request",
                 "http_method": "PUT",
@@ -53,7 +53,7 @@ class DataDeletionApi:
         self._create_data_deletion_request_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateDataDeletionResponseBody,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deletion/data/{product}",
                 "operation_id": "create_data_deletion_request",
                 "http_method": "POST",
@@ -79,7 +79,7 @@ class DataDeletionApi:
         self._get_data_deletion_requests_endpoint = _Endpoint(
             settings={
                 "response_type": (GetDataDeletionsResponseBody,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deletion/requests",
                 "operation_id": "get_data_deletion_requests",
                 "http_method": "GET",

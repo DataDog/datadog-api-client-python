@@ -2,10 +2,12 @@
 Get the list of all Synthetic tests returns "OK - Returns the list of all Synthetic tests." response with pagination
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.synthetics_api import SyntheticsApi
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     items = api_instance.list_tests_with_pagination(

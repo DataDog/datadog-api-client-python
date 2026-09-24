@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.rum_teams_ownership_api import RumTeamsOwnershipA
 TEAMS_OWNERSHIP_MAPPING_DATA_ID = environ["TEAMS_OWNERSHIP_MAPPING_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumTeamsOwnershipApi(api_client)
     api_instance.delete_teams_ownership_mapping(

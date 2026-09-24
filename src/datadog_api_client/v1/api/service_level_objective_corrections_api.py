@@ -57,7 +57,7 @@ class ServiceLevelObjectiveCorrectionsApi:
         self._delete_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/correction/{slo_correction_id}",
                 "operation_id": "delete_slo_correction",
                 "http_method": "DELETE",
@@ -80,7 +80,7 @@ class ServiceLevelObjectiveCorrectionsApi:
         self._get_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/correction/{slo_correction_id}",
                 "operation_id": "get_slo_correction",
                 "http_method": "GET",
@@ -130,7 +130,7 @@ class ServiceLevelObjectiveCorrectionsApi:
         self._update_slo_correction_endpoint = _Endpoint(
             settings={
                 "response_type": (SLOCorrectionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/slo/correction/{slo_correction_id}",
                 "operation_id": "update_slo_correction",
                 "http_method": "PATCH",

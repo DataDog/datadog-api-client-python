@@ -14,6 +14,7 @@ SUPPRESSION_DATA_ID = environ["SUPPRESSION_DATA_ID"]
 SUPPRESSION2_DATA_ID = environ["SUPPRESSION2_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.list_security_monitoring_suppressions(

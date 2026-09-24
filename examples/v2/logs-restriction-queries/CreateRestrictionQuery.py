@@ -2,6 +2,7 @@
 Create a restriction query returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_restriction_queries_api import LogsRestrictionQueriesApi
 from datadog_api_client.v2.model.logs_restriction_queries_type import LogsRestrictionQueriesType
@@ -19,6 +20,7 @@ body = RestrictionQueryCreatePayload(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_restriction_query"] = True
 with ApiClient(configuration) as api_client:
     api_instance = LogsRestrictionQueriesApi(api_client)

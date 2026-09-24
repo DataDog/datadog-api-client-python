@@ -13,6 +13,7 @@ STATUS_PAGE_DATA_ID = environ["STATUS_PAGE_DATA_ID"]
 DEGRADATION_DATA_ID = environ["DEGRADATION_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = StatusPagesApi(api_client)
     api_instance.delete_degradation(

@@ -43,6 +43,7 @@ body = SyntheticsMobileTest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.update_mobile_test(public_id=SYNTHETICS_MOBILE_TEST_PUBLIC_ID, body=body)

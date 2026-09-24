@@ -2,6 +2,7 @@
 Get code coverage summary for a branch returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.code_coverage_api import CodeCoverageApi
 from datadog_api_client.v2.model.branch_coverage_summary_request import BranchCoverageSummaryRequest
@@ -23,6 +24,7 @@ body = BranchCoverageSummaryRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CodeCoverageApi(api_client)
     response = api_instance.get_code_coverage_branch_summary(body=body)

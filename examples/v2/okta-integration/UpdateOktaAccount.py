@@ -26,6 +26,7 @@ body = OktaAccountUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OktaIntegrationApi(api_client)
     response = api_instance.update_okta_account(account_id=OKTA_ACCOUNT_DATA_ID, body=body)

@@ -97,7 +97,7 @@ class DORAMetricsApi:
         self._delete_dora_deployment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/deployment/{deployment_id}",
                 "operation_id": "delete_dora_deployment",
                 "http_method": "DELETE",
@@ -120,7 +120,7 @@ class DORAMetricsApi:
         self._delete_dora_failure_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/failure/{failure_id}",
                 "operation_id": "delete_dora_failure",
                 "http_method": "DELETE",
@@ -143,7 +143,7 @@ class DORAMetricsApi:
         self._get_dora_deployment_endpoint = _Endpoint(
             settings={
                 "response_type": (DORADeploymentFetchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/deployments/{deployment_id}",
                 "operation_id": "get_dora_deployment",
                 "http_method": "GET",
@@ -166,7 +166,7 @@ class DORAMetricsApi:
         self._get_dora_failure_endpoint = _Endpoint(
             settings={
                 "response_type": (DORAFailureFetchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/failures/{failure_id}",
                 "operation_id": "get_dora_failure",
                 "http_method": "GET",
@@ -189,7 +189,7 @@ class DORAMetricsApi:
         self._list_dora_deployments_endpoint = _Endpoint(
             settings={
                 "response_type": (DORADeploymentsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/deployments",
                 "operation_id": "list_dora_deployments",
                 "http_method": "POST",
@@ -209,7 +209,7 @@ class DORAMetricsApi:
         self._list_dora_failures_endpoint = _Endpoint(
             settings={
                 "response_type": (DORAFailuresListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/failures",
                 "operation_id": "list_dora_failures",
                 "http_method": "POST",
@@ -229,7 +229,7 @@ class DORAMetricsApi:
         self._patch_dora_deployment_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/deployments/{deployment_id}",
                 "operation_id": "patch_dora_deployment",
                 "http_method": "PATCH",
@@ -255,7 +255,7 @@ class DORAMetricsApi:
         self._patch_dora_deployment_by_version_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/dora/deployments",
                 "operation_id": "patch_dora_deployment_by_version",
                 "http_method": "PATCH",

@@ -32,7 +32,7 @@ class OrganizationsApi:
         self._create_child_org_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/org",
                 "operation_id": "create_child_org",
                 "http_method": "POST",
@@ -52,7 +52,7 @@ class OrganizationsApi:
         self._downgrade_org_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgDowngradedResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/org/{public_id}/downgrade",
                 "operation_id": "downgrade_org",
                 "http_method": "POST",
@@ -75,7 +75,7 @@ class OrganizationsApi:
         self._get_org_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/org/{public_id}",
                 "operation_id": "get_org",
                 "http_method": "GET",
@@ -98,7 +98,7 @@ class OrganizationsApi:
         self._list_orgs_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/org",
                 "operation_id": "list_orgs",
                 "http_method": "GET",
@@ -114,7 +114,7 @@ class OrganizationsApi:
         self._update_org_endpoint = _Endpoint(
             settings={
                 "response_type": (OrganizationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/org/{public_id}",
                 "operation_id": "update_org",
                 "http_method": "PUT",
@@ -140,7 +140,7 @@ class OrganizationsApi:
         self._upload_idp_for_org_endpoint = _Endpoint(
             settings={
                 "response_type": (IdpResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/org/{public_id}/idp_metadata",
                 "operation_id": "upload_idp_for_org",
                 "http_method": "POST",

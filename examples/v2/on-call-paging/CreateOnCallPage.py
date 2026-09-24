@@ -2,6 +2,7 @@
 Create On-Call Page returns "OK." response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_paging_api import OnCallPagingApi
 from datadog_api_client.v2.model.create_page_request import CreatePageRequest
@@ -31,6 +32,7 @@ body = CreatePageRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OnCallPagingApi(api_client)
     response = api_instance.create_on_call_page(body=body)

@@ -47,6 +47,7 @@ body = TagIndexingRuleUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_tag_indexing_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)

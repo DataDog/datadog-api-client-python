@@ -2,6 +2,7 @@
 Get Test Optimization service settings returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.model.test_optimization_get_service_settings_request import (
@@ -29,6 +30,7 @@ body = TestOptimizationGetServiceSettingsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)
     response = api_instance.get_test_optimization_service_settings(body=body)

@@ -3,6 +3,7 @@ Batch rows query returns "Successfully retrieved rows. Some or all requested row
 rows in the included section." response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.model.batch_rows_query_data_type import BatchRowsQueryDataType
@@ -24,6 +25,7 @@ body = BatchRowsQueryRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ReferenceTablesApi(api_client)
     response = api_instance.batch_rows_query(body=body)

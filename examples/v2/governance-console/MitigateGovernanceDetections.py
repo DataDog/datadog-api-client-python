@@ -2,6 +2,7 @@
 Mitigate detections returns "Accepted" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.governance_console_api import GovernanceConsoleApi
 from datadog_api_client.v2.model.governance_control_detection_resource_type import (
@@ -25,6 +26,7 @@ body = GovernanceMitigationRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["mitigate_governance_detections"] = True
 with ApiClient(configuration) as api_client:
     api_instance = GovernanceConsoleApi(api_client)

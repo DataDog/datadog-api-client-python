@@ -2,6 +2,7 @@
 Create Publish Request returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 from datadog_api_client.v2.model.create_publish_request_request import CreatePublishRequestRequest
@@ -23,6 +24,7 @@ body = CreatePublishRequestRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AppBuilderApi(api_client)
     response = api_instance.create_publish_request(app_id=UUID("9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d"), body=body)

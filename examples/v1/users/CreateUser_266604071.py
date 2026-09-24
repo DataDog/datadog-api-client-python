@@ -2,6 +2,7 @@
 Create a user returns null access role
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.users_api import UsersApi
 from datadog_api_client.v1.model.user import User
@@ -15,6 +16,7 @@ body = User(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = UsersApi(api_client)
     response = api_instance.create_user(body=body)

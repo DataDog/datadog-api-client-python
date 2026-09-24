@@ -2,6 +2,7 @@
 Create a schedule returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
 from datadog_api_client.v2.model.fleet_schedule_create import FleetScheduleCreate
@@ -34,6 +35,7 @@ body = FleetScheduleCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_fleet_schedule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = FleetAutomationApi(api_client)

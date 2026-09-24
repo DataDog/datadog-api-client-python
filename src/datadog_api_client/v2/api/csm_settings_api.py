@@ -33,7 +33,7 @@ class CSMSettingsApi:
         self._get_csm_agentless_host_facet_info_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmHostFacetInfoResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/settings/agentless_hosts/facet_info",
                 "operation_id": "get_csm_agentless_host_facet_info",
                 "http_method": "GET",
@@ -66,7 +66,7 @@ class CSMSettingsApi:
         self._get_csm_unified_host_facet_info_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmHostFacetInfoResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/settings/hosts/facet_info",
                 "operation_id": "get_csm_unified_host_facet_info",
                 "http_method": "GET",
@@ -99,7 +99,7 @@ class CSMSettingsApi:
         self._list_csm_agentless_host_facets_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmAgentlessHostFacetsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/settings/agentless_hosts/facets",
                 "operation_id": "list_csm_agentless_host_facets",
                 "http_method": "GET",
@@ -115,7 +115,7 @@ class CSMSettingsApi:
         self._list_csm_agentless_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmAgentlessHostsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/settings/agentless_hosts",
                 "operation_id": "list_csm_agentless_hosts",
                 "http_method": "GET",
@@ -155,7 +155,7 @@ class CSMSettingsApi:
         self._list_csm_unified_host_facets_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmUnifiedHostFacetsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/settings/hosts/facets",
                 "operation_id": "list_csm_unified_host_facets",
                 "http_method": "GET",
@@ -171,7 +171,7 @@ class CSMSettingsApi:
         self._list_csm_unified_hosts_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmUnifiedHostsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/settings/hosts",
                 "operation_id": "list_csm_unified_hosts",
                 "http_method": "GET",

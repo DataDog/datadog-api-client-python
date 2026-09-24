@@ -2,6 +2,7 @@
 Update a RUM operation strong link returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_operations_api import RUMOperationsApi
 from datadog_api_client.v2.model.rum_operation_strong_link_type import RUMOperationStrongLinkType
@@ -24,6 +25,7 @@ body = RUMOperationStrongLinkUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_rum_operation_strong_link"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMOperationsApi(api_client)

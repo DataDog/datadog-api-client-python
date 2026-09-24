@@ -47,6 +47,7 @@ body = PatchNotificationRuleParameters(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.patch_signal_notification_rule(id=VALID_SIGNAL_NOTIFICATION_RULE_DATA_ID, body=body)

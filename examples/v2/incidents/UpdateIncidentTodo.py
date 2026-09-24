@@ -34,6 +34,7 @@ body = IncidentTodoPatchRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_incident_todo"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

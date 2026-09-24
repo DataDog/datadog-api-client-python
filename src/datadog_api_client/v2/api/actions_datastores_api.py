@@ -41,7 +41,7 @@ class ActionsDatastoresApi:
         self._bulk_delete_datastore_items_endpoint = _Endpoint(
             settings={
                 "response_type": (DeleteAppsDatastoreItemResponseArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}/items/bulk",
                 "operation_id": "bulk_delete_datastore_items",
                 "http_method": "DELETE",
@@ -67,7 +67,7 @@ class ActionsDatastoresApi:
         self._bulk_write_datastore_items_endpoint = _Endpoint(
             settings={
                 "response_type": (PutAppsDatastoreItemResponseArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}/items/bulk",
                 "operation_id": "bulk_write_datastore_items",
                 "http_method": "POST",
@@ -93,7 +93,7 @@ class ActionsDatastoresApi:
         self._create_datastore_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateAppsDatastoreResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores",
                 "operation_id": "create_datastore",
                 "http_method": "POST",
@@ -113,7 +113,7 @@ class ActionsDatastoresApi:
         self._delete_datastore_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}",
                 "operation_id": "delete_datastore",
                 "http_method": "DELETE",
@@ -136,7 +136,7 @@ class ActionsDatastoresApi:
         self._delete_datastore_item_endpoint = _Endpoint(
             settings={
                 "response_type": (DeleteAppsDatastoreItemResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}/items",
                 "operation_id": "delete_datastore_item",
                 "http_method": "DELETE",
@@ -162,7 +162,7 @@ class ActionsDatastoresApi:
         self._get_datastore_endpoint = _Endpoint(
             settings={
                 "response_type": (Datastore,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}",
                 "operation_id": "get_datastore",
                 "http_method": "GET",
@@ -185,7 +185,7 @@ class ActionsDatastoresApi:
         self._list_datastore_items_endpoint = _Endpoint(
             settings={
                 "response_type": (ItemApiPayloadArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}/items",
                 "operation_id": "list_datastore_items",
                 "http_method": "GET",
@@ -240,7 +240,7 @@ class ActionsDatastoresApi:
         self._list_datastores_endpoint = _Endpoint(
             settings={
                 "response_type": (DatastoreArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores",
                 "operation_id": "list_datastores",
                 "http_method": "GET",
@@ -256,7 +256,7 @@ class ActionsDatastoresApi:
         self._update_datastore_endpoint = _Endpoint(
             settings={
                 "response_type": (Datastore,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}",
                 "operation_id": "update_datastore",
                 "http_method": "PATCH",
@@ -282,7 +282,7 @@ class ActionsDatastoresApi:
         self._update_datastore_item_endpoint = _Endpoint(
             settings={
                 "response_type": (ItemApiPayload,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions-datastores/{datastore_id}/items",
                 "operation_id": "update_datastore_item",
                 "http_method": "PATCH",

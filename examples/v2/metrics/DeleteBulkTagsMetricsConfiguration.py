@@ -2,6 +2,7 @@
 Delete tags for multiple metrics returns "Accepted" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
@@ -26,6 +27,7 @@ body = MetricBulkTagConfigDeleteRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.delete_bulk_tags_metrics_configuration(body=body)
