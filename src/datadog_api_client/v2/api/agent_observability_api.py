@@ -2482,6 +2482,11 @@ class AgentObservabilityApi:
 
         Create a new prompt (and its first version) in the Agent Observability prompt registry.
 
+        ..
+
+           **Preview** : Prompt composition is available in Preview. To request access, contact `Datadog Support <https://docs.datadoghq.com/help/>`_ or your Customer Success Manager.
+
+
         :param body: Create prompt payload.
         :type body: LLMObsCreatePromptRequest
         :rtype: LLMObsCreatePromptResponse
@@ -2499,6 +2504,11 @@ class AgentObservabilityApi:
         """Create a new Agent Observability prompt version.
 
         Create a new version of an existing Agent Observability prompt.
+
+        ..
+
+           **Preview** : Prompt composition is available in Preview. To request access, contact `Datadog Support <https://docs.datadoghq.com/help/>`_ or your Customer Success Manager.
+
 
         :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
