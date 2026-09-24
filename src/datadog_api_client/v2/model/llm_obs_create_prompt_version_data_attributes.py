@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import (
+        LLMObsPromptAuthoringMessagesTemplate,
+    )
 
 
 class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
@@ -47,7 +50,9 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
 
     def __init__(
         self_,
-        template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
+        template: Union[
+            LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage], LLMObsPromptAuthoringMessagesTemplate
+        ],
         config: Union[LLMObsPromptConfig, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         env_ids: Union[List[str], UnsetType] = unset,
@@ -70,7 +75,9 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
         :param labels: Optional labels to attach to this version. Do not use this attribute for new integrations. **Deprecated**.
         :type labels: [LLMObsPromptVersionLabel], optional
 
-        :param template: A text template or a list of chat messages.
+        :param template: A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}`` ; other text, including ``{{>...}}`` sequences without a version, remains literal. Use an authored chat object when including prompts as chat messages.
+            **Preview** : Prompt composition is available in Preview. To request access, contact `Datadog Support <https://docs.datadoghq.com/help/>`_ or your Customer Success Manager.
+            Without access, inline references remain literal text and structured includes are unsupported. Previously compiled prompt versions remain available for execution.
         :type template: LLMObsPromptTemplate
 
         :param user_version: Optional user-supplied version identifier for this version.

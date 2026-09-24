@@ -40,7 +40,7 @@ class LLMObsPromptVersionData(ModelNormal):
         """
         Data object for a specific version of an Agent Observability prompt.
 
-        :param attributes: Attributes of a specific version of an Agent Observability prompt. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
+        :param attributes: Attributes of a specific version of an Agent Observability prompt. For a composed version, ``authoring_template`` contains its pinned include-bearing source; ordinary versions omit that attribute. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
         :type attributes: LLMObsPromptVersionDataAttributes
 
         :param id: Unique identifier of the prompt version.
