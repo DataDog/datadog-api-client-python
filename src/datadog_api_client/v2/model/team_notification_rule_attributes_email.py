@@ -18,19 +18,28 @@ class TeamNotificationRuleAttributesEmail(ModelNormal):
     def openapi_types(_):
         return {
             "enabled": (bool,),
+            "recipient_email": (str,),
         }
 
     attribute_map = {
         "enabled": "enabled",
+        "recipient_email": "recipient_email",
     }
 
-    def __init__(self_, enabled: Union[bool, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_, enabled: Union[bool, UnsetType] = unset, recipient_email: Union[str, UnsetType] = unset, **kwargs
+    ):
         """
         Email notification settings for the team
 
         :param enabled: Flag indicating email notification
         :type enabled: bool, optional
+
+        :param recipient_email: Email address to notify. When omitted and email notifications are enabled, notifications are sent to all team members.
+        :type recipient_email: str, optional
         """
         if enabled is not unset:
             kwargs["enabled"] = enabled
+        if recipient_email is not unset:
+            kwargs["recipient_email"] = recipient_email
         super().__init__(kwargs)
