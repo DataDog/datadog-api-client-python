@@ -32,6 +32,7 @@ class TeamRoutingRulesRequestRule(ModelNormal):
 
         return {
             "actions": ([RoutingRuleAction],),
+            "id": (str,),
             "policy_id": (str,),
             "query": (str,),
             "time_restriction": (TimeRestrictions,),
@@ -40,6 +41,7 @@ class TeamRoutingRulesRequestRule(ModelNormal):
 
     attribute_map = {
         "actions": "actions",
+        "id": "id",
         "policy_id": "policy_id",
         "query": "query",
         "time_restriction": "time_restriction",
@@ -60,6 +62,7 @@ class TeamRoutingRulesRequestRule(ModelNormal):
             ],
             UnsetType,
         ] = unset,
+        id: Union[str, UnsetType] = unset,
         policy_id: Union[str, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         time_restriction: Union[TimeRestrictions, UnsetType] = unset,
@@ -71,6 +74,10 @@ class TeamRoutingRulesRequestRule(ModelNormal):
 
         :param actions: Specifies the list of actions to perform when the routing rule is matched.
         :type actions: [RoutingRuleAction], optional
+
+        :param id: Specifies the unique identifier of an existing routing rule to update.
+            If omitted, a new routing rule is created.
+        :type id: str, optional
 
         :param policy_id: Identifies the policy to be applied when this routing rule matches.
         :type policy_id: str, optional
@@ -86,6 +93,8 @@ class TeamRoutingRulesRequestRule(ModelNormal):
         """
         if actions is not unset:
             kwargs["actions"] = actions
+        if id is not unset:
+            kwargs["id"] = id
         if policy_id is not unset:
             kwargs["policy_id"] = policy_id
         if query is not unset:
