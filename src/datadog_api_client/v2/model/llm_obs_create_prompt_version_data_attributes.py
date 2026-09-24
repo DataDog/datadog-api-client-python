@@ -14,18 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
     from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
-    from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
 
 
 class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
         from datadog_api_client.v2.model.llm_obs_prompt_version_label import LLMObsPromptVersionLabel
         from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
 
         return {
+            "config": (LLMObsPromptConfig,),
             "description": (str,),
             "env_ids": ([str],),
             "labels": ([LLMObsPromptVersionLabel],),
@@ -34,6 +37,7 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "config": "config",
         "description": "description",
         "env_ids": "env_ids",
         "labels": "labels",
@@ -43,7 +47,12 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
 
     def __init__(
         self_,
-        template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
+        template: Union[
+            LLMObsPromptTemplate,
+            str,
+            List[Union[LLMObsPromptChatTemplateItem, LLMObsPromptChatMessage, LLMObsPromptMessagePlaceholder]],
+        ],
+        config: Union[LLMObsPromptConfig, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
         env_ids: Union[List[str], UnsetType] = unset,
         labels: Union[List[LLMObsPromptVersionLabel], UnsetType] = unset,
@@ -51,7 +60,10 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for creating a new version of an Agent Observability prompt. ``template`` is required; all other attributes are optional.
+        Attributes for creating a new version of an Agent Observability prompt. ``template`` is required; all other attributes are optional. If ``config`` is omitted, the latest version's configuration is carried forward. An explicit empty object clears it. Configuration authoring must be enabled for your organization to supply ``config``. Otherwise, supplying it, including an empty object, returns HTTP 403. Omitting ``config`` still carries forward the latest configuration.
+
+        :param config: Versioned prompt configuration is in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager. Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
+        :type config: LLMObsPromptConfig, optional
 
         :param description: Optional description of this version.
         :type description: str, optional
@@ -62,12 +74,15 @@ class LLMObsCreatePromptVersionDataAttributes(ModelNormal):
         :param labels: Optional labels to attach to this version. Do not use this attribute for new integrations. **Deprecated**.
         :type labels: [LLMObsPromptVersionLabel], optional
 
-        :param template: A text template or a list of chat messages.
+        :param template: A text template or a list of chat messages and named message placeholders.
+            **Preview:** Message placeholders are available in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager.
         :type template: LLMObsPromptTemplate
 
         :param user_version: Optional user-supplied version identifier for this version.
         :type user_version: str, optional
         """
+        if config is not unset:
+            kwargs["config"] = config
         if description is not unset:
             kwargs["description"] = description
         if env_ids is not unset:

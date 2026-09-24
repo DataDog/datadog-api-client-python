@@ -13,7 +13,8 @@ from datadog_api_client.model_utils import (
 class LLMObsPromptTemplate(ModelComposed):
     def __init__(self, **kwargs):
         """
-        A text template or a list of chat messages.
+        A text template or a list of chat messages and named message placeholders.
+        **Preview:** Message placeholders are available in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager.
         """
         super().__init__(kwargs)
 
@@ -26,11 +27,11 @@ class LLMObsPromptTemplate(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+        from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
 
         return {
             "oneOf": [
                 str,
-                [LLMObsPromptChatMessage],
+                [LLMObsPromptChatTemplateItem],
             ],
         }

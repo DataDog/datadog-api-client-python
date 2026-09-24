@@ -84,7 +84,7 @@ class LLMObsPromptDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an Agent Observability prompt registry entry.
+        Attributes of an Agent Observability prompt registry entry. Prompt list and metadata-update responses omit complete template and configuration data.
 
         :param author: UUID of the user who authored the prompt.
         :type author: str, optional

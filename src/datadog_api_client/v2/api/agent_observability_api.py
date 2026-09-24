@@ -78,10 +78,11 @@ from datadog_api_client.v2.model.llm_obs_project_request import LLMObsProjectReq
 from datadog_api_client.v2.model.llm_obs_delete_projects_request import LLMObsDeleteProjectsRequest
 from datadog_api_client.v2.model.llm_obs_project_update_request import LLMObsProjectUpdateRequest
 from datadog_api_client.v2.model.llm_obs_prompts_response import LLMObsPromptsResponse
-from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
+from datadog_api_client.v2.model.llm_obs_create_prompt_response import LLMObsCreatePromptResponse
 from datadog_api_client.v2.model.llm_obs_create_prompt_request import LLMObsCreatePromptRequest
 from datadog_api_client.v2.model.llm_obs_deleted_prompt_response import LLMObsDeletedPromptResponse
 from datadog_api_client.v2.model.llm_obs_prompt_sdk_response import LLMObsPromptSDKResponse
+from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
 from datadog_api_client.v2.model.llm_obs_update_prompt_request import LLMObsUpdatePromptRequest
 from datadog_api_client.v2.model.llm_obs_prompt_versions_response import LLMObsPromptVersionsResponse
 from datadog_api_client.v2.model.llm_obs_prompt_version_response import LLMObsPromptVersionResponse
@@ -418,7 +419,7 @@ class AgentObservabilityApi:
 
         self._create_llm_obs_prompt_endpoint = _Endpoint(
             settings={
-                "response_type": (LLMObsPromptResponse,),
+                "response_type": (LLMObsCreatePromptResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/llm-obs/v1/prompts",
                 "operation_id": "create_llm_obs_prompt",
@@ -2476,14 +2477,14 @@ class AgentObservabilityApi:
     def create_llm_obs_prompt(
         self,
         body: LLMObsCreatePromptRequest,
-    ) -> LLMObsPromptResponse:
+    ) -> LLMObsCreatePromptResponse:
         """Create an Agent Observability prompt.
 
         Create a new prompt (and its first version) in the Agent Observability prompt registry.
 
         :param body: Create prompt payload.
         :type body: LLMObsCreatePromptRequest
-        :rtype: LLMObsPromptResponse
+        :rtype: LLMObsCreatePromptResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -2990,7 +2991,7 @@ class AgentObservabilityApi:
     ) -> LLMObsPromptVersionResponse:
         """Get a specific Agent Observability prompt version.
 
-        Get the full template of a single, specific version of an Agent Observability prompt.
+        Get the full template and configuration of a single, specific version of an Agent Observability prompt.
 
         :param prompt_id: The customer-provided identifier of the Agent Observability prompt.
         :type prompt_id: str
