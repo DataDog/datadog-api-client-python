@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -28,9 +29,9 @@ class DatabricksIntegrationAccountPrivateActionRunnerAuthResponse(ModelNormal):
 
         return {
             "auth_type": (DatabricksIntegrationAccountPrivateActionRunnerAuthType,),
-            "connection_id": (str,),
+            "connection_id": (UUID,),
             "secret_path": (str,),
-            "user_uuid": (str,),
+            "user_uuid": (UUID,),
         }
 
     attribute_map = {
@@ -43,8 +44,8 @@ class DatabricksIntegrationAccountPrivateActionRunnerAuthResponse(ModelNormal):
     def __init__(
         self_,
         auth_type: DatabricksIntegrationAccountPrivateActionRunnerAuthType,
-        connection_id: str,
-        user_uuid: str,
+        connection_id: UUID,
+        user_uuid: UUID,
         secret_path: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -55,13 +56,13 @@ class DatabricksIntegrationAccountPrivateActionRunnerAuthResponse(ModelNormal):
         :type auth_type: DatabricksIntegrationAccountPrivateActionRunnerAuthType
 
         :param connection_id: Unique identifier of the Private Action Runner connection holding the credentials.
-        :type connection_id: str
+        :type connection_id: UUID
 
         :param secret_path: Path of the credential inside the secret backend configured on the runner.
         :type secret_path: str, optional
 
         :param user_uuid: Unique identifier of the user the Private Action Runner connection belongs to.
-        :type user_uuid: str
+        :type user_uuid: UUID
         """
         if secret_path is not unset:
             kwargs["secret_path"] = secret_path
