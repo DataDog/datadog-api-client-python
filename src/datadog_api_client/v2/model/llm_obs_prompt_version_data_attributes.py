@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
     from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
@@ -29,11 +30,13 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
         from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
         from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
 
         return {
             "author": (str,),
+            "config": (LLMObsPromptConfig,),
             "created_at": (datetime,),
             "datasets": ([LLMObsPromptDataset],),
             "description": (str,),
@@ -52,6 +55,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
 
     attribute_map = {
         "author": "author",
+        "config": "config",
         "created_at": "created_at",
         "datasets": "datasets",
         "description": "description",
@@ -75,6 +79,7 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
         version: int,
         author: Union[str, UnsetType] = unset,
+        config: Union[LLMObsPromptConfig, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         datasets: Union[List[LLMObsPromptDataset], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
@@ -88,10 +93,13 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a specific version of an Agent Observability prompt.
+        Attributes of a specific version of an Agent Observability prompt. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
 
         :param author: UUID of the user who authored this version.
         :type author: str, optional
+
+        :param config: Versioned prompt configuration is in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager. Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
+        :type config: LLMObsPromptConfig, optional
 
         :param created_at: Timestamp stored on this prompt version.
         :type created_at: datetime, optional
@@ -137,6 +145,8 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         """
         if author is not unset:
             kwargs["author"] = author
+        if config is not unset:
+            kwargs["config"] = config
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if datasets is not unset:

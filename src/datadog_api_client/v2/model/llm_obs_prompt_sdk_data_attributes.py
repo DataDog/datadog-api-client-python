@@ -15,15 +15,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 
 
 class LLMObsPromptSDKDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+        from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 
         return {
             "chat_template": ([LLMObsPromptChatMessage],),
+            "config": (LLMObsPromptConfig,),
             "labels": ([str],),
             "prompt_id": (str,),
             "prompt_version_uuid": (str,),
@@ -33,6 +36,7 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
 
     attribute_map = {
         "chat_template": "chat_template",
+        "config": "config",
         "labels": "labels",
         "prompt_id": "prompt_id",
         "prompt_version_uuid": "prompt_version_uuid",
@@ -43,6 +47,7 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
     def __init__(
         self_,
         chat_template: Union[List[LLMObsPromptChatMessage], UnsetType] = unset,
+        config: Union[LLMObsPromptConfig, UnsetType] = unset,
         labels: Union[List[str], UnsetType] = unset,
         prompt_id: Union[str, UnsetType] = unset,
         prompt_version_uuid: Union[str, UnsetType] = unset,
@@ -51,10 +56,13 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned.
+        Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
 
         :param chat_template: Chat template for this prompt version, as a list of role and content messages. Omitted for text templates.
         :type chat_template: [LLMObsPromptChatMessage], optional
+
+        :param config: Versioned prompt configuration is in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager. Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
+        :type config: LLMObsPromptConfig, optional
 
         :param labels: Labels attached to the selected version. **Deprecated**.
         :type labels: [str], optional
@@ -73,6 +81,8 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
         """
         if chat_template is not unset:
             kwargs["chat_template"] = chat_template
+        if config is not unset:
+            kwargs["config"] = config
         if labels is not unset:
             kwargs["labels"] = labels
         if prompt_id is not unset:
