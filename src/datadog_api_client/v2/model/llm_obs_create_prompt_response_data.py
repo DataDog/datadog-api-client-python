@@ -12,18 +12,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.llm_obs_prompt_sdk_data_attributes import LLMObsPromptSDKDataAttributes
+    from datadog_api_client.v2.model.llm_obs_create_prompt_response_data_attributes import (
+        LLMObsCreatePromptResponseDataAttributes,
+    )
     from datadog_api_client.v2.model.llm_obs_prompt_type import LLMObsPromptType
 
 
-class LLMObsPromptSDKData(ModelNormal):
+class LLMObsCreatePromptResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.llm_obs_prompt_sdk_data_attributes import LLMObsPromptSDKDataAttributes
+        from datadog_api_client.v2.model.llm_obs_create_prompt_response_data_attributes import (
+            LLMObsCreatePromptResponseDataAttributes,
+        )
         from datadog_api_client.v2.model.llm_obs_prompt_type import LLMObsPromptType
 
         return {
-            "attributes": (LLMObsPromptSDKDataAttributes,),
+            "attributes": (LLMObsCreatePromptResponseDataAttributes,),
             "id": (str,),
             "type": (LLMObsPromptType,),
         }
@@ -34,12 +38,14 @@ class LLMObsPromptSDKData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: LLMObsPromptSDKDataAttributes, id: str, type: LLMObsPromptType, **kwargs):
+    def __init__(
+        self_, attributes: LLMObsCreatePromptResponseDataAttributes, id: str, type: LLMObsPromptType, **kwargs
+    ):
         """
-        Data object for a flattened Agent Observability prompt version returned for SDK consumption.
+        Data object returned after creating an Agent Observability prompt.
 
-        :param attributes: Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
-        :type attributes: LLMObsPromptSDKDataAttributes
+        :param attributes: Attributes returned after creating an Agent Observability prompt and its first version. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
+        :type attributes: LLMObsCreatePromptResponseDataAttributes
 
         :param id: Unique identifier of the prompt.
         :type id: str

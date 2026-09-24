@@ -17,131 +17,130 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
     from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
-    from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
-    from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 
 
-class LLMObsPromptVersionDataAttributes(ModelNormal):
-    validations = {
-        "version": {
-            "inclusive_minimum": 1,
-        },
-    }
-
+class LLMObsCreatePromptResponseDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
         from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
-        from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
+        from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 
         return {
             "author": (str,),
             "config": (LLMObsPromptConfig,),
             "created_at": (datetime,),
+            "created_from": (str,),
             "datasets": ([LLMObsPromptDataset],),
             "description": (str,),
-            "labels": ([str],),
+            "extracted_from": (str,),
+            "in_registry": (bool,),
             "last_seen_at": (datetime,),
+            "last_version_created_at": (datetime,),
             "ml_app": (str,),
             "ml_apps": ([str],),
+            "num_versions": (int,),
             "prompt_id": (str,),
-            "prompt_uuid": (str,),
+            "source": (LLMObsPromptResponseSource,),
             "tags": ([str],),
-            "template": (LLMObsPromptTemplate,),
-            "user_version": (str,),
-            "version": (int,),
-            "version_created_at": (datetime,),
+            "title": (str,),
         }
 
     attribute_map = {
         "author": "author",
         "config": "config",
         "created_at": "created_at",
+        "created_from": "created_from",
         "datasets": "datasets",
         "description": "description",
-        "labels": "labels",
+        "extracted_from": "extracted_from",
+        "in_registry": "in_registry",
         "last_seen_at": "last_seen_at",
+        "last_version_created_at": "last_version_created_at",
         "ml_app": "ml_app",
         "ml_apps": "ml_apps",
+        "num_versions": "num_versions",
         "prompt_id": "prompt_id",
-        "prompt_uuid": "prompt_uuid",
+        "source": "source",
         "tags": "tags",
-        "template": "template",
-        "user_version": "user_version",
-        "version": "version",
-        "version_created_at": "version_created_at",
+        "title": "title",
     }
 
     def __init__(
         self_,
+        created_from: str,
+        in_registry: bool,
+        num_versions: int,
         prompt_id: str,
-        prompt_uuid: str,
-        template: Union[LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage]],
-        version: int,
+        source: LLMObsPromptResponseSource,
         author: Union[str, UnsetType] = unset,
         config: Union[LLMObsPromptConfig, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         datasets: Union[List[LLMObsPromptDataset], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
-        labels: Union[List[str], UnsetType] = unset,
+        extracted_from: Union[str, UnsetType] = unset,
         last_seen_at: Union[datetime, UnsetType] = unset,
+        last_version_created_at: Union[datetime, UnsetType] = unset,
         ml_app: Union[str, UnsetType] = unset,
         ml_apps: Union[List[str], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        user_version: Union[str, UnsetType] = unset,
-        version_created_at: Union[datetime, UnsetType] = unset,
+        title: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Attributes of a specific version of an Agent Observability prompt. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
+        Attributes returned after creating an Agent Observability prompt and its first version. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
 
-        :param author: UUID of the user who authored this version.
+        :param author: UUID of the user who authored the prompt.
         :type author: str, optional
 
         :param config: Versioned prompt configuration is in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager. Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
         :type config: LLMObsPromptConfig, optional
 
-        :param created_at: Timestamp stored on this prompt version.
+        :param created_at: Timestamp when the prompt was created.
         :type created_at: datetime, optional
 
-        :param datasets: Datasets observed in runs associated with this prompt version.
+        :param created_from: Source that created the prompt, such as ``ui-registry`` , ``sdk-registry`` , or ``sdk-instrumentation``.
+        :type created_from: str
+
+        :param datasets: Datasets observed in runs associated with this prompt.
         :type datasets: [LLMObsPromptDataset], optional
 
-        :param description: Description of this version.
+        :param description: Description of the prompt.
         :type description: str, optional
 
-        :param labels: Labels attached to this version (for example ``development`` , ``staging`` , ``production`` ). **Deprecated**.
-        :type labels: [str], optional
+        :param extracted_from: Source prompt from which this prompt was extracted, when applicable.
+        :type extracted_from: str, optional
 
-        :param last_seen_at: Timestamp of the most recent observed run of this prompt version.
+        :param in_registry: Whether the prompt is a registry entry (as opposed to a code-discovered prompt).
+        :type in_registry: bool
+
+        :param last_seen_at: Timestamp of the most recent observed run of this prompt.
         :type last_seen_at: datetime, optional
+
+        :param last_version_created_at: Timestamp when the most recent version of the prompt was created.
+        :type last_version_created_at: datetime, optional
 
         :param ml_app: The ML application this prompt is associated with.
         :type ml_app: str, optional
 
-        :param ml_apps: ML applications observed running this prompt version.
+        :param ml_apps: ML applications observed running this prompt.
         :type ml_apps: [str], optional
 
-        :param prompt_id: Customer-provided identifier of the parent prompt.
+        :param num_versions: Number of versions of the prompt.
+        :type num_versions: int
+
+        :param prompt_id: Customer-provided identifier of the prompt.
         :type prompt_id: str
 
-        :param prompt_uuid: Unique identifier of the parent prompt.
-        :type prompt_uuid: str
+        :param source: Whether the prompt was created from the registry or discovered from observed LLM calls.
+        :type source: LLMObsPromptResponseSource
 
-        :param tags: Tags observed on runs of this prompt version.
+        :param tags: Tags observed on runs of this prompt.
         :type tags: [str], optional
 
-        :param template: A text template or a list of chat messages.
-        :type template: LLMObsPromptTemplate
-
-        :param user_version: User-supplied identifier for this version.
-        :type user_version: str, optional
-
-        :param version: Sequential version number.
-        :type version: int
-
-        :param version_created_at: Timestamp when this version was created.
-        :type version_created_at: datetime, optional
+        :param title: Title of the prompt.
+        :type title: str, optional
         """
         if author is not unset:
             kwargs["author"] = author
@@ -153,23 +152,24 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
             kwargs["datasets"] = datasets
         if description is not unset:
             kwargs["description"] = description
-        if labels is not unset:
-            kwargs["labels"] = labels
+        if extracted_from is not unset:
+            kwargs["extracted_from"] = extracted_from
         if last_seen_at is not unset:
             kwargs["last_seen_at"] = last_seen_at
+        if last_version_created_at is not unset:
+            kwargs["last_version_created_at"] = last_version_created_at
         if ml_app is not unset:
             kwargs["ml_app"] = ml_app
         if ml_apps is not unset:
             kwargs["ml_apps"] = ml_apps
         if tags is not unset:
             kwargs["tags"] = tags
-        if user_version is not unset:
-            kwargs["user_version"] = user_version
-        if version_created_at is not unset:
-            kwargs["version_created_at"] = version_created_at
+        if title is not unset:
+            kwargs["title"] = title
         super().__init__(kwargs)
 
+        self_.created_from = created_from
+        self_.in_registry = in_registry
+        self_.num_versions = num_versions
         self_.prompt_id = prompt_id
-        self_.prompt_uuid = prompt_uuid
-        self_.template = template
-        self_.version = version
+        self_.source = source
