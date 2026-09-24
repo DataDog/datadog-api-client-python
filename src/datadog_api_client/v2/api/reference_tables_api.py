@@ -347,7 +347,7 @@ class ReferenceTablesApi:
     ) -> BatchRowsQueryResponse:
         """Batch rows query.
 
-        Batch query reference table rows by their primary key values.  Returns only found rows in the included array.
+        Batch query reference table rows by their primary key values. Returns only found rows in the included array.
 
         :type body: BatchRowsQueryRequest
         :rtype: BatchRowsQueryResponse
