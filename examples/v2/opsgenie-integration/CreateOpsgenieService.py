@@ -2,6 +2,7 @@
 Create a new service object returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.model.opsgenie_service_create_attributes import OpsgenieServiceCreateAttributes
@@ -22,6 +23,7 @@ body = OpsgenieServiceCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OpsgenieIntegrationApi(api_client)
     response = api_instance.create_opsgenie_service(body=body)

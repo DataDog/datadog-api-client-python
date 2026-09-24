@@ -2,6 +2,7 @@
 Update identity provider overrides for a user returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.users_api import UsersApi
 from datadog_api_client.v2.model.update_user_identity_providers_request import UpdateUserIdentityProvidersRequest
@@ -20,6 +21,7 @@ body = UpdateUserIdentityProvidersRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = UsersApi(api_client)
     api_instance.update_user_identity_providers(user_id="00000000-0000-9999-0000-000000000000", body=body)

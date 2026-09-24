@@ -2,6 +2,7 @@
 Search pipelines events returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.ci_visibility_pipelines_api import CIVisibilityPipelinesApi
 from datadog_api_client.v2.model.ci_app_pipeline_events_request import CIAppPipelineEventsRequest
@@ -26,6 +27,7 @@ body = CIAppPipelineEventsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CIVisibilityPipelinesApi(api_client)
     response = api_instance.search_ci_app_pipeline_events(body=body)

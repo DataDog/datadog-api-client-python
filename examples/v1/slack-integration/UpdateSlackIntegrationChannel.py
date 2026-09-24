@@ -2,6 +2,7 @@
 Update a Slack integration channel returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.slack_integration_api import SlackIntegrationApi
 from datadog_api_client.v1.model.slack_integration_channel import SlackIntegrationChannel
@@ -19,6 +20,7 @@ body = SlackIntegrationChannel(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SlackIntegrationApi(api_client)
     response = api_instance.update_slack_integration_channel(

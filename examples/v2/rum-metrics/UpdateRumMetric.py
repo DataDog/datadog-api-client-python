@@ -38,6 +38,7 @@ body = RumMetricUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumMetricsApi(api_client)
     response = api_instance.update_rum_metric(metric_id=RUM_METRIC_DATA_ID, body=body)

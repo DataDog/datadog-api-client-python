@@ -46,6 +46,7 @@ body = IncidentCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_incident"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

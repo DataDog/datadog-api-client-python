@@ -34,6 +34,7 @@ body = ExecutionPolicyUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_execution_policy"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ExecutionPolicyApi(api_client)

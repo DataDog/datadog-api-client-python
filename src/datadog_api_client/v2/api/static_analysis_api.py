@@ -59,7 +59,7 @@ class StaticAnalysisApi:
         self._create_ai_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}/rules",
                 "operation_id": "create_ai_custom_rule",
                 "http_method": "POST",
@@ -85,7 +85,7 @@ class StaticAnalysisApi:
         self._create_ai_custom_rule_revision_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}/rules/{rule_name}/revisions",
                 "operation_id": "create_ai_custom_rule_revision",
                 "http_method": "POST",
@@ -117,7 +117,7 @@ class StaticAnalysisApi:
         self._create_ai_custom_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRulesetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets",
                 "operation_id": "create_ai_custom_ruleset",
                 "http_method": "POST",
@@ -137,7 +137,7 @@ class StaticAnalysisApi:
         self._create_ai_memory_violation_result_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/memory",
                 "operation_id": "create_ai_memory_violation_result",
                 "http_method": "POST",
@@ -157,7 +157,7 @@ class StaticAnalysisApi:
         self._create_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}/rules",
                 "operation_id": "create_custom_rule",
                 "http_method": "PUT",
@@ -183,7 +183,7 @@ class StaticAnalysisApi:
         self._create_custom_rule_revision_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}/rules/{rule_name}/revisions",
                 "operation_id": "create_custom_rule_revision",
                 "http_method": "PUT",
@@ -295,7 +295,7 @@ class StaticAnalysisApi:
         self._delete_ai_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}/rules/{rule_name}",
                 "operation_id": "delete_ai_custom_rule",
                 "http_method": "DELETE",
@@ -324,7 +324,7 @@ class StaticAnalysisApi:
         self._delete_ai_custom_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}",
                 "operation_id": "delete_ai_custom_ruleset",
                 "http_method": "DELETE",
@@ -347,7 +347,7 @@ class StaticAnalysisApi:
         self._delete_ai_memory_violation_result_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/memory/{id}",
                 "operation_id": "delete_ai_memory_violation_result",
                 "http_method": "DELETE",
@@ -370,7 +370,7 @@ class StaticAnalysisApi:
         self._delete_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}/rules/{rule_name}",
                 "operation_id": "delete_custom_rule",
                 "http_method": "DELETE",
@@ -399,7 +399,7 @@ class StaticAnalysisApi:
         self._delete_custom_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}",
                 "operation_id": "delete_custom_ruleset",
                 "http_method": "DELETE",
@@ -422,7 +422,7 @@ class StaticAnalysisApi:
         self._get_ai_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}/rules/{rule_name}",
                 "operation_id": "get_ai_custom_rule",
                 "http_method": "GET",
@@ -451,7 +451,7 @@ class StaticAnalysisApi:
         self._get_ai_custom_rule_revision_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRuleRevisionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}/rules/{rule_name}/revisions/{id}",
                 "operation_id": "get_ai_custom_rule_revision",
                 "http_method": "GET",
@@ -486,7 +486,7 @@ class StaticAnalysisApi:
         self._get_ai_custom_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRulesetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}",
                 "operation_id": "get_ai_custom_ruleset",
                 "http_method": "GET",
@@ -509,7 +509,7 @@ class StaticAnalysisApi:
         self._get_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}/rules/{rule_name}",
                 "operation_id": "get_custom_rule",
                 "http_method": "GET",
@@ -538,7 +538,7 @@ class StaticAnalysisApi:
         self._get_custom_rule_revision_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomRuleRevisionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}/rules/{rule_name}/revisions/{id}",
                 "operation_id": "get_custom_rule_revision",
                 "http_method": "GET",
@@ -573,7 +573,7 @@ class StaticAnalysisApi:
         self._get_custom_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomRulesetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}",
                 "operation_id": "get_custom_ruleset",
                 "http_method": "GET",
@@ -619,7 +619,7 @@ class StaticAnalysisApi:
         self._list_ai_custom_rule_revisions_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRuleRevisionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}/rules/{rule_name}/revisions",
                 "operation_id": "list_ai_custom_rule_revisions",
                 "http_method": "GET",
@@ -658,7 +658,7 @@ class StaticAnalysisApi:
         self._list_ai_custom_rulesets_endpoint = _Endpoint(
             settings={
                 "response_type": (AiCustomRulesetsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets",
                 "operation_id": "list_ai_custom_rulesets",
                 "http_method": "GET",
@@ -685,7 +685,7 @@ class StaticAnalysisApi:
         self._list_ai_memory_violation_results_endpoint = _Endpoint(
             settings={
                 "response_type": (AiMemoryViolationResultsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/memory",
                 "operation_id": "list_ai_memory_violation_results",
                 "http_method": "GET",
@@ -701,7 +701,7 @@ class StaticAnalysisApi:
         self._list_ai_prompts_endpoint = _Endpoint(
             settings={
                 "response_type": (AiPromptsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/prompts",
                 "operation_id": "list_ai_prompts",
                 "http_method": "GET",
@@ -717,7 +717,7 @@ class StaticAnalysisApi:
         self._list_custom_rule_revisions_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomRuleRevisionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}/rules/{rule_name}/revisions",
                 "operation_id": "list_custom_rule_revisions",
                 "http_method": "GET",
@@ -772,7 +772,7 @@ class StaticAnalysisApi:
         self._list_sca_licenses_endpoint = _Endpoint(
             settings={
                 "response_type": (LicensesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis-sca/licenses/list",
                 "operation_id": "list_sca_licenses",
                 "http_method": "GET",
@@ -788,7 +788,7 @@ class StaticAnalysisApi:
         self._revert_custom_rule_revision_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}/rules/{rule_name}/revisions/revert",
                 "operation_id": "revert_custom_rule_revision",
                 "http_method": "POST",
@@ -820,7 +820,7 @@ class StaticAnalysisApi:
         self._update_ai_custom_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/ai/rulesets/{ruleset_name}",
                 "operation_id": "update_ai_custom_ruleset",
                 "http_method": "PATCH",
@@ -846,7 +846,7 @@ class StaticAnalysisApi:
         self._update_custom_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomRulesetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/static-analysis/custom/rulesets/{ruleset_name}",
                 "operation_id": "update_custom_ruleset",
                 "http_method": "PATCH",

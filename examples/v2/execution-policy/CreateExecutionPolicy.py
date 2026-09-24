@@ -2,6 +2,7 @@
 Create an execution policy returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.execution_policy_api import ExecutionPolicyApi
 from datadog_api_client.v2.model.execution_policy_action_pattern import ExecutionPolicyActionPattern
@@ -29,6 +30,7 @@ body = ExecutionPolicyCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_execution_policy"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ExecutionPolicyApi(api_client)

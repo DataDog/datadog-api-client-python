@@ -36,6 +36,7 @@ body = MonitorConfigPolicyEditRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MonitorsApi(api_client)
     response = api_instance.update_monitor_config_policy(policy_id=MONITOR_CONFIGURATION_POLICY_DATA_ID, body=body)

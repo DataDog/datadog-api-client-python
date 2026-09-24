@@ -54,7 +54,7 @@ class MicrosoftTeamsIntegrationApi:
         self._create_tenant_based_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsTenantBasedHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles",
                 "operation_id": "create_tenant_based_handle",
                 "http_method": "POST",
@@ -74,7 +74,7 @@ class MicrosoftTeamsIntegrationApi:
         self._create_workflows_webhook_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsWorkflowsWebhookHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles",
                 "operation_id": "create_workflows_webhook_handle",
                 "http_method": "POST",
@@ -94,7 +94,7 @@ class MicrosoftTeamsIntegrationApi:
         self._delete_ms_teams_user_binding_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/user-binding/{tenant_id}",
                 "operation_id": "delete_ms_teams_user_binding",
                 "http_method": "DELETE",
@@ -117,7 +117,7 @@ class MicrosoftTeamsIntegrationApi:
         self._delete_tenant_based_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
                 "operation_id": "delete_tenant_based_handle",
                 "http_method": "DELETE",
@@ -140,7 +140,7 @@ class MicrosoftTeamsIntegrationApi:
         self._delete_workflows_webhook_handle_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}",
                 "operation_id": "delete_workflows_webhook_handle",
                 "http_method": "DELETE",
@@ -163,7 +163,7 @@ class MicrosoftTeamsIntegrationApi:
         self._get_channel_by_name_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsGetChannelByNameResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/channel/{tenant_name}/{team_name}/{channel_name}",
                 "operation_id": "get_channel_by_name",
                 "http_method": "GET",
@@ -198,7 +198,7 @@ class MicrosoftTeamsIntegrationApi:
         self._get_tenant_based_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsTenantBasedHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
                 "operation_id": "get_tenant_based_handle",
                 "http_method": "GET",
@@ -221,7 +221,7 @@ class MicrosoftTeamsIntegrationApi:
         self._get_workflows_webhook_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsWorkflowsWebhookHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}",
                 "operation_id": "get_workflows_webhook_handle",
                 "http_method": "GET",
@@ -244,7 +244,7 @@ class MicrosoftTeamsIntegrationApi:
         self._list_tenant_based_handles_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsTenantBasedHandlesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles",
                 "operation_id": "list_tenant_based_handles",
                 "http_method": "GET",
@@ -271,7 +271,7 @@ class MicrosoftTeamsIntegrationApi:
         self._list_workflows_webhook_handles_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsWorkflowsWebhookHandlesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles",
                 "operation_id": "list_workflows_webhook_handles",
                 "http_method": "GET",
@@ -293,7 +293,7 @@ class MicrosoftTeamsIntegrationApi:
         self._update_tenant_based_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsTenantBasedHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/tenant-based-handles/{handle_id}",
                 "operation_id": "update_tenant_based_handle",
                 "http_method": "PATCH",
@@ -319,7 +319,7 @@ class MicrosoftTeamsIntegrationApi:
         self._update_workflows_webhook_handle_endpoint = _Endpoint(
             settings={
                 "response_type": (MicrosoftTeamsWorkflowsWebhookHandleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/ms-teams/configuration/workflows-webhook-handles/{handle_id}",
                 "operation_id": "update_workflows_webhook_handle",
                 "http_method": "PATCH",

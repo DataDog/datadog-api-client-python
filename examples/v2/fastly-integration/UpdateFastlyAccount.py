@@ -23,6 +23,7 @@ body = FastlyAccountUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FastlyIntegrationApi(api_client)
     response = api_instance.update_fastly_account(account_id=FASTLY_ACCOUNT_DATA_ID, body=body)

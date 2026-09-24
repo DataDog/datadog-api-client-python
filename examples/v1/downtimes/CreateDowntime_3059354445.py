@@ -4,6 +4,7 @@ Schedule a downtime once a year
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.downtimes_api import DowntimesApi
 from datadog_api_client.v1.model.downtime import Downtime
@@ -37,6 +38,7 @@ body = Downtime(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     response = api_instance.create_downtime(body=body)

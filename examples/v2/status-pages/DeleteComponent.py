@@ -11,6 +11,7 @@ STATUS_PAGE_DATA_ATTRIBUTES_COMPONENTS_0_ID = environ["STATUS_PAGE_DATA_ATTRIBUT
 STATUS_PAGE_DATA_ID = environ["STATUS_PAGE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = StatusPagesApi(api_client)
     api_instance.delete_component(

@@ -2,6 +2,7 @@
 Get code coverage summary for an existing commit with valid repository
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.code_coverage_api import CodeCoverageApi
 from datadog_api_client.v2.model.commit_coverage_summary_request import CommitCoverageSummaryRequest
@@ -22,6 +23,7 @@ body = CommitCoverageSummaryRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["get_code_coverage_commit_summary"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CodeCoverageApi(api_client)

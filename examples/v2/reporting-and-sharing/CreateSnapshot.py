@@ -2,6 +2,7 @@
 Create a graph snapshot returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.reporting_and_sharing_api import ReportingAndSharingApi
 from datadog_api_client.v2.model.create_snapshot_additional_config import CreateSnapshotAdditionalConfig
@@ -43,6 +44,7 @@ body = CreateSnapshotRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_snapshot"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ReportingAndSharingApi(api_client)

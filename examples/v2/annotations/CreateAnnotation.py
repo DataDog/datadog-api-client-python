@@ -2,6 +2,7 @@
 Create an annotation returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.annotations_api import AnnotationsApi
 from datadog_api_client.v2.model.annotation_color import AnnotationColor
@@ -28,6 +29,7 @@ body = AnnotationCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_annotation"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AnnotationsApi(api_client)

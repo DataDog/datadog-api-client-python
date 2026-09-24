@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 DOWNTIME_V2_DATA_ID = environ["DOWNTIME_V2_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     api_instance.cancel_downtime(

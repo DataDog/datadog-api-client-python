@@ -2,6 +2,7 @@
 Run an LLM inference returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agent_observability_api import AgentObservabilityApi
 from datadog_api_client.v2.model.llm_obs_anthropic_effort import LLMObsAnthropicEffort
@@ -116,6 +117,7 @@ body = LLMObsIntegrationInferenceRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_llm_obs_integration_inference"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AgentObservabilityApi(api_client)

@@ -34,7 +34,7 @@ class AuditApi:
         self._list_audit_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (AuditLogsEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/audit/events",
                 "operation_id": "list_audit_logs",
                 "http_method": "GET",
@@ -84,7 +84,7 @@ class AuditApi:
         self._search_audit_logs_endpoint = _Endpoint(
             settings={
                 "response_type": (AuditLogsEventsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/audit/events/search",
                 "operation_id": "search_audit_logs",
                 "http_method": "POST",

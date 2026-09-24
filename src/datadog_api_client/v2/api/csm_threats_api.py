@@ -53,7 +53,7 @@ class CSMThreatsApi:
         self._create_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules",
                 "operation_id": "create_cloud_workload_security_agent_rule",
                 "http_method": "POST",
@@ -73,7 +73,7 @@ class CSMThreatsApi:
         self._create_csm_threats_agent_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/policy",
                 "operation_id": "create_csm_threats_agent_policy",
                 "http_method": "POST",
@@ -93,7 +93,7 @@ class CSMThreatsApi:
         self._create_csm_threats_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/agent_rules",
                 "operation_id": "create_csm_threats_agent_rule",
                 "http_method": "POST",
@@ -113,7 +113,7 @@ class CSMThreatsApi:
         self._delete_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "delete_cloud_workload_security_agent_rule",
                 "http_method": "DELETE",
@@ -136,7 +136,7 @@ class CSMThreatsApi:
         self._delete_csm_threats_agent_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/policy/{policy_id}",
                 "operation_id": "delete_csm_threats_agent_policy",
                 "http_method": "DELETE",
@@ -159,7 +159,7 @@ class CSMThreatsApi:
         self._delete_csm_threats_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}",
                 "operation_id": "delete_csm_threats_agent_rule",
                 "http_method": "DELETE",
@@ -187,7 +187,7 @@ class CSMThreatsApi:
         self._download_cloud_workload_policy_file_endpoint = _Endpoint(
             settings={
                 "response_type": (file_type,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/cloud_workload/policy/download",
                 "operation_id": "download_cloud_workload_policy_file",
                 "http_method": "GET",
@@ -203,7 +203,7 @@ class CSMThreatsApi:
         self._download_csm_threats_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (file_type,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/policy/download",
                 "operation_id": "download_csm_threats_policy",
                 "http_method": "GET",
@@ -219,7 +219,7 @@ class CSMThreatsApi:
         self._get_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "get_cloud_workload_security_agent_rule",
                 "http_method": "GET",
@@ -242,7 +242,7 @@ class CSMThreatsApi:
         self._get_csm_threats_agent_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/policy/{policy_id}",
                 "operation_id": "get_csm_threats_agent_policy",
                 "http_method": "GET",
@@ -265,7 +265,7 @@ class CSMThreatsApi:
         self._get_csm_threats_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}",
                 "operation_id": "get_csm_threats_agent_rule",
                 "http_method": "GET",
@@ -293,7 +293,7 @@ class CSMThreatsApi:
         self._list_cloud_workload_security_agent_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRulesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules",
                 "operation_id": "list_cloud_workload_security_agent_rules",
                 "http_method": "GET",
@@ -309,7 +309,7 @@ class CSMThreatsApi:
         self._list_csm_threats_agent_policies_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentPoliciesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/policy",
                 "operation_id": "list_csm_threats_agent_policies",
                 "http_method": "GET",
@@ -325,7 +325,7 @@ class CSMThreatsApi:
         self._list_csm_threats_agent_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRulesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/agent_rules",
                 "operation_id": "list_csm_threats_agent_rules",
                 "http_method": "GET",
@@ -347,7 +347,7 @@ class CSMThreatsApi:
         self._update_cloud_workload_security_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
                 "operation_id": "update_cloud_workload_security_agent_rule",
                 "http_method": "PATCH",
@@ -373,7 +373,7 @@ class CSMThreatsApi:
         self._update_csm_threats_agent_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/policy/{policy_id}",
                 "operation_id": "update_csm_threats_agent_policy",
                 "http_method": "PATCH",
@@ -399,7 +399,7 @@ class CSMThreatsApi:
         self._update_csm_threats_agent_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}",
                 "operation_id": "update_csm_threats_agent_rule",
                 "http_method": "PATCH",

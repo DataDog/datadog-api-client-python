@@ -62,7 +62,7 @@ class FleetAutomationApi:
         self._cancel_fleet_deployment_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentV2CancelResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/deployments/{deployment_id}/cancel",
                 "operation_id": "cancel_fleet_deployment_v2",
                 "http_method": "POST",
@@ -85,7 +85,7 @@ class FleetAutomationApi:
         self._create_fleet_deployment_configure_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentConfigureV2DryRunResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/deployments/configure",
                 "operation_id": "create_fleet_deployment_configure_v2",
                 "http_method": "POST",
@@ -105,7 +105,7 @@ class FleetAutomationApi:
         self._create_fleet_deployment_upgrade_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentV2CreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/deployments/upgrade",
                 "operation_id": "create_fleet_deployment_upgrade_v2",
                 "http_method": "POST",
@@ -125,7 +125,7 @@ class FleetAutomationApi:
         self._create_fleet_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/fleet/schedules",
                 "operation_id": "create_fleet_schedule",
                 "http_method": "POST",
@@ -145,7 +145,7 @@ class FleetAutomationApi:
         self._delete_fleet_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/fleet/schedules/{id}",
                 "operation_id": "delete_fleet_schedule",
                 "http_method": "DELETE",
@@ -168,7 +168,7 @@ class FleetAutomationApi:
         self._get_fleet_agent_detail_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetAgentDetailV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/agents/{agent_key}",
                 "operation_id": "get_fleet_agent_detail_v2",
                 "http_method": "GET",
@@ -197,7 +197,7 @@ class FleetAutomationApi:
         self._get_fleet_deployment_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentV2DetailResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/deployments/{deployment_id}",
                 "operation_id": "get_fleet_deployment_v2",
                 "http_method": "GET",
@@ -220,7 +220,7 @@ class FleetAutomationApi:
         self._get_fleet_schedule_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetScheduleV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/schedules/{id}",
                 "operation_id": "get_fleet_schedule_v2",
                 "http_method": "GET",
@@ -243,7 +243,7 @@ class FleetAutomationApi:
         self._list_fleet_agents_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetAgentsV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/agents",
                 "operation_id": "list_fleet_agents_v2",
                 "http_method": "GET",
@@ -297,7 +297,7 @@ class FleetAutomationApi:
         self._list_fleet_agent_tracers_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetTracersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/fleet/agents/{agent_key}/tracers",
                 "operation_id": "list_fleet_agent_tracers",
                 "http_method": "GET",
@@ -347,7 +347,7 @@ class FleetAutomationApi:
         self._list_fleet_agent_versions_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetAgentVersionsV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/agent_versions",
                 "operation_id": "list_fleet_agent_versions_v2",
                 "http_method": "GET",
@@ -363,7 +363,7 @@ class FleetAutomationApi:
         self._list_fleet_deployments_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentsV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/deployments",
                 "operation_id": "list_fleet_deployments_v2",
                 "http_method": "GET",
@@ -411,7 +411,7 @@ class FleetAutomationApi:
         self._list_fleet_schedules_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetSchedulesV2Response,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/fleet/schedules",
                 "operation_id": "list_fleet_schedules_v2",
                 "http_method": "GET",
@@ -427,7 +427,7 @@ class FleetAutomationApi:
         self._list_fleet_tracers_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetTracersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/fleet/tracers",
                 "operation_id": "list_fleet_tracers",
                 "http_method": "GET",
@@ -476,7 +476,7 @@ class FleetAutomationApi:
         self._trigger_fleet_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/fleet/schedules/{id}/trigger",
                 "operation_id": "trigger_fleet_schedule",
                 "http_method": "POST",
@@ -499,7 +499,7 @@ class FleetAutomationApi:
         self._update_fleet_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetScheduleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/unstable/fleet/schedules/{id}",
                 "operation_id": "update_fleet_schedule",
                 "http_method": "PATCH",

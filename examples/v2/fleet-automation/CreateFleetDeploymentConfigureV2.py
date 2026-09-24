@@ -2,6 +2,7 @@
 Create a configuration deployment returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
 from datadog_api_client.v2.model.fleet_deployment_configure_v2_attributes import FleetDeploymentConfigureV2Attributes
@@ -31,6 +32,7 @@ body = FleetDeploymentConfigureV2CreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FleetAutomationApi(api_client)
     response = api_instance.create_fleet_deployment_configure_v2(body=body)

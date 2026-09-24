@@ -30,7 +30,7 @@ class SeatsApi:
         self._assign_seats_user_endpoint = _Endpoint(
             settings={
                 "response_type": (AssignSeatsUserResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/seats/users",
                 "operation_id": "assign_seats_user",
                 "http_method": "POST",
@@ -50,7 +50,7 @@ class SeatsApi:
         self._get_seats_users_endpoint = _Endpoint(
             settings={
                 "response_type": (SeatUserDataArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/seats/users",
                 "operation_id": "get_seats_users",
                 "http_method": "GET",
@@ -83,7 +83,7 @@ class SeatsApi:
         self._unassign_seats_user_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/seats/users",
                 "operation_id": "unassign_seats_user",
                 "http_method": "DELETE",

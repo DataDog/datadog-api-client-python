@@ -2,6 +2,7 @@
 Get presigned URLs for uploading a test file returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.model.synthetics_test_file_multipart_presigned_urls_part import (
@@ -25,6 +26,7 @@ body = SyntheticsTestFileMultipartPresignedUrlsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     response = api_instance.get_test_file_multipart_presigned_urls(public_id="abc-def-123", body=body)

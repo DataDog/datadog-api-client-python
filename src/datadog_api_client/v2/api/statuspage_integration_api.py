@@ -30,7 +30,7 @@ class StatuspageIntegrationApi:
         self._create_statuspage_account_endpoint = _Endpoint(
             settings={
                 "response_type": (StatuspageAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/account",
                 "operation_id": "create_statuspage_account",
                 "http_method": "POST",
@@ -50,7 +50,7 @@ class StatuspageIntegrationApi:
         self._create_statuspage_url_setting_endpoint = _Endpoint(
             settings={
                 "response_type": (StatuspageUrlSettingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/url_settings",
                 "operation_id": "create_statuspage_url_setting",
                 "http_method": "POST",
@@ -70,7 +70,7 @@ class StatuspageIntegrationApi:
         self._delete_statuspage_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/account",
                 "operation_id": "delete_statuspage_account",
                 "http_method": "DELETE",
@@ -86,7 +86,7 @@ class StatuspageIntegrationApi:
         self._delete_statuspage_url_setting_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/url_settings/{statuspage_url_setting_id}",
                 "operation_id": "delete_statuspage_url_setting",
                 "http_method": "DELETE",
@@ -109,7 +109,7 @@ class StatuspageIntegrationApi:
         self._get_statuspage_account_endpoint = _Endpoint(
             settings={
                 "response_type": (StatuspageAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/account",
                 "operation_id": "get_statuspage_account",
                 "http_method": "GET",
@@ -125,7 +125,7 @@ class StatuspageIntegrationApi:
         self._list_statuspage_url_settings_endpoint = _Endpoint(
             settings={
                 "response_type": (StatuspageUrlSettingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/url_settings",
                 "operation_id": "list_statuspage_url_settings",
                 "http_method": "GET",
@@ -141,7 +141,7 @@ class StatuspageIntegrationApi:
         self._update_statuspage_account_endpoint = _Endpoint(
             settings={
                 "response_type": (StatuspageAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/account",
                 "operation_id": "update_statuspage_account",
                 "http_method": "PATCH",
@@ -161,7 +161,7 @@ class StatuspageIntegrationApi:
         self._update_statuspage_url_setting_endpoint = _Endpoint(
             settings={
                 "response_type": (StatuspageUrlSettingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/statuspage/url_settings/{statuspage_url_setting_id}",
                 "operation_id": "update_statuspage_url_setting",
                 "http_method": "PATCH",

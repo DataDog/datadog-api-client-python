@@ -2,6 +2,7 @@
 Update Azure integration host filters returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.azure_integration_api import AzureIntegrationApi
 from datadog_api_client.v1.model.azure_account import AzureAccount
@@ -36,6 +37,7 @@ body = AzureAccount(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AzureIntegrationApi(api_client)
     response = api_instance.update_azure_host_filters(body=body)

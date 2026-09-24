@@ -2,6 +2,7 @@
 Update a maintenance window returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.model.maintenance_window_resource_type import MaintenanceWindowResourceType
@@ -17,6 +18,7 @@ body = MaintenanceWindowUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     response = api_instance.update_maintenance_window(maintenance_window_id="maintenance_window_id", body=body)

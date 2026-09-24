@@ -2,6 +2,7 @@
 Create a new Opsgenie account returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.model.opsgenie_account_create_attributes import OpsgenieAccountCreateAttributes
@@ -21,6 +22,7 @@ body = OpsgenieAccountCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OpsgenieIntegrationApi(api_client)
     response = api_instance.create_opsgenie_account(body=body)

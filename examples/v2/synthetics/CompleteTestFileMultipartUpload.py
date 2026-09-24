@@ -2,6 +2,7 @@
 Complete a multipart upload of a test file returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.synthetics_api import SyntheticsApi
 from datadog_api_client.v2.model.synthetics_test_file_complete_multipart_upload_part import (
@@ -23,6 +24,7 @@ body = SyntheticsTestFileCompleteMultipartUploadRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SyntheticsApi(api_client)
     api_instance.complete_test_file_multipart_upload(public_id="abc-def-123", body=body)

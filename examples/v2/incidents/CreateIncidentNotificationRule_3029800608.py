@@ -59,6 +59,7 @@ body = CreateIncidentNotificationRuleRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_incident_notification_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

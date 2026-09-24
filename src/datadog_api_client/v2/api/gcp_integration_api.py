@@ -32,7 +32,7 @@ class GCPIntegrationApi:
         self._create_gcpsts_account_endpoint = _Endpoint(
             settings={
                 "response_type": (GCPSTSServiceAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/gcp/accounts",
                 "operation_id": "create_gcpsts_account",
                 "http_method": "POST",
@@ -52,7 +52,7 @@ class GCPIntegrationApi:
         self._delete_gcpsts_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/gcp/accounts/{account_id}",
                 "operation_id": "delete_gcpsts_account",
                 "http_method": "DELETE",
@@ -75,7 +75,7 @@ class GCPIntegrationApi:
         self._get_gcpsts_delegate_endpoint = _Endpoint(
             settings={
                 "response_type": (GCPSTSDelegateAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/gcp/sts_delegate",
                 "operation_id": "get_gcpsts_delegate",
                 "http_method": "GET",
@@ -91,7 +91,7 @@ class GCPIntegrationApi:
         self._list_gcpsts_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (GCPSTSServiceAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/gcp/accounts",
                 "operation_id": "list_gcpsts_accounts",
                 "http_method": "GET",
@@ -107,7 +107,7 @@ class GCPIntegrationApi:
         self._make_gcpsts_delegate_endpoint = _Endpoint(
             settings={
                 "response_type": (GCPSTSDelegateAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/gcp/sts_delegate",
                 "operation_id": "make_gcpsts_delegate",
                 "http_method": "POST",
@@ -126,7 +126,7 @@ class GCPIntegrationApi:
         self._update_gcpsts_account_endpoint = _Endpoint(
             settings={
                 "response_type": (GCPSTSServiceAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/gcp/accounts/{account_id}",
                 "operation_id": "update_gcpsts_account",
                 "http_method": "PATCH",

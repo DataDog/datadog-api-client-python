@@ -24,7 +24,7 @@ class AWSLogsIntegrationApi:
         self._list_aws_logs_services_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSLogsServicesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/logs/services",
                 "operation_id": "list_aws_logs_services",
                 "http_method": "GET",

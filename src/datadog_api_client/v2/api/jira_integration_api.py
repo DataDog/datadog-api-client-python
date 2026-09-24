@@ -30,7 +30,7 @@ class JiraIntegrationApi:
         self._create_jira_issue_template_endpoint = _Endpoint(
             settings={
                 "response_type": (JiraIssueTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/jira/issue-templates",
                 "operation_id": "create_jira_issue_template",
                 "http_method": "POST",
@@ -50,7 +50,7 @@ class JiraIntegrationApi:
         self._delete_jira_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/jira/accounts/{account_id}",
                 "operation_id": "delete_jira_account",
                 "http_method": "DELETE",
@@ -73,7 +73,7 @@ class JiraIntegrationApi:
         self._delete_jira_issue_template_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/jira/issue-templates/{issue_template_id}",
                 "operation_id": "delete_jira_issue_template",
                 "http_method": "DELETE",
@@ -96,7 +96,7 @@ class JiraIntegrationApi:
         self._get_jira_issue_template_endpoint = _Endpoint(
             settings={
                 "response_type": (JiraIssueTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/jira/issue-templates/{issue_template_id}",
                 "operation_id": "get_jira_issue_template",
                 "http_method": "GET",
@@ -119,7 +119,7 @@ class JiraIntegrationApi:
         self._list_jira_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (JiraAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/jira/accounts",
                 "operation_id": "list_jira_accounts",
                 "http_method": "GET",
@@ -135,7 +135,7 @@ class JiraIntegrationApi:
         self._list_jira_issue_templates_endpoint = _Endpoint(
             settings={
                 "response_type": (JiraIssueTemplatesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/jira/issue-templates",
                 "operation_id": "list_jira_issue_templates",
                 "http_method": "GET",
@@ -151,7 +151,7 @@ class JiraIntegrationApi:
         self._update_jira_issue_template_endpoint = _Endpoint(
             settings={
                 "response_type": (JiraIssueTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/jira/issue-templates/{issue_template_id}",
                 "operation_id": "update_jira_issue_template",
                 "http_method": "PATCH",

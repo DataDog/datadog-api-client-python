@@ -24,6 +24,7 @@ body = DowntimeUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DowntimesApi(api_client)
     response = api_instance.update_downtime(downtime_id=DOWNTIME_V2_DATA_ID, body=body)

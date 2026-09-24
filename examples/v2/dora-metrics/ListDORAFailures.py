@@ -2,6 +2,7 @@
 Get a list of incident events returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailuresRequest
@@ -25,6 +26,7 @@ body = DORAListFailuresRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = DORAMetricsApi(api_client)
     response = api_instance.list_dora_failures(body=body)

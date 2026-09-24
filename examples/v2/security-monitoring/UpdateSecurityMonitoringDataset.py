@@ -2,6 +2,7 @@
 Update a dataset returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
 from datadog_api_client.v2.model.security_monitoring_dataset_attributes_request import (
@@ -49,6 +50,7 @@ body = SecurityMonitoringDatasetUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_security_monitoring_dataset"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)

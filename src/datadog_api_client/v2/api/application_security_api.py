@@ -60,7 +60,7 @@ class ApplicationSecurityApi:
         self._create_application_security_waf_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafCustomRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/custom_rules",
                 "operation_id": "create_application_security_waf_custom_rule",
                 "http_method": "POST",
@@ -80,7 +80,7 @@ class ApplicationSecurityApi:
         self._create_application_security_waf_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafExclusionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/exclusion_filters",
                 "operation_id": "create_application_security_waf_exclusion_filter",
                 "http_method": "POST",
@@ -100,7 +100,7 @@ class ApplicationSecurityApi:
         self._create_application_security_waf_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies",
                 "operation_id": "create_application_security_waf_policy",
                 "http_method": "POST",
@@ -120,7 +120,7 @@ class ApplicationSecurityApi:
         self._delete_application_security_waf_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/custom_rules/{custom_rule_id}",
                 "operation_id": "delete_application_security_waf_custom_rule",
                 "http_method": "DELETE",
@@ -143,7 +143,7 @@ class ApplicationSecurityApi:
         self._delete_application_security_waf_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}",
                 "operation_id": "delete_application_security_waf_exclusion_filter",
                 "http_method": "DELETE",
@@ -166,7 +166,7 @@ class ApplicationSecurityApi:
         self._delete_application_security_waf_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies/{policy_id}",
                 "operation_id": "delete_application_security_waf_policy",
                 "http_method": "DELETE",
@@ -189,7 +189,7 @@ class ApplicationSecurityApi:
         self._get_application_security_waf_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafCustomRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/custom_rules/{custom_rule_id}",
                 "operation_id": "get_application_security_waf_custom_rule",
                 "http_method": "GET",
@@ -212,7 +212,7 @@ class ApplicationSecurityApi:
         self._get_application_security_waf_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafExclusionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}",
                 "operation_id": "get_application_security_waf_exclusion_filter",
                 "http_method": "GET",
@@ -235,7 +235,7 @@ class ApplicationSecurityApi:
         self._get_application_security_waf_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies/{policy_id}",
                 "operation_id": "get_application_security_waf_policy",
                 "http_method": "GET",
@@ -258,7 +258,7 @@ class ApplicationSecurityApi:
         self._get_asm_service_by_name_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityServicesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/asm/services/{service_filter}",
                 "operation_id": "get_asm_service_by_name",
                 "http_method": "GET",
@@ -281,7 +281,7 @@ class ApplicationSecurityApi:
         self._list_application_security_waf_custom_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafCustomRuleListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/custom_rules",
                 "operation_id": "list_application_security_waf_custom_rules",
                 "http_method": "GET",
@@ -297,7 +297,7 @@ class ApplicationSecurityApi:
         self._list_application_security_waf_exclusion_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafExclusionFiltersResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/exclusion_filters",
                 "operation_id": "list_application_security_waf_exclusion_filters",
                 "http_method": "GET",
@@ -313,7 +313,7 @@ class ApplicationSecurityApi:
         self._list_application_security_waf_policies_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityPolicyListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies",
                 "operation_id": "list_application_security_waf_policies",
                 "http_method": "GET",
@@ -329,7 +329,7 @@ class ApplicationSecurityApi:
         self._update_application_security_waf_custom_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafCustomRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/custom_rules/{custom_rule_id}",
                 "operation_id": "update_application_security_waf_custom_rule",
                 "http_method": "PUT",
@@ -355,7 +355,7 @@ class ApplicationSecurityApi:
         self._update_application_security_waf_exclusion_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityWafExclusionFilterResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/exclusion_filters/{exclusion_filter_id}",
                 "operation_id": "update_application_security_waf_exclusion_filter",
                 "http_method": "PUT",
@@ -381,7 +381,7 @@ class ApplicationSecurityApi:
         self._update_application_security_waf_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationSecurityPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/asm/waf/policies/{policy_id}",
                 "operation_id": "update_application_security_waf_policy",
                 "http_method": "PUT",

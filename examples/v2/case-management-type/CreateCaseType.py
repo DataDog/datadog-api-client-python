@@ -2,6 +2,7 @@
 Create a case type returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.case_management_type_api import CaseManagementTypeApi
 from datadog_api_client.v2.model.case_type_create import CaseTypeCreate
@@ -21,6 +22,7 @@ body = CaseTypeCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementTypeApi(api_client)
     response = api_instance.create_case_type(body=body)

@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.actions_datastores_api import ActionsDatastoresAp
 DATASTORE_DATA_ID = environ["DATASTORE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ActionsDatastoresApi(api_client)
     api_instance.delete_datastore(

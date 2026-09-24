@@ -35,7 +35,7 @@ class NetworkDeviceMonitoringApi:
         self._get_device_endpoint = _Endpoint(
             settings={
                 "response_type": (GetDeviceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ndm/devices/{device_id}",
                 "operation_id": "get_device",
                 "http_method": "GET",
@@ -58,7 +58,7 @@ class NetworkDeviceMonitoringApi:
         self._get_interfaces_endpoint = _Endpoint(
             settings={
                 "response_type": (GetInterfacesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ndm/interfaces",
                 "operation_id": "get_interfaces",
                 "http_method": "GET",
@@ -86,7 +86,7 @@ class NetworkDeviceMonitoringApi:
         self._list_devices_endpoint = _Endpoint(
             settings={
                 "response_type": (ListDevicesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ndm/devices",
                 "operation_id": "list_devices",
                 "http_method": "GET",
@@ -123,7 +123,7 @@ class NetworkDeviceMonitoringApi:
         self._list_device_user_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (ListTagsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ndm/tags/devices/{device_id}",
                 "operation_id": "list_device_user_tags",
                 "http_method": "GET",
@@ -146,7 +146,7 @@ class NetworkDeviceMonitoringApi:
         self._list_interface_user_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (ListInterfaceTagsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ndm/tags/interfaces/{interface_id}",
                 "operation_id": "list_interface_user_tags",
                 "http_method": "GET",
@@ -169,7 +169,7 @@ class NetworkDeviceMonitoringApi:
         self._update_device_user_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (ListTagsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ndm/tags/devices/{device_id}",
                 "operation_id": "update_device_user_tags",
                 "http_method": "PATCH",
@@ -195,7 +195,7 @@ class NetworkDeviceMonitoringApi:
         self._update_interface_user_tags_endpoint = _Endpoint(
             settings={
                 "response_type": (ListInterfaceTagsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ndm/tags/interfaces/{interface_id}",
                 "operation_id": "update_interface_user_tags",
                 "http_method": "PATCH",

@@ -27,7 +27,7 @@ class OCIIntegrationApi:
         self._create_tenancy_config_endpoint = _Endpoint(
             settings={
                 "response_type": (TenancyConfig,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/oci/tenancies",
                 "operation_id": "create_tenancy_config",
                 "http_method": "POST",
@@ -47,7 +47,7 @@ class OCIIntegrationApi:
         self._delete_tenancy_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/oci/tenancies/{tenancy_ocid}",
                 "operation_id": "delete_tenancy_config",
                 "http_method": "DELETE",
@@ -70,7 +70,7 @@ class OCIIntegrationApi:
         self._get_tenancy_config_endpoint = _Endpoint(
             settings={
                 "response_type": (TenancyConfig,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/oci/tenancies/{tenancy_ocid}",
                 "operation_id": "get_tenancy_config",
                 "http_method": "GET",
@@ -93,7 +93,7 @@ class OCIIntegrationApi:
         self._get_tenancy_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (TenancyConfigList,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/oci/tenancies",
                 "operation_id": "get_tenancy_configs",
                 "http_method": "GET",
@@ -109,7 +109,7 @@ class OCIIntegrationApi:
         self._list_tenancy_products_endpoint = _Endpoint(
             settings={
                 "response_type": (TenancyProductsList,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/oci/products",
                 "operation_id": "list_tenancy_products",
                 "http_method": "GET",
@@ -132,7 +132,7 @@ class OCIIntegrationApi:
         self._update_tenancy_config_endpoint = _Endpoint(
             settings={
                 "response_type": (TenancyConfig,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/oci/tenancies/{tenancy_ocid}",
                 "operation_id": "update_tenancy_config",
                 "http_method": "PATCH",

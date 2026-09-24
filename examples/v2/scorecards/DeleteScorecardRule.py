@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
 CREATE_SCORECARD_RULE_DATA_ID = environ["CREATE_SCORECARD_RULE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ScorecardsApi(api_client)
     api_instance.delete_scorecard_rule(

@@ -2,6 +2,7 @@
 Create a change request returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.change_management_api import ChangeManagementApi
 from datadog_api_client.v2.model.change_request_change_type import ChangeRequestChangeType
@@ -35,6 +36,7 @@ body = ChangeRequestCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_change_request"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ChangeManagementApi(api_client)

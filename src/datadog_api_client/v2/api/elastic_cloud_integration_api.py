@@ -37,7 +37,7 @@ class ElasticCloudIntegrationApi:
         self._create_elastic_cloud_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (ElasticCloudIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/elastic-cloud/accounts",
                 "operation_id": "create_elastic_cloud_integration_account",
                 "http_method": "POST",
@@ -57,7 +57,7 @@ class ElasticCloudIntegrationApi:
         self._delete_elastic_cloud_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/elastic-cloud/accounts/{account_id}",
                 "operation_id": "delete_elastic_cloud_integration_account",
                 "http_method": "DELETE",
@@ -80,7 +80,7 @@ class ElasticCloudIntegrationApi:
         self._get_elastic_cloud_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (ElasticCloudIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/elastic-cloud/accounts/{account_id}",
                 "operation_id": "get_elastic_cloud_integration_account",
                 "http_method": "GET",
@@ -103,7 +103,7 @@ class ElasticCloudIntegrationApi:
         self._list_elastic_cloud_integration_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (ElasticCloudIntegrationAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/elastic-cloud/accounts",
                 "operation_id": "list_elastic_cloud_integration_accounts",
                 "http_method": "GET",
@@ -119,7 +119,7 @@ class ElasticCloudIntegrationApi:
         self._update_elastic_cloud_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (ElasticCloudIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/elastic-cloud/accounts/{account_id}",
                 "operation_id": "update_elastic_cloud_integration_account",
                 "http_method": "PATCH",

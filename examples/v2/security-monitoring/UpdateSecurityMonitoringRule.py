@@ -55,6 +55,7 @@ body = SecurityMonitoringRuleUpdatePayload(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.update_security_monitoring_rule(rule_id=SECURITY_RULE_ID, body=body)

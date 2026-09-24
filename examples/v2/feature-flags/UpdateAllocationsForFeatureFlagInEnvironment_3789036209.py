@@ -72,6 +72,7 @@ body = OverwriteAllocationsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     response = api_instance.update_allocations_for_feature_flag_in_environment(

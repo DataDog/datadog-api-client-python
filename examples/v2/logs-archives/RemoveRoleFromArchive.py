@@ -2,6 +2,7 @@
 Revoke role from an archive returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.logs_archives_api import LogsArchivesApi
 from datadog_api_client.v2.model.relationship_to_role import RelationshipToRole
@@ -16,6 +17,7 @@ body = RelationshipToRole(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = LogsArchivesApi(api_client)
     api_instance.remove_role_from_archive(archive_id="archive_id", body=body)

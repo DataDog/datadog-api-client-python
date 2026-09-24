@@ -27,7 +27,7 @@ class WebIntegrationsApi:
         self._create_web_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (WebIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/web-integrations/{integration_name}/accounts",
                 "operation_id": "create_web_integration_account",
                 "http_method": "POST",
@@ -53,7 +53,7 @@ class WebIntegrationsApi:
         self._delete_web_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/web-integrations/{integration_name}/accounts/{account_id}",
                 "operation_id": "delete_web_integration_account",
                 "http_method": "DELETE",
@@ -82,7 +82,7 @@ class WebIntegrationsApi:
         self._get_web_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (WebIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/web-integrations/{integration_name}/accounts/{account_id}",
                 "operation_id": "get_web_integration_account",
                 "http_method": "GET",
@@ -111,7 +111,7 @@ class WebIntegrationsApi:
         self._list_web_integration_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (WebIntegrationAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/web-integrations/{integration_name}/accounts",
                 "operation_id": "list_web_integration_accounts",
                 "http_method": "GET",
@@ -134,7 +134,7 @@ class WebIntegrationsApi:
         self._update_web_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (WebIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/web-integrations/{integration_name}/accounts/{account_id}",
                 "operation_id": "update_web_integration_account",
                 "http_method": "PATCH",

@@ -2,6 +2,7 @@
 Upgrade hosts returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
 from datadog_api_client.v2.model.fleet_deployment_package import FleetDeploymentPackage
@@ -30,6 +31,7 @@ body = FleetDeploymentPackageUpgradeV2CreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FleetAutomationApi(api_client)
     response = api_instance.create_fleet_deployment_upgrade_v2(body=body)

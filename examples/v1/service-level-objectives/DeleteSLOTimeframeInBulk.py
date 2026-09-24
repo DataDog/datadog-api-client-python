@@ -2,6 +2,7 @@
 Bulk Delete SLO Timeframes returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v1.model.slo_bulk_delete import SLOBulkDelete
@@ -19,6 +20,7 @@ body = SLOBulkDelete(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
     response = api_instance.delete_slo_timeframe_in_bulk(body=body)

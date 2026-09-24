@@ -2,6 +2,7 @@
 Update a case type returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.case_management_type_api import CaseManagementTypeApi
 from datadog_api_client.v2.model.case_type_resource_attributes import CaseTypeResourceAttributes
@@ -21,6 +22,7 @@ body = CaseTypeUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementTypeApi(api_client)
     response = api_instance.update_case_type(case_type_id="case_type_id", body=body)

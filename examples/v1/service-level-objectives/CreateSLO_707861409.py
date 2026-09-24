@@ -2,6 +2,7 @@
 Create a new metric SLO object using bad events formula returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v1.model.formula_and_function_metric_data_source import FormulaAndFunctionMetricDataSource
@@ -63,6 +64,7 @@ body = ServiceLevelObjectiveRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)
     response = api_instance.create_slo(body=body)

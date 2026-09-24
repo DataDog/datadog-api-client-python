@@ -2,6 +2,7 @@
 Edit degradation update returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.status_pages_api import StatusPagesApi
 from datadog_api_client.v2.model.patch_degradation_update_request import PatchDegradationUpdateRequest
@@ -27,6 +28,7 @@ body = PatchDegradationUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = StatusPagesApi(api_client)
     response = api_instance.edit_degradation_update(

@@ -4,6 +4,7 @@ Create a new SLO report returns "OK" response
 
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.service_level_objectives_api import ServiceLevelObjectivesApi
 from datadog_api_client.v2.model.slo_report_create_request import SloReportCreateRequest
@@ -24,6 +25,7 @@ body = SloReportCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_slo_report_job"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ServiceLevelObjectivesApi(api_client)

@@ -2,6 +2,7 @@
 Update organization SAML preferences returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.organizations_api import OrganizationsApi
 from datadog_api_client.v2.model.org_saml_preferences_attributes import OrgSAMLPreferencesAttributes
@@ -26,6 +27,7 @@ body = OrgSAMLPreferencesUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_org_saml_configurations"] = True
 with ApiClient(configuration) as api_client:
     api_instance = OrganizationsApi(api_client)

@@ -37,7 +37,7 @@ class TagRulesApi:
         self._create_tag_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (TagRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/tag_rules",
                 "operation_id": "create_tag_rule",
                 "http_method": "POST",
@@ -57,7 +57,7 @@ class TagRulesApi:
         self._delete_tag_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}",
                 "operation_id": "delete_tag_rule",
                 "http_method": "DELETE",
@@ -85,7 +85,7 @@ class TagRulesApi:
         self._get_tag_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (TagRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}",
                 "operation_id": "get_tag_rule",
                 "http_method": "GET",
@@ -123,7 +123,7 @@ class TagRulesApi:
         self._get_tag_rule_score_endpoint = _Endpoint(
             settings={
                 "response_type": (TagRuleScoreResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}/score",
                 "operation_id": "get_tag_rule_score",
                 "http_method": "GET",
@@ -156,7 +156,7 @@ class TagRulesApi:
         self._list_tag_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TagRulesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/tag_rules",
                 "operation_id": "list_tag_rules",
                 "http_method": "GET",
@@ -203,7 +203,7 @@ class TagRulesApi:
         self._update_tag_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (TagRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/governance/tag_rules/{rule_id}",
                 "operation_id": "update_tag_rule",
                 "http_method": "PATCH",

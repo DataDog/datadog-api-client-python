@@ -24,7 +24,7 @@ class ReportingAndSharingApi:
         self._create_snapshot_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateSnapshotResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/snapshot",
                 "operation_id": "create_snapshot",
                 "http_method": "POST",

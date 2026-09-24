@@ -34,7 +34,7 @@ class SalesforceIntegrationApi:
         self._create_incident_template_endpoint = _Endpoint(
             settings={
                 "response_type": (SalesforceIncidentsTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/salesforce-incidents/incident-templates",
                 "operation_id": "create_incident_template",
                 "http_method": "POST",
@@ -54,7 +54,7 @@ class SalesforceIntegrationApi:
         self._delete_incident_template_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/salesforce-incidents/incident-templates/{incident_template_id}",
                 "operation_id": "delete_incident_template",
                 "http_method": "DELETE",
@@ -77,7 +77,7 @@ class SalesforceIntegrationApi:
         self._delete_salesforce_organization_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/salesforce-incidents/organizations/{salesforce_org_id}",
                 "operation_id": "delete_salesforce_organization",
                 "http_method": "DELETE",
@@ -100,7 +100,7 @@ class SalesforceIntegrationApi:
         self._get_incident_templates_endpoint = _Endpoint(
             settings={
                 "response_type": (SalesforceIncidentsTemplatesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/salesforce-incidents/incident-templates",
                 "operation_id": "get_incident_templates",
                 "http_method": "GET",
@@ -116,7 +116,7 @@ class SalesforceIntegrationApi:
         self._get_salesforce_organizations_endpoint = _Endpoint(
             settings={
                 "response_type": (SalesforceIncidentsOrganizationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/salesforce-incidents/organizations",
                 "operation_id": "get_salesforce_organizations",
                 "http_method": "GET",
@@ -132,7 +132,7 @@ class SalesforceIntegrationApi:
         self._update_incident_template_endpoint = _Endpoint(
             settings={
                 "response_type": (SalesforceIncidentsTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/salesforce-incidents/incident-templates/{incident_template_id}",
                 "operation_id": "update_incident_template",
                 "http_method": "PATCH",

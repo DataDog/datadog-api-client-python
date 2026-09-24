@@ -2,6 +2,7 @@
 Re-order retention filters returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.apm_retention_filters_api import APMRetentionFiltersApi
 from datadog_api_client.v2.model.apm_retention_filter_type import ApmRetentionFilterType
@@ -22,6 +23,7 @@ body = ReorderRetentionFiltersRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = APMRetentionFiltersApi(api_client)
     api_instance.reorder_apm_retention_filters(body=body)

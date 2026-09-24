@@ -52,7 +52,7 @@ class LogsRestrictionQueriesApi:
         self._add_role_to_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}/roles",
                 "operation_id": "add_role_to_restriction_query",
                 "http_method": "POST",
@@ -78,7 +78,7 @@ class LogsRestrictionQueriesApi:
         self._create_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryWithoutRelationshipsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries",
                 "operation_id": "create_restriction_query",
                 "http_method": "POST",
@@ -98,7 +98,7 @@ class LogsRestrictionQueriesApi:
         self._delete_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}",
                 "operation_id": "delete_restriction_query",
                 "http_method": "DELETE",
@@ -121,7 +121,7 @@ class LogsRestrictionQueriesApi:
         self._get_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryWithRelationshipsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}",
                 "operation_id": "get_restriction_query",
                 "http_method": "GET",
@@ -144,7 +144,7 @@ class LogsRestrictionQueriesApi:
         self._get_role_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/role/{role_id}",
                 "operation_id": "get_role_restriction_query",
                 "http_method": "GET",
@@ -167,7 +167,7 @@ class LogsRestrictionQueriesApi:
         self._list_restriction_queries_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries",
                 "operation_id": "list_restriction_queries",
                 "http_method": "GET",
@@ -194,7 +194,7 @@ class LogsRestrictionQueriesApi:
         self._list_restriction_query_roles_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryRolesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}/roles",
                 "operation_id": "list_restriction_query_roles",
                 "http_method": "GET",
@@ -227,7 +227,7 @@ class LogsRestrictionQueriesApi:
         self._list_user_restriction_queries_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/user/{user_id}",
                 "operation_id": "list_user_restriction_queries",
                 "http_method": "GET",
@@ -250,7 +250,7 @@ class LogsRestrictionQueriesApi:
         self._remove_role_from_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}/roles",
                 "operation_id": "remove_role_from_restriction_query",
                 "http_method": "DELETE",
@@ -276,7 +276,7 @@ class LogsRestrictionQueriesApi:
         self._replace_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryWithoutRelationshipsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}",
                 "operation_id": "replace_restriction_query",
                 "http_method": "PUT",
@@ -302,7 +302,7 @@ class LogsRestrictionQueriesApi:
         self._update_restriction_query_endpoint = _Endpoint(
             settings={
                 "response_type": (RestrictionQueryWithoutRelationshipsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/restriction_queries/{restriction_query_id}",
                 "operation_id": "update_restriction_query",
                 "http_method": "PATCH",

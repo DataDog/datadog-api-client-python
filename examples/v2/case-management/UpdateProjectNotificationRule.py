@@ -2,6 +2,7 @@
 Update a notification rule returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.case_management_api import CaseManagementApi
 from datadog_api_client.v2.model.case_notification_rule_attributes import CaseNotificationRuleAttributes
@@ -34,6 +35,7 @@ body = CaseNotificationRuleUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CaseManagementApi(api_client)
     api_instance.update_project_notification_rule(

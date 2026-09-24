@@ -2,6 +2,7 @@
 Validate an observability pipeline with ClickHouse destination with all fields set returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.observability_pipelines_api import ObservabilityPipelinesApi
 from datadog_api_client.v2.model.observability_pipeline_buffer_options_memory_type import (
@@ -141,6 +142,7 @@ body = ObservabilityPipelineSpec(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ObservabilityPipelinesApi(api_client)
     response = api_instance.validate_pipeline(body=body)

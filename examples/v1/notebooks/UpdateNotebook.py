@@ -86,6 +86,7 @@ body = NotebookUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = NotebooksApi(api_client)
     response = api_instance.update_notebook(notebook_id=int(NOTEBOOK_DATA_ID), body=body)

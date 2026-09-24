@@ -25,6 +25,7 @@ body = UpdateAppRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AppBuilderApi(api_client)
     response = api_instance.update_app(app_id=APP_DATA_ID, body=body)

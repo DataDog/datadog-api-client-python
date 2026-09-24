@@ -45,7 +45,7 @@ class AWSIntegrationApi:
         self._create_aws_account_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts",
                 "operation_id": "create_aws_account",
                 "http_method": "POST",
@@ -65,7 +65,7 @@ class AWSIntegrationApi:
         self._create_aws_account_ccm_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCcmConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
                 "operation_id": "create_aws_account_ccm_config",
                 "http_method": "POST",
@@ -91,7 +91,7 @@ class AWSIntegrationApi:
         self._create_aws_event_bridge_source_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/event_bridge",
                 "operation_id": "create_aws_event_bridge_source",
                 "http_method": "POST",
@@ -111,7 +111,7 @@ class AWSIntegrationApi:
         self._create_new_aws_external_id_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSNewExternalIDResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/generate_new_external_id",
                 "operation_id": "create_new_aws_external_id",
                 "http_method": "POST",
@@ -127,7 +127,7 @@ class AWSIntegrationApi:
         self._delete_aws_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}",
                 "operation_id": "delete_aws_account",
                 "http_method": "DELETE",
@@ -150,7 +150,7 @@ class AWSIntegrationApi:
         self._delete_aws_account_ccm_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
                 "operation_id": "delete_aws_account_ccm_config",
                 "http_method": "DELETE",
@@ -173,7 +173,7 @@ class AWSIntegrationApi:
         self._delete_aws_event_bridge_source_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeDeleteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/event_bridge",
                 "operation_id": "delete_aws_event_bridge_source",
                 "http_method": "DELETE",
@@ -193,7 +193,7 @@ class AWSIntegrationApi:
         self._get_aws_account_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}",
                 "operation_id": "get_aws_account",
                 "http_method": "GET",
@@ -216,7 +216,7 @@ class AWSIntegrationApi:
         self._get_aws_account_ccm_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCcmConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
                 "operation_id": "get_aws_account_ccm_config",
                 "http_method": "GET",
@@ -239,7 +239,7 @@ class AWSIntegrationApi:
         self._get_aws_integration_iam_permissions_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSIntegrationIamPermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/iam_permissions",
                 "operation_id": "get_aws_integration_iam_permissions",
                 "http_method": "GET",
@@ -255,7 +255,7 @@ class AWSIntegrationApi:
         self._get_aws_integration_iam_permissions_resource_collection_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSIntegrationIamPermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/iam_permissions/resource_collection",
                 "operation_id": "get_aws_integration_iam_permissions_resource_collection",
                 "http_method": "GET",
@@ -271,7 +271,7 @@ class AWSIntegrationApi:
         self._get_aws_integration_iam_permissions_standard_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSIntegrationIamPermissionsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/iam_permissions/standard",
                 "operation_id": "get_aws_integration_iam_permissions_standard",
                 "http_method": "GET",
@@ -287,7 +287,7 @@ class AWSIntegrationApi:
         self._get_aws_metric_name_filter_preview_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSMetricNameFilterPreviewResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/metric_name_filter_preview",
                 "operation_id": "get_aws_metric_name_filter_preview",
                 "http_method": "GET",
@@ -310,7 +310,7 @@ class AWSIntegrationApi:
         self._list_aws_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts",
                 "operation_id": "list_aws_accounts",
                 "http_method": "GET",
@@ -332,7 +332,7 @@ class AWSIntegrationApi:
         self._list_aws_event_bridge_sources_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/event_bridge",
                 "operation_id": "list_aws_event_bridge_sources",
                 "http_method": "GET",
@@ -348,7 +348,7 @@ class AWSIntegrationApi:
         self._list_aws_namespaces_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSNamespacesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/available_namespaces",
                 "operation_id": "list_aws_namespaces",
                 "http_method": "GET",
@@ -364,7 +364,7 @@ class AWSIntegrationApi:
         self._preview_aws_metric_name_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSMetricNameFilterPreviewResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/metric_name_filter_preview",
                 "operation_id": "preview_aws_metric_name_filter",
                 "http_method": "POST",
@@ -390,7 +390,7 @@ class AWSIntegrationApi:
         self._update_aws_account_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}",
                 "operation_id": "update_aws_account",
                 "http_method": "PATCH",
@@ -416,7 +416,7 @@ class AWSIntegrationApi:
         self._update_aws_account_ccm_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCcmConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/accounts/{aws_account_config_id}/ccm_config",
                 "operation_id": "update_aws_account_ccm_config",
                 "http_method": "PATCH",
@@ -442,7 +442,7 @@ class AWSIntegrationApi:
         self._validate_awsccm_config_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCcmConfigValidationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/aws/validate_ccm_config",
                 "operation_id": "validate_awsccm_config",
                 "http_method": "POST",

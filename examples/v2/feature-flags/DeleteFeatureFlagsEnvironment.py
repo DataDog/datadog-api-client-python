@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 ENVIRONMENT_DATA_ID = environ["ENVIRONMENT_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     api_instance.delete_feature_flags_environment(

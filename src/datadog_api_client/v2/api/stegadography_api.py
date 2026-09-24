@@ -26,7 +26,7 @@ class StegadographyApi:
         self._get_stegadography_widgets_endpoint = _Endpoint(
             settings={
                 "response_type": (StegadographyGetWidgetsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/stegadography/get-widgets",
                 "operation_id": "get_stegadography_widgets",
                 "http_method": "POST",

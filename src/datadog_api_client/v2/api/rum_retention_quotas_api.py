@@ -25,7 +25,7 @@ class RUMRetentionQuotasApi:
         self._delete_rum_quota_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}",
                 "operation_id": "delete_rum_quota_config",
                 "http_method": "DELETE",
@@ -54,7 +54,7 @@ class RUMRetentionQuotasApi:
         self._get_rum_quota_config_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionQuotaConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}",
                 "operation_id": "get_rum_quota_config",
                 "http_method": "GET",
@@ -83,7 +83,7 @@ class RUMRetentionQuotasApi:
         self._upsert_rum_quota_config_endpoint = _Endpoint(
             settings={
                 "response_type": (RumRetentionQuotaConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}",
                 "operation_id": "upsert_rum_quota_config",
                 "http_method": "PUT",

@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoring
 HISTORICAL_JOB_DATA_ID = environ["HISTORICAL_JOB_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["get_historical_job"] = True
 configuration.unstable_operations["run_historical_job"] = True
 with ApiClient(configuration) as api_client:

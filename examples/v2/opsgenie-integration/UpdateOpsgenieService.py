@@ -28,6 +28,7 @@ body = OpsgenieServiceUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OpsgenieIntegrationApi(api_client)
     response = api_instance.update_opsgenie_service(integration_service_id=OPSGENIE_SERVICE_DATA_ID, body=body)

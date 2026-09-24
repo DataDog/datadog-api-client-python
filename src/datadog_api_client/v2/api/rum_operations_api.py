@@ -38,7 +38,7 @@ class RUMOperationsApi:
         self._create_rum_operation_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations",
                 "operation_id": "create_rum_operation",
                 "http_method": "POST",
@@ -58,7 +58,7 @@ class RUMOperationsApi:
         self._create_rum_operation_strong_link_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationStrongLinkResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/strong_links",
                 "operation_id": "create_rum_operation_strong_link",
                 "http_method": "POST",
@@ -78,7 +78,7 @@ class RUMOperationsApi:
         self._delete_rum_operation_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/{rum_operation_id}",
                 "operation_id": "delete_rum_operation",
                 "http_method": "DELETE",
@@ -101,7 +101,7 @@ class RUMOperationsApi:
         self._delete_rum_operation_strong_link_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}",
                 "operation_id": "delete_rum_operation_strong_link",
                 "http_method": "DELETE",
@@ -130,7 +130,7 @@ class RUMOperationsApi:
         self._get_rum_operation_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/{rum_operation_id}",
                 "operation_id": "get_rum_operation",
                 "http_method": "GET",
@@ -153,7 +153,7 @@ class RUMOperationsApi:
         self._get_rum_operation_by_name_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/by-name/{name}",
                 "operation_id": "get_rum_operation_by_name",
                 "http_method": "GET",
@@ -176,7 +176,7 @@ class RUMOperationsApi:
         self._list_rum_operations_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/search",
                 "operation_id": "list_rum_operations",
                 "http_method": "GET",
@@ -235,7 +235,7 @@ class RUMOperationsApi:
         self._list_rum_operation_strong_links_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationStrongLinksListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/strong_links",
                 "operation_id": "list_rum_operation_strong_links",
                 "http_method": "GET",
@@ -279,7 +279,7 @@ class RUMOperationsApi:
         self._update_rum_operation_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/{rum_operation_id}",
                 "operation_id": "update_rum_operation",
                 "http_method": "PUT",
@@ -305,7 +305,7 @@ class RUMOperationsApi:
         self._update_rum_operation_strong_link_endpoint = _Endpoint(
             settings={
                 "response_type": (RUMOperationStrongLinkResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}",
                 "operation_id": "update_rum_operation_strong_link",
                 "http_method": "PUT",

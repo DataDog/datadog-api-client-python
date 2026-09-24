@@ -27,7 +27,7 @@ class CloudAuthenticationApi:
         self._create_aws_cloud_auth_persona_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCloudAuthPersonaMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping",
                 "operation_id": "create_aws_cloud_auth_persona_mapping",
                 "http_method": "POST",
@@ -47,7 +47,7 @@ class CloudAuthenticationApi:
         self._delete_aws_cloud_auth_persona_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping/{persona_mapping_id}",
                 "operation_id": "delete_aws_cloud_auth_persona_mapping",
                 "http_method": "DELETE",
@@ -70,7 +70,7 @@ class CloudAuthenticationApi:
         self._get_aws_cloud_auth_persona_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCloudAuthPersonaMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping/{persona_mapping_id}",
                 "operation_id": "get_aws_cloud_auth_persona_mapping",
                 "http_method": "GET",
@@ -93,7 +93,7 @@ class CloudAuthenticationApi:
         self._list_aws_cloud_auth_persona_mappings_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCloudAuthPersonaMappingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping",
                 "operation_id": "list_aws_cloud_auth_persona_mappings",
                 "http_method": "GET",

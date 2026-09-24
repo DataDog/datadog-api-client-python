@@ -32,6 +32,7 @@ body = CreateUserNotificationChannelRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
     response = api_instance.create_user_notification_channel(user_id=USER_DATA_ID, body=body)

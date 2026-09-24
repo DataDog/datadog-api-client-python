@@ -39,7 +39,7 @@ class FormsApi:
         self._clone_form_endpoint = _Endpoint(
             settings={
                 "response_type": (FormResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/{form_id}/clone",
                 "operation_id": "clone_form",
                 "http_method": "POST",
@@ -65,7 +65,7 @@ class FormsApi:
         self._create_and_publish_form_endpoint = _Endpoint(
             settings={
                 "response_type": (FormResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/create_and_publish",
                 "operation_id": "create_and_publish_form",
                 "http_method": "POST",
@@ -85,7 +85,7 @@ class FormsApi:
         self._create_form_endpoint = _Endpoint(
             settings={
                 "response_type": (FormResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms",
                 "operation_id": "create_form",
                 "http_method": "POST",
@@ -105,7 +105,7 @@ class FormsApi:
         self._delete_form_endpoint = _Endpoint(
             settings={
                 "response_type": (DeleteFormResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/{form_id}",
                 "operation_id": "delete_form",
                 "http_method": "DELETE",
@@ -128,7 +128,7 @@ class FormsApi:
         self._get_form_endpoint = _Endpoint(
             settings={
                 "response_type": (FormResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/{form_id}",
                 "operation_id": "get_form",
                 "http_method": "GET",
@@ -156,7 +156,7 @@ class FormsApi:
         self._list_forms_endpoint = _Endpoint(
             settings={
                 "response_type": (FormsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms",
                 "operation_id": "list_forms",
                 "http_method": "GET",
@@ -172,7 +172,7 @@ class FormsApi:
         self._publish_form_endpoint = _Endpoint(
             settings={
                 "response_type": (FormPublicationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/{form_id}/publish",
                 "operation_id": "publish_form",
                 "http_method": "POST",
@@ -198,7 +198,7 @@ class FormsApi:
         self._update_form_endpoint = _Endpoint(
             settings={
                 "response_type": (FormResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/{form_id}",
                 "operation_id": "update_form",
                 "http_method": "PATCH",
@@ -224,7 +224,7 @@ class FormsApi:
         self._upsert_and_publish_form_version_endpoint = _Endpoint(
             settings={
                 "response_type": (FormResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/{form_id}/versions/upsert_and_publish",
                 "operation_id": "upsert_and_publish_form_version",
                 "http_method": "POST",
@@ -250,7 +250,7 @@ class FormsApi:
         self._upsert_form_version_endpoint = _Endpoint(
             settings={
                 "response_type": (FormVersionResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/forms/{form_id}/versions",
                 "operation_id": "upsert_form_version",
                 "http_method": "POST",

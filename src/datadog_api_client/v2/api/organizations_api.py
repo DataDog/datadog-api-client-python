@@ -41,7 +41,7 @@ class OrganizationsApi:
         self._get_org_config_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgConfigGetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/org_configs/{org_config_name}",
                 "operation_id": "get_org_config",
                 "http_method": "GET",
@@ -64,7 +64,7 @@ class OrganizationsApi:
         self._get_saml_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (SAMLConfigurationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/saml_configurations/{saml_config_uuid}",
                 "operation_id": "get_saml_configuration",
                 "http_method": "GET",
@@ -124,7 +124,7 @@ class OrganizationsApi:
         self._list_org_configs_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgConfigListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/org_configs",
                 "operation_id": "list_org_configs",
                 "http_method": "GET",
@@ -162,7 +162,7 @@ class OrganizationsApi:
         self._list_saml_configurations_endpoint = _Endpoint(
             settings={
                 "response_type": (SAMLConfigurationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/saml_configurations",
                 "operation_id": "list_saml_configurations",
                 "http_method": "GET",
@@ -198,7 +198,7 @@ class OrganizationsApi:
         self._update_org_config_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgConfigGetResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/org_configs/{org_config_name}",
                 "operation_id": "update_org_config",
                 "http_method": "PATCH",
@@ -224,7 +224,7 @@ class OrganizationsApi:
         self._update_org_saml_configurations_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/org/saml_configurations",
                 "operation_id": "update_org_saml_configurations",
                 "http_method": "PATCH",
@@ -244,7 +244,7 @@ class OrganizationsApi:
         self._update_saml_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (SAMLConfigurationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/saml_configurations/{saml_config_uuid}",
                 "operation_id": "update_saml_configuration",
                 "http_method": "PATCH",
@@ -270,7 +270,7 @@ class OrganizationsApi:
         self._upload_idp_metadata_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/saml_configurations/idp_metadata",
                 "operation_id": "upload_idp_metadata",
                 "http_method": "POST",

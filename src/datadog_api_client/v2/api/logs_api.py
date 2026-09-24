@@ -78,7 +78,7 @@ class LogsApi:
         self._list_logs_get_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/events",
                 "operation_id": "list_logs_get",
                 "http_method": "GET",

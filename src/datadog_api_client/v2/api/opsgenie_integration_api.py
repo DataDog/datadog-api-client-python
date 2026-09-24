@@ -31,7 +31,7 @@ class OpsgenieIntegrationApi:
         self._create_opsgenie_account_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/accounts",
                 "operation_id": "create_opsgenie_account",
                 "http_method": "POST",
@@ -51,7 +51,7 @@ class OpsgenieIntegrationApi:
         self._create_opsgenie_service_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/services",
                 "operation_id": "create_opsgenie_service",
                 "http_method": "POST",
@@ -71,7 +71,7 @@ class OpsgenieIntegrationApi:
         self._delete_opsgenie_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/accounts/{account_id}",
                 "operation_id": "delete_opsgenie_account",
                 "http_method": "DELETE",
@@ -94,7 +94,7 @@ class OpsgenieIntegrationApi:
         self._delete_opsgenie_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/services/{integration_service_id}",
                 "operation_id": "delete_opsgenie_service",
                 "http_method": "DELETE",
@@ -117,7 +117,7 @@ class OpsgenieIntegrationApi:
         self._get_opsgenie_service_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/services/{integration_service_id}",
                 "operation_id": "get_opsgenie_service",
                 "http_method": "GET",
@@ -140,7 +140,7 @@ class OpsgenieIntegrationApi:
         self._list_opsgenie_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/accounts",
                 "operation_id": "list_opsgenie_accounts",
                 "http_method": "GET",
@@ -156,7 +156,7 @@ class OpsgenieIntegrationApi:
         self._list_opsgenie_services_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieServicesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/services",
                 "operation_id": "list_opsgenie_services",
                 "http_method": "GET",
@@ -172,7 +172,7 @@ class OpsgenieIntegrationApi:
         self._update_opsgenie_account_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/accounts/{account_id}",
                 "operation_id": "update_opsgenie_account",
                 "http_method": "PATCH",
@@ -198,7 +198,7 @@ class OpsgenieIntegrationApi:
         self._update_opsgenie_service_endpoint = _Endpoint(
             settings={
                 "response_type": (OpsgenieServiceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration/opsgenie/services/{integration_service_id}",
                 "operation_id": "update_opsgenie_service",
                 "http_method": "PATCH",

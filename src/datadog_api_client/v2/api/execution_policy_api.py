@@ -35,7 +35,7 @@ class ExecutionPolicyApi:
         self._create_execution_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (ExecutionPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/execution-policies",
                 "operation_id": "create_execution_policy",
                 "http_method": "POST",
@@ -55,7 +55,7 @@ class ExecutionPolicyApi:
         self._delete_execution_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/execution-policies/{policy_id}",
                 "operation_id": "delete_execution_policy",
                 "http_method": "DELETE",
@@ -78,7 +78,7 @@ class ExecutionPolicyApi:
         self._get_execution_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (ExecutionPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/execution-policies/{policy_id}",
                 "operation_id": "get_execution_policy",
                 "http_method": "GET",
@@ -101,7 +101,7 @@ class ExecutionPolicyApi:
         self._list_execution_policies_endpoint = _Endpoint(
             settings={
                 "response_type": (ExecutionPolicyListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/execution-policies",
                 "operation_id": "list_execution_policies",
                 "http_method": "GET",
@@ -170,7 +170,7 @@ class ExecutionPolicyApi:
         self._update_execution_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (ExecutionPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/actions/execution-policies/{policy_id}",
                 "operation_id": "update_execution_policy",
                 "http_method": "PUT",

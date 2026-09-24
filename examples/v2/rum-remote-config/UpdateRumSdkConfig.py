@@ -2,6 +2,7 @@
 Update a RUM SDK configuration returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_remote_config_api import RUMRemoteConfigApi
 from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RumSdkConfigDynamicOption
@@ -111,6 +112,7 @@ body = RumSdkConfigUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_rum_sdk_config"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMRemoteConfigApi(api_client)

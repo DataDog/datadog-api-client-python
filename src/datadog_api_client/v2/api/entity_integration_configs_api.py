@@ -24,7 +24,7 @@ class EntityIntegrationConfigsApi:
         self._delete_entity_integration_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/idp/entity_integrations/{integration_id}",
                 "operation_id": "delete_entity_integration_config",
                 "http_method": "DELETE",
@@ -47,7 +47,7 @@ class EntityIntegrationConfigsApi:
         self._get_entity_integration_config_endpoint = _Endpoint(
             settings={
                 "response_type": (EntityIntegrationConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/idp/entity_integrations/{integration_id}",
                 "operation_id": "get_entity_integration_config",
                 "http_method": "GET",
@@ -70,7 +70,7 @@ class EntityIntegrationConfigsApi:
         self._update_entity_integration_config_endpoint = _Endpoint(
             settings={
                 "response_type": (EntityIntegrationConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/idp/entity_integrations/{integration_id}",
                 "operation_id": "update_entity_integration_config",
                 "http_method": "PUT",

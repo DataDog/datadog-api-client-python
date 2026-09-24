@@ -2,6 +2,7 @@
 Create the RUM configuration returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_config_api import RUMConfigApi
 from datadog_api_client.v2.model.rum_config_create_attributes import RumConfigCreateAttributes
@@ -19,6 +20,7 @@ body = RumConfigCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_rum_config"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMConfigApi(api_client)

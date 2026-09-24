@@ -2,6 +2,7 @@
 Create a Salesforce incident template returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.salesforce_integration_api import SalesforceIntegrationApi
 from datadog_api_client.v2.model.salesforce_incidents_template_create_attributes import (
@@ -30,6 +31,7 @@ body = SalesforceIncidentsTemplateCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SalesforceIntegrationApi(api_client)
     response = api_instance.create_incident_template(body=body)

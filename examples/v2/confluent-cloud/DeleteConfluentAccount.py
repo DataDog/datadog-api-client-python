@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 CONFLUENT_ACCOUNT_DATA_ID = environ["CONFLUENT_ACCOUNT_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ConfluentCloudApi(api_client)
     api_instance.delete_confluent_account(

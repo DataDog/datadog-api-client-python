@@ -2,6 +2,7 @@
 Create Jira issue template returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.jira_integration_api import JiraIntegrationApi
 from datadog_api_client.v2.model.jira_issue_template_create_request import JiraIssueTemplateCreateRequest
@@ -31,6 +32,7 @@ body = JiraIssueTemplateCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_jira_issue_template"] = True
 with ApiClient(configuration) as api_client:
     api_instance = JiraIntegrationApi(api_client)

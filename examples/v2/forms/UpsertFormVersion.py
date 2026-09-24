@@ -48,6 +48,7 @@ body = UpsertFormVersionRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["upsert_form_version"] = True
 with ApiClient(configuration) as api_client:
     api_instance = FormsApi(api_client)

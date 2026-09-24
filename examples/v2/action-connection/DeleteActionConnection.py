@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
 ACTION_CONNECTION_DATA_ID = environ["ACTION_CONNECTION_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ActionConnectionApi(api_client)
     api_instance.delete_action_connection(

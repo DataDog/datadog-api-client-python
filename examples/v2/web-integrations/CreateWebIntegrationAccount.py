@@ -2,6 +2,7 @@
 Create a web integration account returns "CREATED" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.web_integrations_api import WebIntegrationsApi
 from datadog_api_client.v2.model.web_integration_account_create_request import WebIntegrationAccountCreateRequest
@@ -27,6 +28,7 @@ body = WebIntegrationAccountCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_web_integration_account"] = True
 with ApiClient(configuration) as api_client:
     api_instance = WebIntegrationsApi(api_client)

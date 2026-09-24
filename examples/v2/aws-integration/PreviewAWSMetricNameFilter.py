@@ -2,6 +2,7 @@
 Preview AWS metric name filter returns "AWS metric name filter preview result" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.aws_integration_api import AWSIntegrationApi
 from datadog_api_client.v2.model.aws_metric_name_filter_preview_request import AWSMetricNameFilterPreviewRequest
@@ -31,6 +32,7 @@ body = AWSMetricNameFilterPreviewRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["preview_aws_metric_name_filter"] = True
 with ApiClient(configuration) as api_client:
     api_instance = AWSIntegrationApi(api_client)

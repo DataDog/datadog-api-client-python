@@ -28,6 +28,7 @@ body = ApplicationKeyUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ServiceAccountsApi(api_client)
     response = api_instance.update_service_account_application_key(

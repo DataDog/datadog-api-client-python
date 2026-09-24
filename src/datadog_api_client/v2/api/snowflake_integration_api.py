@@ -33,7 +33,7 @@ class SnowflakeIntegrationApi:
         self._create_snowflake_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (SnowflakeIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/snowflake/accounts",
                 "operation_id": "create_snowflake_integration_account",
                 "http_method": "POST",
@@ -53,7 +53,7 @@ class SnowflakeIntegrationApi:
         self._delete_snowflake_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/snowflake/accounts/{account_id}",
                 "operation_id": "delete_snowflake_integration_account",
                 "http_method": "DELETE",
@@ -76,7 +76,7 @@ class SnowflakeIntegrationApi:
         self._get_snowflake_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (SnowflakeIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/snowflake/accounts/{account_id}",
                 "operation_id": "get_snowflake_integration_account",
                 "http_method": "GET",
@@ -99,7 +99,7 @@ class SnowflakeIntegrationApi:
         self._list_snowflake_integration_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (SnowflakeIntegrationAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/snowflake/accounts",
                 "operation_id": "list_snowflake_integration_accounts",
                 "http_method": "GET",
@@ -115,7 +115,7 @@ class SnowflakeIntegrationApi:
         self._update_snowflake_integration_account_endpoint = _Endpoint(
             settings={
                 "response_type": (SnowflakeIntegrationAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integration-interfaces/snowflake/accounts/{account_id}",
                 "operation_id": "update_snowflake_integration_account",
                 "http_method": "PATCH",

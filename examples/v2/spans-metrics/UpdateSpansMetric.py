@@ -38,6 +38,7 @@ body = SpansMetricUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = SpansMetricsApi(api_client)
     response = api_instance.update_spans_metric(metric_id=SPANS_METRIC_DATA_ID, body=body)

@@ -33,6 +33,7 @@ body = PatchIncidentNotificationTemplateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_incident_notification_template"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

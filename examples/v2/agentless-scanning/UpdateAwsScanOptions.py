@@ -2,6 +2,7 @@
 Update AWS scan options returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.model.aws_scan_options_type import AwsScanOptionsType
@@ -22,6 +23,7 @@ body = AwsScanOptionsUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AgentlessScanningApi(api_client)
     api_instance.update_aws_scan_options(account_id="000000000002", body=body)

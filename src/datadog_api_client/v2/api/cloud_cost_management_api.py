@@ -205,7 +205,7 @@ class CloudCostManagementApi:
         self._create_unit_cost_endpoint = _Endpoint(
             settings={
                 "response_type": (UnitCostResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/unit_costs",
                 "operation_id": "create_unit_cost",
                 "http_method": "POST",
@@ -225,7 +225,7 @@ class CloudCostManagementApi:
         self._delete_budget_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budget/{budget_id}",
                 "operation_id": "delete_budget",
                 "http_method": "DELETE",
@@ -391,7 +391,7 @@ class CloudCostManagementApi:
         self._delete_custom_forecast_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budget/{budget_id}/custom-forecast",
                 "operation_id": "delete_custom_forecast",
                 "http_method": "DELETE",
@@ -437,7 +437,7 @@ class CloudCostManagementApi:
         self._delete_unit_cost_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/unit_costs/{unit_cost_id}",
                 "operation_id": "delete_unit_cost",
                 "http_method": "DELETE",
@@ -483,7 +483,7 @@ class CloudCostManagementApi:
         self._get_budget_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetWithEntries,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budget/{budget_id}",
                 "operation_id": "get_budget",
                 "http_method": "GET",
@@ -1162,7 +1162,7 @@ class CloudCostManagementApi:
         self._get_custom_forecast_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomForecastResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budget/{budget_id}/custom-forecast",
                 "operation_id": "get_custom_forecast",
                 "http_method": "GET",
@@ -1208,7 +1208,7 @@ class CloudCostManagementApi:
         self._get_unit_cost_endpoint = _Endpoint(
             settings={
                 "response_type": (UnitCostResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/unit_costs/{unit_cost_id}",
                 "operation_id": "get_unit_cost",
                 "http_method": "GET",
@@ -1231,7 +1231,7 @@ class CloudCostManagementApi:
         self._list_budgets_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetArray,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budgets",
                 "operation_id": "list_budgets",
                 "http_method": "GET",
@@ -1748,7 +1748,7 @@ class CloudCostManagementApi:
         self._list_unit_costs_endpoint = _Endpoint(
             settings={
                 "response_type": (UnitCostsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/unit_costs",
                 "operation_id": "list_unit_costs",
                 "http_method": "GET",
@@ -1990,7 +1990,7 @@ class CloudCostManagementApi:
         self._update_unit_cost_endpoint = _Endpoint(
             settings={
                 "response_type": (UnitCostResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/unit_costs/{unit_cost_id}",
                 "operation_id": "update_unit_cost",
                 "http_method": "PUT",
@@ -2037,7 +2037,7 @@ class CloudCostManagementApi:
         self._upsert_budget_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetWithEntries,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budget",
                 "operation_id": "upsert_budget",
                 "http_method": "PUT",
@@ -2083,7 +2083,7 @@ class CloudCostManagementApi:
         self._upsert_custom_forecast_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomForecastResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budget/custom-forecast",
                 "operation_id": "upsert_custom_forecast",
                 "http_method": "PUT",
@@ -2103,7 +2103,7 @@ class CloudCostManagementApi:
         self._validate_budget_endpoint = _Endpoint(
             settings={
                 "response_type": (BudgetValidationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/budget/validate",
                 "operation_id": "validate_budget",
                 "http_method": "POST",

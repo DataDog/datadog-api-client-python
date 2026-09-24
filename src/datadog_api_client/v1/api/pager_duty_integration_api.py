@@ -26,7 +26,7 @@ class PagerDutyIntegrationApi:
         self._create_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": (PagerDutyServiceName,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services",
                 "operation_id": "create_pager_duty_integration_service",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class PagerDutyIntegrationApi:
         self._delete_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
                 "operation_id": "delete_pager_duty_integration_service",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class PagerDutyIntegrationApi:
         self._get_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": (PagerDutyServiceName,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
                 "operation_id": "get_pager_duty_integration_service",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class PagerDutyIntegrationApi:
         self._update_pager_duty_integration_service_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/pagerduty/configuration/services/{service_name}",
                 "operation_id": "update_pager_duty_integration_service",
                 "http_method": "PUT",

@@ -26,7 +26,7 @@ class RumMetricsApi:
         self._create_rum_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (RumMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics",
                 "operation_id": "create_rum_metric",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class RumMetricsApi:
         self._delete_rum_metric_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics/{metric_id}",
                 "operation_id": "delete_rum_metric",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class RumMetricsApi:
         self._get_rum_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (RumMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics/{metric_id}",
                 "operation_id": "get_rum_metric",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class RumMetricsApi:
         self._list_rum_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (RumMetricsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics",
                 "operation_id": "list_rum_metrics",
                 "http_method": "GET",
@@ -108,7 +108,7 @@ class RumMetricsApi:
         self._update_rum_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (RumMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics/{metric_id}",
                 "operation_id": "update_rum_metric",
                 "http_method": "PATCH",

@@ -40,7 +40,7 @@ class CSMOwnershipApi:
         self._create_ownership_feedback_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipFeedbackResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}/feedback",
                 "operation_id": "create_ownership_feedback",
                 "http_method": "POST",
@@ -72,7 +72,7 @@ class CSMOwnershipApi:
         self._get_ownership_evidence_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipEvidenceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}/evidence",
                 "operation_id": "get_ownership_evidence",
                 "http_method": "GET",
@@ -106,7 +106,7 @@ class CSMOwnershipApi:
         self._get_ownership_inference_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipInferenceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}",
                 "operation_id": "get_ownership_inference",
                 "http_method": "GET",
@@ -140,7 +140,7 @@ class CSMOwnershipApi:
         self._get_ownership_settings_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipSettingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/settings",
                 "operation_id": "get_ownership_settings",
                 "http_method": "GET",
@@ -156,7 +156,7 @@ class CSMOwnershipApi:
         self._get_ownership_untagged_findings_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipUntaggedFindingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/settings/untagged",
                 "operation_id": "get_ownership_untagged_findings",
                 "http_method": "GET",
@@ -172,7 +172,7 @@ class CSMOwnershipApi:
         self._list_ownership_history_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipHistoryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/{resource_id}/history",
                 "operation_id": "list_ownership_history",
                 "http_method": "GET",
@@ -209,7 +209,7 @@ class CSMOwnershipApi:
         self._list_ownership_history_by_owner_type_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipHistoryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}/history",
                 "operation_id": "list_ownership_history_by_owner_type",
                 "http_method": "GET",
@@ -252,7 +252,7 @@ class CSMOwnershipApi:
         self._list_ownership_inferences_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipInferenceListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/{resource_id}",
                 "operation_id": "list_ownership_inferences",
                 "http_method": "GET",
@@ -275,7 +275,7 @@ class CSMOwnershipApi:
         self._post_ownership_settings_endpoint = _Endpoint(
             settings={
                 "response_type": (OwnershipSettingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/ownership/settings",
                 "operation_id": "post_ownership_settings",
                 "http_method": "POST",

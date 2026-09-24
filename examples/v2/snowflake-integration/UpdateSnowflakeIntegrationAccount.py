@@ -2,6 +2,7 @@
 Update a Snowflake integration account returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.snowflake_integration_api import SnowflakeIntegrationApi
 from datadog_api_client.v2.model.integration_account_type import IntegrationAccountType
@@ -148,6 +149,7 @@ body = SnowflakeIntegrationAccountUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_snowflake_integration_account"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SnowflakeIntegrationApi(api_client)

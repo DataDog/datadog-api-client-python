@@ -26,7 +26,7 @@ class RUMConfigApi:
         self._create_rum_config_endpoint = _Endpoint(
             settings={
                 "response_type": (RumConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config",
                 "operation_id": "create_rum_config",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class RUMConfigApi:
         self._get_rum_config_endpoint = _Endpoint(
             settings={
                 "response_type": (RumConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config",
                 "operation_id": "get_rum_config",
                 "http_method": "GET",
@@ -62,7 +62,7 @@ class RUMConfigApi:
         self._update_rum_config_endpoint = _Endpoint(
             settings={
                 "response_type": (RumConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config",
                 "operation_id": "update_rum_config",
                 "http_method": "PATCH",

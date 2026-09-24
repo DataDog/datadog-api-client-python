@@ -2,6 +2,7 @@
 Delete Test Optimization service settings returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.test_optimization_api import TestOptimizationApi
 from datadog_api_client.v2.model.test_optimization_delete_service_settings_request import (
@@ -29,6 +30,7 @@ body = TestOptimizationDeleteServiceSettingsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = TestOptimizationApi(api_client)
     api_instance.delete_test_optimization_service_settings(body=body)

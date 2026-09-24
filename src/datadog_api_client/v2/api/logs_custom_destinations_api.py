@@ -31,7 +31,7 @@ class LogsCustomDestinationsApi:
         self._create_logs_custom_destination_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomDestinationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/custom-destinations",
                 "operation_id": "create_logs_custom_destination",
                 "http_method": "POST",
@@ -51,7 +51,7 @@ class LogsCustomDestinationsApi:
         self._delete_logs_custom_destination_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/custom-destinations/{custom_destination_id}",
                 "operation_id": "delete_logs_custom_destination",
                 "http_method": "DELETE",
@@ -74,7 +74,7 @@ class LogsCustomDestinationsApi:
         self._get_logs_custom_destination_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomDestinationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/custom-destinations/{custom_destination_id}",
                 "operation_id": "get_logs_custom_destination",
                 "http_method": "GET",
@@ -97,7 +97,7 @@ class LogsCustomDestinationsApi:
         self._list_logs_custom_destinations_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomDestinationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/custom-destinations",
                 "operation_id": "list_logs_custom_destinations",
                 "http_method": "GET",
@@ -113,7 +113,7 @@ class LogsCustomDestinationsApi:
         self._update_logs_custom_destination_endpoint = _Endpoint(
             settings={
                 "response_type": (CustomDestinationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/custom-destinations/{custom_destination_id}",
                 "operation_id": "update_logs_custom_destination",
                 "http_method": "PATCH",

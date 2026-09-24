@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoring
 VALID_MUTE_RULE_DATA_ID = environ["VALID_MUTE_RULE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["get_security_findings_automation_mute_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)

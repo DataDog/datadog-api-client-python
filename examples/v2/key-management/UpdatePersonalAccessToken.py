@@ -24,6 +24,7 @@ body = PersonalAccessTokenUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = KeyManagementApi(api_client)
     response = api_instance.update_personal_access_token(token_id=PERSONAL_ACCESS_TOKEN_DATA_ID, body=body)

@@ -214,7 +214,7 @@ class MetricsApi:
         self._update_metric_metadata_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricMetadata,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/metrics/{metric_name}",
                 "operation_id": "update_metric_metadata",
                 "http_method": "PUT",

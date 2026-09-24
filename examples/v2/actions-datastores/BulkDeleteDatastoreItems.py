@@ -31,6 +31,7 @@ body = BulkDeleteAppsDatastoreItemsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ActionsDatastoresApi(api_client)
     response = api_instance.bulk_delete_datastore_items(datastore_id=DATASTORE_DATA_ID, body=body)

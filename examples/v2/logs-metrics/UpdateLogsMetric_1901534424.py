@@ -26,6 +26,7 @@ body = LogsMetricUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = LogsMetricsApi(api_client)
     response = api_instance.update_logs_metric(metric_id=LOGS_METRIC_PERCENTILE_DATA_ID, body=body)

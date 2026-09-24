@@ -2,6 +2,7 @@
 Update an existing Action Connection returns "Successfully updated Action Connection" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.action_connection_api import ActionConnectionApi
 from datadog_api_client.v2.model.action_connection_attributes_update import ActionConnectionAttributesUpdate
@@ -31,6 +32,7 @@ body = UpdateActionConnectionRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = ActionConnectionApi(api_client)
     response = api_instance.update_action_connection(connection_id="cb460d51-3c88-4e87-adac-d47131d0423d", body=body)

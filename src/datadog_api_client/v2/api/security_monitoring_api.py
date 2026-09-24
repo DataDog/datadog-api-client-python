@@ -552,7 +552,7 @@ class SecurityMonitoringApi:
         self._bulk_edit_security_monitoring_signals_assignee_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsBulkTriageUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/signals/bulk/assignee",
                 "operation_id": "bulk_edit_security_monitoring_signals_assignee",
                 "http_method": "PATCH",
@@ -572,7 +572,7 @@ class SecurityMonitoringApi:
         self._bulk_edit_security_monitoring_signals_state_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalsBulkTriageUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/signals/bulk/state",
                 "operation_id": "bulk_edit_security_monitoring_signals_state",
                 "http_method": "PATCH",
@@ -684,7 +684,7 @@ class SecurityMonitoringApi:
         self._convert_job_result_to_signal_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/siem-historical-detections/jobs/signal_convert",
                 "operation_id": "convert_job_result_to_signal",
                 "http_method": "POST",
@@ -890,7 +890,7 @@ class SecurityMonitoringApi:
         self._create_security_findings_automation_due_date_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules",
                 "operation_id": "create_security_findings_automation_due_date_rule",
                 "http_method": "POST",
@@ -910,7 +910,7 @@ class SecurityMonitoringApi:
         self._create_security_findings_automation_inbox_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (InboxRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/inbox_rules",
                 "operation_id": "create_security_findings_automation_inbox_rule",
                 "http_method": "POST",
@@ -930,7 +930,7 @@ class SecurityMonitoringApi:
         self._create_security_findings_automation_mute_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules",
                 "operation_id": "create_security_findings_automation_mute_rule",
                 "http_method": "POST",
@@ -950,7 +950,7 @@ class SecurityMonitoringApi:
         self._create_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SeverityModifierRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules",
                 "operation_id": "create_security_findings_automation_severity_modifier_rule",
                 "http_method": "POST",
@@ -970,7 +970,7 @@ class SecurityMonitoringApi:
         self._create_security_findings_automation_ticket_creation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/ticket_creation_rules",
                 "operation_id": "create_security_findings_automation_ticket_creation_rule",
                 "http_method": "POST",
@@ -1110,7 +1110,7 @@ class SecurityMonitoringApi:
         self._create_signal_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/signals/notification_rules",
                 "operation_id": "create_signal_notification_rule",
                 "http_method": "POST",
@@ -1170,7 +1170,7 @@ class SecurityMonitoringApi:
         self._create_vulnerability_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules",
                 "operation_id": "create_vulnerability_notification_rule",
                 "http_method": "POST",
@@ -1334,7 +1334,7 @@ class SecurityMonitoringApi:
         self._delete_security_findings_automation_due_date_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules/{rule_id}",
                 "operation_id": "delete_security_findings_automation_due_date_rule",
                 "http_method": "DELETE",
@@ -1357,7 +1357,7 @@ class SecurityMonitoringApi:
         self._delete_security_findings_automation_inbox_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}",
                 "operation_id": "delete_security_findings_automation_inbox_rule",
                 "http_method": "DELETE",
@@ -1380,7 +1380,7 @@ class SecurityMonitoringApi:
         self._delete_security_findings_automation_mute_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules/{rule_id}",
                 "operation_id": "delete_security_findings_automation_mute_rule",
                 "http_method": "DELETE",
@@ -1403,7 +1403,7 @@ class SecurityMonitoringApi:
         self._delete_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}",
                 "operation_id": "delete_security_findings_automation_severity_modifier_rule",
                 "http_method": "DELETE",
@@ -1426,7 +1426,7 @@ class SecurityMonitoringApi:
         self._delete_security_findings_automation_ticket_creation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/ticket_creation_rules/{rule_id}",
                 "operation_id": "delete_security_findings_automation_ticket_creation_rule",
                 "http_method": "DELETE",
@@ -1564,7 +1564,7 @@ class SecurityMonitoringApi:
         self._delete_signal_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/signals/notification_rules/{id}",
                 "operation_id": "delete_signal_notification_rule",
                 "http_method": "DELETE",
@@ -1587,7 +1587,7 @@ class SecurityMonitoringApi:
         self._delete_vulnerability_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules/{id}",
                 "operation_id": "delete_vulnerability_notification_rule",
                 "http_method": "DELETE",
@@ -1630,7 +1630,7 @@ class SecurityMonitoringApi:
         self._disable_security_findings_automation_default_inbox_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DefaultInboxRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}/disable",
                 "operation_id": "disable_security_findings_automation_default_inbox_rule",
                 "http_method": "POST",
@@ -1757,7 +1757,7 @@ class SecurityMonitoringApi:
         self._enable_security_findings_automation_default_inbox_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DefaultInboxRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}/enable",
                 "operation_id": "enable_security_findings_automation_default_inbox_rule",
                 "http_method": "POST",
@@ -2128,7 +2128,7 @@ class SecurityMonitoringApi:
         self._get_rule_version_history_endpoint = _Endpoint(
             settings={
                 "response_type": (GetRuleVersionHistoryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security_monitoring/rules/{rule_id}/version_history",
                 "operation_id": "get_rule_version_history",
                 "http_method": "GET",
@@ -2161,7 +2161,7 @@ class SecurityMonitoringApi:
         self._get_sbom_endpoint = _Endpoint(
             settings={
                 "response_type": (GetSBOMResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/sboms/{asset_type}",
                 "operation_id": "get_sbom",
                 "http_method": "GET",
@@ -2239,7 +2239,7 @@ class SecurityMonitoringApi:
         self._get_security_findings_automation_default_inbox_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DefaultInboxRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_default_inbox_rule",
                 "http_method": "GET",
@@ -2262,7 +2262,7 @@ class SecurityMonitoringApi:
         self._get_security_findings_automation_due_date_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_due_date_rule",
                 "http_method": "GET",
@@ -2285,7 +2285,7 @@ class SecurityMonitoringApi:
         self._get_security_findings_automation_inbox_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (InboxRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_inbox_rule",
                 "http_method": "GET",
@@ -2308,7 +2308,7 @@ class SecurityMonitoringApi:
         self._get_security_findings_automation_mute_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_mute_rule",
                 "http_method": "GET",
@@ -2331,7 +2331,7 @@ class SecurityMonitoringApi:
         self._get_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SeverityModifierRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_severity_modifier_rule",
                 "http_method": "GET",
@@ -2354,7 +2354,7 @@ class SecurityMonitoringApi:
         self._get_security_findings_automation_ticket_creation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/ticket_creation_rules/{rule_id}",
                 "operation_id": "get_security_findings_automation_ticket_creation_rule",
                 "http_method": "GET",
@@ -2687,7 +2687,7 @@ class SecurityMonitoringApi:
         self._get_signal_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/signals/notification_rules/{id}",
                 "operation_id": "get_signal_notification_rule",
                 "http_method": "GET",
@@ -2710,7 +2710,7 @@ class SecurityMonitoringApi:
         self._get_signal_notification_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRulesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/signals/notification_rules",
                 "operation_id": "get_signal_notification_rules",
                 "http_method": "GET",
@@ -2965,7 +2965,7 @@ class SecurityMonitoringApi:
         self._get_vulnerability_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules/{id}",
                 "operation_id": "get_vulnerability_notification_rule",
                 "http_method": "GET",
@@ -2988,7 +2988,7 @@ class SecurityMonitoringApi:
         self._get_vulnerability_notification_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRulesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules",
                 "operation_id": "get_vulnerability_notification_rules",
                 "http_method": "GET",
@@ -3024,7 +3024,7 @@ class SecurityMonitoringApi:
         self._list_assets_sbo_ms_endpoint = _Endpoint(
             settings={
                 "response_type": (ListAssetsSBOMsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/sboms",
                 "operation_id": "list_assets_sbo_ms",
                 "http_method": "GET",
@@ -3336,7 +3336,7 @@ class SecurityMonitoringApi:
         self._list_scanned_assets_metadata_endpoint = _Endpoint(
             settings={
                 "response_type": (ScannedAssetsMetadata,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/scanned-assets-metadata",
                 "operation_id": "list_scanned_assets_metadata",
                 "http_method": "GET",
@@ -3459,7 +3459,7 @@ class SecurityMonitoringApi:
         self._list_security_findings_automation_default_inbox_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (DefaultInboxRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/default_inbox_rules",
                 "operation_id": "list_security_findings_automation_default_inbox_rules",
                 "http_method": "GET",
@@ -3475,7 +3475,7 @@ class SecurityMonitoringApi:
         self._list_security_findings_automation_due_date_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules",
                 "operation_id": "list_security_findings_automation_due_date_rules",
                 "http_method": "GET",
@@ -3509,7 +3509,7 @@ class SecurityMonitoringApi:
         self._list_security_findings_automation_inbox_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (InboxRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/inbox_rules",
                 "operation_id": "list_security_findings_automation_inbox_rules",
                 "http_method": "GET",
@@ -3543,7 +3543,7 @@ class SecurityMonitoringApi:
         self._list_security_findings_automation_mute_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules",
                 "operation_id": "list_security_findings_automation_mute_rules",
                 "http_method": "GET",
@@ -3577,7 +3577,7 @@ class SecurityMonitoringApi:
         self._list_security_findings_automation_severity_modifier_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (SeverityModifierRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules",
                 "operation_id": "list_security_findings_automation_severity_modifier_rules",
                 "http_method": "GET",
@@ -3611,7 +3611,7 @@ class SecurityMonitoringApi:
         self._list_security_findings_automation_ticket_creation_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/ticket_creation_rules",
                 "operation_id": "list_security_findings_automation_ticket_creation_rules",
                 "http_method": "GET",
@@ -3910,7 +3910,7 @@ class SecurityMonitoringApi:
         self._list_vulnerabilities_endpoint = _Endpoint(
             settings={
                 "response_type": (ListVulnerabilitiesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerabilities",
                 "operation_id": "list_vulnerabilities",
                 "http_method": "GET",
@@ -4157,7 +4157,7 @@ class SecurityMonitoringApi:
         self._list_vulnerable_assets_endpoint = _Endpoint(
             settings={
                 "response_type": (ListVulnerableAssetsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerable-assets",
                 "operation_id": "list_vulnerable_assets",
                 "http_method": "GET",
@@ -4282,7 +4282,7 @@ class SecurityMonitoringApi:
         self._patch_signal_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/signals/notification_rules/{id}",
                 "operation_id": "patch_signal_notification_rule",
                 "http_method": "PATCH",
@@ -4308,7 +4308,7 @@ class SecurityMonitoringApi:
         self._patch_vulnerability_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (NotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/vulnerabilities/notification_rules/{id}",
                 "operation_id": "patch_vulnerability_notification_rule",
                 "http_method": "PATCH",
@@ -4334,7 +4334,7 @@ class SecurityMonitoringApi:
         self._reorder_security_findings_automation_due_date_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRuleReorderRequest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_due_date_rules",
                 "http_method": "POST",
@@ -4354,7 +4354,7 @@ class SecurityMonitoringApi:
         self._reorder_security_findings_automation_inbox_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (InboxRuleReorderResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_inbox_rules",
                 "http_method": "POST",
@@ -4374,7 +4374,7 @@ class SecurityMonitoringApi:
         self._reorder_security_findings_automation_mute_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteRuleReorderRequest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_mute_rules",
                 "http_method": "POST",
@@ -4394,7 +4394,7 @@ class SecurityMonitoringApi:
         self._reorder_security_findings_automation_severity_modifier_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (SeverityModifierRuleReorderResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_severity_modifier_rules",
                 "http_method": "POST",
@@ -4414,7 +4414,7 @@ class SecurityMonitoringApi:
         self._reorder_security_findings_automation_ticket_creation_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRuleReorderRequest,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/ticket_creation_rules/reorder",
                 "operation_id": "reorder_security_findings_automation_ticket_creation_rules",
                 "http_method": "POST",
@@ -4705,7 +4705,7 @@ class SecurityMonitoringApi:
         self._update_security_findings_automation_due_date_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/due_date_rules/{rule_id}",
                 "operation_id": "update_security_findings_automation_due_date_rule",
                 "http_method": "PUT",
@@ -4731,7 +4731,7 @@ class SecurityMonitoringApi:
         self._update_security_findings_automation_inbox_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (InboxRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}",
                 "operation_id": "update_security_findings_automation_inbox_rule",
                 "http_method": "PUT",
@@ -4757,7 +4757,7 @@ class SecurityMonitoringApi:
         self._update_security_findings_automation_mute_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (MuteRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/mute_rules/{rule_id}",
                 "operation_id": "update_security_findings_automation_mute_rule",
                 "http_method": "PUT",
@@ -4783,7 +4783,7 @@ class SecurityMonitoringApi:
         self._update_security_findings_automation_severity_modifier_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SeverityModifierRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/severity_modifier_rules/{rule_id}",
                 "operation_id": "update_security_findings_automation_severity_modifier_rule",
                 "http_method": "PUT",
@@ -4809,7 +4809,7 @@ class SecurityMonitoringApi:
         self._update_security_findings_automation_ticket_creation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (TicketCreationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/findings/automation/ticket_creation_rules/{rule_id}",
                 "operation_id": "update_security_findings_automation_ticket_creation_rule",
                 "http_method": "PUT",

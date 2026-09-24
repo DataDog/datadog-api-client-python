@@ -27,7 +27,7 @@ class SecurityMonitoringApi:
         self._add_security_monitoring_signal_to_incident_endpoint = _Endpoint(
             settings={
                 "response_type": (SuccessfulSignalUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/security_analytics/signals/{signal_id}/add_to_incident",
                 "operation_id": "add_security_monitoring_signal_to_incident",
                 "http_method": "PATCH",
@@ -53,7 +53,7 @@ class SecurityMonitoringApi:
         self._edit_security_monitoring_signal_assignee_endpoint = _Endpoint(
             settings={
                 "response_type": (SuccessfulSignalUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/security_analytics/signals/{signal_id}/assignee",
                 "operation_id": "edit_security_monitoring_signal_assignee",
                 "http_method": "PATCH",
@@ -79,7 +79,7 @@ class SecurityMonitoringApi:
         self._edit_security_monitoring_signal_state_endpoint = _Endpoint(
             settings={
                 "response_type": (SuccessfulSignalUpdateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/security_analytics/signals/{signal_id}/state",
                 "operation_id": "edit_security_monitoring_signal_state",
                 "http_method": "PATCH",

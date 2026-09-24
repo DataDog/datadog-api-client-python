@@ -24,7 +24,7 @@ class IntegrationsApi:
         self._list_integrations_endpoint = _Endpoint(
             settings={
                 "response_type": (ListIntegrationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations",
                 "operation_id": "list_integrations",
                 "http_method": "GET",

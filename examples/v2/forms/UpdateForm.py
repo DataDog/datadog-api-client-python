@@ -35,6 +35,7 @@ body = UpdateFormRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_form"] = True
 with ApiClient(configuration) as api_client:
     api_instance = FormsApi(api_client)

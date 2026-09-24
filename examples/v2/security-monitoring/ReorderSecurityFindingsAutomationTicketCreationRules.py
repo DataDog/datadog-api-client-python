@@ -22,6 +22,7 @@ body = TicketCreationRuleReorderRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["reorder_security_findings_automation_ticket_creation_rules"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)

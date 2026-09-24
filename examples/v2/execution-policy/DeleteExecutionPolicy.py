@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.execution_policy_api import ExecutionPolicyApi
 EXECUTION_POLICY_DATA_ID = environ["EXECUTION_POLICY_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["delete_execution_policy"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ExecutionPolicyApi(api_client)

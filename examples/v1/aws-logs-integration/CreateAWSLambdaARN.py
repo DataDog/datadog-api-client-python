@@ -2,6 +2,7 @@
 Add AWS Log Lambda ARN returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v1.api.aws_logs_integration_api import AWSLogsIntegrationApi
 from datadog_api_client.v1.model.aws_account_and_lambda_request import AWSAccountAndLambdaRequest
@@ -12,6 +13,7 @@ body = AWSAccountAndLambdaRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AWSLogsIntegrationApi(api_client)
     response = api_instance.create_aws_lambda_arn(body=body)

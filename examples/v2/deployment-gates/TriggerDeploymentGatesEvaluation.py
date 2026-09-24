@@ -2,6 +2,7 @@
 Trigger a deployment gate evaluation returns "Accepted" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.model.deployment_gates_evaluation_configuration import DeploymentGatesEvaluationConfiguration
@@ -45,6 +46,7 @@ body = DeploymentGatesEvaluationRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["trigger_deployment_gates_evaluation"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DeploymentGatesApi(api_client)

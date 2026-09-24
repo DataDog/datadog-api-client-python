@@ -30,6 +30,7 @@ body = MicrosoftTeamsUpdateTenantBasedHandleRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MicrosoftTeamsIntegrationApi(api_client)
     response = api_instance.update_tenant_based_handle(handle_id=TENANT_BASED_HANDLE_DATA_ID, body=body)

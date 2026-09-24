@@ -24,7 +24,7 @@ class StorageManagementApi:
         self._delete_sync_config_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cloudinventoryservice/syncconfigs/{id}",
                 "operation_id": "delete_sync_config",
                 "http_method": "DELETE",
@@ -47,7 +47,7 @@ class StorageManagementApi:
         self._upsert_sync_config_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudInventorySyncConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cloudinventoryservice/syncconfigs",
                 "operation_id": "upsert_sync_config",
                 "http_method": "PUT",

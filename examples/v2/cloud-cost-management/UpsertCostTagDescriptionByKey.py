@@ -2,6 +2,7 @@
 Upsert a Cloud Cost Management tag description returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.model.cost_tag_description_type import CostTagDescriptionType
@@ -23,6 +24,7 @@ body = CostTagDescriptionUpsertRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CloudCostManagementApi(api_client)
     api_instance.upsert_cost_tag_description_by_key(tag_key="tag_key", body=body)

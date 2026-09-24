@@ -2,6 +2,7 @@
 Create custom allocation rule returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request import ArbitraryCostUpsertRequest
@@ -77,6 +78,7 @@ body = ArbitraryCostUpsertRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CloudCostManagementApi(api_client)
     response = api_instance.create_custom_allocation_rule(body=body)

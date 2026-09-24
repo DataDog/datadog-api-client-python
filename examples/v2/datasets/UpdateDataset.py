@@ -35,6 +35,7 @@ body = DatasetUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_dataset"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DatasetsApi(api_client)

@@ -36,7 +36,7 @@ class NotebooksApi:
         self._create_notebook_endpoint = _Endpoint(
             settings={
                 "response_type": (NotebookResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/notebooks",
                 "operation_id": "create_notebook",
                 "http_method": "POST",
@@ -56,7 +56,7 @@ class NotebooksApi:
         self._delete_notebook_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/notebooks/{notebook_id}",
                 "operation_id": "delete_notebook",
                 "http_method": "DELETE",
@@ -79,7 +79,7 @@ class NotebooksApi:
         self._get_notebook_endpoint = _Endpoint(
             settings={
                 "response_type": (NotebookResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/notebooks/{notebook_id}",
                 "operation_id": "get_notebook",
                 "http_method": "GET",
@@ -102,7 +102,7 @@ class NotebooksApi:
         self._list_notebooks_endpoint = _Endpoint(
             settings={
                 "response_type": (NotebooksResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/notebooks",
                 "operation_id": "list_notebooks",
                 "http_method": "GET",
@@ -169,7 +169,7 @@ class NotebooksApi:
         self._update_notebook_endpoint = _Endpoint(
             settings={
                 "response_type": (NotebookResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/notebooks/{notebook_id}",
                 "operation_id": "update_notebook",
                 "http_method": "PUT",

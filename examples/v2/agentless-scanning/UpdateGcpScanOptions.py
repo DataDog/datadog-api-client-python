@@ -2,6 +2,7 @@
 Update GCP scan options returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.model.gcp_scan_options_input_update import GcpScanOptionsInputUpdate
@@ -23,6 +24,7 @@ body = GcpScanOptionsInputUpdate(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AgentlessScanningApi(api_client)
     response = api_instance.update_gcp_scan_options(project_id="api-spec-test", body=body)

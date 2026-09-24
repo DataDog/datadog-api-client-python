@@ -26,7 +26,7 @@ class GCPIntegrationApi:
         self._create_gcp_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "create_gcp_integration",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class GCPIntegrationApi:
         self._delete_gcp_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "delete_gcp_integration",
                 "http_method": "DELETE",
@@ -66,7 +66,7 @@ class GCPIntegrationApi:
         self._list_gcp_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (GCPAccountListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "list_gcp_integration",
                 "http_method": "GET",
@@ -82,7 +82,7 @@ class GCPIntegrationApi:
         self._update_gcp_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/gcp",
                 "operation_id": "update_gcp_integration",
                 "http_method": "PUT",

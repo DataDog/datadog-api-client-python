@@ -34,7 +34,7 @@ class KeyManagementApi:
         self._create_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApiKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/api_key",
                 "operation_id": "create_api_key",
                 "http_method": "POST",
@@ -54,7 +54,7 @@ class KeyManagementApi:
         self._create_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/application_key",
                 "operation_id": "create_application_key",
                 "http_method": "POST",
@@ -74,7 +74,7 @@ class KeyManagementApi:
         self._delete_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApiKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/api_key/{key}",
                 "operation_id": "delete_api_key",
                 "http_method": "DELETE",
@@ -97,7 +97,7 @@ class KeyManagementApi:
         self._delete_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/application_key/{key}",
                 "operation_id": "delete_application_key",
                 "http_method": "DELETE",
@@ -120,7 +120,7 @@ class KeyManagementApi:
         self._get_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApiKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/api_key/{key}",
                 "operation_id": "get_api_key",
                 "http_method": "GET",
@@ -143,7 +143,7 @@ class KeyManagementApi:
         self._get_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/application_key/{key}",
                 "operation_id": "get_application_key",
                 "http_method": "GET",
@@ -166,7 +166,7 @@ class KeyManagementApi:
         self._list_api_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (ApiKeyListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/api_key",
                 "operation_id": "list_api_keys",
                 "http_method": "GET",
@@ -182,7 +182,7 @@ class KeyManagementApi:
         self._list_application_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/application_key",
                 "operation_id": "list_application_keys",
                 "http_method": "GET",
@@ -198,7 +198,7 @@ class KeyManagementApi:
         self._update_api_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApiKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/api_key/{key}",
                 "operation_id": "update_api_key",
                 "http_method": "PUT",
@@ -224,7 +224,7 @@ class KeyManagementApi:
         self._update_application_key_endpoint = _Endpoint(
             settings={
                 "response_type": (ApplicationKeyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/application_key/{key}",
                 "operation_id": "update_application_key",
                 "http_method": "PUT",

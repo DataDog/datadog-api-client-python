@@ -34,7 +34,7 @@ class RumTeamsOwnershipApi:
         self._create_teams_ownership_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsOwnershipMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/teams-ownership/mappings",
                 "operation_id": "create_teams_ownership_mapping",
                 "http_method": "POST",
@@ -54,7 +54,7 @@ class RumTeamsOwnershipApi:
         self._create_teams_ownership_mappings_batch_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsOwnershipMappingBatchResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/teams-ownership/mappings/operations",
                 "operation_id": "create_teams_ownership_mappings_batch",
                 "http_method": "POST",
@@ -74,7 +74,7 @@ class RumTeamsOwnershipApi:
         self._delete_teams_ownership_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/teams-ownership/mappings/{id}",
                 "operation_id": "delete_teams_ownership_mapping",
                 "http_method": "DELETE",
@@ -97,7 +97,7 @@ class RumTeamsOwnershipApi:
         self._get_teams_ownership_mapping_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsOwnershipMappingResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/teams-ownership/mappings/{id}",
                 "operation_id": "get_teams_ownership_mapping",
                 "http_method": "GET",
@@ -120,7 +120,7 @@ class RumTeamsOwnershipApi:
         self._list_teams_ownership_mappings_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsOwnershipMappingsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/teams-ownership/mappings",
                 "operation_id": "list_teams_ownership_mappings",
                 "http_method": "GET",
@@ -161,7 +161,7 @@ class RumTeamsOwnershipApi:
         self._list_teams_ownership_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsOwnershipRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/teams-ownership/rules",
                 "operation_id": "list_teams_ownership_rules",
                 "http_method": "GET",

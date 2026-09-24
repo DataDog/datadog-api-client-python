@@ -41,7 +41,7 @@ class WorkflowAutomationApi:
         self._cancel_workflow_instance_endpoint = _Endpoint(
             settings={
                 "response_type": (WorklflowCancelInstanceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows/{workflow_id}/instances/{instance_id}/cancel",
                 "operation_id": "cancel_workflow_instance",
                 "http_method": "PUT",
@@ -70,7 +70,7 @@ class WorkflowAutomationApi:
         self._create_workflow_endpoint = _Endpoint(
             settings={
                 "response_type": (CreateWorkflowResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows",
                 "operation_id": "create_workflow",
                 "http_method": "POST",
@@ -116,7 +116,7 @@ class WorkflowAutomationApi:
         self._delete_workflow_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows/{workflow_id}",
                 "operation_id": "delete_workflow",
                 "http_method": "DELETE",
@@ -139,7 +139,7 @@ class WorkflowAutomationApi:
         self._get_workflow_endpoint = _Endpoint(
             settings={
                 "response_type": (GetWorkflowResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows/{workflow_id}",
                 "operation_id": "get_workflow",
                 "http_method": "GET",
@@ -224,7 +224,7 @@ class WorkflowAutomationApi:
         self._list_workflows_endpoint = _Endpoint(
             settings={
                 "response_type": (ListWorkflowsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows",
                 "operation_id": "list_workflows",
                 "http_method": "GET",
@@ -277,7 +277,7 @@ class WorkflowAutomationApi:
         self._update_workflow_endpoint = _Endpoint(
             settings={
                 "response_type": (UpdateWorkflowResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/workflows/{workflow_id}",
                 "operation_id": "update_workflow",
                 "http_method": "PATCH",

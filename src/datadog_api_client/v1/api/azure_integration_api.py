@@ -25,7 +25,7 @@ class AzureIntegrationApi:
         self._create_azure_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "create_azure_integration",
                 "http_method": "POST",
@@ -45,7 +45,7 @@ class AzureIntegrationApi:
         self._delete_azure_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "delete_azure_integration",
                 "http_method": "DELETE",
@@ -65,7 +65,7 @@ class AzureIntegrationApi:
         self._list_azure_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (AzureAccountListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "list_azure_integration",
                 "http_method": "GET",
@@ -81,7 +81,7 @@ class AzureIntegrationApi:
         self._update_azure_host_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/azure/host_filters",
                 "operation_id": "update_azure_host_filters",
                 "http_method": "POST",
@@ -101,7 +101,7 @@ class AzureIntegrationApi:
         self._update_azure_integration_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/azure",
                 "operation_id": "update_azure_integration",
                 "http_method": "PUT",

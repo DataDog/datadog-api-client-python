@@ -29,7 +29,7 @@ class ConfluentCloudApi:
         self._create_confluent_account_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts",
                 "operation_id": "create_confluent_account",
                 "http_method": "POST",
@@ -49,7 +49,7 @@ class ConfluentCloudApi:
         self._create_confluent_resource_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentResourceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}/resources",
                 "operation_id": "create_confluent_resource",
                 "http_method": "POST",
@@ -75,7 +75,7 @@ class ConfluentCloudApi:
         self._delete_confluent_account_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}",
                 "operation_id": "delete_confluent_account",
                 "http_method": "DELETE",
@@ -98,7 +98,7 @@ class ConfluentCloudApi:
         self._delete_confluent_resource_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}/resources/{resource_id}",
                 "operation_id": "delete_confluent_resource",
                 "http_method": "DELETE",
@@ -127,7 +127,7 @@ class ConfluentCloudApi:
         self._get_confluent_account_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}",
                 "operation_id": "get_confluent_account",
                 "http_method": "GET",
@@ -150,7 +150,7 @@ class ConfluentCloudApi:
         self._get_confluent_resource_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentResourceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}/resources/{resource_id}",
                 "operation_id": "get_confluent_resource",
                 "http_method": "GET",
@@ -179,7 +179,7 @@ class ConfluentCloudApi:
         self._list_confluent_account_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentAccountsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts",
                 "operation_id": "list_confluent_account",
                 "http_method": "GET",
@@ -195,7 +195,7 @@ class ConfluentCloudApi:
         self._list_confluent_resource_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentResourcesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}/resources",
                 "operation_id": "list_confluent_resource",
                 "http_method": "GET",
@@ -218,7 +218,7 @@ class ConfluentCloudApi:
         self._update_confluent_account_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentAccountResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}",
                 "operation_id": "update_confluent_account",
                 "http_method": "PATCH",
@@ -244,7 +244,7 @@ class ConfluentCloudApi:
         self._update_confluent_resource_endpoint = _Endpoint(
             settings={
                 "response_type": (ConfluentResourceResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/integrations/confluent-cloud/accounts/{account_id}/resources/{resource_id}",
                 "operation_id": "update_confluent_resource",
                 "http_method": "PATCH",

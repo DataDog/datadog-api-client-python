@@ -2,6 +2,7 @@
 Create a new RUM application returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.model.rum_application_create import RUMApplicationCreate
@@ -20,6 +21,7 @@ body = RUMApplicationCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RUMApi(api_client)
     response = api_instance.create_rum_application(body=body)

@@ -2,6 +2,7 @@
 Ingest STIX threat intelligence returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.threat_intelligence_api import ThreatIntelligenceApi
 from datadog_api_client.v2.model.stix_bundle_request import STIXBundleRequest
@@ -31,6 +32,7 @@ body = STIXBundleRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["add_stix_threat_intel"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ThreatIntelligenceApi(api_client)

@@ -2,10 +2,12 @@
 List agentless hosts returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.csm_settings_api import CSMSettingsApi
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["list_csm_agentless_hosts"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CSMSettingsApi(api_client)

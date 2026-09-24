@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.rum_api import RUMApi
 RUM_APPLICATION_DATA_ID = environ["RUM_APPLICATION_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RUMApi(api_client)
     api_instance.delete_rum_application(

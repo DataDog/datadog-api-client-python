@@ -2,6 +2,7 @@
 Create a new entry for your service account with security command center enabled returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
@@ -22,6 +23,7 @@ body = GCPSTSServiceAccountCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = GCPIntegrationApi(api_client)
     response = api_instance.create_gcpsts_account(body=body)

@@ -13,6 +13,7 @@ USER_DATA_ID = environ["USER_DATA_ID"]
 ONCALL_EMAIL_NOTIFICATION_CHANNEL_DATA_ID = environ["ONCALL_EMAIL_NOTIFICATION_CHANNEL_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OnCallApi(api_client)
     api_instance.delete_user_notification_channel(

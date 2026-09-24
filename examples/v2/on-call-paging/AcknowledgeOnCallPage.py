@@ -2,11 +2,13 @@
 Acknowledge On-Call Page returns "Accepted." response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.on_call_paging_api import OnCallPagingApi
 from uuid import UUID
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = OnCallPagingApi(api_client)
     api_instance.acknowledge_on_call_page(

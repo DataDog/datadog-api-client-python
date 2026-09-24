@@ -109,7 +109,7 @@ class HostsApi:
         self._mute_host_endpoint = _Endpoint(
             settings={
                 "response_type": (HostMuteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/host/{host_name}/mute",
                 "operation_id": "mute_host",
                 "http_method": "POST",
@@ -135,7 +135,7 @@ class HostsApi:
         self._unmute_host_endpoint = _Endpoint(
             settings={
                 "response_type": (HostMuteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/host/{host_name}/unmute",
                 "operation_id": "unmute_host",
                 "http_method": "POST",

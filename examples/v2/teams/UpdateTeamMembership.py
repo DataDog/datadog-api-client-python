@@ -27,6 +27,7 @@ body = UserTeamUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = TeamsApi(api_client)
     response = api_instance.update_team_membership(team_id=DD_TEAM_DATA_ID, user_id=USER_DATA_ID, body=body)

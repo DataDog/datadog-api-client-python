@@ -40,7 +40,7 @@ class DeploymentGatesApi:
         self._create_deployment_gate_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentGateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates",
                 "operation_id": "create_deployment_gate",
                 "http_method": "POST",
@@ -60,7 +60,7 @@ class DeploymentGatesApi:
         self._create_deployment_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{gate_id}/rules",
                 "operation_id": "create_deployment_rule",
                 "http_method": "POST",
@@ -86,7 +86,7 @@ class DeploymentGatesApi:
         self._delete_deployment_gate_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{id}",
                 "operation_id": "delete_deployment_gate",
                 "http_method": "DELETE",
@@ -109,7 +109,7 @@ class DeploymentGatesApi:
         self._delete_deployment_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{gate_id}/rules/{id}",
                 "operation_id": "delete_deployment_rule",
                 "http_method": "DELETE",
@@ -138,7 +138,7 @@ class DeploymentGatesApi:
         self._get_deployment_gate_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentGateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{id}",
                 "operation_id": "get_deployment_gate",
                 "http_method": "GET",
@@ -161,7 +161,7 @@ class DeploymentGatesApi:
         self._get_deployment_gate_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentGateRulesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{gate_id}/rules",
                 "operation_id": "get_deployment_gate_rules",
                 "http_method": "GET",
@@ -184,7 +184,7 @@ class DeploymentGatesApi:
         self._get_deployment_gates_evaluation_result_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentGatesEvaluationResultResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployments/gates/evaluation/{id}",
                 "operation_id": "get_deployment_gates_evaluation_result",
                 "http_method": "GET",
@@ -207,7 +207,7 @@ class DeploymentGatesApi:
         self._get_deployment_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{gate_id}/rules/{id}",
                 "operation_id": "get_deployment_rule",
                 "http_method": "GET",
@@ -236,7 +236,7 @@ class DeploymentGatesApi:
         self._list_deployment_gates_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentGatesListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates",
                 "operation_id": "list_deployment_gates",
                 "http_method": "GET",
@@ -267,7 +267,7 @@ class DeploymentGatesApi:
         self._trigger_deployment_gates_evaluation_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentGatesEvaluationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployments/gates/evaluation",
                 "operation_id": "trigger_deployment_gates_evaluation",
                 "http_method": "POST",
@@ -287,7 +287,7 @@ class DeploymentGatesApi:
         self._update_deployment_gate_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentGateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{id}",
                 "operation_id": "update_deployment_gate",
                 "http_method": "PUT",
@@ -313,7 +313,7 @@ class DeploymentGatesApi:
         self._update_deployment_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (DeploymentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/deployment_gates/{gate_id}/rules/{id}",
                 "operation_id": "update_deployment_rule",
                 "http_method": "PUT",

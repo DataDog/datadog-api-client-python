@@ -13,6 +13,7 @@ INCIDENT_DATA_ID = environ["INCIDENT_DATA_ID"]
 INCIDENT_INTEGRATION_METADATA_DATA_ID = environ["INCIDENT_INTEGRATION_METADATA_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["get_incident_integration"] = True
 with ApiClient(configuration) as api_client:
     api_instance = IncidentsApi(api_client)

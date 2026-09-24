@@ -10,6 +10,7 @@ from datadog_api_client.v1.api.webhooks_integration_api import WebhooksIntegrati
 WEBHOOK_NAME = environ["WEBHOOK_NAME"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = WebhooksIntegrationApi(api_client)
     api_instance.delete_webhooks_integration(

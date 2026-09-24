@@ -39,7 +39,7 @@ class ModelLabAPIApi:
         self._delete_model_lab_run_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/runs/{run_id}",
                 "operation_id": "delete_model_lab_run",
                 "http_method": "DELETE",
@@ -62,7 +62,7 @@ class ModelLabAPIApi:
         self._get_model_lab_artifact_content_endpoint = _Endpoint(
             settings={
                 "response_type": (file_type,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/artifacts/content",
                 "operation_id": "get_model_lab_artifact_content",
                 "http_method": "GET",
@@ -91,7 +91,7 @@ class ModelLabAPIApi:
         self._get_model_lab_project_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabProjectResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/projects/{project_id}",
                 "operation_id": "get_model_lab_project",
                 "http_method": "GET",
@@ -114,7 +114,7 @@ class ModelLabAPIApi:
         self._get_model_lab_run_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabRunResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/runs/{run_id}",
                 "operation_id": "get_model_lab_run",
                 "http_method": "GET",
@@ -137,7 +137,7 @@ class ModelLabAPIApi:
         self._list_model_lab_project_artifacts_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabProjectArtifactsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/projects/{project_id}/artifacts",
                 "operation_id": "list_model_lab_project_artifacts",
                 "http_method": "GET",
@@ -160,7 +160,7 @@ class ModelLabAPIApi:
         self._list_model_lab_project_facet_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabFacetKeysResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/project-facet-keys",
                 "operation_id": "list_model_lab_project_facet_keys",
                 "http_method": "GET",
@@ -176,7 +176,7 @@ class ModelLabAPIApi:
         self._list_model_lab_project_facet_values_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabFacetValuesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/project-facet-values",
                 "operation_id": "list_model_lab_project_facet_values",
                 "http_method": "GET",
@@ -205,7 +205,7 @@ class ModelLabAPIApi:
         self._list_model_lab_projects_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabProjectsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/projects",
                 "operation_id": "list_model_lab_projects",
                 "http_method": "GET",
@@ -255,7 +255,7 @@ class ModelLabAPIApi:
         self._list_model_lab_run_artifacts_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabRunArtifactsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/runs/{run_id}/artifacts",
                 "operation_id": "list_model_lab_run_artifacts",
                 "http_method": "GET",
@@ -283,7 +283,7 @@ class ModelLabAPIApi:
         self._list_model_lab_run_facet_keys_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabFacetKeysResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/facet-keys",
                 "operation_id": "list_model_lab_run_facet_keys",
                 "http_method": "GET",
@@ -306,7 +306,7 @@ class ModelLabAPIApi:
         self._list_model_lab_run_facet_values_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabFacetValuesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/facet-values",
                 "operation_id": "list_model_lab_run_facet_values",
                 "http_method": "GET",
@@ -341,7 +341,7 @@ class ModelLabAPIApi:
         self._list_model_lab_runs_endpoint = _Endpoint(
             settings={
                 "response_type": (ModelLabRunsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/runs",
                 "operation_id": "list_model_lab_runs",
                 "http_method": "GET",
@@ -431,7 +431,7 @@ class ModelLabAPIApi:
         self._pin_model_lab_run_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/runs/{run_id}/pin",
                 "operation_id": "pin_model_lab_run",
                 "http_method": "POST",
@@ -454,7 +454,7 @@ class ModelLabAPIApi:
         self._star_model_lab_project_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/projects/{project_id}/star",
                 "operation_id": "star_model_lab_project",
                 "http_method": "POST",
@@ -477,7 +477,7 @@ class ModelLabAPIApi:
         self._unpin_model_lab_run_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/runs/{run_id}/pin",
                 "operation_id": "unpin_model_lab_run",
                 "http_method": "DELETE",
@@ -500,7 +500,7 @@ class ModelLabAPIApi:
         self._unstar_model_lab_project_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/model-lab-api/projects/{project_id}/star",
                 "operation_id": "unstar_model_lab_project",
                 "http_method": "DELETE",

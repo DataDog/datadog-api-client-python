@@ -14,6 +14,7 @@ EXECUTION_POLICY_DATA_ATTRIBUTES_NAME = environ["EXECUTION_POLICY_DATA_ATTRIBUTE
 EXECUTION_POLICY_DATA_ID = environ["EXECUTION_POLICY_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["list_execution_policies"] = True
 with ApiClient(configuration) as api_client:
     api_instance = ExecutionPolicyApi(api_client)

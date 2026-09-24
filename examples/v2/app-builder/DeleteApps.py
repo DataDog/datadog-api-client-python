@@ -22,6 +22,7 @@ body = DeleteAppsRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = AppBuilderApi(api_client)
     response = api_instance.delete_apps(body=body)

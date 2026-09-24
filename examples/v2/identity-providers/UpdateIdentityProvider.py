@@ -2,6 +2,7 @@
 Update an identity provider returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.identity_providers_api import IdentityProvidersApi
 from datadog_api_client.v2.model.identity_provider_type import IdentityProviderType
@@ -20,6 +21,7 @@ body = IdentityProviderUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = IdentityProvidersApi(api_client)
     response = api_instance.update_identity_provider(idp_id="00000000-0000-0000-0000-000000000001", body=body)

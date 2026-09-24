@@ -29,6 +29,7 @@ body = DeploymentGatesEvaluationRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["trigger_deployment_gates_evaluation"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DeploymentGatesApi(api_client)

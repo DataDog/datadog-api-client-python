@@ -40,7 +40,7 @@ class AWSIntegrationApi:
         self._create_aws_account_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "create_aws_account",
                 "http_method": "POST",
@@ -60,7 +60,7 @@ class AWSIntegrationApi:
         self._create_aws_event_bridge_source_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/event_bridge",
                 "operation_id": "create_aws_event_bridge_source",
                 "http_method": "POST",
@@ -80,7 +80,7 @@ class AWSIntegrationApi:
         self._create_aws_tag_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "create_aws_tag_filter",
                 "http_method": "POST",
@@ -100,7 +100,7 @@ class AWSIntegrationApi:
         self._create_new_aws_external_id_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/generate_new_external_id",
                 "operation_id": "create_new_aws_external_id",
                 "http_method": "PUT",
@@ -120,7 +120,7 @@ class AWSIntegrationApi:
         self._delete_aws_account_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "delete_aws_account",
                 "http_method": "DELETE",
@@ -140,7 +140,7 @@ class AWSIntegrationApi:
         self._delete_aws_event_bridge_source_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeDeleteResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/event_bridge",
                 "operation_id": "delete_aws_event_bridge_source",
                 "http_method": "DELETE",
@@ -160,7 +160,7 @@ class AWSIntegrationApi:
         self._delete_aws_tag_filter_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "delete_aws_tag_filter",
                 "http_method": "DELETE",
@@ -180,7 +180,7 @@ class AWSIntegrationApi:
         self._list_available_aws_namespaces_endpoint = _Endpoint(
             settings={
                 "response_type": ([str],),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/available_namespace_rules",
                 "operation_id": "list_available_aws_namespaces",
                 "http_method": "GET",
@@ -196,7 +196,7 @@ class AWSIntegrationApi:
         self._list_aws_accounts_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSAccountListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "list_aws_accounts",
                 "http_method": "GET",
@@ -228,7 +228,7 @@ class AWSIntegrationApi:
         self._list_aws_event_bridge_sources_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSEventBridgeListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/event_bridge",
                 "operation_id": "list_aws_event_bridge_sources",
                 "http_method": "GET",
@@ -244,7 +244,7 @@ class AWSIntegrationApi:
         self._list_aws_tag_filters_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSTagFilterListResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws/filtering",
                 "operation_id": "list_aws_tag_filters",
                 "http_method": "GET",
@@ -267,7 +267,7 @@ class AWSIntegrationApi:
         self._update_aws_account_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v1/integration/aws",
                 "operation_id": "update_aws_account",
                 "http_method": "PUT",

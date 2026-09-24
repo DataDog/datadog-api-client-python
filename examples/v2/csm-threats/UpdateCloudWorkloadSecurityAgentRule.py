@@ -31,6 +31,7 @@ body = CloudWorkloadSecurityAgentRuleUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CSMThreatsApi(api_client)
     response = api_instance.update_cloud_workload_security_agent_rule(agent_rule_id=AGENT_RULE_DATA_ID, body=body)

@@ -31,7 +31,7 @@ class CSMAgentsApi:
         self._list_all_csm_agents_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmAgentsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/onboarding/agents",
                 "operation_id": "list_all_csm_agents",
                 "http_method": "GET",
@@ -76,7 +76,7 @@ class CSMAgentsApi:
         self._list_all_csm_serverless_agents_endpoint = _Endpoint(
             settings={
                 "response_type": (CsmAgentsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/csm/onboarding/serverless/agents",
                 "operation_id": "list_all_csm_serverless_agents",
                 "http_method": "GET",

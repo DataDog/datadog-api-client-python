@@ -29,7 +29,7 @@ class ThreatIntelligenceApi:
         self._add_stix_threat_intel_endpoint = _Endpoint(
             settings={
                 "response_type": (STIXIngestResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/security/threat-intel/stix",
                 "operation_id": "add_stix_threat_intel",
                 "http_method": "POST",

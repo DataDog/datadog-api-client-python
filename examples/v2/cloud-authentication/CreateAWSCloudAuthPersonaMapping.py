@@ -2,6 +2,7 @@
 Create an AWS cloud authentication persona mapping returns "Created" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.cloud_authentication_api import CloudAuthenticationApi
 from datadog_api_client.v2.model.aws_cloud_auth_persona_mapping_create_attributes import (
@@ -24,6 +25,7 @@ body = AWSCloudAuthPersonaMappingCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_aws_cloud_auth_persona_mapping"] = True
 with ApiClient(configuration) as api_client:
     api_instance = CloudAuthenticationApi(api_client)

@@ -24,7 +24,7 @@ class RUMRemoteConfigApi:
         self._get_rum_sdk_config_endpoint = _Endpoint(
             settings={
                 "response_type": (RumSdkConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/rum/configs/{config_id}",
                 "operation_id": "get_rum_sdk_config",
                 "http_method": "GET",
@@ -47,7 +47,7 @@ class RUMRemoteConfigApi:
         self._update_rum_sdk_config_endpoint = _Endpoint(
             settings={
                 "response_type": (RumSdkConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/rum/configs/{config_id}",
                 "operation_id": "update_rum_sdk_config",
                 "http_method": "PUT",

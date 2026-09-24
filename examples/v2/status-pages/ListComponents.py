@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.status_pages_api import StatusPagesApi
 STATUS_PAGE_DATA_ID = environ["STATUS_PAGE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = StatusPagesApi(api_client)
     response = api_instance.list_components(

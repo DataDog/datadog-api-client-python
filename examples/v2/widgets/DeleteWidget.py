@@ -2,12 +2,14 @@
 Delete a widget returns "No Content" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.widgets_api import WidgetsApi
 from datadog_api_client.v2.model.widget_experience_type import WidgetExperienceType
 from uuid import UUID
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = WidgetsApi(api_client)
     api_instance.delete_widget(

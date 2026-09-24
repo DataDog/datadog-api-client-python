@@ -43,7 +43,7 @@ class MonitorsApi:
         self._create_monitor_config_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorConfigPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/policy",
                 "operation_id": "create_monitor_config_policy",
                 "http_method": "POST",
@@ -63,7 +63,7 @@ class MonitorsApi:
         self._create_monitor_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorNotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/notification_rule",
                 "operation_id": "create_monitor_notification_rule",
                 "http_method": "POST",
@@ -83,7 +83,7 @@ class MonitorsApi:
         self._create_monitor_user_template_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorUserTemplateCreateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/template",
                 "operation_id": "create_monitor_user_template",
                 "http_method": "POST",
@@ -103,7 +103,7 @@ class MonitorsApi:
         self._delete_monitor_config_policy_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/policy/{policy_id}",
                 "operation_id": "delete_monitor_config_policy",
                 "http_method": "DELETE",
@@ -126,7 +126,7 @@ class MonitorsApi:
         self._delete_monitor_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/notification_rule/{rule_id}",
                 "operation_id": "delete_monitor_notification_rule",
                 "http_method": "DELETE",
@@ -149,7 +149,7 @@ class MonitorsApi:
         self._delete_monitor_user_template_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/template/{template_id}",
                 "operation_id": "delete_monitor_user_template",
                 "http_method": "DELETE",
@@ -333,7 +333,7 @@ class MonitorsApi:
         self._update_monitor_config_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorConfigPolicyResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/policy/{policy_id}",
                 "operation_id": "update_monitor_config_policy",
                 "http_method": "PATCH",
@@ -359,7 +359,7 @@ class MonitorsApi:
         self._update_monitor_notification_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorNotificationRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/notification_rule/{rule_id}",
                 "operation_id": "update_monitor_notification_rule",
                 "http_method": "PATCH",
@@ -385,7 +385,7 @@ class MonitorsApi:
         self._update_monitor_user_template_endpoint = _Endpoint(
             settings={
                 "response_type": (MonitorUserTemplateResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/template/{template_id}",
                 "operation_id": "update_monitor_user_template",
                 "http_method": "PUT",
@@ -411,7 +411,7 @@ class MonitorsApi:
         self._validate_existing_monitor_user_template_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/template/{template_id}/validate",
                 "operation_id": "validate_existing_monitor_user_template",
                 "http_method": "POST",
@@ -437,7 +437,7 @@ class MonitorsApi:
         self._validate_monitor_user_template_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/monitor/template/validate",
                 "operation_id": "validate_monitor_user_template",
                 "http_method": "POST",

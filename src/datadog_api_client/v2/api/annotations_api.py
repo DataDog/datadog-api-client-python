@@ -32,7 +32,7 @@ class AnnotationsApi:
         self._create_annotation_endpoint = _Endpoint(
             settings={
                 "response_type": (AnnotationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/annotation",
                 "operation_id": "create_annotation",
                 "http_method": "POST",
@@ -52,7 +52,7 @@ class AnnotationsApi:
         self._delete_annotation_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/annotation/{annotation_id}",
                 "operation_id": "delete_annotation",
                 "http_method": "DELETE",
@@ -75,7 +75,7 @@ class AnnotationsApi:
         self._get_page_annotations_endpoint = _Endpoint(
             settings={
                 "response_type": (PageAnnotationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/annotation/page/{page_id}",
                 "operation_id": "get_page_annotations",
                 "http_method": "GET",
@@ -110,7 +110,7 @@ class AnnotationsApi:
         self._list_annotations_endpoint = _Endpoint(
             settings={
                 "response_type": (AnnotationsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/annotation",
                 "operation_id": "list_annotations",
                 "http_method": "GET",
@@ -150,7 +150,7 @@ class AnnotationsApi:
         self._update_annotation_endpoint = _Endpoint(
             settings={
                 "response_type": (AnnotationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/annotation/{annotation_id}",
                 "operation_id": "update_annotation",
                 "http_method": "PUT",

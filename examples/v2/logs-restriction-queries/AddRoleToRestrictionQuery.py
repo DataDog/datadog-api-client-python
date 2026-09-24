@@ -23,6 +23,7 @@ body = RelationshipToRole(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["add_role_to_restriction_query"] = True
 with ApiClient(configuration) as api_client:
     api_instance = LogsRestrictionQueriesApi(api_client)

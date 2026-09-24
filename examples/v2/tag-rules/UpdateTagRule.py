@@ -2,6 +2,7 @@
 Update a tag rule returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.tag_rules_api import TagRulesApi
 from datadog_api_client.v2.model.tag_rule_resource_type import TagRuleResourceType
@@ -22,6 +23,7 @@ body = TagRuleUpdateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["update_tag_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TagRulesApi(api_client)

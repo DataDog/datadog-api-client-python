@@ -3,6 +3,7 @@ Create or update usage quotas returns "OK. The response includes each item's res
 for any that failed to write." response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.model.usage_quota_create_attributes import UsageQuotaCreateAttributes
@@ -27,6 +28,7 @@ body = UsageQuotasCreateRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_quotas"] = True
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)

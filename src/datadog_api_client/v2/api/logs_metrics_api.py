@@ -26,7 +26,7 @@ class LogsMetricsApi:
         self._create_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/metrics",
                 "operation_id": "create_logs_metric",
                 "http_method": "POST",
@@ -46,7 +46,7 @@ class LogsMetricsApi:
         self._delete_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
                 "operation_id": "delete_logs_metric",
                 "http_method": "DELETE",
@@ -69,7 +69,7 @@ class LogsMetricsApi:
         self._get_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
                 "operation_id": "get_logs_metric",
                 "http_method": "GET",
@@ -92,7 +92,7 @@ class LogsMetricsApi:
         self._list_logs_metrics_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricsResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/metrics",
                 "operation_id": "list_logs_metrics",
                 "http_method": "GET",
@@ -108,7 +108,7 @@ class LogsMetricsApi:
         self._update_logs_metric_endpoint = _Endpoint(
             settings={
                 "response_type": (LogsMetricResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/logs/config/metrics/{metric_id}",
                 "operation_id": "update_logs_metric",
                 "http_method": "PATCH",

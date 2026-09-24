@@ -2,11 +2,13 @@
 Get a deployment gate evaluation result returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from uuid import UUID
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["get_deployment_gates_evaluation_result"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DeploymentGatesApi(api_client)

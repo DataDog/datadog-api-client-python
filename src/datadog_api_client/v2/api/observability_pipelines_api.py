@@ -30,7 +30,7 @@ class ObservabilityPipelinesApi:
         self._create_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (ObservabilityPipeline,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/obs-pipelines/pipelines",
                 "operation_id": "create_pipeline",
                 "http_method": "POST",
@@ -50,7 +50,7 @@ class ObservabilityPipelinesApi:
         self._delete_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}",
                 "operation_id": "delete_pipeline",
                 "http_method": "DELETE",
@@ -73,7 +73,7 @@ class ObservabilityPipelinesApi:
         self._get_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (ObservabilityPipeline,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}",
                 "operation_id": "get_pipeline",
                 "http_method": "GET",
@@ -96,7 +96,7 @@ class ObservabilityPipelinesApi:
         self._list_pipelines_endpoint = _Endpoint(
             settings={
                 "response_type": (ListPipelinesResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/obs-pipelines/pipelines",
                 "operation_id": "list_pipelines",
                 "http_method": "GET",
@@ -123,7 +123,7 @@ class ObservabilityPipelinesApi:
         self._update_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (ObservabilityPipeline,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/obs-pipelines/pipelines/{pipeline_id}",
                 "operation_id": "update_pipeline",
                 "http_method": "PUT",
@@ -149,7 +149,7 @@ class ObservabilityPipelinesApi:
         self._validate_pipeline_endpoint = _Endpoint(
             settings={
                 "response_type": (ValidationResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/obs-pipelines/pipelines/validate",
                 "operation_id": "validate_pipeline",
                 "http_method": "POST",

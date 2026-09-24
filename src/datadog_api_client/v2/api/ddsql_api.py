@@ -28,7 +28,7 @@ class DDSQLApi:
         self._execute_ddsql_tabular_query_endpoint = _Endpoint(
             settings={
                 "response_type": (DdsqlTabularQueryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ddsql/query/tabular",
                 "operation_id": "execute_ddsql_tabular_query",
                 "http_method": "POST",
@@ -48,7 +48,7 @@ class DDSQLApi:
         self._fetch_ddsql_tabular_query_endpoint = _Endpoint(
             settings={
                 "response_type": (DdsqlTabularQueryResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/ddsql/query/tabular/fetch",
                 "operation_id": "fetch_ddsql_tabular_query",
                 "http_method": "POST",

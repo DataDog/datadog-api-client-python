@@ -2,6 +2,7 @@
 Investigate a timeseries anomaly returns "OK" response
 """
 
+from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.timeseries_anomaly_investigations_api import TimeseriesAnomalyInvestigationsApi
 from datadog_api_client.v2.model.timeseries_anomaly_investigation_data_source import (
@@ -50,6 +51,7 @@ body = TimeseriesAnomalyInvestigationRequest(
 )
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["create_timeseries_anomaly_investigation"] = True
 with ApiClient(configuration) as api_client:
     api_instance = TimeseriesAnomalyInvestigationsApi(api_client)

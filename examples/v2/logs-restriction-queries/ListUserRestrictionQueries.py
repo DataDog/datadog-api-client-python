@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.logs_restriction_queries_api import LogsRestricti
 USER_DATA_ID = environ["USER_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["list_user_restriction_queries"] = True
 with ApiClient(configuration) as api_client:
     api_instance = LogsRestrictionQueriesApi(api_client)

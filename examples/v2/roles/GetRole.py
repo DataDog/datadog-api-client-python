@@ -10,6 +10,7 @@ from datadog_api_client.v2.api.roles_api import RolesApi
 ROLE_DATA_ID = environ["ROLE_DATA_ID"]
 
 configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RolesApi(api_client)
     response = api_instance.get_role(
