@@ -38,7 +38,7 @@ class LLMObsPromptSDKData(ModelNormal):
         """
         Data object for a flattened Agent Observability prompt version returned for SDK consumption.
 
-        :param attributes: Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned.
+        :param attributes: Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
         :type attributes: LLMObsPromptSDKDataAttributes
 
         :param id: Unique identifier of the prompt.
