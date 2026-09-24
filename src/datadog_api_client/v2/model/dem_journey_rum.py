@@ -46,7 +46,7 @@ class DemJourneyRum(ModelNormal):
         """
         The RUM definition for a DEM journey.
 
-        :param filter: An optional RUM query filter applied to the entire journey.
+        :param filter: An optional RUM query filter applied to the entire journey. For a single-application journey, include the application as ``@application.id:<application_id>`` in addition to setting ``app_id`` on every RUM node.
         :type filter: str, optional
 
         :param rum_steps: List of RUM journey steps.
