@@ -19,7 +19,7 @@ body = RecommendationsFilterRequest(
             scope=RecommendationsFilterRequestScope.CCM,
             sort=[
                 RecommendationsFilterRequestSortItems(
-                    expression="potential_daily_savings.amount",
+                    expression="@potential_daily_savings",
                     order="DESC",
                 ),
             ],
