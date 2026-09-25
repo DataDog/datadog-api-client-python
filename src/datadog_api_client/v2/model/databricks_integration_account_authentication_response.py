@@ -25,13 +25,13 @@ class DatabricksIntegrationAccountAuthenticationResponse(ModelComposed):
         :type client_id: str
 
         :param connection_id: Unique identifier of the Private Action Runner connection holding the credentials.
-        :type connection_id: str
+        :type connection_id: UUID
 
         :param secret_path: Path of the credential inside the secret backend configured on the runner.
         :type secret_path: str, optional
 
         :param user_uuid: Unique identifier of the user the Private Action Runner connection belongs to.
-        :type user_uuid: str
+        :type user_uuid: UUID
         """
         super().__init__(kwargs)
 
