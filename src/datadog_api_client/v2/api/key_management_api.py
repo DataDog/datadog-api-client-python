@@ -23,9 +23,13 @@ from datadog_api_client.v2.model.application_key_update_request import Applicati
 from datadog_api_client.v2.model.application_key_create_request import ApplicationKeyCreateRequest
 from datadog_api_client.v2.model.list_personal_access_tokens_response import ListPersonalAccessTokensResponse
 from datadog_api_client.v2.model.personal_access_tokens_sort import PersonalAccessTokensSort
+from datadog_api_client.v2.model.personal_access_tokens_include_query_parameter_item import (
+    PersonalAccessTokensIncludeQueryParameterItem,
+)
 from datadog_api_client.v2.model.personal_access_token_create_response import PersonalAccessTokenCreateResponse
 from datadog_api_client.v2.model.personal_access_token_create_request import PersonalAccessTokenCreateRequest
 from datadog_api_client.v2.model.personal_access_token_response import PersonalAccessTokenResponse
+from datadog_api_client.v2.model.updated_personal_access_token_response import UpdatedPersonalAccessTokenResponse
 from datadog_api_client.v2.model.personal_access_token_update_request import PersonalAccessTokenUpdateRequest
 from datadog_api_client.v2.model.validate_v2_response import ValidateV2Response
 from datadog_api_client.v2.model.validate_api_key_response import ValidateAPIKeyResponse
@@ -271,6 +275,12 @@ class KeyManagementApi:
                     "attribute": "token_id",
                     "location": "path",
                 },
+                "include": {
+                    "openapi_types": ([PersonalAccessTokensIncludeQueryParameterItem],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -495,6 +505,17 @@ class KeyManagementApi:
                     "location": "query",
                     "collection_format": "multi",
                 },
+                "filter_leaked": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[leaked]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": ([PersonalAccessTokensIncludeQueryParameterItem],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -605,7 +626,7 @@ class KeyManagementApi:
 
         self._update_personal_access_token_endpoint = _Endpoint(
             settings={
-                "response_type": (PersonalAccessTokenResponse,),
+                "response_type": (UpdatedPersonalAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/personal_access_tokens/{token_id}",
                 "operation_id": "update_personal_access_token",
@@ -829,6 +850,8 @@ class KeyManagementApi:
     def get_personal_access_token(
         self,
         token_id: str,
+        *,
+        include: Union[List[PersonalAccessTokensIncludeQueryParameterItem], UnsetType] = unset,
     ) -> PersonalAccessTokenResponse:
         """Get a personal access token.
 
@@ -836,10 +859,15 @@ class KeyManagementApi:
 
         :param token_id: The ID of the access token.
         :type token_id: str
+        :param include: Comma-separated list of relationship objects that should be included in the response.
+        :type include: [PersonalAccessTokensIncludeQueryParameterItem], optional
         :rtype: PersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["token_id"] = token_id
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._get_personal_access_token_endpoint.call_with_http_info(**kwargs)
 
@@ -1052,6 +1080,8 @@ class KeyManagementApi:
         sort: Union[PersonalAccessTokensSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         filter_owned_by: Union[List[str], UnsetType] = unset,
+        filter_leaked: Union[bool, UnsetType] = unset,
+        include: Union[List[PersonalAccessTokensIncludeQueryParameterItem], UnsetType] = unset,
     ) -> ListPersonalAccessTokensResponse:
         """Get all access tokens.
 
@@ -1069,6 +1099,10 @@ class KeyManagementApi:
         :type filter: str, optional
         :param filter_owned_by: Filter access tokens by the owner's ID. Supports multiple values.
         :type filter_owned_by: [str], optional
+        :param filter_leaked: When true, only return access tokens that have been detected as leaked. Has no effect when false.
+        :type filter_leaked: bool, optional
+        :param include: Comma-separated list of relationship objects that should be included in the response.
+        :type include: [PersonalAccessTokensIncludeQueryParameterItem], optional
         :rtype: ListPersonalAccessTokensResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -1086,6 +1120,12 @@ class KeyManagementApi:
 
         if filter_owned_by is not unset:
             kwargs["filter_owned_by"] = filter_owned_by
+
+        if filter_leaked is not unset:
+            kwargs["filter_leaked"] = filter_leaked
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._list_personal_access_tokens_endpoint.call_with_http_info(**kwargs)
 
@@ -1174,7 +1214,7 @@ class KeyManagementApi:
         self,
         token_id: str,
         body: PersonalAccessTokenUpdateRequest,
-    ) -> PersonalAccessTokenResponse:
+    ) -> UpdatedPersonalAccessTokenResponse:
         """Update a personal access token.
 
         Update a specific personal access token.
@@ -1182,7 +1222,7 @@ class KeyManagementApi:
         :param token_id: The ID of the access token.
         :type token_id: str
         :type body: PersonalAccessTokenUpdateRequest
-        :rtype: PersonalAccessTokenResponse
+        :rtype: UpdatedPersonalAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["token_id"] = token_id

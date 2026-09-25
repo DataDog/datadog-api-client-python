@@ -166,6 +166,7 @@ from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
 from datadog_api_client.v2.model.access_token_list_item import AccessTokenListItem
 from datadog_api_client.v2.model.access_token_list_item_relationships import AccessTokenListItemRelationships
 from datadog_api_client.v2.model.access_token_owner_type import AccessTokenOwnerType
+from datadog_api_client.v2.model.access_token_response_included_item import AccessTokenResponseIncludedItem
 from datadog_api_client.v2.model.access_tokens_type import AccessTokensType
 from datadog_api_client.v2.model.account_filtering_config import AccountFilteringConfig
 from datadog_api_client.v2.model.account_filters import AccountFilters
@@ -3533,8 +3534,10 @@ from datadog_api_client.v2.model.full_custom_framework_data import FullCustomFra
 from datadog_api_client.v2.model.full_custom_framework_data_attributes import FullCustomFrameworkDataAttributes
 from datadog_api_client.v2.model.full_personal_access_token import FullPersonalAccessToken
 from datadog_api_client.v2.model.full_personal_access_token_attributes import FullPersonalAccessTokenAttributes
+from datadog_api_client.v2.model.full_personal_access_token_relationships import FullPersonalAccessTokenRelationships
 from datadog_api_client.v2.model.full_service_access_token import FullServiceAccessToken
 from datadog_api_client.v2.model.full_service_access_token_attributes import FullServiceAccessTokenAttributes
+from datadog_api_client.v2.model.full_service_access_token_relationships import FullServiceAccessTokenRelationships
 from datadog_api_client.v2.model.gcp_credentials import GCPCredentials
 from datadog_api_client.v2.model.gcp_credentials_update import GCPCredentialsUpdate
 from datadog_api_client.v2.model.gcp_integration import GCPIntegration
@@ -7507,6 +7510,9 @@ from datadog_api_client.v2.model.personal_access_token_response_meta_page import
 from datadog_api_client.v2.model.personal_access_token_update_attributes import PersonalAccessTokenUpdateAttributes
 from datadog_api_client.v2.model.personal_access_token_update_data import PersonalAccessTokenUpdateData
 from datadog_api_client.v2.model.personal_access_token_update_request import PersonalAccessTokenUpdateRequest
+from datadog_api_client.v2.model.personal_access_tokens_include_query_parameter_item import (
+    PersonalAccessTokensIncludeQueryParameterItem,
+)
 from datadog_api_client.v2.model.personal_access_tokens_sort import PersonalAccessTokensSort
 from datadog_api_client.v2.model.personal_access_tokens_type import PersonalAccessTokensType
 from datadog_api_client.v2.model.playlist import Playlist
@@ -8208,6 +8214,8 @@ from datadog_api_client.v2.model.relationship_to_incident_user_defined_field_dat
 from datadog_api_client.v2.model.relationship_to_incident_user_defined_fields import (
     RelationshipToIncidentUserDefinedFields,
 )
+from datadog_api_client.v2.model.relationship_to_leaked_key import RelationshipToLeakedKey
+from datadog_api_client.v2.model.relationship_to_leaked_key_data import RelationshipToLeakedKeyData
 from datadog_api_client.v2.model.relationship_to_organization import RelationshipToOrganization
 from datadog_api_client.v2.model.relationship_to_organization_data import RelationshipToOrganizationData
 from datadog_api_client.v2.model.relationship_to_organizations import RelationshipToOrganizations
@@ -11539,6 +11547,16 @@ from datadog_api_client.v2.model.update_user_identity_providers_request import U
 from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequest
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
+from datadog_api_client.v2.model.updated_personal_access_token import UpdatedPersonalAccessToken
+from datadog_api_client.v2.model.updated_personal_access_token_relationships import (
+    UpdatedPersonalAccessTokenRelationships,
+)
+from datadog_api_client.v2.model.updated_personal_access_token_response import UpdatedPersonalAccessTokenResponse
+from datadog_api_client.v2.model.updated_service_access_token import UpdatedServiceAccessToken
+from datadog_api_client.v2.model.updated_service_access_token_relationships import (
+    UpdatedServiceAccessTokenRelationships,
+)
+from datadog_api_client.v2.model.updated_service_access_token_response import UpdatedServiceAccessTokenResponse
 from datadog_api_client.v2.model.upsert_allocation_request import UpsertAllocationRequest
 from datadog_api_client.v2.model.upsert_and_publish_form_version_data import UpsertAndPublishFormVersionData
 from datadog_api_client.v2.model.upsert_and_publish_form_version_data_attributes import (
@@ -12007,6 +12025,7 @@ __all__ = [
     "AccessTokenListItem",
     "AccessTokenListItemRelationships",
     "AccessTokenOwnerType",
+    "AccessTokenResponseIncludedItem",
     "AccessTokensType",
     "AccountFilteringConfig",
     "AccountFilters",
@@ -14456,8 +14475,10 @@ __all__ = [
     "FullCustomFrameworkDataAttributes",
     "FullPersonalAccessToken",
     "FullPersonalAccessTokenAttributes",
+    "FullPersonalAccessTokenRelationships",
     "FullServiceAccessToken",
     "FullServiceAccessTokenAttributes",
+    "FullServiceAccessTokenRelationships",
     "GCPCredentials",
     "GCPCredentialsUpdate",
     "GCPIntegration",
@@ -17048,6 +17069,7 @@ __all__ = [
     "PersonalAccessTokenUpdateAttributes",
     "PersonalAccessTokenUpdateData",
     "PersonalAccessTokenUpdateRequest",
+    "PersonalAccessTokensIncludeQueryParameterItem",
     "PersonalAccessTokensSort",
     "PersonalAccessTokensType",
     "Playlist",
@@ -17521,6 +17543,8 @@ __all__ = [
     "RelationshipToIncidentTypeData",
     "RelationshipToIncidentUserDefinedFieldData",
     "RelationshipToIncidentUserDefinedFields",
+    "RelationshipToLeakedKey",
+    "RelationshipToLeakedKeyData",
     "RelationshipToOrganization",
     "RelationshipToOrganizationData",
     "RelationshipToOrganizations",
@@ -19672,6 +19696,12 @@ __all__ = [
     "UpdateVariantRequest",
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
+    "UpdatedPersonalAccessToken",
+    "UpdatedPersonalAccessTokenRelationships",
+    "UpdatedPersonalAccessTokenResponse",
+    "UpdatedServiceAccessToken",
+    "UpdatedServiceAccessTokenRelationships",
+    "UpdatedServiceAccessTokenResponse",
     "UpsertAllocationRequest",
     "UpsertAndPublishFormVersionData",
     "UpsertAndPublishFormVersionDataAttributes",

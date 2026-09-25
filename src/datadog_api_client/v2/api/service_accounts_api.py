@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -15,11 +15,15 @@ from datadog_api_client.v2.model.user_response import UserResponse
 from datadog_api_client.v2.model.service_account_create_request import ServiceAccountCreateRequest
 from datadog_api_client.v2.model.list_service_access_tokens_response import ListServiceAccessTokensResponse
 from datadog_api_client.v2.model.personal_access_tokens_sort import PersonalAccessTokensSort
+from datadog_api_client.v2.model.personal_access_tokens_include_query_parameter_item import (
+    PersonalAccessTokensIncludeQueryParameterItem,
+)
 from datadog_api_client.v2.model.service_access_token_create_response import ServiceAccessTokenCreateResponse
 from datadog_api_client.v2.model.service_account_access_token_create_request import (
     ServiceAccountAccessTokenCreateRequest,
 )
 from datadog_api_client.v2.model.service_access_token_response import ServiceAccessTokenResponse
+from datadog_api_client.v2.model.updated_service_access_token_response import UpdatedServiceAccessTokenResponse
 from datadog_api_client.v2.model.service_account_access_token_update_request import (
     ServiceAccountAccessTokenUpdateRequest,
 )
@@ -164,6 +168,12 @@ class ServiceAccountsApi:
                     "attribute": "token_id",
                     "location": "path",
                 },
+                "include": {
+                    "openapi_types": ([PersonalAccessTokensIncludeQueryParameterItem],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -235,6 +245,17 @@ class ServiceAccountsApi:
                     "openapi_types": (str,),
                     "attribute": "filter",
                     "location": "query",
+                },
+                "filter_leaked": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[leaked]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": ([PersonalAccessTokensIncludeQueryParameterItem],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
                 },
             },
             headers_map={
@@ -327,7 +348,7 @@ class ServiceAccountsApi:
 
         self._update_service_account_access_token_endpoint = _Endpoint(
             settings={
-                "response_type": (ServiceAccessTokenResponse,),
+                "response_type": (UpdatedServiceAccessTokenResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/service_accounts/{service_account_id}/access_tokens/{token_id}",
                 "operation_id": "update_service_account_access_token",
@@ -473,6 +494,8 @@ class ServiceAccountsApi:
         self,
         service_account_id: str,
         token_id: str,
+        *,
+        include: Union[List[PersonalAccessTokensIncludeQueryParameterItem], UnsetType] = unset,
     ) -> ServiceAccessTokenResponse:
         """Get an access token for a service account.
 
@@ -482,12 +505,17 @@ class ServiceAccountsApi:
         :type service_account_id: str
         :param token_id: The ID of the access token.
         :type token_id: str
+        :param include: Comma-separated list of relationship objects that should be included in the response.
+        :type include: [PersonalAccessTokensIncludeQueryParameterItem], optional
         :rtype: ServiceAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["service_account_id"] = service_account_id
 
         kwargs["token_id"] = token_id
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._get_service_account_access_token_endpoint.call_with_http_info(**kwargs)
 
@@ -521,6 +549,8 @@ class ServiceAccountsApi:
         page_number: Union[int, UnsetType] = unset,
         sort: Union[PersonalAccessTokensSort, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
+        filter_leaked: Union[bool, UnsetType] = unset,
+        include: Union[List[PersonalAccessTokensIncludeQueryParameterItem], UnsetType] = unset,
     ) -> ListServiceAccessTokensResponse:
         """List access tokens for a service account.
 
@@ -538,6 +568,10 @@ class ServiceAccountsApi:
         :type sort: PersonalAccessTokensSort, optional
         :param filter: Filter access tokens by the specified string.
         :type filter: str, optional
+        :param filter_leaked: When true, only return access tokens that have been detected as leaked. Has no effect when false.
+        :type filter_leaked: bool, optional
+        :param include: Comma-separated list of relationship objects that should be included in the response.
+        :type include: [PersonalAccessTokensIncludeQueryParameterItem], optional
         :rtype: ListServiceAccessTokensResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -554,6 +588,12 @@ class ServiceAccountsApi:
 
         if filter is not unset:
             kwargs["filter"] = filter
+
+        if filter_leaked is not unset:
+            kwargs["filter_leaked"] = filter_leaked
+
+        if include is not unset:
+            kwargs["include"] = include
 
         return self._list_service_account_access_tokens_endpoint.call_with_http_info(**kwargs)
 
@@ -640,7 +680,7 @@ class ServiceAccountsApi:
         service_account_id: str,
         token_id: str,
         body: ServiceAccountAccessTokenUpdateRequest,
-    ) -> ServiceAccessTokenResponse:
+    ) -> UpdatedServiceAccessTokenResponse:
         """Update an access token for a service account.
 
         Update a specific access token for a service account.
@@ -650,7 +690,7 @@ class ServiceAccountsApi:
         :param token_id: The ID of the access token.
         :type token_id: str
         :type body: ServiceAccountAccessTokenUpdateRequest
-        :rtype: ServiceAccessTokenResponse
+        :rtype: UpdatedServiceAccessTokenResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["service_account_id"] = service_account_id
