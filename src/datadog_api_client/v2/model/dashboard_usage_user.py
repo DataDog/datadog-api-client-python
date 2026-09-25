@@ -23,6 +23,7 @@ class DashboardUsageUser(ModelNormal):
             "id": (str,),
             "is_disabled": (bool,),
             "name": (str,),
+            "test": (bool,),
         }
 
     attribute_map = {
@@ -30,6 +31,7 @@ class DashboardUsageUser(ModelNormal):
         "id": "id",
         "is_disabled": "is_disabled",
         "name": "name",
+        "test": "test",
     }
 
     def __init__(
@@ -38,6 +40,7 @@ class DashboardUsageUser(ModelNormal):
         id: Union[str, UnsetType] = unset,
         is_disabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        test: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -54,6 +57,9 @@ class DashboardUsageUser(ModelNormal):
 
         :param name: Display name of the user.
         :type name: str, optional
+
+        :param test: just testing generation
+        :type test: bool, optional
         """
         if handle is not unset:
             kwargs["handle"] = handle
@@ -63,4 +69,6 @@ class DashboardUsageUser(ModelNormal):
             kwargs["is_disabled"] = is_disabled
         if name is not unset:
             kwargs["name"] = name
+        if test is not unset:
+            kwargs["test"] = test
         super().__init__(kwargs)
