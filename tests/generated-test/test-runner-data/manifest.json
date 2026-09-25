@@ -1214,6 +1214,20 @@
     {
       "feature": "Logs",
       "feature_file": "../../v1/features/logs.feature",
+      "file": "v1/logs/send-deflate-logs-returns-response-from-server-always-200-empty-json-response.json",
+      "scenario": "Send deflate logs returns \"Response from server (always 200 empty JSON).\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Logs",
+      "feature_file": "../../v1/features/logs.feature",
+      "file": "v1/logs/send-gzip-logs-returns-response-from-server-always-200-empty-json-response.json",
+      "scenario": "Send gzip logs returns \"Response from server (always 200 empty JSON).\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Logs",
+      "feature_file": "../../v1/features/logs.feature",
       "file": "v1/logs/send-logs-returns-response-from-server-always-200-empty-json-response.json",
       "scenario": "Send logs returns \"Response from server (always 200 empty JSON).\" response",
       "version": "v1"
@@ -6389,6 +6403,20 @@
       "feature_file": "../../v2/features/logs.feature",
       "file": "v2/logs/search-logs-returns-ok-response-with-pagination.json",
       "scenario": "Search logs returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "feature_file": "../../v2/features/logs.feature",
+      "file": "v2/logs/send-deflate-logs-returns-request-accepted-for-processing-always-202-empty-json-response.json",
+      "scenario": "Send deflate logs returns \"Request accepted for processing (always 202 empty JSON).\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "feature_file": "../../v2/features/logs.feature",
+      "file": "v2/logs/send-gzip-logs-returns-request-accepted-for-processing-always-202-empty-json-response.json",
+      "scenario": "Send gzip logs returns \"Request accepted for processing (always 202 empty JSON).\" response",
       "version": "v2"
     },
     {
