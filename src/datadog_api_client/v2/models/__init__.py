@@ -3600,6 +3600,13 @@ from datadog_api_client.v2.model.gemini_credentials_update import GeminiCredenti
 from datadog_api_client.v2.model.gemini_integration import GeminiIntegration
 from datadog_api_client.v2.model.gemini_integration_type import GeminiIntegrationType
 from datadog_api_client.v2.model.gemini_integration_update import GeminiIntegrationUpdate
+from datadog_api_client.v2.model.general_investigation_attributes import GeneralInvestigationAttributes
+from datadog_api_client.v2.model.general_investigation_attributes_with_time_bounds import (
+    GeneralInvestigationAttributesWithTimeBounds,
+)
+from datadog_api_client.v2.model.general_investigation_attributes_without_time_bounds import (
+    GeneralInvestigationAttributesWithoutTimeBounds,
+)
 from datadog_api_client.v2.model.generate_cost_tag_description_response import GenerateCostTagDescriptionResponse
 from datadog_api_client.v2.model.generated_cost_tag_description import GeneratedCostTagDescription
 from datadog_api_client.v2.model.generated_cost_tag_description_attributes import GeneratedCostTagDescriptionAttributes
@@ -14517,6 +14524,9 @@ __all__ = [
     "GeminiIntegration",
     "GeminiIntegrationType",
     "GeminiIntegrationUpdate",
+    "GeneralInvestigationAttributes",
+    "GeneralInvestigationAttributesWithTimeBounds",
+    "GeneralInvestigationAttributesWithoutTimeBounds",
     "GenerateCostTagDescriptionResponse",
     "GeneratedCostTagDescription",
     "GeneratedCostTagDescriptionAttributes",
