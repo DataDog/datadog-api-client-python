@@ -702,14 +702,14 @@ def request_parameter_with_value(context, name, value, path_parameters):
     path_parameters[param_name] = json.loads(tpl)
 
 
-@given(parsers.parse('the request uses "{compression}" compression'))
-def request_uses_compression(compression):
-    """Defer compression validation to the generated replay server."""
+@given(parsers.parse('the request and response use "{compression}" compression'))
+def request_and_response_use_compression(compression):
+    """Defer request and response compression to the generated replay server."""
     assert compression
 
 
-@given(parsers.parse('the user selects "{compression}" compression'))
-def user_selects_compression(compression):
+@given(parsers.parse('the client selects "{compression}" compression'))
+def client_selects_compression(compression):
     """Pass the selected compression from the generated request plan."""
     assert compression
 
