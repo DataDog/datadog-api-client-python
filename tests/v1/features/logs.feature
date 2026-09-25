@@ -32,19 +32,21 @@ Feature: Logs
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake
+  @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake
   Scenario: Send deflate logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
-    And request contains "Content-Encoding" parameter with value "deflate"
+    And the client selects "deflate" compression
+    And the request and response use "deflate" compression
     When the request is sent
     Then the response status is 200 Response from server (always 200 empty JSON).
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake
+  @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake
   Scenario: Send gzip logs returns "Response from server (always 200 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"message": "{{ unique }}", "ddtags": "host:{{ unique_alnum }}"}]
-    And request contains "Content-Encoding" parameter with value "gzip"
+    And the client selects "gzip" compression
+    And the request and response use "gzip" compression
     When the request is sent
     Then the response status is 200 Response from server (always 200 empty JSON).
 
