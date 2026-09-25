@@ -10,12 +10,15 @@ from __future__ import annotations
 
 import argparse
 import base64
+import ctypes
 import json
 import os
 import re
 import tempfile
 import threading
 import uuid
+import zlib
+from ctypes.util import find_library
 from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -44,6 +47,9 @@ SAFE_BROWSER_HEADERS = {
     "content-security-policy": "default-src 'none'; sandbox",
     "x-content-type-options": "nosniff",
 }
+ZSTD_CONTENTSIZE_UNKNOWN = (1 << 64) - 1
+ZSTD_CONTENTSIZE_ERROR = (1 << 64) - 2
+MAX_DECOMPRESSED_BODY_SIZE = 256 * 1024 * 1024
 
 
 class RecordingDatabase:
@@ -52,9 +58,11 @@ class RecordingDatabase:
         self.lock = threading.RLock()
         self.shards: dict[tuple[str, str], dict[str, Any]] = {}
         self.shard_paths: dict[tuple[str, str], Path] = {}
+        self.request_plans: dict[tuple[str, str, str], dict[str, Any]] = {}
         self.sessions: dict[str, dict[str, Any]] = {}
         self.fallback_consumed: set[tuple[str, str, str, int]] = set()
         self._load()
+        self._load_request_plans()
 
     def _load(self) -> None:
         manifest_path = self.root / "manifest.json"
@@ -69,6 +77,17 @@ class RecordingDatabase:
             key = (shard["version"], shard["feature"])
             self.shards[key] = shard
             self.shard_paths[key] = path
+
+    def _load_request_plans(self) -> None:
+        root = self.root.parent / "test-runner-data"
+        manifest_path = root / "manifest.json"
+        if not manifest_path.exists():
+            return
+        manifest = _read_json(manifest_path)
+        for item in manifest.get("scenarios", []):
+            plan = _read_json(root / item["file"])
+            key = (item["version"], item["feature"], item["scenario"])
+            self.request_plans[key] = plan.get("request", {})
 
     def start(self, version: str, feature: str, scenario: str, mode: str) -> dict[str, Any]:
         with self.lock:
@@ -91,13 +110,14 @@ class RecordingDatabase:
                 "key": key,
                 "scenario": scenario,
                 "recording": recording,
+                "request_plan": self.request_plans.get((version, feature, scenario)),
                 "cursor": 0,
                 "captures": [],
                 "frozen_at": frozen_at,
             }
             return {"session": session_id, "frozen_at": frozen_at}
 
-    def replay(self, session_id: str | None, actual: dict[str, Any]) -> dict[str, Any]:
+    def replay(self, session_id: str | None, actual: dict[str, Any]) -> tuple[dict[str, Any], str | None]:
         with self.lock:
             if session_id:
                 session = self.sessions.get(session_id)
@@ -109,20 +129,32 @@ class RecordingDatabase:
                 if cursor >= len(interactions):
                     raise LookupError(f"Recording has no interaction #{cursor + 1}")
                 expected = interactions[cursor]
-                if not _requests_match(expected["request"], actual):
+                request_plan = session["request_plan"]
+                if not _requests_match(expected["request"], actual, request_plan):
                     raise RequestMismatchError(expected["request"], actual, cursor)
                 session["cursor"] += 1
-                return expected["response"]
+                compression = (
+                    request_plan.get("compression")
+                    if request_plan and _request_matches_plan(expected["request"], request_plan)
+                    else None
+                )
+                return expected["response"], compression
 
             for (version, feature), shard in sorted(self.shards.items()):
                 for recording in shard["recordings"]:
                     for index, interaction in enumerate(recording["interactions"]):
                         consumed_key = (version, feature, recording["scenario"], index)
+                        request_plan = self.request_plans.get((version, feature, recording["scenario"]))
                         if consumed_key not in self.fallback_consumed and _requests_match(
-                            interaction["request"], actual
+                            interaction["request"], actual, request_plan
                         ):
                             self.fallback_consumed.add(consumed_key)
-                            return interaction["response"]
+                            compression = (
+                                request_plan.get("compression")
+                                if request_plan and _request_matches_plan(interaction["request"], request_plan)
+                                else None
+                            )
+                            return interaction["response"], compression
             raise LookupError("No unconsumed interaction matches this request")
 
     def next_request(self, session_id: str) -> dict[str, Any]:
@@ -298,14 +330,21 @@ class TestRequestHandler(BaseHTTPRequestHandler):
 
     def _handle_api_request(self) -> None:
         body = self._read_body()
-        actual = _normalise_request(self.command, self.path, self.headers.get("content-type", ""), body)
+        actual = _normalise_request(
+            self.command,
+            self.path,
+            self.headers.get("content-type", ""),
+            self.headers.get("content-encoding", ""),
+            body,
+        )
         session_id = self.headers.get(SESSION_HEADER)
         if self.server.mode == "replay":
-            response = self.server.database.replay(session_id, actual)
+            response, compression = self.server.database.replay(session_id, actual)
         else:
             response = self._forward(body)
             self.server.database.capture(session_id, actual, response)
-        self._send_recorded_response(response)
+            compression = None
+        self._send_recorded_response(response, compression=compression)
 
     def _forward(self, body: bytes) -> dict[str, Any]:
         if not self.server.upstream:
@@ -341,17 +380,24 @@ class TestRequestHandler(BaseHTTPRequestHandler):
         length = int(self.headers.get("content-length", "0"))
         return self.rfile.read(length) if length else b""
 
-    def _send_recorded_response(self, response: dict[str, Any]) -> None:
+    def _send_recorded_response(self, response: dict[str, Any], *, compression: str | None = None) -> None:
         body_data = response.get("body", {})
         if body_data.get("encoding") == "base64":
             body = base64.b64decode(body_data.get("value", ""))
         else:
             body = body_data.get("value", "").encode("utf-8")
         status = response["status"]
+        if compression and _status_allows_message_content(status):
+            body = _compress_body(body, compression)
         self.send_response(status, response.get("reason"))
         for key, value in response.get("headers", {}).items():
-            if key.lower() not in HOP_BY_HOP_HEADERS | {"content-length"} | SAFE_BROWSER_HEADERS.keys():
+            if (
+                key.lower()
+                not in HOP_BY_HOP_HEADERS | {"content-encoding", "content-length"} | SAFE_BROWSER_HEADERS.keys()
+            ):
                 self.send_header(key, value)
+        if compression and _status_allows_message_content(status):
+            self.send_header("content-encoding", compression)
         for key, value in SAFE_BROWSER_HEADERS.items():
             self.send_header(key, value)
         if _status_allows_message_content(status):
@@ -372,21 +418,50 @@ class TestRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
 
 
-def _normalise_request(method: str, raw_path: str, content_type: str, body: bytes) -> dict[str, Any]:
+def _normalise_request(
+    method: str,
+    raw_path: str,
+    content_type: str,
+    content_encoding: str,
+    body: bytes,
+) -> dict[str, Any]:
     parsed = urlsplit(raw_path)
-    normalised_body = _normalise_body(body, content_type)
-    return {
+    compression = content_encoding.strip().casefold()
+    normalised_body = _normalise_body(body, content_type, compression)
+    request = {
         "method": method.upper(),
         "path": _normalise_path(parsed.path),
         "query": sorted([list(pair) for pair in parse_qsl(parsed.query, keep_blank_values=True)]),
         "content_type": _normalise_content_type(content_type, normalised_body),
         "body": normalised_body,
     }
+    if compression:
+        request["compression"] = compression
+    return request
 
 
-def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
+def _normalise_body(body: bytes, content_type: str, compression: str = "") -> dict[str, Any]:
     if not body:
+        if compression in {"gzip", "deflate", "zstd1"}:
+            return {"type": "invalid-compression", "value": ""}
         return {"type": "empty", "value": None}
+    if compression == "zstd1":
+        decompressed = _decompress_zstd(body)
+        if decompressed is None:
+            return {
+                "type": "invalid-compression",
+                "value": base64.b64encode(body).decode("ascii"),
+            }
+        body = decompressed
+    elif compression in {"gzip", "deflate"}:
+        wbits = zlib.MAX_WBITS | 16 if compression == "gzip" else zlib.MAX_WBITS
+        decompressed = _decompress_zlib(body, wbits=wbits)
+        if decompressed is None:
+            return {
+                "type": "invalid-compression",
+                "value": base64.b64encode(body).decode("ascii"),
+            }
+        body = decompressed
     media_type = _media_type(content_type)
     text = body.decode("utf-8", errors="surrogateescape")
     if media_type.endswith("json"):
@@ -399,6 +474,138 @@ def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
         if boundary_match:
             text = text.replace(boundary_match.group(1).strip('"'), "x" * 70)
     return {"type": "text", "value": text}
+
+
+def _decompress_zlib(
+    body: bytes,
+    *,
+    wbits: int,
+    max_size: int = MAX_DECOMPRESSED_BODY_SIZE,
+) -> bytes | None:
+    """Decompress exactly one complete zlib stream with bounded output."""
+    decompressor = zlib.decompressobj(wbits)
+    output = bytearray()
+    pending = body
+    try:
+        while pending:
+            remaining = max_size - len(output) + 1
+            chunk = decompressor.decompress(pending, remaining)
+            output.extend(chunk)
+            if len(output) > max_size:
+                return None
+            unconsumed = decompressor.unconsumed_tail
+            if not unconsumed:
+                break
+            if len(unconsumed) == len(pending) and not chunk:
+                return None
+            pending = unconsumed
+    except zlib.error:
+        return None
+    if not decompressor.eof or decompressor.unused_data or decompressor.unconsumed_tail:
+        return None
+    return bytes(output)
+
+
+def _compress_body(body: bytes, compression: str) -> bytes:
+    if compression == "gzip":
+        compressor = zlib.compressobj(wbits=zlib.MAX_WBITS | 16)
+        return compressor.compress(body) + compressor.flush()
+    if compression == "deflate":
+        return zlib.compress(body)
+    if compression == "zstd1":
+        compressed = _compress_zstd(body)
+        if compressed is not None:
+            return compressed
+    raise ValueError(f"Unsupported response compression: {compression}")
+
+
+def _compress_zstd(body: bytes) -> bytes | None:
+    """Compress one Zstandard frame with the platform libzstd."""
+    library = _load_zstd()
+    if library is None:
+        return None
+    try:
+        library.ZSTD_isError.argtypes = [ctypes.c_size_t]
+        library.ZSTD_isError.restype = ctypes.c_uint
+        library.ZSTD_compressBound.argtypes = [ctypes.c_size_t]
+        library.ZSTD_compressBound.restype = ctypes.c_size_t
+        library.ZSTD_compress.argtypes = [
+            ctypes.c_void_p,
+            ctypes.c_size_t,
+            ctypes.c_void_p,
+            ctypes.c_size_t,
+            ctypes.c_int,
+        ]
+        library.ZSTD_compress.restype = ctypes.c_size_t
+
+        source = ctypes.create_string_buffer(body)
+        capacity = library.ZSTD_compressBound(len(body))
+        destination = ctypes.create_string_buffer(max(1, capacity))
+        compressed_size = library.ZSTD_compress(destination, capacity, source, len(body), 3)
+        if library.ZSTD_isError(compressed_size):
+            return None
+        return destination.raw[:compressed_size]
+    except (AttributeError, OSError, OverflowError, TypeError):
+        return None
+
+
+def _load_zstd() -> Any | None:
+    candidates = (
+        find_library("zstd"),
+        "libzstd.so.1",
+        "libzstd.dylib",
+        "/opt/homebrew/lib/libzstd.dylib",
+        "/usr/local/lib/libzstd.dylib",
+        "libzstd.dll",
+        "zstd.dll",
+    )
+    for candidate in dict.fromkeys(item for item in candidates if item):
+        try:
+            return ctypes.CDLL(candidate)
+        except OSError:
+            continue
+    return None
+
+
+def _decompress_zstd(body: bytes) -> bytes | None:
+    """Decompress one complete Zstandard frame with the platform libzstd."""
+    library = _load_zstd()
+    if library is None:
+        return None
+
+    try:
+        library.ZSTD_isError.argtypes = [ctypes.c_size_t]
+        library.ZSTD_isError.restype = ctypes.c_uint
+        library.ZSTD_findFrameCompressedSize.argtypes = [ctypes.c_void_p, ctypes.c_size_t]
+        library.ZSTD_findFrameCompressedSize.restype = ctypes.c_size_t
+        library.ZSTD_getFrameContentSize.argtypes = [ctypes.c_void_p, ctypes.c_size_t]
+        library.ZSTD_getFrameContentSize.restype = ctypes.c_ulonglong
+        library.ZSTD_decompressBound.argtypes = [ctypes.c_void_p, ctypes.c_size_t]
+        library.ZSTD_decompressBound.restype = ctypes.c_ulonglong
+        library.ZSTD_decompress.argtypes = [ctypes.c_void_p, ctypes.c_size_t, ctypes.c_void_p, ctypes.c_size_t]
+        library.ZSTD_decompress.restype = ctypes.c_size_t
+
+        source = ctypes.create_string_buffer(body)
+        source_pointer = ctypes.cast(source, ctypes.c_void_p)
+        compressed_size = library.ZSTD_findFrameCompressedSize(source_pointer, len(body))
+        if library.ZSTD_isError(compressed_size) or compressed_size != len(body):
+            return None
+
+        capacity = library.ZSTD_getFrameContentSize(source_pointer, len(body))
+        if capacity == ZSTD_CONTENTSIZE_ERROR:
+            return None
+        if capacity == ZSTD_CONTENTSIZE_UNKNOWN:
+            capacity = library.ZSTD_decompressBound(source_pointer, len(body))
+        if capacity > MAX_DECOMPRESSED_BODY_SIZE:
+            return None
+
+        destination = ctypes.create_string_buffer(max(1, capacity))
+        decompressed_size = library.ZSTD_decompress(destination, capacity, source_pointer, len(body))
+        if library.ZSTD_isError(decompressed_size) or decompressed_size > capacity:
+            return None
+        return destination.raw[:decompressed_size]
+    except (AttributeError, OSError, OverflowError, TypeError):
+        return None
 
 
 def _normalise_json(value: Any) -> Any:
@@ -415,11 +622,31 @@ def _normalise_content_type(content_type: str, body: dict[str, Any]) -> str:
     return "" if body["type"] == "empty" else _media_type(content_type)
 
 
-def _requests_match(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
+def _requests_match(
+    expected: dict[str, Any],
+    actual: dict[str, Any],
+    request_plan: dict[str, Any] | None = None,
+) -> bool:
     comparable_fields = ("method", "path", "query", "content_type")
     if any(expected[field] != actual[field] for field in comparable_fields):
         return False
+    expected_compression = expected.get("compression")
+    if request_plan and _request_matches_plan(expected, request_plan):
+        expected_compression = request_plan.get("compression", expected_compression)
+    if expected_compression is not None and actual.get("compression", "") != expected_compression:
+        return False
     return _bodies_match(expected["body"], actual["body"])
+
+
+def _request_matches_plan(request: dict[str, Any], plan: dict[str, Any]) -> bool:
+    if request["method"] != plan.get("method"):
+        return False
+    path = plan.get("path")
+    if not path:
+        return False
+    parts = re.split(r"(\{[^/{}]+\})", path)
+    pattern = "".join(r"[^/]+" if part.startswith("{") else re.escape(part) for part in parts)
+    return re.fullmatch(pattern, request["path"]) is not None
 
 
 def _bodies_match(expected: dict[str, Any], actual: dict[str, Any]) -> bool:
