@@ -10853,6 +10853,9 @@ from datadog_api_client.v2.model.team_notification_rule_attributes_ms_teams impo
 from datadog_api_client.v2.model.team_notification_rule_attributes_pagerduty import (
     TeamNotificationRuleAttributesPagerduty,
 )
+from datadog_api_client.v2.model.team_notification_rule_attributes_service_now import (
+    TeamNotificationRuleAttributesServiceNow,
+)
 from datadog_api_client.v2.model.team_notification_rule_attributes_slack import TeamNotificationRuleAttributesSlack
 from datadog_api_client.v2.model.team_notification_rule_request import TeamNotificationRuleRequest
 from datadog_api_client.v2.model.team_notification_rule_response import TeamNotificationRuleResponse
@@ -19254,6 +19257,7 @@ __all__ = [
     "TeamNotificationRuleAttributesEmail",
     "TeamNotificationRuleAttributesMsTeams",
     "TeamNotificationRuleAttributesPagerduty",
+    "TeamNotificationRuleAttributesServiceNow",
     "TeamNotificationRuleAttributesSlack",
     "TeamNotificationRuleRequest",
     "TeamNotificationRuleResponse",

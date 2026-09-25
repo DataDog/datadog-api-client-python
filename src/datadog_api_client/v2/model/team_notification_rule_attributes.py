@@ -21,6 +21,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.team_notification_rule_attributes_pagerduty import (
         TeamNotificationRuleAttributesPagerduty,
     )
+    from datadog_api_client.v2.model.team_notification_rule_attributes_service_now import (
+        TeamNotificationRuleAttributesServiceNow,
+    )
     from datadog_api_client.v2.model.team_notification_rule_attributes_slack import TeamNotificationRuleAttributesSlack
 
 
@@ -36,6 +39,9 @@ class TeamNotificationRuleAttributes(ModelNormal):
         from datadog_api_client.v2.model.team_notification_rule_attributes_pagerduty import (
             TeamNotificationRuleAttributesPagerduty,
         )
+        from datadog_api_client.v2.model.team_notification_rule_attributes_service_now import (
+            TeamNotificationRuleAttributesServiceNow,
+        )
         from datadog_api_client.v2.model.team_notification_rule_attributes_slack import (
             TeamNotificationRuleAttributesSlack,
         )
@@ -44,6 +50,7 @@ class TeamNotificationRuleAttributes(ModelNormal):
             "email": (TeamNotificationRuleAttributesEmail,),
             "ms_teams": (TeamNotificationRuleAttributesMsTeams,),
             "pagerduty": (TeamNotificationRuleAttributesPagerduty,),
+            "servicenow": (TeamNotificationRuleAttributesServiceNow,),
             "slack": (TeamNotificationRuleAttributesSlack,),
         }
 
@@ -51,6 +58,7 @@ class TeamNotificationRuleAttributes(ModelNormal):
         "email": "email",
         "ms_teams": "ms_teams",
         "pagerduty": "pagerduty",
+        "servicenow": "servicenow",
         "slack": "slack",
     }
 
@@ -59,6 +67,7 @@ class TeamNotificationRuleAttributes(ModelNormal):
         email: Union[TeamNotificationRuleAttributesEmail, UnsetType] = unset,
         ms_teams: Union[TeamNotificationRuleAttributesMsTeams, UnsetType] = unset,
         pagerduty: Union[TeamNotificationRuleAttributesPagerduty, UnsetType] = unset,
+        servicenow: Union[TeamNotificationRuleAttributesServiceNow, UnsetType] = unset,
         slack: Union[TeamNotificationRuleAttributesSlack, UnsetType] = unset,
         **kwargs,
     ):
@@ -74,6 +83,9 @@ class TeamNotificationRuleAttributes(ModelNormal):
         :param pagerduty: PagerDuty notification settings for the team
         :type pagerduty: TeamNotificationRuleAttributesPagerduty, optional
 
+        :param servicenow: ServiceNow notification settings for the team.
+        :type servicenow: TeamNotificationRuleAttributesServiceNow, optional
+
         :param slack: Slack notification settings for the team
         :type slack: TeamNotificationRuleAttributesSlack, optional
         """
@@ -83,6 +95,8 @@ class TeamNotificationRuleAttributes(ModelNormal):
             kwargs["ms_teams"] = ms_teams
         if pagerduty is not unset:
             kwargs["pagerduty"] = pagerduty
+        if servicenow is not unset:
+            kwargs["servicenow"] = servicenow
         if slack is not unset:
             kwargs["slack"] = slack
         super().__init__(kwargs)
