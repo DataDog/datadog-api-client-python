@@ -49,6 +49,15 @@ SAFE_BROWSER_HEADERS = {
 }
 ZSTD_CONTENTSIZE_UNKNOWN = (1 << 64) - 1
 ZSTD_CONTENTSIZE_ERROR = (1 << 64) - 2
+ZSTD_MAGIC = b"\x28\xb5\x2f\xfd"
+ZSTD_SINGLE_SEGMENT_FLAG = 0x20
+ZSTD_DESCRIPTOR_LOW_BITS_MASK = 0x3F
+ZSTD_MIN_RAW_FRAME_SIZE = 6
+ZSTD_FCS_TWO_BYTE_OFFSET = 0x100
+UINT8_MAX = (1 << 8) - 1
+UINT16_WITH_OFFSET_MAX = (1 << 16) - 1 + ZSTD_FCS_TWO_BYTE_OFFSET
+UINT32_MAX = (1 << 32) - 1
+ZSTD_RAW_BLOCK_SIZE = 128 * 1024
 MAX_DECOMPRESSED_BODY_SIZE = 256 * 1024 * 1024
 
 
@@ -136,7 +145,7 @@ class RecordingDatabase:
                 compression = (
                     request_plan.get("compression")
                     if request_plan and _request_matches_plan(expected["request"], request_plan)
-                    else None
+                    else expected["request"].get("compression")
                 )
                 return expected["response"], compression
 
@@ -152,7 +161,7 @@ class RecordingDatabase:
                             compression = (
                                 request_plan.get("compression")
                                 if request_plan and _request_matches_plan(interaction["request"], request_plan)
-                                else None
+                                else interaction["request"].get("compression")
                             )
                             return interaction["response"], compression
             raise LookupError("No unconsumed interaction matches this request")
@@ -387,10 +396,21 @@ class TestRequestHandler(BaseHTTPRequestHandler):
         else:
             body = body_data.get("value", "").encode("utf-8")
         status = response["status"]
+        response_headers = response.get("headers", {})
+        recorded_encoding = next(
+            (str(value) for key, value in response_headers.items() if key.lower() == "content-encoding"),
+            "",
+        )
+        recorded_compression = recorded_encoding.strip().casefold()
         if compression and _status_allows_message_content(status):
+            if recorded_compression:
+                decoded = _decompress_body(body, recorded_compression)
+                if decoded is None:
+                    raise ValueError(f"Unsupported or invalid recorded response compression: {recorded_encoding}")
+                body = decoded
             body = _compress_body(body, compression)
         self.send_response(status, response.get("reason"))
-        for key, value in response.get("headers", {}).items():
+        for key, value in response_headers.items():
             if (
                 key.lower()
                 not in HOP_BY_HOP_HEADERS | {"content-encoding", "content-length"} | SAFE_BROWSER_HEADERS.keys()
@@ -398,6 +418,8 @@ class TestRequestHandler(BaseHTTPRequestHandler):
                 self.send_header(key, value)
         if compression and _status_allows_message_content(status):
             self.send_header("content-encoding", compression)
+        elif recorded_encoding and _status_allows_message_content(status):
+            self.send_header("content-encoding", recorded_encoding)
         for key, value in SAFE_BROWSER_HEADERS.items():
             self.send_header(key, value)
         if _status_allows_message_content(status):
@@ -513,17 +535,25 @@ def _compress_body(body: bytes, compression: str) -> bytes:
     if compression == "deflate":
         return zlib.compress(body)
     if compression == "zstd1":
-        compressed = _compress_zstd(body)
-        if compressed is not None:
-            return compressed
+        return _compress_zstd(body)
     raise ValueError(f"Unsupported response compression: {compression}")
 
 
-def _compress_zstd(body: bytes) -> bytes | None:
+def _decompress_body(body: bytes, compression: str) -> bytes | None:
+    if compression == "gzip":
+        return _decompress_zlib(body, wbits=zlib.MAX_WBITS | 16)
+    if compression == "deflate":
+        return _decompress_zlib(body, wbits=zlib.MAX_WBITS)
+    if compression == "zstd1":
+        return _decompress_zstd(body)
+    return None
+
+
+def _compress_zstd(body: bytes) -> bytes:
     """Compress one Zstandard frame with the platform libzstd."""
     library = _load_zstd()
     if library is None:
-        return None
+        return _compress_zstd_raw_frame(body)
     try:
         library.ZSTD_isError.argtypes = [ctypes.c_size_t]
         library.ZSTD_isError.restype = ctypes.c_uint
@@ -543,10 +573,41 @@ def _compress_zstd(body: bytes) -> bytes | None:
         destination = ctypes.create_string_buffer(max(1, capacity))
         compressed_size = library.ZSTD_compress(destination, capacity, source, len(body), 3)
         if library.ZSTD_isError(compressed_size):
-            return None
+            return _compress_zstd_raw_frame(body)
         return destination.raw[:compressed_size]
     except (AttributeError, OSError, OverflowError, TypeError):
-        return None
+        return _compress_zstd_raw_frame(body)
+
+
+def _compress_zstd_raw_frame(body: bytes) -> bytes:
+    """Create a valid Zstandard frame made only of dependency-free raw blocks."""
+    size = len(body)
+    if size <= UINT8_MAX:
+        descriptor = 0x20
+        content_size = size.to_bytes(1, "little")
+    elif size <= UINT16_WITH_OFFSET_MAX:
+        descriptor = 0x60
+        content_size = (size - ZSTD_FCS_TWO_BYTE_OFFSET).to_bytes(2, "little")
+    elif size <= UINT32_MAX:
+        descriptor = 0xA0
+        content_size = size.to_bytes(4, "little")
+    else:
+        descriptor = 0xE0
+        content_size = size.to_bytes(8, "little")
+
+    frame = bytearray(ZSTD_MAGIC)
+    frame.append(descriptor)
+    frame.extend(content_size)
+    offset = 0
+    while offset < size:
+        chunk = body[offset : offset + ZSTD_RAW_BLOCK_SIZE]
+        offset += len(chunk)
+        header = (len(chunk) << 3) | int(offset == size)
+        frame.extend(header.to_bytes(3, "little"))
+        frame.extend(chunk)
+    if not body:
+        frame.extend(b"\x01\x00\x00")
+    return bytes(frame)
 
 
 def _load_zstd() -> Any | None:
@@ -571,7 +632,7 @@ def _decompress_zstd(body: bytes) -> bytes | None:
     """Decompress one complete Zstandard frame with the platform libzstd."""
     library = _load_zstd()
     if library is None:
-        return None
+        return _decompress_zstd_raw_frame(body)
 
     try:
         library.ZSTD_isError.argtypes = [ctypes.c_size_t]
@@ -606,6 +667,53 @@ def _decompress_zstd(body: bytes) -> bytes | None:
         return destination.raw[:decompressed_size]
     except (AttributeError, OSError, OverflowError, TypeError):
         return None
+
+
+def _decompress_zstd_raw_frame(body: bytes) -> bytes | None:
+    """Decode the raw-block Zstandard frames emitted by the dependency-free fallback."""
+    if len(body) < ZSTD_MIN_RAW_FRAME_SIZE or body[:4] != ZSTD_MAGIC:
+        return None
+    descriptor = body[4]
+    if descriptor & ZSTD_DESCRIPTOR_LOW_BITS_MASK != ZSTD_SINGLE_SEGMENT_FLAG:
+        return None
+    size_flag = descriptor >> 6
+    size_bytes = (1, 2, 4, 8)[size_flag]
+    cursor = 5
+    if len(body) < cursor + size_bytes:
+        return None
+    expected_size = int.from_bytes(body[cursor : cursor + size_bytes], "little")
+    if size_flag == 1:
+        expected_size += ZSTD_FCS_TWO_BYTE_OFFSET
+    if expected_size > MAX_DECOMPRESSED_BODY_SIZE:
+        return None
+    cursor += size_bytes
+    output = bytearray()
+    last_block = False
+    while not last_block:
+        if len(body) < cursor + 3:
+            return None
+        header = int.from_bytes(body[cursor : cursor + 3], "little")
+        cursor += 3
+        last_block = bool(header & 1)
+        block_type = (header >> 1) & 0x3
+        block_size = header >> 3
+        if block_type == 0:
+            if len(body) < cursor + block_size:
+                return None
+            output.extend(body[cursor : cursor + block_size])
+            cursor += block_size
+        elif block_type == 1:
+            if cursor >= len(body):
+                return None
+            output.extend(body[cursor : cursor + 1] * block_size)
+            cursor += 1
+        else:
+            return None
+        if len(output) > MAX_DECOMPRESSED_BODY_SIZE:
+            return None
+    if cursor != len(body) or len(output) != expected_size:
+        return None
+    return bytes(output)
 
 
 def _normalise_json(value: Any) -> Any:
