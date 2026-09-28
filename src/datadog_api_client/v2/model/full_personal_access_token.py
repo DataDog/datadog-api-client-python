@@ -15,7 +15,9 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.full_personal_access_token_attributes import FullPersonalAccessTokenAttributes
-    from datadog_api_client.v2.model.personal_access_token_relationships import PersonalAccessTokenRelationships
+    from datadog_api_client.v2.model.full_personal_access_token_relationships import (
+        FullPersonalAccessTokenRelationships,
+    )
     from datadog_api_client.v2.model.personal_access_tokens_type import PersonalAccessTokensType
 
 
@@ -23,13 +25,15 @@ class FullPersonalAccessToken(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.full_personal_access_token_attributes import FullPersonalAccessTokenAttributes
-        from datadog_api_client.v2.model.personal_access_token_relationships import PersonalAccessTokenRelationships
+        from datadog_api_client.v2.model.full_personal_access_token_relationships import (
+            FullPersonalAccessTokenRelationships,
+        )
         from datadog_api_client.v2.model.personal_access_tokens_type import PersonalAccessTokensType
 
         return {
             "attributes": (FullPersonalAccessTokenAttributes,),
             "id": (str,),
-            "relationships": (PersonalAccessTokenRelationships,),
+            "relationships": (FullPersonalAccessTokenRelationships,),
             "type": (PersonalAccessTokensType,),
         }
 
@@ -44,7 +48,7 @@ class FullPersonalAccessToken(ModelNormal):
         self_,
         attributes: Union[FullPersonalAccessTokenAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        relationships: Union[PersonalAccessTokenRelationships, UnsetType] = unset,
+        relationships: Union[FullPersonalAccessTokenRelationships, UnsetType] = unset,
         type: Union[PersonalAccessTokensType, UnsetType] = unset,
         **kwargs,
     ):
@@ -58,7 +62,7 @@ class FullPersonalAccessToken(ModelNormal):
         :type id: str, optional
 
         :param relationships: Resources related to the access token.
-        :type relationships: PersonalAccessTokenRelationships, optional
+        :type relationships: FullPersonalAccessTokenRelationships, optional
 
         :param type: Personal access tokens resource type.
         :type type: PersonalAccessTokensType, optional

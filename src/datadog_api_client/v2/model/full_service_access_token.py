@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.full_service_access_token_attributes import FullServiceAccessTokenAttributes
-    from datadog_api_client.v2.model.service_access_token_relationships import ServiceAccessTokenRelationships
+    from datadog_api_client.v2.model.full_service_access_token_relationships import FullServiceAccessTokenRelationships
     from datadog_api_client.v2.model.service_access_tokens_type import ServiceAccessTokensType
 
 
@@ -23,13 +23,15 @@ class FullServiceAccessToken(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.full_service_access_token_attributes import FullServiceAccessTokenAttributes
-        from datadog_api_client.v2.model.service_access_token_relationships import ServiceAccessTokenRelationships
+        from datadog_api_client.v2.model.full_service_access_token_relationships import (
+            FullServiceAccessTokenRelationships,
+        )
         from datadog_api_client.v2.model.service_access_tokens_type import ServiceAccessTokensType
 
         return {
             "attributes": (FullServiceAccessTokenAttributes,),
             "id": (str,),
-            "relationships": (ServiceAccessTokenRelationships,),
+            "relationships": (FullServiceAccessTokenRelationships,),
             "type": (ServiceAccessTokensType,),
         }
 
@@ -44,7 +46,7 @@ class FullServiceAccessToken(ModelNormal):
         self_,
         attributes: Union[FullServiceAccessTokenAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        relationships: Union[ServiceAccessTokenRelationships, UnsetType] = unset,
+        relationships: Union[FullServiceAccessTokenRelationships, UnsetType] = unset,
         type: Union[ServiceAccessTokensType, UnsetType] = unset,
         **kwargs,
     ):
@@ -58,7 +60,7 @@ class FullServiceAccessToken(ModelNormal):
         :type id: str, optional
 
         :param relationships: Resources related to the access token.
-        :type relationships: ServiceAccessTokenRelationships, optional
+        :type relationships: FullServiceAccessTokenRelationships, optional
 
         :param type: Service access tokens resource type.
         :type type: ServiceAccessTokensType, optional
