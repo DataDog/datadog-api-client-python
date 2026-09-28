@@ -18,7 +18,7 @@ if TYPE_CHECKING:
 class BatchUpsertRowsRequestArray(ModelNormal):
     validations = {
         "data": {
-            "max_items": 200,
+            "max_items": 20971,
         },
     }
 
@@ -38,7 +38,7 @@ class BatchUpsertRowsRequestArray(ModelNormal):
         """
         The request body for creating or updating multiple rows into a reference table.
 
-        :param data: List of row resources to create or update in the reference table.
+        :param data: List of row resources to create or update in the reference table. The request payload can be up to 1 MiB.
         :type data: [BatchUpsertRowsRequestData]
         """
         super().__init__(kwargs)
