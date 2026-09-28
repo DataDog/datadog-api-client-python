@@ -10,12 +10,15 @@ from __future__ import annotations
 
 import argparse
 import base64
+import ctypes
 import json
 import os
 import re
 import tempfile
 import threading
 import uuid
+import zlib
+from ctypes.util import find_library
 from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -44,6 +47,14 @@ SAFE_BROWSER_HEADERS = {
     "content-security-policy": "default-src 'none'; sandbox",
     "x-content-type-options": "nosniff",
 }
+ZSTD_CONTENTSIZE_UNKNOWN = (1 << 64) - 1
+ZSTD_CONTENTSIZE_ERROR = (1 << 64) - 2
+ZSTD_MAGIC = b"\x28\xb5\x2f\xfd"
+ZSTD_SINGLE_SEGMENT_FLAG = 0x20
+ZSTD_DESCRIPTOR_LOW_BITS_MASK = 0x3F
+ZSTD_MIN_RAW_FRAME_SIZE = 6
+ZSTD_FCS_TWO_BYTE_OFFSET = 0x100
+MAX_DECOMPRESSED_BODY_SIZE = 256 * 1024 * 1024
 
 
 class RecordingDatabase:
@@ -92,6 +103,7 @@ class RecordingDatabase:
                 "scenario": scenario,
                 "recording": recording,
                 "cursor": 0,
+                "requests": [],
                 "captures": [],
                 "frozen_at": frozen_at,
             }
@@ -109,6 +121,7 @@ class RecordingDatabase:
                 if cursor >= len(interactions):
                     raise LookupError(f"Recording has no interaction #{cursor + 1}")
                 expected = interactions[cursor]
+                session["requests"].append(actual)
                 if not _requests_match(expected["request"], actual):
                     raise RequestMismatchError(expected["request"], actual, cursor)
                 session["cursor"] += 1
@@ -138,6 +151,19 @@ class RecordingDatabase:
             cursor = session["cursor"]
             request = interactions[cursor]["request"] if cursor < len(interactions) else None
             return {"request": request}
+
+    def last_request(self, session_id: str) -> dict[str, Any]:
+        """Return the most recent request received for a session."""
+        with self.lock:
+            session = self.sessions.get(session_id)
+            if session is None:
+                raise LookupError(f"Unknown session: {session_id}")
+            requests = (
+                session["requests"]
+                if session["mode"] == "replay"
+                else [capture["request"] for capture in session["captures"]]
+            )
+            return {"request": requests[-1] if requests else None}
 
     def capture(
         self,
@@ -187,13 +213,22 @@ class RecordingDatabase:
                 "scenario": session["scenario"],
                 "version": key[0],
                 "frozen_at": session["frozen_at"],
-                "interactions": session["captures"],
+                "interactions": [
+                    {
+                        **capture,
+                        "request": {key: value for key, value in capture["request"].items() if key != "headers"},
+                    }
+                    for capture in session["captures"]
+                ],
             }
             shard["recordings"] = [item for item in shard["recordings"] if item["scenario"] != session["scenario"]]
             shard["recordings"].append(recording)
             shard["recordings"].sort(key=lambda item: item["scenario"])
             _write_json_atomic(self.shard_paths[key], shard)
-            return {"interactions": len(session["captures"]), "file": str(self.shard_paths[key])}
+            return {
+                "interactions": len(session["captures"]),
+                "file": str(self.shard_paths[key]),
+            }
 
     def _add_manifest_entry(self, key: tuple[str, str], shard_path: Path) -> None:
         manifest_path = self.root / "manifest.json"
@@ -216,7 +251,13 @@ class RequestMismatchError(Exception):
 class TestServer(ThreadingHTTPServer):
     daemon_threads = True
 
-    def __init__(self, address: tuple[str, int], database: RecordingDatabase, mode: str, upstream: str | None):
+    def __init__(
+        self,
+        address: tuple[str, int],
+        database: RecordingDatabase,
+        mode: str,
+        upstream: str | None,
+    ):
         super().__init__(address, TestRequestHandler)
         self.database = database
         self.mode = mode
@@ -259,9 +300,20 @@ class TestRequestHandler(BaseHTTPRequestHandler):
             if self.path == f"{CONTROL_ROOT}/sessions" and self.command == "POST":
                 self._start_session()
                 return
-            next_match = re.fullmatch(rf"{re.escape(CONTROL_ROOT)}/sessions/([a-f0-9]+)/next-request", self.path)
+            next_match = re.fullmatch(
+                rf"{re.escape(CONTROL_ROOT)}/sessions/([a-f0-9]+)/next-request",
+                self.path,
+            )
             if next_match and self.command == "GET":
                 result = self.server.database.next_request(next_match.group(1))
+                self._send_json(HTTPStatus.OK, result)
+                return
+            last_match = re.fullmatch(
+                rf"{re.escape(CONTROL_ROOT)}/sessions/([a-f0-9]+)/last-request",
+                self.path,
+            )
+            if last_match and self.command == "GET":
+                result = self.server.database.last_request(last_match.group(1))
                 self._send_json(HTTPStatus.OK, result)
                 return
             stop_match = re.fullmatch(rf"{re.escape(CONTROL_ROOT)}/sessions/([a-f0-9]+)/stop", self.path)
@@ -284,7 +336,11 @@ class TestRequestHandler(BaseHTTPRequestHandler):
         except (LookupError, ValueError) as error:
             self._send_json(HTTPStatus.NOT_FOUND, {"error": str(error)}, error="recording-not-found")
         except Exception as error:
-            self._send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": str(error)}, error="internal-error")
+            self._send_json(
+                HTTPStatus.INTERNAL_SERVER_ERROR,
+                {"error": str(error)},
+                error="internal-error",
+            )
 
     def _start_session(self) -> None:
         payload = json.loads(self._read_body().decode("utf-8"))
@@ -298,7 +354,13 @@ class TestRequestHandler(BaseHTTPRequestHandler):
 
     def _handle_api_request(self) -> None:
         body = self._read_body()
-        actual = _normalise_request(self.command, self.path, self.headers.get("content-type", ""), body)
+        actual = _normalise_request(
+            self.command,
+            self.path,
+            self.headers.get("content-type", ""),
+            self.headers.get("content-encoding", ""),
+            body,
+        )
         session_id = self.headers.get(SESSION_HEADER)
         if self.server.mode == "replay":
             response = self.server.database.replay(session_id, actual)
@@ -332,7 +394,10 @@ class TestRequestHandler(BaseHTTPRequestHandler):
                 "status": remote.status,
                 "reason": remote.reason,
                 "headers": response_headers,
-                "body": {"encoding": "base64", "value": base64.b64encode(response_body).decode("ascii")},
+                "body": {
+                    "encoding": "base64",
+                    "value": base64.b64encode(response_body).decode("ascii"),
+                },
             }
         finally:
             remote.close()
@@ -348,8 +413,9 @@ class TestRequestHandler(BaseHTTPRequestHandler):
         else:
             body = body_data.get("value", "").encode("utf-8")
         status = response["status"]
+        response_headers = response.get("headers", {})
         self.send_response(status, response.get("reason"))
-        for key, value in response.get("headers", {}).items():
+        for key, value in response_headers.items():
             if key.lower() not in HOP_BY_HOP_HEADERS | {"content-length"} | SAFE_BROWSER_HEADERS.keys():
                 self.send_header(key, value)
         for key, value in SAFE_BROWSER_HEADERS.items():
@@ -372,21 +438,48 @@ class TestRequestHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
 
 
-def _normalise_request(method: str, raw_path: str, content_type: str, body: bytes) -> dict[str, Any]:
+def _normalise_request(
+    method: str,
+    raw_path: str,
+    content_type: str,
+    content_encoding: str,
+    body: bytes,
+) -> dict[str, Any]:
     parsed = urlsplit(raw_path)
-    normalised_body = _normalise_body(body, content_type)
+    compression = content_encoding.strip().casefold()
+    normalised_body = _normalise_body(body, content_type, compression)
     return {
         "method": method.upper(),
         "path": _normalise_path(parsed.path),
         "query": sorted([list(pair) for pair in parse_qsl(parsed.query, keep_blank_values=True)]),
         "content_type": _normalise_content_type(content_type, normalised_body),
+        "headers": {"content-encoding": compression} if compression else {},
         "body": normalised_body,
     }
 
 
-def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
+def _normalise_body(body: bytes, content_type: str, compression: str = "") -> dict[str, Any]:
     if not body:
+        if compression in {"gzip", "deflate", "zstd1"}:
+            return {"type": "invalid-compression", "value": ""}
         return {"type": "empty", "value": None}
+    if compression == "zstd1":
+        decompressed = _decompress_zstd(body)
+        if decompressed is None:
+            return {
+                "type": "invalid-compression",
+                "value": base64.b64encode(body).decode("ascii"),
+            }
+        body = decompressed
+    elif compression in {"gzip", "deflate"}:
+        wbits = zlib.MAX_WBITS | 16 if compression == "gzip" else zlib.MAX_WBITS
+        decompressed = _decompress_zlib(body, wbits=wbits)
+        if decompressed is None:
+            return {
+                "type": "invalid-compression",
+                "value": base64.b64encode(body).decode("ascii"),
+            }
+        body = decompressed
     media_type = _media_type(content_type)
     text = body.decode("utf-8", errors="surrogateescape")
     if media_type.endswith("json"):
@@ -399,6 +492,150 @@ def _normalise_body(body: bytes, content_type: str) -> dict[str, Any]:
         if boundary_match:
             text = text.replace(boundary_match.group(1).strip('"'), "x" * 70)
     return {"type": "text", "value": text}
+
+
+def _decompress_zlib(
+    body: bytes,
+    *,
+    wbits: int,
+    max_size: int = MAX_DECOMPRESSED_BODY_SIZE,
+) -> bytes | None:
+    """Decompress exactly one complete zlib stream with bounded output."""
+    decompressor = zlib.decompressobj(wbits)
+    output = bytearray()
+    pending = body
+    try:
+        while pending:
+            remaining = max_size - len(output) + 1
+            chunk = decompressor.decompress(pending, remaining)
+            output.extend(chunk)
+            if len(output) > max_size:
+                return None
+            unconsumed = decompressor.unconsumed_tail
+            if not unconsumed:
+                break
+            if len(unconsumed) == len(pending) and not chunk:
+                return None
+            pending = unconsumed
+    except zlib.error:
+        return None
+    if not decompressor.eof or decompressor.unused_data or decompressor.unconsumed_tail:
+        return None
+    return bytes(output)
+
+
+def _load_zstd() -> Any | None:
+    candidates = (
+        find_library("zstd"),
+        "libzstd.so.1",
+        "libzstd.dylib",
+        "/opt/homebrew/lib/libzstd.dylib",
+        "/usr/local/lib/libzstd.dylib",
+        "libzstd.dll",
+        "zstd.dll",
+    )
+    for candidate in dict.fromkeys(item for item in candidates if item):
+        try:
+            return ctypes.CDLL(candidate)
+        except OSError:
+            continue
+    return None
+
+
+def _decompress_zstd(body: bytes) -> bytes | None:
+    """Decompress one complete Zstandard frame with the platform libzstd."""
+    library = _load_zstd()
+    if library is None:
+        return _decompress_zstd_raw_frame(body)
+
+    try:
+        library.ZSTD_isError.argtypes = [ctypes.c_size_t]
+        library.ZSTD_isError.restype = ctypes.c_uint
+        library.ZSTD_findFrameCompressedSize.argtypes = [
+            ctypes.c_void_p,
+            ctypes.c_size_t,
+        ]
+        library.ZSTD_findFrameCompressedSize.restype = ctypes.c_size_t
+        library.ZSTD_getFrameContentSize.argtypes = [ctypes.c_void_p, ctypes.c_size_t]
+        library.ZSTD_getFrameContentSize.restype = ctypes.c_ulonglong
+        library.ZSTD_decompressBound.argtypes = [ctypes.c_void_p, ctypes.c_size_t]
+        library.ZSTD_decompressBound.restype = ctypes.c_ulonglong
+        library.ZSTD_decompress.argtypes = [
+            ctypes.c_void_p,
+            ctypes.c_size_t,
+            ctypes.c_void_p,
+            ctypes.c_size_t,
+        ]
+        library.ZSTD_decompress.restype = ctypes.c_size_t
+
+        source = ctypes.create_string_buffer(body)
+        source_pointer = ctypes.cast(source, ctypes.c_void_p)
+        compressed_size = library.ZSTD_findFrameCompressedSize(source_pointer, len(body))
+        if library.ZSTD_isError(compressed_size) or compressed_size != len(body):
+            return None
+
+        capacity = library.ZSTD_getFrameContentSize(source_pointer, len(body))
+        if capacity == ZSTD_CONTENTSIZE_ERROR:
+            return None
+        if capacity == ZSTD_CONTENTSIZE_UNKNOWN:
+            capacity = library.ZSTD_decompressBound(source_pointer, len(body))
+        if capacity > MAX_DECOMPRESSED_BODY_SIZE:
+            return None
+
+        destination = ctypes.create_string_buffer(max(1, capacity))
+        decompressed_size = library.ZSTD_decompress(destination, capacity, source_pointer, len(body))
+        if library.ZSTD_isError(decompressed_size) or decompressed_size > capacity:
+            return None
+        return destination.raw[:decompressed_size]
+    except (AttributeError, OSError, OverflowError, TypeError):
+        return None
+
+
+def _decompress_zstd_raw_frame(body: bytes) -> bytes | None:
+    """Decode the raw-block Zstandard frames emitted by the dependency-free fallback."""
+    if len(body) < ZSTD_MIN_RAW_FRAME_SIZE or body[:4] != ZSTD_MAGIC:
+        return None
+    descriptor = body[4]
+    if descriptor & ZSTD_DESCRIPTOR_LOW_BITS_MASK != ZSTD_SINGLE_SEGMENT_FLAG:
+        return None
+    size_flag = descriptor >> 6
+    size_bytes = (1, 2, 4, 8)[size_flag]
+    cursor = 5
+    if len(body) < cursor + size_bytes:
+        return None
+    expected_size = int.from_bytes(body[cursor : cursor + size_bytes], "little")
+    if size_flag == 1:
+        expected_size += ZSTD_FCS_TWO_BYTE_OFFSET
+    if expected_size > MAX_DECOMPRESSED_BODY_SIZE:
+        return None
+    cursor += size_bytes
+    output = bytearray()
+    last_block = False
+    while not last_block:
+        if len(body) < cursor + 3:
+            return None
+        header = int.from_bytes(body[cursor : cursor + 3], "little")
+        cursor += 3
+        last_block = bool(header & 1)
+        block_type = (header >> 1) & 0x3
+        block_size = header >> 3
+        if block_type == 0:
+            if len(body) < cursor + block_size:
+                return None
+            output.extend(body[cursor : cursor + block_size])
+            cursor += block_size
+        elif block_type == 1:
+            if cursor >= len(body):
+                return None
+            output.extend(body[cursor : cursor + 1] * block_size)
+            cursor += 1
+        else:
+            return None
+        if len(output) > MAX_DECOMPRESSED_BODY_SIZE:
+            return None
+    if cursor != len(body) or len(output) != expected_size:
+        return None
+    return bytes(output)
 
 
 def _normalise_json(value: Any) -> Any:
@@ -446,7 +683,10 @@ def _media_type(value: str) -> str:
 
 
 def _status_allows_message_content(status: int) -> bool:
-    return status >= HTTPStatus.OK and status not in {HTTPStatus.NO_CONTENT, HTTPStatus.NOT_MODIFIED}
+    return status >= HTTPStatus.OK and status not in {
+        HTTPStatus.NO_CONTENT,
+        HTTPStatus.NOT_MODIFIED,
+    }
 
 
 def _normalise_path(path: str) -> str:

@@ -702,6 +702,25 @@ def request_parameter_with_value(context, name, value, path_parameters):
     path_parameters[param_name] = json.loads(tpl)
 
 
+@then(parsers.parse('the request uses "{compression}" compression'))
+def request_uses_compression(compression, test_server_session):
+    """Assert the Content-Encoding received by the generated replay server."""
+    if not test_server_session:
+        return
+    result = _test_server_request(
+        "GET",
+        f"/__openapi_transformer__/sessions/{test_server_session['session']}/last-request",
+    )
+    actual = result["request"]["headers"].get("content-encoding")
+    assert actual == compression.casefold(), f"expected Content-Encoding {compression!r}, got {actual!r}"
+
+
+@given(parsers.parse('the client selects "{compression}" compression'))
+def client_selects_compression(compression):
+    """Pass the selected compression from the generated request plan."""
+    assert compression
+
+
 def assert_no_unparsed(data):
     if isinstance(data, list):
         for item in data:
@@ -731,6 +750,9 @@ def prepare_test_runner_request(context, client, api_version, request, path_para
     if request_plan["body"] is not None:
         body = _materialize_test_value(request_plan["body"]["value"], context)
         api_request["kwargs"]["body"] = json.dumps(body)
+
+    if request_plan.get("selected_compression") is not None:
+        api_request["kwargs"]["content_encoding"] = json.dumps(request_plan["selected_compression"])
 
     for parameter in request_plan["parameters"]:
         source = parameter["source"]
