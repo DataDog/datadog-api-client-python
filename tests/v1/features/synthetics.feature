@@ -230,6 +230,7 @@ Feature: Synthetics
     And the response "name" is equal to "{{ unique }}"
     And the response "config.assertions[7].type" is equal to "javascript"
     And the response "config.assertions[7].code" is equal to "const hello = 'world';"
+    And the response "options.bits_ai_auto_investigate" is equal to true
 
   @team:DataDog/synthetics-orchestrating-managing
   Scenario: Create an API HTTP with oauth-rop test returns "OK - Returns the created test details." response
