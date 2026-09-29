@@ -136,6 +136,15 @@ Feature: Logs
     When the request is sent
     Then the response status is 202 Response from server (always 202 empty JSON).
 
+  @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/logs-backend @team:DataDog/logs-ingestion
+  Scenario: Send deflate logs with explicit compression returns "Request accepted for processing (always 202 empty JSON)." response
+    Given new "SubmitLog" request
+    And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
+    And the client selects "deflate" compression
+    When the request is sent
+    Then the response status is 202 Response from server (always 202 empty JSON).
+    And the request uses "deflate" compression
+
   @integration-only @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/logs-backend @team:DataDog/logs-ingestion
   Scenario: Send gzip logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
@@ -143,6 +152,15 @@ Feature: Logs
     And request contains "Content-Encoding" parameter with value "gzip"
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).
+
+  @skip-terraform-config @skip-validation @team:DataDog/event-platform-intake @team:DataDog/logs-backend @team:DataDog/logs-ingestion
+  Scenario: Send gzip logs with explicit compression returns "Request accepted for processing (always 202 empty JSON)." response
+    Given new "SubmitLog" request
+    And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
+    And the client selects "gzip" compression
+    When the request is sent
+    Then the response status is 202 Request accepted for processing (always 202 empty JSON).
+    And the request uses "gzip" compression
 
   @generated @skip @team:DataDog/event-platform-intake @team:DataDog/logs-backend @team:DataDog/logs-ingestion
   Scenario: Send logs returns "Bad Request" response
