@@ -43,6 +43,78 @@
     },
     {
       "feature": "Logs",
+      "frozen_at": "2026-09-28T14:19:35.421Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "ddtags": "host:TestSenddeflatelogswithexplicitcompressionreturnsResponsefromserveralways200emptyJSONrespo1790605175",
+                  "message": "Test-Send_deflate_logs_with_explicit_compression_returns_Response_from_server_always_200_empty_JSON_respo-1790605175"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/v1/input",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Send deflate logs with explicit compression returns \"Response from server (always 200 empty JSON).\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2026-09-28T14:19:35.658Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "ddtags": "host:TestSendgziplogswithexplicitcompressionreturnsResponsefromserveralways200emptyJSONresponse1790605175",
+                  "message": "Test-Send_gzip_logs_with_explicit_compression_returns_Response_from_server_always_200_empty_JSON_response-1790605175"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/v1/input",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Send gzip logs with explicit compression returns \"Response from server (always 200 empty JSON).\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Logs",
       "frozen_at": "2022-04-12T14:46:46.337Z",
       "interactions": [
         {
