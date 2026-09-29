@@ -312,6 +312,18 @@ Feature: Teams
     Then the response status is 200 OK
     And the response has 3 items
 
+  @generated @skip @team:DataDog/aaa-omg
+  Scenario: Get all teams with a test returns "OK" response
+    Given new "ListTeams" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:DataDog/aaa-omg @with-pagination
+  Scenario: Get all teams with a test returns "OK" response with pagination
+    Given new "ListTeams" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @team:DataDog/aaa-omg
   Scenario: Get all teams with fields_team parameter returns "OK" response
     Given new "ListTeams" request
