@@ -11,7 +11,7 @@ Feature: Key Management
     Given a valid "apiKeyAuth" key in the system
     And an instance of "KeyManagement" API
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Create a personal access token returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "CreatePersonalAccessToken" request
@@ -19,7 +19,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-terraform-config @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credential-management
   Scenario: Create a personal access token returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreatePersonalAccessToken" request
@@ -31,7 +31,7 @@ Feature: Key Management
     And the response "data.attributes.scopes" is equal to ["dashboards_read"]
     And the response "data.attributes" has field "key"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Create an API key returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateAPIKey" request
@@ -39,7 +39,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Create an API key returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateAPIKey" request
@@ -49,7 +49,7 @@ Feature: Key Management
     And the response "data.type" is equal to "api_keys"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Create an Application key with scopes for current user returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateCurrentUserApplicationKey" request
@@ -59,7 +59,7 @@ Feature: Key Management
     And the response "data.attributes.name" is equal to "{{ unique }}"
     And the response "data.attributes.scopes" is equal to ["dashboards_read", "dashboards_write", "dashboards_public_share"]
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Create an application key for current user returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateCurrentUserApplicationKey" request
@@ -67,7 +67,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Create an application key for current user returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateCurrentUserApplicationKey" request
@@ -77,7 +77,7 @@ Feature: Key Management
     And the response "data.type" is equal to "application_keys"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Delete an API key returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "api_key" in the system
@@ -86,7 +86,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Delete an API key returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteAPIKey" request
@@ -94,7 +94,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Delete an application key owned by current user returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "application_key" in the system
@@ -103,7 +103,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Delete an application key owned by current user returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteCurrentUserApplicationKey" request
@@ -111,7 +111,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Delete an application key returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "application_key" in the system
@@ -120,7 +120,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Delete an application key returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteApplicationKey" request
@@ -128,7 +128,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Edit an API key returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateAPIKey" request
@@ -137,7 +137,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Edit an API key returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateAPIKey" request
@@ -146,7 +146,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Edit an API key returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "api_key" in the system
@@ -159,7 +159,7 @@ Feature: Key Management
     And the response "data.id" is equal to "{{ api_key.data.id }}"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Edit an application key owned by current user returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateCurrentUserApplicationKey" request
@@ -168,7 +168,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Edit an application key owned by current user returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateCurrentUserApplicationKey" request
@@ -177,7 +177,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Edit an application key owned by current user returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "application_key" in the system
@@ -190,7 +190,7 @@ Feature: Key Management
     And the response "data.id" is equal to "{{ application_key.data.id }}"
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}-updated"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Edit an application key returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateApplicationKey" request
@@ -199,7 +199,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Edit an application key returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateApplicationKey" request
@@ -208,7 +208,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Edit an application key returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "application_key" in the system
@@ -221,7 +221,7 @@ Feature: Key Management
     And the response "data.id" is equal to "{{ application_key.data.id }}"
     And the response "data.attributes.name" is equal to "{{ application_key.data.attributes.name }}-updated"
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get API key returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetAPIKey" request
@@ -229,7 +229,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get API key returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "api_key" in the system
@@ -241,7 +241,7 @@ Feature: Key Management
     And the response "data.id" is equal to "{{ api_key.data.id }}"
     And the response "data.attributes" has field "date_last_used"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get a personal access token returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetPersonalAccessToken" request
@@ -249,7 +249,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credential-management
   Scenario: Get a personal access token returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
@@ -260,14 +260,14 @@ Feature: Key Management
     And the response "data.type" is equal to "personal_access_tokens"
     And the response "data.id" has the same value as "personal_access_token.data.id"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get all API keys returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListAPIKeys" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get all API keys returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "api_key" in the system
@@ -278,35 +278,35 @@ Feature: Key Management
     And the response "data[0].type" is equal to "api_keys"
     And the response "data[0].attributes" has field "date_last_used"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get all access tokens returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListPersonalAccessTokens" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get all access tokens returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListPersonalAccessTokens" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get all application keys owned by current user returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListCurrentUserApplicationKeys" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get all application keys owned by current user returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListCurrentUserApplicationKeys" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get all application keys owned by current user returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListCurrentUserApplicationKeys" request
@@ -315,21 +315,21 @@ Feature: Key Management
     And the response "data[0].type" is equal to "application_keys"
     And the response "data[0].attributes" has field "last_used_at"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get all application keys returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListApplicationKeys" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get all application keys returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListApplicationKeys" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get all application keys returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "application_key" in the system
@@ -339,7 +339,7 @@ Feature: Key Management
     And the response "data[0].type" is equal to "application_keys"
     And the response "data[0].attributes" has field "last_used_at"
 
-  @skip-terraform-config @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credential-management
   Scenario: Get all personal access tokens returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
@@ -348,7 +348,7 @@ Feature: Key Management
     Then the response status is 200 OK
     And the response "data" has item with field "type" with value "personal_access_tokens"
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Get an application key returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "GetApplicationKey" request
@@ -356,7 +356,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get an application key returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetApplicationKey" request
@@ -364,7 +364,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get an application key returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "application_key" in the system
@@ -376,7 +376,7 @@ Feature: Key Management
     And the response "data.id" has the same value as "application_key.data.id"
     And the response "data.attributes" has field "last_used_at"
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get one application key owned by current user returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetCurrentUserApplicationKey" request
@@ -384,7 +384,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/credentials-management
+  @team:DataDog/credential-management
   Scenario: Get one application key owned by current user returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "application_key" in the system
@@ -398,7 +398,7 @@ Feature: Key Management
     And the response "data.attributes" has field "scopes"
     And the response "data.attributes" has field "last_used_at"
 
-  @skip-terraform-config @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credential-management
   Scenario: Revoke a personal access token returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
@@ -407,7 +407,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Revoke a personal access token returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "RevokePersonalAccessToken" request
@@ -415,7 +415,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Update a personal access token returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdatePersonalAccessToken" request
@@ -424,7 +424,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/credentials-management
+  @generated @skip @team:DataDog/credential-management
   Scenario: Update a personal access token returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdatePersonalAccessToken" request
@@ -433,7 +433,7 @@ Feature: Key Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:DataDog/credentials-management
+  @skip-terraform-config @team:DataDog/credential-management
   Scenario: Update a personal access token returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "personal_access_token" in the system
