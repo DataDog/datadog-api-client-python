@@ -14,7 +14,7 @@ Feature: Product Analytics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "ProductAnalytics" API
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute a Sankey diagram returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsSankey" enabled
@@ -23,7 +23,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute a Sankey diagram returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsSankey" enabled
@@ -32,7 +32,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute a retention grid returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionGrid" enabled
@@ -41,7 +41,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute a retention grid returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionGrid" enabled
@@ -50,7 +50,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute journey funnel analysis returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyFunnel" enabled
@@ -59,7 +59,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute journey funnel analysis returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyFunnel" enabled
@@ -68,7 +68,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute journey scalar analytics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyScalar" enabled
@@ -77,7 +77,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute journey scalar analytics returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyScalar" enabled
@@ -86,7 +86,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute journey timeseries analytics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyTimeseries" enabled
@@ -95,7 +95,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute journey timeseries analytics returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyTimeseries" enabled
@@ -104,7 +104,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute retention scalar values returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionScalar" enabled
@@ -113,7 +113,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute retention scalar values returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionScalar" enabled
@@ -122,7 +122,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute retention timeseries returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionTimeseries" enabled
@@ -131,7 +131,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute retention timeseries returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionTimeseries" enabled
@@ -140,7 +140,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute scalar analytics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryProductAnalyticsScalar" request
@@ -148,7 +148,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute scalar analytics returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryProductAnalyticsScalar" request
@@ -156,7 +156,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute timeseries analytics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryProductAnalyticsTimeseries" request
@@ -164,7 +164,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Compute timeseries analytics returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryProductAnalyticsTimeseries" request
@@ -172,7 +172,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: List analytics events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsList" enabled
@@ -181,7 +181,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: List analytics events returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsList" enabled
@@ -190,7 +190,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: List journey entities returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyList" enabled
@@ -199,7 +199,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: List journey entities returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsJourneyList" enabled
@@ -208,7 +208,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: List the entities behind a retention cell returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionList" enabled
@@ -217,7 +217,7 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: List the entities behind a retention cell returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsRetentionList" enabled
@@ -226,28 +226,28 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Send server-side events returns "Bad Request" response
     Given new "SubmitProductAnalyticsEvent" request
     And body with value {"account": {"id": "account-67890"}, "application": {"id": "123abcde-123a-123b-1234-123456789abc"}, "event": {"name": "payment.processed"}, "session": {"id": "session-abcdef"}, "type": "server", "usr": {"id": "user-12345"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Send server-side events returns "Payload Too Large" response
     Given new "SubmitProductAnalyticsEvent" request
     And body with value {"account": {"id": "account-67890"}, "application": {"id": "123abcde-123a-123b-1234-123456789abc"}, "event": {"name": "payment.processed"}, "session": {"id": "session-abcdef"}, "type": "server", "usr": {"id": "user-12345"}}
     When the request is sent
     Then the response status is 413 Payload Too Large
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Send server-side events returns "Request Timeout" response
     Given new "SubmitProductAnalyticsEvent" request
     And body with value {"account": {"id": "account-67890"}, "application": {"id": "123abcde-123a-123b-1234-123456789abc"}, "event": {"name": "payment.processed"}, "session": {"id": "session-abcdef"}, "type": "server", "usr": {"id": "user-12345"}}
     When the request is sent
     Then the response status is 408 Request Timeout
 
-  @generated @skip @team:DataDog/product-analytics-backend
+  @generated @skip @team:DataDog/product-analytics-platform
   Scenario: Send server-side events returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitProductAnalyticsEvent" request
     And body with value {"account": {"id": "account-67890"}, "application": {"id": "123abcde-123a-123b-1234-123456789abc"}, "event": {"name": "payment.processed"}, "session": {"id": "session-abcdef"}, "type": "server", "usr": {"id": "user-12345"}}
