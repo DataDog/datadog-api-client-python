@@ -3412,6 +3412,11 @@ from datadog_api_client.v2.model.fleet_agent_versions_v2_response_meta import Fl
 from datadog_api_client.v2.model.fleet_agents_v2_page import FleetAgentsV2Page
 from datadog_api_client.v2.model.fleet_agents_v2_response import FleetAgentsV2Response
 from datadog_api_client.v2.model.fleet_agents_v2_response_meta import FleetAgentsV2ResponseMeta
+from datadog_api_client.v2.model.fleet_config_file_schema_v2 import FleetConfigFileSchemaV2
+from datadog_api_client.v2.model.fleet_config_file_schema_v2_attributes import FleetConfigFileSchemaV2Attributes
+from datadog_api_client.v2.model.fleet_config_file_schema_v2_resource_type import FleetConfigFileSchemaV2ResourceType
+from datadog_api_client.v2.model.fleet_config_file_schema_v2_response import FleetConfigFileSchemaV2Response
+from datadog_api_client.v2.model.fleet_config_file_schema_v2_response_data import FleetConfigFileSchemaV2ResponseData
 from datadog_api_client.v2.model.fleet_configuration_file_v2 import FleetConfigurationFileV2
 from datadog_api_client.v2.model.fleet_configuration_layer import FleetConfigurationLayer
 from datadog_api_client.v2.model.fleet_deployment import FleetDeployment
@@ -3463,6 +3468,16 @@ from datadog_api_client.v2.model.fleet_deployments_v2_response import FleetDeplo
 from datadog_api_client.v2.model.fleet_deployments_v2_response_meta import FleetDeploymentsV2ResponseMeta
 from datadog_api_client.v2.model.fleet_detected_integration import FleetDetectedIntegration
 from datadog_api_client.v2.model.fleet_integration_details_v2 import FleetIntegrationDetailsV2
+from datadog_api_client.v2.model.fleet_integration_schema_deprecation_v2 import FleetIntegrationSchemaDeprecationV2
+from datadog_api_client.v2.model.fleet_integration_schema_detail_v2 import FleetIntegrationSchemaDetailV2
+from datadog_api_client.v2.model.fleet_integration_schema_detail_v2_attributes import (
+    FleetIntegrationSchemaDetailV2Attributes,
+)
+from datadog_api_client.v2.model.fleet_integration_schema_file_spec_v2 import FleetIntegrationSchemaFileSpecV2
+from datadog_api_client.v2.model.fleet_integration_schema_spec_option_v2 import FleetIntegrationSchemaSpecOptionV2
+from datadog_api_client.v2.model.fleet_integration_schema_spec_property_v2 import FleetIntegrationSchemaSpecPropertyV2
+from datadog_api_client.v2.model.fleet_integration_schema_spec_value_v2 import FleetIntegrationSchemaSpecValueV2
+from datadog_api_client.v2.model.fleet_integration_schema_v2_resource_type import FleetIntegrationSchemaV2ResourceType
 from datadog_api_client.v2.model.fleet_integrations_by_status_v2 import FleetIntegrationsByStatusV2
 from datadog_api_client.v2.model.fleet_otel_collector import FleetOtelCollector
 from datadog_api_client.v2.model.fleet_otel_collector_configuration_v2 import FleetOtelCollectorConfigurationV2
@@ -14372,6 +14387,11 @@ __all__ = [
     "FleetAgentsV2Page",
     "FleetAgentsV2Response",
     "FleetAgentsV2ResponseMeta",
+    "FleetConfigFileSchemaV2",
+    "FleetConfigFileSchemaV2Attributes",
+    "FleetConfigFileSchemaV2ResourceType",
+    "FleetConfigFileSchemaV2Response",
+    "FleetConfigFileSchemaV2ResponseData",
     "FleetConfigurationFileV2",
     "FleetConfigurationLayer",
     "FleetDeployment",
@@ -14411,6 +14431,14 @@ __all__ = [
     "FleetDeploymentsV2ResponseMeta",
     "FleetDetectedIntegration",
     "FleetIntegrationDetailsV2",
+    "FleetIntegrationSchemaDeprecationV2",
+    "FleetIntegrationSchemaDetailV2",
+    "FleetIntegrationSchemaDetailV2Attributes",
+    "FleetIntegrationSchemaFileSpecV2",
+    "FleetIntegrationSchemaSpecOptionV2",
+    "FleetIntegrationSchemaSpecPropertyV2",
+    "FleetIntegrationSchemaSpecValueV2",
+    "FleetIntegrationSchemaV2ResourceType",
     "FleetIntegrationsByStatusV2",
     "FleetOtelCollector",
     "FleetOtelCollectorConfigurationV2",

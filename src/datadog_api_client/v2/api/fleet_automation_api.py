@@ -34,6 +34,7 @@ from datadog_api_client.v2.model.fleet_deployment_v2_detail_response import Flee
 from datadog_api_client.v2.model.fleet_deployment_v2_cancel_response import FleetDeploymentV2CancelResponse
 from datadog_api_client.v2.model.fleet_schedules_v2_response import FleetSchedulesV2Response
 from datadog_api_client.v2.model.fleet_schedule_v2_response import FleetScheduleV2Response
+from datadog_api_client.v2.model.fleet_config_file_schema_v2_response import FleetConfigFileSchemaV2Response
 
 
 class FleetAutomationApi:
@@ -185,6 +186,29 @@ class FleetAutomationApi:
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_fleet_config_file_schema_v2_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetConfigFileSchemaV2Response,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/fleet/schemas/config-file",
+                "operation_id": "get_fleet_config_file_schema_v2",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "file_path": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "file_path",
                     "location": "query",
                 },
             },
@@ -691,6 +715,29 @@ class FleetAutomationApi:
             kwargs["include"] = include
 
         return self._get_fleet_agent_detail_v2_endpoint.call_with_http_info(**kwargs)
+
+    def get_fleet_config_file_schema_v2(
+        self,
+        file_path: str,
+    ) -> FleetConfigFileSchemaV2Response:
+        """Get a configuration file's schema by path.
+
+        Retrieve the schema for a configuration file, identified by the file
+        path reported by the Datadog Agent. A schema describes the structure
+        and options of a configuration file. Works for both integration
+        configuration files and core Agent configuration files.
+
+        The schema defines which fields can be edited remotely from Fleet
+        Automation using ``POST /api/v2/fleet/deployments/configure``.
+
+        :param file_path: The configuration file path reported by the Datadog Agent (for example, ``conf.d/postgres.d/conf.yaml`` or ``datadog.yaml`` ).
+        :type file_path: str
+        :rtype: FleetConfigFileSchemaV2Response
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["file_path"] = file_path
+
+        return self._get_fleet_config_file_schema_v2_endpoint.call_with_http_info(**kwargs)
 
     def get_fleet_deployment_v2(
         self,
