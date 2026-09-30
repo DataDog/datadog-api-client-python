@@ -400,6 +400,7 @@ class Configuration:
                 "v2.export_security_monitoring_terraform_resource": False,
                 "v2.get_content_packs_states": False,
                 "v2.get_entity_context": False,
+                "v2.get_entity_context_recently_updated": False,
                 "v2.get_entra_id_azure_app_registrations": False,
                 "v2.get_finding": False,
                 "v2.get_historical_job": False,

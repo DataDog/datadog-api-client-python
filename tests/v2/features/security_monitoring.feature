@@ -2505,6 +2505,20 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Get recently updated entity context returns "Bad Request" response
+    Given operation "GetEntityContextRecentlyUpdated" enabled
+    And new "GetEntityContextRecentlyUpdated" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/cloud-siem
+  Scenario: Get recently updated entity context returns "OK" response
+    Given operation "GetEntityContextRecentlyUpdated" enabled
+    And new "GetEntityContextRecentlyUpdated" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip-go @skip-java @skip-ruby @team:DataDog/cloud-siem
   Scenario: Get rule version history returns "OK" response
     Given operation "GetRuleVersionHistory" enabled

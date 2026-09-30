@@ -196,6 +196,9 @@ from datadog_api_client.v2.model.security_monitoring_dataset_version_history_res
     SecurityMonitoringDatasetVersionHistoryResponse,
 )
 from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
+from datadog_api_client.v2.model.entity_context_entity_type import EntityContextEntityType
+from datadog_api_client.v2.model.recently_updated_entities_response import RecentlyUpdatedEntitiesResponse
+from datadog_api_client.v2.model.entity_context_revisions_mode import EntityContextRevisionsMode
 from datadog_api_client.v2.model.single_entity_context_response import SingleEntityContextResponse
 from datadog_api_client.v2.model.matching_signals_response import MatchingSignalsResponse
 from datadog_api_client.v2.model.security_monitoring_list_rules_response import SecurityMonitoringListRulesResponse
@@ -1889,6 +1892,11 @@ class SecurityMonitoringApi:
                     "attribute": "query",
                     "location": "query",
                 },
+                "entity_type": {
+                    "openapi_types": (EntityContextEntityType,),
+                    "attribute": "entity_type",
+                    "location": "query",
+                },
                 "_from": {
                     "openapi_types": (str,),
                     "attribute": "from",
@@ -1912,6 +1920,57 @@ class SecurityMonitoringApi:
                 "page_token": {
                     "openapi_types": (str,),
                     "attribute": "page_token",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_entity_context_recently_updated_endpoint = _Endpoint(
+            settings={
+                "response_type": (RecentlyUpdatedEntitiesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/entity_context/recently_updated",
+                "operation_id": "get_entity_context_recently_updated",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "query": {
+                    "openapi_types": (str,),
+                    "attribute": "query",
+                    "location": "query",
+                },
+                "entity_type": {
+                    "openapi_types": (EntityContextEntityType,),
+                    "attribute": "entity_type",
+                    "location": "query",
+                },
+                "_from": {
+                    "openapi_types": (str,),
+                    "attribute": "from",
+                    "location": "query",
+                },
+                "to": {
+                    "openapi_types": (str,),
+                    "attribute": "to",
+                    "location": "query",
+                },
+                "limit": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "revisions": {
+                    "openapi_types": (EntityContextRevisionsMode,),
+                    "attribute": "revisions",
                     "location": "query",
                 },
             },
@@ -2738,6 +2797,11 @@ class SecurityMonitoringApi:
                     "openapi_types": (str,),
                     "attribute": "id",
                     "location": "path",
+                },
+                "entity_type": {
+                    "openapi_types": (EntityContextEntityType,),
+                    "attribute": "entity_type",
+                    "location": "query",
                 },
                 "_from": {
                     "openapi_types": (str,),
@@ -6382,6 +6446,7 @@ class SecurityMonitoringApi:
         self,
         *,
         query: Union[str, UnsetType] = unset,
+        entity_type: Union[EntityContextEntityType, UnsetType] = unset,
         _from: Union[str, UnsetType] = unset,
         to: Union[str, UnsetType] = unset,
         as_of: Union[str, UnsetType] = unset,
@@ -6397,6 +6462,9 @@ class SecurityMonitoringApi:
 
         :param query: A free-text query (for example, an email address or principal ID) used to filter the entities returned.
         :type query: str, optional
+        :param entity_type: The type of entity to retrieve. Only ``siem_entity_identity`` is currently supported.
+            Defaults to ``siem_entity_identity``.
+        :type entity_type: EntityContextEntityType, optional
         :param _from: The start of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now-7d`` ).
             Defaults to ``now-7d``. Ignored when ``as_of`` is set.
         :type _from: str, optional
@@ -6417,6 +6485,9 @@ class SecurityMonitoringApi:
         if query is not unset:
             kwargs["query"] = query
 
+        if entity_type is not unset:
+            kwargs["entity_type"] = entity_type
+
         if _from is not unset:
             kwargs["_from"] = _from
 
@@ -6433,6 +6504,61 @@ class SecurityMonitoringApi:
             kwargs["page_token"] = page_token
 
         return self._get_entity_context_endpoint.call_with_http_info(**kwargs)
+
+    def get_entity_context_recently_updated(
+        self,
+        *,
+        query: Union[str, UnsetType] = unset,
+        entity_type: Union[EntityContextEntityType, UnsetType] = unset,
+        _from: Union[str, UnsetType] = unset,
+        to: Union[str, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        revisions: Union[EntityContextRevisionsMode, UnsetType] = unset,
+    ) -> RecentlyUpdatedEntitiesResponse:
+        """Get recently updated entity context.
+
+        Get the entities with the most recent updates in the Cloud SIEM entity context store. Entities are ranked
+        by the time of their most recent revision in the requested time range, and the top ``limit`` entities are
+        returned in that order. This endpoint is not paginated.
+
+        :param query: A free-text query (for example, an email address or principal ID) used to filter the entities returned.
+        :type query: str, optional
+        :param entity_type: The type of entity to retrieve. Only ``siem_entity_identity`` is currently supported.
+            Defaults to ``siem_entity_identity``.
+        :type entity_type: EntityContextEntityType, optional
+        :param _from: The start of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now-7d`` ).
+            Defaults to ``now-7d``.
+        :type _from: str, optional
+        :param to: The end of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now`` ).
+            Defaults to ``now``. Entities are ranked by their most recent revision within ``[from, to]``.
+        :type to: str, optional
+        :param limit: The number of entities to return. Must be between 1 and 100.
+        :type limit: int, optional
+        :param revisions: Which revisions to return for each entity: ``latest`` returns only the latest revision of each entity as of ``to`` ,
+            and ``all`` returns every revision in the requested time range.
+        :type revisions: EntityContextRevisionsMode, optional
+        :rtype: RecentlyUpdatedEntitiesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
+        if entity_type is not unset:
+            kwargs["entity_type"] = entity_type
+
+        if _from is not unset:
+            kwargs["_from"] = _from
+
+        if to is not unset:
+            kwargs["to"] = to
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if revisions is not unset:
+            kwargs["revisions"] = revisions
+
+        return self._get_entity_context_recently_updated_endpoint.call_with_http_info(**kwargs)
 
     def get_entra_id_azure_app_registrations(
         self,
@@ -7089,6 +7215,7 @@ class SecurityMonitoringApi:
         self,
         id: str,
         *,
+        entity_type: Union[EntityContextEntityType, UnsetType] = unset,
         _from: Union[str, UnsetType] = unset,
         to: Union[str, UnsetType] = unset,
         as_of: Union[str, UnsetType] = unset,
@@ -7102,6 +7229,9 @@ class SecurityMonitoringApi:
 
         :param id: The unique identifier of the entity to retrieve.
         :type id: str
+        :param entity_type: The type of entity to retrieve. Only ``siem_entity_identity`` is currently supported.
+            Defaults to ``siem_entity_identity``.
+        :type entity_type: EntityContextEntityType, optional
         :param _from: The start of the time range to query, as an RFC3339 timestamp or a relative time (for example, ``now-7d`` ).
             Defaults to ``now-7d``. Ignored when ``as_of`` is set.
         :type _from: str, optional
@@ -7116,6 +7246,9 @@ class SecurityMonitoringApi:
         """
         kwargs: Dict[str, Any] = {}
         kwargs["id"] = id
+
+        if entity_type is not unset:
+            kwargs["entity_type"] = entity_type
 
         if _from is not unset:
             kwargs["_from"] = _from
