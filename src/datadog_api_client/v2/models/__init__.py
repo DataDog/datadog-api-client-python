@@ -5211,12 +5211,15 @@ from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjects
 from datadog_api_client.v2.model.llm_obs_prompt_authoring_item import LLMObsPromptAuthoringItem
 from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import LLMObsPromptAuthoringMessagesTemplate
 from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
 from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 from datadog_api_client.v2.model.llm_obs_prompt_data import LLMObsPromptData
 from datadog_api_client.v2.model.llm_obs_prompt_data_attributes import LLMObsPromptDataAttributes
 from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
 from datadog_api_client.v2.model.llm_obs_prompt_include import LLMObsPromptInclude
 from datadog_api_client.v2.model.llm_obs_prompt_include_item import LLMObsPromptIncludeItem
+from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder import LLMObsPromptMessagePlaceholder
+from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder_type import LLMObsPromptMessagePlaceholderType
 from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
 from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 from datadog_api_client.v2.model.llm_obs_prompt_sdk_data import LLMObsPromptSDKData
@@ -15682,12 +15685,15 @@ __all__ = [
     "LLMObsPromptAuthoringItem",
     "LLMObsPromptAuthoringMessagesTemplate",
     "LLMObsPromptChatMessage",
+    "LLMObsPromptChatTemplateItem",
     "LLMObsPromptConfig",
     "LLMObsPromptData",
     "LLMObsPromptDataAttributes",
     "LLMObsPromptDataset",
     "LLMObsPromptInclude",
     "LLMObsPromptIncludeItem",
+    "LLMObsPromptMessagePlaceholder",
+    "LLMObsPromptMessagePlaceholderType",
     "LLMObsPromptResponse",
     "LLMObsPromptResponseSource",
     "LLMObsPromptSDKData",

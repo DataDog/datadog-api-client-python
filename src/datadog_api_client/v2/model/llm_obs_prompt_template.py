@@ -13,9 +13,10 @@ from datadog_api_client.model_utils import (
 class LLMObsPromptTemplate(ModelComposed):
     def __init__(self, **kwargs):
         """
-        A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}`` ; other text, including ``{{>...}}`` sequences without a version, remains literal. Use an authored chat object when including prompts as chat messages.
+        A text template, a list of chat messages and named message placeholders, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}`` ; other text, including ``{{>...}}`` sequences without a version, remains literal. Use an authored chat object when including prompts as chat messages.
         **Preview** : Prompt composition is available in Preview. To request access, contact `Datadog Support <https://docs.datadoghq.com/help/>`_ or your Customer Success Manager.
         Without access, inline references remain literal text and structured includes are unsupported. Previously compiled prompt versions remain available for execution.
+        **Preview:** Message placeholders are available in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager.
 
         :param messages: A chat prompt containing messages, references to specific versions of other prompts, or both.
         :type messages: [LLMObsPromptAuthoringItem]
@@ -31,7 +32,7 @@ class LLMObsPromptTemplate(ModelComposed):
         # code would be run when this module is imported, and these composed
         # classes don't exist yet because their module has not finished
         # loading
-        from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+        from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
         from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import (
             LLMObsPromptAuthoringMessagesTemplate,
         )
@@ -39,7 +40,7 @@ class LLMObsPromptTemplate(ModelComposed):
         return {
             "oneOf": [
                 str,
-                [LLMObsPromptChatMessage],
+                [LLMObsPromptChatTemplateItem],
                 LLMObsPromptAuthoringMessagesTemplate,
             ],
         }
