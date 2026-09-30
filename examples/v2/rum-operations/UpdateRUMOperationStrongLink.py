@@ -30,7 +30,7 @@ configuration.unstable_operations["update_rum_operation_strong_link"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMOperationsApi(api_client)
     response = api_instance.update_rum_operation_strong_link(
-        rum_operation_id="rum_operation_id", feature_id="feature_id", body=body
+        rum_operation_id="rum_operation_id", journey_id="journey_id", body=body
     )
 
     print(response)

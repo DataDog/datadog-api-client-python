@@ -88,7 +88,7 @@ Feature: RUM Operations
     Given operation "DeleteRUMOperationStrongLink" enabled
     And new "DeleteRUMOperationStrongLink" request
     And request contains "rum_operation_id" parameter from "REPLACE.ME"
-    And request contains "feature_id" parameter from "REPLACE.ME"
+    And request contains "journey_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
@@ -97,7 +97,7 @@ Feature: RUM Operations
     Given operation "DeleteRUMOperationStrongLink" enabled
     And new "DeleteRUMOperationStrongLink" request
     And request contains "rum_operation_id" parameter from "REPLACE.ME"
-    And request contains "feature_id" parameter from "REPLACE.ME"
+    And request contains "journey_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -208,7 +208,7 @@ Feature: RUM Operations
     Given operation "UpdateRUMOperationStrongLink" enabled
     And new "UpdateRUMOperationStrongLink" request
     And request contains "rum_operation_id" parameter from "REPLACE.ME"
-    And request contains "feature_id" parameter from "REPLACE.ME"
+    And request contains "journey_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"status": "CONFIRMED"}, "type": "strong_links"}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -218,7 +218,7 @@ Feature: RUM Operations
     Given operation "UpdateRUMOperationStrongLink" enabled
     And new "UpdateRUMOperationStrongLink" request
     And request contains "rum_operation_id" parameter from "REPLACE.ME"
-    And request contains "feature_id" parameter from "REPLACE.ME"
+    And request contains "journey_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"status": "CONFIRMED"}, "type": "strong_links"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -228,7 +228,7 @@ Feature: RUM Operations
     Given operation "UpdateRUMOperationStrongLink" enabled
     And new "UpdateRUMOperationStrongLink" request
     And request contains "rum_operation_id" parameter from "REPLACE.ME"
-    And request contains "feature_id" parameter from "REPLACE.ME"
+    And request contains "journey_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"status": "CONFIRMED"}, "type": "strong_links"}}
     When the request is sent
     Then the response status is 200 OK
