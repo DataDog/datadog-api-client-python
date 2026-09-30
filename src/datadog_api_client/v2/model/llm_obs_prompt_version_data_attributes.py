@@ -18,10 +18,12 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_prompt_template import LLMObsPromptTemplate
     from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
     from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
-    from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
     from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import (
         LLMObsPromptAuthoringMessagesTemplate,
     )
+    from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder import LLMObsPromptMessagePlaceholder
 
 
 class LLMObsPromptVersionDataAttributes(ModelNormal):
@@ -82,12 +84,19 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         prompt_id: str,
         prompt_uuid: str,
         template: Union[
-            LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage], LLMObsPromptAuthoringMessagesTemplate
+            LLMObsPromptTemplate,
+            str,
+            List[Union[LLMObsPromptChatTemplateItem, LLMObsPromptChatMessage, LLMObsPromptMessagePlaceholder]],
+            LLMObsPromptAuthoringMessagesTemplate,
         ],
         version: int,
         author: Union[str, UnsetType] = unset,
         authoring_template: Union[
-            LLMObsPromptTemplate, str, List[LLMObsPromptChatMessage], LLMObsPromptAuthoringMessagesTemplate, UnsetType
+            LLMObsPromptTemplate,
+            str,
+            List[Union[LLMObsPromptChatTemplateItem, LLMObsPromptChatMessage, LLMObsPromptMessagePlaceholder]],
+            LLMObsPromptAuthoringMessagesTemplate,
+            UnsetType,
         ] = unset,
         config: Union[LLMObsPromptConfig, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
@@ -108,9 +117,10 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         :param author: UUID of the user who authored this version.
         :type author: str, optional
 
-        :param authoring_template: A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}`` ; other text, including ``{{>...}}`` sequences without a version, remains literal. Use an authored chat object when including prompts as chat messages.
+        :param authoring_template: A text template, a list of chat messages and named message placeholders, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}`` ; other text, including ``{{>...}}`` sequences without a version, remains literal. Use an authored chat object when including prompts as chat messages.
             **Preview** : Prompt composition is available in Preview. To request access, contact `Datadog Support <https://docs.datadoghq.com/help/>`_ or your Customer Success Manager.
             Without access, inline references remain literal text and structured includes are unsupported. Previously compiled prompt versions remain available for execution.
+            **Preview:** Message placeholders are available in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager.
         :type authoring_template: LLMObsPromptTemplate, optional
 
         :param config: Versioned prompt configuration is in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager. Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
@@ -146,9 +156,10 @@ class LLMObsPromptVersionDataAttributes(ModelNormal):
         :param tags: Tags observed on runs of this prompt version.
         :type tags: [str], optional
 
-        :param template: A text template, a list of chat messages, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}`` ; other text, including ``{{>...}}`` sequences without a version, remains literal. Use an authored chat object when including prompts as chat messages.
+        :param template: A text template, a list of chat messages and named message placeholders, or an authored chat object. Text can include an exact prompt version with ``{{>prompt-id version=N}}`` ; other text, including ``{{>...}}`` sequences without a version, remains literal. Use an authored chat object when including prompts as chat messages.
             **Preview** : Prompt composition is available in Preview. To request access, contact `Datadog Support <https://docs.datadoghq.com/help/>`_ or your Customer Success Manager.
             Without access, inline references remain literal text and structured includes are unsupported. Previously compiled prompt versions remain available for execution.
+            **Preview:** Message placeholders are available in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager.
         :type template: LLMObsPromptTemplate
 
         :param user_version: User-supplied identifier for this version.

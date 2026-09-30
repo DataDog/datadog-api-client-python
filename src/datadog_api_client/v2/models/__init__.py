@@ -2984,11 +2984,13 @@ from datadog_api_client.v2.model.elastic_cloud_slm_stats_integration_dataflow_re
 from datadog_api_client.v2.model.entity_attributes import EntityAttributes
 from datadog_api_client.v2.model.entity_context_entity import EntityContextEntity
 from datadog_api_client.v2.model.entity_context_entity_attributes import EntityContextEntityAttributes
+from datadog_api_client.v2.model.entity_context_entity_type import EntityContextEntityType
 from datadog_api_client.v2.model.entity_context_page import EntityContextPage
 from datadog_api_client.v2.model.entity_context_response import EntityContextResponse
 from datadog_api_client.v2.model.entity_context_response_meta import EntityContextResponseMeta
 from datadog_api_client.v2.model.entity_context_revision import EntityContextRevision
 from datadog_api_client.v2.model.entity_context_revision_attributes import EntityContextRevisionAttributes
+from datadog_api_client.v2.model.entity_context_revisions_mode import EntityContextRevisionsMode
 from datadog_api_client.v2.model.entity_data import EntityData
 from datadog_api_client.v2.model.entity_integration_config_attributes import EntityIntegrationConfigAttributes
 from datadog_api_client.v2.model.entity_integration_config_data import EntityIntegrationConfigData
@@ -5209,12 +5211,15 @@ from datadog_api_client.v2.model.llm_obs_projects_response import LLMObsProjects
 from datadog_api_client.v2.model.llm_obs_prompt_authoring_item import LLMObsPromptAuthoringItem
 from datadog_api_client.v2.model.llm_obs_prompt_authoring_messages_template import LLMObsPromptAuthoringMessagesTemplate
 from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
 from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 from datadog_api_client.v2.model.llm_obs_prompt_data import LLMObsPromptData
 from datadog_api_client.v2.model.llm_obs_prompt_data_attributes import LLMObsPromptDataAttributes
 from datadog_api_client.v2.model.llm_obs_prompt_dataset import LLMObsPromptDataset
 from datadog_api_client.v2.model.llm_obs_prompt_include import LLMObsPromptInclude
 from datadog_api_client.v2.model.llm_obs_prompt_include_item import LLMObsPromptIncludeItem
+from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder import LLMObsPromptMessagePlaceholder
+from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder_type import LLMObsPromptMessagePlaceholderType
 from datadog_api_client.v2.model.llm_obs_prompt_response import LLMObsPromptResponse
 from datadog_api_client.v2.model.llm_obs_prompt_response_source import LLMObsPromptResponseSource
 from datadog_api_client.v2.model.llm_obs_prompt_sdk_data import LLMObsPromptSDKData
@@ -8158,6 +8163,7 @@ from datadog_api_client.v2.model.react_native_sourcemap_attributes import ReactN
 from datadog_api_client.v2.model.react_native_sourcemap_data import ReactNativeSourcemapData
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
+from datadog_api_client.v2.model.recently_updated_entities_response import RecentlyUpdatedEntitiesResponse
 from datadog_api_client.v2.model.recommendation_attributes import RecommendationAttributes
 from datadog_api_client.v2.model.recommendation_data import RecommendationData
 from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
@@ -14034,11 +14040,13 @@ __all__ = [
     "EntityAttributes",
     "EntityContextEntity",
     "EntityContextEntityAttributes",
+    "EntityContextEntityType",
     "EntityContextPage",
     "EntityContextResponse",
     "EntityContextResponseMeta",
     "EntityContextRevision",
     "EntityContextRevisionAttributes",
+    "EntityContextRevisionsMode",
     "EntityData",
     "EntityIntegrationConfigAttributes",
     "EntityIntegrationConfigData",
@@ -15677,12 +15685,15 @@ __all__ = [
     "LLMObsPromptAuthoringItem",
     "LLMObsPromptAuthoringMessagesTemplate",
     "LLMObsPromptChatMessage",
+    "LLMObsPromptChatTemplateItem",
     "LLMObsPromptConfig",
     "LLMObsPromptData",
     "LLMObsPromptDataAttributes",
     "LLMObsPromptDataset",
     "LLMObsPromptInclude",
     "LLMObsPromptIncludeItem",
+    "LLMObsPromptMessagePlaceholder",
+    "LLMObsPromptMessagePlaceholderType",
     "LLMObsPromptResponse",
     "LLMObsPromptResponseSource",
     "LLMObsPromptSDKData",
@@ -17504,6 +17515,7 @@ __all__ = [
     "ReactNativeSourcemapData",
     "ReadinessGate",
     "ReadinessGateThresholdType",
+    "RecentlyUpdatedEntitiesResponse",
     "RecommendationAttributes",
     "RecommendationData",
     "RecommendationDocument",

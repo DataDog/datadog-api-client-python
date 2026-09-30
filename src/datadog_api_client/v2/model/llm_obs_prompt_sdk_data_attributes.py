@@ -14,18 +14,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
     from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
+    from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+    from datadog_api_client.v2.model.llm_obs_prompt_message_placeholder import LLMObsPromptMessagePlaceholder
 
 
 class LLMObsPromptSDKDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.llm_obs_prompt_chat_message import LLMObsPromptChatMessage
+        from datadog_api_client.v2.model.llm_obs_prompt_chat_template_item import LLMObsPromptChatTemplateItem
         from datadog_api_client.v2.model.llm_obs_prompt_config import LLMObsPromptConfig
 
         return {
-            "chat_template": ([LLMObsPromptChatMessage],),
+            "chat_template": ([LLMObsPromptChatTemplateItem],),
             "config": (LLMObsPromptConfig,),
             "labels": ([str],),
             "prompt_id": (str,),
@@ -46,7 +48,10 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
 
     def __init__(
         self_,
-        chat_template: Union[List[LLMObsPromptChatMessage], UnsetType] = unset,
+        chat_template: Union[
+            List[Union[LLMObsPromptChatTemplateItem, LLMObsPromptChatMessage, LLMObsPromptMessagePlaceholder]],
+            UnsetType,
+        ] = unset,
         config: Union[LLMObsPromptConfig, UnsetType] = unset,
         labels: Union[List[str], UnsetType] = unset,
         prompt_id: Union[str, UnsetType] = unset,
@@ -58,8 +63,9 @@ class LLMObsPromptSDKDataAttributes(ModelNormal):
         """
         Attributes of a flattened prompt version returned for SDK consumption. Exactly one of ``template`` and ``chat_template`` is returned. Empty ``config`` is omitted when configuration authoring is disabled for the organization. Non-empty saved configuration is always returned.
 
-        :param chat_template: Chat template for this prompt version, as a list of role and content messages. Omitted for text templates.
-        :type chat_template: [LLMObsPromptChatMessage], optional
+        :param chat_template: Chat template for this prompt version, as a list of messages and named message placeholders. Omitted for text templates.
+            **Preview:** Message placeholders are available in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager.
+        :type chat_template: [LLMObsPromptChatTemplateItem], optional
 
         :param config: Versioned prompt configuration is in Preview. To request access, contact `Datadog Support <https://www.datadoghq.com/support/>`_ or your Customer Success Manager. Customer-owned configuration delivered with a prompt version. Datadog stores and returns the object without interpolating it, validating provider-specific keys, or applying it to model calls. Do not include secrets.
         :type config: LLMObsPromptConfig, optional
