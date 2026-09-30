@@ -102,7 +102,7 @@ class RUMOperationsApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}",
+                "endpoint_path": "/api/v2/rum/operations/strong_links/{rum_operation_id}/{journey_id}",
                 "operation_id": "delete_rum_operation_strong_link",
                 "http_method": "DELETE",
                 "version": "v2",
@@ -114,10 +114,10 @@ class RUMOperationsApi:
                     "attribute": "rum_operation_id",
                     "location": "path",
                 },
-                "feature_id": {
+                "journey_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "feature_id",
+                    "attribute": "journey_id",
                     "location": "path",
                 },
             },
@@ -306,7 +306,7 @@ class RUMOperationsApi:
             settings={
                 "response_type": (RUMOperationStrongLinkResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}",
+                "endpoint_path": "/api/v2/rum/operations/strong_links/{rum_operation_id}/{journey_id}",
                 "operation_id": "update_rum_operation_strong_link",
                 "http_method": "PUT",
                 "version": "v2",
@@ -318,10 +318,10 @@ class RUMOperationsApi:
                     "attribute": "rum_operation_id",
                     "location": "path",
                 },
-                "feature_id": {
+                "journey_id": {
                     "required": True,
                     "openapi_types": (str,),
-                    "attribute": "feature_id",
+                    "attribute": "journey_id",
                     "location": "path",
                 },
                 "body": {
@@ -388,7 +388,7 @@ class RUMOperationsApi:
     def delete_rum_operation_strong_link(
         self,
         rum_operation_id: str,
-        feature_id: str,
+        journey_id: str,
     ) -> None:
         """Delete a RUM operation strong link.
 
@@ -396,14 +396,14 @@ class RUMOperationsApi:
 
         :param rum_operation_id: The unique identifier of the RUM operation.
         :type rum_operation_id: str
-        :param feature_id: The unique identifier of the feature.
-        :type feature_id: str
+        :param journey_id: The unique identifier of the journey.
+        :type journey_id: str
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
         kwargs["rum_operation_id"] = rum_operation_id
 
-        kwargs["feature_id"] = feature_id
+        kwargs["journey_id"] = journey_id
 
         return self._delete_rum_operation_strong_link_endpoint.call_with_http_info(**kwargs)
 
@@ -560,7 +560,7 @@ class RUMOperationsApi:
     def update_rum_operation_strong_link(
         self,
         rum_operation_id: str,
-        feature_id: str,
+        journey_id: str,
         body: RUMOperationStrongLinkUpdateRequest,
     ) -> RUMOperationStrongLinkResponse:
         """Update a RUM operation strong link.
@@ -569,15 +569,15 @@ class RUMOperationsApi:
 
         :param rum_operation_id: The unique identifier of the RUM operation.
         :type rum_operation_id: str
-        :param feature_id: The unique identifier of the feature.
-        :type feature_id: str
+        :param journey_id: The unique identifier of the journey.
+        :type journey_id: str
         :type body: RUMOperationStrongLinkUpdateRequest
         :rtype: RUMOperationStrongLinkResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["rum_operation_id"] = rum_operation_id
 
-        kwargs["feature_id"] = feature_id
+        kwargs["journey_id"] = journey_id
 
         kwargs["body"] = body
 

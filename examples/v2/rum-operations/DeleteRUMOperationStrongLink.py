@@ -13,5 +13,5 @@ with ApiClient(configuration) as api_client:
     api_instance = RUMOperationsApi(api_client)
     api_instance.delete_rum_operation_strong_link(
         rum_operation_id="rum_operation_id",
-        feature_id="feature_id",
+        journey_id="journey_id",
     )
