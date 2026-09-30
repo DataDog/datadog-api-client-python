@@ -25,6 +25,7 @@ class RoleUpdateAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "created_at": (datetime,),
+            "default_permissions_opt_out": (bool,),
             "modified_at": (datetime,),
             "name": (str,),
             "receives_permissions_from": ([str],),
@@ -33,6 +34,7 @@ class RoleUpdateAttributes(ModelNormal):
 
     attribute_map = {
         "created_at": "created_at",
+        "default_permissions_opt_out": "default_permissions_opt_out",
         "modified_at": "modified_at",
         "name": "name",
         "receives_permissions_from": "receives_permissions_from",
@@ -46,6 +48,7 @@ class RoleUpdateAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: Union[datetime, UnsetType] = unset,
+        default_permissions_opt_out: Union[bool, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         receives_permissions_from: Union[List[str], UnsetType] = unset,
@@ -57,6 +60,11 @@ class RoleUpdateAttributes(ModelNormal):
 
         :param created_at: Creation time of the role.
         :type created_at: datetime, optional
+
+        :param default_permissions_opt_out: Whether to exclude restricted default permissions from this role.
+            Restricted default permissions are automatically assigned to every role by default. Set this field to ``true`` to exclude them.
+            Some of these permissions can only be excluded after Minimal Access Roles is enabled for the organization.
+        :type default_permissions_opt_out: bool, optional
 
         :param modified_at: Time of last role modification.
         :type modified_at: datetime, optional
@@ -74,6 +82,8 @@ class RoleUpdateAttributes(ModelNormal):
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if default_permissions_opt_out is not unset:
+            kwargs["default_permissions_opt_out"] = default_permissions_opt_out
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
         if name is not unset:
