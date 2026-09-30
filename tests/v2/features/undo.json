@@ -8776,6 +8776,12 @@
       "type": "safe"
     }
   },
+  "GetEntityContextRecentlyUpdated": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSingleEntityContext": {
     "tag": "Security Monitoring",
     "undo": {
