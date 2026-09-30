@@ -164,6 +164,7 @@ body = SyntheticsAPITest(
     options=SyntheticsTestOptions(
         accept_self_signed=False,
         allow_insecure=True,
+        bits_ai_auto_investigate=True,
         follow_redirects=True,
         min_failure_duration=10,
         min_location_failed=1,

@@ -70,6 +70,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         return {
             "allow_application_crash": (bool,),
             "bindings": ([SyntheticsTestRestrictionPolicyBinding],),
+            "bits_ai_auto_investigate": (bool,),
             "ci": (SyntheticsTestCiOptions,),
             "default_step_timeout": (int,),
             "device_ids": ([str],),
@@ -90,6 +91,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
     attribute_map = {
         "allow_application_crash": "allowApplicationCrash",
         "bindings": "bindings",
+        "bits_ai_auto_investigate": "bits_ai_auto_investigate",
         "ci": "ci",
         "default_step_timeout": "defaultStepTimeout",
         "device_ids": "device_ids",
@@ -114,6 +116,7 @@ class SyntheticsMobileTestOptions(ModelNormal):
         tick_every: int,
         allow_application_crash: Union[bool, UnsetType] = unset,
         bindings: Union[List[SyntheticsTestRestrictionPolicyBinding], UnsetType] = unset,
+        bits_ai_auto_investigate: Union[bool, UnsetType] = unset,
         ci: Union[SyntheticsTestCiOptions, UnsetType] = unset,
         default_step_timeout: Union[int, UnsetType] = unset,
         disable_auto_accept_alert: Union[bool, UnsetType] = unset,
@@ -136,6 +139,9 @@ class SyntheticsMobileTestOptions(ModelNormal):
 
         :param bindings: Array of bindings used for the mobile test.
         :type bindings: [SyntheticsTestRestrictionPolicyBinding], optional
+
+        :param bits_ai_auto_investigate: Whether Bits AI automatically investigates alerts from the test monitor.
+        :type bits_ai_auto_investigate: bool, optional
 
         :param ci: CI/CD options for a Synthetic test.
         :type ci: SyntheticsTestCiOptions, optional
@@ -187,6 +193,8 @@ class SyntheticsMobileTestOptions(ModelNormal):
             kwargs["allow_application_crash"] = allow_application_crash
         if bindings is not unset:
             kwargs["bindings"] = bindings
+        if bits_ai_auto_investigate is not unset:
+            kwargs["bits_ai_auto_investigate"] = bits_ai_auto_investigate
         if ci is not unset:
             kwargs["ci"] = ci
         if default_step_timeout is not unset:

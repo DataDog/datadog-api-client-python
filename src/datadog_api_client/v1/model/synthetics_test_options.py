@@ -50,6 +50,7 @@ class SyntheticsTestOptions(ModelNormal):
         return {
             "accept_self_signed": (bool,),
             "allow_insecure": (bool,),
+            "bits_ai_auto_investigate": (bool,),
             "blocked_request_patterns": ([str],),
             "capture_network_payloads": (bool,),
             "check_certificate_revocation": (bool,),
@@ -81,6 +82,7 @@ class SyntheticsTestOptions(ModelNormal):
     attribute_map = {
         "accept_self_signed": "accept_self_signed",
         "allow_insecure": "allow_insecure",
+        "bits_ai_auto_investigate": "bits_ai_auto_investigate",
         "blocked_request_patterns": "blockedRequestPatterns",
         "capture_network_payloads": "captureNetworkPayloads",
         "check_certificate_revocation": "checkCertificateRevocation",
@@ -113,6 +115,7 @@ class SyntheticsTestOptions(ModelNormal):
         self_,
         accept_self_signed: Union[bool, UnsetType] = unset,
         allow_insecure: Union[bool, UnsetType] = unset,
+        bits_ai_auto_investigate: Union[bool, UnsetType] = unset,
         blocked_request_patterns: Union[List[str], UnsetType] = unset,
         capture_network_payloads: Union[bool, UnsetType] = unset,
         check_certificate_revocation: Union[bool, UnsetType] = unset,
@@ -150,6 +153,9 @@ class SyntheticsTestOptions(ModelNormal):
 
         :param allow_insecure: Allows loading insecure content for an HTTP request in an API test.
         :type allow_insecure: bool, optional
+
+        :param bits_ai_auto_investigate: Whether Bits AI automatically investigates alerts from the test monitor.
+        :type bits_ai_auto_investigate: bool, optional
 
         :param blocked_request_patterns: Array of URL patterns to block.
         :type blocked_request_patterns: [str], optional
@@ -245,6 +251,8 @@ class SyntheticsTestOptions(ModelNormal):
             kwargs["accept_self_signed"] = accept_self_signed
         if allow_insecure is not unset:
             kwargs["allow_insecure"] = allow_insecure
+        if bits_ai_auto_investigate is not unset:
+            kwargs["bits_ai_auto_investigate"] = bits_ai_auto_investigate
         if blocked_request_patterns is not unset:
             kwargs["blocked_request_patterns"] = blocked_request_patterns
         if capture_network_payloads is not unset:
