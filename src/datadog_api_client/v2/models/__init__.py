@@ -628,6 +628,17 @@ from datadog_api_client.v2.model.arbitrary_rule_status_response_data_attributes 
     ArbitraryRuleStatusResponseDataAttributes,
 )
 from datadog_api_client.v2.model.arbitrary_rule_status_response_data_type import ArbitraryRuleStatusResponseDataType
+from datadog_api_client.v2.model.archive_search_create_rehydration import ArchiveSearchCreateRehydration
+from datadog_api_client.v2.model.archive_search_create_request import ArchiveSearchCreateRequest
+from datadog_api_client.v2.model.archive_search_create_request_attributes import ArchiveSearchCreateRequestAttributes
+from datadog_api_client.v2.model.archive_search_create_request_data import ArchiveSearchCreateRequestData
+from datadog_api_client.v2.model.archive_search_rehydration import ArchiveSearchRehydration
+from datadog_api_client.v2.model.archive_search_rehydration_tier import ArchiveSearchRehydrationTier
+from datadog_api_client.v2.model.archive_search_response import ArchiveSearchResponse
+from datadog_api_client.v2.model.archive_search_response_attributes import ArchiveSearchResponseAttributes
+from datadog_api_client.v2.model.archive_search_response_data import ArchiveSearchResponseData
+from datadog_api_client.v2.model.archive_search_status import ArchiveSearchStatus
+from datadog_api_client.v2.model.archive_search_type import ArchiveSearchType
 from datadog_api_client.v2.model.argument import Argument
 from datadog_api_client.v2.model.asana_access_token import AsanaAccessToken
 from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
@@ -12410,6 +12421,17 @@ __all__ = [
     "ArbitraryRuleStatusResponseData",
     "ArbitraryRuleStatusResponseDataAttributes",
     "ArbitraryRuleStatusResponseDataType",
+    "ArchiveSearchCreateRehydration",
+    "ArchiveSearchCreateRequest",
+    "ArchiveSearchCreateRequestAttributes",
+    "ArchiveSearchCreateRequestData",
+    "ArchiveSearchRehydration",
+    "ArchiveSearchRehydrationTier",
+    "ArchiveSearchResponse",
+    "ArchiveSearchResponseAttributes",
+    "ArchiveSearchResponseData",
+    "ArchiveSearchStatus",
+    "ArchiveSearchType",
     "Argument",
     "AsanaAccessToken",
     "AsanaAccessTokenType",

@@ -5331,6 +5331,18 @@
       "type": "safe"
     }
   },
+  "CreateArchiveSearch": {
+    "tag": "Logs Archive Searches",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetArchiveSearch": {
+    "tag": "Logs Archive Searches",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetLogsArchiveOrder": {
     "tag": "Logs Archives",
     "undo": {
