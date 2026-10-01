@@ -8,7 +8,7 @@ from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoring
 from datadog_api_client.v2.model.automation_rule_scope import AutomationRuleScope
 from datadog_api_client.v2.model.security_finding_type import SecurityFindingType
 from datadog_api_client.v2.model.severity_modifier_rule_attributes_create import SeverityModifierRuleAttributesCreate
-from datadog_api_client.v2.model.severity_modifier_rule_data_create import SeverityModifierRuleDataCreate
+from datadog_api_client.v2.model.severity_modifier_rule_data_update import SeverityModifierRuleDataUpdate
 from datadog_api_client.v2.model.severity_modifier_rule_set_action import SeverityModifierRuleSetAction
 from datadog_api_client.v2.model.severity_modifier_rule_set_action_type import SeverityModifierRuleSetActionType
 from datadog_api_client.v2.model.severity_modifier_rule_type import SeverityModifierRuleType
@@ -19,7 +19,7 @@ from datadog_api_client.v2.model.severity_modifier_severity import SeverityModif
 VALID_SEVERITY_MODIFIER_RULE_DATA_ID = environ["VALID_SEVERITY_MODIFIER_RULE_DATA_ID"]
 
 body = SeverityModifierRuleUpdateRequest(
-    data=SeverityModifierRuleDataCreate(
+    data=SeverityModifierRuleDataUpdate(
         attributes=SeverityModifierRuleAttributesCreate(
             action=SeverityModifierRuleSetAction(
                 description="Lower severity for dev environment noise",
@@ -35,6 +35,7 @@ body = SeverityModifierRuleUpdateRequest(
                 query="env:prod team:platform",
             ),
         ),
+        id=VALID_SEVERITY_MODIFIER_RULE_DATA_ID,
         type=SeverityModifierRuleType.SEVERITY_MODIFIER_RULES,
     ),
 )

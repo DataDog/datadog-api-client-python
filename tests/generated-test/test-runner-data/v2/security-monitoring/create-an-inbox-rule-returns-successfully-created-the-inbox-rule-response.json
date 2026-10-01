@@ -1,0 +1,43 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create an inbox rule returns \"Successfully created the inbox rule\" response",
+  "operation_id": "CreateSecurityFindingsAutomationInboxRule",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "InboxRuleCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action": {
+              "description": "Needs triage"
+            },
+            "enabled": true,
+            "name": "{{ unique }}",
+            "rule": {
+              "finding_types": [
+                "misconfiguration"
+              ],
+              "query": "env:staging"
+            }
+          },
+          "type": "inbox_rules"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/inbox_rules"
+  },
+  "scenario": "Create an inbox rule returns \"Successfully created the inbox rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

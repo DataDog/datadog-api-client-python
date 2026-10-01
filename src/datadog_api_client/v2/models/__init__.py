@@ -2860,8 +2860,10 @@ from datadog_api_client.v2.model.due_date_rule_attributes_response import DueDat
 from datadog_api_client.v2.model.due_date_rule_create_request import DueDateRuleCreateRequest
 from datadog_api_client.v2.model.due_date_rule_data_create import DueDateRuleDataCreate
 from datadog_api_client.v2.model.due_date_rule_data_response import DueDateRuleDataResponse
+from datadog_api_client.v2.model.due_date_rule_data_update import DueDateRuleDataUpdate
 from datadog_api_client.v2.model.due_date_rule_reorder_item import DueDateRuleReorderItem
 from datadog_api_client.v2.model.due_date_rule_reorder_request import DueDateRuleReorderRequest
+from datadog_api_client.v2.model.due_date_rule_reorder_response import DueDateRuleReorderResponse
 from datadog_api_client.v2.model.due_date_rule_response import DueDateRuleResponse
 from datadog_api_client.v2.model.due_date_rule_type import DueDateRuleType
 from datadog_api_client.v2.model.due_date_rule_update_request import DueDateRuleUpdateRequest
@@ -5951,8 +5953,10 @@ from datadog_api_client.v2.model.mute_rule_attributes_response import MuteRuleAt
 from datadog_api_client.v2.model.mute_rule_create_request import MuteRuleCreateRequest
 from datadog_api_client.v2.model.mute_rule_data_create import MuteRuleDataCreate
 from datadog_api_client.v2.model.mute_rule_data_response import MuteRuleDataResponse
+from datadog_api_client.v2.model.mute_rule_data_update import MuteRuleDataUpdate
 from datadog_api_client.v2.model.mute_rule_reorder_item import MuteRuleReorderItem
 from datadog_api_client.v2.model.mute_rule_reorder_request import MuteRuleReorderRequest
+from datadog_api_client.v2.model.mute_rule_reorder_response import MuteRuleReorderResponse
 from datadog_api_client.v2.model.mute_rule_response import MuteRuleResponse
 from datadog_api_client.v2.model.mute_rule_type import MuteRuleType
 from datadog_api_client.v2.model.mute_rule_update_request import MuteRuleUpdateRequest
@@ -9956,6 +9960,7 @@ from datadog_api_client.v2.model.severity_modifier_rule_attributes_response impo
 from datadog_api_client.v2.model.severity_modifier_rule_create_request import SeverityModifierRuleCreateRequest
 from datadog_api_client.v2.model.severity_modifier_rule_data_create import SeverityModifierRuleDataCreate
 from datadog_api_client.v2.model.severity_modifier_rule_data_response import SeverityModifierRuleDataResponse
+from datadog_api_client.v2.model.severity_modifier_rule_data_update import SeverityModifierRuleDataUpdate
 from datadog_api_client.v2.model.severity_modifier_rule_reorder_item import SeverityModifierRuleReorderItem
 from datadog_api_client.v2.model.severity_modifier_rule_reorder_request import SeverityModifierRuleReorderRequest
 from datadog_api_client.v2.model.severity_modifier_rule_reorder_response import SeverityModifierRuleReorderResponse
@@ -11140,8 +11145,10 @@ from datadog_api_client.v2.model.ticket_creation_rule_attributes_response import
 from datadog_api_client.v2.model.ticket_creation_rule_create_request import TicketCreationRuleCreateRequest
 from datadog_api_client.v2.model.ticket_creation_rule_data_create import TicketCreationRuleDataCreate
 from datadog_api_client.v2.model.ticket_creation_rule_data_response import TicketCreationRuleDataResponse
+from datadog_api_client.v2.model.ticket_creation_rule_data_update import TicketCreationRuleDataUpdate
 from datadog_api_client.v2.model.ticket_creation_rule_reorder_item import TicketCreationRuleReorderItem
 from datadog_api_client.v2.model.ticket_creation_rule_reorder_request import TicketCreationRuleReorderRequest
+from datadog_api_client.v2.model.ticket_creation_rule_reorder_response import TicketCreationRuleReorderResponse
 from datadog_api_client.v2.model.ticket_creation_rule_response import TicketCreationRuleResponse
 from datadog_api_client.v2.model.ticket_creation_rule_type import TicketCreationRuleType
 from datadog_api_client.v2.model.ticket_creation_rule_update_request import TicketCreationRuleUpdateRequest
@@ -13990,8 +13997,10 @@ __all__ = [
     "DueDateRuleCreateRequest",
     "DueDateRuleDataCreate",
     "DueDateRuleDataResponse",
+    "DueDateRuleDataUpdate",
     "DueDateRuleReorderItem",
     "DueDateRuleReorderRequest",
+    "DueDateRuleReorderResponse",
     "DueDateRuleResponse",
     "DueDateRuleType",
     "DueDateRuleUpdateRequest",
@@ -16269,8 +16278,10 @@ __all__ = [
     "MuteRuleCreateRequest",
     "MuteRuleDataCreate",
     "MuteRuleDataResponse",
+    "MuteRuleDataUpdate",
     "MuteRuleReorderItem",
     "MuteRuleReorderRequest",
+    "MuteRuleReorderResponse",
     "MuteRuleResponse",
     "MuteRuleType",
     "MuteRuleUpdateRequest",
@@ -18660,6 +18671,7 @@ __all__ = [
     "SeverityModifierRuleCreateRequest",
     "SeverityModifierRuleDataCreate",
     "SeverityModifierRuleDataResponse",
+    "SeverityModifierRuleDataUpdate",
     "SeverityModifierRuleReorderItem",
     "SeverityModifierRuleReorderRequest",
     "SeverityModifierRuleReorderResponse",
@@ -19460,8 +19472,10 @@ __all__ = [
     "TicketCreationRuleCreateRequest",
     "TicketCreationRuleDataCreate",
     "TicketCreationRuleDataResponse",
+    "TicketCreationRuleDataUpdate",
     "TicketCreationRuleReorderItem",
     "TicketCreationRuleReorderRequest",
+    "TicketCreationRuleReorderResponse",
     "TicketCreationRuleResponse",
     "TicketCreationRuleType",
     "TicketCreationRuleUpdateRequest",

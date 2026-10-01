@@ -32,7 +32,7 @@ class TicketCreationRuleCreateRequest(ModelNormal):
         """
         The body of a ticket creation rule create request.
 
-        :param data: The data object for a ticket creation rule create or update request.
+        :param data: The data object for a ticket creation rule create request.
         :type data: TicketCreationRuleDataCreate
         """
         super().__init__(kwargs)

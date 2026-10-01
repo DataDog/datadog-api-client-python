@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.ticket_creation_rule_data_create import TicketCreationRuleDataCreate
+    from datadog_api_client.v2.model.ticket_creation_rule_data_update import TicketCreationRuleDataUpdate
 
 
 class TicketCreationRuleUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.ticket_creation_rule_data_create import TicketCreationRuleDataCreate
+        from datadog_api_client.v2.model.ticket_creation_rule_data_update import TicketCreationRuleDataUpdate
 
         return {
-            "data": (TicketCreationRuleDataCreate,),
+            "data": (TicketCreationRuleDataUpdate,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: TicketCreationRuleDataCreate, **kwargs):
+    def __init__(self_, data: TicketCreationRuleDataUpdate, **kwargs):
         """
         The body of a ticket creation rule update request.
 
-        :param data: The data object for a ticket creation rule create or update request.
-        :type data: TicketCreationRuleDataCreate
+        :param data: The data object for a ticket creation rule update request. The ``id`` must match the ``rule_id`` path parameter.
+        :type data: TicketCreationRuleDataUpdate
         """
         super().__init__(kwargs)
 

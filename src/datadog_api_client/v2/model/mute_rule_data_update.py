@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    UUID,
 )
 
 
@@ -16,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.mute_rule_type import MuteRuleType
 
 
-class MuteRuleDataCreate(ModelNormal):
+class MuteRuleDataUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.mute_rule_attributes_create import MuteRuleAttributesCreate
@@ -24,20 +25,25 @@ class MuteRuleDataCreate(ModelNormal):
 
         return {
             "attributes": (MuteRuleAttributesCreate,),
+            "id": (UUID,),
             "type": (MuteRuleType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
-    def __init__(self_, attributes: MuteRuleAttributesCreate, type: MuteRuleType, **kwargs):
+    def __init__(self_, attributes: MuteRuleAttributesCreate, id: UUID, type: MuteRuleType, **kwargs):
         """
-        The data object for a mute rule create request.
+        The data object for a mute rule update request. The ``id`` must match the ``rule_id`` path parameter.
 
         :param attributes: Attributes for creating or updating a mute rule.
         :type attributes: MuteRuleAttributesCreate
+
+        :param id: The ID of the mute rule to update.
+        :type id: UUID
 
         :param type: The JSON:API type for mute rules.
         :type type: MuteRuleType
@@ -45,4 +51,5 @@ class MuteRuleDataCreate(ModelNormal):
         super().__init__(kwargs)
 
         self_.attributes = attributes
+        self_.id = id
         self_.type = type

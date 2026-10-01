@@ -10,7 +10,7 @@ from datadog_api_client.v2.model.due_date_from import DueDateFrom
 from datadog_api_client.v2.model.due_date_per_severity_item import DueDatePerSeverityItem
 from datadog_api_client.v2.model.due_date_rule_action import DueDateRuleAction
 from datadog_api_client.v2.model.due_date_rule_attributes_create import DueDateRuleAttributesCreate
-from datadog_api_client.v2.model.due_date_rule_data_create import DueDateRuleDataCreate
+from datadog_api_client.v2.model.due_date_rule_data_update import DueDateRuleDataUpdate
 from datadog_api_client.v2.model.due_date_rule_type import DueDateRuleType
 from datadog_api_client.v2.model.due_date_rule_update_request import DueDateRuleUpdateRequest
 from datadog_api_client.v2.model.due_date_severity import DueDateSeverity
@@ -20,7 +20,7 @@ from datadog_api_client.v2.model.security_finding_type import SecurityFindingTyp
 VALID_DUE_DATE_RULE_DATA_ID = environ["VALID_DUE_DATE_RULE_DATA_ID"]
 
 body = DueDateRuleUpdateRequest(
-    data=DueDateRuleDataCreate(
+    data=DueDateRuleDataUpdate(
         attributes=DueDateRuleAttributesCreate(
             action=DueDateRuleAction(
                 due_days_per_severity=[
@@ -40,6 +40,7 @@ body = DueDateRuleUpdateRequest(
                 query="env:staging",
             ),
         ),
+        id=VALID_DUE_DATE_RULE_DATA_ID,
         type=DueDateRuleType.DUE_DATE_RULES,
     ),
 )

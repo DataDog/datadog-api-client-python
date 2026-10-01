@@ -32,7 +32,7 @@ class SeverityModifierRuleCreateRequest(ModelNormal):
         """
         The body of a severity modifier rule create request.
 
-        :param data: The data object for a severity modifier rule create or update request.
+        :param data: The data object for a severity modifier rule create request.
         :type data: SeverityModifierRuleDataCreate
         """
         super().__init__(kwargs)

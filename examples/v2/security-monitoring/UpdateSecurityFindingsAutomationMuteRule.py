@@ -9,7 +9,7 @@ from datadog_api_client.v2.model.automation_rule_scope import AutomationRuleScop
 from datadog_api_client.v2.model.mute_reason import MuteReason
 from datadog_api_client.v2.model.mute_rule_action import MuteRuleAction
 from datadog_api_client.v2.model.mute_rule_attributes_create import MuteRuleAttributesCreate
-from datadog_api_client.v2.model.mute_rule_data_create import MuteRuleDataCreate
+from datadog_api_client.v2.model.mute_rule_data_update import MuteRuleDataUpdate
 from datadog_api_client.v2.model.mute_rule_type import MuteRuleType
 from datadog_api_client.v2.model.mute_rule_update_request import MuteRuleUpdateRequest
 from datadog_api_client.v2.model.security_finding_type import SecurityFindingType
@@ -18,7 +18,7 @@ from datadog_api_client.v2.model.security_finding_type import SecurityFindingTyp
 VALID_MUTE_RULE_DATA_ID = environ["VALID_MUTE_RULE_DATA_ID"]
 
 body = MuteRuleUpdateRequest(
-    data=MuteRuleDataCreate(
+    data=MuteRuleDataUpdate(
         attributes=MuteRuleAttributesCreate(
             action=MuteRuleAction(
                 reason=MuteReason.FALSE_POSITIVE,
@@ -32,6 +32,7 @@ body = MuteRuleUpdateRequest(
                 query="env:staging",
             ),
         ),
+        id=VALID_MUTE_RULE_DATA_ID,
         type=MuteRuleType.MUTE_RULES,
     ),
 )

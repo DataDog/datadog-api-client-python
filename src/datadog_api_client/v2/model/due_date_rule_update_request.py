@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.due_date_rule_data_create import DueDateRuleDataCreate
+    from datadog_api_client.v2.model.due_date_rule_data_update import DueDateRuleDataUpdate
 
 
 class DueDateRuleUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.due_date_rule_data_create import DueDateRuleDataCreate
+        from datadog_api_client.v2.model.due_date_rule_data_update import DueDateRuleDataUpdate
 
         return {
-            "data": (DueDateRuleDataCreate,),
+            "data": (DueDateRuleDataUpdate,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: DueDateRuleDataCreate, **kwargs):
+    def __init__(self_, data: DueDateRuleDataUpdate, **kwargs):
         """
         The body of a due date rule update request.
 
-        :param data: The data object for a due date rule create or update request.
-        :type data: DueDateRuleDataCreate
+        :param data: The data object for a due date rule update request. The ``id`` must match the ``rule_id`` path parameter.
+        :type data: DueDateRuleDataUpdate
         """
         super().__init__(kwargs)
 

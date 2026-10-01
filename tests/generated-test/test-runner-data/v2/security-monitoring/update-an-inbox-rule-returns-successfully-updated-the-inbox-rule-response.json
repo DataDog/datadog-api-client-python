@@ -2,13 +2,13 @@
   "api": "SecurityMonitoring",
   "expected_status": 200,
   "feature": "Security Monitoring",
-  "id": "v2/Security Monitoring/Update a ticket creation rule returns \"Successfully updated the ticket creation rule\" response",
-  "operation_id": "UpdateSecurityFindingsAutomationTicketCreationRule",
+  "id": "v2/Security Monitoring/Update an inbox rule returns \"Successfully updated the inbox rule\" response",
+  "operation_id": "UpdateSecurityFindingsAutomationInboxRule",
   "request": {
     "body": {
       "schema": {
         "format": null,
-        "ref": "TicketCreationRuleUpdateRequest",
+        "ref": "InboxRuleUpdateRequest",
         "type": "object"
       },
       "source": "inline",
@@ -16,9 +16,7 @@
         "data": {
           "attributes": {
             "action": {
-              "max_tickets_per_day": 5,
-              "project_id": "11111111-1111-1111-1111-111111111111",
-              "target": "jira"
+              "description": "Needs triage"
             },
             "enabled": false,
             "name": "{{ unique }}",
@@ -29,8 +27,8 @@
               "query": "env:staging"
             }
           },
-          "id": "{{ valid_ticket_creation_rule.data.id }}",
-          "type": "ticket_creation_rules"
+          "id": "{{ valid_inbox_rule.data.id }}",
+          "type": "inbox_rules"
         }
       }
     },
@@ -49,15 +47,15 @@
           "type": "string"
         },
         "source": {
-          "path": "valid_ticket_creation_rule.data.id",
+          "path": "valid_inbox_rule.data.id",
           "type": "fixture"
         },
         "style": null
       }
     ],
-    "path": "/api/v2/security/findings/automation/ticket_creation_rules/{rule_id}"
+    "path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}"
   },
-  "scenario": "Update a ticket creation rule returns \"Successfully updated the ticket creation rule\" response",
+  "scenario": "Update an inbox rule returns \"Successfully updated the inbox rule\" response",
   "schema_version": 1,
   "version": "v2"
 }

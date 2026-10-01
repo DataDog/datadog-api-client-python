@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    UUID,
 )
 
 
@@ -18,7 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.severity_modifier_rule_type import SeverityModifierRuleType
 
 
-class SeverityModifierRuleDataCreate(ModelNormal):
+class SeverityModifierRuleDataUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.severity_modifier_rule_attributes_create import (
@@ -28,20 +29,27 @@ class SeverityModifierRuleDataCreate(ModelNormal):
 
         return {
             "attributes": (SeverityModifierRuleAttributesCreate,),
+            "id": (UUID,),
             "type": (SeverityModifierRuleType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
-    def __init__(self_, attributes: SeverityModifierRuleAttributesCreate, type: SeverityModifierRuleType, **kwargs):
+    def __init__(
+        self_, attributes: SeverityModifierRuleAttributesCreate, id: UUID, type: SeverityModifierRuleType, **kwargs
+    ):
         """
-        The data object for a severity modifier rule create request.
+        The data object for a severity modifier rule update request. The ``id`` must match the ``rule_id`` path parameter.
 
         :param attributes: Attributes for creating or updating a severity modifier rule.
         :type attributes: SeverityModifierRuleAttributesCreate
+
+        :param id: The ID of the severity modifier rule to update.
+        :type id: UUID
 
         :param type: The JSON:API type for severity modifier rules.
         :type type: SeverityModifierRuleType
@@ -49,4 +57,5 @@ class SeverityModifierRuleDataCreate(ModelNormal):
         super().__init__(kwargs)
 
         self_.attributes = attributes
+        self_.id = id
         self_.type = type

@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Enable a default inbox rule returns \"Successfully enabled the default inbox rule\" response",
+  "operation_id": "EnableSecurityFindingsAutomationDefaultInboxRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "secret_default_rule"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}/enable"
+  },
+  "scenario": "Enable a default inbox rule returns \"Successfully enabled the default inbox rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

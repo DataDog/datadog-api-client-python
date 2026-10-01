@@ -9,7 +9,7 @@ from datadog_api_client.v2.model.automation_rule_scope import AutomationRuleScop
 from datadog_api_client.v2.model.security_finding_type import SecurityFindingType
 from datadog_api_client.v2.model.ticket_creation_rule_action import TicketCreationRuleAction
 from datadog_api_client.v2.model.ticket_creation_rule_attributes_create import TicketCreationRuleAttributesCreate
-from datadog_api_client.v2.model.ticket_creation_rule_data_create import TicketCreationRuleDataCreate
+from datadog_api_client.v2.model.ticket_creation_rule_data_update import TicketCreationRuleDataUpdate
 from datadog_api_client.v2.model.ticket_creation_rule_type import TicketCreationRuleType
 from datadog_api_client.v2.model.ticket_creation_rule_update_request import TicketCreationRuleUpdateRequest
 from datadog_api_client.v2.model.ticket_creation_target import TicketCreationTarget
@@ -19,7 +19,7 @@ from uuid import UUID
 VALID_TICKET_CREATION_RULE_DATA_ID = environ["VALID_TICKET_CREATION_RULE_DATA_ID"]
 
 body = TicketCreationRuleUpdateRequest(
-    data=TicketCreationRuleDataCreate(
+    data=TicketCreationRuleDataUpdate(
         attributes=TicketCreationRuleAttributesCreate(
             action=TicketCreationRuleAction(
                 max_tickets_per_day=5,
@@ -35,6 +35,7 @@ body = TicketCreationRuleUpdateRequest(
                 query="env:staging",
             ),
         ),
+        id=VALID_TICKET_CREATION_RULE_DATA_ID,
         type=TicketCreationRuleType.TICKET_CREATION_RULES,
     ),
 )

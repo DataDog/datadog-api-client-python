@@ -30,7 +30,7 @@ class DueDateRuleReorderRequest(ModelNormal):
 
     def __init__(self_, data: List[DueDateRuleReorderItem], **kwargs):
         """
-        The body of the due date rule reorder request.
+        The body of a due date rule reorder request.
 
         :param data: The ordered list of all due date rules. Every rule must be included.
         :type data: [DueDateRuleReorderItem]

@@ -3574,6 +3574,75 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:27.938Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Needs triage"
+                    },
+                    "enabled": true,
+                    "name": "Test-Create_an_inbox_rule_returns_Successfully_created_the_inbox_rule_response-1790612067",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "inbox_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dc57dc85-6aca-47bf-b8b3-28898cb0b855\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612069795,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612069795,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Create_an_inbox_rule_returns_Successfully_created_the_inbox_rule_response-1790612067\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/inbox_rules/dc57dc85-6aca-47bf-b8b3-28898cb0b855",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an inbox rule returns \"Successfully created the inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2025-12-12T14:46:23.960Z",
       "interactions": [
         {
@@ -5289,6 +5358,98 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:30.420Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Needs triage"
+                    },
+                    "enabled": true,
+                    "name": "Test-Delete_an_inbox_rule_returns_Successfully_deleted_the_inbox_rule_response-1790612070",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "inbox_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4801a0e2-68ad-4a78-a19c-1ed461044144\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612070593,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612070593,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Delete_an_inbox_rule_returns_Successfully_deleted_the_inbox_rule_response-1790612070\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/inbox_rules/4801a0e2-68ad-4a78-a19c-1ed461044144",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/inbox_rules/4801a0e2-68ad-4a78-a19c-1ed461044144",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rule does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an inbox rule returns \"Successfully deleted the inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2025-11-20T16:07:27.292Z",
       "interactions": [
         {
@@ -5413,6 +5574,68 @@
         }
       ],
       "scenario": "Detach security findings from their case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:31.398Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/default_inbox_rules/secret_default_rule/disable",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":false,\"modified_at\":1790612071580,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[\"secret\"],\"query\":\"@git.repository_visibility:public OR @secret.validation_status:valid\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Disable a default inbox rule returns \"Successfully disabled the default inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:31.756Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/default_inbox_rules/secret_default_rule/enable",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1790612071928,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[\"secret\"],\"query\":\"@git.repository_visibility:public OR @secret.validation_status:valid\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Enable a default inbox rule returns \"Successfully enabled the default inbox rule\" response",
       "version": "v2"
     },
     {
@@ -6032,6 +6255,37 @@
         }
       ],
       "scenario": "Get a custom framework returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:32.107Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/findings/automation/default_inbox_rules/secret_default_rule",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1790612071928,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[\"secret\"],\"query\":\"@git.repository_visibility:public OR @secret.validation_status:valid\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a default inbox rule returns \"Successfully retrieved the default inbox rule\" response",
       "version": "v2"
     },
     {
@@ -7409,6 +7663,37 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:32.340Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/findings/automation/default_inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"attack_path_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1788857644518,\"modified_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"name\":\"Attack Paths\",\"rule\":{\"finding_types\":[\"attack_path\"],\"query\":\"@severity:(high OR critical)\"}}},{\"id\":\"host_and_container_vulnerability_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1787094752823,\"modified_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"name\":\"Host \\u0026 Container Vulnerabilities\",\"rule\":{\"finding_types\":[\"host_and_container_vulnerability\"],\"query\":\"-@risk.is_image_running:false @risk.has_exploit_available:true @remediation.is_available:true @risk.has_high_exploitability_chance:true @risk_details.has_exploit_available.evidence.exploit_sources:CISA @risk.is_publicly_accessible:true @severity:(high OR critical)\"}}},{\"id\":\"iac_misconfiguration_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1787094752823,\"modified_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"name\":\"IaC Misconfigurations\",\"rule\":{\"finding_types\":[\"iac_misconfiguration\"],\"query\":\"@vulnerability.confidence:high @iac_resource.platform:cicd @rule.type:(insecure_configurations OR insecure_defaults) @git.repository_visibility:public @severity:(critical OR high)\"}}},{\"id\":\"identity_risk_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1788468727122,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1788468727122,\"modified_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"name\":\"Identity Risks\",\"rule\":{\"finding_types\":[\"identity_risk\"],\"query\":\"@rule.default_rule_id:(def-000-65w OR def-000-k6r)\"}}},{\"id\":\"library_vulnerability_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1787094752823,\"modified_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"name\":\"Library Vulnerabilities\",\"rule\":{\"finding_types\":[\"library_vulnerability\"],\"query\":\"@risk.is_emerging:true OR ((@risk.is_function_reachable:true OR (@risk.is_exposed_to_attacks:true @risk.is_production:true)) @risk.has_exploit_available:true @severity:critical)\"}}},{\"id\":\"misconfiguration_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1788468727122,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1788468727122,\"modified_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"name\":\"Misconfigurations\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"@rule.default_rule_id:(542-ddc-8ba OR 5yq-fi1-8pn OR 7hk-tff-0fv OR 8yh-cqk-qbn OR a7e-e88-302 OR def-000-0f1 OR def-000-1u4 OR def-000-5g7 OR def-000-5zq OR def-000-6vi OR def-000-7qa OR def-000-8nn OR def-000-8zx OR def-000-936 OR def-000-9vv OR def-000-ag8 OR def-000-ag9 OR def-000-ee1 OR def-000-fdu OR def-000-glk OR def-000-hrv OR def-000-imu OR def-000-m2r OR def-000-ma8 OR def-000-mcz OR def-000-mwf OR def-000-ny3 OR def-000-ocr OR def-000-ont OR def-000-oru OR def-000-p1v OR def-000-pgo OR def-000-ph2 OR def-000-pp0 OR def-000-q4w OR def-000-qk5 OR def-000-rdc OR def-000-rtu OR def-000-u48 OR def-000-ua9 OR def-000-vcf OR def-000-xog OR def-000-y7k OR dsk-1y0-pv3 OR ee4-ngx-bwr OR exe-9ow-gwv OR fcc-nsq-vkn OR fo0-6re-l0f OR fu0-rtv-2rb OR g1t-jj4-k8k OR rl5-ki5-ja8 OR tzw-4b4-bz5 OR w95-9o2-mw0)\"}}},{\"id\":\"runtime_code_vulnerability_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1787094752823,\"modified_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"name\":\"Runtime Code Vulnerabilities\",\"rule\":{\"finding_types\":[\"runtime_code_vulnerability\"],\"query\":\"@risk.is_production:true @risk.is_exposed_to_attacks:true @severity:(critical OR high)\"}}},{\"id\":\"secret_default_rule\",\"type\":\"default_inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Maintained by Datadog Security Research. Customize your inbox by adding your own rules, cloning this rule, or disabling it.\"},\"created_at\":1787094752823,\"created_by\":{\"type\":\"system\",\"id\":\"datadog.security_research\",\"name\":\"Datadog Security Research\"},\"enabled\":true,\"modified_at\":1790612071928,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Secrets\",\"rule\":{\"finding_types\":[\"secret\"],\"query\":\"@git.repository_visibility:public OR @secret.validation_status:valid\"}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get all default inbox rules returns \"Successfully retrieved the list of default inbox rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2026-06-16T15:41:11.482Z",
       "interactions": [
         {
@@ -7503,6 +7788,98 @@
         }
       ],
       "scenario": "Get all due date rules returns \"Successfully retrieved the list of due date rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:32.563Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Needs triage"
+                    },
+                    "enabled": true,
+                    "name": "Test-Get_all_inbox_rules_returns_Successfully_retrieved_the_list_of_inbox_rules_response-1790612072",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "inbox_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"619001a4-e643-4b0c-a984-2f8823a408c3\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612072728,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612072728,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_all_inbox_rules_returns_Successfully_retrieved_the_list_of_inbox_rules_response-1790612072\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/findings/automation/inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"619001a4-e643-4b0c-a984-2f8823a408c3\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612072728,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612072728,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_all_inbox_rules_returns_Successfully_retrieved_the_list_of_inbox_rules_response-1790612072\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}],\"meta\":{\"page\":{\"total_filtered_count\":1}},\"links\":{\"first\":\"/api/v2/security/findings/automation/inbox_rules?page[size]=1000\\u0026page[number]=0\",\"last\":\"/api/v2/security/findings/automation/inbox_rules?page[size]=1000\\u0026page[number]=0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/inbox_rules/619001a4-e643-4b0c-a984-2f8823a408c3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all inbox rules returns \"Successfully retrieved the list of inbox rules\" response",
       "version": "v2"
     },
     {
@@ -8291,6 +8668,98 @@
         }
       ],
       "scenario": "Get all ticket creation rules returns \"Successfully retrieved the list of ticket creation rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:33.495Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Needs triage"
+                    },
+                    "enabled": true,
+                    "name": "Test-Get_an_inbox_rule_returns_Successfully_retrieved_the_inbox_rule_response-1790612073",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "inbox_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"32688e34-1328-4675-923a-e80d74041e62\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612073668,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612073668,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_an_inbox_rule_returns_Successfully_retrieved_the_inbox_rule_response-1790612073\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/findings/automation/inbox_rules/32688e34-1328-4675-923a-e80d74041e62",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"32688e34-1328-4675-923a-e80d74041e62\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612073668,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612073668,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Get_an_inbox_rule_returns_Successfully_retrieved_the_inbox_rule_response-1790612073\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/inbox_rules/32688e34-1328-4675-923a-e80d74041e62",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an inbox rule returns \"Successfully retrieved the inbox rule\" response",
       "version": "v2"
     },
     {
@@ -10992,6 +11461,105 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:34.474Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Needs triage"
+                    },
+                    "enabled": true,
+                    "name": "Test-Reorder_inbox_rules_returns_Successfully_reordered_the_inbox_rules_response-1790612074",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "inbox_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"600fac73-3dc3-4f7e-81ad-bb841ab820e6\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612074649,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612074649,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Reorder_inbox_rules_returns_Successfully_reordered_the_inbox_rules_response-1790612074\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": [
+                  {
+                    "id": "600fac73-3dc3-4f7e-81ad-bb841ab820e6",
+                    "type": "inbox_rules"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/inbox_rules/reorder",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"type\":\"inbox_rules\",\"id\":\"600fac73-3dc3-4f7e-81ad-bb841ab820e6\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/inbox_rules/600fac73-3dc3-4f7e-81ad-bb841ab820e6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Reorder inbox rules returns \"Successfully reordered the inbox rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2026-06-16T15:41:16.028Z",
       "interactions": [
         {
@@ -12777,7 +13345,7 @@
     },
     {
       "feature": "Security Monitoring",
-      "frozen_at": "2026-06-16T15:41:18.417Z",
+      "frozen_at": "2026-09-28T16:14:35.560Z",
       "interactions": [
         {
           "request": {
@@ -12796,7 +13364,7 @@
                       "due_from": "first_seen"
                     },
                     "enabled": true,
-                    "name": "Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1781624478",
+                    "name": "Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1790612075",
                     "rule": {
                       "finding_types": [
                         "misconfiguration"
@@ -12816,7 +13384,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"22df6980-9710-496d-bf46-85e0ac181dc0\",\"type\":\"due_date_rules\",\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"severity\":\"critical\",\"due_in_days\":7}],\"due_from\":\"first_seen\"},\"created_at\":1781624478629,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1781624478629,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1781624478\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+              "value": "{\"data\":{\"id\":\"d1c57af8-441e-40ad-861c-8f72e0590d1e\",\"type\":\"due_date_rules\",\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"severity\":\"critical\",\"due_in_days\":7}],\"due_from\":\"first_seen\"},\"created_at\":1790612075728,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612075728,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1790612075\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -12842,7 +13410,7 @@
                       "due_from": "first_seen"
                     },
                     "enabled": false,
-                    "name": "Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1781624478",
+                    "name": "Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1790612075",
                     "rule": {
                       "finding_types": [
                         "misconfiguration"
@@ -12850,19 +13418,20 @@
                       "query": "env:staging"
                     }
                   },
+                  "id": "d1c57af8-441e-40ad-861c-8f72e0590d1e",
                   "type": "due_date_rules"
                 }
               }
             },
             "content_type": "application/json",
             "method": "PUT",
-            "path": "/api/v2/security/findings/automation/due_date_rules/22df6980-9710-496d-bf46-85e0ac181dc0",
+            "path": "/api/v2/security/findings/automation/due_date_rules/d1c57af8-441e-40ad-861c-8f72e0590d1e",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"22df6980-9710-496d-bf46-85e0ac181dc0\",\"type\":\"due_date_rules\",\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"severity\":\"critical\",\"due_in_days\":14}],\"due_from\":\"first_seen\"},\"created_at\":1781624478629,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":false,\"modified_at\":1781624479036,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1781624478\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+              "value": "{\"data\":{\"id\":\"d1c57af8-441e-40ad-861c-8f72e0590d1e\",\"type\":\"due_date_rules\",\"attributes\":{\"action\":{\"due_days_per_severity\":[{\"severity\":\"critical\",\"due_in_days\":14}],\"due_from\":\"first_seen\"},\"created_at\":1790612075728,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":false,\"modified_at\":1790612076079,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_due_date_rule_returns_Successfully_updated_the_due_date_rule_response-1790612075\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -12879,7 +13448,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/security/findings/automation/due_date_rules/22df6980-9710-496d-bf46-85e0ac181dc0",
+            "path": "/api/v2/security/findings/automation/due_date_rules/d1c57af8-441e-40ad-861c-8f72e0590d1e",
             "query": []
           },
           "response": {
@@ -12898,7 +13467,7 @@
     },
     {
       "feature": "Security Monitoring",
-      "frozen_at": "2026-06-16T15:41:19.612Z",
+      "frozen_at": "2026-09-28T16:14:36.693Z",
       "interactions": [
         {
           "request": {
@@ -12911,7 +13480,7 @@
                       "reason": "risk_accepted"
                     },
                     "enabled": true,
-                    "name": "Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1781624479",
+                    "name": "Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1790612076",
                     "rule": {
                       "finding_types": [
                         "misconfiguration"
@@ -12931,7 +13500,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"9a1d22ad-558c-4c4e-bdf5-72cd264cf7a9\",\"type\":\"mute_rules\",\"attributes\":{\"action\":{\"reason\":\"risk_accepted\"},\"created_at\":1781624479894,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1781624479894,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1781624479\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+              "value": "{\"data\":{\"id\":\"47ebb4d1-b4f1-4519-b864-a977c307f7ae\",\"type\":\"mute_rules\",\"attributes\":{\"action\":{\"reason\":\"risk_accepted\"},\"created_at\":1790612076862,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612076862,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1790612076\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -12951,7 +13520,7 @@
                       "reason": "false_positive"
                     },
                     "enabled": false,
-                    "name": "Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1781624479",
+                    "name": "Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1790612076",
                     "rule": {
                       "finding_types": [
                         "misconfiguration"
@@ -12959,19 +13528,20 @@
                       "query": "env:staging"
                     }
                   },
+                  "id": "47ebb4d1-b4f1-4519-b864-a977c307f7ae",
                   "type": "mute_rules"
                 }
               }
             },
             "content_type": "application/json",
             "method": "PUT",
-            "path": "/api/v2/security/findings/automation/mute_rules/9a1d22ad-558c-4c4e-bdf5-72cd264cf7a9",
+            "path": "/api/v2/security/findings/automation/mute_rules/47ebb4d1-b4f1-4519-b864-a977c307f7ae",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"9a1d22ad-558c-4c4e-bdf5-72cd264cf7a9\",\"type\":\"mute_rules\",\"attributes\":{\"action\":{\"reason\":\"false_positive\"},\"created_at\":1781624479894,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":false,\"modified_at\":1781624480318,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1781624479\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+              "value": "{\"data\":{\"id\":\"47ebb4d1-b4f1-4519-b864-a977c307f7ae\",\"type\":\"mute_rules\",\"attributes\":{\"action\":{\"reason\":\"false_positive\"},\"created_at\":1790612076862,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":false,\"modified_at\":1790612077230,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_mute_rule_returns_Successfully_updated_the_mute_rule_response-1790612076\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -12988,7 +13558,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/security/findings/automation/mute_rules/9a1d22ad-558c-4c4e-bdf5-72cd264cf7a9",
+            "path": "/api/v2/security/findings/automation/mute_rules/47ebb4d1-b4f1-4519-b864-a977c307f7ae",
             "query": []
           },
           "response": {
@@ -13112,7 +13682,7 @@
     },
     {
       "feature": "Security Monitoring",
-      "frozen_at": "2026-08-18T07:21:01.200Z",
+      "frozen_at": "2026-09-28T16:14:37.824Z",
       "interactions": [
         {
           "request": {
@@ -13126,7 +13696,7 @@
                       "type": "set"
                     },
                     "enabled": true,
-                    "name": "Test-Update_a_severity_modifier_rule_returns_Successfully_updated_the_severity_modifier_rule_response-1787037661",
+                    "name": "Test-Update_a_severity_modifier_rule_returns_Successfully_updated_the_severity_modifier_rule_response-1790612077",
                     "rule": {
                       "finding_types": [
                         "misconfiguration"
@@ -13146,7 +13716,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c58887bd-5c87-497c-adb8-db08a3593bbb\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1787037661319,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037661319,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_severity_modifier_rule_returns_Successfully_updated_the_severity_modifier_rule_response-1787037661\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+              "value": "{\"data\":{\"id\":\"ee58047b-5859-4ebc-9b21-55ff99109f13\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\"},\"created_at\":1790612078013,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612078013,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_severity_modifier_rule_returns_Successfully_updated_the_severity_modifier_rule_response-1790612077\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -13176,19 +13746,20 @@
                       "query": "env:prod team:platform"
                     }
                   },
+                  "id": "ee58047b-5859-4ebc-9b21-55ff99109f13",
                   "type": "severity_modifier_rules"
                 }
               }
             },
             "content_type": "application/json",
             "method": "PUT",
-            "path": "/api/v2/security/findings/automation/severity_modifier_rules/c58887bd-5c87-497c-adb8-db08a3593bbb",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/ee58047b-5859-4ebc-9b21-55ff99109f13",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c58887bd-5c87-497c-adb8-db08a3593bbb\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\",\"description\":\"Lower severity for dev environment noise\"},\"created_at\":1787037661319,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1787037661614,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Downgrade misconfigurations in dev\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:prod team:platform\"}}}}"
+              "value": "{\"data\":{\"id\":\"ee58047b-5859-4ebc-9b21-55ff99109f13\",\"type\":\"severity_modifier_rules\",\"attributes\":{\"action\":{\"type\":\"set\",\"severity\":\"low\",\"description\":\"Lower severity for dev environment noise\"},\"created_at\":1790612078013,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612078376,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Downgrade misconfigurations in dev\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:prod team:platform\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -13205,7 +13776,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/security/findings/automation/severity_modifier_rules/c58887bd-5c87-497c-adb8-db08a3593bbb",
+            "path": "/api/v2/security/findings/automation/severity_modifier_rules/ee58047b-5859-4ebc-9b21-55ff99109f13",
             "query": []
           },
           "response": {
@@ -13321,7 +13892,7 @@
     },
     {
       "feature": "Security Monitoring",
-      "frozen_at": "2026-06-16T15:41:20.880Z",
+      "frozen_at": "2026-09-28T16:14:38.945Z",
       "interactions": [
         {
           "request": {
@@ -13336,7 +13907,7 @@
                       "target": "jira"
                     },
                     "enabled": true,
-                    "name": "Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1781624480",
+                    "name": "Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1790612078",
                     "rule": {
                       "finding_types": [
                         "misconfiguration"
@@ -13356,7 +13927,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"d3fcec39-567f-4450-967e-ca83bb29dbe4\",\"type\":\"ticket_creation_rules\",\"attributes\":{\"action\":{\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\",\"max_tickets_per_day\":10},\"created_at\":1781624481109,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1781624481109,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1781624480\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+              "value": "{\"data\":{\"id\":\"ce00a58f-5bfd-4325-9cb7-0ce1fc3c632b\",\"type\":\"ticket_creation_rules\",\"attributes\":{\"action\":{\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\",\"max_tickets_per_day\":10},\"created_at\":1790612079182,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612079182,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1790612078\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -13378,7 +13949,7 @@
                       "target": "jira"
                     },
                     "enabled": false,
-                    "name": "Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1781624480",
+                    "name": "Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1790612078",
                     "rule": {
                       "finding_types": [
                         "misconfiguration"
@@ -13386,19 +13957,20 @@
                       "query": "env:staging"
                     }
                   },
+                  "id": "ce00a58f-5bfd-4325-9cb7-0ce1fc3c632b",
                   "type": "ticket_creation_rules"
                 }
               }
             },
             "content_type": "application/json",
             "method": "PUT",
-            "path": "/api/v2/security/findings/automation/ticket_creation_rules/d3fcec39-567f-4450-967e-ca83bb29dbe4",
+            "path": "/api/v2/security/findings/automation/ticket_creation_rules/ce00a58f-5bfd-4325-9cb7-0ce1fc3c632b",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"d3fcec39-567f-4450-967e-ca83bb29dbe4\",\"type\":\"ticket_creation_rules\",\"attributes\":{\"action\":{\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\",\"max_tickets_per_day\":5},\"created_at\":1781624481109,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":false,\"modified_at\":1781624481511,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1781624480\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+              "value": "{\"data\":{\"id\":\"ce00a58f-5bfd-4325-9cb7-0ce1fc3c632b\",\"type\":\"ticket_creation_rules\",\"attributes\":{\"action\":{\"project_id\":\"11111111-1111-1111-1111-111111111111\",\"target\":\"jira\",\"max_tickets_per_day\":5},\"created_at\":1790612079182,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":false,\"modified_at\":1790612079544,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_a_ticket_creation_rule_returns_Successfully_updated_the_ticket_creation_rule_response-1790612078\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -13415,7 +13987,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/security/findings/automation/ticket_creation_rules/d3fcec39-567f-4450-967e-ca83bb29dbe4",
+            "path": "/api/v2/security/findings/automation/ticket_creation_rules/ce00a58f-5bfd-4325-9cb7-0ce1fc3c632b",
             "query": []
           },
           "response": {
@@ -13741,6 +14313,116 @@
         }
       ],
       "scenario": "Update an existing rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-09-28T16:14:40.089Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Needs triage"
+                    },
+                    "enabled": true,
+                    "name": "Test-Update_an_inbox_rule_returns_Successfully_updated_the_inbox_rule_response-1790612080",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "type": "inbox_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security/findings/automation/inbox_rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9c1e6995-7c04-403a-9cb0-62f8cc94e25a\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612080262,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":true,\"modified_at\":1790612080262,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_an_inbox_rule_returns_Successfully_updated_the_inbox_rule_response-1790612080\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action": {
+                      "description": "Needs triage"
+                    },
+                    "enabled": false,
+                    "name": "Test-Update_an_inbox_rule_returns_Successfully_updated_the_inbox_rule_response-1790612080",
+                    "rule": {
+                      "finding_types": [
+                        "misconfiguration"
+                      ],
+                      "query": "env:staging"
+                    }
+                  },
+                  "id": "9c1e6995-7c04-403a-9cb0-62f8cc94e25a",
+                  "type": "inbox_rules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/security/findings/automation/inbox_rules/9c1e6995-7c04-403a-9cb0-62f8cc94e25a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9c1e6995-7c04-403a-9cb0-62f8cc94e25a\",\"type\":\"inbox_rules\",\"attributes\":{\"action\":{\"description\":\"Needs triage\"},\"created_at\":1790612080262,\"created_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"enabled\":false,\"modified_at\":1790612080636,\"modified_by\":{\"type\":\"user\",\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\"},\"name\":\"Test-Update_an_inbox_rule_returns_Successfully_updated_the_inbox_rule_response-1790612080\",\"rule\":{\"finding_types\":[\"misconfiguration\"],\"query\":\"env:staging\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security/findings/automation/inbox_rules/9c1e6995-7c04-403a-9cb0-62f8cc94e25a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an inbox rule returns \"Successfully updated the inbox rule\" response",
       "version": "v2"
     },
     {

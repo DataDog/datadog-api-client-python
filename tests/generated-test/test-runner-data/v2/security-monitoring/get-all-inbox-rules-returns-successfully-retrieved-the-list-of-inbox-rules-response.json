@@ -1,0 +1,18 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get all inbox rules returns \"Successfully retrieved the list of inbox rules\" response",
+  "operation_id": "ListSecurityFindingsAutomationInboxRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/automation/inbox_rules"
+  },
+  "scenario": "Get all inbox rules returns \"Successfully retrieved the list of inbox rules\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

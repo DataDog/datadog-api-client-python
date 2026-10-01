@@ -32,7 +32,7 @@ class DueDateRuleCreateRequest(ModelNormal):
         """
         The body of a due date rule create request.
 
-        :param data: The data object for a due date rule create or update request.
+        :param data: The data object for a due date rule create request.
         :type data: DueDateRuleDataCreate
         """
         super().__init__(kwargs)
