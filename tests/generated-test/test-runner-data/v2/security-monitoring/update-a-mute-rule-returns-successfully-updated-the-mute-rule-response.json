@@ -27,6 +27,7 @@
               "query": "env:staging"
             }
           },
+          "id": "{{ valid_mute_rule.data.id }}",
           "type": "mute_rules"
         }
       }

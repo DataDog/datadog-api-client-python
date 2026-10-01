@@ -30,7 +30,7 @@ class MuteRuleReorderRequest(ModelNormal):
 
     def __init__(self_, data: List[MuteRuleReorderItem], **kwargs):
         """
-        The body of the mute rule reorder request.
+        The body of a mute rule reorder request.
 
         :param data: The ordered list of all mute rules. Every rule must be included.
         :type data: [MuteRuleReorderItem]

@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get an inbox rule returns \"Successfully retrieved the inbox rule\" response",
+  "operation_id": "GetSecurityFindingsAutomationInboxRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "valid_inbox_rule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/inbox_rules/{rule_id}"
+  },
+  "scenario": "Get an inbox rule returns \"Successfully retrieved the inbox rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

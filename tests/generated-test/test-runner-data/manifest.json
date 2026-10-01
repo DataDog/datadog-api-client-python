@@ -9558,6 +9558,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/create-an-inbox-rule-returns-successfully-created-the-inbox-rule-response.json",
+      "scenario": "Create an inbox rule returns \"Successfully created the inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/create-case-for-security-finding-returns-created-response.json",
       "scenario": "Create case for security finding returns \"Created\" response",
       "version": "v2"
@@ -9726,6 +9733,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/delete-an-inbox-rule-returns-successfully-deleted-the-inbox-rule-response.json",
+      "scenario": "Delete an inbox rule returns \"Successfully deleted the inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/detach-security-findings-from-their-case-returns-bad-request-response.json",
       "scenario": "Detach security findings from their case returns \"Bad Request\" response",
       "version": "v2"
@@ -9742,6 +9756,20 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/detach-security-findings-from-their-case-returns-not-found-response.json",
       "scenario": "Detach security findings from their case returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/disable-a-default-inbox-rule-returns-successfully-disabled-the-default-inbox-rule-response.json",
+      "scenario": "Disable a default inbox rule returns \"Successfully disabled the default inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/enable-a-default-inbox-rule-returns-successfully-enabled-the-default-inbox-rule-response.json",
+      "scenario": "Enable a default inbox rule returns \"Successfully enabled the default inbox rule\" response",
       "version": "v2"
     },
     {
@@ -9798,6 +9826,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/get-a-custom-framework-returns-ok-response.json",
       "scenario": "Get a custom framework returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-a-default-inbox-rule-returns-successfully-retrieved-the-default-inbox-rule-response.json",
+      "scenario": "Get a default inbox rule returns \"Successfully retrieved the default inbox rule\" response",
       "version": "v2"
     },
     {
@@ -9950,8 +9985,22 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-all-default-inbox-rules-returns-successfully-retrieved-the-list-of-default-inbox-rules-response.json",
+      "scenario": "Get all default inbox rules returns \"Successfully retrieved the list of default inbox rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/get-all-due-date-rules-returns-successfully-retrieved-the-list-of-due-date-rules-response.json",
       "scenario": "Get all due date rules returns \"Successfully retrieved the list of due date rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-all-inbox-rules-returns-successfully-retrieved-the-list-of-inbox-rules-response.json",
+      "scenario": "Get all inbox rules returns \"Successfully retrieved the list of inbox rules\" response",
       "version": "v2"
     },
     {
@@ -10001,6 +10050,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/get-all-ticket-creation-rules-returns-successfully-retrieved-the-list-of-ticket-creation-rules-response.json",
       "scenario": "Get all ticket creation rules returns \"Successfully retrieved the list of ticket creation rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-an-inbox-rule-returns-successfully-retrieved-the-inbox-rule-response.json",
+      "scenario": "Get an inbox rule returns \"Successfully retrieved the inbox rule\" response",
       "version": "v2"
     },
     {
@@ -10314,6 +10370,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/reorder-inbox-rules-returns-successfully-reordered-the-inbox-rules-response.json",
+      "scenario": "Reorder inbox rules returns \"Successfully reordered the inbox rules\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/reorder-mute-rules-returns-successfully-reordered-the-mute-rules-response.json",
       "scenario": "Reorder mute rules returns \"Successfully reordered the mute rules\" response",
       "version": "v2"
@@ -10526,6 +10589,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/update-an-existing-rule-returns-ok-response.json",
       "scenario": "Update an existing rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/update-an-inbox-rule-returns-successfully-updated-the-inbox-rule-response.json",
+      "scenario": "Update an inbox rule returns \"Successfully updated the inbox rule\" response",
       "version": "v2"
     },
     {

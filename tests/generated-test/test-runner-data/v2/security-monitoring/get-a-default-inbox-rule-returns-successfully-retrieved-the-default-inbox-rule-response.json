@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get a default inbox rule returns \"Successfully retrieved the default inbox rule\" response",
+  "operation_id": "GetSecurityFindingsAutomationDefaultInboxRule",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "secret_default_rule"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/findings/automation/default_inbox_rules/{rule_id}"
+  },
+  "scenario": "Get a default inbox rule returns \"Successfully retrieved the default inbox rule\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

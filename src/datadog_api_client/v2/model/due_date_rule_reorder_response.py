@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.mute_rule_data_update import MuteRuleDataUpdate
+    from datadog_api_client.v2.model.due_date_rule_reorder_item import DueDateRuleReorderItem
 
 
-class MuteRuleUpdateRequest(ModelNormal):
+class DueDateRuleReorderResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.mute_rule_data_update import MuteRuleDataUpdate
+        from datadog_api_client.v2.model.due_date_rule_reorder_item import DueDateRuleReorderItem
 
         return {
-            "data": (MuteRuleDataUpdate,),
+            "data": ([DueDateRuleReorderItem],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: MuteRuleDataUpdate, **kwargs):
+    def __init__(self_, data: List[DueDateRuleReorderItem], **kwargs):
         """
-        The body of a mute rule update request.
+        The response of a due date rule reorder request.
 
-        :param data: The data object for a mute rule update request. The ``id`` must match the ``rule_id`` path parameter.
-        :type data: MuteRuleDataUpdate
+        :param data: The ordered list of all due date rules. Every rule must be included.
+        :type data: [DueDateRuleReorderItem]
         """
         super().__init__(kwargs)
 

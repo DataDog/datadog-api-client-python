@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.severity_modifier_rule_data_create import SeverityModifierRuleDataCreate
+    from datadog_api_client.v2.model.severity_modifier_rule_data_update import SeverityModifierRuleDataUpdate
 
 
 class SeverityModifierRuleUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.severity_modifier_rule_data_create import SeverityModifierRuleDataCreate
+        from datadog_api_client.v2.model.severity_modifier_rule_data_update import SeverityModifierRuleDataUpdate
 
         return {
-            "data": (SeverityModifierRuleDataCreate,),
+            "data": (SeverityModifierRuleDataUpdate,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: SeverityModifierRuleDataCreate, **kwargs):
+    def __init__(self_, data: SeverityModifierRuleDataUpdate, **kwargs):
         """
         The body of a severity modifier rule update request.
 
-        :param data: The data object for a severity modifier rule create or update request.
-        :type data: SeverityModifierRuleDataCreate
+        :param data: The data object for a severity modifier rule update request. The ``id`` must match the ``rule_id`` path parameter.
+        :type data: SeverityModifierRuleDataUpdate
         """
         super().__init__(kwargs)
 

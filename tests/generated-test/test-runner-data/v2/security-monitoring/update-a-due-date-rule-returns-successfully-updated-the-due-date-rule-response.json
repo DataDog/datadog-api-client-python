@@ -33,6 +33,7 @@
               "query": "env:staging"
             }
           },
+          "id": "{{ valid_due_date_rule.data.id }}",
           "type": "due_date_rules"
         }
       }

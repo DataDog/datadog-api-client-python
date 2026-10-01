@@ -29,6 +29,7 @@
               "query": "env:prod team:platform"
             }
           },
+          "id": "{{ valid_severity_modifier_rule.data.id }}",
           "type": "severity_modifier_rules"
         }
       }

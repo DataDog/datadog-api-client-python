@@ -1049,7 +1049,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Create an inbox rule returns "Successfully created the inbox rule" response
     Given operation "CreateSecurityFindingsAutomationInboxRule" enabled
     And new "CreateSecurityFindingsAutomationInboxRule" request
@@ -1493,7 +1493,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Delete an inbox rule returns "Successfully deleted the inbox rule" response
     Given operation "DeleteSecurityFindingsAutomationInboxRule" enabled
     And there is a valid "valid_inbox_rule" in the system
@@ -1531,7 +1531,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Disable a default inbox rule returns "Successfully disabled the default inbox rule" response
     Given operation "DisableSecurityFindingsAutomationDefaultInboxRule" enabled
     And new "DisableSecurityFindingsAutomationDefaultInboxRule" request
@@ -1550,7 +1550,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Enable a default inbox rule returns "Successfully enabled the default inbox rule" response
     Given operation "EnableSecurityFindingsAutomationDefaultInboxRule" enabled
     And new "EnableSecurityFindingsAutomationDefaultInboxRule" request
@@ -1784,7 +1784,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Get a default inbox rule returns "Successfully retrieved the default inbox rule" response
     Given operation "GetSecurityFindingsAutomationDefaultInboxRule" enabled
     And new "GetSecurityFindingsAutomationDefaultInboxRule" request
@@ -2159,7 +2159,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Get all default inbox rules returns "Successfully retrieved the list of default inbox rules" response
     Given operation "ListSecurityFindingsAutomationDefaultInboxRules" enabled
     And new "ListSecurityFindingsAutomationDefaultInboxRules" request
@@ -2176,7 +2176,7 @@ Feature: Security Monitoring
     Then the response status is 200 Successfully retrieved the list of due date rules
     And the response "data" has item with field "id" with value "{{ valid_due_date_rule.data.id }}"
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Get all inbox rules returns "Successfully retrieved the list of inbox rules" response
     Given operation "ListSecurityFindingsAutomationInboxRules" enabled
     And there is a valid "valid_inbox_rule" in the system
@@ -2291,7 +2291,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Get an inbox rule returns "Successfully retrieved the inbox rule" response
     Given operation "GetSecurityFindingsAutomationInboxRule" enabled
     And there is a valid "valid_inbox_rule" in the system
@@ -3180,7 +3180,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Reorder inbox rules returns "Successfully reordered the inbox rules" response
     Given operation "ReorderSecurityFindingsAutomationInboxRules" enabled
     And there is a valid "valid_inbox_rule" in the system
@@ -3622,7 +3622,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationDueDateRule" enabled
     And new "UpdateSecurityFindingsAutomationDueDateRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "due_date_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -3631,7 +3631,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationDueDateRule" enabled
     And new "UpdateSecurityFindingsAutomationDueDateRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "due_date_rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -3641,7 +3641,7 @@ Feature: Security Monitoring
     And there is a valid "valid_due_date_rule" in the system
     And new "UpdateSecurityFindingsAutomationDueDateRule" request
     And request contains "rule_id" parameter from "valid_due_date_rule.data.id"
-    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 14, "severity": "critical"}], "due_from": "first_seen"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "due_date_rules"}}
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 14, "severity": "critical"}], "due_from": "first_seen"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "id": "{{ valid_due_date_rule.data.id }}", "type": "due_date_rules"}}
     When the request is sent
     Then the response status is 200 Successfully updated the due date rule
     And the response "data.id" is equal to "{{ valid_due_date_rule.data.id }}"
@@ -3652,7 +3652,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationDueDateRule" enabled
     And new "UpdateSecurityFindingsAutomationDueDateRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "due_date_rules"}}
+    And body with value {"data": {"attributes": {"action": {"due_days_per_severity": [{"due_in_days": 7, "severity": "critical"}], "due_from": "first_seen", "reason_description": "Applied for production findings only"}, "enabled": true, "name": "Critical findings due in 7 days", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "due_date_rules"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
@@ -3661,7 +3661,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationMuteRule" enabled
     And new "UpdateSecurityFindingsAutomationMuteRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "mute_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -3670,7 +3670,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationMuteRule" enabled
     And new "UpdateSecurityFindingsAutomationMuteRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "mute_rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -3680,7 +3680,7 @@ Feature: Security Monitoring
     And there is a valid "valid_mute_rule" in the system
     And new "UpdateSecurityFindingsAutomationMuteRule" request
     And request contains "rule_id" parameter from "valid_mute_rule.data.id"
-    And body with value {"data": {"attributes": {"action": {"reason": "false_positive"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "mute_rules"}}
+    And body with value {"data": {"attributes": {"action": {"reason": "false_positive"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "id": "{{ valid_mute_rule.data.id }}", "type": "mute_rules"}}
     When the request is sent
     Then the response status is 200 Successfully updated the mute rule
     And the response "data.id" is equal to "{{ valid_mute_rule.data.id }}"
@@ -3691,7 +3691,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationMuteRule" enabled
     And new "UpdateSecurityFindingsAutomationMuteRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "mute_rules"}}
+    And body with value {"data": {"attributes": {"action": {"expire_at": 4070908800000, "reason": "risk_accepted", "reason_description": "Accepted for dev environments only"}, "enabled": true, "name": "Mute accepted risks in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "mute_rules"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
@@ -3736,7 +3736,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationSeverityModifierRule" enabled
     And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "severity_modifier_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -3745,7 +3745,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationSeverityModifierRule" enabled
     And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "severity_modifier_rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -3755,7 +3755,7 @@ Feature: Security Monitoring
     And there is a valid "valid_severity_modifier_rule" in the system
     And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
     And request contains "rule_id" parameter from "valid_severity_modifier_rule.data.id"
-    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "{{ valid_severity_modifier_rule.data.id }}", "type": "severity_modifier_rules"}}
     When the request is sent
     Then the response status is 200 Successfully updated the severity modifier rule
 
@@ -3764,7 +3764,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationSeverityModifierRule" enabled
     And new "UpdateSecurityFindingsAutomationSeverityModifierRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "severity_modifier_rules"}}
+    And body with value {"data": {"attributes": {"action": {"description": "Lower severity for dev environment noise", "severity": "low", "type": "set"}, "enabled": true, "name": "Downgrade misconfigurations in dev", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "severity_modifier_rules"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
@@ -3809,7 +3809,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationTicketCreationRule" enabled
     And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "ticket_creation_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -3818,7 +3818,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationTicketCreationRule" enabled
     And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "ticket_creation_rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -3828,7 +3828,7 @@ Feature: Security Monitoring
     And there is a valid "valid_ticket_creation_rule" in the system
     And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
     And request contains "rule_id" parameter from "valid_ticket_creation_rule.data.id"
-    And body with value {"data": {"attributes": {"action": {"max_tickets_per_day": 5, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "type": "ticket_creation_rules"}}
+    And body with value {"data": {"attributes": {"action": {"max_tickets_per_day": 5, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": false, "name": "{{ unique }}", "rule": {"finding_types": ["misconfiguration"], "query": "env:staging"}}, "id": "{{ valid_ticket_creation_rule.data.id }}", "type": "ticket_creation_rules"}}
     When the request is sent
     Then the response status is 200 Successfully updated the ticket creation rule
     And the response "data.id" is equal to "{{ valid_ticket_creation_rule.data.id }}"
@@ -3839,7 +3839,7 @@ Feature: Security Monitoring
     Given operation "UpdateSecurityFindingsAutomationTicketCreationRule" enabled
     And new "UpdateSecurityFindingsAutomationTicketCreationRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "type": "ticket_creation_rules"}}
+    And body with value {"data": {"attributes": {"action": {"assignee_id": "22222222-2222-2222-2222-222222222222", "fields": {"labels": ["security"]}, "max_tickets_per_day": 100, "project_id": "11111111-1111-1111-1111-111111111111", "target": "jira"}, "enabled": true, "name": "Auto-create Jira tickets for critical findings", "rule": {"finding_types": ["misconfiguration"], "query": "env:prod team:platform"}}, "id": "00000000-0000-0000-0000-000000000000", "type": "ticket_creation_rules"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
@@ -3916,7 +3916,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/k9-automation
+  @team:DataDog/k9-automation
   Scenario: Update an inbox rule returns "Successfully updated the inbox rule" response
     Given operation "UpdateSecurityFindingsAutomationInboxRule" enabled
     And there is a valid "valid_inbox_rule" in the system

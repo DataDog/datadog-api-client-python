@@ -32,7 +32,7 @@ class MuteRuleCreateRequest(ModelNormal):
         """
         The body of a mute rule create request.
 
-        :param data: The data object for a mute rule create or update request.
+        :param data: The data object for a mute rule create request.
         :type data: MuteRuleDataCreate
         """
         super().__init__(kwargs)

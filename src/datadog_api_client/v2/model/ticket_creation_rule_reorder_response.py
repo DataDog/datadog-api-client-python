@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.ticket_creation_rule_reorder_item import TicketCreationRuleReorderItem
 
 
-class TicketCreationRuleReorderRequest(ModelNormal):
+class TicketCreationRuleReorderResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ticket_creation_rule_reorder_item import TicketCreationRuleReorderItem
@@ -30,7 +30,7 @@ class TicketCreationRuleReorderRequest(ModelNormal):
 
     def __init__(self_, data: List[TicketCreationRuleReorderItem], **kwargs):
         """
-        The body of a ticket creation rule reorder request.
+        The response of a ticket creation rule reorder request.
 
         :param data: The ordered list of all ticket creation rules. Every rule must be included.
         :type data: [TicketCreationRuleReorderItem]
