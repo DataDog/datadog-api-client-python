@@ -32,9 +32,9 @@ class RUMOperationStrongLinkUpdateRequestAttributes(ModelNormal):
 
     def __init__(self_, status: RUMOperationStrongLinkUpdateStatus, **kwargs):
         """
-        Attributes for updating a RUM operation strong link.
+        Attributes for updating a RUM operation link.
 
-        :param status: The status of a RUM operation strong link. Can only be set to ``CONFIRMED`` or ``REJECTED``.
+        :param status: The status of a RUM operation link. Can only be set to ``CONFIRMED`` or ``REJECTED``.
         :type status: RUMOperationStrongLinkUpdateStatus
         """
         super().__init__(kwargs)

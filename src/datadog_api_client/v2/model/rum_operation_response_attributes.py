@@ -102,7 +102,7 @@ class RUMOperationResponseAttributes(ModelNormal):
         :param display_name: A human-readable display name for the RUM operation.
         :type display_name: str, optional
 
-        :param feature_ids: The list of feature IDs associated with the RUM operation.
+        :param feature_ids: The list of journey IDs associated with the RUM operation.
         :type feature_ids: [str], optional
 
         :param journey_rum: The definition of a RUM operation's journey, used to detect it from RUM events.
