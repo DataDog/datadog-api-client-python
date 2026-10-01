@@ -30,7 +30,7 @@ class RecommendationsFilterRequestSortItems(ModelNormal):
         """
         A single sort clause applied to the cost recommendations result set.
 
-        :param expression: Field to sort by (for example, ``potential_daily_savings.amount`` ).
+        :param expression: Field to sort by (for example, ``@potential_daily_savings`` ).
         :type expression: str, optional
 
         :param order: Sort direction, either ``ASC`` or ``DESC``.
