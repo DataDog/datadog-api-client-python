@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v1.model.dashboard_default_timeframe_setting import DashboardDefaultTimeframeSetting
+    from datadog_api_client.v1.model.dashboard_experience_type import DashboardExperienceType
     from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
     from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
     from datadog_api_client.v1.model.dashboard_tab import DashboardTab
@@ -40,6 +41,7 @@ class Dashboard(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v1.model.dashboard_default_timeframe_setting import DashboardDefaultTimeframeSetting
+        from datadog_api_client.v1.model.dashboard_experience_type import DashboardExperienceType
         from datadog_api_client.v1.model.dashboard_layout_type import DashboardLayoutType
         from datadog_api_client.v1.model.dashboard_reflow_type import DashboardReflowType
         from datadog_api_client.v1.model.dashboard_tab import DashboardTab
@@ -53,6 +55,7 @@ class Dashboard(ModelNormal):
             "created_at": (datetime,),
             "default_timeframe": (DashboardDefaultTimeframeSetting,),
             "description": (str, none_type),
+            "experience_type": (DashboardExperienceType,),
             "id": (str,),
             "is_read_only": (bool,),
             "layout_type": (DashboardLayoutType,),
@@ -75,6 +78,7 @@ class Dashboard(ModelNormal):
         "created_at": "created_at",
         "default_timeframe": "default_timeframe",
         "description": "description",
+        "experience_type": "experience_type",
         "id": "id",
         "is_read_only": "is_read_only",
         "layout_type": "layout_type",
@@ -94,6 +98,7 @@ class Dashboard(ModelNormal):
         "author_handle",
         "author_name",
         "created_at",
+        "experience_type",
         "id",
         "modified_at",
         "url",
@@ -111,6 +116,7 @@ class Dashboard(ModelNormal):
             DashboardDefaultTimeframeSetting, DashboardLiveTimeframe, DashboardFixedTimeframe, UnsetType
         ] = unset,
         description: Union[str, none_type, UnsetType] = unset,
+        experience_type: Union[DashboardExperienceType, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         is_read_only: Union[bool, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
@@ -142,6 +148,9 @@ class Dashboard(ModelNormal):
 
         :param description: Description of the dashboard.
         :type description: str, none_type, optional
+
+        :param experience_type: The experience type of the dashboard.
+        :type experience_type: DashboardExperienceType, optional
 
         :param id: ID of the dashboard.
         :type id: str, optional
@@ -199,6 +208,8 @@ class Dashboard(ModelNormal):
             kwargs["default_timeframe"] = default_timeframe
         if description is not unset:
             kwargs["description"] = description
+        if experience_type is not unset:
+            kwargs["experience_type"] = experience_type
         if id is not unset:
             kwargs["id"] = id
         if is_read_only is not unset:

@@ -1348,6 +1348,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "description" is equal to null
+    And the response "experience_type" is equal to "default"
 
   @replay-only @team:DataDog/dashboards-backend
   Scenario: Get a dashboard returns 'author_name'
