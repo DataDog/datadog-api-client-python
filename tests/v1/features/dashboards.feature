@@ -404,6 +404,17 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].sort.order_by[0].name" is equal to "service"
 
   @team:DataDog/dashboards-backend
+  Scenario: Create a new dashboard with case_stream list_stream widget
+    Given new "CreateDashboard" request
+    And body with value {"layout_type":"ordered","title":"{{ unique }} with case_stream list_stream widget","widgets":[{"definition":{"type":"list_stream","requests":[{"columns":[{"width":"auto","field":"created_at"}],"query":{"data_source":"case_stream","query_string":"*","sort":{"column":"created_at","order":"desc"}},"response_format":"event_list"}]}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].query.data_source" is equal to "case_stream"
+    And the response "widgets[0].definition.requests[0].query.query_string" is equal to "*"
+    And the response "widgets[0].definition.requests[0].query.sort.column" is equal to "created_at"
+    And the response "widgets[0].definition.requests[0].query.sort.order" is equal to "desc"
+
+  @team:DataDog/dashboards-backend
   Scenario: Create a new dashboard with check_status widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/check_status_widget.json"
