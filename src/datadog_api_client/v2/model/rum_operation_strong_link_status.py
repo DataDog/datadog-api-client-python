@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RUMOperationStrongLinkStatus(ModelSimple):
     """
-    The status of a RUM operation strong link.
+    The status of a RUM operation link.
 
     :param value: Must be one of ["DRAFT", "CONFIRMED", "REJECTED"].
     :type value: str

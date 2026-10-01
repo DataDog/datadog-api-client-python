@@ -1,5 +1,5 @@
 """
-Update a RUM operation strong link returns "OK" response
+Update a RUM operation link returns "OK" response
 """
 
 from os import environ

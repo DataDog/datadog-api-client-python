@@ -34,9 +34,9 @@ class RUMOperationStrongLinkUpdateRequest(ModelNormal):
 
     def __init__(self_, data: RUMOperationStrongLinkUpdateRequestData, **kwargs):
         """
-        The request body for updating a RUM operation strong link.
+        The request body for updating a RUM operation link.
 
-        :param data: The data object for updating a RUM operation strong link.
+        :param data: The data object for updating a RUM operation link.
         :type data: RUMOperationStrongLinkUpdateRequestData
         """
         super().__init__(kwargs)

@@ -32,9 +32,9 @@ class RUMOperationStrongLinkResponse(ModelNormal):
 
     def __init__(self_, data: RUMOperationStrongLinkResponseData, **kwargs):
         """
-        The response for a single RUM operation strong link.
+        The response for a single RUM operation link.
 
-        :param data: The data object in a RUM operation strong link response.
+        :param data: The data object in a RUM operation link response.
         :type data: RUMOperationStrongLinkResponseData
         """
         super().__init__(kwargs)
