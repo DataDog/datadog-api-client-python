@@ -255,6 +255,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_aggregate_processor import (
             ObservabilityPipelineAggregateProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_processor import (
+            ObservabilityPipelineMetricEnrichmentTableProcessor,
+        )
         from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor import (
             ObservabilityPipelineMetricTagsProcessor,
         )
@@ -291,6 +294,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineThrottleProcessor,
                 ObservabilityPipelineAddMetricTagsProcessor,
                 ObservabilityPipelineAggregateProcessor,
+                ObservabilityPipelineMetricEnrichmentTableProcessor,
                 ObservabilityPipelineMetricTagsProcessor,
                 ObservabilityPipelineRenameMetricTagsProcessor,
                 ObservabilityPipelineTagCardinalityLimitProcessor,

@@ -6571,6 +6571,42 @@ from datadog_api_client.v2.model.observability_pipeline_memory_buffer_size_optio
     ObservabilityPipelineMemoryBufferSizeOptions,
 )
 from datadog_api_client.v2.model.observability_pipeline_metadata_entry import ObservabilityPipelineMetadataEntry
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_file import (
+    ObservabilityPipelineMetricEnrichmentTableFile,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_file_key import (
+    ObservabilityPipelineMetricEnrichmentTableFileKey,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_file_processor import (
+    ObservabilityPipelineMetricEnrichmentTableFileProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_lookup_source import (
+    ObservabilityPipelineMetricEnrichmentTableLookupSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_metric_name_lookup import (
+    ObservabilityPipelineMetricEnrichmentTableMetricNameLookup,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_metric_name_lookup_type import (
+    ObservabilityPipelineMetricEnrichmentTableMetricNameLookupType,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_processor import (
+    ObservabilityPipelineMetricEnrichmentTableProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_reference_key import (
+    ObservabilityPipelineMetricEnrichmentTableReferenceKey,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_reference_table import (
+    ObservabilityPipelineMetricEnrichmentTableReferenceTable,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_reference_table_processor import (
+    ObservabilityPipelineMetricEnrichmentTableReferenceTableProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_tag_lookup import (
+    ObservabilityPipelineMetricEnrichmentTableTagLookup,
+)
+from datadog_api_client.v2.model.observability_pipeline_metric_enrichment_table_tag_lookup_type import (
+    ObservabilityPipelineMetricEnrichmentTableTagLookupType,
+)
 from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor import (
     ObservabilityPipelineMetricTagsProcessor,
 )
@@ -16545,6 +16581,18 @@ __all__ = [
     "ObservabilityPipelineMemoryBufferOptions",
     "ObservabilityPipelineMemoryBufferSizeOptions",
     "ObservabilityPipelineMetadataEntry",
+    "ObservabilityPipelineMetricEnrichmentTableFile",
+    "ObservabilityPipelineMetricEnrichmentTableFileKey",
+    "ObservabilityPipelineMetricEnrichmentTableFileProcessor",
+    "ObservabilityPipelineMetricEnrichmentTableLookupSource",
+    "ObservabilityPipelineMetricEnrichmentTableMetricNameLookup",
+    "ObservabilityPipelineMetricEnrichmentTableMetricNameLookupType",
+    "ObservabilityPipelineMetricEnrichmentTableProcessor",
+    "ObservabilityPipelineMetricEnrichmentTableReferenceKey",
+    "ObservabilityPipelineMetricEnrichmentTableReferenceTable",
+    "ObservabilityPipelineMetricEnrichmentTableReferenceTableProcessor",
+    "ObservabilityPipelineMetricEnrichmentTableTagLookup",
+    "ObservabilityPipelineMetricEnrichmentTableTagLookupType",
     "ObservabilityPipelineMetricTagsProcessor",
     "ObservabilityPipelineMetricTagsProcessorRule",
     "ObservabilityPipelineMetricTagsProcessorRuleAction",

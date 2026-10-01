@@ -150,6 +150,22 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.destinations[0].id" is equal to "updated-datadog-logs-destination-id"
 
   @team:DataDog/observability-pipelines
+  Scenario: Validate a metrics pipeline with enrichment table processor file lookup returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"pipeline_type": "metrics", "destinations": [{"id": "datadog-metrics-destination", "inputs": ["my-processor-group"], "type": "datadog_metrics"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "enrichment-table-processor", "include": "*", "type": "enrichment_table", "file": {"encoding": {"delimiter": ",", "type": "csv", "includes_headers": true}, "key": {"column": "service", "source": {"type": "tag", "name": "service"}}, "path": "/etc/enrichment/lookup.csv"}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Metrics Pipeline with Enrichment Table File Lookup"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
+  Scenario: Validate a metrics pipeline with enrichment table processor reference table returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"pipeline_type": "metrics", "destinations": [{"id": "datadog-metrics-destination", "inputs": ["my-processor-group"], "type": "datadog_metrics"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "enrichment-table-processor", "include": "*", "type": "enrichment_table", "reference_table": {"table_id": "metric-enrichment", "key": {"source": {"type": "metric_name"}}, "columns": ["environment", "team"]}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Metrics Pipeline with Enrichment Table Reference Table"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:DataDog/observability-pipelines
   Scenario: Validate a metrics pipeline with opentelemetry source returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"pipeline_type": "metrics", "destinations": [{"id": "datadog-metrics-destination", "inputs": ["my-processor-group"], "type": "datadog_metrics"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["opentelemetry-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "env:production", "type": "filter"}]}], "sources": [{"id": "opentelemetry-source", "type": "opentelemetry"}]}, "name": "Metrics OTel Pipeline"}, "type": "pipelines"}}

@@ -1,0 +1,81 @@
+{
+  "api": "ObservabilityPipelines",
+  "expected_status": 200,
+  "feature": "Observability Pipelines",
+  "id": "v2/Observability Pipelines/Validate a metrics pipeline with enrichment table processor reference table returns \"OK\" response",
+  "operation_id": "ValidatePipeline",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ObservabilityPipelineSpec",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "config": {
+              "destinations": [
+                {
+                  "id": "datadog-metrics-destination",
+                  "inputs": [
+                    "my-processor-group"
+                  ],
+                  "type": "datadog_metrics"
+                }
+              ],
+              "pipeline_type": "metrics",
+              "processor_groups": [
+                {
+                  "enabled": true,
+                  "id": "my-processor-group",
+                  "include": "*",
+                  "inputs": [
+                    "datadog-agent-source"
+                  ],
+                  "processors": [
+                    {
+                      "enabled": true,
+                      "id": "enrichment-table-processor",
+                      "include": "*",
+                      "reference_table": {
+                        "columns": [
+                          "environment",
+                          "team"
+                        ],
+                        "key": {
+                          "source": {
+                            "type": "metric_name"
+                          }
+                        },
+                        "table_id": "metric-enrichment"
+                      },
+                      "type": "enrichment_table"
+                    }
+                  ]
+                }
+              ],
+              "sources": [
+                {
+                  "id": "datadog-agent-source",
+                  "type": "datadog_agent"
+                }
+              ]
+            },
+            "name": "Metrics Pipeline with Enrichment Table Reference Table"
+          },
+          "type": "pipelines"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/obs-pipelines/pipelines/validate"
+  },
+  "scenario": "Validate a metrics pipeline with enrichment table processor reference table returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
