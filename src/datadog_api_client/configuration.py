@@ -690,6 +690,8 @@ class Configuration:
                 "v2.list_jira_accounts": False,
                 "v2.list_jira_issue_templates": False,
                 "v2.update_jira_issue_template": False,
+                "v2.create_archive_search": False,
+                "v2.get_archive_search": False,
                 "v2.add_role_to_restriction_query": False,
                 "v2.create_restriction_query": False,
                 "v2.delete_restriction_query": False,
