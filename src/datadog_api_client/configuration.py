@@ -487,6 +487,7 @@ class Configuration:
                 "v2.search_cost_recommendations": False,
                 "v2.update_unit_cost": False,
                 "v2.create_quotas": False,
+                "v2.delete_pending_quota": False,
                 "v2.delete_quota": False,
                 "v2.list_quotas": False,
                 "v2.update_quota": False,

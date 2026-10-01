@@ -10532,6 +10532,12 @@
       "type": "idempotent"
     }
   },
+  "DeletePendingQuota": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetUsageSummaryAvailableFields": {
     "tag": "Usage Metering",
     "undo": {

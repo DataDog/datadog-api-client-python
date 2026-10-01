@@ -38,7 +38,7 @@ class UsageQuotaBulkResultData(ModelNormal):
         """
         The result of writing one usage quota in a bulk create-or-update request.
 
-        :param attributes: Attributes of a usage quota bulk write result. On success, all fields except ``error`` are present. On failure, only ``error`` is present and the other fields are omitted.
+        :param attributes: Attributes of a usage quota bulk write result. On success, quota fields are present as applicable, and pending fields are present only when a change is scheduled. On failure, only ``error`` is present and the other fields are omitted.
         :type attributes: UsageQuotaBulkResultAttributes
 
         :param id: An opaque usage quota identifier. Clients must pass this value back verbatim in update and delete requests and must not infer any structure from it.
