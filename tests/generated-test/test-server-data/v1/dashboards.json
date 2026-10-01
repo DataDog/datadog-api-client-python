@@ -3187,6 +3187,89 @@
     },
     {
       "feature": "Dashboards",
+      "frozen_at": "2026-09-30T01:58:34.406Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Create_a_new_dashboard_with_case_stream_list_stream_widget-1790733514 with case_stream list_stream widget",
+                "widgets": [
+                  {
+                    "definition": {
+                      "requests": [
+                        {
+                          "columns": [
+                            {
+                              "field": "created_at",
+                              "width": "auto"
+                            }
+                          ],
+                          "query": {
+                            "data_source": "case_stream",
+                            "query_string": "*",
+                            "sort": {
+                              "column": "created_at",
+                              "order": "desc"
+                            }
+                          },
+                          "response_format": "event_list"
+                        }
+                      ],
+                      "type": "list_stream"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"kb4-hic-k5w\",\"title\":\"Test-Create_a_new_dashboard_with_case_stream_list_stream_widget-1790733514 with case_stream list_stream widget\",\"description\":null,\"author_handle\":\"frog@datadoghq.com\",\"author_name\":\"frog\",\"layout_type\":\"ordered\",\"url\":\"/dashboard/kb4-hic-k5w/test-createanewdashboardwithcasestreamliststreamwidget-1790733514-with-casestrea\",\"template_variables\":null,\"widgets\":[{\"definition\":{\"requests\":[{\"columns\":[{\"field\":\"created_at\",\"width\":\"auto\"}],\"query\":{\"data_source\":\"case_stream\",\"query_string\":\"*\",\"sort\":{\"column\":\"created_at\",\"order\":\"desc\"}},\"response_format\":\"event_list\"}],\"type\":\"list_stream\"},\"id\":2376957674388246}],\"notify_list\":null,\"created_at\":\"2026-09-30T01:58:34.620706+00:00\",\"modified_at\":\"2026-09-30T01:58:34.620706+00:00\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/kb4-hic-k5w",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"kb4-hic-k5w\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a new dashboard with case_stream list_stream widget",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
       "frozen_at": "2024-11-15T19:32:37.699Z",
       "interactions": [
         {
