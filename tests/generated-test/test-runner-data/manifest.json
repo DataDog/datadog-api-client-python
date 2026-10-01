@@ -7955,6 +7955,20 @@
     {
       "feature": "Observability Pipelines",
       "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-a-metrics-pipeline-with-enrichment-table-processor-file-lookup-returns-ok-response.json",
+      "scenario": "Validate a metrics pipeline with enrichment table processor file lookup returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-a-metrics-pipeline-with-enrichment-table-processor-reference-table-returns-ok-response.json",
+      "scenario": "Validate a metrics pipeline with enrichment table processor reference table returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-a-metrics-pipeline-with-opentelemetry-source-returns-ok-response.json",
       "scenario": "Validate a metrics pipeline with opentelemetry source returns \"OK\" response",
       "version": "v2"

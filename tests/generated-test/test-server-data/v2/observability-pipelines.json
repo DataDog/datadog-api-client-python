@@ -1207,6 +1207,181 @@
     },
     {
       "feature": "Observability Pipelines",
+      "frozen_at": "2026-09-30T13:15:58.810Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-metrics-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_metrics"
+                        }
+                      ],
+                      "pipeline_type": "metrics",
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "*",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "file": {
+                                "encoding": {
+                                  "delimiter": ",",
+                                  "includes_headers": true,
+                                  "type": "csv"
+                                },
+                                "key": {
+                                  "column": "service",
+                                  "source": {
+                                    "name": "service",
+                                    "type": "tag"
+                                  }
+                                },
+                                "path": "/etc/enrichment/lookup.csv"
+                              },
+                              "id": "enrichment-table-processor",
+                              "include": "*",
+                              "type": "enrichment_table"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Metrics Pipeline with Enrichment Table File Lookup"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate a metrics pipeline with enrichment table processor file lookup returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-09-30T13:15:58.904Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-metrics-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_metrics"
+                        }
+                      ],
+                      "pipeline_type": "metrics",
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "*",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "enrichment-table-processor",
+                              "include": "*",
+                              "reference_table": {
+                                "columns": [
+                                  "environment",
+                                  "team"
+                                ],
+                                "key": {
+                                  "source": {
+                                    "type": "metric_name"
+                                  }
+                                },
+                                "table_id": "metric-enrichment"
+                              },
+                              "type": "enrichment_table"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Metrics Pipeline with Enrichment Table Reference Table"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate a metrics pipeline with enrichment table processor reference table returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
       "frozen_at": "2026-03-10T16:11:47.487Z",
       "interactions": [
         {
