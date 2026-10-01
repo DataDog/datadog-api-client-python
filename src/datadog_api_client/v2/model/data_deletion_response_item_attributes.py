@@ -28,6 +28,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
             "org_id": (int,),
             "product": (str,),
             "query": (str,),
+            "source": (str,),
             "starting_at": (str,),
             "status": (str,),
             "to_time": (int,),
@@ -47,6 +48,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         "org_id": "org_id",
         "product": "product",
         "query": "query",
+        "source": "source",
         "starting_at": "starting_at",
         "status": "status",
         "to_time": "to_time",
@@ -72,6 +74,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         customer_message: Union[str, UnsetType] = unset,
         error_category: Union[str, UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
+        source: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -110,6 +113,9 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         :param query: Query for creating a data deletion request.
         :type query: str
 
+        :param source: The source of the deletion request.
+        :type source: str, optional
+
         :param starting_at: Starting time of the process to delete the requested data.
         :type starting_at: str
 
@@ -131,6 +137,8 @@ class DataDeletionResponseItemAttributes(ModelNormal):
             kwargs["error_category"] = error_category
         if indexes is not unset:
             kwargs["indexes"] = indexes
+        if source is not unset:
+            kwargs["source"] = source
         super().__init__(kwargs)
 
         self_.created_at = created_at
