@@ -3,38 +3,51 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.table_row_resource_data import TableRowResourceData
+    from datadog_api_client.v2.model.table_row_resource_array_meta import TableRowResourceArrayMeta
 
 
 class TableRowResourceArray(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.table_row_resource_data import TableRowResourceData
+        from datadog_api_client.v2.model.table_row_resource_array_meta import TableRowResourceArrayMeta
 
         return {
             "data": ([TableRowResourceData],),
+            "meta": (TableRowResourceArrayMeta,),
         }
 
     attribute_map = {
         "data": "data",
+        "meta": "meta",
     }
 
-    def __init__(self_, data: List[TableRowResourceData], **kwargs):
+    def __init__(
+        self_, data: List[TableRowResourceData], meta: Union[TableRowResourceArrayMeta, UnsetType] = unset, **kwargs
+    ):
         """
-        List of rows from a reference table query.
+        List of rows from a reference table query, along with metadata about rows that were requested but not found.
 
         :param data: The rows.
         :type data: [TableRowResourceData]
+
+        :param meta: Metadata about the rows requested, including which ones were not found.
+        :type meta: TableRowResourceArrayMeta, optional
         """
+        if meta is not unset:
+            kwargs["meta"] = meta
         super().__init__(kwargs)
 
         self_.data = data
