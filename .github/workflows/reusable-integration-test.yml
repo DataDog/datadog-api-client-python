@@ -86,7 +86,7 @@ jobs:
         id: get_token
         uses: DataDog/dd-octo-sts-action@96a25462dbcb10ebf0bfd6e2ccc917d2ab235b9a # v1.0.4
         with:
-          scope: DataDog/datadog-api-spec
+          scope: ddoghq/datadog-api-spec
           policy: datadog-api-client-python.reusable-integration-test.post-status
       - name: Checkout code
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -98,6 +98,7 @@ jobs:
         uses: DataDog/github-actions/post-status-check@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
+          owner: ddoghq
           repo: ${{ inputs.target-repo || 'datadog-api-spec' }}
           status: pending
           context: ${{ inputs.status-context || 'integration' }}
@@ -133,6 +134,7 @@ jobs:
         uses: DataDog/github-actions/post-status-check@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
+          owner: ddoghq
           repo: ${{ inputs.target-repo || 'datadog-api-spec' }}
           status: failure
           context: ${{ inputs.status-context || 'integration' }}
@@ -141,6 +143,7 @@ jobs:
         uses: DataDog/github-actions/post-status-check@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.get_token.outputs.token }}
+          owner: ddoghq
           repo: ${{ inputs.target-repo || 'datadog-api-spec' }}
           status: success
           context: ${{ inputs.status-context || 'integration' }}
