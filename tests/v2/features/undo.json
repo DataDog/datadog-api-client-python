@@ -9323,6 +9323,12 @@
       "type": "unsafe"
     }
   },
+  "GetSPARecommendationsV2": {
+    "tag": "Spa",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSPARecommendations": {
     "tag": "Spa",
     "undo": {

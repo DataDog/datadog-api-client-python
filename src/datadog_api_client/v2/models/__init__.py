@@ -8201,6 +8201,10 @@ from datadog_api_client.v2.model.recommendation_attributes import Recommendation
 from datadog_api_client.v2.model.recommendation_data import RecommendationData
 from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
 from datadog_api_client.v2.model.recommendation_type import RecommendationType
+from datadog_api_client.v2.model.recommendation_v2_request_attributes import RecommendationV2RequestAttributes
+from datadog_api_client.v2.model.recommendation_v2_request_body import RecommendationV2RequestBody
+from datadog_api_client.v2.model.recommendation_v2_request_data import RecommendationV2RequestData
+from datadog_api_client.v2.model.recommendation_v2_request_type import RecommendationV2RequestType
 from datadog_api_client.v2.model.recommendations_filter_request import RecommendationsFilterRequest
 from datadog_api_client.v2.model.recommendations_filter_request_data import RecommendationsFilterRequestData
 from datadog_api_client.v2.model.recommendations_filter_request_data_attributes import (
@@ -17571,6 +17575,10 @@ __all__ = [
     "RecommendationData",
     "RecommendationDocument",
     "RecommendationType",
+    "RecommendationV2RequestAttributes",
+    "RecommendationV2RequestBody",
+    "RecommendationV2RequestData",
+    "RecommendationV2RequestType",
     "RecommendationsFilterRequest",
     "RecommendationsFilterRequestData",
     "RecommendationsFilterRequestDataAttributes",
