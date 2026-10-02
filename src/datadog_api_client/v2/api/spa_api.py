@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
     unset,
 )
 from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
+from datadog_api_client.v2.model.recommendation_v2_request_body import RecommendationV2RequestBody
 
 
 class SpaApi:
@@ -49,6 +50,32 @@ class SpaApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._get_spa_recommendations_v2_endpoint = _Endpoint(
+            settings={
+                "response_type": (RecommendationDocument,),
+                "auth": ["AuthZ"],
+                "endpoint_path": "/api/v2/spa/recommendations-v2/{service}",
+                "operation_id": "get_spa_recommendations_v2",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "service": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "service",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RecommendationV2RequestBody,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -109,6 +136,30 @@ class SpaApi:
         kwargs["service"] = service
 
         return self._get_spa_recommendations_endpoint.call_with_http_info(**kwargs)
+
+    def get_spa_recommendations_v2(
+        self,
+        service: str,
+        body: RecommendationV2RequestBody,
+    ) -> RecommendationDocument:
+        """Get SPA recommendations v2.
+
+        This endpoint is experimental and restricted to Datadog internal use only.
+        Retrieve resource recommendations for a Spark job. The caller (Spark Gateway) provides
+        a service name and the job's raw arguments. SPA determines which arguments are relevant
+        for the service and returns structured recommendations for driver and executor resources.
+
+        :param service: The service name for a Spark job
+        :type service: str
+        :type body: RecommendationV2RequestBody
+        :rtype: RecommendationDocument
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["service"] = service
+
+        kwargs["body"] = body
+
+        return self._get_spa_recommendations_v2_endpoint.call_with_http_info(**kwargs)
 
     def get_spa_recommendations_with_shard(
         self,

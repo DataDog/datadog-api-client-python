@@ -837,6 +837,7 @@ class Configuration:
                 "v2.get_slo_status": False,
                 "v2.create_snapshot": False,
                 "v2.get_spa_recommendations": False,
+                "v2.get_spa_recommendations_v2": False,
                 "v2.get_spa_recommendations_with_shard": False,
                 "v2.create_ai_custom_rule": False,
                 "v2.create_ai_custom_rule_revision": False,

@@ -40,6 +40,33 @@ Feature: Spa
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:DataDog/data-and-analytics-processing
+  Scenario: Get SPA recommendations v2 returns "Bad Request" response
+    Given operation "GetSPARecommendationsV2" enabled
+    And new "GetSPARecommendationsV2" request
+    And request contains "service" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"arguments": [""]}, "type": "recommendation_v2_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/data-and-analytics-processing
+  Scenario: Get SPA recommendations v2 returns "Not Found" response
+    Given operation "GetSPARecommendationsV2" enabled
+    And new "GetSPARecommendationsV2" request
+    And request contains "service" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"arguments": [""]}, "type": "recommendation_v2_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/data-and-analytics-processing
+  Scenario: Get SPA recommendations v2 returns "OK" response
+    Given operation "GetSPARecommendationsV2" enabled
+    And new "GetSPARecommendationsV2" request
+    And request contains "service" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"arguments": [""]}, "type": "recommendation_v2_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/data-and-analytics-processing
   Scenario: GetSPARecommendations returns a JSON:API Recommendation with driver and executor estimations
     Given new "GetSPARecommendations" request
