@@ -2723,6 +2723,362 @@
       "type": "safe"
     }
   },
+  "ListExperiments": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateExperiment": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperiment",
+      "parameters": [
+        {
+          "name": "experiment_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListExposureSQLModels": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateExposureSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetExposureSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateExposureSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ArchiveExposureSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UnarchiveExposureSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListMetricCollections": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMetricCollection": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteMetricCollection",
+      "parameters": [
+        {
+          "name": "metric_collection_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteMetricCollection": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetMetricCollection": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMetricCollection": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListMetricSQLModels": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMetricSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetMetricSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMetricSQLModel": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListMetrics": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateMetric": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteMetric",
+      "parameters": [
+        {
+          "name": "metric_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteMetric": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetMetric": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMetric": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListExperimentProtocols": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetExperimentProtocol": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RefreshExperimentResultsForOrg": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "ListSubjectTypes": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSubjectType": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteSubjectType",
+      "parameters": [
+        {
+          "name": "subject_type_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSubjectType": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSubjectType": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchSubjectType": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "SetDefaultSubjectType": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteExperiment": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetExperiment": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchExperiment": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetExperimentAnalysisPlan": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateExperimentAnalysisPlanAttributes": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CancelExperiment": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperiment",
+      "parameters": [
+        {
+          "name": "experiment_id",
+          "origin": "path",
+          "source": "experiment_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ConcludeExperiment": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperiment",
+      "parameters": [
+        {
+          "name": "experiment_id",
+          "origin": "path",
+          "source": "experiment_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "GetExperimentDiagnostics": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListExperimentMetricGroups": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateExperimentMetricGroup": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperimentMetricGroup",
+      "parameters": [
+        {
+          "name": "experiment_id",
+          "origin": "path",
+          "source": "experiment_id"
+        },
+        {
+          "name": "metric_group_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateExperimentMetricGroupFromCollection": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperimentMetricGroup",
+      "parameters": [
+        {
+          "name": "experiment_id",
+          "origin": "path",
+          "source": "experiment_id"
+        },
+        {
+          "name": "metric_group_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteExperimentMetricGroup": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateExperimentMetricGroup": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetExperimentResults": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RefreshExperimentResults": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "StartExperiment": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetExperimentTrafficSummary": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListFeatureFlags": {
     "tag": "Feature Flags",
     "undo": {

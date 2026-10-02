@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 204,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Delete subject type returns \"No Content\" response",
+  "operation_id": "DeleteSubjectType",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "subject_type_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_subject_type.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/subject-types/{subject_type_id}"
+  },
+  "scenario": "Delete subject type returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

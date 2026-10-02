@@ -1,0 +1,67 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Update experiment metric group returns \"OK\" response",
+  "operation_id": "UpdateExperimentMetricGroup",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsPatchExperimentMetricGroupV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "ex-{{ unique_hash }} updated"
+          },
+          "id": "{{ experiment_metric_group.data.id }}",
+          "type": "experiment-metric-groups"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "experiment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_group_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_metric_group.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/{experiment_id}/metric-groups/{metric_group_id}"
+  },
+  "scenario": "Update experiment metric group returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

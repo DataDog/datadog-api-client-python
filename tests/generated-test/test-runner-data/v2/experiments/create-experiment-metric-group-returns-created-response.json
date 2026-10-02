@@ -1,0 +1,55 @@
+{
+  "api": "Experiments",
+  "expected_status": 201,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Create experiment metric group returns \"Created\" response",
+  "operation_id": "CreateExperimentMetricGroup",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCreateExperimentMetricGroupV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "metrics": [
+              {
+                "metric_id": "{{ experiment_metric.data.id }}"
+              }
+            ],
+            "name": "ex-{{ unique_hash }}"
+          },
+          "type": "experiment-metric-groups"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "experiment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/{experiment_id}/metric-groups"
+  },
+  "scenario": "Create experiment metric group returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

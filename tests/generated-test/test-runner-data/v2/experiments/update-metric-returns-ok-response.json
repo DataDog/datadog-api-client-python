@@ -1,0 +1,51 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Update metric returns \"OK\" response",
+  "operation_id": "UpdateMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsUpdateMetricV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "ex-{{ unique_hash }} updated"
+          },
+          "id": "{{ experiment_metric.data.id }}",
+          "type": "metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/metrics/{metric_id}"
+  },
+  "scenario": "Update metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,50 @@
+{
+  "api": "Experiments",
+  "expected_status": 204,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Cancel experiment returns \"The experiment was canceled and unlinked from its feature flag allocations.\" response",
+  "operation_id": "CancelExperiment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCancelExperimentV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "reason": "Cancel the test experiment"
+          },
+          "type": "cancel-experiment-request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "experiment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/{experiment_id}/cancel"
+  },
+  "scenario": "Cancel experiment returns \"The experiment was canceled and unlinked from its feature flag allocations.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

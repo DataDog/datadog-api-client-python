@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 204,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Delete metric collection returns \"No Content\" response",
+  "operation_id": "DeleteMetricCollection",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_collection_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_metric_collection.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/metric-collections/{metric_collection_id}"
+  },
+  "scenario": "Delete metric collection returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

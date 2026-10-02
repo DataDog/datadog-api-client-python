@@ -5496,6 +5496,244 @@
       "version": "v2"
     },
     {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/cancel-experiment-returns-the-experiment-was-canceled-and-unlinked-from-its-feature-flag-allocations-response.json",
+      "scenario": "Cancel experiment returns \"The experiment was canceled and unlinked from its feature flag allocations.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-experiment-metric-group-from-collection-returns-created-response.json",
+      "scenario": "Create experiment metric group from collection returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-experiment-metric-group-returns-created-response.json",
+      "scenario": "Create experiment metric group returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-experiment-returns-created-response.json",
+      "scenario": "Create experiment returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-metric-collection-returns-created-response.json",
+      "scenario": "Create metric collection returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-metric-returns-created-response.json",
+      "scenario": "Create metric returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-subject-type-returns-created-response.json",
+      "scenario": "Create subject type returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/delete-experiment-metric-group-returns-no-content-response.json",
+      "scenario": "Delete experiment metric group returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/delete-experiment-returns-no-content-response.json",
+      "scenario": "Delete experiment returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/delete-metric-collection-returns-no-content-response.json",
+      "scenario": "Delete metric collection returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/delete-metric-returns-the-metric-was-deleted-response.json",
+      "scenario": "Delete metric returns \"The metric was deleted.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/delete-subject-type-returns-no-content-response.json",
+      "scenario": "Delete subject type returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-experiment-analysis-plan-returns-ok-response.json",
+      "scenario": "Get experiment analysis plan returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-experiment-diagnostics-returns-ok-response.json",
+      "scenario": "Get experiment diagnostics returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-experiment-returns-ok-response.json",
+      "scenario": "Get experiment returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-experiment-traffic-summary-returns-ok-response.json",
+      "scenario": "Get experiment traffic summary returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-metric-collection-returns-ok-response.json",
+      "scenario": "Get metric collection returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-metric-returns-ok-response.json",
+      "scenario": "Get metric returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-subject-type-returns-ok-response.json",
+      "scenario": "Get subject type returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-experiment-metric-groups-returns-ok-response.json",
+      "scenario": "List experiment metric groups returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-experiment-protocols-returns-ok-response.json",
+      "scenario": "List experiment protocols returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-experiments-returns-ok-response.json",
+      "scenario": "List experiments returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-exposure-sql-models-returns-ok-response.json",
+      "scenario": "List exposure SQL models returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-metric-sql-models-returns-ok-response.json",
+      "scenario": "List metric SQL models returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-metric-collections-returns-ok-response.json",
+      "scenario": "List metric collections returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-metrics-returns-ok-response.json",
+      "scenario": "List metrics returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-subject-types-returns-ok-response.json",
+      "scenario": "List subject types returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/patch-experiment-returns-ok-response.json",
+      "scenario": "Patch experiment returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/patch-subject-type-returns-ok-response.json",
+      "scenario": "Patch subject type returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/start-experiment-returns-the-experiment-was-started-response.json",
+      "scenario": "Start experiment returns \"The experiment was started.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/update-experiment-analysis-plan-attributes-returns-ok-response.json",
+      "scenario": "Update experiment analysis plan attributes returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/update-experiment-metric-group-returns-ok-response.json",
+      "scenario": "Update experiment metric group returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/update-metric-collection-returns-ok-response.json",
+      "scenario": "Update metric collection returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/update-metric-returns-ok-response.json",
+      "scenario": "Update metric returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Fastly Integration",
       "feature_file": "../../v2/features/fastly_integration.feature",
       "file": "v2/fastly-integration/add-fastly-account-returns-created-response.json",

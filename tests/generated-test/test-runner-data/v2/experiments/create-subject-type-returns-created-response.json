@@ -1,0 +1,37 @@
+{
+  "api": "Experiments",
+  "expected_status": 201,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Create subject type returns \"Created\" response",
+  "operation_id": "CreateSubjectType",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCreateSubjectTypeV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "ex-{{ unique_hash }}",
+            "product_analytics_attribute": "@account.id",
+            "warehouse_column_names": [
+              "account_id"
+            ]
+          },
+          "type": "subject-types"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/experiments/subject-types"
+  },
+  "scenario": "Create subject type returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

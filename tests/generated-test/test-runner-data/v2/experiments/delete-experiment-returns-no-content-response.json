@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 204,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Delete experiment returns \"No Content\" response",
+  "operation_id": "DeleteExperiment",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "experiment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/{experiment_id}"
+  },
+  "scenario": "Delete experiment returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

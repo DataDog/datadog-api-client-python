@@ -3275,6 +3275,588 @@ from datadog_api_client.v2.model.execution_policy_type import ExecutionPolicyTyp
 from datadog_api_client.v2.model.execution_policy_update_request import ExecutionPolicyUpdateRequest
 from datadog_api_client.v2.model.execution_policy_update_request_data import ExecutionPolicyUpdateRequestData
 from datadog_api_client.v2.model.execution_policy_write_attributes import ExecutionPolicyWriteAttributes
+from datadog_api_client.v2.model.experiments_analysis_plan_v2_dto import ExperimentsAnalysisPlanV2DTO
+from datadog_api_client.v2.model.experiments_analysis_plan_v2_dto_data import ExperimentsAnalysisPlanV2DTOData
+from datadog_api_client.v2.model.experiments_analysis_plan_v2_dto_data_attributes_confidence_interval_method import (
+    ExperimentsAnalysisPlanV2DTODataAttributesConfidenceIntervalMethod,
+)
+from datadog_api_client.v2.model.experiments_analysis_plan_v2_mutation_response import (
+    ExperimentsAnalysisPlanV2MutationResponse,
+)
+from datadog_api_client.v2.model.experiments_analysis_plan_v2_mutation_response_data_attributes import (
+    ExperimentsAnalysisPlanV2MutationResponseDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_analysis_plan_v2_mutation_response_data_attributes_bayesian_prior import (
+    ExperimentsAnalysisPlanV2MutationResponseDataAttributesBayesianPrior,
+)
+from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request import ExperimentsAnalysisPlanWriteV2Request
+from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request_data import (
+    ExperimentsAnalysisPlanWriteV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request_data_attributes import (
+    ExperimentsAnalysisPlanWriteV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request_data_attributes_bayesian_prior import (
+    ExperimentsAnalysisPlanWriteV2RequestDataAttributesBayesianPrior,
+)
+from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request_data_type import (
+    ExperimentsAnalysisPlanWriteV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_cancel_experiment_v2_request import ExperimentsCancelExperimentV2Request
+from datadog_api_client.v2.model.experiments_cancel_experiment_v2_request_data import (
+    ExperimentsCancelExperimentV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_cancel_experiment_v2_request_data_attributes import (
+    ExperimentsCancelExperimentV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_cancel_experiment_v2_request_data_type import (
+    ExperimentsCancelExperimentV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request import (
+    ExperimentsConcludeExperimentV2Request,
+)
+from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request_data import (
+    ExperimentsConcludeExperimentV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request_data_attributes import (
+    ExperimentsConcludeExperimentV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request_data_type import (
+    ExperimentsConcludeExperimentV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_request import (
+    ExperimentsCreateExperimentMetricGroupV2Request,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_request_data import (
+    ExperimentsCreateExperimentMetricGroupV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_request_data_attributes import (
+    ExperimentsCreateExperimentMetricGroupV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_request_data_attributes_metrics_items import (
+    ExperimentsCreateExperimentMetricGroupV2RequestDataAttributesMetricsItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request import ExperimentsCreateExperimentV2Request
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data import (
+    ExperimentsCreateExperimentV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes import (
+    ExperimentsCreateExperimentV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration import (
+    ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfiguration,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration_targeting_rules_items import (
+    ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_decision_metrics_items import (
+    ExperimentsCreateExperimentV2RequestDataAttributesDecisionMetricsItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_related_links_items import (
+    ExperimentsCreateExperimentV2RequestDataAttributesRelatedLinksItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_split_by_properties_items import (
+    ExperimentsCreateExperimentV2RequestDataAttributesSplitByPropertiesItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_structured_metadata_items import (
+    ExperimentsCreateExperimentV2RequestDataAttributesStructuredMetadataItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_traffic_exposure_mode import (
+    ExperimentsCreateExperimentV2RequestDataAttributesTrafficExposureMode,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_traffic_exposure_steps_items import (
+    ExperimentsCreateExperimentV2RequestDataAttributesTrafficExposureStepsItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_variants_items import (
+    ExperimentsCreateExperimentV2RequestDataAttributesVariantsItems,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_warehouse_exposure_configuration import (
+    ExperimentsCreateExperimentV2RequestDataAttributesWarehouseExposureConfiguration,
+)
+from datadog_api_client.v2.model.experiments_create_exposure_sql_model_v2_request import (
+    ExperimentsCreateExposureSQLModelV2Request,
+)
+from datadog_api_client.v2.model.experiments_create_exposure_sql_model_v2_request_data import (
+    ExperimentsCreateExposureSQLModelV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_create_exposure_sql_model_v2_request_data_attributes_items_column_type import (
+    ExperimentsCreateExposureSQLModelV2RequestDataAttributesItemsColumnType,
+)
+from datadog_api_client.v2.model.experiments_create_exposure_sql_model_v2_request_data_attributes_subject_types_items import (
+    ExperimentsCreateExposureSQLModelV2RequestDataAttributesSubjectTypesItems,
+)
+from datadog_api_client.v2.model.experiments_create_metric_collection_v2_request import (
+    ExperimentsCreateMetricCollectionV2Request,
+)
+from datadog_api_client.v2.model.experiments_create_metric_collection_v2_request_data import (
+    ExperimentsCreateMetricCollectionV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_create_metric_collection_v2_request_data_attributes import (
+    ExperimentsCreateMetricCollectionV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_create_metric_collection_v2_request_data_attributes_metrics_items import (
+    ExperimentsCreateMetricCollectionV2RequestDataAttributesMetricsItems,
+)
+from datadog_api_client.v2.model.experiments_create_metric_numerator_attributes import (
+    ExperimentsCreateMetricNumeratorAttributes,
+)
+from datadog_api_client.v2.model.experiments_create_metric_percentile_attributes import (
+    ExperimentsCreateMetricPercentileAttributes,
+)
+from datadog_api_client.v2.model.experiments_create_metric_sql_model_v2_request import (
+    ExperimentsCreateMetricSQLModelV2Request,
+)
+from datadog_api_client.v2.model.experiments_create_metric_sql_model_v2_request_data import (
+    ExperimentsCreateMetricSQLModelV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_create_metric_sql_model_v2_request_data_attributes_measures_items import (
+    ExperimentsCreateMetricSQLModelV2RequestDataAttributesMeasuresItems,
+)
+from datadog_api_client.v2.model.experiments_create_metric_v2_request import ExperimentsCreateMetricV2Request
+from datadog_api_client.v2.model.experiments_create_metric_v2_request_data import ExperimentsCreateMetricV2RequestData
+from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes import (
+    ExperimentsCreateMetricV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_data_source_type import (
+    ExperimentsCreateMetricV2RequestDataAttributesDataSourceType,
+)
+from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_desired_change import (
+    ExperimentsCreateMetricV2RequestDataAttributesDesiredChange,
+)
+from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_numerator_aggregation import (
+    ExperimentsCreateMetricV2RequestDataAttributesNumeratorAggregation,
+)
+from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation import (
+    ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregation,
+)
+from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation_warehouse_metric_measure import (
+    ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
+)
+from datadog_api_client.v2.model.experiments_create_subject_type_v2_request import ExperimentsCreateSubjectTypeV2Request
+from datadog_api_client.v2.model.experiments_create_subject_type_v2_request_data import (
+    ExperimentsCreateSubjectTypeV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_create_subject_type_v2_request_data_attributes import (
+    ExperimentsCreateSubjectTypeV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_datadog_entry_point_filter import ExperimentsDatadogEntryPointFilter
+from datadog_api_client.v2.model.experiments_datadog_metric_aggregation_input import (
+    ExperimentsDatadogMetricAggregationInput,
+)
+from datadog_api_client.v2.model.experiments_datadog_metric_measure_input import ExperimentsDatadogMetricMeasureInput
+from datadog_api_client.v2.model.experiments_datadog_percentile_aggregation_input import (
+    ExperimentsDatadogPercentileAggregationInput,
+)
+from datadog_api_client.v2.model.experiments_datadog_percentile_measure_input import (
+    ExperimentsDatadogPercentileMeasureInput,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto import ExperimentsExperimentDiagnosticsV2DTO
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data import (
+    ExperimentsExperimentDiagnosticsV2DTOData,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_attributes import (
+    ExperimentsExperimentDiagnosticsV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_attributes_diagnostics_items import (
+    ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItems,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_attributes_diagnostics_items_skipped_reason import (
+    ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItemsSkippedReason,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_attributes_diagnostics_items_status import (
+    ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItemsStatus,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_attributes_diagnostics_items_type import (
+    ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItemsType,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_attributes_result import (
+    ExperimentsExperimentDiagnosticsV2DTODataAttributesResult,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_attributes_state import (
+    ExperimentsExperimentDiagnosticsV2DTODataAttributesState,
+)
+from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_type import (
+    ExperimentsExperimentDiagnosticsV2DTODataType,
+)
+from datadog_api_client.v2.model.experiments_experiment_metric_group_mutation_v2 import (
+    ExperimentsExperimentMetricGroupMutationV2,
+)
+from datadog_api_client.v2.model.experiments_experiment_metric_group_mutation_v2_data import (
+    ExperimentsExperimentMetricGroupMutationV2Data,
+)
+from datadog_api_client.v2.model.experiments_experiment_metric_group_mutation_v2_data_attributes_metrics_items import (
+    ExperimentsExperimentMetricGroupMutationV2DataAttributesMetricsItems,
+)
+from datadog_api_client.v2.model.experiments_experiment_metric_group_v2_dto_array import (
+    ExperimentsExperimentMetricGroupV2DTOArray,
+)
+from datadog_api_client.v2.model.experiments_experiment_metric_group_v2_dto_data_attributes import (
+    ExperimentsExperimentMetricGroupV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_experiment_results_v2_meta_dto import ExperimentsExperimentResultsV2MetaDTO
+from datadog_api_client.v2.model.experiments_experiment_v2_dto import ExperimentsExperimentV2DTO
+from datadog_api_client.v2.model.experiments_experiment_v2_dto_data import ExperimentsExperimentV2DTOData
+from datadog_api_client.v2.model.experiments_experiment_v2_dto_data_attributes_conclusion_outcome import (
+    ExperimentsExperimentV2DTODataAttributesConclusionOutcome,
+)
+from datadog_api_client.v2.model.experiments_experiment_v2_dto_data_attributes_split_by_properties_items import (
+    ExperimentsExperimentV2DTODataAttributesSplitByPropertiesItems,
+)
+from datadog_api_client.v2.model.experiments_experiment_v2_dto_data_attributes_status import (
+    ExperimentsExperimentV2DTODataAttributesStatus,
+)
+from datadog_api_client.v2.model.experiments_experiment_v2_dto_data_attributes_variants_items import (
+    ExperimentsExperimentV2DTODataAttributesVariantsItems,
+)
+from datadog_api_client.v2.model.experiments_experiment_v2_list_dto_array import ExperimentsExperimentV2ListDTOArray
+from datadog_api_client.v2.model.experiments_experiment_v2_list_dto_data import ExperimentsExperimentV2ListDTOData
+from datadog_api_client.v2.model.experiments_experiment_v2_list_dto_data_attributes import (
+    ExperimentsExperimentV2ListDTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_exposure_sql_model_v2_dto import ExperimentsExposureSQLModelV2DTO
+from datadog_api_client.v2.model.experiments_exposure_sql_model_v2_dto_array import (
+    ExperimentsExposureSQLModelV2DTOArray,
+)
+from datadog_api_client.v2.model.experiments_exposure_sql_model_v2_dto_data import ExperimentsExposureSQLModelV2DTOData
+from datadog_api_client.v2.model.experiments_exposure_sql_model_v2_dto_data_attributes import (
+    ExperimentsExposureSQLModelV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_exposure_sql_model_v2_dto_data_attributes_items import (
+    ExperimentsExposureSQLModelV2DTODataAttributesItems,
+)
+from datadog_api_client.v2.model.experiments_inline_condition import ExperimentsInlineCondition
+from datadog_api_client.v2.model.experiments_measure_comparison_filter_input import (
+    ExperimentsMeasureComparisonFilterInput,
+)
+from datadog_api_client.v2.model.experiments_measure_comparison_filter_input_operation import (
+    ExperimentsMeasureComparisonFilterInputOperation,
+)
+from datadog_api_client.v2.model.experiments_measure_null_filter_input import ExperimentsMeasureNullFilterInput
+from datadog_api_client.v2.model.experiments_measure_range_filter_input import ExperimentsMeasureRangeFilterInput
+from datadog_api_client.v2.model.experiments_measure_range_filter_input_operation import (
+    ExperimentsMeasureRangeFilterInputOperation,
+)
+from datadog_api_client.v2.model.experiments_metric_collection_v2_dto import ExperimentsMetricCollectionV2DTO
+from datadog_api_client.v2.model.experiments_metric_collection_v2_dto_array import ExperimentsMetricCollectionV2DTOArray
+from datadog_api_client.v2.model.experiments_metric_collection_v2_dto_data import ExperimentsMetricCollectionV2DTOData
+from datadog_api_client.v2.model.experiments_metric_collection_v2_dto_data_attributes import (
+    ExperimentsMetricCollectionV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_metric_collection_v2_dto_data_attributes_metrics_items import (
+    ExperimentsMetricCollectionV2DTODataAttributesMetricsItems,
+)
+from datadog_api_client.v2.model.experiments_metric_property_filter import ExperimentsMetricPropertyFilter
+from datadog_api_client.v2.model.experiments_metric_sql_model_property_input import (
+    ExperimentsMetricSQLModelPropertyInput,
+)
+from datadog_api_client.v2.model.experiments_metric_sql_model_v2_dto import ExperimentsMetricSQLModelV2DTO
+from datadog_api_client.v2.model.experiments_metric_sql_model_v2_dto_array import ExperimentsMetricSQLModelV2DTOArray
+from datadog_api_client.v2.model.experiments_metric_sql_model_v2_dto_data import ExperimentsMetricSQLModelV2DTOData
+from datadog_api_client.v2.model.experiments_metric_sql_model_v2_dto_data_attributes import (
+    ExperimentsMetricSQLModelV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_metric_sql_model_v2_dto_data_attributes_measures_items import (
+    ExperimentsMetricSQLModelV2DTODataAttributesMeasuresItems,
+)
+from datadog_api_client.v2.model.experiments_metric_sql_model_v2_dto_data_attributes_subject_types_items import (
+    ExperimentsMetricSQLModelV2DTODataAttributesSubjectTypesItems,
+)
+from datadog_api_client.v2.model.experiments_metric_v2_dto import ExperimentsMetricV2DTO
+from datadog_api_client.v2.model.experiments_metric_v2_dto_array import ExperimentsMetricV2DTOArray
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data import ExperimentsMetricV2DTOData
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes import ExperimentsMetricV2DTODataAttributes
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes_data_source_type import (
+    ExperimentsMetricV2DTODataAttributesDataSourceType,
+)
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes_desired_change import (
+    ExperimentsMetricV2DTODataAttributesDesiredChange,
+)
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes_metric_type import (
+    ExperimentsMetricV2DTODataAttributesMetricType,
+)
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes_numerator_aggregation import (
+    ExperimentsMetricV2DTODataAttributesNumeratorAggregation,
+)
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes_percentile_aggregation import (
+    ExperimentsMetricV2DTODataAttributesPercentileAggregation,
+)
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes_percentile_aggregation_datadog_metric_measure import (
+    ExperimentsMetricV2DTODataAttributesPercentileAggregationDatadogMetricMeasure,
+)
+from datadog_api_client.v2.model.experiments_metric_v2_dto_data_attributes_percentile_aggregation_warehouse_metric_measure import (
+    ExperimentsMetricV2DTODataAttributesPercentileAggregationWarehouseMetricMeasure,
+)
+from datadog_api_client.v2.model.experiments_nullable_datadog_metric_measure_input import (
+    ExperimentsNullableDatadogMetricMeasureInput,
+)
+from datadog_api_client.v2.model.experiments_nullable_datadog_percentile_measure_input import (
+    ExperimentsNullableDatadogPercentileMeasureInput,
+)
+from datadog_api_client.v2.model.experiments_nullable_warehouse_metric_measure_input import (
+    ExperimentsNullableWarehouseMetricMeasureInput,
+)
+from datadog_api_client.v2.model.experiments_offset_links import ExperimentsOffsetLinks
+from datadog_api_client.v2.model.experiments_offset_meta import ExperimentsOffsetMeta
+from datadog_api_client.v2.model.experiments_offset_meta_page import ExperimentsOffsetMetaPage
+from datadog_api_client.v2.model.experiments_patch_experiment_metric_group_v2_request import (
+    ExperimentsPatchExperimentMetricGroupV2Request,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_metric_group_v2_request_data import (
+    ExperimentsPatchExperimentMetricGroupV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_metric_group_v2_request_data_attributes import (
+    ExperimentsPatchExperimentMetricGroupV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_metric_group_v2_request_data_type import (
+    ExperimentsPatchExperimentMetricGroupV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_meta_dto import ExperimentsPatchExperimentV2MetaDTO
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_meta_dto_warnings_items import (
+    ExperimentsPatchExperimentV2MetaDTOWarningsItems,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_request import ExperimentsPatchExperimentV2Request
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_request_data import (
+    ExperimentsPatchExperimentV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_request_data_attributes import (
+    ExperimentsPatchExperimentV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_request_data_attributes_datadog_flag_configuration import (
+    ExperimentsPatchExperimentV2RequestDataAttributesDatadogFlagConfiguration,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response import ExperimentsPatchExperimentV2Response
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes import (
+    ExperimentsPatchExperimentV2ResponseDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_conclusion import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesConclusion,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_column_type import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_operation import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_targeting_rules_items_conditions_items_operator import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_split_by_properties_items_column_type import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesSplitByPropertiesItemsColumnType,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_structured_metadata_items_field_type import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesStructuredMetadataItemsFieldType,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_traffic_exposure import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesTrafficExposure,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfiguration,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point_filters_items_operation import (
+    ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_type import (
+    ExperimentsPatchExperimentV2ResponseDataType,
+)
+from datadog_api_client.v2.model.experiments_patch_metric_collection_v2_request import (
+    ExperimentsPatchMetricCollectionV2Request,
+)
+from datadog_api_client.v2.model.experiments_patch_metric_collection_v2_request_data import (
+    ExperimentsPatchMetricCollectionV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_patch_metric_collection_v2_request_data_attributes import (
+    ExperimentsPatchMetricCollectionV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_patch_metric_collection_v2_request_data_type import (
+    ExperimentsPatchMetricCollectionV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_patch_subject_type_v2_request import ExperimentsPatchSubjectTypeV2Request
+from datadog_api_client.v2.model.experiments_patch_subject_type_v2_request_data import (
+    ExperimentsPatchSubjectTypeV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_patch_subject_type_v2_request_data_attributes import (
+    ExperimentsPatchSubjectTypeV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_property_filter_input import ExperimentsPropertyFilterInput
+from datadog_api_client.v2.model.experiments_property_null_filter_input import ExperimentsPropertyNullFilterInput
+from datadog_api_client.v2.model.experiments_property_null_filter_input_operation import (
+    ExperimentsPropertyNullFilterInputOperation,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_list_response_array import (
+    ExperimentsPublicProtocolListResponseArray,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_list_response_data import (
+    ExperimentsPublicProtocolListResponseData,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_list_response_data_attributes import (
+    ExperimentsPublicProtocolListResponseDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response import ExperimentsPublicProtocolResponse
+from datadog_api_client.v2.model.experiments_public_protocol_response_data import ExperimentsPublicProtocolResponseData
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes import (
+    ExperimentsPublicProtocolResponseDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_analysis_plan import (
+    ExperimentsPublicProtocolResponseDataAttributesAnalysisPlan,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_assignment_source_default_properties_items import (
+    ExperimentsPublicProtocolResponseDataAttributesAssignmentSourceDefaultPropertiesItems,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_enforcement import (
+    ExperimentsPublicProtocolResponseDataAttributesEnforcement,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_exposure_schedule import (
+    ExperimentsPublicProtocolResponseDataAttributesExposureSchedule,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_exposure_schedule_rollout_steps_items import (
+    ExperimentsPublicProtocolResponseDataAttributesExposureScheduleRolloutStepsItems,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_metric_groups_items import (
+    ExperimentsPublicProtocolResponseDataAttributesMetricGroupsItems,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_status import (
+    ExperimentsPublicProtocolResponseDataAttributesStatus,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_subject_type import (
+    ExperimentsPublicProtocolResponseDataAttributesSubjectType,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_targeting_rules_items import (
+    ExperimentsPublicProtocolResponseDataAttributesTargetingRulesItems,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_targeting_rules_items_conditions_items import (
+    ExperimentsPublicProtocolResponseDataAttributesTargetingRulesItemsConditionsItems,
+)
+from datadog_api_client.v2.model.experiments_public_protocol_response_data_type import (
+    ExperimentsPublicProtocolResponseDataType,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_batch_meta_v2_dto import (
+    ExperimentsRefreshExperimentResultsBatchMetaV2DTO,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_batch_meta_v2_dto_results_items import (
+    ExperimentsRefreshExperimentResultsBatchMetaV2DTOResultsItems,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_batch_meta_v2_dto_results_items_outcome import (
+    ExperimentsRefreshExperimentResultsBatchMetaV2DTOResultsItemsOutcome,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto import (
+    ExperimentsRefreshExperimentResultsV2DTO,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto_array import (
+    ExperimentsRefreshExperimentResultsV2DTOArray,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto_data import (
+    ExperimentsRefreshExperimentResultsV2DTOData,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto_data_attributes import (
+    ExperimentsRefreshExperimentResultsV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto_data_type import (
+    ExperimentsRefreshExperimentResultsV2DTODataType,
+)
+from datadog_api_client.v2.model.experiments_sql_model_property_input import ExperimentsSQLModelPropertyInput
+from datadog_api_client.v2.model.experiments_saved_filter_condition import ExperimentsSavedFilterCondition
+from datadog_api_client.v2.model.experiments_start_experiment_v2_request import ExperimentsStartExperimentV2Request
+from datadog_api_client.v2.model.experiments_start_experiment_v2_request_data import (
+    ExperimentsStartExperimentV2RequestData,
+)
+from datadog_api_client.v2.model.experiments_start_experiment_v2_request_data_type import (
+    ExperimentsStartExperimentV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_structured_metadata_response import ExperimentsStructuredMetadataResponse
+from datadog_api_client.v2.model.experiments_subject_type_v2_dto import ExperimentsSubjectTypeV2DTO
+from datadog_api_client.v2.model.experiments_subject_type_v2_dto_array import ExperimentsSubjectTypeV2DTOArray
+from datadog_api_client.v2.model.experiments_subject_type_v2_dto_data import ExperimentsSubjectTypeV2DTOData
+from datadog_api_client.v2.model.experiments_subject_type_v2_dto_data_attributes import (
+    ExperimentsSubjectTypeV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_subject_type_v2_dto_data_type import ExperimentsSubjectTypeV2DTODataType
+from datadog_api_client.v2.model.experiments_targeting_rule_condition import ExperimentsTargetingRuleCondition
+from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto import ExperimentsTrafficSummaryV2DTO
+from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto_data import ExperimentsTrafficSummaryV2DTOData
+from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto_data_attributes import (
+    ExperimentsTrafficSummaryV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto_data_attributes_variants_items import (
+    ExperimentsTrafficSummaryV2DTODataAttributesVariantsItems,
+)
+from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto_data_type import (
+    ExperimentsTrafficSummaryV2DTODataType,
+)
+from datadog_api_client.v2.model.experiments_update_exposure_sql_model_v2_request_data_attributes import (
+    ExperimentsUpdateExposureSQLModelV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_update_exposure_sql_model_v2_request_data_type import (
+    ExperimentsUpdateExposureSQLModelV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_update_exposure_sql_model_v2_response import (
+    ExperimentsUpdateExposureSQLModelV2Response,
+)
+from datadog_api_client.v2.model.experiments_update_exposure_sql_model_v2_response_meta import (
+    ExperimentsUpdateExposureSQLModelV2ResponseMeta,
+)
+from datadog_api_client.v2.model.experiments_update_metric_sql_model_v2_request_data_attributes import (
+    ExperimentsUpdateMetricSQLModelV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_update_metric_sql_model_v2_request_data_type import (
+    ExperimentsUpdateMetricSQLModelV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_update_metric_sql_model_v2_response import (
+    ExperimentsUpdateMetricSQLModelV2Response,
+)
+from datadog_api_client.v2.model.experiments_update_metric_sql_model_v2_response_meta import (
+    ExperimentsUpdateMetricSQLModelV2ResponseMeta,
+)
+from datadog_api_client.v2.model.experiments_update_metric_v2_request import ExperimentsUpdateMetricV2Request
+from datadog_api_client.v2.model.experiments_update_metric_v2_request_data import ExperimentsUpdateMetricV2RequestData
+from datadog_api_client.v2.model.experiments_update_metric_v2_request_data_attributes import (
+    ExperimentsUpdateMetricV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_array import ExperimentsVariantResultsV2DTOArray
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data import ExperimentsVariantResultsV2DTOData
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes import (
+    ExperimentsVariantResultsV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items import (
+    ExperimentsVariantResultsV2DTODataAttributesMetricsItems,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items import (
+    ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_confidence_interval import (
+    ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_lift_type import (
+    ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_method import (
+    ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsMethod,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_unreliable_reason import (
+    ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsUnreliableReason,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_coverage_summary import (
+    ExperimentsVariantResultsV2DTODataAttributesMetricsItemsCoverageSummary,
+)
+from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_type import (
+    ExperimentsVariantResultsV2DTODataType,
+)
+from datadog_api_client.v2.model.experiments_warehouse_exposure_filter import ExperimentsWarehouseExposureFilter
+from datadog_api_client.v2.model.experiments_warehouse_filter_input import ExperimentsWarehouseFilterInput
+from datadog_api_client.v2.model.experiments_warehouse_metric_aggregation_input import (
+    ExperimentsWarehouseMetricAggregationInput,
+)
+from datadog_api_client.v2.model.experiments_warehouse_percentile_aggregation_input import (
+    ExperimentsWarehousePercentileAggregationInput,
+)
 from datadog_api_client.v2.model.exposure_rollout_step_request import ExposureRolloutStepRequest
 from datadog_api_client.v2.model.exposure_schedule_request import ExposureScheduleRequest
 from datadog_api_client.v2.model.facet_info_request import FacetInfoRequest
@@ -3330,6 +3912,9 @@ from datadog_api_client.v2.model.feature_flag_environment_list_item import Featu
 from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
 from datadog_api_client.v2.model.feature_flag_list_item_attributes import FeatureFlagListItemAttributes
 from datadog_api_client.v2.model.feature_flag_response import FeatureFlagResponse
+from datadog_api_client.v2.model.feature_flag_staleness_code_reference import FeatureFlagStalenessCodeReference
+from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
+from datadog_api_client.v2.model.feature_flag_staleness_recommended_action import FeatureFlagStalenessRecommendedAction
 from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
 from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 from datadog_api_client.v2.model.feature_flags_pagination_meta_page import FeatureFlagsPaginationMetaPage
@@ -14295,6 +14880,240 @@ __all__ = [
     "ExecutionPolicyUpdateRequest",
     "ExecutionPolicyUpdateRequestData",
     "ExecutionPolicyWriteAttributes",
+    "ExperimentsAnalysisPlanV2DTO",
+    "ExperimentsAnalysisPlanV2DTOData",
+    "ExperimentsAnalysisPlanV2DTODataAttributesConfidenceIntervalMethod",
+    "ExperimentsAnalysisPlanV2MutationResponse",
+    "ExperimentsAnalysisPlanV2MutationResponseDataAttributes",
+    "ExperimentsAnalysisPlanV2MutationResponseDataAttributesBayesianPrior",
+    "ExperimentsAnalysisPlanWriteV2Request",
+    "ExperimentsAnalysisPlanWriteV2RequestData",
+    "ExperimentsAnalysisPlanWriteV2RequestDataAttributes",
+    "ExperimentsAnalysisPlanWriteV2RequestDataAttributesBayesianPrior",
+    "ExperimentsAnalysisPlanWriteV2RequestDataType",
+    "ExperimentsCancelExperimentV2Request",
+    "ExperimentsCancelExperimentV2RequestData",
+    "ExperimentsCancelExperimentV2RequestDataAttributes",
+    "ExperimentsCancelExperimentV2RequestDataType",
+    "ExperimentsConcludeExperimentV2Request",
+    "ExperimentsConcludeExperimentV2RequestData",
+    "ExperimentsConcludeExperimentV2RequestDataAttributes",
+    "ExperimentsConcludeExperimentV2RequestDataType",
+    "ExperimentsCreateExperimentMetricGroupV2Request",
+    "ExperimentsCreateExperimentMetricGroupV2RequestData",
+    "ExperimentsCreateExperimentMetricGroupV2RequestDataAttributes",
+    "ExperimentsCreateExperimentMetricGroupV2RequestDataAttributesMetricsItems",
+    "ExperimentsCreateExperimentV2Request",
+    "ExperimentsCreateExperimentV2RequestData",
+    "ExperimentsCreateExperimentV2RequestDataAttributes",
+    "ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfiguration",
+    "ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems",
+    "ExperimentsCreateExperimentV2RequestDataAttributesDecisionMetricsItems",
+    "ExperimentsCreateExperimentV2RequestDataAttributesRelatedLinksItems",
+    "ExperimentsCreateExperimentV2RequestDataAttributesSplitByPropertiesItems",
+    "ExperimentsCreateExperimentV2RequestDataAttributesStructuredMetadataItems",
+    "ExperimentsCreateExperimentV2RequestDataAttributesTrafficExposureMode",
+    "ExperimentsCreateExperimentV2RequestDataAttributesTrafficExposureStepsItems",
+    "ExperimentsCreateExperimentV2RequestDataAttributesVariantsItems",
+    "ExperimentsCreateExperimentV2RequestDataAttributesWarehouseExposureConfiguration",
+    "ExperimentsCreateExposureSQLModelV2Request",
+    "ExperimentsCreateExposureSQLModelV2RequestData",
+    "ExperimentsCreateExposureSQLModelV2RequestDataAttributesItemsColumnType",
+    "ExperimentsCreateExposureSQLModelV2RequestDataAttributesSubjectTypesItems",
+    "ExperimentsCreateMetricCollectionV2Request",
+    "ExperimentsCreateMetricCollectionV2RequestData",
+    "ExperimentsCreateMetricCollectionV2RequestDataAttributes",
+    "ExperimentsCreateMetricCollectionV2RequestDataAttributesMetricsItems",
+    "ExperimentsCreateMetricNumeratorAttributes",
+    "ExperimentsCreateMetricPercentileAttributes",
+    "ExperimentsCreateMetricSQLModelV2Request",
+    "ExperimentsCreateMetricSQLModelV2RequestData",
+    "ExperimentsCreateMetricSQLModelV2RequestDataAttributesMeasuresItems",
+    "ExperimentsCreateMetricV2Request",
+    "ExperimentsCreateMetricV2RequestData",
+    "ExperimentsCreateMetricV2RequestDataAttributes",
+    "ExperimentsCreateMetricV2RequestDataAttributesDataSourceType",
+    "ExperimentsCreateMetricV2RequestDataAttributesDesiredChange",
+    "ExperimentsCreateMetricV2RequestDataAttributesNumeratorAggregation",
+    "ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregation",
+    "ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure",
+    "ExperimentsCreateSubjectTypeV2Request",
+    "ExperimentsCreateSubjectTypeV2RequestData",
+    "ExperimentsCreateSubjectTypeV2RequestDataAttributes",
+    "ExperimentsDatadogEntryPointFilter",
+    "ExperimentsDatadogMetricAggregationInput",
+    "ExperimentsDatadogMetricMeasureInput",
+    "ExperimentsDatadogPercentileAggregationInput",
+    "ExperimentsDatadogPercentileMeasureInput",
+    "ExperimentsExperimentDiagnosticsV2DTO",
+    "ExperimentsExperimentDiagnosticsV2DTOData",
+    "ExperimentsExperimentDiagnosticsV2DTODataAttributes",
+    "ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItems",
+    "ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItemsSkippedReason",
+    "ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItemsStatus",
+    "ExperimentsExperimentDiagnosticsV2DTODataAttributesDiagnosticsItemsType",
+    "ExperimentsExperimentDiagnosticsV2DTODataAttributesResult",
+    "ExperimentsExperimentDiagnosticsV2DTODataAttributesState",
+    "ExperimentsExperimentDiagnosticsV2DTODataType",
+    "ExperimentsExperimentMetricGroupMutationV2",
+    "ExperimentsExperimentMetricGroupMutationV2Data",
+    "ExperimentsExperimentMetricGroupMutationV2DataAttributesMetricsItems",
+    "ExperimentsExperimentMetricGroupV2DTOArray",
+    "ExperimentsExperimentMetricGroupV2DTODataAttributes",
+    "ExperimentsExperimentResultsV2MetaDTO",
+    "ExperimentsExperimentV2DTO",
+    "ExperimentsExperimentV2DTOData",
+    "ExperimentsExperimentV2DTODataAttributesConclusionOutcome",
+    "ExperimentsExperimentV2DTODataAttributesSplitByPropertiesItems",
+    "ExperimentsExperimentV2DTODataAttributesStatus",
+    "ExperimentsExperimentV2DTODataAttributesVariantsItems",
+    "ExperimentsExperimentV2ListDTOArray",
+    "ExperimentsExperimentV2ListDTOData",
+    "ExperimentsExperimentV2ListDTODataAttributes",
+    "ExperimentsExposureSQLModelV2DTO",
+    "ExperimentsExposureSQLModelV2DTOArray",
+    "ExperimentsExposureSQLModelV2DTOData",
+    "ExperimentsExposureSQLModelV2DTODataAttributes",
+    "ExperimentsExposureSQLModelV2DTODataAttributesItems",
+    "ExperimentsInlineCondition",
+    "ExperimentsMeasureComparisonFilterInput",
+    "ExperimentsMeasureComparisonFilterInputOperation",
+    "ExperimentsMeasureNullFilterInput",
+    "ExperimentsMeasureRangeFilterInput",
+    "ExperimentsMeasureRangeFilterInputOperation",
+    "ExperimentsMetricCollectionV2DTO",
+    "ExperimentsMetricCollectionV2DTOArray",
+    "ExperimentsMetricCollectionV2DTOData",
+    "ExperimentsMetricCollectionV2DTODataAttributes",
+    "ExperimentsMetricCollectionV2DTODataAttributesMetricsItems",
+    "ExperimentsMetricPropertyFilter",
+    "ExperimentsMetricSQLModelPropertyInput",
+    "ExperimentsMetricSQLModelV2DTO",
+    "ExperimentsMetricSQLModelV2DTOArray",
+    "ExperimentsMetricSQLModelV2DTOData",
+    "ExperimentsMetricSQLModelV2DTODataAttributes",
+    "ExperimentsMetricSQLModelV2DTODataAttributesMeasuresItems",
+    "ExperimentsMetricSQLModelV2DTODataAttributesSubjectTypesItems",
+    "ExperimentsMetricV2DTO",
+    "ExperimentsMetricV2DTOArray",
+    "ExperimentsMetricV2DTOData",
+    "ExperimentsMetricV2DTODataAttributes",
+    "ExperimentsMetricV2DTODataAttributesDataSourceType",
+    "ExperimentsMetricV2DTODataAttributesDesiredChange",
+    "ExperimentsMetricV2DTODataAttributesMetricType",
+    "ExperimentsMetricV2DTODataAttributesNumeratorAggregation",
+    "ExperimentsMetricV2DTODataAttributesPercentileAggregation",
+    "ExperimentsMetricV2DTODataAttributesPercentileAggregationDatadogMetricMeasure",
+    "ExperimentsMetricV2DTODataAttributesPercentileAggregationWarehouseMetricMeasure",
+    "ExperimentsNullableDatadogMetricMeasureInput",
+    "ExperimentsNullableDatadogPercentileMeasureInput",
+    "ExperimentsNullableWarehouseMetricMeasureInput",
+    "ExperimentsOffsetLinks",
+    "ExperimentsOffsetMeta",
+    "ExperimentsOffsetMetaPage",
+    "ExperimentsPatchExperimentMetricGroupV2Request",
+    "ExperimentsPatchExperimentMetricGroupV2RequestData",
+    "ExperimentsPatchExperimentMetricGroupV2RequestDataAttributes",
+    "ExperimentsPatchExperimentMetricGroupV2RequestDataType",
+    "ExperimentsPatchExperimentV2MetaDTO",
+    "ExperimentsPatchExperimentV2MetaDTOWarningsItems",
+    "ExperimentsPatchExperimentV2Request",
+    "ExperimentsPatchExperimentV2RequestData",
+    "ExperimentsPatchExperimentV2RequestDataAttributes",
+    "ExperimentsPatchExperimentV2RequestDataAttributesDatadogFlagConfiguration",
+    "ExperimentsPatchExperimentV2Response",
+    "ExperimentsPatchExperimentV2ResponseDataAttributes",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesConclusion",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesSplitByPropertiesItemsColumnType",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesStructuredMetadataItemsFieldType",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesTrafficExposure",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfiguration",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint",
+    "ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation",
+    "ExperimentsPatchExperimentV2ResponseDataType",
+    "ExperimentsPatchMetricCollectionV2Request",
+    "ExperimentsPatchMetricCollectionV2RequestData",
+    "ExperimentsPatchMetricCollectionV2RequestDataAttributes",
+    "ExperimentsPatchMetricCollectionV2RequestDataType",
+    "ExperimentsPatchSubjectTypeV2Request",
+    "ExperimentsPatchSubjectTypeV2RequestData",
+    "ExperimentsPatchSubjectTypeV2RequestDataAttributes",
+    "ExperimentsPropertyFilterInput",
+    "ExperimentsPropertyNullFilterInput",
+    "ExperimentsPropertyNullFilterInputOperation",
+    "ExperimentsPublicProtocolListResponseArray",
+    "ExperimentsPublicProtocolListResponseData",
+    "ExperimentsPublicProtocolListResponseDataAttributes",
+    "ExperimentsPublicProtocolResponse",
+    "ExperimentsPublicProtocolResponseData",
+    "ExperimentsPublicProtocolResponseDataAttributes",
+    "ExperimentsPublicProtocolResponseDataAttributesAnalysisPlan",
+    "ExperimentsPublicProtocolResponseDataAttributesAssignmentSourceDefaultPropertiesItems",
+    "ExperimentsPublicProtocolResponseDataAttributesEnforcement",
+    "ExperimentsPublicProtocolResponseDataAttributesExposureSchedule",
+    "ExperimentsPublicProtocolResponseDataAttributesExposureScheduleRolloutStepsItems",
+    "ExperimentsPublicProtocolResponseDataAttributesMetricGroupsItems",
+    "ExperimentsPublicProtocolResponseDataAttributesStatus",
+    "ExperimentsPublicProtocolResponseDataAttributesSubjectType",
+    "ExperimentsPublicProtocolResponseDataAttributesTargetingRulesItems",
+    "ExperimentsPublicProtocolResponseDataAttributesTargetingRulesItemsConditionsItems",
+    "ExperimentsPublicProtocolResponseDataType",
+    "ExperimentsRefreshExperimentResultsBatchMetaV2DTO",
+    "ExperimentsRefreshExperimentResultsBatchMetaV2DTOResultsItems",
+    "ExperimentsRefreshExperimentResultsBatchMetaV2DTOResultsItemsOutcome",
+    "ExperimentsRefreshExperimentResultsV2DTO",
+    "ExperimentsRefreshExperimentResultsV2DTOArray",
+    "ExperimentsRefreshExperimentResultsV2DTOData",
+    "ExperimentsRefreshExperimentResultsV2DTODataAttributes",
+    "ExperimentsRefreshExperimentResultsV2DTODataType",
+    "ExperimentsSQLModelPropertyInput",
+    "ExperimentsSavedFilterCondition",
+    "ExperimentsStartExperimentV2Request",
+    "ExperimentsStartExperimentV2RequestData",
+    "ExperimentsStartExperimentV2RequestDataType",
+    "ExperimentsStructuredMetadataResponse",
+    "ExperimentsSubjectTypeV2DTO",
+    "ExperimentsSubjectTypeV2DTOArray",
+    "ExperimentsSubjectTypeV2DTOData",
+    "ExperimentsSubjectTypeV2DTODataAttributes",
+    "ExperimentsSubjectTypeV2DTODataType",
+    "ExperimentsTargetingRuleCondition",
+    "ExperimentsTrafficSummaryV2DTO",
+    "ExperimentsTrafficSummaryV2DTOData",
+    "ExperimentsTrafficSummaryV2DTODataAttributes",
+    "ExperimentsTrafficSummaryV2DTODataAttributesVariantsItems",
+    "ExperimentsTrafficSummaryV2DTODataType",
+    "ExperimentsUpdateExposureSQLModelV2RequestDataAttributes",
+    "ExperimentsUpdateExposureSQLModelV2RequestDataType",
+    "ExperimentsUpdateExposureSQLModelV2Response",
+    "ExperimentsUpdateExposureSQLModelV2ResponseMeta",
+    "ExperimentsUpdateMetricSQLModelV2RequestDataAttributes",
+    "ExperimentsUpdateMetricSQLModelV2RequestDataType",
+    "ExperimentsUpdateMetricSQLModelV2Response",
+    "ExperimentsUpdateMetricSQLModelV2ResponseMeta",
+    "ExperimentsUpdateMetricV2Request",
+    "ExperimentsUpdateMetricV2RequestData",
+    "ExperimentsUpdateMetricV2RequestDataAttributes",
+    "ExperimentsVariantResultsV2DTOArray",
+    "ExperimentsVariantResultsV2DTOData",
+    "ExperimentsVariantResultsV2DTODataAttributes",
+    "ExperimentsVariantResultsV2DTODataAttributesMetricsItems",
+    "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems",
+    "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval",
+    "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType",
+    "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsMethod",
+    "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsUnreliableReason",
+    "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsCoverageSummary",
+    "ExperimentsVariantResultsV2DTODataType",
+    "ExperimentsWarehouseExposureFilter",
+    "ExperimentsWarehouseFilterInput",
+    "ExperimentsWarehouseMetricAggregationInput",
+    "ExperimentsWarehousePercentileAggregationInput",
     "ExposureRolloutStepRequest",
     "ExposureScheduleRequest",
     "FacetInfoRequest",
@@ -14344,6 +15163,9 @@ __all__ = [
     "FeatureFlagListItem",
     "FeatureFlagListItemAttributes",
     "FeatureFlagResponse",
+    "FeatureFlagStalenessCodeReference",
+    "FeatureFlagStalenessDetails",
+    "FeatureFlagStalenessRecommendedAction",
     "FeatureFlagStatus",
     "FeatureFlagsPaginationMeta",
     "FeatureFlagsPaginationMetaPage",

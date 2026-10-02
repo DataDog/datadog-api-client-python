@@ -1,0 +1,18 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/List subject types returns \"OK\" response",
+  "operation_id": "ListSubjectTypes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/experiments/subject-types"
+  },
+  "scenario": "List subject types returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

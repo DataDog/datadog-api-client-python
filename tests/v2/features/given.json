@@ -443,6 +443,110 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"type\": \"experiments\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\", \"subject_type_id\": \"{{ experiment_subject_type.data.id }}\", \"decision_metrics\": [{\"metric_id\": \"{{ experiment_metric.data.id }}\", \"is_primary\": true}], \"assignments_start_date\": null, \"assignments_end_date\": null, \"events_start_date\": null, \"events_end_date\": null, \"datadog_flag_configuration\": {\"feature_flag_id\": \"{{ feature_flag.data.id }}\", \"environment_id\": \"{{ environment.data.id }}\", \"targeting_rules\": [], \"entry_point\": null}, \"variants\": [{\"feature_flag_variant_id\": \"{{ feature_flag.data.attributes.variants[0].id }}\", \"key\": \"{{ feature_flag.data.attributes.variants[0].key }}\", \"name\": \"{{ feature_flag.data.attributes.variants[0].name }}\", \"is_active\": true, \"is_control\": true, \"weight\": 50}, {\"feature_flag_variant_id\": \"{{ feature_flag.data.attributes.variants[1].id }}\", \"key\": \"{{ feature_flag.data.attributes.variants[1].key }}\", \"name\": \"{{ feature_flag.data.attributes.variants[1].name }}\", \"is_active\": true, \"is_control\": false, \"weight\": 50}], \"traffic_exposure\": {\"mode\": \"STATIC\", \"fraction\": 1}}}}"
+      }
+    ],
+    "step": "there is a valid \"configured_experiment\" in the system",
+    "key": "configured_experiment",
+    "tag": "Experiments",
+    "operationId": "CreateExperiment"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"experiments\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\"}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment\" in the system",
+    "key": "experiment",
+    "tag": "Experiments",
+    "operationId": "CreateExperiment"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"metric-collections\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\"}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment_metric_collection\" in the system",
+    "key": "experiment_metric_collection",
+    "tag": "Experiments",
+    "operationId": "CreateMetricCollection"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"metric-collections\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\", \"metrics\": [{\"metric_id\": \"{{ experiment_metric.data.id }}\"}]}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment_metric_collection_with_metric\" in the system",
+    "key": "experiment_metric_collection_with_metric",
+    "tag": "Experiments",
+    "operationId": "CreateMetricCollection"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"metrics\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\", \"data_source_type\": \"DATADOG\", \"desired_change\": \"METRIC_INCREASES\", \"numerator_aggregation\": {\"operation\": \"sum\", \"datadog_metric_measure\": {\"name\": \"ex-{{ unique_hash }} view duration\", \"source_type\": \"PRODUCT_ANALYTICS\", \"source_subtype\": \"RUM_VIEWS\", \"column_type\": \"double\", \"column_name\": \"@view.time_spent\"}}}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment_metric\" in the system",
+    "key": "experiment_metric",
+    "tag": "Experiments",
+    "operationId": "CreateMetric"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"subject-types\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\", \"product_analytics_attribute\": \"@account.id\", \"warehouse_column_names\": [\"account_id\"]}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment_subject_type\" in the system",
+    "key": "experiment_subject_type",
+    "tag": "Experiments",
+    "operationId": "CreateSubjectType"
+  },
+  {
+    "parameters": [
+      {
+        "name": "experiment_id",
+        "value": "\"{{ configured_experiment.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"analysis-plans\", \"attributes\": {\"target_duration_days\": 14}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment_start_analysis_plan\" in the system",
+    "key": "experiment_start_analysis_plan",
+    "tag": "Experiments",
+    "operationId": "UpdateExperimentAnalysisPlanAttributes"
+  },
+  {
+    "parameters": [
+      {
+        "name": "experiment_id",
+        "value": "\"{{ experiment.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"experiment-metric-groups\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\", \"metrics\": [{\"metric_id\": \"{{ experiment_metric.data.id }}\"}]}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment_metric_group\" in the system",
+    "key": "experiment_metric_group",
+    "tag": "Experiments",
+    "operationId": "CreateExperimentMetricGroup"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\"data\": {\"type\": \"feature-flags\", \"attributes\": {\"key\": \"test-feature-flag-{{ unique }}\", \"name\": \"Test Feature Flag {{ unique }}\", \"description\": \"Test feature flag for BDD scenarios\", \"value_type\": \"BOOLEAN\", \"variants\": [{\"key\": \"variant-{{ unique }}-1\", \"name\": \"Variant {{ unique }} A\", \"value\": \"true\"}, {\"key\": \"variant-{{ unique }}-2\", \"name\": \"Variant {{ unique }} B\", \"value\": \"false\"}]}}}"
       }
     ],

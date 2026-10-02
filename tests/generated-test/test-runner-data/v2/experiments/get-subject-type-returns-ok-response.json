@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Get subject type returns \"OK\" response",
+  "operation_id": "GetSubjectType",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "subject_type_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_subject_type.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/subject-types/{subject_type_id}"
+  },
+  "scenario": "Get subject type returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

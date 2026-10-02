@@ -1,0 +1,50 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Update metric collection returns \"OK\" response",
+  "operation_id": "UpdateMetricCollection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsPatchMetricCollectionV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "ex-{{ unique_hash }} updated"
+          },
+          "type": "metric-collections"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_collection_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_metric_collection.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/metric-collections/{metric_collection_id}"
+  },
+  "scenario": "Update metric collection returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

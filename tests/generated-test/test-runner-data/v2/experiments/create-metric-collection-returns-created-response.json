@@ -1,0 +1,33 @@
+{
+  "api": "Experiments",
+  "expected_status": 201,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Create metric collection returns \"Created\" response",
+  "operation_id": "CreateMetricCollection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCreateMetricCollectionV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "ex-{{ unique_hash }}"
+          },
+          "type": "metric-collections"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/experiments/metric-collections"
+  },
+  "scenario": "Create metric collection returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

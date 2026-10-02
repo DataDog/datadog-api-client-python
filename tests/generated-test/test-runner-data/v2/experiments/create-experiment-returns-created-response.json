@@ -1,0 +1,33 @@
+{
+  "api": "Experiments",
+  "expected_status": 201,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Create experiment returns \"Created\" response",
+  "operation_id": "CreateExperiment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCreateExperimentV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "ex-{{ unique_hash }}"
+          },
+          "type": "experiments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/experiments"
+  },
+  "scenario": "Create experiment returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
