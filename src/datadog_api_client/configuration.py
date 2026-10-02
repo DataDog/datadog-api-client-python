@@ -826,7 +826,6 @@ class Configuration:
                 "v2.update_rum_operation": False,
                 "v2.update_rum_operation_strong_link": False,
                 "v2.query_aggregated_long_tasks": False,
-                "v2.query_aggregated_signals_problems": False,
                 "v2.query_aggregated_waterfall": False,
                 "v2.create_scorecard_outcomes_batch": False,
                 "v2.get_entity_risk_score": False,

@@ -209,8 +209,6 @@ from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamReq
 from datadog_api_client.v2.model.advisory import Advisory
 from datadog_api_client.v2.model.agent_trigger import AgentTrigger
 from datadog_api_client.v2.model.agent_trigger_wrapper import AgentTriggerWrapper
-from datadog_api_client.v2.model.aggregated_high_frozen_frame_rate import AggregatedHighFrozenFrameRate
-from datadog_api_client.v2.model.aggregated_high_script_eval import AggregatedHighScriptEval
 from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
 from datadog_api_client.v2.model.aggregated_long_tasks_request import AggregatedLongTasksRequest
 from datadog_api_client.v2.model.aggregated_long_tasks_request_attributes import AggregatedLongTasksRequestAttributes
@@ -222,24 +220,8 @@ from datadog_api_client.v2.model.aggregated_long_tasks_response_attributes_crite
     AggregatedLongTasksResponseAttributesCriteria,
 )
 from datadog_api_client.v2.model.aggregated_long_tasks_response_data import AggregatedLongTasksResponseData
-from datadog_api_client.v2.model.aggregated_low_cache_hit_rate import AggregatedLowCacheHitRate
-from datadog_api_client.v2.model.aggregated_mobile_scroll_friction import AggregatedMobileScrollFriction
 from datadog_api_client.v2.model.aggregated_resource import AggregatedResource
 from datadog_api_client.v2.model.aggregated_resource_timing_breakdown import AggregatedResourceTimingBreakdown
-from datadog_api_client.v2.model.aggregated_signals_problems_request import AggregatedSignalsProblemsRequest
-from datadog_api_client.v2.model.aggregated_signals_problems_request_attributes import (
-    AggregatedSignalsProblemsRequestAttributes,
-)
-from datadog_api_client.v2.model.aggregated_signals_problems_request_data import AggregatedSignalsProblemsRequestData
-from datadog_api_client.v2.model.aggregated_signals_problems_request_type import AggregatedSignalsProblemsRequestType
-from datadog_api_client.v2.model.aggregated_signals_problems_response import AggregatedSignalsProblemsResponse
-from datadog_api_client.v2.model.aggregated_signals_problems_response_attributes import (
-    AggregatedSignalsProblemsResponseAttributes,
-)
-from datadog_api_client.v2.model.aggregated_signals_problems_response_data import AggregatedSignalsProblemsResponseData
-from datadog_api_client.v2.model.aggregated_slow_fcp_high_bytes import AggregatedSlowFCPHighBytes
-from datadog_api_client.v2.model.aggregated_slow_interaction_long_task import AggregatedSlowInteractionLongTask
-from datadog_api_client.v2.model.aggregated_uncompressed_resource import AggregatedUncompressedResource
 from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria import AggregatedWaterfallPerformanceCriteria
 from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria_metric import (
     AggregatedWaterfallPerformanceCriteriaMetric,
@@ -10063,8 +10045,6 @@ from datadog_api_client.v2.model.signal_entities_data import SignalEntitiesData
 from datadog_api_client.v2.model.signal_entities_response import SignalEntitiesResponse
 from datadog_api_client.v2.model.signal_entities_type import SignalEntitiesType
 from datadog_api_client.v2.model.signal_entity_identity import SignalEntityIdentity
-from datadog_api_client.v2.model.signals_problems_detections import SignalsProblemsDetections
-from datadog_api_client.v2.model.signals_problems_sample_metadata import SignalsProblemsSampleMetadata
 from datadog_api_client.v2.model.simple_monitor_user_template import SimpleMonitorUserTemplate
 from datadog_api_client.v2.model.single_aggregated_connection_response_array import (
     SingleAggregatedConnectionResponseArray,
@@ -12136,8 +12116,6 @@ __all__ = [
     "Advisory",
     "AgentTrigger",
     "AgentTriggerWrapper",
-    "AggregatedHighFrozenFrameRate",
-    "AggregatedHighScriptEval",
     "AggregatedLongTasksByInvokerType",
     "AggregatedLongTasksRequest",
     "AggregatedLongTasksRequestAttributes",
@@ -12147,20 +12125,8 @@ __all__ = [
     "AggregatedLongTasksResponseAttributes",
     "AggregatedLongTasksResponseAttributesCriteria",
     "AggregatedLongTasksResponseData",
-    "AggregatedLowCacheHitRate",
-    "AggregatedMobileScrollFriction",
     "AggregatedResource",
     "AggregatedResourceTimingBreakdown",
-    "AggregatedSignalsProblemsRequest",
-    "AggregatedSignalsProblemsRequestAttributes",
-    "AggregatedSignalsProblemsRequestData",
-    "AggregatedSignalsProblemsRequestType",
-    "AggregatedSignalsProblemsResponse",
-    "AggregatedSignalsProblemsResponseAttributes",
-    "AggregatedSignalsProblemsResponseData",
-    "AggregatedSlowFCPHighBytes",
-    "AggregatedSlowInteractionLongTask",
-    "AggregatedUncompressedResource",
     "AggregatedWaterfallPerformanceCriteria",
     "AggregatedWaterfallPerformanceCriteriaMetric",
     "AggregatedWaterfallRequest",
@@ -18790,8 +18756,6 @@ __all__ = [
     "SignalEntitiesResponse",
     "SignalEntitiesType",
     "SignalEntityIdentity",
-    "SignalsProblemsDetections",
-    "SignalsProblemsSampleMetadata",
     "SimpleMonitorUserTemplate",
     "SingleAggregatedConnectionResponseArray",
     "SingleAggregatedConnectionResponseData",
