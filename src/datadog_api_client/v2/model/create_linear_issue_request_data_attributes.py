@@ -65,7 +65,7 @@ class CreateLinearIssueRequestDataAttributes(ModelNormal):
         :param linear_project_id: Unique identifier of the Linear project to pin the issue to. If not provided, the issue is not associated with a Linear project.
         :type linear_project_id: str, optional
 
-        :param priority: Case priority
+        :param priority: Work item priority
         :type priority: CasePriority, optional
 
         :param title: Title of the Linear issue. If not provided, the title will be automatically generated.

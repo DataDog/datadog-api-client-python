@@ -49,18 +49,18 @@ class Case(ModelNormal):
         **kwargs,
     ):
         """
-        A case
+        A work item
 
-        :param attributes: Case resource attributes
+        :param attributes: Work item resource attributes
         :type attributes: CaseAttributes
 
-        :param id: Case's identifier
+        :param id: Work item's identifier
         :type id: str
 
-        :param relationships: Resources related to a case
+        :param relationships: Resources related to a work item
         :type relationships: CaseRelationships, optional
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         if relationships is not unset:

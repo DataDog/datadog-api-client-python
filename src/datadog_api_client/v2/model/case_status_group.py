@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseStatusGroup(ModelSimple):
     """
-    Status group of the case.
+    Status group of the work item.
 
     :param value: Must be one of ["SG_OPEN", "SG_IN_PROGRESS", "SG_CLOSED"].
     :type value: str

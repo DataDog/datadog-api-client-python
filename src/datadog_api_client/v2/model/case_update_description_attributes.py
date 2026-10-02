@@ -23,9 +23,9 @@ class CaseUpdateDescriptionAttributes(ModelNormal):
 
     def __init__(self_, description: str, **kwargs):
         """
-        Case update description attributes
+        Work item update description attributes
 
-        :param description: Case new description
+        :param description: Work item new description
         :type description: str
         """
         super().__init__(kwargs)

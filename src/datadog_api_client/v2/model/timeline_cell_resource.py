@@ -36,9 +36,9 @@ class TimelineCellResource(ModelNormal):
 
     def __init__(self_, attributes: TimelineCell, id: str, type: TimelineCellResourceType, **kwargs):
         """
-        A timeline cell resource representing a single entry in a case's activity timeline.
+        A timeline cell resource representing a single entry in a work item's activity timeline.
 
-        :param attributes: Attributes of a timeline cell, representing a single event in a case's chronological activity log (for example, a comment, status change, or assignment update).
+        :param attributes: Attributes of a timeline cell, representing a single event in a work item's chronological activity log (for example, a comment, status change, or assignment update).
         :type attributes: TimelineCell
 
         :param id: Timeline cell's identifier

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CasePriority(ModelSimple):
     """
-    Case priority
+    Work item priority
 
     :param value: If omitted defaults to "NOT_DEFINED". Must be one of ["NOT_DEFINED", "P1", "P2", "P3", "P4", "P5"].
     :type value: str

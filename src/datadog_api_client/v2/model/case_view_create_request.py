@@ -30,9 +30,9 @@ class CaseViewCreateRequest(ModelNormal):
 
     def __init__(self_, data: CaseViewCreate, **kwargs):
         """
-        Request payload for creating a case view.
+        Request payload for creating a work item view.
 
-        :param data: Data object for creating a case view.
+        :param data: Data object for creating a work item view.
         :type data: CaseViewCreate
         """
         super().__init__(kwargs)

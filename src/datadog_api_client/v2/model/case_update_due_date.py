@@ -34,12 +34,12 @@ class CaseUpdateDueDate(ModelNormal):
 
     def __init__(self_, attributes: CaseUpdateDueDateAttributes, type: CaseResourceType, **kwargs):
         """
-        Data object for updating a case's due date.
+        Data object for updating a work item's due date.
 
-        :param attributes: Attributes for setting or clearing a case's due date.
+        :param attributes: Attributes for setting or clearing a work item's due date.
         :type attributes: CaseUpdateDueDateAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

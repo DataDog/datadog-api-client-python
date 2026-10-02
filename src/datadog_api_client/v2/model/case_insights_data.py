@@ -36,10 +36,10 @@ class CaseInsightsData(ModelNormal):
         """
         Data object containing the insights to add or remove.
 
-        :param attributes: Attributes for adding or removing insights from a case.
+        :param attributes: Attributes for adding or removing insights from a work item.
         :type attributes: CaseInsightsAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

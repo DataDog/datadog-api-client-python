@@ -38,7 +38,7 @@ class CaseNotificationRule(ModelNormal):
         self_, attributes: CaseNotificationRuleAttributes, id: str, type: CaseNotificationRuleResourceType, **kwargs
     ):
         """
-        A notification rule for case management
+        A notification rule for Work Management
 
         :param attributes: Notification rule attributes
         :type attributes: CaseNotificationRuleAttributes

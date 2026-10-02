@@ -41,7 +41,7 @@ class ProjectCreateAttributes(ModelNormal):
         """
         Project creation attributes.
 
-        :param enabled_custom_case_types: List of enabled custom case type IDs.
+        :param enabled_custom_case_types: List of enabled custom work item type IDs.
         :type enabled_custom_case_types: [str], optional
 
         :param key: Project's key. Cannot be "CASE".

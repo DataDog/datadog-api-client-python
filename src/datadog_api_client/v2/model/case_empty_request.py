@@ -30,9 +30,9 @@ class CaseEmptyRequest(ModelNormal):
 
     def __init__(self_, data: CaseEmpty, **kwargs):
         """
-        Case empty request
+        Work item empty request
 
-        :param data: Case empty request data
+        :param data: Work item empty request data
         :type data: CaseEmpty
         """
         super().__init__(kwargs)

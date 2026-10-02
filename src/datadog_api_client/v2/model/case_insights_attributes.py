@@ -37,9 +37,9 @@ class CaseInsightsAttributes(ModelNormal):
 
     def __init__(self_, insights: List[CaseInsight], **kwargs):
         """
-        Attributes for adding or removing insights from a case.
+        Attributes for adding or removing insights from a work item.
 
-        :param insights: Array of insights to add to or remove from a case.
+        :param insights: Array of insights to add to or remove from a work item.
         :type insights: [CaseInsight]
         """
         super().__init__(kwargs)

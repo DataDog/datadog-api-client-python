@@ -50,7 +50,7 @@ class AutomationRuleTriggerData(ModelNormal):
         :param change_type: The kind of attribute change to match. Allowed values: ``VALUE_ADDED`` , ``VALUE_DELETED`` , ``ANY_CHANGES``. Used with ``ATTRIBUTE_VALUE_CHANGED`` triggers.
         :type change_type: str, optional
 
-        :param field: The case attribute field name to monitor for changes. Used with ``ATTRIBUTE_VALUE_CHANGED`` triggers.
+        :param field: The work item attribute field name to monitor for changes. Used with ``ATTRIBUTE_VALUE_CHANGED`` triggers.
         :type field: str, optional
 
         :param from_status_name: The originating status name. Used with ``STATUS_TRANSITIONED`` triggers to match transitions from this status.

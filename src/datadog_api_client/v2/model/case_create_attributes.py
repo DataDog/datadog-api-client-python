@@ -53,24 +53,24 @@ class CaseCreateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Case creation attributes
+        Work item creation attributes
 
-        :param custom_attributes: Case custom attributes
+        :param custom_attributes: Work item custom attributes
         :type custom_attributes: {str: (CustomAttributeValue,)}, optional
 
         :param description: Description
         :type description: str, optional
 
-        :param priority: Case priority
+        :param priority: Work item priority
         :type priority: CasePriority, optional
 
-        :param status_name: Status of the case. Must be one of the existing statuses for the case's type.
+        :param status_name: Status of the work item. Must be one of the existing statuses for the work item's type.
         :type status_name: str, optional
 
         :param title: Title
         :type title: str
 
-        :param type_id: Case type UUID
+        :param type_id: Work item type UUID
         :type type_id: str
         """
         if custom_attributes is not unset:

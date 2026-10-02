@@ -15,7 +15,7 @@ from datadog_api_client.v2.model.case_type_update_request import CaseTypeUpdateR
 
 class CaseManagementTypeApi:
     """
-    View and configure case types within Case Management. See the `Case Management page <https://docs.datadoghq.com/service_management/case_management/>`_ for more information.
+    View and configure work item types within Work Management. See the `Work Management page <https://docs.datadoghq.com/incident_response/work_management/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
@@ -114,9 +114,9 @@ class CaseManagementTypeApi:
     ) -> CaseTypeResponse:
         """Create a case type.
 
-        Create a Case Type
+        Create a work item type.
 
-        :param body: Case type payload
+        :param body: Work item type payload
         :type body: CaseTypeCreateRequest
         :rtype: CaseTypeResponse
         """
@@ -131,9 +131,9 @@ class CaseManagementTypeApi:
     ) -> None:
         """Delete a case type.
 
-        Delete a case type
+        Delete a work item type
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: The UUID of the work item type.
         :type case_type_id: str
         :rtype: None
         """
@@ -147,7 +147,7 @@ class CaseManagementTypeApi:
     ) -> CaseTypesResponse:
         """Get all case types.
 
-        Get all case types
+        Get all work item types
 
         :rtype: CaseTypesResponse
         """
@@ -161,11 +161,11 @@ class CaseManagementTypeApi:
     ) -> CaseTypeResponse:
         """Update a case type.
 
-        Updates the name, emoji, or description of an existing case type.
+        Updates the name, emoji, or description of an existing work item type.
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: The UUID of the work item type.
         :type case_type_id: str
-        :param body: Case type payload.
+        :param body: Work item type payload.
         :type body: CaseTypeUpdateRequest
         :rtype: CaseTypeResponse
         """

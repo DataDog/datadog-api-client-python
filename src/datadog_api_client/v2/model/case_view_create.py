@@ -34,12 +34,12 @@ class CaseViewCreate(ModelNormal):
 
     def __init__(self_, attributes: CaseViewCreateAttributes, type: CaseViewResourceType, **kwargs):
         """
-        Data object for creating a case view.
+        Data object for creating a work item view.
 
-        :param attributes: Attributes required to create a case view.
+        :param attributes: Attributes required to create a work item view.
         :type attributes: CaseViewCreateAttributes
 
-        :param type: JSON:API resource type for case views.
+        :param type: JSON:API resource type for work item views.
         :type type: CaseViewResourceType
         """
         super().__init__(kwargs)

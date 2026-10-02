@@ -34,12 +34,12 @@ class CaseUpdatePriority(ModelNormal):
 
     def __init__(self_, attributes: CaseUpdatePriorityAttributes, type: CaseResourceType, **kwargs):
         """
-        Case priority status
+        Work item priority status
 
-        :param attributes: Case update priority attributes
+        :param attributes: Work item update priority attributes
         :type attributes: CaseUpdatePriorityAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

@@ -68,13 +68,13 @@ class IntegrationIncident(ModelNormal):
         :param enabled: Whether incident integration is enabled.
         :type enabled: bool, optional
 
-        :param field_mappings: List of mappings between incident fields and case fields.
+        :param field_mappings: List of mappings between incident fields and work item fields.
         :type field_mappings: [IntegrationIncidentFieldMappingsItems], optional
 
         :param incident_type: Incident type.
         :type incident_type: str, optional
 
-        :param severity_config: Severity configuration for mapping incident priorities to case priorities.
+        :param severity_config: Severity configuration for mapping incident priorities to work item priorities.
         :type severity_config: IntegrationIncidentSeverityConfig, optional
         """
         if auto_escalation_query is not unset:

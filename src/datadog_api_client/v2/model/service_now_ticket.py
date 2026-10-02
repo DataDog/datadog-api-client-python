@@ -46,12 +46,12 @@ class ServiceNowTicket(ModelNormal):
         **kwargs,
     ):
         """
-        ServiceNow ticket attached to case
+        ServiceNow ticket attached to work item
 
         :param result: ServiceNow ticket information
         :type result: ServiceNowTicketResult, optional
 
-        :param status: Case status
+        :param status: Work item status
         :type status: Case3rdPartyTicketStatus, optional
         """
         if result is not unset:

@@ -34,12 +34,12 @@ class CaseUpdateCustomAttribute(ModelNormal):
 
     def __init__(self_, attributes: CustomAttributeValue, type: CaseResourceType, **kwargs):
         """
-        Case update custom attribute
+        Work item update custom attribute
 
-        :param attributes: A typed value for a custom attribute on a specific case.
+        :param attributes: A typed value for a custom attribute on a specific work item.
         :type attributes: CustomAttributeValue
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

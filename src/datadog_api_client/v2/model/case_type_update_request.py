@@ -30,9 +30,9 @@ class CaseTypeUpdateRequest(ModelNormal):
 
     def __init__(self_, data: CaseTypeUpdate, **kwargs):
         """
-        Request payload for updating a case type.
+        Request payload for updating a work item type.
 
-        :param data: Data object for updating a case type.
+        :param data: Data object for updating a work item type.
         :type data: CaseTypeUpdate
         """
         super().__init__(kwargs)

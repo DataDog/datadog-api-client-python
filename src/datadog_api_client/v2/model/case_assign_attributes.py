@@ -23,7 +23,7 @@ class CaseAssignAttributes(ModelNormal):
 
     def __init__(self_, assignee_id: str, **kwargs):
         """
-        Case assign attributes
+        Work item assign attributes
 
         :param assignee_id: Assignee's UUID
         :type assignee_id: str

@@ -34,12 +34,12 @@ class CaseUpdateComment(ModelNormal):
 
     def __init__(self_, attributes: CaseUpdateCommentAttributes, type: CaseResourceType, **kwargs):
         """
-        Data object for updating a case comment.
+        Data object for updating a work item comment.
 
         :param attributes: Attributes for updating a comment.
         :type attributes: CaseUpdateCommentAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)
