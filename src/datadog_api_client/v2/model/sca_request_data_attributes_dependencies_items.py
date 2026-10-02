@@ -94,7 +94,7 @@ class ScaRequestDataAttributesDependenciesItems(ModelNormal):
         **kwargs,
     ):
         """
-        A dependency found in the repository, including its identity, location, and reachability metadata.
+        A dependency found in the repository, including its identity, location, and ``reachability metadata``.
 
         :param exclusions: A list of patterns or identifiers that should be excluded from analysis for this dependency.
         :type exclusions: [str], optional
