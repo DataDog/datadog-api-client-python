@@ -21,6 +21,9 @@ class SecurityMonitoringRuleResponse(ModelComposed):
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
 
+        :param compatible_version: The version of the rule at which its detection logic last changed. Updates that only change the name, message, tags, or notifications do not change this value.
+        :type compatible_version: int, optional
+
         :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
         :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions, optional
 
